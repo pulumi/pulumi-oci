@@ -140,7 +140,7 @@ namespace Pulumi.Oci.StackMonitoring
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// List of resource objects on which this metric extension is enabled.
+        /// List of resource details objects having resourceIds on which this metric extension is enabled.
         /// </summary>
         [Output("enabledOnResources")]
         public Output<ImmutableArray<Outputs.MetricExtensionEnabledOnResource>> EnabledOnResources { get; private set; } = null!;
@@ -385,7 +385,7 @@ namespace Pulumi.Oci.StackMonitoring
         private InputList<Inputs.MetricExtensionEnabledOnResourceGetArgs>? _enabledOnResources;
 
         /// <summary>
-        /// List of resource objects on which this metric extension is enabled.
+        /// List of resource details objects having resourceIds on which this metric extension is enabled.
         /// </summary>
         public InputList<Inputs.MetricExtensionEnabledOnResourceGetArgs> EnabledOnResources
         {

@@ -48,6 +48,9 @@ public final class GetConnectionResult {
      * @return Used authentication mechanism to be provided for the following connection types:
      * * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE
      * * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
+     * * DATABRICKS - Required fields by authentication types:
+     * * PERSONAL_ACCESS_TOKEN: username is always &#39;token&#39;, user must enter password
+     * * OAUTH_M2M: user must enter clientId and clientSecret
      * 
      */
     private String authenticationType;
@@ -99,6 +102,7 @@ public final class GetConnectionResult {
      * @return * JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: &#39;mq://myjms.host.domain:7676&#39;
      * * SNOWFLAKE: JDBC connection URL. e.g.: &#39;jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;&#39;
      * * AMAZON_REDSHIFT: Connection URL. e.g.: &#39;jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb&#39;
+     * * DATABRICKS: Connection URL. e.g.: &#39;jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb&#39;
      * 
      */
     private String connectionUrl;
@@ -148,6 +152,10 @@ public final class GetConnectionResult {
      * 
      */
     private Boolean doesUseSecretIds;
+    /**
+     * @return Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+     * 
+     */
     private String endpoint;
     private String fingerprint;
     /**
@@ -272,7 +280,7 @@ public final class GetConnectionResult {
      */
     private String redisClusterId;
     /**
-     * @return The name of the region. e.g.: us-ashburn-1
+     * @return The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
      * 
      */
     private String region;
@@ -323,12 +331,17 @@ public final class GetConnectionResult {
      */
     private Boolean shouldUseJndi;
     /**
+     * @return Indicates that the user intents to connect to the instance through resource principal.
+     * 
+     */
+    private Boolean shouldUseResourcePrincipal;
+    /**
      * @return If set to true, the driver validates the certificate that is sent by the database server.
      * 
      */
     private Boolean shouldValidateServerCertificate;
     /**
-     * @return Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
+     * @return Database Certificate - The base64 encoded content of a .pem or .crt file. containing the server public key (for 1-way SSL).
      * 
      */
     private String sslCa;
@@ -371,6 +384,11 @@ public final class GetConnectionResult {
      */
     private String state;
     /**
+     * @return Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
+     * 
+     */
+    private String storageCredentialName;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
      * 
      */
@@ -396,6 +414,11 @@ public final class GetConnectionResult {
      */
     private String tenancyId;
     /**
+     * @return Azure tenant ID of the application. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
+     * 
+     */
+    private String tenantId;
+    /**
      * @return The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
@@ -405,6 +428,20 @@ public final class GetConnectionResult {
      * 
      */
     private String timeUpdated;
+    private String tlsCaFile;
+    private String tlsCertificateKeyFile;
+    private String tlsCertificateKeyFilePassword;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, &#39;tlsCertificateKeyFilePassword&#39; field must not be provided.
+     * 
+     */
+    private String tlsCertificateKeyFilePasswordSecretId;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
+     * * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, &#39;tlsCertificateKeyFile&#39; field must not be provided.
+     * 
+     */
+    private String tlsCertificateKeyFileSecretId;
     private Boolean triggerRefresh;
     private String trustStore;
     private String trustStorePassword;
@@ -414,7 +451,7 @@ public final class GetConnectionResult {
      */
     private String trustStorePasswordSecretId;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, &#39;trustStore&#39; field must not be provided
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, &#39;trustStore&#39; field must not be provided.
      * 
      */
     private String trustStoreSecretId;
@@ -424,12 +461,12 @@ public final class GetConnectionResult {
      */
     private String url;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/Object Storage. The user must have write access to the table they want to connect to.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
      * 
      */
     private String userId;
     /**
-     * @return The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
+     * @return The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
      * 
      */
     private String username;
@@ -488,6 +525,9 @@ public final class GetConnectionResult {
      * @return Used authentication mechanism to be provided for the following connection types:
      * * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE
      * * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
+     * * DATABRICKS - Required fields by authentication types:
+     * * PERSONAL_ACCESS_TOKEN: username is always &#39;token&#39;, user must enter password
+     * * OAUTH_M2M: user must enter clientId and clientSecret
      * 
      */
     public String authenticationType() {
@@ -561,6 +601,7 @@ public final class GetConnectionResult {
      * @return * JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: &#39;mq://myjms.host.domain:7676&#39;
      * * SNOWFLAKE: JDBC connection URL. e.g.: &#39;jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;&#39;
      * * AMAZON_REDSHIFT: Connection URL. e.g.: &#39;jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb&#39;
+     * * DATABRICKS: Connection URL. e.g.: &#39;jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb&#39;
      * 
      */
     public String connectionUrl() {
@@ -632,6 +673,10 @@ public final class GetConnectionResult {
     public Boolean doesUseSecretIds() {
         return this.doesUseSecretIds;
     }
+    /**
+     * @return Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+     * 
+     */
     public String endpoint() {
         return this.endpoint;
     }
@@ -820,7 +865,7 @@ public final class GetConnectionResult {
         return this.redisClusterId;
     }
     /**
-     * @return The name of the region. e.g.: us-ashburn-1
+     * @return The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
      * 
      */
     public String region() {
@@ -895,6 +940,13 @@ public final class GetConnectionResult {
         return this.shouldUseJndi;
     }
     /**
+     * @return Indicates that the user intents to connect to the instance through resource principal.
+     * 
+     */
+    public Boolean shouldUseResourcePrincipal() {
+        return this.shouldUseResourcePrincipal;
+    }
+    /**
      * @return If set to true, the driver validates the certificate that is sent by the database server.
      * 
      */
@@ -902,7 +954,7 @@ public final class GetConnectionResult {
         return this.shouldValidateServerCertificate;
     }
     /**
-     * @return Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
+     * @return Database Certificate - The base64 encoded content of a .pem or .crt file. containing the server public key (for 1-way SSL).
      * 
      */
     public String sslCa() {
@@ -973,6 +1025,13 @@ public final class GetConnectionResult {
         return this.state;
     }
     /**
+     * @return Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
+     * 
+     */
+    public String storageCredentialName() {
+        return this.storageCredentialName;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
      * 
      */
@@ -1008,6 +1067,13 @@ public final class GetConnectionResult {
         return this.tenancyId;
     }
     /**
+     * @return Azure tenant ID of the application. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
+     * 
+     */
+    public String tenantId() {
+        return this.tenantId;
+    }
+    /**
      * @return The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
@@ -1020,6 +1086,30 @@ public final class GetConnectionResult {
      */
     public String timeUpdated() {
         return this.timeUpdated;
+    }
+    public String tlsCaFile() {
+        return this.tlsCaFile;
+    }
+    public String tlsCertificateKeyFile() {
+        return this.tlsCertificateKeyFile;
+    }
+    public String tlsCertificateKeyFilePassword() {
+        return this.tlsCertificateKeyFilePassword;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, &#39;tlsCertificateKeyFilePassword&#39; field must not be provided.
+     * 
+     */
+    public String tlsCertificateKeyFilePasswordSecretId() {
+        return this.tlsCertificateKeyFilePasswordSecretId;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
+     * * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, &#39;tlsCertificateKeyFile&#39; field must not be provided.
+     * 
+     */
+    public String tlsCertificateKeyFileSecretId() {
+        return this.tlsCertificateKeyFileSecretId;
     }
     public Boolean triggerRefresh() {
         return this.triggerRefresh;
@@ -1038,7 +1128,7 @@ public final class GetConnectionResult {
         return this.trustStorePasswordSecretId;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, &#39;trustStore&#39; field must not be provided
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, &#39;trustStore&#39; field must not be provided.
      * 
      */
     public String trustStoreSecretId() {
@@ -1052,14 +1142,14 @@ public final class GetConnectionResult {
         return this.url;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/Object Storage. The user must have write access to the table they want to connect to.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
      * 
      */
     public String userId() {
         return this.userId;
     }
     /**
-     * @return The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
+     * @return The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
      * 
      */
     public String username() {
@@ -1164,6 +1254,7 @@ public final class GetConnectionResult {
         private String serviceAccountKeyFileSecretId;
         private String sessionMode;
         private Boolean shouldUseJndi;
+        private Boolean shouldUseResourcePrincipal;
         private Boolean shouldValidateServerCertificate;
         private String sslCa;
         private String sslCert;
@@ -1179,13 +1270,20 @@ public final class GetConnectionResult {
         private String sslMode;
         private String sslServerCertificate;
         private String state;
+        private String storageCredentialName;
         private String streamPoolId;
         private String subnetId;
         private Map<String,String> systemTags;
         private String technologyType;
         private String tenancyId;
+        private String tenantId;
         private String timeCreated;
         private String timeUpdated;
+        private String tlsCaFile;
+        private String tlsCertificateKeyFile;
+        private String tlsCertificateKeyFilePassword;
+        private String tlsCertificateKeyFilePasswordSecretId;
+        private String tlsCertificateKeyFileSecretId;
         private Boolean triggerRefresh;
         private String trustStore;
         private String trustStorePassword;
@@ -1272,6 +1370,7 @@ public final class GetConnectionResult {
     	      this.serviceAccountKeyFileSecretId = defaults.serviceAccountKeyFileSecretId;
     	      this.sessionMode = defaults.sessionMode;
     	      this.shouldUseJndi = defaults.shouldUseJndi;
+    	      this.shouldUseResourcePrincipal = defaults.shouldUseResourcePrincipal;
     	      this.shouldValidateServerCertificate = defaults.shouldValidateServerCertificate;
     	      this.sslCa = defaults.sslCa;
     	      this.sslCert = defaults.sslCert;
@@ -1287,13 +1386,20 @@ public final class GetConnectionResult {
     	      this.sslMode = defaults.sslMode;
     	      this.sslServerCertificate = defaults.sslServerCertificate;
     	      this.state = defaults.state;
+    	      this.storageCredentialName = defaults.storageCredentialName;
     	      this.streamPoolId = defaults.streamPoolId;
     	      this.subnetId = defaults.subnetId;
     	      this.systemTags = defaults.systemTags;
     	      this.technologyType = defaults.technologyType;
     	      this.tenancyId = defaults.tenancyId;
+    	      this.tenantId = defaults.tenantId;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
+    	      this.tlsCaFile = defaults.tlsCaFile;
+    	      this.tlsCertificateKeyFile = defaults.tlsCertificateKeyFile;
+    	      this.tlsCertificateKeyFilePassword = defaults.tlsCertificateKeyFilePassword;
+    	      this.tlsCertificateKeyFilePasswordSecretId = defaults.tlsCertificateKeyFilePasswordSecretId;
+    	      this.tlsCertificateKeyFileSecretId = defaults.tlsCertificateKeyFileSecretId;
     	      this.triggerRefresh = defaults.triggerRefresh;
     	      this.trustStore = defaults.trustStore;
     	      this.trustStorePassword = defaults.trustStorePassword;
@@ -1899,6 +2005,14 @@ public final class GetConnectionResult {
             return this;
         }
         @CustomType.Setter
+        public Builder shouldUseResourcePrincipal(Boolean shouldUseResourcePrincipal) {
+            if (shouldUseResourcePrincipal == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "shouldUseResourcePrincipal");
+            }
+            this.shouldUseResourcePrincipal = shouldUseResourcePrincipal;
+            return this;
+        }
+        @CustomType.Setter
         public Builder shouldValidateServerCertificate(Boolean shouldValidateServerCertificate) {
             if (shouldValidateServerCertificate == null) {
               throw new MissingRequiredPropertyException("GetConnectionResult", "shouldValidateServerCertificate");
@@ -2019,6 +2133,14 @@ public final class GetConnectionResult {
             return this;
         }
         @CustomType.Setter
+        public Builder storageCredentialName(String storageCredentialName) {
+            if (storageCredentialName == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "storageCredentialName");
+            }
+            this.storageCredentialName = storageCredentialName;
+            return this;
+        }
+        @CustomType.Setter
         public Builder streamPoolId(String streamPoolId) {
             if (streamPoolId == null) {
               throw new MissingRequiredPropertyException("GetConnectionResult", "streamPoolId");
@@ -2059,6 +2181,14 @@ public final class GetConnectionResult {
             return this;
         }
         @CustomType.Setter
+        public Builder tenantId(String tenantId) {
+            if (tenantId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "tenantId");
+            }
+            this.tenantId = tenantId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetConnectionResult", "timeCreated");
@@ -2072,6 +2202,46 @@ public final class GetConnectionResult {
               throw new MissingRequiredPropertyException("GetConnectionResult", "timeUpdated");
             }
             this.timeUpdated = timeUpdated;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder tlsCaFile(String tlsCaFile) {
+            if (tlsCaFile == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "tlsCaFile");
+            }
+            this.tlsCaFile = tlsCaFile;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder tlsCertificateKeyFile(String tlsCertificateKeyFile) {
+            if (tlsCertificateKeyFile == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "tlsCertificateKeyFile");
+            }
+            this.tlsCertificateKeyFile = tlsCertificateKeyFile;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder tlsCertificateKeyFilePassword(String tlsCertificateKeyFilePassword) {
+            if (tlsCertificateKeyFilePassword == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "tlsCertificateKeyFilePassword");
+            }
+            this.tlsCertificateKeyFilePassword = tlsCertificateKeyFilePassword;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder tlsCertificateKeyFilePasswordSecretId(String tlsCertificateKeyFilePasswordSecretId) {
+            if (tlsCertificateKeyFilePasswordSecretId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "tlsCertificateKeyFilePasswordSecretId");
+            }
+            this.tlsCertificateKeyFilePasswordSecretId = tlsCertificateKeyFilePasswordSecretId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder tlsCertificateKeyFileSecretId(String tlsCertificateKeyFileSecretId) {
+            if (tlsCertificateKeyFileSecretId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "tlsCertificateKeyFileSecretId");
+            }
+            this.tlsCertificateKeyFileSecretId = tlsCertificateKeyFileSecretId;
             return this;
         }
         @CustomType.Setter
@@ -2236,6 +2406,7 @@ public final class GetConnectionResult {
             _resultValue.serviceAccountKeyFileSecretId = serviceAccountKeyFileSecretId;
             _resultValue.sessionMode = sessionMode;
             _resultValue.shouldUseJndi = shouldUseJndi;
+            _resultValue.shouldUseResourcePrincipal = shouldUseResourcePrincipal;
             _resultValue.shouldValidateServerCertificate = shouldValidateServerCertificate;
             _resultValue.sslCa = sslCa;
             _resultValue.sslCert = sslCert;
@@ -2251,13 +2422,20 @@ public final class GetConnectionResult {
             _resultValue.sslMode = sslMode;
             _resultValue.sslServerCertificate = sslServerCertificate;
             _resultValue.state = state;
+            _resultValue.storageCredentialName = storageCredentialName;
             _resultValue.streamPoolId = streamPoolId;
             _resultValue.subnetId = subnetId;
             _resultValue.systemTags = systemTags;
             _resultValue.technologyType = technologyType;
             _resultValue.tenancyId = tenancyId;
+            _resultValue.tenantId = tenantId;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
+            _resultValue.tlsCaFile = tlsCaFile;
+            _resultValue.tlsCertificateKeyFile = tlsCertificateKeyFile;
+            _resultValue.tlsCertificateKeyFilePassword = tlsCertificateKeyFilePassword;
+            _resultValue.tlsCertificateKeyFilePasswordSecretId = tlsCertificateKeyFilePasswordSecretId;
+            _resultValue.tlsCertificateKeyFileSecretId = tlsCertificateKeyFileSecretId;
             _resultValue.triggerRefresh = triggerRefresh;
             _resultValue.trustStore = trustStore;
             _resultValue.trustStorePassword = trustStorePassword;

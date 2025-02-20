@@ -70,6 +70,10 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// </summary>
         public readonly string State;
         /// <summary>
+        /// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SystemTags;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of target filesystem.
         /// </summary>
         public readonly string TargetId;
@@ -108,6 +112,8 @@ namespace Pulumi.Oci.FileStorage.Outputs
 
             string state,
 
+            ImmutableDictionary<string, string> systemTags,
+
             string targetId,
 
             string timeCreated)
@@ -126,6 +132,7 @@ namespace Pulumi.Oci.FileStorage.Outputs
             ReplicationId = replicationId;
             SourceId = sourceId;
             State = state;
+            SystemTags = systemTags;
             TargetId = targetId;
             TimeCreated = timeCreated;
         }

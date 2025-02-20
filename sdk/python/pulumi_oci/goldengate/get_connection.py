@@ -27,7 +27,7 @@ class GetConnectionResult:
     """
     A collection of values returned by getConnection.
     """
-    def __init__(__self__, access_key_id=None, account_key=None, account_key_secret_id=None, account_name=None, additional_attributes=None, authentication_mode=None, authentication_type=None, azure_tenant_id=None, bootstrap_servers=None, client_id=None, client_secret=None, client_secret_secret_id=None, compartment_id=None, connection_factory=None, connection_id=None, connection_string=None, connection_type=None, connection_url=None, consumer_properties=None, core_site_xml=None, database_id=None, database_name=None, db_system_id=None, defined_tags=None, deployment_id=None, description=None, display_name=None, does_use_secret_ids=None, endpoint=None, fingerprint=None, freeform_tags=None, host=None, id=None, ingress_ips=None, is_lock_override=None, jndi_connection_factory=None, jndi_initial_context_factory=None, jndi_provider_url=None, jndi_security_credentials=None, jndi_security_credentials_secret_id=None, jndi_security_principal=None, key_id=None, key_store=None, key_store_password=None, key_store_password_secret_id=None, key_store_secret_id=None, lifecycle_details=None, locks=None, nsg_ids=None, password=None, password_secret_id=None, port=None, private_ip=None, private_key_file=None, private_key_file_secret_id=None, private_key_passphrase=None, private_key_passphrase_secret_id=None, producer_properties=None, public_key_fingerprint=None, redis_cluster_id=None, region=None, routing_method=None, sas_token=None, sas_token_secret_id=None, secret_access_key=None, secret_access_key_secret_id=None, security_protocol=None, servers=None, service_account_key_file=None, service_account_key_file_secret_id=None, session_mode=None, should_use_jndi=None, should_validate_server_certificate=None, ssl_ca=None, ssl_cert=None, ssl_client_keystash=None, ssl_client_keystash_secret_id=None, ssl_client_keystoredb=None, ssl_client_keystoredb_secret_id=None, ssl_crl=None, ssl_key=None, ssl_key_password=None, ssl_key_password_secret_id=None, ssl_key_secret_id=None, ssl_mode=None, ssl_server_certificate=None, state=None, stream_pool_id=None, subnet_id=None, system_tags=None, technology_type=None, tenancy_id=None, time_created=None, time_updated=None, trigger_refresh=None, trust_store=None, trust_store_password=None, trust_store_password_secret_id=None, trust_store_secret_id=None, url=None, user_id=None, username=None, vault_id=None, wallet=None, wallet_secret_id=None):
+    def __init__(__self__, access_key_id=None, account_key=None, account_key_secret_id=None, account_name=None, additional_attributes=None, authentication_mode=None, authentication_type=None, azure_tenant_id=None, bootstrap_servers=None, client_id=None, client_secret=None, client_secret_secret_id=None, compartment_id=None, connection_factory=None, connection_id=None, connection_string=None, connection_type=None, connection_url=None, consumer_properties=None, core_site_xml=None, database_id=None, database_name=None, db_system_id=None, defined_tags=None, deployment_id=None, description=None, display_name=None, does_use_secret_ids=None, endpoint=None, fingerprint=None, freeform_tags=None, host=None, id=None, ingress_ips=None, is_lock_override=None, jndi_connection_factory=None, jndi_initial_context_factory=None, jndi_provider_url=None, jndi_security_credentials=None, jndi_security_credentials_secret_id=None, jndi_security_principal=None, key_id=None, key_store=None, key_store_password=None, key_store_password_secret_id=None, key_store_secret_id=None, lifecycle_details=None, locks=None, nsg_ids=None, password=None, password_secret_id=None, port=None, private_ip=None, private_key_file=None, private_key_file_secret_id=None, private_key_passphrase=None, private_key_passphrase_secret_id=None, producer_properties=None, public_key_fingerprint=None, redis_cluster_id=None, region=None, routing_method=None, sas_token=None, sas_token_secret_id=None, secret_access_key=None, secret_access_key_secret_id=None, security_protocol=None, servers=None, service_account_key_file=None, service_account_key_file_secret_id=None, session_mode=None, should_use_jndi=None, should_use_resource_principal=None, should_validate_server_certificate=None, ssl_ca=None, ssl_cert=None, ssl_client_keystash=None, ssl_client_keystash_secret_id=None, ssl_client_keystoredb=None, ssl_client_keystoredb_secret_id=None, ssl_crl=None, ssl_key=None, ssl_key_password=None, ssl_key_password_secret_id=None, ssl_key_secret_id=None, ssl_mode=None, ssl_server_certificate=None, state=None, storage_credential_name=None, stream_pool_id=None, subnet_id=None, system_tags=None, technology_type=None, tenancy_id=None, tenant_id=None, time_created=None, time_updated=None, tls_ca_file=None, tls_certificate_key_file=None, tls_certificate_key_file_password=None, tls_certificate_key_file_password_secret_id=None, tls_certificate_key_file_secret_id=None, trigger_refresh=None, trust_store=None, trust_store_password=None, trust_store_password_secret_id=None, trust_store_secret_id=None, url=None, user_id=None, username=None, vault_id=None, wallet=None, wallet_secret_id=None):
         if access_key_id and not isinstance(access_key_id, str):
             raise TypeError("Expected argument 'access_key_id' to be a str")
         pulumi.set(__self__, "access_key_id", access_key_id)
@@ -244,6 +244,9 @@ class GetConnectionResult:
         if should_use_jndi and not isinstance(should_use_jndi, bool):
             raise TypeError("Expected argument 'should_use_jndi' to be a bool")
         pulumi.set(__self__, "should_use_jndi", should_use_jndi)
+        if should_use_resource_principal and not isinstance(should_use_resource_principal, bool):
+            raise TypeError("Expected argument 'should_use_resource_principal' to be a bool")
+        pulumi.set(__self__, "should_use_resource_principal", should_use_resource_principal)
         if should_validate_server_certificate and not isinstance(should_validate_server_certificate, bool):
             raise TypeError("Expected argument 'should_validate_server_certificate' to be a bool")
         pulumi.set(__self__, "should_validate_server_certificate", should_validate_server_certificate)
@@ -289,6 +292,9 @@ class GetConnectionResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if storage_credential_name and not isinstance(storage_credential_name, str):
+            raise TypeError("Expected argument 'storage_credential_name' to be a str")
+        pulumi.set(__self__, "storage_credential_name", storage_credential_name)
         if stream_pool_id and not isinstance(stream_pool_id, str):
             raise TypeError("Expected argument 'stream_pool_id' to be a str")
         pulumi.set(__self__, "stream_pool_id", stream_pool_id)
@@ -304,12 +310,30 @@ class GetConnectionResult:
         if tenancy_id and not isinstance(tenancy_id, str):
             raise TypeError("Expected argument 'tenancy_id' to be a str")
         pulumi.set(__self__, "tenancy_id", tenancy_id)
+        if tenant_id and not isinstance(tenant_id, str):
+            raise TypeError("Expected argument 'tenant_id' to be a str")
+        pulumi.set(__self__, "tenant_id", tenant_id)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+        if tls_ca_file and not isinstance(tls_ca_file, str):
+            raise TypeError("Expected argument 'tls_ca_file' to be a str")
+        pulumi.set(__self__, "tls_ca_file", tls_ca_file)
+        if tls_certificate_key_file and not isinstance(tls_certificate_key_file, str):
+            raise TypeError("Expected argument 'tls_certificate_key_file' to be a str")
+        pulumi.set(__self__, "tls_certificate_key_file", tls_certificate_key_file)
+        if tls_certificate_key_file_password and not isinstance(tls_certificate_key_file_password, str):
+            raise TypeError("Expected argument 'tls_certificate_key_file_password' to be a str")
+        pulumi.set(__self__, "tls_certificate_key_file_password", tls_certificate_key_file_password)
+        if tls_certificate_key_file_password_secret_id and not isinstance(tls_certificate_key_file_password_secret_id, str):
+            raise TypeError("Expected argument 'tls_certificate_key_file_password_secret_id' to be a str")
+        pulumi.set(__self__, "tls_certificate_key_file_password_secret_id", tls_certificate_key_file_password_secret_id)
+        if tls_certificate_key_file_secret_id and not isinstance(tls_certificate_key_file_secret_id, str):
+            raise TypeError("Expected argument 'tls_certificate_key_file_secret_id' to be a str")
+        pulumi.set(__self__, "tls_certificate_key_file_secret_id", tls_certificate_key_file_secret_id)
         if trigger_refresh and not isinstance(trigger_refresh, bool):
             raise TypeError("Expected argument 'trigger_refresh' to be a bool")
         pulumi.set(__self__, "trigger_refresh", trigger_refresh)
@@ -396,6 +420,9 @@ class GetConnectionResult:
         Used authentication mechanism to be provided for the following connection types:
         * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE
         * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
+        * DATABRICKS - Required fields by authentication types:
+        * PERSONAL_ACCESS_TOKEN: username is always 'token', user must enter password
+        * OAUTH_M2M: user must enter clientId and clientSecret
         """
         return pulumi.get(self, "authentication_type")
 
@@ -482,6 +509,7 @@ class GetConnectionResult:
         * JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676'
         * SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
         * AMAZON_REDSHIFT: Connection URL. e.g.: 'jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb'
+        * DATABRICKS: Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
         """
         return pulumi.get(self, "connection_url")
 
@@ -565,6 +593,9 @@ class GetConnectionResult:
     @property
     @pulumi.getter
     def endpoint(self) -> str:
+        """
+        Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+        """
         return pulumi.get(self, "endpoint")
 
     @property
@@ -795,7 +826,7 @@ class GetConnectionResult:
     @pulumi.getter
     def region(self) -> str:
         """
-        The name of the region. e.g.: us-ashburn-1
+        The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
         """
         return pulumi.get(self, "region")
 
@@ -882,6 +913,14 @@ class GetConnectionResult:
         return pulumi.get(self, "should_use_jndi")
 
     @property
+    @pulumi.getter(name="shouldUseResourcePrincipal")
+    def should_use_resource_principal(self) -> bool:
+        """
+        Indicates that the user intents to connect to the instance through resource principal.
+        """
+        return pulumi.get(self, "should_use_resource_principal")
+
+    @property
     @pulumi.getter(name="shouldValidateServerCertificate")
     def should_validate_server_certificate(self) -> bool:
         """
@@ -893,7 +932,7 @@ class GetConnectionResult:
     @pulumi.getter(name="sslCa")
     def ssl_ca(self) -> str:
         """
-        Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
+        Database Certificate - The base64 encoded content of a .pem or .crt file. containing the server public key (for 1-way SSL).
         """
         return pulumi.get(self, "ssl_ca")
 
@@ -982,6 +1021,14 @@ class GetConnectionResult:
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="storageCredentialName")
+    def storage_credential_name(self) -> str:
+        """
+        Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
+        """
+        return pulumi.get(self, "storage_credential_name")
+
+    @property
     @pulumi.getter(name="streamPoolId")
     def stream_pool_id(self) -> str:
         """
@@ -1022,6 +1069,14 @@ class GetConnectionResult:
         return pulumi.get(self, "tenancy_id")
 
     @property
+    @pulumi.getter(name="tenantId")
+    def tenant_id(self) -> str:
+        """
+        Azure tenant ID of the application. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
+        """
+        return pulumi.get(self, "tenant_id")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
@@ -1036,6 +1091,38 @@ class GetConnectionResult:
         The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="tlsCaFile")
+    def tls_ca_file(self) -> str:
+        return pulumi.get(self, "tls_ca_file")
+
+    @property
+    @pulumi.getter(name="tlsCertificateKeyFile")
+    def tls_certificate_key_file(self) -> str:
+        return pulumi.get(self, "tls_certificate_key_file")
+
+    @property
+    @pulumi.getter(name="tlsCertificateKeyFilePassword")
+    def tls_certificate_key_file_password(self) -> str:
+        return pulumi.get(self, "tls_certificate_key_file_password")
+
+    @property
+    @pulumi.getter(name="tlsCertificateKeyFilePasswordSecretId")
+    def tls_certificate_key_file_password_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
+        """
+        return pulumi.get(self, "tls_certificate_key_file_password_secret_id")
+
+    @property
+    @pulumi.getter(name="tlsCertificateKeyFileSecretId")
+    def tls_certificate_key_file_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
+        * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
+        """
+        return pulumi.get(self, "tls_certificate_key_file_secret_id")
 
     @property
     @pulumi.getter(name="triggerRefresh")
@@ -1064,7 +1151,7 @@ class GetConnectionResult:
     @pulumi.getter(name="trustStoreSecretId")
     def trust_store_secret_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided.
         """
         return pulumi.get(self, "trust_store_secret_id")
 
@@ -1080,7 +1167,7 @@ class GetConnectionResult:
     @pulumi.getter(name="userId")
     def user_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/Object Storage. The user must have write access to the table they want to connect to.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
         """
         return pulumi.get(self, "user_id")
 
@@ -1088,7 +1175,7 @@ class GetConnectionResult:
     @pulumi.getter
     def username(self) -> str:
         """
-        The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
+        The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
         """
         return pulumi.get(self, "username")
 
@@ -1192,6 +1279,7 @@ class AwaitableGetConnectionResult(GetConnectionResult):
             service_account_key_file_secret_id=self.service_account_key_file_secret_id,
             session_mode=self.session_mode,
             should_use_jndi=self.should_use_jndi,
+            should_use_resource_principal=self.should_use_resource_principal,
             should_validate_server_certificate=self.should_validate_server_certificate,
             ssl_ca=self.ssl_ca,
             ssl_cert=self.ssl_cert,
@@ -1207,13 +1295,20 @@ class AwaitableGetConnectionResult(GetConnectionResult):
             ssl_mode=self.ssl_mode,
             ssl_server_certificate=self.ssl_server_certificate,
             state=self.state,
+            storage_credential_name=self.storage_credential_name,
             stream_pool_id=self.stream_pool_id,
             subnet_id=self.subnet_id,
             system_tags=self.system_tags,
             technology_type=self.technology_type,
             tenancy_id=self.tenancy_id,
+            tenant_id=self.tenant_id,
             time_created=self.time_created,
             time_updated=self.time_updated,
+            tls_ca_file=self.tls_ca_file,
+            tls_certificate_key_file=self.tls_certificate_key_file,
+            tls_certificate_key_file_password=self.tls_certificate_key_file_password,
+            tls_certificate_key_file_password_secret_id=self.tls_certificate_key_file_password_secret_id,
+            tls_certificate_key_file_secret_id=self.tls_certificate_key_file_secret_id,
             trigger_refresh=self.trigger_refresh,
             trust_store=self.trust_store,
             trust_store_password=self.trust_store_password,
@@ -1324,6 +1419,7 @@ def get_connection(connection_id: Optional[str] = None,
         service_account_key_file_secret_id=pulumi.get(__ret__, 'service_account_key_file_secret_id'),
         session_mode=pulumi.get(__ret__, 'session_mode'),
         should_use_jndi=pulumi.get(__ret__, 'should_use_jndi'),
+        should_use_resource_principal=pulumi.get(__ret__, 'should_use_resource_principal'),
         should_validate_server_certificate=pulumi.get(__ret__, 'should_validate_server_certificate'),
         ssl_ca=pulumi.get(__ret__, 'ssl_ca'),
         ssl_cert=pulumi.get(__ret__, 'ssl_cert'),
@@ -1339,13 +1435,20 @@ def get_connection(connection_id: Optional[str] = None,
         ssl_mode=pulumi.get(__ret__, 'ssl_mode'),
         ssl_server_certificate=pulumi.get(__ret__, 'ssl_server_certificate'),
         state=pulumi.get(__ret__, 'state'),
+        storage_credential_name=pulumi.get(__ret__, 'storage_credential_name'),
         stream_pool_id=pulumi.get(__ret__, 'stream_pool_id'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         technology_type=pulumi.get(__ret__, 'technology_type'),
         tenancy_id=pulumi.get(__ret__, 'tenancy_id'),
+        tenant_id=pulumi.get(__ret__, 'tenant_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
+        tls_ca_file=pulumi.get(__ret__, 'tls_ca_file'),
+        tls_certificate_key_file=pulumi.get(__ret__, 'tls_certificate_key_file'),
+        tls_certificate_key_file_password=pulumi.get(__ret__, 'tls_certificate_key_file_password'),
+        tls_certificate_key_file_password_secret_id=pulumi.get(__ret__, 'tls_certificate_key_file_password_secret_id'),
+        tls_certificate_key_file_secret_id=pulumi.get(__ret__, 'tls_certificate_key_file_secret_id'),
         trigger_refresh=pulumi.get(__ret__, 'trigger_refresh'),
         trust_store=pulumi.get(__ret__, 'trust_store'),
         trust_store_password=pulumi.get(__ret__, 'trust_store_password'),
@@ -1453,6 +1556,7 @@ def get_connection_output(connection_id: Optional[pulumi.Input[str]] = None,
         service_account_key_file_secret_id=pulumi.get(__response__, 'service_account_key_file_secret_id'),
         session_mode=pulumi.get(__response__, 'session_mode'),
         should_use_jndi=pulumi.get(__response__, 'should_use_jndi'),
+        should_use_resource_principal=pulumi.get(__response__, 'should_use_resource_principal'),
         should_validate_server_certificate=pulumi.get(__response__, 'should_validate_server_certificate'),
         ssl_ca=pulumi.get(__response__, 'ssl_ca'),
         ssl_cert=pulumi.get(__response__, 'ssl_cert'),
@@ -1468,13 +1572,20 @@ def get_connection_output(connection_id: Optional[pulumi.Input[str]] = None,
         ssl_mode=pulumi.get(__response__, 'ssl_mode'),
         ssl_server_certificate=pulumi.get(__response__, 'ssl_server_certificate'),
         state=pulumi.get(__response__, 'state'),
+        storage_credential_name=pulumi.get(__response__, 'storage_credential_name'),
         stream_pool_id=pulumi.get(__response__, 'stream_pool_id'),
         subnet_id=pulumi.get(__response__, 'subnet_id'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         technology_type=pulumi.get(__response__, 'technology_type'),
         tenancy_id=pulumi.get(__response__, 'tenancy_id'),
+        tenant_id=pulumi.get(__response__, 'tenant_id'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated'),
+        tls_ca_file=pulumi.get(__response__, 'tls_ca_file'),
+        tls_certificate_key_file=pulumi.get(__response__, 'tls_certificate_key_file'),
+        tls_certificate_key_file_password=pulumi.get(__response__, 'tls_certificate_key_file_password'),
+        tls_certificate_key_file_password_secret_id=pulumi.get(__response__, 'tls_certificate_key_file_password_secret_id'),
+        tls_certificate_key_file_secret_id=pulumi.get(__response__, 'tls_certificate_key_file_secret_id'),
         trigger_refresh=pulumi.get(__response__, 'trigger_refresh'),
         trust_store=pulumi.get(__response__, 'trust_store'),
         trust_store_password=pulumi.get(__response__, 'trust_store_password'),

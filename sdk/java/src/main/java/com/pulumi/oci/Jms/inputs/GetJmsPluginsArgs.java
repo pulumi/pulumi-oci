@@ -34,6 +34,21 @@ public final class GetJmsPluginsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
+     * Filter JmsPlugin with agent type.
+     * 
+     */
+    @Import(name="agentType")
+    private @Nullable Output<String> agentType;
+
+    /**
+     * @return Filter JmsPlugin with agent type.
+     * 
+     */
+    public Optional<Output<String>> agentType() {
+        return Optional.ofNullable(this.agentType);
+    }
+
+    /**
      * Filter JmsPlugin with its availability status.
      * 
      */
@@ -179,6 +194,7 @@ public final class GetJmsPluginsArgs extends com.pulumi.resources.InvokeArgs {
 
     private GetJmsPluginsArgs(GetJmsPluginsArgs $) {
         this.agentId = $.agentId;
+        this.agentType = $.agentType;
         this.availabilityStatus = $.availabilityStatus;
         this.compartmentId = $.compartmentId;
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
@@ -228,6 +244,27 @@ public final class GetJmsPluginsArgs extends com.pulumi.resources.InvokeArgs {
          */
         public Builder agentId(String agentId) {
             return agentId(Output.of(agentId));
+        }
+
+        /**
+         * @param agentType Filter JmsPlugin with agent type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder agentType(@Nullable Output<String> agentType) {
+            $.agentType = agentType;
+            return this;
+        }
+
+        /**
+         * @param agentType Filter JmsPlugin with agent type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder agentType(String agentType) {
+            return agentType(Output.of(agentType));
         }
 
         /**

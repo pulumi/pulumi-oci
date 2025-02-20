@@ -95,10 +95,16 @@ type BackupDestination struct {
 	NfsServers pulumi.StringArrayOutput `pulumi:"nfsServers"`
 	// The current lifecycle state of the backup destination.
 	State pulumi.StringOutput `pulumi:"state"`
+	// The time when the total storage size and the utilized storage size of the backup destination are updated.
+	TimeAtWhichStorageDetailsAreUpdated pulumi.StringOutput `pulumi:"timeAtWhichStorageDetailsAreUpdated"`
 	// The date and time the backup destination was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	// The total storage size of the backup destination in GBs, rounded to the nearest integer.
+	TotalStorageSizeInGbs pulumi.IntOutput `pulumi:"totalStorageSizeInGbs"`
 	// Type of the backup destination.
 	Type pulumi.StringOutput `pulumi:"type"`
+	// The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
+	UtilizedStorageSizeInGbs pulumi.IntOutput `pulumi:"utilizedStorageSizeInGbs"`
 	// (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
 	//
 	// ** IMPORTANT **
@@ -173,10 +179,16 @@ type backupDestinationState struct {
 	NfsServers []string `pulumi:"nfsServers"`
 	// The current lifecycle state of the backup destination.
 	State *string `pulumi:"state"`
+	// The time when the total storage size and the utilized storage size of the backup destination are updated.
+	TimeAtWhichStorageDetailsAreUpdated *string `pulumi:"timeAtWhichStorageDetailsAreUpdated"`
 	// The date and time the backup destination was created.
 	TimeCreated *string `pulumi:"timeCreated"`
+	// The total storage size of the backup destination in GBs, rounded to the nearest integer.
+	TotalStorageSizeInGbs *int `pulumi:"totalStorageSizeInGbs"`
 	// Type of the backup destination.
 	Type *string `pulumi:"type"`
+	// The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
+	UtilizedStorageSizeInGbs *int `pulumi:"utilizedStorageSizeInGbs"`
 	// (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
 	//
 	// ** IMPORTANT **
@@ -213,10 +225,16 @@ type BackupDestinationState struct {
 	NfsServers pulumi.StringArrayInput
 	// The current lifecycle state of the backup destination.
 	State pulumi.StringPtrInput
+	// The time when the total storage size and the utilized storage size of the backup destination are updated.
+	TimeAtWhichStorageDetailsAreUpdated pulumi.StringPtrInput
 	// The date and time the backup destination was created.
 	TimeCreated pulumi.StringPtrInput
+	// The total storage size of the backup destination in GBs, rounded to the nearest integer.
+	TotalStorageSizeInGbs pulumi.IntPtrInput
 	// Type of the backup destination.
 	Type pulumi.StringPtrInput
+	// The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
+	UtilizedStorageSizeInGbs pulumi.IntPtrInput
 	// (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
 	//
 	// ** IMPORTANT **
@@ -437,14 +455,29 @@ func (o BackupDestinationOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *BackupDestination) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
 
+// The time when the total storage size and the utilized storage size of the backup destination are updated.
+func (o BackupDestinationOutput) TimeAtWhichStorageDetailsAreUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v *BackupDestination) pulumi.StringOutput { return v.TimeAtWhichStorageDetailsAreUpdated }).(pulumi.StringOutput)
+}
+
 // The date and time the backup destination was created.
 func (o BackupDestinationOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *BackupDestination) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
+// The total storage size of the backup destination in GBs, rounded to the nearest integer.
+func (o BackupDestinationOutput) TotalStorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v *BackupDestination) pulumi.IntOutput { return v.TotalStorageSizeInGbs }).(pulumi.IntOutput)
+}
+
 // Type of the backup destination.
 func (o BackupDestinationOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *BackupDestination) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
+}
+
+// The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
+func (o BackupDestinationOutput) UtilizedStorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v *BackupDestination) pulumi.IntOutput { return v.UtilizedStorageSizeInGbs }).(pulumi.IntOutput)
 }
 
 // (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.

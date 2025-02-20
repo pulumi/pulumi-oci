@@ -50,10 +50,22 @@ namespace Pulumi.Oci.Vault
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) The value of this flag determines whether or not secret content will be generated automatically. If not set, it defaults to false.
+        /// </summary>
+        [Output("enableAutoGeneration")]
+        public Output<bool?> EnableAutoGeneration { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
+
+        /// <summary>
+        /// The value of this flag determines whether or not secret content will be generated automatically.
+        /// </summary>
+        [Output("isAutoGenerationEnabled")]
+        public Output<bool> IsAutoGenerationEnabled { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
@@ -102,6 +114,12 @@ namespace Pulumi.Oci.Vault
         /// </summary>
         [Output("secretContent")]
         public Output<Outputs.SecretSecretContent> SecretContent { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
+        /// </summary>
+        [Output("secretGenerationContext")]
+        public Output<Outputs.SecretSecretGenerationContext> SecretGenerationContext { get; private set; } = null!;
 
         /// <summary>
         /// A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
@@ -219,6 +237,12 @@ namespace Pulumi.Oci.Vault
         [Input("description")]
         public Input<string>? Description { get; set; }
 
+        /// <summary>
+        /// (Updatable) The value of this flag determines whether or not secret content will be generated automatically. If not set, it defaults to false.
+        /// </summary>
+        [Input("enableAutoGeneration")]
+        public Input<bool>? EnableAutoGeneration { get; set; }
+
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;
 
@@ -260,6 +284,12 @@ namespace Pulumi.Oci.Vault
         /// </summary>
         [Input("secretContent")]
         public Input<Inputs.SecretSecretContentArgs>? SecretContent { get; set; }
+
+        /// <summary>
+        /// (Updatable) Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
+        /// </summary>
+        [Input("secretGenerationContext")]
+        public Input<Inputs.SecretSecretGenerationContextArgs>? SecretGenerationContext { get; set; }
 
         /// <summary>
         /// A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
@@ -327,6 +357,12 @@ namespace Pulumi.Oci.Vault
         [Input("description")]
         public Input<string>? Description { get; set; }
 
+        /// <summary>
+        /// (Updatable) The value of this flag determines whether or not secret content will be generated automatically. If not set, it defaults to false.
+        /// </summary>
+        [Input("enableAutoGeneration")]
+        public Input<bool>? EnableAutoGeneration { get; set; }
+
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;
 
@@ -338,6 +374,12 @@ namespace Pulumi.Oci.Vault
             get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// The value of this flag determines whether or not secret content will be generated automatically.
+        /// </summary>
+        [Input("isAutoGenerationEnabled")]
+        public Input<bool>? IsAutoGenerationEnabled { get; set; }
 
         /// <summary>
         /// The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
@@ -392,6 +434,12 @@ namespace Pulumi.Oci.Vault
         /// </summary>
         [Input("secretContent")]
         public Input<Inputs.SecretSecretContentGetArgs>? SecretContent { get; set; }
+
+        /// <summary>
+        /// (Updatable) Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
+        /// </summary>
+        [Input("secretGenerationContext")]
+        public Input<Inputs.SecretSecretGenerationContextGetArgs>? SecretGenerationContext { get; set; }
 
         /// <summary>
         /// A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.

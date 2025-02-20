@@ -29,6 +29,7 @@ namespace Pulumi.Oci.Jms
         ///     var testJmsPlugins = Oci.Jms.GetJmsPlugins.Invoke(new()
         ///     {
         ///         AgentId = jmsPluginAgentId,
+        ///         AgentType = jmsPluginAgentType,
         ///         AvailabilityStatus = jmsPluginAvailabilityStatus,
         ///         CompartmentId = compartmentId,
         ///         CompartmentIdInSubtree = jmsPluginCompartmentIdInSubtree,
@@ -64,6 +65,7 @@ namespace Pulumi.Oci.Jms
         ///     var testJmsPlugins = Oci.Jms.GetJmsPlugins.Invoke(new()
         ///     {
         ///         AgentId = jmsPluginAgentId,
+        ///         AgentType = jmsPluginAgentType,
         ///         AvailabilityStatus = jmsPluginAvailabilityStatus,
         ///         CompartmentId = compartmentId,
         ///         CompartmentIdInSubtree = jmsPluginCompartmentIdInSubtree,
@@ -99,6 +101,7 @@ namespace Pulumi.Oci.Jms
         ///     var testJmsPlugins = Oci.Jms.GetJmsPlugins.Invoke(new()
         ///     {
         ///         AgentId = jmsPluginAgentId,
+        ///         AgentType = jmsPluginAgentType,
         ///         AvailabilityStatus = jmsPluginAvailabilityStatus,
         ///         CompartmentId = compartmentId,
         ///         CompartmentIdInSubtree = jmsPluginCompartmentIdInSubtree,
@@ -125,6 +128,12 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         [Input("agentId")]
         public string? AgentId { get; set; }
+
+        /// <summary>
+        /// Filter JmsPlugin with agent type.
+        /// </summary>
+        [Input("agentType")]
+        public string? AgentType { get; set; }
 
         /// <summary>
         /// Filter JmsPlugin with its availability status.
@@ -203,6 +212,12 @@ namespace Pulumi.Oci.Jms
         public Input<string>? AgentId { get; set; }
 
         /// <summary>
+        /// Filter JmsPlugin with agent type.
+        /// </summary>
+        [Input("agentType")]
+        public Input<string>? AgentType { get; set; }
+
+        /// <summary>
         /// Filter JmsPlugin with its availability status.
         /// </summary>
         [Input("availabilityStatus")]
@@ -279,6 +294,10 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public readonly string? AgentId;
         /// <summary>
+        /// The agent type.
+        /// </summary>
+        public readonly string? AgentType;
+        /// <summary>
         /// The availability status.
         /// </summary>
         public readonly string? AvailabilityStatus;
@@ -312,6 +331,8 @@ namespace Pulumi.Oci.Jms
         private GetJmsPluginsResult(
             string? agentId,
 
+            string? agentType,
+
             string? availabilityStatus,
 
             string? compartmentId,
@@ -335,6 +356,7 @@ namespace Pulumi.Oci.Jms
             string? timeRegisteredLessThanOrEqualTo)
         {
             AgentId = agentId;
+            AgentType = agentType;
             AvailabilityStatus = availabilityStatus;
             CompartmentId = compartmentId;
             CompartmentIdInSubtree = compartmentIdInSubtree;

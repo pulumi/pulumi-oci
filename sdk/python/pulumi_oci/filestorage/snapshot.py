@@ -166,6 +166,7 @@ class _SnapshotState:
                  snapshot_time: Optional[pulumi.Input[str]] = None,
                  snapshot_type: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Snapshot resources.
@@ -193,6 +194,7 @@ class _SnapshotState:
                * If the snapshot is replicated from a file system.
         :param pulumi.Input[str] snapshot_type: Specifies the generation type of the snapshot.
         :param pulumi.Input[str] state: The current state of the snapshot.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
         :param pulumi.Input[str] time_created: The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         if defined_tags is not None:
@@ -223,6 +225,8 @@ class _SnapshotState:
             pulumi.set(__self__, "snapshot_type", snapshot_type)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
 
@@ -403,6 +407,18 @@ class _SnapshotState:
         pulumi.set(self, "state", value)
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "system_tags", value)
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
@@ -574,6 +590,7 @@ class Snapshot(pulumi.CustomResource):
             __props__.__dict__["snapshot_time"] = None
             __props__.__dict__["snapshot_type"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
         super(Snapshot, __self__).__init__(
             'oci:FileStorage/snapshot:Snapshot',
@@ -599,6 +616,7 @@ class Snapshot(pulumi.CustomResource):
             snapshot_time: Optional[pulumi.Input[str]] = None,
             snapshot_type: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None) -> 'Snapshot':
         """
         Get an existing Snapshot resource's state with the given name, id, and optional extra
@@ -631,6 +649,7 @@ class Snapshot(pulumi.CustomResource):
                * If the snapshot is replicated from a file system.
         :param pulumi.Input[str] snapshot_type: Specifies the generation type of the snapshot.
         :param pulumi.Input[str] state: The current state of the snapshot.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
         :param pulumi.Input[str] time_created: The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -651,6 +670,7 @@ class Snapshot(pulumi.CustomResource):
         __props__.__dict__["snapshot_time"] = snapshot_time
         __props__.__dict__["snapshot_type"] = snapshot_type
         __props__.__dict__["state"] = state
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         return Snapshot(resource_name, opts=opts, __props__=__props__)
 
@@ -773,6 +793,14 @@ class Snapshot(pulumi.CustomResource):
         The current state of the snapshot.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, str]]:
+        """
+        System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")

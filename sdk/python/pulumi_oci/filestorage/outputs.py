@@ -1609,6 +1609,7 @@ class GetFileSystemsFileSystemResult(dict):
                  source_details: Sequence['outputs.GetFileSystemsFileSystemSourceDetailResult'],
                  source_snapshot_id: str,
                  state: str,
+                 system_tags: Mapping[str, str],
                  time_created: str):
         """
         :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -1631,6 +1632,7 @@ class GetFileSystemsFileSystemResult(dict):
         :param Sequence['GetFileSystemsFileSystemSourceDetailArgs'] source_details: Source information for the file system.
         :param str source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
+        :param Mapping[str, str] system_tags: System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
         :param str time_created: The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -1655,6 +1657,7 @@ class GetFileSystemsFileSystemResult(dict):
         pulumi.set(__self__, "source_details", source_details)
         pulumi.set(__self__, "source_snapshot_id", source_snapshot_id)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
 
     @property
@@ -1828,6 +1831,14 @@ class GetFileSystemsFileSystemResult(dict):
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
@@ -1957,6 +1968,7 @@ class GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyResult(dict):
                  policy_prefix: str,
                  schedules: Sequence['outputs.GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleResult'],
                  state: str,
+                 system_tags: Mapping[str, str],
                  time_created: str):
         """
         :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -1969,6 +1981,7 @@ class GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyResult(dict):
         :param str policy_prefix: The prefix to apply to all snapshots created by this policy.  Example: `acme`
         :param Sequence['GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArgs'] schedules: The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
         :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
+        :param Mapping[str, str] system_tags: System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
         :param str time_created: The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -1982,6 +1995,7 @@ class GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyResult(dict):
         pulumi.set(__self__, "policy_prefix", policy_prefix)
         pulumi.set(__self__, "schedules", schedules)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
 
     @property
@@ -2068,6 +2082,14 @@ class GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyResult(dict):
         Filter results by the specified lifecycle state. Must be a valid state for the resource type.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -2471,6 +2493,7 @@ class GetMountTargetsMountTargetResult(dict):
                  reserved_storage_capacity: str,
                  state: str,
                  subnet_id: str,
+                 system_tags: Mapping[str, str],
                  time_billing_cycle_end: str,
                  time_created: str):
         """
@@ -2493,6 +2516,7 @@ class GetMountTargetsMountTargetResult(dict):
         :param str reserved_storage_capacity: * Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value of mount target. Value is listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
         :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the mount target is in.
+        :param Mapping[str, str] system_tags: System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
         :param str time_billing_cycle_end: The date and time the mount target current billing cycle will end, expressed in  [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated  automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
         :param str time_created: The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
@@ -2518,6 +2542,7 @@ class GetMountTargetsMountTargetResult(dict):
         pulumi.set(__self__, "reserved_storage_capacity", reserved_storage_capacity)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_billing_cycle_end", time_billing_cycle_end)
         pulumi.set(__self__, "time_created", time_created)
 
@@ -2687,6 +2712,14 @@ class GetMountTargetsMountTargetResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the mount target is in.
         """
         return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeBillingCycleEnd")
@@ -3037,6 +3070,7 @@ class GetOutboundConnectorsOutboundConnectorResult(dict):
                  password_secret_id: str,
                  password_secret_version: int,
                  state: str,
+                 system_tags: Mapping[str, str],
                  time_created: str):
         """
         :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -3052,6 +3086,7 @@ class GetOutboundConnectorsOutboundConnectorResult(dict):
         :param str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
         :param int password_secret_version: Version of the password secret in the Vault to use.
         :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
+        :param Mapping[str, str] system_tags: System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
         :param str time_created: The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -3068,6 +3103,7 @@ class GetOutboundConnectorsOutboundConnectorResult(dict):
         pulumi.set(__self__, "password_secret_id", password_secret_id)
         pulumi.set(__self__, "password_secret_version", password_secret_version)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
 
     @property
@@ -3178,6 +3214,14 @@ class GetOutboundConnectorsOutboundConnectorResult(dict):
         Filter results by the specified lifecycle state. Must be a valid state for the resource type.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -3363,6 +3407,7 @@ class GetReplicationTargetsReplicationTargetResult(dict):
                  replication_id: str,
                  source_id: str,
                  state: str,
+                 system_tags: Mapping[str, str],
                  target_id: str,
                  time_created: str):
         """
@@ -3380,6 +3425,7 @@ class GetReplicationTargetsReplicationTargetResult(dict):
         :param str replication_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of replication.
         :param str source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of source filesystem.
         :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
+        :param Mapping[str, str] system_tags: System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
         :param str target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of target filesystem.
         :param str time_created: The date and time the replication target was created in target region. in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-01-04T20:01:29.100Z`
         """
@@ -3397,6 +3443,7 @@ class GetReplicationTargetsReplicationTargetResult(dict):
         pulumi.set(__self__, "replication_id", replication_id)
         pulumi.set(__self__, "source_id", source_id)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "target_id", target_id)
         pulumi.set(__self__, "time_created", time_created)
 
@@ -3513,6 +3560,14 @@ class GetReplicationTargetsReplicationTargetResult(dict):
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> str:
         """
@@ -3576,6 +3631,7 @@ class GetReplicationsReplicationResult(dict):
                  replication_target_id: str,
                  source_id: str,
                  state: str,
+                 system_tags: Mapping[str, str],
                  target_id: str,
                  time_created: str):
         """
@@ -3595,6 +3651,7 @@ class GetReplicationsReplicationResult(dict):
         :param str replication_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [`ReplicationTarget`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ReplicationTarget).
         :param str source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source file system.
         :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
+        :param Mapping[str, str] system_tags: System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
         :param str target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.
         :param str time_created: The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
         """
@@ -3615,6 +3672,7 @@ class GetReplicationsReplicationResult(dict):
         pulumi.set(__self__, "replication_target_id", replication_target_id)
         pulumi.set(__self__, "source_id", source_id)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "target_id", target_id)
         pulumi.set(__self__, "time_created", time_created)
 
@@ -3750,6 +3808,14 @@ class GetReplicationsReplicationResult(dict):
         Filter results by the specified lifecycle state. Must be a valid state for the resource type.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="targetId")
@@ -3921,6 +3987,7 @@ class GetSnapshotsSnapshotResult(dict):
                  snapshot_time: str,
                  snapshot_type: str,
                  state: str,
+                 system_tags: Mapping[str, str],
                  time_created: str):
         """
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -3940,6 +4007,7 @@ class GetSnapshotsSnapshotResult(dict):
                * If the snapshot is replicated from a file system.
         :param str snapshot_type: Specifies the generation type of the snapshot.
         :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
+        :param Mapping[str, str] system_tags: System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
         :param str time_created: The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -3957,6 +4025,7 @@ class GetSnapshotsSnapshotResult(dict):
         pulumi.set(__self__, "snapshot_time", snapshot_time)
         pulumi.set(__self__, "snapshot_type", snapshot_type)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
 
     @property
@@ -4078,6 +4147,14 @@ class GetSnapshotsSnapshotResult(dict):
         Filter results by the specified lifecycle state. Must be a valid state for the resource type.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")

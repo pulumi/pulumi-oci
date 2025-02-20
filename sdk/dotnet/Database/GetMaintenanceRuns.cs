@@ -31,6 +31,7 @@ namespace Pulumi.Oci.Database
         ///     {
         ///         CompartmentId = compartmentId,
         ///         AvailabilityDomain = maintenanceRunAvailabilityDomain,
+        ///         IsLocalAdg = maintenanceRunIsLocalAdg,
         ///         MaintenanceSubtype = maintenanceRunMaintenanceSubtype,
         ///         MaintenanceType = maintenanceRunMaintenanceType,
         ///         State = maintenanceRunState,
@@ -64,6 +65,7 @@ namespace Pulumi.Oci.Database
         ///     {
         ///         CompartmentId = compartmentId,
         ///         AvailabilityDomain = maintenanceRunAvailabilityDomain,
+        ///         IsLocalAdg = maintenanceRunIsLocalAdg,
         ///         MaintenanceSubtype = maintenanceRunMaintenanceSubtype,
         ///         MaintenanceType = maintenanceRunMaintenanceType,
         ///         State = maintenanceRunState,
@@ -97,6 +99,7 @@ namespace Pulumi.Oci.Database
         ///     {
         ///         CompartmentId = compartmentId,
         ///         AvailabilityDomain = maintenanceRunAvailabilityDomain,
+        ///         IsLocalAdg = maintenanceRunIsLocalAdg,
         ///         MaintenanceSubtype = maintenanceRunMaintenanceSubtype,
         ///         MaintenanceType = maintenanceRunMaintenanceType,
         ///         State = maintenanceRunState,
@@ -133,6 +136,12 @@ namespace Pulumi.Oci.Database
             get => _filters ?? (_filters = new List<Inputs.GetMaintenanceRunsFilterArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// A filter to return the maintenance history results for the local standby Autonomous Database Serverless only.
+        /// </summary>
+        [Input("isLocalAdg")]
+        public bool? IsLocalAdg { get; set; }
 
         /// <summary>
         /// The sub-type of the maintenance run.
@@ -193,6 +202,12 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
+        /// A filter to return the maintenance history results for the local standby Autonomous Database Serverless only.
+        /// </summary>
+        [Input("isLocalAdg")]
+        public Input<bool>? IsLocalAdg { get; set; }
+
+        /// <summary>
         /// The sub-type of the maintenance run.
         /// </summary>
         [Input("maintenanceSubtype")]
@@ -242,6 +257,7 @@ namespace Pulumi.Oci.Database
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly bool? IsLocalAdg;
         /// <summary>
         /// The list of maintenance_runs.
         /// </summary>
@@ -277,6 +293,8 @@ namespace Pulumi.Oci.Database
 
             string id,
 
+            bool? isLocalAdg,
+
             ImmutableArray<Outputs.GetMaintenanceRunsMaintenanceRunResult> maintenanceRuns,
 
             string? maintenanceSubtype,
@@ -293,6 +311,7 @@ namespace Pulumi.Oci.Database
             CompartmentId = compartmentId;
             Filters = filters;
             Id = id;
+            IsLocalAdg = isLocalAdg;
             MaintenanceRuns = maintenanceRuns;
             MaintenanceSubtype = maintenanceSubtype;
             MaintenanceType = maintenanceType;

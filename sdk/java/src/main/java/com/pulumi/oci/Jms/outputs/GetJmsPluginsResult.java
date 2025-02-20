@@ -22,6 +22,11 @@ public final class GetJmsPluginsResult {
      */
     private @Nullable String agentId;
     /**
+     * @return The agent type.
+     * 
+     */
+    private @Nullable String agentType;
+    /**
      * @return The availability status.
      * 
      */
@@ -64,6 +69,13 @@ public final class GetJmsPluginsResult {
      */
     public Optional<String> agentId() {
         return Optional.ofNullable(this.agentId);
+    }
+    /**
+     * @return The agent type.
+     * 
+     */
+    public Optional<String> agentType() {
+        return Optional.ofNullable(this.agentType);
     }
     /**
      * @return The availability status.
@@ -133,6 +145,7 @@ public final class GetJmsPluginsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String agentId;
+        private @Nullable String agentType;
         private @Nullable String availabilityStatus;
         private @Nullable String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
@@ -148,6 +161,7 @@ public final class GetJmsPluginsResult {
         public Builder(GetJmsPluginsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.agentId = defaults.agentId;
+    	      this.agentType = defaults.agentType;
     	      this.availabilityStatus = defaults.availabilityStatus;
     	      this.compartmentId = defaults.compartmentId;
     	      this.compartmentIdInSubtree = defaults.compartmentIdInSubtree;
@@ -165,6 +179,12 @@ public final class GetJmsPluginsResult {
         public Builder agentId(@Nullable String agentId) {
 
             this.agentId = agentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder agentType(@Nullable String agentType) {
+
+            this.agentType = agentType;
             return this;
         }
         @CustomType.Setter
@@ -244,6 +264,7 @@ public final class GetJmsPluginsResult {
         public GetJmsPluginsResult build() {
             final var _resultValue = new GetJmsPluginsResult();
             _resultValue.agentId = agentId;
+            _resultValue.agentType = agentType;
             _resultValue.availabilityStatus = availabilityStatus;
             _resultValue.compartmentId = compartmentId;
             _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;

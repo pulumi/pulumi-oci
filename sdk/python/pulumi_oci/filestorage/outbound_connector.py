@@ -233,6 +233,7 @@ class _OutboundConnectorState:
                  password_secret_id: Optional[pulumi.Input[str]] = None,
                  password_secret_version: Optional[pulumi.Input[int]] = None,
                  state: Optional[pulumi.Input[str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering OutboundConnector resources.
@@ -252,6 +253,7 @@ class _OutboundConnectorState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of this outbound connector.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
         :param pulumi.Input[str] time_created: The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         if availability_domain is not None:
@@ -280,6 +282,8 @@ class _OutboundConnectorState:
             pulumi.set(__self__, "password_secret_version", password_secret_version)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
 
@@ -439,6 +443,18 @@ class _OutboundConnectorState:
     @state.setter
     def state(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "state", value)
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "system_tags", value)
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -682,6 +698,7 @@ class OutboundConnector(pulumi.CustomResource):
             __props__.__dict__["password_secret_id"] = password_secret_id
             __props__.__dict__["password_secret_version"] = password_secret_version
             __props__.__dict__["state"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
         super(OutboundConnector, __self__).__init__(
             'oci:FileStorage/outboundConnector:OutboundConnector',
@@ -706,6 +723,7 @@ class OutboundConnector(pulumi.CustomResource):
             password_secret_id: Optional[pulumi.Input[str]] = None,
             password_secret_version: Optional[pulumi.Input[int]] = None,
             state: Optional[pulumi.Input[str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None) -> 'OutboundConnector':
         """
         Get an existing OutboundConnector resource's state with the given name, id, and optional extra
@@ -730,6 +748,7 @@ class OutboundConnector(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of this outbound connector.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
         :param pulumi.Input[str] time_created: The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -749,6 +768,7 @@ class OutboundConnector(pulumi.CustomResource):
         __props__.__dict__["password_secret_id"] = password_secret_id
         __props__.__dict__["password_secret_version"] = password_secret_version
         __props__.__dict__["state"] = state
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         return OutboundConnector(resource_name, opts=opts, __props__=__props__)
 
@@ -856,6 +876,14 @@ class OutboundConnector(pulumi.CustomResource):
         The current state of this outbound connector.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, str]]:
+        """
+        System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")

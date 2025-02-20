@@ -93,6 +93,10 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// </summary>
         public readonly string SubnetId;
         /// <summary>
+        /// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SystemTags;
+        /// <summary>
         /// The date and time the mount target current billing cycle will end, expressed in  [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated  automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeBillingCycleEnd;
@@ -147,6 +151,8 @@ namespace Pulumi.Oci.FileStorage.Outputs
 
             string subnetId,
 
+            ImmutableDictionary<string, string> systemTags,
+
             string timeBillingCycleEnd,
 
             string timeCreated)
@@ -173,6 +179,7 @@ namespace Pulumi.Oci.FileStorage.Outputs
             ReservedStorageCapacity = reservedStorageCapacity;
             State = state;
             SubnetId = subnetId;
+            SystemTags = systemTags;
             TimeBillingCycleEnd = timeBillingCycleEnd;
             TimeCreated = timeCreated;
         }

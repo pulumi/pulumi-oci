@@ -30,6 +30,11 @@ public final class ClusterOptions {
      */
     private @Nullable ClusterOptionsAdmissionControllerOptions admissionControllerOptions;
     /**
+     * @return IP family to use for single stack or define the order of IP families for dual-stack
+     * 
+     */
+    private @Nullable List<String> ipFamilies;
+    /**
      * @return Network configuration for Kubernetes.
      * 
      */
@@ -74,6 +79,13 @@ public final class ClusterOptions {
      */
     public Optional<ClusterOptionsAdmissionControllerOptions> admissionControllerOptions() {
         return Optional.ofNullable(this.admissionControllerOptions);
+    }
+    /**
+     * @return IP family to use for single stack or define the order of IP families for dual-stack
+     * 
+     */
+    public List<String> ipFamilies() {
+        return this.ipFamilies == null ? List.of() : this.ipFamilies;
     }
     /**
      * @return Network configuration for Kubernetes.
@@ -129,6 +141,7 @@ public final class ClusterOptions {
     public static final class Builder {
         private @Nullable ClusterOptionsAddOns addOns;
         private @Nullable ClusterOptionsAdmissionControllerOptions admissionControllerOptions;
+        private @Nullable List<String> ipFamilies;
         private @Nullable ClusterOptionsKubernetesNetworkConfig kubernetesNetworkConfig;
         private @Nullable ClusterOptionsOpenIdConnectDiscovery openIdConnectDiscovery;
         private @Nullable ClusterOptionsOpenIdConnectTokenAuthenticationConfig openIdConnectTokenAuthenticationConfig;
@@ -140,6 +153,7 @@ public final class ClusterOptions {
     	      Objects.requireNonNull(defaults);
     	      this.addOns = defaults.addOns;
     	      this.admissionControllerOptions = defaults.admissionControllerOptions;
+    	      this.ipFamilies = defaults.ipFamilies;
     	      this.kubernetesNetworkConfig = defaults.kubernetesNetworkConfig;
     	      this.openIdConnectDiscovery = defaults.openIdConnectDiscovery;
     	      this.openIdConnectTokenAuthenticationConfig = defaults.openIdConnectTokenAuthenticationConfig;
@@ -159,6 +173,15 @@ public final class ClusterOptions {
 
             this.admissionControllerOptions = admissionControllerOptions;
             return this;
+        }
+        @CustomType.Setter
+        public Builder ipFamilies(@Nullable List<String> ipFamilies) {
+
+            this.ipFamilies = ipFamilies;
+            return this;
+        }
+        public Builder ipFamilies(String... ipFamilies) {
+            return ipFamilies(List.of(ipFamilies));
         }
         @CustomType.Setter
         public Builder kubernetesNetworkConfig(@Nullable ClusterOptionsKubernetesNetworkConfig kubernetesNetworkConfig) {
@@ -203,6 +226,7 @@ public final class ClusterOptions {
             final var _resultValue = new ClusterOptions();
             _resultValue.addOns = addOns;
             _resultValue.admissionControllerOptions = admissionControllerOptions;
+            _resultValue.ipFamilies = ipFamilies;
             _resultValue.kubernetesNetworkConfig = kubernetesNetworkConfig;
             _resultValue.openIdConnectDiscovery = openIdConnectDiscovery;
             _resultValue.openIdConnectTokenAuthenticationConfig = openIdConnectTokenAuthenticationConfig;

@@ -30,6 +30,7 @@ namespace Pulumi.Oci.Jms
         ///     {
         ///         FleetId = testFleet.Id,
         ///         ApplicationId = fleetPerformanceTuningAnalysisResultApplicationId,
+        ///         ApplicationName = fleetPerformanceTuningAnalysisResultApplicationName,
         ///         HostName = fleetPerformanceTuningAnalysisResultHostName,
         ///         ManagedInstanceId = fleetPerformanceTuningAnalysisResultManagedInstanceId,
         ///         TimeEnd = fleetPerformanceTuningAnalysisResultTimeEnd,
@@ -61,6 +62,7 @@ namespace Pulumi.Oci.Jms
         ///     {
         ///         FleetId = testFleet.Id,
         ///         ApplicationId = fleetPerformanceTuningAnalysisResultApplicationId,
+        ///         ApplicationName = fleetPerformanceTuningAnalysisResultApplicationName,
         ///         HostName = fleetPerformanceTuningAnalysisResultHostName,
         ///         ManagedInstanceId = fleetPerformanceTuningAnalysisResultManagedInstanceId,
         ///         TimeEnd = fleetPerformanceTuningAnalysisResultTimeEnd,
@@ -92,6 +94,7 @@ namespace Pulumi.Oci.Jms
         ///     {
         ///         FleetId = testFleet.Id,
         ///         ApplicationId = fleetPerformanceTuningAnalysisResultApplicationId,
+        ///         ApplicationName = fleetPerformanceTuningAnalysisResultApplicationName,
         ///         HostName = fleetPerformanceTuningAnalysisResultHostName,
         ///         ManagedInstanceId = fleetPerformanceTuningAnalysisResultManagedInstanceId,
         ///         TimeEnd = fleetPerformanceTuningAnalysisResultTimeEnd,
@@ -113,6 +116,12 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         [Input("applicationId")]
         public string? ApplicationId { get; set; }
+
+        /// <summary>
+        /// The name of the application.
+        /// </summary>
+        [Input("applicationName")]
+        public string? ApplicationName { get; set; }
 
         [Input("filters")]
         private List<Inputs.GetFleetPerformanceTuningAnalysisResultsFilterArgs>? _filters;
@@ -166,6 +175,12 @@ namespace Pulumi.Oci.Jms
         [Input("applicationId")]
         public Input<string>? ApplicationId { get; set; }
 
+        /// <summary>
+        /// The name of the application.
+        /// </summary>
+        [Input("applicationName")]
+        public Input<string>? ApplicationName { get; set; }
+
         [Input("filters")]
         private InputList<Inputs.GetFleetPerformanceTuningAnalysisResultsFilterInputArgs>? _filters;
         public InputList<Inputs.GetFleetPerformanceTuningAnalysisResultsFilterInputArgs> Filters
@@ -218,6 +233,10 @@ namespace Pulumi.Oci.Jms
         /// The OCID of the application for which the report has been generated.
         /// </summary>
         public readonly string? ApplicationId;
+        /// <summary>
+        /// The name of the application for which the report has been generated.
+        /// </summary>
+        public readonly string? ApplicationName;
         public readonly ImmutableArray<Outputs.GetFleetPerformanceTuningAnalysisResultsFilterResult> Filters;
         /// <summary>
         /// The fleet OCID.
@@ -246,6 +265,8 @@ namespace Pulumi.Oci.Jms
         private GetFleetPerformanceTuningAnalysisResultsResult(
             string? applicationId,
 
+            string? applicationName,
+
             ImmutableArray<Outputs.GetFleetPerformanceTuningAnalysisResultsFilterResult> filters,
 
             string fleetId,
@@ -263,6 +284,7 @@ namespace Pulumi.Oci.Jms
             string? timeStart)
         {
             ApplicationId = applicationId;
+            ApplicationName = applicationName;
             Filters = filters;
             FleetId = fleetId;
             HostName = hostName;

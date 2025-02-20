@@ -98,6 +98,10 @@ export interface GetOutboundConnectorResult {
      */
     readonly state: string;
     /**
+     * System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+     */
+    readonly systemTags: {[key: string]: string};
+    /**
      * The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
     readonly timeCreated: string;

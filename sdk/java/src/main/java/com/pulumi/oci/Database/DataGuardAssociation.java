@@ -92,6 +92,7 @@ import javax.annotation.Nullable;
  *             .peerSidPrefix(dataGuardAssociationPeerSidPrefix)
  *             .peerVmClusterId(testVmCluster.id())
  *             .privateIp(dataGuardAssociationPrivateIp)
+ *             .privateIpV6(dataGuardAssociationPrivateIpV6)
  *             .shape(dataGuardAssociationShape)
  *             .storageVolumePerformanceMode(dataGuardAssociationStorageVolumePerformanceMode)
  *             .subnetId(testSubnet.id())
@@ -638,6 +639,20 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      */
     public Output<Optional<String>> privateIp() {
         return Codegen.optional(this.privateIp);
+    }
+    /**
+     * The IPv6 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv6 address from the subnet.
+     * 
+     */
+    @Export(name="privateIpV6", refs={String.class}, tree="[0]")
+    private Output<String> privateIpV6;
+
+    /**
+     * @return The IPv6 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv6 address from the subnet.
+     * 
+     */
+    public Output<String> privateIpV6() {
+        return this.privateIpV6;
     }
     /**
      * (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.

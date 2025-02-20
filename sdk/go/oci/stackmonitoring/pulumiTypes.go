@@ -4589,6 +4589,8 @@ type MonitoredResourceTypeMetadata struct {
 	ValidPropertiesForUpdates []string `pulumi:"validPropertiesForUpdates"`
 	// (Updatable) List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{ "osType": "Linux,Windows,Solaris"}`
 	ValidPropertyValues map[string]string `pulumi:"validPropertyValues"`
+	// (Updatable) List of valid sub-resource types for a composite resource type. The sub-resource types will be obtained from the valid association pairs corresponding to the composite resource types. It will be empty for non composite resource types
+	ValidSubResourceTypes []string `pulumi:"validSubResourceTypes"`
 }
 
 // MonitoredResourceTypeMetadataInput is an input type that accepts MonitoredResourceTypeMetadataArgs and MonitoredResourceTypeMetadataOutput values.
@@ -4618,6 +4620,8 @@ type MonitoredResourceTypeMetadataArgs struct {
 	ValidPropertiesForUpdates pulumi.StringArrayInput `pulumi:"validPropertiesForUpdates"`
 	// (Updatable) List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{ "osType": "Linux,Windows,Solaris"}`
 	ValidPropertyValues pulumi.StringMapInput `pulumi:"validPropertyValues"`
+	// (Updatable) List of valid sub-resource types for a composite resource type. The sub-resource types will be obtained from the valid association pairs corresponding to the composite resource types. It will be empty for non composite resource types
+	ValidSubResourceTypes pulumi.StringArrayInput `pulumi:"validSubResourceTypes"`
 }
 
 func (MonitoredResourceTypeMetadataArgs) ElementType() reflect.Type {
@@ -4735,6 +4739,11 @@ func (o MonitoredResourceTypeMetadataOutput) ValidPropertyValues() pulumi.String
 	return o.ApplyT(func(v MonitoredResourceTypeMetadata) map[string]string { return v.ValidPropertyValues }).(pulumi.StringMapOutput)
 }
 
+// (Updatable) List of valid sub-resource types for a composite resource type. The sub-resource types will be obtained from the valid association pairs corresponding to the composite resource types. It will be empty for non composite resource types
+func (o MonitoredResourceTypeMetadataOutput) ValidSubResourceTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v MonitoredResourceTypeMetadata) []string { return v.ValidSubResourceTypes }).(pulumi.StringArrayOutput)
+}
+
 type MonitoredResourceTypeMetadataPtrOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourceTypeMetadataPtrOutput) ElementType() reflect.Type {
@@ -4828,6 +4837,16 @@ func (o MonitoredResourceTypeMetadataPtrOutput) ValidPropertyValues() pulumi.Str
 		}
 		return v.ValidPropertyValues
 	}).(pulumi.StringMapOutput)
+}
+
+// (Updatable) List of valid sub-resource types for a composite resource type. The sub-resource types will be obtained from the valid association pairs corresponding to the composite resource types. It will be empty for non composite resource types
+func (o MonitoredResourceTypeMetadataPtrOutput) ValidSubResourceTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *MonitoredResourceTypeMetadata) []string {
+		if v == nil {
+			return nil
+		}
+		return v.ValidSubResourceTypes
+	}).(pulumi.StringArrayOutput)
 }
 
 type MonitoredResourceTypeMetadataUniquePropertySet struct {
@@ -6125,6 +6144,263 @@ func (o MonitoredResourcesSearchItemPropertyArrayOutput) Index(i pulumi.IntInput
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MonitoredResourcesSearchItemProperty {
 		return vs[0].([]MonitoredResourcesSearchItemProperty)[vs[1].(int)]
 	}).(MonitoredResourcesSearchItemPropertyOutput)
+}
+
+type MonitoringTemplateAlarmConditionCondition struct {
+	// (Updatable) The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.
+	Body *string `pulumi:"body"`
+	// (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+	Query string `pulumi:"query"`
+	// (Updatable) Severity - Critical/Warning
+	Severity string `pulumi:"severity"`
+	// (Updatable) Whether the note need to add into bottom of the body for mapping the alarms information with template or not.
+	ShouldAppendNote *bool `pulumi:"shouldAppendNote"`
+	// (Updatable) Whether the URL need to add into bottom of the body for mapping the alarms information with template or not.
+	ShouldAppendUrl *bool `pulumi:"shouldAppendUrl"`
+	// (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING".
+	TriggerDelay *string `pulumi:"triggerDelay"`
+}
+
+// MonitoringTemplateAlarmConditionConditionInput is an input type that accepts MonitoringTemplateAlarmConditionConditionArgs and MonitoringTemplateAlarmConditionConditionOutput values.
+// You can construct a concrete instance of `MonitoringTemplateAlarmConditionConditionInput` via:
+//
+//	MonitoringTemplateAlarmConditionConditionArgs{...}
+type MonitoringTemplateAlarmConditionConditionInput interface {
+	pulumi.Input
+
+	ToMonitoringTemplateAlarmConditionConditionOutput() MonitoringTemplateAlarmConditionConditionOutput
+	ToMonitoringTemplateAlarmConditionConditionOutputWithContext(context.Context) MonitoringTemplateAlarmConditionConditionOutput
+}
+
+type MonitoringTemplateAlarmConditionConditionArgs struct {
+	// (Updatable) The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.
+	Body pulumi.StringPtrInput `pulumi:"body"`
+	// (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+	Query pulumi.StringInput `pulumi:"query"`
+	// (Updatable) Severity - Critical/Warning
+	Severity pulumi.StringInput `pulumi:"severity"`
+	// (Updatable) Whether the note need to add into bottom of the body for mapping the alarms information with template or not.
+	ShouldAppendNote pulumi.BoolPtrInput `pulumi:"shouldAppendNote"`
+	// (Updatable) Whether the URL need to add into bottom of the body for mapping the alarms information with template or not.
+	ShouldAppendUrl pulumi.BoolPtrInput `pulumi:"shouldAppendUrl"`
+	// (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING".
+	TriggerDelay pulumi.StringPtrInput `pulumi:"triggerDelay"`
+}
+
+func (MonitoringTemplateAlarmConditionConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoringTemplateAlarmConditionCondition)(nil)).Elem()
+}
+
+func (i MonitoringTemplateAlarmConditionConditionArgs) ToMonitoringTemplateAlarmConditionConditionOutput() MonitoringTemplateAlarmConditionConditionOutput {
+	return i.ToMonitoringTemplateAlarmConditionConditionOutputWithContext(context.Background())
+}
+
+func (i MonitoringTemplateAlarmConditionConditionArgs) ToMonitoringTemplateAlarmConditionConditionOutputWithContext(ctx context.Context) MonitoringTemplateAlarmConditionConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoringTemplateAlarmConditionConditionOutput)
+}
+
+// MonitoringTemplateAlarmConditionConditionArrayInput is an input type that accepts MonitoringTemplateAlarmConditionConditionArray and MonitoringTemplateAlarmConditionConditionArrayOutput values.
+// You can construct a concrete instance of `MonitoringTemplateAlarmConditionConditionArrayInput` via:
+//
+//	MonitoringTemplateAlarmConditionConditionArray{ MonitoringTemplateAlarmConditionConditionArgs{...} }
+type MonitoringTemplateAlarmConditionConditionArrayInput interface {
+	pulumi.Input
+
+	ToMonitoringTemplateAlarmConditionConditionArrayOutput() MonitoringTemplateAlarmConditionConditionArrayOutput
+	ToMonitoringTemplateAlarmConditionConditionArrayOutputWithContext(context.Context) MonitoringTemplateAlarmConditionConditionArrayOutput
+}
+
+type MonitoringTemplateAlarmConditionConditionArray []MonitoringTemplateAlarmConditionConditionInput
+
+func (MonitoringTemplateAlarmConditionConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MonitoringTemplateAlarmConditionCondition)(nil)).Elem()
+}
+
+func (i MonitoringTemplateAlarmConditionConditionArray) ToMonitoringTemplateAlarmConditionConditionArrayOutput() MonitoringTemplateAlarmConditionConditionArrayOutput {
+	return i.ToMonitoringTemplateAlarmConditionConditionArrayOutputWithContext(context.Background())
+}
+
+func (i MonitoringTemplateAlarmConditionConditionArray) ToMonitoringTemplateAlarmConditionConditionArrayOutputWithContext(ctx context.Context) MonitoringTemplateAlarmConditionConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoringTemplateAlarmConditionConditionArrayOutput)
+}
+
+type MonitoringTemplateAlarmConditionConditionOutput struct{ *pulumi.OutputState }
+
+func (MonitoringTemplateAlarmConditionConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoringTemplateAlarmConditionCondition)(nil)).Elem()
+}
+
+func (o MonitoringTemplateAlarmConditionConditionOutput) ToMonitoringTemplateAlarmConditionConditionOutput() MonitoringTemplateAlarmConditionConditionOutput {
+	return o
+}
+
+func (o MonitoringTemplateAlarmConditionConditionOutput) ToMonitoringTemplateAlarmConditionConditionOutputWithContext(ctx context.Context) MonitoringTemplateAlarmConditionConditionOutput {
+	return o
+}
+
+// (Updatable) The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.
+func (o MonitoringTemplateAlarmConditionConditionOutput) Body() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoringTemplateAlarmConditionCondition) *string { return v.Body }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+func (o MonitoringTemplateAlarmConditionConditionOutput) Query() pulumi.StringOutput {
+	return o.ApplyT(func(v MonitoringTemplateAlarmConditionCondition) string { return v.Query }).(pulumi.StringOutput)
+}
+
+// (Updatable) Severity - Critical/Warning
+func (o MonitoringTemplateAlarmConditionConditionOutput) Severity() pulumi.StringOutput {
+	return o.ApplyT(func(v MonitoringTemplateAlarmConditionCondition) string { return v.Severity }).(pulumi.StringOutput)
+}
+
+// (Updatable) Whether the note need to add into bottom of the body for mapping the alarms information with template or not.
+func (o MonitoringTemplateAlarmConditionConditionOutput) ShouldAppendNote() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MonitoringTemplateAlarmConditionCondition) *bool { return v.ShouldAppendNote }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Whether the URL need to add into bottom of the body for mapping the alarms information with template or not.
+func (o MonitoringTemplateAlarmConditionConditionOutput) ShouldAppendUrl() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MonitoringTemplateAlarmConditionCondition) *bool { return v.ShouldAppendUrl }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING".
+func (o MonitoringTemplateAlarmConditionConditionOutput) TriggerDelay() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoringTemplateAlarmConditionCondition) *string { return v.TriggerDelay }).(pulumi.StringPtrOutput)
+}
+
+type MonitoringTemplateAlarmConditionConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (MonitoringTemplateAlarmConditionConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MonitoringTemplateAlarmConditionCondition)(nil)).Elem()
+}
+
+func (o MonitoringTemplateAlarmConditionConditionArrayOutput) ToMonitoringTemplateAlarmConditionConditionArrayOutput() MonitoringTemplateAlarmConditionConditionArrayOutput {
+	return o
+}
+
+func (o MonitoringTemplateAlarmConditionConditionArrayOutput) ToMonitoringTemplateAlarmConditionConditionArrayOutputWithContext(ctx context.Context) MonitoringTemplateAlarmConditionConditionArrayOutput {
+	return o
+}
+
+func (o MonitoringTemplateAlarmConditionConditionArrayOutput) Index(i pulumi.IntInput) MonitoringTemplateAlarmConditionConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MonitoringTemplateAlarmConditionCondition {
+		return vs[0].([]MonitoringTemplateAlarmConditionCondition)[vs[1].(int)]
+	}).(MonitoringTemplateAlarmConditionConditionOutput)
+}
+
+type MonitoringTemplateMember struct {
+	// (Updatable) The OCID of the composite resource type like EBS or Peoplesoft.
+	CompositeType *string `pulumi:"compositeType"`
+	// (Updatable) The OCID of the resourceInstance/resourceType/resourceGroup
+	Id string `pulumi:"id"`
+	// (Updatable) Type of the member reference RESOURCE_INSTANCE, RESOURCE_TYPE, RESOURCE_GROUP
+	Type string `pulumi:"type"`
+}
+
+// MonitoringTemplateMemberInput is an input type that accepts MonitoringTemplateMemberArgs and MonitoringTemplateMemberOutput values.
+// You can construct a concrete instance of `MonitoringTemplateMemberInput` via:
+//
+//	MonitoringTemplateMemberArgs{...}
+type MonitoringTemplateMemberInput interface {
+	pulumi.Input
+
+	ToMonitoringTemplateMemberOutput() MonitoringTemplateMemberOutput
+	ToMonitoringTemplateMemberOutputWithContext(context.Context) MonitoringTemplateMemberOutput
+}
+
+type MonitoringTemplateMemberArgs struct {
+	// (Updatable) The OCID of the composite resource type like EBS or Peoplesoft.
+	CompositeType pulumi.StringPtrInput `pulumi:"compositeType"`
+	// (Updatable) The OCID of the resourceInstance/resourceType/resourceGroup
+	Id pulumi.StringInput `pulumi:"id"`
+	// (Updatable) Type of the member reference RESOURCE_INSTANCE, RESOURCE_TYPE, RESOURCE_GROUP
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (MonitoringTemplateMemberArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoringTemplateMember)(nil)).Elem()
+}
+
+func (i MonitoringTemplateMemberArgs) ToMonitoringTemplateMemberOutput() MonitoringTemplateMemberOutput {
+	return i.ToMonitoringTemplateMemberOutputWithContext(context.Background())
+}
+
+func (i MonitoringTemplateMemberArgs) ToMonitoringTemplateMemberOutputWithContext(ctx context.Context) MonitoringTemplateMemberOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoringTemplateMemberOutput)
+}
+
+// MonitoringTemplateMemberArrayInput is an input type that accepts MonitoringTemplateMemberArray and MonitoringTemplateMemberArrayOutput values.
+// You can construct a concrete instance of `MonitoringTemplateMemberArrayInput` via:
+//
+//	MonitoringTemplateMemberArray{ MonitoringTemplateMemberArgs{...} }
+type MonitoringTemplateMemberArrayInput interface {
+	pulumi.Input
+
+	ToMonitoringTemplateMemberArrayOutput() MonitoringTemplateMemberArrayOutput
+	ToMonitoringTemplateMemberArrayOutputWithContext(context.Context) MonitoringTemplateMemberArrayOutput
+}
+
+type MonitoringTemplateMemberArray []MonitoringTemplateMemberInput
+
+func (MonitoringTemplateMemberArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MonitoringTemplateMember)(nil)).Elem()
+}
+
+func (i MonitoringTemplateMemberArray) ToMonitoringTemplateMemberArrayOutput() MonitoringTemplateMemberArrayOutput {
+	return i.ToMonitoringTemplateMemberArrayOutputWithContext(context.Background())
+}
+
+func (i MonitoringTemplateMemberArray) ToMonitoringTemplateMemberArrayOutputWithContext(ctx context.Context) MonitoringTemplateMemberArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoringTemplateMemberArrayOutput)
+}
+
+type MonitoringTemplateMemberOutput struct{ *pulumi.OutputState }
+
+func (MonitoringTemplateMemberOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoringTemplateMember)(nil)).Elem()
+}
+
+func (o MonitoringTemplateMemberOutput) ToMonitoringTemplateMemberOutput() MonitoringTemplateMemberOutput {
+	return o
+}
+
+func (o MonitoringTemplateMemberOutput) ToMonitoringTemplateMemberOutputWithContext(ctx context.Context) MonitoringTemplateMemberOutput {
+	return o
+}
+
+// (Updatable) The OCID of the composite resource type like EBS or Peoplesoft.
+func (o MonitoringTemplateMemberOutput) CompositeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoringTemplateMember) *string { return v.CompositeType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the resourceInstance/resourceType/resourceGroup
+func (o MonitoringTemplateMemberOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v MonitoringTemplateMember) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// (Updatable) Type of the member reference RESOURCE_INSTANCE, RESOURCE_TYPE, RESOURCE_GROUP
+func (o MonitoringTemplateMemberOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v MonitoringTemplateMember) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type MonitoringTemplateMemberArrayOutput struct{ *pulumi.OutputState }
+
+func (MonitoringTemplateMemberArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MonitoringTemplateMember)(nil)).Elem()
+}
+
+func (o MonitoringTemplateMemberArrayOutput) ToMonitoringTemplateMemberArrayOutput() MonitoringTemplateMemberArrayOutput {
+	return o
+}
+
+func (o MonitoringTemplateMemberArrayOutput) ToMonitoringTemplateMemberArrayOutputWithContext(ctx context.Context) MonitoringTemplateMemberArrayOutput {
+	return o
+}
+
+func (o MonitoringTemplateMemberArrayOutput) Index(i pulumi.IntInput) MonitoringTemplateMemberOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MonitoringTemplateMember {
+		return vs[0].([]MonitoringTemplateMember)[vs[1].(int)]
+	}).(MonitoringTemplateMemberOutput)
 }
 
 type ProcessSetSpecification struct {
@@ -7860,6 +8136,671 @@ func (o GetConfigsFilterArrayOutput) Index(i pulumi.IntInput) GetConfigsFilterOu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigsFilter {
 		return vs[0].([]GetConfigsFilter)[vs[1].(int)]
 	}).(GetConfigsFilterOutput)
+}
+
+type GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollection struct {
+	// List of defined Monitoring Template.
+	Items []GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItem `pulumi:"items"`
+}
+
+// GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionInput is an input type that accepts GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArgs and GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionOutput values.
+// You can construct a concrete instance of `GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionInput` via:
+//
+//	GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArgs{...}
+type GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionInput interface {
+	pulumi.Input
+
+	ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionOutput() GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionOutput
+	ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionOutputWithContext(context.Context) GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionOutput
+}
+
+type GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArgs struct {
+	// List of defined Monitoring Template.
+	Items GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollection)(nil)).Elem()
+}
+
+func (i GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArgs) ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionOutput() GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionOutput {
+	return i.ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArgs) ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionOutputWithContext(ctx context.Context) GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionOutput)
+}
+
+// GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArrayInput is an input type that accepts GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArray and GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArrayInput` via:
+//
+//	GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArray{ GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArgs{...} }
+type GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArrayOutput() GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArrayOutput
+	ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArrayOutputWithContext(context.Context) GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArrayOutput
+}
+
+type GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArray []GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionInput
+
+func (GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollection)(nil)).Elem()
+}
+
+func (i GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArray) ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArrayOutput() GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArrayOutput {
+	return i.ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArray) ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArrayOutputWithContext(ctx context.Context) GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArrayOutput)
+}
+
+type GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollection)(nil)).Elem()
+}
+
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionOutput) ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionOutput() GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionOutput {
+	return o
+}
+
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionOutput) ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionOutputWithContext(ctx context.Context) GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionOutput {
+	return o
+}
+
+// List of defined Monitoring Template.
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionOutput) Items() GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollection) []GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItem {
+		return v.Items
+	}).(GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArrayOutput)
+}
+
+type GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollection)(nil)).Elem()
+}
+
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArrayOutput) ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArrayOutput() GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArrayOutput {
+	return o
+}
+
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArrayOutput) ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArrayOutputWithContext(ctx context.Context) GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArrayOutput {
+	return o
+}
+
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArrayOutput) Index(i pulumi.IntInput) GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollection {
+		return vs[0].([]GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollection)[vs[1].(int)]
+	}).(GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionOutput)
+}
+
+type GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItem struct {
+	// Type of composite resource type OCID like EBS/PEOPLE_SOFT.
+	CompositeType string `pulumi:"compositeType"`
+	// Defined Monitoring template alarm conditions
+	DefinedAlarmConditions []GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmCondition `pulumi:"definedAlarmConditions"`
+	// A filter to return monitoring template based on name.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the definedMonitoringTemplate.
+	Id string `pulumi:"id"`
+	// The stack monitoring service or application emitting the metric that is evaluated by the alarm.
+	Namespace string `pulumi:"namespace"`
+	// The resource types OCID.
+	ResourceType string `pulumi:"resourceType"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the monitoringTemplate was created. Format defined by RFC3339.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the monitoringTemplate was updated. Format defined by RFC3339.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemInput is an input type that accepts GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArgs and GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemOutput values.
+// You can construct a concrete instance of `GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemInput` via:
+//
+//	GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArgs{...}
+type GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemOutput() GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemOutput
+	ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemOutputWithContext(context.Context) GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemOutput
+}
+
+type GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArgs struct {
+	// Type of composite resource type OCID like EBS/PEOPLE_SOFT.
+	CompositeType pulumi.StringInput `pulumi:"compositeType"`
+	// Defined Monitoring template alarm conditions
+	DefinedAlarmConditions GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArrayInput `pulumi:"definedAlarmConditions"`
+	// A filter to return monitoring template based on name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the definedMonitoringTemplate.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The stack monitoring service or application emitting the metric that is evaluated by the alarm.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The resource types OCID.
+	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the monitoringTemplate was created. Format defined by RFC3339.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the monitoringTemplate was updated. Format defined by RFC3339.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItem)(nil)).Elem()
+}
+
+func (i GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArgs) ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemOutput() GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemOutput {
+	return i.ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArgs) ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemOutputWithContext(ctx context.Context) GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemOutput)
+}
+
+// GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArrayInput is an input type that accepts GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArray and GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArrayInput` via:
+//
+//	GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArray{ GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArgs{...} }
+type GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArrayOutput() GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArrayOutput
+	ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArrayOutputWithContext(context.Context) GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArrayOutput
+}
+
+type GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArray []GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemInput
+
+func (GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItem)(nil)).Elem()
+}
+
+func (i GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArray) ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArrayOutput() GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArrayOutput {
+	return i.ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArray) ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArrayOutputWithContext(ctx context.Context) GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArrayOutput)
+}
+
+type GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItem)(nil)).Elem()
+}
+
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemOutput) ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemOutput() GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemOutput {
+	return o
+}
+
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemOutput) ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemOutputWithContext(ctx context.Context) GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemOutput {
+	return o
+}
+
+// Type of composite resource type OCID like EBS/PEOPLE_SOFT.
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemOutput) CompositeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItem) string {
+		return v.CompositeType
+	}).(pulumi.StringOutput)
+}
+
+// Defined Monitoring template alarm conditions
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemOutput) DefinedAlarmConditions() GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArrayOutput {
+	return o.ApplyT(func(v GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItem) []GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmCondition {
+		return v.DefinedAlarmConditions
+	}).(GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArrayOutput)
+}
+
+// A filter to return monitoring template based on name.
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the definedMonitoringTemplate.
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The stack monitoring service or application emitting the metric that is evaluated by the alarm.
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItem) string {
+		return v.Namespace
+	}).(pulumi.StringOutput)
+}
+
+// The resource types OCID.
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItem) string {
+		return v.ResourceType
+	}).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The date and time the monitoringTemplate was created. Format defined by RFC3339.
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the monitoringTemplate was updated. Format defined by RFC3339.
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItem)(nil)).Elem()
+}
+
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArrayOutput) ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArrayOutput() GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArrayOutput) ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArrayOutputWithContext(ctx context.Context) GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItem {
+		return vs[0].([]GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItem)[vs[1].(int)]
+	}).(GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemOutput)
+}
+
+type GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmCondition struct {
+	// Type of defined monitoring template.
+	ConditionType string `pulumi:"conditionType"`
+	// Monitoring template conditions.
+	Conditions []GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionCondition `pulumi:"conditions"`
+	// The metric name.
+	MetricName string `pulumi:"metricName"`
+}
+
+// GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionInput is an input type that accepts GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArgs and GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionOutput values.
+// You can construct a concrete instance of `GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionInput` via:
+//
+//	GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArgs{...}
+type GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionInput interface {
+	pulumi.Input
+
+	ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionOutput() GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionOutput
+	ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionOutputWithContext(context.Context) GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionOutput
+}
+
+type GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArgs struct {
+	// Type of defined monitoring template.
+	ConditionType pulumi.StringInput `pulumi:"conditionType"`
+	// Monitoring template conditions.
+	Conditions GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArrayInput `pulumi:"conditions"`
+	// The metric name.
+	MetricName pulumi.StringInput `pulumi:"metricName"`
+}
+
+func (GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmCondition)(nil)).Elem()
+}
+
+func (i GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArgs) ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionOutput() GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionOutput {
+	return i.ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionOutputWithContext(context.Background())
+}
+
+func (i GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArgs) ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionOutputWithContext(ctx context.Context) GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionOutput)
+}
+
+// GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArrayInput is an input type that accepts GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArray and GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArrayOutput values.
+// You can construct a concrete instance of `GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArrayInput` via:
+//
+//	GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArray{ GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArgs{...} }
+type GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArrayInput interface {
+	pulumi.Input
+
+	ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArrayOutput() GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArrayOutput
+	ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArrayOutputWithContext(context.Context) GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArrayOutput
+}
+
+type GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArray []GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionInput
+
+func (GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmCondition)(nil)).Elem()
+}
+
+func (i GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArray) ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArrayOutput() GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArrayOutput {
+	return i.ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArray) ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArrayOutputWithContext(ctx context.Context) GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArrayOutput)
+}
+
+type GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionOutput struct{ *pulumi.OutputState }
+
+func (GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmCondition)(nil)).Elem()
+}
+
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionOutput) ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionOutput() GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionOutput {
+	return o
+}
+
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionOutput) ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionOutputWithContext(ctx context.Context) GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionOutput {
+	return o
+}
+
+// Type of defined monitoring template.
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionOutput) ConditionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmCondition) string {
+		return v.ConditionType
+	}).(pulumi.StringOutput)
+}
+
+// Monitoring template conditions.
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionOutput) Conditions() GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArrayOutput {
+	return o.ApplyT(func(v GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmCondition) []GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionCondition {
+		return v.Conditions
+	}).(GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArrayOutput)
+}
+
+// The metric name.
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionOutput) MetricName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmCondition) string {
+		return v.MetricName
+	}).(pulumi.StringOutput)
+}
+
+type GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmCondition)(nil)).Elem()
+}
+
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArrayOutput) ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArrayOutput() GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArrayOutput {
+	return o
+}
+
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArrayOutput) ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArrayOutputWithContext(ctx context.Context) GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArrayOutput {
+	return o
+}
+
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArrayOutput) Index(i pulumi.IntInput) GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmCondition {
+		return vs[0].([]GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmCondition)[vs[1].(int)]
+	}).(GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionOutput)
+}
+
+type GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionCondition struct {
+	// The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.
+	Body string `pulumi:"body"`
+	// The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+	Query string `pulumi:"query"`
+	// Severity - Critical/Warning
+	Severity string `pulumi:"severity"`
+	// Whether the note need to add into bottom of the body for mapping the alarms information with template or not.
+	ShouldAppendNote bool `pulumi:"shouldAppendNote"`
+	// Whether the URL need to add into bottom of the body for mapping the alarms information with template or not.
+	ShouldAppendUrl bool `pulumi:"shouldAppendUrl"`
+	// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING".
+	TriggerDelay string `pulumi:"triggerDelay"`
+}
+
+// GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionInput is an input type that accepts GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArgs and GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionOutput values.
+// You can construct a concrete instance of `GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionInput` via:
+//
+//	GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArgs{...}
+type GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionInput interface {
+	pulumi.Input
+
+	ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionOutput() GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionOutput
+	ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionOutputWithContext(context.Context) GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionOutput
+}
+
+type GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArgs struct {
+	// The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.
+	Body pulumi.StringInput `pulumi:"body"`
+	// The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+	Query pulumi.StringInput `pulumi:"query"`
+	// Severity - Critical/Warning
+	Severity pulumi.StringInput `pulumi:"severity"`
+	// Whether the note need to add into bottom of the body for mapping the alarms information with template or not.
+	ShouldAppendNote pulumi.BoolInput `pulumi:"shouldAppendNote"`
+	// Whether the URL need to add into bottom of the body for mapping the alarms information with template or not.
+	ShouldAppendUrl pulumi.BoolInput `pulumi:"shouldAppendUrl"`
+	// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING".
+	TriggerDelay pulumi.StringInput `pulumi:"triggerDelay"`
+}
+
+func (GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionCondition)(nil)).Elem()
+}
+
+func (i GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArgs) ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionOutput() GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionOutput {
+	return i.ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionOutputWithContext(context.Background())
+}
+
+func (i GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArgs) ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionOutputWithContext(ctx context.Context) GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionOutput)
+}
+
+// GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArrayInput is an input type that accepts GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArray and GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArrayOutput values.
+// You can construct a concrete instance of `GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArrayInput` via:
+//
+//	GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArray{ GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArgs{...} }
+type GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArrayInput interface {
+	pulumi.Input
+
+	ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArrayOutput() GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArrayOutput
+	ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArrayOutputWithContext(context.Context) GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArrayOutput
+}
+
+type GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArray []GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionInput
+
+func (GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionCondition)(nil)).Elem()
+}
+
+func (i GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArray) ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArrayOutput() GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArrayOutput {
+	return i.ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArray) ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArrayOutputWithContext(ctx context.Context) GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArrayOutput)
+}
+
+type GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionOutput struct{ *pulumi.OutputState }
+
+func (GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionCondition)(nil)).Elem()
+}
+
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionOutput) ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionOutput() GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionOutput {
+	return o
+}
+
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionOutput) ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionOutputWithContext(ctx context.Context) GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionOutput {
+	return o
+}
+
+// The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionOutput) Body() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionCondition) string {
+		return v.Body
+	}).(pulumi.StringOutput)
+}
+
+// The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionOutput) Query() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionCondition) string {
+		return v.Query
+	}).(pulumi.StringOutput)
+}
+
+// Severity - Critical/Warning
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionOutput) Severity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionCondition) string {
+		return v.Severity
+	}).(pulumi.StringOutput)
+}
+
+// Whether the note need to add into bottom of the body for mapping the alarms information with template or not.
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionOutput) ShouldAppendNote() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionCondition) bool {
+		return v.ShouldAppendNote
+	}).(pulumi.BoolOutput)
+}
+
+// Whether the URL need to add into bottom of the body for mapping the alarms information with template or not.
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionOutput) ShouldAppendUrl() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionCondition) bool {
+		return v.ShouldAppendUrl
+	}).(pulumi.BoolOutput)
+}
+
+// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING".
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionOutput) TriggerDelay() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionCondition) string {
+		return v.TriggerDelay
+	}).(pulumi.StringOutput)
+}
+
+type GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionCondition)(nil)).Elem()
+}
+
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArrayOutput) ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArrayOutput() GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArrayOutput {
+	return o
+}
+
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArrayOutput) ToGetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArrayOutputWithContext(ctx context.Context) GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArrayOutput {
+	return o
+}
+
+func (o GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArrayOutput) Index(i pulumi.IntInput) GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionCondition {
+		return vs[0].([]GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionCondition)[vs[1].(int)]
+	}).(GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionOutput)
+}
+
+type GetDefinedMonitoringTemplatesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDefinedMonitoringTemplatesFilterInput is an input type that accepts GetDefinedMonitoringTemplatesFilterArgs and GetDefinedMonitoringTemplatesFilterOutput values.
+// You can construct a concrete instance of `GetDefinedMonitoringTemplatesFilterInput` via:
+//
+//	GetDefinedMonitoringTemplatesFilterArgs{...}
+type GetDefinedMonitoringTemplatesFilterInput interface {
+	pulumi.Input
+
+	ToGetDefinedMonitoringTemplatesFilterOutput() GetDefinedMonitoringTemplatesFilterOutput
+	ToGetDefinedMonitoringTemplatesFilterOutputWithContext(context.Context) GetDefinedMonitoringTemplatesFilterOutput
+}
+
+type GetDefinedMonitoringTemplatesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDefinedMonitoringTemplatesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefinedMonitoringTemplatesFilter)(nil)).Elem()
+}
+
+func (i GetDefinedMonitoringTemplatesFilterArgs) ToGetDefinedMonitoringTemplatesFilterOutput() GetDefinedMonitoringTemplatesFilterOutput {
+	return i.ToGetDefinedMonitoringTemplatesFilterOutputWithContext(context.Background())
+}
+
+func (i GetDefinedMonitoringTemplatesFilterArgs) ToGetDefinedMonitoringTemplatesFilterOutputWithContext(ctx context.Context) GetDefinedMonitoringTemplatesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefinedMonitoringTemplatesFilterOutput)
+}
+
+// GetDefinedMonitoringTemplatesFilterArrayInput is an input type that accepts GetDefinedMonitoringTemplatesFilterArray and GetDefinedMonitoringTemplatesFilterArrayOutput values.
+// You can construct a concrete instance of `GetDefinedMonitoringTemplatesFilterArrayInput` via:
+//
+//	GetDefinedMonitoringTemplatesFilterArray{ GetDefinedMonitoringTemplatesFilterArgs{...} }
+type GetDefinedMonitoringTemplatesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDefinedMonitoringTemplatesFilterArrayOutput() GetDefinedMonitoringTemplatesFilterArrayOutput
+	ToGetDefinedMonitoringTemplatesFilterArrayOutputWithContext(context.Context) GetDefinedMonitoringTemplatesFilterArrayOutput
+}
+
+type GetDefinedMonitoringTemplatesFilterArray []GetDefinedMonitoringTemplatesFilterInput
+
+func (GetDefinedMonitoringTemplatesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDefinedMonitoringTemplatesFilter)(nil)).Elem()
+}
+
+func (i GetDefinedMonitoringTemplatesFilterArray) ToGetDefinedMonitoringTemplatesFilterArrayOutput() GetDefinedMonitoringTemplatesFilterArrayOutput {
+	return i.ToGetDefinedMonitoringTemplatesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDefinedMonitoringTemplatesFilterArray) ToGetDefinedMonitoringTemplatesFilterArrayOutputWithContext(ctx context.Context) GetDefinedMonitoringTemplatesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefinedMonitoringTemplatesFilterArrayOutput)
+}
+
+type GetDefinedMonitoringTemplatesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDefinedMonitoringTemplatesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefinedMonitoringTemplatesFilter)(nil)).Elem()
+}
+
+func (o GetDefinedMonitoringTemplatesFilterOutput) ToGetDefinedMonitoringTemplatesFilterOutput() GetDefinedMonitoringTemplatesFilterOutput {
+	return o
+}
+
+func (o GetDefinedMonitoringTemplatesFilterOutput) ToGetDefinedMonitoringTemplatesFilterOutputWithContext(ctx context.Context) GetDefinedMonitoringTemplatesFilterOutput {
+	return o
+}
+
+func (o GetDefinedMonitoringTemplatesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefinedMonitoringTemplatesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDefinedMonitoringTemplatesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDefinedMonitoringTemplatesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDefinedMonitoringTemplatesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDefinedMonitoringTemplatesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDefinedMonitoringTemplatesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDefinedMonitoringTemplatesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDefinedMonitoringTemplatesFilter)(nil)).Elem()
+}
+
+func (o GetDefinedMonitoringTemplatesFilterArrayOutput) ToGetDefinedMonitoringTemplatesFilterArrayOutput() GetDefinedMonitoringTemplatesFilterArrayOutput {
+	return o
+}
+
+func (o GetDefinedMonitoringTemplatesFilterArrayOutput) ToGetDefinedMonitoringTemplatesFilterArrayOutputWithContext(ctx context.Context) GetDefinedMonitoringTemplatesFilterArrayOutput {
+	return o
+}
+
+func (o GetDefinedMonitoringTemplatesFilterArrayOutput) Index(i pulumi.IntInput) GetDefinedMonitoringTemplatesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDefinedMonitoringTemplatesFilter {
+		return vs[0].([]GetDefinedMonitoringTemplatesFilter)[vs[1].(int)]
+	}).(GetDefinedMonitoringTemplatesFilterOutput)
 }
 
 type GetDiscoveryJobDiscoveryDetail struct {
@@ -11343,7 +12284,7 @@ type GetMetricExtensionsMetricExtensionCollectionItem struct {
 	Description string `pulumi:"description"`
 	// Display name of the metric.
 	DisplayName string `pulumi:"displayName"`
-	// List of resource objects on which this metric extension is enabled.
+	// List of resource details objects having resourceIds on which this metric extension is enabled.
 	EnabledOnResources []GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource `pulumi:"enabledOnResources"`
 	// Count of resources on which this metric extension is enabled.
 	EnabledOnResourcesCount int `pulumi:"enabledOnResourcesCount"`
@@ -11398,7 +12339,7 @@ type GetMetricExtensionsMetricExtensionCollectionItemArgs struct {
 	Description pulumi.StringInput `pulumi:"description"`
 	// Display name of the metric.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// List of resource objects on which this metric extension is enabled.
+	// List of resource details objects having resourceIds on which this metric extension is enabled.
 	EnabledOnResources GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayInput `pulumi:"enabledOnResources"`
 	// Count of resources on which this metric extension is enabled.
 	EnabledOnResourcesCount pulumi.IntInput `pulumi:"enabledOnResourcesCount"`
@@ -11510,7 +12451,7 @@ func (o GetMetricExtensionsMetricExtensionCollectionItemOutput) DisplayName() pu
 	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// List of resource objects on which this metric extension is enabled.
+// List of resource details objects having resourceIds on which this metric extension is enabled.
 func (o GetMetricExtensionsMetricExtensionCollectionItemOutput) EnabledOnResources() GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayOutput {
 	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItem) []GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource {
 		return v.EnabledOnResources
@@ -14750,6 +15691,8 @@ type GetMonitoredResourceTypeMetadata struct {
 	ValidPropertiesForUpdates []string `pulumi:"validPropertiesForUpdates"`
 	// List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{"osType": "Linux,Windows,Solaris", "osVersion": "v6.0,v7.0"}`
 	ValidPropertyValues map[string]string `pulumi:"validPropertyValues"`
+	// List of valid sub-resource types for a composite resource type. The sub-resource types will be obtained from the valid association pairs corresponding to the composite resource types. It will be empty for non composite resource types
+	ValidSubResourceTypes []string `pulumi:"validSubResourceTypes"`
 }
 
 // GetMonitoredResourceTypeMetadataInput is an input type that accepts GetMonitoredResourceTypeMetadataArgs and GetMonitoredResourceTypeMetadataOutput values.
@@ -14779,6 +15722,8 @@ type GetMonitoredResourceTypeMetadataArgs struct {
 	ValidPropertiesForUpdates pulumi.StringArrayInput `pulumi:"validPropertiesForUpdates"`
 	// List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{"osType": "Linux,Windows,Solaris", "osVersion": "v6.0,v7.0"}`
 	ValidPropertyValues pulumi.StringMapInput `pulumi:"validPropertyValues"`
+	// List of valid sub-resource types for a composite resource type. The sub-resource types will be obtained from the valid association pairs corresponding to the composite resource types. It will be empty for non composite resource types
+	ValidSubResourceTypes pulumi.StringArrayInput `pulumi:"validSubResourceTypes"`
 }
 
 func (GetMonitoredResourceTypeMetadataArgs) ElementType() reflect.Type {
@@ -14868,6 +15813,11 @@ func (o GetMonitoredResourceTypeMetadataOutput) ValidPropertiesForUpdates() pulu
 // List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{"osType": "Linux,Windows,Solaris", "osVersion": "v6.0,v7.0"}`
 func (o GetMonitoredResourceTypeMetadataOutput) ValidPropertyValues() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetMonitoredResourceTypeMetadata) map[string]string { return v.ValidPropertyValues }).(pulumi.StringMapOutput)
+}
+
+// List of valid sub-resource types for a composite resource type. The sub-resource types will be obtained from the valid association pairs corresponding to the composite resource types. It will be empty for non composite resource types
+func (o GetMonitoredResourceTypeMetadataOutput) ValidSubResourceTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypeMetadata) []string { return v.ValidSubResourceTypes }).(pulumi.StringArrayOutput)
 }
 
 type GetMonitoredResourceTypeMetadataArrayOutput struct{ *pulumi.OutputState }
@@ -15193,6 +16143,8 @@ func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayOutput) In
 }
 
 type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem struct {
+	// Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
+	AdditionalNamespaceMap map[string]string `pulumi:"additionalNamespaceMap"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy for which  monitored resource types should be listed.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -15237,6 +16189,8 @@ type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemInput interfac
 }
 
 type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArgs struct {
+	// Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
+	AdditionalNamespaceMap pulumi.StringMapInput `pulumi:"additionalNamespaceMap"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy for which  monitored resource types should be listed.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -15318,6 +16272,13 @@ func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) ToG
 
 func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput {
 	return o
+}
+
+// Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) AdditionalNamespaceMap() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem) map[string]string {
+		return v.AdditionalNamespaceMap
+	}).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy for which  monitored resource types should be listed.
@@ -15441,6 +16402,8 @@ type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata struc
 	ValidPropertiesForUpdates []string `pulumi:"validPropertiesForUpdates"`
 	// List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{"osType": "Linux,Windows,Solaris", "osVersion": "v6.0,v7.0"}`
 	ValidPropertyValues map[string]string `pulumi:"validPropertyValues"`
+	// List of valid sub-resource types for a composite resource type. The sub-resource types will be obtained from the valid association pairs corresponding to the composite resource types. It will be empty for non composite resource types
+	ValidSubResourceTypes []string `pulumi:"validSubResourceTypes"`
 }
 
 // GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataInput is an input type that accepts GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArgs and GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput values.
@@ -15470,6 +16433,8 @@ type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArgs s
 	ValidPropertiesForUpdates pulumi.StringArrayInput `pulumi:"validPropertiesForUpdates"`
 	// List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{"osType": "Linux,Windows,Solaris", "osVersion": "v6.0,v7.0"}`
 	ValidPropertyValues pulumi.StringMapInput `pulumi:"validPropertyValues"`
+	// List of valid sub-resource types for a composite resource type. The sub-resource types will be obtained from the valid association pairs corresponding to the composite resource types. It will be empty for non composite resource types
+	ValidSubResourceTypes pulumi.StringArrayInput `pulumi:"validSubResourceTypes"`
 }
 
 func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArgs) ElementType() reflect.Type {
@@ -15569,6 +16534,13 @@ func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOut
 	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata) map[string]string {
 		return v.ValidPropertyValues
 	}).(pulumi.StringMapOutput)
+}
+
+// List of valid sub-resource types for a composite resource type. The sub-resource types will be obtained from the valid association pairs corresponding to the composite resource types. It will be empty for non composite resource types
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput) ValidSubResourceTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata) []string {
+		return v.ValidSubResourceTypes
+	}).(pulumi.StringArrayOutput)
 }
 
 type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayOutput struct{ *pulumi.OutputState }
@@ -17506,6 +18478,1451 @@ func (o GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutput)
 	}).(GetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutput)
 }
 
+type GetMonitoringTemplateAlarmConditionCondition struct {
+	// The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.
+	Body string `pulumi:"body"`
+	// The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+	Query string `pulumi:"query"`
+	// Severity - Critical/Warning
+	Severity string `pulumi:"severity"`
+	// Whether the note need to add into bottom of the body for mapping the alarms information with template or not.
+	ShouldAppendNote bool `pulumi:"shouldAppendNote"`
+	// Whether the URL need to add into bottom of the body for mapping the alarms information with template or not.
+	ShouldAppendUrl bool `pulumi:"shouldAppendUrl"`
+	// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING".
+	TriggerDelay string `pulumi:"triggerDelay"`
+}
+
+// GetMonitoringTemplateAlarmConditionConditionInput is an input type that accepts GetMonitoringTemplateAlarmConditionConditionArgs and GetMonitoringTemplateAlarmConditionConditionOutput values.
+// You can construct a concrete instance of `GetMonitoringTemplateAlarmConditionConditionInput` via:
+//
+//	GetMonitoringTemplateAlarmConditionConditionArgs{...}
+type GetMonitoringTemplateAlarmConditionConditionInput interface {
+	pulumi.Input
+
+	ToGetMonitoringTemplateAlarmConditionConditionOutput() GetMonitoringTemplateAlarmConditionConditionOutput
+	ToGetMonitoringTemplateAlarmConditionConditionOutputWithContext(context.Context) GetMonitoringTemplateAlarmConditionConditionOutput
+}
+
+type GetMonitoringTemplateAlarmConditionConditionArgs struct {
+	// The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.
+	Body pulumi.StringInput `pulumi:"body"`
+	// The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+	Query pulumi.StringInput `pulumi:"query"`
+	// Severity - Critical/Warning
+	Severity pulumi.StringInput `pulumi:"severity"`
+	// Whether the note need to add into bottom of the body for mapping the alarms information with template or not.
+	ShouldAppendNote pulumi.BoolInput `pulumi:"shouldAppendNote"`
+	// Whether the URL need to add into bottom of the body for mapping the alarms information with template or not.
+	ShouldAppendUrl pulumi.BoolInput `pulumi:"shouldAppendUrl"`
+	// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING".
+	TriggerDelay pulumi.StringInput `pulumi:"triggerDelay"`
+}
+
+func (GetMonitoringTemplateAlarmConditionConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoringTemplateAlarmConditionCondition)(nil)).Elem()
+}
+
+func (i GetMonitoringTemplateAlarmConditionConditionArgs) ToGetMonitoringTemplateAlarmConditionConditionOutput() GetMonitoringTemplateAlarmConditionConditionOutput {
+	return i.ToGetMonitoringTemplateAlarmConditionConditionOutputWithContext(context.Background())
+}
+
+func (i GetMonitoringTemplateAlarmConditionConditionArgs) ToGetMonitoringTemplateAlarmConditionConditionOutputWithContext(ctx context.Context) GetMonitoringTemplateAlarmConditionConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoringTemplateAlarmConditionConditionOutput)
+}
+
+// GetMonitoringTemplateAlarmConditionConditionArrayInput is an input type that accepts GetMonitoringTemplateAlarmConditionConditionArray and GetMonitoringTemplateAlarmConditionConditionArrayOutput values.
+// You can construct a concrete instance of `GetMonitoringTemplateAlarmConditionConditionArrayInput` via:
+//
+//	GetMonitoringTemplateAlarmConditionConditionArray{ GetMonitoringTemplateAlarmConditionConditionArgs{...} }
+type GetMonitoringTemplateAlarmConditionConditionArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoringTemplateAlarmConditionConditionArrayOutput() GetMonitoringTemplateAlarmConditionConditionArrayOutput
+	ToGetMonitoringTemplateAlarmConditionConditionArrayOutputWithContext(context.Context) GetMonitoringTemplateAlarmConditionConditionArrayOutput
+}
+
+type GetMonitoringTemplateAlarmConditionConditionArray []GetMonitoringTemplateAlarmConditionConditionInput
+
+func (GetMonitoringTemplateAlarmConditionConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoringTemplateAlarmConditionCondition)(nil)).Elem()
+}
+
+func (i GetMonitoringTemplateAlarmConditionConditionArray) ToGetMonitoringTemplateAlarmConditionConditionArrayOutput() GetMonitoringTemplateAlarmConditionConditionArrayOutput {
+	return i.ToGetMonitoringTemplateAlarmConditionConditionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoringTemplateAlarmConditionConditionArray) ToGetMonitoringTemplateAlarmConditionConditionArrayOutputWithContext(ctx context.Context) GetMonitoringTemplateAlarmConditionConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoringTemplateAlarmConditionConditionArrayOutput)
+}
+
+type GetMonitoringTemplateAlarmConditionConditionOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoringTemplateAlarmConditionConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoringTemplateAlarmConditionCondition)(nil)).Elem()
+}
+
+func (o GetMonitoringTemplateAlarmConditionConditionOutput) ToGetMonitoringTemplateAlarmConditionConditionOutput() GetMonitoringTemplateAlarmConditionConditionOutput {
+	return o
+}
+
+func (o GetMonitoringTemplateAlarmConditionConditionOutput) ToGetMonitoringTemplateAlarmConditionConditionOutputWithContext(ctx context.Context) GetMonitoringTemplateAlarmConditionConditionOutput {
+	return o
+}
+
+// The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.
+func (o GetMonitoringTemplateAlarmConditionConditionOutput) Body() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplateAlarmConditionCondition) string { return v.Body }).(pulumi.StringOutput)
+}
+
+// The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+func (o GetMonitoringTemplateAlarmConditionConditionOutput) Query() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplateAlarmConditionCondition) string { return v.Query }).(pulumi.StringOutput)
+}
+
+// Severity - Critical/Warning
+func (o GetMonitoringTemplateAlarmConditionConditionOutput) Severity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplateAlarmConditionCondition) string { return v.Severity }).(pulumi.StringOutput)
+}
+
+// Whether the note need to add into bottom of the body for mapping the alarms information with template or not.
+func (o GetMonitoringTemplateAlarmConditionConditionOutput) ShouldAppendNote() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMonitoringTemplateAlarmConditionCondition) bool { return v.ShouldAppendNote }).(pulumi.BoolOutput)
+}
+
+// Whether the URL need to add into bottom of the body for mapping the alarms information with template or not.
+func (o GetMonitoringTemplateAlarmConditionConditionOutput) ShouldAppendUrl() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMonitoringTemplateAlarmConditionCondition) bool { return v.ShouldAppendUrl }).(pulumi.BoolOutput)
+}
+
+// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING".
+func (o GetMonitoringTemplateAlarmConditionConditionOutput) TriggerDelay() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplateAlarmConditionCondition) string { return v.TriggerDelay }).(pulumi.StringOutput)
+}
+
+type GetMonitoringTemplateAlarmConditionConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoringTemplateAlarmConditionConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoringTemplateAlarmConditionCondition)(nil)).Elem()
+}
+
+func (o GetMonitoringTemplateAlarmConditionConditionArrayOutput) ToGetMonitoringTemplateAlarmConditionConditionArrayOutput() GetMonitoringTemplateAlarmConditionConditionArrayOutput {
+	return o
+}
+
+func (o GetMonitoringTemplateAlarmConditionConditionArrayOutput) ToGetMonitoringTemplateAlarmConditionConditionArrayOutputWithContext(ctx context.Context) GetMonitoringTemplateAlarmConditionConditionArrayOutput {
+	return o
+}
+
+func (o GetMonitoringTemplateAlarmConditionConditionArrayOutput) Index(i pulumi.IntInput) GetMonitoringTemplateAlarmConditionConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoringTemplateAlarmConditionCondition {
+		return vs[0].([]GetMonitoringTemplateAlarmConditionCondition)[vs[1].(int)]
+	}).(GetMonitoringTemplateAlarmConditionConditionOutput)
+}
+
+type GetMonitoringTemplateAlarmConditionsAlarmConditionCollection struct {
+	Items []GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItem `pulumi:"items"`
+}
+
+// GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionInput is an input type that accepts GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArgs and GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionOutput values.
+// You can construct a concrete instance of `GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionInput` via:
+//
+//	GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArgs{...}
+type GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionInput interface {
+	pulumi.Input
+
+	ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionOutput() GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionOutput
+	ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionOutputWithContext(context.Context) GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionOutput
+}
+
+type GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArgs struct {
+	Items GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoringTemplateAlarmConditionsAlarmConditionCollection)(nil)).Elem()
+}
+
+func (i GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArgs) ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionOutput() GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionOutput {
+	return i.ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArgs) ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionOutputWithContext(ctx context.Context) GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionOutput)
+}
+
+// GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArrayInput is an input type that accepts GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArray and GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArrayInput` via:
+//
+//	GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArray{ GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArgs{...} }
+type GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArrayOutput() GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArrayOutput
+	ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArrayOutputWithContext(context.Context) GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArrayOutput
+}
+
+type GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArray []GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionInput
+
+func (GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoringTemplateAlarmConditionsAlarmConditionCollection)(nil)).Elem()
+}
+
+func (i GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArray) ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArrayOutput() GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArrayOutput {
+	return i.ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArray) ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArrayOutputWithContext(ctx context.Context) GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArrayOutput)
+}
+
+type GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoringTemplateAlarmConditionsAlarmConditionCollection)(nil)).Elem()
+}
+
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionOutput) ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionOutput() GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionOutput {
+	return o
+}
+
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionOutput) ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionOutputWithContext(ctx context.Context) GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionOutput {
+	return o
+}
+
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionOutput) Items() GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMonitoringTemplateAlarmConditionsAlarmConditionCollection) []GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItem {
+		return v.Items
+	}).(GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArrayOutput)
+}
+
+type GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoringTemplateAlarmConditionsAlarmConditionCollection)(nil)).Elem()
+}
+
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArrayOutput) ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArrayOutput() GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArrayOutput {
+	return o
+}
+
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArrayOutput) ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArrayOutputWithContext(ctx context.Context) GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArrayOutput {
+	return o
+}
+
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArrayOutput) Index(i pulumi.IntInput) GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoringTemplateAlarmConditionsAlarmConditionCollection {
+		return vs[0].([]GetMonitoringTemplateAlarmConditionsAlarmConditionCollection)[vs[1].(int)]
+	}).(GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionOutput)
+}
+
+type GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItem struct {
+	// The OCID of the composite resource type like EBS/PEOPLE_SOFT.
+	CompositeType string `pulumi:"compositeType"`
+	// Type of defined monitoring template.
+	ConditionType string `pulumi:"conditionType"`
+	// Monitoring template conditions
+	Conditions []GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemCondition `pulumi:"conditions"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Alarm Condition.
+	Id string `pulumi:"id"`
+	// metricName filter.
+	MetricName string `pulumi:"metricName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitoring template.
+	MonitoringTemplateId string `pulumi:"monitoringTemplateId"`
+	// The stack monitoring service or application emitting the metric that is evaluated by the alarm.
+	Namespace string `pulumi:"namespace"`
+	// The resource type OCID.
+	ResourceType string `pulumi:"resourceType"`
+	// A filter to return alarm condition based on Lifecycle State.
+	State string `pulumi:"state"`
+	// A filter to return alarm condition based on input status.
+	Status string `pulumi:"status"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the alarm condition was created. Format defined by RFC3339.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the alarm condition was updated. Format defined by RFC3339.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemInput is an input type that accepts GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArgs and GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutput values.
+// You can construct a concrete instance of `GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemInput` via:
+//
+//	GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArgs{...}
+type GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutput() GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutput
+	ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutputWithContext(context.Context) GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutput
+}
+
+type GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArgs struct {
+	// The OCID of the composite resource type like EBS/PEOPLE_SOFT.
+	CompositeType pulumi.StringInput `pulumi:"compositeType"`
+	// Type of defined monitoring template.
+	ConditionType pulumi.StringInput `pulumi:"conditionType"`
+	// Monitoring template conditions
+	Conditions GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArrayInput `pulumi:"conditions"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Alarm Condition.
+	Id pulumi.StringInput `pulumi:"id"`
+	// metricName filter.
+	MetricName pulumi.StringInput `pulumi:"metricName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitoring template.
+	MonitoringTemplateId pulumi.StringInput `pulumi:"monitoringTemplateId"`
+	// The stack monitoring service or application emitting the metric that is evaluated by the alarm.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The resource type OCID.
+	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	// A filter to return alarm condition based on Lifecycle State.
+	State pulumi.StringInput `pulumi:"state"`
+	// A filter to return alarm condition based on input status.
+	Status pulumi.StringInput `pulumi:"status"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the alarm condition was created. Format defined by RFC3339.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the alarm condition was updated. Format defined by RFC3339.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItem)(nil)).Elem()
+}
+
+func (i GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArgs) ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutput() GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutput {
+	return i.ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArgs) ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutputWithContext(ctx context.Context) GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutput)
+}
+
+// GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArrayInput is an input type that accepts GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArray and GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArrayInput` via:
+//
+//	GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArray{ GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArgs{...} }
+type GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArrayOutput() GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArrayOutput
+	ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArrayOutputWithContext(context.Context) GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArrayOutput
+}
+
+type GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArray []GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemInput
+
+func (GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItem)(nil)).Elem()
+}
+
+func (i GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArray) ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArrayOutput() GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArrayOutput {
+	return i.ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArray) ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArrayOutputWithContext(ctx context.Context) GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArrayOutput)
+}
+
+type GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItem)(nil)).Elem()
+}
+
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutput) ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutput() GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutput {
+	return o
+}
+
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutput) ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutputWithContext(ctx context.Context) GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutput {
+	return o
+}
+
+// The OCID of the composite resource type like EBS/PEOPLE_SOFT.
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutput) CompositeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItem) string {
+		return v.CompositeType
+	}).(pulumi.StringOutput)
+}
+
+// Type of defined monitoring template.
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutput) ConditionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItem) string {
+		return v.ConditionType
+	}).(pulumi.StringOutput)
+}
+
+// Monitoring template conditions
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutput) Conditions() GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArrayOutput {
+	return o.ApplyT(func(v GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItem) []GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemCondition {
+		return v.Conditions
+	}).(GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArrayOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Alarm Condition.
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// metricName filter.
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutput) MetricName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItem) string { return v.MetricName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitoring template.
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutput) MonitoringTemplateId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItem) string {
+		return v.MonitoringTemplateId
+	}).(pulumi.StringOutput)
+}
+
+// The stack monitoring service or application emitting the metric that is evaluated by the alarm.
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItem) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The resource type OCID.
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItem) string { return v.ResourceType }).(pulumi.StringOutput)
+}
+
+// A filter to return alarm condition based on Lifecycle State.
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// A filter to return alarm condition based on input status.
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The date and time the alarm condition was created. Format defined by RFC3339.
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the alarm condition was updated. Format defined by RFC3339.
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItem)(nil)).Elem()
+}
+
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArrayOutput) ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArrayOutput() GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArrayOutput) ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArrayOutputWithContext(ctx context.Context) GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItem {
+		return vs[0].([]GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItem)[vs[1].(int)]
+	}).(GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutput)
+}
+
+type GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemCondition struct {
+	// The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.
+	Body string `pulumi:"body"`
+	// The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+	Query string `pulumi:"query"`
+	// Severity - Critical/Warning
+	Severity string `pulumi:"severity"`
+	// Whether the note need to add into bottom of the body for mapping the alarms information with template or not.
+	ShouldAppendNote bool `pulumi:"shouldAppendNote"`
+	// Whether the URL need to add into bottom of the body for mapping the alarms information with template or not.
+	ShouldAppendUrl bool `pulumi:"shouldAppendUrl"`
+	// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING".
+	TriggerDelay string `pulumi:"triggerDelay"`
+}
+
+// GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionInput is an input type that accepts GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArgs and GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionOutput values.
+// You can construct a concrete instance of `GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionInput` via:
+//
+//	GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArgs{...}
+type GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionInput interface {
+	pulumi.Input
+
+	ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionOutput() GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionOutput
+	ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionOutputWithContext(context.Context) GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionOutput
+}
+
+type GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArgs struct {
+	// The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.
+	Body pulumi.StringInput `pulumi:"body"`
+	// The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+	Query pulumi.StringInput `pulumi:"query"`
+	// Severity - Critical/Warning
+	Severity pulumi.StringInput `pulumi:"severity"`
+	// Whether the note need to add into bottom of the body for mapping the alarms information with template or not.
+	ShouldAppendNote pulumi.BoolInput `pulumi:"shouldAppendNote"`
+	// Whether the URL need to add into bottom of the body for mapping the alarms information with template or not.
+	ShouldAppendUrl pulumi.BoolInput `pulumi:"shouldAppendUrl"`
+	// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING".
+	TriggerDelay pulumi.StringInput `pulumi:"triggerDelay"`
+}
+
+func (GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemCondition)(nil)).Elem()
+}
+
+func (i GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArgs) ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionOutput() GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionOutput {
+	return i.ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionOutputWithContext(context.Background())
+}
+
+func (i GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArgs) ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionOutputWithContext(ctx context.Context) GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionOutput)
+}
+
+// GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArrayInput is an input type that accepts GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArray and GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArrayOutput values.
+// You can construct a concrete instance of `GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArrayInput` via:
+//
+//	GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArray{ GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArgs{...} }
+type GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArrayOutput() GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArrayOutput
+	ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArrayOutputWithContext(context.Context) GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArrayOutput
+}
+
+type GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArray []GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionInput
+
+func (GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemCondition)(nil)).Elem()
+}
+
+func (i GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArray) ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArrayOutput() GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArrayOutput {
+	return i.ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArray) ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArrayOutputWithContext(ctx context.Context) GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArrayOutput)
+}
+
+type GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemCondition)(nil)).Elem()
+}
+
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionOutput) ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionOutput() GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionOutput {
+	return o
+}
+
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionOutput) ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionOutputWithContext(ctx context.Context) GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionOutput {
+	return o
+}
+
+// The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionOutput) Body() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemCondition) string {
+		return v.Body
+	}).(pulumi.StringOutput)
+}
+
+// The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionOutput) Query() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemCondition) string {
+		return v.Query
+	}).(pulumi.StringOutput)
+}
+
+// Severity - Critical/Warning
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionOutput) Severity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemCondition) string {
+		return v.Severity
+	}).(pulumi.StringOutput)
+}
+
+// Whether the note need to add into bottom of the body for mapping the alarms information with template or not.
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionOutput) ShouldAppendNote() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemCondition) bool {
+		return v.ShouldAppendNote
+	}).(pulumi.BoolOutput)
+}
+
+// Whether the URL need to add into bottom of the body for mapping the alarms information with template or not.
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionOutput) ShouldAppendUrl() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemCondition) bool {
+		return v.ShouldAppendUrl
+	}).(pulumi.BoolOutput)
+}
+
+// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING".
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionOutput) TriggerDelay() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemCondition) string {
+		return v.TriggerDelay
+	}).(pulumi.StringOutput)
+}
+
+type GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemCondition)(nil)).Elem()
+}
+
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArrayOutput) ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArrayOutput() GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArrayOutput {
+	return o
+}
+
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArrayOutput) ToGetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArrayOutputWithContext(ctx context.Context) GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArrayOutput {
+	return o
+}
+
+func (o GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArrayOutput) Index(i pulumi.IntInput) GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemCondition {
+		return vs[0].([]GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemCondition)[vs[1].(int)]
+	}).(GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionOutput)
+}
+
+type GetMonitoringTemplateAlarmConditionsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetMonitoringTemplateAlarmConditionsFilterInput is an input type that accepts GetMonitoringTemplateAlarmConditionsFilterArgs and GetMonitoringTemplateAlarmConditionsFilterOutput values.
+// You can construct a concrete instance of `GetMonitoringTemplateAlarmConditionsFilterInput` via:
+//
+//	GetMonitoringTemplateAlarmConditionsFilterArgs{...}
+type GetMonitoringTemplateAlarmConditionsFilterInput interface {
+	pulumi.Input
+
+	ToGetMonitoringTemplateAlarmConditionsFilterOutput() GetMonitoringTemplateAlarmConditionsFilterOutput
+	ToGetMonitoringTemplateAlarmConditionsFilterOutputWithContext(context.Context) GetMonitoringTemplateAlarmConditionsFilterOutput
+}
+
+type GetMonitoringTemplateAlarmConditionsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetMonitoringTemplateAlarmConditionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoringTemplateAlarmConditionsFilter)(nil)).Elem()
+}
+
+func (i GetMonitoringTemplateAlarmConditionsFilterArgs) ToGetMonitoringTemplateAlarmConditionsFilterOutput() GetMonitoringTemplateAlarmConditionsFilterOutput {
+	return i.ToGetMonitoringTemplateAlarmConditionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetMonitoringTemplateAlarmConditionsFilterArgs) ToGetMonitoringTemplateAlarmConditionsFilterOutputWithContext(ctx context.Context) GetMonitoringTemplateAlarmConditionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoringTemplateAlarmConditionsFilterOutput)
+}
+
+// GetMonitoringTemplateAlarmConditionsFilterArrayInput is an input type that accepts GetMonitoringTemplateAlarmConditionsFilterArray and GetMonitoringTemplateAlarmConditionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetMonitoringTemplateAlarmConditionsFilterArrayInput` via:
+//
+//	GetMonitoringTemplateAlarmConditionsFilterArray{ GetMonitoringTemplateAlarmConditionsFilterArgs{...} }
+type GetMonitoringTemplateAlarmConditionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoringTemplateAlarmConditionsFilterArrayOutput() GetMonitoringTemplateAlarmConditionsFilterArrayOutput
+	ToGetMonitoringTemplateAlarmConditionsFilterArrayOutputWithContext(context.Context) GetMonitoringTemplateAlarmConditionsFilterArrayOutput
+}
+
+type GetMonitoringTemplateAlarmConditionsFilterArray []GetMonitoringTemplateAlarmConditionsFilterInput
+
+func (GetMonitoringTemplateAlarmConditionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoringTemplateAlarmConditionsFilter)(nil)).Elem()
+}
+
+func (i GetMonitoringTemplateAlarmConditionsFilterArray) ToGetMonitoringTemplateAlarmConditionsFilterArrayOutput() GetMonitoringTemplateAlarmConditionsFilterArrayOutput {
+	return i.ToGetMonitoringTemplateAlarmConditionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoringTemplateAlarmConditionsFilterArray) ToGetMonitoringTemplateAlarmConditionsFilterArrayOutputWithContext(ctx context.Context) GetMonitoringTemplateAlarmConditionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoringTemplateAlarmConditionsFilterArrayOutput)
+}
+
+type GetMonitoringTemplateAlarmConditionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoringTemplateAlarmConditionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoringTemplateAlarmConditionsFilter)(nil)).Elem()
+}
+
+func (o GetMonitoringTemplateAlarmConditionsFilterOutput) ToGetMonitoringTemplateAlarmConditionsFilterOutput() GetMonitoringTemplateAlarmConditionsFilterOutput {
+	return o
+}
+
+func (o GetMonitoringTemplateAlarmConditionsFilterOutput) ToGetMonitoringTemplateAlarmConditionsFilterOutputWithContext(ctx context.Context) GetMonitoringTemplateAlarmConditionsFilterOutput {
+	return o
+}
+
+func (o GetMonitoringTemplateAlarmConditionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplateAlarmConditionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMonitoringTemplateAlarmConditionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMonitoringTemplateAlarmConditionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMonitoringTemplateAlarmConditionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoringTemplateAlarmConditionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetMonitoringTemplateAlarmConditionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoringTemplateAlarmConditionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoringTemplateAlarmConditionsFilter)(nil)).Elem()
+}
+
+func (o GetMonitoringTemplateAlarmConditionsFilterArrayOutput) ToGetMonitoringTemplateAlarmConditionsFilterArrayOutput() GetMonitoringTemplateAlarmConditionsFilterArrayOutput {
+	return o
+}
+
+func (o GetMonitoringTemplateAlarmConditionsFilterArrayOutput) ToGetMonitoringTemplateAlarmConditionsFilterArrayOutputWithContext(ctx context.Context) GetMonitoringTemplateAlarmConditionsFilterArrayOutput {
+	return o
+}
+
+func (o GetMonitoringTemplateAlarmConditionsFilterArrayOutput) Index(i pulumi.IntInput) GetMonitoringTemplateAlarmConditionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoringTemplateAlarmConditionsFilter {
+		return vs[0].([]GetMonitoringTemplateAlarmConditionsFilter)[vs[1].(int)]
+	}).(GetMonitoringTemplateAlarmConditionsFilterOutput)
+}
+
+type GetMonitoringTemplateMember struct {
+	// The OCID of the composite resource type like EBS or Peoplesoft.
+	CompositeType string `pulumi:"compositeType"`
+	// The OCID of the resourceInstance/resourceType/resourceGroup
+	Id string `pulumi:"id"`
+	// Type of the member reference RESOURCE_INSTANCE, RESOURCE_TYPE, RESOURCE_GROUP
+	Type string `pulumi:"type"`
+}
+
+// GetMonitoringTemplateMemberInput is an input type that accepts GetMonitoringTemplateMemberArgs and GetMonitoringTemplateMemberOutput values.
+// You can construct a concrete instance of `GetMonitoringTemplateMemberInput` via:
+//
+//	GetMonitoringTemplateMemberArgs{...}
+type GetMonitoringTemplateMemberInput interface {
+	pulumi.Input
+
+	ToGetMonitoringTemplateMemberOutput() GetMonitoringTemplateMemberOutput
+	ToGetMonitoringTemplateMemberOutputWithContext(context.Context) GetMonitoringTemplateMemberOutput
+}
+
+type GetMonitoringTemplateMemberArgs struct {
+	// The OCID of the composite resource type like EBS or Peoplesoft.
+	CompositeType pulumi.StringInput `pulumi:"compositeType"`
+	// The OCID of the resourceInstance/resourceType/resourceGroup
+	Id pulumi.StringInput `pulumi:"id"`
+	// Type of the member reference RESOURCE_INSTANCE, RESOURCE_TYPE, RESOURCE_GROUP
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMonitoringTemplateMemberArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoringTemplateMember)(nil)).Elem()
+}
+
+func (i GetMonitoringTemplateMemberArgs) ToGetMonitoringTemplateMemberOutput() GetMonitoringTemplateMemberOutput {
+	return i.ToGetMonitoringTemplateMemberOutputWithContext(context.Background())
+}
+
+func (i GetMonitoringTemplateMemberArgs) ToGetMonitoringTemplateMemberOutputWithContext(ctx context.Context) GetMonitoringTemplateMemberOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoringTemplateMemberOutput)
+}
+
+// GetMonitoringTemplateMemberArrayInput is an input type that accepts GetMonitoringTemplateMemberArray and GetMonitoringTemplateMemberArrayOutput values.
+// You can construct a concrete instance of `GetMonitoringTemplateMemberArrayInput` via:
+//
+//	GetMonitoringTemplateMemberArray{ GetMonitoringTemplateMemberArgs{...} }
+type GetMonitoringTemplateMemberArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoringTemplateMemberArrayOutput() GetMonitoringTemplateMemberArrayOutput
+	ToGetMonitoringTemplateMemberArrayOutputWithContext(context.Context) GetMonitoringTemplateMemberArrayOutput
+}
+
+type GetMonitoringTemplateMemberArray []GetMonitoringTemplateMemberInput
+
+func (GetMonitoringTemplateMemberArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoringTemplateMember)(nil)).Elem()
+}
+
+func (i GetMonitoringTemplateMemberArray) ToGetMonitoringTemplateMemberArrayOutput() GetMonitoringTemplateMemberArrayOutput {
+	return i.ToGetMonitoringTemplateMemberArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoringTemplateMemberArray) ToGetMonitoringTemplateMemberArrayOutputWithContext(ctx context.Context) GetMonitoringTemplateMemberArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoringTemplateMemberArrayOutput)
+}
+
+type GetMonitoringTemplateMemberOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoringTemplateMemberOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoringTemplateMember)(nil)).Elem()
+}
+
+func (o GetMonitoringTemplateMemberOutput) ToGetMonitoringTemplateMemberOutput() GetMonitoringTemplateMemberOutput {
+	return o
+}
+
+func (o GetMonitoringTemplateMemberOutput) ToGetMonitoringTemplateMemberOutputWithContext(ctx context.Context) GetMonitoringTemplateMemberOutput {
+	return o
+}
+
+// The OCID of the composite resource type like EBS or Peoplesoft.
+func (o GetMonitoringTemplateMemberOutput) CompositeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplateMember) string { return v.CompositeType }).(pulumi.StringOutput)
+}
+
+// The OCID of the resourceInstance/resourceType/resourceGroup
+func (o GetMonitoringTemplateMemberOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplateMember) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Type of the member reference RESOURCE_INSTANCE, RESOURCE_TYPE, RESOURCE_GROUP
+func (o GetMonitoringTemplateMemberOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplateMember) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMonitoringTemplateMemberArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoringTemplateMemberArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoringTemplateMember)(nil)).Elem()
+}
+
+func (o GetMonitoringTemplateMemberArrayOutput) ToGetMonitoringTemplateMemberArrayOutput() GetMonitoringTemplateMemberArrayOutput {
+	return o
+}
+
+func (o GetMonitoringTemplateMemberArrayOutput) ToGetMonitoringTemplateMemberArrayOutputWithContext(ctx context.Context) GetMonitoringTemplateMemberArrayOutput {
+	return o
+}
+
+func (o GetMonitoringTemplateMemberArrayOutput) Index(i pulumi.IntInput) GetMonitoringTemplateMemberOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoringTemplateMember {
+		return vs[0].([]GetMonitoringTemplateMember)[vs[1].(int)]
+	}).(GetMonitoringTemplateMemberOutput)
+}
+
+type GetMonitoringTemplatesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetMonitoringTemplatesFilterInput is an input type that accepts GetMonitoringTemplatesFilterArgs and GetMonitoringTemplatesFilterOutput values.
+// You can construct a concrete instance of `GetMonitoringTemplatesFilterInput` via:
+//
+//	GetMonitoringTemplatesFilterArgs{...}
+type GetMonitoringTemplatesFilterInput interface {
+	pulumi.Input
+
+	ToGetMonitoringTemplatesFilterOutput() GetMonitoringTemplatesFilterOutput
+	ToGetMonitoringTemplatesFilterOutputWithContext(context.Context) GetMonitoringTemplatesFilterOutput
+}
+
+type GetMonitoringTemplatesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetMonitoringTemplatesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoringTemplatesFilter)(nil)).Elem()
+}
+
+func (i GetMonitoringTemplatesFilterArgs) ToGetMonitoringTemplatesFilterOutput() GetMonitoringTemplatesFilterOutput {
+	return i.ToGetMonitoringTemplatesFilterOutputWithContext(context.Background())
+}
+
+func (i GetMonitoringTemplatesFilterArgs) ToGetMonitoringTemplatesFilterOutputWithContext(ctx context.Context) GetMonitoringTemplatesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoringTemplatesFilterOutput)
+}
+
+// GetMonitoringTemplatesFilterArrayInput is an input type that accepts GetMonitoringTemplatesFilterArray and GetMonitoringTemplatesFilterArrayOutput values.
+// You can construct a concrete instance of `GetMonitoringTemplatesFilterArrayInput` via:
+//
+//	GetMonitoringTemplatesFilterArray{ GetMonitoringTemplatesFilterArgs{...} }
+type GetMonitoringTemplatesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoringTemplatesFilterArrayOutput() GetMonitoringTemplatesFilterArrayOutput
+	ToGetMonitoringTemplatesFilterArrayOutputWithContext(context.Context) GetMonitoringTemplatesFilterArrayOutput
+}
+
+type GetMonitoringTemplatesFilterArray []GetMonitoringTemplatesFilterInput
+
+func (GetMonitoringTemplatesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoringTemplatesFilter)(nil)).Elem()
+}
+
+func (i GetMonitoringTemplatesFilterArray) ToGetMonitoringTemplatesFilterArrayOutput() GetMonitoringTemplatesFilterArrayOutput {
+	return i.ToGetMonitoringTemplatesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoringTemplatesFilterArray) ToGetMonitoringTemplatesFilterArrayOutputWithContext(ctx context.Context) GetMonitoringTemplatesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoringTemplatesFilterArrayOutput)
+}
+
+type GetMonitoringTemplatesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoringTemplatesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoringTemplatesFilter)(nil)).Elem()
+}
+
+func (o GetMonitoringTemplatesFilterOutput) ToGetMonitoringTemplatesFilterOutput() GetMonitoringTemplatesFilterOutput {
+	return o
+}
+
+func (o GetMonitoringTemplatesFilterOutput) ToGetMonitoringTemplatesFilterOutputWithContext(ctx context.Context) GetMonitoringTemplatesFilterOutput {
+	return o
+}
+
+func (o GetMonitoringTemplatesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplatesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMonitoringTemplatesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMonitoringTemplatesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMonitoringTemplatesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoringTemplatesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetMonitoringTemplatesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoringTemplatesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoringTemplatesFilter)(nil)).Elem()
+}
+
+func (o GetMonitoringTemplatesFilterArrayOutput) ToGetMonitoringTemplatesFilterArrayOutput() GetMonitoringTemplatesFilterArrayOutput {
+	return o
+}
+
+func (o GetMonitoringTemplatesFilterArrayOutput) ToGetMonitoringTemplatesFilterArrayOutputWithContext(ctx context.Context) GetMonitoringTemplatesFilterArrayOutput {
+	return o
+}
+
+func (o GetMonitoringTemplatesFilterArrayOutput) Index(i pulumi.IntInput) GetMonitoringTemplatesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoringTemplatesFilter {
+		return vs[0].([]GetMonitoringTemplatesFilter)[vs[1].(int)]
+	}).(GetMonitoringTemplatesFilterOutput)
+}
+
+type GetMonitoringTemplatesMonitoringTemplateCollection struct {
+	Items []GetMonitoringTemplatesMonitoringTemplateCollectionItem `pulumi:"items"`
+}
+
+// GetMonitoringTemplatesMonitoringTemplateCollectionInput is an input type that accepts GetMonitoringTemplatesMonitoringTemplateCollectionArgs and GetMonitoringTemplatesMonitoringTemplateCollectionOutput values.
+// You can construct a concrete instance of `GetMonitoringTemplatesMonitoringTemplateCollectionInput` via:
+//
+//	GetMonitoringTemplatesMonitoringTemplateCollectionArgs{...}
+type GetMonitoringTemplatesMonitoringTemplateCollectionInput interface {
+	pulumi.Input
+
+	ToGetMonitoringTemplatesMonitoringTemplateCollectionOutput() GetMonitoringTemplatesMonitoringTemplateCollectionOutput
+	ToGetMonitoringTemplatesMonitoringTemplateCollectionOutputWithContext(context.Context) GetMonitoringTemplatesMonitoringTemplateCollectionOutput
+}
+
+type GetMonitoringTemplatesMonitoringTemplateCollectionArgs struct {
+	Items GetMonitoringTemplatesMonitoringTemplateCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetMonitoringTemplatesMonitoringTemplateCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoringTemplatesMonitoringTemplateCollection)(nil)).Elem()
+}
+
+func (i GetMonitoringTemplatesMonitoringTemplateCollectionArgs) ToGetMonitoringTemplatesMonitoringTemplateCollectionOutput() GetMonitoringTemplatesMonitoringTemplateCollectionOutput {
+	return i.ToGetMonitoringTemplatesMonitoringTemplateCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMonitoringTemplatesMonitoringTemplateCollectionArgs) ToGetMonitoringTemplatesMonitoringTemplateCollectionOutputWithContext(ctx context.Context) GetMonitoringTemplatesMonitoringTemplateCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoringTemplatesMonitoringTemplateCollectionOutput)
+}
+
+// GetMonitoringTemplatesMonitoringTemplateCollectionArrayInput is an input type that accepts GetMonitoringTemplatesMonitoringTemplateCollectionArray and GetMonitoringTemplatesMonitoringTemplateCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMonitoringTemplatesMonitoringTemplateCollectionArrayInput` via:
+//
+//	GetMonitoringTemplatesMonitoringTemplateCollectionArray{ GetMonitoringTemplatesMonitoringTemplateCollectionArgs{...} }
+type GetMonitoringTemplatesMonitoringTemplateCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoringTemplatesMonitoringTemplateCollectionArrayOutput() GetMonitoringTemplatesMonitoringTemplateCollectionArrayOutput
+	ToGetMonitoringTemplatesMonitoringTemplateCollectionArrayOutputWithContext(context.Context) GetMonitoringTemplatesMonitoringTemplateCollectionArrayOutput
+}
+
+type GetMonitoringTemplatesMonitoringTemplateCollectionArray []GetMonitoringTemplatesMonitoringTemplateCollectionInput
+
+func (GetMonitoringTemplatesMonitoringTemplateCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoringTemplatesMonitoringTemplateCollection)(nil)).Elem()
+}
+
+func (i GetMonitoringTemplatesMonitoringTemplateCollectionArray) ToGetMonitoringTemplatesMonitoringTemplateCollectionArrayOutput() GetMonitoringTemplatesMonitoringTemplateCollectionArrayOutput {
+	return i.ToGetMonitoringTemplatesMonitoringTemplateCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoringTemplatesMonitoringTemplateCollectionArray) ToGetMonitoringTemplatesMonitoringTemplateCollectionArrayOutputWithContext(ctx context.Context) GetMonitoringTemplatesMonitoringTemplateCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoringTemplatesMonitoringTemplateCollectionArrayOutput)
+}
+
+type GetMonitoringTemplatesMonitoringTemplateCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoringTemplatesMonitoringTemplateCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoringTemplatesMonitoringTemplateCollection)(nil)).Elem()
+}
+
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionOutput) ToGetMonitoringTemplatesMonitoringTemplateCollectionOutput() GetMonitoringTemplatesMonitoringTemplateCollectionOutput {
+	return o
+}
+
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionOutput) ToGetMonitoringTemplatesMonitoringTemplateCollectionOutputWithContext(ctx context.Context) GetMonitoringTemplatesMonitoringTemplateCollectionOutput {
+	return o
+}
+
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionOutput) Items() GetMonitoringTemplatesMonitoringTemplateCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMonitoringTemplatesMonitoringTemplateCollection) []GetMonitoringTemplatesMonitoringTemplateCollectionItem {
+		return v.Items
+	}).(GetMonitoringTemplatesMonitoringTemplateCollectionItemArrayOutput)
+}
+
+type GetMonitoringTemplatesMonitoringTemplateCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoringTemplatesMonitoringTemplateCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoringTemplatesMonitoringTemplateCollection)(nil)).Elem()
+}
+
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionArrayOutput) ToGetMonitoringTemplatesMonitoringTemplateCollectionArrayOutput() GetMonitoringTemplatesMonitoringTemplateCollectionArrayOutput {
+	return o
+}
+
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionArrayOutput) ToGetMonitoringTemplatesMonitoringTemplateCollectionArrayOutputWithContext(ctx context.Context) GetMonitoringTemplatesMonitoringTemplateCollectionArrayOutput {
+	return o
+}
+
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionArrayOutput) Index(i pulumi.IntInput) GetMonitoringTemplatesMonitoringTemplateCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoringTemplatesMonitoringTemplateCollection {
+		return vs[0].([]GetMonitoringTemplatesMonitoringTemplateCollection)[vs[1].(int)]
+	}).(GetMonitoringTemplatesMonitoringTemplateCollectionOutput)
+}
+
+type GetMonitoringTemplatesMonitoringTemplateCollectionItem struct {
+	// The ID of the compartment in which data is listed.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A user-friendly description for the monitoring template. It does not have to be unique, and it's changeable. Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// A list of destinations for alarm notifications. Each destination is represented by the OCID of a related resource.
+	Destinations []string `pulumi:"destinations"`
+	// A filter to return monitoring template based on name.
+	DisplayName string `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the resourceInstance/resourceType/resourceGroup
+	Id string `pulumi:"id"`
+	// Whether the alarm is enabled or disabled. Default value is enabled.
+	IsAlarmsEnabled bool `pulumi:"isAlarmsEnabled"`
+	// Whether the alarm notification is enabled or disabled, it will be Enabled by default.
+	IsSplitNotificationEnabled bool `pulumi:"isSplitNotificationEnabled"`
+	// List of members of this monitoring template.
+	Members []GetMonitoringTemplatesMonitoringTemplateCollectionItemMember `pulumi:"members"`
+	// The format to use for alarm notifications.
+	MessageFormat string `pulumi:"messageFormat"`
+	// The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, PT4H indicates four hours. Minimum- PT1M. Maximum - P30D.
+	RepeatNotificationDuration string `pulumi:"repeatNotificationDuration"`
+	// A filter to return monitoring template based on Lifecycle State
+	State string `pulumi:"state"`
+	// A filter to return monitoring template based on input status
+	Status string `pulumi:"status"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// Tenant Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	TenantId string `pulumi:"tenantId"`
+	// The date and time the monitoringTemplate was created. Format defined by RFC3339.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the monitoringTemplate was last updated. Format defined by RFC3339.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// Total Alarm Conditions
+	TotalAlarmConditions float64 `pulumi:"totalAlarmConditions"`
+	// Total Applied Alarm Conditions
+	TotalAppliedAlarmConditions float64 `pulumi:"totalAppliedAlarmConditions"`
+}
+
+// GetMonitoringTemplatesMonitoringTemplateCollectionItemInput is an input type that accepts GetMonitoringTemplatesMonitoringTemplateCollectionItemArgs and GetMonitoringTemplatesMonitoringTemplateCollectionItemOutput values.
+// You can construct a concrete instance of `GetMonitoringTemplatesMonitoringTemplateCollectionItemInput` via:
+//
+//	GetMonitoringTemplatesMonitoringTemplateCollectionItemArgs{...}
+type GetMonitoringTemplatesMonitoringTemplateCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMonitoringTemplatesMonitoringTemplateCollectionItemOutput() GetMonitoringTemplatesMonitoringTemplateCollectionItemOutput
+	ToGetMonitoringTemplatesMonitoringTemplateCollectionItemOutputWithContext(context.Context) GetMonitoringTemplatesMonitoringTemplateCollectionItemOutput
+}
+
+type GetMonitoringTemplatesMonitoringTemplateCollectionItemArgs struct {
+	// The ID of the compartment in which data is listed.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A user-friendly description for the monitoring template. It does not have to be unique, and it's changeable. Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A list of destinations for alarm notifications. Each destination is represented by the OCID of a related resource.
+	Destinations pulumi.StringArrayInput `pulumi:"destinations"`
+	// A filter to return monitoring template based on name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the resourceInstance/resourceType/resourceGroup
+	Id pulumi.StringInput `pulumi:"id"`
+	// Whether the alarm is enabled or disabled. Default value is enabled.
+	IsAlarmsEnabled pulumi.BoolInput `pulumi:"isAlarmsEnabled"`
+	// Whether the alarm notification is enabled or disabled, it will be Enabled by default.
+	IsSplitNotificationEnabled pulumi.BoolInput `pulumi:"isSplitNotificationEnabled"`
+	// List of members of this monitoring template.
+	Members GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArrayInput `pulumi:"members"`
+	// The format to use for alarm notifications.
+	MessageFormat pulumi.StringInput `pulumi:"messageFormat"`
+	// The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, PT4H indicates four hours. Minimum- PT1M. Maximum - P30D.
+	RepeatNotificationDuration pulumi.StringInput `pulumi:"repeatNotificationDuration"`
+	// A filter to return monitoring template based on Lifecycle State
+	State pulumi.StringInput `pulumi:"state"`
+	// A filter to return monitoring template based on input status
+	Status pulumi.StringInput `pulumi:"status"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// Tenant Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	TenantId pulumi.StringInput `pulumi:"tenantId"`
+	// The date and time the monitoringTemplate was created. Format defined by RFC3339.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the monitoringTemplate was last updated. Format defined by RFC3339.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// Total Alarm Conditions
+	TotalAlarmConditions pulumi.Float64Input `pulumi:"totalAlarmConditions"`
+	// Total Applied Alarm Conditions
+	TotalAppliedAlarmConditions pulumi.Float64Input `pulumi:"totalAppliedAlarmConditions"`
+}
+
+func (GetMonitoringTemplatesMonitoringTemplateCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoringTemplatesMonitoringTemplateCollectionItem)(nil)).Elem()
+}
+
+func (i GetMonitoringTemplatesMonitoringTemplateCollectionItemArgs) ToGetMonitoringTemplatesMonitoringTemplateCollectionItemOutput() GetMonitoringTemplatesMonitoringTemplateCollectionItemOutput {
+	return i.ToGetMonitoringTemplatesMonitoringTemplateCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMonitoringTemplatesMonitoringTemplateCollectionItemArgs) ToGetMonitoringTemplatesMonitoringTemplateCollectionItemOutputWithContext(ctx context.Context) GetMonitoringTemplatesMonitoringTemplateCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoringTemplatesMonitoringTemplateCollectionItemOutput)
+}
+
+// GetMonitoringTemplatesMonitoringTemplateCollectionItemArrayInput is an input type that accepts GetMonitoringTemplatesMonitoringTemplateCollectionItemArray and GetMonitoringTemplatesMonitoringTemplateCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMonitoringTemplatesMonitoringTemplateCollectionItemArrayInput` via:
+//
+//	GetMonitoringTemplatesMonitoringTemplateCollectionItemArray{ GetMonitoringTemplatesMonitoringTemplateCollectionItemArgs{...} }
+type GetMonitoringTemplatesMonitoringTemplateCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoringTemplatesMonitoringTemplateCollectionItemArrayOutput() GetMonitoringTemplatesMonitoringTemplateCollectionItemArrayOutput
+	ToGetMonitoringTemplatesMonitoringTemplateCollectionItemArrayOutputWithContext(context.Context) GetMonitoringTemplatesMonitoringTemplateCollectionItemArrayOutput
+}
+
+type GetMonitoringTemplatesMonitoringTemplateCollectionItemArray []GetMonitoringTemplatesMonitoringTemplateCollectionItemInput
+
+func (GetMonitoringTemplatesMonitoringTemplateCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoringTemplatesMonitoringTemplateCollectionItem)(nil)).Elem()
+}
+
+func (i GetMonitoringTemplatesMonitoringTemplateCollectionItemArray) ToGetMonitoringTemplatesMonitoringTemplateCollectionItemArrayOutput() GetMonitoringTemplatesMonitoringTemplateCollectionItemArrayOutput {
+	return i.ToGetMonitoringTemplatesMonitoringTemplateCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoringTemplatesMonitoringTemplateCollectionItemArray) ToGetMonitoringTemplatesMonitoringTemplateCollectionItemArrayOutputWithContext(ctx context.Context) GetMonitoringTemplatesMonitoringTemplateCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoringTemplatesMonitoringTemplateCollectionItemArrayOutput)
+}
+
+type GetMonitoringTemplatesMonitoringTemplateCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoringTemplatesMonitoringTemplateCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoringTemplatesMonitoringTemplateCollectionItem)(nil)).Elem()
+}
+
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionItemOutput) ToGetMonitoringTemplatesMonitoringTemplateCollectionItemOutput() GetMonitoringTemplatesMonitoringTemplateCollectionItemOutput {
+	return o
+}
+
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionItemOutput) ToGetMonitoringTemplatesMonitoringTemplateCollectionItemOutputWithContext(ctx context.Context) GetMonitoringTemplatesMonitoringTemplateCollectionItemOutput {
+	return o
+}
+
+// The ID of the compartment in which data is listed.
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplatesMonitoringTemplateCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMonitoringTemplatesMonitoringTemplateCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A user-friendly description for the monitoring template. It does not have to be unique, and it's changeable. Avoid entering confidential information.
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplatesMonitoringTemplateCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A list of destinations for alarm notifications. Each destination is represented by the OCID of a related resource.
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionItemOutput) Destinations() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoringTemplatesMonitoringTemplateCollectionItem) []string { return v.Destinations }).(pulumi.StringArrayOutput)
+}
+
+// A filter to return monitoring template based on name.
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplatesMonitoringTemplateCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMonitoringTemplatesMonitoringTemplateCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The OCID of the resourceInstance/resourceType/resourceGroup
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplatesMonitoringTemplateCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Whether the alarm is enabled or disabled. Default value is enabled.
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionItemOutput) IsAlarmsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMonitoringTemplatesMonitoringTemplateCollectionItem) bool { return v.IsAlarmsEnabled }).(pulumi.BoolOutput)
+}
+
+// Whether the alarm notification is enabled or disabled, it will be Enabled by default.
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionItemOutput) IsSplitNotificationEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMonitoringTemplatesMonitoringTemplateCollectionItem) bool {
+		return v.IsSplitNotificationEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// List of members of this monitoring template.
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionItemOutput) Members() GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArrayOutput {
+	return o.ApplyT(func(v GetMonitoringTemplatesMonitoringTemplateCollectionItem) []GetMonitoringTemplatesMonitoringTemplateCollectionItemMember {
+		return v.Members
+	}).(GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArrayOutput)
+}
+
+// The format to use for alarm notifications.
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionItemOutput) MessageFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplatesMonitoringTemplateCollectionItem) string { return v.MessageFormat }).(pulumi.StringOutput)
+}
+
+// The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, PT4H indicates four hours. Minimum- PT1M. Maximum - P30D.
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionItemOutput) RepeatNotificationDuration() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplatesMonitoringTemplateCollectionItem) string {
+		return v.RepeatNotificationDuration
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return monitoring template based on Lifecycle State
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplatesMonitoringTemplateCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// A filter to return monitoring template based on input status
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplatesMonitoringTemplateCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMonitoringTemplatesMonitoringTemplateCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// Tenant Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionItemOutput) TenantId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplatesMonitoringTemplateCollectionItem) string { return v.TenantId }).(pulumi.StringOutput)
+}
+
+// The date and time the monitoringTemplate was created. Format defined by RFC3339.
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplatesMonitoringTemplateCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the monitoringTemplate was last updated. Format defined by RFC3339.
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplatesMonitoringTemplateCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// Total Alarm Conditions
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionItemOutput) TotalAlarmConditions() pulumi.Float64Output {
+	return o.ApplyT(func(v GetMonitoringTemplatesMonitoringTemplateCollectionItem) float64 { return v.TotalAlarmConditions }).(pulumi.Float64Output)
+}
+
+// Total Applied Alarm Conditions
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionItemOutput) TotalAppliedAlarmConditions() pulumi.Float64Output {
+	return o.ApplyT(func(v GetMonitoringTemplatesMonitoringTemplateCollectionItem) float64 {
+		return v.TotalAppliedAlarmConditions
+	}).(pulumi.Float64Output)
+}
+
+type GetMonitoringTemplatesMonitoringTemplateCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoringTemplatesMonitoringTemplateCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoringTemplatesMonitoringTemplateCollectionItem)(nil)).Elem()
+}
+
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionItemArrayOutput) ToGetMonitoringTemplatesMonitoringTemplateCollectionItemArrayOutput() GetMonitoringTemplatesMonitoringTemplateCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionItemArrayOutput) ToGetMonitoringTemplatesMonitoringTemplateCollectionItemArrayOutputWithContext(ctx context.Context) GetMonitoringTemplatesMonitoringTemplateCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMonitoringTemplatesMonitoringTemplateCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoringTemplatesMonitoringTemplateCollectionItem {
+		return vs[0].([]GetMonitoringTemplatesMonitoringTemplateCollectionItem)[vs[1].(int)]
+	}).(GetMonitoringTemplatesMonitoringTemplateCollectionItemOutput)
+}
+
+type GetMonitoringTemplatesMonitoringTemplateCollectionItemMember struct {
+	// The OCID of the composite resource type like EBS or Peoplesoft.
+	CompositeType string `pulumi:"compositeType"`
+	// The OCID of the resourceInstance/resourceType/resourceGroup
+	Id string `pulumi:"id"`
+	// Type of the member reference RESOURCE_INSTANCE, RESOURCE_TYPE, RESOURCE_GROUP
+	Type string `pulumi:"type"`
+}
+
+// GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberInput is an input type that accepts GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArgs and GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberOutput values.
+// You can construct a concrete instance of `GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberInput` via:
+//
+//	GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArgs{...}
+type GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberInput interface {
+	pulumi.Input
+
+	ToGetMonitoringTemplatesMonitoringTemplateCollectionItemMemberOutput() GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberOutput
+	ToGetMonitoringTemplatesMonitoringTemplateCollectionItemMemberOutputWithContext(context.Context) GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberOutput
+}
+
+type GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArgs struct {
+	// The OCID of the composite resource type like EBS or Peoplesoft.
+	CompositeType pulumi.StringInput `pulumi:"compositeType"`
+	// The OCID of the resourceInstance/resourceType/resourceGroup
+	Id pulumi.StringInput `pulumi:"id"`
+	// Type of the member reference RESOURCE_INSTANCE, RESOURCE_TYPE, RESOURCE_GROUP
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoringTemplatesMonitoringTemplateCollectionItemMember)(nil)).Elem()
+}
+
+func (i GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArgs) ToGetMonitoringTemplatesMonitoringTemplateCollectionItemMemberOutput() GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberOutput {
+	return i.ToGetMonitoringTemplatesMonitoringTemplateCollectionItemMemberOutputWithContext(context.Background())
+}
+
+func (i GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArgs) ToGetMonitoringTemplatesMonitoringTemplateCollectionItemMemberOutputWithContext(ctx context.Context) GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberOutput)
+}
+
+// GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArrayInput is an input type that accepts GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArray and GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArrayOutput values.
+// You can construct a concrete instance of `GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArrayInput` via:
+//
+//	GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArray{ GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArgs{...} }
+type GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArrayOutput() GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArrayOutput
+	ToGetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArrayOutputWithContext(context.Context) GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArrayOutput
+}
+
+type GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArray []GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberInput
+
+func (GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoringTemplatesMonitoringTemplateCollectionItemMember)(nil)).Elem()
+}
+
+func (i GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArray) ToGetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArrayOutput() GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArrayOutput {
+	return i.ToGetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArray) ToGetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArrayOutputWithContext(ctx context.Context) GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArrayOutput)
+}
+
+type GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoringTemplatesMonitoringTemplateCollectionItemMember)(nil)).Elem()
+}
+
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberOutput) ToGetMonitoringTemplatesMonitoringTemplateCollectionItemMemberOutput() GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberOutput {
+	return o
+}
+
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberOutput) ToGetMonitoringTemplatesMonitoringTemplateCollectionItemMemberOutputWithContext(ctx context.Context) GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberOutput {
+	return o
+}
+
+// The OCID of the composite resource type like EBS or Peoplesoft.
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberOutput) CompositeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplatesMonitoringTemplateCollectionItemMember) string { return v.CompositeType }).(pulumi.StringOutput)
+}
+
+// The OCID of the resourceInstance/resourceType/resourceGroup
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplatesMonitoringTemplateCollectionItemMember) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Type of the member reference RESOURCE_INSTANCE, RESOURCE_TYPE, RESOURCE_GROUP
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoringTemplatesMonitoringTemplateCollectionItemMember) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoringTemplatesMonitoringTemplateCollectionItemMember)(nil)).Elem()
+}
+
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArrayOutput) ToGetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArrayOutput() GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArrayOutput {
+	return o
+}
+
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArrayOutput) ToGetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArrayOutputWithContext(ctx context.Context) GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArrayOutput {
+	return o
+}
+
+func (o GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArrayOutput) Index(i pulumi.IntInput) GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoringTemplatesMonitoringTemplateCollectionItemMember {
+		return vs[0].([]GetMonitoringTemplatesMonitoringTemplateCollectionItemMember)[vs[1].(int)]
+	}).(GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberOutput)
+}
+
 type GetProcessSetSpecification struct {
 	// List of Process Set specification details.
 	Items []GetProcessSetSpecificationItem `pulumi:"items"`
@@ -18417,6 +20834,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourcesSearchItemArrayInput)(nil)).Elem(), MonitoredResourcesSearchItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourcesSearchItemPropertyInput)(nil)).Elem(), MonitoredResourcesSearchItemPropertyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourcesSearchItemPropertyArrayInput)(nil)).Elem(), MonitoredResourcesSearchItemPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoringTemplateAlarmConditionConditionInput)(nil)).Elem(), MonitoringTemplateAlarmConditionConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoringTemplateAlarmConditionConditionArrayInput)(nil)).Elem(), MonitoringTemplateAlarmConditionConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoringTemplateMemberInput)(nil)).Elem(), MonitoringTemplateMemberArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoringTemplateMemberArrayInput)(nil)).Elem(), MonitoringTemplateMemberArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ProcessSetSpecificationInput)(nil)).Elem(), ProcessSetSpecificationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ProcessSetSpecificationPtrInput)(nil)).Elem(), ProcessSetSpecificationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ProcessSetSpecificationItemInput)(nil)).Elem(), ProcessSetSpecificationItemArgs{})
@@ -18443,6 +20864,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemArrayInput)(nil)).Elem(), GetConfigsConfigCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsFilterInput)(nil)).Elem(), GetConfigsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsFilterArrayInput)(nil)).Elem(), GetConfigsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionInput)(nil)).Elem(), GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArrayInput)(nil)).Elem(), GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemInput)(nil)).Elem(), GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArrayInput)(nil)).Elem(), GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionInput)(nil)).Elem(), GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArrayInput)(nil)).Elem(), GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionInput)(nil)).Elem(), GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArrayInput)(nil)).Elem(), GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefinedMonitoringTemplatesFilterInput)(nil)).Elem(), GetDefinedMonitoringTemplatesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefinedMonitoringTemplatesFilterArrayInput)(nil)).Elem(), GetDefinedMonitoringTemplatesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDiscoveryJobDiscoveryDetailInput)(nil)).Elem(), GetDiscoveryJobDiscoveryDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDiscoveryJobDiscoveryDetailArrayInput)(nil)).Elem(), GetDiscoveryJobDiscoveryDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDiscoveryJobDiscoveryDetailCredentialInput)(nil)).Elem(), GetDiscoveryJobDiscoveryDetailCredentialArgs{})
@@ -18585,6 +21016,26 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayInput)(nil)).Elem(), GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemPropertyInput)(nil)).Elem(), GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayInput)(nil)).Elem(), GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoringTemplateAlarmConditionConditionInput)(nil)).Elem(), GetMonitoringTemplateAlarmConditionConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoringTemplateAlarmConditionConditionArrayInput)(nil)).Elem(), GetMonitoringTemplateAlarmConditionConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionInput)(nil)).Elem(), GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArrayInput)(nil)).Elem(), GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemInput)(nil)).Elem(), GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArrayInput)(nil)).Elem(), GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionInput)(nil)).Elem(), GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArrayInput)(nil)).Elem(), GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoringTemplateAlarmConditionsFilterInput)(nil)).Elem(), GetMonitoringTemplateAlarmConditionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoringTemplateAlarmConditionsFilterArrayInput)(nil)).Elem(), GetMonitoringTemplateAlarmConditionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoringTemplateMemberInput)(nil)).Elem(), GetMonitoringTemplateMemberArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoringTemplateMemberArrayInput)(nil)).Elem(), GetMonitoringTemplateMemberArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoringTemplatesFilterInput)(nil)).Elem(), GetMonitoringTemplatesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoringTemplatesFilterArrayInput)(nil)).Elem(), GetMonitoringTemplatesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoringTemplatesMonitoringTemplateCollectionInput)(nil)).Elem(), GetMonitoringTemplatesMonitoringTemplateCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoringTemplatesMonitoringTemplateCollectionArrayInput)(nil)).Elem(), GetMonitoringTemplatesMonitoringTemplateCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoringTemplatesMonitoringTemplateCollectionItemInput)(nil)).Elem(), GetMonitoringTemplatesMonitoringTemplateCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoringTemplatesMonitoringTemplateCollectionItemArrayInput)(nil)).Elem(), GetMonitoringTemplatesMonitoringTemplateCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberInput)(nil)).Elem(), GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArrayInput)(nil)).Elem(), GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProcessSetSpecificationInput)(nil)).Elem(), GetProcessSetSpecificationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProcessSetSpecificationArrayInput)(nil)).Elem(), GetProcessSetSpecificationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProcessSetSpecificationItemInput)(nil)).Elem(), GetProcessSetSpecificationItemArgs{})
@@ -18671,6 +21122,10 @@ func init() {
 	pulumi.RegisterOutputType(MonitoredResourcesSearchItemArrayOutput{})
 	pulumi.RegisterOutputType(MonitoredResourcesSearchItemPropertyOutput{})
 	pulumi.RegisterOutputType(MonitoredResourcesSearchItemPropertyArrayOutput{})
+	pulumi.RegisterOutputType(MonitoringTemplateAlarmConditionConditionOutput{})
+	pulumi.RegisterOutputType(MonitoringTemplateAlarmConditionConditionArrayOutput{})
+	pulumi.RegisterOutputType(MonitoringTemplateMemberOutput{})
+	pulumi.RegisterOutputType(MonitoringTemplateMemberArrayOutput{})
 	pulumi.RegisterOutputType(ProcessSetSpecificationOutput{})
 	pulumi.RegisterOutputType(ProcessSetSpecificationPtrOutput{})
 	pulumi.RegisterOutputType(ProcessSetSpecificationItemOutput{})
@@ -18697,6 +21152,16 @@ func init() {
 	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetConfigsFilterOutput{})
 	pulumi.RegisterOutputType(GetConfigsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionOutput{})
+	pulumi.RegisterOutputType(GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionOutput{})
+	pulumi.RegisterOutputType(GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArrayOutput{})
+	pulumi.RegisterOutputType(GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionOutput{})
+	pulumi.RegisterOutputType(GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArrayOutput{})
+	pulumi.RegisterOutputType(GetDefinedMonitoringTemplatesFilterOutput{})
+	pulumi.RegisterOutputType(GetDefinedMonitoringTemplatesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDiscoveryJobDiscoveryDetailOutput{})
 	pulumi.RegisterOutputType(GetDiscoveryJobDiscoveryDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDiscoveryJobDiscoveryDetailCredentialOutput{})
@@ -18839,6 +21304,26 @@ func init() {
 	pulumi.RegisterOutputType(GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutput{})
 	pulumi.RegisterOutputType(GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoringTemplateAlarmConditionConditionOutput{})
+	pulumi.RegisterOutputType(GetMonitoringTemplateAlarmConditionConditionArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionOutput{})
+	pulumi.RegisterOutputType(GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionOutput{})
+	pulumi.RegisterOutputType(GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoringTemplateAlarmConditionsFilterOutput{})
+	pulumi.RegisterOutputType(GetMonitoringTemplateAlarmConditionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoringTemplateMemberOutput{})
+	pulumi.RegisterOutputType(GetMonitoringTemplateMemberArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoringTemplatesFilterOutput{})
+	pulumi.RegisterOutputType(GetMonitoringTemplatesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoringTemplatesMonitoringTemplateCollectionOutput{})
+	pulumi.RegisterOutputType(GetMonitoringTemplatesMonitoringTemplateCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoringTemplatesMonitoringTemplateCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMonitoringTemplatesMonitoringTemplateCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberOutput{})
+	pulumi.RegisterOutputType(GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArrayOutput{})
 	pulumi.RegisterOutputType(GetProcessSetSpecificationOutput{})
 	pulumi.RegisterOutputType(GetProcessSetSpecificationArrayOutput{})
 	pulumi.RegisterOutputType(GetProcessSetSpecificationItemOutput{})

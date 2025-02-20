@@ -38,7 +38,8 @@ type Provider struct {
 	Region pulumi.StringPtrOutput `pulumi:"region"`
 	// (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud
 	// Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
-	TenancyOcid pulumi.StringPtrOutput `pulumi:"tenancyOcid"`
+	TenancyOcid                  pulumi.StringPtrOutput `pulumi:"tenancyOcid"`
+	TestTimeMaintenanceRebootDue pulumi.StringPtrOutput `pulumi:"testTimeMaintenanceRebootDue"`
 	// (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if
 	// auth is set to 'ApiKey', ignored otherwise.
 	UserOcid pulumi.StringPtrOutput `pulumi:"userOcid"`
@@ -102,7 +103,8 @@ type providerArgs struct {
 	RetryDurationSeconds *int `pulumi:"retryDurationSeconds"`
 	// (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud
 	// Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
-	TenancyOcid *string `pulumi:"tenancyOcid"`
+	TenancyOcid                  *string `pulumi:"tenancyOcid"`
+	TestTimeMaintenanceRebootDue *string `pulumi:"testTimeMaintenanceRebootDue"`
 	// (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if
 	// auth is set to 'ApiKey', ignored otherwise.
 	UserOcid *string `pulumi:"userOcid"`
@@ -140,7 +142,8 @@ type ProviderArgs struct {
 	RetryDurationSeconds pulumi.IntPtrInput
 	// (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud
 	// Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
-	TenancyOcid pulumi.StringPtrInput
+	TenancyOcid                  pulumi.StringPtrInput
+	TestTimeMaintenanceRebootDue pulumi.StringPtrInput
 	// (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if
 	// auth is set to 'ApiKey', ignored otherwise.
 	UserOcid pulumi.StringPtrInput
@@ -226,6 +229,10 @@ func (o ProviderOutput) Region() pulumi.StringPtrOutput {
 // Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
 func (o ProviderOutput) TenancyOcid() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.TenancyOcid }).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderOutput) TestTimeMaintenanceRebootDue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.TestTimeMaintenanceRebootDue }).(pulumi.StringPtrOutput)
 }
 
 // (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if

@@ -252,6 +252,21 @@ public final class ReplicationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+     * 
+     */
+    @Import(name="systemTags")
+    private @Nullable Output<Map<String,String>> systemTags;
+
+    /**
+     * @return System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+     * 
+     */
+    public Optional<Output<Map<String,String>>> systemTags() {
+        return Optional.ofNullable(this.systemTags);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.
      * 
      * ** IMPORTANT **
@@ -306,6 +321,7 @@ public final class ReplicationState extends com.pulumi.resources.ResourceArgs {
         this.replicationTargetId = $.replicationTargetId;
         this.sourceId = $.sourceId;
         this.state = $.state;
+        this.systemTags = $.systemTags;
         this.targetId = $.targetId;
         this.timeCreated = $.timeCreated;
     }
@@ -660,6 +676,27 @@ public final class ReplicationState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder state(String state) {
             return state(Output.of(state));
+        }
+
+        /**
+         * @param systemTags System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(@Nullable Output<Map<String,String>> systemTags) {
+            $.systemTags = systemTags;
+            return this;
+        }
+
+        /**
+         * @param systemTags System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(Map<String,String> systemTags) {
+            return systemTags(Output.of(systemTags));
         }
 
         /**

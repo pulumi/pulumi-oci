@@ -59,6 +59,7 @@ import * as utilities from "../utilities";
  *     peerSidPrefix: dataGuardAssociationPeerSidPrefix,
  *     peerVmClusterId: testVmCluster.id,
  *     privateIp: dataGuardAssociationPrivateIp,
+ *     privateIpV6: dataGuardAssociationPrivateIpV6,
  *     shape: dataGuardAssociationShape,
  *     storageVolumePerformanceMode: dataGuardAssociationStorageVolumePerformanceMode,
  *     subnetId: testSubnet.id,
@@ -258,6 +259,10 @@ export class DataGuardAssociation extends pulumi.CustomResource {
      */
     public readonly privateIp!: pulumi.Output<string | undefined>;
     /**
+     * The IPv6 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv6 address from the subnet.
+     */
+    public readonly privateIpV6!: pulumi.Output<string>;
+    /**
      * (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      *
      * **IMPORTANT** - The only protection mode currently supported by the Database service is MAXIMUM_PERFORMANCE.
@@ -357,6 +362,7 @@ export class DataGuardAssociation extends pulumi.CustomResource {
             resourceInputs["peerSidPrefix"] = state ? state.peerSidPrefix : undefined;
             resourceInputs["peerVmClusterId"] = state ? state.peerVmClusterId : undefined;
             resourceInputs["privateIp"] = state ? state.privateIp : undefined;
+            resourceInputs["privateIpV6"] = state ? state.privateIpV6 : undefined;
             resourceInputs["protectionMode"] = state ? state.protectionMode : undefined;
             resourceInputs["role"] = state ? state.role : undefined;
             resourceInputs["shape"] = state ? state.shape : undefined;
@@ -416,6 +422,7 @@ export class DataGuardAssociation extends pulumi.CustomResource {
             resourceInputs["peerSidPrefix"] = args ? args.peerSidPrefix : undefined;
             resourceInputs["peerVmClusterId"] = args ? args.peerVmClusterId : undefined;
             resourceInputs["privateIp"] = args ? args.privateIp : undefined;
+            resourceInputs["privateIpV6"] = args ? args.privateIpV6 : undefined;
             resourceInputs["protectionMode"] = args ? args.protectionMode : undefined;
             resourceInputs["shape"] = args ? args.shape : undefined;
             resourceInputs["storageVolumePerformanceMode"] = args ? args.storageVolumePerformanceMode : undefined;
@@ -602,6 +609,10 @@ export interface DataGuardAssociationState {
      * The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
      */
     privateIp?: pulumi.Input<string>;
+    /**
+     * The IPv6 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv6 address from the subnet.
+     */
+    privateIpV6?: pulumi.Input<string>;
     /**
      * (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      *
@@ -793,6 +804,10 @@ export interface DataGuardAssociationArgs {
      * The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
      */
     privateIp?: pulumi.Input<string>;
+    /**
+     * The IPv6 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv6 address from the subnet.
+     */
+    privateIpV6?: pulumi.Input<string>;
     /**
      * (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      *

@@ -125,13 +125,21 @@ namespace Pulumi.Oci.Database
         /// 
         /// For an Autonomous Database on dedicated infrastructure, the allowed values are:
         /// 
+        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
         /// AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
         /// </summary>
         [Output("characterSet")]
         public Output<string> CharacterSet { get; private set; } = null!;
 
         /// <summary>
+        /// A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
+        /// </summary>
+        [Output("cloneTableSpaceLists")]
+        public Output<ImmutableArray<int>> CloneTableSpaceLists { get; private set; } = null!;
+
+        /// <summary>
         /// The Autonomous Database clone type. This parameter is not used to create a refreshable clone type, and for refreshable clones one must use the (source=CLONE_TO_REFRESHABLE) parameter.
+        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; theirs
         /// * `FULL` - This option creates a new database that includes all source database data.
         /// * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
         /// </summary>
@@ -507,13 +515,13 @@ namespace Pulumi.Oci.Database
         public Output<int> LocalAdgAutoFailoverMaxDataLossLimit { get; private set; } = null!;
 
         /// <summary>
-        /// Indicates the local disaster recovery (DR) type of the Serverless Autonomous Database. Autonomous Data Guard (`ADG`) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based (`BACKUP_BASED`) DR type provides lower cost DR with a slower RTO during failover or switchover.
+        /// Indicates the local disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         /// </summary>
         [Output("localDisasterRecoveryType")]
         public Output<string> LocalDisasterRecoveryType { get; private set; } = null!;
 
         /// <summary>
-        /// Autonomous Data Guard local (same region) standby database details.
+        /// Autonomous Data Guard standby database details.
         /// </summary>
         [Output("localStandbyDbs")]
         public Output<ImmutableArray<Outputs.AutonomousDatabaseLocalStandbyDb>> LocalStandbyDbs { get; private set; } = null!;
@@ -523,6 +531,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("longTermBackupSchedules")]
         public Output<ImmutableArray<Outputs.AutonomousDatabaseLongTermBackupSchedule>> LongTermBackupSchedules { get; private set; } = null!;
+
+        /// <summary>
+        /// The component chosen for maintenance.
+        /// </summary>
+        [Output("maintenanceTargetComponent")]
+        public Output<string> MaintenanceTargetComponent { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) **Deprecated.** The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
@@ -1085,13 +1099,27 @@ namespace Pulumi.Oci.Database
         /// 
         /// For an Autonomous Database on dedicated infrastructure, the allowed values are:
         /// 
+        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
         /// AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
         /// </summary>
         [Input("characterSet")]
         public Input<string>? CharacterSet { get; set; }
 
+        [Input("cloneTableSpaceLists")]
+        private InputList<int>? _cloneTableSpaceLists;
+
+        /// <summary>
+        /// A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
+        /// </summary>
+        public InputList<int> CloneTableSpaceLists
+        {
+            get => _cloneTableSpaceLists ?? (_cloneTableSpaceLists = new InputList<int>());
+            set => _cloneTableSpaceLists = value;
+        }
+
         /// <summary>
         /// The Autonomous Database clone type. This parameter is not used to create a refreshable clone type, and for refreshable clones one must use the (source=CLONE_TO_REFRESHABLE) parameter.
+        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; theirs
         /// * `FULL` - This option creates a new database that includes all source database data.
         /// * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
         /// </summary>
@@ -1799,13 +1827,27 @@ namespace Pulumi.Oci.Database
         /// 
         /// For an Autonomous Database on dedicated infrastructure, the allowed values are:
         /// 
+        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
         /// AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
         /// </summary>
         [Input("characterSet")]
         public Input<string>? CharacterSet { get; set; }
 
+        [Input("cloneTableSpaceLists")]
+        private InputList<int>? _cloneTableSpaceLists;
+
+        /// <summary>
+        /// A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
+        /// </summary>
+        public InputList<int> CloneTableSpaceLists
+        {
+            get => _cloneTableSpaceLists ?? (_cloneTableSpaceLists = new InputList<int>());
+            set => _cloneTableSpaceLists = value;
+        }
+
         /// <summary>
         /// The Autonomous Database clone type. This parameter is not used to create a refreshable clone type, and for refreshable clones one must use the (source=CLONE_TO_REFRESHABLE) parameter.
+        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; theirs
         /// * `FULL` - This option creates a new database that includes all source database data.
         /// * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
         /// </summary>
@@ -2229,7 +2271,7 @@ namespace Pulumi.Oci.Database
         public Input<int>? LocalAdgAutoFailoverMaxDataLossLimit { get; set; }
 
         /// <summary>
-        /// Indicates the local disaster recovery (DR) type of the Serverless Autonomous Database. Autonomous Data Guard (`ADG`) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based (`BACKUP_BASED`) DR type provides lower cost DR with a slower RTO during failover or switchover.
+        /// Indicates the local disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         /// </summary>
         [Input("localDisasterRecoveryType")]
         public Input<string>? LocalDisasterRecoveryType { get; set; }
@@ -2238,7 +2280,7 @@ namespace Pulumi.Oci.Database
         private InputList<Inputs.AutonomousDatabaseLocalStandbyDbGetArgs>? _localStandbyDbs;
 
         /// <summary>
-        /// Autonomous Data Guard local (same region) standby database details.
+        /// Autonomous Data Guard standby database details.
         /// </summary>
         public InputList<Inputs.AutonomousDatabaseLocalStandbyDbGetArgs> LocalStandbyDbs
         {
@@ -2257,6 +2299,12 @@ namespace Pulumi.Oci.Database
             get => _longTermBackupSchedules ?? (_longTermBackupSchedules = new InputList<Inputs.AutonomousDatabaseLongTermBackupScheduleGetArgs>());
             set => _longTermBackupSchedules = value;
         }
+
+        /// <summary>
+        /// The component chosen for maintenance.
+        /// </summary>
+        [Input("maintenanceTargetComponent")]
+        public Input<string>? MaintenanceTargetComponent { get; set; }
 
         /// <summary>
         /// (Updatable) **Deprecated.** The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.

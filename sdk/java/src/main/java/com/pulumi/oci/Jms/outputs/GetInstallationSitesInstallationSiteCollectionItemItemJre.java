@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetInstallationSitesInstallationSiteCollectionItemItemJre {
     /**
-     * @return The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
+     * @return The name of the Operating System distribution, such as Oracle Linux 9, Windows 10, or macOS X.
      * 
      */
     private String distribution;
@@ -33,7 +33,7 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItemJre {
 
     private GetInstallationSitesInstallationSiteCollectionItemItemJre() {}
     /**
-     * @return The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
+     * @return The name of the Operating System distribution, such as Oracle Linux 9, Windows 10, or macOS X.
      * 
      */
     public String distribution() {

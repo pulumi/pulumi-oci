@@ -613,11 +613,13 @@ class AutonomousContainerDatabaseArgs:
 @pulumi.input_type
 class _AutonomousContainerDatabaseState:
     def __init__(__self__, *,
+                 associated_backup_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs']]]] = None,
                  autonomous_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
                  autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                  availability_domain: Optional[pulumi.Input[str]] = None,
                  available_cpus: Optional[pulumi.Input[float]] = None,
                  backup_config: Optional[pulumi.Input['AutonomousContainerDatabaseBackupConfigArgs']] = None,
+                 backup_destination_properties_lists: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseBackupDestinationPropertiesListArgs']]]] = None,
                  cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  compute_model: Optional[pulumi.Input[str]] = None,
@@ -662,6 +664,7 @@ class _AutonomousContainerDatabaseState:
                  provisionable_cpuses: Optional[pulumi.Input[Sequence[pulumi.Input[float]]]] = None,
                  provisioned_cpus: Optional[pulumi.Input[float]] = None,
                  reclaimable_cpus: Optional[pulumi.Input[float]] = None,
+                 recovery_appliance_details: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseRecoveryApplianceDetailArgs']]]] = None,
                  reserved_cpus: Optional[pulumi.Input[float]] = None,
                  role: Optional[pulumi.Input[str]] = None,
                  rotate_key_trigger: Optional[pulumi.Input[bool]] = None,
@@ -677,11 +680,13 @@ class _AutonomousContainerDatabaseState:
                  vm_failover_reservation: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering AutonomousContainerDatabase resources.
+        :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs']]] associated_backup_configuration_details: A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
         :param pulumi.Input[str] autonomous_exadata_infrastructure_id: **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
         :param pulumi.Input[str] autonomous_vm_cluster_id: The OCID of the Autonomous VM Cluster.
         :param pulumi.Input[str] availability_domain: The availability domain of the Autonomous Container Database
         :param pulumi.Input[float] available_cpus: Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         :param pulumi.Input['AutonomousContainerDatabaseBackupConfigArgs'] backup_config: (Updatable) Backup options for the Autonomous Container Database.
+        :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseBackupDestinationPropertiesListArgs']]] backup_destination_properties_lists: This list describes the backup destination properties associated with the Autonomous Container Database (ACD) 's preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
         :param pulumi.Input[str] cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
         :param pulumi.Input[str] compute_model: The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
@@ -722,9 +727,12 @@ class _AutonomousContainerDatabaseState:
         :param pulumi.Input[str] protection_mode: The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         :param pulumi.Input[Sequence[pulumi.Input[float]]] provisionable_cpuses: An array of CPU values that can be used to successfully provision a single Autonomous Database.
         :param pulumi.Input[float] provisioned_cpus: The number of CPUs provisioned in an Autonomous Container Database.
+               <<<<<<< ours
         :param pulumi.Input[float] reclaimable_cpus: For Autonomous Databases on Dedicated Exadata Infrastructure:
                * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
                * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+               >>>>>>> theirs
+        :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseRecoveryApplianceDetailArgs']]] recovery_appliance_details: Information about the recovery appliance configuration associated with the Autonomous Container Database.
         :param pulumi.Input[float] reserved_cpus: The number of CPUs reserved in an Autonomous Container Database.
                * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
                * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
@@ -744,6 +752,8 @@ class _AutonomousContainerDatabaseState:
         :param pulumi.Input[str] version_preference: (Updatable) The next maintenance version preference.
         :param pulumi.Input[int] vm_failover_reservation: The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
         """
+        if associated_backup_configuration_details is not None:
+            pulumi.set(__self__, "associated_backup_configuration_details", associated_backup_configuration_details)
         if autonomous_exadata_infrastructure_id is not None:
             pulumi.set(__self__, "autonomous_exadata_infrastructure_id", autonomous_exadata_infrastructure_id)
         if autonomous_vm_cluster_id is not None:
@@ -754,6 +764,8 @@ class _AutonomousContainerDatabaseState:
             pulumi.set(__self__, "available_cpus", available_cpus)
         if backup_config is not None:
             pulumi.set(__self__, "backup_config", backup_config)
+        if backup_destination_properties_lists is not None:
+            pulumi.set(__self__, "backup_destination_properties_lists", backup_destination_properties_lists)
         if cloud_autonomous_vm_cluster_id is not None:
             pulumi.set(__self__, "cloud_autonomous_vm_cluster_id", cloud_autonomous_vm_cluster_id)
         if compartment_id is not None:
@@ -842,6 +854,8 @@ class _AutonomousContainerDatabaseState:
             pulumi.set(__self__, "provisioned_cpus", provisioned_cpus)
         if reclaimable_cpus is not None:
             pulumi.set(__self__, "reclaimable_cpus", reclaimable_cpus)
+        if recovery_appliance_details is not None:
+            pulumi.set(__self__, "recovery_appliance_details", recovery_appliance_details)
         if reserved_cpus is not None:
             pulumi.set(__self__, "reserved_cpus", reserved_cpus)
         if role is not None:
@@ -868,6 +882,18 @@ class _AutonomousContainerDatabaseState:
             pulumi.set(__self__, "version_preference", version_preference)
         if vm_failover_reservation is not None:
             pulumi.set(__self__, "vm_failover_reservation", vm_failover_reservation)
+
+    @property
+    @pulumi.getter(name="associatedBackupConfigurationDetails")
+    def associated_backup_configuration_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs']]]]:
+        """
+        A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
+        """
+        return pulumi.get(self, "associated_backup_configuration_details")
+
+    @associated_backup_configuration_details.setter
+    def associated_backup_configuration_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs']]]]):
+        pulumi.set(self, "associated_backup_configuration_details", value)
 
     @property
     @pulumi.getter(name="autonomousExadataInfrastructureId")
@@ -928,6 +954,18 @@ class _AutonomousContainerDatabaseState:
     @backup_config.setter
     def backup_config(self, value: Optional[pulumi.Input['AutonomousContainerDatabaseBackupConfigArgs']]):
         pulumi.set(self, "backup_config", value)
+
+    @property
+    @pulumi.getter(name="backupDestinationPropertiesLists")
+    def backup_destination_properties_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseBackupDestinationPropertiesListArgs']]]]:
+        """
+        This list describes the backup destination properties associated with the Autonomous Container Database (ACD) 's preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
+        """
+        return pulumi.get(self, "backup_destination_properties_lists")
+
+    @backup_destination_properties_lists.setter
+    def backup_destination_properties_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseBackupDestinationPropertiesListArgs']]]]):
+        pulumi.set(self, "backup_destination_properties_lists", value)
 
     @property
     @pulumi.getter(name="cloudAutonomousVmClusterId")
@@ -1429,6 +1467,7 @@ class _AutonomousContainerDatabaseState:
     def provisioned_cpus(self) -> Optional[pulumi.Input[float]]:
         """
         The number of CPUs provisioned in an Autonomous Container Database.
+        <<<<<<< ours
         """
         return pulumi.get(self, "provisioned_cpus")
 
@@ -1443,12 +1482,25 @@ class _AutonomousContainerDatabaseState:
         For Autonomous Databases on Dedicated Exadata Infrastructure:
         * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
         * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        >>>>>>> theirs
         """
         return pulumi.get(self, "reclaimable_cpus")
 
     @reclaimable_cpus.setter
     def reclaimable_cpus(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "reclaimable_cpus", value)
+
+    @property
+    @pulumi.getter(name="recoveryApplianceDetails")
+    def recovery_appliance_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseRecoveryApplianceDetailArgs']]]]:
+        """
+        Information about the recovery appliance configuration associated with the Autonomous Container Database.
+        """
+        return pulumi.get(self, "recovery_appliance_details")
+
+    @recovery_appliance_details.setter
+    def recovery_appliance_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseRecoveryApplianceDetailArgs']]]]):
+        pulumi.set(self, "recovery_appliance_details", value)
 
     @property
     @pulumi.getter(name="reservedCpus")
@@ -1829,8 +1881,10 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             __props__.__dict__["vault_id"] = vault_id
             __props__.__dict__["version_preference"] = version_preference
             __props__.__dict__["vm_failover_reservation"] = vm_failover_reservation
+            __props__.__dict__["associated_backup_configuration_details"] = None
             __props__.__dict__["availability_domain"] = None
             __props__.__dict__["available_cpus"] = None
+            __props__.__dict__["backup_destination_properties_lists"] = None
             __props__.__dict__["compute_model"] = None
             __props__.__dict__["dst_file_version"] = None
             __props__.__dict__["infrastructure_type"] = None
@@ -1847,6 +1901,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             __props__.__dict__["provisionable_cpuses"] = None
             __props__.__dict__["provisioned_cpus"] = None
             __props__.__dict__["reclaimable_cpus"] = None
+            __props__.__dict__["recovery_appliance_details"] = None
             __props__.__dict__["reserved_cpus"] = None
             __props__.__dict__["role"] = None
             __props__.__dict__["state"] = None
@@ -1864,11 +1919,13 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            associated_backup_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs', 'AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgsDict']]]]] = None,
             autonomous_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
             autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
             availability_domain: Optional[pulumi.Input[str]] = None,
             available_cpus: Optional[pulumi.Input[float]] = None,
             backup_config: Optional[pulumi.Input[Union['AutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
+            backup_destination_properties_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseBackupDestinationPropertiesListArgs', 'AutonomousContainerDatabaseBackupDestinationPropertiesListArgsDict']]]]] = None,
             cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             compute_model: Optional[pulumi.Input[str]] = None,
@@ -1913,6 +1970,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             provisionable_cpuses: Optional[pulumi.Input[Sequence[pulumi.Input[float]]]] = None,
             provisioned_cpus: Optional[pulumi.Input[float]] = None,
             reclaimable_cpus: Optional[pulumi.Input[float]] = None,
+            recovery_appliance_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseRecoveryApplianceDetailArgs', 'AutonomousContainerDatabaseRecoveryApplianceDetailArgsDict']]]]] = None,
             reserved_cpus: Optional[pulumi.Input[float]] = None,
             role: Optional[pulumi.Input[str]] = None,
             rotate_key_trigger: Optional[pulumi.Input[bool]] = None,
@@ -1933,11 +1991,13 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs', 'AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgsDict']]]] associated_backup_configuration_details: A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
         :param pulumi.Input[str] autonomous_exadata_infrastructure_id: **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
         :param pulumi.Input[str] autonomous_vm_cluster_id: The OCID of the Autonomous VM Cluster.
         :param pulumi.Input[str] availability_domain: The availability domain of the Autonomous Container Database
         :param pulumi.Input[float] available_cpus: Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         :param pulumi.Input[Union['AutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseBackupConfigArgsDict']] backup_config: (Updatable) Backup options for the Autonomous Container Database.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseBackupDestinationPropertiesListArgs', 'AutonomousContainerDatabaseBackupDestinationPropertiesListArgsDict']]]] backup_destination_properties_lists: This list describes the backup destination properties associated with the Autonomous Container Database (ACD) 's preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
         :param pulumi.Input[str] cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
         :param pulumi.Input[str] compute_model: The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
@@ -1978,9 +2038,12 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] protection_mode: The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         :param pulumi.Input[Sequence[pulumi.Input[float]]] provisionable_cpuses: An array of CPU values that can be used to successfully provision a single Autonomous Database.
         :param pulumi.Input[float] provisioned_cpus: The number of CPUs provisioned in an Autonomous Container Database.
+               <<<<<<< ours
         :param pulumi.Input[float] reclaimable_cpus: For Autonomous Databases on Dedicated Exadata Infrastructure:
                * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
                * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+               >>>>>>> theirs
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseRecoveryApplianceDetailArgs', 'AutonomousContainerDatabaseRecoveryApplianceDetailArgsDict']]]] recovery_appliance_details: Information about the recovery appliance configuration associated with the Autonomous Container Database.
         :param pulumi.Input[float] reserved_cpus: The number of CPUs reserved in an Autonomous Container Database.
                * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
                * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
@@ -2004,11 +2067,13 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
 
         __props__ = _AutonomousContainerDatabaseState.__new__(_AutonomousContainerDatabaseState)
 
+        __props__.__dict__["associated_backup_configuration_details"] = associated_backup_configuration_details
         __props__.__dict__["autonomous_exadata_infrastructure_id"] = autonomous_exadata_infrastructure_id
         __props__.__dict__["autonomous_vm_cluster_id"] = autonomous_vm_cluster_id
         __props__.__dict__["availability_domain"] = availability_domain
         __props__.__dict__["available_cpus"] = available_cpus
         __props__.__dict__["backup_config"] = backup_config
+        __props__.__dict__["backup_destination_properties_lists"] = backup_destination_properties_lists
         __props__.__dict__["cloud_autonomous_vm_cluster_id"] = cloud_autonomous_vm_cluster_id
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["compute_model"] = compute_model
@@ -2053,6 +2118,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         __props__.__dict__["provisionable_cpuses"] = provisionable_cpuses
         __props__.__dict__["provisioned_cpus"] = provisioned_cpus
         __props__.__dict__["reclaimable_cpus"] = reclaimable_cpus
+        __props__.__dict__["recovery_appliance_details"] = recovery_appliance_details
         __props__.__dict__["reserved_cpus"] = reserved_cpus
         __props__.__dict__["role"] = role
         __props__.__dict__["rotate_key_trigger"] = rotate_key_trigger
@@ -2067,6 +2133,14 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         __props__.__dict__["version_preference"] = version_preference
         __props__.__dict__["vm_failover_reservation"] = vm_failover_reservation
         return AutonomousContainerDatabase(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter(name="associatedBackupConfigurationDetails")
+    def associated_backup_configuration_details(self) -> pulumi.Output[Sequence['outputs.AutonomousContainerDatabaseAssociatedBackupConfigurationDetail']]:
+        """
+        A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
+        """
+        return pulumi.get(self, "associated_backup_configuration_details")
 
     @property
     @pulumi.getter(name="autonomousExadataInfrastructureId")
@@ -2107,6 +2181,14 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         (Updatable) Backup options for the Autonomous Container Database.
         """
         return pulumi.get(self, "backup_config")
+
+    @property
+    @pulumi.getter(name="backupDestinationPropertiesLists")
+    def backup_destination_properties_lists(self) -> pulumi.Output[Sequence['outputs.AutonomousContainerDatabaseBackupDestinationPropertiesList']]:
+        """
+        This list describes the backup destination properties associated with the Autonomous Container Database (ACD) 's preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
+        """
+        return pulumi.get(self, "backup_destination_properties_lists")
 
     @property
     @pulumi.getter(name="cloudAutonomousVmClusterId")
@@ -2440,6 +2522,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
     def provisioned_cpus(self) -> pulumi.Output[float]:
         """
         The number of CPUs provisioned in an Autonomous Container Database.
+        <<<<<<< ours
         """
         return pulumi.get(self, "provisioned_cpus")
 
@@ -2450,8 +2533,17 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         For Autonomous Databases on Dedicated Exadata Infrastructure:
         * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
         * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        >>>>>>> theirs
         """
         return pulumi.get(self, "reclaimable_cpus")
+
+    @property
+    @pulumi.getter(name="recoveryApplianceDetails")
+    def recovery_appliance_details(self) -> pulumi.Output[Sequence['outputs.AutonomousContainerDatabaseRecoveryApplianceDetail']]:
+        """
+        Information about the recovery appliance configuration associated with the Autonomous Container Database.
+        """
+        return pulumi.get(self, "recovery_appliance_details")
 
     @property
     @pulumi.getter(name="reservedCpus")

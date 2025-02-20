@@ -181,13 +181,25 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string State;
         /// <summary>
+        /// The time when the total storage size and the utilized storage size of the backup destination are updated.
+        /// </summary>
+        public readonly string TimeAtWhichStorageDetailsAreUpdated;
+        /// <summary>
         /// The date and time the backup destination was created.
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
+        /// The total storage size of the backup destination in GBs, rounded to the nearest integer.
+        /// </summary>
+        public readonly int TotalStorageSizeInGbs;
+        /// <summary>
         /// Type of the backup destination.
         /// </summary>
         public readonly string Type;
+        /// <summary>
+        /// The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
+        /// </summary>
+        public readonly int UtilizedStorageSizeInGbs;
         /// <summary>
         /// For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
         /// </summary>
@@ -225,9 +237,15 @@ namespace Pulumi.Oci.Database
 
             string state,
 
+            string timeAtWhichStorageDetailsAreUpdated,
+
             string timeCreated,
 
+            int totalStorageSizeInGbs,
+
             string type,
+
+            int utilizedStorageSizeInGbs,
 
             ImmutableArray<string> vpcUsers)
         {
@@ -246,8 +264,11 @@ namespace Pulumi.Oci.Database
             NfsServerExport = nfsServerExport;
             NfsServers = nfsServers;
             State = state;
+            TimeAtWhichStorageDetailsAreUpdated = timeAtWhichStorageDetailsAreUpdated;
             TimeCreated = timeCreated;
+            TotalStorageSizeInGbs = totalStorageSizeInGbs;
             Type = type;
+            UtilizedStorageSizeInGbs = utilizedStorageSizeInGbs;
             VpcUsers = vpcUsers;
         }
     }

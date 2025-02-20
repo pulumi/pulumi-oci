@@ -18,6 +18,21 @@ public final class MonitoredResourceTypeState extends com.pulumi.resources.Resou
     public static final MonitoredResourceTypeState Empty = new MonitoredResourceTypeState();
 
     /**
+     * Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
+     * 
+     */
+    @Import(name="additionalNamespaceMap")
+    private @Nullable Output<Map<String,String>> additionalNamespaceMap;
+
+    /**
+     * @return Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
+     * 
+     */
+    public Optional<Output<Map<String,String>>> additionalNamespaceMap() {
+        return Optional.ofNullable(this.additionalNamespaceMap);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
      * 
      */
@@ -236,6 +251,7 @@ public final class MonitoredResourceTypeState extends com.pulumi.resources.Resou
     private MonitoredResourceTypeState() {}
 
     private MonitoredResourceTypeState(MonitoredResourceTypeState $) {
+        this.additionalNamespaceMap = $.additionalNamespaceMap;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.description = $.description;
@@ -268,6 +284,27 @@ public final class MonitoredResourceTypeState extends com.pulumi.resources.Resou
 
         public Builder(MonitoredResourceTypeState defaults) {
             $ = new MonitoredResourceTypeState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param additionalNamespaceMap Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder additionalNamespaceMap(@Nullable Output<Map<String,String>> additionalNamespaceMap) {
+            $.additionalNamespaceMap = additionalNamespaceMap;
+            return this;
+        }
+
+        /**
+         * @param additionalNamespaceMap Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder additionalNamespaceMap(Map<String,String> additionalNamespaceMap) {
+            return additionalNamespaceMap(Output.of(additionalNamespaceMap));
         }
 
         /**

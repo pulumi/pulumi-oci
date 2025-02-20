@@ -19,6 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testJmsPlugins = oci.Jms.getJmsPlugins({
  *     agentId: jmsPluginAgentId,
+ *     agentType: jmsPluginAgentType,
  *     availabilityStatus: jmsPluginAvailabilityStatus,
  *     compartmentId: compartmentId,
  *     compartmentIdInSubtree: jmsPluginCompartmentIdInSubtree,
@@ -36,6 +37,7 @@ export function getJmsPlugins(args?: GetJmsPluginsArgs, opts?: pulumi.InvokeOpti
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getJmsPlugins:getJmsPlugins", {
         "agentId": args.agentId,
+        "agentType": args.agentType,
         "availabilityStatus": args.availabilityStatus,
         "compartmentId": args.compartmentId,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
@@ -57,6 +59,10 @@ export interface GetJmsPluginsArgs {
      * The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
      */
     agentId?: string;
+    /**
+     * Filter JmsPlugin with agent type.
+     */
+    agentType?: string;
     /**
      * Filter JmsPlugin with its availability status.
      */
@@ -105,6 +111,10 @@ export interface GetJmsPluginsResult {
      */
     readonly agentId?: string;
     /**
+     * The agent type.
+     */
+    readonly agentType?: string;
+    /**
      * The availability status.
      */
     readonly availabilityStatus?: string;
@@ -147,6 +157,7 @@ export interface GetJmsPluginsResult {
  *
  * const testJmsPlugins = oci.Jms.getJmsPlugins({
  *     agentId: jmsPluginAgentId,
+ *     agentType: jmsPluginAgentType,
  *     availabilityStatus: jmsPluginAvailabilityStatus,
  *     compartmentId: compartmentId,
  *     compartmentIdInSubtree: jmsPluginCompartmentIdInSubtree,
@@ -164,6 +175,7 @@ export function getJmsPluginsOutput(args?: GetJmsPluginsOutputArgs, opts?: pulum
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Jms/getJmsPlugins:getJmsPlugins", {
         "agentId": args.agentId,
+        "agentType": args.agentType,
         "availabilityStatus": args.availabilityStatus,
         "compartmentId": args.compartmentId,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
@@ -185,6 +197,10 @@ export interface GetJmsPluginsOutputArgs {
      * The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
      */
     agentId?: pulumi.Input<string>;
+    /**
+     * Filter JmsPlugin with agent type.
+     */
+    agentType?: pulumi.Input<string>;
     /**
      * Filter JmsPlugin with its availability status.
      */

@@ -26,6 +26,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// The component chosen for maintenance.
+        /// </summary>
+        public readonly string MaintenanceTargetComponent;
+        /// <summary>
         /// The current state of the Autonomous Database.
         /// </summary>
         public readonly string State;
@@ -37,6 +41,14 @@ namespace Pulumi.Oci.Database.Outputs
         /// The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
         /// </summary>
         public readonly string TimeDisasterRecoveryRoleChanged;
+        /// <summary>
+        /// The date and time when maintenance will begin.
+        /// </summary>
+        public readonly string TimeMaintenanceBegin;
+        /// <summary>
+        /// The date and time when maintenance will end.
+        /// </summary>
+        public readonly string TimeMaintenanceEnd;
 
         [OutputConstructor]
         private GetAutonomousDatabaseLocalStandbyDbResult(
@@ -46,18 +58,27 @@ namespace Pulumi.Oci.Database.Outputs
 
             string lifecycleDetails,
 
+            string maintenanceTargetComponent,
+
             string state,
 
             string timeDataGuardRoleChanged,
 
-            string timeDisasterRecoveryRoleChanged)
+            string timeDisasterRecoveryRoleChanged,
+
+            string timeMaintenanceBegin,
+
+            string timeMaintenanceEnd)
         {
             AvailabilityDomain = availabilityDomain;
             LagTimeInSeconds = lagTimeInSeconds;
             LifecycleDetails = lifecycleDetails;
+            MaintenanceTargetComponent = maintenanceTargetComponent;
             State = state;
             TimeDataGuardRoleChanged = timeDataGuardRoleChanged;
             TimeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
+            TimeMaintenanceBegin = timeMaintenanceBegin;
+            TimeMaintenanceEnd = timeMaintenanceEnd;
         }
     }
 }

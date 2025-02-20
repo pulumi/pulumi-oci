@@ -90,6 +90,7 @@ class ConnectionArgs:
                  service_account_key_file_secret_id: Optional[pulumi.Input[str]] = None,
                  session_mode: Optional[pulumi.Input[str]] = None,
                  should_use_jndi: Optional[pulumi.Input[bool]] = None,
+                 should_use_resource_principal: Optional[pulumi.Input[bool]] = None,
                  should_validate_server_certificate: Optional[pulumi.Input[bool]] = None,
                  ssl_ca: Optional[pulumi.Input[str]] = None,
                  ssl_cert: Optional[pulumi.Input[str]] = None,
@@ -104,9 +105,16 @@ class ConnectionArgs:
                  ssl_key_secret_id: Optional[pulumi.Input[str]] = None,
                  ssl_mode: Optional[pulumi.Input[str]] = None,
                  ssl_server_certificate: Optional[pulumi.Input[str]] = None,
+                 storage_credential_name: Optional[pulumi.Input[str]] = None,
                  stream_pool_id: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  tenancy_id: Optional[pulumi.Input[str]] = None,
+                 tenant_id: Optional[pulumi.Input[str]] = None,
+                 tls_ca_file: Optional[pulumi.Input[str]] = None,
+                 tls_certificate_key_file: Optional[pulumi.Input[str]] = None,
+                 tls_certificate_key_file_password: Optional[pulumi.Input[str]] = None,
+                 tls_certificate_key_file_password_secret_id: Optional[pulumi.Input[str]] = None,
+                 tls_certificate_key_file_secret_id: Optional[pulumi.Input[str]] = None,
                  trigger_refresh: Optional[pulumi.Input[bool]] = None,
                  trust_store: Optional[pulumi.Input[str]] = None,
                  trust_store_password: Optional[pulumi.Input[str]] = None,
@@ -125,7 +133,7 @@ class ConnectionArgs:
         :param pulumi.Input[str] display_name: (Updatable) An object's Display Name.
         :param pulumi.Input[str] technology_type: The Kafka (e.g. Confluent) Schema Registry technology type.
         :param pulumi.Input[str] access_key_id: (Updatable) Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
-        :param pulumi.Input[str] account_key: (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
+        :param pulumi.Input[str] account_key: (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] account_key_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, 'accountKey' field must not be provided.
         :param pulumi.Input[str] account_name: (Updatable) Sets the Azure storage account name.
         :param pulumi.Input[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]] additional_attributes: (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
@@ -134,11 +142,11 @@ class ConnectionArgs:
         :param pulumi.Input[str] azure_tenant_id: (Updatable) Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         :param pulumi.Input[Sequence[pulumi.Input['ConnectionBootstrapServerArgs']]] bootstrap_servers: (Updatable) Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
         :param pulumi.Input[str] client_id: (Updatable) Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
-        :param pulumi.Input[str] client_secret: (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
-        :param pulumi.Input[str] client_secret_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not be provided.
+        :param pulumi.Input[str] client_secret: (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
+        :param pulumi.Input[str] client_secret_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
         :param pulumi.Input[str] connection_factory: (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
         :param pulumi.Input[str] connection_string: (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
-        :param pulumi.Input[str] connection_url: (Updatable) JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+        :param pulumi.Input[str] connection_url: (Updatable) Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
         :param pulumi.Input[str] consumer_properties: (Updatable) The base64 encoded content of the consumer.properties file.
         :param pulumi.Input[str] core_site_xml: (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
         :param pulumi.Input[str] database_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
@@ -148,7 +156,7 @@ class ConnectionArgs:
         :param pulumi.Input[str] deployment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         :param pulumi.Input[str] description: (Updatable) Metadata about this specific object.
         :param pulumi.Input[bool] does_use_secret_ids: (Updatable) Indicates that sensitive attributes are provided via Secrets.
-        :param pulumi.Input[str] endpoint: (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+        :param pulumi.Input[str] endpoint: (Updatable)Azure Storage service endpoint. e.g: https://test.blob.core.windows.net,  Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
         :param pulumi.Input[str] fingerprint: (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] host: (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
@@ -156,73 +164,82 @@ class ConnectionArgs:
         :param pulumi.Input[str] jndi_connection_factory: (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
         :param pulumi.Input[str] jndi_initial_context_factory: (Updatable) The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
         :param pulumi.Input[str] jndi_provider_url: (Updatable) The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
-        :param pulumi.Input[str] jndi_security_credentials: (Updatable) The password associated to the principal.
+        :param pulumi.Input[str] jndi_security_credentials: (Updatable) The password associated to the principal. Deprecated: This field is deprecated and replaced by "jndiSecurityCredentialsSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] jndi_security_credentials_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the security credentials are stored associated to the principal. Note: When provided, 'jndiSecurityCredentials' field must not be provided.
         :param pulumi.Input[str] jndi_security_principal: (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
         :param pulumi.Input[str] key_id: (Updatable) Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
-        :param pulumi.Input[str] key_store: (Updatable) The base64 encoded content of the KeyStore file.
-        :param pulumi.Input[str] key_store_password: (Updatable) The KeyStore password.
+        :param pulumi.Input[str] key_store: (Updatable) The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
+        :param pulumi.Input[str] key_store_password: (Updatable) The KeyStore password. Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] key_store_password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, 'keyStorePassword' field must not be provided.
         :param pulumi.Input[str] key_store_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore' field must not be provided.
         :param pulumi.Input[Sequence[pulumi.Input['ConnectionLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
-        :param pulumi.Input[str] password: (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
+        :param pulumi.Input[str] password: (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. If secretId is used plaintext field must not be provided. Note: When provided, 'password' field must not be provided.
         :param pulumi.Input[int] port: (Updatable) The port of an endpoint usually specified for a connection.
         :param pulumi.Input[str] private_ip: (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
                
                The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-        :param pulumi.Input[str] private_key_file: (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        :param pulumi.Input[str] private_key_file: (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] private_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, 'privateKeyFile' field must not be provided.
-        :param pulumi.Input[str] private_key_passphrase: (Updatable) Password if the private key file is encrypted.
+        :param pulumi.Input[str] private_key_passphrase: (Updatable) Password if the private key file is encrypted. Deprecated: This field is deprecated and replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] private_key_passphrase_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, 'privateKeyPassphrase' field must not be provided.
         :param pulumi.Input[str] producer_properties: (Updatable) The base64 encoded content of the producer.properties file.
         :param pulumi.Input[str] public_key_fingerprint: (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
         :param pulumi.Input[str] redis_cluster_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
-        :param pulumi.Input[str] region: (Updatable) The name of the region. e.g.: us-ashburn-1
+        :param pulumi.Input[str] region: (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
         :param pulumi.Input[str] routing_method: (Updatable) Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
-        :param pulumi.Input[str] sas_token: (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
+        :param pulumi.Input[str] sas_token: (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] sas_token_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be provided.
-        :param pulumi.Input[str] secret_access_key: (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+        :param pulumi.Input[str] secret_access_key: (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] secret_access_key_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field must not be provided.
         :param pulumi.Input[str] security_protocol: (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
         :param pulumi.Input[str] servers: (Updatable) Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
-        :param pulumi.Input[str] service_account_key_file: (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage.
+        :param pulumi.Input[str] service_account_key_file: (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] service_account_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
         :param pulumi.Input[str] session_mode: (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
         :param pulumi.Input[bool] should_use_jndi: (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
+        :param pulumi.Input[bool] should_use_resource_principal: (Updatable) Indicates that the user intents to connect to the instance through resource principal.
         :param pulumi.Input[bool] should_validate_server_certificate: (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
         :param pulumi.Input[str] ssl_ca: (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
         :param pulumi.Input[str] ssl_cert: (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
-        :param pulumi.Input[str] ssl_client_keystash: (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+        :param pulumi.Input[str] ssl_client_keystash: (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] ssl_client_keystash_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
-        :param pulumi.Input[str] ssl_client_keystoredb: (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+        :param pulumi.Input[str] ssl_client_keystoredb: (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] ssl_client_keystoredb_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
         :param pulumi.Input[str] ssl_crl: (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
-        :param pulumi.Input[str] ssl_key: (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
-        :param pulumi.Input[str] ssl_key_password: (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
+        :param pulumi.Input[str] ssl_key: (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "sslKeySecretId". This field will be removed after February 15 2026.
+        :param pulumi.Input[str] ssl_key_password: (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided. Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] ssl_key_password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword' field must not be provided.
         :param pulumi.Input[str] ssl_key_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
                * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
         :param pulumi.Input[str] ssl_mode: (Updatable) SSL modes for PostgreSQL.
         :param pulumi.Input[str] ssl_server_certificate: (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+        :param pulumi.Input[str] storage_credential_name: (Updatable) Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
         :param pulumi.Input[str] stream_pool_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
         :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
         :param pulumi.Input[str] tenancy_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
+        :param pulumi.Input[str] tenant_id: (Updatable) Azure tenant ID of the application. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
+        :param pulumi.Input[str] tls_ca_file: (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+        :param pulumi.Input[str] tls_certificate_key_file: (Updatable) Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
+        :param pulumi.Input[str] tls_certificate_key_file_password: (Updatable) Client Certificate key file password. Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFilePasswordSecretId". This field will be removed after February 15 2026.
+        :param pulumi.Input[str] tls_certificate_key_file_password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
+        :param pulumi.Input[str] tls_certificate_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
+               * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
         :param pulumi.Input[bool] trigger_refresh: (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the "update" plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] trust_store: (Updatable) The base64 encoded content of the TrustStore file.
-        :param pulumi.Input[str] trust_store_password: (Updatable) The TrustStore password.
+        :param pulumi.Input[str] trust_store: (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
+        :param pulumi.Input[str] trust_store_password: (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] trust_store_password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, 'trustStorePassword' field must not be provided.
         :param pulumi.Input[str] trust_store_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided.
         :param pulumi.Input[str] url: (Updatable) Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
-        :param pulumi.Input[str] user_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to.
+        :param pulumi.Input[str] user_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
         :param pulumi.Input[str] username: (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
         :param pulumi.Input[str] vault_id: (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
-        :param pulumi.Input[str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
+        :param pulumi.Input[str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] wallet_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -359,6 +376,8 @@ class ConnectionArgs:
             pulumi.set(__self__, "session_mode", session_mode)
         if should_use_jndi is not None:
             pulumi.set(__self__, "should_use_jndi", should_use_jndi)
+        if should_use_resource_principal is not None:
+            pulumi.set(__self__, "should_use_resource_principal", should_use_resource_principal)
         if should_validate_server_certificate is not None:
             pulumi.set(__self__, "should_validate_server_certificate", should_validate_server_certificate)
         if ssl_ca is not None:
@@ -387,12 +406,26 @@ class ConnectionArgs:
             pulumi.set(__self__, "ssl_mode", ssl_mode)
         if ssl_server_certificate is not None:
             pulumi.set(__self__, "ssl_server_certificate", ssl_server_certificate)
+        if storage_credential_name is not None:
+            pulumi.set(__self__, "storage_credential_name", storage_credential_name)
         if stream_pool_id is not None:
             pulumi.set(__self__, "stream_pool_id", stream_pool_id)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
         if tenancy_id is not None:
             pulumi.set(__self__, "tenancy_id", tenancy_id)
+        if tenant_id is not None:
+            pulumi.set(__self__, "tenant_id", tenant_id)
+        if tls_ca_file is not None:
+            pulumi.set(__self__, "tls_ca_file", tls_ca_file)
+        if tls_certificate_key_file is not None:
+            pulumi.set(__self__, "tls_certificate_key_file", tls_certificate_key_file)
+        if tls_certificate_key_file_password is not None:
+            pulumi.set(__self__, "tls_certificate_key_file_password", tls_certificate_key_file_password)
+        if tls_certificate_key_file_password_secret_id is not None:
+            pulumi.set(__self__, "tls_certificate_key_file_password_secret_id", tls_certificate_key_file_password_secret_id)
+        if tls_certificate_key_file_secret_id is not None:
+            pulumi.set(__self__, "tls_certificate_key_file_secret_id", tls_certificate_key_file_secret_id)
         if trigger_refresh is not None:
             pulumi.set(__self__, "trigger_refresh", trigger_refresh)
         if trust_store is not None:
@@ -480,7 +513,7 @@ class ConnectionArgs:
     @pulumi.getter(name="accountKey")
     def account_key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
+        (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "account_key")
 
@@ -588,7 +621,7 @@ class ConnectionArgs:
     @pulumi.getter(name="clientSecret")
     def client_secret(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
+        (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "client_secret")
 
@@ -600,7 +633,7 @@ class ConnectionArgs:
     @pulumi.getter(name="clientSecretSecretId")
     def client_secret_secret_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not be provided.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
         """
         return pulumi.get(self, "client_secret_secret_id")
 
@@ -636,7 +669,7 @@ class ConnectionArgs:
     @pulumi.getter(name="connectionUrl")
     def connection_url(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+        (Updatable) Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
         """
         return pulumi.get(self, "connection_url")
 
@@ -756,7 +789,7 @@ class ConnectionArgs:
     @pulumi.getter
     def endpoint(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+        (Updatable)Azure Storage service endpoint. e.g: https://test.blob.core.windows.net,  Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
         """
         return pulumi.get(self, "endpoint")
 
@@ -850,7 +883,7 @@ class ConnectionArgs:
     @pulumi.getter(name="jndiSecurityCredentials")
     def jndi_security_credentials(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The password associated to the principal.
+        (Updatable) The password associated to the principal. Deprecated: This field is deprecated and replaced by "jndiSecurityCredentialsSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "jndi_security_credentials")
 
@@ -898,7 +931,7 @@ class ConnectionArgs:
     @pulumi.getter(name="keyStore")
     def key_store(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The base64 encoded content of the KeyStore file.
+        (Updatable) The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "key_store")
 
@@ -910,7 +943,7 @@ class ConnectionArgs:
     @pulumi.getter(name="keyStorePassword")
     def key_store_password(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The KeyStore password.
+        (Updatable) The KeyStore password. Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "key_store_password")
 
@@ -970,7 +1003,7 @@ class ConnectionArgs:
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
+        (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "password")
 
@@ -1020,7 +1053,7 @@ class ConnectionArgs:
     @pulumi.getter(name="privateKeyFile")
     def private_key_file(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "private_key_file")
 
@@ -1044,7 +1077,7 @@ class ConnectionArgs:
     @pulumi.getter(name="privateKeyPassphrase")
     def private_key_passphrase(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Password if the private key file is encrypted.
+        (Updatable) Password if the private key file is encrypted. Deprecated: This field is deprecated and replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "private_key_passphrase")
 
@@ -1104,7 +1137,7 @@ class ConnectionArgs:
     @pulumi.getter
     def region(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The name of the region. e.g.: us-ashburn-1
+        (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
         """
         return pulumi.get(self, "region")
 
@@ -1128,7 +1161,7 @@ class ConnectionArgs:
     @pulumi.getter(name="sasToken")
     def sas_token(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
+        (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "sas_token")
 
@@ -1152,7 +1185,7 @@ class ConnectionArgs:
     @pulumi.getter(name="secretAccessKey")
     def secret_access_key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+        (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "secret_access_key")
 
@@ -1200,7 +1233,7 @@ class ConnectionArgs:
     @pulumi.getter(name="serviceAccountKeyFile")
     def service_account_key_file(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage.
+        (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "service_account_key_file")
 
@@ -1245,6 +1278,18 @@ class ConnectionArgs:
         pulumi.set(self, "should_use_jndi", value)
 
     @property
+    @pulumi.getter(name="shouldUseResourcePrincipal")
+    def should_use_resource_principal(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates that the user intents to connect to the instance through resource principal.
+        """
+        return pulumi.get(self, "should_use_resource_principal")
+
+    @should_use_resource_principal.setter
+    def should_use_resource_principal(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "should_use_resource_principal", value)
+
+    @property
     @pulumi.getter(name="shouldValidateServerCertificate")
     def should_validate_server_certificate(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -1284,7 +1329,7 @@ class ConnectionArgs:
     @pulumi.getter(name="sslClientKeystash")
     def ssl_client_keystash(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+        (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "ssl_client_keystash")
 
@@ -1308,7 +1353,7 @@ class ConnectionArgs:
     @pulumi.getter(name="sslClientKeystoredb")
     def ssl_client_keystoredb(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+        (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "ssl_client_keystoredb")
 
@@ -1344,7 +1389,7 @@ class ConnectionArgs:
     @pulumi.getter(name="sslKey")
     def ssl_key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
+        (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "sslKeySecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "ssl_key")
 
@@ -1356,7 +1401,7 @@ class ConnectionArgs:
     @pulumi.getter(name="sslKeyPassword")
     def ssl_key_password(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
+        (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided. Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "ssl_key_password")
 
@@ -1414,6 +1459,18 @@ class ConnectionArgs:
         pulumi.set(self, "ssl_server_certificate", value)
 
     @property
+    @pulumi.getter(name="storageCredentialName")
+    def storage_credential_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
+        """
+        return pulumi.get(self, "storage_credential_name")
+
+    @storage_credential_name.setter
+    def storage_credential_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "storage_credential_name", value)
+
+    @property
     @pulumi.getter(name="streamPoolId")
     def stream_pool_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1450,6 +1507,79 @@ class ConnectionArgs:
         pulumi.set(self, "tenancy_id", value)
 
     @property
+    @pulumi.getter(name="tenantId")
+    def tenant_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Azure tenant ID of the application. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
+        """
+        return pulumi.get(self, "tenant_id")
+
+    @tenant_id.setter
+    def tenant_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "tenant_id", value)
+
+    @property
+    @pulumi.getter(name="tlsCaFile")
+    def tls_ca_file(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+        """
+        return pulumi.get(self, "tls_ca_file")
+
+    @tls_ca_file.setter
+    def tls_ca_file(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "tls_ca_file", value)
+
+    @property
+    @pulumi.getter(name="tlsCertificateKeyFile")
+    def tls_certificate_key_file(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
+        """
+        return pulumi.get(self, "tls_certificate_key_file")
+
+    @tls_certificate_key_file.setter
+    def tls_certificate_key_file(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "tls_certificate_key_file", value)
+
+    @property
+    @pulumi.getter(name="tlsCertificateKeyFilePassword")
+    def tls_certificate_key_file_password(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Client Certificate key file password. Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFilePasswordSecretId". This field will be removed after February 15 2026.
+        """
+        return pulumi.get(self, "tls_certificate_key_file_password")
+
+    @tls_certificate_key_file_password.setter
+    def tls_certificate_key_file_password(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "tls_certificate_key_file_password", value)
+
+    @property
+    @pulumi.getter(name="tlsCertificateKeyFilePasswordSecretId")
+    def tls_certificate_key_file_password_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
+        """
+        return pulumi.get(self, "tls_certificate_key_file_password_secret_id")
+
+    @tls_certificate_key_file_password_secret_id.setter
+    def tls_certificate_key_file_password_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "tls_certificate_key_file_password_secret_id", value)
+
+    @property
+    @pulumi.getter(name="tlsCertificateKeyFileSecretId")
+    def tls_certificate_key_file_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
+        * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
+        """
+        return pulumi.get(self, "tls_certificate_key_file_secret_id")
+
+    @tls_certificate_key_file_secret_id.setter
+    def tls_certificate_key_file_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "tls_certificate_key_file_secret_id", value)
+
+    @property
     @pulumi.getter(name="triggerRefresh")
     def trigger_refresh(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -1469,7 +1599,7 @@ class ConnectionArgs:
     @pulumi.getter(name="trustStore")
     def trust_store(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The base64 encoded content of the TrustStore file.
+        (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "trust_store")
 
@@ -1481,7 +1611,7 @@ class ConnectionArgs:
     @pulumi.getter(name="trustStorePassword")
     def trust_store_password(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The TrustStore password.
+        (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "trust_store_password")
 
@@ -1529,7 +1659,7 @@ class ConnectionArgs:
     @pulumi.getter(name="userId")
     def user_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
         """
         return pulumi.get(self, "user_id")
 
@@ -1565,7 +1695,7 @@ class ConnectionArgs:
     @pulumi.getter
     def wallet(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
+        (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "wallet")
 
@@ -1659,6 +1789,7 @@ class _ConnectionState:
                  service_account_key_file_secret_id: Optional[pulumi.Input[str]] = None,
                  session_mode: Optional[pulumi.Input[str]] = None,
                  should_use_jndi: Optional[pulumi.Input[bool]] = None,
+                 should_use_resource_principal: Optional[pulumi.Input[bool]] = None,
                  should_validate_server_certificate: Optional[pulumi.Input[bool]] = None,
                  ssl_ca: Optional[pulumi.Input[str]] = None,
                  ssl_cert: Optional[pulumi.Input[str]] = None,
@@ -1674,13 +1805,20 @@ class _ConnectionState:
                  ssl_mode: Optional[pulumi.Input[str]] = None,
                  ssl_server_certificate: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
+                 storage_credential_name: Optional[pulumi.Input[str]] = None,
                  stream_pool_id: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  technology_type: Optional[pulumi.Input[str]] = None,
                  tenancy_id: Optional[pulumi.Input[str]] = None,
+                 tenant_id: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
+                 tls_ca_file: Optional[pulumi.Input[str]] = None,
+                 tls_certificate_key_file: Optional[pulumi.Input[str]] = None,
+                 tls_certificate_key_file_password: Optional[pulumi.Input[str]] = None,
+                 tls_certificate_key_file_password_secret_id: Optional[pulumi.Input[str]] = None,
+                 tls_certificate_key_file_secret_id: Optional[pulumi.Input[str]] = None,
                  trigger_refresh: Optional[pulumi.Input[bool]] = None,
                  trust_store: Optional[pulumi.Input[str]] = None,
                  trust_store_password: Optional[pulumi.Input[str]] = None,
@@ -1695,7 +1833,7 @@ class _ConnectionState:
         """
         Input properties used for looking up and filtering Connection resources.
         :param pulumi.Input[str] access_key_id: (Updatable) Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
-        :param pulumi.Input[str] account_key: (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
+        :param pulumi.Input[str] account_key: (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] account_key_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, 'accountKey' field must not be provided.
         :param pulumi.Input[str] account_name: (Updatable) Sets the Azure storage account name.
         :param pulumi.Input[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]] additional_attributes: (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
@@ -1704,13 +1842,13 @@ class _ConnectionState:
         :param pulumi.Input[str] azure_tenant_id: (Updatable) Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         :param pulumi.Input[Sequence[pulumi.Input['ConnectionBootstrapServerArgs']]] bootstrap_servers: (Updatable) Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
         :param pulumi.Input[str] client_id: (Updatable) Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
-        :param pulumi.Input[str] client_secret: (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
-        :param pulumi.Input[str] client_secret_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not be provided.
+        :param pulumi.Input[str] client_secret: (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
+        :param pulumi.Input[str] client_secret_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         :param pulumi.Input[str] connection_factory: (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
         :param pulumi.Input[str] connection_string: (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
         :param pulumi.Input[str] connection_type: (Updatable) The connection type.
-        :param pulumi.Input[str] connection_url: (Updatable) JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+        :param pulumi.Input[str] connection_url: (Updatable) Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
         :param pulumi.Input[str] consumer_properties: (Updatable) The base64 encoded content of the consumer.properties file.
         :param pulumi.Input[str] core_site_xml: (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
         :param pulumi.Input[str] database_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
@@ -1721,7 +1859,7 @@ class _ConnectionState:
         :param pulumi.Input[str] description: (Updatable) Metadata about this specific object.
         :param pulumi.Input[str] display_name: (Updatable) An object's Display Name.
         :param pulumi.Input[bool] does_use_secret_ids: (Updatable) Indicates that sensitive attributes are provided via Secrets.
-        :param pulumi.Input[str] endpoint: (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+        :param pulumi.Input[str] endpoint: (Updatable)Azure Storage service endpoint. e.g: https://test.blob.core.windows.net,  Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
         :param pulumi.Input[str] fingerprint: (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] host: (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
@@ -1730,79 +1868,88 @@ class _ConnectionState:
         :param pulumi.Input[str] jndi_connection_factory: (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
         :param pulumi.Input[str] jndi_initial_context_factory: (Updatable) The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
         :param pulumi.Input[str] jndi_provider_url: (Updatable) The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
-        :param pulumi.Input[str] jndi_security_credentials: (Updatable) The password associated to the principal.
+        :param pulumi.Input[str] jndi_security_credentials: (Updatable) The password associated to the principal. Deprecated: This field is deprecated and replaced by "jndiSecurityCredentialsSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] jndi_security_credentials_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the security credentials are stored associated to the principal. Note: When provided, 'jndiSecurityCredentials' field must not be provided.
         :param pulumi.Input[str] jndi_security_principal: (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
         :param pulumi.Input[str] key_id: (Updatable) Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
-        :param pulumi.Input[str] key_store: (Updatable) The base64 encoded content of the KeyStore file.
-        :param pulumi.Input[str] key_store_password: (Updatable) The KeyStore password.
+        :param pulumi.Input[str] key_store: (Updatable) The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
+        :param pulumi.Input[str] key_store_password: (Updatable) The KeyStore password. Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] key_store_password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, 'keyStorePassword' field must not be provided.
         :param pulumi.Input[str] key_store_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore' field must not be provided.
         :param pulumi.Input[str] lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         :param pulumi.Input[Sequence[pulumi.Input['ConnectionLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
-        :param pulumi.Input[str] password: (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
+        :param pulumi.Input[str] password: (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. If secretId is used plaintext field must not be provided. Note: When provided, 'password' field must not be provided.
         :param pulumi.Input[int] port: (Updatable) The port of an endpoint usually specified for a connection.
         :param pulumi.Input[str] private_ip: (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
                
                The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-        :param pulumi.Input[str] private_key_file: (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        :param pulumi.Input[str] private_key_file: (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] private_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, 'privateKeyFile' field must not be provided.
-        :param pulumi.Input[str] private_key_passphrase: (Updatable) Password if the private key file is encrypted.
+        :param pulumi.Input[str] private_key_passphrase: (Updatable) Password if the private key file is encrypted. Deprecated: This field is deprecated and replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] private_key_passphrase_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, 'privateKeyPassphrase' field must not be provided.
         :param pulumi.Input[str] producer_properties: (Updatable) The base64 encoded content of the producer.properties file.
         :param pulumi.Input[str] public_key_fingerprint: (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
         :param pulumi.Input[str] redis_cluster_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
-        :param pulumi.Input[str] region: (Updatable) The name of the region. e.g.: us-ashburn-1
+        :param pulumi.Input[str] region: (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
         :param pulumi.Input[str] routing_method: (Updatable) Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
-        :param pulumi.Input[str] sas_token: (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
+        :param pulumi.Input[str] sas_token: (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] sas_token_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be provided.
-        :param pulumi.Input[str] secret_access_key: (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+        :param pulumi.Input[str] secret_access_key: (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] secret_access_key_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field must not be provided.
         :param pulumi.Input[str] security_protocol: (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
         :param pulumi.Input[str] servers: (Updatable) Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
-        :param pulumi.Input[str] service_account_key_file: (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage.
+        :param pulumi.Input[str] service_account_key_file: (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] service_account_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
         :param pulumi.Input[str] session_mode: (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
         :param pulumi.Input[bool] should_use_jndi: (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
+        :param pulumi.Input[bool] should_use_resource_principal: (Updatable) Indicates that the user intents to connect to the instance through resource principal.
         :param pulumi.Input[bool] should_validate_server_certificate: (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
         :param pulumi.Input[str] ssl_ca: (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
         :param pulumi.Input[str] ssl_cert: (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
-        :param pulumi.Input[str] ssl_client_keystash: (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+        :param pulumi.Input[str] ssl_client_keystash: (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] ssl_client_keystash_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
-        :param pulumi.Input[str] ssl_client_keystoredb: (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+        :param pulumi.Input[str] ssl_client_keystoredb: (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] ssl_client_keystoredb_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
         :param pulumi.Input[str] ssl_crl: (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
-        :param pulumi.Input[str] ssl_key: (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
-        :param pulumi.Input[str] ssl_key_password: (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
+        :param pulumi.Input[str] ssl_key: (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "sslKeySecretId". This field will be removed after February 15 2026.
+        :param pulumi.Input[str] ssl_key_password: (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided. Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] ssl_key_password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword' field must not be provided.
         :param pulumi.Input[str] ssl_key_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
                * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
         :param pulumi.Input[str] ssl_mode: (Updatable) SSL modes for PostgreSQL.
         :param pulumi.Input[str] ssl_server_certificate: (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
         :param pulumi.Input[str] state: Possible lifecycle states for connection.
+        :param pulumi.Input[str] storage_credential_name: (Updatable) Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
         :param pulumi.Input[str] stream_pool_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
         :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param pulumi.Input[str] technology_type: The Kafka (e.g. Confluent) Schema Registry technology type.
         :param pulumi.Input[str] tenancy_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
+        :param pulumi.Input[str] tenant_id: (Updatable) Azure tenant ID of the application. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         :param pulumi.Input[str] time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[str] time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param pulumi.Input[str] tls_ca_file: (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+        :param pulumi.Input[str] tls_certificate_key_file: (Updatable) Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
+        :param pulumi.Input[str] tls_certificate_key_file_password: (Updatable) Client Certificate key file password. Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFilePasswordSecretId". This field will be removed after February 15 2026.
+        :param pulumi.Input[str] tls_certificate_key_file_password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
+        :param pulumi.Input[str] tls_certificate_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
+               * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
         :param pulumi.Input[bool] trigger_refresh: (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the "update" plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] trust_store: (Updatable) The base64 encoded content of the TrustStore file.
-        :param pulumi.Input[str] trust_store_password: (Updatable) The TrustStore password.
+        :param pulumi.Input[str] trust_store: (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
+        :param pulumi.Input[str] trust_store_password: (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] trust_store_password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, 'trustStorePassword' field must not be provided.
         :param pulumi.Input[str] trust_store_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided.
         :param pulumi.Input[str] url: (Updatable) Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
-        :param pulumi.Input[str] user_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to.
+        :param pulumi.Input[str] user_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
         :param pulumi.Input[str] username: (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
         :param pulumi.Input[str] vault_id: (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
-        :param pulumi.Input[str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
+        :param pulumi.Input[str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] wallet_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
         """
         if access_key_id is not None:
@@ -1945,6 +2092,8 @@ class _ConnectionState:
             pulumi.set(__self__, "session_mode", session_mode)
         if should_use_jndi is not None:
             pulumi.set(__self__, "should_use_jndi", should_use_jndi)
+        if should_use_resource_principal is not None:
+            pulumi.set(__self__, "should_use_resource_principal", should_use_resource_principal)
         if should_validate_server_certificate is not None:
             pulumi.set(__self__, "should_validate_server_certificate", should_validate_server_certificate)
         if ssl_ca is not None:
@@ -1975,6 +2124,8 @@ class _ConnectionState:
             pulumi.set(__self__, "ssl_server_certificate", ssl_server_certificate)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if storage_credential_name is not None:
+            pulumi.set(__self__, "storage_credential_name", storage_credential_name)
         if stream_pool_id is not None:
             pulumi.set(__self__, "stream_pool_id", stream_pool_id)
         if subnet_id is not None:
@@ -1985,10 +2136,22 @@ class _ConnectionState:
             pulumi.set(__self__, "technology_type", technology_type)
         if tenancy_id is not None:
             pulumi.set(__self__, "tenancy_id", tenancy_id)
+        if tenant_id is not None:
+            pulumi.set(__self__, "tenant_id", tenant_id)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
+        if tls_ca_file is not None:
+            pulumi.set(__self__, "tls_ca_file", tls_ca_file)
+        if tls_certificate_key_file is not None:
+            pulumi.set(__self__, "tls_certificate_key_file", tls_certificate_key_file)
+        if tls_certificate_key_file_password is not None:
+            pulumi.set(__self__, "tls_certificate_key_file_password", tls_certificate_key_file_password)
+        if tls_certificate_key_file_password_secret_id is not None:
+            pulumi.set(__self__, "tls_certificate_key_file_password_secret_id", tls_certificate_key_file_password_secret_id)
+        if tls_certificate_key_file_secret_id is not None:
+            pulumi.set(__self__, "tls_certificate_key_file_secret_id", tls_certificate_key_file_secret_id)
         if trigger_refresh is not None:
             pulumi.set(__self__, "trigger_refresh", trigger_refresh)
         if trust_store is not None:
@@ -2028,7 +2191,7 @@ class _ConnectionState:
     @pulumi.getter(name="accountKey")
     def account_key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
+        (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "account_key")
 
@@ -2136,7 +2299,7 @@ class _ConnectionState:
     @pulumi.getter(name="clientSecret")
     def client_secret(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
+        (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "client_secret")
 
@@ -2148,7 +2311,7 @@ class _ConnectionState:
     @pulumi.getter(name="clientSecretSecretId")
     def client_secret_secret_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not be provided.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
         """
         return pulumi.get(self, "client_secret_secret_id")
 
@@ -2208,7 +2371,7 @@ class _ConnectionState:
     @pulumi.getter(name="connectionUrl")
     def connection_url(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+        (Updatable) Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
         """
         return pulumi.get(self, "connection_url")
 
@@ -2340,7 +2503,7 @@ class _ConnectionState:
     @pulumi.getter
     def endpoint(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+        (Updatable)Azure Storage service endpoint. e.g: https://test.blob.core.windows.net,  Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
         """
         return pulumi.get(self, "endpoint")
 
@@ -2446,7 +2609,7 @@ class _ConnectionState:
     @pulumi.getter(name="jndiSecurityCredentials")
     def jndi_security_credentials(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The password associated to the principal.
+        (Updatable) The password associated to the principal. Deprecated: This field is deprecated and replaced by "jndiSecurityCredentialsSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "jndi_security_credentials")
 
@@ -2494,7 +2657,7 @@ class _ConnectionState:
     @pulumi.getter(name="keyStore")
     def key_store(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The base64 encoded content of the KeyStore file.
+        (Updatable) The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "key_store")
 
@@ -2506,7 +2669,7 @@ class _ConnectionState:
     @pulumi.getter(name="keyStorePassword")
     def key_store_password(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The KeyStore password.
+        (Updatable) The KeyStore password. Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "key_store_password")
 
@@ -2578,7 +2741,7 @@ class _ConnectionState:
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
+        (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "password")
 
@@ -2628,7 +2791,7 @@ class _ConnectionState:
     @pulumi.getter(name="privateKeyFile")
     def private_key_file(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "private_key_file")
 
@@ -2652,7 +2815,7 @@ class _ConnectionState:
     @pulumi.getter(name="privateKeyPassphrase")
     def private_key_passphrase(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Password if the private key file is encrypted.
+        (Updatable) Password if the private key file is encrypted. Deprecated: This field is deprecated and replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "private_key_passphrase")
 
@@ -2712,7 +2875,7 @@ class _ConnectionState:
     @pulumi.getter
     def region(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The name of the region. e.g.: us-ashburn-1
+        (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
         """
         return pulumi.get(self, "region")
 
@@ -2736,7 +2899,7 @@ class _ConnectionState:
     @pulumi.getter(name="sasToken")
     def sas_token(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
+        (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "sas_token")
 
@@ -2760,7 +2923,7 @@ class _ConnectionState:
     @pulumi.getter(name="secretAccessKey")
     def secret_access_key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+        (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "secret_access_key")
 
@@ -2808,7 +2971,7 @@ class _ConnectionState:
     @pulumi.getter(name="serviceAccountKeyFile")
     def service_account_key_file(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage.
+        (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "service_account_key_file")
 
@@ -2853,6 +3016,18 @@ class _ConnectionState:
         pulumi.set(self, "should_use_jndi", value)
 
     @property
+    @pulumi.getter(name="shouldUseResourcePrincipal")
+    def should_use_resource_principal(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates that the user intents to connect to the instance through resource principal.
+        """
+        return pulumi.get(self, "should_use_resource_principal")
+
+    @should_use_resource_principal.setter
+    def should_use_resource_principal(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "should_use_resource_principal", value)
+
+    @property
     @pulumi.getter(name="shouldValidateServerCertificate")
     def should_validate_server_certificate(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -2892,7 +3067,7 @@ class _ConnectionState:
     @pulumi.getter(name="sslClientKeystash")
     def ssl_client_keystash(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+        (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "ssl_client_keystash")
 
@@ -2916,7 +3091,7 @@ class _ConnectionState:
     @pulumi.getter(name="sslClientKeystoredb")
     def ssl_client_keystoredb(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+        (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "ssl_client_keystoredb")
 
@@ -2952,7 +3127,7 @@ class _ConnectionState:
     @pulumi.getter(name="sslKey")
     def ssl_key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
+        (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "sslKeySecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "ssl_key")
 
@@ -2964,7 +3139,7 @@ class _ConnectionState:
     @pulumi.getter(name="sslKeyPassword")
     def ssl_key_password(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
+        (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided. Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "ssl_key_password")
 
@@ -3034,6 +3209,18 @@ class _ConnectionState:
         pulumi.set(self, "state", value)
 
     @property
+    @pulumi.getter(name="storageCredentialName")
+    def storage_credential_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
+        """
+        return pulumi.get(self, "storage_credential_name")
+
+    @storage_credential_name.setter
+    def storage_credential_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "storage_credential_name", value)
+
+    @property
     @pulumi.getter(name="streamPoolId")
     def stream_pool_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -3094,6 +3281,18 @@ class _ConnectionState:
         pulumi.set(self, "tenancy_id", value)
 
     @property
+    @pulumi.getter(name="tenantId")
+    def tenant_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Azure tenant ID of the application. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
+        """
+        return pulumi.get(self, "tenant_id")
+
+    @tenant_id.setter
+    def tenant_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "tenant_id", value)
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
@@ -3118,6 +3317,67 @@ class _ConnectionState:
         pulumi.set(self, "time_updated", value)
 
     @property
+    @pulumi.getter(name="tlsCaFile")
+    def tls_ca_file(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+        """
+        return pulumi.get(self, "tls_ca_file")
+
+    @tls_ca_file.setter
+    def tls_ca_file(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "tls_ca_file", value)
+
+    @property
+    @pulumi.getter(name="tlsCertificateKeyFile")
+    def tls_certificate_key_file(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
+        """
+        return pulumi.get(self, "tls_certificate_key_file")
+
+    @tls_certificate_key_file.setter
+    def tls_certificate_key_file(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "tls_certificate_key_file", value)
+
+    @property
+    @pulumi.getter(name="tlsCertificateKeyFilePassword")
+    def tls_certificate_key_file_password(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Client Certificate key file password. Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFilePasswordSecretId". This field will be removed after February 15 2026.
+        """
+        return pulumi.get(self, "tls_certificate_key_file_password")
+
+    @tls_certificate_key_file_password.setter
+    def tls_certificate_key_file_password(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "tls_certificate_key_file_password", value)
+
+    @property
+    @pulumi.getter(name="tlsCertificateKeyFilePasswordSecretId")
+    def tls_certificate_key_file_password_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
+        """
+        return pulumi.get(self, "tls_certificate_key_file_password_secret_id")
+
+    @tls_certificate_key_file_password_secret_id.setter
+    def tls_certificate_key_file_password_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "tls_certificate_key_file_password_secret_id", value)
+
+    @property
+    @pulumi.getter(name="tlsCertificateKeyFileSecretId")
+    def tls_certificate_key_file_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
+        * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
+        """
+        return pulumi.get(self, "tls_certificate_key_file_secret_id")
+
+    @tls_certificate_key_file_secret_id.setter
+    def tls_certificate_key_file_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "tls_certificate_key_file_secret_id", value)
+
+    @property
     @pulumi.getter(name="triggerRefresh")
     def trigger_refresh(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -3137,7 +3397,7 @@ class _ConnectionState:
     @pulumi.getter(name="trustStore")
     def trust_store(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The base64 encoded content of the TrustStore file.
+        (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "trust_store")
 
@@ -3149,7 +3409,7 @@ class _ConnectionState:
     @pulumi.getter(name="trustStorePassword")
     def trust_store_password(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The TrustStore password.
+        (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "trust_store_password")
 
@@ -3197,7 +3457,7 @@ class _ConnectionState:
     @pulumi.getter(name="userId")
     def user_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
         """
         return pulumi.get(self, "user_id")
 
@@ -3233,7 +3493,7 @@ class _ConnectionState:
     @pulumi.getter
     def wallet(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
+        (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "wallet")
 
@@ -3327,6 +3587,7 @@ class Connection(pulumi.CustomResource):
                  service_account_key_file_secret_id: Optional[pulumi.Input[str]] = None,
                  session_mode: Optional[pulumi.Input[str]] = None,
                  should_use_jndi: Optional[pulumi.Input[bool]] = None,
+                 should_use_resource_principal: Optional[pulumi.Input[bool]] = None,
                  should_validate_server_certificate: Optional[pulumi.Input[bool]] = None,
                  ssl_ca: Optional[pulumi.Input[str]] = None,
                  ssl_cert: Optional[pulumi.Input[str]] = None,
@@ -3341,10 +3602,17 @@ class Connection(pulumi.CustomResource):
                  ssl_key_secret_id: Optional[pulumi.Input[str]] = None,
                  ssl_mode: Optional[pulumi.Input[str]] = None,
                  ssl_server_certificate: Optional[pulumi.Input[str]] = None,
+                 storage_credential_name: Optional[pulumi.Input[str]] = None,
                  stream_pool_id: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  technology_type: Optional[pulumi.Input[str]] = None,
                  tenancy_id: Optional[pulumi.Input[str]] = None,
+                 tenant_id: Optional[pulumi.Input[str]] = None,
+                 tls_ca_file: Optional[pulumi.Input[str]] = None,
+                 tls_certificate_key_file: Optional[pulumi.Input[str]] = None,
+                 tls_certificate_key_file_password: Optional[pulumi.Input[str]] = None,
+                 tls_certificate_key_file_password_secret_id: Optional[pulumi.Input[str]] = None,
+                 tls_certificate_key_file_secret_id: Optional[pulumi.Input[str]] = None,
                  trigger_refresh: Optional[pulumi.Input[bool]] = None,
                  trust_store: Optional[pulumi.Input[str]] = None,
                  trust_store_password: Optional[pulumi.Input[str]] = None,
@@ -3451,6 +3719,7 @@ class Connection(pulumi.CustomResource):
             service_account_key_file_secret_id=test_secret["id"],
             session_mode=connection_session_mode,
             should_use_jndi=connection_should_use_jndi,
+            should_use_resource_principal=connection_should_use_resource_principal,
             should_validate_server_certificate=connection_should_validate_server_certificate,
             ssl_ca=connection_ssl_ca,
             ssl_cert=connection_ssl_cert,
@@ -3465,9 +3734,16 @@ class Connection(pulumi.CustomResource):
             ssl_key_secret_id=test_secret["id"],
             ssl_mode=connection_ssl_mode,
             ssl_server_certificate=connection_ssl_server_certificate,
+            storage_credential_name=connection_storage_credential_name,
             stream_pool_id=test_stream_pool["id"],
             subnet_id=test_subnet["id"],
             tenancy_id=test_tenancy["id"],
+            tenant_id=test_tenant["id"],
+            tls_ca_file=connection_tls_ca_file,
+            tls_certificate_key_file=connection_tls_certificate_key_file,
+            tls_certificate_key_file_password=connection_tls_certificate_key_file_password,
+            tls_certificate_key_file_password_secret_id=test_secret["id"],
+            tls_certificate_key_file_secret_id=test_secret["id"],
             trust_store=connection_trust_store,
             trust_store_password=connection_trust_store_password,
             trust_store_password_secret_id=test_secret["id"],
@@ -3492,7 +3768,7 @@ class Connection(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] access_key_id: (Updatable) Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
-        :param pulumi.Input[str] account_key: (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
+        :param pulumi.Input[str] account_key: (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] account_key_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, 'accountKey' field must not be provided.
         :param pulumi.Input[str] account_name: (Updatable) Sets the Azure storage account name.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectionAdditionalAttributeArgs', 'ConnectionAdditionalAttributeArgsDict']]]] additional_attributes: (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
@@ -3501,13 +3777,13 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] azure_tenant_id: (Updatable) Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectionBootstrapServerArgs', 'ConnectionBootstrapServerArgsDict']]]] bootstrap_servers: (Updatable) Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
         :param pulumi.Input[str] client_id: (Updatable) Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
-        :param pulumi.Input[str] client_secret: (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
-        :param pulumi.Input[str] client_secret_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not be provided.
+        :param pulumi.Input[str] client_secret: (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
+        :param pulumi.Input[str] client_secret_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         :param pulumi.Input[str] connection_factory: (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
         :param pulumi.Input[str] connection_string: (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
         :param pulumi.Input[str] connection_type: (Updatable) The connection type.
-        :param pulumi.Input[str] connection_url: (Updatable) JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+        :param pulumi.Input[str] connection_url: (Updatable) Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
         :param pulumi.Input[str] consumer_properties: (Updatable) The base64 encoded content of the consumer.properties file.
         :param pulumi.Input[str] core_site_xml: (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
         :param pulumi.Input[str] database_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
@@ -3518,7 +3794,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) Metadata about this specific object.
         :param pulumi.Input[str] display_name: (Updatable) An object's Display Name.
         :param pulumi.Input[bool] does_use_secret_ids: (Updatable) Indicates that sensitive attributes are provided via Secrets.
-        :param pulumi.Input[str] endpoint: (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+        :param pulumi.Input[str] endpoint: (Updatable)Azure Storage service endpoint. e.g: https://test.blob.core.windows.net,  Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
         :param pulumi.Input[str] fingerprint: (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] host: (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
@@ -3526,74 +3802,83 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] jndi_connection_factory: (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
         :param pulumi.Input[str] jndi_initial_context_factory: (Updatable) The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
         :param pulumi.Input[str] jndi_provider_url: (Updatable) The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
-        :param pulumi.Input[str] jndi_security_credentials: (Updatable) The password associated to the principal.
+        :param pulumi.Input[str] jndi_security_credentials: (Updatable) The password associated to the principal. Deprecated: This field is deprecated and replaced by "jndiSecurityCredentialsSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] jndi_security_credentials_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the security credentials are stored associated to the principal. Note: When provided, 'jndiSecurityCredentials' field must not be provided.
         :param pulumi.Input[str] jndi_security_principal: (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
         :param pulumi.Input[str] key_id: (Updatable) Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
-        :param pulumi.Input[str] key_store: (Updatable) The base64 encoded content of the KeyStore file.
-        :param pulumi.Input[str] key_store_password: (Updatable) The KeyStore password.
+        :param pulumi.Input[str] key_store: (Updatable) The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
+        :param pulumi.Input[str] key_store_password: (Updatable) The KeyStore password. Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] key_store_password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, 'keyStorePassword' field must not be provided.
         :param pulumi.Input[str] key_store_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore' field must not be provided.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectionLockArgs', 'ConnectionLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
-        :param pulumi.Input[str] password: (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
+        :param pulumi.Input[str] password: (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. If secretId is used plaintext field must not be provided. Note: When provided, 'password' field must not be provided.
         :param pulumi.Input[int] port: (Updatable) The port of an endpoint usually specified for a connection.
         :param pulumi.Input[str] private_ip: (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
                
                The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-        :param pulumi.Input[str] private_key_file: (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        :param pulumi.Input[str] private_key_file: (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] private_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, 'privateKeyFile' field must not be provided.
-        :param pulumi.Input[str] private_key_passphrase: (Updatable) Password if the private key file is encrypted.
+        :param pulumi.Input[str] private_key_passphrase: (Updatable) Password if the private key file is encrypted. Deprecated: This field is deprecated and replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] private_key_passphrase_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, 'privateKeyPassphrase' field must not be provided.
         :param pulumi.Input[str] producer_properties: (Updatable) The base64 encoded content of the producer.properties file.
         :param pulumi.Input[str] public_key_fingerprint: (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
         :param pulumi.Input[str] redis_cluster_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
-        :param pulumi.Input[str] region: (Updatable) The name of the region. e.g.: us-ashburn-1
+        :param pulumi.Input[str] region: (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
         :param pulumi.Input[str] routing_method: (Updatable) Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
-        :param pulumi.Input[str] sas_token: (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
+        :param pulumi.Input[str] sas_token: (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] sas_token_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be provided.
-        :param pulumi.Input[str] secret_access_key: (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+        :param pulumi.Input[str] secret_access_key: (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] secret_access_key_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field must not be provided.
         :param pulumi.Input[str] security_protocol: (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
         :param pulumi.Input[str] servers: (Updatable) Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
-        :param pulumi.Input[str] service_account_key_file: (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage.
+        :param pulumi.Input[str] service_account_key_file: (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] service_account_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
         :param pulumi.Input[str] session_mode: (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
         :param pulumi.Input[bool] should_use_jndi: (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
+        :param pulumi.Input[bool] should_use_resource_principal: (Updatable) Indicates that the user intents to connect to the instance through resource principal.
         :param pulumi.Input[bool] should_validate_server_certificate: (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
         :param pulumi.Input[str] ssl_ca: (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
         :param pulumi.Input[str] ssl_cert: (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
-        :param pulumi.Input[str] ssl_client_keystash: (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+        :param pulumi.Input[str] ssl_client_keystash: (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] ssl_client_keystash_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
-        :param pulumi.Input[str] ssl_client_keystoredb: (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+        :param pulumi.Input[str] ssl_client_keystoredb: (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] ssl_client_keystoredb_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
         :param pulumi.Input[str] ssl_crl: (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
-        :param pulumi.Input[str] ssl_key: (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
-        :param pulumi.Input[str] ssl_key_password: (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
+        :param pulumi.Input[str] ssl_key: (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "sslKeySecretId". This field will be removed after February 15 2026.
+        :param pulumi.Input[str] ssl_key_password: (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided. Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] ssl_key_password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword' field must not be provided.
         :param pulumi.Input[str] ssl_key_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
                * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
         :param pulumi.Input[str] ssl_mode: (Updatable) SSL modes for PostgreSQL.
         :param pulumi.Input[str] ssl_server_certificate: (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+        :param pulumi.Input[str] storage_credential_name: (Updatable) Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
         :param pulumi.Input[str] stream_pool_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
         :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
         :param pulumi.Input[str] technology_type: The Kafka (e.g. Confluent) Schema Registry technology type.
         :param pulumi.Input[str] tenancy_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
+        :param pulumi.Input[str] tenant_id: (Updatable) Azure tenant ID of the application. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
+        :param pulumi.Input[str] tls_ca_file: (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+        :param pulumi.Input[str] tls_certificate_key_file: (Updatable) Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
+        :param pulumi.Input[str] tls_certificate_key_file_password: (Updatable) Client Certificate key file password. Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFilePasswordSecretId". This field will be removed after February 15 2026.
+        :param pulumi.Input[str] tls_certificate_key_file_password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
+        :param pulumi.Input[str] tls_certificate_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
+               * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
         :param pulumi.Input[bool] trigger_refresh: (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the "update" plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] trust_store: (Updatable) The base64 encoded content of the TrustStore file.
-        :param pulumi.Input[str] trust_store_password: (Updatable) The TrustStore password.
+        :param pulumi.Input[str] trust_store: (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
+        :param pulumi.Input[str] trust_store_password: (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] trust_store_password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, 'trustStorePassword' field must not be provided.
         :param pulumi.Input[str] trust_store_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided.
         :param pulumi.Input[str] url: (Updatable) Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
-        :param pulumi.Input[str] user_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to.
+        :param pulumi.Input[str] user_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
         :param pulumi.Input[str] username: (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
         :param pulumi.Input[str] vault_id: (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
-        :param pulumi.Input[str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
+        :param pulumi.Input[str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] wallet_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
         """
         ...
@@ -3696,6 +3981,7 @@ class Connection(pulumi.CustomResource):
             service_account_key_file_secret_id=test_secret["id"],
             session_mode=connection_session_mode,
             should_use_jndi=connection_should_use_jndi,
+            should_use_resource_principal=connection_should_use_resource_principal,
             should_validate_server_certificate=connection_should_validate_server_certificate,
             ssl_ca=connection_ssl_ca,
             ssl_cert=connection_ssl_cert,
@@ -3710,9 +3996,16 @@ class Connection(pulumi.CustomResource):
             ssl_key_secret_id=test_secret["id"],
             ssl_mode=connection_ssl_mode,
             ssl_server_certificate=connection_ssl_server_certificate,
+            storage_credential_name=connection_storage_credential_name,
             stream_pool_id=test_stream_pool["id"],
             subnet_id=test_subnet["id"],
             tenancy_id=test_tenancy["id"],
+            tenant_id=test_tenant["id"],
+            tls_ca_file=connection_tls_ca_file,
+            tls_certificate_key_file=connection_tls_certificate_key_file,
+            tls_certificate_key_file_password=connection_tls_certificate_key_file_password,
+            tls_certificate_key_file_password_secret_id=test_secret["id"],
+            tls_certificate_key_file_secret_id=test_secret["id"],
             trust_store=connection_trust_store,
             trust_store_password=connection_trust_store_password,
             trust_store_password_secret_id=test_secret["id"],
@@ -3817,6 +4110,7 @@ class Connection(pulumi.CustomResource):
                  service_account_key_file_secret_id: Optional[pulumi.Input[str]] = None,
                  session_mode: Optional[pulumi.Input[str]] = None,
                  should_use_jndi: Optional[pulumi.Input[bool]] = None,
+                 should_use_resource_principal: Optional[pulumi.Input[bool]] = None,
                  should_validate_server_certificate: Optional[pulumi.Input[bool]] = None,
                  ssl_ca: Optional[pulumi.Input[str]] = None,
                  ssl_cert: Optional[pulumi.Input[str]] = None,
@@ -3831,10 +4125,17 @@ class Connection(pulumi.CustomResource):
                  ssl_key_secret_id: Optional[pulumi.Input[str]] = None,
                  ssl_mode: Optional[pulumi.Input[str]] = None,
                  ssl_server_certificate: Optional[pulumi.Input[str]] = None,
+                 storage_credential_name: Optional[pulumi.Input[str]] = None,
                  stream_pool_id: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  technology_type: Optional[pulumi.Input[str]] = None,
                  tenancy_id: Optional[pulumi.Input[str]] = None,
+                 tenant_id: Optional[pulumi.Input[str]] = None,
+                 tls_ca_file: Optional[pulumi.Input[str]] = None,
+                 tls_certificate_key_file: Optional[pulumi.Input[str]] = None,
+                 tls_certificate_key_file_password: Optional[pulumi.Input[str]] = None,
+                 tls_certificate_key_file_password_secret_id: Optional[pulumi.Input[str]] = None,
+                 tls_certificate_key_file_secret_id: Optional[pulumi.Input[str]] = None,
                  trigger_refresh: Optional[pulumi.Input[bool]] = None,
                  trust_store: Optional[pulumi.Input[str]] = None,
                  trust_store_password: Optional[pulumi.Input[str]] = None,
@@ -3929,6 +4230,7 @@ class Connection(pulumi.CustomResource):
             __props__.__dict__["service_account_key_file_secret_id"] = service_account_key_file_secret_id
             __props__.__dict__["session_mode"] = session_mode
             __props__.__dict__["should_use_jndi"] = should_use_jndi
+            __props__.__dict__["should_use_resource_principal"] = should_use_resource_principal
             __props__.__dict__["should_validate_server_certificate"] = should_validate_server_certificate
             __props__.__dict__["ssl_ca"] = ssl_ca
             __props__.__dict__["ssl_cert"] = ssl_cert
@@ -3943,12 +4245,19 @@ class Connection(pulumi.CustomResource):
             __props__.__dict__["ssl_key_secret_id"] = ssl_key_secret_id
             __props__.__dict__["ssl_mode"] = ssl_mode
             __props__.__dict__["ssl_server_certificate"] = ssl_server_certificate
+            __props__.__dict__["storage_credential_name"] = storage_credential_name
             __props__.__dict__["stream_pool_id"] = stream_pool_id
             __props__.__dict__["subnet_id"] = subnet_id
             if technology_type is None and not opts.urn:
                 raise TypeError("Missing required property 'technology_type'")
             __props__.__dict__["technology_type"] = technology_type
             __props__.__dict__["tenancy_id"] = tenancy_id
+            __props__.__dict__["tenant_id"] = tenant_id
+            __props__.__dict__["tls_ca_file"] = tls_ca_file
+            __props__.__dict__["tls_certificate_key_file"] = tls_certificate_key_file
+            __props__.__dict__["tls_certificate_key_file_password"] = None if tls_certificate_key_file_password is None else pulumi.Output.secret(tls_certificate_key_file_password)
+            __props__.__dict__["tls_certificate_key_file_password_secret_id"] = None if tls_certificate_key_file_password_secret_id is None else pulumi.Output.secret(tls_certificate_key_file_password_secret_id)
+            __props__.__dict__["tls_certificate_key_file_secret_id"] = tls_certificate_key_file_secret_id
             __props__.__dict__["trigger_refresh"] = trigger_refresh
             __props__.__dict__["trust_store"] = None if trust_store is None else pulumi.Output.secret(trust_store)
             __props__.__dict__["trust_store_password"] = None if trust_store_password is None else pulumi.Output.secret(trust_store_password)
@@ -3966,7 +4275,7 @@ class Connection(pulumi.CustomResource):
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
-        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["accountKey", "clientSecret", "jndiSecurityCredentials", "keyStore", "keyStorePassword", "password", "privateKeyFile", "privateKeyPassphrase", "sasToken", "secretAccessKey", "serviceAccountKeyFile", "sslClientKeystash", "sslClientKeystoredb", "sslKey", "sslKeyPassword", "trustStore", "trustStorePassword", "wallet"])
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["accountKey", "clientSecret", "jndiSecurityCredentials", "keyStore", "keyStorePassword", "password", "privateKeyFile", "privateKeyPassphrase", "sasToken", "secretAccessKey", "serviceAccountKeyFile", "sslClientKeystash", "sslClientKeystoredb", "sslKey", "sslKeyPassword", "tlsCertificateKeyFilePassword", "tlsCertificateKeyFilePasswordSecretId", "trustStore", "trustStorePassword", "wallet"])
         opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(Connection, __self__).__init__(
             'oci:GoldenGate/connection:Connection',
@@ -4048,6 +4357,7 @@ class Connection(pulumi.CustomResource):
             service_account_key_file_secret_id: Optional[pulumi.Input[str]] = None,
             session_mode: Optional[pulumi.Input[str]] = None,
             should_use_jndi: Optional[pulumi.Input[bool]] = None,
+            should_use_resource_principal: Optional[pulumi.Input[bool]] = None,
             should_validate_server_certificate: Optional[pulumi.Input[bool]] = None,
             ssl_ca: Optional[pulumi.Input[str]] = None,
             ssl_cert: Optional[pulumi.Input[str]] = None,
@@ -4063,13 +4373,20 @@ class Connection(pulumi.CustomResource):
             ssl_mode: Optional[pulumi.Input[str]] = None,
             ssl_server_certificate: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
+            storage_credential_name: Optional[pulumi.Input[str]] = None,
             stream_pool_id: Optional[pulumi.Input[str]] = None,
             subnet_id: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             technology_type: Optional[pulumi.Input[str]] = None,
             tenancy_id: Optional[pulumi.Input[str]] = None,
+            tenant_id: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
+            tls_ca_file: Optional[pulumi.Input[str]] = None,
+            tls_certificate_key_file: Optional[pulumi.Input[str]] = None,
+            tls_certificate_key_file_password: Optional[pulumi.Input[str]] = None,
+            tls_certificate_key_file_password_secret_id: Optional[pulumi.Input[str]] = None,
+            tls_certificate_key_file_secret_id: Optional[pulumi.Input[str]] = None,
             trigger_refresh: Optional[pulumi.Input[bool]] = None,
             trust_store: Optional[pulumi.Input[str]] = None,
             trust_store_password: Optional[pulumi.Input[str]] = None,
@@ -4089,7 +4406,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] access_key_id: (Updatable) Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
-        :param pulumi.Input[str] account_key: (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
+        :param pulumi.Input[str] account_key: (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] account_key_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, 'accountKey' field must not be provided.
         :param pulumi.Input[str] account_name: (Updatable) Sets the Azure storage account name.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectionAdditionalAttributeArgs', 'ConnectionAdditionalAttributeArgsDict']]]] additional_attributes: (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
@@ -4098,13 +4415,13 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] azure_tenant_id: (Updatable) Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectionBootstrapServerArgs', 'ConnectionBootstrapServerArgsDict']]]] bootstrap_servers: (Updatable) Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
         :param pulumi.Input[str] client_id: (Updatable) Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
-        :param pulumi.Input[str] client_secret: (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
-        :param pulumi.Input[str] client_secret_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not be provided.
+        :param pulumi.Input[str] client_secret: (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
+        :param pulumi.Input[str] client_secret_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         :param pulumi.Input[str] connection_factory: (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
         :param pulumi.Input[str] connection_string: (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
         :param pulumi.Input[str] connection_type: (Updatable) The connection type.
-        :param pulumi.Input[str] connection_url: (Updatable) JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+        :param pulumi.Input[str] connection_url: (Updatable) Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
         :param pulumi.Input[str] consumer_properties: (Updatable) The base64 encoded content of the consumer.properties file.
         :param pulumi.Input[str] core_site_xml: (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
         :param pulumi.Input[str] database_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
@@ -4115,7 +4432,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) Metadata about this specific object.
         :param pulumi.Input[str] display_name: (Updatable) An object's Display Name.
         :param pulumi.Input[bool] does_use_secret_ids: (Updatable) Indicates that sensitive attributes are provided via Secrets.
-        :param pulumi.Input[str] endpoint: (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+        :param pulumi.Input[str] endpoint: (Updatable)Azure Storage service endpoint. e.g: https://test.blob.core.windows.net,  Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
         :param pulumi.Input[str] fingerprint: (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] host: (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
@@ -4124,79 +4441,88 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] jndi_connection_factory: (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
         :param pulumi.Input[str] jndi_initial_context_factory: (Updatable) The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
         :param pulumi.Input[str] jndi_provider_url: (Updatable) The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
-        :param pulumi.Input[str] jndi_security_credentials: (Updatable) The password associated to the principal.
+        :param pulumi.Input[str] jndi_security_credentials: (Updatable) The password associated to the principal. Deprecated: This field is deprecated and replaced by "jndiSecurityCredentialsSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] jndi_security_credentials_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the security credentials are stored associated to the principal. Note: When provided, 'jndiSecurityCredentials' field must not be provided.
         :param pulumi.Input[str] jndi_security_principal: (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
         :param pulumi.Input[str] key_id: (Updatable) Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
-        :param pulumi.Input[str] key_store: (Updatable) The base64 encoded content of the KeyStore file.
-        :param pulumi.Input[str] key_store_password: (Updatable) The KeyStore password.
+        :param pulumi.Input[str] key_store: (Updatable) The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
+        :param pulumi.Input[str] key_store_password: (Updatable) The KeyStore password. Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] key_store_password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, 'keyStorePassword' field must not be provided.
         :param pulumi.Input[str] key_store_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore' field must not be provided.
         :param pulumi.Input[str] lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectionLockArgs', 'ConnectionLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
-        :param pulumi.Input[str] password: (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
+        :param pulumi.Input[str] password: (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. If secretId is used plaintext field must not be provided. Note: When provided, 'password' field must not be provided.
         :param pulumi.Input[int] port: (Updatable) The port of an endpoint usually specified for a connection.
         :param pulumi.Input[str] private_ip: (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
                
                The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-        :param pulumi.Input[str] private_key_file: (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        :param pulumi.Input[str] private_key_file: (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] private_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, 'privateKeyFile' field must not be provided.
-        :param pulumi.Input[str] private_key_passphrase: (Updatable) Password if the private key file is encrypted.
+        :param pulumi.Input[str] private_key_passphrase: (Updatable) Password if the private key file is encrypted. Deprecated: This field is deprecated and replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] private_key_passphrase_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, 'privateKeyPassphrase' field must not be provided.
         :param pulumi.Input[str] producer_properties: (Updatable) The base64 encoded content of the producer.properties file.
         :param pulumi.Input[str] public_key_fingerprint: (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
         :param pulumi.Input[str] redis_cluster_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
-        :param pulumi.Input[str] region: (Updatable) The name of the region. e.g.: us-ashburn-1
+        :param pulumi.Input[str] region: (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
         :param pulumi.Input[str] routing_method: (Updatable) Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
-        :param pulumi.Input[str] sas_token: (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
+        :param pulumi.Input[str] sas_token: (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] sas_token_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be provided.
-        :param pulumi.Input[str] secret_access_key: (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+        :param pulumi.Input[str] secret_access_key: (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] secret_access_key_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field must not be provided.
         :param pulumi.Input[str] security_protocol: (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
         :param pulumi.Input[str] servers: (Updatable) Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
-        :param pulumi.Input[str] service_account_key_file: (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage.
+        :param pulumi.Input[str] service_account_key_file: (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] service_account_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
         :param pulumi.Input[str] session_mode: (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
         :param pulumi.Input[bool] should_use_jndi: (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
+        :param pulumi.Input[bool] should_use_resource_principal: (Updatable) Indicates that the user intents to connect to the instance through resource principal.
         :param pulumi.Input[bool] should_validate_server_certificate: (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
         :param pulumi.Input[str] ssl_ca: (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
         :param pulumi.Input[str] ssl_cert: (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
-        :param pulumi.Input[str] ssl_client_keystash: (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+        :param pulumi.Input[str] ssl_client_keystash: (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] ssl_client_keystash_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
-        :param pulumi.Input[str] ssl_client_keystoredb: (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+        :param pulumi.Input[str] ssl_client_keystoredb: (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] ssl_client_keystoredb_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
         :param pulumi.Input[str] ssl_crl: (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
-        :param pulumi.Input[str] ssl_key: (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
-        :param pulumi.Input[str] ssl_key_password: (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
+        :param pulumi.Input[str] ssl_key: (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "sslKeySecretId". This field will be removed after February 15 2026.
+        :param pulumi.Input[str] ssl_key_password: (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided. Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] ssl_key_password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword' field must not be provided.
         :param pulumi.Input[str] ssl_key_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
                * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
         :param pulumi.Input[str] ssl_mode: (Updatable) SSL modes for PostgreSQL.
         :param pulumi.Input[str] ssl_server_certificate: (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
         :param pulumi.Input[str] state: Possible lifecycle states for connection.
+        :param pulumi.Input[str] storage_credential_name: (Updatable) Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
         :param pulumi.Input[str] stream_pool_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
         :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param pulumi.Input[str] technology_type: The Kafka (e.g. Confluent) Schema Registry technology type.
         :param pulumi.Input[str] tenancy_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
+        :param pulumi.Input[str] tenant_id: (Updatable) Azure tenant ID of the application. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         :param pulumi.Input[str] time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[str] time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param pulumi.Input[str] tls_ca_file: (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+        :param pulumi.Input[str] tls_certificate_key_file: (Updatable) Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
+        :param pulumi.Input[str] tls_certificate_key_file_password: (Updatable) Client Certificate key file password. Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFilePasswordSecretId". This field will be removed after February 15 2026.
+        :param pulumi.Input[str] tls_certificate_key_file_password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
+        :param pulumi.Input[str] tls_certificate_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
+               * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
         :param pulumi.Input[bool] trigger_refresh: (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the "update" plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] trust_store: (Updatable) The base64 encoded content of the TrustStore file.
-        :param pulumi.Input[str] trust_store_password: (Updatable) The TrustStore password.
+        :param pulumi.Input[str] trust_store: (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
+        :param pulumi.Input[str] trust_store_password: (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] trust_store_password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, 'trustStorePassword' field must not be provided.
         :param pulumi.Input[str] trust_store_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided.
         :param pulumi.Input[str] url: (Updatable) Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
-        :param pulumi.Input[str] user_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to.
+        :param pulumi.Input[str] user_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
         :param pulumi.Input[str] username: (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
         :param pulumi.Input[str] vault_id: (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
-        :param pulumi.Input[str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
+        :param pulumi.Input[str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[str] wallet_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -4273,6 +4599,7 @@ class Connection(pulumi.CustomResource):
         __props__.__dict__["service_account_key_file_secret_id"] = service_account_key_file_secret_id
         __props__.__dict__["session_mode"] = session_mode
         __props__.__dict__["should_use_jndi"] = should_use_jndi
+        __props__.__dict__["should_use_resource_principal"] = should_use_resource_principal
         __props__.__dict__["should_validate_server_certificate"] = should_validate_server_certificate
         __props__.__dict__["ssl_ca"] = ssl_ca
         __props__.__dict__["ssl_cert"] = ssl_cert
@@ -4288,13 +4615,20 @@ class Connection(pulumi.CustomResource):
         __props__.__dict__["ssl_mode"] = ssl_mode
         __props__.__dict__["ssl_server_certificate"] = ssl_server_certificate
         __props__.__dict__["state"] = state
+        __props__.__dict__["storage_credential_name"] = storage_credential_name
         __props__.__dict__["stream_pool_id"] = stream_pool_id
         __props__.__dict__["subnet_id"] = subnet_id
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["technology_type"] = technology_type
         __props__.__dict__["tenancy_id"] = tenancy_id
+        __props__.__dict__["tenant_id"] = tenant_id
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
+        __props__.__dict__["tls_ca_file"] = tls_ca_file
+        __props__.__dict__["tls_certificate_key_file"] = tls_certificate_key_file
+        __props__.__dict__["tls_certificate_key_file_password"] = tls_certificate_key_file_password
+        __props__.__dict__["tls_certificate_key_file_password_secret_id"] = tls_certificate_key_file_password_secret_id
+        __props__.__dict__["tls_certificate_key_file_secret_id"] = tls_certificate_key_file_secret_id
         __props__.__dict__["trigger_refresh"] = trigger_refresh
         __props__.__dict__["trust_store"] = trust_store
         __props__.__dict__["trust_store_password"] = trust_store_password
@@ -4320,7 +4654,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="accountKey")
     def account_key(self) -> pulumi.Output[Optional[str]]:
         """
-        (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
+        (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "account_key")
 
@@ -4392,7 +4726,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="clientSecret")
     def client_secret(self) -> pulumi.Output[Optional[str]]:
         """
-        (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
+        (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "client_secret")
 
@@ -4400,7 +4734,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="clientSecretSecretId")
     def client_secret_secret_id(self) -> pulumi.Output[Optional[str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not be provided.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
         """
         return pulumi.get(self, "client_secret_secret_id")
 
@@ -4440,7 +4774,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="connectionUrl")
     def connection_url(self) -> pulumi.Output[str]:
         """
-        (Updatable) JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+        (Updatable) Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
         """
         return pulumi.get(self, "connection_url")
 
@@ -4528,7 +4862,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter
     def endpoint(self) -> pulumi.Output[str]:
         """
-        (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+        (Updatable)Azure Storage service endpoint. e.g: https://test.blob.core.windows.net,  Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
         """
         return pulumi.get(self, "endpoint")
 
@@ -4598,7 +4932,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="jndiSecurityCredentials")
     def jndi_security_credentials(self) -> pulumi.Output[Optional[str]]:
         """
-        (Updatable) The password associated to the principal.
+        (Updatable) The password associated to the principal. Deprecated: This field is deprecated and replaced by "jndiSecurityCredentialsSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "jndi_security_credentials")
 
@@ -4630,7 +4964,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="keyStore")
     def key_store(self) -> pulumi.Output[Optional[str]]:
         """
-        (Updatable) The base64 encoded content of the KeyStore file.
+        (Updatable) The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "key_store")
 
@@ -4638,7 +4972,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="keyStorePassword")
     def key_store_password(self) -> pulumi.Output[Optional[str]]:
         """
-        (Updatable) The KeyStore password.
+        (Updatable) The KeyStore password. Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "key_store_password")
 
@@ -4686,7 +5020,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter
     def password(self) -> pulumi.Output[Optional[str]]:
         """
-        (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
+        (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "password")
 
@@ -4720,7 +5054,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="privateKeyFile")
     def private_key_file(self) -> pulumi.Output[Optional[str]]:
         """
-        (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "private_key_file")
 
@@ -4736,7 +5070,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="privateKeyPassphrase")
     def private_key_passphrase(self) -> pulumi.Output[Optional[str]]:
         """
-        (Updatable) Password if the private key file is encrypted.
+        (Updatable) Password if the private key file is encrypted. Deprecated: This field is deprecated and replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "private_key_passphrase")
 
@@ -4776,7 +5110,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter
     def region(self) -> pulumi.Output[str]:
         """
-        (Updatable) The name of the region. e.g.: us-ashburn-1
+        (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
         """
         return pulumi.get(self, "region")
 
@@ -4792,7 +5126,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="sasToken")
     def sas_token(self) -> pulumi.Output[Optional[str]]:
         """
-        (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
+        (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "sas_token")
 
@@ -4808,7 +5142,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="secretAccessKey")
     def secret_access_key(self) -> pulumi.Output[Optional[str]]:
         """
-        (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+        (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "secret_access_key")
 
@@ -4840,7 +5174,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="serviceAccountKeyFile")
     def service_account_key_file(self) -> pulumi.Output[Optional[str]]:
         """
-        (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage.
+        (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "service_account_key_file")
 
@@ -4867,6 +5201,14 @@ class Connection(pulumi.CustomResource):
         (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
         """
         return pulumi.get(self, "should_use_jndi")
+
+    @property
+    @pulumi.getter(name="shouldUseResourcePrincipal")
+    def should_use_resource_principal(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) Indicates that the user intents to connect to the instance through resource principal.
+        """
+        return pulumi.get(self, "should_use_resource_principal")
 
     @property
     @pulumi.getter(name="shouldValidateServerCertificate")
@@ -4896,7 +5238,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="sslClientKeystash")
     def ssl_client_keystash(self) -> pulumi.Output[Optional[str]]:
         """
-        (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+        (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "ssl_client_keystash")
 
@@ -4912,7 +5254,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="sslClientKeystoredb")
     def ssl_client_keystoredb(self) -> pulumi.Output[Optional[str]]:
         """
-        (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+        (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "ssl_client_keystoredb")
 
@@ -4936,7 +5278,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="sslKey")
     def ssl_key(self) -> pulumi.Output[Optional[str]]:
         """
-        (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
+        (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "sslKeySecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "ssl_key")
 
@@ -4944,7 +5286,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="sslKeyPassword")
     def ssl_key_password(self) -> pulumi.Output[Optional[str]]:
         """
-        (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
+        (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided. Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "ssl_key_password")
 
@@ -4990,6 +5332,14 @@ class Connection(pulumi.CustomResource):
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="storageCredentialName")
+    def storage_credential_name(self) -> pulumi.Output[str]:
+        """
+        (Updatable) Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
+        """
+        return pulumi.get(self, "storage_credential_name")
+
+    @property
     @pulumi.getter(name="streamPoolId")
     def stream_pool_id(self) -> pulumi.Output[str]:
         """
@@ -5030,6 +5380,14 @@ class Connection(pulumi.CustomResource):
         return pulumi.get(self, "tenancy_id")
 
     @property
+    @pulumi.getter(name="tenantId")
+    def tenant_id(self) -> pulumi.Output[str]:
+        """
+        (Updatable) Azure tenant ID of the application. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
+        """
+        return pulumi.get(self, "tenant_id")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[str]:
         """
@@ -5044,6 +5402,47 @@ class Connection(pulumi.CustomResource):
         The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="tlsCaFile")
+    def tls_ca_file(self) -> pulumi.Output[str]:
+        """
+        (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+        """
+        return pulumi.get(self, "tls_ca_file")
+
+    @property
+    @pulumi.getter(name="tlsCertificateKeyFile")
+    def tls_certificate_key_file(self) -> pulumi.Output[str]:
+        """
+        (Updatable) Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
+        """
+        return pulumi.get(self, "tls_certificate_key_file")
+
+    @property
+    @pulumi.getter(name="tlsCertificateKeyFilePassword")
+    def tls_certificate_key_file_password(self) -> pulumi.Output[str]:
+        """
+        (Updatable) Client Certificate key file password. Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFilePasswordSecretId". This field will be removed after February 15 2026.
+        """
+        return pulumi.get(self, "tls_certificate_key_file_password")
+
+    @property
+    @pulumi.getter(name="tlsCertificateKeyFilePasswordSecretId")
+    def tls_certificate_key_file_password_secret_id(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
+        """
+        return pulumi.get(self, "tls_certificate_key_file_password_secret_id")
+
+    @property
+    @pulumi.getter(name="tlsCertificateKeyFileSecretId")
+    def tls_certificate_key_file_secret_id(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
+        * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
+        """
+        return pulumi.get(self, "tls_certificate_key_file_secret_id")
 
     @property
     @pulumi.getter(name="triggerRefresh")
@@ -5061,7 +5460,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="trustStore")
     def trust_store(self) -> pulumi.Output[Optional[str]]:
         """
-        (Updatable) The base64 encoded content of the TrustStore file.
+        (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "trust_store")
 
@@ -5069,7 +5468,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="trustStorePassword")
     def trust_store_password(self) -> pulumi.Output[Optional[str]]:
         """
-        (Updatable) The TrustStore password.
+        (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "trust_store_password")
 
@@ -5101,7 +5500,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="userId")
     def user_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
         """
         return pulumi.get(self, "user_id")
 
@@ -5125,7 +5524,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter
     def wallet(self) -> pulumi.Output[Optional[str]]:
         """
-        (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
+        (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "wallet")
 

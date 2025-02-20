@@ -76,6 +76,9 @@ func GetRetryDurationSeconds(ctx *pulumi.Context) int {
 func GetTenancyOcid(ctx *pulumi.Context) string {
 	return config.Get(ctx, "oci:tenancyOcid")
 }
+func GetTestTimeMaintenanceRebootDue(ctx *pulumi.Context) string {
+	return config.Get(ctx, "oci:testTimeMaintenanceRebootDue")
+}
 
 // (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if
 // auth is set to 'ApiKey', ignored otherwise.

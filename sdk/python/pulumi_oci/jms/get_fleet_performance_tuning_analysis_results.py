@@ -28,10 +28,13 @@ class GetFleetPerformanceTuningAnalysisResultsResult:
     """
     A collection of values returned by getFleetPerformanceTuningAnalysisResults.
     """
-    def __init__(__self__, application_id=None, filters=None, fleet_id=None, host_name=None, id=None, managed_instance_id=None, performance_tuning_analysis_result_collections=None, time_end=None, time_start=None):
+    def __init__(__self__, application_id=None, application_name=None, filters=None, fleet_id=None, host_name=None, id=None, managed_instance_id=None, performance_tuning_analysis_result_collections=None, time_end=None, time_start=None):
         if application_id and not isinstance(application_id, str):
             raise TypeError("Expected argument 'application_id' to be a str")
         pulumi.set(__self__, "application_id", application_id)
+        if application_name and not isinstance(application_name, str):
+            raise TypeError("Expected argument 'application_name' to be a str")
+        pulumi.set(__self__, "application_name", application_name)
         if filters and not isinstance(filters, list):
             raise TypeError("Expected argument 'filters' to be a list")
         pulumi.set(__self__, "filters", filters)
@@ -64,6 +67,14 @@ class GetFleetPerformanceTuningAnalysisResultsResult:
         The OCID of the application for which the report has been generated.
         """
         return pulumi.get(self, "application_id")
+
+    @property
+    @pulumi.getter(name="applicationName")
+    def application_name(self) -> Optional[str]:
+        """
+        The name of the application for which the report has been generated.
+        """
+        return pulumi.get(self, "application_name")
 
     @property
     @pulumi.getter
@@ -128,6 +139,7 @@ class AwaitableGetFleetPerformanceTuningAnalysisResultsResult(GetFleetPerformanc
             yield self
         return GetFleetPerformanceTuningAnalysisResultsResult(
             application_id=self.application_id,
+            application_name=self.application_name,
             filters=self.filters,
             fleet_id=self.fleet_id,
             host_name=self.host_name,
@@ -139,6 +151,7 @@ class AwaitableGetFleetPerformanceTuningAnalysisResultsResult(GetFleetPerformanc
 
 
 def get_fleet_performance_tuning_analysis_results(application_id: Optional[str] = None,
+                                                  application_name: Optional[str] = None,
                                                   filters: Optional[Sequence[Union['GetFleetPerformanceTuningAnalysisResultsFilterArgs', 'GetFleetPerformanceTuningAnalysisResultsFilterArgsDict']]] = None,
                                                   fleet_id: Optional[str] = None,
                                                   host_name: Optional[str] = None,
@@ -159,6 +172,7 @@ def get_fleet_performance_tuning_analysis_results(application_id: Optional[str] 
 
     test_fleet_performance_tuning_analysis_results = oci.Jms.get_fleet_performance_tuning_analysis_results(fleet_id=test_fleet["id"],
         application_id=fleet_performance_tuning_analysis_result_application_id,
+        application_name=fleet_performance_tuning_analysis_result_application_name,
         host_name=fleet_performance_tuning_analysis_result_host_name,
         managed_instance_id=fleet_performance_tuning_analysis_result_managed_instance_id,
         time_end=fleet_performance_tuning_analysis_result_time_end,
@@ -167,6 +181,7 @@ def get_fleet_performance_tuning_analysis_results(application_id: Optional[str] 
 
 
     :param str application_id: The Fleet-unique identifier of the related application.
+    :param str application_name: The name of the application.
     :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
     :param str host_name: The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
     :param str managed_instance_id: The Fleet-unique identifier of the related managed instance.
@@ -175,6 +190,7 @@ def get_fleet_performance_tuning_analysis_results(application_id: Optional[str] 
     """
     __args__ = dict()
     __args__['applicationId'] = application_id
+    __args__['applicationName'] = application_name
     __args__['filters'] = filters
     __args__['fleetId'] = fleet_id
     __args__['hostName'] = host_name
@@ -186,6 +202,7 @@ def get_fleet_performance_tuning_analysis_results(application_id: Optional[str] 
 
     return AwaitableGetFleetPerformanceTuningAnalysisResultsResult(
         application_id=pulumi.get(__ret__, 'application_id'),
+        application_name=pulumi.get(__ret__, 'application_name'),
         filters=pulumi.get(__ret__, 'filters'),
         fleet_id=pulumi.get(__ret__, 'fleet_id'),
         host_name=pulumi.get(__ret__, 'host_name'),
@@ -195,6 +212,7 @@ def get_fleet_performance_tuning_analysis_results(application_id: Optional[str] 
         time_end=pulumi.get(__ret__, 'time_end'),
         time_start=pulumi.get(__ret__, 'time_start'))
 def get_fleet_performance_tuning_analysis_results_output(application_id: Optional[pulumi.Input[Optional[str]]] = None,
+                                                         application_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFleetPerformanceTuningAnalysisResultsFilterArgs', 'GetFleetPerformanceTuningAnalysisResultsFilterArgsDict']]]]] = None,
                                                          fleet_id: Optional[pulumi.Input[str]] = None,
                                                          host_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -215,6 +233,7 @@ def get_fleet_performance_tuning_analysis_results_output(application_id: Optiona
 
     test_fleet_performance_tuning_analysis_results = oci.Jms.get_fleet_performance_tuning_analysis_results(fleet_id=test_fleet["id"],
         application_id=fleet_performance_tuning_analysis_result_application_id,
+        application_name=fleet_performance_tuning_analysis_result_application_name,
         host_name=fleet_performance_tuning_analysis_result_host_name,
         managed_instance_id=fleet_performance_tuning_analysis_result_managed_instance_id,
         time_end=fleet_performance_tuning_analysis_result_time_end,
@@ -223,6 +242,7 @@ def get_fleet_performance_tuning_analysis_results_output(application_id: Optiona
 
 
     :param str application_id: The Fleet-unique identifier of the related application.
+    :param str application_name: The name of the application.
     :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
     :param str host_name: The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
     :param str managed_instance_id: The Fleet-unique identifier of the related managed instance.
@@ -231,6 +251,7 @@ def get_fleet_performance_tuning_analysis_results_output(application_id: Optiona
     """
     __args__ = dict()
     __args__['applicationId'] = application_id
+    __args__['applicationName'] = application_name
     __args__['filters'] = filters
     __args__['fleetId'] = fleet_id
     __args__['hostName'] = host_name
@@ -241,6 +262,7 @@ def get_fleet_performance_tuning_analysis_results_output(application_id: Optiona
     __ret__ = pulumi.runtime.invoke_output('oci:Jms/getFleetPerformanceTuningAnalysisResults:getFleetPerformanceTuningAnalysisResults', __args__, opts=opts, typ=GetFleetPerformanceTuningAnalysisResultsResult)
     return __ret__.apply(lambda __response__: GetFleetPerformanceTuningAnalysisResultsResult(
         application_id=pulumi.get(__response__, 'application_id'),
+        application_name=pulumi.get(__response__, 'application_name'),
         filters=pulumi.get(__response__, 'filters'),
         fleet_id=pulumi.get(__response__, 'fleet_id'),
         host_name=pulumi.get(__response__, 'host_name'),

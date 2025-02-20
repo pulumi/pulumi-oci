@@ -42,6 +42,10 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// (Updatable) List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{ "osType": "Linux,Windows,Solaris"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string>? ValidPropertyValues;
+        /// <summary>
+        /// (Updatable) List of valid sub-resource types for a composite resource type. The sub-resource types will be obtained from the valid association pairs corresponding to the composite resource types. It will be empty for non composite resource types
+        /// </summary>
+        public readonly ImmutableArray<string> ValidSubResourceTypes;
 
         [OutputConstructor]
         private MonitoredResourceTypeMetadata(
@@ -57,7 +61,9 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
 
             ImmutableArray<string> validPropertiesForUpdates,
 
-            ImmutableDictionary<string, string>? validPropertyValues)
+            ImmutableDictionary<string, string>? validPropertyValues,
+
+            ImmutableArray<string> validSubResourceTypes)
         {
             AgentProperties = agentProperties;
             Format = format;
@@ -66,6 +72,7 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
             ValidPropertiesForCreates = validPropertiesForCreates;
             ValidPropertiesForUpdates = validPropertiesForUpdates;
             ValidPropertyValues = validPropertyValues;
+            ValidSubResourceTypes = validSubResourceTypes;
         }
     }
 }

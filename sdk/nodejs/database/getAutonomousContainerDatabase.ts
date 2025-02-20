@@ -43,6 +43,10 @@ export interface GetAutonomousContainerDatabaseArgs {
  * A collection of values returned by getAutonomousContainerDatabase.
  */
 export interface GetAutonomousContainerDatabaseResult {
+    /**
+     * A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
+     */
+    readonly associatedBackupConfigurationDetails: outputs.Database.GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetail[];
     readonly autonomousContainerDatabaseId: string;
     /**
      * **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
@@ -64,6 +68,10 @@ export interface GetAutonomousContainerDatabaseResult {
      * Backup options for the Autonomous Container Database.
      */
     readonly backupConfigs: outputs.Database.GetAutonomousContainerDatabaseBackupConfig[];
+    /**
+     * This list describes the backup destination properties associated with the Autonomous Container Database (ACD) 's preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
+     */
+    readonly backupDestinationPropertiesLists: outputs.Database.GetAutonomousContainerDatabaseBackupDestinationPropertiesList[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
      */
@@ -205,6 +213,10 @@ export interface GetAutonomousContainerDatabaseResult {
      * CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      */
     readonly reclaimableCpus: number;
+    /**
+     * Information about the recovery appliance configuration associated with the Autonomous Container Database.
+     */
+    readonly recoveryApplianceDetails: outputs.Database.GetAutonomousContainerDatabaseRecoveryApplianceDetail[];
     /**
      * The number of CPUs reserved in an Autonomous Container Database.
      */

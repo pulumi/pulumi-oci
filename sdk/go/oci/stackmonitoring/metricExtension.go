@@ -116,7 +116,7 @@ type MetricExtension struct {
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) Metric Extension display name.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// List of resource objects on which this metric extension is enabled.
+	// List of resource details objects having resourceIds on which this metric extension is enabled.
 	EnabledOnResources MetricExtensionEnabledOnResourceArrayOutput `pulumi:"enabledOnResources"`
 	// Count of resources on which this metric extension is enabled.
 	EnabledOnResourcesCount pulumi.IntOutput `pulumi:"enabledOnResourcesCount"`
@@ -209,7 +209,7 @@ type metricExtensionState struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) Metric Extension display name.
 	DisplayName *string `pulumi:"displayName"`
-	// List of resource objects on which this metric extension is enabled.
+	// List of resource details objects having resourceIds on which this metric extension is enabled.
 	EnabledOnResources []MetricExtensionEnabledOnResource `pulumi:"enabledOnResources"`
 	// Count of resources on which this metric extension is enabled.
 	EnabledOnResourcesCount *int `pulumi:"enabledOnResourcesCount"`
@@ -255,7 +255,7 @@ type MetricExtensionState struct {
 	Description pulumi.StringPtrInput
 	// (Updatable) Metric Extension display name.
 	DisplayName pulumi.StringPtrInput
-	// List of resource objects on which this metric extension is enabled.
+	// List of resource details objects having resourceIds on which this metric extension is enabled.
 	EnabledOnResources MetricExtensionEnabledOnResourceArrayInput
 	// Count of resources on which this metric extension is enabled.
 	EnabledOnResourcesCount pulumi.IntPtrInput
@@ -458,7 +458,7 @@ func (o MetricExtensionOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *MetricExtension) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// List of resource objects on which this metric extension is enabled.
+// List of resource details objects having resourceIds on which this metric extension is enabled.
 func (o MetricExtensionOutput) EnabledOnResources() MetricExtensionEnabledOnResourceArrayOutput {
 	return o.ApplyT(func(v *MetricExtension) MetricExtensionEnabledOnResourceArrayOutput { return v.EnabledOnResources }).(MetricExtensionEnabledOnResourceArrayOutput)
 }

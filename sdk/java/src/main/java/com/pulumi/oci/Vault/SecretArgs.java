@@ -8,7 +8,9 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Vault.inputs.SecretRotationConfigArgs;
 import com.pulumi.oci.Vault.inputs.SecretSecretContentArgs;
+import com.pulumi.oci.Vault.inputs.SecretSecretGenerationContextArgs;
 import com.pulumi.oci.Vault.inputs.SecretSecretRuleArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -64,6 +66,21 @@ public final class SecretArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
+    }
+
+    /**
+     * (Updatable) The value of this flag determines whether or not secret content will be generated automatically. If not set, it defaults to false.
+     * 
+     */
+    @Import(name="enableAutoGeneration")
+    private @Nullable Output<Boolean> enableAutoGeneration;
+
+    /**
+     * @return (Updatable) The value of this flag determines whether or not secret content will be generated automatically. If not set, it defaults to false.
+     * 
+     */
+    public Optional<Output<Boolean>> enableAutoGeneration() {
+        return Optional.ofNullable(this.enableAutoGeneration);
     }
 
     /**
@@ -142,6 +159,21 @@ public final class SecretArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
+     * 
+     */
+    @Import(name="secretGenerationContext")
+    private @Nullable Output<SecretSecretGenerationContextArgs> secretGenerationContext;
+
+    /**
+     * @return (Updatable) Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
+     * 
+     */
+    public Optional<Output<SecretSecretGenerationContextArgs>> secretGenerationContext() {
+        return Optional.ofNullable(this.secretGenerationContext);
+    }
+
+    /**
      * A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
      * 
      */
@@ -198,11 +230,13 @@ public final class SecretArgs extends com.pulumi.resources.ResourceArgs {
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.description = $.description;
+        this.enableAutoGeneration = $.enableAutoGeneration;
         this.freeformTags = $.freeformTags;
         this.keyId = $.keyId;
         this.metadata = $.metadata;
         this.rotationConfig = $.rotationConfig;
         this.secretContent = $.secretContent;
+        this.secretGenerationContext = $.secretGenerationContext;
         this.secretName = $.secretName;
         this.secretRules = $.secretRules;
         this.vaultId = $.vaultId;
@@ -287,6 +321,27 @@ public final class SecretArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder description(String description) {
             return description(Output.of(description));
+        }
+
+        /**
+         * @param enableAutoGeneration (Updatable) The value of this flag determines whether or not secret content will be generated automatically. If not set, it defaults to false.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enableAutoGeneration(@Nullable Output<Boolean> enableAutoGeneration) {
+            $.enableAutoGeneration = enableAutoGeneration;
+            return this;
+        }
+
+        /**
+         * @param enableAutoGeneration (Updatable) The value of this flag determines whether or not secret content will be generated automatically. If not set, it defaults to false.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enableAutoGeneration(Boolean enableAutoGeneration) {
+            return enableAutoGeneration(Output.of(enableAutoGeneration));
         }
 
         /**
@@ -392,6 +447,27 @@ public final class SecretArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder secretContent(SecretSecretContentArgs secretContent) {
             return secretContent(Output.of(secretContent));
+        }
+
+        /**
+         * @param secretGenerationContext (Updatable) Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretGenerationContext(@Nullable Output<SecretSecretGenerationContextArgs> secretGenerationContext) {
+            $.secretGenerationContext = secretGenerationContext;
+            return this;
+        }
+
+        /**
+         * @param secretGenerationContext (Updatable) Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretGenerationContext(SecretSecretGenerationContextArgs secretGenerationContext) {
+            return secretGenerationContext(Output.of(secretGenerationContext));
         }
 
         /**

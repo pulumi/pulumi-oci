@@ -71,6 +71,9 @@ namespace Pulumi.Oci
         [Output("tenancyOcid")]
         public Output<string?> TenancyOcid { get; private set; } = null!;
 
+        [Output("testTimeMaintenanceRebootDue")]
+        public Output<string?> TestTimeMaintenanceRebootDue { get; private set; } = null!;
+
         /// <summary>
         /// (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if
         /// auth is set to 'ApiKey', ignored otherwise.
@@ -212,6 +215,9 @@ namespace Pulumi.Oci
         /// </summary>
         [Input("tenancyOcid")]
         public Input<string>? TenancyOcid { get; set; }
+
+        [Input("testTimeMaintenanceRebootDue")]
+        public Input<string>? TestTimeMaintenanceRebootDue { get; set; }
 
         /// <summary>
         /// (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if

@@ -18,6 +18,8 @@ import com.pulumi.oci.StackMonitoring.inputs.GetConfigArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetConfigPlainArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetConfigsArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetConfigsPlainArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetDefinedMonitoringTemplatesArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetDefinedMonitoringTemplatesPlainArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobLogsArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobLogsPlainArgs;
@@ -44,6 +46,14 @@ import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTypesArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTypesPlainArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourcesArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourcesPlainArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplateAlarmConditionArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplateAlarmConditionPlainArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplateAlarmConditionsArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplateAlarmConditionsPlainArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplateArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplatePlainArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplatesArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplatesPlainArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetProcessSetArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetProcessSetPlainArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetProcessSetsArgs;
@@ -53,6 +63,7 @@ import com.pulumi.oci.StackMonitoring.outputs.GetBaselineableMetricsEvaluateResu
 import com.pulumi.oci.StackMonitoring.outputs.GetBaselineableMetricsResult;
 import com.pulumi.oci.StackMonitoring.outputs.GetConfigResult;
 import com.pulumi.oci.StackMonitoring.outputs.GetConfigsResult;
+import com.pulumi.oci.StackMonitoring.outputs.GetDefinedMonitoringTemplatesResult;
 import com.pulumi.oci.StackMonitoring.outputs.GetDiscoveryJobLogsResult;
 import com.pulumi.oci.StackMonitoring.outputs.GetDiscoveryJobResult;
 import com.pulumi.oci.StackMonitoring.outputs.GetDiscoveryJobsResult;
@@ -66,6 +77,10 @@ import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourceTasksResult;
 import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourceTypeResult;
 import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourceTypesResult;
 import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourcesResult;
+import com.pulumi.oci.StackMonitoring.outputs.GetMonitoringTemplateAlarmConditionResult;
+import com.pulumi.oci.StackMonitoring.outputs.GetMonitoringTemplateAlarmConditionsResult;
+import com.pulumi.oci.StackMonitoring.outputs.GetMonitoringTemplateResult;
+import com.pulumi.oci.StackMonitoring.outputs.GetMonitoringTemplatesResult;
 import com.pulumi.oci.StackMonitoring.outputs.GetProcessSetResult;
 import com.pulumi.oci.StackMonitoring.outputs.GetProcessSetsResult;
 import com.pulumi.oci.Utilities;
@@ -1376,6 +1391,236 @@ public final class StackMonitoringFunctions {
      */
     public static CompletableFuture<GetConfigsResult> getConfigsPlain(GetConfigsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getConfigs:getConfigs", TypeShape.of(GetConfigsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Defined Monitoring Templates in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * List Defined Monitoring Templates.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetDefinedMonitoringTemplatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDefinedMonitoringTemplates = StackMonitoringFunctions.getDefinedMonitoringTemplates(GetDefinedMonitoringTemplatesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(definedMonitoringTemplateDisplayName)
+     *             .resourceTypes(definedMonitoringTemplateResourceTypes)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDefinedMonitoringTemplatesResult> getDefinedMonitoringTemplates(GetDefinedMonitoringTemplatesArgs args) {
+        return getDefinedMonitoringTemplates(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Defined Monitoring Templates in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * List Defined Monitoring Templates.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetDefinedMonitoringTemplatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDefinedMonitoringTemplates = StackMonitoringFunctions.getDefinedMonitoringTemplates(GetDefinedMonitoringTemplatesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(definedMonitoringTemplateDisplayName)
+     *             .resourceTypes(definedMonitoringTemplateResourceTypes)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDefinedMonitoringTemplatesResult> getDefinedMonitoringTemplatesPlain(GetDefinedMonitoringTemplatesPlainArgs args) {
+        return getDefinedMonitoringTemplatesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Defined Monitoring Templates in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * List Defined Monitoring Templates.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetDefinedMonitoringTemplatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDefinedMonitoringTemplates = StackMonitoringFunctions.getDefinedMonitoringTemplates(GetDefinedMonitoringTemplatesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(definedMonitoringTemplateDisplayName)
+     *             .resourceTypes(definedMonitoringTemplateResourceTypes)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDefinedMonitoringTemplatesResult> getDefinedMonitoringTemplates(GetDefinedMonitoringTemplatesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getDefinedMonitoringTemplates:getDefinedMonitoringTemplates", TypeShape.of(GetDefinedMonitoringTemplatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Defined Monitoring Templates in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * List Defined Monitoring Templates.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetDefinedMonitoringTemplatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDefinedMonitoringTemplates = StackMonitoringFunctions.getDefinedMonitoringTemplates(GetDefinedMonitoringTemplatesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(definedMonitoringTemplateDisplayName)
+     *             .resourceTypes(definedMonitoringTemplateResourceTypes)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDefinedMonitoringTemplatesResult> getDefinedMonitoringTemplates(GetDefinedMonitoringTemplatesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getDefinedMonitoringTemplates:getDefinedMonitoringTemplates", TypeShape.of(GetDefinedMonitoringTemplatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Defined Monitoring Templates in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * List Defined Monitoring Templates.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetDefinedMonitoringTemplatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDefinedMonitoringTemplates = StackMonitoringFunctions.getDefinedMonitoringTemplates(GetDefinedMonitoringTemplatesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(definedMonitoringTemplateDisplayName)
+     *             .resourceTypes(definedMonitoringTemplateResourceTypes)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDefinedMonitoringTemplatesResult> getDefinedMonitoringTemplatesPlain(GetDefinedMonitoringTemplatesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getDefinedMonitoringTemplates:getDefinedMonitoringTemplates", TypeShape.of(GetDefinedMonitoringTemplatesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Discovery Job resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -4466,6 +4711,1048 @@ public final class StackMonitoringFunctions {
      */
     public static CompletableFuture<GetMonitoredResourcesResult> getMonitoredResourcesPlain(GetMonitoredResourcesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getMonitoredResources:getMonitoredResources", TypeShape.of(GetMonitoredResourcesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Monitoring Template resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Gets a Monitoring Template by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoringTemplate = StackMonitoringFunctions.getMonitoringTemplate(GetMonitoringTemplateArgs.builder()
+     *             .monitoringTemplateId(testMonitoringTemplateOciStackMonitoringMonitoringTemplate.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMonitoringTemplateResult> getMonitoringTemplate(GetMonitoringTemplateArgs args) {
+        return getMonitoringTemplate(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Monitoring Template resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Gets a Monitoring Template by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoringTemplate = StackMonitoringFunctions.getMonitoringTemplate(GetMonitoringTemplateArgs.builder()
+     *             .monitoringTemplateId(testMonitoringTemplateOciStackMonitoringMonitoringTemplate.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetMonitoringTemplateResult> getMonitoringTemplatePlain(GetMonitoringTemplatePlainArgs args) {
+        return getMonitoringTemplatePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Monitoring Template resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Gets a Monitoring Template by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoringTemplate = StackMonitoringFunctions.getMonitoringTemplate(GetMonitoringTemplateArgs.builder()
+     *             .monitoringTemplateId(testMonitoringTemplateOciStackMonitoringMonitoringTemplate.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMonitoringTemplateResult> getMonitoringTemplate(GetMonitoringTemplateArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getMonitoringTemplate:getMonitoringTemplate", TypeShape.of(GetMonitoringTemplateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Monitoring Template resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Gets a Monitoring Template by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoringTemplate = StackMonitoringFunctions.getMonitoringTemplate(GetMonitoringTemplateArgs.builder()
+     *             .monitoringTemplateId(testMonitoringTemplateOciStackMonitoringMonitoringTemplate.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMonitoringTemplateResult> getMonitoringTemplate(GetMonitoringTemplateArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getMonitoringTemplate:getMonitoringTemplate", TypeShape.of(GetMonitoringTemplateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Monitoring Template resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Gets a Monitoring Template by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoringTemplate = StackMonitoringFunctions.getMonitoringTemplate(GetMonitoringTemplateArgs.builder()
+     *             .monitoringTemplateId(testMonitoringTemplateOciStackMonitoringMonitoringTemplate.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetMonitoringTemplateResult> getMonitoringTemplatePlain(GetMonitoringTemplatePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getMonitoringTemplate:getMonitoringTemplate", TypeShape.of(GetMonitoringTemplateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Monitoring Template Alarm Condition resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Gets a Alarm Condition by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplateAlarmConditionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoringTemplateAlarmCondition = StackMonitoringFunctions.getMonitoringTemplateAlarmCondition(GetMonitoringTemplateAlarmConditionArgs.builder()
+     *             .alarmConditionId(testAlarmCondition.id())
+     *             .monitoringTemplateId(testMonitoringTemplate.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMonitoringTemplateAlarmConditionResult> getMonitoringTemplateAlarmCondition(GetMonitoringTemplateAlarmConditionArgs args) {
+        return getMonitoringTemplateAlarmCondition(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Monitoring Template Alarm Condition resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Gets a Alarm Condition by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplateAlarmConditionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoringTemplateAlarmCondition = StackMonitoringFunctions.getMonitoringTemplateAlarmCondition(GetMonitoringTemplateAlarmConditionArgs.builder()
+     *             .alarmConditionId(testAlarmCondition.id())
+     *             .monitoringTemplateId(testMonitoringTemplate.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetMonitoringTemplateAlarmConditionResult> getMonitoringTemplateAlarmConditionPlain(GetMonitoringTemplateAlarmConditionPlainArgs args) {
+        return getMonitoringTemplateAlarmConditionPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Monitoring Template Alarm Condition resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Gets a Alarm Condition by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplateAlarmConditionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoringTemplateAlarmCondition = StackMonitoringFunctions.getMonitoringTemplateAlarmCondition(GetMonitoringTemplateAlarmConditionArgs.builder()
+     *             .alarmConditionId(testAlarmCondition.id())
+     *             .monitoringTemplateId(testMonitoringTemplate.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMonitoringTemplateAlarmConditionResult> getMonitoringTemplateAlarmCondition(GetMonitoringTemplateAlarmConditionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getMonitoringTemplateAlarmCondition:getMonitoringTemplateAlarmCondition", TypeShape.of(GetMonitoringTemplateAlarmConditionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Monitoring Template Alarm Condition resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Gets a Alarm Condition by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplateAlarmConditionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoringTemplateAlarmCondition = StackMonitoringFunctions.getMonitoringTemplateAlarmCondition(GetMonitoringTemplateAlarmConditionArgs.builder()
+     *             .alarmConditionId(testAlarmCondition.id())
+     *             .monitoringTemplateId(testMonitoringTemplate.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMonitoringTemplateAlarmConditionResult> getMonitoringTemplateAlarmCondition(GetMonitoringTemplateAlarmConditionArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getMonitoringTemplateAlarmCondition:getMonitoringTemplateAlarmCondition", TypeShape.of(GetMonitoringTemplateAlarmConditionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Monitoring Template Alarm Condition resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Gets a Alarm Condition by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplateAlarmConditionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoringTemplateAlarmCondition = StackMonitoringFunctions.getMonitoringTemplateAlarmCondition(GetMonitoringTemplateAlarmConditionArgs.builder()
+     *             .alarmConditionId(testAlarmCondition.id())
+     *             .monitoringTemplateId(testMonitoringTemplate.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetMonitoringTemplateAlarmConditionResult> getMonitoringTemplateAlarmConditionPlain(GetMonitoringTemplateAlarmConditionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getMonitoringTemplateAlarmCondition:getMonitoringTemplateAlarmCondition", TypeShape.of(GetMonitoringTemplateAlarmConditionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Monitoring Template Alarm Conditions in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns a list of Alarm Conditions.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplateAlarmConditionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoringTemplateAlarmConditions = StackMonitoringFunctions.getMonitoringTemplateAlarmConditions(GetMonitoringTemplateAlarmConditionsArgs.builder()
+     *             .monitoringTemplateId(testMonitoringTemplate.id())
+     *             .metricNames(testMetric.name())
+     *             .resourceTypes(monitoringTemplateAlarmConditionResourceTypes)
+     *             .state(monitoringTemplateAlarmConditionState)
+     *             .status(monitoringTemplateAlarmConditionStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMonitoringTemplateAlarmConditionsResult> getMonitoringTemplateAlarmConditions(GetMonitoringTemplateAlarmConditionsArgs args) {
+        return getMonitoringTemplateAlarmConditions(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Monitoring Template Alarm Conditions in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns a list of Alarm Conditions.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplateAlarmConditionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoringTemplateAlarmConditions = StackMonitoringFunctions.getMonitoringTemplateAlarmConditions(GetMonitoringTemplateAlarmConditionsArgs.builder()
+     *             .monitoringTemplateId(testMonitoringTemplate.id())
+     *             .metricNames(testMetric.name())
+     *             .resourceTypes(monitoringTemplateAlarmConditionResourceTypes)
+     *             .state(monitoringTemplateAlarmConditionState)
+     *             .status(monitoringTemplateAlarmConditionStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetMonitoringTemplateAlarmConditionsResult> getMonitoringTemplateAlarmConditionsPlain(GetMonitoringTemplateAlarmConditionsPlainArgs args) {
+        return getMonitoringTemplateAlarmConditionsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Monitoring Template Alarm Conditions in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns a list of Alarm Conditions.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplateAlarmConditionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoringTemplateAlarmConditions = StackMonitoringFunctions.getMonitoringTemplateAlarmConditions(GetMonitoringTemplateAlarmConditionsArgs.builder()
+     *             .monitoringTemplateId(testMonitoringTemplate.id())
+     *             .metricNames(testMetric.name())
+     *             .resourceTypes(monitoringTemplateAlarmConditionResourceTypes)
+     *             .state(monitoringTemplateAlarmConditionState)
+     *             .status(monitoringTemplateAlarmConditionStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMonitoringTemplateAlarmConditionsResult> getMonitoringTemplateAlarmConditions(GetMonitoringTemplateAlarmConditionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getMonitoringTemplateAlarmConditions:getMonitoringTemplateAlarmConditions", TypeShape.of(GetMonitoringTemplateAlarmConditionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Monitoring Template Alarm Conditions in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns a list of Alarm Conditions.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplateAlarmConditionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoringTemplateAlarmConditions = StackMonitoringFunctions.getMonitoringTemplateAlarmConditions(GetMonitoringTemplateAlarmConditionsArgs.builder()
+     *             .monitoringTemplateId(testMonitoringTemplate.id())
+     *             .metricNames(testMetric.name())
+     *             .resourceTypes(monitoringTemplateAlarmConditionResourceTypes)
+     *             .state(monitoringTemplateAlarmConditionState)
+     *             .status(monitoringTemplateAlarmConditionStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMonitoringTemplateAlarmConditionsResult> getMonitoringTemplateAlarmConditions(GetMonitoringTemplateAlarmConditionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getMonitoringTemplateAlarmConditions:getMonitoringTemplateAlarmConditions", TypeShape.of(GetMonitoringTemplateAlarmConditionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Monitoring Template Alarm Conditions in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns a list of Alarm Conditions.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplateAlarmConditionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoringTemplateAlarmConditions = StackMonitoringFunctions.getMonitoringTemplateAlarmConditions(GetMonitoringTemplateAlarmConditionsArgs.builder()
+     *             .monitoringTemplateId(testMonitoringTemplate.id())
+     *             .metricNames(testMetric.name())
+     *             .resourceTypes(monitoringTemplateAlarmConditionResourceTypes)
+     *             .state(monitoringTemplateAlarmConditionState)
+     *             .status(monitoringTemplateAlarmConditionStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetMonitoringTemplateAlarmConditionsResult> getMonitoringTemplateAlarmConditionsPlain(GetMonitoringTemplateAlarmConditionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getMonitoringTemplateAlarmConditions:getMonitoringTemplateAlarmConditions", TypeShape.of(GetMonitoringTemplateAlarmConditionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Monitoring Templates in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns a list of Monitoring Templates.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoringTemplates = StackMonitoringFunctions.getMonitoringTemplates(GetMonitoringTemplatesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(monitoringTemplateDisplayName)
+     *             .metricNames(testMetric.name())
+     *             .monitoringTemplateId(testMonitoringTemplate.id())
+     *             .namespaces(monitoringTemplateNamespace)
+     *             .resourceTypes(monitoringTemplateResourceTypes)
+     *             .state(monitoringTemplateState)
+     *             .status(monitoringTemplateStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMonitoringTemplatesResult> getMonitoringTemplates() {
+        return getMonitoringTemplates(GetMonitoringTemplatesArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Monitoring Templates in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns a list of Monitoring Templates.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoringTemplates = StackMonitoringFunctions.getMonitoringTemplates(GetMonitoringTemplatesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(monitoringTemplateDisplayName)
+     *             .metricNames(testMetric.name())
+     *             .monitoringTemplateId(testMonitoringTemplate.id())
+     *             .namespaces(monitoringTemplateNamespace)
+     *             .resourceTypes(monitoringTemplateResourceTypes)
+     *             .state(monitoringTemplateState)
+     *             .status(monitoringTemplateStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetMonitoringTemplatesResult> getMonitoringTemplatesPlain() {
+        return getMonitoringTemplatesPlain(GetMonitoringTemplatesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Monitoring Templates in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns a list of Monitoring Templates.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoringTemplates = StackMonitoringFunctions.getMonitoringTemplates(GetMonitoringTemplatesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(monitoringTemplateDisplayName)
+     *             .metricNames(testMetric.name())
+     *             .monitoringTemplateId(testMonitoringTemplate.id())
+     *             .namespaces(monitoringTemplateNamespace)
+     *             .resourceTypes(monitoringTemplateResourceTypes)
+     *             .state(monitoringTemplateState)
+     *             .status(monitoringTemplateStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMonitoringTemplatesResult> getMonitoringTemplates(GetMonitoringTemplatesArgs args) {
+        return getMonitoringTemplates(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Monitoring Templates in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns a list of Monitoring Templates.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoringTemplates = StackMonitoringFunctions.getMonitoringTemplates(GetMonitoringTemplatesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(monitoringTemplateDisplayName)
+     *             .metricNames(testMetric.name())
+     *             .monitoringTemplateId(testMonitoringTemplate.id())
+     *             .namespaces(monitoringTemplateNamespace)
+     *             .resourceTypes(monitoringTemplateResourceTypes)
+     *             .state(monitoringTemplateState)
+     *             .status(monitoringTemplateStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetMonitoringTemplatesResult> getMonitoringTemplatesPlain(GetMonitoringTemplatesPlainArgs args) {
+        return getMonitoringTemplatesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Monitoring Templates in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns a list of Monitoring Templates.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoringTemplates = StackMonitoringFunctions.getMonitoringTemplates(GetMonitoringTemplatesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(monitoringTemplateDisplayName)
+     *             .metricNames(testMetric.name())
+     *             .monitoringTemplateId(testMonitoringTemplate.id())
+     *             .namespaces(monitoringTemplateNamespace)
+     *             .resourceTypes(monitoringTemplateResourceTypes)
+     *             .state(monitoringTemplateState)
+     *             .status(monitoringTemplateStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMonitoringTemplatesResult> getMonitoringTemplates(GetMonitoringTemplatesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getMonitoringTemplates:getMonitoringTemplates", TypeShape.of(GetMonitoringTemplatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Monitoring Templates in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns a list of Monitoring Templates.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoringTemplates = StackMonitoringFunctions.getMonitoringTemplates(GetMonitoringTemplatesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(monitoringTemplateDisplayName)
+     *             .metricNames(testMetric.name())
+     *             .monitoringTemplateId(testMonitoringTemplate.id())
+     *             .namespaces(monitoringTemplateNamespace)
+     *             .resourceTypes(monitoringTemplateResourceTypes)
+     *             .state(monitoringTemplateState)
+     *             .status(monitoringTemplateStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMonitoringTemplatesResult> getMonitoringTemplates(GetMonitoringTemplatesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getMonitoringTemplates:getMonitoringTemplates", TypeShape.of(GetMonitoringTemplatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Monitoring Templates in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns a list of Monitoring Templates.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoringTemplates = StackMonitoringFunctions.getMonitoringTemplates(GetMonitoringTemplatesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(monitoringTemplateDisplayName)
+     *             .metricNames(testMetric.name())
+     *             .monitoringTemplateId(testMonitoringTemplate.id())
+     *             .namespaces(monitoringTemplateNamespace)
+     *             .resourceTypes(monitoringTemplateResourceTypes)
+     *             .state(monitoringTemplateState)
+     *             .status(monitoringTemplateStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetMonitoringTemplatesResult> getMonitoringTemplatesPlain(GetMonitoringTemplatesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getMonitoringTemplates:getMonitoringTemplates", TypeShape.of(GetMonitoringTemplatesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Process Set resource in Oracle Cloud Infrastructure Stack Monitoring service.

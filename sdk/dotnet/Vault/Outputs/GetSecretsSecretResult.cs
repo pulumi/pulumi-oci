@@ -29,6 +29,7 @@ namespace Pulumi.Oci.Vault.Outputs
         /// A brief description of the secret. Avoid entering confidential information.
         /// </summary>
         public readonly string Description;
+        public readonly bool EnableAutoGeneration;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
@@ -37,6 +38,10 @@ namespace Pulumi.Oci.Vault.Outputs
         /// The OCID of the secret.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// The value of this flag determines whether or not secret content will be generated automatically.
+        /// </summary>
+        public readonly bool IsAutoGenerationEnabled;
         /// <summary>
         /// The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
         /// </summary>
@@ -66,6 +71,10 @@ namespace Pulumi.Oci.Vault.Outputs
         /// </summary>
         public readonly string RotationStatus;
         public readonly ImmutableArray<Outputs.GetSecretsSecretSecretContentResult> SecretContents;
+        /// <summary>
+        /// Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetSecretsSecretSecretGenerationContextResult> SecretGenerationContexts;
         /// <summary>
         /// The user-friendly name of the secret. Avoid entering confidential information.
         /// </summary>
@@ -105,9 +114,13 @@ namespace Pulumi.Oci.Vault.Outputs
 
             string description,
 
+            bool enableAutoGeneration,
+
             ImmutableDictionary<string, string> freeformTags,
 
             string id,
+
+            bool isAutoGenerationEnabled,
 
             string keyId,
 
@@ -124,6 +137,8 @@ namespace Pulumi.Oci.Vault.Outputs
             string rotationStatus,
 
             ImmutableArray<Outputs.GetSecretsSecretSecretContentResult> secretContents,
+
+            ImmutableArray<Outputs.GetSecretsSecretSecretGenerationContextResult> secretGenerationContexts,
 
             string secretName,
 
@@ -143,8 +158,10 @@ namespace Pulumi.Oci.Vault.Outputs
             CurrentVersionNumber = currentVersionNumber;
             DefinedTags = definedTags;
             Description = description;
+            EnableAutoGeneration = enableAutoGeneration;
             FreeformTags = freeformTags;
             Id = id;
+            IsAutoGenerationEnabled = isAutoGenerationEnabled;
             KeyId = keyId;
             LastRotationTime = lastRotationTime;
             LifecycleDetails = lifecycleDetails;
@@ -153,6 +170,7 @@ namespace Pulumi.Oci.Vault.Outputs
             RotationConfigs = rotationConfigs;
             RotationStatus = rotationStatus;
             SecretContents = secretContents;
+            SecretGenerationContexts = secretGenerationContexts;
             SecretName = secretName;
             SecretRules = secretRules;
             State = state;

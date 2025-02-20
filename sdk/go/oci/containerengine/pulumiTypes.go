@@ -332,6 +332,8 @@ func (o ClusterClusterPodNetworkOptionArrayOutput) Index(i pulumi.IntInput) Clus
 }
 
 type ClusterEndpoint struct {
+	// The IPv6 networking Kubernetes API server endpoint.
+	Ipv6endpoint *string `pulumi:"ipv6endpoint"`
 	// The non-native networking Kubernetes API server endpoint.
 	Kubernetes *string `pulumi:"kubernetes"`
 	// The private native networking Kubernetes API server endpoint.
@@ -354,6 +356,8 @@ type ClusterEndpointInput interface {
 }
 
 type ClusterEndpointArgs struct {
+	// The IPv6 networking Kubernetes API server endpoint.
+	Ipv6endpoint pulumi.StringPtrInput `pulumi:"ipv6endpoint"`
 	// The non-native networking Kubernetes API server endpoint.
 	Kubernetes pulumi.StringPtrInput `pulumi:"kubernetes"`
 	// The private native networking Kubernetes API server endpoint.
@@ -413,6 +417,11 @@ func (o ClusterEndpointOutput) ToClusterEndpointOutput() ClusterEndpointOutput {
 
 func (o ClusterEndpointOutput) ToClusterEndpointOutputWithContext(ctx context.Context) ClusterEndpointOutput {
 	return o
+}
+
+// The IPv6 networking Kubernetes API server endpoint.
+func (o ClusterEndpointOutput) Ipv6endpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterEndpoint) *string { return v.Ipv6endpoint }).(pulumi.StringPtrOutput)
 }
 
 // The non-native networking Kubernetes API server endpoint.
@@ -1066,6 +1075,8 @@ type ClusterOptions struct {
 	AddOns *ClusterOptionsAddOns `pulumi:"addOns"`
 	// (Updatable) Configurable cluster admission controllers
 	AdmissionControllerOptions *ClusterOptionsAdmissionControllerOptions `pulumi:"admissionControllerOptions"`
+	// IP family to use for single stack or define the order of IP families for dual-stack
+	IpFamilies []string `pulumi:"ipFamilies"`
 	// Network configuration for Kubernetes.
 	KubernetesNetworkConfig *ClusterOptionsKubernetesNetworkConfig `pulumi:"kubernetesNetworkConfig"`
 	// (Updatable) The property that define the status of the OIDC Discovery feature for a cluster.
@@ -1096,6 +1107,8 @@ type ClusterOptionsArgs struct {
 	AddOns ClusterOptionsAddOnsPtrInput `pulumi:"addOns"`
 	// (Updatable) Configurable cluster admission controllers
 	AdmissionControllerOptions ClusterOptionsAdmissionControllerOptionsPtrInput `pulumi:"admissionControllerOptions"`
+	// IP family to use for single stack or define the order of IP families for dual-stack
+	IpFamilies pulumi.StringArrayInput `pulumi:"ipFamilies"`
 	// Network configuration for Kubernetes.
 	KubernetesNetworkConfig ClusterOptionsKubernetesNetworkConfigPtrInput `pulumi:"kubernetesNetworkConfig"`
 	// (Updatable) The property that define the status of the OIDC Discovery feature for a cluster.
@@ -1197,6 +1210,11 @@ func (o ClusterOptionsOutput) AdmissionControllerOptions() ClusterOptionsAdmissi
 	return o.ApplyT(func(v ClusterOptions) *ClusterOptionsAdmissionControllerOptions { return v.AdmissionControllerOptions }).(ClusterOptionsAdmissionControllerOptionsPtrOutput)
 }
 
+// IP family to use for single stack or define the order of IP families for dual-stack
+func (o ClusterOptionsOutput) IpFamilies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ClusterOptions) []string { return v.IpFamilies }).(pulumi.StringArrayOutput)
+}
+
 // Network configuration for Kubernetes.
 func (o ClusterOptionsOutput) KubernetesNetworkConfig() ClusterOptionsKubernetesNetworkConfigPtrOutput {
 	return o.ApplyT(func(v ClusterOptions) *ClusterOptionsKubernetesNetworkConfig { return v.KubernetesNetworkConfig }).(ClusterOptionsKubernetesNetworkConfigPtrOutput)
@@ -1271,6 +1289,16 @@ func (o ClusterOptionsPtrOutput) AdmissionControllerOptions() ClusterOptionsAdmi
 		}
 		return v.AdmissionControllerOptions
 	}).(ClusterOptionsAdmissionControllerOptionsPtrOutput)
+}
+
+// IP family to use for single stack or define the order of IP families for dual-stack
+func (o ClusterOptionsPtrOutput) IpFamilies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ClusterOptions) []string {
+		if v == nil {
+			return nil
+		}
+		return v.IpFamilies
+	}).(pulumi.StringArrayOutput)
 }
 
 // Network configuration for Kubernetes.
@@ -9246,6 +9274,8 @@ func (o GetClusterClusterPodNetworkOptionArrayOutput) Index(i pulumi.IntInput) G
 }
 
 type GetClusterEndpoint struct {
+	// The IPv6 networking Kubernetes API server endpoint.
+	Ipv6endpoint string `pulumi:"ipv6endpoint"`
 	// The non-native networking Kubernetes API server endpoint.
 	Kubernetes string `pulumi:"kubernetes"`
 	// The private native networking Kubernetes API server endpoint.
@@ -9268,6 +9298,8 @@ type GetClusterEndpointInput interface {
 }
 
 type GetClusterEndpointArgs struct {
+	// The IPv6 networking Kubernetes API server endpoint.
+	Ipv6endpoint pulumi.StringInput `pulumi:"ipv6endpoint"`
 	// The non-native networking Kubernetes API server endpoint.
 	Kubernetes pulumi.StringInput `pulumi:"kubernetes"`
 	// The private native networking Kubernetes API server endpoint.
@@ -9327,6 +9359,11 @@ func (o GetClusterEndpointOutput) ToGetClusterEndpointOutput() GetClusterEndpoin
 
 func (o GetClusterEndpointOutput) ToGetClusterEndpointOutputWithContext(ctx context.Context) GetClusterEndpointOutput {
 	return o
+}
+
+// The IPv6 networking Kubernetes API server endpoint.
+func (o GetClusterEndpointOutput) Ipv6endpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterEndpoint) string { return v.Ipv6endpoint }).(pulumi.StringOutput)
 }
 
 // The non-native networking Kubernetes API server endpoint.
@@ -9870,6 +9907,8 @@ type GetClusterOption struct {
 	AddOns []GetClusterOptionAddOn `pulumi:"addOns"`
 	// Configurable cluster admission controllers
 	AdmissionControllerOptions []GetClusterOptionAdmissionControllerOption `pulumi:"admissionControllerOptions"`
+	// IP family to use for single stack or define the order of IP families for dual-stack
+	IpFamilies []string `pulumi:"ipFamilies"`
 	// Network configuration for Kubernetes.
 	KubernetesNetworkConfigs                []GetClusterOptionKubernetesNetworkConfig                `pulumi:"kubernetesNetworkConfigs"`
 	OpenIdConnectDiscoveries                []GetClusterOptionOpenIdConnectDiscovery                 `pulumi:"openIdConnectDiscoveries"`
@@ -9898,6 +9937,8 @@ type GetClusterOptionArgs struct {
 	AddOns GetClusterOptionAddOnArrayInput `pulumi:"addOns"`
 	// Configurable cluster admission controllers
 	AdmissionControllerOptions GetClusterOptionAdmissionControllerOptionArrayInput `pulumi:"admissionControllerOptions"`
+	// IP family to use for single stack or define the order of IP families for dual-stack
+	IpFamilies pulumi.StringArrayInput `pulumi:"ipFamilies"`
 	// Network configuration for Kubernetes.
 	KubernetesNetworkConfigs                GetClusterOptionKubernetesNetworkConfigArrayInput                `pulumi:"kubernetesNetworkConfigs"`
 	OpenIdConnectDiscoveries                GetClusterOptionOpenIdConnectDiscoveryArrayInput                 `pulumi:"openIdConnectDiscoveries"`
@@ -9971,6 +10012,11 @@ func (o GetClusterOptionOutput) AdmissionControllerOptions() GetClusterOptionAdm
 	return o.ApplyT(func(v GetClusterOption) []GetClusterOptionAdmissionControllerOption {
 		return v.AdmissionControllerOptions
 	}).(GetClusterOptionAdmissionControllerOptionArrayOutput)
+}
+
+// IP family to use for single stack or define the order of IP families for dual-stack
+func (o GetClusterOptionOutput) IpFamilies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetClusterOption) []string { return v.IpFamilies }).(pulumi.StringArrayOutput)
 }
 
 // Network configuration for Kubernetes.
@@ -11621,6 +11667,8 @@ func (o GetClustersClusterClusterPodNetworkOptionArrayOutput) Index(i pulumi.Int
 }
 
 type GetClustersClusterEndpoint struct {
+	// The IPv6 networking Kubernetes API server endpoint.
+	Ipv6endpoint string `pulumi:"ipv6endpoint"`
 	// The non-native networking Kubernetes API server endpoint.
 	Kubernetes string `pulumi:"kubernetes"`
 	// The private native networking Kubernetes API server endpoint.
@@ -11643,6 +11691,8 @@ type GetClustersClusterEndpointInput interface {
 }
 
 type GetClustersClusterEndpointArgs struct {
+	// The IPv6 networking Kubernetes API server endpoint.
+	Ipv6endpoint pulumi.StringInput `pulumi:"ipv6endpoint"`
 	// The non-native networking Kubernetes API server endpoint.
 	Kubernetes pulumi.StringInput `pulumi:"kubernetes"`
 	// The private native networking Kubernetes API server endpoint.
@@ -11702,6 +11752,11 @@ func (o GetClustersClusterEndpointOutput) ToGetClustersClusterEndpointOutput() G
 
 func (o GetClustersClusterEndpointOutput) ToGetClustersClusterEndpointOutputWithContext(ctx context.Context) GetClustersClusterEndpointOutput {
 	return o
+}
+
+// The IPv6 networking Kubernetes API server endpoint.
+func (o GetClustersClusterEndpointOutput) Ipv6endpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterEndpoint) string { return v.Ipv6endpoint }).(pulumi.StringOutput)
 }
 
 // The non-native networking Kubernetes API server endpoint.
@@ -12247,6 +12302,8 @@ type GetClustersClusterOption struct {
 	AddOns []GetClustersClusterOptionAddOn `pulumi:"addOns"`
 	// Configurable cluster admission controllers
 	AdmissionControllerOptions []GetClustersClusterOptionAdmissionControllerOption `pulumi:"admissionControllerOptions"`
+	// IP family to use for single stack or define the order of IP families for dual-stack
+	IpFamilies []string `pulumi:"ipFamilies"`
 	// Network configuration for Kubernetes.
 	KubernetesNetworkConfigs []GetClustersClusterOptionKubernetesNetworkConfig `pulumi:"kubernetesNetworkConfigs"`
 	// The property that define the status of the OIDC Discovery feature for a cluster.
@@ -12277,6 +12334,8 @@ type GetClustersClusterOptionArgs struct {
 	AddOns GetClustersClusterOptionAddOnArrayInput `pulumi:"addOns"`
 	// Configurable cluster admission controllers
 	AdmissionControllerOptions GetClustersClusterOptionAdmissionControllerOptionArrayInput `pulumi:"admissionControllerOptions"`
+	// IP family to use for single stack or define the order of IP families for dual-stack
+	IpFamilies pulumi.StringArrayInput `pulumi:"ipFamilies"`
 	// Network configuration for Kubernetes.
 	KubernetesNetworkConfigs GetClustersClusterOptionKubernetesNetworkConfigArrayInput `pulumi:"kubernetesNetworkConfigs"`
 	// The property that define the status of the OIDC Discovery feature for a cluster.
@@ -12352,6 +12411,11 @@ func (o GetClustersClusterOptionOutput) AdmissionControllerOptions() GetClusters
 	return o.ApplyT(func(v GetClustersClusterOption) []GetClustersClusterOptionAdmissionControllerOption {
 		return v.AdmissionControllerOptions
 	}).(GetClustersClusterOptionAdmissionControllerOptionArrayOutput)
+}
+
+// IP family to use for single stack or define the order of IP families for dual-stack
+func (o GetClustersClusterOptionOutput) IpFamilies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetClustersClusterOption) []string { return v.IpFamilies }).(pulumi.StringArrayOutput)
 }
 
 // Network configuration for Kubernetes.

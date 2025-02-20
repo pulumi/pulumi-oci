@@ -47,7 +47,7 @@ public final class GetMetricExtensionResult {
      */
     private String displayName;
     /**
-     * @return List of resource objects on which this metric extension is enabled.
+     * @return List of resource details objects having resourceIds on which this metric extension is enabled.
      * 
      */
     private List<GetMetricExtensionEnabledOnResource> enabledOnResources;
@@ -163,7 +163,7 @@ public final class GetMetricExtensionResult {
         return this.displayName;
     }
     /**
-     * @return List of resource objects on which this metric extension is enabled.
+     * @return List of resource details objects having resourceIds on which this metric extension is enabled.
      * 
      */
     public List<GetMetricExtensionEnabledOnResource> enabledOnResources() {

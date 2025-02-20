@@ -124,6 +124,7 @@ import * as servicemanagerproxy from "./servicemanagerproxy";
 import * as servicemesh from "./servicemesh";
 import * as stackmonitoring from "./stackmonitoring";
 import * as streaming from "./streaming";
+import * as tenantmanagercontrolplane from "./tenantmanagercontrolplane";
 import * as types from "./types";
 import * as usageproxy from "./usageproxy";
 import * as vault from "./vault";
@@ -249,6 +250,7 @@ export {
     servicemesh,
     stackmonitoring,
     streaming,
+    tenantmanagercontrolplane,
     types,
     usageproxy,
     vault,

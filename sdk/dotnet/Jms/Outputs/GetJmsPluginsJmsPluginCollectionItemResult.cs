@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Jms.Outputs
         /// </summary>
         public readonly string AgentId;
         /// <summary>
-        /// The agent type.
+        /// Filter JmsPlugin with agent type.
         /// </summary>
         public readonly string AgentType;
         /// <summary>

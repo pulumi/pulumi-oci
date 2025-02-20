@@ -110,6 +110,7 @@ type LookupDataGuardAssociationResult struct {
 	PeerSidPrefix   string `pulumi:"peerSidPrefix"`
 	PeerVmClusterId string `pulumi:"peerVmClusterId"`
 	PrivateIp       string `pulumi:"privateIp"`
+	PrivateIpV6     string `pulumi:"privateIpV6"`
 	// The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
 	ProtectionMode string `pulumi:"protectionMode"`
 	// The role of the reporting database in this Data Guard association.
@@ -325,6 +326,10 @@ func (o LookupDataGuardAssociationResultOutput) PeerVmClusterId() pulumi.StringO
 
 func (o LookupDataGuardAssociationResultOutput) PrivateIp() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.PrivateIp }).(pulumi.StringOutput)
+}
+
+func (o LookupDataGuardAssociationResultOutput) PrivateIpV6() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.PrivateIpV6 }).(pulumi.StringOutput)
 }
 
 // The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.

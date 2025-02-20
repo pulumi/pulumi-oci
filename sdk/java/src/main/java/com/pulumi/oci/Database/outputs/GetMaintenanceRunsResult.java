@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetMaintenanceRunsFilter;
 import com.pulumi.oci.Database.outputs.GetMaintenanceRunsMaintenanceRun;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -27,6 +28,7 @@ public final class GetMaintenanceRunsResult {
      * 
      */
     private String id;
+    private @Nullable Boolean isLocalAdg;
     /**
      * @return The list of maintenance_runs.
      * 
@@ -78,6 +80,9 @@ public final class GetMaintenanceRunsResult {
      */
     public String id() {
         return this.id;
+    }
+    public Optional<Boolean> isLocalAdg() {
+        return Optional.ofNullable(this.isLocalAdg);
     }
     /**
      * @return The list of maintenance_runs.
@@ -135,6 +140,7 @@ public final class GetMaintenanceRunsResult {
         private String compartmentId;
         private @Nullable List<GetMaintenanceRunsFilter> filters;
         private String id;
+        private @Nullable Boolean isLocalAdg;
         private List<GetMaintenanceRunsMaintenanceRun> maintenanceRuns;
         private @Nullable String maintenanceSubtype;
         private @Nullable String maintenanceType;
@@ -148,6 +154,7 @@ public final class GetMaintenanceRunsResult {
     	      this.compartmentId = defaults.compartmentId;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.isLocalAdg = defaults.isLocalAdg;
     	      this.maintenanceRuns = defaults.maintenanceRuns;
     	      this.maintenanceSubtype = defaults.maintenanceSubtype;
     	      this.maintenanceType = defaults.maintenanceType;
@@ -185,6 +192,12 @@ public final class GetMaintenanceRunsResult {
               throw new MissingRequiredPropertyException("GetMaintenanceRunsResult", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isLocalAdg(@Nullable Boolean isLocalAdg) {
+
+            this.isLocalAdg = isLocalAdg;
             return this;
         }
         @CustomType.Setter
@@ -234,6 +247,7 @@ public final class GetMaintenanceRunsResult {
             _resultValue.compartmentId = compartmentId;
             _resultValue.filters = filters;
             _resultValue.id = id;
+            _resultValue.isLocalAdg = isLocalAdg;
             _resultValue.maintenanceRuns = maintenanceRuns;
             _resultValue.maintenanceSubtype = maintenanceSubtype;
             _resultValue.maintenanceType = maintenanceType;

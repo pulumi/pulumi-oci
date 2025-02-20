@@ -185,6 +185,12 @@ namespace Pulumi.Oci.FileStorage
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
+        /// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+        /// </summary>
+        [Output("systemTags")]
+        public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system. 
         /// 
         /// 
@@ -437,6 +443,18 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        [Input("systemTags")]
+        private InputMap<string>? _systemTags;
+
+        /// <summary>
+        /// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+        /// </summary>
+        public InputMap<string> SystemTags
+        {
+            get => _systemTags ?? (_systemTags = new InputMap<string>());
+            set => _systemTags = value;
+        }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system. 

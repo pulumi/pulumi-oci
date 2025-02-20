@@ -131,7 +131,7 @@ export class MetricExtension extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
-     * List of resource objects on which this metric extension is enabled.
+     * List of resource details objects having resourceIds on which this metric extension is enabled.
      */
     public /*out*/ readonly enabledOnResources!: pulumi.Output<outputs.StackMonitoring.MetricExtensionEnabledOnResource[]>;
     /**
@@ -299,7 +299,7 @@ export interface MetricExtensionState {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * List of resource objects on which this metric extension is enabled.
+     * List of resource details objects having resourceIds on which this metric extension is enabled.
      */
     enabledOnResources?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MetricExtensionEnabledOnResource>[]>;
     /**

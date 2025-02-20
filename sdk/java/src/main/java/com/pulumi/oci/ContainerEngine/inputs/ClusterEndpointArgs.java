@@ -16,6 +16,21 @@ public final class ClusterEndpointArgs extends com.pulumi.resources.ResourceArgs
     public static final ClusterEndpointArgs Empty = new ClusterEndpointArgs();
 
     /**
+     * The IPv6 networking Kubernetes API server endpoint.
+     * 
+     */
+    @Import(name="ipv6endpoint")
+    private @Nullable Output<String> ipv6endpoint;
+
+    /**
+     * @return The IPv6 networking Kubernetes API server endpoint.
+     * 
+     */
+    public Optional<Output<String>> ipv6endpoint() {
+        return Optional.ofNullable(this.ipv6endpoint);
+    }
+
+    /**
      * The non-native networking Kubernetes API server endpoint.
      * 
      */
@@ -78,6 +93,7 @@ public final class ClusterEndpointArgs extends com.pulumi.resources.ResourceArgs
     private ClusterEndpointArgs() {}
 
     private ClusterEndpointArgs(ClusterEndpointArgs $) {
+        this.ipv6endpoint = $.ipv6endpoint;
         this.kubernetes = $.kubernetes;
         this.privateEndpoint = $.privateEndpoint;
         this.publicEndpoint = $.publicEndpoint;
@@ -100,6 +116,27 @@ public final class ClusterEndpointArgs extends com.pulumi.resources.ResourceArgs
 
         public Builder(ClusterEndpointArgs defaults) {
             $ = new ClusterEndpointArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param ipv6endpoint The IPv6 networking Kubernetes API server endpoint.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6endpoint(@Nullable Output<String> ipv6endpoint) {
+            $.ipv6endpoint = ipv6endpoint;
+            return this;
+        }
+
+        /**
+         * @param ipv6endpoint The IPv6 networking Kubernetes API server endpoint.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6endpoint(String ipv6endpoint) {
+            return ipv6endpoint(Output.of(ipv6endpoint));
         }
 
         /**

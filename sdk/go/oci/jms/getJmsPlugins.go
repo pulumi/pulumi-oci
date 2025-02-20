@@ -31,6 +31,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := jms.GetJmsPlugins(ctx, &jms.GetJmsPluginsArgs{
 //				AgentId:                         pulumi.StringRef(jmsPluginAgentId),
+//				AgentType:                       pulumi.StringRef(jmsPluginAgentType),
 //				AvailabilityStatus:              pulumi.StringRef(jmsPluginAvailabilityStatus),
 //				CompartmentId:                   pulumi.StringRef(compartmentId),
 //				CompartmentIdInSubtree:          pulumi.BoolRef(jmsPluginCompartmentIdInSubtree),
@@ -63,6 +64,8 @@ func GetJmsPlugins(ctx *pulumi.Context, args *GetJmsPluginsArgs, opts ...pulumi.
 type GetJmsPluginsArgs struct {
 	// The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
 	AgentId *string `pulumi:"agentId"`
+	// Filter JmsPlugin with agent type.
+	AgentType *string `pulumi:"agentType"`
 	// Filter JmsPlugin with its availability status.
 	AvailabilityStatus *string `pulumi:"availabilityStatus"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -88,6 +91,8 @@ type GetJmsPluginsArgs struct {
 type GetJmsPluginsResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
 	AgentId *string `pulumi:"agentId"`
+	// The agent type.
+	AgentType *string `pulumi:"agentType"`
 	// The availability status.
 	AvailabilityStatus *string `pulumi:"availabilityStatus"`
 	// The OMA/OCA agent's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -120,6 +125,8 @@ func GetJmsPluginsOutput(ctx *pulumi.Context, args GetJmsPluginsOutputArgs, opts
 type GetJmsPluginsOutputArgs struct {
 	// The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
 	AgentId pulumi.StringPtrInput `pulumi:"agentId"`
+	// Filter JmsPlugin with agent type.
+	AgentType pulumi.StringPtrInput `pulumi:"agentType"`
 	// Filter JmsPlugin with its availability status.
 	AvailabilityStatus pulumi.StringPtrInput `pulumi:"availabilityStatus"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -163,6 +170,11 @@ func (o GetJmsPluginsResultOutput) ToGetJmsPluginsResultOutputWithContext(ctx co
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
 func (o GetJmsPluginsResultOutput) AgentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetJmsPluginsResult) *string { return v.AgentId }).(pulumi.StringPtrOutput)
+}
+
+// The agent type.
+func (o GetJmsPluginsResultOutput) AgentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJmsPluginsResult) *string { return v.AgentType }).(pulumi.StringPtrOutput)
 }
 
 // The availability status.

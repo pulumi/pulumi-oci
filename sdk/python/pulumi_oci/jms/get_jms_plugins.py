@@ -28,10 +28,13 @@ class GetJmsPluginsResult:
     """
     A collection of values returned by getJmsPlugins.
     """
-    def __init__(__self__, agent_id=None, availability_status=None, compartment_id=None, compartment_id_in_subtree=None, filters=None, fleet_id=None, hostname_contains=None, id=None, jms_plugin_collections=None, state=None, time_last_seen_less_than_or_equal_to=None, time_registered_less_than_or_equal_to=None):
+    def __init__(__self__, agent_id=None, agent_type=None, availability_status=None, compartment_id=None, compartment_id_in_subtree=None, filters=None, fleet_id=None, hostname_contains=None, id=None, jms_plugin_collections=None, state=None, time_last_seen_less_than_or_equal_to=None, time_registered_less_than_or_equal_to=None):
         if agent_id and not isinstance(agent_id, str):
             raise TypeError("Expected argument 'agent_id' to be a str")
         pulumi.set(__self__, "agent_id", agent_id)
+        if agent_type and not isinstance(agent_type, str):
+            raise TypeError("Expected argument 'agent_type' to be a str")
+        pulumi.set(__self__, "agent_type", agent_type)
         if availability_status and not isinstance(availability_status, str):
             raise TypeError("Expected argument 'availability_status' to be a str")
         pulumi.set(__self__, "availability_status", availability_status)
@@ -73,6 +76,14 @@ class GetJmsPluginsResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
         """
         return pulumi.get(self, "agent_id")
+
+    @property
+    @pulumi.getter(name="agentType")
+    def agent_type(self) -> Optional[str]:
+        """
+        The agent type.
+        """
+        return pulumi.get(self, "agent_type")
 
     @property
     @pulumi.getter(name="availabilityStatus")
@@ -155,6 +166,7 @@ class AwaitableGetJmsPluginsResult(GetJmsPluginsResult):
             yield self
         return GetJmsPluginsResult(
             agent_id=self.agent_id,
+            agent_type=self.agent_type,
             availability_status=self.availability_status,
             compartment_id=self.compartment_id,
             compartment_id_in_subtree=self.compartment_id_in_subtree,
@@ -169,6 +181,7 @@ class AwaitableGetJmsPluginsResult(GetJmsPluginsResult):
 
 
 def get_jms_plugins(agent_id: Optional[str] = None,
+                    agent_type: Optional[str] = None,
                     availability_status: Optional[str] = None,
                     compartment_id: Optional[str] = None,
                     compartment_id_in_subtree: Optional[bool] = None,
@@ -192,6 +205,7 @@ def get_jms_plugins(agent_id: Optional[str] = None,
     import pulumi_oci as oci
 
     test_jms_plugins = oci.Jms.get_jms_plugins(agent_id=jms_plugin_agent_id,
+        agent_type=jms_plugin_agent_type,
         availability_status=jms_plugin_availability_status,
         compartment_id=compartment_id,
         compartment_id_in_subtree=jms_plugin_compartment_id_in_subtree,
@@ -205,6 +219,7 @@ def get_jms_plugins(agent_id: Optional[str] = None,
 
 
     :param str agent_id: The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
+    :param str agent_type: Filter JmsPlugin with agent type.
     :param str availability_status: Filter JmsPlugin with its availability status.
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
     :param bool compartment_id_in_subtree: Flag to determine whether the info should be gathered only in the compartment or in the compartment and its subcompartments.
@@ -217,6 +232,7 @@ def get_jms_plugins(agent_id: Optional[str] = None,
     """
     __args__ = dict()
     __args__['agentId'] = agent_id
+    __args__['agentType'] = agent_type
     __args__['availabilityStatus'] = availability_status
     __args__['compartmentId'] = compartment_id
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
@@ -232,6 +248,7 @@ def get_jms_plugins(agent_id: Optional[str] = None,
 
     return AwaitableGetJmsPluginsResult(
         agent_id=pulumi.get(__ret__, 'agent_id'),
+        agent_type=pulumi.get(__ret__, 'agent_type'),
         availability_status=pulumi.get(__ret__, 'availability_status'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
@@ -244,6 +261,7 @@ def get_jms_plugins(agent_id: Optional[str] = None,
         time_last_seen_less_than_or_equal_to=pulumi.get(__ret__, 'time_last_seen_less_than_or_equal_to'),
         time_registered_less_than_or_equal_to=pulumi.get(__ret__, 'time_registered_less_than_or_equal_to'))
 def get_jms_plugins_output(agent_id: Optional[pulumi.Input[Optional[str]]] = None,
+                           agent_type: Optional[pulumi.Input[Optional[str]]] = None,
                            availability_status: Optional[pulumi.Input[Optional[str]]] = None,
                            compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                            compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
@@ -267,6 +285,7 @@ def get_jms_plugins_output(agent_id: Optional[pulumi.Input[Optional[str]]] = Non
     import pulumi_oci as oci
 
     test_jms_plugins = oci.Jms.get_jms_plugins(agent_id=jms_plugin_agent_id,
+        agent_type=jms_plugin_agent_type,
         availability_status=jms_plugin_availability_status,
         compartment_id=compartment_id,
         compartment_id_in_subtree=jms_plugin_compartment_id_in_subtree,
@@ -280,6 +299,7 @@ def get_jms_plugins_output(agent_id: Optional[pulumi.Input[Optional[str]]] = Non
 
 
     :param str agent_id: The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
+    :param str agent_type: Filter JmsPlugin with agent type.
     :param str availability_status: Filter JmsPlugin with its availability status.
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
     :param bool compartment_id_in_subtree: Flag to determine whether the info should be gathered only in the compartment or in the compartment and its subcompartments.
@@ -292,6 +312,7 @@ def get_jms_plugins_output(agent_id: Optional[pulumi.Input[Optional[str]]] = Non
     """
     __args__ = dict()
     __args__['agentId'] = agent_id
+    __args__['agentType'] = agent_type
     __args__['availabilityStatus'] = availability_status
     __args__['compartmentId'] = compartment_id
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
@@ -306,6 +327,7 @@ def get_jms_plugins_output(agent_id: Optional[pulumi.Input[Optional[str]]] = Non
     __ret__ = pulumi.runtime.invoke_output('oci:Jms/getJmsPlugins:getJmsPlugins', __args__, opts=opts, typ=GetJmsPluginsResult)
     return __ret__.apply(lambda __response__: GetJmsPluginsResult(
         agent_id=pulumi.get(__response__, 'agent_id'),
+        agent_type=pulumi.get(__response__, 'agent_type'),
         availability_status=pulumi.get(__response__, 'availability_status'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),

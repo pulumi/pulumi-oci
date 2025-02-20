@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetBackupDestinationAssociatedDatabase;
 import com.pulumi.oci.Database.outputs.GetBackupDestinationMountTypeDetail;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -86,15 +87,30 @@ public final class GetBackupDestinationResult {
      */
     private String state;
     /**
+     * @return The time when the total storage size and the utilized storage size of the backup destination are updated.
+     * 
+     */
+    private String timeAtWhichStorageDetailsAreUpdated;
+    /**
      * @return The date and time the backup destination was created.
      * 
      */
     private String timeCreated;
     /**
+     * @return The total storage size of the backup destination in GBs, rounded to the nearest integer.
+     * 
+     */
+    private Integer totalStorageSizeInGbs;
+    /**
      * @return Type of the backup destination.
      * 
      */
     private String type;
+    /**
+     * @return The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
+     * 
+     */
+    private Integer utilizedStorageSizeInGbs;
     /**
      * @return For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
      * 
@@ -204,6 +220,13 @@ public final class GetBackupDestinationResult {
         return this.state;
     }
     /**
+     * @return The time when the total storage size and the utilized storage size of the backup destination are updated.
+     * 
+     */
+    public String timeAtWhichStorageDetailsAreUpdated() {
+        return this.timeAtWhichStorageDetailsAreUpdated;
+    }
+    /**
      * @return The date and time the backup destination was created.
      * 
      */
@@ -211,11 +234,25 @@ public final class GetBackupDestinationResult {
         return this.timeCreated;
     }
     /**
+     * @return The total storage size of the backup destination in GBs, rounded to the nearest integer.
+     * 
+     */
+    public Integer totalStorageSizeInGbs() {
+        return this.totalStorageSizeInGbs;
+    }
+    /**
      * @return Type of the backup destination.
      * 
      */
     public String type() {
         return this.type;
+    }
+    /**
+     * @return The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
+     * 
+     */
+    public Integer utilizedStorageSizeInGbs() {
+        return this.utilizedStorageSizeInGbs;
     }
     /**
      * @return For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
@@ -249,8 +286,11 @@ public final class GetBackupDestinationResult {
         private String nfsServerExport;
         private List<String> nfsServers;
         private String state;
+        private String timeAtWhichStorageDetailsAreUpdated;
         private String timeCreated;
+        private Integer totalStorageSizeInGbs;
         private String type;
+        private Integer utilizedStorageSizeInGbs;
         private List<String> vpcUsers;
         public Builder() {}
         public Builder(GetBackupDestinationResult defaults) {
@@ -270,8 +310,11 @@ public final class GetBackupDestinationResult {
     	      this.nfsServerExport = defaults.nfsServerExport;
     	      this.nfsServers = defaults.nfsServers;
     	      this.state = defaults.state;
+    	      this.timeAtWhichStorageDetailsAreUpdated = defaults.timeAtWhichStorageDetailsAreUpdated;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.totalStorageSizeInGbs = defaults.totalStorageSizeInGbs;
     	      this.type = defaults.type;
+    	      this.utilizedStorageSizeInGbs = defaults.utilizedStorageSizeInGbs;
     	      this.vpcUsers = defaults.vpcUsers;
         }
 
@@ -405,6 +448,14 @@ public final class GetBackupDestinationResult {
             return this;
         }
         @CustomType.Setter
+        public Builder timeAtWhichStorageDetailsAreUpdated(String timeAtWhichStorageDetailsAreUpdated) {
+            if (timeAtWhichStorageDetailsAreUpdated == null) {
+              throw new MissingRequiredPropertyException("GetBackupDestinationResult", "timeAtWhichStorageDetailsAreUpdated");
+            }
+            this.timeAtWhichStorageDetailsAreUpdated = timeAtWhichStorageDetailsAreUpdated;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetBackupDestinationResult", "timeCreated");
@@ -413,11 +464,27 @@ public final class GetBackupDestinationResult {
             return this;
         }
         @CustomType.Setter
+        public Builder totalStorageSizeInGbs(Integer totalStorageSizeInGbs) {
+            if (totalStorageSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetBackupDestinationResult", "totalStorageSizeInGbs");
+            }
+            this.totalStorageSizeInGbs = totalStorageSizeInGbs;
+            return this;
+        }
+        @CustomType.Setter
         public Builder type(String type) {
             if (type == null) {
               throw new MissingRequiredPropertyException("GetBackupDestinationResult", "type");
             }
             this.type = type;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder utilizedStorageSizeInGbs(Integer utilizedStorageSizeInGbs) {
+            if (utilizedStorageSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetBackupDestinationResult", "utilizedStorageSizeInGbs");
+            }
+            this.utilizedStorageSizeInGbs = utilizedStorageSizeInGbs;
             return this;
         }
         @CustomType.Setter
@@ -448,8 +515,11 @@ public final class GetBackupDestinationResult {
             _resultValue.nfsServerExport = nfsServerExport;
             _resultValue.nfsServers = nfsServers;
             _resultValue.state = state;
+            _resultValue.timeAtWhichStorageDetailsAreUpdated = timeAtWhichStorageDetailsAreUpdated;
             _resultValue.timeCreated = timeCreated;
+            _resultValue.totalStorageSizeInGbs = totalStorageSizeInGbs;
             _resultValue.type = type;
+            _resultValue.utilizedStorageSizeInGbs = utilizedStorageSizeInGbs;
             _resultValue.vpcUsers = vpcUsers;
             return _resultValue;
         }

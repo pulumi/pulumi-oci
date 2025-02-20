@@ -22,6 +22,10 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetClusterOptionAdmissionControllerOptionResult> AdmissionControllerOptions;
         /// <summary>
+        /// IP family to use for single stack or define the order of IP families for dual-stack
+        /// </summary>
+        public readonly ImmutableArray<string> IpFamilies;
+        /// <summary>
         /// Network configuration for Kubernetes.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetClusterOptionKubernetesNetworkConfigResult> KubernetesNetworkConfigs;
@@ -46,6 +50,8 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
             ImmutableArray<Outputs.GetClusterOptionAdmissionControllerOptionResult> admissionControllerOptions,
 
+            ImmutableArray<string> ipFamilies,
+
             ImmutableArray<Outputs.GetClusterOptionKubernetesNetworkConfigResult> kubernetesNetworkConfigs,
 
             ImmutableArray<Outputs.GetClusterOptionOpenIdConnectDiscoveryResult> openIdConnectDiscoveries,
@@ -60,6 +66,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         {
             AddOns = addOns;
             AdmissionControllerOptions = admissionControllerOptions;
+            IpFamilies = ipFamilies;
             KubernetesNetworkConfigs = kubernetesNetworkConfigs;
             OpenIdConnectDiscoveries = openIdConnectDiscoveries;
             OpenIdConnectTokenAuthenticationConfigs = openIdConnectTokenAuthenticationConfigs;

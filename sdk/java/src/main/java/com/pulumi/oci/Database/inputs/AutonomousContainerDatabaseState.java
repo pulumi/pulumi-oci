@@ -5,11 +5,14 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs;
 import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseBackupConfigArgs;
+import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseBackupDestinationPropertiesListArgs;
 import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseKeyHistoryEntryArgs;
 import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseMaintenanceWindowArgs;
 import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseMaintenanceWindowDetailsArgs;
 import com.pulumi.oci.Database.inputs.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs;
+import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseRecoveryApplianceDetailArgs;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
@@ -24,6 +27,21 @@ import javax.annotation.Nullable;
 public final class AutonomousContainerDatabaseState extends com.pulumi.resources.ResourceArgs {
 
     public static final AutonomousContainerDatabaseState Empty = new AutonomousContainerDatabaseState();
+
+    /**
+     * A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
+     * 
+     */
+    @Import(name="associatedBackupConfigurationDetails")
+    private @Nullable Output<List<AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs>> associatedBackupConfigurationDetails;
+
+    /**
+     * @return A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
+     * 
+     */
+    public Optional<Output<List<AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs>>> associatedBackupConfigurationDetails() {
+        return Optional.ofNullable(this.associatedBackupConfigurationDetails);
+    }
 
     /**
      * **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
@@ -98,6 +116,21 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
      */
     public Optional<Output<AutonomousContainerDatabaseBackupConfigArgs>> backupConfig() {
         return Optional.ofNullable(this.backupConfig);
+    }
+
+    /**
+     * This list describes the backup destination properties associated with the Autonomous Container Database (ACD) &#39;s preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
+     * 
+     */
+    @Import(name="backupDestinationPropertiesLists")
+    private @Nullable Output<List<AutonomousContainerDatabaseBackupDestinationPropertiesListArgs>> backupDestinationPropertiesLists;
+
+    /**
+     * @return This list describes the backup destination properties associated with the Autonomous Container Database (ACD) &#39;s preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
+     * 
+     */
+    public Optional<Output<List<AutonomousContainerDatabaseBackupDestinationPropertiesListArgs>>> backupDestinationPropertiesLists() {
+        return Optional.ofNullable(this.backupDestinationPropertiesLists);
     }
 
     /**
@@ -708,6 +741,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
 
     /**
      * The number of CPUs provisioned in an Autonomous Container Database.
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     @Import(name="provisionedCpus")
@@ -715,6 +749,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
 
     /**
      * @return The number of CPUs provisioned in an Autonomous Container Database.
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     public Optional<Output<Double>> provisionedCpus() {
@@ -725,6 +760,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
      * For Autonomous Databases on Dedicated Exadata Infrastructure:
      * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     @Import(name="reclaimableCpus")
@@ -734,10 +770,26 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
      * @return For Autonomous Databases on Dedicated Exadata Infrastructure:
      * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     public Optional<Output<Double>> reclaimableCpus() {
         return Optional.ofNullable(this.reclaimableCpus);
+    }
+
+    /**
+     * Information about the recovery appliance configuration associated with the Autonomous Container Database.
+     * 
+     */
+    @Import(name="recoveryApplianceDetails")
+    private @Nullable Output<List<AutonomousContainerDatabaseRecoveryApplianceDetailArgs>> recoveryApplianceDetails;
+
+    /**
+     * @return Information about the recovery appliance configuration associated with the Autonomous Container Database.
+     * 
+     */
+    public Optional<Output<List<AutonomousContainerDatabaseRecoveryApplianceDetailArgs>>> recoveryApplianceDetails() {
+        return Optional.ofNullable(this.recoveryApplianceDetails);
     }
 
     /**
@@ -948,11 +1000,13 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
     private AutonomousContainerDatabaseState() {}
 
     private AutonomousContainerDatabaseState(AutonomousContainerDatabaseState $) {
+        this.associatedBackupConfigurationDetails = $.associatedBackupConfigurationDetails;
         this.autonomousExadataInfrastructureId = $.autonomousExadataInfrastructureId;
         this.autonomousVmClusterId = $.autonomousVmClusterId;
         this.availabilityDomain = $.availabilityDomain;
         this.availableCpus = $.availableCpus;
         this.backupConfig = $.backupConfig;
+        this.backupDestinationPropertiesLists = $.backupDestinationPropertiesLists;
         this.cloudAutonomousVmClusterId = $.cloudAutonomousVmClusterId;
         this.compartmentId = $.compartmentId;
         this.computeModel = $.computeModel;
@@ -997,6 +1051,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         this.provisionableCpuses = $.provisionableCpuses;
         this.provisionedCpus = $.provisionedCpus;
         this.reclaimableCpus = $.reclaimableCpus;
+        this.recoveryApplianceDetails = $.recoveryApplianceDetails;
         this.reservedCpus = $.reservedCpus;
         this.role = $.role;
         this.rotateKeyTrigger = $.rotateKeyTrigger;
@@ -1028,6 +1083,37 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
 
         public Builder(AutonomousContainerDatabaseState defaults) {
             $ = new AutonomousContainerDatabaseState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param associatedBackupConfigurationDetails A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder associatedBackupConfigurationDetails(@Nullable Output<List<AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs>> associatedBackupConfigurationDetails) {
+            $.associatedBackupConfigurationDetails = associatedBackupConfigurationDetails;
+            return this;
+        }
+
+        /**
+         * @param associatedBackupConfigurationDetails A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder associatedBackupConfigurationDetails(List<AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs> associatedBackupConfigurationDetails) {
+            return associatedBackupConfigurationDetails(Output.of(associatedBackupConfigurationDetails));
+        }
+
+        /**
+         * @param associatedBackupConfigurationDetails A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder associatedBackupConfigurationDetails(AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs... associatedBackupConfigurationDetails) {
+            return associatedBackupConfigurationDetails(List.of(associatedBackupConfigurationDetails));
         }
 
         /**
@@ -1133,6 +1219,37 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
          */
         public Builder backupConfig(AutonomousContainerDatabaseBackupConfigArgs backupConfig) {
             return backupConfig(Output.of(backupConfig));
+        }
+
+        /**
+         * @param backupDestinationPropertiesLists This list describes the backup destination properties associated with the Autonomous Container Database (ACD) &#39;s preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupDestinationPropertiesLists(@Nullable Output<List<AutonomousContainerDatabaseBackupDestinationPropertiesListArgs>> backupDestinationPropertiesLists) {
+            $.backupDestinationPropertiesLists = backupDestinationPropertiesLists;
+            return this;
+        }
+
+        /**
+         * @param backupDestinationPropertiesLists This list describes the backup destination properties associated with the Autonomous Container Database (ACD) &#39;s preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupDestinationPropertiesLists(List<AutonomousContainerDatabaseBackupDestinationPropertiesListArgs> backupDestinationPropertiesLists) {
+            return backupDestinationPropertiesLists(Output.of(backupDestinationPropertiesLists));
+        }
+
+        /**
+         * @param backupDestinationPropertiesLists This list describes the backup destination properties associated with the Autonomous Container Database (ACD) &#39;s preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupDestinationPropertiesLists(AutonomousContainerDatabaseBackupDestinationPropertiesListArgs... backupDestinationPropertiesLists) {
+            return backupDestinationPropertiesLists(List.of(backupDestinationPropertiesLists));
         }
 
         /**
@@ -2023,6 +2140,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
 
         /**
          * @param provisionedCpus The number of CPUs provisioned in an Autonomous Container Database.
+         * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
          * 
          * @return builder
          * 
@@ -2034,6 +2152,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
 
         /**
          * @param provisionedCpus The number of CPUs provisioned in an Autonomous Container Database.
+         * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
          * 
          * @return builder
          * 
@@ -2046,6 +2165,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
          * @param reclaimableCpus For Autonomous Databases on Dedicated Exadata Infrastructure:
          * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
          * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+         * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
          * 
          * @return builder
          * 
@@ -2059,12 +2179,44 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
          * @param reclaimableCpus For Autonomous Databases on Dedicated Exadata Infrastructure:
          * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
          * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+         * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
          * 
          * @return builder
          * 
          */
         public Builder reclaimableCpus(Double reclaimableCpus) {
             return reclaimableCpus(Output.of(reclaimableCpus));
+        }
+
+        /**
+         * @param recoveryApplianceDetails Information about the recovery appliance configuration associated with the Autonomous Container Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder recoveryApplianceDetails(@Nullable Output<List<AutonomousContainerDatabaseRecoveryApplianceDetailArgs>> recoveryApplianceDetails) {
+            $.recoveryApplianceDetails = recoveryApplianceDetails;
+            return this;
+        }
+
+        /**
+         * @param recoveryApplianceDetails Information about the recovery appliance configuration associated with the Autonomous Container Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder recoveryApplianceDetails(List<AutonomousContainerDatabaseRecoveryApplianceDetailArgs> recoveryApplianceDetails) {
+            return recoveryApplianceDetails(Output.of(recoveryApplianceDetails));
+        }
+
+        /**
+         * @param recoveryApplianceDetails Information about the recovery appliance configuration associated with the Autonomous Container Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder recoveryApplianceDetails(AutonomousContainerDatabaseRecoveryApplianceDetailArgs... recoveryApplianceDetails) {
+            return recoveryApplianceDetails(List.of(recoveryApplianceDetails));
         }
 
         /**

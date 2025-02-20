@@ -17,7 +17,7 @@ public final class GetJmsPluginsJmsPluginCollectionItem {
      */
     private String agentId;
     /**
-     * @return The agent type.
+     * @return Filter JmsPlugin with agent type.
      * 
      */
     private String agentType;
@@ -106,7 +106,7 @@ public final class GetJmsPluginsJmsPluginCollectionItem {
         return this.agentId;
     }
     /**
-     * @return The agent type.
+     * @return Filter JmsPlugin with agent type.
      * 
      */
     public String agentType() {

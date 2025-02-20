@@ -44,6 +44,10 @@ export interface GetMonitoredResourceTypeArgs {
  */
 export interface GetMonitoredResourceTypeResult {
     /**
+     * Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
+     */
+    readonly additionalNamespaceMap: {[key: string]: string};
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
      */
     readonly compartmentId: string;

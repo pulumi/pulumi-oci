@@ -93,6 +93,7 @@ import javax.annotation.Nullable;
  *                 .admissionControllerOptions(ClusterOptionsAdmissionControllerOptionsArgs.builder()
  *                     .isPodSecurityPolicyEnabled(clusterOptionsAdmissionControllerOptionsIsPodSecurityPolicyEnabled)
  *                     .build())
+ *                 .ipFamilies(clusterOptionsIpFamilies)
  *                 .kubernetesNetworkConfig(ClusterOptionsKubernetesNetworkConfigArgs.builder()
  *                     .podsCidr(clusterOptionsKubernetesNetworkConfigPodsCidr)
  *                     .servicesCidr(clusterOptionsKubernetesNetworkConfigServicesCidr)

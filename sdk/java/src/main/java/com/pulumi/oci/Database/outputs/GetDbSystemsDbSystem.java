@@ -186,6 +186,7 @@ public final class GetDbSystemsDbSystem {
      */
     private String pointInTimeDataDiskCloneTimestamp;
     private String privateIp;
+    private String privateIpV6;
     /**
      * @return The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
      * 
@@ -202,10 +203,15 @@ public final class GetDbSystemsDbSystem {
      */
     private String scanDnsRecordId;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv4 addresses associated with the DB system. SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      * 
      */
     private List<String> scanIpIds;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv6 addresses associated with the DB system. SCAN IPv6 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+     * 
+     */
+    private List<String> scanIpv6ids;
     /**
      * @return Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
      * 
@@ -265,10 +271,15 @@ public final class GetDbSystemsDbSystem {
      */
     private String version;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IPv4 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIPv4 address for each node in the DB system to enable failover. If one node fails, the VIPv4 is reassigned to another active node in the cluster.
      * 
      */
     private List<String> vipIds;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IPv6 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP IpV6 address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+     * 
+     */
+    private List<String> vipv6ids;
     /**
      * @return The OCID of the zone the DB system is associated with.
      * 
@@ -516,6 +527,9 @@ public final class GetDbSystemsDbSystem {
     public String privateIp() {
         return this.privateIp;
     }
+    public String privateIpV6() {
+        return this.privateIpV6;
+    }
     /**
      * @return The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
      * 
@@ -538,11 +552,18 @@ public final class GetDbSystemsDbSystem {
         return this.scanDnsRecordId;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv4 addresses associated with the DB system. SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      * 
      */
     public List<String> scanIpIds() {
         return this.scanIpIds;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv6 addresses associated with the DB system. SCAN IPv6 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+     * 
+     */
+    public List<String> scanIpv6ids() {
+        return this.scanIpv6ids;
     }
     /**
      * @return Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
@@ -627,11 +648,18 @@ public final class GetDbSystemsDbSystem {
         return this.version;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IPv4 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIPv4 address for each node in the DB system to enable failover. If one node fails, the VIPv4 is reassigned to another active node in the cluster.
      * 
      */
     public List<String> vipIds() {
         return this.vipIds;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IPv6 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP IpV6 address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+     * 
+     */
+    public List<String> vipv6ids() {
+        return this.vipv6ids;
     }
     /**
      * @return The OCID of the zone the DB system is associated with.
@@ -687,10 +715,12 @@ public final class GetDbSystemsDbSystem {
         private String osVersion;
         private String pointInTimeDataDiskCloneTimestamp;
         private String privateIp;
+        private String privateIpV6;
         private Integer recoStorageSizeInGb;
         private String scanDnsName;
         private String scanDnsRecordId;
         private List<String> scanIpIds;
+        private List<String> scanIpv6ids;
         private Map<String,String> securityAttributes;
         private String shape;
         private String source;
@@ -704,6 +734,7 @@ public final class GetDbSystemsDbSystem {
         private String timeZone;
         private String version;
         private List<String> vipIds;
+        private List<String> vipv6ids;
         private String zoneId;
         public Builder() {}
         public Builder(GetDbSystemsDbSystem defaults) {
@@ -745,10 +776,12 @@ public final class GetDbSystemsDbSystem {
     	      this.osVersion = defaults.osVersion;
     	      this.pointInTimeDataDiskCloneTimestamp = defaults.pointInTimeDataDiskCloneTimestamp;
     	      this.privateIp = defaults.privateIp;
+    	      this.privateIpV6 = defaults.privateIpV6;
     	      this.recoStorageSizeInGb = defaults.recoStorageSizeInGb;
     	      this.scanDnsName = defaults.scanDnsName;
     	      this.scanDnsRecordId = defaults.scanDnsRecordId;
     	      this.scanIpIds = defaults.scanIpIds;
+    	      this.scanIpv6ids = defaults.scanIpv6ids;
     	      this.securityAttributes = defaults.securityAttributes;
     	      this.shape = defaults.shape;
     	      this.source = defaults.source;
@@ -762,6 +795,7 @@ public final class GetDbSystemsDbSystem {
     	      this.timeZone = defaults.timeZone;
     	      this.version = defaults.version;
     	      this.vipIds = defaults.vipIds;
+    	      this.vipv6ids = defaults.vipv6ids;
     	      this.zoneId = defaults.zoneId;
         }
 
@@ -1089,6 +1123,14 @@ public final class GetDbSystemsDbSystem {
             return this;
         }
         @CustomType.Setter
+        public Builder privateIpV6(String privateIpV6) {
+            if (privateIpV6 == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystem", "privateIpV6");
+            }
+            this.privateIpV6 = privateIpV6;
+            return this;
+        }
+        @CustomType.Setter
         public Builder recoStorageSizeInGb(Integer recoStorageSizeInGb) {
             if (recoStorageSizeInGb == null) {
               throw new MissingRequiredPropertyException("GetDbSystemsDbSystem", "recoStorageSizeInGb");
@@ -1122,6 +1164,17 @@ public final class GetDbSystemsDbSystem {
         }
         public Builder scanIpIds(String... scanIpIds) {
             return scanIpIds(List.of(scanIpIds));
+        }
+        @CustomType.Setter
+        public Builder scanIpv6ids(List<String> scanIpv6ids) {
+            if (scanIpv6ids == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystem", "scanIpv6ids");
+            }
+            this.scanIpv6ids = scanIpv6ids;
+            return this;
+        }
+        public Builder scanIpv6ids(String... scanIpv6ids) {
+            return scanIpv6ids(List.of(scanIpv6ids));
         }
         @CustomType.Setter
         public Builder securityAttributes(Map<String,String> securityAttributes) {
@@ -1234,6 +1287,17 @@ public final class GetDbSystemsDbSystem {
             return vipIds(List.of(vipIds));
         }
         @CustomType.Setter
+        public Builder vipv6ids(List<String> vipv6ids) {
+            if (vipv6ids == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystem", "vipv6ids");
+            }
+            this.vipv6ids = vipv6ids;
+            return this;
+        }
+        public Builder vipv6ids(String... vipv6ids) {
+            return vipv6ids(List.of(vipv6ids));
+        }
+        @CustomType.Setter
         public Builder zoneId(String zoneId) {
             if (zoneId == null) {
               throw new MissingRequiredPropertyException("GetDbSystemsDbSystem", "zoneId");
@@ -1280,10 +1344,12 @@ public final class GetDbSystemsDbSystem {
             _resultValue.osVersion = osVersion;
             _resultValue.pointInTimeDataDiskCloneTimestamp = pointInTimeDataDiskCloneTimestamp;
             _resultValue.privateIp = privateIp;
+            _resultValue.privateIpV6 = privateIpV6;
             _resultValue.recoStorageSizeInGb = recoStorageSizeInGb;
             _resultValue.scanDnsName = scanDnsName;
             _resultValue.scanDnsRecordId = scanDnsRecordId;
             _resultValue.scanIpIds = scanIpIds;
+            _resultValue.scanIpv6ids = scanIpv6ids;
             _resultValue.securityAttributes = securityAttributes;
             _resultValue.shape = shape;
             _resultValue.source = source;
@@ -1297,6 +1363,7 @@ public final class GetDbSystemsDbSystem {
             _resultValue.timeZone = timeZone;
             _resultValue.version = version;
             _resultValue.vipIds = vipIds;
+            _resultValue.vipv6ids = vipv6ids;
             _resultValue.zoneId = zoneId;
             return _resultValue;
         }

@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Jms.Outputs
         /// </summary>
         public readonly string ApplicationInstallationPath;
         /// <summary>
-        /// The name of the application for which the report has been generated.
+        /// The name of the application.
         /// </summary>
         public readonly string ApplicationName;
         /// <summary>

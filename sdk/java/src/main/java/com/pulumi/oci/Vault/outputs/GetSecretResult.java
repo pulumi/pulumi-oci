@@ -7,7 +7,9 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Vault.outputs.GetSecretRotationConfig;
 import com.pulumi.oci.Vault.outputs.GetSecretSecretContent;
+import com.pulumi.oci.Vault.outputs.GetSecretSecretGenerationContext;
 import com.pulumi.oci.Vault.outputs.GetSecretSecretRule;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -35,6 +37,7 @@ public final class GetSecretResult {
      * 
      */
     private String description;
+    private Boolean enableAutoGeneration;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
@@ -45,6 +48,11 @@ public final class GetSecretResult {
      * 
      */
     private String id;
+    /**
+     * @return The value of this flag determines whether or not secret content will be generated automatically.
+     * 
+     */
+    private Boolean isAutoGenerationEnabled;
     /**
      * @return The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
      * 
@@ -81,6 +89,11 @@ public final class GetSecretResult {
      */
     private String rotationStatus;
     private List<GetSecretSecretContent> secretContents;
+    /**
+     * @return Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
+     * 
+     */
+    private List<GetSecretSecretGenerationContext> secretGenerationContexts;
     private String secretId;
     /**
      * @return The user-friendly name of the secret. Avoid entering confidential information.
@@ -147,6 +160,9 @@ public final class GetSecretResult {
     public String description() {
         return this.description;
     }
+    public Boolean enableAutoGeneration() {
+        return this.enableAutoGeneration;
+    }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
@@ -160,6 +176,13 @@ public final class GetSecretResult {
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return The value of this flag determines whether or not secret content will be generated automatically.
+     * 
+     */
+    public Boolean isAutoGenerationEnabled() {
+        return this.isAutoGenerationEnabled;
     }
     /**
      * @return The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
@@ -212,6 +235,13 @@ public final class GetSecretResult {
     }
     public List<GetSecretSecretContent> secretContents() {
         return this.secretContents;
+    }
+    /**
+     * @return Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
+     * 
+     */
+    public List<GetSecretSecretGenerationContext> secretGenerationContexts() {
+        return this.secretGenerationContexts;
     }
     public String secretId() {
         return this.secretId;
@@ -279,8 +309,10 @@ public final class GetSecretResult {
         private String currentVersionNumber;
         private Map<String,String> definedTags;
         private String description;
+        private Boolean enableAutoGeneration;
         private Map<String,String> freeformTags;
         private String id;
+        private Boolean isAutoGenerationEnabled;
         private String keyId;
         private String lastRotationTime;
         private String lifecycleDetails;
@@ -289,6 +321,7 @@ public final class GetSecretResult {
         private List<GetSecretRotationConfig> rotationConfigs;
         private String rotationStatus;
         private List<GetSecretSecretContent> secretContents;
+        private List<GetSecretSecretGenerationContext> secretGenerationContexts;
         private String secretId;
         private String secretName;
         private List<GetSecretSecretRule> secretRules;
@@ -304,8 +337,10 @@ public final class GetSecretResult {
     	      this.currentVersionNumber = defaults.currentVersionNumber;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
+    	      this.enableAutoGeneration = defaults.enableAutoGeneration;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isAutoGenerationEnabled = defaults.isAutoGenerationEnabled;
     	      this.keyId = defaults.keyId;
     	      this.lastRotationTime = defaults.lastRotationTime;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
@@ -314,6 +349,7 @@ public final class GetSecretResult {
     	      this.rotationConfigs = defaults.rotationConfigs;
     	      this.rotationStatus = defaults.rotationStatus;
     	      this.secretContents = defaults.secretContents;
+    	      this.secretGenerationContexts = defaults.secretGenerationContexts;
     	      this.secretId = defaults.secretId;
     	      this.secretName = defaults.secretName;
     	      this.secretRules = defaults.secretRules;
@@ -357,6 +393,14 @@ public final class GetSecretResult {
             return this;
         }
         @CustomType.Setter
+        public Builder enableAutoGeneration(Boolean enableAutoGeneration) {
+            if (enableAutoGeneration == null) {
+              throw new MissingRequiredPropertyException("GetSecretResult", "enableAutoGeneration");
+            }
+            this.enableAutoGeneration = enableAutoGeneration;
+            return this;
+        }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetSecretResult", "freeformTags");
@@ -370,6 +414,14 @@ public final class GetSecretResult {
               throw new MissingRequiredPropertyException("GetSecretResult", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isAutoGenerationEnabled(Boolean isAutoGenerationEnabled) {
+            if (isAutoGenerationEnabled == null) {
+              throw new MissingRequiredPropertyException("GetSecretResult", "isAutoGenerationEnabled");
+            }
+            this.isAutoGenerationEnabled = isAutoGenerationEnabled;
             return this;
         }
         @CustomType.Setter
@@ -441,6 +493,17 @@ public final class GetSecretResult {
         }
         public Builder secretContents(GetSecretSecretContent... secretContents) {
             return secretContents(List.of(secretContents));
+        }
+        @CustomType.Setter
+        public Builder secretGenerationContexts(List<GetSecretSecretGenerationContext> secretGenerationContexts) {
+            if (secretGenerationContexts == null) {
+              throw new MissingRequiredPropertyException("GetSecretResult", "secretGenerationContexts");
+            }
+            this.secretGenerationContexts = secretGenerationContexts;
+            return this;
+        }
+        public Builder secretGenerationContexts(GetSecretSecretGenerationContext... secretGenerationContexts) {
+            return secretGenerationContexts(List.of(secretGenerationContexts));
         }
         @CustomType.Setter
         public Builder secretId(String secretId) {
@@ -515,8 +578,10 @@ public final class GetSecretResult {
             _resultValue.currentVersionNumber = currentVersionNumber;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;
+            _resultValue.enableAutoGeneration = enableAutoGeneration;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isAutoGenerationEnabled = isAutoGenerationEnabled;
             _resultValue.keyId = keyId;
             _resultValue.lastRotationTime = lastRotationTime;
             _resultValue.lifecycleDetails = lifecycleDetails;
@@ -525,6 +590,7 @@ public final class GetSecretResult {
             _resultValue.rotationConfigs = rotationConfigs;
             _resultValue.rotationStatus = rotationStatus;
             _resultValue.secretContents = secretContents;
+            _resultValue.secretGenerationContexts = secretGenerationContexts;
             _resultValue.secretId = secretId;
             _resultValue.secretName = secretName;
             _resultValue.secretRules = secretRules;

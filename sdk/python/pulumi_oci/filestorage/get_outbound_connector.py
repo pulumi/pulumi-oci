@@ -27,7 +27,7 @@ class GetOutboundConnectorResult:
     """
     A collection of values returned by getOutboundConnector.
     """
-    def __init__(__self__, availability_domain=None, bind_distinguished_name=None, compartment_id=None, connector_type=None, defined_tags=None, display_name=None, endpoints=None, freeform_tags=None, id=None, is_lock_override=None, locks=None, outbound_connector_id=None, password_secret_id=None, password_secret_version=None, state=None, time_created=None):
+    def __init__(__self__, availability_domain=None, bind_distinguished_name=None, compartment_id=None, connector_type=None, defined_tags=None, display_name=None, endpoints=None, freeform_tags=None, id=None, is_lock_override=None, locks=None, outbound_connector_id=None, password_secret_id=None, password_secret_version=None, state=None, system_tags=None, time_created=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -73,6 +73,9 @@ class GetOutboundConnectorResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -192,6 +195,14 @@ class GetOutboundConnectorResult:
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
@@ -221,6 +232,7 @@ class AwaitableGetOutboundConnectorResult(GetOutboundConnectorResult):
             password_secret_id=self.password_secret_id,
             password_secret_version=self.password_secret_version,
             state=self.state,
+            system_tags=self.system_tags,
             time_created=self.time_created)
 
 
@@ -264,6 +276,7 @@ def get_outbound_connector(outbound_connector_id: Optional[str] = None,
         password_secret_id=pulumi.get(__ret__, 'password_secret_id'),
         password_secret_version=pulumi.get(__ret__, 'password_secret_version'),
         state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_outbound_connector_output(outbound_connector_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOutboundConnectorResult]:
@@ -304,4 +317,5 @@ def get_outbound_connector_output(outbound_connector_id: Optional[pulumi.Input[s
         password_secret_id=pulumi.get(__response__, 'password_secret_id'),
         password_secret_version=pulumi.get(__response__, 'password_secret_version'),
         state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created')))

@@ -70,7 +70,7 @@ type LookupMetricExtensionResult struct {
 	Description string `pulumi:"description"`
 	// Display name of the metric.
 	DisplayName string `pulumi:"displayName"`
-	// List of resource objects on which this metric extension is enabled.
+	// List of resource details objects having resourceIds on which this metric extension is enabled.
 	EnabledOnResources []GetMetricExtensionEnabledOnResource `pulumi:"enabledOnResources"`
 	// Count of resources on which this metric extension is enabled.
 	EnabledOnResourcesCount int `pulumi:"enabledOnResourcesCount"`
@@ -166,7 +166,7 @@ func (o LookupMetricExtensionResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMetricExtensionResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// List of resource objects on which this metric extension is enabled.
+// List of resource details objects having resourceIds on which this metric extension is enabled.
 func (o LookupMetricExtensionResultOutput) EnabledOnResources() GetMetricExtensionEnabledOnResourceArrayOutput {
 	return o.ApplyT(func(v LookupMetricExtensionResult) []GetMetricExtensionEnabledOnResource { return v.EnabledOnResources }).(GetMetricExtensionEnabledOnResourceArrayOutput)
 }

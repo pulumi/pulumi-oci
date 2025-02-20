@@ -26,6 +26,12 @@ namespace Pulumi.Oci.Database
     public partial class AutonomousContainerDatabase : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
+        /// </summary>
+        [Output("associatedBackupConfigurationDetails")]
+        public Output<ImmutableArray<Outputs.AutonomousContainerDatabaseAssociatedBackupConfigurationDetail>> AssociatedBackupConfigurationDetails { get; private set; } = null!;
+
+        /// <summary>
         /// **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
         /// </summary>
         [Output("autonomousExadataInfrastructureId")]
@@ -54,6 +60,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("backupConfig")]
         public Output<Outputs.AutonomousContainerDatabaseBackupConfig> BackupConfig { get; private set; } = null!;
+
+        /// <summary>
+        /// This list describes the backup destination properties associated with the Autonomous Container Database (ACD) 's preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
+        /// </summary>
+        [Output("backupDestinationPropertiesLists")]
+        public Output<ImmutableArray<Outputs.AutonomousContainerDatabaseBackupDestinationPropertiesList>> BackupDestinationPropertiesLists { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
@@ -300,6 +312,7 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The number of CPUs provisioned in an Autonomous Container Database.
+        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
         /// </summary>
         [Output("provisionedCpus")]
         public Output<double> ProvisionedCpus { get; private set; } = null!;
@@ -308,9 +321,16 @@ namespace Pulumi.Oci.Database
         /// For Autonomous Databases on Dedicated Exadata Infrastructure:
         /// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
         /// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; theirs
         /// </summary>
         [Output("reclaimableCpus")]
         public Output<double> ReclaimableCpus { get; private set; } = null!;
+
+        /// <summary>
+        /// Information about the recovery appliance configuration associated with the Autonomous Container Database.
+        /// </summary>
+        [Output("recoveryApplianceDetails")]
+        public Output<ImmutableArray<Outputs.AutonomousContainerDatabaseRecoveryApplianceDetail>> RecoveryApplianceDetails { get; private set; } = null!;
 
         /// <summary>
         /// The number of CPUs reserved in an Autonomous Container Database.
@@ -677,6 +697,18 @@ namespace Pulumi.Oci.Database
 
     public sealed class AutonomousContainerDatabaseState : global::Pulumi.ResourceArgs
     {
+        [Input("associatedBackupConfigurationDetails")]
+        private InputList<Inputs.AutonomousContainerDatabaseAssociatedBackupConfigurationDetailGetArgs>? _associatedBackupConfigurationDetails;
+
+        /// <summary>
+        /// A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
+        /// </summary>
+        public InputList<Inputs.AutonomousContainerDatabaseAssociatedBackupConfigurationDetailGetArgs> AssociatedBackupConfigurationDetails
+        {
+            get => _associatedBackupConfigurationDetails ?? (_associatedBackupConfigurationDetails = new InputList<Inputs.AutonomousContainerDatabaseAssociatedBackupConfigurationDetailGetArgs>());
+            set => _associatedBackupConfigurationDetails = value;
+        }
+
         /// <summary>
         /// **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
         /// </summary>
@@ -706,6 +738,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("backupConfig")]
         public Input<Inputs.AutonomousContainerDatabaseBackupConfigGetArgs>? BackupConfig { get; set; }
+
+        [Input("backupDestinationPropertiesLists")]
+        private InputList<Inputs.AutonomousContainerDatabaseBackupDestinationPropertiesListGetArgs>? _backupDestinationPropertiesLists;
+
+        /// <summary>
+        /// This list describes the backup destination properties associated with the Autonomous Container Database (ACD) 's preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
+        /// </summary>
+        public InputList<Inputs.AutonomousContainerDatabaseBackupDestinationPropertiesListGetArgs> BackupDestinationPropertiesLists
+        {
+            get => _backupDestinationPropertiesLists ?? (_backupDestinationPropertiesLists = new InputList<Inputs.AutonomousContainerDatabaseBackupDestinationPropertiesListGetArgs>());
+            set => _backupDestinationPropertiesLists = value;
+        }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
@@ -988,6 +1032,7 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The number of CPUs provisioned in an Autonomous Container Database.
+        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
         /// </summary>
         [Input("provisionedCpus")]
         public Input<double>? ProvisionedCpus { get; set; }
@@ -996,9 +1041,22 @@ namespace Pulumi.Oci.Database
         /// For Autonomous Databases on Dedicated Exadata Infrastructure:
         /// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
         /// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; theirs
         /// </summary>
         [Input("reclaimableCpus")]
         public Input<double>? ReclaimableCpus { get; set; }
+
+        [Input("recoveryApplianceDetails")]
+        private InputList<Inputs.AutonomousContainerDatabaseRecoveryApplianceDetailGetArgs>? _recoveryApplianceDetails;
+
+        /// <summary>
+        /// Information about the recovery appliance configuration associated with the Autonomous Container Database.
+        /// </summary>
+        public InputList<Inputs.AutonomousContainerDatabaseRecoveryApplianceDetailGetArgs> RecoveryApplianceDetails
+        {
+            get => _recoveryApplianceDetails ?? (_recoveryApplianceDetails = new InputList<Inputs.AutonomousContainerDatabaseRecoveryApplianceDetailGetArgs>());
+            set => _recoveryApplianceDetails = value;
+        }
 
         /// <summary>
         /// The number of CPUs reserved in an Autonomous Container Database.

@@ -147,7 +147,7 @@ class GetMetricExtensionResult:
     @pulumi.getter(name="enabledOnResources")
     def enabled_on_resources(self) -> Sequence['outputs.GetMetricExtensionEnabledOnResourceResult']:
         """
-        List of resource objects on which this metric extension is enabled.
+        List of resource details objects having resourceIds on which this metric extension is enabled.
         """
         return pulumi.get(self, "enabled_on_resources")
 

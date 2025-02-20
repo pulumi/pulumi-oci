@@ -6786,6 +6786,891 @@ func (o GetFleetDrsFilesFilterArrayOutput) Index(i pulumi.IntInput) GetFleetDrsF
 	}).(GetFleetDrsFilesFilterOutput)
 }
 
+type GetFleetErrorAnalyticsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetFleetErrorAnalyticsFilterInput is an input type that accepts GetFleetErrorAnalyticsFilterArgs and GetFleetErrorAnalyticsFilterOutput values.
+// You can construct a concrete instance of `GetFleetErrorAnalyticsFilterInput` via:
+//
+//	GetFleetErrorAnalyticsFilterArgs{...}
+type GetFleetErrorAnalyticsFilterInput interface {
+	pulumi.Input
+
+	ToGetFleetErrorAnalyticsFilterOutput() GetFleetErrorAnalyticsFilterOutput
+	ToGetFleetErrorAnalyticsFilterOutputWithContext(context.Context) GetFleetErrorAnalyticsFilterOutput
+}
+
+type GetFleetErrorAnalyticsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetFleetErrorAnalyticsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetErrorAnalyticsFilter)(nil)).Elem()
+}
+
+func (i GetFleetErrorAnalyticsFilterArgs) ToGetFleetErrorAnalyticsFilterOutput() GetFleetErrorAnalyticsFilterOutput {
+	return i.ToGetFleetErrorAnalyticsFilterOutputWithContext(context.Background())
+}
+
+func (i GetFleetErrorAnalyticsFilterArgs) ToGetFleetErrorAnalyticsFilterOutputWithContext(ctx context.Context) GetFleetErrorAnalyticsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetErrorAnalyticsFilterOutput)
+}
+
+// GetFleetErrorAnalyticsFilterArrayInput is an input type that accepts GetFleetErrorAnalyticsFilterArray and GetFleetErrorAnalyticsFilterArrayOutput values.
+// You can construct a concrete instance of `GetFleetErrorAnalyticsFilterArrayInput` via:
+//
+//	GetFleetErrorAnalyticsFilterArray{ GetFleetErrorAnalyticsFilterArgs{...} }
+type GetFleetErrorAnalyticsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetErrorAnalyticsFilterArrayOutput() GetFleetErrorAnalyticsFilterArrayOutput
+	ToGetFleetErrorAnalyticsFilterArrayOutputWithContext(context.Context) GetFleetErrorAnalyticsFilterArrayOutput
+}
+
+type GetFleetErrorAnalyticsFilterArray []GetFleetErrorAnalyticsFilterInput
+
+func (GetFleetErrorAnalyticsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetErrorAnalyticsFilter)(nil)).Elem()
+}
+
+func (i GetFleetErrorAnalyticsFilterArray) ToGetFleetErrorAnalyticsFilterArrayOutput() GetFleetErrorAnalyticsFilterArrayOutput {
+	return i.ToGetFleetErrorAnalyticsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetErrorAnalyticsFilterArray) ToGetFleetErrorAnalyticsFilterArrayOutputWithContext(ctx context.Context) GetFleetErrorAnalyticsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetErrorAnalyticsFilterArrayOutput)
+}
+
+type GetFleetErrorAnalyticsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetFleetErrorAnalyticsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetErrorAnalyticsFilter)(nil)).Elem()
+}
+
+func (o GetFleetErrorAnalyticsFilterOutput) ToGetFleetErrorAnalyticsFilterOutput() GetFleetErrorAnalyticsFilterOutput {
+	return o
+}
+
+func (o GetFleetErrorAnalyticsFilterOutput) ToGetFleetErrorAnalyticsFilterOutputWithContext(ctx context.Context) GetFleetErrorAnalyticsFilterOutput {
+	return o
+}
+
+func (o GetFleetErrorAnalyticsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetErrorAnalyticsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetFleetErrorAnalyticsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFleetErrorAnalyticsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetFleetErrorAnalyticsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFleetErrorAnalyticsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetFleetErrorAnalyticsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetErrorAnalyticsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetErrorAnalyticsFilter)(nil)).Elem()
+}
+
+func (o GetFleetErrorAnalyticsFilterArrayOutput) ToGetFleetErrorAnalyticsFilterArrayOutput() GetFleetErrorAnalyticsFilterArrayOutput {
+	return o
+}
+
+func (o GetFleetErrorAnalyticsFilterArrayOutput) ToGetFleetErrorAnalyticsFilterArrayOutputWithContext(ctx context.Context) GetFleetErrorAnalyticsFilterArrayOutput {
+	return o
+}
+
+func (o GetFleetErrorAnalyticsFilterArrayOutput) Index(i pulumi.IntInput) GetFleetErrorAnalyticsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetErrorAnalyticsFilter {
+		return vs[0].([]GetFleetErrorAnalyticsFilter)[vs[1].(int)]
+	}).(GetFleetErrorAnalyticsFilterOutput)
+}
+
+type GetFleetErrorAnalyticsFleetErrorAggregationCollection struct {
+	// A list of FleetErrorAggregationSummary.
+	Items []GetFleetErrorAnalyticsFleetErrorAggregationCollectionItem `pulumi:"items"`
+}
+
+// GetFleetErrorAnalyticsFleetErrorAggregationCollectionInput is an input type that accepts GetFleetErrorAnalyticsFleetErrorAggregationCollectionArgs and GetFleetErrorAnalyticsFleetErrorAggregationCollectionOutput values.
+// You can construct a concrete instance of `GetFleetErrorAnalyticsFleetErrorAggregationCollectionInput` via:
+//
+//	GetFleetErrorAnalyticsFleetErrorAggregationCollectionArgs{...}
+type GetFleetErrorAnalyticsFleetErrorAggregationCollectionInput interface {
+	pulumi.Input
+
+	ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionOutput() GetFleetErrorAnalyticsFleetErrorAggregationCollectionOutput
+	ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionOutputWithContext(context.Context) GetFleetErrorAnalyticsFleetErrorAggregationCollectionOutput
+}
+
+type GetFleetErrorAnalyticsFleetErrorAggregationCollectionArgs struct {
+	// A list of FleetErrorAggregationSummary.
+	Items GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetFleetErrorAnalyticsFleetErrorAggregationCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetErrorAnalyticsFleetErrorAggregationCollection)(nil)).Elem()
+}
+
+func (i GetFleetErrorAnalyticsFleetErrorAggregationCollectionArgs) ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionOutput() GetFleetErrorAnalyticsFleetErrorAggregationCollectionOutput {
+	return i.ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionOutputWithContext(context.Background())
+}
+
+func (i GetFleetErrorAnalyticsFleetErrorAggregationCollectionArgs) ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionOutputWithContext(ctx context.Context) GetFleetErrorAnalyticsFleetErrorAggregationCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetErrorAnalyticsFleetErrorAggregationCollectionOutput)
+}
+
+// GetFleetErrorAnalyticsFleetErrorAggregationCollectionArrayInput is an input type that accepts GetFleetErrorAnalyticsFleetErrorAggregationCollectionArray and GetFleetErrorAnalyticsFleetErrorAggregationCollectionArrayOutput values.
+// You can construct a concrete instance of `GetFleetErrorAnalyticsFleetErrorAggregationCollectionArrayInput` via:
+//
+//	GetFleetErrorAnalyticsFleetErrorAggregationCollectionArray{ GetFleetErrorAnalyticsFleetErrorAggregationCollectionArgs{...} }
+type GetFleetErrorAnalyticsFleetErrorAggregationCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionArrayOutput() GetFleetErrorAnalyticsFleetErrorAggregationCollectionArrayOutput
+	ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionArrayOutputWithContext(context.Context) GetFleetErrorAnalyticsFleetErrorAggregationCollectionArrayOutput
+}
+
+type GetFleetErrorAnalyticsFleetErrorAggregationCollectionArray []GetFleetErrorAnalyticsFleetErrorAggregationCollectionInput
+
+func (GetFleetErrorAnalyticsFleetErrorAggregationCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetErrorAnalyticsFleetErrorAggregationCollection)(nil)).Elem()
+}
+
+func (i GetFleetErrorAnalyticsFleetErrorAggregationCollectionArray) ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionArrayOutput() GetFleetErrorAnalyticsFleetErrorAggregationCollectionArrayOutput {
+	return i.ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetErrorAnalyticsFleetErrorAggregationCollectionArray) ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionArrayOutputWithContext(ctx context.Context) GetFleetErrorAnalyticsFleetErrorAggregationCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetErrorAnalyticsFleetErrorAggregationCollectionArrayOutput)
+}
+
+type GetFleetErrorAnalyticsFleetErrorAggregationCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetFleetErrorAnalyticsFleetErrorAggregationCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetErrorAnalyticsFleetErrorAggregationCollection)(nil)).Elem()
+}
+
+func (o GetFleetErrorAnalyticsFleetErrorAggregationCollectionOutput) ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionOutput() GetFleetErrorAnalyticsFleetErrorAggregationCollectionOutput {
+	return o
+}
+
+func (o GetFleetErrorAnalyticsFleetErrorAggregationCollectionOutput) ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionOutputWithContext(ctx context.Context) GetFleetErrorAnalyticsFleetErrorAggregationCollectionOutput {
+	return o
+}
+
+// A list of FleetErrorAggregationSummary.
+func (o GetFleetErrorAnalyticsFleetErrorAggregationCollectionOutput) Items() GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetFleetErrorAnalyticsFleetErrorAggregationCollection) []GetFleetErrorAnalyticsFleetErrorAggregationCollectionItem {
+		return v.Items
+	}).(GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArrayOutput)
+}
+
+type GetFleetErrorAnalyticsFleetErrorAggregationCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetErrorAnalyticsFleetErrorAggregationCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetErrorAnalyticsFleetErrorAggregationCollection)(nil)).Elem()
+}
+
+func (o GetFleetErrorAnalyticsFleetErrorAggregationCollectionArrayOutput) ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionArrayOutput() GetFleetErrorAnalyticsFleetErrorAggregationCollectionArrayOutput {
+	return o
+}
+
+func (o GetFleetErrorAnalyticsFleetErrorAggregationCollectionArrayOutput) ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionArrayOutputWithContext(ctx context.Context) GetFleetErrorAnalyticsFleetErrorAggregationCollectionArrayOutput {
+	return o
+}
+
+func (o GetFleetErrorAnalyticsFleetErrorAggregationCollectionArrayOutput) Index(i pulumi.IntInput) GetFleetErrorAnalyticsFleetErrorAggregationCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetErrorAnalyticsFleetErrorAggregationCollection {
+		return vs[0].([]GetFleetErrorAnalyticsFleetErrorAggregationCollection)[vs[1].(int)]
+	}).(GetFleetErrorAnalyticsFleetErrorAggregationCollectionOutput)
+}
+
+type GetFleetErrorAnalyticsFleetErrorAggregationCollectionItem struct {
+	// List of fleet error aggregations.
+	FleetErrorAggregations []GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregation `pulumi:"fleetErrorAggregations"`
+	// Count of fleets with no problems.
+	HealthyFleetCount int `pulumi:"healthyFleetCount"`
+}
+
+// GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemInput is an input type that accepts GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArgs and GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemOutput values.
+// You can construct a concrete instance of `GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemInput` via:
+//
+//	GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArgs{...}
+type GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionItemOutput() GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemOutput
+	ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionItemOutputWithContext(context.Context) GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemOutput
+}
+
+type GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArgs struct {
+	// List of fleet error aggregations.
+	FleetErrorAggregations GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArrayInput `pulumi:"fleetErrorAggregations"`
+	// Count of fleets with no problems.
+	HealthyFleetCount pulumi.IntInput `pulumi:"healthyFleetCount"`
+}
+
+func (GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetErrorAnalyticsFleetErrorAggregationCollectionItem)(nil)).Elem()
+}
+
+func (i GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArgs) ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionItemOutput() GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemOutput {
+	return i.ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArgs) ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionItemOutputWithContext(ctx context.Context) GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemOutput)
+}
+
+// GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArrayInput is an input type that accepts GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArray and GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArrayInput` via:
+//
+//	GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArray{ GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArgs{...} }
+type GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArrayOutput() GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArrayOutput
+	ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArrayOutputWithContext(context.Context) GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArrayOutput
+}
+
+type GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArray []GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemInput
+
+func (GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetErrorAnalyticsFleetErrorAggregationCollectionItem)(nil)).Elem()
+}
+
+func (i GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArray) ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArrayOutput() GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArrayOutput {
+	return i.ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArray) ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArrayOutputWithContext(ctx context.Context) GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArrayOutput)
+}
+
+type GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetErrorAnalyticsFleetErrorAggregationCollectionItem)(nil)).Elem()
+}
+
+func (o GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemOutput) ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionItemOutput() GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemOutput {
+	return o
+}
+
+func (o GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemOutput) ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionItemOutputWithContext(ctx context.Context) GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemOutput {
+	return o
+}
+
+// List of fleet error aggregations.
+func (o GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemOutput) FleetErrorAggregations() GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArrayOutput {
+	return o.ApplyT(func(v GetFleetErrorAnalyticsFleetErrorAggregationCollectionItem) []GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregation {
+		return v.FleetErrorAggregations
+	}).(GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArrayOutput)
+}
+
+// Count of fleets with no problems.
+func (o GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemOutput) HealthyFleetCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFleetErrorAnalyticsFleetErrorAggregationCollectionItem) int { return v.HealthyFleetCount }).(pulumi.IntOutput)
+}
+
+type GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetErrorAnalyticsFleetErrorAggregationCollectionItem)(nil)).Elem()
+}
+
+func (o GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArrayOutput) ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArrayOutput() GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArrayOutput) ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArrayOutputWithContext(ctx context.Context) GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetErrorAnalyticsFleetErrorAggregationCollectionItem {
+		return vs[0].([]GetFleetErrorAnalyticsFleetErrorAggregationCollectionItem)[vs[1].(int)]
+	}).(GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemOutput)
+}
+
+type GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregation struct {
+	// Number of FleetErrors encountered for the specific reason.
+	FleetErrorAnalyticCount int `pulumi:"fleetErrorAnalyticCount"`
+	// Enum that uniquely identifies the fleet error.
+	Reason string `pulumi:"reason"`
+}
+
+// GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationInput is an input type that accepts GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArgs and GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationOutput values.
+// You can construct a concrete instance of `GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationInput` via:
+//
+//	GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArgs{...}
+type GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationInput interface {
+	pulumi.Input
+
+	ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationOutput() GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationOutput
+	ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationOutputWithContext(context.Context) GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationOutput
+}
+
+type GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArgs struct {
+	// Number of FleetErrors encountered for the specific reason.
+	FleetErrorAnalyticCount pulumi.IntInput `pulumi:"fleetErrorAnalyticCount"`
+	// Enum that uniquely identifies the fleet error.
+	Reason pulumi.StringInput `pulumi:"reason"`
+}
+
+func (GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregation)(nil)).Elem()
+}
+
+func (i GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArgs) ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationOutput() GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationOutput {
+	return i.ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationOutputWithContext(context.Background())
+}
+
+func (i GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArgs) ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationOutputWithContext(ctx context.Context) GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationOutput)
+}
+
+// GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArrayInput is an input type that accepts GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArray and GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArrayOutput values.
+// You can construct a concrete instance of `GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArrayInput` via:
+//
+//	GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArray{ GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArgs{...} }
+type GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArrayOutput() GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArrayOutput
+	ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArrayOutputWithContext(context.Context) GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArrayOutput
+}
+
+type GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArray []GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationInput
+
+func (GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregation)(nil)).Elem()
+}
+
+func (i GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArray) ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArrayOutput() GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArrayOutput {
+	return i.ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArray) ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArrayOutputWithContext(ctx context.Context) GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArrayOutput)
+}
+
+type GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationOutput struct{ *pulumi.OutputState }
+
+func (GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregation)(nil)).Elem()
+}
+
+func (o GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationOutput) ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationOutput() GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationOutput {
+	return o
+}
+
+func (o GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationOutput) ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationOutputWithContext(ctx context.Context) GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationOutput {
+	return o
+}
+
+// Number of FleetErrors encountered for the specific reason.
+func (o GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationOutput) FleetErrorAnalyticCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregation) int {
+		return v.FleetErrorAnalyticCount
+	}).(pulumi.IntOutput)
+}
+
+// Enum that uniquely identifies the fleet error.
+func (o GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationOutput) Reason() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregation) string {
+		return v.Reason
+	}).(pulumi.StringOutput)
+}
+
+type GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregation)(nil)).Elem()
+}
+
+func (o GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArrayOutput) ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArrayOutput() GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArrayOutput {
+	return o
+}
+
+func (o GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArrayOutput) ToGetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArrayOutputWithContext(ctx context.Context) GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArrayOutput {
+	return o
+}
+
+func (o GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArrayOutput) Index(i pulumi.IntInput) GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregation {
+		return vs[0].([]GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregation)[vs[1].(int)]
+	}).(GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationOutput)
+}
+
+type GetFleetErrorsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetFleetErrorsFilterInput is an input type that accepts GetFleetErrorsFilterArgs and GetFleetErrorsFilterOutput values.
+// You can construct a concrete instance of `GetFleetErrorsFilterInput` via:
+//
+//	GetFleetErrorsFilterArgs{...}
+type GetFleetErrorsFilterInput interface {
+	pulumi.Input
+
+	ToGetFleetErrorsFilterOutput() GetFleetErrorsFilterOutput
+	ToGetFleetErrorsFilterOutputWithContext(context.Context) GetFleetErrorsFilterOutput
+}
+
+type GetFleetErrorsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetFleetErrorsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetErrorsFilter)(nil)).Elem()
+}
+
+func (i GetFleetErrorsFilterArgs) ToGetFleetErrorsFilterOutput() GetFleetErrorsFilterOutput {
+	return i.ToGetFleetErrorsFilterOutputWithContext(context.Background())
+}
+
+func (i GetFleetErrorsFilterArgs) ToGetFleetErrorsFilterOutputWithContext(ctx context.Context) GetFleetErrorsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetErrorsFilterOutput)
+}
+
+// GetFleetErrorsFilterArrayInput is an input type that accepts GetFleetErrorsFilterArray and GetFleetErrorsFilterArrayOutput values.
+// You can construct a concrete instance of `GetFleetErrorsFilterArrayInput` via:
+//
+//	GetFleetErrorsFilterArray{ GetFleetErrorsFilterArgs{...} }
+type GetFleetErrorsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetErrorsFilterArrayOutput() GetFleetErrorsFilterArrayOutput
+	ToGetFleetErrorsFilterArrayOutputWithContext(context.Context) GetFleetErrorsFilterArrayOutput
+}
+
+type GetFleetErrorsFilterArray []GetFleetErrorsFilterInput
+
+func (GetFleetErrorsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetErrorsFilter)(nil)).Elem()
+}
+
+func (i GetFleetErrorsFilterArray) ToGetFleetErrorsFilterArrayOutput() GetFleetErrorsFilterArrayOutput {
+	return i.ToGetFleetErrorsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetErrorsFilterArray) ToGetFleetErrorsFilterArrayOutputWithContext(ctx context.Context) GetFleetErrorsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetErrorsFilterArrayOutput)
+}
+
+type GetFleetErrorsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetFleetErrorsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetErrorsFilter)(nil)).Elem()
+}
+
+func (o GetFleetErrorsFilterOutput) ToGetFleetErrorsFilterOutput() GetFleetErrorsFilterOutput {
+	return o
+}
+
+func (o GetFleetErrorsFilterOutput) ToGetFleetErrorsFilterOutputWithContext(ctx context.Context) GetFleetErrorsFilterOutput {
+	return o
+}
+
+func (o GetFleetErrorsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetErrorsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetFleetErrorsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFleetErrorsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetFleetErrorsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFleetErrorsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetFleetErrorsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetErrorsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetErrorsFilter)(nil)).Elem()
+}
+
+func (o GetFleetErrorsFilterArrayOutput) ToGetFleetErrorsFilterArrayOutput() GetFleetErrorsFilterArrayOutput {
+	return o
+}
+
+func (o GetFleetErrorsFilterArrayOutput) ToGetFleetErrorsFilterArrayOutputWithContext(ctx context.Context) GetFleetErrorsFilterArrayOutput {
+	return o
+}
+
+func (o GetFleetErrorsFilterArrayOutput) Index(i pulumi.IntInput) GetFleetErrorsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetErrorsFilter {
+		return vs[0].([]GetFleetErrorsFilter)[vs[1].(int)]
+	}).(GetFleetErrorsFilterOutput)
+}
+
+type GetFleetErrorsFleetErrorCollection struct {
+	// A list of FleetErrorSummary.
+	Items []GetFleetErrorsFleetErrorCollectionItem `pulumi:"items"`
+}
+
+// GetFleetErrorsFleetErrorCollectionInput is an input type that accepts GetFleetErrorsFleetErrorCollectionArgs and GetFleetErrorsFleetErrorCollectionOutput values.
+// You can construct a concrete instance of `GetFleetErrorsFleetErrorCollectionInput` via:
+//
+//	GetFleetErrorsFleetErrorCollectionArgs{...}
+type GetFleetErrorsFleetErrorCollectionInput interface {
+	pulumi.Input
+
+	ToGetFleetErrorsFleetErrorCollectionOutput() GetFleetErrorsFleetErrorCollectionOutput
+	ToGetFleetErrorsFleetErrorCollectionOutputWithContext(context.Context) GetFleetErrorsFleetErrorCollectionOutput
+}
+
+type GetFleetErrorsFleetErrorCollectionArgs struct {
+	// A list of FleetErrorSummary.
+	Items GetFleetErrorsFleetErrorCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetFleetErrorsFleetErrorCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetErrorsFleetErrorCollection)(nil)).Elem()
+}
+
+func (i GetFleetErrorsFleetErrorCollectionArgs) ToGetFleetErrorsFleetErrorCollectionOutput() GetFleetErrorsFleetErrorCollectionOutput {
+	return i.ToGetFleetErrorsFleetErrorCollectionOutputWithContext(context.Background())
+}
+
+func (i GetFleetErrorsFleetErrorCollectionArgs) ToGetFleetErrorsFleetErrorCollectionOutputWithContext(ctx context.Context) GetFleetErrorsFleetErrorCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetErrorsFleetErrorCollectionOutput)
+}
+
+// GetFleetErrorsFleetErrorCollectionArrayInput is an input type that accepts GetFleetErrorsFleetErrorCollectionArray and GetFleetErrorsFleetErrorCollectionArrayOutput values.
+// You can construct a concrete instance of `GetFleetErrorsFleetErrorCollectionArrayInput` via:
+//
+//	GetFleetErrorsFleetErrorCollectionArray{ GetFleetErrorsFleetErrorCollectionArgs{...} }
+type GetFleetErrorsFleetErrorCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetErrorsFleetErrorCollectionArrayOutput() GetFleetErrorsFleetErrorCollectionArrayOutput
+	ToGetFleetErrorsFleetErrorCollectionArrayOutputWithContext(context.Context) GetFleetErrorsFleetErrorCollectionArrayOutput
+}
+
+type GetFleetErrorsFleetErrorCollectionArray []GetFleetErrorsFleetErrorCollectionInput
+
+func (GetFleetErrorsFleetErrorCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetErrorsFleetErrorCollection)(nil)).Elem()
+}
+
+func (i GetFleetErrorsFleetErrorCollectionArray) ToGetFleetErrorsFleetErrorCollectionArrayOutput() GetFleetErrorsFleetErrorCollectionArrayOutput {
+	return i.ToGetFleetErrorsFleetErrorCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetErrorsFleetErrorCollectionArray) ToGetFleetErrorsFleetErrorCollectionArrayOutputWithContext(ctx context.Context) GetFleetErrorsFleetErrorCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetErrorsFleetErrorCollectionArrayOutput)
+}
+
+type GetFleetErrorsFleetErrorCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetFleetErrorsFleetErrorCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetErrorsFleetErrorCollection)(nil)).Elem()
+}
+
+func (o GetFleetErrorsFleetErrorCollectionOutput) ToGetFleetErrorsFleetErrorCollectionOutput() GetFleetErrorsFleetErrorCollectionOutput {
+	return o
+}
+
+func (o GetFleetErrorsFleetErrorCollectionOutput) ToGetFleetErrorsFleetErrorCollectionOutputWithContext(ctx context.Context) GetFleetErrorsFleetErrorCollectionOutput {
+	return o
+}
+
+// A list of FleetErrorSummary.
+func (o GetFleetErrorsFleetErrorCollectionOutput) Items() GetFleetErrorsFleetErrorCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetFleetErrorsFleetErrorCollection) []GetFleetErrorsFleetErrorCollectionItem { return v.Items }).(GetFleetErrorsFleetErrorCollectionItemArrayOutput)
+}
+
+type GetFleetErrorsFleetErrorCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetErrorsFleetErrorCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetErrorsFleetErrorCollection)(nil)).Elem()
+}
+
+func (o GetFleetErrorsFleetErrorCollectionArrayOutput) ToGetFleetErrorsFleetErrorCollectionArrayOutput() GetFleetErrorsFleetErrorCollectionArrayOutput {
+	return o
+}
+
+func (o GetFleetErrorsFleetErrorCollectionArrayOutput) ToGetFleetErrorsFleetErrorCollectionArrayOutputWithContext(ctx context.Context) GetFleetErrorsFleetErrorCollectionArrayOutput {
+	return o
+}
+
+func (o GetFleetErrorsFleetErrorCollectionArrayOutput) Index(i pulumi.IntInput) GetFleetErrorsFleetErrorCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetErrorsFleetErrorCollection {
+		return vs[0].([]GetFleetErrorsFleetErrorCollection)[vs[1].(int)]
+	}).(GetFleetErrorsFleetErrorCollectionOutput)
+}
+
+type GetFleetErrorsFleetErrorCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// List of fleet error details.
+	Errors []GetFleetErrorsFleetErrorCollectionItemError `pulumi:"errors"`
+	// The ID of the Fleet.
+	FleetId string `pulumi:"fleetId"`
+	// The display name of the Fleet.
+	FleetName string `pulumi:"fleetName"`
+	// The timestamp of the first time an error was detected.
+	TimeFirstSeen string `pulumi:"timeFirstSeen"`
+	// The timestamp of the last time an error was detected.
+	TimeLastSeen string `pulumi:"timeLastSeen"`
+}
+
+// GetFleetErrorsFleetErrorCollectionItemInput is an input type that accepts GetFleetErrorsFleetErrorCollectionItemArgs and GetFleetErrorsFleetErrorCollectionItemOutput values.
+// You can construct a concrete instance of `GetFleetErrorsFleetErrorCollectionItemInput` via:
+//
+//	GetFleetErrorsFleetErrorCollectionItemArgs{...}
+type GetFleetErrorsFleetErrorCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetFleetErrorsFleetErrorCollectionItemOutput() GetFleetErrorsFleetErrorCollectionItemOutput
+	ToGetFleetErrorsFleetErrorCollectionItemOutputWithContext(context.Context) GetFleetErrorsFleetErrorCollectionItemOutput
+}
+
+type GetFleetErrorsFleetErrorCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// List of fleet error details.
+	Errors GetFleetErrorsFleetErrorCollectionItemErrorArrayInput `pulumi:"errors"`
+	// The ID of the Fleet.
+	FleetId pulumi.StringInput `pulumi:"fleetId"`
+	// The display name of the Fleet.
+	FleetName pulumi.StringInput `pulumi:"fleetName"`
+	// The timestamp of the first time an error was detected.
+	TimeFirstSeen pulumi.StringInput `pulumi:"timeFirstSeen"`
+	// The timestamp of the last time an error was detected.
+	TimeLastSeen pulumi.StringInput `pulumi:"timeLastSeen"`
+}
+
+func (GetFleetErrorsFleetErrorCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetErrorsFleetErrorCollectionItem)(nil)).Elem()
+}
+
+func (i GetFleetErrorsFleetErrorCollectionItemArgs) ToGetFleetErrorsFleetErrorCollectionItemOutput() GetFleetErrorsFleetErrorCollectionItemOutput {
+	return i.ToGetFleetErrorsFleetErrorCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetFleetErrorsFleetErrorCollectionItemArgs) ToGetFleetErrorsFleetErrorCollectionItemOutputWithContext(ctx context.Context) GetFleetErrorsFleetErrorCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetErrorsFleetErrorCollectionItemOutput)
+}
+
+// GetFleetErrorsFleetErrorCollectionItemArrayInput is an input type that accepts GetFleetErrorsFleetErrorCollectionItemArray and GetFleetErrorsFleetErrorCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetFleetErrorsFleetErrorCollectionItemArrayInput` via:
+//
+//	GetFleetErrorsFleetErrorCollectionItemArray{ GetFleetErrorsFleetErrorCollectionItemArgs{...} }
+type GetFleetErrorsFleetErrorCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetErrorsFleetErrorCollectionItemArrayOutput() GetFleetErrorsFleetErrorCollectionItemArrayOutput
+	ToGetFleetErrorsFleetErrorCollectionItemArrayOutputWithContext(context.Context) GetFleetErrorsFleetErrorCollectionItemArrayOutput
+}
+
+type GetFleetErrorsFleetErrorCollectionItemArray []GetFleetErrorsFleetErrorCollectionItemInput
+
+func (GetFleetErrorsFleetErrorCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetErrorsFleetErrorCollectionItem)(nil)).Elem()
+}
+
+func (i GetFleetErrorsFleetErrorCollectionItemArray) ToGetFleetErrorsFleetErrorCollectionItemArrayOutput() GetFleetErrorsFleetErrorCollectionItemArrayOutput {
+	return i.ToGetFleetErrorsFleetErrorCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetErrorsFleetErrorCollectionItemArray) ToGetFleetErrorsFleetErrorCollectionItemArrayOutputWithContext(ctx context.Context) GetFleetErrorsFleetErrorCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetErrorsFleetErrorCollectionItemArrayOutput)
+}
+
+type GetFleetErrorsFleetErrorCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetFleetErrorsFleetErrorCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetErrorsFleetErrorCollectionItem)(nil)).Elem()
+}
+
+func (o GetFleetErrorsFleetErrorCollectionItemOutput) ToGetFleetErrorsFleetErrorCollectionItemOutput() GetFleetErrorsFleetErrorCollectionItemOutput {
+	return o
+}
+
+func (o GetFleetErrorsFleetErrorCollectionItemOutput) ToGetFleetErrorsFleetErrorCollectionItemOutputWithContext(ctx context.Context) GetFleetErrorsFleetErrorCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetFleetErrorsFleetErrorCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetErrorsFleetErrorCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// List of fleet error details.
+func (o GetFleetErrorsFleetErrorCollectionItemOutput) Errors() GetFleetErrorsFleetErrorCollectionItemErrorArrayOutput {
+	return o.ApplyT(func(v GetFleetErrorsFleetErrorCollectionItem) []GetFleetErrorsFleetErrorCollectionItemError {
+		return v.Errors
+	}).(GetFleetErrorsFleetErrorCollectionItemErrorArrayOutput)
+}
+
+// The ID of the Fleet.
+func (o GetFleetErrorsFleetErrorCollectionItemOutput) FleetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetErrorsFleetErrorCollectionItem) string { return v.FleetId }).(pulumi.StringOutput)
+}
+
+// The display name of the Fleet.
+func (o GetFleetErrorsFleetErrorCollectionItemOutput) FleetName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetErrorsFleetErrorCollectionItem) string { return v.FleetName }).(pulumi.StringOutput)
+}
+
+// The timestamp of the first time an error was detected.
+func (o GetFleetErrorsFleetErrorCollectionItemOutput) TimeFirstSeen() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetErrorsFleetErrorCollectionItem) string { return v.TimeFirstSeen }).(pulumi.StringOutput)
+}
+
+// The timestamp of the last time an error was detected.
+func (o GetFleetErrorsFleetErrorCollectionItemOutput) TimeLastSeen() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetErrorsFleetErrorCollectionItem) string { return v.TimeLastSeen }).(pulumi.StringOutput)
+}
+
+type GetFleetErrorsFleetErrorCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetErrorsFleetErrorCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetErrorsFleetErrorCollectionItem)(nil)).Elem()
+}
+
+func (o GetFleetErrorsFleetErrorCollectionItemArrayOutput) ToGetFleetErrorsFleetErrorCollectionItemArrayOutput() GetFleetErrorsFleetErrorCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFleetErrorsFleetErrorCollectionItemArrayOutput) ToGetFleetErrorsFleetErrorCollectionItemArrayOutputWithContext(ctx context.Context) GetFleetErrorsFleetErrorCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFleetErrorsFleetErrorCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFleetErrorsFleetErrorCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetErrorsFleetErrorCollectionItem {
+		return vs[0].([]GetFleetErrorsFleetErrorCollectionItem)[vs[1].(int)]
+	}).(GetFleetErrorsFleetErrorCollectionItemOutput)
+}
+
+type GetFleetErrorsFleetErrorCollectionItemError struct {
+	// Optional string containing additional details.
+	Details string `pulumi:"details"`
+	// The fleet error reason.
+	Reason string `pulumi:"reason"`
+	// The timestamp of the last time an error was detected.
+	TimeLastSeen string `pulumi:"timeLastSeen"`
+}
+
+// GetFleetErrorsFleetErrorCollectionItemErrorInput is an input type that accepts GetFleetErrorsFleetErrorCollectionItemErrorArgs and GetFleetErrorsFleetErrorCollectionItemErrorOutput values.
+// You can construct a concrete instance of `GetFleetErrorsFleetErrorCollectionItemErrorInput` via:
+//
+//	GetFleetErrorsFleetErrorCollectionItemErrorArgs{...}
+type GetFleetErrorsFleetErrorCollectionItemErrorInput interface {
+	pulumi.Input
+
+	ToGetFleetErrorsFleetErrorCollectionItemErrorOutput() GetFleetErrorsFleetErrorCollectionItemErrorOutput
+	ToGetFleetErrorsFleetErrorCollectionItemErrorOutputWithContext(context.Context) GetFleetErrorsFleetErrorCollectionItemErrorOutput
+}
+
+type GetFleetErrorsFleetErrorCollectionItemErrorArgs struct {
+	// Optional string containing additional details.
+	Details pulumi.StringInput `pulumi:"details"`
+	// The fleet error reason.
+	Reason pulumi.StringInput `pulumi:"reason"`
+	// The timestamp of the last time an error was detected.
+	TimeLastSeen pulumi.StringInput `pulumi:"timeLastSeen"`
+}
+
+func (GetFleetErrorsFleetErrorCollectionItemErrorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetErrorsFleetErrorCollectionItemError)(nil)).Elem()
+}
+
+func (i GetFleetErrorsFleetErrorCollectionItemErrorArgs) ToGetFleetErrorsFleetErrorCollectionItemErrorOutput() GetFleetErrorsFleetErrorCollectionItemErrorOutput {
+	return i.ToGetFleetErrorsFleetErrorCollectionItemErrorOutputWithContext(context.Background())
+}
+
+func (i GetFleetErrorsFleetErrorCollectionItemErrorArgs) ToGetFleetErrorsFleetErrorCollectionItemErrorOutputWithContext(ctx context.Context) GetFleetErrorsFleetErrorCollectionItemErrorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetErrorsFleetErrorCollectionItemErrorOutput)
+}
+
+// GetFleetErrorsFleetErrorCollectionItemErrorArrayInput is an input type that accepts GetFleetErrorsFleetErrorCollectionItemErrorArray and GetFleetErrorsFleetErrorCollectionItemErrorArrayOutput values.
+// You can construct a concrete instance of `GetFleetErrorsFleetErrorCollectionItemErrorArrayInput` via:
+//
+//	GetFleetErrorsFleetErrorCollectionItemErrorArray{ GetFleetErrorsFleetErrorCollectionItemErrorArgs{...} }
+type GetFleetErrorsFleetErrorCollectionItemErrorArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetErrorsFleetErrorCollectionItemErrorArrayOutput() GetFleetErrorsFleetErrorCollectionItemErrorArrayOutput
+	ToGetFleetErrorsFleetErrorCollectionItemErrorArrayOutputWithContext(context.Context) GetFleetErrorsFleetErrorCollectionItemErrorArrayOutput
+}
+
+type GetFleetErrorsFleetErrorCollectionItemErrorArray []GetFleetErrorsFleetErrorCollectionItemErrorInput
+
+func (GetFleetErrorsFleetErrorCollectionItemErrorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetErrorsFleetErrorCollectionItemError)(nil)).Elem()
+}
+
+func (i GetFleetErrorsFleetErrorCollectionItemErrorArray) ToGetFleetErrorsFleetErrorCollectionItemErrorArrayOutput() GetFleetErrorsFleetErrorCollectionItemErrorArrayOutput {
+	return i.ToGetFleetErrorsFleetErrorCollectionItemErrorArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetErrorsFleetErrorCollectionItemErrorArray) ToGetFleetErrorsFleetErrorCollectionItemErrorArrayOutputWithContext(ctx context.Context) GetFleetErrorsFleetErrorCollectionItemErrorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetErrorsFleetErrorCollectionItemErrorArrayOutput)
+}
+
+type GetFleetErrorsFleetErrorCollectionItemErrorOutput struct{ *pulumi.OutputState }
+
+func (GetFleetErrorsFleetErrorCollectionItemErrorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetErrorsFleetErrorCollectionItemError)(nil)).Elem()
+}
+
+func (o GetFleetErrorsFleetErrorCollectionItemErrorOutput) ToGetFleetErrorsFleetErrorCollectionItemErrorOutput() GetFleetErrorsFleetErrorCollectionItemErrorOutput {
+	return o
+}
+
+func (o GetFleetErrorsFleetErrorCollectionItemErrorOutput) ToGetFleetErrorsFleetErrorCollectionItemErrorOutputWithContext(ctx context.Context) GetFleetErrorsFleetErrorCollectionItemErrorOutput {
+	return o
+}
+
+// Optional string containing additional details.
+func (o GetFleetErrorsFleetErrorCollectionItemErrorOutput) Details() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetErrorsFleetErrorCollectionItemError) string { return v.Details }).(pulumi.StringOutput)
+}
+
+// The fleet error reason.
+func (o GetFleetErrorsFleetErrorCollectionItemErrorOutput) Reason() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetErrorsFleetErrorCollectionItemError) string { return v.Reason }).(pulumi.StringOutput)
+}
+
+// The timestamp of the last time an error was detected.
+func (o GetFleetErrorsFleetErrorCollectionItemErrorOutput) TimeLastSeen() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetErrorsFleetErrorCollectionItemError) string { return v.TimeLastSeen }).(pulumi.StringOutput)
+}
+
+type GetFleetErrorsFleetErrorCollectionItemErrorArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetErrorsFleetErrorCollectionItemErrorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetErrorsFleetErrorCollectionItemError)(nil)).Elem()
+}
+
+func (o GetFleetErrorsFleetErrorCollectionItemErrorArrayOutput) ToGetFleetErrorsFleetErrorCollectionItemErrorArrayOutput() GetFleetErrorsFleetErrorCollectionItemErrorArrayOutput {
+	return o
+}
+
+func (o GetFleetErrorsFleetErrorCollectionItemErrorArrayOutput) ToGetFleetErrorsFleetErrorCollectionItemErrorArrayOutputWithContext(ctx context.Context) GetFleetErrorsFleetErrorCollectionItemErrorArrayOutput {
+	return o
+}
+
+func (o GetFleetErrorsFleetErrorCollectionItemErrorArrayOutput) Index(i pulumi.IntInput) GetFleetErrorsFleetErrorCollectionItemErrorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetErrorsFleetErrorCollectionItemError {
+		return vs[0].([]GetFleetErrorsFleetErrorCollectionItemError)[vs[1].(int)]
+	}).(GetFleetErrorsFleetErrorCollectionItemErrorOutput)
+}
+
 type GetFleetInventoryLog struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
 	LogGroupId string `pulumi:"logGroupId"`
@@ -7684,7 +8569,7 @@ type GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultColl
 	ApplicationInstallationId string `pulumi:"applicationInstallationId"`
 	// The installation path of the application for which the report has been generated.
 	ApplicationInstallationPath string `pulumi:"applicationInstallationPath"`
-	// The name of the application for which the report has been generated.
+	// The name of the application.
 	ApplicationName string `pulumi:"applicationName"`
 	// The Object Storage bucket name of this analysis result.
 	Bucket string `pulumi:"bucket"`
@@ -7732,7 +8617,7 @@ type GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultColl
 	ApplicationInstallationId pulumi.StringInput `pulumi:"applicationInstallationId"`
 	// The installation path of the application for which the report has been generated.
 	ApplicationInstallationPath pulumi.StringInput `pulumi:"applicationInstallationPath"`
-	// The name of the application for which the report has been generated.
+	// The name of the application.
 	ApplicationName pulumi.StringInput `pulumi:"applicationName"`
 	// The Object Storage bucket name of this analysis result.
 	Bucket pulumi.StringInput `pulumi:"bucket"`
@@ -7834,7 +8719,7 @@ func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultC
 	}).(pulumi.StringOutput)
 }
 
-// The name of the application for which the report has been generated.
+// The name of the application.
 func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) ApplicationName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) string {
 		return v.ApplicationName
@@ -9759,7 +10644,7 @@ func (o GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutp
 }
 
 type GetInstallationSitesInstallationSiteCollectionItemItemJre struct {
-	// The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
+	// The name of the Operating System distribution, such as Oracle Linux 9, Windows 10, or macOS X.
 	Distribution string `pulumi:"distribution"`
 	// The unique identifier for a Java Runtime.
 	JreKey string `pulumi:"jreKey"`
@@ -9781,7 +10666,7 @@ type GetInstallationSitesInstallationSiteCollectionItemItemJreInput interface {
 }
 
 type GetInstallationSitesInstallationSiteCollectionItemItemJreArgs struct {
-	// The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
+	// The name of the Operating System distribution, such as Oracle Linux 9, Windows 10, or macOS X.
 	Distribution pulumi.StringInput `pulumi:"distribution"`
 	// The unique identifier for a Java Runtime.
 	JreKey pulumi.StringInput `pulumi:"jreKey"`
@@ -9842,7 +10727,7 @@ func (o GetInstallationSitesInstallationSiteCollectionItemItemJreOutput) ToGetIn
 	return o
 }
 
-// The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
+// The name of the Operating System distribution, such as Oracle Linux 9, Windows 10, or macOS X.
 func (o GetInstallationSitesInstallationSiteCollectionItemItemJreOutput) Distribution() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemJre) string { return v.Distribution }).(pulumi.StringOutput)
 }
@@ -9885,6 +10770,8 @@ func (o GetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput) In
 type GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem struct {
 	// The architecture of the operating system as provided by the Java system property os.arch.
 	Architecture string `pulumi:"architecture"`
+	// The name of the Operating System distribution, such as Oracle Linux 9, Windows 10, or macOS X.
+	Distribution string `pulumi:"distribution"`
 	// The operating system type, such as Windows, Linux or macOS
 	Family string `pulumi:"family"`
 	// Number of instances running the operating system.
@@ -9909,6 +10796,8 @@ type GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemInput 
 type GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArgs struct {
 	// The architecture of the operating system as provided by the Java system property os.arch.
 	Architecture pulumi.StringInput `pulumi:"architecture"`
+	// The name of the Operating System distribution, such as Oracle Linux 9, Windows 10, or macOS X.
+	Distribution pulumi.StringInput `pulumi:"distribution"`
 	// The operating system type, such as Windows, Linux or macOS
 	Family pulumi.StringInput `pulumi:"family"`
 	// Number of instances running the operating system.
@@ -9974,6 +10863,13 @@ func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOut
 func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput) Architecture() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem) string {
 		return v.Architecture
+	}).(pulumi.StringOutput)
+}
+
+// The name of the Operating System distribution, such as Oracle Linux 9, Windows 10, or macOS X.
+func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput) Distribution() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem) string {
+		return v.Distribution
 	}).(pulumi.StringOutput)
 }
 
@@ -16323,7 +17219,7 @@ func (o GetJmsPluginsJmsPluginCollectionArrayOutput) Index(i pulumi.IntInput) Ge
 type GetJmsPluginsJmsPluginCollectionItem struct {
 	// The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
 	AgentId string `pulumi:"agentId"`
-	// The agent type.
+	// Filter JmsPlugin with agent type.
 	AgentType string `pulumi:"agentType"`
 	// Filter JmsPlugin with its availability status.
 	AvailabilityStatus string `pulumi:"availabilityStatus"`
@@ -16371,7 +17267,7 @@ type GetJmsPluginsJmsPluginCollectionItemInput interface {
 type GetJmsPluginsJmsPluginCollectionItemArgs struct {
 	// The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
 	AgentId pulumi.StringInput `pulumi:"agentId"`
-	// The agent type.
+	// Filter JmsPlugin with agent type.
 	AgentType pulumi.StringInput `pulumi:"agentType"`
 	// Filter JmsPlugin with its availability status.
 	AvailabilityStatus pulumi.StringInput `pulumi:"availabilityStatus"`
@@ -16461,7 +17357,7 @@ func (o GetJmsPluginsJmsPluginCollectionItemOutput) AgentId() pulumi.StringOutpu
 	return o.ApplyT(func(v GetJmsPluginsJmsPluginCollectionItem) string { return v.AgentId }).(pulumi.StringOutput)
 }
 
-// The agent type.
+// Filter JmsPlugin with agent type.
 func (o GetJmsPluginsJmsPluginCollectionItemOutput) AgentType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJmsPluginsJmsPluginCollectionItem) string { return v.AgentType }).(pulumi.StringOutput)
 }
@@ -16953,6 +17849,902 @@ func (o GetListJreUsageItemOperatingSystemArrayOutput) Index(i pulumi.IntInput) 
 	}).(GetListJreUsageItemOperatingSystemOutput)
 }
 
+type GetPluginErrorAnalyticsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetPluginErrorAnalyticsFilterInput is an input type that accepts GetPluginErrorAnalyticsFilterArgs and GetPluginErrorAnalyticsFilterOutput values.
+// You can construct a concrete instance of `GetPluginErrorAnalyticsFilterInput` via:
+//
+//	GetPluginErrorAnalyticsFilterArgs{...}
+type GetPluginErrorAnalyticsFilterInput interface {
+	pulumi.Input
+
+	ToGetPluginErrorAnalyticsFilterOutput() GetPluginErrorAnalyticsFilterOutput
+	ToGetPluginErrorAnalyticsFilterOutputWithContext(context.Context) GetPluginErrorAnalyticsFilterOutput
+}
+
+type GetPluginErrorAnalyticsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetPluginErrorAnalyticsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluginErrorAnalyticsFilter)(nil)).Elem()
+}
+
+func (i GetPluginErrorAnalyticsFilterArgs) ToGetPluginErrorAnalyticsFilterOutput() GetPluginErrorAnalyticsFilterOutput {
+	return i.ToGetPluginErrorAnalyticsFilterOutputWithContext(context.Background())
+}
+
+func (i GetPluginErrorAnalyticsFilterArgs) ToGetPluginErrorAnalyticsFilterOutputWithContext(ctx context.Context) GetPluginErrorAnalyticsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluginErrorAnalyticsFilterOutput)
+}
+
+// GetPluginErrorAnalyticsFilterArrayInput is an input type that accepts GetPluginErrorAnalyticsFilterArray and GetPluginErrorAnalyticsFilterArrayOutput values.
+// You can construct a concrete instance of `GetPluginErrorAnalyticsFilterArrayInput` via:
+//
+//	GetPluginErrorAnalyticsFilterArray{ GetPluginErrorAnalyticsFilterArgs{...} }
+type GetPluginErrorAnalyticsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetPluginErrorAnalyticsFilterArrayOutput() GetPluginErrorAnalyticsFilterArrayOutput
+	ToGetPluginErrorAnalyticsFilterArrayOutputWithContext(context.Context) GetPluginErrorAnalyticsFilterArrayOutput
+}
+
+type GetPluginErrorAnalyticsFilterArray []GetPluginErrorAnalyticsFilterInput
+
+func (GetPluginErrorAnalyticsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluginErrorAnalyticsFilter)(nil)).Elem()
+}
+
+func (i GetPluginErrorAnalyticsFilterArray) ToGetPluginErrorAnalyticsFilterArrayOutput() GetPluginErrorAnalyticsFilterArrayOutput {
+	return i.ToGetPluginErrorAnalyticsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetPluginErrorAnalyticsFilterArray) ToGetPluginErrorAnalyticsFilterArrayOutputWithContext(ctx context.Context) GetPluginErrorAnalyticsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluginErrorAnalyticsFilterArrayOutput)
+}
+
+type GetPluginErrorAnalyticsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetPluginErrorAnalyticsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluginErrorAnalyticsFilter)(nil)).Elem()
+}
+
+func (o GetPluginErrorAnalyticsFilterOutput) ToGetPluginErrorAnalyticsFilterOutput() GetPluginErrorAnalyticsFilterOutput {
+	return o
+}
+
+func (o GetPluginErrorAnalyticsFilterOutput) ToGetPluginErrorAnalyticsFilterOutputWithContext(ctx context.Context) GetPluginErrorAnalyticsFilterOutput {
+	return o
+}
+
+func (o GetPluginErrorAnalyticsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluginErrorAnalyticsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetPluginErrorAnalyticsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPluginErrorAnalyticsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetPluginErrorAnalyticsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPluginErrorAnalyticsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetPluginErrorAnalyticsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPluginErrorAnalyticsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluginErrorAnalyticsFilter)(nil)).Elem()
+}
+
+func (o GetPluginErrorAnalyticsFilterArrayOutput) ToGetPluginErrorAnalyticsFilterArrayOutput() GetPluginErrorAnalyticsFilterArrayOutput {
+	return o
+}
+
+func (o GetPluginErrorAnalyticsFilterArrayOutput) ToGetPluginErrorAnalyticsFilterArrayOutputWithContext(ctx context.Context) GetPluginErrorAnalyticsFilterArrayOutput {
+	return o
+}
+
+func (o GetPluginErrorAnalyticsFilterArrayOutput) Index(i pulumi.IntInput) GetPluginErrorAnalyticsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPluginErrorAnalyticsFilter {
+		return vs[0].([]GetPluginErrorAnalyticsFilter)[vs[1].(int)]
+	}).(GetPluginErrorAnalyticsFilterOutput)
+}
+
+type GetPluginErrorAnalyticsPluginErrorAggregationCollection struct {
+	// A list of PluginErrorAggregationSummary.
+	Items []GetPluginErrorAnalyticsPluginErrorAggregationCollectionItem `pulumi:"items"`
+}
+
+// GetPluginErrorAnalyticsPluginErrorAggregationCollectionInput is an input type that accepts GetPluginErrorAnalyticsPluginErrorAggregationCollectionArgs and GetPluginErrorAnalyticsPluginErrorAggregationCollectionOutput values.
+// You can construct a concrete instance of `GetPluginErrorAnalyticsPluginErrorAggregationCollectionInput` via:
+//
+//	GetPluginErrorAnalyticsPluginErrorAggregationCollectionArgs{...}
+type GetPluginErrorAnalyticsPluginErrorAggregationCollectionInput interface {
+	pulumi.Input
+
+	ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionOutput() GetPluginErrorAnalyticsPluginErrorAggregationCollectionOutput
+	ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionOutputWithContext(context.Context) GetPluginErrorAnalyticsPluginErrorAggregationCollectionOutput
+}
+
+type GetPluginErrorAnalyticsPluginErrorAggregationCollectionArgs struct {
+	// A list of PluginErrorAggregationSummary.
+	Items GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetPluginErrorAnalyticsPluginErrorAggregationCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluginErrorAnalyticsPluginErrorAggregationCollection)(nil)).Elem()
+}
+
+func (i GetPluginErrorAnalyticsPluginErrorAggregationCollectionArgs) ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionOutput() GetPluginErrorAnalyticsPluginErrorAggregationCollectionOutput {
+	return i.ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionOutputWithContext(context.Background())
+}
+
+func (i GetPluginErrorAnalyticsPluginErrorAggregationCollectionArgs) ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionOutputWithContext(ctx context.Context) GetPluginErrorAnalyticsPluginErrorAggregationCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluginErrorAnalyticsPluginErrorAggregationCollectionOutput)
+}
+
+// GetPluginErrorAnalyticsPluginErrorAggregationCollectionArrayInput is an input type that accepts GetPluginErrorAnalyticsPluginErrorAggregationCollectionArray and GetPluginErrorAnalyticsPluginErrorAggregationCollectionArrayOutput values.
+// You can construct a concrete instance of `GetPluginErrorAnalyticsPluginErrorAggregationCollectionArrayInput` via:
+//
+//	GetPluginErrorAnalyticsPluginErrorAggregationCollectionArray{ GetPluginErrorAnalyticsPluginErrorAggregationCollectionArgs{...} }
+type GetPluginErrorAnalyticsPluginErrorAggregationCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionArrayOutput() GetPluginErrorAnalyticsPluginErrorAggregationCollectionArrayOutput
+	ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionArrayOutputWithContext(context.Context) GetPluginErrorAnalyticsPluginErrorAggregationCollectionArrayOutput
+}
+
+type GetPluginErrorAnalyticsPluginErrorAggregationCollectionArray []GetPluginErrorAnalyticsPluginErrorAggregationCollectionInput
+
+func (GetPluginErrorAnalyticsPluginErrorAggregationCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluginErrorAnalyticsPluginErrorAggregationCollection)(nil)).Elem()
+}
+
+func (i GetPluginErrorAnalyticsPluginErrorAggregationCollectionArray) ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionArrayOutput() GetPluginErrorAnalyticsPluginErrorAggregationCollectionArrayOutput {
+	return i.ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetPluginErrorAnalyticsPluginErrorAggregationCollectionArray) ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionArrayOutputWithContext(ctx context.Context) GetPluginErrorAnalyticsPluginErrorAggregationCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluginErrorAnalyticsPluginErrorAggregationCollectionArrayOutput)
+}
+
+type GetPluginErrorAnalyticsPluginErrorAggregationCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetPluginErrorAnalyticsPluginErrorAggregationCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluginErrorAnalyticsPluginErrorAggregationCollection)(nil)).Elem()
+}
+
+func (o GetPluginErrorAnalyticsPluginErrorAggregationCollectionOutput) ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionOutput() GetPluginErrorAnalyticsPluginErrorAggregationCollectionOutput {
+	return o
+}
+
+func (o GetPluginErrorAnalyticsPluginErrorAggregationCollectionOutput) ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionOutputWithContext(ctx context.Context) GetPluginErrorAnalyticsPluginErrorAggregationCollectionOutput {
+	return o
+}
+
+// A list of PluginErrorAggregationSummary.
+func (o GetPluginErrorAnalyticsPluginErrorAggregationCollectionOutput) Items() GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetPluginErrorAnalyticsPluginErrorAggregationCollection) []GetPluginErrorAnalyticsPluginErrorAggregationCollectionItem {
+		return v.Items
+	}).(GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArrayOutput)
+}
+
+type GetPluginErrorAnalyticsPluginErrorAggregationCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPluginErrorAnalyticsPluginErrorAggregationCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluginErrorAnalyticsPluginErrorAggregationCollection)(nil)).Elem()
+}
+
+func (o GetPluginErrorAnalyticsPluginErrorAggregationCollectionArrayOutput) ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionArrayOutput() GetPluginErrorAnalyticsPluginErrorAggregationCollectionArrayOutput {
+	return o
+}
+
+func (o GetPluginErrorAnalyticsPluginErrorAggregationCollectionArrayOutput) ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionArrayOutputWithContext(ctx context.Context) GetPluginErrorAnalyticsPluginErrorAggregationCollectionArrayOutput {
+	return o
+}
+
+func (o GetPluginErrorAnalyticsPluginErrorAggregationCollectionArrayOutput) Index(i pulumi.IntInput) GetPluginErrorAnalyticsPluginErrorAggregationCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPluginErrorAnalyticsPluginErrorAggregationCollection {
+		return vs[0].([]GetPluginErrorAnalyticsPluginErrorAggregationCollection)[vs[1].(int)]
+	}).(GetPluginErrorAnalyticsPluginErrorAggregationCollectionOutput)
+}
+
+type GetPluginErrorAnalyticsPluginErrorAggregationCollectionItem struct {
+	// Count of plugins with no problems.
+	HealthyPluginCount int `pulumi:"healthyPluginCount"`
+	// List of plugin aggregation errors.
+	PluginErrorAggregations []GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregation `pulumi:"pluginErrorAggregations"`
+}
+
+// GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemInput is an input type that accepts GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArgs and GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemOutput values.
+// You can construct a concrete instance of `GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemInput` via:
+//
+//	GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArgs{...}
+type GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionItemOutput() GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemOutput
+	ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionItemOutputWithContext(context.Context) GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemOutput
+}
+
+type GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArgs struct {
+	// Count of plugins with no problems.
+	HealthyPluginCount pulumi.IntInput `pulumi:"healthyPluginCount"`
+	// List of plugin aggregation errors.
+	PluginErrorAggregations GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArrayInput `pulumi:"pluginErrorAggregations"`
+}
+
+func (GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluginErrorAnalyticsPluginErrorAggregationCollectionItem)(nil)).Elem()
+}
+
+func (i GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArgs) ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionItemOutput() GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemOutput {
+	return i.ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArgs) ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionItemOutputWithContext(ctx context.Context) GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemOutput)
+}
+
+// GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArrayInput is an input type that accepts GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArray and GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArrayInput` via:
+//
+//	GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArray{ GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArgs{...} }
+type GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArrayOutput() GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArrayOutput
+	ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArrayOutputWithContext(context.Context) GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArrayOutput
+}
+
+type GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArray []GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemInput
+
+func (GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluginErrorAnalyticsPluginErrorAggregationCollectionItem)(nil)).Elem()
+}
+
+func (i GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArray) ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArrayOutput() GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArrayOutput {
+	return i.ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArray) ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArrayOutputWithContext(ctx context.Context) GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArrayOutput)
+}
+
+type GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluginErrorAnalyticsPluginErrorAggregationCollectionItem)(nil)).Elem()
+}
+
+func (o GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemOutput) ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionItemOutput() GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemOutput {
+	return o
+}
+
+func (o GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemOutput) ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionItemOutputWithContext(ctx context.Context) GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemOutput {
+	return o
+}
+
+// Count of plugins with no problems.
+func (o GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemOutput) HealthyPluginCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPluginErrorAnalyticsPluginErrorAggregationCollectionItem) int { return v.HealthyPluginCount }).(pulumi.IntOutput)
+}
+
+// List of plugin aggregation errors.
+func (o GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemOutput) PluginErrorAggregations() GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArrayOutput {
+	return o.ApplyT(func(v GetPluginErrorAnalyticsPluginErrorAggregationCollectionItem) []GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregation {
+		return v.PluginErrorAggregations
+	}).(GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArrayOutput)
+}
+
+type GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluginErrorAnalyticsPluginErrorAggregationCollectionItem)(nil)).Elem()
+}
+
+func (o GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArrayOutput) ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArrayOutput() GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArrayOutput) ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArrayOutputWithContext(ctx context.Context) GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArrayOutput) Index(i pulumi.IntInput) GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPluginErrorAnalyticsPluginErrorAggregationCollectionItem {
+		return vs[0].([]GetPluginErrorAnalyticsPluginErrorAggregationCollectionItem)[vs[1].(int)]
+	}).(GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemOutput)
+}
+
+type GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregation struct {
+	// Number of FleetErrors encountered for the specific reason.
+	PluginErrorAnalyticCount int `pulumi:"pluginErrorAnalyticCount"`
+	// Enum that uniquely identifies the plugin error.
+	Reason string `pulumi:"reason"`
+}
+
+// GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationInput is an input type that accepts GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArgs and GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationOutput values.
+// You can construct a concrete instance of `GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationInput` via:
+//
+//	GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArgs{...}
+type GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationInput interface {
+	pulumi.Input
+
+	ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationOutput() GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationOutput
+	ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationOutputWithContext(context.Context) GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationOutput
+}
+
+type GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArgs struct {
+	// Number of FleetErrors encountered for the specific reason.
+	PluginErrorAnalyticCount pulumi.IntInput `pulumi:"pluginErrorAnalyticCount"`
+	// Enum that uniquely identifies the plugin error.
+	Reason pulumi.StringInput `pulumi:"reason"`
+}
+
+func (GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregation)(nil)).Elem()
+}
+
+func (i GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArgs) ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationOutput() GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationOutput {
+	return i.ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationOutputWithContext(context.Background())
+}
+
+func (i GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArgs) ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationOutputWithContext(ctx context.Context) GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationOutput)
+}
+
+// GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArrayInput is an input type that accepts GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArray and GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArrayOutput values.
+// You can construct a concrete instance of `GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArrayInput` via:
+//
+//	GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArray{ GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArgs{...} }
+type GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArrayInput interface {
+	pulumi.Input
+
+	ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArrayOutput() GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArrayOutput
+	ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArrayOutputWithContext(context.Context) GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArrayOutput
+}
+
+type GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArray []GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationInput
+
+func (GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregation)(nil)).Elem()
+}
+
+func (i GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArray) ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArrayOutput() GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArrayOutput {
+	return i.ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArrayOutputWithContext(context.Background())
+}
+
+func (i GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArray) ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArrayOutputWithContext(ctx context.Context) GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArrayOutput)
+}
+
+type GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationOutput struct{ *pulumi.OutputState }
+
+func (GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregation)(nil)).Elem()
+}
+
+func (o GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationOutput) ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationOutput() GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationOutput {
+	return o
+}
+
+func (o GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationOutput) ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationOutputWithContext(ctx context.Context) GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationOutput {
+	return o
+}
+
+// Number of FleetErrors encountered for the specific reason.
+func (o GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationOutput) PluginErrorAnalyticCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregation) int {
+		return v.PluginErrorAnalyticCount
+	}).(pulumi.IntOutput)
+}
+
+// Enum that uniquely identifies the plugin error.
+func (o GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationOutput) Reason() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregation) string {
+		return v.Reason
+	}).(pulumi.StringOutput)
+}
+
+type GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregation)(nil)).Elem()
+}
+
+func (o GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArrayOutput) ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArrayOutput() GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArrayOutput {
+	return o
+}
+
+func (o GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArrayOutput) ToGetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArrayOutputWithContext(ctx context.Context) GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArrayOutput {
+	return o
+}
+
+func (o GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArrayOutput) Index(i pulumi.IntInput) GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregation {
+		return vs[0].([]GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregation)[vs[1].(int)]
+	}).(GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationOutput)
+}
+
+type GetPluginErrorsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetPluginErrorsFilterInput is an input type that accepts GetPluginErrorsFilterArgs and GetPluginErrorsFilterOutput values.
+// You can construct a concrete instance of `GetPluginErrorsFilterInput` via:
+//
+//	GetPluginErrorsFilterArgs{...}
+type GetPluginErrorsFilterInput interface {
+	pulumi.Input
+
+	ToGetPluginErrorsFilterOutput() GetPluginErrorsFilterOutput
+	ToGetPluginErrorsFilterOutputWithContext(context.Context) GetPluginErrorsFilterOutput
+}
+
+type GetPluginErrorsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetPluginErrorsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluginErrorsFilter)(nil)).Elem()
+}
+
+func (i GetPluginErrorsFilterArgs) ToGetPluginErrorsFilterOutput() GetPluginErrorsFilterOutput {
+	return i.ToGetPluginErrorsFilterOutputWithContext(context.Background())
+}
+
+func (i GetPluginErrorsFilterArgs) ToGetPluginErrorsFilterOutputWithContext(ctx context.Context) GetPluginErrorsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluginErrorsFilterOutput)
+}
+
+// GetPluginErrorsFilterArrayInput is an input type that accepts GetPluginErrorsFilterArray and GetPluginErrorsFilterArrayOutput values.
+// You can construct a concrete instance of `GetPluginErrorsFilterArrayInput` via:
+//
+//	GetPluginErrorsFilterArray{ GetPluginErrorsFilterArgs{...} }
+type GetPluginErrorsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetPluginErrorsFilterArrayOutput() GetPluginErrorsFilterArrayOutput
+	ToGetPluginErrorsFilterArrayOutputWithContext(context.Context) GetPluginErrorsFilterArrayOutput
+}
+
+type GetPluginErrorsFilterArray []GetPluginErrorsFilterInput
+
+func (GetPluginErrorsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluginErrorsFilter)(nil)).Elem()
+}
+
+func (i GetPluginErrorsFilterArray) ToGetPluginErrorsFilterArrayOutput() GetPluginErrorsFilterArrayOutput {
+	return i.ToGetPluginErrorsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetPluginErrorsFilterArray) ToGetPluginErrorsFilterArrayOutputWithContext(ctx context.Context) GetPluginErrorsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluginErrorsFilterArrayOutput)
+}
+
+type GetPluginErrorsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetPluginErrorsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluginErrorsFilter)(nil)).Elem()
+}
+
+func (o GetPluginErrorsFilterOutput) ToGetPluginErrorsFilterOutput() GetPluginErrorsFilterOutput {
+	return o
+}
+
+func (o GetPluginErrorsFilterOutput) ToGetPluginErrorsFilterOutputWithContext(ctx context.Context) GetPluginErrorsFilterOutput {
+	return o
+}
+
+func (o GetPluginErrorsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluginErrorsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetPluginErrorsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPluginErrorsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetPluginErrorsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPluginErrorsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetPluginErrorsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPluginErrorsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluginErrorsFilter)(nil)).Elem()
+}
+
+func (o GetPluginErrorsFilterArrayOutput) ToGetPluginErrorsFilterArrayOutput() GetPluginErrorsFilterArrayOutput {
+	return o
+}
+
+func (o GetPluginErrorsFilterArrayOutput) ToGetPluginErrorsFilterArrayOutputWithContext(ctx context.Context) GetPluginErrorsFilterArrayOutput {
+	return o
+}
+
+func (o GetPluginErrorsFilterArrayOutput) Index(i pulumi.IntInput) GetPluginErrorsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPluginErrorsFilter {
+		return vs[0].([]GetPluginErrorsFilter)[vs[1].(int)]
+	}).(GetPluginErrorsFilterOutput)
+}
+
+type GetPluginErrorsPluginErrorCollection struct {
+	// A list of PluginErrorSummary.
+	Items []GetPluginErrorsPluginErrorCollectionItem `pulumi:"items"`
+}
+
+// GetPluginErrorsPluginErrorCollectionInput is an input type that accepts GetPluginErrorsPluginErrorCollectionArgs and GetPluginErrorsPluginErrorCollectionOutput values.
+// You can construct a concrete instance of `GetPluginErrorsPluginErrorCollectionInput` via:
+//
+//	GetPluginErrorsPluginErrorCollectionArgs{...}
+type GetPluginErrorsPluginErrorCollectionInput interface {
+	pulumi.Input
+
+	ToGetPluginErrorsPluginErrorCollectionOutput() GetPluginErrorsPluginErrorCollectionOutput
+	ToGetPluginErrorsPluginErrorCollectionOutputWithContext(context.Context) GetPluginErrorsPluginErrorCollectionOutput
+}
+
+type GetPluginErrorsPluginErrorCollectionArgs struct {
+	// A list of PluginErrorSummary.
+	Items GetPluginErrorsPluginErrorCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetPluginErrorsPluginErrorCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluginErrorsPluginErrorCollection)(nil)).Elem()
+}
+
+func (i GetPluginErrorsPluginErrorCollectionArgs) ToGetPluginErrorsPluginErrorCollectionOutput() GetPluginErrorsPluginErrorCollectionOutput {
+	return i.ToGetPluginErrorsPluginErrorCollectionOutputWithContext(context.Background())
+}
+
+func (i GetPluginErrorsPluginErrorCollectionArgs) ToGetPluginErrorsPluginErrorCollectionOutputWithContext(ctx context.Context) GetPluginErrorsPluginErrorCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluginErrorsPluginErrorCollectionOutput)
+}
+
+// GetPluginErrorsPluginErrorCollectionArrayInput is an input type that accepts GetPluginErrorsPluginErrorCollectionArray and GetPluginErrorsPluginErrorCollectionArrayOutput values.
+// You can construct a concrete instance of `GetPluginErrorsPluginErrorCollectionArrayInput` via:
+//
+//	GetPluginErrorsPluginErrorCollectionArray{ GetPluginErrorsPluginErrorCollectionArgs{...} }
+type GetPluginErrorsPluginErrorCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetPluginErrorsPluginErrorCollectionArrayOutput() GetPluginErrorsPluginErrorCollectionArrayOutput
+	ToGetPluginErrorsPluginErrorCollectionArrayOutputWithContext(context.Context) GetPluginErrorsPluginErrorCollectionArrayOutput
+}
+
+type GetPluginErrorsPluginErrorCollectionArray []GetPluginErrorsPluginErrorCollectionInput
+
+func (GetPluginErrorsPluginErrorCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluginErrorsPluginErrorCollection)(nil)).Elem()
+}
+
+func (i GetPluginErrorsPluginErrorCollectionArray) ToGetPluginErrorsPluginErrorCollectionArrayOutput() GetPluginErrorsPluginErrorCollectionArrayOutput {
+	return i.ToGetPluginErrorsPluginErrorCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetPluginErrorsPluginErrorCollectionArray) ToGetPluginErrorsPluginErrorCollectionArrayOutputWithContext(ctx context.Context) GetPluginErrorsPluginErrorCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluginErrorsPluginErrorCollectionArrayOutput)
+}
+
+type GetPluginErrorsPluginErrorCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetPluginErrorsPluginErrorCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluginErrorsPluginErrorCollection)(nil)).Elem()
+}
+
+func (o GetPluginErrorsPluginErrorCollectionOutput) ToGetPluginErrorsPluginErrorCollectionOutput() GetPluginErrorsPluginErrorCollectionOutput {
+	return o
+}
+
+func (o GetPluginErrorsPluginErrorCollectionOutput) ToGetPluginErrorsPluginErrorCollectionOutputWithContext(ctx context.Context) GetPluginErrorsPluginErrorCollectionOutput {
+	return o
+}
+
+// A list of PluginErrorSummary.
+func (o GetPluginErrorsPluginErrorCollectionOutput) Items() GetPluginErrorsPluginErrorCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetPluginErrorsPluginErrorCollection) []GetPluginErrorsPluginErrorCollectionItem {
+		return v.Items
+	}).(GetPluginErrorsPluginErrorCollectionItemArrayOutput)
+}
+
+type GetPluginErrorsPluginErrorCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPluginErrorsPluginErrorCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluginErrorsPluginErrorCollection)(nil)).Elem()
+}
+
+func (o GetPluginErrorsPluginErrorCollectionArrayOutput) ToGetPluginErrorsPluginErrorCollectionArrayOutput() GetPluginErrorsPluginErrorCollectionArrayOutput {
+	return o
+}
+
+func (o GetPluginErrorsPluginErrorCollectionArrayOutput) ToGetPluginErrorsPluginErrorCollectionArrayOutputWithContext(ctx context.Context) GetPluginErrorsPluginErrorCollectionArrayOutput {
+	return o
+}
+
+func (o GetPluginErrorsPluginErrorCollectionArrayOutput) Index(i pulumi.IntInput) GetPluginErrorsPluginErrorCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPluginErrorsPluginErrorCollection {
+		return vs[0].([]GetPluginErrorsPluginErrorCollection)[vs[1].(int)]
+	}).(GetPluginErrorsPluginErrorCollectionOutput)
+}
+
+type GetPluginErrorsPluginErrorCollectionItem struct {
+	// The agent type.
+	AgentType string `pulumi:"agentType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// List of plugin error details.
+	Errors []GetPluginErrorsPluginErrorCollectionItemError `pulumi:"errors"`
+	// The HostName or Compute Instance name of the Managed Instance running the plugin.
+	HostName string `pulumi:"hostName"`
+	// The Fleet-unique identifier of the managed instance.
+	ManagedInstanceId string `pulumi:"managedInstanceId"`
+	// The timestamp of the first time an error was detected.
+	TimeFirstSeen string `pulumi:"timeFirstSeen"`
+	// The timestamp of the last time an error was detected.
+	TimeLastSeen string `pulumi:"timeLastSeen"`
+}
+
+// GetPluginErrorsPluginErrorCollectionItemInput is an input type that accepts GetPluginErrorsPluginErrorCollectionItemArgs and GetPluginErrorsPluginErrorCollectionItemOutput values.
+// You can construct a concrete instance of `GetPluginErrorsPluginErrorCollectionItemInput` via:
+//
+//	GetPluginErrorsPluginErrorCollectionItemArgs{...}
+type GetPluginErrorsPluginErrorCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetPluginErrorsPluginErrorCollectionItemOutput() GetPluginErrorsPluginErrorCollectionItemOutput
+	ToGetPluginErrorsPluginErrorCollectionItemOutputWithContext(context.Context) GetPluginErrorsPluginErrorCollectionItemOutput
+}
+
+type GetPluginErrorsPluginErrorCollectionItemArgs struct {
+	// The agent type.
+	AgentType pulumi.StringInput `pulumi:"agentType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// List of plugin error details.
+	Errors GetPluginErrorsPluginErrorCollectionItemErrorArrayInput `pulumi:"errors"`
+	// The HostName or Compute Instance name of the Managed Instance running the plugin.
+	HostName pulumi.StringInput `pulumi:"hostName"`
+	// The Fleet-unique identifier of the managed instance.
+	ManagedInstanceId pulumi.StringInput `pulumi:"managedInstanceId"`
+	// The timestamp of the first time an error was detected.
+	TimeFirstSeen pulumi.StringInput `pulumi:"timeFirstSeen"`
+	// The timestamp of the last time an error was detected.
+	TimeLastSeen pulumi.StringInput `pulumi:"timeLastSeen"`
+}
+
+func (GetPluginErrorsPluginErrorCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluginErrorsPluginErrorCollectionItem)(nil)).Elem()
+}
+
+func (i GetPluginErrorsPluginErrorCollectionItemArgs) ToGetPluginErrorsPluginErrorCollectionItemOutput() GetPluginErrorsPluginErrorCollectionItemOutput {
+	return i.ToGetPluginErrorsPluginErrorCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetPluginErrorsPluginErrorCollectionItemArgs) ToGetPluginErrorsPluginErrorCollectionItemOutputWithContext(ctx context.Context) GetPluginErrorsPluginErrorCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluginErrorsPluginErrorCollectionItemOutput)
+}
+
+// GetPluginErrorsPluginErrorCollectionItemArrayInput is an input type that accepts GetPluginErrorsPluginErrorCollectionItemArray and GetPluginErrorsPluginErrorCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetPluginErrorsPluginErrorCollectionItemArrayInput` via:
+//
+//	GetPluginErrorsPluginErrorCollectionItemArray{ GetPluginErrorsPluginErrorCollectionItemArgs{...} }
+type GetPluginErrorsPluginErrorCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetPluginErrorsPluginErrorCollectionItemArrayOutput() GetPluginErrorsPluginErrorCollectionItemArrayOutput
+	ToGetPluginErrorsPluginErrorCollectionItemArrayOutputWithContext(context.Context) GetPluginErrorsPluginErrorCollectionItemArrayOutput
+}
+
+type GetPluginErrorsPluginErrorCollectionItemArray []GetPluginErrorsPluginErrorCollectionItemInput
+
+func (GetPluginErrorsPluginErrorCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluginErrorsPluginErrorCollectionItem)(nil)).Elem()
+}
+
+func (i GetPluginErrorsPluginErrorCollectionItemArray) ToGetPluginErrorsPluginErrorCollectionItemArrayOutput() GetPluginErrorsPluginErrorCollectionItemArrayOutput {
+	return i.ToGetPluginErrorsPluginErrorCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetPluginErrorsPluginErrorCollectionItemArray) ToGetPluginErrorsPluginErrorCollectionItemArrayOutputWithContext(ctx context.Context) GetPluginErrorsPluginErrorCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluginErrorsPluginErrorCollectionItemArrayOutput)
+}
+
+type GetPluginErrorsPluginErrorCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetPluginErrorsPluginErrorCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluginErrorsPluginErrorCollectionItem)(nil)).Elem()
+}
+
+func (o GetPluginErrorsPluginErrorCollectionItemOutput) ToGetPluginErrorsPluginErrorCollectionItemOutput() GetPluginErrorsPluginErrorCollectionItemOutput {
+	return o
+}
+
+func (o GetPluginErrorsPluginErrorCollectionItemOutput) ToGetPluginErrorsPluginErrorCollectionItemOutputWithContext(ctx context.Context) GetPluginErrorsPluginErrorCollectionItemOutput {
+	return o
+}
+
+// The agent type.
+func (o GetPluginErrorsPluginErrorCollectionItemOutput) AgentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluginErrorsPluginErrorCollectionItem) string { return v.AgentType }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetPluginErrorsPluginErrorCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluginErrorsPluginErrorCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// List of plugin error details.
+func (o GetPluginErrorsPluginErrorCollectionItemOutput) Errors() GetPluginErrorsPluginErrorCollectionItemErrorArrayOutput {
+	return o.ApplyT(func(v GetPluginErrorsPluginErrorCollectionItem) []GetPluginErrorsPluginErrorCollectionItemError {
+		return v.Errors
+	}).(GetPluginErrorsPluginErrorCollectionItemErrorArrayOutput)
+}
+
+// The HostName or Compute Instance name of the Managed Instance running the plugin.
+func (o GetPluginErrorsPluginErrorCollectionItemOutput) HostName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluginErrorsPluginErrorCollectionItem) string { return v.HostName }).(pulumi.StringOutput)
+}
+
+// The Fleet-unique identifier of the managed instance.
+func (o GetPluginErrorsPluginErrorCollectionItemOutput) ManagedInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluginErrorsPluginErrorCollectionItem) string { return v.ManagedInstanceId }).(pulumi.StringOutput)
+}
+
+// The timestamp of the first time an error was detected.
+func (o GetPluginErrorsPluginErrorCollectionItemOutput) TimeFirstSeen() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluginErrorsPluginErrorCollectionItem) string { return v.TimeFirstSeen }).(pulumi.StringOutput)
+}
+
+// The timestamp of the last time an error was detected.
+func (o GetPluginErrorsPluginErrorCollectionItemOutput) TimeLastSeen() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluginErrorsPluginErrorCollectionItem) string { return v.TimeLastSeen }).(pulumi.StringOutput)
+}
+
+type GetPluginErrorsPluginErrorCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPluginErrorsPluginErrorCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluginErrorsPluginErrorCollectionItem)(nil)).Elem()
+}
+
+func (o GetPluginErrorsPluginErrorCollectionItemArrayOutput) ToGetPluginErrorsPluginErrorCollectionItemArrayOutput() GetPluginErrorsPluginErrorCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPluginErrorsPluginErrorCollectionItemArrayOutput) ToGetPluginErrorsPluginErrorCollectionItemArrayOutputWithContext(ctx context.Context) GetPluginErrorsPluginErrorCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPluginErrorsPluginErrorCollectionItemArrayOutput) Index(i pulumi.IntInput) GetPluginErrorsPluginErrorCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPluginErrorsPluginErrorCollectionItem {
+		return vs[0].([]GetPluginErrorsPluginErrorCollectionItem)[vs[1].(int)]
+	}).(GetPluginErrorsPluginErrorCollectionItemOutput)
+}
+
+type GetPluginErrorsPluginErrorCollectionItemError struct {
+	// Optional string containing additional details.
+	Details string `pulumi:"details"`
+	// The plugin error reason.
+	Reason string `pulumi:"reason"`
+	// The timestamp of the last time an error was detected.
+	TimeLastSeen string `pulumi:"timeLastSeen"`
+}
+
+// GetPluginErrorsPluginErrorCollectionItemErrorInput is an input type that accepts GetPluginErrorsPluginErrorCollectionItemErrorArgs and GetPluginErrorsPluginErrorCollectionItemErrorOutput values.
+// You can construct a concrete instance of `GetPluginErrorsPluginErrorCollectionItemErrorInput` via:
+//
+//	GetPluginErrorsPluginErrorCollectionItemErrorArgs{...}
+type GetPluginErrorsPluginErrorCollectionItemErrorInput interface {
+	pulumi.Input
+
+	ToGetPluginErrorsPluginErrorCollectionItemErrorOutput() GetPluginErrorsPluginErrorCollectionItemErrorOutput
+	ToGetPluginErrorsPluginErrorCollectionItemErrorOutputWithContext(context.Context) GetPluginErrorsPluginErrorCollectionItemErrorOutput
+}
+
+type GetPluginErrorsPluginErrorCollectionItemErrorArgs struct {
+	// Optional string containing additional details.
+	Details pulumi.StringInput `pulumi:"details"`
+	// The plugin error reason.
+	Reason pulumi.StringInput `pulumi:"reason"`
+	// The timestamp of the last time an error was detected.
+	TimeLastSeen pulumi.StringInput `pulumi:"timeLastSeen"`
+}
+
+func (GetPluginErrorsPluginErrorCollectionItemErrorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluginErrorsPluginErrorCollectionItemError)(nil)).Elem()
+}
+
+func (i GetPluginErrorsPluginErrorCollectionItemErrorArgs) ToGetPluginErrorsPluginErrorCollectionItemErrorOutput() GetPluginErrorsPluginErrorCollectionItemErrorOutput {
+	return i.ToGetPluginErrorsPluginErrorCollectionItemErrorOutputWithContext(context.Background())
+}
+
+func (i GetPluginErrorsPluginErrorCollectionItemErrorArgs) ToGetPluginErrorsPluginErrorCollectionItemErrorOutputWithContext(ctx context.Context) GetPluginErrorsPluginErrorCollectionItemErrorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluginErrorsPluginErrorCollectionItemErrorOutput)
+}
+
+// GetPluginErrorsPluginErrorCollectionItemErrorArrayInput is an input type that accepts GetPluginErrorsPluginErrorCollectionItemErrorArray and GetPluginErrorsPluginErrorCollectionItemErrorArrayOutput values.
+// You can construct a concrete instance of `GetPluginErrorsPluginErrorCollectionItemErrorArrayInput` via:
+//
+//	GetPluginErrorsPluginErrorCollectionItemErrorArray{ GetPluginErrorsPluginErrorCollectionItemErrorArgs{...} }
+type GetPluginErrorsPluginErrorCollectionItemErrorArrayInput interface {
+	pulumi.Input
+
+	ToGetPluginErrorsPluginErrorCollectionItemErrorArrayOutput() GetPluginErrorsPluginErrorCollectionItemErrorArrayOutput
+	ToGetPluginErrorsPluginErrorCollectionItemErrorArrayOutputWithContext(context.Context) GetPluginErrorsPluginErrorCollectionItemErrorArrayOutput
+}
+
+type GetPluginErrorsPluginErrorCollectionItemErrorArray []GetPluginErrorsPluginErrorCollectionItemErrorInput
+
+func (GetPluginErrorsPluginErrorCollectionItemErrorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluginErrorsPluginErrorCollectionItemError)(nil)).Elem()
+}
+
+func (i GetPluginErrorsPluginErrorCollectionItemErrorArray) ToGetPluginErrorsPluginErrorCollectionItemErrorArrayOutput() GetPluginErrorsPluginErrorCollectionItemErrorArrayOutput {
+	return i.ToGetPluginErrorsPluginErrorCollectionItemErrorArrayOutputWithContext(context.Background())
+}
+
+func (i GetPluginErrorsPluginErrorCollectionItemErrorArray) ToGetPluginErrorsPluginErrorCollectionItemErrorArrayOutputWithContext(ctx context.Context) GetPluginErrorsPluginErrorCollectionItemErrorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluginErrorsPluginErrorCollectionItemErrorArrayOutput)
+}
+
+type GetPluginErrorsPluginErrorCollectionItemErrorOutput struct{ *pulumi.OutputState }
+
+func (GetPluginErrorsPluginErrorCollectionItemErrorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluginErrorsPluginErrorCollectionItemError)(nil)).Elem()
+}
+
+func (o GetPluginErrorsPluginErrorCollectionItemErrorOutput) ToGetPluginErrorsPluginErrorCollectionItemErrorOutput() GetPluginErrorsPluginErrorCollectionItemErrorOutput {
+	return o
+}
+
+func (o GetPluginErrorsPluginErrorCollectionItemErrorOutput) ToGetPluginErrorsPluginErrorCollectionItemErrorOutputWithContext(ctx context.Context) GetPluginErrorsPluginErrorCollectionItemErrorOutput {
+	return o
+}
+
+// Optional string containing additional details.
+func (o GetPluginErrorsPluginErrorCollectionItemErrorOutput) Details() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluginErrorsPluginErrorCollectionItemError) string { return v.Details }).(pulumi.StringOutput)
+}
+
+// The plugin error reason.
+func (o GetPluginErrorsPluginErrorCollectionItemErrorOutput) Reason() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluginErrorsPluginErrorCollectionItemError) string { return v.Reason }).(pulumi.StringOutput)
+}
+
+// The timestamp of the last time an error was detected.
+func (o GetPluginErrorsPluginErrorCollectionItemErrorOutput) TimeLastSeen() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluginErrorsPluginErrorCollectionItemError) string { return v.TimeLastSeen }).(pulumi.StringOutput)
+}
+
+type GetPluginErrorsPluginErrorCollectionItemErrorArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPluginErrorsPluginErrorCollectionItemErrorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluginErrorsPluginErrorCollectionItemError)(nil)).Elem()
+}
+
+func (o GetPluginErrorsPluginErrorCollectionItemErrorArrayOutput) ToGetPluginErrorsPluginErrorCollectionItemErrorArrayOutput() GetPluginErrorsPluginErrorCollectionItemErrorArrayOutput {
+	return o
+}
+
+func (o GetPluginErrorsPluginErrorCollectionItemErrorArrayOutput) ToGetPluginErrorsPluginErrorCollectionItemErrorArrayOutputWithContext(ctx context.Context) GetPluginErrorsPluginErrorCollectionItemErrorArrayOutput {
+	return o
+}
+
+func (o GetPluginErrorsPluginErrorCollectionItemErrorArrayOutput) Index(i pulumi.IntInput) GetPluginErrorsPluginErrorCollectionItemErrorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPluginErrorsPluginErrorCollectionItemError {
+		return vs[0].([]GetPluginErrorsPluginErrorCollectionItemError)[vs[1].(int)]
+	}).(GetPluginErrorsPluginErrorCollectionItemErrorOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*FleetAdvancedFeatureConfigurationAdvancedUsageTrackingInput)(nil)).Elem(), FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrInput)(nil)).Elem(), FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs{})
@@ -17056,6 +18848,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetDrsFilesDrsFileCollectionItemArrayInput)(nil)).Elem(), GetFleetDrsFilesDrsFileCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetDrsFilesFilterInput)(nil)).Elem(), GetFleetDrsFilesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetDrsFilesFilterArrayInput)(nil)).Elem(), GetFleetDrsFilesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetErrorAnalyticsFilterInput)(nil)).Elem(), GetFleetErrorAnalyticsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetErrorAnalyticsFilterArrayInput)(nil)).Elem(), GetFleetErrorAnalyticsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetErrorAnalyticsFleetErrorAggregationCollectionInput)(nil)).Elem(), GetFleetErrorAnalyticsFleetErrorAggregationCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetErrorAnalyticsFleetErrorAggregationCollectionArrayInput)(nil)).Elem(), GetFleetErrorAnalyticsFleetErrorAggregationCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemInput)(nil)).Elem(), GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArrayInput)(nil)).Elem(), GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationInput)(nil)).Elem(), GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArrayInput)(nil)).Elem(), GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetErrorsFilterInput)(nil)).Elem(), GetFleetErrorsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetErrorsFilterArrayInput)(nil)).Elem(), GetFleetErrorsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetErrorsFleetErrorCollectionInput)(nil)).Elem(), GetFleetErrorsFleetErrorCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetErrorsFleetErrorCollectionArrayInput)(nil)).Elem(), GetFleetErrorsFleetErrorCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetErrorsFleetErrorCollectionItemInput)(nil)).Elem(), GetFleetErrorsFleetErrorCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetErrorsFleetErrorCollectionItemArrayInput)(nil)).Elem(), GetFleetErrorsFleetErrorCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetErrorsFleetErrorCollectionItemErrorInput)(nil)).Elem(), GetFleetErrorsFleetErrorCollectionItemErrorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetErrorsFleetErrorCollectionItemErrorArrayInput)(nil)).Elem(), GetFleetErrorsFleetErrorCollectionItemErrorArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetInventoryLogInput)(nil)).Elem(), GetFleetInventoryLogArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetInventoryLogArrayInput)(nil)).Elem(), GetFleetInventoryLogArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetJavaMigrationAnalysisResultsFilterInput)(nil)).Elem(), GetFleetJavaMigrationAnalysisResultsFilterArgs{})
@@ -17200,6 +19008,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListJreUsageItemArrayInput)(nil)).Elem(), GetListJreUsageItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListJreUsageItemOperatingSystemInput)(nil)).Elem(), GetListJreUsageItemOperatingSystemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListJreUsageItemOperatingSystemArrayInput)(nil)).Elem(), GetListJreUsageItemOperatingSystemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluginErrorAnalyticsFilterInput)(nil)).Elem(), GetPluginErrorAnalyticsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluginErrorAnalyticsFilterArrayInput)(nil)).Elem(), GetPluginErrorAnalyticsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluginErrorAnalyticsPluginErrorAggregationCollectionInput)(nil)).Elem(), GetPluginErrorAnalyticsPluginErrorAggregationCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluginErrorAnalyticsPluginErrorAggregationCollectionArrayInput)(nil)).Elem(), GetPluginErrorAnalyticsPluginErrorAggregationCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemInput)(nil)).Elem(), GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArrayInput)(nil)).Elem(), GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationInput)(nil)).Elem(), GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArrayInput)(nil)).Elem(), GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluginErrorsFilterInput)(nil)).Elem(), GetPluginErrorsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluginErrorsFilterArrayInput)(nil)).Elem(), GetPluginErrorsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluginErrorsPluginErrorCollectionInput)(nil)).Elem(), GetPluginErrorsPluginErrorCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluginErrorsPluginErrorCollectionArrayInput)(nil)).Elem(), GetPluginErrorsPluginErrorCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluginErrorsPluginErrorCollectionItemInput)(nil)).Elem(), GetPluginErrorsPluginErrorCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluginErrorsPluginErrorCollectionItemArrayInput)(nil)).Elem(), GetPluginErrorsPluginErrorCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluginErrorsPluginErrorCollectionItemErrorInput)(nil)).Elem(), GetPluginErrorsPluginErrorCollectionItemErrorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluginErrorsPluginErrorCollectionItemErrorArrayInput)(nil)).Elem(), GetPluginErrorsPluginErrorCollectionItemErrorArray{})
 	pulumi.RegisterOutputType(FleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput{})
 	pulumi.RegisterOutputType(FleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrOutput{})
 	pulumi.RegisterOutputType(FleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput{})
@@ -17302,6 +19126,22 @@ func init() {
 	pulumi.RegisterOutputType(GetFleetDrsFilesDrsFileCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetDrsFilesFilterOutput{})
 	pulumi.RegisterOutputType(GetFleetDrsFilesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetErrorAnalyticsFilterOutput{})
+	pulumi.RegisterOutputType(GetFleetErrorAnalyticsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetErrorAnalyticsFleetErrorAggregationCollectionOutput{})
+	pulumi.RegisterOutputType(GetFleetErrorAnalyticsFleetErrorAggregationCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationOutput{})
+	pulumi.RegisterOutputType(GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetErrorsFilterOutput{})
+	pulumi.RegisterOutputType(GetFleetErrorsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetErrorsFleetErrorCollectionOutput{})
+	pulumi.RegisterOutputType(GetFleetErrorsFleetErrorCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetErrorsFleetErrorCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetFleetErrorsFleetErrorCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetErrorsFleetErrorCollectionItemErrorOutput{})
+	pulumi.RegisterOutputType(GetFleetErrorsFleetErrorCollectionItemErrorArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetInventoryLogOutput{})
 	pulumi.RegisterOutputType(GetFleetInventoryLogArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetJavaMigrationAnalysisResultsFilterOutput{})
@@ -17446,4 +19286,20 @@ func init() {
 	pulumi.RegisterOutputType(GetListJreUsageItemArrayOutput{})
 	pulumi.RegisterOutputType(GetListJreUsageItemOperatingSystemOutput{})
 	pulumi.RegisterOutputType(GetListJreUsageItemOperatingSystemArrayOutput{})
+	pulumi.RegisterOutputType(GetPluginErrorAnalyticsFilterOutput{})
+	pulumi.RegisterOutputType(GetPluginErrorAnalyticsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetPluginErrorAnalyticsPluginErrorAggregationCollectionOutput{})
+	pulumi.RegisterOutputType(GetPluginErrorAnalyticsPluginErrorAggregationCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationOutput{})
+	pulumi.RegisterOutputType(GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArrayOutput{})
+	pulumi.RegisterOutputType(GetPluginErrorsFilterOutput{})
+	pulumi.RegisterOutputType(GetPluginErrorsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetPluginErrorsPluginErrorCollectionOutput{})
+	pulumi.RegisterOutputType(GetPluginErrorsPluginErrorCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetPluginErrorsPluginErrorCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetPluginErrorsPluginErrorCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetPluginErrorsPluginErrorCollectionItemErrorOutput{})
+	pulumi.RegisterOutputType(GetPluginErrorsPluginErrorCollectionItemErrorArrayOutput{})
 }

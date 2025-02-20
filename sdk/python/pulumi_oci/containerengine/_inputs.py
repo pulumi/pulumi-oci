@@ -292,6 +292,10 @@ class ClusterClusterPodNetworkOptionArgs:
 
 if not MYPY:
     class ClusterEndpointArgsDict(TypedDict):
+        ipv6endpoint: NotRequired[pulumi.Input[str]]
+        """
+        The IPv6 networking Kubernetes API server endpoint.
+        """
         kubernetes: NotRequired[pulumi.Input[str]]
         """
         The non-native networking Kubernetes API server endpoint.
@@ -314,16 +318,20 @@ elif False:
 @pulumi.input_type
 class ClusterEndpointArgs:
     def __init__(__self__, *,
+                 ipv6endpoint: Optional[pulumi.Input[str]] = None,
                  kubernetes: Optional[pulumi.Input[str]] = None,
                  private_endpoint: Optional[pulumi.Input[str]] = None,
                  public_endpoint: Optional[pulumi.Input[str]] = None,
                  vcn_hostname_endpoint: Optional[pulumi.Input[str]] = None):
         """
+        :param pulumi.Input[str] ipv6endpoint: The IPv6 networking Kubernetes API server endpoint.
         :param pulumi.Input[str] kubernetes: The non-native networking Kubernetes API server endpoint.
         :param pulumi.Input[str] private_endpoint: The private native networking Kubernetes API server endpoint.
         :param pulumi.Input[str] public_endpoint: The public native networking Kubernetes API server endpoint, if one was requested.
         :param pulumi.Input[str] vcn_hostname_endpoint: The FQDN assigned to the Kubernetes API private endpoint. Example: 'https://yourVcnHostnameEndpoint'
         """
+        if ipv6endpoint is not None:
+            pulumi.set(__self__, "ipv6endpoint", ipv6endpoint)
         if kubernetes is not None:
             pulumi.set(__self__, "kubernetes", kubernetes)
         if private_endpoint is not None:
@@ -332,6 +340,18 @@ class ClusterEndpointArgs:
             pulumi.set(__self__, "public_endpoint", public_endpoint)
         if vcn_hostname_endpoint is not None:
             pulumi.set(__self__, "vcn_hostname_endpoint", vcn_hostname_endpoint)
+
+    @property
+    @pulumi.getter
+    def ipv6endpoint(self) -> Optional[pulumi.Input[str]]:
+        """
+        The IPv6 networking Kubernetes API server endpoint.
+        """
+        return pulumi.get(self, "ipv6endpoint")
+
+    @ipv6endpoint.setter
+    def ipv6endpoint(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ipv6endpoint", value)
 
     @property
     @pulumi.getter
@@ -759,6 +779,10 @@ if not MYPY:
         """
         (Updatable) Configurable cluster admission controllers
         """
+        ip_families: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        IP family to use for single stack or define the order of IP families for dual-stack
+        """
         kubernetes_network_config: NotRequired[pulumi.Input['ClusterOptionsKubernetesNetworkConfigArgsDict']]
         """
         Network configuration for Kubernetes.
@@ -791,6 +815,7 @@ class ClusterOptionsArgs:
     def __init__(__self__, *,
                  add_ons: Optional[pulumi.Input['ClusterOptionsAddOnsArgs']] = None,
                  admission_controller_options: Optional[pulumi.Input['ClusterOptionsAdmissionControllerOptionsArgs']] = None,
+                 ip_families: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  kubernetes_network_config: Optional[pulumi.Input['ClusterOptionsKubernetesNetworkConfigArgs']] = None,
                  open_id_connect_discovery: Optional[pulumi.Input['ClusterOptionsOpenIdConnectDiscoveryArgs']] = None,
                  open_id_connect_token_authentication_config: Optional[pulumi.Input['ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs']] = None,
@@ -800,6 +825,7 @@ class ClusterOptionsArgs:
         """
         :param pulumi.Input['ClusterOptionsAddOnsArgs'] add_ons: Configurable cluster add-ons
         :param pulumi.Input['ClusterOptionsAdmissionControllerOptionsArgs'] admission_controller_options: (Updatable) Configurable cluster admission controllers
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] ip_families: IP family to use for single stack or define the order of IP families for dual-stack
         :param pulumi.Input['ClusterOptionsKubernetesNetworkConfigArgs'] kubernetes_network_config: Network configuration for Kubernetes.
         :param pulumi.Input['ClusterOptionsOpenIdConnectDiscoveryArgs'] open_id_connect_discovery: (Updatable) The property that define the status of the OIDC Discovery feature for a cluster.
         :param pulumi.Input['ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs'] open_id_connect_token_authentication_config: (Updatable) The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
@@ -811,6 +837,8 @@ class ClusterOptionsArgs:
             pulumi.set(__self__, "add_ons", add_ons)
         if admission_controller_options is not None:
             pulumi.set(__self__, "admission_controller_options", admission_controller_options)
+        if ip_families is not None:
+            pulumi.set(__self__, "ip_families", ip_families)
         if kubernetes_network_config is not None:
             pulumi.set(__self__, "kubernetes_network_config", kubernetes_network_config)
         if open_id_connect_discovery is not None:
@@ -847,6 +875,18 @@ class ClusterOptionsArgs:
     @admission_controller_options.setter
     def admission_controller_options(self, value: Optional[pulumi.Input['ClusterOptionsAdmissionControllerOptionsArgs']]):
         pulumi.set(self, "admission_controller_options", value)
+
+    @property
+    @pulumi.getter(name="ipFamilies")
+    def ip_families(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        IP family to use for single stack or define the order of IP families for dual-stack
+        """
+        return pulumi.get(self, "ip_families")
+
+    @ip_families.setter
+    def ip_families(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "ip_families", value)
 
     @property
     @pulumi.getter(name="kubernetesNetworkConfig")

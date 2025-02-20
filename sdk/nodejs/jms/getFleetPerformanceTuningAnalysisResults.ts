@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  * const testFleetPerformanceTuningAnalysisResults = oci.Jms.getFleetPerformanceTuningAnalysisResults({
  *     fleetId: testFleet.id,
  *     applicationId: fleetPerformanceTuningAnalysisResultApplicationId,
+ *     applicationName: fleetPerformanceTuningAnalysisResultApplicationName,
  *     hostName: fleetPerformanceTuningAnalysisResultHostName,
  *     managedInstanceId: fleetPerformanceTuningAnalysisResultManagedInstanceId,
  *     timeEnd: fleetPerformanceTuningAnalysisResultTimeEnd,
@@ -31,6 +32,7 @@ export function getFleetPerformanceTuningAnalysisResults(args: GetFleetPerforman
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getFleetPerformanceTuningAnalysisResults:getFleetPerformanceTuningAnalysisResults", {
         "applicationId": args.applicationId,
+        "applicationName": args.applicationName,
         "filters": args.filters,
         "fleetId": args.fleetId,
         "hostName": args.hostName,
@@ -48,6 +50,10 @@ export interface GetFleetPerformanceTuningAnalysisResultsArgs {
      * The Fleet-unique identifier of the related application.
      */
     applicationId?: string;
+    /**
+     * The name of the application.
+     */
+    applicationName?: string;
     filters?: inputs.Jms.GetFleetPerformanceTuningAnalysisResultsFilter[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
@@ -79,6 +85,10 @@ export interface GetFleetPerformanceTuningAnalysisResultsResult {
      * The OCID of the application for which the report has been generated.
      */
     readonly applicationId?: string;
+    /**
+     * The name of the application for which the report has been generated.
+     */
+    readonly applicationName?: string;
     readonly filters?: outputs.Jms.GetFleetPerformanceTuningAnalysisResultsFilter[];
     /**
      * The fleet OCID.
@@ -117,6 +127,7 @@ export interface GetFleetPerformanceTuningAnalysisResultsResult {
  * const testFleetPerformanceTuningAnalysisResults = oci.Jms.getFleetPerformanceTuningAnalysisResults({
  *     fleetId: testFleet.id,
  *     applicationId: fleetPerformanceTuningAnalysisResultApplicationId,
+ *     applicationName: fleetPerformanceTuningAnalysisResultApplicationName,
  *     hostName: fleetPerformanceTuningAnalysisResultHostName,
  *     managedInstanceId: fleetPerformanceTuningAnalysisResultManagedInstanceId,
  *     timeEnd: fleetPerformanceTuningAnalysisResultTimeEnd,
@@ -128,6 +139,7 @@ export function getFleetPerformanceTuningAnalysisResultsOutput(args: GetFleetPer
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Jms/getFleetPerformanceTuningAnalysisResults:getFleetPerformanceTuningAnalysisResults", {
         "applicationId": args.applicationId,
+        "applicationName": args.applicationName,
         "filters": args.filters,
         "fleetId": args.fleetId,
         "hostName": args.hostName,
@@ -145,6 +157,10 @@ export interface GetFleetPerformanceTuningAnalysisResultsOutputArgs {
      * The Fleet-unique identifier of the related application.
      */
     applicationId?: pulumi.Input<string>;
+    /**
+     * The name of the application.
+     */
+    applicationName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetFleetPerformanceTuningAnalysisResultsFilterArgs>[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.

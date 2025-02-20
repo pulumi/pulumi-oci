@@ -110,6 +110,10 @@ class _ExportableConfig(types.ModuleType):
         return __config__.get('tenancyOcid')
 
     @property
+    def test_time_maintenance_reboot_due(self) -> Optional[str]:
+        return __config__.get('testTimeMaintenanceRebootDue')
+
+    @property
     def user_ocid(self) -> Optional[str]:
         """
         (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if

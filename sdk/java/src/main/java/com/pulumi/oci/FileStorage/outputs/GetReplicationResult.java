@@ -97,6 +97,11 @@ public final class GetReplicationResult {
      */
     private String state;
     /**
+     * @return System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+     * 
+     */
+    private Map<String,String> systemTags;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.
      * 
      */
@@ -227,6 +232,13 @@ public final class GetReplicationResult {
         return this.state;
     }
     /**
+     * @return System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.
      * 
      */
@@ -268,6 +280,7 @@ public final class GetReplicationResult {
         private String replicationTargetId;
         private String sourceId;
         private String state;
+        private Map<String,String> systemTags;
         private String targetId;
         private String timeCreated;
         public Builder() {}
@@ -291,6 +304,7 @@ public final class GetReplicationResult {
     	      this.replicationTargetId = defaults.replicationTargetId;
     	      this.sourceId = defaults.sourceId;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
     	      this.targetId = defaults.targetId;
     	      this.timeCreated = defaults.timeCreated;
         }
@@ -443,6 +457,14 @@ public final class GetReplicationResult {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetReplicationResult", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder targetId(String targetId) {
             if (targetId == null) {
               throw new MissingRequiredPropertyException("GetReplicationResult", "targetId");
@@ -478,6 +500,7 @@ public final class GetReplicationResult {
             _resultValue.replicationTargetId = replicationTargetId;
             _resultValue.sourceId = sourceId;
             _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
             _resultValue.targetId = targetId;
             _resultValue.timeCreated = timeCreated;
             return _resultValue;

@@ -27,7 +27,10 @@ class GetAutonomousContainerDatabaseResult:
     """
     A collection of values returned by getAutonomousContainerDatabase.
     """
-    def __init__(__self__, autonomous_container_database_id=None, autonomous_exadata_infrastructure_id=None, autonomous_vm_cluster_id=None, availability_domain=None, available_cpus=None, backup_configs=None, cloud_autonomous_vm_cluster_id=None, compartment_id=None, compute_model=None, database_software_image_id=None, db_name=None, db_split_threshold=None, db_unique_name=None, db_version=None, defined_tags=None, display_name=None, distribution_affinity=None, dst_file_version=None, fast_start_fail_over_lag_limit_in_seconds=None, freeform_tags=None, id=None, infrastructure_type=None, is_automatic_failover_enabled=None, is_dst_file_update_enabled=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, key_version_id=None, kms_key_id=None, largest_provisionable_autonomous_database_in_cpus=None, last_maintenance_run_id=None, lifecycle_details=None, list_one_off_patches=None, maintenance_window_details=None, maintenance_windows=None, memory_per_oracle_compute_unit_in_gbs=None, net_services_architecture=None, next_maintenance_run_id=None, patch_id=None, patch_model=None, peer_autonomous_container_database_backup_configs=None, peer_autonomous_container_database_compartment_id=None, peer_autonomous_container_database_display_name=None, peer_autonomous_exadata_infrastructure_id=None, peer_autonomous_vm_cluster_id=None, peer_cloud_autonomous_vm_cluster_id=None, peer_db_unique_name=None, protection_mode=None, provisionable_cpuses=None, provisioned_cpus=None, reclaimable_cpus=None, reserved_cpus=None, role=None, rotate_key_trigger=None, service_level_agreement_type=None, standby_maintenance_buffer_in_days=None, state=None, time_created=None, time_of_last_backup=None, time_snapshot_standby_revert=None, total_cpus=None, vault_id=None, version_preference=None, vm_failover_reservation=None):
+    def __init__(__self__, associated_backup_configuration_details=None, autonomous_container_database_id=None, autonomous_exadata_infrastructure_id=None, autonomous_vm_cluster_id=None, availability_domain=None, available_cpus=None, backup_configs=None, backup_destination_properties_lists=None, cloud_autonomous_vm_cluster_id=None, compartment_id=None, compute_model=None, database_software_image_id=None, db_name=None, db_split_threshold=None, db_unique_name=None, db_version=None, defined_tags=None, display_name=None, distribution_affinity=None, dst_file_version=None, fast_start_fail_over_lag_limit_in_seconds=None, freeform_tags=None, id=None, infrastructure_type=None, is_automatic_failover_enabled=None, is_dst_file_update_enabled=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, key_version_id=None, kms_key_id=None, largest_provisionable_autonomous_database_in_cpus=None, last_maintenance_run_id=None, lifecycle_details=None, list_one_off_patches=None, maintenance_window_details=None, maintenance_windows=None, memory_per_oracle_compute_unit_in_gbs=None, net_services_architecture=None, next_maintenance_run_id=None, patch_id=None, patch_model=None, peer_autonomous_container_database_backup_configs=None, peer_autonomous_container_database_compartment_id=None, peer_autonomous_container_database_display_name=None, peer_autonomous_exadata_infrastructure_id=None, peer_autonomous_vm_cluster_id=None, peer_cloud_autonomous_vm_cluster_id=None, peer_db_unique_name=None, protection_mode=None, provisionable_cpuses=None, provisioned_cpus=None, reclaimable_cpus=None, recovery_appliance_details=None, reserved_cpus=None, role=None, rotate_key_trigger=None, service_level_agreement_type=None, standby_maintenance_buffer_in_days=None, state=None, time_created=None, time_of_last_backup=None, time_snapshot_standby_revert=None, total_cpus=None, vault_id=None, version_preference=None, vm_failover_reservation=None):
+        if associated_backup_configuration_details and not isinstance(associated_backup_configuration_details, list):
+            raise TypeError("Expected argument 'associated_backup_configuration_details' to be a list")
+        pulumi.set(__self__, "associated_backup_configuration_details", associated_backup_configuration_details)
         if autonomous_container_database_id and not isinstance(autonomous_container_database_id, str):
             raise TypeError("Expected argument 'autonomous_container_database_id' to be a str")
         pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
@@ -46,6 +49,9 @@ class GetAutonomousContainerDatabaseResult:
         if backup_configs and not isinstance(backup_configs, list):
             raise TypeError("Expected argument 'backup_configs' to be a list")
         pulumi.set(__self__, "backup_configs", backup_configs)
+        if backup_destination_properties_lists and not isinstance(backup_destination_properties_lists, list):
+            raise TypeError("Expected argument 'backup_destination_properties_lists' to be a list")
+        pulumi.set(__self__, "backup_destination_properties_lists", backup_destination_properties_lists)
         if cloud_autonomous_vm_cluster_id and not isinstance(cloud_autonomous_vm_cluster_id, str):
             raise TypeError("Expected argument 'cloud_autonomous_vm_cluster_id' to be a str")
         pulumi.set(__self__, "cloud_autonomous_vm_cluster_id", cloud_autonomous_vm_cluster_id)
@@ -181,6 +187,9 @@ class GetAutonomousContainerDatabaseResult:
         if reclaimable_cpus and not isinstance(reclaimable_cpus, float):
             raise TypeError("Expected argument 'reclaimable_cpus' to be a float")
         pulumi.set(__self__, "reclaimable_cpus", reclaimable_cpus)
+        if recovery_appliance_details and not isinstance(recovery_appliance_details, list):
+            raise TypeError("Expected argument 'recovery_appliance_details' to be a list")
+        pulumi.set(__self__, "recovery_appliance_details", recovery_appliance_details)
         if reserved_cpus and not isinstance(reserved_cpus, float):
             raise TypeError("Expected argument 'reserved_cpus' to be a float")
         pulumi.set(__self__, "reserved_cpus", reserved_cpus)
@@ -220,6 +229,14 @@ class GetAutonomousContainerDatabaseResult:
         if vm_failover_reservation and not isinstance(vm_failover_reservation, int):
             raise TypeError("Expected argument 'vm_failover_reservation' to be a int")
         pulumi.set(__self__, "vm_failover_reservation", vm_failover_reservation)
+
+    @property
+    @pulumi.getter(name="associatedBackupConfigurationDetails")
+    def associated_backup_configuration_details(self) -> Sequence['outputs.GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetailResult']:
+        """
+        A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
+        """
+        return pulumi.get(self, "associated_backup_configuration_details")
 
     @property
     @pulumi.getter(name="autonomousContainerDatabaseId")
@@ -265,6 +282,14 @@ class GetAutonomousContainerDatabaseResult:
         Backup options for the Autonomous Container Database.
         """
         return pulumi.get(self, "backup_configs")
+
+    @property
+    @pulumi.getter(name="backupDestinationPropertiesLists")
+    def backup_destination_properties_lists(self) -> Sequence['outputs.GetAutonomousContainerDatabaseBackupDestinationPropertiesListResult']:
+        """
+        This list describes the backup destination properties associated with the Autonomous Container Database (ACD) 's preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
+        """
+        return pulumi.get(self, "backup_destination_properties_lists")
 
     @property
     @pulumi.getter(name="cloudAutonomousVmClusterId")
@@ -588,6 +613,14 @@ class GetAutonomousContainerDatabaseResult:
         return pulumi.get(self, "reclaimable_cpus")
 
     @property
+    @pulumi.getter(name="recoveryApplianceDetails")
+    def recovery_appliance_details(self) -> Sequence['outputs.GetAutonomousContainerDatabaseRecoveryApplianceDetailResult']:
+        """
+        Information about the recovery appliance configuration associated with the Autonomous Container Database.
+        """
+        return pulumi.get(self, "recovery_appliance_details")
+
+    @property
     @pulumi.getter(name="reservedCpus")
     def reserved_cpus(self) -> float:
         """
@@ -695,12 +728,14 @@ class AwaitableGetAutonomousContainerDatabaseResult(GetAutonomousContainerDataba
         if False:
             yield self
         return GetAutonomousContainerDatabaseResult(
+            associated_backup_configuration_details=self.associated_backup_configuration_details,
             autonomous_container_database_id=self.autonomous_container_database_id,
             autonomous_exadata_infrastructure_id=self.autonomous_exadata_infrastructure_id,
             autonomous_vm_cluster_id=self.autonomous_vm_cluster_id,
             availability_domain=self.availability_domain,
             available_cpus=self.available_cpus,
             backup_configs=self.backup_configs,
+            backup_destination_properties_lists=self.backup_destination_properties_lists,
             cloud_autonomous_vm_cluster_id=self.cloud_autonomous_vm_cluster_id,
             compartment_id=self.compartment_id,
             compute_model=self.compute_model,
@@ -746,6 +781,7 @@ class AwaitableGetAutonomousContainerDatabaseResult(GetAutonomousContainerDataba
             provisionable_cpuses=self.provisionable_cpuses,
             provisioned_cpus=self.provisioned_cpus,
             reclaimable_cpus=self.reclaimable_cpus,
+            recovery_appliance_details=self.recovery_appliance_details,
             reserved_cpus=self.reserved_cpus,
             role=self.role,
             rotate_key_trigger=self.rotate_key_trigger,
@@ -786,12 +822,14 @@ def get_autonomous_container_database(autonomous_container_database_id: Optional
     __ret__ = pulumi.runtime.invoke('oci:Database/getAutonomousContainerDatabase:getAutonomousContainerDatabase', __args__, opts=opts, typ=GetAutonomousContainerDatabaseResult).value
 
     return AwaitableGetAutonomousContainerDatabaseResult(
+        associated_backup_configuration_details=pulumi.get(__ret__, 'associated_backup_configuration_details'),
         autonomous_container_database_id=pulumi.get(__ret__, 'autonomous_container_database_id'),
         autonomous_exadata_infrastructure_id=pulumi.get(__ret__, 'autonomous_exadata_infrastructure_id'),
         autonomous_vm_cluster_id=pulumi.get(__ret__, 'autonomous_vm_cluster_id'),
         availability_domain=pulumi.get(__ret__, 'availability_domain'),
         available_cpus=pulumi.get(__ret__, 'available_cpus'),
         backup_configs=pulumi.get(__ret__, 'backup_configs'),
+        backup_destination_properties_lists=pulumi.get(__ret__, 'backup_destination_properties_lists'),
         cloud_autonomous_vm_cluster_id=pulumi.get(__ret__, 'cloud_autonomous_vm_cluster_id'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         compute_model=pulumi.get(__ret__, 'compute_model'),
@@ -837,6 +875,7 @@ def get_autonomous_container_database(autonomous_container_database_id: Optional
         provisionable_cpuses=pulumi.get(__ret__, 'provisionable_cpuses'),
         provisioned_cpus=pulumi.get(__ret__, 'provisioned_cpus'),
         reclaimable_cpus=pulumi.get(__ret__, 'reclaimable_cpus'),
+        recovery_appliance_details=pulumi.get(__ret__, 'recovery_appliance_details'),
         reserved_cpus=pulumi.get(__ret__, 'reserved_cpus'),
         role=pulumi.get(__ret__, 'role'),
         rotate_key_trigger=pulumi.get(__ret__, 'rotate_key_trigger'),
@@ -874,12 +913,14 @@ def get_autonomous_container_database_output(autonomous_container_database_id: O
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousContainerDatabase:getAutonomousContainerDatabase', __args__, opts=opts, typ=GetAutonomousContainerDatabaseResult)
     return __ret__.apply(lambda __response__: GetAutonomousContainerDatabaseResult(
+        associated_backup_configuration_details=pulumi.get(__response__, 'associated_backup_configuration_details'),
         autonomous_container_database_id=pulumi.get(__response__, 'autonomous_container_database_id'),
         autonomous_exadata_infrastructure_id=pulumi.get(__response__, 'autonomous_exadata_infrastructure_id'),
         autonomous_vm_cluster_id=pulumi.get(__response__, 'autonomous_vm_cluster_id'),
         availability_domain=pulumi.get(__response__, 'availability_domain'),
         available_cpus=pulumi.get(__response__, 'available_cpus'),
         backup_configs=pulumi.get(__response__, 'backup_configs'),
+        backup_destination_properties_lists=pulumi.get(__response__, 'backup_destination_properties_lists'),
         cloud_autonomous_vm_cluster_id=pulumi.get(__response__, 'cloud_autonomous_vm_cluster_id'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         compute_model=pulumi.get(__response__, 'compute_model'),
@@ -925,6 +966,7 @@ def get_autonomous_container_database_output(autonomous_container_database_id: O
         provisionable_cpuses=pulumi.get(__response__, 'provisionable_cpuses'),
         provisioned_cpus=pulumi.get(__response__, 'provisioned_cpus'),
         reclaimable_cpus=pulumi.get(__response__, 'reclaimable_cpus'),
+        recovery_appliance_details=pulumi.get(__response__, 'recovery_appliance_details'),
         reserved_cpus=pulumi.get(__response__, 'reserved_cpus'),
         role=pulumi.get(__response__, 'role'),
         rotate_key_trigger=pulumi.get(__response__, 'rotate_key_trigger'),

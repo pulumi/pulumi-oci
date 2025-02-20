@@ -139,16 +139,34 @@ namespace Pulumi.Oci.Database
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
+        /// The time when the total storage size and the utilized storage size of the backup destination are updated.
+        /// </summary>
+        [Output("timeAtWhichStorageDetailsAreUpdated")]
+        public Output<string> TimeAtWhichStorageDetailsAreUpdated { get; private set; } = null!;
+
+        /// <summary>
         /// The date and time the backup destination was created.
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
+        /// The total storage size of the backup destination in GBs, rounded to the nearest integer.
+        /// </summary>
+        [Output("totalStorageSizeInGbs")]
+        public Output<int> TotalStorageSizeInGbs { get; private set; } = null!;
+
+        /// <summary>
         /// Type of the backup destination.
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
+
+        /// <summary>
+        /// The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
+        /// </summary>
+        [Output("utilizedStorageSizeInGbs")]
+        public Output<int> UtilizedStorageSizeInGbs { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
@@ -393,16 +411,34 @@ namespace Pulumi.Oci.Database
         public Input<string>? State { get; set; }
 
         /// <summary>
+        /// The time when the total storage size and the utilized storage size of the backup destination are updated.
+        /// </summary>
+        [Input("timeAtWhichStorageDetailsAreUpdated")]
+        public Input<string>? TimeAtWhichStorageDetailsAreUpdated { get; set; }
+
+        /// <summary>
         /// The date and time the backup destination was created.
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
+        /// The total storage size of the backup destination in GBs, rounded to the nearest integer.
+        /// </summary>
+        [Input("totalStorageSizeInGbs")]
+        public Input<int>? TotalStorageSizeInGbs { get; set; }
+
+        /// <summary>
         /// Type of the backup destination.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
+
+        /// <summary>
+        /// The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
+        /// </summary>
+        [Input("utilizedStorageSizeInGbs")]
+        public Input<int>? UtilizedStorageSizeInGbs { get; set; }
 
         [Input("vpcUsers")]
         private InputList<string>? _vpcUsers;

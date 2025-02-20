@@ -68,6 +68,7 @@ namespace Pulumi.Oci.Database
     ///         PeerSidPrefix = dataGuardAssociationPeerSidPrefix,
     ///         PeerVmClusterId = testVmCluster.Id,
     ///         PrivateIp = dataGuardAssociationPrivateIp,
+    ///         PrivateIpV6 = dataGuardAssociationPrivateIpV6,
     ///         Shape = dataGuardAssociationShape,
     ///         StorageVolumePerformanceMode = dataGuardAssociationStorageVolumePerformanceMode,
     ///         SubnetId = testSubnet.Id,
@@ -314,6 +315,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("privateIp")]
         public Output<string?> PrivateIp { get; private set; } = null!;
+
+        /// <summary>
+        /// The IPv6 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv6 address from the subnet.
+        /// </summary>
+        [Output("privateIpV6")]
+        public Output<string> PrivateIpV6 { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
@@ -687,6 +694,12 @@ namespace Pulumi.Oci.Database
         public Input<string>? PrivateIp { get; set; }
 
         /// <summary>
+        /// The IPv6 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv6 address from the subnet.
+        /// </summary>
+        [Input("privateIpV6")]
+        public Input<string>? PrivateIpV6 { get; set; }
+
+        /// <summary>
         /// (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         /// 
         /// **IMPORTANT** - The only protection mode currently supported by the Database service is MAXIMUM_PERFORMANCE.
@@ -1032,6 +1045,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("privateIp")]
         public Input<string>? PrivateIp { get; set; }
+
+        /// <summary>
+        /// The IPv6 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv6 address from the subnet.
+        /// </summary>
+        [Input("privateIpV6")]
+        public Input<string>? PrivateIpV6 { get; set; }
 
         /// <summary>
         /// (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.

@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  * const testMaintenanceRuns = oci.Database.getMaintenanceRuns({
  *     compartmentId: compartmentId,
  *     availabilityDomain: maintenanceRunAvailabilityDomain,
+ *     isLocalAdg: maintenanceRunIsLocalAdg,
  *     maintenanceSubtype: maintenanceRunMaintenanceSubtype,
  *     maintenanceType: maintenanceRunMaintenanceType,
  *     state: maintenanceRunState,
@@ -34,6 +35,7 @@ export function getMaintenanceRuns(args: GetMaintenanceRunsArgs, opts?: pulumi.I
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
         "filters": args.filters,
+        "isLocalAdg": args.isLocalAdg,
         "maintenanceSubtype": args.maintenanceSubtype,
         "maintenanceType": args.maintenanceType,
         "state": args.state,
@@ -55,6 +57,10 @@ export interface GetMaintenanceRunsArgs {
      */
     compartmentId: string;
     filters?: inputs.Database.GetMaintenanceRunsFilter[];
+    /**
+     * A filter to return the maintenance history results for the local standby Autonomous Database Serverless only.
+     */
+    isLocalAdg?: boolean;
     /**
      * The sub-type of the maintenance run.
      */
@@ -91,6 +97,7 @@ export interface GetMaintenanceRunsResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly isLocalAdg?: boolean;
     /**
      * The list of maintenance_runs.
      */
@@ -130,6 +137,7 @@ export interface GetMaintenanceRunsResult {
  * const testMaintenanceRuns = oci.Database.getMaintenanceRuns({
  *     compartmentId: compartmentId,
  *     availabilityDomain: maintenanceRunAvailabilityDomain,
+ *     isLocalAdg: maintenanceRunIsLocalAdg,
  *     maintenanceSubtype: maintenanceRunMaintenanceSubtype,
  *     maintenanceType: maintenanceRunMaintenanceType,
  *     state: maintenanceRunState,
@@ -144,6 +152,7 @@ export function getMaintenanceRunsOutput(args: GetMaintenanceRunsOutputArgs, opt
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
         "filters": args.filters,
+        "isLocalAdg": args.isLocalAdg,
         "maintenanceSubtype": args.maintenanceSubtype,
         "maintenanceType": args.maintenanceType,
         "state": args.state,
@@ -165,6 +174,10 @@ export interface GetMaintenanceRunsOutputArgs {
      */
     compartmentId: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Database.GetMaintenanceRunsFilterArgs>[]>;
+    /**
+     * A filter to return the maintenance history results for the local standby Autonomous Database Serverless only.
+     */
+    isLocalAdg?: pulumi.Input<boolean>;
     /**
      * The sub-type of the maintenance run.
      */

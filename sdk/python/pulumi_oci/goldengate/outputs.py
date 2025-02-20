@@ -1709,6 +1709,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  service_account_key_file_secret_id: str,
                  session_mode: str,
                  should_use_jndi: bool,
+                 should_use_resource_principal: bool,
                  should_validate_server_certificate: bool,
                  ssl_ca: str,
                  ssl_cert: str,
@@ -1724,13 +1725,20 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  ssl_mode: str,
                  ssl_server_certificate: str,
                  state: str,
+                 storage_credential_name: str,
                  stream_pool_id: str,
                  subnet_id: str,
                  system_tags: Mapping[str, str],
                  technology_type: str,
                  tenancy_id: str,
+                 tenant_id: str,
                  time_created: str,
                  time_updated: str,
+                 tls_ca_file: str,
+                 tls_certificate_key_file: str,
+                 tls_certificate_key_file_password: str,
+                 tls_certificate_key_file_password_secret_id: str,
+                 tls_certificate_key_file_secret_id: str,
                  trigger_refresh: bool,
                  trust_store: str,
                  trust_store_password: str,
@@ -1751,6 +1759,9 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param str authentication_type: Used authentication mechanism to be provided for the following connection types:
                * SNOWFLAKE, AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS
                * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
+               * DATABRICKS - Required fields by authentication types:
+               * PERSONAL_ACCESS_TOKEN: username is always 'token', user must enter password
+               * OAUTH_M2M: user must enter clientId and clientSecret
         :param str azure_tenant_id: Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         :param Sequence['GetConnectionsConnectionCollectionItemBootstrapServerArgs'] bootstrap_servers: Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
         :param str client_id: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
@@ -1764,6 +1775,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param str connection_url: * JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676'
                * SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
                * AMAZON_REDSHIFT: Connection URL. e.g.: 'jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb'
+               * DATABRICKS: Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
         :param str consumer_properties: The base64 encoded content of the consumer.properties file.
         :param str database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
         :param str database_name: The name of the database.
@@ -1773,7 +1785,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param str description: Metadata about this specific object.
         :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
         :param bool does_use_secret_ids: Indicates that sensitive attributes are provided via Secrets.
-        :param str endpoint: Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+        :param str endpoint: Service endpoint. e.g for Azure Storage service: https://test.blob.core.windows.net. Optional for Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
         :param Mapping[str, str] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param str host: The name or address of a host.
                In case of Generic connection type it represents the Host and port separated by colon. Example: `"server.example.com:1234"`
@@ -1799,7 +1811,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param str private_key_passphrase_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, 'privateKeyPassphrase' field must not be provided.
         :param str producer_properties: The base64 encoded content of the producer.properties file.
         :param str redis_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
-        :param str region: The name of the region. e.g.: us-ashburn-1
+        :param str region: The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
         :param str routing_method: Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
         :param str sas_token_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be provided.
         :param str secret_access_key_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field must not be provided.
@@ -1811,8 +1823,9 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param str service_account_key_file_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
         :param str session_mode: The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
         :param bool should_use_jndi: If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
+        :param bool should_use_resource_principal: Indicates that the user intents to connect to the instance through resource principal.
         :param bool should_validate_server_certificate: If set to true, the driver validates the certificate that is sent by the database server.
-        :param str ssl_ca: Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
+        :param str ssl_ca: Database Certificate - The base64 encoded content of a .pem or .crt file. containing the server public key (for 1-way SSL).
         :param str ssl_client_keystash_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
         :param str ssl_client_keystoredb_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
         :param str ssl_key_password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword' field must not be provided.
@@ -1820,18 +1833,23 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
         :param str ssl_mode: SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
         :param str state: A filter to return only connections having the 'lifecycleState' given.
+        :param str storage_credential_name: Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
         :param str stream_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
         :param Mapping[str, str] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param str technology_type: The array of technology types.
         :param str tenancy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
+        :param str tenant_id: Azure tenant ID of the application. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param str tls_certificate_key_file_password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
+        :param str tls_certificate_key_file_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
+               * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
         :param str trust_store_password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, 'trustStorePassword' field must not be provided.
         :param str trust_store_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided.
         :param str url: Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
-        :param str user_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/Object Storage. The user must have write access to the table they want to connect to.
-        :param str username: The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
+        :param str user_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+        :param str username: The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
         :param str vault_id: Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
         :param str wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
         """
@@ -1906,6 +1924,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         pulumi.set(__self__, "service_account_key_file_secret_id", service_account_key_file_secret_id)
         pulumi.set(__self__, "session_mode", session_mode)
         pulumi.set(__self__, "should_use_jndi", should_use_jndi)
+        pulumi.set(__self__, "should_use_resource_principal", should_use_resource_principal)
         pulumi.set(__self__, "should_validate_server_certificate", should_validate_server_certificate)
         pulumi.set(__self__, "ssl_ca", ssl_ca)
         pulumi.set(__self__, "ssl_cert", ssl_cert)
@@ -1921,13 +1940,20 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         pulumi.set(__self__, "ssl_mode", ssl_mode)
         pulumi.set(__self__, "ssl_server_certificate", ssl_server_certificate)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "storage_credential_name", storage_credential_name)
         pulumi.set(__self__, "stream_pool_id", stream_pool_id)
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "technology_type", technology_type)
         pulumi.set(__self__, "tenancy_id", tenancy_id)
+        pulumi.set(__self__, "tenant_id", tenant_id)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "tls_ca_file", tls_ca_file)
+        pulumi.set(__self__, "tls_certificate_key_file", tls_certificate_key_file)
+        pulumi.set(__self__, "tls_certificate_key_file_password", tls_certificate_key_file_password)
+        pulumi.set(__self__, "tls_certificate_key_file_password_secret_id", tls_certificate_key_file_password_secret_id)
+        pulumi.set(__self__, "tls_certificate_key_file_secret_id", tls_certificate_key_file_secret_id)
         pulumi.set(__self__, "trigger_refresh", trigger_refresh)
         pulumi.set(__self__, "trust_store", trust_store)
         pulumi.set(__self__, "trust_store_password", trust_store_password)
@@ -1992,6 +2018,9 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         Used authentication mechanism to be provided for the following connection types:
         * SNOWFLAKE, AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS
         * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
+        * DATABRICKS - Required fields by authentication types:
+        * PERSONAL_ACCESS_TOKEN: username is always 'token', user must enter password
+        * OAUTH_M2M: user must enter clientId and clientSecret
         """
         return pulumi.get(self, "authentication_type")
 
@@ -2073,6 +2102,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         * JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676'
         * SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
         * AMAZON_REDSHIFT: Connection URL. e.g.: 'jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb'
+        * DATABRICKS: Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
         """
         return pulumi.get(self, "connection_url")
 
@@ -2157,7 +2187,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter
     def endpoint(self) -> str:
         """
-        Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+        Service endpoint. e.g for Azure Storage service: https://test.blob.core.windows.net. Optional for Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
         """
         return pulumi.get(self, "endpoint")
 
@@ -2389,7 +2419,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter
     def region(self) -> str:
         """
-        The name of the region. e.g.: us-ashburn-1
+        The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
         """
         return pulumi.get(self, "region")
 
@@ -2476,6 +2506,14 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         return pulumi.get(self, "should_use_jndi")
 
     @property
+    @pulumi.getter(name="shouldUseResourcePrincipal")
+    def should_use_resource_principal(self) -> bool:
+        """
+        Indicates that the user intents to connect to the instance through resource principal.
+        """
+        return pulumi.get(self, "should_use_resource_principal")
+
+    @property
     @pulumi.getter(name="shouldValidateServerCertificate")
     def should_validate_server_certificate(self) -> bool:
         """
@@ -2487,7 +2525,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="sslCa")
     def ssl_ca(self) -> str:
         """
-        Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
+        Database Certificate - The base64 encoded content of a .pem or .crt file. containing the server public key (for 1-way SSL).
         """
         return pulumi.get(self, "ssl_ca")
 
@@ -2576,6 +2614,14 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="storageCredentialName")
+    def storage_credential_name(self) -> str:
+        """
+        Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
+        """
+        return pulumi.get(self, "storage_credential_name")
+
+    @property
     @pulumi.getter(name="streamPoolId")
     def stream_pool_id(self) -> str:
         """
@@ -2616,6 +2662,14 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         return pulumi.get(self, "tenancy_id")
 
     @property
+    @pulumi.getter(name="tenantId")
+    def tenant_id(self) -> str:
+        """
+        Azure tenant ID of the application. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
+        """
+        return pulumi.get(self, "tenant_id")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
@@ -2630,6 +2684,38 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="tlsCaFile")
+    def tls_ca_file(self) -> str:
+        return pulumi.get(self, "tls_ca_file")
+
+    @property
+    @pulumi.getter(name="tlsCertificateKeyFile")
+    def tls_certificate_key_file(self) -> str:
+        return pulumi.get(self, "tls_certificate_key_file")
+
+    @property
+    @pulumi.getter(name="tlsCertificateKeyFilePassword")
+    def tls_certificate_key_file_password(self) -> str:
+        return pulumi.get(self, "tls_certificate_key_file_password")
+
+    @property
+    @pulumi.getter(name="tlsCertificateKeyFilePasswordSecretId")
+    def tls_certificate_key_file_password_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
+        """
+        return pulumi.get(self, "tls_certificate_key_file_password_secret_id")
+
+    @property
+    @pulumi.getter(name="tlsCertificateKeyFileSecretId")
+    def tls_certificate_key_file_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
+        * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
+        """
+        return pulumi.get(self, "tls_certificate_key_file_secret_id")
 
     @property
     @pulumi.getter(name="triggerRefresh")
@@ -2674,7 +2760,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="userId")
     def user_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/Object Storage. The user must have write access to the table they want to connect to.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
         """
         return pulumi.get(self, "user_id")
 
@@ -2682,7 +2768,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter
     def username(self) -> str:
         """
-        The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
+        The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
         """
         return pulumi.get(self, "username")
 

@@ -87,6 +87,8 @@ type GetReplicationTargetResult struct {
 	SourceId string `pulumi:"sourceId"`
 	// The current state of this replication.
 	State string `pulumi:"state"`
+	// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of target filesystem.
 	TargetId string `pulumi:"targetId"`
 	// The date and time the replication target was created in target region. in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-01-04T20:01:29.100Z`
@@ -199,6 +201,11 @@ func (o GetReplicationTargetResultOutput) SourceId() pulumi.StringOutput {
 // The current state of this replication.
 func (o GetReplicationTargetResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReplicationTargetResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+func (o GetReplicationTargetResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetReplicationTargetResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of target filesystem.

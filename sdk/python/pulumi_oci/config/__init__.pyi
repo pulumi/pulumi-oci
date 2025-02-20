@@ -79,6 +79,8 @@ tenancyOcid: Optional[str]
 Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
 """
 
+testTimeMaintenanceRebootDue: Optional[str]
+
 userOcid: Optional[str]
 """
 (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if

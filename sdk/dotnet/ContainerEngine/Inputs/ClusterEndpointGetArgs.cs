@@ -13,6 +13,12 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
     public sealed class ClusterEndpointGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// The IPv6 networking Kubernetes API server endpoint.
+        /// </summary>
+        [Input("ipv6endpoint")]
+        public Input<string>? Ipv6endpoint { get; set; }
+
+        /// <summary>
         /// The non-native networking Kubernetes API server endpoint.
         /// </summary>
         [Input("kubernetes")]

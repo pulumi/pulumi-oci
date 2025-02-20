@@ -67,6 +67,14 @@ __all__ = [
     'GetFleetDrsFilesDrsFileCollectionResult',
     'GetFleetDrsFilesDrsFileCollectionItemResult',
     'GetFleetDrsFilesFilterResult',
+    'GetFleetErrorAnalyticsFilterResult',
+    'GetFleetErrorAnalyticsFleetErrorAggregationCollectionResult',
+    'GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemResult',
+    'GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationResult',
+    'GetFleetErrorsFilterResult',
+    'GetFleetErrorsFleetErrorCollectionResult',
+    'GetFleetErrorsFleetErrorCollectionItemResult',
+    'GetFleetErrorsFleetErrorCollectionItemErrorResult',
     'GetFleetInventoryLogResult',
     'GetFleetJavaMigrationAnalysisResultsFilterResult',
     'GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionResult',
@@ -139,6 +147,14 @@ __all__ = [
     'GetJmsPluginsJmsPluginCollectionItemResult',
     'GetListJreUsageItemResult',
     'GetListJreUsageItemOperatingSystemResult',
+    'GetPluginErrorAnalyticsFilterResult',
+    'GetPluginErrorAnalyticsPluginErrorAggregationCollectionResult',
+    'GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemResult',
+    'GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationResult',
+    'GetPluginErrorsFilterResult',
+    'GetPluginErrorsPluginErrorCollectionResult',
+    'GetPluginErrorsPluginErrorCollectionItemResult',
+    'GetPluginErrorsPluginErrorCollectionItemErrorResult',
 ]
 
 @pulumi.output_type
@@ -2647,6 +2663,267 @@ class GetFleetDrsFilesFilterResult(dict):
 
 
 @pulumi.output_type
+class GetFleetErrorAnalyticsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetFleetErrorAnalyticsFleetErrorAggregationCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemResult']):
+        """
+        :param Sequence['GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemArgs'] items: A list of FleetErrorAggregationSummary.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemResult']:
+        """
+        A list of FleetErrorAggregationSummary.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 fleet_error_aggregations: Sequence['outputs.GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationResult'],
+                 healthy_fleet_count: int):
+        """
+        :param Sequence['GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationArgs'] fleet_error_aggregations: List of fleet error aggregations.
+        :param int healthy_fleet_count: Count of fleets with no problems.
+        """
+        pulumi.set(__self__, "fleet_error_aggregations", fleet_error_aggregations)
+        pulumi.set(__self__, "healthy_fleet_count", healthy_fleet_count)
+
+    @property
+    @pulumi.getter(name="fleetErrorAggregations")
+    def fleet_error_aggregations(self) -> Sequence['outputs.GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationResult']:
+        """
+        List of fleet error aggregations.
+        """
+        return pulumi.get(self, "fleet_error_aggregations")
+
+    @property
+    @pulumi.getter(name="healthyFleetCount")
+    def healthy_fleet_count(self) -> int:
+        """
+        Count of fleets with no problems.
+        """
+        return pulumi.get(self, "healthy_fleet_count")
+
+
+@pulumi.output_type
+class GetFleetErrorAnalyticsFleetErrorAggregationCollectionItemFleetErrorAggregationResult(dict):
+    def __init__(__self__, *,
+                 fleet_error_analytic_count: int,
+                 reason: str):
+        """
+        :param int fleet_error_analytic_count: Number of FleetErrors encountered for the specific reason.
+        :param str reason: Enum that uniquely identifies the fleet error.
+        """
+        pulumi.set(__self__, "fleet_error_analytic_count", fleet_error_analytic_count)
+        pulumi.set(__self__, "reason", reason)
+
+    @property
+    @pulumi.getter(name="fleetErrorAnalyticCount")
+    def fleet_error_analytic_count(self) -> int:
+        """
+        Number of FleetErrors encountered for the specific reason.
+        """
+        return pulumi.get(self, "fleet_error_analytic_count")
+
+    @property
+    @pulumi.getter
+    def reason(self) -> str:
+        """
+        Enum that uniquely identifies the fleet error.
+        """
+        return pulumi.get(self, "reason")
+
+
+@pulumi.output_type
+class GetFleetErrorsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetFleetErrorsFleetErrorCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetFleetErrorsFleetErrorCollectionItemResult']):
+        """
+        :param Sequence['GetFleetErrorsFleetErrorCollectionItemArgs'] items: A list of FleetErrorSummary.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetFleetErrorsFleetErrorCollectionItemResult']:
+        """
+        A list of FleetErrorSummary.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetFleetErrorsFleetErrorCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 errors: Sequence['outputs.GetFleetErrorsFleetErrorCollectionItemErrorResult'],
+                 fleet_id: str,
+                 fleet_name: str,
+                 time_first_seen: str,
+                 time_last_seen: str):
+        """
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Sequence['GetFleetErrorsFleetErrorCollectionItemErrorArgs'] errors: List of fleet error details.
+        :param str fleet_id: The ID of the Fleet.
+        :param str fleet_name: The display name of the Fleet.
+        :param str time_first_seen: The timestamp of the first time an error was detected.
+        :param str time_last_seen: The timestamp of the last time an error was detected.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "errors", errors)
+        pulumi.set(__self__, "fleet_id", fleet_id)
+        pulumi.set(__self__, "fleet_name", fleet_name)
+        pulumi.set(__self__, "time_first_seen", time_first_seen)
+        pulumi.set(__self__, "time_last_seen", time_last_seen)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def errors(self) -> Sequence['outputs.GetFleetErrorsFleetErrorCollectionItemErrorResult']:
+        """
+        List of fleet error details.
+        """
+        return pulumi.get(self, "errors")
+
+    @property
+    @pulumi.getter(name="fleetId")
+    def fleet_id(self) -> str:
+        """
+        The ID of the Fleet.
+        """
+        return pulumi.get(self, "fleet_id")
+
+    @property
+    @pulumi.getter(name="fleetName")
+    def fleet_name(self) -> str:
+        """
+        The display name of the Fleet.
+        """
+        return pulumi.get(self, "fleet_name")
+
+    @property
+    @pulumi.getter(name="timeFirstSeen")
+    def time_first_seen(self) -> str:
+        """
+        The timestamp of the first time an error was detected.
+        """
+        return pulumi.get(self, "time_first_seen")
+
+    @property
+    @pulumi.getter(name="timeLastSeen")
+    def time_last_seen(self) -> str:
+        """
+        The timestamp of the last time an error was detected.
+        """
+        return pulumi.get(self, "time_last_seen")
+
+
+@pulumi.output_type
+class GetFleetErrorsFleetErrorCollectionItemErrorResult(dict):
+    def __init__(__self__, *,
+                 details: str,
+                 reason: str,
+                 time_last_seen: str):
+        """
+        :param str details: Optional string containing additional details.
+        :param str reason: The fleet error reason.
+        :param str time_last_seen: The timestamp of the last time an error was detected.
+        """
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "reason", reason)
+        pulumi.set(__self__, "time_last_seen", time_last_seen)
+
+    @property
+    @pulumi.getter
+    def details(self) -> str:
+        """
+        Optional string containing additional details.
+        """
+        return pulumi.get(self, "details")
+
+    @property
+    @pulumi.getter
+    def reason(self) -> str:
+        """
+        The fleet error reason.
+        """
+        return pulumi.get(self, "reason")
+
+    @property
+    @pulumi.getter(name="timeLastSeen")
+    def time_last_seen(self) -> str:
+        """
+        The timestamp of the last time an error was detected.
+        """
+        return pulumi.get(self, "time_last_seen")
+
+
+@pulumi.output_type
 class GetFleetInventoryLogResult(dict):
     def __init__(__self__, *,
                  log_group_id: str,
@@ -3000,7 +3277,7 @@ class GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCol
         :param str application_id: The Fleet-unique identifier of the related application.
         :param str application_installation_id: The internal identifier of the application installation for which the report has been generated.
         :param str application_installation_path: The installation path of the application for which the report has been generated.
-        :param str application_name: The name of the application for which the report has been generated.
+        :param str application_name: The name of the application.
         :param str bucket: The Object Storage bucket name of this analysis result.
         :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
         :param str host_name: The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
@@ -3061,7 +3338,7 @@ class GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCol
     @pulumi.getter(name="applicationName")
     def application_name(self) -> str:
         """
-        The name of the application for which the report has been generated.
+        The name of the application.
         """
         return pulumi.get(self, "application_name")
 
@@ -3954,7 +4231,7 @@ class GetInstallationSitesInstallationSiteCollectionItemItemJreResult(dict):
                  vendor: str,
                  version: str):
         """
-        :param str distribution: The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
+        :param str distribution: The name of the Operating System distribution, such as Oracle Linux 9, Windows 10, or macOS X.
         :param str jre_key: The unique identifier for a Java Runtime.
         :param str vendor: The vendor of the Java Runtime.
         :param str version: The version of the operating system as provided by the Java system property os.version.
@@ -3968,7 +4245,7 @@ class GetInstallationSitesInstallationSiteCollectionItemItemJreResult(dict):
     @pulumi.getter
     def distribution(self) -> str:
         """
-        The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
+        The name of the Operating System distribution, such as Oracle Linux 9, Windows 10, or macOS X.
         """
         return pulumi.get(self, "distribution")
 
@@ -4001,18 +4278,21 @@ class GetInstallationSitesInstallationSiteCollectionItemItemJreResult(dict):
 class GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemResult(dict):
     def __init__(__self__, *,
                  architecture: str,
+                 distribution: str,
                  family: str,
                  managed_instance_count: int,
                  name: str,
                  version: str):
         """
         :param str architecture: The architecture of the operating system as provided by the Java system property os.arch.
+        :param str distribution: The name of the Operating System distribution, such as Oracle Linux 9, Windows 10, or macOS X.
         :param str family: The operating system type, such as Windows, Linux or macOS
         :param int managed_instance_count: Number of instances running the operating system.
         :param str name: The name of the operating system as provided by the Java system property os.name.
         :param str version: The version of the operating system as provided by the Java system property os.version.
         """
         pulumi.set(__self__, "architecture", architecture)
+        pulumi.set(__self__, "distribution", distribution)
         pulumi.set(__self__, "family", family)
         pulumi.set(__self__, "managed_instance_count", managed_instance_count)
         pulumi.set(__self__, "name", name)
@@ -4025,6 +4305,14 @@ class GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemResul
         The architecture of the operating system as provided by the Java system property os.arch.
         """
         return pulumi.get(self, "architecture")
+
+    @property
+    @pulumi.getter
+    def distribution(self) -> str:
+        """
+        The name of the Operating System distribution, such as Oracle Linux 9, Windows 10, or macOS X.
+        """
+        return pulumi.get(self, "distribution")
 
     @property
     @pulumi.getter
@@ -7014,7 +7302,7 @@ class GetJmsPluginsJmsPluginCollectionItemResult(dict):
                  time_registered: str):
         """
         :param str agent_id: The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
-        :param str agent_type: The agent type.
+        :param str agent_type: Filter JmsPlugin with agent type.
         :param str availability_status: Filter JmsPlugin with its availability status.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
@@ -7061,7 +7349,7 @@ class GetJmsPluginsJmsPluginCollectionItemResult(dict):
     @pulumi.getter(name="agentType")
     def agent_type(self) -> str:
         """
-        The agent type.
+        Filter JmsPlugin with agent type.
         """
         return pulumi.get(self, "agent_type")
 
@@ -7462,5 +7750,277 @@ class GetListJreUsageItemOperatingSystemResult(dict):
         The version of the Java Runtime.
         """
         return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetPluginErrorAnalyticsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetPluginErrorAnalyticsPluginErrorAggregationCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemResult']):
+        """
+        :param Sequence['GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemArgs'] items: A list of PluginErrorAggregationSummary.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemResult']:
+        """
+        A list of PluginErrorAggregationSummary.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 healthy_plugin_count: int,
+                 plugin_error_aggregations: Sequence['outputs.GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationResult']):
+        """
+        :param int healthy_plugin_count: Count of plugins with no problems.
+        :param Sequence['GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationArgs'] plugin_error_aggregations: List of plugin aggregation errors.
+        """
+        pulumi.set(__self__, "healthy_plugin_count", healthy_plugin_count)
+        pulumi.set(__self__, "plugin_error_aggregations", plugin_error_aggregations)
+
+    @property
+    @pulumi.getter(name="healthyPluginCount")
+    def healthy_plugin_count(self) -> int:
+        """
+        Count of plugins with no problems.
+        """
+        return pulumi.get(self, "healthy_plugin_count")
+
+    @property
+    @pulumi.getter(name="pluginErrorAggregations")
+    def plugin_error_aggregations(self) -> Sequence['outputs.GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationResult']:
+        """
+        List of plugin aggregation errors.
+        """
+        return pulumi.get(self, "plugin_error_aggregations")
+
+
+@pulumi.output_type
+class GetPluginErrorAnalyticsPluginErrorAggregationCollectionItemPluginErrorAggregationResult(dict):
+    def __init__(__self__, *,
+                 plugin_error_analytic_count: int,
+                 reason: str):
+        """
+        :param int plugin_error_analytic_count: Number of FleetErrors encountered for the specific reason.
+        :param str reason: Enum that uniquely identifies the plugin error.
+        """
+        pulumi.set(__self__, "plugin_error_analytic_count", plugin_error_analytic_count)
+        pulumi.set(__self__, "reason", reason)
+
+    @property
+    @pulumi.getter(name="pluginErrorAnalyticCount")
+    def plugin_error_analytic_count(self) -> int:
+        """
+        Number of FleetErrors encountered for the specific reason.
+        """
+        return pulumi.get(self, "plugin_error_analytic_count")
+
+    @property
+    @pulumi.getter
+    def reason(self) -> str:
+        """
+        Enum that uniquely identifies the plugin error.
+        """
+        return pulumi.get(self, "reason")
+
+
+@pulumi.output_type
+class GetPluginErrorsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetPluginErrorsPluginErrorCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetPluginErrorsPluginErrorCollectionItemResult']):
+        """
+        :param Sequence['GetPluginErrorsPluginErrorCollectionItemArgs'] items: A list of PluginErrorSummary.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetPluginErrorsPluginErrorCollectionItemResult']:
+        """
+        A list of PluginErrorSummary.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetPluginErrorsPluginErrorCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 agent_type: str,
+                 compartment_id: str,
+                 errors: Sequence['outputs.GetPluginErrorsPluginErrorCollectionItemErrorResult'],
+                 host_name: str,
+                 managed_instance_id: str,
+                 time_first_seen: str,
+                 time_last_seen: str):
+        """
+        :param str agent_type: The agent type.
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Sequence['GetPluginErrorsPluginErrorCollectionItemErrorArgs'] errors: List of plugin error details.
+        :param str host_name: The HostName or Compute Instance name of the Managed Instance running the plugin.
+        :param str managed_instance_id: The Fleet-unique identifier of the managed instance.
+        :param str time_first_seen: The timestamp of the first time an error was detected.
+        :param str time_last_seen: The timestamp of the last time an error was detected.
+        """
+        pulumi.set(__self__, "agent_type", agent_type)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "errors", errors)
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+        pulumi.set(__self__, "time_first_seen", time_first_seen)
+        pulumi.set(__self__, "time_last_seen", time_last_seen)
+
+    @property
+    @pulumi.getter(name="agentType")
+    def agent_type(self) -> str:
+        """
+        The agent type.
+        """
+        return pulumi.get(self, "agent_type")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def errors(self) -> Sequence['outputs.GetPluginErrorsPluginErrorCollectionItemErrorResult']:
+        """
+        List of plugin error details.
+        """
+        return pulumi.get(self, "errors")
+
+    @property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> str:
+        """
+        The HostName or Compute Instance name of the Managed Instance running the plugin.
+        """
+        return pulumi.get(self, "host_name")
+
+    @property
+    @pulumi.getter(name="managedInstanceId")
+    def managed_instance_id(self) -> str:
+        """
+        The Fleet-unique identifier of the managed instance.
+        """
+        return pulumi.get(self, "managed_instance_id")
+
+    @property
+    @pulumi.getter(name="timeFirstSeen")
+    def time_first_seen(self) -> str:
+        """
+        The timestamp of the first time an error was detected.
+        """
+        return pulumi.get(self, "time_first_seen")
+
+    @property
+    @pulumi.getter(name="timeLastSeen")
+    def time_last_seen(self) -> str:
+        """
+        The timestamp of the last time an error was detected.
+        """
+        return pulumi.get(self, "time_last_seen")
+
+
+@pulumi.output_type
+class GetPluginErrorsPluginErrorCollectionItemErrorResult(dict):
+    def __init__(__self__, *,
+                 details: str,
+                 reason: str,
+                 time_last_seen: str):
+        """
+        :param str details: Optional string containing additional details.
+        :param str reason: The plugin error reason.
+        :param str time_last_seen: The timestamp of the last time an error was detected.
+        """
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "reason", reason)
+        pulumi.set(__self__, "time_last_seen", time_last_seen)
+
+    @property
+    @pulumi.getter
+    def details(self) -> str:
+        """
+        Optional string containing additional details.
+        """
+        return pulumi.get(self, "details")
+
+    @property
+    @pulumi.getter
+    def reason(self) -> str:
+        """
+        The plugin error reason.
+        """
+        return pulumi.get(self, "reason")
+
+    @property
+    @pulumi.getter(name="timeLastSeen")
+    def time_last_seen(self) -> str:
+        """
+        The timestamp of the last time an error was detected.
+        """
+        return pulumi.get(self, "time_last_seen")
 
 

@@ -53,6 +53,8 @@ __all__ = [
     'MonitoredResourcesSearchAssociationItemSourceResourceDetail',
     'MonitoredResourcesSearchItem',
     'MonitoredResourcesSearchItemProperty',
+    'MonitoringTemplateAlarmConditionCondition',
+    'MonitoringTemplateMember',
     'ProcessSetSpecification',
     'ProcessSetSpecificationItem',
     'GetBaselineableMetricsBaselineableMetricSummaryCollectionResult',
@@ -66,6 +68,11 @@ __all__ = [
     'GetConfigsConfigCollectionResult',
     'GetConfigsConfigCollectionItemResult',
     'GetConfigsFilterResult',
+    'GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionResult',
+    'GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemResult',
+    'GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionResult',
+    'GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionResult',
+    'GetDefinedMonitoringTemplatesFilterResult',
     'GetDiscoveryJobDiscoveryDetailResult',
     'GetDiscoveryJobDiscoveryDetailCredentialResult',
     'GetDiscoveryJobDiscoveryDetailCredentialItemResult',
@@ -137,6 +144,16 @@ __all__ = [
     'GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyResult',
     'GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailResult',
     'GetMonitoredResourcesMonitoredResourceCollectionItemPropertyResult',
+    'GetMonitoringTemplateAlarmConditionConditionResult',
+    'GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionResult',
+    'GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemResult',
+    'GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionResult',
+    'GetMonitoringTemplateAlarmConditionsFilterResult',
+    'GetMonitoringTemplateMemberResult',
+    'GetMonitoringTemplatesFilterResult',
+    'GetMonitoringTemplatesMonitoringTemplateCollectionResult',
+    'GetMonitoringTemplatesMonitoringTemplateCollectionItemResult',
+    'GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberResult',
     'GetProcessSetSpecificationResult',
     'GetProcessSetSpecificationItemResult',
     'GetProcessSetsFilterResult',
@@ -2126,6 +2143,8 @@ class MonitoredResourceTypeMetadata(dict):
             suggest = "valid_properties_for_updates"
         elif key == "validPropertyValues":
             suggest = "valid_property_values"
+        elif key == "validSubResourceTypes":
+            suggest = "valid_sub_resource_types"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in MonitoredResourceTypeMetadata. Access the value via the '{suggest}' property getter instead.")
@@ -2145,7 +2164,8 @@ class MonitoredResourceTypeMetadata(dict):
                  unique_property_sets: Optional[Sequence['outputs.MonitoredResourceTypeMetadataUniquePropertySet']] = None,
                  valid_properties_for_creates: Optional[Sequence[str]] = None,
                  valid_properties_for_updates: Optional[Sequence[str]] = None,
-                 valid_property_values: Optional[Mapping[str, str]] = None):
+                 valid_property_values: Optional[Mapping[str, str]] = None,
+                 valid_sub_resource_types: Optional[Sequence[str]] = None):
         """
         :param str format: (Updatable) ResourceType metadata format to be used. Currently supports only one format. Possible values - SYSTEM_FORMAT.
                * SYSTEM_FORMAT - The resource type metadata is defined in machine friendly format.
@@ -2155,6 +2175,7 @@ class MonitoredResourceTypeMetadata(dict):
         :param Sequence[str] valid_properties_for_creates: (Updatable) List of valid properties for resource type while creating the monitored resource.  If resources of this type specifies any other properties during create operation,  the operation will fail.
         :param Sequence[str] valid_properties_for_updates: (Updatable) List of valid properties for resource type while updating the monitored resource.  If resources of this type specifies any other properties during update operation,  the operation will fail.
         :param Mapping[str, str] valid_property_values: (Updatable) List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{ "osType": "Linux,Windows,Solaris"}`
+        :param Sequence[str] valid_sub_resource_types: (Updatable) List of valid sub-resource types for a composite resource type. The sub-resource types will be obtained from the valid association pairs corresponding to the composite resource types. It will be empty for non composite resource types
         """
         pulumi.set(__self__, "format", format)
         if agent_properties is not None:
@@ -2169,6 +2190,8 @@ class MonitoredResourceTypeMetadata(dict):
             pulumi.set(__self__, "valid_properties_for_updates", valid_properties_for_updates)
         if valid_property_values is not None:
             pulumi.set(__self__, "valid_property_values", valid_property_values)
+        if valid_sub_resource_types is not None:
+            pulumi.set(__self__, "valid_sub_resource_types", valid_sub_resource_types)
 
     @property
     @pulumi.getter
@@ -2226,6 +2249,14 @@ class MonitoredResourceTypeMetadata(dict):
         (Updatable) List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{ "osType": "Linux,Windows,Solaris"}`
         """
         return pulumi.get(self, "valid_property_values")
+
+    @property
+    @pulumi.getter(name="validSubResourceTypes")
+    def valid_sub_resource_types(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) List of valid sub-resource types for a composite resource type. The sub-resource types will be obtained from the valid association pairs corresponding to the composite resource types. It will be empty for non composite resource types
+        """
+        return pulumi.get(self, "valid_sub_resource_types")
 
 
 @pulumi.output_type
@@ -3122,6 +3153,162 @@ class MonitoredResourcesSearchItemProperty(dict):
 
 
 @pulumi.output_type
+class MonitoringTemplateAlarmConditionCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "shouldAppendNote":
+            suggest = "should_append_note"
+        elif key == "shouldAppendUrl":
+            suggest = "should_append_url"
+        elif key == "triggerDelay":
+            suggest = "trigger_delay"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MonitoringTemplateAlarmConditionCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MonitoringTemplateAlarmConditionCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MonitoringTemplateAlarmConditionCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 query: str,
+                 severity: str,
+                 body: Optional[str] = None,
+                 should_append_note: Optional[bool] = None,
+                 should_append_url: Optional[bool] = None,
+                 trigger_delay: Optional[str] = None):
+        """
+        :param str query: (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+        :param str severity: (Updatable) Severity - Critical/Warning
+        :param str body: (Updatable) The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.
+        :param bool should_append_note: (Updatable) Whether the note need to add into bottom of the body for mapping the alarms information with template or not.
+        :param bool should_append_url: (Updatable) Whether the URL need to add into bottom of the body for mapping the alarms information with template or not.
+        :param str trigger_delay: (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING".
+        """
+        pulumi.set(__self__, "query", query)
+        pulumi.set(__self__, "severity", severity)
+        if body is not None:
+            pulumi.set(__self__, "body", body)
+        if should_append_note is not None:
+            pulumi.set(__self__, "should_append_note", should_append_note)
+        if should_append_url is not None:
+            pulumi.set(__self__, "should_append_url", should_append_url)
+        if trigger_delay is not None:
+            pulumi.set(__self__, "trigger_delay", trigger_delay)
+
+    @property
+    @pulumi.getter
+    def query(self) -> str:
+        """
+        (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+        """
+        return pulumi.get(self, "query")
+
+    @property
+    @pulumi.getter
+    def severity(self) -> str:
+        """
+        (Updatable) Severity - Critical/Warning
+        """
+        return pulumi.get(self, "severity")
+
+    @property
+    @pulumi.getter
+    def body(self) -> Optional[str]:
+        """
+        (Updatable) The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "body")
+
+    @property
+    @pulumi.getter(name="shouldAppendNote")
+    def should_append_note(self) -> Optional[bool]:
+        """
+        (Updatable) Whether the note need to add into bottom of the body for mapping the alarms information with template or not.
+        """
+        return pulumi.get(self, "should_append_note")
+
+    @property
+    @pulumi.getter(name="shouldAppendUrl")
+    def should_append_url(self) -> Optional[bool]:
+        """
+        (Updatable) Whether the URL need to add into bottom of the body for mapping the alarms information with template or not.
+        """
+        return pulumi.get(self, "should_append_url")
+
+    @property
+    @pulumi.getter(name="triggerDelay")
+    def trigger_delay(self) -> Optional[str]:
+        """
+        (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING".
+        """
+        return pulumi.get(self, "trigger_delay")
+
+
+@pulumi.output_type
+class MonitoringTemplateMember(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compositeType":
+            suggest = "composite_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MonitoringTemplateMember. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MonitoringTemplateMember.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MonitoringTemplateMember.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 id: str,
+                 type: str,
+                 composite_type: Optional[str] = None):
+        """
+        :param str id: (Updatable) The OCID of the resourceInstance/resourceType/resourceGroup
+        :param str type: (Updatable) Type of the member reference RESOURCE_INSTANCE, RESOURCE_TYPE, RESOURCE_GROUP
+        :param str composite_type: (Updatable) The OCID of the composite resource type like EBS or Peoplesoft.
+        """
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "type", type)
+        if composite_type is not None:
+            pulumi.set(__self__, "composite_type", composite_type)
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        (Updatable) The OCID of the resourceInstance/resourceType/resourceGroup
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        (Updatable) Type of the member reference RESOURCE_INSTANCE, RESOURCE_TYPE, RESOURCE_GROUP
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="compositeType")
+    def composite_type(self) -> Optional[str]:
+        """
+        (Updatable) The OCID of the composite resource type like EBS or Peoplesoft.
+        """
+        return pulumi.get(self, "composite_type")
+
+
+@pulumi.output_type
 class ProcessSetSpecification(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.ProcessSetSpecificationItem']):
@@ -3859,6 +4046,270 @@ class GetConfigsConfigCollectionItemResult(dict):
 
 @pulumi.output_type
 class GetConfigsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemResult']):
+        """
+        :param Sequence['GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemArgs'] items: List of defined Monitoring Template.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemResult']:
+        """
+        List of defined Monitoring Template.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 composite_type: str,
+                 defined_alarm_conditions: Sequence['outputs.GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionResult'],
+                 display_name: str,
+                 id: str,
+                 namespace: str,
+                 resource_type: str,
+                 system_tags: Mapping[str, str],
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param str composite_type: Type of composite resource type OCID like EBS/PEOPLE_SOFT.
+        :param Sequence['GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionArgs'] defined_alarm_conditions: Defined Monitoring template alarm conditions
+        :param str display_name: A filter to return monitoring template based on name.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the definedMonitoringTemplate.
+        :param str namespace: The stack monitoring service or application emitting the metric that is evaluated by the alarm.
+        :param str resource_type: The resource types OCID.
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The date and time the monitoringTemplate was created. Format defined by RFC3339.
+        :param str time_updated: The date and time the monitoringTemplate was updated. Format defined by RFC3339.
+        """
+        pulumi.set(__self__, "composite_type", composite_type)
+        pulumi.set(__self__, "defined_alarm_conditions", defined_alarm_conditions)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compositeType")
+    def composite_type(self) -> str:
+        """
+        Type of composite resource type OCID like EBS/PEOPLE_SOFT.
+        """
+        return pulumi.get(self, "composite_type")
+
+    @property
+    @pulumi.getter(name="definedAlarmConditions")
+    def defined_alarm_conditions(self) -> Sequence['outputs.GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionResult']:
+        """
+        Defined Monitoring template alarm conditions
+        """
+        return pulumi.get(self, "defined_alarm_conditions")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return monitoring template based on name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the definedMonitoringTemplate.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        The stack monitoring service or application emitting the metric that is evaluated by the alarm.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> str:
+        """
+        The resource types OCID.
+        """
+        return pulumi.get(self, "resource_type")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the monitoringTemplate was created. Format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the monitoringTemplate was updated. Format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionResult(dict):
+    def __init__(__self__, *,
+                 condition_type: str,
+                 conditions: Sequence['outputs.GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionResult'],
+                 metric_name: str):
+        """
+        :param str condition_type: Type of defined monitoring template.
+        :param Sequence['GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionArgs'] conditions: Monitoring template conditions.
+        :param str metric_name: The metric name.
+        """
+        pulumi.set(__self__, "condition_type", condition_type)
+        pulumi.set(__self__, "conditions", conditions)
+        pulumi.set(__self__, "metric_name", metric_name)
+
+    @property
+    @pulumi.getter(name="conditionType")
+    def condition_type(self) -> str:
+        """
+        Type of defined monitoring template.
+        """
+        return pulumi.get(self, "condition_type")
+
+    @property
+    @pulumi.getter
+    def conditions(self) -> Sequence['outputs.GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionResult']:
+        """
+        Monitoring template conditions.
+        """
+        return pulumi.get(self, "conditions")
+
+    @property
+    @pulumi.getter(name="metricName")
+    def metric_name(self) -> str:
+        """
+        The metric name.
+        """
+        return pulumi.get(self, "metric_name")
+
+
+@pulumi.output_type
+class GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemDefinedAlarmConditionConditionResult(dict):
+    def __init__(__self__, *,
+                 body: str,
+                 query: str,
+                 severity: str,
+                 should_append_note: bool,
+                 should_append_url: bool,
+                 trigger_delay: str):
+        """
+        :param str body: The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.
+        :param str query: The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+        :param str severity: Severity - Critical/Warning
+        :param bool should_append_note: Whether the note need to add into bottom of the body for mapping the alarms information with template or not.
+        :param bool should_append_url: Whether the URL need to add into bottom of the body for mapping the alarms information with template or not.
+        :param str trigger_delay: The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING".
+        """
+        pulumi.set(__self__, "body", body)
+        pulumi.set(__self__, "query", query)
+        pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "should_append_note", should_append_note)
+        pulumi.set(__self__, "should_append_url", should_append_url)
+        pulumi.set(__self__, "trigger_delay", trigger_delay)
+
+    @property
+    @pulumi.getter
+    def body(self) -> str:
+        """
+        The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "body")
+
+    @property
+    @pulumi.getter
+    def query(self) -> str:
+        """
+        The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+        """
+        return pulumi.get(self, "query")
+
+    @property
+    @pulumi.getter
+    def severity(self) -> str:
+        """
+        Severity - Critical/Warning
+        """
+        return pulumi.get(self, "severity")
+
+    @property
+    @pulumi.getter(name="shouldAppendNote")
+    def should_append_note(self) -> bool:
+        """
+        Whether the note need to add into bottom of the body for mapping the alarms information with template or not.
+        """
+        return pulumi.get(self, "should_append_note")
+
+    @property
+    @pulumi.getter(name="shouldAppendUrl")
+    def should_append_url(self) -> bool:
+        """
+        Whether the URL need to add into bottom of the body for mapping the alarms information with template or not.
+        """
+        return pulumi.get(self, "should_append_url")
+
+    @property
+    @pulumi.getter(name="triggerDelay")
+    def trigger_delay(self) -> str:
+        """
+        The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING".
+        """
+        return pulumi.get(self, "trigger_delay")
+
+
+@pulumi.output_type
+class GetDefinedMonitoringTemplatesFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],
@@ -5291,7 +5742,7 @@ class GetMetricExtensionsMetricExtensionCollectionItemResult(dict):
         :param str created_by: Created by user
         :param str description: Description of the metric extension.
         :param str display_name: Display name of the metric.
-        :param Sequence['GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArgs'] enabled_on_resources: List of resource objects on which this metric extension is enabled.
+        :param Sequence['GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArgs'] enabled_on_resources: List of resource details objects having resourceIds on which this metric extension is enabled.
         :param int enabled_on_resources_count: Count of resources on which this metric extension is enabled.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Metric Extension resource
         :param str last_updated_by: Last updated by user
@@ -5380,7 +5831,7 @@ class GetMetricExtensionsMetricExtensionCollectionItemResult(dict):
     @pulumi.getter(name="enabledOnResources")
     def enabled_on_resources(self) -> Sequence['outputs.GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceResult']:
         """
-        List of resource objects on which this metric extension is enabled.
+        List of resource details objects having resourceIds on which this metric extension is enabled.
         """
         return pulumi.get(self, "enabled_on_resources")
 
@@ -6995,7 +7446,8 @@ class GetMonitoredResourceTypeMetadataResult(dict):
                  unique_property_sets: Sequence['outputs.GetMonitoredResourceTypeMetadataUniquePropertySetResult'],
                  valid_properties_for_creates: Sequence[str],
                  valid_properties_for_updates: Sequence[str],
-                 valid_property_values: Mapping[str, str]):
+                 valid_property_values: Mapping[str, str],
+                 valid_sub_resource_types: Sequence[str]):
         """
         :param Sequence[str] agent_properties: List of properties needed by the agent for monitoring the resource.  Valid only if resource type is Oracle Cloud Infrastructure management agent based. When specified,  these properties are passed to the management agent during resource create or update.
         :param str format: ResourceType metadata format to be used. Currently supports only one format. Possible values - SYSTEM_FORMAT.
@@ -7005,6 +7457,7 @@ class GetMonitoredResourceTypeMetadataResult(dict):
         :param Sequence[str] valid_properties_for_creates: List of valid properties for resource type while creating the monitored resource.  If resources of this type specifies any other properties during create operation,  the operation will fail.
         :param Sequence[str] valid_properties_for_updates: List of valid properties for resource type while updating the monitored resource.  If resources of this type specifies any other properties during update operation,  the operation will fail.
         :param Mapping[str, str] valid_property_values: List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{"osType": "Linux,Windows,Solaris", "osVersion": "v6.0,v7.0"}`
+        :param Sequence[str] valid_sub_resource_types: List of valid sub-resource types for a composite resource type. The sub-resource types will be obtained from the valid association pairs corresponding to the composite resource types. It will be empty for non composite resource types
         """
         pulumi.set(__self__, "agent_properties", agent_properties)
         pulumi.set(__self__, "format", format)
@@ -7013,6 +7466,7 @@ class GetMonitoredResourceTypeMetadataResult(dict):
         pulumi.set(__self__, "valid_properties_for_creates", valid_properties_for_creates)
         pulumi.set(__self__, "valid_properties_for_updates", valid_properties_for_updates)
         pulumi.set(__self__, "valid_property_values", valid_property_values)
+        pulumi.set(__self__, "valid_sub_resource_types", valid_sub_resource_types)
 
     @property
     @pulumi.getter(name="agentProperties")
@@ -7070,6 +7524,14 @@ class GetMonitoredResourceTypeMetadataResult(dict):
         List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{"osType": "Linux,Windows,Solaris", "osVersion": "v6.0,v7.0"}`
         """
         return pulumi.get(self, "valid_property_values")
+
+    @property
+    @pulumi.getter(name="validSubResourceTypes")
+    def valid_sub_resource_types(self) -> Sequence[str]:
+        """
+        List of valid sub-resource types for a composite resource type. The sub-resource types will be obtained from the valid association pairs corresponding to the composite resource types. It will be empty for non composite resource types
+        """
+        return pulumi.get(self, "valid_sub_resource_types")
 
 
 @pulumi.output_type
@@ -7138,6 +7600,7 @@ class GetMonitoredResourceTypesMonitoredResourceTypesCollectionResult(dict):
 @pulumi.output_type
 class GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemResult(dict):
     def __init__(__self__, *,
+                 additional_namespace_map: Mapping[str, str],
                  compartment_id: str,
                  defined_tags: Mapping[str, str],
                  description: str,
@@ -7154,6 +7617,7 @@ class GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemResult(dict):
                  time_created: str,
                  time_updated: str):
         """
+        :param Mapping[str, str] additional_namespace_map: Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy for which  monitored resource types should be listed.
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: A friendly description.
@@ -7170,6 +7634,7 @@ class GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemResult(dict):
         :param str time_created: The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         :param str time_updated: The date and time when the monitored resource was updated, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         """
+        pulumi.set(__self__, "additional_namespace_map", additional_namespace_map)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "description", description)
@@ -7185,6 +7650,14 @@ class GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemResult(dict):
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="additionalNamespaceMap")
+    def additional_namespace_map(self) -> Mapping[str, str]:
+        """
+        Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
+        """
+        return pulumi.get(self, "additional_namespace_map")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -7316,7 +7789,8 @@ class GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataResul
                  unique_property_sets: Sequence['outputs.GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetResult'],
                  valid_properties_for_creates: Sequence[str],
                  valid_properties_for_updates: Sequence[str],
-                 valid_property_values: Mapping[str, str]):
+                 valid_property_values: Mapping[str, str],
+                 valid_sub_resource_types: Sequence[str]):
         """
         :param Sequence[str] agent_properties: List of properties needed by the agent for monitoring the resource.  Valid only if resource type is Oracle Cloud Infrastructure management agent based. When specified,  these properties are passed to the management agent during resource create or update.
         :param str format: ResourceType metadata format to be used. Currently supports only one format. Possible values - SYSTEM_FORMAT.
@@ -7326,6 +7800,7 @@ class GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataResul
         :param Sequence[str] valid_properties_for_creates: List of valid properties for resource type while creating the monitored resource.  If resources of this type specifies any other properties during create operation,  the operation will fail.
         :param Sequence[str] valid_properties_for_updates: List of valid properties for resource type while updating the monitored resource.  If resources of this type specifies any other properties during update operation,  the operation will fail.
         :param Mapping[str, str] valid_property_values: List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{"osType": "Linux,Windows,Solaris", "osVersion": "v6.0,v7.0"}`
+        :param Sequence[str] valid_sub_resource_types: List of valid sub-resource types for a composite resource type. The sub-resource types will be obtained from the valid association pairs corresponding to the composite resource types. It will be empty for non composite resource types
         """
         pulumi.set(__self__, "agent_properties", agent_properties)
         pulumi.set(__self__, "format", format)
@@ -7334,6 +7809,7 @@ class GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataResul
         pulumi.set(__self__, "valid_properties_for_creates", valid_properties_for_creates)
         pulumi.set(__self__, "valid_properties_for_updates", valid_properties_for_updates)
         pulumi.set(__self__, "valid_property_values", valid_property_values)
+        pulumi.set(__self__, "valid_sub_resource_types", valid_sub_resource_types)
 
     @property
     @pulumi.getter(name="agentProperties")
@@ -7391,6 +7867,14 @@ class GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataResul
         List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{"osType": "Linux,Windows,Solaris", "osVersion": "v6.0,v7.0"}`
         """
         return pulumi.get(self, "valid_property_values")
+
+    @property
+    @pulumi.getter(name="validSubResourceTypes")
+    def valid_sub_resource_types(self) -> Sequence[str]:
+        """
+        List of valid sub-resource types for a composite resource type. The sub-resource types will be obtained from the valid association pairs corresponding to the composite resource types. It will be empty for non composite resource types
+        """
+        return pulumi.get(self, "valid_sub_resource_types")
 
 
 @pulumi.output_type
@@ -8242,6 +8726,709 @@ class GetMonitoredResourcesMonitoredResourceCollectionItemPropertyResult(dict):
         Property Value.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetMonitoringTemplateAlarmConditionConditionResult(dict):
+    def __init__(__self__, *,
+                 body: str,
+                 query: str,
+                 severity: str,
+                 should_append_note: bool,
+                 should_append_url: bool,
+                 trigger_delay: str):
+        """
+        :param str body: The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.
+        :param str query: The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+        :param str severity: Severity - Critical/Warning
+        :param bool should_append_note: Whether the note need to add into bottom of the body for mapping the alarms information with template or not.
+        :param bool should_append_url: Whether the URL need to add into bottom of the body for mapping the alarms information with template or not.
+        :param str trigger_delay: The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING".
+        """
+        pulumi.set(__self__, "body", body)
+        pulumi.set(__self__, "query", query)
+        pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "should_append_note", should_append_note)
+        pulumi.set(__self__, "should_append_url", should_append_url)
+        pulumi.set(__self__, "trigger_delay", trigger_delay)
+
+    @property
+    @pulumi.getter
+    def body(self) -> str:
+        """
+        The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "body")
+
+    @property
+    @pulumi.getter
+    def query(self) -> str:
+        """
+        The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+        """
+        return pulumi.get(self, "query")
+
+    @property
+    @pulumi.getter
+    def severity(self) -> str:
+        """
+        Severity - Critical/Warning
+        """
+        return pulumi.get(self, "severity")
+
+    @property
+    @pulumi.getter(name="shouldAppendNote")
+    def should_append_note(self) -> bool:
+        """
+        Whether the note need to add into bottom of the body for mapping the alarms information with template or not.
+        """
+        return pulumi.get(self, "should_append_note")
+
+    @property
+    @pulumi.getter(name="shouldAppendUrl")
+    def should_append_url(self) -> bool:
+        """
+        Whether the URL need to add into bottom of the body for mapping the alarms information with template or not.
+        """
+        return pulumi.get(self, "should_append_url")
+
+    @property
+    @pulumi.getter(name="triggerDelay")
+    def trigger_delay(self) -> str:
+        """
+        The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING".
+        """
+        return pulumi.get(self, "trigger_delay")
+
+
+@pulumi.output_type
+class GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 composite_type: str,
+                 condition_type: str,
+                 conditions: Sequence['outputs.GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionResult'],
+                 defined_tags: Mapping[str, str],
+                 freeform_tags: Mapping[str, str],
+                 id: str,
+                 metric_name: str,
+                 monitoring_template_id: str,
+                 namespace: str,
+                 resource_type: str,
+                 state: str,
+                 status: str,
+                 system_tags: Mapping[str, str],
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param str composite_type: The OCID of the composite resource type like EBS/PEOPLE_SOFT.
+        :param str condition_type: Type of defined monitoring template.
+        :param Sequence['GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionArgs'] conditions: Monitoring template conditions
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Alarm Condition.
+        :param str metric_name: metricName filter.
+        :param str monitoring_template_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitoring template.
+        :param str namespace: The stack monitoring service or application emitting the metric that is evaluated by the alarm.
+        :param str resource_type: The resource type OCID.
+        :param str state: A filter to return alarm condition based on Lifecycle State.
+        :param str status: A filter to return alarm condition based on input status.
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The date and time the alarm condition was created. Format defined by RFC3339.
+        :param str time_updated: The date and time the alarm condition was updated. Format defined by RFC3339.
+        """
+        pulumi.set(__self__, "composite_type", composite_type)
+        pulumi.set(__self__, "condition_type", condition_type)
+        pulumi.set(__self__, "conditions", conditions)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "metric_name", metric_name)
+        pulumi.set(__self__, "monitoring_template_id", monitoring_template_id)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compositeType")
+    def composite_type(self) -> str:
+        """
+        The OCID of the composite resource type like EBS/PEOPLE_SOFT.
+        """
+        return pulumi.get(self, "composite_type")
+
+    @property
+    @pulumi.getter(name="conditionType")
+    def condition_type(self) -> str:
+        """
+        Type of defined monitoring template.
+        """
+        return pulumi.get(self, "condition_type")
+
+    @property
+    @pulumi.getter
+    def conditions(self) -> Sequence['outputs.GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionResult']:
+        """
+        Monitoring template conditions
+        """
+        return pulumi.get(self, "conditions")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Alarm Condition.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="metricName")
+    def metric_name(self) -> str:
+        """
+        metricName filter.
+        """
+        return pulumi.get(self, "metric_name")
+
+    @property
+    @pulumi.getter(name="monitoringTemplateId")
+    def monitoring_template_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitoring template.
+        """
+        return pulumi.get(self, "monitoring_template_id")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        The stack monitoring service or application emitting the metric that is evaluated by the alarm.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> str:
+        """
+        The resource type OCID.
+        """
+        return pulumi.get(self, "resource_type")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return alarm condition based on Lifecycle State.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        A filter to return alarm condition based on input status.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the alarm condition was created. Format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the alarm condition was updated. Format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetMonitoringTemplateAlarmConditionsAlarmConditionCollectionItemConditionResult(dict):
+    def __init__(__self__, *,
+                 body: str,
+                 query: str,
+                 severity: str,
+                 should_append_note: bool,
+                 should_append_url: bool,
+                 trigger_delay: str):
+        """
+        :param str body: The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.
+        :param str query: The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+        :param str severity: Severity - Critical/Warning
+        :param bool should_append_note: Whether the note need to add into bottom of the body for mapping the alarms information with template or not.
+        :param bool should_append_url: Whether the URL need to add into bottom of the body for mapping the alarms information with template or not.
+        :param str trigger_delay: The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING".
+        """
+        pulumi.set(__self__, "body", body)
+        pulumi.set(__self__, "query", query)
+        pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "should_append_note", should_append_note)
+        pulumi.set(__self__, "should_append_url", should_append_url)
+        pulumi.set(__self__, "trigger_delay", trigger_delay)
+
+    @property
+    @pulumi.getter
+    def body(self) -> str:
+        """
+        The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "body")
+
+    @property
+    @pulumi.getter
+    def query(self) -> str:
+        """
+        The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+        """
+        return pulumi.get(self, "query")
+
+    @property
+    @pulumi.getter
+    def severity(self) -> str:
+        """
+        Severity - Critical/Warning
+        """
+        return pulumi.get(self, "severity")
+
+    @property
+    @pulumi.getter(name="shouldAppendNote")
+    def should_append_note(self) -> bool:
+        """
+        Whether the note need to add into bottom of the body for mapping the alarms information with template or not.
+        """
+        return pulumi.get(self, "should_append_note")
+
+    @property
+    @pulumi.getter(name="shouldAppendUrl")
+    def should_append_url(self) -> bool:
+        """
+        Whether the URL need to add into bottom of the body for mapping the alarms information with template or not.
+        """
+        return pulumi.get(self, "should_append_url")
+
+    @property
+    @pulumi.getter(name="triggerDelay")
+    def trigger_delay(self) -> str:
+        """
+        The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING".
+        """
+        return pulumi.get(self, "trigger_delay")
+
+
+@pulumi.output_type
+class GetMonitoringTemplateAlarmConditionsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetMonitoringTemplateMemberResult(dict):
+    def __init__(__self__, *,
+                 composite_type: str,
+                 id: str,
+                 type: str):
+        """
+        :param str composite_type: The OCID of the composite resource type like EBS or Peoplesoft.
+        :param str id: The OCID of the resourceInstance/resourceType/resourceGroup
+        :param str type: Type of the member reference RESOURCE_INSTANCE, RESOURCE_TYPE, RESOURCE_GROUP
+        """
+        pulumi.set(__self__, "composite_type", composite_type)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="compositeType")
+    def composite_type(self) -> str:
+        """
+        The OCID of the composite resource type like EBS or Peoplesoft.
+        """
+        return pulumi.get(self, "composite_type")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of the resourceInstance/resourceType/resourceGroup
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the member reference RESOURCE_INSTANCE, RESOURCE_TYPE, RESOURCE_GROUP
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetMonitoringTemplatesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetMonitoringTemplatesMonitoringTemplateCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetMonitoringTemplatesMonitoringTemplateCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetMonitoringTemplatesMonitoringTemplateCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetMonitoringTemplatesMonitoringTemplateCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, str],
+                 description: str,
+                 destinations: Sequence[str],
+                 display_name: str,
+                 freeform_tags: Mapping[str, str],
+                 id: str,
+                 is_alarms_enabled: bool,
+                 is_split_notification_enabled: bool,
+                 members: Sequence['outputs.GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberResult'],
+                 message_format: str,
+                 repeat_notification_duration: str,
+                 state: str,
+                 status: str,
+                 system_tags: Mapping[str, str],
+                 tenant_id: str,
+                 time_created: str,
+                 time_updated: str,
+                 total_alarm_conditions: float,
+                 total_applied_alarm_conditions: float):
+        """
+        :param str compartment_id: The ID of the compartment in which data is listed.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param str description: A user-friendly description for the monitoring template. It does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param Sequence[str] destinations: A list of destinations for alarm notifications. Each destination is represented by the OCID of a related resource.
+        :param str display_name: A filter to return monitoring template based on name.
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param str id: The OCID of the resourceInstance/resourceType/resourceGroup
+        :param bool is_alarms_enabled: Whether the alarm is enabled or disabled. Default value is enabled.
+        :param bool is_split_notification_enabled: Whether the alarm notification is enabled or disabled, it will be Enabled by default.
+        :param Sequence['GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberArgs'] members: List of members of this monitoring template.
+        :param str message_format: The format to use for alarm notifications.
+        :param str repeat_notification_duration: The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, PT4H indicates four hours. Minimum- PT1M. Maximum - P30D.
+        :param str state: A filter to return monitoring template based on Lifecycle State
+        :param str status: A filter to return monitoring template based on input status
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str tenant_id: Tenant Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        :param str time_created: The date and time the monitoringTemplate was created. Format defined by RFC3339.
+        :param str time_updated: The date and time the monitoringTemplate was last updated. Format defined by RFC3339.
+        :param float total_alarm_conditions: Total Alarm Conditions
+        :param float total_applied_alarm_conditions: Total Applied Alarm Conditions
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "destinations", destinations)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_alarms_enabled", is_alarms_enabled)
+        pulumi.set(__self__, "is_split_notification_enabled", is_split_notification_enabled)
+        pulumi.set(__self__, "members", members)
+        pulumi.set(__self__, "message_format", message_format)
+        pulumi.set(__self__, "repeat_notification_duration", repeat_notification_duration)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "tenant_id", tenant_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "total_alarm_conditions", total_alarm_conditions)
+        pulumi.set(__self__, "total_applied_alarm_conditions", total_applied_alarm_conditions)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The ID of the compartment in which data is listed.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        A user-friendly description for the monitoring template. It does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def destinations(self) -> Sequence[str]:
+        """
+        A list of destinations for alarm notifications. Each destination is represented by the OCID of a related resource.
+        """
+        return pulumi.get(self, "destinations")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return monitoring template based on name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of the resourceInstance/resourceType/resourceGroup
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isAlarmsEnabled")
+    def is_alarms_enabled(self) -> bool:
+        """
+        Whether the alarm is enabled or disabled. Default value is enabled.
+        """
+        return pulumi.get(self, "is_alarms_enabled")
+
+    @property
+    @pulumi.getter(name="isSplitNotificationEnabled")
+    def is_split_notification_enabled(self) -> bool:
+        """
+        Whether the alarm notification is enabled or disabled, it will be Enabled by default.
+        """
+        return pulumi.get(self, "is_split_notification_enabled")
+
+    @property
+    @pulumi.getter
+    def members(self) -> Sequence['outputs.GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberResult']:
+        """
+        List of members of this monitoring template.
+        """
+        return pulumi.get(self, "members")
+
+    @property
+    @pulumi.getter(name="messageFormat")
+    def message_format(self) -> str:
+        """
+        The format to use for alarm notifications.
+        """
+        return pulumi.get(self, "message_format")
+
+    @property
+    @pulumi.getter(name="repeatNotificationDuration")
+    def repeat_notification_duration(self) -> str:
+        """
+        The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, PT4H indicates four hours. Minimum- PT1M. Maximum - P30D.
+        """
+        return pulumi.get(self, "repeat_notification_duration")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return monitoring template based on Lifecycle State
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        A filter to return monitoring template based on input status
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="tenantId")
+    def tenant_id(self) -> str:
+        """
+        Tenant Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        """
+        return pulumi.get(self, "tenant_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the monitoringTemplate was created. Format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the monitoringTemplate was last updated. Format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="totalAlarmConditions")
+    def total_alarm_conditions(self) -> float:
+        """
+        Total Alarm Conditions
+        """
+        return pulumi.get(self, "total_alarm_conditions")
+
+    @property
+    @pulumi.getter(name="totalAppliedAlarmConditions")
+    def total_applied_alarm_conditions(self) -> float:
+        """
+        Total Applied Alarm Conditions
+        """
+        return pulumi.get(self, "total_applied_alarm_conditions")
+
+
+@pulumi.output_type
+class GetMonitoringTemplatesMonitoringTemplateCollectionItemMemberResult(dict):
+    def __init__(__self__, *,
+                 composite_type: str,
+                 id: str,
+                 type: str):
+        """
+        :param str composite_type: The OCID of the composite resource type like EBS or Peoplesoft.
+        :param str id: The OCID of the resourceInstance/resourceType/resourceGroup
+        :param str type: Type of the member reference RESOURCE_INSTANCE, RESOURCE_TYPE, RESOURCE_GROUP
+        """
+        pulumi.set(__self__, "composite_type", composite_type)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="compositeType")
+    def composite_type(self) -> str:
+        """
+        The OCID of the composite resource type like EBS or Peoplesoft.
+        """
+        return pulumi.get(self, "composite_type")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of the resourceInstance/resourceType/resourceGroup
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the member reference RESOURCE_INSTANCE, RESOURCE_TYPE, RESOURCE_GROUP
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type

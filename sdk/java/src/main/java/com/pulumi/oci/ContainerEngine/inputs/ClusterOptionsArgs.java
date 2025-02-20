@@ -54,6 +54,21 @@ public final class ClusterOptionsArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * IP family to use for single stack or define the order of IP families for dual-stack
+     * 
+     */
+    @Import(name="ipFamilies")
+    private @Nullable Output<List<String>> ipFamilies;
+
+    /**
+     * @return IP family to use for single stack or define the order of IP families for dual-stack
+     * 
+     */
+    public Optional<Output<List<String>>> ipFamilies() {
+        return Optional.ofNullable(this.ipFamilies);
+    }
+
+    /**
      * Network configuration for Kubernetes.
      * 
      */
@@ -148,6 +163,7 @@ public final class ClusterOptionsArgs extends com.pulumi.resources.ResourceArgs 
     private ClusterOptionsArgs(ClusterOptionsArgs $) {
         this.addOns = $.addOns;
         this.admissionControllerOptions = $.admissionControllerOptions;
+        this.ipFamilies = $.ipFamilies;
         this.kubernetesNetworkConfig = $.kubernetesNetworkConfig;
         this.openIdConnectDiscovery = $.openIdConnectDiscovery;
         this.openIdConnectTokenAuthenticationConfig = $.openIdConnectTokenAuthenticationConfig;
@@ -214,6 +230,37 @@ public final class ClusterOptionsArgs extends com.pulumi.resources.ResourceArgs 
          */
         public Builder admissionControllerOptions(ClusterOptionsAdmissionControllerOptionsArgs admissionControllerOptions) {
             return admissionControllerOptions(Output.of(admissionControllerOptions));
+        }
+
+        /**
+         * @param ipFamilies IP family to use for single stack or define the order of IP families for dual-stack
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipFamilies(@Nullable Output<List<String>> ipFamilies) {
+            $.ipFamilies = ipFamilies;
+            return this;
+        }
+
+        /**
+         * @param ipFamilies IP family to use for single stack or define the order of IP families for dual-stack
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipFamilies(List<String> ipFamilies) {
+            return ipFamilies(Output.of(ipFamilies));
+        }
+
+        /**
+         * @param ipFamilies IP family to use for single stack or define the order of IP families for dual-stack
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipFamilies(String... ipFamilies) {
+            return ipFamilies(List.of(ipFamilies));
         }
 
         /**

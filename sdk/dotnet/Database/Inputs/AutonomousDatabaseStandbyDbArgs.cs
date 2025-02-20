@@ -31,6 +31,12 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
+        /// The component chosen for maintenance.
+        /// </summary>
+        [Input("maintenanceTargetComponent")]
+        public Input<string>? MaintenanceTargetComponent { get; set; }
+
+        /// <summary>
         /// The current state of the Autonomous Database.
         /// </summary>
         [Input("state")]
@@ -47,6 +53,18 @@ namespace Pulumi.Oci.Database.Inputs
         /// </summary>
         [Input("timeDisasterRecoveryRoleChanged")]
         public Input<string>? TimeDisasterRecoveryRoleChanged { get; set; }
+
+        /// <summary>
+        /// The date and time when maintenance will begin.
+        /// </summary>
+        [Input("timeMaintenanceBegin")]
+        public Input<string>? TimeMaintenanceBegin { get; set; }
+
+        /// <summary>
+        /// The date and time when maintenance will end.
+        /// </summary>
+        [Input("timeMaintenanceEnd")]
+        public Input<string>? TimeMaintenanceEnd { get; set; }
 
         public AutonomousDatabaseStandbyDbArgs()
         {

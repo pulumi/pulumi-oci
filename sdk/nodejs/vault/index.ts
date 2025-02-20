@@ -10,10 +10,10 @@ export const getSecret: typeof import("./getSecret").getSecret = null as any;
 export const getSecretOutput: typeof import("./getSecret").getSecretOutput = null as any;
 utilities.lazyLoad(exports, ["getSecret","getSecretOutput"], () => require("./getSecret"));
 
-export { GetSecretVersionArgs, GetSecretVersionResult, GetSecretVersionOutputArgs } from "./getSecretVersion";
-export const getSecretVersion: typeof import("./getSecretVersion").getSecretVersion = null as any;
-export const getSecretVersionOutput: typeof import("./getSecretVersion").getSecretVersionOutput = null as any;
-utilities.lazyLoad(exports, ["getSecretVersion","getSecretVersionOutput"], () => require("./getSecretVersion"));
+export { GetSecretVersionSdkV2Args, GetSecretVersionSdkV2Result, GetSecretVersionSdkV2OutputArgs } from "./getSecretVersionSdkV2";
+export const getSecretVersionSdkV2: typeof import("./getSecretVersionSdkV2").getSecretVersionSdkV2 = null as any;
+export const getSecretVersionSdkV2Output: typeof import("./getSecretVersionSdkV2").getSecretVersionSdkV2Output = null as any;
+utilities.lazyLoad(exports, ["getSecretVersionSdkV2","getSecretVersionSdkV2Output"], () => require("./getSecretVersionSdkV2"));
 
 export { GetSecretsArgs, GetSecretsResult, GetSecretsOutputArgs } from "./getSecrets";
 export const getSecrets: typeof import("./getSecrets").getSecrets = null as any;

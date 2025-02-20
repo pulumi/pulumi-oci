@@ -233,6 +233,8 @@ if typing.TYPE_CHECKING:
     stackmonitoring = __stackmonitoring
     import pulumi_oci.streaming as __streaming
     streaming = __streaming
+    import pulumi_oci.tenantmanagercontrolplane as __tenantmanagercontrolplane
+    tenantmanagercontrolplane = __tenantmanagercontrolplane
     import pulumi_oci.usageproxy as __usageproxy
     usageproxy = __usageproxy
     import pulumi_oci.vault as __vault
@@ -366,6 +368,7 @@ else:
     servicemesh = _utilities.lazy_import('pulumi_oci.servicemesh')
     stackmonitoring = _utilities.lazy_import('pulumi_oci.stackmonitoring')
     streaming = _utilities.lazy_import('pulumi_oci.streaming')
+    tenantmanagercontrolplane = _utilities.lazy_import('pulumi_oci.tenantmanagercontrolplane')
     usageproxy = _utilities.lazy_import('pulumi_oci.usageproxy')
     vault = _utilities.lazy_import('pulumi_oci.vault')
     vbs = _utilities.lazy_import('pulumi_oci.vbs')
@@ -6366,6 +6369,30 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "StackMonitoring/monitoringTemplate",
+  "fqn": "pulumi_oci.stackmonitoring",
+  "classes": {
+   "oci:StackMonitoring/monitoringTemplate:MonitoringTemplate": "MonitoringTemplate"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "StackMonitoring/monitoringTemplateAlarmCondition",
+  "fqn": "pulumi_oci.stackmonitoring",
+  "classes": {
+   "oci:StackMonitoring/monitoringTemplateAlarmCondition:MonitoringTemplateAlarmCondition": "MonitoringTemplateAlarmCondition"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "StackMonitoring/monitoringTemplateMonitoringTemplateOnGivenResourcesManagement",
+  "fqn": "pulumi_oci.stackmonitoring",
+  "classes": {
+   "oci:StackMonitoring/monitoringTemplateMonitoringTemplateOnGivenResourcesManagement:MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement": "MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "StackMonitoring/processSet",
   "fqn": "pulumi_oci.stackmonitoring",
   "classes": {
@@ -6394,6 +6421,14 @@ _utilities.register(
   "fqn": "pulumi_oci.streaming",
   "classes": {
    "oci:Streaming/streamPool:StreamPool": "StreamPool"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Tenantmanagercontrolplane/subscriptionMapping",
+  "fqn": "pulumi_oci.tenantmanagercontrolplane",
+  "classes": {
+   "oci:Tenantmanagercontrolplane/subscriptionMapping:SubscriptionMapping": "SubscriptionMapping"
   }
  },
  {

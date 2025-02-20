@@ -72,6 +72,9 @@ type LookupConnectionResult struct {
 	// Used authentication mechanism to be provided for the following connection types:
 	// * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE
 	// * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
+	// * DATABRICKS - Required fields by authentication types:
+	// * PERSONAL_ACCESS_TOKEN: username is always 'token', user must enter password
+	// * OAUTH_M2M: user must enter clientId and clientSecret
 	AuthenticationType string `pulumi:"authenticationType"`
 	// Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
 	AzureTenantId string `pulumi:"azureTenantId"`
@@ -96,6 +99,7 @@ type LookupConnectionResult struct {
 	// * JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676'
 	// * SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
 	// * AMAZON_REDSHIFT: Connection URL. e.g.: 'jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb'
+	// * DATABRICKS: Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
 	ConnectionUrl string `pulumi:"connectionUrl"`
 	// The base64 encoded content of the consumer.properties file.
 	ConsumerProperties string `pulumi:"consumerProperties"`
@@ -115,9 +119,10 @@ type LookupConnectionResult struct {
 	// An object's Display Name.
 	DisplayName string `pulumi:"displayName"`
 	// Indicates that sensitive attributes are provided via Secrets.
-	DoesUseSecretIds bool   `pulumi:"doesUseSecretIds"`
-	Endpoint         string `pulumi:"endpoint"`
-	Fingerprint      string `pulumi:"fingerprint"`
+	DoesUseSecretIds bool `pulumi:"doesUseSecretIds"`
+	// Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+	Endpoint    string `pulumi:"endpoint"`
+	Fingerprint string `pulumi:"fingerprint"`
 	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The name or address of a host.
@@ -173,7 +178,7 @@ type LookupConnectionResult struct {
 	PublicKeyFingerprint string `pulumi:"publicKeyFingerprint"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
 	RedisClusterId string `pulumi:"redisClusterId"`
-	// The name of the region. e.g.: us-ashburn-1
+	// The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
 	Region string `pulumi:"region"`
 	// Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
 	RoutingMethod string `pulumi:"routingMethod"`
@@ -197,9 +202,11 @@ type LookupConnectionResult struct {
 	SessionMode string `pulumi:"sessionMode"`
 	// If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
 	ShouldUseJndi bool `pulumi:"shouldUseJndi"`
+	// Indicates that the user intents to connect to the instance through resource principal.
+	ShouldUseResourcePrincipal bool `pulumi:"shouldUseResourcePrincipal"`
 	// If set to true, the driver validates the certificate that is sent by the database server.
 	ShouldValidateServerCertificate bool `pulumi:"shouldValidateServerCertificate"`
-	// Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
+	// Database Certificate - The base64 encoded content of a .pem or .crt file. containing the server public key (for 1-way SSL).
 	SslCa             string `pulumi:"sslCa"`
 	SslCert           string `pulumi:"sslCert"`
 	SslClientKeystash string `pulumi:"sslClientKeystash"`
@@ -221,6 +228,8 @@ type LookupConnectionResult struct {
 	SslServerCertificate string `pulumi:"sslServerCertificate"`
 	// Possible lifecycle states for connection.
 	State string `pulumi:"state"`
+	// Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
+	StorageCredentialName string `pulumi:"storageCredentialName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
 	StreamPoolId string `pulumi:"streamPoolId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
@@ -231,22 +240,32 @@ type LookupConnectionResult struct {
 	TechnologyType string `pulumi:"technologyType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
 	TenancyId string `pulumi:"tenancyId"`
+	// Azure tenant ID of the application. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
+	TenantId string `pulumi:"tenantId"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeUpdated        string `pulumi:"timeUpdated"`
-	TriggerRefresh     bool   `pulumi:"triggerRefresh"`
-	TrustStore         string `pulumi:"trustStore"`
-	TrustStorePassword string `pulumi:"trustStorePassword"`
+	TimeUpdated                   string `pulumi:"timeUpdated"`
+	TlsCaFile                     string `pulumi:"tlsCaFile"`
+	TlsCertificateKeyFile         string `pulumi:"tlsCertificateKeyFile"`
+	TlsCertificateKeyFilePassword string `pulumi:"tlsCertificateKeyFilePassword"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
+	TlsCertificateKeyFilePasswordSecretId string `pulumi:"tlsCertificateKeyFilePasswordSecretId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
+	// * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
+	TlsCertificateKeyFileSecretId string `pulumi:"tlsCertificateKeyFileSecretId"`
+	TriggerRefresh                bool   `pulumi:"triggerRefresh"`
+	TrustStore                    string `pulumi:"trustStore"`
+	TrustStorePassword            string `pulumi:"trustStorePassword"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, 'trustStorePassword' field must not be provided.
 	TrustStorePasswordSecretId string `pulumi:"trustStorePasswordSecretId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided.
 	TrustStoreSecretId string `pulumi:"trustStoreSecretId"`
 	// Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
 	Url string `pulumi:"url"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/Object Storage. The user must have write access to the table they want to connect to.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
 	UserId string `pulumi:"userId"`
-	// The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
+	// The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
 	Username string `pulumi:"username"`
 	// Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
 	VaultId string `pulumi:"vaultId"`
@@ -321,6 +340,9 @@ func (o LookupConnectionResultOutput) AuthenticationMode() pulumi.StringOutput {
 // Used authentication mechanism to be provided for the following connection types:
 // * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE
 // * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
+// * DATABRICKS - Required fields by authentication types:
+// * PERSONAL_ACCESS_TOKEN: username is always 'token', user must enter password
+// * OAUTH_M2M: user must enter clientId and clientSecret
 func (o LookupConnectionResultOutput) AuthenticationType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.AuthenticationType }).(pulumi.StringOutput)
 }
@@ -378,6 +400,7 @@ func (o LookupConnectionResultOutput) ConnectionType() pulumi.StringOutput {
 // * JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676'
 // * SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
 // * AMAZON_REDSHIFT: Connection URL. e.g.: 'jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb'
+// * DATABRICKS: Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
 func (o LookupConnectionResultOutput) ConnectionUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.ConnectionUrl }).(pulumi.StringOutput)
 }
@@ -431,6 +454,7 @@ func (o LookupConnectionResultOutput) DoesUseSecretIds() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupConnectionResult) bool { return v.DoesUseSecretIds }).(pulumi.BoolOutput)
 }
 
+// Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
 func (o LookupConnectionResultOutput) Endpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.Endpoint }).(pulumi.StringOutput)
 }
@@ -584,7 +608,7 @@ func (o LookupConnectionResultOutput) RedisClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.RedisClusterId }).(pulumi.StringOutput)
 }
 
-// The name of the region. e.g.: us-ashburn-1
+// The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
 func (o LookupConnectionResultOutput) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.Region }).(pulumi.StringOutput)
 }
@@ -644,12 +668,17 @@ func (o LookupConnectionResultOutput) ShouldUseJndi() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupConnectionResult) bool { return v.ShouldUseJndi }).(pulumi.BoolOutput)
 }
 
+// Indicates that the user intents to connect to the instance through resource principal.
+func (o LookupConnectionResultOutput) ShouldUseResourcePrincipal() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupConnectionResult) bool { return v.ShouldUseResourcePrincipal }).(pulumi.BoolOutput)
+}
+
 // If set to true, the driver validates the certificate that is sent by the database server.
 func (o LookupConnectionResultOutput) ShouldValidateServerCertificate() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupConnectionResult) bool { return v.ShouldValidateServerCertificate }).(pulumi.BoolOutput)
 }
 
-// Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
+// Database Certificate - The base64 encoded content of a .pem or .crt file. containing the server public key (for 1-way SSL).
 func (o LookupConnectionResultOutput) SslCa() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SslCa }).(pulumi.StringOutput)
 }
@@ -713,6 +742,11 @@ func (o LookupConnectionResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.State }).(pulumi.StringOutput)
 }
 
+// Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
+func (o LookupConnectionResultOutput) StorageCredentialName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.StorageCredentialName }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
 func (o LookupConnectionResultOutput) StreamPoolId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.StreamPoolId }).(pulumi.StringOutput)
@@ -738,6 +772,11 @@ func (o LookupConnectionResultOutput) TenancyId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.TenancyId }).(pulumi.StringOutput)
 }
 
+// Azure tenant ID of the application. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
+func (o LookupConnectionResultOutput) TenantId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.TenantId }).(pulumi.StringOutput)
+}
+
 // The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 func (o LookupConnectionResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.TimeCreated }).(pulumi.StringOutput)
@@ -746,6 +785,29 @@ func (o LookupConnectionResultOutput) TimeCreated() pulumi.StringOutput {
 // The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 func (o LookupConnectionResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+func (o LookupConnectionResultOutput) TlsCaFile() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.TlsCaFile }).(pulumi.StringOutput)
+}
+
+func (o LookupConnectionResultOutput) TlsCertificateKeyFile() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.TlsCertificateKeyFile }).(pulumi.StringOutput)
+}
+
+func (o LookupConnectionResultOutput) TlsCertificateKeyFilePassword() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.TlsCertificateKeyFilePassword }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
+func (o LookupConnectionResultOutput) TlsCertificateKeyFilePasswordSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.TlsCertificateKeyFilePasswordSecretId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
+// * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
+func (o LookupConnectionResultOutput) TlsCertificateKeyFileSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.TlsCertificateKeyFileSecretId }).(pulumi.StringOutput)
 }
 
 func (o LookupConnectionResultOutput) TriggerRefresh() pulumi.BoolOutput {
@@ -765,7 +827,7 @@ func (o LookupConnectionResultOutput) TrustStorePasswordSecretId() pulumi.String
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.TrustStorePasswordSecretId }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided.
 func (o LookupConnectionResultOutput) TrustStoreSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.TrustStoreSecretId }).(pulumi.StringOutput)
 }
@@ -775,12 +837,12 @@ func (o LookupConnectionResultOutput) Url() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.Url }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/Object Storage. The user must have write access to the table they want to connect to.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
 func (o LookupConnectionResultOutput) UserId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.UserId }).(pulumi.StringOutput)
 }
 
-// The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
+// The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
 func (o LookupConnectionResultOutput) Username() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.Username }).(pulumi.StringOutput)
 }

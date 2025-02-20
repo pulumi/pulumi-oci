@@ -32,6 +32,7 @@ import (
 //			_, err := jms.GetFleetPerformanceTuningAnalysisResults(ctx, &jms.GetFleetPerformanceTuningAnalysisResultsArgs{
 //				FleetId:           testFleet.Id,
 //				ApplicationId:     pulumi.StringRef(fleetPerformanceTuningAnalysisResultApplicationId),
+//				ApplicationName:   pulumi.StringRef(fleetPerformanceTuningAnalysisResultApplicationName),
 //				HostName:          pulumi.StringRef(fleetPerformanceTuningAnalysisResultHostName),
 //				ManagedInstanceId: pulumi.StringRef(fleetPerformanceTuningAnalysisResultManagedInstanceId),
 //				TimeEnd:           pulumi.StringRef(fleetPerformanceTuningAnalysisResultTimeEnd),
@@ -58,8 +59,10 @@ func GetFleetPerformanceTuningAnalysisResults(ctx *pulumi.Context, args *GetFlee
 // A collection of arguments for invoking getFleetPerformanceTuningAnalysisResults.
 type GetFleetPerformanceTuningAnalysisResultsArgs struct {
 	// The Fleet-unique identifier of the related application.
-	ApplicationId *string                                          `pulumi:"applicationId"`
-	Filters       []GetFleetPerformanceTuningAnalysisResultsFilter `pulumi:"filters"`
+	ApplicationId *string `pulumi:"applicationId"`
+	// The name of the application.
+	ApplicationName *string                                          `pulumi:"applicationName"`
+	Filters         []GetFleetPerformanceTuningAnalysisResultsFilter `pulumi:"filters"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
 	FleetId string `pulumi:"fleetId"`
 	// The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
@@ -75,8 +78,10 @@ type GetFleetPerformanceTuningAnalysisResultsArgs struct {
 // A collection of values returned by getFleetPerformanceTuningAnalysisResults.
 type GetFleetPerformanceTuningAnalysisResultsResult struct {
 	// The OCID of the application for which the report has been generated.
-	ApplicationId *string                                          `pulumi:"applicationId"`
-	Filters       []GetFleetPerformanceTuningAnalysisResultsFilter `pulumi:"filters"`
+	ApplicationId *string `pulumi:"applicationId"`
+	// The name of the application for which the report has been generated.
+	ApplicationName *string                                          `pulumi:"applicationName"`
+	Filters         []GetFleetPerformanceTuningAnalysisResultsFilter `pulumi:"filters"`
 	// The fleet OCID.
 	FleetId string `pulumi:"fleetId"`
 	// The hostname of the managed instance.
@@ -103,8 +108,10 @@ func GetFleetPerformanceTuningAnalysisResultsOutput(ctx *pulumi.Context, args Ge
 // A collection of arguments for invoking getFleetPerformanceTuningAnalysisResults.
 type GetFleetPerformanceTuningAnalysisResultsOutputArgs struct {
 	// The Fleet-unique identifier of the related application.
-	ApplicationId pulumi.StringPtrInput                                    `pulumi:"applicationId"`
-	Filters       GetFleetPerformanceTuningAnalysisResultsFilterArrayInput `pulumi:"filters"`
+	ApplicationId pulumi.StringPtrInput `pulumi:"applicationId"`
+	// The name of the application.
+	ApplicationName pulumi.StringPtrInput                                    `pulumi:"applicationName"`
+	Filters         GetFleetPerformanceTuningAnalysisResultsFilterArrayInput `pulumi:"filters"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
 	FleetId pulumi.StringInput `pulumi:"fleetId"`
 	// The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
@@ -139,6 +146,11 @@ func (o GetFleetPerformanceTuningAnalysisResultsResultOutput) ToGetFleetPerforma
 // The OCID of the application for which the report has been generated.
 func (o GetFleetPerformanceTuningAnalysisResultsResultOutput) ApplicationId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsResult) *string { return v.ApplicationId }).(pulumi.StringPtrOutput)
+}
+
+// The name of the application for which the report has been generated.
+func (o GetFleetPerformanceTuningAnalysisResultsResultOutput) ApplicationName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsResult) *string { return v.ApplicationName }).(pulumi.StringPtrOutput)
 }
 
 func (o GetFleetPerformanceTuningAnalysisResultsResultOutput) Filters() GetFleetPerformanceTuningAnalysisResultsFilterArrayOutput {

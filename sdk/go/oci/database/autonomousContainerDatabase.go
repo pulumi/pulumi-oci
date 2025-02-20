@@ -26,6 +26,8 @@ import (
 type AutonomousContainerDatabase struct {
 	pulumi.CustomResourceState
 
+	// A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
+	AssociatedBackupConfigurationDetails AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArrayOutput `pulumi:"associatedBackupConfigurationDetails"`
 	// **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
 	AutonomousExadataInfrastructureId pulumi.StringOutput `pulumi:"autonomousExadataInfrastructureId"`
 	// The OCID of the Autonomous VM Cluster.
@@ -36,6 +38,8 @@ type AutonomousContainerDatabase struct {
 	AvailableCpus pulumi.Float64Output `pulumi:"availableCpus"`
 	// (Updatable) Backup options for the Autonomous Container Database.
 	BackupConfig AutonomousContainerDatabaseBackupConfigOutput `pulumi:"backupConfig"`
+	// This list describes the backup destination properties associated with the Autonomous Container Database (ACD) 's preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
+	BackupDestinationPropertiesLists AutonomousContainerDatabaseBackupDestinationPropertiesListArrayOutput `pulumi:"backupDestinationPropertiesLists"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
 	CloudAutonomousVmClusterId pulumi.StringOutput `pulumi:"cloudAutonomousVmClusterId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
@@ -118,11 +122,15 @@ type AutonomousContainerDatabase struct {
 	// An array of CPU values that can be used to successfully provision a single Autonomous Database.
 	ProvisionableCpuses pulumi.Float64ArrayOutput `pulumi:"provisionableCpuses"`
 	// The number of CPUs provisioned in an Autonomous Container Database.
+	// <<<<<<< ours
 	ProvisionedCpus pulumi.Float64Output `pulumi:"provisionedCpus"`
 	// For Autonomous Databases on Dedicated Exadata Infrastructure:
 	// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 	// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+	// > > > > > > > theirs
 	ReclaimableCpus pulumi.Float64Output `pulumi:"reclaimableCpus"`
+	// Information about the recovery appliance configuration associated with the Autonomous Container Database.
+	RecoveryApplianceDetails AutonomousContainerDatabaseRecoveryApplianceDetailArrayOutput `pulumi:"recoveryApplianceDetails"`
 	// The number of CPUs reserved in an Autonomous Container Database.
 	// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 	// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
@@ -192,6 +200,8 @@ func GetAutonomousContainerDatabase(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AutonomousContainerDatabase resources.
 type autonomousContainerDatabaseState struct {
+	// A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
+	AssociatedBackupConfigurationDetails []AutonomousContainerDatabaseAssociatedBackupConfigurationDetail `pulumi:"associatedBackupConfigurationDetails"`
 	// **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
 	AutonomousExadataInfrastructureId *string `pulumi:"autonomousExadataInfrastructureId"`
 	// The OCID of the Autonomous VM Cluster.
@@ -202,6 +212,8 @@ type autonomousContainerDatabaseState struct {
 	AvailableCpus *float64 `pulumi:"availableCpus"`
 	// (Updatable) Backup options for the Autonomous Container Database.
 	BackupConfig *AutonomousContainerDatabaseBackupConfig `pulumi:"backupConfig"`
+	// This list describes the backup destination properties associated with the Autonomous Container Database (ACD) 's preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
+	BackupDestinationPropertiesLists []AutonomousContainerDatabaseBackupDestinationPropertiesList `pulumi:"backupDestinationPropertiesLists"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
 	CloudAutonomousVmClusterId *string `pulumi:"cloudAutonomousVmClusterId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
@@ -284,11 +296,15 @@ type autonomousContainerDatabaseState struct {
 	// An array of CPU values that can be used to successfully provision a single Autonomous Database.
 	ProvisionableCpuses []float64 `pulumi:"provisionableCpuses"`
 	// The number of CPUs provisioned in an Autonomous Container Database.
+	// <<<<<<< ours
 	ProvisionedCpus *float64 `pulumi:"provisionedCpus"`
 	// For Autonomous Databases on Dedicated Exadata Infrastructure:
 	// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 	// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+	// > > > > > > > theirs
 	ReclaimableCpus *float64 `pulumi:"reclaimableCpus"`
+	// Information about the recovery appliance configuration associated with the Autonomous Container Database.
+	RecoveryApplianceDetails []AutonomousContainerDatabaseRecoveryApplianceDetail `pulumi:"recoveryApplianceDetails"`
 	// The number of CPUs reserved in an Autonomous Container Database.
 	// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 	// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
@@ -323,6 +339,8 @@ type autonomousContainerDatabaseState struct {
 }
 
 type AutonomousContainerDatabaseState struct {
+	// A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
+	AssociatedBackupConfigurationDetails AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArrayInput
 	// **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
 	AutonomousExadataInfrastructureId pulumi.StringPtrInput
 	// The OCID of the Autonomous VM Cluster.
@@ -333,6 +351,8 @@ type AutonomousContainerDatabaseState struct {
 	AvailableCpus pulumi.Float64PtrInput
 	// (Updatable) Backup options for the Autonomous Container Database.
 	BackupConfig AutonomousContainerDatabaseBackupConfigPtrInput
+	// This list describes the backup destination properties associated with the Autonomous Container Database (ACD) 's preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
+	BackupDestinationPropertiesLists AutonomousContainerDatabaseBackupDestinationPropertiesListArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
 	CloudAutonomousVmClusterId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
@@ -415,11 +435,15 @@ type AutonomousContainerDatabaseState struct {
 	// An array of CPU values that can be used to successfully provision a single Autonomous Database.
 	ProvisionableCpuses pulumi.Float64ArrayInput
 	// The number of CPUs provisioned in an Autonomous Container Database.
+	// <<<<<<< ours
 	ProvisionedCpus pulumi.Float64PtrInput
 	// For Autonomous Databases on Dedicated Exadata Infrastructure:
 	// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 	// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+	// > > > > > > > theirs
 	ReclaimableCpus pulumi.Float64PtrInput
+	// Information about the recovery appliance configuration associated with the Autonomous Container Database.
+	RecoveryApplianceDetails AutonomousContainerDatabaseRecoveryApplianceDetailArrayInput
 	// The number of CPUs reserved in an Autonomous Container Database.
 	// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 	// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
@@ -699,6 +723,13 @@ func (o AutonomousContainerDatabaseOutput) ToAutonomousContainerDatabaseOutputWi
 	return o
 }
 
+// A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
+func (o AutonomousContainerDatabaseOutput) AssociatedBackupConfigurationDetails() AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArrayOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabase) AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArrayOutput {
+		return v.AssociatedBackupConfigurationDetails
+	}).(AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArrayOutput)
+}
+
 // **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
 func (o AutonomousContainerDatabaseOutput) AutonomousExadataInfrastructureId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.AutonomousExadataInfrastructureId }).(pulumi.StringOutput)
@@ -724,6 +755,13 @@ func (o AutonomousContainerDatabaseOutput) BackupConfig() AutonomousContainerDat
 	return o.ApplyT(func(v *AutonomousContainerDatabase) AutonomousContainerDatabaseBackupConfigOutput {
 		return v.BackupConfig
 	}).(AutonomousContainerDatabaseBackupConfigOutput)
+}
+
+// This list describes the backup destination properties associated with the Autonomous Container Database (ACD) 's preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
+func (o AutonomousContainerDatabaseOutput) BackupDestinationPropertiesLists() AutonomousContainerDatabaseBackupDestinationPropertiesListArrayOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabase) AutonomousContainerDatabaseBackupDestinationPropertiesListArrayOutput {
+		return v.BackupDestinationPropertiesLists
+	}).(AutonomousContainerDatabaseBackupDestinationPropertiesListArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
@@ -950,6 +988,7 @@ func (o AutonomousContainerDatabaseOutput) ProvisionableCpuses() pulumi.Float64A
 }
 
 // The number of CPUs provisioned in an Autonomous Container Database.
+// <<<<<<< ours
 func (o AutonomousContainerDatabaseOutput) ProvisionedCpus() pulumi.Float64Output {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.Float64Output { return v.ProvisionedCpus }).(pulumi.Float64Output)
 }
@@ -957,8 +996,16 @@ func (o AutonomousContainerDatabaseOutput) ProvisionedCpus() pulumi.Float64Outpu
 // For Autonomous Databases on Dedicated Exadata Infrastructure:
 // * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 // * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+// > > > > > > > theirs
 func (o AutonomousContainerDatabaseOutput) ReclaimableCpus() pulumi.Float64Output {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.Float64Output { return v.ReclaimableCpus }).(pulumi.Float64Output)
+}
+
+// Information about the recovery appliance configuration associated with the Autonomous Container Database.
+func (o AutonomousContainerDatabaseOutput) RecoveryApplianceDetails() AutonomousContainerDatabaseRecoveryApplianceDetailArrayOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabase) AutonomousContainerDatabaseRecoveryApplianceDetailArrayOutput {
+		return v.RecoveryApplianceDetails
+	}).(AutonomousContainerDatabaseRecoveryApplianceDetailArrayOutput)
 }
 
 // The number of CPUs reserved in an Autonomous Container Database.

@@ -127,6 +127,8 @@ type Replication struct {
 	SourceId pulumi.StringOutput `pulumi:"sourceId"`
 	// The current state of this replication. This resource can be in a `FAILED` state if replication target is deleted instead of the replication resource.
 	State pulumi.StringOutput `pulumi:"state"`
+	// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.
 	//
 	// ** IMPORTANT **
@@ -206,6 +208,8 @@ type replicationState struct {
 	SourceId *string `pulumi:"sourceId"`
 	// The current state of this replication. This resource can be in a `FAILED` state if replication target is deleted instead of the replication resource.
 	State *string `pulumi:"state"`
+	// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.
 	//
 	// ** IMPORTANT **
@@ -247,6 +251,8 @@ type ReplicationState struct {
 	SourceId pulumi.StringPtrInput
 	// The current state of this replication. This resource can be in a `FAILED` state if replication target is deleted instead of the replication resource.
 	State pulumi.StringPtrInput
+	// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+	SystemTags pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.
 	//
 	// ** IMPORTANT **
@@ -471,6 +477,11 @@ func (o ReplicationOutput) SourceId() pulumi.StringOutput {
 // The current state of this replication. This resource can be in a `FAILED` state if replication target is deleted instead of the replication resource.
 func (o ReplicationOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *Replication) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+func (o ReplicationOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Replication) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.

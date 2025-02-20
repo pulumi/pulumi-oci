@@ -15,10 +15,14 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs',
+    'AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgsDict',
     'AutonomousContainerDatabaseBackupConfigArgs',
     'AutonomousContainerDatabaseBackupConfigArgsDict',
     'AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs',
     'AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgsDict',
+    'AutonomousContainerDatabaseBackupDestinationPropertiesListArgs',
+    'AutonomousContainerDatabaseBackupDestinationPropertiesListArgsDict',
     'AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs',
     'AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgsDict',
     'AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs',
@@ -41,6 +45,8 @@ __all__ = [
     'AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgsDict',
     'AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs',
     'AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgsDict',
+    'AutonomousContainerDatabaseRecoveryApplianceDetailArgs',
+    'AutonomousContainerDatabaseRecoveryApplianceDetailArgsDict',
     'AutonomousDatabaseApexDetailArgs',
     'AutonomousDatabaseApexDetailArgsDict',
     'AutonomousDatabaseBackupBackupDestinationDetailsArgs',
@@ -560,6 +566,218 @@ __all__ = [
 MYPY = False
 
 if not MYPY:
+    class AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgsDict(TypedDict):
+        backup_destination_attach_histories: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        The timestamps at which this backup destination is used as the preferred destination to host the Autonomous Container Database backups.
+        """
+        dbrs_policy_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        """
+        internet_proxy: NotRequired[pulumi.Input[str]]
+        """
+        Proxy URL to connect to object store.
+        """
+        recovery_window_in_days: NotRequired[pulumi.Input[int]]
+        """
+        Number of days between the current and earliest point of recoverability covered by automatic backups.
+        """
+        space_utilized_in_gbs: NotRequired[pulumi.Input[int]]
+        """
+        The total space utilized (in GBs) by this Autonomous Container Database on this backup destination, rounded to the nearest integer.
+        """
+        time_at_which_storage_details_are_updated: NotRequired[pulumi.Input[str]]
+        """
+        The latest timestamp when the backup destination details, such as 'spaceUtilized,' are updated.
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        Type of the database backup destination.
+        """
+        vpc_password: NotRequired[pulumi.Input[str]]
+        """
+        For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+        """
+        vpc_user: NotRequired[pulumi.Input[str]]
+        """
+        For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+        """
+elif False:
+    AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs:
+    def __init__(__self__, *,
+                 backup_destination_attach_histories: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 dbrs_policy_id: Optional[pulumi.Input[str]] = None,
+                 id: Optional[pulumi.Input[str]] = None,
+                 internet_proxy: Optional[pulumi.Input[str]] = None,
+                 recovery_window_in_days: Optional[pulumi.Input[int]] = None,
+                 space_utilized_in_gbs: Optional[pulumi.Input[int]] = None,
+                 time_at_which_storage_details_are_updated: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None,
+                 vpc_password: Optional[pulumi.Input[str]] = None,
+                 vpc_user: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] backup_destination_attach_histories: The timestamps at which this backup destination is used as the preferred destination to host the Autonomous Container Database backups.
+        :param pulumi.Input[str] dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+        :param pulumi.Input[str] id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        :param pulumi.Input[str] internet_proxy: Proxy URL to connect to object store.
+        :param pulumi.Input[int] recovery_window_in_days: Number of days between the current and earliest point of recoverability covered by automatic backups.
+        :param pulumi.Input[int] space_utilized_in_gbs: The total space utilized (in GBs) by this Autonomous Container Database on this backup destination, rounded to the nearest integer.
+        :param pulumi.Input[str] time_at_which_storage_details_are_updated: The latest timestamp when the backup destination details, such as 'spaceUtilized,' are updated.
+        :param pulumi.Input[str] type: Type of the database backup destination.
+        :param pulumi.Input[str] vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+        :param pulumi.Input[str] vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+        """
+        if backup_destination_attach_histories is not None:
+            pulumi.set(__self__, "backup_destination_attach_histories", backup_destination_attach_histories)
+        if dbrs_policy_id is not None:
+            pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if internet_proxy is not None:
+            pulumi.set(__self__, "internet_proxy", internet_proxy)
+        if recovery_window_in_days is not None:
+            pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
+        if space_utilized_in_gbs is not None:
+            pulumi.set(__self__, "space_utilized_in_gbs", space_utilized_in_gbs)
+        if time_at_which_storage_details_are_updated is not None:
+            pulumi.set(__self__, "time_at_which_storage_details_are_updated", time_at_which_storage_details_are_updated)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if vpc_password is not None:
+            pulumi.set(__self__, "vpc_password", vpc_password)
+        if vpc_user is not None:
+            pulumi.set(__self__, "vpc_user", vpc_user)
+
+    @property
+    @pulumi.getter(name="backupDestinationAttachHistories")
+    def backup_destination_attach_histories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The timestamps at which this backup destination is used as the preferred destination to host the Autonomous Container Database backups.
+        """
+        return pulumi.get(self, "backup_destination_attach_histories")
+
+    @backup_destination_attach_histories.setter
+    def backup_destination_attach_histories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "backup_destination_attach_histories", value)
+
+    @property
+    @pulumi.getter(name="dbrsPolicyId")
+    def dbrs_policy_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+        """
+        return pulumi.get(self, "dbrs_policy_id")
+
+    @dbrs_policy_id.setter
+    def dbrs_policy_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "dbrs_policy_id", value)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "id", value)
+
+    @property
+    @pulumi.getter(name="internetProxy")
+    def internet_proxy(self) -> Optional[pulumi.Input[str]]:
+        """
+        Proxy URL to connect to object store.
+        """
+        return pulumi.get(self, "internet_proxy")
+
+    @internet_proxy.setter
+    def internet_proxy(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "internet_proxy", value)
+
+    @property
+    @pulumi.getter(name="recoveryWindowInDays")
+    def recovery_window_in_days(self) -> Optional[pulumi.Input[int]]:
+        """
+        Number of days between the current and earliest point of recoverability covered by automatic backups.
+        """
+        return pulumi.get(self, "recovery_window_in_days")
+
+    @recovery_window_in_days.setter
+    def recovery_window_in_days(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "recovery_window_in_days", value)
+
+    @property
+    @pulumi.getter(name="spaceUtilizedInGbs")
+    def space_utilized_in_gbs(self) -> Optional[pulumi.Input[int]]:
+        """
+        The total space utilized (in GBs) by this Autonomous Container Database on this backup destination, rounded to the nearest integer.
+        """
+        return pulumi.get(self, "space_utilized_in_gbs")
+
+    @space_utilized_in_gbs.setter
+    def space_utilized_in_gbs(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "space_utilized_in_gbs", value)
+
+    @property
+    @pulumi.getter(name="timeAtWhichStorageDetailsAreUpdated")
+    def time_at_which_storage_details_are_updated(self) -> Optional[pulumi.Input[str]]:
+        """
+        The latest timestamp when the backup destination details, such as 'spaceUtilized,' are updated.
+        """
+        return pulumi.get(self, "time_at_which_storage_details_are_updated")
+
+    @time_at_which_storage_details_are_updated.setter
+    def time_at_which_storage_details_are_updated(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_at_which_storage_details_are_updated", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Type of the database backup destination.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="vpcPassword")
+    def vpc_password(self) -> Optional[pulumi.Input[str]]:
+        """
+        For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+        """
+        return pulumi.get(self, "vpc_password")
+
+    @vpc_password.setter
+    def vpc_password(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "vpc_password", value)
+
+    @property
+    @pulumi.getter(name="vpcUser")
+    def vpc_user(self) -> Optional[pulumi.Input[str]]:
+        """
+        For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+        """
+        return pulumi.get(self, "vpc_user")
+
+    @vpc_user.setter
+    def vpc_user(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "vpc_user", value)
+
+
+if not MYPY:
     class AutonomousContainerDatabaseBackupConfigArgsDict(TypedDict):
         backup_destination_details: NotRequired[pulumi.Input['AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgsDict']]
         """
@@ -720,6 +938,78 @@ class AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs:
     @vpc_user.setter
     def vpc_user(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "vpc_user", value)
+
+
+if not MYPY:
+    class AutonomousContainerDatabaseBackupDestinationPropertiesListArgsDict(TypedDict):
+        backup_destination_attach_histories: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        The timestamps at which this backup destination is used as the preferred destination to host the Autonomous Container Database backups.
+        """
+        space_utilized_in_gbs: NotRequired[pulumi.Input[int]]
+        """
+        The total space utilized (in GBs) by this Autonomous Container Database on this backup destination, rounded to the nearest integer.
+        """
+        time_at_which_storage_details_are_updated: NotRequired[pulumi.Input[str]]
+        """
+        The latest timestamp when the backup destination details, such as 'spaceUtilized,' are updated.
+        """
+elif False:
+    AutonomousContainerDatabaseBackupDestinationPropertiesListArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AutonomousContainerDatabaseBackupDestinationPropertiesListArgs:
+    def __init__(__self__, *,
+                 backup_destination_attach_histories: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 space_utilized_in_gbs: Optional[pulumi.Input[int]] = None,
+                 time_at_which_storage_details_are_updated: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] backup_destination_attach_histories: The timestamps at which this backup destination is used as the preferred destination to host the Autonomous Container Database backups.
+        :param pulumi.Input[int] space_utilized_in_gbs: The total space utilized (in GBs) by this Autonomous Container Database on this backup destination, rounded to the nearest integer.
+        :param pulumi.Input[str] time_at_which_storage_details_are_updated: The latest timestamp when the backup destination details, such as 'spaceUtilized,' are updated.
+        """
+        if backup_destination_attach_histories is not None:
+            pulumi.set(__self__, "backup_destination_attach_histories", backup_destination_attach_histories)
+        if space_utilized_in_gbs is not None:
+            pulumi.set(__self__, "space_utilized_in_gbs", space_utilized_in_gbs)
+        if time_at_which_storage_details_are_updated is not None:
+            pulumi.set(__self__, "time_at_which_storage_details_are_updated", time_at_which_storage_details_are_updated)
+
+    @property
+    @pulumi.getter(name="backupDestinationAttachHistories")
+    def backup_destination_attach_histories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The timestamps at which this backup destination is used as the preferred destination to host the Autonomous Container Database backups.
+        """
+        return pulumi.get(self, "backup_destination_attach_histories")
+
+    @backup_destination_attach_histories.setter
+    def backup_destination_attach_histories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "backup_destination_attach_histories", value)
+
+    @property
+    @pulumi.getter(name="spaceUtilizedInGbs")
+    def space_utilized_in_gbs(self) -> Optional[pulumi.Input[int]]:
+        """
+        The total space utilized (in GBs) by this Autonomous Container Database on this backup destination, rounded to the nearest integer.
+        """
+        return pulumi.get(self, "space_utilized_in_gbs")
+
+    @space_utilized_in_gbs.setter
+    def space_utilized_in_gbs(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "space_utilized_in_gbs", value)
+
+    @property
+    @pulumi.getter(name="timeAtWhichStorageDetailsAreUpdated")
+    def time_at_which_storage_details_are_updated(self) -> Optional[pulumi.Input[str]]:
+        """
+        The latest timestamp when the backup destination details, such as 'spaceUtilized,' are updated.
+        """
+        return pulumi.get(self, "time_at_which_storage_details_are_updated")
+
+    @time_at_which_storage_details_are_updated.setter
+    def time_at_which_storage_details_are_updated(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_at_which_storage_details_are_updated", value)
 
 
 if not MYPY:
@@ -1760,6 +2050,81 @@ class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBack
     @vpc_user.setter
     def vpc_user(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "vpc_user", value)
+
+
+if not MYPY:
+    class AutonomousContainerDatabaseRecoveryApplianceDetailArgsDict(TypedDict):
+        allocated_storage_size_in_gbs: NotRequired[pulumi.Input[int]]
+        """
+        The storage size of the backup destination allocated for an Autonomous Container Database to store backups on the recovery appliance, in GBs, rounded to the nearest integer.
+        """
+        recovery_window_in_days: NotRequired[pulumi.Input[int]]
+        """
+        Number of days between the current and earliest point of recoverability covered by automatic backups.
+        """
+        time_recovery_appliance_details_updated: NotRequired[pulumi.Input[str]]
+        """
+        The time when the recovery appliance details are updated.
+        =======
+        """
+elif False:
+    AutonomousContainerDatabaseRecoveryApplianceDetailArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AutonomousContainerDatabaseRecoveryApplianceDetailArgs:
+    def __init__(__self__, *,
+                 allocated_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
+                 recovery_window_in_days: Optional[pulumi.Input[int]] = None,
+                 time_recovery_appliance_details_updated: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[int] allocated_storage_size_in_gbs: The storage size of the backup destination allocated for an Autonomous Container Database to store backups on the recovery appliance, in GBs, rounded to the nearest integer.
+        :param pulumi.Input[int] recovery_window_in_days: Number of days between the current and earliest point of recoverability covered by automatic backups.
+        :param pulumi.Input[str] time_recovery_appliance_details_updated: The time when the recovery appliance details are updated.
+               =======
+        """
+        if allocated_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "allocated_storage_size_in_gbs", allocated_storage_size_in_gbs)
+        if recovery_window_in_days is not None:
+            pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
+        if time_recovery_appliance_details_updated is not None:
+            pulumi.set(__self__, "time_recovery_appliance_details_updated", time_recovery_appliance_details_updated)
+
+    @property
+    @pulumi.getter(name="allocatedStorageSizeInGbs")
+    def allocated_storage_size_in_gbs(self) -> Optional[pulumi.Input[int]]:
+        """
+        The storage size of the backup destination allocated for an Autonomous Container Database to store backups on the recovery appliance, in GBs, rounded to the nearest integer.
+        """
+        return pulumi.get(self, "allocated_storage_size_in_gbs")
+
+    @allocated_storage_size_in_gbs.setter
+    def allocated_storage_size_in_gbs(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "allocated_storage_size_in_gbs", value)
+
+    @property
+    @pulumi.getter(name="recoveryWindowInDays")
+    def recovery_window_in_days(self) -> Optional[pulumi.Input[int]]:
+        """
+        Number of days between the current and earliest point of recoverability covered by automatic backups.
+        """
+        return pulumi.get(self, "recovery_window_in_days")
+
+    @recovery_window_in_days.setter
+    def recovery_window_in_days(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "recovery_window_in_days", value)
+
+    @property
+    @pulumi.getter(name="timeRecoveryApplianceDetailsUpdated")
+    def time_recovery_appliance_details_updated(self) -> Optional[pulumi.Input[str]]:
+        """
+        The time when the recovery appliance details are updated.
+        =======
+        """
+        return pulumi.get(self, "time_recovery_appliance_details_updated")
+
+    @time_recovery_appliance_details_updated.setter
+    def time_recovery_appliance_details_updated(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_recovery_appliance_details_updated", value)
 
 
 if not MYPY:
@@ -3338,6 +3703,10 @@ if not MYPY:
         """
         Additional information about the current lifecycle state.
         """
+        maintenance_target_component: NotRequired[pulumi.Input[str]]
+        """
+        The component chosen for maintenance.
+        """
         state: NotRequired[pulumi.Input[str]]
         """
         The current state of the Autonomous Database.
@@ -3350,6 +3719,14 @@ if not MYPY:
         """
         The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
         """
+        time_maintenance_begin: NotRequired[pulumi.Input[str]]
+        """
+        The date and time when maintenance will begin.
+        """
+        time_maintenance_end: NotRequired[pulumi.Input[str]]
+        """
+        The date and time when maintenance will end.
+        """
 elif False:
     AutonomousDatabaseLocalStandbyDbArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -3359,16 +3736,22 @@ class AutonomousDatabaseLocalStandbyDbArgs:
                  availability_domain: Optional[pulumi.Input[str]] = None,
                  lag_time_in_seconds: Optional[pulumi.Input[int]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 maintenance_target_component: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_data_guard_role_changed: Optional[pulumi.Input[str]] = None,
-                 time_disaster_recovery_role_changed: Optional[pulumi.Input[str]] = None):
+                 time_disaster_recovery_role_changed: Optional[pulumi.Input[str]] = None,
+                 time_maintenance_begin: Optional[pulumi.Input[str]] = None,
+                 time_maintenance_end: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
         :param pulumi.Input[int] lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
+        :param pulumi.Input[str] maintenance_target_component: The component chosen for maintenance.
         :param pulumi.Input[str] state: The current state of the Autonomous Database.
         :param pulumi.Input[str] time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         :param pulumi.Input[str] time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        :param pulumi.Input[str] time_maintenance_begin: The date and time when maintenance will begin.
+        :param pulumi.Input[str] time_maintenance_end: The date and time when maintenance will end.
         """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
@@ -3376,12 +3759,18 @@ class AutonomousDatabaseLocalStandbyDbArgs:
             pulumi.set(__self__, "lag_time_in_seconds", lag_time_in_seconds)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if maintenance_target_component is not None:
+            pulumi.set(__self__, "maintenance_target_component", maintenance_target_component)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if time_data_guard_role_changed is not None:
             pulumi.set(__self__, "time_data_guard_role_changed", time_data_guard_role_changed)
         if time_disaster_recovery_role_changed is not None:
             pulumi.set(__self__, "time_disaster_recovery_role_changed", time_disaster_recovery_role_changed)
+        if time_maintenance_begin is not None:
+            pulumi.set(__self__, "time_maintenance_begin", time_maintenance_begin)
+        if time_maintenance_end is not None:
+            pulumi.set(__self__, "time_maintenance_end", time_maintenance_end)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -3420,6 +3809,18 @@ class AutonomousDatabaseLocalStandbyDbArgs:
         pulumi.set(self, "lifecycle_details", value)
 
     @property
+    @pulumi.getter(name="maintenanceTargetComponent")
+    def maintenance_target_component(self) -> Optional[pulumi.Input[str]]:
+        """
+        The component chosen for maintenance.
+        """
+        return pulumi.get(self, "maintenance_target_component")
+
+    @maintenance_target_component.setter
+    def maintenance_target_component(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "maintenance_target_component", value)
+
+    @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
@@ -3454,6 +3855,30 @@ class AutonomousDatabaseLocalStandbyDbArgs:
     @time_disaster_recovery_role_changed.setter
     def time_disaster_recovery_role_changed(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_disaster_recovery_role_changed", value)
+
+    @property
+    @pulumi.getter(name="timeMaintenanceBegin")
+    def time_maintenance_begin(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time when maintenance will begin.
+        """
+        return pulumi.get(self, "time_maintenance_begin")
+
+    @time_maintenance_begin.setter
+    def time_maintenance_begin(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_maintenance_begin", value)
+
+    @property
+    @pulumi.getter(name="timeMaintenanceEnd")
+    def time_maintenance_end(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time when maintenance will end.
+        """
+        return pulumi.get(self, "time_maintenance_end")
+
+    @time_maintenance_end.setter
+    def time_maintenance_end(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_maintenance_end", value)
 
 
 if not MYPY:
@@ -3980,6 +4405,10 @@ if not MYPY:
         """
         Additional information about the current lifecycle state.
         """
+        maintenance_target_component: NotRequired[pulumi.Input[str]]
+        """
+        The component chosen for maintenance.
+        """
         state: NotRequired[pulumi.Input[str]]
         """
         The current state of the Autonomous Database.
@@ -3992,6 +4421,14 @@ if not MYPY:
         """
         The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
         """
+        time_maintenance_begin: NotRequired[pulumi.Input[str]]
+        """
+        The date and time when maintenance will begin.
+        """
+        time_maintenance_end: NotRequired[pulumi.Input[str]]
+        """
+        The date and time when maintenance will end.
+        """
 elif False:
     AutonomousDatabaseStandbyDbArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -4001,16 +4438,22 @@ class AutonomousDatabaseStandbyDbArgs:
                  availability_domain: Optional[pulumi.Input[str]] = None,
                  lag_time_in_seconds: Optional[pulumi.Input[int]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 maintenance_target_component: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_data_guard_role_changed: Optional[pulumi.Input[str]] = None,
-                 time_disaster_recovery_role_changed: Optional[pulumi.Input[str]] = None):
+                 time_disaster_recovery_role_changed: Optional[pulumi.Input[str]] = None,
+                 time_maintenance_begin: Optional[pulumi.Input[str]] = None,
+                 time_maintenance_end: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
         :param pulumi.Input[int] lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
+        :param pulumi.Input[str] maintenance_target_component: The component chosen for maintenance.
         :param pulumi.Input[str] state: The current state of the Autonomous Database.
         :param pulumi.Input[str] time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         :param pulumi.Input[str] time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        :param pulumi.Input[str] time_maintenance_begin: The date and time when maintenance will begin.
+        :param pulumi.Input[str] time_maintenance_end: The date and time when maintenance will end.
         """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
@@ -4018,12 +4461,18 @@ class AutonomousDatabaseStandbyDbArgs:
             pulumi.set(__self__, "lag_time_in_seconds", lag_time_in_seconds)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if maintenance_target_component is not None:
+            pulumi.set(__self__, "maintenance_target_component", maintenance_target_component)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if time_data_guard_role_changed is not None:
             pulumi.set(__self__, "time_data_guard_role_changed", time_data_guard_role_changed)
         if time_disaster_recovery_role_changed is not None:
             pulumi.set(__self__, "time_disaster_recovery_role_changed", time_disaster_recovery_role_changed)
+        if time_maintenance_begin is not None:
+            pulumi.set(__self__, "time_maintenance_begin", time_maintenance_begin)
+        if time_maintenance_end is not None:
+            pulumi.set(__self__, "time_maintenance_end", time_maintenance_end)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -4062,6 +4511,18 @@ class AutonomousDatabaseStandbyDbArgs:
         pulumi.set(self, "lifecycle_details", value)
 
     @property
+    @pulumi.getter(name="maintenanceTargetComponent")
+    def maintenance_target_component(self) -> Optional[pulumi.Input[str]]:
+        """
+        The component chosen for maintenance.
+        """
+        return pulumi.get(self, "maintenance_target_component")
+
+    @maintenance_target_component.setter
+    def maintenance_target_component(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "maintenance_target_component", value)
+
+    @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
@@ -4096,6 +4557,30 @@ class AutonomousDatabaseStandbyDbArgs:
     @time_disaster_recovery_role_changed.setter
     def time_disaster_recovery_role_changed(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_disaster_recovery_role_changed", value)
+
+    @property
+    @pulumi.getter(name="timeMaintenanceBegin")
+    def time_maintenance_begin(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time when maintenance will begin.
+        """
+        return pulumi.get(self, "time_maintenance_begin")
+
+    @time_maintenance_begin.setter
+    def time_maintenance_begin(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_maintenance_begin", value)
+
+    @property
+    @pulumi.getter(name="timeMaintenanceEnd")
+    def time_maintenance_end(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time when maintenance will end.
+        """
+        return pulumi.get(self, "time_maintenance_end")
+
+    @time_maintenance_end.setter
+    def time_maintenance_end(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_maintenance_end", value)
 
 
 if not MYPY:

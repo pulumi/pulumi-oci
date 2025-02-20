@@ -473,6 +473,21 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * A private IPv6 address of your choice. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value and the subnet is dual stack, Oracle automatically assigns a private IPv6 address from the subnet.
+     * 
+     */
+    @Import(name="privateIpV6")
+    private @Nullable Output<String> privateIpV6;
+
+    /**
+     * @return A private IPv6 address of your choice. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value and the subnet is dual stack, Oracle automatically assigns a private IPv6 address from the subnet.
+     * 
+     */
+    public Optional<Output<String>> privateIpV6() {
+        return Optional.ofNullable(this.privateIpV6);
+    }
+
+    /**
      * The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
      * 
      */
@@ -677,6 +692,7 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
         this.nodeCount = $.nodeCount;
         this.nsgIds = $.nsgIds;
         this.privateIp = $.privateIp;
+        this.privateIpV6 = $.privateIpV6;
         this.recoStorageSizeInGb = $.recoStorageSizeInGb;
         this.securityAttributes = $.securityAttributes;
         this.shape = $.shape;
@@ -1348,6 +1364,27 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder privateIp(String privateIp) {
             return privateIp(Output.of(privateIp));
+        }
+
+        /**
+         * @param privateIpV6 A private IPv6 address of your choice. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value and the subnet is dual stack, Oracle automatically assigns a private IPv6 address from the subnet.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateIpV6(@Nullable Output<String> privateIpV6) {
+            $.privateIpV6 = privateIpV6;
+            return this;
+        }
+
+        /**
+         * @param privateIpV6 A private IPv6 address of your choice. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value and the subnet is dual stack, Oracle automatically assigns a private IPv6 address from the subnet.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateIpV6(String privateIpV6) {
+            return privateIpV6(Output.of(privateIpV6));
         }
 
         /**

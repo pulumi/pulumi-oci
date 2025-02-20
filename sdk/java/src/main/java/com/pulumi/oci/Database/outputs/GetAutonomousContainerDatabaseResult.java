@@ -5,11 +5,14 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetail;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseBackupConfig;
+import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseBackupDestinationPropertiesList;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseKeyHistoryEntry;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseMaintenanceWindow;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseMaintenanceWindowDetail;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig;
+import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseRecoveryApplianceDetail;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
@@ -20,6 +23,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAutonomousContainerDatabaseResult {
+    /**
+     * @return A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
+     * 
+     */
+    private List<GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetail> associatedBackupConfigurationDetails;
     private String autonomousContainerDatabaseId;
     /**
      * @return **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
@@ -46,6 +54,11 @@ public final class GetAutonomousContainerDatabaseResult {
      * 
      */
     private List<GetAutonomousContainerDatabaseBackupConfig> backupConfigs;
+    /**
+     * @return This list describes the backup destination properties associated with the Autonomous Container Database (ACD) &#39;s preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
+     * 
+     */
+    private List<GetAutonomousContainerDatabaseBackupDestinationPropertiesList> backupDestinationPropertiesLists;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
      * 
@@ -220,6 +233,11 @@ public final class GetAutonomousContainerDatabaseResult {
      */
     private Double reclaimableCpus;
     /**
+     * @return Information about the recovery appliance configuration associated with the Autonomous Container Database.
+     * 
+     */
+    private List<GetAutonomousContainerDatabaseRecoveryApplianceDetail> recoveryApplianceDetails;
+    /**
      * @return The number of CPUs reserved in an Autonomous Container Database.
      * 
      */
@@ -282,6 +300,13 @@ public final class GetAutonomousContainerDatabaseResult {
     private Integer vmFailoverReservation;
 
     private GetAutonomousContainerDatabaseResult() {}
+    /**
+     * @return A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
+     * 
+     */
+    public List<GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetail> associatedBackupConfigurationDetails() {
+        return this.associatedBackupConfigurationDetails;
+    }
     public String autonomousContainerDatabaseId() {
         return this.autonomousContainerDatabaseId;
     }
@@ -319,6 +344,13 @@ public final class GetAutonomousContainerDatabaseResult {
      */
     public List<GetAutonomousContainerDatabaseBackupConfig> backupConfigs() {
         return this.backupConfigs;
+    }
+    /**
+     * @return This list describes the backup destination properties associated with the Autonomous Container Database (ACD) &#39;s preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
+     * 
+     */
+    public List<GetAutonomousContainerDatabaseBackupDestinationPropertiesList> backupDestinationPropertiesLists() {
+        return this.backupDestinationPropertiesLists;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
@@ -584,6 +616,13 @@ public final class GetAutonomousContainerDatabaseResult {
         return this.reclaimableCpus;
     }
     /**
+     * @return Information about the recovery appliance configuration associated with the Autonomous Container Database.
+     * 
+     */
+    public List<GetAutonomousContainerDatabaseRecoveryApplianceDetail> recoveryApplianceDetails() {
+        return this.recoveryApplianceDetails;
+    }
+    /**
      * @return The number of CPUs reserved in an Autonomous Container Database.
      * 
      */
@@ -680,12 +719,14 @@ public final class GetAutonomousContainerDatabaseResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetail> associatedBackupConfigurationDetails;
         private String autonomousContainerDatabaseId;
         private String autonomousExadataInfrastructureId;
         private String autonomousVmClusterId;
         private String availabilityDomain;
         private Double availableCpus;
         private List<GetAutonomousContainerDatabaseBackupConfig> backupConfigs;
+        private List<GetAutonomousContainerDatabaseBackupDestinationPropertiesList> backupDestinationPropertiesLists;
         private String cloudAutonomousVmClusterId;
         private String compartmentId;
         private String computeModel;
@@ -731,6 +772,7 @@ public final class GetAutonomousContainerDatabaseResult {
         private List<Double> provisionableCpuses;
         private Double provisionedCpus;
         private Double reclaimableCpus;
+        private List<GetAutonomousContainerDatabaseRecoveryApplianceDetail> recoveryApplianceDetails;
         private Double reservedCpus;
         private String role;
         private Boolean rotateKeyTrigger;
@@ -747,12 +789,14 @@ public final class GetAutonomousContainerDatabaseResult {
         public Builder() {}
         public Builder(GetAutonomousContainerDatabaseResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.associatedBackupConfigurationDetails = defaults.associatedBackupConfigurationDetails;
     	      this.autonomousContainerDatabaseId = defaults.autonomousContainerDatabaseId;
     	      this.autonomousExadataInfrastructureId = defaults.autonomousExadataInfrastructureId;
     	      this.autonomousVmClusterId = defaults.autonomousVmClusterId;
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.availableCpus = defaults.availableCpus;
     	      this.backupConfigs = defaults.backupConfigs;
+    	      this.backupDestinationPropertiesLists = defaults.backupDestinationPropertiesLists;
     	      this.cloudAutonomousVmClusterId = defaults.cloudAutonomousVmClusterId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.computeModel = defaults.computeModel;
@@ -798,6 +842,7 @@ public final class GetAutonomousContainerDatabaseResult {
     	      this.provisionableCpuses = defaults.provisionableCpuses;
     	      this.provisionedCpus = defaults.provisionedCpus;
     	      this.reclaimableCpus = defaults.reclaimableCpus;
+    	      this.recoveryApplianceDetails = defaults.recoveryApplianceDetails;
     	      this.reservedCpus = defaults.reservedCpus;
     	      this.role = defaults.role;
     	      this.rotateKeyTrigger = defaults.rotateKeyTrigger;
@@ -813,6 +858,17 @@ public final class GetAutonomousContainerDatabaseResult {
     	      this.vmFailoverReservation = defaults.vmFailoverReservation;
         }
 
+        @CustomType.Setter
+        public Builder associatedBackupConfigurationDetails(List<GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetail> associatedBackupConfigurationDetails) {
+            if (associatedBackupConfigurationDetails == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResult", "associatedBackupConfigurationDetails");
+            }
+            this.associatedBackupConfigurationDetails = associatedBackupConfigurationDetails;
+            return this;
+        }
+        public Builder associatedBackupConfigurationDetails(GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetail... associatedBackupConfigurationDetails) {
+            return associatedBackupConfigurationDetails(List.of(associatedBackupConfigurationDetails));
+        }
         @CustomType.Setter
         public Builder autonomousContainerDatabaseId(String autonomousContainerDatabaseId) {
             if (autonomousContainerDatabaseId == null) {
@@ -863,6 +919,17 @@ public final class GetAutonomousContainerDatabaseResult {
         }
         public Builder backupConfigs(GetAutonomousContainerDatabaseBackupConfig... backupConfigs) {
             return backupConfigs(List.of(backupConfigs));
+        }
+        @CustomType.Setter
+        public Builder backupDestinationPropertiesLists(List<GetAutonomousContainerDatabaseBackupDestinationPropertiesList> backupDestinationPropertiesLists) {
+            if (backupDestinationPropertiesLists == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResult", "backupDestinationPropertiesLists");
+            }
+            this.backupDestinationPropertiesLists = backupDestinationPropertiesLists;
+            return this;
+        }
+        public Builder backupDestinationPropertiesLists(GetAutonomousContainerDatabaseBackupDestinationPropertiesList... backupDestinationPropertiesLists) {
+            return backupDestinationPropertiesLists(List.of(backupDestinationPropertiesLists));
         }
         @CustomType.Setter
         public Builder cloudAutonomousVmClusterId(String cloudAutonomousVmClusterId) {
@@ -1243,6 +1310,17 @@ public final class GetAutonomousContainerDatabaseResult {
             return this;
         }
         @CustomType.Setter
+        public Builder recoveryApplianceDetails(List<GetAutonomousContainerDatabaseRecoveryApplianceDetail> recoveryApplianceDetails) {
+            if (recoveryApplianceDetails == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResult", "recoveryApplianceDetails");
+            }
+            this.recoveryApplianceDetails = recoveryApplianceDetails;
+            return this;
+        }
+        public Builder recoveryApplianceDetails(GetAutonomousContainerDatabaseRecoveryApplianceDetail... recoveryApplianceDetails) {
+            return recoveryApplianceDetails(List.of(recoveryApplianceDetails));
+        }
+        @CustomType.Setter
         public Builder reservedCpus(Double reservedCpus) {
             if (reservedCpus == null) {
               throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResult", "reservedCpus");
@@ -1348,12 +1426,14 @@ public final class GetAutonomousContainerDatabaseResult {
         }
         public GetAutonomousContainerDatabaseResult build() {
             final var _resultValue = new GetAutonomousContainerDatabaseResult();
+            _resultValue.associatedBackupConfigurationDetails = associatedBackupConfigurationDetails;
             _resultValue.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
             _resultValue.autonomousExadataInfrastructureId = autonomousExadataInfrastructureId;
             _resultValue.autonomousVmClusterId = autonomousVmClusterId;
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.availableCpus = availableCpus;
             _resultValue.backupConfigs = backupConfigs;
+            _resultValue.backupDestinationPropertiesLists = backupDestinationPropertiesLists;
             _resultValue.cloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.computeModel = computeModel;
@@ -1399,6 +1479,7 @@ public final class GetAutonomousContainerDatabaseResult {
             _resultValue.provisionableCpuses = provisionableCpuses;
             _resultValue.provisionedCpus = provisionedCpus;
             _resultValue.reclaimableCpus = reclaimableCpus;
+            _resultValue.recoveryApplianceDetails = recoveryApplianceDetails;
             _resultValue.reservedCpus = reservedCpus;
             _resultValue.role = role;
             _resultValue.rotateKeyTrigger = rotateKeyTrigger;

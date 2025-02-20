@@ -32,6 +32,21 @@ public final class GetFleetPerformanceTuningAnalysisResultsPlainArgs extends com
         return Optional.ofNullable(this.applicationId);
     }
 
+    /**
+     * The name of the application.
+     * 
+     */
+    @Import(name="applicationName")
+    private @Nullable String applicationName;
+
+    /**
+     * @return The name of the application.
+     * 
+     */
+    public Optional<String> applicationName() {
+        return Optional.ofNullable(this.applicationName);
+    }
+
     @Import(name="filters")
     private @Nullable List<GetFleetPerformanceTuningAnalysisResultsFilter> filters;
 
@@ -118,6 +133,7 @@ public final class GetFleetPerformanceTuningAnalysisResultsPlainArgs extends com
 
     private GetFleetPerformanceTuningAnalysisResultsPlainArgs(GetFleetPerformanceTuningAnalysisResultsPlainArgs $) {
         this.applicationId = $.applicationId;
+        this.applicationName = $.applicationName;
         this.filters = $.filters;
         this.fleetId = $.fleetId;
         this.hostName = $.hostName;
@@ -152,6 +168,17 @@ public final class GetFleetPerformanceTuningAnalysisResultsPlainArgs extends com
          */
         public Builder applicationId(@Nullable String applicationId) {
             $.applicationId = applicationId;
+            return this;
+        }
+
+        /**
+         * @param applicationName The name of the application.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder applicationName(@Nullable String applicationName) {
+            $.applicationName = applicationName;
             return this;
         }
 

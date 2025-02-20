@@ -86,6 +86,8 @@ type LookupOutboundConnectorResult struct {
 	PasswordSecretVersion int `pulumi:"passwordSecretVersion"`
 	// The current state of this outbound connector.
 	State string `pulumi:"state"`
+	// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 }
@@ -195,6 +197,11 @@ func (o LookupOutboundConnectorResultOutput) PasswordSecretVersion() pulumi.IntO
 // The current state of this outbound connector.
 func (o LookupOutboundConnectorResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupOutboundConnectorResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+func (o LookupOutboundConnectorResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupOutboundConnectorResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`

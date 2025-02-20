@@ -11,21 +11,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ##
-//
-// ***
-// ## subcategory: "Database"
-//
-// layout: "oci"
-// page_title: "Oracle Cloud Infrastructure: Database.getAutonomousDatabases"
-// sidebar_current: "docs-oci-datasource-database-autonomous_databases"
-// description: |-
-//
-//	Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
-//
-// ---
-//
-// # Data Source: Database.getAutonomousDatabases
 // This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
 //
 // Gets a list of Autonomous Databases based on the query parameters specified.

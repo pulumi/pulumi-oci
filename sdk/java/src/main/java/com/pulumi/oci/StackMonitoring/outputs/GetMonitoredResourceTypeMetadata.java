@@ -49,6 +49,11 @@ public final class GetMonitoredResourceTypeMetadata {
      * 
      */
     private Map<String,String> validPropertyValues;
+    /**
+     * @return List of valid sub-resource types for a composite resource type. The sub-resource types will be obtained from the valid association pairs corresponding to the composite resource types. It will be empty for non composite resource types
+     * 
+     */
+    private List<String> validSubResourceTypes;
 
     private GetMonitoredResourceTypeMetadata() {}
     /**
@@ -101,6 +106,13 @@ public final class GetMonitoredResourceTypeMetadata {
     public Map<String,String> validPropertyValues() {
         return this.validPropertyValues;
     }
+    /**
+     * @return List of valid sub-resource types for a composite resource type. The sub-resource types will be obtained from the valid association pairs corresponding to the composite resource types. It will be empty for non composite resource types
+     * 
+     */
+    public List<String> validSubResourceTypes() {
+        return this.validSubResourceTypes;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -118,6 +130,7 @@ public final class GetMonitoredResourceTypeMetadata {
         private List<String> validPropertiesForCreates;
         private List<String> validPropertiesForUpdates;
         private Map<String,String> validPropertyValues;
+        private List<String> validSubResourceTypes;
         public Builder() {}
         public Builder(GetMonitoredResourceTypeMetadata defaults) {
     	      Objects.requireNonNull(defaults);
@@ -128,6 +141,7 @@ public final class GetMonitoredResourceTypeMetadata {
     	      this.validPropertiesForCreates = defaults.validPropertiesForCreates;
     	      this.validPropertiesForUpdates = defaults.validPropertiesForUpdates;
     	      this.validPropertyValues = defaults.validPropertyValues;
+    	      this.validSubResourceTypes = defaults.validSubResourceTypes;
         }
 
         @CustomType.Setter
@@ -201,6 +215,17 @@ public final class GetMonitoredResourceTypeMetadata {
             this.validPropertyValues = validPropertyValues;
             return this;
         }
+        @CustomType.Setter
+        public Builder validSubResourceTypes(List<String> validSubResourceTypes) {
+            if (validSubResourceTypes == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTypeMetadata", "validSubResourceTypes");
+            }
+            this.validSubResourceTypes = validSubResourceTypes;
+            return this;
+        }
+        public Builder validSubResourceTypes(String... validSubResourceTypes) {
+            return validSubResourceTypes(List.of(validSubResourceTypes));
+        }
         public GetMonitoredResourceTypeMetadata build() {
             final var _resultValue = new GetMonitoredResourceTypeMetadata();
             _resultValue.agentProperties = agentProperties;
@@ -210,6 +235,7 @@ public final class GetMonitoredResourceTypeMetadata {
             _resultValue.validPropertiesForCreates = validPropertiesForCreates;
             _resultValue.validPropertiesForUpdates = validPropertiesForUpdates;
             _resultValue.validPropertyValues = validPropertyValues;
+            _resultValue.validSubResourceTypes = validSubResourceTypes;
             return _resultValue;
         }
     }

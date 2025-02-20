@@ -27,10 +27,12 @@ class SecretArgs:
                  vault_id: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 enable_auto_generation: Optional[pulumi.Input[bool]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  rotation_config: Optional[pulumi.Input['SecretRotationConfigArgs']] = None,
                  secret_content: Optional[pulumi.Input['SecretSecretContentArgs']] = None,
+                 secret_generation_context: Optional[pulumi.Input['SecretSecretGenerationContextArgs']] = None,
                  secret_rules: Optional[pulumi.Input[Sequence[pulumi.Input['SecretSecretRuleArgs']]]] = None):
         """
         The set of arguments for constructing a Secret resource.
@@ -44,10 +46,12 @@ class SecretArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) A brief description of the secret. Avoid entering confidential information.
+        :param pulumi.Input[bool] enable_auto_generation: (Updatable) The value of this flag determines whether or not secret content will be generated automatically. If not set, it defaults to false.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] metadata: (Updatable) Additional metadata that you can use to provide context about how to use the secret during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
         :param pulumi.Input['SecretRotationConfigArgs'] rotation_config: (Updatable) Defines the frequency of the rotation and the information about the target system
         :param pulumi.Input['SecretSecretContentArgs'] secret_content: (Updatable) The content of the secret and metadata to help identify it.
+        :param pulumi.Input['SecretSecretGenerationContextArgs'] secret_generation_context: (Updatable) Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
         :param pulumi.Input[Sequence[pulumi.Input['SecretSecretRuleArgs']]] secret_rules: (Updatable) A list of rules to control how the secret is used and managed.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -58,6 +62,8 @@ class SecretArgs:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if enable_auto_generation is not None:
+            pulumi.set(__self__, "enable_auto_generation", enable_auto_generation)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if metadata is not None:
@@ -66,6 +72,8 @@ class SecretArgs:
             pulumi.set(__self__, "rotation_config", rotation_config)
         if secret_content is not None:
             pulumi.set(__self__, "secret_content", secret_content)
+        if secret_generation_context is not None:
+            pulumi.set(__self__, "secret_generation_context", secret_generation_context)
         if secret_rules is not None:
             pulumi.set(__self__, "secret_rules", secret_rules)
 
@@ -146,6 +154,18 @@ class SecretArgs:
         pulumi.set(self, "description", value)
 
     @property
+    @pulumi.getter(name="enableAutoGeneration")
+    def enable_auto_generation(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) The value of this flag determines whether or not secret content will be generated automatically. If not set, it defaults to false.
+        """
+        return pulumi.get(self, "enable_auto_generation")
+
+    @enable_auto_generation.setter
+    def enable_auto_generation(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "enable_auto_generation", value)
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
@@ -194,6 +214,18 @@ class SecretArgs:
         pulumi.set(self, "secret_content", value)
 
     @property
+    @pulumi.getter(name="secretGenerationContext")
+    def secret_generation_context(self) -> Optional[pulumi.Input['SecretSecretGenerationContextArgs']]:
+        """
+        (Updatable) Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
+        """
+        return pulumi.get(self, "secret_generation_context")
+
+    @secret_generation_context.setter
+    def secret_generation_context(self, value: Optional[pulumi.Input['SecretSecretGenerationContextArgs']]):
+        pulumi.set(self, "secret_generation_context", value)
+
+    @property
     @pulumi.getter(name="secretRules")
     def secret_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecretSecretRuleArgs']]]]:
         """
@@ -213,7 +245,9 @@ class _SecretState:
                  current_version_number: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 enable_auto_generation: Optional[pulumi.Input[bool]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 is_auto_generation_enabled: Optional[pulumi.Input[bool]] = None,
                  key_id: Optional[pulumi.Input[str]] = None,
                  last_rotation_time: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
@@ -222,6 +256,7 @@ class _SecretState:
                  rotation_config: Optional[pulumi.Input['SecretRotationConfigArgs']] = None,
                  rotation_status: Optional[pulumi.Input[str]] = None,
                  secret_content: Optional[pulumi.Input['SecretSecretContentArgs']] = None,
+                 secret_generation_context: Optional[pulumi.Input['SecretSecretGenerationContextArgs']] = None,
                  secret_name: Optional[pulumi.Input[str]] = None,
                  secret_rules: Optional[pulumi.Input[Sequence[pulumi.Input['SecretSecretRuleArgs']]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
@@ -235,7 +270,9 @@ class _SecretState:
         :param pulumi.Input[str] current_version_number: The version number of the secret version that's currently in use.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) A brief description of the secret. Avoid entering confidential information.
+        :param pulumi.Input[bool] enable_auto_generation: (Updatable) The value of this flag determines whether or not secret content will be generated automatically. If not set, it defaults to false.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[bool] is_auto_generation_enabled: The value of this flag determines whether or not secret content will be generated automatically.
         :param pulumi.Input[str] key_id: The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
         :param pulumi.Input[str] last_rotation_time: A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state of the secret.
@@ -244,6 +281,7 @@ class _SecretState:
         :param pulumi.Input['SecretRotationConfigArgs'] rotation_config: (Updatable) Defines the frequency of the rotation and the information about the target system
         :param pulumi.Input[str] rotation_status: Additional information about the status of the secret rotation
         :param pulumi.Input['SecretSecretContentArgs'] secret_content: (Updatable) The content of the secret and metadata to help identify it.
+        :param pulumi.Input['SecretSecretGenerationContextArgs'] secret_generation_context: (Updatable) Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
         :param pulumi.Input[str] secret_name: A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
         :param pulumi.Input[Sequence[pulumi.Input['SecretSecretRuleArgs']]] secret_rules: (Updatable) A list of rules to control how the secret is used and managed.
         :param pulumi.Input[str] state: The current lifecycle state of the secret.
@@ -264,8 +302,12 @@ class _SecretState:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if enable_auto_generation is not None:
+            pulumi.set(__self__, "enable_auto_generation", enable_auto_generation)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_auto_generation_enabled is not None:
+            pulumi.set(__self__, "is_auto_generation_enabled", is_auto_generation_enabled)
         if key_id is not None:
             pulumi.set(__self__, "key_id", key_id)
         if last_rotation_time is not None:
@@ -282,6 +324,8 @@ class _SecretState:
             pulumi.set(__self__, "rotation_status", rotation_status)
         if secret_content is not None:
             pulumi.set(__self__, "secret_content", secret_content)
+        if secret_generation_context is not None:
+            pulumi.set(__self__, "secret_generation_context", secret_generation_context)
         if secret_name is not None:
             pulumi.set(__self__, "secret_name", secret_name)
         if secret_rules is not None:
@@ -346,6 +390,18 @@ class _SecretState:
         pulumi.set(self, "description", value)
 
     @property
+    @pulumi.getter(name="enableAutoGeneration")
+    def enable_auto_generation(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) The value of this flag determines whether or not secret content will be generated automatically. If not set, it defaults to false.
+        """
+        return pulumi.get(self, "enable_auto_generation")
+
+    @enable_auto_generation.setter
+    def enable_auto_generation(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "enable_auto_generation", value)
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
@@ -356,6 +412,18 @@ class _SecretState:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="isAutoGenerationEnabled")
+    def is_auto_generation_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        The value of this flag determines whether or not secret content will be generated automatically.
+        """
+        return pulumi.get(self, "is_auto_generation_enabled")
+
+    @is_auto_generation_enabled.setter
+    def is_auto_generation_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_auto_generation_enabled", value)
 
     @property
     @pulumi.getter(name="keyId")
@@ -454,6 +522,18 @@ class _SecretState:
         pulumi.set(self, "secret_content", value)
 
     @property
+    @pulumi.getter(name="secretGenerationContext")
+    def secret_generation_context(self) -> Optional[pulumi.Input['SecretSecretGenerationContextArgs']]:
+        """
+        (Updatable) Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
+        """
+        return pulumi.get(self, "secret_generation_context")
+
+    @secret_generation_context.setter
+    def secret_generation_context(self, value: Optional[pulumi.Input['SecretSecretGenerationContextArgs']]):
+        pulumi.set(self, "secret_generation_context", value)
+
+    @property
     @pulumi.getter(name="secretName")
     def secret_name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -550,11 +630,13 @@ class Secret(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 enable_auto_generation: Optional[pulumi.Input[bool]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  key_id: Optional[pulumi.Input[str]] = None,
                  metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  rotation_config: Optional[pulumi.Input[Union['SecretRotationConfigArgs', 'SecretRotationConfigArgsDict']]] = None,
                  secret_content: Optional[pulumi.Input[Union['SecretSecretContentArgs', 'SecretSecretContentArgsDict']]] = None,
+                 secret_generation_context: Optional[pulumi.Input[Union['SecretSecretGenerationContextArgs', 'SecretSecretGenerationContextArgsDict']]] = None,
                  secret_name: Optional[pulumi.Input[str]] = None,
                  secret_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SecretSecretRuleArgs', 'SecretSecretRuleArgsDict']]]]] = None,
                  vault_id: Optional[pulumi.Input[str]] = None,
@@ -577,11 +659,13 @@ class Secret(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where you want to create the secret.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) A brief description of the secret. Avoid entering confidential information.
+        :param pulumi.Input[bool] enable_auto_generation: (Updatable) The value of this flag determines whether or not secret content will be generated automatically. If not set, it defaults to false.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] key_id: The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] metadata: (Updatable) Additional metadata that you can use to provide context about how to use the secret during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
         :param pulumi.Input[Union['SecretRotationConfigArgs', 'SecretRotationConfigArgsDict']] rotation_config: (Updatable) Defines the frequency of the rotation and the information about the target system
         :param pulumi.Input[Union['SecretSecretContentArgs', 'SecretSecretContentArgsDict']] secret_content: (Updatable) The content of the secret and metadata to help identify it.
+        :param pulumi.Input[Union['SecretSecretGenerationContextArgs', 'SecretSecretGenerationContextArgsDict']] secret_generation_context: (Updatable) Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
         :param pulumi.Input[str] secret_name: A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
         :param pulumi.Input[Sequence[pulumi.Input[Union['SecretSecretRuleArgs', 'SecretSecretRuleArgsDict']]]] secret_rules: (Updatable) A list of rules to control how the secret is used and managed.
         :param pulumi.Input[str] vault_id: The OCID of the vault where you want to create the secret.
@@ -627,11 +711,13 @@ class Secret(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 enable_auto_generation: Optional[pulumi.Input[bool]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  key_id: Optional[pulumi.Input[str]] = None,
                  metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  rotation_config: Optional[pulumi.Input[Union['SecretRotationConfigArgs', 'SecretRotationConfigArgsDict']]] = None,
                  secret_content: Optional[pulumi.Input[Union['SecretSecretContentArgs', 'SecretSecretContentArgsDict']]] = None,
+                 secret_generation_context: Optional[pulumi.Input[Union['SecretSecretGenerationContextArgs', 'SecretSecretGenerationContextArgsDict']]] = None,
                  secret_name: Optional[pulumi.Input[str]] = None,
                  secret_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SecretSecretRuleArgs', 'SecretSecretRuleArgsDict']]]]] = None,
                  vault_id: Optional[pulumi.Input[str]] = None,
@@ -649,6 +735,7 @@ class Secret(pulumi.CustomResource):
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["description"] = description
+            __props__.__dict__["enable_auto_generation"] = enable_auto_generation
             __props__.__dict__["freeform_tags"] = freeform_tags
             if key_id is None and not opts.urn:
                 raise TypeError("Missing required property 'key_id'")
@@ -656,6 +743,7 @@ class Secret(pulumi.CustomResource):
             __props__.__dict__["metadata"] = metadata
             __props__.__dict__["rotation_config"] = rotation_config
             __props__.__dict__["secret_content"] = secret_content
+            __props__.__dict__["secret_generation_context"] = secret_generation_context
             if secret_name is None and not opts.urn:
                 raise TypeError("Missing required property 'secret_name'")
             __props__.__dict__["secret_name"] = secret_name
@@ -664,6 +752,7 @@ class Secret(pulumi.CustomResource):
                 raise TypeError("Missing required property 'vault_id'")
             __props__.__dict__["vault_id"] = vault_id
             __props__.__dict__["current_version_number"] = None
+            __props__.__dict__["is_auto_generation_enabled"] = None
             __props__.__dict__["last_rotation_time"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["next_rotation_time"] = None
@@ -686,7 +775,9 @@ class Secret(pulumi.CustomResource):
             current_version_number: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             description: Optional[pulumi.Input[str]] = None,
+            enable_auto_generation: Optional[pulumi.Input[bool]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+            is_auto_generation_enabled: Optional[pulumi.Input[bool]] = None,
             key_id: Optional[pulumi.Input[str]] = None,
             last_rotation_time: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
@@ -695,6 +786,7 @@ class Secret(pulumi.CustomResource):
             rotation_config: Optional[pulumi.Input[Union['SecretRotationConfigArgs', 'SecretRotationConfigArgsDict']]] = None,
             rotation_status: Optional[pulumi.Input[str]] = None,
             secret_content: Optional[pulumi.Input[Union['SecretSecretContentArgs', 'SecretSecretContentArgsDict']]] = None,
+            secret_generation_context: Optional[pulumi.Input[Union['SecretSecretGenerationContextArgs', 'SecretSecretGenerationContextArgsDict']]] = None,
             secret_name: Optional[pulumi.Input[str]] = None,
             secret_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SecretSecretRuleArgs', 'SecretSecretRuleArgsDict']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -713,7 +805,9 @@ class Secret(pulumi.CustomResource):
         :param pulumi.Input[str] current_version_number: The version number of the secret version that's currently in use.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) A brief description of the secret. Avoid entering confidential information.
+        :param pulumi.Input[bool] enable_auto_generation: (Updatable) The value of this flag determines whether or not secret content will be generated automatically. If not set, it defaults to false.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[bool] is_auto_generation_enabled: The value of this flag determines whether or not secret content will be generated automatically.
         :param pulumi.Input[str] key_id: The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
         :param pulumi.Input[str] last_rotation_time: A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state of the secret.
@@ -722,6 +816,7 @@ class Secret(pulumi.CustomResource):
         :param pulumi.Input[Union['SecretRotationConfigArgs', 'SecretRotationConfigArgsDict']] rotation_config: (Updatable) Defines the frequency of the rotation and the information about the target system
         :param pulumi.Input[str] rotation_status: Additional information about the status of the secret rotation
         :param pulumi.Input[Union['SecretSecretContentArgs', 'SecretSecretContentArgsDict']] secret_content: (Updatable) The content of the secret and metadata to help identify it.
+        :param pulumi.Input[Union['SecretSecretGenerationContextArgs', 'SecretSecretGenerationContextArgsDict']] secret_generation_context: (Updatable) Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
         :param pulumi.Input[str] secret_name: A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
         :param pulumi.Input[Sequence[pulumi.Input[Union['SecretSecretRuleArgs', 'SecretSecretRuleArgsDict']]]] secret_rules: (Updatable) A list of rules to control how the secret is used and managed.
         :param pulumi.Input[str] state: The current lifecycle state of the secret.
@@ -742,7 +837,9 @@ class Secret(pulumi.CustomResource):
         __props__.__dict__["current_version_number"] = current_version_number
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
+        __props__.__dict__["enable_auto_generation"] = enable_auto_generation
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["is_auto_generation_enabled"] = is_auto_generation_enabled
         __props__.__dict__["key_id"] = key_id
         __props__.__dict__["last_rotation_time"] = last_rotation_time
         __props__.__dict__["lifecycle_details"] = lifecycle_details
@@ -751,6 +848,7 @@ class Secret(pulumi.CustomResource):
         __props__.__dict__["rotation_config"] = rotation_config
         __props__.__dict__["rotation_status"] = rotation_status
         __props__.__dict__["secret_content"] = secret_content
+        __props__.__dict__["secret_generation_context"] = secret_generation_context
         __props__.__dict__["secret_name"] = secret_name
         __props__.__dict__["secret_rules"] = secret_rules
         __props__.__dict__["state"] = state
@@ -793,12 +891,28 @@ class Secret(pulumi.CustomResource):
         return pulumi.get(self, "description")
 
     @property
+    @pulumi.getter(name="enableAutoGeneration")
+    def enable_auto_generation(self) -> pulumi.Output[Optional[bool]]:
+        """
+        (Updatable) The value of this flag determines whether or not secret content will be generated automatically. If not set, it defaults to false.
+        """
+        return pulumi.get(self, "enable_auto_generation")
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="isAutoGenerationEnabled")
+    def is_auto_generation_enabled(self) -> pulumi.Output[bool]:
+        """
+        The value of this flag determines whether or not secret content will be generated automatically.
+        """
+        return pulumi.get(self, "is_auto_generation_enabled")
 
     @property
     @pulumi.getter(name="keyId")
@@ -863,6 +977,14 @@ class Secret(pulumi.CustomResource):
         (Updatable) The content of the secret and metadata to help identify it.
         """
         return pulumi.get(self, "secret_content")
+
+    @property
+    @pulumi.getter(name="secretGenerationContext")
+    def secret_generation_context(self) -> pulumi.Output['outputs.SecretSecretGenerationContext']:
+        """
+        (Updatable) Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
+        """
+        return pulumi.get(self, "secret_generation_context")
 
     @property
     @pulumi.getter(name="secretName")

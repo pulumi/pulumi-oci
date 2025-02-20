@@ -11,6 +11,11 @@ import java.util.Objects;
 @CustomType
 public final class GetClustersClusterEndpoint {
     /**
+     * @return The IPv6 networking Kubernetes API server endpoint.
+     * 
+     */
+    private String ipv6endpoint;
+    /**
      * @return The non-native networking Kubernetes API server endpoint.
      * 
      */
@@ -32,6 +37,13 @@ public final class GetClustersClusterEndpoint {
     private String vcnHostnameEndpoint;
 
     private GetClustersClusterEndpoint() {}
+    /**
+     * @return The IPv6 networking Kubernetes API server endpoint.
+     * 
+     */
+    public String ipv6endpoint() {
+        return this.ipv6endpoint;
+    }
     /**
      * @return The non-native networking Kubernetes API server endpoint.
      * 
@@ -70,6 +82,7 @@ public final class GetClustersClusterEndpoint {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String ipv6endpoint;
         private String kubernetes;
         private String privateEndpoint;
         private String publicEndpoint;
@@ -77,12 +90,21 @@ public final class GetClustersClusterEndpoint {
         public Builder() {}
         public Builder(GetClustersClusterEndpoint defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.ipv6endpoint = defaults.ipv6endpoint;
     	      this.kubernetes = defaults.kubernetes;
     	      this.privateEndpoint = defaults.privateEndpoint;
     	      this.publicEndpoint = defaults.publicEndpoint;
     	      this.vcnHostnameEndpoint = defaults.vcnHostnameEndpoint;
         }
 
+        @CustomType.Setter
+        public Builder ipv6endpoint(String ipv6endpoint) {
+            if (ipv6endpoint == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterEndpoint", "ipv6endpoint");
+            }
+            this.ipv6endpoint = ipv6endpoint;
+            return this;
+        }
         @CustomType.Setter
         public Builder kubernetes(String kubernetes) {
             if (kubernetes == null) {
@@ -117,6 +139,7 @@ public final class GetClustersClusterEndpoint {
         }
         public GetClustersClusterEndpoint build() {
             final var _resultValue = new GetClustersClusterEndpoint();
+            _resultValue.ipv6endpoint = ipv6endpoint;
             _resultValue.kubernetes = kubernetes;
             _resultValue.privateEndpoint = privateEndpoint;
             _resultValue.publicEndpoint = publicEndpoint;

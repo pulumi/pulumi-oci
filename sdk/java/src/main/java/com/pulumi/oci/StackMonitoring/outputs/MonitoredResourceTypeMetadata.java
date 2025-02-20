@@ -50,6 +50,11 @@ public final class MonitoredResourceTypeMetadata {
      * 
      */
     private @Nullable Map<String,String> validPropertyValues;
+    /**
+     * @return (Updatable) List of valid sub-resource types for a composite resource type. The sub-resource types will be obtained from the valid association pairs corresponding to the composite resource types. It will be empty for non composite resource types
+     * 
+     */
+    private @Nullable List<String> validSubResourceTypes;
 
     private MonitoredResourceTypeMetadata() {}
     /**
@@ -102,6 +107,13 @@ public final class MonitoredResourceTypeMetadata {
     public Map<String,String> validPropertyValues() {
         return this.validPropertyValues == null ? Map.of() : this.validPropertyValues;
     }
+    /**
+     * @return (Updatable) List of valid sub-resource types for a composite resource type. The sub-resource types will be obtained from the valid association pairs corresponding to the composite resource types. It will be empty for non composite resource types
+     * 
+     */
+    public List<String> validSubResourceTypes() {
+        return this.validSubResourceTypes == null ? List.of() : this.validSubResourceTypes;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -119,6 +131,7 @@ public final class MonitoredResourceTypeMetadata {
         private @Nullable List<String> validPropertiesForCreates;
         private @Nullable List<String> validPropertiesForUpdates;
         private @Nullable Map<String,String> validPropertyValues;
+        private @Nullable List<String> validSubResourceTypes;
         public Builder() {}
         public Builder(MonitoredResourceTypeMetadata defaults) {
     	      Objects.requireNonNull(defaults);
@@ -129,6 +142,7 @@ public final class MonitoredResourceTypeMetadata {
     	      this.validPropertiesForCreates = defaults.validPropertiesForCreates;
     	      this.validPropertiesForUpdates = defaults.validPropertiesForUpdates;
     	      this.validPropertyValues = defaults.validPropertyValues;
+    	      this.validSubResourceTypes = defaults.validSubResourceTypes;
         }
 
         @CustomType.Setter
@@ -190,6 +204,15 @@ public final class MonitoredResourceTypeMetadata {
             this.validPropertyValues = validPropertyValues;
             return this;
         }
+        @CustomType.Setter
+        public Builder validSubResourceTypes(@Nullable List<String> validSubResourceTypes) {
+
+            this.validSubResourceTypes = validSubResourceTypes;
+            return this;
+        }
+        public Builder validSubResourceTypes(String... validSubResourceTypes) {
+            return validSubResourceTypes(List.of(validSubResourceTypes));
+        }
         public MonitoredResourceTypeMetadata build() {
             final var _resultValue = new MonitoredResourceTypeMetadata();
             _resultValue.agentProperties = agentProperties;
@@ -199,6 +222,7 @@ public final class MonitoredResourceTypeMetadata {
             _resultValue.validPropertiesForCreates = validPropertiesForCreates;
             _resultValue.validPropertiesForUpdates = validPropertiesForUpdates;
             _resultValue.validPropertyValues = validPropertyValues;
+            _resultValue.validSubResourceTypes = validSubResourceTypes;
             return _resultValue;
         }
     }

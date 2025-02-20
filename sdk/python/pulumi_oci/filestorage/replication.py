@@ -190,6 +190,7 @@ class _ReplicationState:
                  replication_target_id: Optional[pulumi.Input[str]] = None,
                  source_id: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  target_id: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None):
         """
@@ -209,6 +210,7 @@ class _ReplicationState:
         :param pulumi.Input[str] replication_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [`ReplicationTarget`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ReplicationTarget).
         :param pulumi.Input[str] source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source file system.
         :param pulumi.Input[str] state: The current state of this replication. This resource can be in a `FAILED` state if replication target is deleted instead of the replication resource.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
         :param pulumi.Input[str] target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system. 
                
                
@@ -248,6 +250,8 @@ class _ReplicationState:
             pulumi.set(__self__, "source_id", source_id)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if target_id is not None:
             pulumi.set(__self__, "target_id", target_id)
         if time_created is not None:
@@ -441,6 +445,18 @@ class _ReplicationState:
     @state.setter
     def state(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "state", value)
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "system_tags", value)
 
     @property
     @pulumi.getter(name="targetId")
@@ -693,6 +709,7 @@ class Replication(pulumi.CustomResource):
             __props__.__dict__["recovery_point_time"] = None
             __props__.__dict__["replication_target_id"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
         super(Replication, __self__).__init__(
             'oci:FileStorage/replication:Replication',
@@ -720,6 +737,7 @@ class Replication(pulumi.CustomResource):
             replication_target_id: Optional[pulumi.Input[str]] = None,
             source_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             target_id: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None) -> 'Replication':
         """
@@ -744,6 +762,7 @@ class Replication(pulumi.CustomResource):
         :param pulumi.Input[str] replication_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [`ReplicationTarget`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ReplicationTarget).
         :param pulumi.Input[str] source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source file system.
         :param pulumi.Input[str] state: The current state of this replication. This resource can be in a `FAILED` state if replication target is deleted instead of the replication resource.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
         :param pulumi.Input[str] target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system. 
                
                
@@ -771,6 +790,7 @@ class Replication(pulumi.CustomResource):
         __props__.__dict__["replication_target_id"] = replication_target_id
         __props__.__dict__["source_id"] = source_id
         __props__.__dict__["state"] = state
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["target_id"] = target_id
         __props__.__dict__["time_created"] = time_created
         return Replication(resource_name, opts=opts, __props__=__props__)
@@ -899,6 +919,14 @@ class Replication(pulumi.CustomResource):
         The current state of this replication. This resource can be in a `FAILED` state if replication target is deleted instead of the replication resource.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, str]]:
+        """
+        System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="targetId")

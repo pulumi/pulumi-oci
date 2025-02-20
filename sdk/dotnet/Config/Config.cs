@@ -157,6 +157,13 @@ namespace Pulumi.Oci
             set => _tenancyOcid.Set(value);
         }
 
+        private static readonly __Value<string?> _testTimeMaintenanceRebootDue = new __Value<string?>(() => __config.Get("testTimeMaintenanceRebootDue"));
+        public static string? TestTimeMaintenanceRebootDue
+        {
+            get => _testTimeMaintenanceRebootDue.Get();
+            set => _testTimeMaintenanceRebootDue.Set(value);
+        }
+
         private static readonly __Value<string?> _userOcid = new __Value<string?>(() => __config.Get("userOcid"));
         /// <summary>
         /// (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if

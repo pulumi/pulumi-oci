@@ -14,6 +14,11 @@ import java.util.Objects;
 @CustomType
 public final class GetMonitoredResourceTypeResult {
     /**
+     * @return Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
+     * 
+     */
+    private Map<String,String> additionalNamespaceMap;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
      * 
      */
@@ -91,6 +96,13 @@ public final class GetMonitoredResourceTypeResult {
     private String timeUpdated;
 
     private GetMonitoredResourceTypeResult() {}
+    /**
+     * @return Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
+     * 
+     */
+    public Map<String,String> additionalNamespaceMap() {
+        return this.additionalNamespaceMap;
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
      * 
@@ -209,6 +221,7 @@ public final class GetMonitoredResourceTypeResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private Map<String,String> additionalNamespaceMap;
         private String compartmentId;
         private Map<String,String> definedTags;
         private String description;
@@ -228,6 +241,7 @@ public final class GetMonitoredResourceTypeResult {
         public Builder() {}
         public Builder(GetMonitoredResourceTypeResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.additionalNamespaceMap = defaults.additionalNamespaceMap;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
@@ -246,6 +260,14 @@ public final class GetMonitoredResourceTypeResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
+        public Builder additionalNamespaceMap(Map<String,String> additionalNamespaceMap) {
+            if (additionalNamespaceMap == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTypeResult", "additionalNamespaceMap");
+            }
+            this.additionalNamespaceMap = additionalNamespaceMap;
+            return this;
+        }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             if (compartmentId == null) {
@@ -379,6 +401,7 @@ public final class GetMonitoredResourceTypeResult {
         }
         public GetMonitoredResourceTypeResult build() {
             final var _resultValue = new GetMonitoredResourceTypeResult();
+            _resultValue.additionalNamespaceMap = additionalNamespaceMap;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;

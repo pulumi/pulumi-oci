@@ -355,6 +355,21 @@ public final class MountTargetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+     * 
+     */
+    @Import(name="systemTags")
+    private @Nullable Output<Map<String,String>> systemTags;
+
+    /**
+     * @return System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+     * 
+     */
+    public Optional<Output<Map<String,String>>> systemTags() {
+        return Optional.ofNullable(this.systemTags);
+    }
+
+    /**
      * The date and time the mount target current billing cycle will end, expressed in  [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated  automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
@@ -408,6 +423,7 @@ public final class MountTargetState extends com.pulumi.resources.ResourceArgs {
         this.reservedStorageCapacity = $.reservedStorageCapacity;
         this.state = $.state;
         this.subnetId = $.subnetId;
+        this.systemTags = $.systemTags;
         this.timeBillingCycleEnd = $.timeBillingCycleEnd;
         this.timeCreated = $.timeCreated;
     }
@@ -917,6 +933,27 @@ public final class MountTargetState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
+        }
+
+        /**
+         * @param systemTags System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(@Nullable Output<Map<String,String>> systemTags) {
+            $.systemTags = systemTags;
+            return this;
+        }
+
+        /**
+         * @param systemTags System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(Map<String,String> systemTags) {
+            return systemTags(Output.of(systemTags));
         }
 
         /**

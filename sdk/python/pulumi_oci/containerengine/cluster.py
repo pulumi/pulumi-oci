@@ -590,6 +590,7 @@ class Cluster(pulumi.CustomResource):
                 "admission_controller_options": {
                     "is_pod_security_policy_enabled": cluster_options_admission_controller_options_is_pod_security_policy_enabled,
                 },
+                "ip_families": cluster_options_ip_families,
                 "kubernetes_network_config": {
                     "pods_cidr": cluster_options_kubernetes_network_config_pods_cidr,
                     "services_cidr": cluster_options_kubernetes_network_config_services_cidr,
@@ -711,6 +712,7 @@ class Cluster(pulumi.CustomResource):
                 "admission_controller_options": {
                     "is_pod_security_policy_enabled": cluster_options_admission_controller_options_is_pod_security_policy_enabled,
                 },
+                "ip_families": cluster_options_ip_families,
                 "kubernetes_network_config": {
                     "pods_cidr": cluster_options_kubernetes_network_config_pods_cidr,
                     "services_cidr": cluster_options_kubernetes_network_config_services_cidr,

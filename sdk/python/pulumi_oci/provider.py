@@ -31,6 +31,7 @@ class ProviderArgs:
                  region: Optional[pulumi.Input[str]] = None,
                  retry_duration_seconds: Optional[pulumi.Input[int]] = None,
                  tenancy_ocid: Optional[pulumi.Input[str]] = None,
+                 test_time_maintenance_reboot_due: Optional[pulumi.Input[str]] = None,
                  user_ocid: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Provider resource.
@@ -80,6 +81,8 @@ class ProviderArgs:
             pulumi.set(__self__, "retry_duration_seconds", retry_duration_seconds)
         if tenancy_ocid is not None:
             pulumi.set(__self__, "tenancy_ocid", tenancy_ocid)
+        if test_time_maintenance_reboot_due is not None:
+            pulumi.set(__self__, "test_time_maintenance_reboot_due", test_time_maintenance_reboot_due)
         if user_ocid is not None:
             pulumi.set(__self__, "user_ocid", user_ocid)
 
@@ -233,6 +236,15 @@ class ProviderArgs:
         pulumi.set(self, "tenancy_ocid", value)
 
     @property
+    @pulumi.getter(name="testTimeMaintenanceRebootDue")
+    def test_time_maintenance_reboot_due(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "test_time_maintenance_reboot_due")
+
+    @test_time_maintenance_reboot_due.setter
+    def test_time_maintenance_reboot_due(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "test_time_maintenance_reboot_due", value)
+
+    @property
     @pulumi.getter(name="userOcid")
     def user_ocid(self) -> Optional[pulumi.Input[str]]:
         """
@@ -263,6 +275,7 @@ class Provider(pulumi.ProviderResource):
                  region: Optional[pulumi.Input[str]] = None,
                  retry_duration_seconds: Optional[pulumi.Input[int]] = None,
                  tenancy_ocid: Optional[pulumi.Input[str]] = None,
+                 test_time_maintenance_reboot_due: Optional[pulumi.Input[str]] = None,
                  user_ocid: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -334,6 +347,7 @@ class Provider(pulumi.ProviderResource):
                  region: Optional[pulumi.Input[str]] = None,
                  retry_duration_seconds: Optional[pulumi.Input[int]] = None,
                  tenancy_ocid: Optional[pulumi.Input[str]] = None,
+                 test_time_maintenance_reboot_due: Optional[pulumi.Input[str]] = None,
                  user_ocid: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -356,6 +370,7 @@ class Provider(pulumi.ProviderResource):
             __props__.__dict__["region"] = region
             __props__.__dict__["retry_duration_seconds"] = pulumi.Output.from_input(retry_duration_seconds).apply(pulumi.runtime.to_json) if retry_duration_seconds is not None else None
             __props__.__dict__["tenancy_ocid"] = tenancy_ocid
+            __props__.__dict__["test_time_maintenance_reboot_due"] = test_time_maintenance_reboot_due
             __props__.__dict__["user_ocid"] = user_ocid
         secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["privateKey", "privateKeyPassword"])
         opts = pulumi.ResourceOptions.merge(opts, secret_opts)
@@ -433,6 +448,11 @@ class Provider(pulumi.ProviderResource):
         Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
         """
         return pulumi.get(self, "tenancy_ocid")
+
+    @property
+    @pulumi.getter(name="testTimeMaintenanceRebootDue")
+    def test_time_maintenance_reboot_due(self) -> pulumi.Output[Optional[str]]:
+        return pulumi.get(self, "test_time_maintenance_reboot_due")
 
     @property
     @pulumi.getter(name="userOcid")

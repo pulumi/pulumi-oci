@@ -48,6 +48,10 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
     }
 
     /**
+     * A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
+     */
+    public /*out*/ readonly associatedBackupConfigurationDetails!: pulumi.Output<outputs.Database.AutonomousContainerDatabaseAssociatedBackupConfigurationDetail[]>;
+    /**
      * **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
      */
     public readonly autonomousExadataInfrastructureId!: pulumi.Output<string>;
@@ -67,6 +71,10 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      * (Updatable) Backup options for the Autonomous Container Database.
      */
     public readonly backupConfig!: pulumi.Output<outputs.Database.AutonomousContainerDatabaseBackupConfig>;
+    /**
+     * This list describes the backup destination properties associated with the Autonomous Container Database (ACD) 's preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
+     */
+    public /*out*/ readonly backupDestinationPropertiesLists!: pulumi.Output<outputs.Database.AutonomousContainerDatabaseBackupDestinationPropertiesList[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
      */
@@ -228,14 +236,20 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
     public /*out*/ readonly provisionableCpuses!: pulumi.Output<number[]>;
     /**
      * The number of CPUs provisioned in an Autonomous Container Database.
+     * <<<<<<< ours
      */
     public /*out*/ readonly provisionedCpus!: pulumi.Output<number>;
     /**
      * For Autonomous Databases on Dedicated Exadata Infrastructure:
      * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+     * >>>>>>> theirs
      */
     public /*out*/ readonly reclaimableCpus!: pulumi.Output<number>;
+    /**
+     * Information about the recovery appliance configuration associated with the Autonomous Container Database.
+     */
+    public /*out*/ readonly recoveryApplianceDetails!: pulumi.Output<outputs.Database.AutonomousContainerDatabaseRecoveryApplianceDetail[]>;
     /**
      * The number of CPUs reserved in an Autonomous Container Database.
      * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
@@ -307,11 +321,13 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AutonomousContainerDatabaseState | undefined;
+            resourceInputs["associatedBackupConfigurationDetails"] = state ? state.associatedBackupConfigurationDetails : undefined;
             resourceInputs["autonomousExadataInfrastructureId"] = state ? state.autonomousExadataInfrastructureId : undefined;
             resourceInputs["autonomousVmClusterId"] = state ? state.autonomousVmClusterId : undefined;
             resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
             resourceInputs["availableCpus"] = state ? state.availableCpus : undefined;
             resourceInputs["backupConfig"] = state ? state.backupConfig : undefined;
+            resourceInputs["backupDestinationPropertiesLists"] = state ? state.backupDestinationPropertiesLists : undefined;
             resourceInputs["cloudAutonomousVmClusterId"] = state ? state.cloudAutonomousVmClusterId : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["computeModel"] = state ? state.computeModel : undefined;
@@ -356,6 +372,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["provisionableCpuses"] = state ? state.provisionableCpuses : undefined;
             resourceInputs["provisionedCpus"] = state ? state.provisionedCpus : undefined;
             resourceInputs["reclaimableCpus"] = state ? state.reclaimableCpus : undefined;
+            resourceInputs["recoveryApplianceDetails"] = state ? state.recoveryApplianceDetails : undefined;
             resourceInputs["reservedCpus"] = state ? state.reservedCpus : undefined;
             resourceInputs["role"] = state ? state.role : undefined;
             resourceInputs["rotateKeyTrigger"] = state ? state.rotateKeyTrigger : undefined;
@@ -414,8 +431,10 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["vaultId"] = args ? args.vaultId : undefined;
             resourceInputs["versionPreference"] = args ? args.versionPreference : undefined;
             resourceInputs["vmFailoverReservation"] = args ? args.vmFailoverReservation : undefined;
+            resourceInputs["associatedBackupConfigurationDetails"] = undefined /*out*/;
             resourceInputs["availabilityDomain"] = undefined /*out*/;
             resourceInputs["availableCpus"] = undefined /*out*/;
+            resourceInputs["backupDestinationPropertiesLists"] = undefined /*out*/;
             resourceInputs["computeModel"] = undefined /*out*/;
             resourceInputs["dstFileVersion"] = undefined /*out*/;
             resourceInputs["infrastructureType"] = undefined /*out*/;
@@ -432,6 +451,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["provisionableCpuses"] = undefined /*out*/;
             resourceInputs["provisionedCpus"] = undefined /*out*/;
             resourceInputs["reclaimableCpus"] = undefined /*out*/;
+            resourceInputs["recoveryApplianceDetails"] = undefined /*out*/;
             resourceInputs["reservedCpus"] = undefined /*out*/;
             resourceInputs["role"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -449,6 +469,10 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
  * Input properties used for looking up and filtering AutonomousContainerDatabase resources.
  */
 export interface AutonomousContainerDatabaseState {
+    /**
+     * A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
+     */
+    associatedBackupConfigurationDetails?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseAssociatedBackupConfigurationDetail>[]>;
     /**
      * **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
      */
@@ -469,6 +493,10 @@ export interface AutonomousContainerDatabaseState {
      * (Updatable) Backup options for the Autonomous Container Database.
      */
     backupConfig?: pulumi.Input<inputs.Database.AutonomousContainerDatabaseBackupConfig>;
+    /**
+     * This list describes the backup destination properties associated with the Autonomous Container Database (ACD) 's preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
+     */
+    backupDestinationPropertiesLists?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseBackupDestinationPropertiesList>[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
      */
@@ -630,14 +658,20 @@ export interface AutonomousContainerDatabaseState {
     provisionableCpuses?: pulumi.Input<pulumi.Input<number>[]>;
     /**
      * The number of CPUs provisioned in an Autonomous Container Database.
+     * <<<<<<< ours
      */
     provisionedCpus?: pulumi.Input<number>;
     /**
      * For Autonomous Databases on Dedicated Exadata Infrastructure:
      * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+     * >>>>>>> theirs
      */
     reclaimableCpus?: pulumi.Input<number>;
+    /**
+     * Information about the recovery appliance configuration associated with the Autonomous Container Database.
+     */
+    recoveryApplianceDetails?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseRecoveryApplianceDetail>[]>;
     /**
      * The number of CPUs reserved in an Autonomous Container Database.
      * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.

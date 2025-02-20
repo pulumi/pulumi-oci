@@ -122,6 +122,7 @@ namespace Pulumi.Oci.GoldenGate
     ///         ServiceAccountKeyFileSecretId = testSecret.Id,
     ///         SessionMode = connectionSessionMode,
     ///         ShouldUseJndi = connectionShouldUseJndi,
+    ///         ShouldUseResourcePrincipal = connectionShouldUseResourcePrincipal,
     ///         ShouldValidateServerCertificate = connectionShouldValidateServerCertificate,
     ///         SslCa = connectionSslCa,
     ///         SslCert = connectionSslCert,
@@ -136,9 +137,16 @@ namespace Pulumi.Oci.GoldenGate
     ///         SslKeySecretId = testSecret.Id,
     ///         SslMode = connectionSslMode,
     ///         SslServerCertificate = connectionSslServerCertificate,
+    ///         StorageCredentialName = connectionStorageCredentialName,
     ///         StreamPoolId = testStreamPool.Id,
     ///         SubnetId = testSubnet.Id,
     ///         TenancyId = testTenancy.Id,
+    ///         TenantId = testTenant.Id,
+    ///         TlsCaFile = connectionTlsCaFile,
+    ///         TlsCertificateKeyFile = connectionTlsCertificateKeyFile,
+    ///         TlsCertificateKeyFilePassword = connectionTlsCertificateKeyFilePassword,
+    ///         TlsCertificateKeyFilePasswordSecretId = testSecret.Id,
+    ///         TlsCertificateKeyFileSecretId = testSecret.Id,
     ///         TrustStore = connectionTrustStore,
     ///         TrustStorePassword = connectionTrustStorePassword,
     ///         TrustStorePasswordSecretId = testSecret.Id,
@@ -173,7 +181,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> AccessKeyId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
+        /// (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
         /// </summary>
         [Output("accountKey")]
         public Output<string?> AccountKey { get; private set; } = null!;
@@ -227,13 +235,13 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> ClientId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
+        /// (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
         /// </summary>
         [Output("clientSecret")]
         public Output<string?> ClientSecret { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not be provided.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
         /// </summary>
         [Output("clientSecretSecretId")]
         public Output<string?> ClientSecretSecretId { get; private set; } = null!;
@@ -263,7 +271,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> ConnectionType { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) JDBC connection URL. e.g.: 'jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;'
+        /// (Updatable) Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
         /// </summary>
         [Output("connectionUrl")]
         public Output<string> ConnectionUrl { get; private set; } = null!;
@@ -329,7 +337,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<bool> DoesUseSecretIds { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+        /// (Updatable)Azure Storage service endpoint. e.g: https://test.blob.core.windows.net,  Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
         /// </summary>
         [Output("endpoint")]
         public Output<string> Endpoint { get; private set; } = null!;
@@ -381,7 +389,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> JndiProviderUrl { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The password associated to the principal.
+        /// (Updatable) The password associated to the principal. Deprecated: This field is deprecated and replaced by "jndiSecurityCredentialsSecretId". This field will be removed after February 15 2026.
         /// </summary>
         [Output("jndiSecurityCredentials")]
         public Output<string?> JndiSecurityCredentials { get; private set; } = null!;
@@ -405,13 +413,13 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> KeyId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The base64 encoded content of the KeyStore file.
+        /// (Updatable) The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
         /// </summary>
         [Output("keyStore")]
         public Output<string?> KeyStore { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The KeyStore password.
+        /// (Updatable) The KeyStore password. Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId". This field will be removed after February 15 2026.
         /// </summary>
         [Output("keyStorePassword")]
         public Output<string?> KeyStorePassword { get; private set; } = null!;
@@ -447,7 +455,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<ImmutableArray<string>> NsgIds { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
+        /// (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
         /// </summary>
         [Output("password")]
         public Output<string?> Password { get; private set; } = null!;
@@ -473,7 +481,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> PrivateIp { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        /// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This field will be removed after February 15 2026.
         /// </summary>
         [Output("privateKeyFile")]
         public Output<string?> PrivateKeyFile { get; private set; } = null!;
@@ -485,7 +493,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string?> PrivateKeyFileSecretId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Password if the private key file is encrypted.
+        /// (Updatable) Password if the private key file is encrypted. Deprecated: This field is deprecated and replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
         /// </summary>
         [Output("privateKeyPassphrase")]
         public Output<string?> PrivateKeyPassphrase { get; private set; } = null!;
@@ -515,7 +523,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> RedisClusterId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The name of the region. e.g.: us-ashburn-1
+        /// (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
         /// </summary>
         [Output("region")]
         public Output<string> Region { get; private set; } = null!;
@@ -527,7 +535,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> RoutingMethod { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&amp;ss=bfqt&amp;srt=sco&amp;sp=rwdlacupyx&amp;se=2020-09-10T20:27:28Z&amp;st=2022-08-05T12:27:28Z&amp;spr=https&amp;sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
+        /// (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&amp;ss=bfqt&amp;srt=sco&amp;sp=rwdlacupyx&amp;se=2020-09-10T20:27:28Z&amp;st=2022-08-05T12:27:28Z&amp;spr=https&amp;sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This field will be removed after February 15 2026.
         /// </summary>
         [Output("sasToken")]
         public Output<string?> SasToken { get; private set; } = null!;
@@ -539,7 +547,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string?> SasTokenSecretId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+        /// (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
         /// </summary>
         [Output("secretAccessKey")]
         public Output<string?> SecretAccessKey { get; private set; } = null!;
@@ -563,7 +571,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> Servers { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage.
+        /// (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
         /// </summary>
         [Output("serviceAccountKeyFile")]
         public Output<string?> ServiceAccountKeyFile { get; private set; } = null!;
@@ -587,6 +595,12 @@ namespace Pulumi.Oci.GoldenGate
         public Output<bool> ShouldUseJndi { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Indicates that the user intents to connect to the instance through resource principal.
+        /// </summary>
+        [Output("shouldUseResourcePrincipal")]
+        public Output<bool> ShouldUseResourcePrincipal { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
         /// </summary>
         [Output("shouldValidateServerCertificate")]
@@ -605,7 +619,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> SslCert { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+        /// (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
         /// </summary>
         [Output("sslClientKeystash")]
         public Output<string?> SslClientKeystash { get; private set; } = null!;
@@ -617,7 +631,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string?> SslClientKeystashSecretId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+        /// (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
         /// </summary>
         [Output("sslClientKeystoredb")]
         public Output<string?> SslClientKeystoredb { get; private set; } = null!;
@@ -635,13 +649,13 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> SslCrl { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
+        /// (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "sslKeySecretId". This field will be removed after February 15 2026.
         /// </summary>
         [Output("sslKey")]
         public Output<string?> SslKey { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
+        /// (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided. Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
         /// </summary>
         [Output("sslKeyPassword")]
         public Output<string?> SslKeyPassword { get; private set; } = null!;
@@ -678,6 +692,12 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
+        /// </summary>
+        [Output("storageCredentialName")]
+        public Output<string> StorageCredentialName { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
         /// </summary>
         [Output("streamPoolId")]
@@ -708,6 +728,12 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> TenancyId { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Azure tenant ID of the application. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
+        /// </summary>
+        [Output("tenantId")]
+        public Output<string> TenantId { get; private set; } = null!;
+
+        /// <summary>
         /// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
         [Output("timeCreated")]
@@ -720,6 +746,37 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+        /// </summary>
+        [Output("tlsCaFile")]
+        public Output<string> TlsCaFile { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
+        /// </summary>
+        [Output("tlsCertificateKeyFile")]
+        public Output<string> TlsCertificateKeyFile { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Client Certificate key file password. Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFilePasswordSecretId". This field will be removed after February 15 2026.
+        /// </summary>
+        [Output("tlsCertificateKeyFilePassword")]
+        public Output<string> TlsCertificateKeyFilePassword { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
+        /// </summary>
+        [Output("tlsCertificateKeyFilePasswordSecretId")]
+        public Output<string> TlsCertificateKeyFilePasswordSecretId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
+        /// * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
+        /// </summary>
+        [Output("tlsCertificateKeyFileSecretId")]
+        public Output<string> TlsCertificateKeyFileSecretId { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the "update" plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
         /// 
         /// 
@@ -730,13 +787,13 @@ namespace Pulumi.Oci.GoldenGate
         public Output<bool?> TriggerRefresh { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The base64 encoded content of the TrustStore file.
+        /// (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
         /// </summary>
         [Output("trustStore")]
         public Output<string?> TrustStore { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The TrustStore password.
+        /// (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
         /// </summary>
         [Output("trustStorePassword")]
         public Output<string?> TrustStorePassword { get; private set; } = null!;
@@ -760,7 +817,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> Url { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
         /// </summary>
         [Output("userId")]
         public Output<string> UserId { get; private set; } = null!;
@@ -778,7 +835,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> VaultId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
+        /// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This field will be removed after February 15 2026.
         /// </summary>
         [Output("wallet")]
         public Output<string?> Wallet { get; private set; } = null!;
@@ -829,6 +886,8 @@ namespace Pulumi.Oci.GoldenGate
                     "sslClientKeystoredb",
                     "sslKey",
                     "sslKeyPassword",
+                    "tlsCertificateKeyFilePassword",
+                    "tlsCertificateKeyFilePasswordSecretId",
                     "trustStore",
                     "trustStorePassword",
                     "wallet",
@@ -866,7 +925,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _accountKey;
 
         /// <summary>
-        /// (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
+        /// (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? AccountKey
         {
@@ -942,7 +1001,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _clientSecret;
 
         /// <summary>
-        /// (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
+        /// (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? ClientSecret
         {
@@ -955,7 +1014,7 @@ namespace Pulumi.Oci.GoldenGate
         }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not be provided.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
         /// </summary>
         [Input("clientSecretSecretId")]
         public Input<string>? ClientSecretSecretId { get; set; }
@@ -985,7 +1044,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string> ConnectionType { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) JDBC connection URL. e.g.: 'jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;'
+        /// (Updatable) Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
         /// </summary>
         [Input("connectionUrl")]
         public Input<string>? ConnectionUrl { get; set; }
@@ -1057,7 +1116,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<bool>? DoesUseSecretIds { get; set; }
 
         /// <summary>
-        /// (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+        /// (Updatable)Azure Storage service endpoint. e.g: https://test.blob.core.windows.net,  Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
         /// </summary>
         [Input("endpoint")]
         public Input<string>? Endpoint { get; set; }
@@ -1112,7 +1171,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _jndiSecurityCredentials;
 
         /// <summary>
-        /// (Updatable) The password associated to the principal.
+        /// (Updatable) The password associated to the principal. Deprecated: This field is deprecated and replaced by "jndiSecurityCredentialsSecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? JndiSecurityCredentials
         {
@@ -1146,7 +1205,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _keyStore;
 
         /// <summary>
-        /// (Updatable) The base64 encoded content of the KeyStore file.
+        /// (Updatable) The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? KeyStore
         {
@@ -1162,7 +1221,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _keyStorePassword;
 
         /// <summary>
-        /// (Updatable) The KeyStore password.
+        /// (Updatable) The KeyStore password. Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? KeyStorePassword
         {
@@ -1214,7 +1273,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _password;
 
         /// <summary>
-        /// (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
+        /// (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? Password
         {
@@ -1250,7 +1309,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _privateKeyFile;
 
         /// <summary>
-        /// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        /// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? PrivateKeyFile
         {
@@ -1272,7 +1331,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _privateKeyPassphrase;
 
         /// <summary>
-        /// (Updatable) Password if the private key file is encrypted.
+        /// (Updatable) Password if the private key file is encrypted. Deprecated: This field is deprecated and replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? PrivateKeyPassphrase
         {
@@ -1309,7 +1368,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? RedisClusterId { get; set; }
 
         /// <summary>
-        /// (Updatable) The name of the region. e.g.: us-ashburn-1
+        /// (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
         /// </summary>
         [Input("region")]
         public Input<string>? Region { get; set; }
@@ -1324,7 +1383,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _sasToken;
 
         /// <summary>
-        /// (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&amp;ss=bfqt&amp;srt=sco&amp;sp=rwdlacupyx&amp;se=2020-09-10T20:27:28Z&amp;st=2022-08-05T12:27:28Z&amp;spr=https&amp;sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
+        /// (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&amp;ss=bfqt&amp;srt=sco&amp;sp=rwdlacupyx&amp;se=2020-09-10T20:27:28Z&amp;st=2022-08-05T12:27:28Z&amp;spr=https&amp;sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? SasToken
         {
@@ -1346,7 +1405,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _secretAccessKey;
 
         /// <summary>
-        /// (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+        /// (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? SecretAccessKey
         {
@@ -1380,7 +1439,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _serviceAccountKeyFile;
 
         /// <summary>
-        /// (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage.
+        /// (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? ServiceAccountKeyFile
         {
@@ -1411,6 +1470,12 @@ namespace Pulumi.Oci.GoldenGate
         public Input<bool>? ShouldUseJndi { get; set; }
 
         /// <summary>
+        /// (Updatable) Indicates that the user intents to connect to the instance through resource principal.
+        /// </summary>
+        [Input("shouldUseResourcePrincipal")]
+        public Input<bool>? ShouldUseResourcePrincipal { get; set; }
+
+        /// <summary>
         /// (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
         /// </summary>
         [Input("shouldValidateServerCertificate")]
@@ -1432,7 +1497,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _sslClientKeystash;
 
         /// <summary>
-        /// (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+        /// (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? SslClientKeystash
         {
@@ -1454,7 +1519,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _sslClientKeystoredb;
 
         /// <summary>
-        /// (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+        /// (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? SslClientKeystoredb
         {
@@ -1482,7 +1547,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _sslKey;
 
         /// <summary>
-        /// (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
+        /// (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "sslKeySecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? SslKey
         {
@@ -1498,7 +1563,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _sslKeyPassword;
 
         /// <summary>
-        /// (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
+        /// (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided. Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? SslKeyPassword
         {
@@ -1536,6 +1601,12 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? SslServerCertificate { get; set; }
 
         /// <summary>
+        /// (Updatable) Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
+        /// </summary>
+        [Input("storageCredentialName")]
+        public Input<string>? StorageCredentialName { get; set; }
+
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
         /// </summary>
         [Input("streamPoolId")]
@@ -1560,6 +1631,63 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? TenancyId { get; set; }
 
         /// <summary>
+        /// (Updatable) Azure tenant ID of the application. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
+        /// </summary>
+        [Input("tenantId")]
+        public Input<string>? TenantId { get; set; }
+
+        /// <summary>
+        /// (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+        /// </summary>
+        [Input("tlsCaFile")]
+        public Input<string>? TlsCaFile { get; set; }
+
+        /// <summary>
+        /// (Updatable) Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
+        /// </summary>
+        [Input("tlsCertificateKeyFile")]
+        public Input<string>? TlsCertificateKeyFile { get; set; }
+
+        [Input("tlsCertificateKeyFilePassword")]
+        private Input<string>? _tlsCertificateKeyFilePassword;
+
+        /// <summary>
+        /// (Updatable) Client Certificate key file password. Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFilePasswordSecretId". This field will be removed after February 15 2026.
+        /// </summary>
+        public Input<string>? TlsCertificateKeyFilePassword
+        {
+            get => _tlsCertificateKeyFilePassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _tlsCertificateKeyFilePassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        [Input("tlsCertificateKeyFilePasswordSecretId")]
+        private Input<string>? _tlsCertificateKeyFilePasswordSecretId;
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
+        /// </summary>
+        public Input<string>? TlsCertificateKeyFilePasswordSecretId
+        {
+            get => _tlsCertificateKeyFilePasswordSecretId;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _tlsCertificateKeyFilePasswordSecretId = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
+        /// * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
+        /// </summary>
+        [Input("tlsCertificateKeyFileSecretId")]
+        public Input<string>? TlsCertificateKeyFileSecretId { get; set; }
+
+        /// <summary>
         /// (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the "update" plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
         /// 
         /// 
@@ -1573,7 +1701,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _trustStore;
 
         /// <summary>
-        /// (Updatable) The base64 encoded content of the TrustStore file.
+        /// (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? TrustStore
         {
@@ -1589,7 +1717,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _trustStorePassword;
 
         /// <summary>
-        /// (Updatable) The TrustStore password.
+        /// (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? TrustStorePassword
         {
@@ -1620,7 +1748,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? Url { get; set; }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
         /// </summary>
         [Input("userId")]
         public Input<string>? UserId { get; set; }
@@ -1641,7 +1769,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _wallet;
 
         /// <summary>
-        /// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
+        /// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? Wallet
         {
@@ -1677,7 +1805,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _accountKey;
 
         /// <summary>
-        /// (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
+        /// (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? AccountKey
         {
@@ -1753,7 +1881,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _clientSecret;
 
         /// <summary>
-        /// (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
+        /// (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? ClientSecret
         {
@@ -1766,7 +1894,7 @@ namespace Pulumi.Oci.GoldenGate
         }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not be provided.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
         /// </summary>
         [Input("clientSecretSecretId")]
         public Input<string>? ClientSecretSecretId { get; set; }
@@ -1796,7 +1924,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? ConnectionType { get; set; }
 
         /// <summary>
-        /// (Updatable) JDBC connection URL. e.g.: 'jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;'
+        /// (Updatable) Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
         /// </summary>
         [Input("connectionUrl")]
         public Input<string>? ConnectionUrl { get; set; }
@@ -1868,7 +1996,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<bool>? DoesUseSecretIds { get; set; }
 
         /// <summary>
-        /// (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+        /// (Updatable)Azure Storage service endpoint. e.g: https://test.blob.core.windows.net,  Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
         /// </summary>
         [Input("endpoint")]
         public Input<string>? Endpoint { get; set; }
@@ -1935,7 +2063,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _jndiSecurityCredentials;
 
         /// <summary>
-        /// (Updatable) The password associated to the principal.
+        /// (Updatable) The password associated to the principal. Deprecated: This field is deprecated and replaced by "jndiSecurityCredentialsSecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? JndiSecurityCredentials
         {
@@ -1969,7 +2097,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _keyStore;
 
         /// <summary>
-        /// (Updatable) The base64 encoded content of the KeyStore file.
+        /// (Updatable) The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? KeyStore
         {
@@ -1985,7 +2113,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _keyStorePassword;
 
         /// <summary>
-        /// (Updatable) The KeyStore password.
+        /// (Updatable) The KeyStore password. Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? KeyStorePassword
         {
@@ -2043,7 +2171,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _password;
 
         /// <summary>
-        /// (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
+        /// (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? Password
         {
@@ -2079,7 +2207,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _privateKeyFile;
 
         /// <summary>
-        /// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        /// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? PrivateKeyFile
         {
@@ -2101,7 +2229,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _privateKeyPassphrase;
 
         /// <summary>
-        /// (Updatable) Password if the private key file is encrypted.
+        /// (Updatable) Password if the private key file is encrypted. Deprecated: This field is deprecated and replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? PrivateKeyPassphrase
         {
@@ -2138,7 +2266,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? RedisClusterId { get; set; }
 
         /// <summary>
-        /// (Updatable) The name of the region. e.g.: us-ashburn-1
+        /// (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
         /// </summary>
         [Input("region")]
         public Input<string>? Region { get; set; }
@@ -2153,7 +2281,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _sasToken;
 
         /// <summary>
-        /// (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&amp;ss=bfqt&amp;srt=sco&amp;sp=rwdlacupyx&amp;se=2020-09-10T20:27:28Z&amp;st=2022-08-05T12:27:28Z&amp;spr=https&amp;sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
+        /// (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&amp;ss=bfqt&amp;srt=sco&amp;sp=rwdlacupyx&amp;se=2020-09-10T20:27:28Z&amp;st=2022-08-05T12:27:28Z&amp;spr=https&amp;sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? SasToken
         {
@@ -2175,7 +2303,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _secretAccessKey;
 
         /// <summary>
-        /// (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+        /// (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? SecretAccessKey
         {
@@ -2209,7 +2337,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _serviceAccountKeyFile;
 
         /// <summary>
-        /// (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage.
+        /// (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? ServiceAccountKeyFile
         {
@@ -2240,6 +2368,12 @@ namespace Pulumi.Oci.GoldenGate
         public Input<bool>? ShouldUseJndi { get; set; }
 
         /// <summary>
+        /// (Updatable) Indicates that the user intents to connect to the instance through resource principal.
+        /// </summary>
+        [Input("shouldUseResourcePrincipal")]
+        public Input<bool>? ShouldUseResourcePrincipal { get; set; }
+
+        /// <summary>
         /// (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
         /// </summary>
         [Input("shouldValidateServerCertificate")]
@@ -2261,7 +2395,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _sslClientKeystash;
 
         /// <summary>
-        /// (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+        /// (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? SslClientKeystash
         {
@@ -2283,7 +2417,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _sslClientKeystoredb;
 
         /// <summary>
-        /// (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+        /// (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? SslClientKeystoredb
         {
@@ -2311,7 +2445,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _sslKey;
 
         /// <summary>
-        /// (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
+        /// (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "sslKeySecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? SslKey
         {
@@ -2327,7 +2461,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _sslKeyPassword;
 
         /// <summary>
-        /// (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
+        /// (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided. Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? SslKeyPassword
         {
@@ -2371,6 +2505,12 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? State { get; set; }
 
         /// <summary>
+        /// (Updatable) Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
+        /// </summary>
+        [Input("storageCredentialName")]
+        public Input<string>? StorageCredentialName { get; set; }
+
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
         /// </summary>
         [Input("streamPoolId")]
@@ -2407,6 +2547,12 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? TenancyId { get; set; }
 
         /// <summary>
+        /// (Updatable) Azure tenant ID of the application. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
+        /// </summary>
+        [Input("tenantId")]
+        public Input<string>? TenantId { get; set; }
+
+        /// <summary>
         /// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
         [Input("timeCreated")]
@@ -2417,6 +2563,57 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
+
+        /// <summary>
+        /// (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+        /// </summary>
+        [Input("tlsCaFile")]
+        public Input<string>? TlsCaFile { get; set; }
+
+        /// <summary>
+        /// (Updatable) Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
+        /// </summary>
+        [Input("tlsCertificateKeyFile")]
+        public Input<string>? TlsCertificateKeyFile { get; set; }
+
+        [Input("tlsCertificateKeyFilePassword")]
+        private Input<string>? _tlsCertificateKeyFilePassword;
+
+        /// <summary>
+        /// (Updatable) Client Certificate key file password. Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFilePasswordSecretId". This field will be removed after February 15 2026.
+        /// </summary>
+        public Input<string>? TlsCertificateKeyFilePassword
+        {
+            get => _tlsCertificateKeyFilePassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _tlsCertificateKeyFilePassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        [Input("tlsCertificateKeyFilePasswordSecretId")]
+        private Input<string>? _tlsCertificateKeyFilePasswordSecretId;
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
+        /// </summary>
+        public Input<string>? TlsCertificateKeyFilePasswordSecretId
+        {
+            get => _tlsCertificateKeyFilePasswordSecretId;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _tlsCertificateKeyFilePasswordSecretId = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
+        /// * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
+        /// </summary>
+        [Input("tlsCertificateKeyFileSecretId")]
+        public Input<string>? TlsCertificateKeyFileSecretId { get; set; }
 
         /// <summary>
         /// (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the "update" plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
@@ -2432,7 +2629,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _trustStore;
 
         /// <summary>
-        /// (Updatable) The base64 encoded content of the TrustStore file.
+        /// (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? TrustStore
         {
@@ -2448,7 +2645,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _trustStorePassword;
 
         /// <summary>
-        /// (Updatable) The TrustStore password.
+        /// (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? TrustStorePassword
         {
@@ -2479,7 +2676,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? Url { get; set; }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
         /// </summary>
         [Input("userId")]
         public Input<string>? UserId { get; set; }
@@ -2500,7 +2697,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _wallet;
 
         /// <summary>
-        /// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
+        /// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? Wallet
         {

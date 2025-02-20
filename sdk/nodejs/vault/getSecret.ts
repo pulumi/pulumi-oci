@@ -59,6 +59,7 @@ export interface GetSecretResult {
      * A brief description of the secret. Avoid entering confidential information.
      */
     readonly description: string;
+    readonly enableAutoGeneration: boolean;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
@@ -67,6 +68,10 @@ export interface GetSecretResult {
      * The OCID of the secret.
      */
     readonly id: string;
+    /**
+     * The value of this flag determines whether or not secret content will be generated automatically.
+     */
+    readonly isAutoGenerationEnabled: boolean;
     /**
      * The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
      */
@@ -96,6 +101,10 @@ export interface GetSecretResult {
      */
     readonly rotationStatus: string;
     readonly secretContents: outputs.Vault.GetSecretSecretContent[];
+    /**
+     * Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
+     */
+    readonly secretGenerationContexts: outputs.Vault.GetSecretSecretGenerationContext[];
     readonly secretId: string;
     /**
      * The user-friendly name of the secret. Avoid entering confidential information.

@@ -146,6 +146,8 @@ type FileSystem struct {
 	SourceSnapshotId pulumi.StringOutput `pulumi:"sourceSnapshotId"`
 	// The current state of the file system.
 	State pulumi.StringOutput `pulumi:"state"`
+	// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 }
@@ -232,6 +234,8 @@ type fileSystemState struct {
 	SourceSnapshotId *string `pulumi:"sourceSnapshotId"`
 	// The current state of the file system.
 	State *string `pulumi:"state"`
+	// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
 }
@@ -283,6 +287,8 @@ type FileSystemState struct {
 	SourceSnapshotId pulumi.StringPtrInput
 	// The current state of the file system.
 	State pulumi.StringPtrInput
+	// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+	SystemTags pulumi.StringMapInput
 	// The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
 }
@@ -548,6 +554,11 @@ func (o FileSystemOutput) SourceSnapshotId() pulumi.StringOutput {
 // The current state of the file system.
 func (o FileSystemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *FileSystem) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+func (o FileSystemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *FileSystem) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`

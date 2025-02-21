@@ -195,8 +195,11 @@ class _BackupDestinationState:
                  nfs_server_export: Optional[pulumi.Input[str]] = None,
                  nfs_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
+                 time_at_which_storage_details_are_updated: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
+                 total_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  type: Optional[pulumi.Input[str]] = None,
+                 utilized_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  vpc_users: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         Input properties used for looking up and filtering BackupDestination resources.
@@ -213,8 +216,11 @@ class _BackupDestinationState:
         :param pulumi.Input[str] nfs_server_export: Specifies the directory on which to mount the file system
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nfs_servers: Host names or IP addresses for NFS Auto mount.
         :param pulumi.Input[str] state: The current lifecycle state of the backup destination.
+        :param pulumi.Input[str] time_at_which_storage_details_are_updated: The time when the total storage size and the utilized storage size of the backup destination are updated.
         :param pulumi.Input[str] time_created: The date and time the backup destination was created.
+        :param pulumi.Input[int] total_storage_size_in_gbs: The total storage size of the backup destination in GBs, rounded to the nearest integer.
         :param pulumi.Input[str] type: Type of the backup destination.
+        :param pulumi.Input[int] utilized_storage_size_in_gbs: The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] vpc_users: (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
                
                
@@ -250,10 +256,16 @@ class _BackupDestinationState:
             pulumi.set(__self__, "nfs_servers", nfs_servers)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if time_at_which_storage_details_are_updated is not None:
+            pulumi.set(__self__, "time_at_which_storage_details_are_updated", time_at_which_storage_details_are_updated)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
+        if total_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "total_storage_size_in_gbs", total_storage_size_in_gbs)
         if type is not None:
             pulumi.set(__self__, "type", type)
+        if utilized_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "utilized_storage_size_in_gbs", utilized_storage_size_in_gbs)
         if vpc_users is not None:
             pulumi.set(__self__, "vpc_users", vpc_users)
 
@@ -415,6 +427,18 @@ class _BackupDestinationState:
         pulumi.set(self, "state", value)
 
     @property
+    @pulumi.getter(name="timeAtWhichStorageDetailsAreUpdated")
+    def time_at_which_storage_details_are_updated(self) -> Optional[pulumi.Input[str]]:
+        """
+        The time when the total storage size and the utilized storage size of the backup destination are updated.
+        """
+        return pulumi.get(self, "time_at_which_storage_details_are_updated")
+
+    @time_at_which_storage_details_are_updated.setter
+    def time_at_which_storage_details_are_updated(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_at_which_storage_details_are_updated", value)
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
@@ -427,6 +451,18 @@ class _BackupDestinationState:
         pulumi.set(self, "time_created", value)
 
     @property
+    @pulumi.getter(name="totalStorageSizeInGbs")
+    def total_storage_size_in_gbs(self) -> Optional[pulumi.Input[int]]:
+        """
+        The total storage size of the backup destination in GBs, rounded to the nearest integer.
+        """
+        return pulumi.get(self, "total_storage_size_in_gbs")
+
+    @total_storage_size_in_gbs.setter
+    def total_storage_size_in_gbs(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "total_storage_size_in_gbs", value)
+
+    @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
@@ -437,6 +473,18 @@ class _BackupDestinationState:
     @type.setter
     def type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="utilizedStorageSizeInGbs")
+    def utilized_storage_size_in_gbs(self) -> Optional[pulumi.Input[int]]:
+        """
+        The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
+        """
+        return pulumi.get(self, "utilized_storage_size_in_gbs")
+
+    @utilized_storage_size_in_gbs.setter
+    def utilized_storage_size_in_gbs(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "utilized_storage_size_in_gbs", value)
 
     @property
     @pulumi.getter(name="vpcUsers")
@@ -622,7 +670,10 @@ class BackupDestination(pulumi.CustomResource):
             __props__.__dict__["nfs_server_export"] = None
             __props__.__dict__["nfs_servers"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["time_at_which_storage_details_are_updated"] = None
             __props__.__dict__["time_created"] = None
+            __props__.__dict__["total_storage_size_in_gbs"] = None
+            __props__.__dict__["utilized_storage_size_in_gbs"] = None
         super(BackupDestination, __self__).__init__(
             'oci:Database/backupDestination:BackupDestination',
             resource_name,
@@ -646,8 +697,11 @@ class BackupDestination(pulumi.CustomResource):
             nfs_server_export: Optional[pulumi.Input[str]] = None,
             nfs_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
+            time_at_which_storage_details_are_updated: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
+            total_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
             type: Optional[pulumi.Input[str]] = None,
+            utilized_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
             vpc_users: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None) -> 'BackupDestination':
         """
         Get an existing BackupDestination resource's state with the given name, id, and optional extra
@@ -669,8 +723,11 @@ class BackupDestination(pulumi.CustomResource):
         :param pulumi.Input[str] nfs_server_export: Specifies the directory on which to mount the file system
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nfs_servers: Host names or IP addresses for NFS Auto mount.
         :param pulumi.Input[str] state: The current lifecycle state of the backup destination.
+        :param pulumi.Input[str] time_at_which_storage_details_are_updated: The time when the total storage size and the utilized storage size of the backup destination are updated.
         :param pulumi.Input[str] time_created: The date and time the backup destination was created.
+        :param pulumi.Input[int] total_storage_size_in_gbs: The total storage size of the backup destination in GBs, rounded to the nearest integer.
         :param pulumi.Input[str] type: Type of the backup destination.
+        :param pulumi.Input[int] utilized_storage_size_in_gbs: The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] vpc_users: (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
                
                
@@ -694,8 +751,11 @@ class BackupDestination(pulumi.CustomResource):
         __props__.__dict__["nfs_server_export"] = nfs_server_export
         __props__.__dict__["nfs_servers"] = nfs_servers
         __props__.__dict__["state"] = state
+        __props__.__dict__["time_at_which_storage_details_are_updated"] = time_at_which_storage_details_are_updated
         __props__.__dict__["time_created"] = time_created
+        __props__.__dict__["total_storage_size_in_gbs"] = total_storage_size_in_gbs
         __props__.__dict__["type"] = type
+        __props__.__dict__["utilized_storage_size_in_gbs"] = utilized_storage_size_in_gbs
         __props__.__dict__["vpc_users"] = vpc_users
         return BackupDestination(resource_name, opts=opts, __props__=__props__)
 
@@ -805,6 +865,14 @@ class BackupDestination(pulumi.CustomResource):
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="timeAtWhichStorageDetailsAreUpdated")
+    def time_at_which_storage_details_are_updated(self) -> pulumi.Output[str]:
+        """
+        The time when the total storage size and the utilized storage size of the backup destination are updated.
+        """
+        return pulumi.get(self, "time_at_which_storage_details_are_updated")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[str]:
         """
@@ -813,12 +881,28 @@ class BackupDestination(pulumi.CustomResource):
         return pulumi.get(self, "time_created")
 
     @property
+    @pulumi.getter(name="totalStorageSizeInGbs")
+    def total_storage_size_in_gbs(self) -> pulumi.Output[int]:
+        """
+        The total storage size of the backup destination in GBs, rounded to the nearest integer.
+        """
+        return pulumi.get(self, "total_storage_size_in_gbs")
+
+    @property
     @pulumi.getter
     def type(self) -> pulumi.Output[str]:
         """
         Type of the backup destination.
         """
         return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="utilizedStorageSizeInGbs")
+    def utilized_storage_size_in_gbs(self) -> pulumi.Output[int]:
+        """
+        The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
+        """
+        return pulumi.get(self, "utilized_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="vpcUsers")

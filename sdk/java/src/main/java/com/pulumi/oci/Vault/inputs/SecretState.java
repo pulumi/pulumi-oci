@@ -7,7 +7,9 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Vault.inputs.SecretRotationConfigArgs;
 import com.pulumi.oci.Vault.inputs.SecretSecretContentArgs;
+import com.pulumi.oci.Vault.inputs.SecretSecretGenerationContextArgs;
 import com.pulumi.oci.Vault.inputs.SecretSecretRuleArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -81,6 +83,21 @@ public final class SecretState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The value of this flag determines whether or not secret content will be generated automatically. If not set, it defaults to false.
+     * 
+     */
+    @Import(name="enableAutoGeneration")
+    private @Nullable Output<Boolean> enableAutoGeneration;
+
+    /**
+     * @return (Updatable) The value of this flag determines whether or not secret content will be generated automatically. If not set, it defaults to false.
+     * 
+     */
+    public Optional<Output<Boolean>> enableAutoGeneration() {
+        return Optional.ofNullable(this.enableAutoGeneration);
+    }
+
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -93,6 +110,21 @@ public final class SecretState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Map<String,String>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
+    }
+
+    /**
+     * The value of this flag determines whether or not secret content will be generated automatically.
+     * 
+     */
+    @Import(name="isAutoGenerationEnabled")
+    private @Nullable Output<Boolean> isAutoGenerationEnabled;
+
+    /**
+     * @return The value of this flag determines whether or not secret content will be generated automatically.
+     * 
+     */
+    public Optional<Output<Boolean>> isAutoGenerationEnabled() {
+        return Optional.ofNullable(this.isAutoGenerationEnabled);
     }
 
     /**
@@ -216,6 +248,21 @@ public final class SecretState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
+     * 
+     */
+    @Import(name="secretGenerationContext")
+    private @Nullable Output<SecretSecretGenerationContextArgs> secretGenerationContext;
+
+    /**
+     * @return (Updatable) Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
+     * 
+     */
+    public Optional<Output<SecretSecretGenerationContextArgs>> secretGenerationContext() {
+        return Optional.ofNullable(this.secretGenerationContext);
+    }
+
+    /**
      * A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
      * 
      */
@@ -333,7 +380,9 @@ public final class SecretState extends com.pulumi.resources.ResourceArgs {
         this.currentVersionNumber = $.currentVersionNumber;
         this.definedTags = $.definedTags;
         this.description = $.description;
+        this.enableAutoGeneration = $.enableAutoGeneration;
         this.freeformTags = $.freeformTags;
+        this.isAutoGenerationEnabled = $.isAutoGenerationEnabled;
         this.keyId = $.keyId;
         this.lastRotationTime = $.lastRotationTime;
         this.lifecycleDetails = $.lifecycleDetails;
@@ -342,6 +391,7 @@ public final class SecretState extends com.pulumi.resources.ResourceArgs {
         this.rotationConfig = $.rotationConfig;
         this.rotationStatus = $.rotationStatus;
         this.secretContent = $.secretContent;
+        this.secretGenerationContext = $.secretGenerationContext;
         this.secretName = $.secretName;
         this.secretRules = $.secretRules;
         this.state = $.state;
@@ -454,6 +504,27 @@ public final class SecretState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param enableAutoGeneration (Updatable) The value of this flag determines whether or not secret content will be generated automatically. If not set, it defaults to false.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enableAutoGeneration(@Nullable Output<Boolean> enableAutoGeneration) {
+            $.enableAutoGeneration = enableAutoGeneration;
+            return this;
+        }
+
+        /**
+         * @param enableAutoGeneration (Updatable) The value of this flag determines whether or not secret content will be generated automatically. If not set, it defaults to false.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enableAutoGeneration(Boolean enableAutoGeneration) {
+            return enableAutoGeneration(Output.of(enableAutoGeneration));
+        }
+
+        /**
          * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
          * @return builder
@@ -472,6 +543,27 @@ public final class SecretState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param isAutoGenerationEnabled The value of this flag determines whether or not secret content will be generated automatically.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAutoGenerationEnabled(@Nullable Output<Boolean> isAutoGenerationEnabled) {
+            $.isAutoGenerationEnabled = isAutoGenerationEnabled;
+            return this;
+        }
+
+        /**
+         * @param isAutoGenerationEnabled The value of this flag determines whether or not secret content will be generated automatically.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAutoGenerationEnabled(Boolean isAutoGenerationEnabled) {
+            return isAutoGenerationEnabled(Output.of(isAutoGenerationEnabled));
         }
 
         /**
@@ -640,6 +732,27 @@ public final class SecretState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder secretContent(SecretSecretContentArgs secretContent) {
             return secretContent(Output.of(secretContent));
+        }
+
+        /**
+         * @param secretGenerationContext (Updatable) Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretGenerationContext(@Nullable Output<SecretSecretGenerationContextArgs> secretGenerationContext) {
+            $.secretGenerationContext = secretGenerationContext;
+            return this;
+        }
+
+        /**
+         * @param secretGenerationContext (Updatable) Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretGenerationContext(SecretSecretGenerationContextArgs secretGenerationContext) {
+            return secretGenerationContext(Output.of(secretGenerationContext));
         }
 
         /**

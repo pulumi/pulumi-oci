@@ -112,14 +112,14 @@ public final class MetricExtensionState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * List of resource objects on which this metric extension is enabled.
+     * List of resource details objects having resourceIds on which this metric extension is enabled.
      * 
      */
     @Import(name="enabledOnResources")
     private @Nullable Output<List<MetricExtensionEnabledOnResourceArgs>> enabledOnResources;
 
     /**
-     * @return List of resource objects on which this metric extension is enabled.
+     * @return List of resource details objects having resourceIds on which this metric extension is enabled.
      * 
      */
     public Optional<Output<List<MetricExtensionEnabledOnResourceArgs>>> enabledOnResources() {
@@ -497,7 +497,7 @@ public final class MetricExtensionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param enabledOnResources List of resource objects on which this metric extension is enabled.
+         * @param enabledOnResources List of resource details objects having resourceIds on which this metric extension is enabled.
          * 
          * @return builder
          * 
@@ -508,7 +508,7 @@ public final class MetricExtensionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param enabledOnResources List of resource objects on which this metric extension is enabled.
+         * @param enabledOnResources List of resource details objects having resourceIds on which this metric extension is enabled.
          * 
          * @return builder
          * 
@@ -518,7 +518,7 @@ public final class MetricExtensionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param enabledOnResources List of resource objects on which this metric extension is enabled.
+         * @param enabledOnResources List of resource details objects having resourceIds on which this metric extension is enabled.
          * 
          * @return builder
          * 

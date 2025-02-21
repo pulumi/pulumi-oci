@@ -53,6 +53,7 @@ class DataGuardAssociationArgs:
                  peer_sid_prefix: Optional[pulumi.Input[str]] = None,
                  peer_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                  private_ip: Optional[pulumi.Input[str]] = None,
+                 private_ip_v6: Optional[pulumi.Input[str]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  storage_volume_performance_mode: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
@@ -119,6 +120,7 @@ class DataGuardAssociationArgs:
         :param pulumi.Input[str] peer_sid_prefix: Specifies a prefix for the `Oracle SID` of the database to be created.
         :param pulumi.Input[str] peer_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster in which to create the standby database. You must supply this value if creationType is `ExistingVmCluster`.
         :param pulumi.Input[str] private_ip: The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+        :param pulumi.Input[str] private_ip_v6: The IPv6 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv6 address from the subnet.
         :param pulumi.Input[str] shape: The virtual machine DB system shape to launch for the standby database in the Data Guard association. The shape determines the number of CPU cores and the amount of memory available for the DB system. Only virtual machine shapes are valid options. If you do not supply this parameter, the default shape is the shape of the primary DB system.
                
                To get a list of all shapes, use the [ListDbSystemShapes](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbSystemShapeSummary/ListDbSystemShapes) operation.
@@ -187,6 +189,8 @@ class DataGuardAssociationArgs:
             pulumi.set(__self__, "peer_vm_cluster_id", peer_vm_cluster_id)
         if private_ip is not None:
             pulumi.set(__self__, "private_ip", private_ip)
+        if private_ip_v6 is not None:
+            pulumi.set(__self__, "private_ip_v6", private_ip_v6)
         if shape is not None:
             pulumi.set(__self__, "shape", shape)
         if storage_volume_performance_mode is not None:
@@ -605,6 +609,18 @@ class DataGuardAssociationArgs:
         pulumi.set(self, "private_ip", value)
 
     @property
+    @pulumi.getter(name="privateIpV6")
+    def private_ip_v6(self) -> Optional[pulumi.Input[str]]:
+        """
+        The IPv6 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv6 address from the subnet.
+        """
+        return pulumi.get(self, "private_ip_v6")
+
+    @private_ip_v6.setter
+    def private_ip_v6(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "private_ip_v6", value)
+
+    @property
     @pulumi.getter
     def shape(self) -> Optional[pulumi.Input[str]]:
         """
@@ -697,6 +713,7 @@ class _DataGuardAssociationState:
                  peer_sid_prefix: Optional[pulumi.Input[str]] = None,
                  peer_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                  private_ip: Optional[pulumi.Input[str]] = None,
+                 private_ip_v6: Optional[pulumi.Input[str]] = None,
                  protection_mode: Optional[pulumi.Input[str]] = None,
                  role: Optional[pulumi.Input[str]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
@@ -763,6 +780,7 @@ class _DataGuardAssociationState:
         :param pulumi.Input[str] peer_sid_prefix: Specifies a prefix for the `Oracle SID` of the database to be created.
         :param pulumi.Input[str] peer_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster in which to create the standby database. You must supply this value if creationType is `ExistingVmCluster`.
         :param pulumi.Input[str] private_ip: The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+        :param pulumi.Input[str] private_ip_v6: The IPv6 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv6 address from the subnet.
         :param pulumi.Input[str] protection_mode: (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
                
                **IMPORTANT** - The only protection mode currently supported by the Database service is MAXIMUM_PERFORMANCE.
@@ -859,6 +877,8 @@ class _DataGuardAssociationState:
             pulumi.set(__self__, "peer_vm_cluster_id", peer_vm_cluster_id)
         if private_ip is not None:
             pulumi.set(__self__, "private_ip", private_ip)
+        if private_ip_v6 is not None:
+            pulumi.set(__self__, "private_ip_v6", private_ip_v6)
         if protection_mode is not None:
             pulumi.set(__self__, "protection_mode", protection_mode)
         if role is not None:
@@ -1326,6 +1346,18 @@ class _DataGuardAssociationState:
         pulumi.set(self, "private_ip", value)
 
     @property
+    @pulumi.getter(name="privateIpV6")
+    def private_ip_v6(self) -> Optional[pulumi.Input[str]]:
+        """
+        The IPv6 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv6 address from the subnet.
+        """
+        return pulumi.get(self, "private_ip_v6")
+
+    @private_ip_v6.setter
+    def private_ip_v6(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "private_ip_v6", value)
+
+    @property
     @pulumi.getter(name="protectionMode")
     def protection_mode(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1483,6 +1515,7 @@ class DataGuardAssociation(pulumi.CustomResource):
                  peer_sid_prefix: Optional[pulumi.Input[str]] = None,
                  peer_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                  private_ip: Optional[pulumi.Input[str]] = None,
+                 private_ip_v6: Optional[pulumi.Input[str]] = None,
                  protection_mode: Optional[pulumi.Input[str]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  storage_volume_performance_mode: Optional[pulumi.Input[str]] = None,
@@ -1543,6 +1576,7 @@ class DataGuardAssociation(pulumi.CustomResource):
             peer_sid_prefix=data_guard_association_peer_sid_prefix,
             peer_vm_cluster_id=test_vm_cluster["id"],
             private_ip=data_guard_association_private_ip,
+            private_ip_v6=data_guard_association_private_ip_v6,
             shape=data_guard_association_shape,
             storage_volume_performance_mode=data_guard_association_storage_volume_performance_mode,
             subnet_id=test_subnet["id"],
@@ -1604,6 +1638,7 @@ class DataGuardAssociation(pulumi.CustomResource):
         :param pulumi.Input[str] peer_sid_prefix: Specifies a prefix for the `Oracle SID` of the database to be created.
         :param pulumi.Input[str] peer_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster in which to create the standby database. You must supply this value if creationType is `ExistingVmCluster`.
         :param pulumi.Input[str] private_ip: The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+        :param pulumi.Input[str] private_ip_v6: The IPv6 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv6 address from the subnet.
         :param pulumi.Input[str] protection_mode: (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
                
                **IMPORTANT** - The only protection mode currently supported by the Database service is MAXIMUM_PERFORMANCE.
@@ -1684,6 +1719,7 @@ class DataGuardAssociation(pulumi.CustomResource):
             peer_sid_prefix=data_guard_association_peer_sid_prefix,
             peer_vm_cluster_id=test_vm_cluster["id"],
             private_ip=data_guard_association_private_ip,
+            private_ip_v6=data_guard_association_private_ip_v6,
             shape=data_guard_association_shape,
             storage_volume_performance_mode=data_guard_association_storage_volume_performance_mode,
             subnet_id=test_subnet["id"],
@@ -1739,6 +1775,7 @@ class DataGuardAssociation(pulumi.CustomResource):
                  peer_sid_prefix: Optional[pulumi.Input[str]] = None,
                  peer_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                  private_ip: Optional[pulumi.Input[str]] = None,
+                 private_ip_v6: Optional[pulumi.Input[str]] = None,
                  protection_mode: Optional[pulumi.Input[str]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  storage_volume_performance_mode: Optional[pulumi.Input[str]] = None,
@@ -1792,6 +1829,7 @@ class DataGuardAssociation(pulumi.CustomResource):
             __props__.__dict__["peer_sid_prefix"] = peer_sid_prefix
             __props__.__dict__["peer_vm_cluster_id"] = peer_vm_cluster_id
             __props__.__dict__["private_ip"] = private_ip
+            __props__.__dict__["private_ip_v6"] = private_ip_v6
             if protection_mode is None and not opts.urn:
                 raise TypeError("Missing required property 'protection_mode'")
             __props__.__dict__["protection_mode"] = protection_mode
@@ -1859,6 +1897,7 @@ class DataGuardAssociation(pulumi.CustomResource):
             peer_sid_prefix: Optional[pulumi.Input[str]] = None,
             peer_vm_cluster_id: Optional[pulumi.Input[str]] = None,
             private_ip: Optional[pulumi.Input[str]] = None,
+            private_ip_v6: Optional[pulumi.Input[str]] = None,
             protection_mode: Optional[pulumi.Input[str]] = None,
             role: Optional[pulumi.Input[str]] = None,
             shape: Optional[pulumi.Input[str]] = None,
@@ -1930,6 +1969,7 @@ class DataGuardAssociation(pulumi.CustomResource):
         :param pulumi.Input[str] peer_sid_prefix: Specifies a prefix for the `Oracle SID` of the database to be created.
         :param pulumi.Input[str] peer_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster in which to create the standby database. You must supply this value if creationType is `ExistingVmCluster`.
         :param pulumi.Input[str] private_ip: The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+        :param pulumi.Input[str] private_ip_v6: The IPv6 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv6 address from the subnet.
         :param pulumi.Input[str] protection_mode: (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
                
                **IMPORTANT** - The only protection mode currently supported by the Database service is MAXIMUM_PERFORMANCE.
@@ -1994,6 +2034,7 @@ class DataGuardAssociation(pulumi.CustomResource):
         __props__.__dict__["peer_sid_prefix"] = peer_sid_prefix
         __props__.__dict__["peer_vm_cluster_id"] = peer_vm_cluster_id
         __props__.__dict__["private_ip"] = private_ip
+        __props__.__dict__["private_ip_v6"] = private_ip_v6
         __props__.__dict__["protection_mode"] = protection_mode
         __props__.__dict__["role"] = role
         __props__.__dict__["shape"] = shape
@@ -2307,6 +2348,14 @@ class DataGuardAssociation(pulumi.CustomResource):
         The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
         """
         return pulumi.get(self, "private_ip")
+
+    @property
+    @pulumi.getter(name="privateIpV6")
+    def private_ip_v6(self) -> pulumi.Output[str]:
+        """
+        The IPv6 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv6 address from the subnet.
+        """
+        return pulumi.get(self, "private_ip_v6")
 
     @property
     @pulumi.getter(name="protectionMode")

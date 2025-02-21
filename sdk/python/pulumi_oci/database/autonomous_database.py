@@ -34,6 +34,7 @@ class AutonomousDatabaseArgs:
                  backup_retention_period_in_days: Optional[pulumi.Input[int]] = None,
                  byol_compute_count_limit: Optional[pulumi.Input[float]] = None,
                  character_set: Optional[pulumi.Input[str]] = None,
+                 clone_table_space_lists: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
                  clone_type: Optional[pulumi.Input[str]] = None,
                  compute_count: Optional[pulumi.Input[float]] = None,
                  compute_model: Optional[pulumi.Input[str]] = None,
@@ -123,8 +124,11 @@ class AutonomousDatabaseArgs:
                
                For an Autonomous Database on dedicated infrastructure, the allowed values are:
                
+               <<<<<<< ours
                AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
+        :param pulumi.Input[Sequence[pulumi.Input[int]]] clone_table_space_lists: A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
         :param pulumi.Input[str] clone_type: The Autonomous Database clone type. This parameter is not used to create a refreshable clone type, and for refreshable clones one must use the (source=CLONE_TO_REFRESHABLE) parameter.
+               >>>>>>> theirs
                * `FULL` - This option creates a new database that includes all source database data.
                * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
         :param pulumi.Input[float] compute_count: (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure. For an Autonomous Database Serverless instance, the 'ECPU' compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value. Providing `computeModel` and `computeCount` is the preferred method for both OCPU and ECPU.
@@ -294,6 +298,8 @@ class AutonomousDatabaseArgs:
             pulumi.set(__self__, "byol_compute_count_limit", byol_compute_count_limit)
         if character_set is not None:
             pulumi.set(__self__, "character_set", character_set)
+        if clone_table_space_lists is not None:
+            pulumi.set(__self__, "clone_table_space_lists", clone_table_space_lists)
         if clone_type is not None:
             pulumi.set(__self__, "clone_type", clone_type)
         if compute_count is not None:
@@ -591,6 +597,7 @@ class AutonomousDatabaseArgs:
 
         For an Autonomous Database on dedicated infrastructure, the allowed values are:
 
+        <<<<<<< ours
         AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
         """
         return pulumi.get(self, "character_set")
@@ -600,10 +607,23 @@ class AutonomousDatabaseArgs:
         pulumi.set(self, "character_set", value)
 
     @property
+    @pulumi.getter(name="cloneTableSpaceLists")
+    def clone_table_space_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
+        """
+        A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
+        """
+        return pulumi.get(self, "clone_table_space_lists")
+
+    @clone_table_space_lists.setter
+    def clone_table_space_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]):
+        pulumi.set(self, "clone_table_space_lists", value)
+
+    @property
     @pulumi.getter(name="cloneType")
     def clone_type(self) -> Optional[pulumi.Input[str]]:
         """
         The Autonomous Database clone type. This parameter is not used to create a refreshable clone type, and for refreshable clones one must use the (source=CLONE_TO_REFRESHABLE) parameter.
+        >>>>>>> theirs
         * `FULL` - This option creates a new database that includes all source database data.
         * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
         """
@@ -1556,6 +1576,7 @@ class _AutonomousDatabaseState:
                  backup_retention_period_in_days: Optional[pulumi.Input[int]] = None,
                  byol_compute_count_limit: Optional[pulumi.Input[float]] = None,
                  character_set: Optional[pulumi.Input[str]] = None,
+                 clone_table_space_lists: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
                  clone_type: Optional[pulumi.Input[str]] = None,
                  cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
@@ -1617,6 +1638,7 @@ class _AutonomousDatabaseState:
                  local_disaster_recovery_type: Optional[pulumi.Input[str]] = None,
                  local_standby_dbs: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLocalStandbyDbArgs']]]] = None,
                  long_term_backup_schedules: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLongTermBackupScheduleArgs']]]] = None,
+                 maintenance_target_component: Optional[pulumi.Input[str]] = None,
                  max_cpu_core_count: Optional[pulumi.Input[int]] = None,
                  memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[int]] = None,
                  ncharacter_set: Optional[pulumi.Input[str]] = None,
@@ -1705,8 +1727,11 @@ class _AutonomousDatabaseState:
                
                For an Autonomous Database on dedicated infrastructure, the allowed values are:
                
+               <<<<<<< ours
                AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
+        :param pulumi.Input[Sequence[pulumi.Input[int]]] clone_table_space_lists: A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
         :param pulumi.Input[str] clone_type: The Autonomous Database clone type. This parameter is not used to create a refreshable clone type, and for refreshable clones one must use the (source=CLONE_TO_REFRESHABLE) parameter.
+               >>>>>>> theirs
                * `FULL` - This option creates a new database that includes all source database data.
                * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
         :param pulumi.Input[str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
@@ -1792,9 +1817,10 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`. It is a required field when `db_workload` is AJD and needs to be set to `LICENSE_INCLUDED` as AJD does not support default `license_model` value `BRING_YOUR_OWN_LICENSE`.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[int] local_adg_auto_failover_max_data_loss_limit: Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
-        :param pulumi.Input[str] local_disaster_recovery_type: Indicates the local disaster recovery (DR) type of the Serverless Autonomous Database. Autonomous Data Guard (`ADG`) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based (`BACKUP_BASED`) DR type provides lower cost DR with a slower RTO during failover or switchover.
-        :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLocalStandbyDbArgs']]] local_standby_dbs: Autonomous Data Guard local (same region) standby database details.
+        :param pulumi.Input[str] local_disaster_recovery_type: Indicates the local disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLocalStandbyDbArgs']]] local_standby_dbs: Autonomous Data Guard standby database details.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLongTermBackupScheduleArgs']]] long_term_backup_schedules: Details for the long-term backup schedule.
+        :param pulumi.Input[str] maintenance_target_component: The component chosen for maintenance.
         :param pulumi.Input[int] max_cpu_core_count: (Updatable) **Deprecated.** The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
         :param pulumi.Input[int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details. This parameter is not used for Autonomous database Serverless.
         :param pulumi.Input[str] ncharacter_set: The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
@@ -1940,6 +1966,8 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "byol_compute_count_limit", byol_compute_count_limit)
         if character_set is not None:
             pulumi.set(__self__, "character_set", character_set)
+        if clone_table_space_lists is not None:
+            pulumi.set(__self__, "clone_table_space_lists", clone_table_space_lists)
         if clone_type is not None:
             pulumi.set(__self__, "clone_type", clone_type)
         if cluster_placement_group_id is not None:
@@ -2065,6 +2093,8 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "local_standby_dbs", local_standby_dbs)
         if long_term_backup_schedules is not None:
             pulumi.set(__self__, "long_term_backup_schedules", long_term_backup_schedules)
+        if maintenance_target_component is not None:
+            pulumi.set(__self__, "maintenance_target_component", maintenance_target_component)
         if max_cpu_core_count is not None:
             pulumi.set(__self__, "max_cpu_core_count", max_cpu_core_count)
         if memory_per_oracle_compute_unit_in_gbs is not None:
@@ -2397,6 +2427,7 @@ class _AutonomousDatabaseState:
 
         For an Autonomous Database on dedicated infrastructure, the allowed values are:
 
+        <<<<<<< ours
         AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
         """
         return pulumi.get(self, "character_set")
@@ -2406,10 +2437,23 @@ class _AutonomousDatabaseState:
         pulumi.set(self, "character_set", value)
 
     @property
+    @pulumi.getter(name="cloneTableSpaceLists")
+    def clone_table_space_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
+        """
+        A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
+        """
+        return pulumi.get(self, "clone_table_space_lists")
+
+    @clone_table_space_lists.setter
+    def clone_table_space_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]):
+        pulumi.set(self, "clone_table_space_lists", value)
+
+    @property
     @pulumi.getter(name="cloneType")
     def clone_type(self) -> Optional[pulumi.Input[str]]:
         """
         The Autonomous Database clone type. This parameter is not used to create a refreshable clone type, and for refreshable clones one must use the (source=CLONE_TO_REFRESHABLE) parameter.
+        >>>>>>> theirs
         * `FULL` - This option creates a new database that includes all source database data.
         * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
         """
@@ -3134,7 +3178,7 @@ class _AutonomousDatabaseState:
     @pulumi.getter(name="localDisasterRecoveryType")
     def local_disaster_recovery_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Indicates the local disaster recovery (DR) type of the Serverless Autonomous Database. Autonomous Data Guard (`ADG`) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based (`BACKUP_BASED`) DR type provides lower cost DR with a slower RTO during failover or switchover.
+        Indicates the local disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         """
         return pulumi.get(self, "local_disaster_recovery_type")
 
@@ -3146,7 +3190,7 @@ class _AutonomousDatabaseState:
     @pulumi.getter(name="localStandbyDbs")
     def local_standby_dbs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLocalStandbyDbArgs']]]]:
         """
-        Autonomous Data Guard local (same region) standby database details.
+        Autonomous Data Guard standby database details.
         """
         return pulumi.get(self, "local_standby_dbs")
 
@@ -3165,6 +3209,18 @@ class _AutonomousDatabaseState:
     @long_term_backup_schedules.setter
     def long_term_backup_schedules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLongTermBackupScheduleArgs']]]]):
         pulumi.set(self, "long_term_backup_schedules", value)
+
+    @property
+    @pulumi.getter(name="maintenanceTargetComponent")
+    def maintenance_target_component(self) -> Optional[pulumi.Input[str]]:
+        """
+        The component chosen for maintenance.
+        """
+        return pulumi.get(self, "maintenance_target_component")
+
+    @maintenance_target_component.setter
+    def maintenance_target_component(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "maintenance_target_component", value)
 
     @property
     @pulumi.getter(name="maxCpuCoreCount")
@@ -4024,6 +4080,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  backup_retention_period_in_days: Optional[pulumi.Input[int]] = None,
                  byol_compute_count_limit: Optional[pulumi.Input[float]] = None,
                  character_set: Optional[pulumi.Input[str]] = None,
+                 clone_table_space_lists: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
                  clone_type: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  compute_count: Optional[pulumi.Input[float]] = None,
@@ -4129,8 +4186,11 @@ class AutonomousDatabase(pulumi.CustomResource):
                
                For an Autonomous Database on dedicated infrastructure, the allowed values are:
                
+               <<<<<<< ours
                AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
+        :param pulumi.Input[Sequence[pulumi.Input[int]]] clone_table_space_lists: A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
         :param pulumi.Input[str] clone_type: The Autonomous Database clone type. This parameter is not used to create a refreshable clone type, and for refreshable clones one must use the (source=CLONE_TO_REFRESHABLE) parameter.
+               >>>>>>> theirs
                * `FULL` - This option creates a new database that includes all source database data.
                * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
@@ -4325,6 +4385,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  backup_retention_period_in_days: Optional[pulumi.Input[int]] = None,
                  byol_compute_count_limit: Optional[pulumi.Input[float]] = None,
                  character_set: Optional[pulumi.Input[str]] = None,
+                 clone_table_space_lists: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
                  clone_type: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  compute_count: Optional[pulumi.Input[float]] = None,
@@ -4419,6 +4480,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["backup_retention_period_in_days"] = backup_retention_period_in_days
             __props__.__dict__["byol_compute_count_limit"] = byol_compute_count_limit
             __props__.__dict__["character_set"] = character_set
+            __props__.__dict__["clone_table_space_lists"] = clone_table_space_lists
             __props__.__dict__["clone_type"] = clone_type
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
@@ -4523,6 +4585,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["local_disaster_recovery_type"] = None
             __props__.__dict__["local_standby_dbs"] = None
+            __props__.__dict__["maintenance_target_component"] = None
             __props__.__dict__["memory_per_oracle_compute_unit_in_gbs"] = None
             __props__.__dict__["net_services_architecture"] = None
             __props__.__dict__["next_long_term_backup_time_stamp"] = None
@@ -4586,6 +4649,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             backup_retention_period_in_days: Optional[pulumi.Input[int]] = None,
             byol_compute_count_limit: Optional[pulumi.Input[float]] = None,
             character_set: Optional[pulumi.Input[str]] = None,
+            clone_table_space_lists: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
             clone_type: Optional[pulumi.Input[str]] = None,
             cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
@@ -4647,6 +4711,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             local_disaster_recovery_type: Optional[pulumi.Input[str]] = None,
             local_standby_dbs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseLocalStandbyDbArgs', 'AutonomousDatabaseLocalStandbyDbArgsDict']]]]] = None,
             long_term_backup_schedules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseLongTermBackupScheduleArgs', 'AutonomousDatabaseLongTermBackupScheduleArgsDict']]]]] = None,
+            maintenance_target_component: Optional[pulumi.Input[str]] = None,
             max_cpu_core_count: Optional[pulumi.Input[int]] = None,
             memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[int]] = None,
             ncharacter_set: Optional[pulumi.Input[str]] = None,
@@ -4740,8 +4805,11 @@ class AutonomousDatabase(pulumi.CustomResource):
                
                For an Autonomous Database on dedicated infrastructure, the allowed values are:
                
+               <<<<<<< ours
                AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
+        :param pulumi.Input[Sequence[pulumi.Input[int]]] clone_table_space_lists: A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
         :param pulumi.Input[str] clone_type: The Autonomous Database clone type. This parameter is not used to create a refreshable clone type, and for refreshable clones one must use the (source=CLONE_TO_REFRESHABLE) parameter.
+               >>>>>>> theirs
                * `FULL` - This option creates a new database that includes all source database data.
                * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
         :param pulumi.Input[str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
@@ -4827,9 +4895,10 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`. It is a required field when `db_workload` is AJD and needs to be set to `LICENSE_INCLUDED` as AJD does not support default `license_model` value `BRING_YOUR_OWN_LICENSE`.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[int] local_adg_auto_failover_max_data_loss_limit: Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
-        :param pulumi.Input[str] local_disaster_recovery_type: Indicates the local disaster recovery (DR) type of the Serverless Autonomous Database. Autonomous Data Guard (`ADG`) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based (`BACKUP_BASED`) DR type provides lower cost DR with a slower RTO during failover or switchover.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseLocalStandbyDbArgs', 'AutonomousDatabaseLocalStandbyDbArgsDict']]]] local_standby_dbs: Autonomous Data Guard local (same region) standby database details.
+        :param pulumi.Input[str] local_disaster_recovery_type: Indicates the local disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseLocalStandbyDbArgs', 'AutonomousDatabaseLocalStandbyDbArgsDict']]]] local_standby_dbs: Autonomous Data Guard standby database details.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseLongTermBackupScheduleArgs', 'AutonomousDatabaseLongTermBackupScheduleArgsDict']]]] long_term_backup_schedules: Details for the long-term backup schedule.
+        :param pulumi.Input[str] maintenance_target_component: The component chosen for maintenance.
         :param pulumi.Input[int] max_cpu_core_count: (Updatable) **Deprecated.** The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
         :param pulumi.Input[int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details. This parameter is not used for Autonomous database Serverless.
         :param pulumi.Input[str] ncharacter_set: The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
@@ -4962,6 +5031,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["backup_retention_period_in_days"] = backup_retention_period_in_days
         __props__.__dict__["byol_compute_count_limit"] = byol_compute_count_limit
         __props__.__dict__["character_set"] = character_set
+        __props__.__dict__["clone_table_space_lists"] = clone_table_space_lists
         __props__.__dict__["clone_type"] = clone_type
         __props__.__dict__["cluster_placement_group_id"] = cluster_placement_group_id
         __props__.__dict__["compartment_id"] = compartment_id
@@ -5023,6 +5093,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["local_disaster_recovery_type"] = local_disaster_recovery_type
         __props__.__dict__["local_standby_dbs"] = local_standby_dbs
         __props__.__dict__["long_term_backup_schedules"] = long_term_backup_schedules
+        __props__.__dict__["maintenance_target_component"] = maintenance_target_component
         __props__.__dict__["max_cpu_core_count"] = max_cpu_core_count
         __props__.__dict__["memory_per_oracle_compute_unit_in_gbs"] = memory_per_oracle_compute_unit_in_gbs
         __props__.__dict__["ncharacter_set"] = ncharacter_set
@@ -5225,15 +5296,25 @@ class AutonomousDatabase(pulumi.CustomResource):
 
         For an Autonomous Database on dedicated infrastructure, the allowed values are:
 
+        <<<<<<< ours
         AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
         """
         return pulumi.get(self, "character_set")
+
+    @property
+    @pulumi.getter(name="cloneTableSpaceLists")
+    def clone_table_space_lists(self) -> pulumi.Output[Sequence[int]]:
+        """
+        A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
+        """
+        return pulumi.get(self, "clone_table_space_lists")
 
     @property
     @pulumi.getter(name="cloneType")
     def clone_type(self) -> pulumi.Output[str]:
         """
         The Autonomous Database clone type. This parameter is not used to create a refreshable clone type, and for refreshable clones one must use the (source=CLONE_TO_REFRESHABLE) parameter.
+        >>>>>>> theirs
         * `FULL` - This option creates a new database that includes all source database data.
         * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
         """
@@ -5726,7 +5807,7 @@ class AutonomousDatabase(pulumi.CustomResource):
     @pulumi.getter(name="localDisasterRecoveryType")
     def local_disaster_recovery_type(self) -> pulumi.Output[str]:
         """
-        Indicates the local disaster recovery (DR) type of the Serverless Autonomous Database. Autonomous Data Guard (`ADG`) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based (`BACKUP_BASED`) DR type provides lower cost DR with a slower RTO during failover or switchover.
+        Indicates the local disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         """
         return pulumi.get(self, "local_disaster_recovery_type")
 
@@ -5734,7 +5815,7 @@ class AutonomousDatabase(pulumi.CustomResource):
     @pulumi.getter(name="localStandbyDbs")
     def local_standby_dbs(self) -> pulumi.Output[Sequence['outputs.AutonomousDatabaseLocalStandbyDb']]:
         """
-        Autonomous Data Guard local (same region) standby database details.
+        Autonomous Data Guard standby database details.
         """
         return pulumi.get(self, "local_standby_dbs")
 
@@ -5745,6 +5826,14 @@ class AutonomousDatabase(pulumi.CustomResource):
         Details for the long-term backup schedule.
         """
         return pulumi.get(self, "long_term_backup_schedules")
+
+    @property
+    @pulumi.getter(name="maintenanceTargetComponent")
+    def maintenance_target_component(self) -> pulumi.Output[str]:
+        """
+        The component chosen for maintenance.
+        """
+        return pulumi.get(self, "maintenance_target_component")
 
     @property
     @pulumi.getter(name="maxCpuCoreCount")

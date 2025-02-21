@@ -17,6 +17,11 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItemOperati
      */
     private String architecture;
     /**
+     * @return The name of the Operating System distribution, such as Oracle Linux 9, Windows 10, or macOS X.
+     * 
+     */
+    private String distribution;
+    /**
      * @return The operating system type, such as Windows, Linux or macOS
      * 
      */
@@ -44,6 +49,13 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItemOperati
      */
     public String architecture() {
         return this.architecture;
+    }
+    /**
+     * @return The name of the Operating System distribution, such as Oracle Linux 9, Windows 10, or macOS X.
+     * 
+     */
+    public String distribution() {
+        return this.distribution;
     }
     /**
      * @return The operating system type, such as Windows, Linux or macOS
@@ -84,6 +96,7 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItemOperati
     @CustomType.Builder
     public static final class Builder {
         private String architecture;
+        private String distribution;
         private String family;
         private Integer managedInstanceCount;
         private String name;
@@ -92,6 +105,7 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItemOperati
         public Builder(GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.architecture = defaults.architecture;
+    	      this.distribution = defaults.distribution;
     	      this.family = defaults.family;
     	      this.managedInstanceCount = defaults.managedInstanceCount;
     	      this.name = defaults.name;
@@ -104,6 +118,14 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItemOperati
               throw new MissingRequiredPropertyException("GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem", "architecture");
             }
             this.architecture = architecture;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder distribution(String distribution) {
+            if (distribution == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem", "distribution");
+            }
+            this.distribution = distribution;
             return this;
         }
         @CustomType.Setter
@@ -141,6 +163,7 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItemOperati
         public GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem build() {
             final var _resultValue = new GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem();
             _resultValue.architecture = architecture;
+            _resultValue.distribution = distribution;
             _resultValue.family = family;
             _resultValue.managedInstanceCount = managedInstanceCount;
             _resultValue.name = name;

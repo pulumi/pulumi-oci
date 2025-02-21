@@ -12,6 +12,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ClusterEndpoint {
     /**
+     * @return The IPv6 networking Kubernetes API server endpoint.
+     * 
+     */
+    private @Nullable String ipv6endpoint;
+    /**
      * @return The non-native networking Kubernetes API server endpoint.
      * 
      */
@@ -33,6 +38,13 @@ public final class ClusterEndpoint {
     private @Nullable String vcnHostnameEndpoint;
 
     private ClusterEndpoint() {}
+    /**
+     * @return The IPv6 networking Kubernetes API server endpoint.
+     * 
+     */
+    public Optional<String> ipv6endpoint() {
+        return Optional.ofNullable(this.ipv6endpoint);
+    }
     /**
      * @return The non-native networking Kubernetes API server endpoint.
      * 
@@ -71,6 +83,7 @@ public final class ClusterEndpoint {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String ipv6endpoint;
         private @Nullable String kubernetes;
         private @Nullable String privateEndpoint;
         private @Nullable String publicEndpoint;
@@ -78,12 +91,19 @@ public final class ClusterEndpoint {
         public Builder() {}
         public Builder(ClusterEndpoint defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.ipv6endpoint = defaults.ipv6endpoint;
     	      this.kubernetes = defaults.kubernetes;
     	      this.privateEndpoint = defaults.privateEndpoint;
     	      this.publicEndpoint = defaults.publicEndpoint;
     	      this.vcnHostnameEndpoint = defaults.vcnHostnameEndpoint;
         }
 
+        @CustomType.Setter
+        public Builder ipv6endpoint(@Nullable String ipv6endpoint) {
+
+            this.ipv6endpoint = ipv6endpoint;
+            return this;
+        }
         @CustomType.Setter
         public Builder kubernetes(@Nullable String kubernetes) {
 
@@ -110,6 +130,7 @@ public final class ClusterEndpoint {
         }
         public ClusterEndpoint build() {
             final var _resultValue = new ClusterEndpoint();
+            _resultValue.ipv6endpoint = ipv6endpoint;
             _resultValue.kubernetes = kubernetes;
             _resultValue.privateEndpoint = privateEndpoint;
             _resultValue.publicEndpoint = publicEndpoint;

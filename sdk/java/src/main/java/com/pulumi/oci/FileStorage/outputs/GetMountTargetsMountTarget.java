@@ -115,6 +115,11 @@ public final class GetMountTargetsMountTarget {
      */
     private String subnetId;
     /**
+     * @return System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+     * 
+     */
+    private Map<String,String> systemTags;
+    /**
      * @return The date and time the mount target current billing cycle will end, expressed in  [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated  automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
@@ -269,6 +274,13 @@ public final class GetMountTargetsMountTarget {
         return this.subnetId;
     }
     /**
+     * @return System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return The date and time the mount target current billing cycle will end, expressed in  [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated  automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
@@ -314,6 +326,7 @@ public final class GetMountTargetsMountTarget {
         private String reservedStorageCapacity;
         private String state;
         private String subnetId;
+        private Map<String,String> systemTags;
         private String timeBillingCycleEnd;
         private String timeCreated;
         public Builder() {}
@@ -341,6 +354,7 @@ public final class GetMountTargetsMountTarget {
     	      this.reservedStorageCapacity = defaults.reservedStorageCapacity;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeBillingCycleEnd = defaults.timeBillingCycleEnd;
     	      this.timeCreated = defaults.timeCreated;
         }
@@ -537,6 +551,14 @@ public final class GetMountTargetsMountTarget {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTarget", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeBillingCycleEnd(String timeBillingCycleEnd) {
             if (timeBillingCycleEnd == null) {
               throw new MissingRequiredPropertyException("GetMountTargetsMountTarget", "timeBillingCycleEnd");
@@ -576,6 +598,7 @@ public final class GetMountTargetsMountTarget {
             _resultValue.reservedStorageCapacity = reservedStorageCapacity;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeBillingCycleEnd = timeBillingCycleEnd;
             _resultValue.timeCreated = timeCreated;
             return _resultValue;

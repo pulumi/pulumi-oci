@@ -140,7 +140,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
+        /// (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
         /// </summary>
         [Output("password")]
         public Output<string> Password { get; private set; } = null!;
@@ -212,7 +212,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> VaultId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. 
+        /// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This field will be removed after February 15 2026. 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -353,7 +353,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _password;
 
         /// <summary>
-        /// (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
+        /// (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? Password
         {
@@ -396,7 +396,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? VaultId { get; set; }
 
         /// <summary>
-        /// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. 
+        /// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This field will be removed after February 15 2026. 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -501,7 +501,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _password;
 
         /// <summary>
-        /// (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
+        /// (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? Password
         {
@@ -586,7 +586,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? VaultId { get; set; }
 
         /// <summary>
-        /// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. 
+        /// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This field will be removed after February 15 2026. 
         /// 
         /// 
         /// ** IMPORTANT **

@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetBackupDestinationsBackupDestinationAssociatedDatabase;
 import com.pulumi.oci.Database.outputs.GetBackupDestinationsBackupDestinationMountTypeDetail;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -85,15 +86,30 @@ public final class GetBackupDestinationsBackupDestination {
      */
     private String state;
     /**
+     * @return The time when the total storage size and the utilized storage size of the backup destination are updated.
+     * 
+     */
+    private String timeAtWhichStorageDetailsAreUpdated;
+    /**
      * @return The date and time the backup destination was created.
      * 
      */
     private String timeCreated;
     /**
+     * @return The total storage size of the backup destination in GBs, rounded to the nearest integer.
+     * 
+     */
+    private Integer totalStorageSizeInGbs;
+    /**
      * @return A filter to return only resources that match the given type of the Backup Destination.
      * 
      */
     private String type;
+    /**
+     * @return The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
+     * 
+     */
+    private Integer utilizedStorageSizeInGbs;
     /**
      * @return For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
      * 
@@ -200,6 +216,13 @@ public final class GetBackupDestinationsBackupDestination {
         return this.state;
     }
     /**
+     * @return The time when the total storage size and the utilized storage size of the backup destination are updated.
+     * 
+     */
+    public String timeAtWhichStorageDetailsAreUpdated() {
+        return this.timeAtWhichStorageDetailsAreUpdated;
+    }
+    /**
      * @return The date and time the backup destination was created.
      * 
      */
@@ -207,11 +230,25 @@ public final class GetBackupDestinationsBackupDestination {
         return this.timeCreated;
     }
     /**
+     * @return The total storage size of the backup destination in GBs, rounded to the nearest integer.
+     * 
+     */
+    public Integer totalStorageSizeInGbs() {
+        return this.totalStorageSizeInGbs;
+    }
+    /**
      * @return A filter to return only resources that match the given type of the Backup Destination.
      * 
      */
     public String type() {
         return this.type;
+    }
+    /**
+     * @return The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
+     * 
+     */
+    public Integer utilizedStorageSizeInGbs() {
+        return this.utilizedStorageSizeInGbs;
     }
     /**
      * @return For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
@@ -244,8 +281,11 @@ public final class GetBackupDestinationsBackupDestination {
         private String nfsServerExport;
         private List<String> nfsServers;
         private String state;
+        private String timeAtWhichStorageDetailsAreUpdated;
         private String timeCreated;
+        private Integer totalStorageSizeInGbs;
         private String type;
+        private Integer utilizedStorageSizeInGbs;
         private List<String> vpcUsers;
         public Builder() {}
         public Builder(GetBackupDestinationsBackupDestination defaults) {
@@ -264,8 +304,11 @@ public final class GetBackupDestinationsBackupDestination {
     	      this.nfsServerExport = defaults.nfsServerExport;
     	      this.nfsServers = defaults.nfsServers;
     	      this.state = defaults.state;
+    	      this.timeAtWhichStorageDetailsAreUpdated = defaults.timeAtWhichStorageDetailsAreUpdated;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.totalStorageSizeInGbs = defaults.totalStorageSizeInGbs;
     	      this.type = defaults.type;
+    	      this.utilizedStorageSizeInGbs = defaults.utilizedStorageSizeInGbs;
     	      this.vpcUsers = defaults.vpcUsers;
         }
 
@@ -391,6 +434,14 @@ public final class GetBackupDestinationsBackupDestination {
             return this;
         }
         @CustomType.Setter
+        public Builder timeAtWhichStorageDetailsAreUpdated(String timeAtWhichStorageDetailsAreUpdated) {
+            if (timeAtWhichStorageDetailsAreUpdated == null) {
+              throw new MissingRequiredPropertyException("GetBackupDestinationsBackupDestination", "timeAtWhichStorageDetailsAreUpdated");
+            }
+            this.timeAtWhichStorageDetailsAreUpdated = timeAtWhichStorageDetailsAreUpdated;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetBackupDestinationsBackupDestination", "timeCreated");
@@ -399,11 +450,27 @@ public final class GetBackupDestinationsBackupDestination {
             return this;
         }
         @CustomType.Setter
+        public Builder totalStorageSizeInGbs(Integer totalStorageSizeInGbs) {
+            if (totalStorageSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetBackupDestinationsBackupDestination", "totalStorageSizeInGbs");
+            }
+            this.totalStorageSizeInGbs = totalStorageSizeInGbs;
+            return this;
+        }
+        @CustomType.Setter
         public Builder type(String type) {
             if (type == null) {
               throw new MissingRequiredPropertyException("GetBackupDestinationsBackupDestination", "type");
             }
             this.type = type;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder utilizedStorageSizeInGbs(Integer utilizedStorageSizeInGbs) {
+            if (utilizedStorageSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetBackupDestinationsBackupDestination", "utilizedStorageSizeInGbs");
+            }
+            this.utilizedStorageSizeInGbs = utilizedStorageSizeInGbs;
             return this;
         }
         @CustomType.Setter
@@ -433,8 +500,11 @@ public final class GetBackupDestinationsBackupDestination {
             _resultValue.nfsServerExport = nfsServerExport;
             _resultValue.nfsServers = nfsServers;
             _resultValue.state = state;
+            _resultValue.timeAtWhichStorageDetailsAreUpdated = timeAtWhichStorageDetailsAreUpdated;
             _resultValue.timeCreated = timeCreated;
+            _resultValue.totalStorageSizeInGbs = totalStorageSizeInGbs;
             _resultValue.type = type;
+            _resultValue.utilizedStorageSizeInGbs = utilizedStorageSizeInGbs;
             _resultValue.vpcUsers = vpcUsers;
             return _resultValue;
         }

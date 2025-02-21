@@ -273,6 +273,7 @@ var mappedMods = map[string]string{
 	"service_mesh":                   serviceMeshMod,
 	"stack_monitoring":               stackMonitoringMod,
 	"streaming":                      streamingMod,
+	"tenantmanagercontrolplane":      "Tenantmanagercontrolplane",
 	"usage_proxy":                    usageProxyMod,
 	"vault":                          vaultMod,
 	"vbs":                            vbsMod,
@@ -1755,6 +1756,7 @@ func Provider() tfbridge.ProviderInfo {
 		"oci_objectstorage_namespace_metadata",
 		"oci_objectstorage_private_endpoint",
 		"oci_objectstorage_private_endpoint_summaries",
+		"oci_vault_secret_version_sdk_v2",
 	}
 	for _, tk := range datasourcesMissingDocs {
 		d, ok := prov.DataSources[tk]

@@ -91,6 +91,18 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
             set => _validPropertyValues = value;
         }
 
+        [Input("validSubResourceTypes")]
+        private InputList<string>? _validSubResourceTypes;
+
+        /// <summary>
+        /// (Updatable) List of valid sub-resource types for a composite resource type. The sub-resource types will be obtained from the valid association pairs corresponding to the composite resource types. It will be empty for non composite resource types
+        /// </summary>
+        public InputList<string> ValidSubResourceTypes
+        {
+            get => _validSubResourceTypes ?? (_validSubResourceTypes = new InputList<string>());
+            set => _validSubResourceTypes = value;
+        }
+
         public MonitoredResourceTypeMetadataGetArgs()
         {
         }

@@ -62,6 +62,7 @@ export class Provider extends pulumi.ProviderResource {
      * Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
      */
     public readonly tenancyOcid!: pulumi.Output<string | undefined>;
+    public readonly testTimeMaintenanceRebootDue!: pulumi.Output<string | undefined>;
     /**
      * (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if
      * auth is set to 'ApiKey', ignored otherwise.
@@ -91,6 +92,7 @@ export class Provider extends pulumi.ProviderResource {
             resourceInputs["region"] = args ? args.region : undefined;
             resourceInputs["retryDurationSeconds"] = pulumi.output(args ? args.retryDurationSeconds : undefined).apply(JSON.stringify);
             resourceInputs["tenancyOcid"] = args ? args.tenancyOcid : undefined;
+            resourceInputs["testTimeMaintenanceRebootDue"] = args ? args.testTimeMaintenanceRebootDue : undefined;
             resourceInputs["userOcid"] = args ? args.userOcid : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -157,6 +159,7 @@ export interface ProviderArgs {
      * Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
      */
     tenancyOcid?: pulumi.Input<string>;
+    testTimeMaintenanceRebootDue?: pulumi.Input<string>;
     /**
      * (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if
      * auth is set to 'ApiKey', ignored otherwise.

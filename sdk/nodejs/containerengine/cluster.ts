@@ -51,6 +51,7 @@ import * as utilities from "../utilities";
  *         admissionControllerOptions: {
  *             isPodSecurityPolicyEnabled: clusterOptionsAdmissionControllerOptionsIsPodSecurityPolicyEnabled,
  *         },
+ *         ipFamilies: clusterOptionsIpFamilies,
  *         kubernetesNetworkConfig: {
  *             podsCidr: clusterOptionsKubernetesNetworkConfigPodsCidr,
  *             servicesCidr: clusterOptionsKubernetesNetworkConfigServicesCidr,

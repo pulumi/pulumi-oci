@@ -557,6 +557,200 @@ func (o SecretSecretContentPtrOutput) Stage() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+type SecretSecretGenerationContext struct {
+	// (Updatable) Name of random bytes generation template for generating random byte type secret.
+	GenerationTemplate string `pulumi:"generationTemplate"`
+	// (Updatable) Name of the predefined secret generation type.
+	GenerationType string `pulumi:"generationType"`
+	// (Updatable) Length of the passphrase to be generated
+	PassphraseLength *int `pulumi:"passphraseLength"`
+	// (Updatable) SecretTemplate captures structure in which customer wants to store secrets. This is optional and a default structure is available for each secret type.  The template can have any structure with static values that are not generated. Within the template, you can insert predefined placeholders to store secrets.  These placeholders are later replaced with the generated content and saved as a Base64 encoded content.
+	SecretTemplate *string `pulumi:"secretTemplate"`
+}
+
+// SecretSecretGenerationContextInput is an input type that accepts SecretSecretGenerationContextArgs and SecretSecretGenerationContextOutput values.
+// You can construct a concrete instance of `SecretSecretGenerationContextInput` via:
+//
+//	SecretSecretGenerationContextArgs{...}
+type SecretSecretGenerationContextInput interface {
+	pulumi.Input
+
+	ToSecretSecretGenerationContextOutput() SecretSecretGenerationContextOutput
+	ToSecretSecretGenerationContextOutputWithContext(context.Context) SecretSecretGenerationContextOutput
+}
+
+type SecretSecretGenerationContextArgs struct {
+	// (Updatable) Name of random bytes generation template for generating random byte type secret.
+	GenerationTemplate pulumi.StringInput `pulumi:"generationTemplate"`
+	// (Updatable) Name of the predefined secret generation type.
+	GenerationType pulumi.StringInput `pulumi:"generationType"`
+	// (Updatable) Length of the passphrase to be generated
+	PassphraseLength pulumi.IntPtrInput `pulumi:"passphraseLength"`
+	// (Updatable) SecretTemplate captures structure in which customer wants to store secrets. This is optional and a default structure is available for each secret type.  The template can have any structure with static values that are not generated. Within the template, you can insert predefined placeholders to store secrets.  These placeholders are later replaced with the generated content and saved as a Base64 encoded content.
+	SecretTemplate pulumi.StringPtrInput `pulumi:"secretTemplate"`
+}
+
+func (SecretSecretGenerationContextArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SecretSecretGenerationContext)(nil)).Elem()
+}
+
+func (i SecretSecretGenerationContextArgs) ToSecretSecretGenerationContextOutput() SecretSecretGenerationContextOutput {
+	return i.ToSecretSecretGenerationContextOutputWithContext(context.Background())
+}
+
+func (i SecretSecretGenerationContextArgs) ToSecretSecretGenerationContextOutputWithContext(ctx context.Context) SecretSecretGenerationContextOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SecretSecretGenerationContextOutput)
+}
+
+func (i SecretSecretGenerationContextArgs) ToSecretSecretGenerationContextPtrOutput() SecretSecretGenerationContextPtrOutput {
+	return i.ToSecretSecretGenerationContextPtrOutputWithContext(context.Background())
+}
+
+func (i SecretSecretGenerationContextArgs) ToSecretSecretGenerationContextPtrOutputWithContext(ctx context.Context) SecretSecretGenerationContextPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SecretSecretGenerationContextOutput).ToSecretSecretGenerationContextPtrOutputWithContext(ctx)
+}
+
+// SecretSecretGenerationContextPtrInput is an input type that accepts SecretSecretGenerationContextArgs, SecretSecretGenerationContextPtr and SecretSecretGenerationContextPtrOutput values.
+// You can construct a concrete instance of `SecretSecretGenerationContextPtrInput` via:
+//
+//	        SecretSecretGenerationContextArgs{...}
+//
+//	or:
+//
+//	        nil
+type SecretSecretGenerationContextPtrInput interface {
+	pulumi.Input
+
+	ToSecretSecretGenerationContextPtrOutput() SecretSecretGenerationContextPtrOutput
+	ToSecretSecretGenerationContextPtrOutputWithContext(context.Context) SecretSecretGenerationContextPtrOutput
+}
+
+type secretSecretGenerationContextPtrType SecretSecretGenerationContextArgs
+
+func SecretSecretGenerationContextPtr(v *SecretSecretGenerationContextArgs) SecretSecretGenerationContextPtrInput {
+	return (*secretSecretGenerationContextPtrType)(v)
+}
+
+func (*secretSecretGenerationContextPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**SecretSecretGenerationContext)(nil)).Elem()
+}
+
+func (i *secretSecretGenerationContextPtrType) ToSecretSecretGenerationContextPtrOutput() SecretSecretGenerationContextPtrOutput {
+	return i.ToSecretSecretGenerationContextPtrOutputWithContext(context.Background())
+}
+
+func (i *secretSecretGenerationContextPtrType) ToSecretSecretGenerationContextPtrOutputWithContext(ctx context.Context) SecretSecretGenerationContextPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SecretSecretGenerationContextPtrOutput)
+}
+
+type SecretSecretGenerationContextOutput struct{ *pulumi.OutputState }
+
+func (SecretSecretGenerationContextOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SecretSecretGenerationContext)(nil)).Elem()
+}
+
+func (o SecretSecretGenerationContextOutput) ToSecretSecretGenerationContextOutput() SecretSecretGenerationContextOutput {
+	return o
+}
+
+func (o SecretSecretGenerationContextOutput) ToSecretSecretGenerationContextOutputWithContext(ctx context.Context) SecretSecretGenerationContextOutput {
+	return o
+}
+
+func (o SecretSecretGenerationContextOutput) ToSecretSecretGenerationContextPtrOutput() SecretSecretGenerationContextPtrOutput {
+	return o.ToSecretSecretGenerationContextPtrOutputWithContext(context.Background())
+}
+
+func (o SecretSecretGenerationContextOutput) ToSecretSecretGenerationContextPtrOutputWithContext(ctx context.Context) SecretSecretGenerationContextPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SecretSecretGenerationContext) *SecretSecretGenerationContext {
+		return &v
+	}).(SecretSecretGenerationContextPtrOutput)
+}
+
+// (Updatable) Name of random bytes generation template for generating random byte type secret.
+func (o SecretSecretGenerationContextOutput) GenerationTemplate() pulumi.StringOutput {
+	return o.ApplyT(func(v SecretSecretGenerationContext) string { return v.GenerationTemplate }).(pulumi.StringOutput)
+}
+
+// (Updatable) Name of the predefined secret generation type.
+func (o SecretSecretGenerationContextOutput) GenerationType() pulumi.StringOutput {
+	return o.ApplyT(func(v SecretSecretGenerationContext) string { return v.GenerationType }).(pulumi.StringOutput)
+}
+
+// (Updatable) Length of the passphrase to be generated
+func (o SecretSecretGenerationContextOutput) PassphraseLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v SecretSecretGenerationContext) *int { return v.PassphraseLength }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) SecretTemplate captures structure in which customer wants to store secrets. This is optional and a default structure is available for each secret type.  The template can have any structure with static values that are not generated. Within the template, you can insert predefined placeholders to store secrets.  These placeholders are later replaced with the generated content and saved as a Base64 encoded content.
+func (o SecretSecretGenerationContextOutput) SecretTemplate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SecretSecretGenerationContext) *string { return v.SecretTemplate }).(pulumi.StringPtrOutput)
+}
+
+type SecretSecretGenerationContextPtrOutput struct{ *pulumi.OutputState }
+
+func (SecretSecretGenerationContextPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SecretSecretGenerationContext)(nil)).Elem()
+}
+
+func (o SecretSecretGenerationContextPtrOutput) ToSecretSecretGenerationContextPtrOutput() SecretSecretGenerationContextPtrOutput {
+	return o
+}
+
+func (o SecretSecretGenerationContextPtrOutput) ToSecretSecretGenerationContextPtrOutputWithContext(ctx context.Context) SecretSecretGenerationContextPtrOutput {
+	return o
+}
+
+func (o SecretSecretGenerationContextPtrOutput) Elem() SecretSecretGenerationContextOutput {
+	return o.ApplyT(func(v *SecretSecretGenerationContext) SecretSecretGenerationContext {
+		if v != nil {
+			return *v
+		}
+		var ret SecretSecretGenerationContext
+		return ret
+	}).(SecretSecretGenerationContextOutput)
+}
+
+// (Updatable) Name of random bytes generation template for generating random byte type secret.
+func (o SecretSecretGenerationContextPtrOutput) GenerationTemplate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecretSecretGenerationContext) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.GenerationTemplate
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Name of the predefined secret generation type.
+func (o SecretSecretGenerationContextPtrOutput) GenerationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecretSecretGenerationContext) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.GenerationType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Length of the passphrase to be generated
+func (o SecretSecretGenerationContextPtrOutput) PassphraseLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *SecretSecretGenerationContext) *int {
+		if v == nil {
+			return nil
+		}
+		return v.PassphraseLength
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) SecretTemplate captures structure in which customer wants to store secrets. This is optional and a default structure is available for each secret type.  The template can have any structure with static values that are not generated. Within the template, you can insert predefined placeholders to store secrets.  These placeholders are later replaced with the generated content and saved as a Base64 encoded content.
+func (o SecretSecretGenerationContextPtrOutput) SecretTemplate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecretSecretGenerationContext) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SecretTemplate
+	}).(pulumi.StringPtrOutput)
+}
+
 type SecretSecretRule struct {
 	// (Updatable) A property indicating whether the rule is applied even if the secret version with the content you are trying to reuse was deleted.
 	IsEnforcedOnDeletedSecretVersions *bool `pulumi:"isEnforcedOnDeletedSecretVersions"`
@@ -1034,6 +1228,130 @@ func (o GetSecretSecretContentArrayOutput) Index(i pulumi.IntInput) GetSecretSec
 	}).(GetSecretSecretContentOutput)
 }
 
+type GetSecretSecretGenerationContext struct {
+	// Name of random bytes generation template for generating random byte type secret.
+	GenerationTemplate string `pulumi:"generationTemplate"`
+	// Name of the predefined secret generation type.
+	GenerationType string `pulumi:"generationType"`
+	// Length of the passphrase to be generated
+	PassphraseLength int `pulumi:"passphraseLength"`
+	// SecretTemplate captures structure in which customer wants to store secrets. This is optional and a default structure is available for each secret type.  The template can have any structure with static values that are not generated. Within the template, you can insert predefined placeholders to store secrets.  These placeholders are later replaced with the generated content and saved as a Base64 encoded content.
+	SecretTemplate string `pulumi:"secretTemplate"`
+}
+
+// GetSecretSecretGenerationContextInput is an input type that accepts GetSecretSecretGenerationContextArgs and GetSecretSecretGenerationContextOutput values.
+// You can construct a concrete instance of `GetSecretSecretGenerationContextInput` via:
+//
+//	GetSecretSecretGenerationContextArgs{...}
+type GetSecretSecretGenerationContextInput interface {
+	pulumi.Input
+
+	ToGetSecretSecretGenerationContextOutput() GetSecretSecretGenerationContextOutput
+	ToGetSecretSecretGenerationContextOutputWithContext(context.Context) GetSecretSecretGenerationContextOutput
+}
+
+type GetSecretSecretGenerationContextArgs struct {
+	// Name of random bytes generation template for generating random byte type secret.
+	GenerationTemplate pulumi.StringInput `pulumi:"generationTemplate"`
+	// Name of the predefined secret generation type.
+	GenerationType pulumi.StringInput `pulumi:"generationType"`
+	// Length of the passphrase to be generated
+	PassphraseLength pulumi.IntInput `pulumi:"passphraseLength"`
+	// SecretTemplate captures structure in which customer wants to store secrets. This is optional and a default structure is available for each secret type.  The template can have any structure with static values that are not generated. Within the template, you can insert predefined placeholders to store secrets.  These placeholders are later replaced with the generated content and saved as a Base64 encoded content.
+	SecretTemplate pulumi.StringInput `pulumi:"secretTemplate"`
+}
+
+func (GetSecretSecretGenerationContextArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecretSecretGenerationContext)(nil)).Elem()
+}
+
+func (i GetSecretSecretGenerationContextArgs) ToGetSecretSecretGenerationContextOutput() GetSecretSecretGenerationContextOutput {
+	return i.ToGetSecretSecretGenerationContextOutputWithContext(context.Background())
+}
+
+func (i GetSecretSecretGenerationContextArgs) ToGetSecretSecretGenerationContextOutputWithContext(ctx context.Context) GetSecretSecretGenerationContextOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecretSecretGenerationContextOutput)
+}
+
+// GetSecretSecretGenerationContextArrayInput is an input type that accepts GetSecretSecretGenerationContextArray and GetSecretSecretGenerationContextArrayOutput values.
+// You can construct a concrete instance of `GetSecretSecretGenerationContextArrayInput` via:
+//
+//	GetSecretSecretGenerationContextArray{ GetSecretSecretGenerationContextArgs{...} }
+type GetSecretSecretGenerationContextArrayInput interface {
+	pulumi.Input
+
+	ToGetSecretSecretGenerationContextArrayOutput() GetSecretSecretGenerationContextArrayOutput
+	ToGetSecretSecretGenerationContextArrayOutputWithContext(context.Context) GetSecretSecretGenerationContextArrayOutput
+}
+
+type GetSecretSecretGenerationContextArray []GetSecretSecretGenerationContextInput
+
+func (GetSecretSecretGenerationContextArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecretSecretGenerationContext)(nil)).Elem()
+}
+
+func (i GetSecretSecretGenerationContextArray) ToGetSecretSecretGenerationContextArrayOutput() GetSecretSecretGenerationContextArrayOutput {
+	return i.ToGetSecretSecretGenerationContextArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecretSecretGenerationContextArray) ToGetSecretSecretGenerationContextArrayOutputWithContext(ctx context.Context) GetSecretSecretGenerationContextArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecretSecretGenerationContextArrayOutput)
+}
+
+type GetSecretSecretGenerationContextOutput struct{ *pulumi.OutputState }
+
+func (GetSecretSecretGenerationContextOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecretSecretGenerationContext)(nil)).Elem()
+}
+
+func (o GetSecretSecretGenerationContextOutput) ToGetSecretSecretGenerationContextOutput() GetSecretSecretGenerationContextOutput {
+	return o
+}
+
+func (o GetSecretSecretGenerationContextOutput) ToGetSecretSecretGenerationContextOutputWithContext(ctx context.Context) GetSecretSecretGenerationContextOutput {
+	return o
+}
+
+// Name of random bytes generation template for generating random byte type secret.
+func (o GetSecretSecretGenerationContextOutput) GenerationTemplate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretSecretGenerationContext) string { return v.GenerationTemplate }).(pulumi.StringOutput)
+}
+
+// Name of the predefined secret generation type.
+func (o GetSecretSecretGenerationContextOutput) GenerationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretSecretGenerationContext) string { return v.GenerationType }).(pulumi.StringOutput)
+}
+
+// Length of the passphrase to be generated
+func (o GetSecretSecretGenerationContextOutput) PassphraseLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecretSecretGenerationContext) int { return v.PassphraseLength }).(pulumi.IntOutput)
+}
+
+// SecretTemplate captures structure in which customer wants to store secrets. This is optional and a default structure is available for each secret type.  The template can have any structure with static values that are not generated. Within the template, you can insert predefined placeholders to store secrets.  These placeholders are later replaced with the generated content and saved as a Base64 encoded content.
+func (o GetSecretSecretGenerationContextOutput) SecretTemplate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretSecretGenerationContext) string { return v.SecretTemplate }).(pulumi.StringOutput)
+}
+
+type GetSecretSecretGenerationContextArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecretSecretGenerationContextArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecretSecretGenerationContext)(nil)).Elem()
+}
+
+func (o GetSecretSecretGenerationContextArrayOutput) ToGetSecretSecretGenerationContextArrayOutput() GetSecretSecretGenerationContextArrayOutput {
+	return o
+}
+
+func (o GetSecretSecretGenerationContextArrayOutput) ToGetSecretSecretGenerationContextArrayOutputWithContext(ctx context.Context) GetSecretSecretGenerationContextArrayOutput {
+	return o
+}
+
+func (o GetSecretSecretGenerationContextArrayOutput) Index(i pulumi.IntInput) GetSecretSecretGenerationContextOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecretSecretGenerationContext {
+		return vs[0].([]GetSecretSecretGenerationContext)[vs[1].(int)]
+	}).(GetSecretSecretGenerationContextOutput)
+}
+
 type GetSecretSecretRule struct {
 	// A property indicating whether the rule is applied even if the secret version with the content you are trying to reuse was deleted.
 	IsEnforcedOnDeletedSecretVersions bool `pulumi:"isEnforcedOnDeletedSecretVersions"`
@@ -1284,11 +1602,14 @@ type GetSecretsSecret struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A brief description of the secret. Avoid entering confidential information.
-	Description string `pulumi:"description"`
+	Description          string `pulumi:"description"`
+	EnableAutoGeneration bool   `pulumi:"enableAutoGeneration"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the secret.
 	Id string `pulumi:"id"`
+	// The value of this flag determines whether or not secret content will be generated automatically.
+	IsAutoGenerationEnabled bool `pulumi:"isAutoGenerationEnabled"`
 	// The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
 	KeyId string `pulumi:"keyId"`
 	// A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
@@ -1304,6 +1625,8 @@ type GetSecretsSecret struct {
 	// Additional information about the status of the secret rotation
 	RotationStatus string                          `pulumi:"rotationStatus"`
 	SecretContents []GetSecretsSecretSecretContent `pulumi:"secretContents"`
+	// Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
+	SecretGenerationContexts []GetSecretsSecretSecretGenerationContext `pulumi:"secretGenerationContexts"`
 	// The user-friendly name of the secret. Avoid entering confidential information.
 	SecretName string `pulumi:"secretName"`
 	// A list of rules that control how the secret is used and managed.
@@ -1339,11 +1662,14 @@ type GetSecretsSecretArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A brief description of the secret. Avoid entering confidential information.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description          pulumi.StringInput `pulumi:"description"`
+	EnableAutoGeneration pulumi.BoolInput   `pulumi:"enableAutoGeneration"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the secret.
 	Id pulumi.StringInput `pulumi:"id"`
+	// The value of this flag determines whether or not secret content will be generated automatically.
+	IsAutoGenerationEnabled pulumi.BoolInput `pulumi:"isAutoGenerationEnabled"`
 	// The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
 	KeyId pulumi.StringInput `pulumi:"keyId"`
 	// A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
@@ -1359,6 +1685,8 @@ type GetSecretsSecretArgs struct {
 	// Additional information about the status of the secret rotation
 	RotationStatus pulumi.StringInput                      `pulumi:"rotationStatus"`
 	SecretContents GetSecretsSecretSecretContentArrayInput `pulumi:"secretContents"`
+	// Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
+	SecretGenerationContexts GetSecretsSecretSecretGenerationContextArrayInput `pulumi:"secretGenerationContexts"`
 	// The user-friendly name of the secret. Avoid entering confidential information.
 	SecretName pulumi.StringInput `pulumi:"secretName"`
 	// A list of rules that control how the secret is used and managed.
@@ -1446,6 +1774,10 @@ func (o GetSecretsSecretOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecretsSecret) string { return v.Description }).(pulumi.StringOutput)
 }
 
+func (o GetSecretsSecretOutput) EnableAutoGeneration() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecretsSecret) bool { return v.EnableAutoGeneration }).(pulumi.BoolOutput)
+}
+
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 func (o GetSecretsSecretOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetSecretsSecret) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
@@ -1454,6 +1786,11 @@ func (o GetSecretsSecretOutput) FreeformTags() pulumi.StringMapOutput {
 // The OCID of the secret.
 func (o GetSecretsSecretOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecretsSecret) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The value of this flag determines whether or not secret content will be generated automatically.
+func (o GetSecretsSecretOutput) IsAutoGenerationEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecretsSecret) bool { return v.IsAutoGenerationEnabled }).(pulumi.BoolOutput)
 }
 
 // The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
@@ -1493,6 +1830,11 @@ func (o GetSecretsSecretOutput) RotationStatus() pulumi.StringOutput {
 
 func (o GetSecretsSecretOutput) SecretContents() GetSecretsSecretSecretContentArrayOutput {
 	return o.ApplyT(func(v GetSecretsSecret) []GetSecretsSecretSecretContent { return v.SecretContents }).(GetSecretsSecretSecretContentArrayOutput)
+}
+
+// Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
+func (o GetSecretsSecretOutput) SecretGenerationContexts() GetSecretsSecretSecretGenerationContextArrayOutput {
+	return o.ApplyT(func(v GetSecretsSecret) []GetSecretsSecretSecretGenerationContext { return v.SecretGenerationContexts }).(GetSecretsSecretSecretGenerationContextArrayOutput)
 }
 
 // The user-friendly name of the secret. Avoid entering confidential information.
@@ -1897,6 +2239,130 @@ func (o GetSecretsSecretSecretContentArrayOutput) Index(i pulumi.IntInput) GetSe
 	}).(GetSecretsSecretSecretContentOutput)
 }
 
+type GetSecretsSecretSecretGenerationContext struct {
+	// Name of random bytes generation template for generating random byte type secret.
+	GenerationTemplate string `pulumi:"generationTemplate"`
+	// Name of the predefined secret generation type.
+	GenerationType string `pulumi:"generationType"`
+	// Length of the passphrase to be generated
+	PassphraseLength int `pulumi:"passphraseLength"`
+	// SecretTemplate captures structure in which customer wants to store secrets. This is optional and a default structure is available for each secret type.  The template can have any structure with static values that are not generated. Within the template, you can insert predefined placeholders to store secrets.  These placeholders are later replaced with the generated content and saved as a Base64 encoded content.
+	SecretTemplate string `pulumi:"secretTemplate"`
+}
+
+// GetSecretsSecretSecretGenerationContextInput is an input type that accepts GetSecretsSecretSecretGenerationContextArgs and GetSecretsSecretSecretGenerationContextOutput values.
+// You can construct a concrete instance of `GetSecretsSecretSecretGenerationContextInput` via:
+//
+//	GetSecretsSecretSecretGenerationContextArgs{...}
+type GetSecretsSecretSecretGenerationContextInput interface {
+	pulumi.Input
+
+	ToGetSecretsSecretSecretGenerationContextOutput() GetSecretsSecretSecretGenerationContextOutput
+	ToGetSecretsSecretSecretGenerationContextOutputWithContext(context.Context) GetSecretsSecretSecretGenerationContextOutput
+}
+
+type GetSecretsSecretSecretGenerationContextArgs struct {
+	// Name of random bytes generation template for generating random byte type secret.
+	GenerationTemplate pulumi.StringInput `pulumi:"generationTemplate"`
+	// Name of the predefined secret generation type.
+	GenerationType pulumi.StringInput `pulumi:"generationType"`
+	// Length of the passphrase to be generated
+	PassphraseLength pulumi.IntInput `pulumi:"passphraseLength"`
+	// SecretTemplate captures structure in which customer wants to store secrets. This is optional and a default structure is available for each secret type.  The template can have any structure with static values that are not generated. Within the template, you can insert predefined placeholders to store secrets.  These placeholders are later replaced with the generated content and saved as a Base64 encoded content.
+	SecretTemplate pulumi.StringInput `pulumi:"secretTemplate"`
+}
+
+func (GetSecretsSecretSecretGenerationContextArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecretsSecretSecretGenerationContext)(nil)).Elem()
+}
+
+func (i GetSecretsSecretSecretGenerationContextArgs) ToGetSecretsSecretSecretGenerationContextOutput() GetSecretsSecretSecretGenerationContextOutput {
+	return i.ToGetSecretsSecretSecretGenerationContextOutputWithContext(context.Background())
+}
+
+func (i GetSecretsSecretSecretGenerationContextArgs) ToGetSecretsSecretSecretGenerationContextOutputWithContext(ctx context.Context) GetSecretsSecretSecretGenerationContextOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecretsSecretSecretGenerationContextOutput)
+}
+
+// GetSecretsSecretSecretGenerationContextArrayInput is an input type that accepts GetSecretsSecretSecretGenerationContextArray and GetSecretsSecretSecretGenerationContextArrayOutput values.
+// You can construct a concrete instance of `GetSecretsSecretSecretGenerationContextArrayInput` via:
+//
+//	GetSecretsSecretSecretGenerationContextArray{ GetSecretsSecretSecretGenerationContextArgs{...} }
+type GetSecretsSecretSecretGenerationContextArrayInput interface {
+	pulumi.Input
+
+	ToGetSecretsSecretSecretGenerationContextArrayOutput() GetSecretsSecretSecretGenerationContextArrayOutput
+	ToGetSecretsSecretSecretGenerationContextArrayOutputWithContext(context.Context) GetSecretsSecretSecretGenerationContextArrayOutput
+}
+
+type GetSecretsSecretSecretGenerationContextArray []GetSecretsSecretSecretGenerationContextInput
+
+func (GetSecretsSecretSecretGenerationContextArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecretsSecretSecretGenerationContext)(nil)).Elem()
+}
+
+func (i GetSecretsSecretSecretGenerationContextArray) ToGetSecretsSecretSecretGenerationContextArrayOutput() GetSecretsSecretSecretGenerationContextArrayOutput {
+	return i.ToGetSecretsSecretSecretGenerationContextArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecretsSecretSecretGenerationContextArray) ToGetSecretsSecretSecretGenerationContextArrayOutputWithContext(ctx context.Context) GetSecretsSecretSecretGenerationContextArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecretsSecretSecretGenerationContextArrayOutput)
+}
+
+type GetSecretsSecretSecretGenerationContextOutput struct{ *pulumi.OutputState }
+
+func (GetSecretsSecretSecretGenerationContextOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecretsSecretSecretGenerationContext)(nil)).Elem()
+}
+
+func (o GetSecretsSecretSecretGenerationContextOutput) ToGetSecretsSecretSecretGenerationContextOutput() GetSecretsSecretSecretGenerationContextOutput {
+	return o
+}
+
+func (o GetSecretsSecretSecretGenerationContextOutput) ToGetSecretsSecretSecretGenerationContextOutputWithContext(ctx context.Context) GetSecretsSecretSecretGenerationContextOutput {
+	return o
+}
+
+// Name of random bytes generation template for generating random byte type secret.
+func (o GetSecretsSecretSecretGenerationContextOutput) GenerationTemplate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretsSecretSecretGenerationContext) string { return v.GenerationTemplate }).(pulumi.StringOutput)
+}
+
+// Name of the predefined secret generation type.
+func (o GetSecretsSecretSecretGenerationContextOutput) GenerationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretsSecretSecretGenerationContext) string { return v.GenerationType }).(pulumi.StringOutput)
+}
+
+// Length of the passphrase to be generated
+func (o GetSecretsSecretSecretGenerationContextOutput) PassphraseLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecretsSecretSecretGenerationContext) int { return v.PassphraseLength }).(pulumi.IntOutput)
+}
+
+// SecretTemplate captures structure in which customer wants to store secrets. This is optional and a default structure is available for each secret type.  The template can have any structure with static values that are not generated. Within the template, you can insert predefined placeholders to store secrets.  These placeholders are later replaced with the generated content and saved as a Base64 encoded content.
+func (o GetSecretsSecretSecretGenerationContextOutput) SecretTemplate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretsSecretSecretGenerationContext) string { return v.SecretTemplate }).(pulumi.StringOutput)
+}
+
+type GetSecretsSecretSecretGenerationContextArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecretsSecretSecretGenerationContextArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecretsSecretSecretGenerationContext)(nil)).Elem()
+}
+
+func (o GetSecretsSecretSecretGenerationContextArrayOutput) ToGetSecretsSecretSecretGenerationContextArrayOutput() GetSecretsSecretSecretGenerationContextArrayOutput {
+	return o
+}
+
+func (o GetSecretsSecretSecretGenerationContextArrayOutput) ToGetSecretsSecretSecretGenerationContextArrayOutputWithContext(ctx context.Context) GetSecretsSecretSecretGenerationContextArrayOutput {
+	return o
+}
+
+func (o GetSecretsSecretSecretGenerationContextArrayOutput) Index(i pulumi.IntInput) GetSecretsSecretSecretGenerationContextOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecretsSecretSecretGenerationContext {
+		return vs[0].([]GetSecretsSecretSecretGenerationContext)[vs[1].(int)]
+	}).(GetSecretsSecretSecretGenerationContextOutput)
+}
+
 type GetSecretsSecretSecretRule struct {
 	// A property indicating whether the rule is applied even if the secret version with the content you are trying to reuse was deleted.
 	IsEnforcedOnDeletedSecretVersions bool `pulumi:"isEnforcedOnDeletedSecretVersions"`
@@ -2037,6 +2503,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*SecretRotationConfigTargetSystemDetailsPtrInput)(nil)).Elem(), SecretRotationConfigTargetSystemDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SecretSecretContentInput)(nil)).Elem(), SecretSecretContentArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SecretSecretContentPtrInput)(nil)).Elem(), SecretSecretContentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SecretSecretGenerationContextInput)(nil)).Elem(), SecretSecretGenerationContextArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SecretSecretGenerationContextPtrInput)(nil)).Elem(), SecretSecretGenerationContextArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SecretSecretRuleInput)(nil)).Elem(), SecretSecretRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SecretSecretRuleArrayInput)(nil)).Elem(), SecretSecretRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretRotationConfigInput)(nil)).Elem(), GetSecretRotationConfigArgs{})
@@ -2045,6 +2513,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretRotationConfigTargetSystemDetailArrayInput)(nil)).Elem(), GetSecretRotationConfigTargetSystemDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretSecretContentInput)(nil)).Elem(), GetSecretSecretContentArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretSecretContentArrayInput)(nil)).Elem(), GetSecretSecretContentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretSecretGenerationContextInput)(nil)).Elem(), GetSecretSecretGenerationContextArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretSecretGenerationContextArrayInput)(nil)).Elem(), GetSecretSecretGenerationContextArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretSecretRuleInput)(nil)).Elem(), GetSecretSecretRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretSecretRuleArrayInput)(nil)).Elem(), GetSecretSecretRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretsFilterInput)(nil)).Elem(), GetSecretsFilterArgs{})
@@ -2057,6 +2527,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretsSecretRotationConfigTargetSystemDetailArrayInput)(nil)).Elem(), GetSecretsSecretRotationConfigTargetSystemDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretsSecretSecretContentInput)(nil)).Elem(), GetSecretsSecretSecretContentArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretsSecretSecretContentArrayInput)(nil)).Elem(), GetSecretsSecretSecretContentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretsSecretSecretGenerationContextInput)(nil)).Elem(), GetSecretsSecretSecretGenerationContextArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretsSecretSecretGenerationContextArrayInput)(nil)).Elem(), GetSecretsSecretSecretGenerationContextArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretsSecretSecretRuleInput)(nil)).Elem(), GetSecretsSecretSecretRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretsSecretSecretRuleArrayInput)(nil)).Elem(), GetSecretsSecretSecretRuleArray{})
 	pulumi.RegisterOutputType(SecretRotationConfigOutput{})
@@ -2065,6 +2537,8 @@ func init() {
 	pulumi.RegisterOutputType(SecretRotationConfigTargetSystemDetailsPtrOutput{})
 	pulumi.RegisterOutputType(SecretSecretContentOutput{})
 	pulumi.RegisterOutputType(SecretSecretContentPtrOutput{})
+	pulumi.RegisterOutputType(SecretSecretGenerationContextOutput{})
+	pulumi.RegisterOutputType(SecretSecretGenerationContextPtrOutput{})
 	pulumi.RegisterOutputType(SecretSecretRuleOutput{})
 	pulumi.RegisterOutputType(SecretSecretRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetSecretRotationConfigOutput{})
@@ -2073,6 +2547,8 @@ func init() {
 	pulumi.RegisterOutputType(GetSecretRotationConfigTargetSystemDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetSecretSecretContentOutput{})
 	pulumi.RegisterOutputType(GetSecretSecretContentArrayOutput{})
+	pulumi.RegisterOutputType(GetSecretSecretGenerationContextOutput{})
+	pulumi.RegisterOutputType(GetSecretSecretGenerationContextArrayOutput{})
 	pulumi.RegisterOutputType(GetSecretSecretRuleOutput{})
 	pulumi.RegisterOutputType(GetSecretSecretRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetSecretsFilterOutput{})
@@ -2085,6 +2561,8 @@ func init() {
 	pulumi.RegisterOutputType(GetSecretsSecretRotationConfigTargetSystemDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetSecretsSecretSecretContentOutput{})
 	pulumi.RegisterOutputType(GetSecretsSecretSecretContentArrayOutput{})
+	pulumi.RegisterOutputType(GetSecretsSecretSecretGenerationContextOutput{})
+	pulumi.RegisterOutputType(GetSecretsSecretSecretGenerationContextArrayOutput{})
 	pulumi.RegisterOutputType(GetSecretsSecretSecretRuleOutput{})
 	pulumi.RegisterOutputType(GetSecretsSecretSecretRuleArrayOutput{})
 }

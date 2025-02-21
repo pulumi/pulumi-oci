@@ -145,6 +145,12 @@ public class Provider extends com.pulumi.resources.ProviderResource {
     public Output<Optional<String>> tenancyOcid() {
         return Codegen.optional(this.tenancyOcid);
     }
+    @Export(name="testTimeMaintenanceRebootDue", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> testTimeMaintenanceRebootDue;
+
+    public Output<Optional<String>> testTimeMaintenanceRebootDue() {
+        return Codegen.optional(this.testTimeMaintenanceRebootDue);
+    }
     /**
      * (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if
      * auth is set to &#39;ApiKey&#39;, ignored otherwise.

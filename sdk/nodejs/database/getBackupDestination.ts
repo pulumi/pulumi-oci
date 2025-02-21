@@ -100,13 +100,25 @@ export interface GetBackupDestinationResult {
      */
     readonly state: string;
     /**
+     * The time when the total storage size and the utilized storage size of the backup destination are updated.
+     */
+    readonly timeAtWhichStorageDetailsAreUpdated: string;
+    /**
      * The date and time the backup destination was created.
      */
     readonly timeCreated: string;
     /**
+     * The total storage size of the backup destination in GBs, rounded to the nearest integer.
+     */
+    readonly totalStorageSizeInGbs: number;
+    /**
      * Type of the backup destination.
      */
     readonly type: string;
+    /**
+     * The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
+     */
+    readonly utilizedStorageSizeInGbs: number;
     /**
      * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
      */

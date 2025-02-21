@@ -10803,6 +10803,10 @@ export namespace ContainerEngine {
 
     export interface ClusterEndpoint {
         /**
+         * The IPv6 networking Kubernetes API server endpoint.
+         */
+        ipv6endpoint?: pulumi.Input<string>;
+        /**
          * The non-native networking Kubernetes API server endpoint.
          */
         kubernetes?: pulumi.Input<string>;
@@ -10905,6 +10909,10 @@ export namespace ContainerEngine {
          * (Updatable) Configurable cluster admission controllers
          */
         admissionControllerOptions?: pulumi.Input<inputs.ContainerEngine.ClusterOptionsAdmissionControllerOptions>;
+        /**
+         * IP family to use for single stack or define the order of IP families for dual-stack
+         */
+        ipFamilies?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * Network configuration for Kubernetes.
          */
@@ -24698,6 +24706,49 @@ export namespace DataScience {
 }
 
 export namespace Database {
+    export interface AutonomousContainerDatabaseAssociatedBackupConfigurationDetail {
+        /**
+         * The timestamps at which this backup destination is used as the preferred destination to host the Autonomous Container Database backups.
+         */
+        backupDestinationAttachHistories?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+         */
+        dbrsPolicyId?: pulumi.Input<string>;
+        /**
+         * The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * Proxy URL to connect to object store.
+         */
+        internetProxy?: pulumi.Input<string>;
+        /**
+         * Number of days between the current and earliest point of recoverability covered by automatic backups.
+         */
+        recoveryWindowInDays?: pulumi.Input<number>;
+        /**
+         * The total space utilized (in GBs) by this Autonomous Container Database on this backup destination, rounded to the nearest integer.
+         */
+        spaceUtilizedInGbs?: pulumi.Input<number>;
+        /**
+         * The latest timestamp when the backup destination details, such as 'spaceUtilized,' are updated.
+         */
+        timeAtWhichStorageDetailsAreUpdated?: pulumi.Input<string>;
+        /**
+         * Type of the database backup destination.
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+         */
+        vpcPassword?: pulumi.Input<string>;
+        /**
+         * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+         */
+        vpcUser?: pulumi.Input<string>;
+    }
+
     export interface AutonomousContainerDatabaseBackupConfig {
         /**
          * (Updatable) Backup destination details.
@@ -24730,6 +24781,21 @@ export namespace Database {
          * (Updatable) For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
          */
         vpcUser?: pulumi.Input<string>;
+    }
+
+    export interface AutonomousContainerDatabaseBackupDestinationPropertiesList {
+        /**
+         * The timestamps at which this backup destination is used as the preferred destination to host the Autonomous Container Database backups.
+         */
+        backupDestinationAttachHistories?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The total space utilized (in GBs) by this Autonomous Container Database on this backup destination, rounded to the nearest integer.
+         */
+        spaceUtilizedInGbs?: pulumi.Input<number>;
+        /**
+         * The latest timestamp when the backup destination details, such as 'spaceUtilized,' are updated.
+         */
+        timeAtWhichStorageDetailsAreUpdated?: pulumi.Input<string>;
     }
 
     export interface AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig {
@@ -24947,6 +25013,22 @@ export namespace Database {
          * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
          */
         vpcUser?: pulumi.Input<string>;
+    }
+
+    export interface AutonomousContainerDatabaseRecoveryApplianceDetail {
+        /**
+         * The storage size of the backup destination allocated for an Autonomous Container Database to store backups on the recovery appliance, in GBs, rounded to the nearest integer.
+         */
+        allocatedStorageSizeInGbs?: pulumi.Input<number>;
+        /**
+         * Number of days between the current and earliest point of recoverability covered by automatic backups.
+         */
+        recoveryWindowInDays?: pulumi.Input<number>;
+        /**
+         * The time when the recovery appliance details are updated.
+         * =======
+         */
+        timeRecoveryApplianceDetailsUpdated?: pulumi.Input<string>;
     }
 
     export interface AutonomousDatabaseApexDetail {
@@ -25283,6 +25365,10 @@ export namespace Database {
          */
         lifecycleDetails?: pulumi.Input<string>;
         /**
+         * The component chosen for maintenance.
+         */
+        maintenanceTargetComponent?: pulumi.Input<string>;
+        /**
          * The current state of the Autonomous Database.
          */
         state?: pulumi.Input<string>;
@@ -25294,6 +25380,14 @@ export namespace Database {
          * The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
          */
         timeDisasterRecoveryRoleChanged?: pulumi.Input<string>;
+        /**
+         * The date and time when maintenance will begin.
+         */
+        timeMaintenanceBegin?: pulumi.Input<string>;
+        /**
+         * The date and time when maintenance will end.
+         */
+        timeMaintenanceEnd?: pulumi.Input<string>;
     }
 
     export interface AutonomousDatabaseLongTermBackupSchedule {
@@ -25416,6 +25510,10 @@ export namespace Database {
          */
         lifecycleDetails?: pulumi.Input<string>;
         /**
+         * The component chosen for maintenance.
+         */
+        maintenanceTargetComponent?: pulumi.Input<string>;
+        /**
          * The current state of the Autonomous Database.
          */
         state?: pulumi.Input<string>;
@@ -25427,6 +25525,14 @@ export namespace Database {
          * The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
          */
         timeDisasterRecoveryRoleChanged?: pulumi.Input<string>;
+        /**
+         * The date and time when maintenance will begin.
+         */
+        timeMaintenanceBegin?: pulumi.Input<string>;
+        /**
+         * The date and time when maintenance will end.
+         */
+        timeMaintenanceEnd?: pulumi.Input<string>;
     }
 
     export interface AutonomousExadataInfrastructureMaintenanceWindow {
@@ -68710,6 +68816,30 @@ export namespace Jms {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetFleetErrorAnalyticsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFleetErrorAnalyticsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetFleetErrorsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFleetErrorsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetFleetJavaMigrationAnalysisResultsFilter {
         name: string;
         regex?: boolean;
@@ -68855,6 +68985,30 @@ export namespace Jms {
     }
 
     export interface GetJmsPluginsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetPluginErrorAnalyticsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetPluginErrorAnalyticsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetPluginErrorsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetPluginErrorsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -81951,6 +82105,18 @@ export namespace StackMonitoring {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetDefinedMonitoringTemplatesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDefinedMonitoringTemplatesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetDiscoveryJobLogsFilter {
         name: string;
         regex?: boolean;
@@ -82066,6 +82232,30 @@ export namespace StackMonitoring {
         /**
          * A filter to return resources that match exact resource name.
          */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetMonitoringTemplateAlarmConditionsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetMonitoringTemplateAlarmConditionsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetMonitoringTemplatesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetMonitoringTemplatesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -82596,6 +82786,10 @@ export namespace StackMonitoring {
          * (Updatable) List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{ "osType": "Linux,Windows,Solaris"}`
          */
         validPropertyValues?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * (Updatable) List of valid sub-resource types for a composite resource type. The sub-resource types will be obtained from the valid association pairs corresponding to the composite resource types. It will be empty for non composite resource types
+         */
+        validSubResourceTypes?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface MonitoredResourceTypeMetadataUniquePropertySet {
@@ -82845,6 +83039,48 @@ export namespace StackMonitoring {
         value?: pulumi.Input<string>;
     }
 
+    export interface MonitoringTemplateAlarmConditionCondition {
+        /**
+         * (Updatable) The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.
+         */
+        body?: pulumi.Input<string>;
+        /**
+         * (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+         */
+        query: pulumi.Input<string>;
+        /**
+         * (Updatable) Severity - Critical/Warning
+         */
+        severity: pulumi.Input<string>;
+        /**
+         * (Updatable) Whether the note need to add into bottom of the body for mapping the alarms information with template or not.
+         */
+        shouldAppendNote?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Whether the URL need to add into bottom of the body for mapping the alarms information with template or not.
+         */
+        shouldAppendUrl?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING".
+         */
+        triggerDelay?: pulumi.Input<string>;
+    }
+
+    export interface MonitoringTemplateMember {
+        /**
+         * (Updatable) The OCID of the composite resource type like EBS or Peoplesoft.
+         */
+        compositeType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the resourceInstance/resourceType/resourceGroup
+         */
+        id: pulumi.Input<string>;
+        /**
+         * (Updatable) Type of the member reference RESOURCE_INSTANCE, RESOURCE_TYPE, RESOURCE_GROUP
+         */
+        type: pulumi.Input<string>;
+    }
+
     export interface ProcessSetSpecification {
         /**
          * (Updatable) List of Process Set specification details.
@@ -82979,6 +83215,183 @@ export namespace Streaming {
          */
         subnetId?: pulumi.Input<string>;
     }
+}
+
+export namespace Tenantmanagercontrolplane {
+    export interface GetAssignedSubscriptionLineItemsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAssignedSubscriptionLineItemsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetAssignedSubscriptionsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAssignedSubscriptionsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDomainGovernancesFilter {
+        /**
+         * A filter to return only resources that exactly match the name given.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDomainGovernancesFilterArgs {
+        /**
+         * A filter to return only resources that exactly match the name given.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDomainsFilter {
+        /**
+         * A filter to return only resources that exactly match the name given.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDomainsFilterArgs {
+        /**
+         * A filter to return only resources that exactly match the name given.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetLinksFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetLinksFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetOrganizationTenanciesFilter {
+        /**
+         * Name of the tenancy.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetOrganizationTenanciesFilterArgs {
+        /**
+         * Name of the tenancy.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetOrganizationsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetOrganizationsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetRecipientInvitationsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetRecipientInvitationsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSenderInvitationsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSenderInvitationsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSubscriptionAvailableRegionsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSubscriptionAvailableRegionsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSubscriptionLineItemsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSubscriptionLineItemsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSubscriptionMappingsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSubscriptionMappingsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSubscriptionsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSubscriptionsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
 }
 
 export namespace UsageProxy {
@@ -83160,6 +83573,25 @@ export namespace Vault {
          * (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don't yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven't yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating a secret, you can specify a version's rotation state as either `CURRENT` or `PENDING`.
          */
         stage?: pulumi.Input<string>;
+    }
+
+    export interface SecretSecretGenerationContext {
+        /**
+         * (Updatable) Name of random bytes generation template for generating random byte type secret.
+         */
+        generationTemplate: pulumi.Input<string>;
+        /**
+         * (Updatable) Name of the predefined secret generation type.
+         */
+        generationType: pulumi.Input<string>;
+        /**
+         * (Updatable) Length of the passphrase to be generated
+         */
+        passphraseLength?: pulumi.Input<number>;
+        /**
+         * (Updatable) SecretTemplate captures structure in which customer wants to store secrets. This is optional and a default structure is available for each secret type.  The template can have any structure with static values that are not generated. Within the template, you can insert predefined placeholders to store secrets.  These placeholders are later replaced with the generated content and saved as a Base64 encoded content.
+         */
+        secretTemplate?: pulumi.Input<string>;
     }
 
     export interface SecretSecretRule {

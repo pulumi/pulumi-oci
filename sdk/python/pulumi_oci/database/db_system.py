@@ -50,6 +50,7 @@ class DbSystemArgs:
                  node_count: Optional[pulumi.Input[int]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_ip: Optional[pulumi.Input[str]] = None,
+                 private_ip_v6: Optional[pulumi.Input[str]] = None,
                  reco_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  source: Optional[pulumi.Input[str]] = None,
@@ -127,6 +128,7 @@ class DbSystemArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[str] private_ip: A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
+        :param pulumi.Input[str] private_ip_v6: A private IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value and the subnet is dual stack, Oracle automatically assigns a private IPv6 address from the subnet.
         :param pulumi.Input[int] reco_storage_size_in_gb: The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[str] source: The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATABASE` for creating a new database from an existing database, including archive redo log data. The default is `NONE`.
@@ -190,6 +192,8 @@ class DbSystemArgs:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_ip is not None:
             pulumi.set(__self__, "private_ip", private_ip)
+        if private_ip_v6 is not None:
+            pulumi.set(__self__, "private_ip_v6", private_ip_v6)
         if reco_storage_size_in_gb is not None:
             pulumi.set(__self__, "reco_storage_size_in_gb", reco_storage_size_in_gb)
         if security_attributes is not None:
@@ -593,6 +597,18 @@ class DbSystemArgs:
         pulumi.set(self, "private_ip", value)
 
     @property
+    @pulumi.getter(name="privateIpV6")
+    def private_ip_v6(self) -> Optional[pulumi.Input[str]]:
+        """
+        A private IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value and the subnet is dual stack, Oracle automatically assigns a private IPv6 address from the subnet.
+        """
+        return pulumi.get(self, "private_ip_v6")
+
+    @private_ip_v6.setter
+    def private_ip_v6(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "private_ip_v6", value)
+
+    @property
     @pulumi.getter(name="recoStorageSizeInGb")
     def reco_storage_size_in_gb(self) -> Optional[pulumi.Input[int]]:
         """
@@ -720,10 +736,12 @@ class _DbSystemState:
                  os_version: Optional[pulumi.Input[str]] = None,
                  point_in_time_data_disk_clone_timestamp: Optional[pulumi.Input[str]] = None,
                  private_ip: Optional[pulumi.Input[str]] = None,
+                 private_ip_v6: Optional[pulumi.Input[str]] = None,
                  reco_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
                  scan_dns_name: Optional[pulumi.Input[str]] = None,
                  scan_dns_record_id: Optional[pulumi.Input[str]] = None,
                  scan_ip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 scan_ipv6ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  source: Optional[pulumi.Input[str]] = None,
@@ -737,6 +755,7 @@ class _DbSystemState:
                  time_zone: Optional[pulumi.Input[str]] = None,
                  version: Optional[pulumi.Input[str]] = None,
                  vip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 vipv6ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  zone_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering DbSystem resources.
@@ -805,10 +824,12 @@ class _DbSystemState:
         :param pulumi.Input[str] os_version: The most recent OS Patch Version applied on the DB system.
         :param pulumi.Input[str] point_in_time_data_disk_clone_timestamp: The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[str] private_ip: A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
+        :param pulumi.Input[str] private_ip_v6: A private IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value and the subnet is dual stack, Oracle automatically assigns a private IPv6 address from the subnet.
         :param pulumi.Input[int] reco_storage_size_in_gb: The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
         :param pulumi.Input[str] scan_dns_name: The FQDN of the DNS record for the SCAN IP addresses that are associated with the DB system.
         :param pulumi.Input[str] scan_dns_record_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the DB system.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] scan_ip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] scan_ip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv4 addresses associated with the DB system. SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] scan_ipv6ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv6 addresses associated with the DB system. SCAN IPv6 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[str] shape: (Updatable) The shape of the DB system. The shape determines resources allocated to the DB system.
                * For virtual machine shapes, the number of CPU cores and memory
@@ -835,7 +856,8 @@ class _DbSystemState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] version: The Oracle Database version of the DB system.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] vip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] vip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IPv4 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIPv4 address for each node in the DB system to enable failover. If one node fails, the VIPv4 is reassigned to another active node in the cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] vipv6ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IPv6 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP IpV6 address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
         :param pulumi.Input[str] zone_id: The OCID of the zone the DB system is associated with.
         """
         if availability_domain is not None:
@@ -910,6 +932,8 @@ class _DbSystemState:
             pulumi.set(__self__, "point_in_time_data_disk_clone_timestamp", point_in_time_data_disk_clone_timestamp)
         if private_ip is not None:
             pulumi.set(__self__, "private_ip", private_ip)
+        if private_ip_v6 is not None:
+            pulumi.set(__self__, "private_ip_v6", private_ip_v6)
         if reco_storage_size_in_gb is not None:
             pulumi.set(__self__, "reco_storage_size_in_gb", reco_storage_size_in_gb)
         if scan_dns_name is not None:
@@ -918,6 +942,8 @@ class _DbSystemState:
             pulumi.set(__self__, "scan_dns_record_id", scan_dns_record_id)
         if scan_ip_ids is not None:
             pulumi.set(__self__, "scan_ip_ids", scan_ip_ids)
+        if scan_ipv6ids is not None:
+            pulumi.set(__self__, "scan_ipv6ids", scan_ipv6ids)
         if security_attributes is not None:
             pulumi.set(__self__, "security_attributes", security_attributes)
         if shape is not None:
@@ -944,6 +970,8 @@ class _DbSystemState:
             pulumi.set(__self__, "version", version)
         if vip_ids is not None:
             pulumi.set(__self__, "vip_ids", vip_ids)
+        if vipv6ids is not None:
+            pulumi.set(__self__, "vipv6ids", vipv6ids)
         if zone_id is not None:
             pulumi.set(__self__, "zone_id", zone_id)
 
@@ -1409,6 +1437,18 @@ class _DbSystemState:
         pulumi.set(self, "private_ip", value)
 
     @property
+    @pulumi.getter(name="privateIpV6")
+    def private_ip_v6(self) -> Optional[pulumi.Input[str]]:
+        """
+        A private IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value and the subnet is dual stack, Oracle automatically assigns a private IPv6 address from the subnet.
+        """
+        return pulumi.get(self, "private_ip_v6")
+
+    @private_ip_v6.setter
+    def private_ip_v6(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "private_ip_v6", value)
+
+    @property
     @pulumi.getter(name="recoStorageSizeInGb")
     def reco_storage_size_in_gb(self) -> Optional[pulumi.Input[int]]:
         """
@@ -1448,13 +1488,25 @@ class _DbSystemState:
     @pulumi.getter(name="scanIpIds")
     def scan_ip_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv4 addresses associated with the DB system. SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
         """
         return pulumi.get(self, "scan_ip_ids")
 
     @scan_ip_ids.setter
     def scan_ip_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "scan_ip_ids", value)
+
+    @property
+    @pulumi.getter(name="scanIpv6ids")
+    def scan_ipv6ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv6 addresses associated with the DB system. SCAN IPv6 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+        """
+        return pulumi.get(self, "scan_ipv6ids")
+
+    @scan_ipv6ids.setter
+    def scan_ipv6ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "scan_ipv6ids", value)
 
     @property
     @pulumi.getter(name="securityAttributes")
@@ -1618,13 +1670,25 @@ class _DbSystemState:
     @pulumi.getter(name="vipIds")
     def vip_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IPv4 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIPv4 address for each node in the DB system to enable failover. If one node fails, the VIPv4 is reassigned to another active node in the cluster.
         """
         return pulumi.get(self, "vip_ids")
 
     @vip_ids.setter
     def vip_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "vip_ids", value)
+
+    @property
+    @pulumi.getter
+    def vipv6ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IPv6 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP IpV6 address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+        """
+        return pulumi.get(self, "vipv6ids")
+
+    @vipv6ids.setter
+    def vipv6ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "vipv6ids", value)
 
     @property
     @pulumi.getter(name="zoneId")
@@ -1670,6 +1734,7 @@ class DbSystem(pulumi.CustomResource):
                  node_count: Optional[pulumi.Input[int]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_ip: Optional[pulumi.Input[str]] = None,
+                 private_ip_v6: Optional[pulumi.Input[str]] = None,
                  reco_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
@@ -1791,6 +1856,7 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[str] private_ip: A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
+        :param pulumi.Input[str] private_ip_v6: A private IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value and the subnet is dual stack, Oracle automatically assigns a private IPv6 address from the subnet.
         :param pulumi.Input[int] reco_storage_size_in_gb: The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[str] shape: (Updatable) The shape of the DB system. The shape determines resources allocated to the DB system.
@@ -1916,6 +1982,7 @@ class DbSystem(pulumi.CustomResource):
                  node_count: Optional[pulumi.Input[int]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_ip: Optional[pulumi.Input[str]] = None,
+                 private_ip_v6: Optional[pulumi.Input[str]] = None,
                  reco_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
@@ -1969,6 +2036,7 @@ class DbSystem(pulumi.CustomResource):
             __props__.__dict__["node_count"] = node_count
             __props__.__dict__["nsg_ids"] = nsg_ids
             __props__.__dict__["private_ip"] = private_ip
+            __props__.__dict__["private_ip_v6"] = private_ip_v6
             __props__.__dict__["reco_storage_size_in_gb"] = reco_storage_size_in_gb
             __props__.__dict__["security_attributes"] = security_attributes
             if shape is None and not opts.urn:
@@ -1998,10 +2066,12 @@ class DbSystem(pulumi.CustomResource):
             __props__.__dict__["scan_dns_name"] = None
             __props__.__dict__["scan_dns_record_id"] = None
             __props__.__dict__["scan_ip_ids"] = None
+            __props__.__dict__["scan_ipv6ids"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["version"] = None
             __props__.__dict__["vip_ids"] = None
+            __props__.__dict__["vipv6ids"] = None
             __props__.__dict__["zone_id"] = None
         super(DbSystem, __self__).__init__(
             'oci:Database/dbSystem:DbSystem',
@@ -2049,10 +2119,12 @@ class DbSystem(pulumi.CustomResource):
             os_version: Optional[pulumi.Input[str]] = None,
             point_in_time_data_disk_clone_timestamp: Optional[pulumi.Input[str]] = None,
             private_ip: Optional[pulumi.Input[str]] = None,
+            private_ip_v6: Optional[pulumi.Input[str]] = None,
             reco_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
             scan_dns_name: Optional[pulumi.Input[str]] = None,
             scan_dns_record_id: Optional[pulumi.Input[str]] = None,
             scan_ip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            scan_ipv6ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             shape: Optional[pulumi.Input[str]] = None,
             source: Optional[pulumi.Input[str]] = None,
@@ -2066,6 +2138,7 @@ class DbSystem(pulumi.CustomResource):
             time_zone: Optional[pulumi.Input[str]] = None,
             version: Optional[pulumi.Input[str]] = None,
             vip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            vipv6ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             zone_id: Optional[pulumi.Input[str]] = None) -> 'DbSystem':
         """
         Get an existing DbSystem resource's state with the given name, id, and optional extra
@@ -2139,10 +2212,12 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[str] os_version: The most recent OS Patch Version applied on the DB system.
         :param pulumi.Input[str] point_in_time_data_disk_clone_timestamp: The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[str] private_ip: A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
+        :param pulumi.Input[str] private_ip_v6: A private IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value and the subnet is dual stack, Oracle automatically assigns a private IPv6 address from the subnet.
         :param pulumi.Input[int] reco_storage_size_in_gb: The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
         :param pulumi.Input[str] scan_dns_name: The FQDN of the DNS record for the SCAN IP addresses that are associated with the DB system.
         :param pulumi.Input[str] scan_dns_record_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the DB system.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] scan_ip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] scan_ip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv4 addresses associated with the DB system. SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] scan_ipv6ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv6 addresses associated with the DB system. SCAN IPv6 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[str] shape: (Updatable) The shape of the DB system. The shape determines resources allocated to the DB system.
                * For virtual machine shapes, the number of CPU cores and memory
@@ -2169,7 +2244,8 @@ class DbSystem(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] version: The Oracle Database version of the DB system.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] vip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] vip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IPv4 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIPv4 address for each node in the DB system to enable failover. If one node fails, the VIPv4 is reassigned to another active node in the cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] vipv6ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IPv6 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP IpV6 address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
         :param pulumi.Input[str] zone_id: The OCID of the zone the DB system is associated with.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -2212,10 +2288,12 @@ class DbSystem(pulumi.CustomResource):
         __props__.__dict__["os_version"] = os_version
         __props__.__dict__["point_in_time_data_disk_clone_timestamp"] = point_in_time_data_disk_clone_timestamp
         __props__.__dict__["private_ip"] = private_ip
+        __props__.__dict__["private_ip_v6"] = private_ip_v6
         __props__.__dict__["reco_storage_size_in_gb"] = reco_storage_size_in_gb
         __props__.__dict__["scan_dns_name"] = scan_dns_name
         __props__.__dict__["scan_dns_record_id"] = scan_dns_record_id
         __props__.__dict__["scan_ip_ids"] = scan_ip_ids
+        __props__.__dict__["scan_ipv6ids"] = scan_ipv6ids
         __props__.__dict__["security_attributes"] = security_attributes
         __props__.__dict__["shape"] = shape
         __props__.__dict__["source"] = source
@@ -2229,6 +2307,7 @@ class DbSystem(pulumi.CustomResource):
         __props__.__dict__["time_zone"] = time_zone
         __props__.__dict__["version"] = version
         __props__.__dict__["vip_ids"] = vip_ids
+        __props__.__dict__["vipv6ids"] = vipv6ids
         __props__.__dict__["zone_id"] = zone_id
         return DbSystem(resource_name, opts=opts, __props__=__props__)
 
@@ -2550,6 +2629,14 @@ class DbSystem(pulumi.CustomResource):
         return pulumi.get(self, "private_ip")
 
     @property
+    @pulumi.getter(name="privateIpV6")
+    def private_ip_v6(self) -> pulumi.Output[str]:
+        """
+        A private IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value and the subnet is dual stack, Oracle automatically assigns a private IPv6 address from the subnet.
+        """
+        return pulumi.get(self, "private_ip_v6")
+
+    @property
     @pulumi.getter(name="recoStorageSizeInGb")
     def reco_storage_size_in_gb(self) -> pulumi.Output[int]:
         """
@@ -2577,9 +2664,17 @@ class DbSystem(pulumi.CustomResource):
     @pulumi.getter(name="scanIpIds")
     def scan_ip_ids(self) -> pulumi.Output[Sequence[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv4 addresses associated with the DB system. SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
         """
         return pulumi.get(self, "scan_ip_ids")
+
+    @property
+    @pulumi.getter(name="scanIpv6ids")
+    def scan_ipv6ids(self) -> pulumi.Output[Sequence[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv6 addresses associated with the DB system. SCAN IPv6 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+        """
+        return pulumi.get(self, "scan_ipv6ids")
 
     @property
     @pulumi.getter(name="securityAttributes")
@@ -2695,9 +2790,17 @@ class DbSystem(pulumi.CustomResource):
     @pulumi.getter(name="vipIds")
     def vip_ids(self) -> pulumi.Output[Sequence[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IPv4 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIPv4 address for each node in the DB system to enable failover. If one node fails, the VIPv4 is reassigned to another active node in the cluster.
         """
         return pulumi.get(self, "vip_ids")
+
+    @property
+    @pulumi.getter
+    def vipv6ids(self) -> pulumi.Output[Sequence[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IPv6 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP IpV6 address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+        """
+        return pulumi.get(self, "vipv6ids")
 
     @property
     @pulumi.getter(name="zoneId")

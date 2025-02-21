@@ -68,6 +68,9 @@ export interface GetConnectionResult {
      * Used authentication mechanism to be provided for the following connection types:
      * * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE
      * * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
+     * * DATABRICKS - Required fields by authentication types:
+     * * PERSONAL_ACCESS_TOKEN: username is always 'token', user must enter password
+     * * OAUTH_M2M: user must enter clientId and clientSecret
      */
     readonly authenticationType: string;
     /**
@@ -110,6 +113,7 @@ export interface GetConnectionResult {
      * * JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676'
      * * SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
      * * AMAZON_REDSHIFT: Connection URL. e.g.: 'jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb'
+     * * DATABRICKS: Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
      */
     readonly connectionUrl: string;
     /**
@@ -149,6 +153,9 @@ export interface GetConnectionResult {
      * Indicates that sensitive attributes are provided via Secrets.
      */
     readonly doesUseSecretIds: boolean;
+    /**
+     * Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+     */
     readonly endpoint: string;
     readonly fingerprint: string;
     /**
@@ -251,7 +258,7 @@ export interface GetConnectionResult {
      */
     readonly redisClusterId: string;
     /**
-     * The name of the region. e.g.: us-ashburn-1
+     * The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
      */
     readonly region: string;
     /**
@@ -293,11 +300,15 @@ export interface GetConnectionResult {
      */
     readonly shouldUseJndi: boolean;
     /**
+     * Indicates that the user intents to connect to the instance through resource principal.
+     */
+    readonly shouldUseResourcePrincipal: boolean;
+    /**
      * If set to true, the driver validates the certificate that is sent by the database server.
      */
     readonly shouldValidateServerCertificate: boolean;
     /**
-     * Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
+     * Database Certificate - The base64 encoded content of a .pem or .crt file. containing the server public key (for 1-way SSL).
      */
     readonly sslCa: string;
     readonly sslCert: string;
@@ -333,6 +344,10 @@ export interface GetConnectionResult {
      */
     readonly state: string;
     /**
+     * Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
+     */
+    readonly storageCredentialName: string;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
      */
     readonly streamPoolId: string;
@@ -353,6 +368,10 @@ export interface GetConnectionResult {
      */
     readonly tenancyId: string;
     /**
+     * Azure tenant ID of the application. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
+     */
+    readonly tenantId: string;
+    /**
      * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
     readonly timeCreated: string;
@@ -360,6 +379,18 @@ export interface GetConnectionResult {
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
     readonly timeUpdated: string;
+    readonly tlsCaFile: string;
+    readonly tlsCertificateKeyFile: string;
+    readonly tlsCertificateKeyFilePassword: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
+     */
+    readonly tlsCertificateKeyFilePasswordSecretId: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
+     * * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
+     */
+    readonly tlsCertificateKeyFileSecretId: string;
     readonly triggerRefresh: boolean;
     readonly trustStore: string;
     readonly trustStorePassword: string;
@@ -368,7 +399,7 @@ export interface GetConnectionResult {
      */
     readonly trustStorePasswordSecretId: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided.
      */
     readonly trustStoreSecretId: string;
     /**
@@ -376,11 +407,11 @@ export interface GetConnectionResult {
      */
     readonly url: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/Object Storage. The user must have write access to the table they want to connect to.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
      */
     readonly userId: string;
     /**
-     * The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
+     * The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
      */
     readonly username: string;
     /**

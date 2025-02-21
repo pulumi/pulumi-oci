@@ -19,16 +19,19 @@ __all__ = [
     'SecretRotationConfig',
     'SecretRotationConfigTargetSystemDetails',
     'SecretSecretContent',
+    'SecretSecretGenerationContext',
     'SecretSecretRule',
     'GetSecretRotationConfigResult',
     'GetSecretRotationConfigTargetSystemDetailResult',
     'GetSecretSecretContentResult',
+    'GetSecretSecretGenerationContextResult',
     'GetSecretSecretRuleResult',
     'GetSecretsFilterResult',
     'GetSecretsSecretResult',
     'GetSecretsSecretRotationConfigResult',
     'GetSecretsSecretRotationConfigTargetSystemDetailResult',
     'GetSecretsSecretSecretContentResult',
+    'GetSecretsSecretSecretGenerationContextResult',
     'GetSecretsSecretSecretRuleResult',
 ]
 
@@ -227,6 +230,82 @@ class SecretSecretContent(dict):
         (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don't yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven't yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating a secret, you can specify a version's rotation state as either `CURRENT` or `PENDING`.
         """
         return pulumi.get(self, "stage")
+
+
+@pulumi.output_type
+class SecretSecretGenerationContext(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "generationTemplate":
+            suggest = "generation_template"
+        elif key == "generationType":
+            suggest = "generation_type"
+        elif key == "passphraseLength":
+            suggest = "passphrase_length"
+        elif key == "secretTemplate":
+            suggest = "secret_template"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SecretSecretGenerationContext. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SecretSecretGenerationContext.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SecretSecretGenerationContext.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 generation_template: str,
+                 generation_type: str,
+                 passphrase_length: Optional[int] = None,
+                 secret_template: Optional[str] = None):
+        """
+        :param str generation_template: (Updatable) Name of random bytes generation template for generating random byte type secret.
+        :param str generation_type: (Updatable) Name of the predefined secret generation type.
+        :param int passphrase_length: (Updatable) Length of the passphrase to be generated
+        :param str secret_template: (Updatable) SecretTemplate captures structure in which customer wants to store secrets. This is optional and a default structure is available for each secret type.  The template can have any structure with static values that are not generated. Within the template, you can insert predefined placeholders to store secrets.  These placeholders are later replaced with the generated content and saved as a Base64 encoded content.
+        """
+        pulumi.set(__self__, "generation_template", generation_template)
+        pulumi.set(__self__, "generation_type", generation_type)
+        if passphrase_length is not None:
+            pulumi.set(__self__, "passphrase_length", passphrase_length)
+        if secret_template is not None:
+            pulumi.set(__self__, "secret_template", secret_template)
+
+    @property
+    @pulumi.getter(name="generationTemplate")
+    def generation_template(self) -> str:
+        """
+        (Updatable) Name of random bytes generation template for generating random byte type secret.
+        """
+        return pulumi.get(self, "generation_template")
+
+    @property
+    @pulumi.getter(name="generationType")
+    def generation_type(self) -> str:
+        """
+        (Updatable) Name of the predefined secret generation type.
+        """
+        return pulumi.get(self, "generation_type")
+
+    @property
+    @pulumi.getter(name="passphraseLength")
+    def passphrase_length(self) -> Optional[int]:
+        """
+        (Updatable) Length of the passphrase to be generated
+        """
+        return pulumi.get(self, "passphrase_length")
+
+    @property
+    @pulumi.getter(name="secretTemplate")
+    def secret_template(self) -> Optional[str]:
+        """
+        (Updatable) SecretTemplate captures structure in which customer wants to store secrets. This is optional and a default structure is available for each secret type.  The template can have any structure with static values that are not generated. Within the template, you can insert predefined placeholders to store secrets.  These placeholders are later replaced with the generated content and saved as a Base64 encoded content.
+        """
+        return pulumi.get(self, "secret_template")
 
 
 @pulumi.output_type
@@ -434,6 +513,57 @@ class GetSecretSecretContentResult(dict):
 
 
 @pulumi.output_type
+class GetSecretSecretGenerationContextResult(dict):
+    def __init__(__self__, *,
+                 generation_template: str,
+                 generation_type: str,
+                 passphrase_length: int,
+                 secret_template: str):
+        """
+        :param str generation_template: Name of random bytes generation template for generating random byte type secret.
+        :param str generation_type: Name of the predefined secret generation type.
+        :param int passphrase_length: Length of the passphrase to be generated
+        :param str secret_template: SecretTemplate captures structure in which customer wants to store secrets. This is optional and a default structure is available for each secret type.  The template can have any structure with static values that are not generated. Within the template, you can insert predefined placeholders to store secrets.  These placeholders are later replaced with the generated content and saved as a Base64 encoded content.
+        """
+        pulumi.set(__self__, "generation_template", generation_template)
+        pulumi.set(__self__, "generation_type", generation_type)
+        pulumi.set(__self__, "passphrase_length", passphrase_length)
+        pulumi.set(__self__, "secret_template", secret_template)
+
+    @property
+    @pulumi.getter(name="generationTemplate")
+    def generation_template(self) -> str:
+        """
+        Name of random bytes generation template for generating random byte type secret.
+        """
+        return pulumi.get(self, "generation_template")
+
+    @property
+    @pulumi.getter(name="generationType")
+    def generation_type(self) -> str:
+        """
+        Name of the predefined secret generation type.
+        """
+        return pulumi.get(self, "generation_type")
+
+    @property
+    @pulumi.getter(name="passphraseLength")
+    def passphrase_length(self) -> int:
+        """
+        Length of the passphrase to be generated
+        """
+        return pulumi.get(self, "passphrase_length")
+
+    @property
+    @pulumi.getter(name="secretTemplate")
+    def secret_template(self) -> str:
+        """
+        SecretTemplate captures structure in which customer wants to store secrets. This is optional and a default structure is available for each secret type.  The template can have any structure with static values that are not generated. Within the template, you can insert predefined placeholders to store secrets.  These placeholders are later replaced with the generated content and saved as a Base64 encoded content.
+        """
+        return pulumi.get(self, "secret_template")
+
+
+@pulumi.output_type
 class GetSecretSecretRuleResult(dict):
     def __init__(__self__, *,
                  is_enforced_on_deleted_secret_versions: bool,
@@ -535,8 +665,10 @@ class GetSecretsSecretResult(dict):
                  current_version_number: str,
                  defined_tags: Mapping[str, str],
                  description: str,
+                 enable_auto_generation: bool,
                  freeform_tags: Mapping[str, str],
                  id: str,
+                 is_auto_generation_enabled: bool,
                  key_id: str,
                  last_rotation_time: str,
                  lifecycle_details: str,
@@ -545,6 +677,7 @@ class GetSecretsSecretResult(dict):
                  rotation_configs: Sequence['outputs.GetSecretsSecretRotationConfigResult'],
                  rotation_status: str,
                  secret_contents: Sequence['outputs.GetSecretsSecretSecretContentResult'],
+                 secret_generation_contexts: Sequence['outputs.GetSecretsSecretSecretGenerationContextResult'],
                  secret_name: str,
                  secret_rules: Sequence['outputs.GetSecretsSecretSecretRuleResult'],
                  state: str,
@@ -559,6 +692,7 @@ class GetSecretsSecretResult(dict):
         :param str description: A brief description of the secret. Avoid entering confidential information.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The OCID of the secret.
+        :param bool is_auto_generation_enabled: The value of this flag determines whether or not secret content will be generated automatically.
         :param str key_id: The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
         :param str last_rotation_time: A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param str lifecycle_details: Additional information about the current lifecycle state of the secret.
@@ -566,6 +700,7 @@ class GetSecretsSecretResult(dict):
         :param str next_rotation_time: A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param Sequence['GetSecretsSecretRotationConfigArgs'] rotation_configs: Defines the frequency of the rotation and the information about the target system
         :param str rotation_status: Additional information about the status of the secret rotation
+        :param Sequence['GetSecretsSecretSecretGenerationContextArgs'] secret_generation_contexts: Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
         :param str secret_name: The user-friendly name of the secret. Avoid entering confidential information.
         :param Sequence['GetSecretsSecretSecretRuleArgs'] secret_rules: A list of rules that control how the secret is used and managed.
         :param str state: A filter that returns only resources that match the specified lifecycle state. The state value is case-insensitive.
@@ -578,8 +713,10 @@ class GetSecretsSecretResult(dict):
         pulumi.set(__self__, "current_version_number", current_version_number)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "enable_auto_generation", enable_auto_generation)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_auto_generation_enabled", is_auto_generation_enabled)
         pulumi.set(__self__, "key_id", key_id)
         pulumi.set(__self__, "last_rotation_time", last_rotation_time)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -588,6 +725,7 @@ class GetSecretsSecretResult(dict):
         pulumi.set(__self__, "rotation_configs", rotation_configs)
         pulumi.set(__self__, "rotation_status", rotation_status)
         pulumi.set(__self__, "secret_contents", secret_contents)
+        pulumi.set(__self__, "secret_generation_contexts", secret_generation_contexts)
         pulumi.set(__self__, "secret_name", secret_name)
         pulumi.set(__self__, "secret_rules", secret_rules)
         pulumi.set(__self__, "state", state)
@@ -629,6 +767,11 @@ class GetSecretsSecretResult(dict):
         return pulumi.get(self, "description")
 
     @property
+    @pulumi.getter(name="enableAutoGeneration")
+    def enable_auto_generation(self) -> bool:
+        return pulumi.get(self, "enable_auto_generation")
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, str]:
         """
@@ -643,6 +786,14 @@ class GetSecretsSecretResult(dict):
         The OCID of the secret.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isAutoGenerationEnabled")
+    def is_auto_generation_enabled(self) -> bool:
+        """
+        The value of this flag determines whether or not secret content will be generated automatically.
+        """
+        return pulumi.get(self, "is_auto_generation_enabled")
 
     @property
     @pulumi.getter(name="keyId")
@@ -704,6 +855,14 @@ class GetSecretsSecretResult(dict):
     @pulumi.getter(name="secretContents")
     def secret_contents(self) -> Sequence['outputs.GetSecretsSecretSecretContentResult']:
         return pulumi.get(self, "secret_contents")
+
+    @property
+    @pulumi.getter(name="secretGenerationContexts")
+    def secret_generation_contexts(self) -> Sequence['outputs.GetSecretsSecretSecretGenerationContextResult']:
+        """
+        Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
+        """
+        return pulumi.get(self, "secret_generation_contexts")
 
     @property
     @pulumi.getter(name="secretName")
@@ -879,6 +1038,57 @@ class GetSecretsSecretSecretContentResult(dict):
     @pulumi.getter
     def stage(self) -> str:
         return pulumi.get(self, "stage")
+
+
+@pulumi.output_type
+class GetSecretsSecretSecretGenerationContextResult(dict):
+    def __init__(__self__, *,
+                 generation_template: str,
+                 generation_type: str,
+                 passphrase_length: int,
+                 secret_template: str):
+        """
+        :param str generation_template: Name of random bytes generation template for generating random byte type secret.
+        :param str generation_type: Name of the predefined secret generation type.
+        :param int passphrase_length: Length of the passphrase to be generated
+        :param str secret_template: SecretTemplate captures structure in which customer wants to store secrets. This is optional and a default structure is available for each secret type.  The template can have any structure with static values that are not generated. Within the template, you can insert predefined placeholders to store secrets.  These placeholders are later replaced with the generated content and saved as a Base64 encoded content.
+        """
+        pulumi.set(__self__, "generation_template", generation_template)
+        pulumi.set(__self__, "generation_type", generation_type)
+        pulumi.set(__self__, "passphrase_length", passphrase_length)
+        pulumi.set(__self__, "secret_template", secret_template)
+
+    @property
+    @pulumi.getter(name="generationTemplate")
+    def generation_template(self) -> str:
+        """
+        Name of random bytes generation template for generating random byte type secret.
+        """
+        return pulumi.get(self, "generation_template")
+
+    @property
+    @pulumi.getter(name="generationType")
+    def generation_type(self) -> str:
+        """
+        Name of the predefined secret generation type.
+        """
+        return pulumi.get(self, "generation_type")
+
+    @property
+    @pulumi.getter(name="passphraseLength")
+    def passphrase_length(self) -> int:
+        """
+        Length of the passphrase to be generated
+        """
+        return pulumi.get(self, "passphrase_length")
+
+    @property
+    @pulumi.getter(name="secretTemplate")
+    def secret_template(self) -> str:
+        """
+        SecretTemplate captures structure in which customer wants to store secrets. This is optional and a default structure is available for each secret type.  The template can have any structure with static values that are not generated. Within the template, you can insert predefined placeholders to store secrets.  These placeholders are later replaced with the generated content and saved as a Base64 encoded content.
+        """
+        return pulumi.get(self, "secret_template")
 
 
 @pulumi.output_type

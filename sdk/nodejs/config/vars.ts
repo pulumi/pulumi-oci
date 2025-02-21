@@ -144,6 +144,14 @@ Object.defineProperty(exports, "tenancyOcid", {
     enumerable: true,
 });
 
+export declare const testTimeMaintenanceRebootDue: string | undefined;
+Object.defineProperty(exports, "testTimeMaintenanceRebootDue", {
+    get() {
+        return __config.get("testTimeMaintenanceRebootDue");
+    },
+    enumerable: true,
+});
+
 /**
  * (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if
  * auth is set to 'ApiKey', ignored otherwise.

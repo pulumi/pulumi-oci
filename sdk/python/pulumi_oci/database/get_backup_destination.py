@@ -27,7 +27,7 @@ class GetBackupDestinationResult:
     """
     A collection of values returned by getBackupDestination.
     """
-    def __init__(__self__, associated_databases=None, backup_destination_id=None, compartment_id=None, connection_string=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, local_mount_point_path=None, mount_type_details=None, nfs_mount_type=None, nfs_server_export=None, nfs_servers=None, state=None, time_created=None, type=None, vpc_users=None):
+    def __init__(__self__, associated_databases=None, backup_destination_id=None, compartment_id=None, connection_string=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, local_mount_point_path=None, mount_type_details=None, nfs_mount_type=None, nfs_server_export=None, nfs_servers=None, state=None, time_at_which_storage_details_are_updated=None, time_created=None, total_storage_size_in_gbs=None, type=None, utilized_storage_size_in_gbs=None, vpc_users=None):
         if associated_databases and not isinstance(associated_databases, list):
             raise TypeError("Expected argument 'associated_databases' to be a list")
         pulumi.set(__self__, "associated_databases", associated_databases)
@@ -73,12 +73,21 @@ class GetBackupDestinationResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if time_at_which_storage_details_are_updated and not isinstance(time_at_which_storage_details_are_updated, str):
+            raise TypeError("Expected argument 'time_at_which_storage_details_are_updated' to be a str")
+        pulumi.set(__self__, "time_at_which_storage_details_are_updated", time_at_which_storage_details_are_updated)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
+        if total_storage_size_in_gbs and not isinstance(total_storage_size_in_gbs, int):
+            raise TypeError("Expected argument 'total_storage_size_in_gbs' to be a int")
+        pulumi.set(__self__, "total_storage_size_in_gbs", total_storage_size_in_gbs)
         if type and not isinstance(type, str):
             raise TypeError("Expected argument 'type' to be a str")
         pulumi.set(__self__, "type", type)
+        if utilized_storage_size_in_gbs and not isinstance(utilized_storage_size_in_gbs, int):
+            raise TypeError("Expected argument 'utilized_storage_size_in_gbs' to be a int")
+        pulumi.set(__self__, "utilized_storage_size_in_gbs", utilized_storage_size_in_gbs)
         if vpc_users and not isinstance(vpc_users, list):
             raise TypeError("Expected argument 'vpc_users' to be a list")
         pulumi.set(__self__, "vpc_users", vpc_users)
@@ -199,6 +208,14 @@ class GetBackupDestinationResult:
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="timeAtWhichStorageDetailsAreUpdated")
+    def time_at_which_storage_details_are_updated(self) -> str:
+        """
+        The time when the total storage size and the utilized storage size of the backup destination are updated.
+        """
+        return pulumi.get(self, "time_at_which_storage_details_are_updated")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
@@ -207,12 +224,28 @@ class GetBackupDestinationResult:
         return pulumi.get(self, "time_created")
 
     @property
+    @pulumi.getter(name="totalStorageSizeInGbs")
+    def total_storage_size_in_gbs(self) -> int:
+        """
+        The total storage size of the backup destination in GBs, rounded to the nearest integer.
+        """
+        return pulumi.get(self, "total_storage_size_in_gbs")
+
+    @property
     @pulumi.getter
     def type(self) -> str:
         """
         Type of the backup destination.
         """
         return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="utilizedStorageSizeInGbs")
+    def utilized_storage_size_in_gbs(self) -> int:
+        """
+        The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
+        """
+        return pulumi.get(self, "utilized_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="vpcUsers")
@@ -244,8 +277,11 @@ class AwaitableGetBackupDestinationResult(GetBackupDestinationResult):
             nfs_server_export=self.nfs_server_export,
             nfs_servers=self.nfs_servers,
             state=self.state,
+            time_at_which_storage_details_are_updated=self.time_at_which_storage_details_are_updated,
             time_created=self.time_created,
+            total_storage_size_in_gbs=self.total_storage_size_in_gbs,
             type=self.type,
+            utilized_storage_size_in_gbs=self.utilized_storage_size_in_gbs,
             vpc_users=self.vpc_users)
 
 
@@ -289,8 +325,11 @@ def get_backup_destination(backup_destination_id: Optional[str] = None,
         nfs_server_export=pulumi.get(__ret__, 'nfs_server_export'),
         nfs_servers=pulumi.get(__ret__, 'nfs_servers'),
         state=pulumi.get(__ret__, 'state'),
+        time_at_which_storage_details_are_updated=pulumi.get(__ret__, 'time_at_which_storage_details_are_updated'),
         time_created=pulumi.get(__ret__, 'time_created'),
+        total_storage_size_in_gbs=pulumi.get(__ret__, 'total_storage_size_in_gbs'),
         type=pulumi.get(__ret__, 'type'),
+        utilized_storage_size_in_gbs=pulumi.get(__ret__, 'utilized_storage_size_in_gbs'),
         vpc_users=pulumi.get(__ret__, 'vpc_users'))
 def get_backup_destination_output(backup_destination_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBackupDestinationResult]:
@@ -331,6 +370,9 @@ def get_backup_destination_output(backup_destination_id: Optional[pulumi.Input[s
         nfs_server_export=pulumi.get(__response__, 'nfs_server_export'),
         nfs_servers=pulumi.get(__response__, 'nfs_servers'),
         state=pulumi.get(__response__, 'state'),
+        time_at_which_storage_details_are_updated=pulumi.get(__response__, 'time_at_which_storage_details_are_updated'),
         time_created=pulumi.get(__response__, 'time_created'),
+        total_storage_size_in_gbs=pulumi.get(__response__, 'total_storage_size_in_gbs'),
         type=pulumi.get(__response__, 'type'),
+        utilized_storage_size_in_gbs=pulumi.get(__response__, 'utilized_storage_size_in_gbs'),
         vpc_users=pulumi.get(__response__, 'vpc_users')))

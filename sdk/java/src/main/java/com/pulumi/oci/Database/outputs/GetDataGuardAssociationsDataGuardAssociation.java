@@ -96,6 +96,7 @@ public final class GetDataGuardAssociationsDataGuardAssociation {
     private String peerSidPrefix;
     private String peerVmClusterId;
     private String privateIp;
+    private String privateIpV6;
     /**
      * @return The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      * 
@@ -282,6 +283,9 @@ public final class GetDataGuardAssociationsDataGuardAssociation {
     public String privateIp() {
         return this.privateIp;
     }
+    public String privateIpV6() {
+        return this.privateIpV6;
+    }
     /**
      * @return The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      * 
@@ -376,6 +380,7 @@ public final class GetDataGuardAssociationsDataGuardAssociation {
         private String peerSidPrefix;
         private String peerVmClusterId;
         private String privateIp;
+        private String privateIpV6;
         private String protectionMode;
         private String role;
         private String shape;
@@ -425,6 +430,7 @@ public final class GetDataGuardAssociationsDataGuardAssociation {
     	      this.peerSidPrefix = defaults.peerSidPrefix;
     	      this.peerVmClusterId = defaults.peerVmClusterId;
     	      this.privateIp = defaults.privateIp;
+    	      this.privateIpV6 = defaults.privateIpV6;
     	      this.protectionMode = defaults.protectionMode;
     	      this.role = defaults.role;
     	      this.shape = defaults.shape;
@@ -745,6 +751,14 @@ public final class GetDataGuardAssociationsDataGuardAssociation {
             return this;
         }
         @CustomType.Setter
+        public Builder privateIpV6(String privateIpV6) {
+            if (privateIpV6 == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "privateIpV6");
+            }
+            this.privateIpV6 = privateIpV6;
+            return this;
+        }
+        @CustomType.Setter
         public Builder protectionMode(String protectionMode) {
             if (protectionMode == null) {
               throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "protectionMode");
@@ -855,6 +869,7 @@ public final class GetDataGuardAssociationsDataGuardAssociation {
             _resultValue.peerSidPrefix = peerSidPrefix;
             _resultValue.peerVmClusterId = peerVmClusterId;
             _resultValue.privateIp = privateIp;
+            _resultValue.privateIpV6 = privateIpV6;
             _resultValue.protectionMode = protectionMode;
             _resultValue.role = role;
             _resultValue.shape = shape;

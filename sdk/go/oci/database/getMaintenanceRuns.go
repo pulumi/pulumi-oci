@@ -32,6 +32,7 @@ import (
 //			_, err := database.GetMaintenanceRuns(ctx, &database.GetMaintenanceRunsArgs{
 //				CompartmentId:      compartmentId,
 //				AvailabilityDomain: pulumi.StringRef(maintenanceRunAvailabilityDomain),
+//				IsLocalAdg:         pulumi.BoolRef(maintenanceRunIsLocalAdg),
 //				MaintenanceSubtype: pulumi.StringRef(maintenanceRunMaintenanceSubtype),
 //				MaintenanceType:    pulumi.StringRef(maintenanceRunMaintenanceType),
 //				State:              pulumi.StringRef(maintenanceRunState),
@@ -63,6 +64,8 @@ type GetMaintenanceRunsArgs struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string                     `pulumi:"compartmentId"`
 	Filters       []GetMaintenanceRunsFilter `pulumi:"filters"`
+	// A filter to return the maintenance history results for the local standby Autonomous Database Serverless only.
+	IsLocalAdg *bool `pulumi:"isLocalAdg"`
 	// The sub-type of the maintenance run.
 	MaintenanceSubtype *string `pulumi:"maintenanceSubtype"`
 	// The maintenance type.
@@ -82,7 +85,8 @@ type GetMaintenanceRunsResult struct {
 	CompartmentId string                     `pulumi:"compartmentId"`
 	Filters       []GetMaintenanceRunsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id         string `pulumi:"id"`
+	IsLocalAdg *bool  `pulumi:"isLocalAdg"`
 	// The list of maintenance_runs.
 	MaintenanceRuns []GetMaintenanceRunsMaintenanceRun `pulumi:"maintenanceRuns"`
 	// Maintenance sub-type.
@@ -113,6 +117,8 @@ type GetMaintenanceRunsOutputArgs struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput                 `pulumi:"compartmentId"`
 	Filters       GetMaintenanceRunsFilterArrayInput `pulumi:"filters"`
+	// A filter to return the maintenance history results for the local standby Autonomous Database Serverless only.
+	IsLocalAdg pulumi.BoolPtrInput `pulumi:"isLocalAdg"`
 	// The sub-type of the maintenance run.
 	MaintenanceSubtype pulumi.StringPtrInput `pulumi:"maintenanceSubtype"`
 	// The maintenance type.
@@ -160,6 +166,10 @@ func (o GetMaintenanceRunsResultOutput) Filters() GetMaintenanceRunsFilterArrayO
 // The provider-assigned unique ID for this managed resource.
 func (o GetMaintenanceRunsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaintenanceRunsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetMaintenanceRunsResultOutput) IsLocalAdg() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsResult) *bool { return v.IsLocalAdg }).(pulumi.BoolPtrOutput)
 }
 
 // The list of maintenance_runs.

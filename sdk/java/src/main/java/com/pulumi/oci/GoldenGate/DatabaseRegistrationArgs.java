@@ -183,14 +183,14 @@ public final class DatabaseRegistrationArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
+     * (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by &#34;passwordSecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     @Import(name="password", required=true)
     private Output<String> password;
 
     /**
-     * @return (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
+     * @return (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by &#34;passwordSecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     public Output<String> password() {
@@ -273,7 +273,7 @@ public final class DatabaseRegistrationArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
+     * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by &#34;walletSecretId&#34;. This field will be removed after February 15 2026.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -283,7 +283,7 @@ public final class DatabaseRegistrationArgs extends com.pulumi.resources.Resourc
     private @Nullable Output<String> wallet;
 
     /**
-     * @return (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
+     * @return (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by &#34;walletSecretId&#34;. This field will be removed after February 15 2026.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -566,7 +566,7 @@ public final class DatabaseRegistrationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param password (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
+         * @param password (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by &#34;passwordSecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -577,7 +577,7 @@ public final class DatabaseRegistrationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param password (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
+         * @param password (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by &#34;passwordSecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -692,7 +692,7 @@ public final class DatabaseRegistrationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param wallet (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
+         * @param wallet (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by &#34;walletSecretId&#34;. This field will be removed after February 15 2026.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -706,7 +706,7 @@ public final class DatabaseRegistrationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param wallet (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
+         * @param wallet (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by &#34;walletSecretId&#34;. This field will be removed after February 15 2026.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

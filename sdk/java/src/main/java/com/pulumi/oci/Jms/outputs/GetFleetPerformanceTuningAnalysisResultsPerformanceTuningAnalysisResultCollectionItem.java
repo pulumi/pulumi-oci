@@ -27,7 +27,7 @@ public final class GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnal
      */
     private String applicationInstallationPath;
     /**
-     * @return The name of the application for which the report has been generated.
+     * @return The name of the application.
      * 
      */
     private String applicationName;
@@ -120,7 +120,7 @@ public final class GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnal
         return this.applicationInstallationPath;
     }
     /**
-     * @return The name of the application for which the report has been generated.
+     * @return The name of the application.
      * 
      */
     public String applicationName() {

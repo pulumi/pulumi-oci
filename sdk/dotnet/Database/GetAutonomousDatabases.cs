@@ -12,19 +12,6 @@ namespace Pulumi.Oci.Database
     public static class GetAutonomousDatabases
     {
         /// <summary>
-        /// ## 
-        /// 
-        /// ---
-        /// ## subcategory: "Database"
-        /// 
-        /// layout: "oci"
-        /// page_title: "Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases"
-        /// sidebar_current: "docs-oci-datasource-database-autonomous_databases"
-        /// description: |-
-        ///   Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
-        /// ---
-        /// 
-        /// # Data Source: oci.Database.getAutonomousDatabases
         /// This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets a list of Autonomous Databases based on the query parameters specified.
@@ -64,19 +51,6 @@ namespace Pulumi.Oci.Database
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousDatabasesResult>("oci:Database/getAutonomousDatabases:getAutonomousDatabases", args ?? new GetAutonomousDatabasesArgs(), options.WithDefaults());
 
         /// <summary>
-        /// ## 
-        /// 
-        /// ---
-        /// ## subcategory: "Database"
-        /// 
-        /// layout: "oci"
-        /// page_title: "Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases"
-        /// sidebar_current: "docs-oci-datasource-database-autonomous_databases"
-        /// description: |-
-        ///   Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
-        /// ---
-        /// 
-        /// # Data Source: oci.Database.getAutonomousDatabases
         /// This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets a list of Autonomous Databases based on the query parameters specified.
@@ -116,19 +90,6 @@ namespace Pulumi.Oci.Database
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabasesResult>("oci:Database/getAutonomousDatabases:getAutonomousDatabases", args ?? new GetAutonomousDatabasesInvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// ## 
-        /// 
-        /// ---
-        /// ## subcategory: "Database"
-        /// 
-        /// layout: "oci"
-        /// page_title: "Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases"
-        /// sidebar_current: "docs-oci-datasource-database-autonomous_databases"
-        /// description: |-
-        ///   Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
-        /// ---
-        /// 
-        /// # Data Source: oci.Database.getAutonomousDatabases
         /// This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets a list of Autonomous Databases based on the query parameters specified.

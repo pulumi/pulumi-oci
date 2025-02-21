@@ -126,6 +126,21 @@ public final class MonitoredResourceTypeMetadataArgs extends com.pulumi.resource
         return Optional.ofNullable(this.validPropertyValues);
     }
 
+    /**
+     * (Updatable) List of valid sub-resource types for a composite resource type. The sub-resource types will be obtained from the valid association pairs corresponding to the composite resource types. It will be empty for non composite resource types
+     * 
+     */
+    @Import(name="validSubResourceTypes")
+    private @Nullable Output<List<String>> validSubResourceTypes;
+
+    /**
+     * @return (Updatable) List of valid sub-resource types for a composite resource type. The sub-resource types will be obtained from the valid association pairs corresponding to the composite resource types. It will be empty for non composite resource types
+     * 
+     */
+    public Optional<Output<List<String>>> validSubResourceTypes() {
+        return Optional.ofNullable(this.validSubResourceTypes);
+    }
+
     private MonitoredResourceTypeMetadataArgs() {}
 
     private MonitoredResourceTypeMetadataArgs(MonitoredResourceTypeMetadataArgs $) {
@@ -136,6 +151,7 @@ public final class MonitoredResourceTypeMetadataArgs extends com.pulumi.resource
         this.validPropertiesForCreates = $.validPropertiesForCreates;
         this.validPropertiesForUpdates = $.validPropertiesForUpdates;
         this.validPropertyValues = $.validPropertyValues;
+        this.validSubResourceTypes = $.validSubResourceTypes;
     }
 
     public static Builder builder() {
@@ -353,6 +369,37 @@ public final class MonitoredResourceTypeMetadataArgs extends com.pulumi.resource
          */
         public Builder validPropertyValues(Map<String,String> validPropertyValues) {
             return validPropertyValues(Output.of(validPropertyValues));
+        }
+
+        /**
+         * @param validSubResourceTypes (Updatable) List of valid sub-resource types for a composite resource type. The sub-resource types will be obtained from the valid association pairs corresponding to the composite resource types. It will be empty for non composite resource types
+         * 
+         * @return builder
+         * 
+         */
+        public Builder validSubResourceTypes(@Nullable Output<List<String>> validSubResourceTypes) {
+            $.validSubResourceTypes = validSubResourceTypes;
+            return this;
+        }
+
+        /**
+         * @param validSubResourceTypes (Updatable) List of valid sub-resource types for a composite resource type. The sub-resource types will be obtained from the valid association pairs corresponding to the composite resource types. It will be empty for non composite resource types
+         * 
+         * @return builder
+         * 
+         */
+        public Builder validSubResourceTypes(List<String> validSubResourceTypes) {
+            return validSubResourceTypes(Output.of(validSubResourceTypes));
+        }
+
+        /**
+         * @param validSubResourceTypes (Updatable) List of valid sub-resource types for a composite resource type. The sub-resource types will be obtained from the valid association pairs corresponding to the composite resource types. It will be empty for non composite resource types
+         * 
+         * @return builder
+         * 
+         */
+        public Builder validSubResourceTypes(String... validSubResourceTypes) {
+            return validSubResourceTypes(List.of(validSubResourceTypes));
         }
 
         public MonitoredResourceTypeMetadataArgs build() {

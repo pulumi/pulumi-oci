@@ -74,6 +74,7 @@ namespace Pulumi.Oci.ContainerEngine
     ///             {
     ///                 IsPodSecurityPolicyEnabled = clusterOptionsAdmissionControllerOptionsIsPodSecurityPolicyEnabled,
     ///             },
+    ///             IpFamilies = clusterOptionsIpFamilies,
     ///             KubernetesNetworkConfig = new Oci.ContainerEngine.Inputs.ClusterOptionsKubernetesNetworkConfigArgs
     ///             {
     ///                 PodsCidr = clusterOptionsKubernetesNetworkConfigPodsCidr,

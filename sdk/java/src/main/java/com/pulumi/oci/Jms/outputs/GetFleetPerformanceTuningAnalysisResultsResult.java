@@ -20,6 +20,11 @@ public final class GetFleetPerformanceTuningAnalysisResultsResult {
      * 
      */
     private @Nullable String applicationId;
+    /**
+     * @return The name of the application for which the report has been generated.
+     * 
+     */
+    private @Nullable String applicationName;
     private @Nullable List<GetFleetPerformanceTuningAnalysisResultsFilter> filters;
     /**
      * @return The fleet OCID.
@@ -56,6 +61,13 @@ public final class GetFleetPerformanceTuningAnalysisResultsResult {
      */
     public Optional<String> applicationId() {
         return Optional.ofNullable(this.applicationId);
+    }
+    /**
+     * @return The name of the application for which the report has been generated.
+     * 
+     */
+    public Optional<String> applicationName() {
+        return Optional.ofNullable(this.applicationName);
     }
     public List<GetFleetPerformanceTuningAnalysisResultsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -112,6 +124,7 @@ public final class GetFleetPerformanceTuningAnalysisResultsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String applicationId;
+        private @Nullable String applicationName;
         private @Nullable List<GetFleetPerformanceTuningAnalysisResultsFilter> filters;
         private String fleetId;
         private @Nullable String hostName;
@@ -124,6 +137,7 @@ public final class GetFleetPerformanceTuningAnalysisResultsResult {
         public Builder(GetFleetPerformanceTuningAnalysisResultsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.applicationId = defaults.applicationId;
+    	      this.applicationName = defaults.applicationName;
     	      this.filters = defaults.filters;
     	      this.fleetId = defaults.fleetId;
     	      this.hostName = defaults.hostName;
@@ -138,6 +152,12 @@ public final class GetFleetPerformanceTuningAnalysisResultsResult {
         public Builder applicationId(@Nullable String applicationId) {
 
             this.applicationId = applicationId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder applicationName(@Nullable String applicationName) {
+
+            this.applicationName = applicationName;
             return this;
         }
         @CustomType.Setter
@@ -203,6 +223,7 @@ public final class GetFleetPerformanceTuningAnalysisResultsResult {
         public GetFleetPerformanceTuningAnalysisResultsResult build() {
             final var _resultValue = new GetFleetPerformanceTuningAnalysisResultsResult();
             _resultValue.applicationId = applicationId;
+            _resultValue.applicationName = applicationName;
             _resultValue.filters = filters;
             _resultValue.fleetId = fleetId;
             _resultValue.hostName = hostName;

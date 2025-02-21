@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.inputs;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.GetMaintenanceRunsFilter;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -52,6 +53,21 @@ public final class GetMaintenanceRunsPlainArgs extends com.pulumi.resources.Invo
 
     public Optional<List<GetMaintenanceRunsFilter>> filters() {
         return Optional.ofNullable(this.filters);
+    }
+
+    /**
+     * A filter to return the maintenance history results for the local standby Autonomous Database Serverless only.
+     * 
+     */
+    @Import(name="isLocalAdg")
+    private @Nullable Boolean isLocalAdg;
+
+    /**
+     * @return A filter to return the maintenance history results for the local standby Autonomous Database Serverless only.
+     * 
+     */
+    public Optional<Boolean> isLocalAdg() {
+        return Optional.ofNullable(this.isLocalAdg);
     }
 
     /**
@@ -135,6 +151,7 @@ public final class GetMaintenanceRunsPlainArgs extends com.pulumi.resources.Invo
         this.availabilityDomain = $.availabilityDomain;
         this.compartmentId = $.compartmentId;
         this.filters = $.filters;
+        this.isLocalAdg = $.isLocalAdg;
         this.maintenanceSubtype = $.maintenanceSubtype;
         this.maintenanceType = $.maintenanceType;
         this.state = $.state;
@@ -189,6 +206,17 @@ public final class GetMaintenanceRunsPlainArgs extends com.pulumi.resources.Invo
 
         public Builder filters(GetMaintenanceRunsFilter... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param isLocalAdg A filter to return the maintenance history results for the local standby Autonomous Database Serverless only.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isLocalAdg(@Nullable Boolean isLocalAdg) {
+            $.isLocalAdg = isLocalAdg;
+            return this;
         }
 
         /**

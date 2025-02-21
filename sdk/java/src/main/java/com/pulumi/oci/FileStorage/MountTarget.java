@@ -452,6 +452,20 @@ public class MountTarget extends com.pulumi.resources.CustomResource {
         return this.subnetId;
     }
     /**
+     * System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+     * 
+     */
+    @Export(name="systemTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> systemTags;
+
+    /**
+     * @return System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+     * 
+     */
+    public Output<Map<String,String>> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * The date and time the mount target current billing cycle will end, expressed in  [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated  automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */

@@ -12,10 +12,13 @@ import com.pulumi.oci.Vault.SecretArgs;
 import com.pulumi.oci.Vault.inputs.SecretState;
 import com.pulumi.oci.Vault.outputs.SecretRotationConfig;
 import com.pulumi.oci.Vault.outputs.SecretSecretContent;
+import com.pulumi.oci.Vault.outputs.SecretSecretGenerationContext;
 import com.pulumi.oci.Vault.outputs.SecretSecretRule;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -91,6 +94,20 @@ public class Secret extends com.pulumi.resources.CustomResource {
         return this.description;
     }
     /**
+     * (Updatable) The value of this flag determines whether or not secret content will be generated automatically. If not set, it defaults to false.
+     * 
+     */
+    @Export(name="enableAutoGeneration", refs={Boolean.class}, tree="[0]")
+    private Output</* @Nullable */ Boolean> enableAutoGeneration;
+
+    /**
+     * @return (Updatable) The value of this flag determines whether or not secret content will be generated automatically. If not set, it defaults to false.
+     * 
+     */
+    public Output<Optional<Boolean>> enableAutoGeneration() {
+        return Codegen.optional(this.enableAutoGeneration);
+    }
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -103,6 +120,20 @@ public class Secret extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,String>> freeformTags() {
         return this.freeformTags;
+    }
+    /**
+     * The value of this flag determines whether or not secret content will be generated automatically.
+     * 
+     */
+    @Export(name="isAutoGenerationEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isAutoGenerationEnabled;
+
+    /**
+     * @return The value of this flag determines whether or not secret content will be generated automatically.
+     * 
+     */
+    public Output<Boolean> isAutoGenerationEnabled() {
+        return this.isAutoGenerationEnabled;
     }
     /**
      * The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
@@ -215,6 +246,20 @@ public class Secret extends com.pulumi.resources.CustomResource {
      */
     public Output<SecretSecretContent> secretContent() {
         return this.secretContent;
+    }
+    /**
+     * (Updatable) Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
+     * 
+     */
+    @Export(name="secretGenerationContext", refs={SecretSecretGenerationContext.class}, tree="[0]")
+    private Output<SecretSecretGenerationContext> secretGenerationContext;
+
+    /**
+     * @return (Updatable) Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
+     * 
+     */
+    public Output<SecretSecretGenerationContext> secretGenerationContext() {
+        return this.secretGenerationContext;
     }
     /**
      * A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.

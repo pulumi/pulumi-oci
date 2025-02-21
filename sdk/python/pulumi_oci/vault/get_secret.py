@@ -27,7 +27,7 @@ class GetSecretResult:
     """
     A collection of values returned by getSecret.
     """
-    def __init__(__self__, compartment_id=None, current_version_number=None, defined_tags=None, description=None, freeform_tags=None, id=None, key_id=None, last_rotation_time=None, lifecycle_details=None, metadata=None, next_rotation_time=None, rotation_configs=None, rotation_status=None, secret_contents=None, secret_id=None, secret_name=None, secret_rules=None, state=None, time_created=None, time_of_current_version_expiry=None, time_of_deletion=None, vault_id=None):
+    def __init__(__self__, compartment_id=None, current_version_number=None, defined_tags=None, description=None, enable_auto_generation=None, freeform_tags=None, id=None, is_auto_generation_enabled=None, key_id=None, last_rotation_time=None, lifecycle_details=None, metadata=None, next_rotation_time=None, rotation_configs=None, rotation_status=None, secret_contents=None, secret_generation_contexts=None, secret_id=None, secret_name=None, secret_rules=None, state=None, time_created=None, time_of_current_version_expiry=None, time_of_deletion=None, vault_id=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -40,12 +40,18 @@ class GetSecretResult:
         if description and not isinstance(description, str):
             raise TypeError("Expected argument 'description' to be a str")
         pulumi.set(__self__, "description", description)
+        if enable_auto_generation and not isinstance(enable_auto_generation, bool):
+            raise TypeError("Expected argument 'enable_auto_generation' to be a bool")
+        pulumi.set(__self__, "enable_auto_generation", enable_auto_generation)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_auto_generation_enabled and not isinstance(is_auto_generation_enabled, bool):
+            raise TypeError("Expected argument 'is_auto_generation_enabled' to be a bool")
+        pulumi.set(__self__, "is_auto_generation_enabled", is_auto_generation_enabled)
         if key_id and not isinstance(key_id, str):
             raise TypeError("Expected argument 'key_id' to be a str")
         pulumi.set(__self__, "key_id", key_id)
@@ -70,6 +76,9 @@ class GetSecretResult:
         if secret_contents and not isinstance(secret_contents, list):
             raise TypeError("Expected argument 'secret_contents' to be a list")
         pulumi.set(__self__, "secret_contents", secret_contents)
+        if secret_generation_contexts and not isinstance(secret_generation_contexts, list):
+            raise TypeError("Expected argument 'secret_generation_contexts' to be a list")
+        pulumi.set(__self__, "secret_generation_contexts", secret_generation_contexts)
         if secret_id and not isinstance(secret_id, str):
             raise TypeError("Expected argument 'secret_id' to be a str")
         pulumi.set(__self__, "secret_id", secret_id)
@@ -128,6 +137,11 @@ class GetSecretResult:
         return pulumi.get(self, "description")
 
     @property
+    @pulumi.getter(name="enableAutoGeneration")
+    def enable_auto_generation(self) -> bool:
+        return pulumi.get(self, "enable_auto_generation")
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, str]:
         """
@@ -142,6 +156,14 @@ class GetSecretResult:
         The OCID of the secret.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isAutoGenerationEnabled")
+    def is_auto_generation_enabled(self) -> bool:
+        """
+        The value of this flag determines whether or not secret content will be generated automatically.
+        """
+        return pulumi.get(self, "is_auto_generation_enabled")
 
     @property
     @pulumi.getter(name="keyId")
@@ -203,6 +225,14 @@ class GetSecretResult:
     @pulumi.getter(name="secretContents")
     def secret_contents(self) -> Sequence['outputs.GetSecretSecretContentResult']:
         return pulumi.get(self, "secret_contents")
+
+    @property
+    @pulumi.getter(name="secretGenerationContexts")
+    def secret_generation_contexts(self) -> Sequence['outputs.GetSecretSecretGenerationContextResult']:
+        """
+        Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
+        """
+        return pulumi.get(self, "secret_generation_contexts")
 
     @property
     @pulumi.getter(name="secretId")
@@ -276,8 +306,10 @@ class AwaitableGetSecretResult(GetSecretResult):
             current_version_number=self.current_version_number,
             defined_tags=self.defined_tags,
             description=self.description,
+            enable_auto_generation=self.enable_auto_generation,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            is_auto_generation_enabled=self.is_auto_generation_enabled,
             key_id=self.key_id,
             last_rotation_time=self.last_rotation_time,
             lifecycle_details=self.lifecycle_details,
@@ -286,6 +318,7 @@ class AwaitableGetSecretResult(GetSecretResult):
             rotation_configs=self.rotation_configs,
             rotation_status=self.rotation_status,
             secret_contents=self.secret_contents,
+            secret_generation_contexts=self.secret_generation_contexts,
             secret_id=self.secret_id,
             secret_name=self.secret_name,
             secret_rules=self.secret_rules,
@@ -325,8 +358,10 @@ def get_secret(secret_id: Optional[str] = None,
         current_version_number=pulumi.get(__ret__, 'current_version_number'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         description=pulumi.get(__ret__, 'description'),
+        enable_auto_generation=pulumi.get(__ret__, 'enable_auto_generation'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        is_auto_generation_enabled=pulumi.get(__ret__, 'is_auto_generation_enabled'),
         key_id=pulumi.get(__ret__, 'key_id'),
         last_rotation_time=pulumi.get(__ret__, 'last_rotation_time'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
@@ -335,6 +370,7 @@ def get_secret(secret_id: Optional[str] = None,
         rotation_configs=pulumi.get(__ret__, 'rotation_configs'),
         rotation_status=pulumi.get(__ret__, 'rotation_status'),
         secret_contents=pulumi.get(__ret__, 'secret_contents'),
+        secret_generation_contexts=pulumi.get(__ret__, 'secret_generation_contexts'),
         secret_id=pulumi.get(__ret__, 'secret_id'),
         secret_name=pulumi.get(__ret__, 'secret_name'),
         secret_rules=pulumi.get(__ret__, 'secret_rules'),
@@ -371,8 +407,10 @@ def get_secret_output(secret_id: Optional[pulumi.Input[str]] = None,
         current_version_number=pulumi.get(__response__, 'current_version_number'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         description=pulumi.get(__response__, 'description'),
+        enable_auto_generation=pulumi.get(__response__, 'enable_auto_generation'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
+        is_auto_generation_enabled=pulumi.get(__response__, 'is_auto_generation_enabled'),
         key_id=pulumi.get(__response__, 'key_id'),
         last_rotation_time=pulumi.get(__response__, 'last_rotation_time'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
@@ -381,6 +419,7 @@ def get_secret_output(secret_id: Optional[pulumi.Input[str]] = None,
         rotation_configs=pulumi.get(__response__, 'rotation_configs'),
         rotation_status=pulumi.get(__response__, 'rotation_status'),
         secret_contents=pulumi.get(__response__, 'secret_contents'),
+        secret_generation_contexts=pulumi.get(__response__, 'secret_generation_contexts'),
         secret_id=pulumi.get(__response__, 'secret_id'),
         secret_name=pulumi.get(__response__, 'secret_name'),
         secret_rules=pulumi.get(__response__, 'secret_rules'),

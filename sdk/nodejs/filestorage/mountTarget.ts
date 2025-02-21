@@ -222,6 +222,10 @@ export class MountTarget extends pulumi.CustomResource {
      */
     public readonly subnetId!: pulumi.Output<string>;
     /**
+     * System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+     */
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    /**
      * The date and time the mount target current billing cycle will end, expressed in  [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated  automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
      */
     public /*out*/ readonly timeBillingCycleEnd!: pulumi.Output<string>;
@@ -264,6 +268,7 @@ export class MountTarget extends pulumi.CustomResource {
             resourceInputs["reservedStorageCapacity"] = state ? state.reservedStorageCapacity : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["subnetId"] = state ? state.subnetId : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeBillingCycleEnd"] = state ? state.timeBillingCycleEnd : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
         } else {
@@ -298,6 +303,7 @@ export class MountTarget extends pulumi.CustomResource {
             resourceInputs["privateIpIds"] = undefined /*out*/;
             resourceInputs["reservedStorageCapacity"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeBillingCycleEnd"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }
@@ -404,6 +410,10 @@ export interface MountTargetState {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     subnetId?: pulumi.Input<string>;
+    /**
+     * System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+     */
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The date and time the mount target current billing cycle will end, expressed in  [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated  automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
      */

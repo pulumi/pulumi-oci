@@ -147,6 +147,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string PointInTimeDataDiskCloneTimestamp;
         public readonly string PrivateIp;
+        public readonly string PrivateIpV6;
         /// <summary>
         /// The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
         /// </summary>
@@ -160,9 +161,13 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string ScanDnsRecordId;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv4 addresses associated with the DB system. SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
         /// </summary>
         public readonly ImmutableArray<string> ScanIpIds;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv6 addresses associated with the DB system. SCAN IPv6 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+        /// </summary>
+        public readonly ImmutableArray<string> ScanIpv6ids;
         /// <summary>
         /// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         /// </summary>
@@ -211,9 +216,13 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string Version;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IPv4 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIPv4 address for each node in the DB system to enable failover. If one node fails, the VIPv4 is reassigned to another active node in the cluster.
         /// </summary>
         public readonly ImmutableArray<string> VipIds;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IPv6 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP IpV6 address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+        /// </summary>
+        public readonly ImmutableArray<string> Vipv6ids;
         /// <summary>
         /// The OCID of the zone the DB system is associated with.
         /// </summary>
@@ -295,6 +304,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string privateIp,
 
+            string privateIpV6,
+
             int recoStorageSizeInGb,
 
             string scanDnsName,
@@ -302,6 +313,8 @@ namespace Pulumi.Oci.Database.Outputs
             string scanDnsRecordId,
 
             ImmutableArray<string> scanIpIds,
+
+            ImmutableArray<string> scanIpv6ids,
 
             ImmutableDictionary<string, string> securityAttributes,
 
@@ -328,6 +341,8 @@ namespace Pulumi.Oci.Database.Outputs
             string version,
 
             ImmutableArray<string> vipIds,
+
+            ImmutableArray<string> vipv6ids,
 
             string zoneId)
         {
@@ -368,10 +383,12 @@ namespace Pulumi.Oci.Database.Outputs
             OsVersion = osVersion;
             PointInTimeDataDiskCloneTimestamp = pointInTimeDataDiskCloneTimestamp;
             PrivateIp = privateIp;
+            PrivateIpV6 = privateIpV6;
             RecoStorageSizeInGb = recoStorageSizeInGb;
             ScanDnsName = scanDnsName;
             ScanDnsRecordId = scanDnsRecordId;
             ScanIpIds = scanIpIds;
+            ScanIpv6ids = scanIpv6ids;
             SecurityAttributes = securityAttributes;
             Shape = shape;
             Source = source;
@@ -385,6 +402,7 @@ namespace Pulumi.Oci.Database.Outputs
             TimeZone = timeZone;
             Version = version;
             VipIds = vipIds;
+            Vipv6ids = vipv6ids;
             ZoneId = zoneId;
         }
     }

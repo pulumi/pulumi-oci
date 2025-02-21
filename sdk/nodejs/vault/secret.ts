@@ -64,9 +64,17 @@ export class Secret extends pulumi.CustomResource {
      */
     public readonly description!: pulumi.Output<string>;
     /**
+     * (Updatable) The value of this flag determines whether or not secret content will be generated automatically. If not set, it defaults to false.
+     */
+    public readonly enableAutoGeneration!: pulumi.Output<boolean | undefined>;
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    /**
+     * The value of this flag determines whether or not secret content will be generated automatically.
+     */
+    public /*out*/ readonly isAutoGenerationEnabled!: pulumi.Output<boolean>;
     /**
      * The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
      */
@@ -99,6 +107,10 @@ export class Secret extends pulumi.CustomResource {
      * (Updatable) The content of the secret and metadata to help identify it.
      */
     public readonly secretContent!: pulumi.Output<outputs.Vault.SecretSecretContent>;
+    /**
+     * (Updatable) Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
+     */
+    public readonly secretGenerationContext!: pulumi.Output<outputs.Vault.SecretSecretGenerationContext>;
     /**
      * A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
      */
@@ -149,7 +161,9 @@ export class Secret extends pulumi.CustomResource {
             resourceInputs["currentVersionNumber"] = state ? state.currentVersionNumber : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
+            resourceInputs["enableAutoGeneration"] = state ? state.enableAutoGeneration : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["isAutoGenerationEnabled"] = state ? state.isAutoGenerationEnabled : undefined;
             resourceInputs["keyId"] = state ? state.keyId : undefined;
             resourceInputs["lastRotationTime"] = state ? state.lastRotationTime : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
@@ -158,6 +172,7 @@ export class Secret extends pulumi.CustomResource {
             resourceInputs["rotationConfig"] = state ? state.rotationConfig : undefined;
             resourceInputs["rotationStatus"] = state ? state.rotationStatus : undefined;
             resourceInputs["secretContent"] = state ? state.secretContent : undefined;
+            resourceInputs["secretGenerationContext"] = state ? state.secretGenerationContext : undefined;
             resourceInputs["secretName"] = state ? state.secretName : undefined;
             resourceInputs["secretRules"] = state ? state.secretRules : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
@@ -182,15 +197,18 @@ export class Secret extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
+            resourceInputs["enableAutoGeneration"] = args ? args.enableAutoGeneration : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["keyId"] = args ? args.keyId : undefined;
             resourceInputs["metadata"] = args ? args.metadata : undefined;
             resourceInputs["rotationConfig"] = args ? args.rotationConfig : undefined;
             resourceInputs["secretContent"] = args ? args.secretContent : undefined;
+            resourceInputs["secretGenerationContext"] = args ? args.secretGenerationContext : undefined;
             resourceInputs["secretName"] = args ? args.secretName : undefined;
             resourceInputs["secretRules"] = args ? args.secretRules : undefined;
             resourceInputs["vaultId"] = args ? args.vaultId : undefined;
             resourceInputs["currentVersionNumber"] = undefined /*out*/;
+            resourceInputs["isAutoGenerationEnabled"] = undefined /*out*/;
             resourceInputs["lastRotationTime"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["nextRotationTime"] = undefined /*out*/;
@@ -226,9 +244,17 @@ export interface SecretState {
      */
     description?: pulumi.Input<string>;
     /**
+     * (Updatable) The value of this flag determines whether or not secret content will be generated automatically. If not set, it defaults to false.
+     */
+    enableAutoGeneration?: pulumi.Input<boolean>;
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * The value of this flag determines whether or not secret content will be generated automatically.
+     */
+    isAutoGenerationEnabled?: pulumi.Input<boolean>;
     /**
      * The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
      */
@@ -261,6 +287,10 @@ export interface SecretState {
      * (Updatable) The content of the secret and metadata to help identify it.
      */
     secretContent?: pulumi.Input<inputs.Vault.SecretSecretContent>;
+    /**
+     * (Updatable) Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
+     */
+    secretGenerationContext?: pulumi.Input<inputs.Vault.SecretSecretGenerationContext>;
     /**
      * A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
      */
@@ -312,6 +342,10 @@ export interface SecretArgs {
      */
     description?: pulumi.Input<string>;
     /**
+     * (Updatable) The value of this flag determines whether or not secret content will be generated automatically. If not set, it defaults to false.
+     */
+    enableAutoGeneration?: pulumi.Input<boolean>;
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
@@ -331,6 +365,10 @@ export interface SecretArgs {
      * (Updatable) The content of the secret and metadata to help identify it.
      */
     secretContent?: pulumi.Input<inputs.Vault.SecretSecretContent>;
+    /**
+     * (Updatable) Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
+     */
+    secretGenerationContext?: pulumi.Input<inputs.Vault.SecretSecretGenerationContext>;
     /**
      * A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
      */

@@ -68,6 +68,7 @@ import (
 //					AdmissionControllerOptions: &containerengine.ClusterOptionsAdmissionControllerOptionsArgs{
 //						IsPodSecurityPolicyEnabled: pulumi.Any(clusterOptionsAdmissionControllerOptionsIsPodSecurityPolicyEnabled),
 //					},
+//					IpFamilies: pulumi.Any(clusterOptionsIpFamilies),
 //					KubernetesNetworkConfig: &containerengine.ClusterOptionsKubernetesNetworkConfigArgs{
 //						PodsCidr:     pulumi.Any(clusterOptionsKubernetesNetworkConfigPodsCidr),
 //						ServicesCidr: pulumi.Any(clusterOptionsKubernetesNetworkConfigServicesCidr),

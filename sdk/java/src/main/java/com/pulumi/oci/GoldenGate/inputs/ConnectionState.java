@@ -39,14 +39,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Azure storage account key. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_KEY&#39;. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
+     * (Updatable) Azure storage account key. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_KEY&#39;. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by &#34;accountKeySecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     @Import(name="accountKey")
     private @Nullable Output<String> accountKey;
 
     /**
-     * @return (Updatable) Azure storage account key. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_KEY&#39;. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
+     * @return (Updatable) Azure storage account key. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_KEY&#39;. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by &#34;accountKeySecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     public Optional<Output<String>> accountKey() {
@@ -174,14 +174,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Azure client secret (aka application password) for authentication. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
+     * (Updatable) Azure client secret (aka application password) for authentication. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by &#34;clientSecretSecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     @Import(name="clientSecret")
     private @Nullable Output<String> clientSecret;
 
     /**
-     * @return (Updatable) Azure client secret (aka application password) for authentication. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
+     * @return (Updatable) Azure client secret (aka application password) for authentication. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by &#34;clientSecretSecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     public Optional<Output<String>> clientSecret() {
@@ -189,14 +189,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, &#39;clientSecret&#39; field must not be provided.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, &#39;clientSecret&#39; field must not be provided.
      * 
      */
     @Import(name="clientSecretSecretId")
     private @Nullable Output<String> clientSecretSecretId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, &#39;clientSecret&#39; field must not be provided.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, &#39;clientSecret&#39; field must not be provided.
      * 
      */
     public Optional<Output<String>> clientSecretSecretId() {
@@ -264,14 +264,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) JDBC connection URL. e.g.: &#39;jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;&#39;
+     * (Updatable) Connection URL. e.g.: &#39;jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb&#39;
      * 
      */
     @Import(name="connectionUrl")
     private @Nullable Output<String> connectionUrl;
 
     /**
-     * @return (Updatable) JDBC connection URL. e.g.: &#39;jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;&#39;
+     * @return (Updatable) Connection URL. e.g.: &#39;jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb&#39;
      * 
      */
     public Optional<Output<String>> connectionUrl() {
@@ -429,14 +429,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+     * (Updatable)Azure Storage service endpoint. e.g: https://test.blob.core.windows.net,  Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
      * 
      */
     @Import(name="endpoint")
     private @Nullable Output<String> endpoint;
 
     /**
-     * @return (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+     * @return (Updatable)Azure Storage service endpoint. e.g: https://test.blob.core.windows.net,  Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
      * 
      */
     public Optional<Output<String>> endpoint() {
@@ -558,14 +558,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The password associated to the principal.
+     * (Updatable) The password associated to the principal. Deprecated: This field is deprecated and replaced by &#34;jndiSecurityCredentialsSecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     @Import(name="jndiSecurityCredentials")
     private @Nullable Output<String> jndiSecurityCredentials;
 
     /**
-     * @return (Updatable) The password associated to the principal.
+     * @return (Updatable) The password associated to the principal. Deprecated: This field is deprecated and replaced by &#34;jndiSecurityCredentialsSecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     public Optional<Output<String>> jndiSecurityCredentials() {
@@ -618,14 +618,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The base64 encoded content of the KeyStore file.
+     * (Updatable) The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and replaced by &#34;keyStoreSecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     @Import(name="keyStore")
     private @Nullable Output<String> keyStore;
 
     /**
-     * @return (Updatable) The base64 encoded content of the KeyStore file.
+     * @return (Updatable) The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and replaced by &#34;keyStoreSecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     public Optional<Output<String>> keyStore() {
@@ -633,14 +633,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The KeyStore password.
+     * (Updatable) The KeyStore password. Deprecated: This field is deprecated and replaced by &#34;keyStorePasswordSecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     @Import(name="keyStorePassword")
     private @Nullable Output<String> keyStorePassword;
 
     /**
-     * @return (Updatable) The KeyStore password.
+     * @return (Updatable) The KeyStore password. Deprecated: This field is deprecated and replaced by &#34;keyStorePasswordSecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     public Optional<Output<String>> keyStorePassword() {
@@ -723,14 +723,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
+     * (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by &#34;passwordSecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     @Import(name="password")
     private @Nullable Output<String> password;
 
     /**
-     * @return (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
+     * @return (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by &#34;passwordSecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     public Optional<Output<String>> password() {
@@ -787,14 +787,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by &#34;privateKeyFileSecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     @Import(name="privateKeyFile")
     private @Nullable Output<String> privateKeyFile;
 
     /**
-     * @return (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * @return (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by &#34;privateKeyFileSecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     public Optional<Output<String>> privateKeyFile() {
@@ -817,14 +817,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Password if the private key file is encrypted.
+     * (Updatable) Password if the private key file is encrypted. Deprecated: This field is deprecated and replaced by &#34;privateKeyPassphraseSecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     @Import(name="privateKeyPassphrase")
     private @Nullable Output<String> privateKeyPassphrase;
 
     /**
-     * @return (Updatable) Password if the private key file is encrypted.
+     * @return (Updatable) Password if the private key file is encrypted. Deprecated: This field is deprecated and replaced by &#34;privateKeyPassphraseSecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     public Optional<Output<String>> privateKeyPassphrase() {
@@ -892,14 +892,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The name of the region. e.g.: us-ashburn-1
+     * (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
      * 
      */
     @Import(name="region")
     private @Nullable Output<String> region;
 
     /**
-     * @return (Updatable) The name of the region. e.g.: us-ashburn-1
+     * @return (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
      * 
      */
     public Optional<Output<String>> region() {
@@ -922,14 +922,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_ACCESS_SIGNATURE&#39;. e.g.: ?sv=2020-06-08&amp;ss=bfqt&amp;srt=sco&amp;sp=rwdlacupyx&amp;se=2020-09-10T20:27:28Z&amp;st=2022-08-05T12:27:28Z&amp;spr=https&amp;sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
+     * (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_ACCESS_SIGNATURE&#39;. e.g.: ?sv=2020-06-08&amp;ss=bfqt&amp;srt=sco&amp;sp=rwdlacupyx&amp;se=2020-09-10T20:27:28Z&amp;st=2022-08-05T12:27:28Z&amp;spr=https&amp;sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D Deprecated: This field is deprecated and replaced by &#34;sasTokenSecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     @Import(name="sasToken")
     private @Nullable Output<String> sasToken;
 
     /**
-     * @return (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_ACCESS_SIGNATURE&#39;. e.g.: ?sv=2020-06-08&amp;ss=bfqt&amp;srt=sco&amp;sp=rwdlacupyx&amp;se=2020-09-10T20:27:28Z&amp;st=2022-08-05T12:27:28Z&amp;spr=https&amp;sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
+     * @return (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_ACCESS_SIGNATURE&#39;. e.g.: ?sv=2020-06-08&amp;ss=bfqt&amp;srt=sco&amp;sp=rwdlacupyx&amp;se=2020-09-10T20:27:28Z&amp;st=2022-08-05T12:27:28Z&amp;spr=https&amp;sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D Deprecated: This field is deprecated and replaced by &#34;sasTokenSecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     public Optional<Output<String>> sasToken() {
@@ -952,14 +952,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: &#34;this-is-not-the-secret&#34;
+     * (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: &#34;this-is-not-the-secret&#34; Deprecated: This field is deprecated and replaced by &#34;secretAccessKeySecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     @Import(name="secretAccessKey")
     private @Nullable Output<String> secretAccessKey;
 
     /**
-     * @return (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: &#34;this-is-not-the-secret&#34;
+     * @return (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: &#34;this-is-not-the-secret&#34; Deprecated: This field is deprecated and replaced by &#34;secretAccessKeySecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     public Optional<Output<String>> secretAccessKey() {
@@ -1012,14 +1012,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage.
+     * (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by &#34;serviceAccountKeyFileSecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     @Import(name="serviceAccountKeyFile")
     private @Nullable Output<String> serviceAccountKeyFile;
 
     /**
-     * @return (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage.
+     * @return (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by &#34;serviceAccountKeyFileSecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     public Optional<Output<String>> serviceAccountKeyFile() {
@@ -1072,6 +1072,21 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Indicates that the user intents to connect to the instance through resource principal.
+     * 
+     */
+    @Import(name="shouldUseResourcePrincipal")
+    private @Nullable Output<Boolean> shouldUseResourcePrincipal;
+
+    /**
+     * @return (Updatable) Indicates that the user intents to connect to the instance through resource principal.
+     * 
+     */
+    public Optional<Output<Boolean>> shouldUseResourcePrincipal() {
+        return Optional.ofNullable(this.shouldUseResourcePrincipal);
+    }
+
+    /**
      * (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
      * 
      */
@@ -1117,14 +1132,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+     * (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. Deprecated: This field is deprecated and replaced by &#34;sslClientKeystashSecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     @Import(name="sslClientKeystash")
     private @Nullable Output<String> sslClientKeystash;
 
     /**
-     * @return (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+     * @return (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. Deprecated: This field is deprecated and replaced by &#34;sslClientKeystashSecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     public Optional<Output<String>> sslClientKeystash() {
@@ -1147,14 +1162,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+     * (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. Deprecated: This field is deprecated and replaced by &#34;sslClientKeystoredbSecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     @Import(name="sslClientKeystoredb")
     private @Nullable Output<String> sslClientKeystoredb;
 
     /**
-     * @return (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+     * @return (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. Deprecated: This field is deprecated and replaced by &#34;sslClientKeystoredbSecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     public Optional<Output<String>> sslClientKeystoredb() {
@@ -1192,14 +1207,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
+     * (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL). Deprecated: This field is deprecated and replaced by &#34;sslKeySecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     @Import(name="sslKey")
     private @Nullable Output<String> sslKey;
 
     /**
-     * @return (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
+     * @return (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL). Deprecated: This field is deprecated and replaced by &#34;sslKeySecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     public Optional<Output<String>> sslKey() {
@@ -1207,14 +1222,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
+     * (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided. Deprecated: This field is deprecated and replaced by &#34;sslKeyPasswordSecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     @Import(name="sslKeyPassword")
     private @Nullable Output<String> sslKeyPassword;
 
     /**
-     * @return (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
+     * @return (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided. Deprecated: This field is deprecated and replaced by &#34;sslKeyPasswordSecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     public Optional<Output<String>> sslKeyPassword() {
@@ -1299,6 +1314,21 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
+     * 
+     */
+    @Import(name="storageCredentialName")
+    private @Nullable Output<String> storageCredentialName;
+
+    /**
+     * @return (Updatable) Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
+     * 
+     */
+    public Optional<Output<String>> storageCredentialName() {
+        return Optional.ofNullable(this.storageCredentialName);
+    }
+
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
      * 
      */
@@ -1374,6 +1404,21 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Azure tenant ID of the application. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
+     * 
+     */
+    @Import(name="tenantId")
+    private @Nullable Output<String> tenantId;
+
+    /**
+     * @return (Updatable) Azure tenant ID of the application. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
+     * 
+     */
+    public Optional<Output<String>> tenantId() {
+        return Optional.ofNullable(this.tenantId);
+    }
+
+    /**
      * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
@@ -1404,6 +1449,83 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+     * 
+     */
+    @Import(name="tlsCaFile")
+    private @Nullable Output<String> tlsCaFile;
+
+    /**
+     * @return (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+     * 
+     */
+    public Optional<Output<String>> tlsCaFile() {
+        return Optional.ofNullable(this.tlsCaFile);
+    }
+
+    /**
+     * (Updatable) Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL). Deprecated: This field is deprecated and replaced by &#34;tlsCertificateKeyFileSecretId&#34;. This field will be removed after February 15 2026.
+     * 
+     */
+    @Import(name="tlsCertificateKeyFile")
+    private @Nullable Output<String> tlsCertificateKeyFile;
+
+    /**
+     * @return (Updatable) Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL). Deprecated: This field is deprecated and replaced by &#34;tlsCertificateKeyFileSecretId&#34;. This field will be removed after February 15 2026.
+     * 
+     */
+    public Optional<Output<String>> tlsCertificateKeyFile() {
+        return Optional.ofNullable(this.tlsCertificateKeyFile);
+    }
+
+    /**
+     * (Updatable) Client Certificate key file password. Deprecated: This field is deprecated and replaced by &#34;tlsCertificateKeyFilePasswordSecretId&#34;. This field will be removed after February 15 2026.
+     * 
+     */
+    @Import(name="tlsCertificateKeyFilePassword")
+    private @Nullable Output<String> tlsCertificateKeyFilePassword;
+
+    /**
+     * @return (Updatable) Client Certificate key file password. Deprecated: This field is deprecated and replaced by &#34;tlsCertificateKeyFilePasswordSecretId&#34;. This field will be removed after February 15 2026.
+     * 
+     */
+    public Optional<Output<String>> tlsCertificateKeyFilePassword() {
+        return Optional.ofNullable(this.tlsCertificateKeyFilePassword);
+    }
+
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, &#39;tlsCertificateKeyFilePassword&#39; field must not be provided.
+     * 
+     */
+    @Import(name="tlsCertificateKeyFilePasswordSecretId")
+    private @Nullable Output<String> tlsCertificateKeyFilePasswordSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, &#39;tlsCertificateKeyFilePassword&#39; field must not be provided.
+     * 
+     */
+    public Optional<Output<String>> tlsCertificateKeyFilePasswordSecretId() {
+        return Optional.ofNullable(this.tlsCertificateKeyFilePasswordSecretId);
+    }
+
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
+     * * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, &#39;tlsCertificateKeyFile&#39; field must not be provided.
+     * 
+     */
+    @Import(name="tlsCertificateKeyFileSecretId")
+    private @Nullable Output<String> tlsCertificateKeyFileSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
+     * * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, &#39;tlsCertificateKeyFile&#39; field must not be provided.
+     * 
+     */
+    public Optional<Output<String>> tlsCertificateKeyFileSecretId() {
+        return Optional.ofNullable(this.tlsCertificateKeyFileSecretId);
+    }
+
+    /**
      * (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the &#34;update&#34; plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
      * 
      * ** IMPORTANT **
@@ -1425,14 +1547,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The base64 encoded content of the TrustStore file.
+     * (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by &#34;trustStoreSecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     @Import(name="trustStore")
     private @Nullable Output<String> trustStore;
 
     /**
-     * @return (Updatable) The base64 encoded content of the TrustStore file.
+     * @return (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by &#34;trustStoreSecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     public Optional<Output<String>> trustStore() {
@@ -1440,14 +1562,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The TrustStore password.
+     * (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by &#34;trustStorePasswordSecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     @Import(name="trustStorePassword")
     private @Nullable Output<String> trustStorePassword;
 
     /**
-     * @return (Updatable) The TrustStore password.
+     * @return (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by &#34;trustStorePasswordSecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     public Optional<Output<String>> trustStorePassword() {
@@ -1500,14 +1622,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
      * 
      */
     @Import(name="userId")
     private @Nullable Output<String> userId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
      * 
      */
     public Optional<Output<String>> userId() {
@@ -1545,14 +1667,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
+     * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by &#34;walletSecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     @Import(name="wallet")
     private @Nullable Output<String> wallet;
 
     /**
-     * @return (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
+     * @return (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by &#34;walletSecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     public Optional<Output<String>> wallet() {
@@ -1647,6 +1769,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         this.serviceAccountKeyFileSecretId = $.serviceAccountKeyFileSecretId;
         this.sessionMode = $.sessionMode;
         this.shouldUseJndi = $.shouldUseJndi;
+        this.shouldUseResourcePrincipal = $.shouldUseResourcePrincipal;
         this.shouldValidateServerCertificate = $.shouldValidateServerCertificate;
         this.sslCa = $.sslCa;
         this.sslCert = $.sslCert;
@@ -1662,13 +1785,20 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         this.sslMode = $.sslMode;
         this.sslServerCertificate = $.sslServerCertificate;
         this.state = $.state;
+        this.storageCredentialName = $.storageCredentialName;
         this.streamPoolId = $.streamPoolId;
         this.subnetId = $.subnetId;
         this.systemTags = $.systemTags;
         this.technologyType = $.technologyType;
         this.tenancyId = $.tenancyId;
+        this.tenantId = $.tenantId;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
+        this.tlsCaFile = $.tlsCaFile;
+        this.tlsCertificateKeyFile = $.tlsCertificateKeyFile;
+        this.tlsCertificateKeyFilePassword = $.tlsCertificateKeyFilePassword;
+        this.tlsCertificateKeyFilePasswordSecretId = $.tlsCertificateKeyFilePasswordSecretId;
+        this.tlsCertificateKeyFileSecretId = $.tlsCertificateKeyFileSecretId;
         this.triggerRefresh = $.triggerRefresh;
         this.trustStore = $.trustStore;
         this.trustStorePassword = $.trustStorePassword;
@@ -1722,7 +1852,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountKey (Updatable) Azure storage account key. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_KEY&#39;. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
+         * @param accountKey (Updatable) Azure storage account key. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_KEY&#39;. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by &#34;accountKeySecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -1733,7 +1863,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountKey (Updatable) Azure storage account key. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_KEY&#39;. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
+         * @param accountKey (Updatable) Azure storage account key. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_KEY&#39;. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by &#34;accountKeySecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -1931,7 +2061,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clientSecret (Updatable) Azure client secret (aka application password) for authentication. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
+         * @param clientSecret (Updatable) Azure client secret (aka application password) for authentication. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by &#34;clientSecretSecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -1942,7 +2072,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clientSecret (Updatable) Azure client secret (aka application password) for authentication. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
+         * @param clientSecret (Updatable) Azure client secret (aka application password) for authentication. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by &#34;clientSecretSecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -1952,7 +2082,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clientSecretSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, &#39;clientSecret&#39; field must not be provided.
+         * @param clientSecretSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, &#39;clientSecret&#39; field must not be provided.
          * 
          * @return builder
          * 
@@ -1963,7 +2093,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clientSecretSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, &#39;clientSecret&#39; field must not be provided.
+         * @param clientSecretSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, &#39;clientSecret&#39; field must not be provided.
          * 
          * @return builder
          * 
@@ -2057,7 +2187,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param connectionUrl (Updatable) JDBC connection URL. e.g.: &#39;jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;&#39;
+         * @param connectionUrl (Updatable) Connection URL. e.g.: &#39;jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb&#39;
          * 
          * @return builder
          * 
@@ -2068,7 +2198,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param connectionUrl (Updatable) JDBC connection URL. e.g.: &#39;jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;&#39;
+         * @param connectionUrl (Updatable) Connection URL. e.g.: &#39;jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb&#39;
          * 
          * @return builder
          * 
@@ -2288,7 +2418,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endpoint (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+         * @param endpoint (Updatable)Azure Storage service endpoint. e.g: https://test.blob.core.windows.net,  Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
          * 
          * @return builder
          * 
@@ -2299,7 +2429,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endpoint (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+         * @param endpoint (Updatable)Azure Storage service endpoint. e.g: https://test.blob.core.windows.net,  Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
          * 
          * @return builder
          * 
@@ -2477,7 +2607,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param jndiSecurityCredentials (Updatable) The password associated to the principal.
+         * @param jndiSecurityCredentials (Updatable) The password associated to the principal. Deprecated: This field is deprecated and replaced by &#34;jndiSecurityCredentialsSecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -2488,7 +2618,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param jndiSecurityCredentials (Updatable) The password associated to the principal.
+         * @param jndiSecurityCredentials (Updatable) The password associated to the principal. Deprecated: This field is deprecated and replaced by &#34;jndiSecurityCredentialsSecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -2561,7 +2691,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keyStore (Updatable) The base64 encoded content of the KeyStore file.
+         * @param keyStore (Updatable) The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and replaced by &#34;keyStoreSecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -2572,7 +2702,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keyStore (Updatable) The base64 encoded content of the KeyStore file.
+         * @param keyStore (Updatable) The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and replaced by &#34;keyStoreSecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -2582,7 +2712,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keyStorePassword (Updatable) The KeyStore password.
+         * @param keyStorePassword (Updatable) The KeyStore password. Deprecated: This field is deprecated and replaced by &#34;keyStorePasswordSecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -2593,7 +2723,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keyStorePassword (Updatable) The KeyStore password.
+         * @param keyStorePassword (Updatable) The KeyStore password. Deprecated: This field is deprecated and replaced by &#34;keyStorePasswordSecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -2728,7 +2858,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param password (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
+         * @param password (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by &#34;passwordSecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -2739,7 +2869,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param password (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
+         * @param password (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by &#34;passwordSecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -2816,7 +2946,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param privateKeyFile (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+         * @param privateKeyFile (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by &#34;privateKeyFileSecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -2827,7 +2957,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param privateKeyFile (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+         * @param privateKeyFile (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by &#34;privateKeyFileSecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -2858,7 +2988,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param privateKeyPassphrase (Updatable) Password if the private key file is encrypted.
+         * @param privateKeyPassphrase (Updatable) Password if the private key file is encrypted. Deprecated: This field is deprecated and replaced by &#34;privateKeyPassphraseSecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -2869,7 +2999,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param privateKeyPassphrase (Updatable) Password if the private key file is encrypted.
+         * @param privateKeyPassphrase (Updatable) Password if the private key file is encrypted. Deprecated: This field is deprecated and replaced by &#34;privateKeyPassphraseSecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -2963,7 +3093,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param region (Updatable) The name of the region. e.g.: us-ashburn-1
+         * @param region (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
          * 
          * @return builder
          * 
@@ -2974,7 +3104,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param region (Updatable) The name of the region. e.g.: us-ashburn-1
+         * @param region (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
          * 
          * @return builder
          * 
@@ -3005,7 +3135,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sasToken (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_ACCESS_SIGNATURE&#39;. e.g.: ?sv=2020-06-08&amp;ss=bfqt&amp;srt=sco&amp;sp=rwdlacupyx&amp;se=2020-09-10T20:27:28Z&amp;st=2022-08-05T12:27:28Z&amp;spr=https&amp;sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
+         * @param sasToken (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_ACCESS_SIGNATURE&#39;. e.g.: ?sv=2020-06-08&amp;ss=bfqt&amp;srt=sco&amp;sp=rwdlacupyx&amp;se=2020-09-10T20:27:28Z&amp;st=2022-08-05T12:27:28Z&amp;spr=https&amp;sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D Deprecated: This field is deprecated and replaced by &#34;sasTokenSecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -3016,7 +3146,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sasToken (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_ACCESS_SIGNATURE&#39;. e.g.: ?sv=2020-06-08&amp;ss=bfqt&amp;srt=sco&amp;sp=rwdlacupyx&amp;se=2020-09-10T20:27:28Z&amp;st=2022-08-05T12:27:28Z&amp;spr=https&amp;sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
+         * @param sasToken (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_ACCESS_SIGNATURE&#39;. e.g.: ?sv=2020-06-08&amp;ss=bfqt&amp;srt=sco&amp;sp=rwdlacupyx&amp;se=2020-09-10T20:27:28Z&amp;st=2022-08-05T12:27:28Z&amp;spr=https&amp;sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D Deprecated: This field is deprecated and replaced by &#34;sasTokenSecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -3047,7 +3177,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param secretAccessKey (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: &#34;this-is-not-the-secret&#34;
+         * @param secretAccessKey (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: &#34;this-is-not-the-secret&#34; Deprecated: This field is deprecated and replaced by &#34;secretAccessKeySecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -3058,7 +3188,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param secretAccessKey (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: &#34;this-is-not-the-secret&#34;
+         * @param secretAccessKey (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: &#34;this-is-not-the-secret&#34; Deprecated: This field is deprecated and replaced by &#34;secretAccessKeySecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -3131,7 +3261,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serviceAccountKeyFile (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage.
+         * @param serviceAccountKeyFile (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by &#34;serviceAccountKeyFileSecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -3142,7 +3272,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serviceAccountKeyFile (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage.
+         * @param serviceAccountKeyFile (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by &#34;serviceAccountKeyFileSecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -3215,6 +3345,27 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param shouldUseResourcePrincipal (Updatable) Indicates that the user intents to connect to the instance through resource principal.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shouldUseResourcePrincipal(@Nullable Output<Boolean> shouldUseResourcePrincipal) {
+            $.shouldUseResourcePrincipal = shouldUseResourcePrincipal;
+            return this;
+        }
+
+        /**
+         * @param shouldUseResourcePrincipal (Updatable) Indicates that the user intents to connect to the instance through resource principal.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shouldUseResourcePrincipal(Boolean shouldUseResourcePrincipal) {
+            return shouldUseResourcePrincipal(Output.of(shouldUseResourcePrincipal));
+        }
+
+        /**
          * @param shouldValidateServerCertificate (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
          * 
          * @return builder
@@ -3278,7 +3429,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslClientKeystash (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+         * @param sslClientKeystash (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. Deprecated: This field is deprecated and replaced by &#34;sslClientKeystashSecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -3289,7 +3440,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslClientKeystash (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+         * @param sslClientKeystash (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. Deprecated: This field is deprecated and replaced by &#34;sslClientKeystashSecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -3320,7 +3471,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslClientKeystoredb (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+         * @param sslClientKeystoredb (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. Deprecated: This field is deprecated and replaced by &#34;sslClientKeystoredbSecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -3331,7 +3482,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslClientKeystoredb (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+         * @param sslClientKeystoredb (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. Deprecated: This field is deprecated and replaced by &#34;sslClientKeystoredbSecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -3383,7 +3534,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslKey (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
+         * @param sslKey (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL). Deprecated: This field is deprecated and replaced by &#34;sslKeySecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -3394,7 +3545,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslKey (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
+         * @param sslKey (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL). Deprecated: This field is deprecated and replaced by &#34;sslKeySecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -3404,7 +3555,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslKeyPassword (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
+         * @param sslKeyPassword (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided. Deprecated: This field is deprecated and replaced by &#34;sslKeyPasswordSecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -3415,7 +3566,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslKeyPassword (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
+         * @param sslKeyPassword (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided. Deprecated: This field is deprecated and replaced by &#34;sslKeyPasswordSecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -3532,6 +3683,27 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param storageCredentialName (Updatable) Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder storageCredentialName(@Nullable Output<String> storageCredentialName) {
+            $.storageCredentialName = storageCredentialName;
+            return this;
+        }
+
+        /**
+         * @param storageCredentialName (Updatable) Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder storageCredentialName(String storageCredentialName) {
+            return storageCredentialName(Output.of(storageCredentialName));
+        }
+
+        /**
          * @param streamPoolId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
          * 
          * @return builder
@@ -3637,6 +3809,27 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param tenantId (Updatable) Azure tenant ID of the application. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tenantId(@Nullable Output<String> tenantId) {
+            $.tenantId = tenantId;
+            return this;
+        }
+
+        /**
+         * @param tenantId (Updatable) Azure tenant ID of the application. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tenantId(String tenantId) {
+            return tenantId(Output.of(tenantId));
+        }
+
+        /**
          * @param timeCreated The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
          * 
          * @return builder
@@ -3679,6 +3872,113 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param tlsCaFile (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tlsCaFile(@Nullable Output<String> tlsCaFile) {
+            $.tlsCaFile = tlsCaFile;
+            return this;
+        }
+
+        /**
+         * @param tlsCaFile (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tlsCaFile(String tlsCaFile) {
+            return tlsCaFile(Output.of(tlsCaFile));
+        }
+
+        /**
+         * @param tlsCertificateKeyFile (Updatable) Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL). Deprecated: This field is deprecated and replaced by &#34;tlsCertificateKeyFileSecretId&#34;. This field will be removed after February 15 2026.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tlsCertificateKeyFile(@Nullable Output<String> tlsCertificateKeyFile) {
+            $.tlsCertificateKeyFile = tlsCertificateKeyFile;
+            return this;
+        }
+
+        /**
+         * @param tlsCertificateKeyFile (Updatable) Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL). Deprecated: This field is deprecated and replaced by &#34;tlsCertificateKeyFileSecretId&#34;. This field will be removed after February 15 2026.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tlsCertificateKeyFile(String tlsCertificateKeyFile) {
+            return tlsCertificateKeyFile(Output.of(tlsCertificateKeyFile));
+        }
+
+        /**
+         * @param tlsCertificateKeyFilePassword (Updatable) Client Certificate key file password. Deprecated: This field is deprecated and replaced by &#34;tlsCertificateKeyFilePasswordSecretId&#34;. This field will be removed after February 15 2026.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tlsCertificateKeyFilePassword(@Nullable Output<String> tlsCertificateKeyFilePassword) {
+            $.tlsCertificateKeyFilePassword = tlsCertificateKeyFilePassword;
+            return this;
+        }
+
+        /**
+         * @param tlsCertificateKeyFilePassword (Updatable) Client Certificate key file password. Deprecated: This field is deprecated and replaced by &#34;tlsCertificateKeyFilePasswordSecretId&#34;. This field will be removed after February 15 2026.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tlsCertificateKeyFilePassword(String tlsCertificateKeyFilePassword) {
+            return tlsCertificateKeyFilePassword(Output.of(tlsCertificateKeyFilePassword));
+        }
+
+        /**
+         * @param tlsCertificateKeyFilePasswordSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, &#39;tlsCertificateKeyFilePassword&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tlsCertificateKeyFilePasswordSecretId(@Nullable Output<String> tlsCertificateKeyFilePasswordSecretId) {
+            $.tlsCertificateKeyFilePasswordSecretId = tlsCertificateKeyFilePasswordSecretId;
+            return this;
+        }
+
+        /**
+         * @param tlsCertificateKeyFilePasswordSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, &#39;tlsCertificateKeyFilePassword&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tlsCertificateKeyFilePasswordSecretId(String tlsCertificateKeyFilePasswordSecretId) {
+            return tlsCertificateKeyFilePasswordSecretId(Output.of(tlsCertificateKeyFilePasswordSecretId));
+        }
+
+        /**
+         * @param tlsCertificateKeyFileSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
+         * * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, &#39;tlsCertificateKeyFile&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tlsCertificateKeyFileSecretId(@Nullable Output<String> tlsCertificateKeyFileSecretId) {
+            $.tlsCertificateKeyFileSecretId = tlsCertificateKeyFileSecretId;
+            return this;
+        }
+
+        /**
+         * @param tlsCertificateKeyFileSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
+         * * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, &#39;tlsCertificateKeyFile&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tlsCertificateKeyFileSecretId(String tlsCertificateKeyFileSecretId) {
+            return tlsCertificateKeyFileSecretId(Output.of(tlsCertificateKeyFileSecretId));
+        }
+
+        /**
          * @param triggerRefresh (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the &#34;update&#34; plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
          * 
          * ** IMPORTANT **
@@ -3706,7 +4006,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param trustStore (Updatable) The base64 encoded content of the TrustStore file.
+         * @param trustStore (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by &#34;trustStoreSecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -3717,7 +4017,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param trustStore (Updatable) The base64 encoded content of the TrustStore file.
+         * @param trustStore (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by &#34;trustStoreSecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -3727,7 +4027,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param trustStorePassword (Updatable) The TrustStore password.
+         * @param trustStorePassword (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by &#34;trustStorePasswordSecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -3738,7 +4038,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param trustStorePassword (Updatable) The TrustStore password.
+         * @param trustStorePassword (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by &#34;trustStorePasswordSecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -3811,7 +4111,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to.
+         * @param userId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
          * 
          * @return builder
          * 
@@ -3822,7 +4122,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to.
+         * @param userId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
          * 
          * @return builder
          * 
@@ -3874,7 +4174,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param wallet (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
+         * @param wallet (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by &#34;walletSecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 
@@ -3885,7 +4185,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param wallet (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
+         * @param wallet (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by &#34;walletSecretId&#34;. This field will be removed after February 15 2026.
          * 
          * @return builder
          * 

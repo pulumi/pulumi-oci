@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult
     {
         /// <summary>
+        /// A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseAssociatedBackupConfigurationDetailResult> AssociatedBackupConfigurationDetails;
+        /// <summary>
         /// The Autonomous Exadata Infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string AutonomousExadataInfrastructureId;
@@ -33,6 +37,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// Backup options for the Autonomous Container Database.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigResult> BackupConfigs;
+        /// <summary>
+        /// This list describes the backup destination properties associated with the Autonomous Container Database (ACD) 's preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupDestinationPropertiesListResult> BackupDestinationPropertiesLists;
         /// <summary>
         /// The cloud Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
@@ -172,6 +180,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly double ReclaimableCpus;
         /// <summary>
+        /// Information about the recovery appliance configuration associated with the Autonomous Container Database.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseRecoveryApplianceDetailResult> RecoveryApplianceDetails;
+        /// <summary>
         /// The number of CPUs reserved in an Autonomous Container Database.
         /// </summary>
         public readonly double ReservedCpus;
@@ -223,6 +235,8 @@ namespace Pulumi.Oci.Database.Outputs
 
         [OutputConstructor]
         private GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(
+            ImmutableArray<Outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseAssociatedBackupConfigurationDetailResult> associatedBackupConfigurationDetails,
+
             string autonomousExadataInfrastructureId,
 
             string autonomousVmClusterId,
@@ -232,6 +246,8 @@ namespace Pulumi.Oci.Database.Outputs
             double availableCpus,
 
             ImmutableArray<Outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigResult> backupConfigs,
+
+            ImmutableArray<Outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupDestinationPropertiesListResult> backupDestinationPropertiesLists,
 
             string cloudAutonomousVmClusterId,
 
@@ -323,6 +339,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             double reclaimableCpus,
 
+            ImmutableArray<Outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseRecoveryApplianceDetailResult> recoveryApplianceDetails,
+
             double reservedCpus,
 
             string role,
@@ -349,11 +367,13 @@ namespace Pulumi.Oci.Database.Outputs
 
             int vmFailoverReservation)
         {
+            AssociatedBackupConfigurationDetails = associatedBackupConfigurationDetails;
             AutonomousExadataInfrastructureId = autonomousExadataInfrastructureId;
             AutonomousVmClusterId = autonomousVmClusterId;
             AvailabilityDomain = availabilityDomain;
             AvailableCpus = availableCpus;
             BackupConfigs = backupConfigs;
+            BackupDestinationPropertiesLists = backupDestinationPropertiesLists;
             CloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
             CompartmentId = compartmentId;
             ComputeModel = computeModel;
@@ -399,6 +419,7 @@ namespace Pulumi.Oci.Database.Outputs
             ProvisionableCpuses = provisionableCpuses;
             ProvisionedCpus = provisionedCpus;
             ReclaimableCpus = reclaimableCpus;
+            RecoveryApplianceDetails = recoveryApplianceDetails;
             ReservedCpus = reservedCpus;
             Role = role;
             RotateKeyTrigger = rotateKeyTrigger;

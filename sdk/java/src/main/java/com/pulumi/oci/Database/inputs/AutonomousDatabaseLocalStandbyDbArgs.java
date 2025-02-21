@@ -62,6 +62,21 @@ public final class AutonomousDatabaseLocalStandbyDbArgs extends com.pulumi.resou
     }
 
     /**
+     * The component chosen for maintenance.
+     * 
+     */
+    @Import(name="maintenanceTargetComponent")
+    private @Nullable Output<String> maintenanceTargetComponent;
+
+    /**
+     * @return The component chosen for maintenance.
+     * 
+     */
+    public Optional<Output<String>> maintenanceTargetComponent() {
+        return Optional.ofNullable(this.maintenanceTargetComponent);
+    }
+
+    /**
      * The current state of the Autonomous Database.
      * 
      */
@@ -106,15 +121,48 @@ public final class AutonomousDatabaseLocalStandbyDbArgs extends com.pulumi.resou
         return Optional.ofNullable(this.timeDisasterRecoveryRoleChanged);
     }
 
+    /**
+     * The date and time when maintenance will begin.
+     * 
+     */
+    @Import(name="timeMaintenanceBegin")
+    private @Nullable Output<String> timeMaintenanceBegin;
+
+    /**
+     * @return The date and time when maintenance will begin.
+     * 
+     */
+    public Optional<Output<String>> timeMaintenanceBegin() {
+        return Optional.ofNullable(this.timeMaintenanceBegin);
+    }
+
+    /**
+     * The date and time when maintenance will end.
+     * 
+     */
+    @Import(name="timeMaintenanceEnd")
+    private @Nullable Output<String> timeMaintenanceEnd;
+
+    /**
+     * @return The date and time when maintenance will end.
+     * 
+     */
+    public Optional<Output<String>> timeMaintenanceEnd() {
+        return Optional.ofNullable(this.timeMaintenanceEnd);
+    }
+
     private AutonomousDatabaseLocalStandbyDbArgs() {}
 
     private AutonomousDatabaseLocalStandbyDbArgs(AutonomousDatabaseLocalStandbyDbArgs $) {
         this.availabilityDomain = $.availabilityDomain;
         this.lagTimeInSeconds = $.lagTimeInSeconds;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.maintenanceTargetComponent = $.maintenanceTargetComponent;
         this.state = $.state;
         this.timeDataGuardRoleChanged = $.timeDataGuardRoleChanged;
         this.timeDisasterRecoveryRoleChanged = $.timeDisasterRecoveryRoleChanged;
+        this.timeMaintenanceBegin = $.timeMaintenanceBegin;
+        this.timeMaintenanceEnd = $.timeMaintenanceEnd;
     }
 
     public static Builder builder() {
@@ -199,6 +247,27 @@ public final class AutonomousDatabaseLocalStandbyDbArgs extends com.pulumi.resou
         }
 
         /**
+         * @param maintenanceTargetComponent The component chosen for maintenance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceTargetComponent(@Nullable Output<String> maintenanceTargetComponent) {
+            $.maintenanceTargetComponent = maintenanceTargetComponent;
+            return this;
+        }
+
+        /**
+         * @param maintenanceTargetComponent The component chosen for maintenance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceTargetComponent(String maintenanceTargetComponent) {
+            return maintenanceTargetComponent(Output.of(maintenanceTargetComponent));
+        }
+
+        /**
          * @param state The current state of the Autonomous Database.
          * 
          * @return builder
@@ -259,6 +328,48 @@ public final class AutonomousDatabaseLocalStandbyDbArgs extends com.pulumi.resou
          */
         public Builder timeDisasterRecoveryRoleChanged(String timeDisasterRecoveryRoleChanged) {
             return timeDisasterRecoveryRoleChanged(Output.of(timeDisasterRecoveryRoleChanged));
+        }
+
+        /**
+         * @param timeMaintenanceBegin The date and time when maintenance will begin.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeMaintenanceBegin(@Nullable Output<String> timeMaintenanceBegin) {
+            $.timeMaintenanceBegin = timeMaintenanceBegin;
+            return this;
+        }
+
+        /**
+         * @param timeMaintenanceBegin The date and time when maintenance will begin.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeMaintenanceBegin(String timeMaintenanceBegin) {
+            return timeMaintenanceBegin(Output.of(timeMaintenanceBegin));
+        }
+
+        /**
+         * @param timeMaintenanceEnd The date and time when maintenance will end.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeMaintenanceEnd(@Nullable Output<String> timeMaintenanceEnd) {
+            $.timeMaintenanceEnd = timeMaintenanceEnd;
+            return this;
+        }
+
+        /**
+         * @param timeMaintenanceEnd The date and time when maintenance will end.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeMaintenanceEnd(String timeMaintenanceEnd) {
+            return timeMaintenanceEnd(Output.of(timeMaintenanceEnd));
         }
 
         public AutonomousDatabaseLocalStandbyDbArgs build() {

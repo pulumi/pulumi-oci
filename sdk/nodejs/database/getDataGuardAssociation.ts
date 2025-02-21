@@ -120,6 +120,7 @@ export interface GetDataGuardAssociationResult {
     readonly peerSidPrefix: string;
     readonly peerVmClusterId: string;
     readonly privateIp: string;
+    readonly privateIpV6: string;
     /**
      * The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      */

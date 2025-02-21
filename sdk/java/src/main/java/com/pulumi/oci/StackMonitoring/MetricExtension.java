@@ -209,14 +209,14 @@ public class MetricExtension extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
-     * List of resource objects on which this metric extension is enabled.
+     * List of resource details objects having resourceIds on which this metric extension is enabled.
      * 
      */
     @Export(name="enabledOnResources", refs={List.class,MetricExtensionEnabledOnResource.class}, tree="[0,1]")
     private Output<List<MetricExtensionEnabledOnResource>> enabledOnResources;
 
     /**
-     * @return List of resource objects on which this metric extension is enabled.
+     * @return List of resource details objects having resourceIds on which this metric extension is enabled.
      * 
      */
     public Output<List<MetricExtensionEnabledOnResource>> enabledOnResources() {

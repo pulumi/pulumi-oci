@@ -203,7 +203,7 @@ class _MetricExtensionState:
         :param pulumi.Input[str] created_by: Created by user
         :param pulumi.Input[str] description: (Updatable) Description of the metric extension.
         :param pulumi.Input[str] display_name: (Updatable) Metric Extension display name.
-        :param pulumi.Input[Sequence[pulumi.Input['MetricExtensionEnabledOnResourceArgs']]] enabled_on_resources: List of resource objects on which this metric extension is enabled.
+        :param pulumi.Input[Sequence[pulumi.Input['MetricExtensionEnabledOnResourceArgs']]] enabled_on_resources: List of resource details objects having resourceIds on which this metric extension is enabled.
         :param pulumi.Input[int] enabled_on_resources_count: Count of resources on which this metric extension is enabled.
         :param pulumi.Input[str] last_updated_by: Last updated by user
         :param pulumi.Input[Sequence[pulumi.Input['MetricExtensionMetricListArgs']]] metric_lists: (Updatable) List of metrics which are part of this metric extension
@@ -339,7 +339,7 @@ class _MetricExtensionState:
     @pulumi.getter(name="enabledOnResources")
     def enabled_on_resources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MetricExtensionEnabledOnResourceArgs']]]]:
         """
-        List of resource objects on which this metric extension is enabled.
+        List of resource details objects having resourceIds on which this metric extension is enabled.
         """
         return pulumi.get(self, "enabled_on_resources")
 
@@ -795,7 +795,7 @@ class MetricExtension(pulumi.CustomResource):
         :param pulumi.Input[str] created_by: Created by user
         :param pulumi.Input[str] description: (Updatable) Description of the metric extension.
         :param pulumi.Input[str] display_name: (Updatable) Metric Extension display name.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MetricExtensionEnabledOnResourceArgs', 'MetricExtensionEnabledOnResourceArgsDict']]]] enabled_on_resources: List of resource objects on which this metric extension is enabled.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MetricExtensionEnabledOnResourceArgs', 'MetricExtensionEnabledOnResourceArgsDict']]]] enabled_on_resources: List of resource details objects having resourceIds on which this metric extension is enabled.
         :param pulumi.Input[int] enabled_on_resources_count: Count of resources on which this metric extension is enabled.
         :param pulumi.Input[str] last_updated_by: Last updated by user
         :param pulumi.Input[Sequence[pulumi.Input[Union['MetricExtensionMetricListArgs', 'MetricExtensionMetricListArgsDict']]]] metric_lists: (Updatable) List of metrics which are part of this metric extension
@@ -892,7 +892,7 @@ class MetricExtension(pulumi.CustomResource):
     @pulumi.getter(name="enabledOnResources")
     def enabled_on_resources(self) -> pulumi.Output[Sequence['outputs.MetricExtensionEnabledOnResource']]:
         """
-        List of resource objects on which this metric extension is enabled.
+        List of resource details objects having resourceIds on which this metric extension is enabled.
         """
         return pulumi.get(self, "enabled_on_resources")
 

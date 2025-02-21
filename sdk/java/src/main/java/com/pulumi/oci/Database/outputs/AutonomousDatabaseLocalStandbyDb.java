@@ -28,6 +28,11 @@ public final class AutonomousDatabaseLocalStandbyDb {
      */
     private @Nullable String lifecycleDetails;
     /**
+     * @return The component chosen for maintenance.
+     * 
+     */
+    private @Nullable String maintenanceTargetComponent;
+    /**
      * @return The current state of the Autonomous Database.
      * 
      */
@@ -42,6 +47,16 @@ public final class AutonomousDatabaseLocalStandbyDb {
      * 
      */
     private @Nullable String timeDisasterRecoveryRoleChanged;
+    /**
+     * @return The date and time when maintenance will begin.
+     * 
+     */
+    private @Nullable String timeMaintenanceBegin;
+    /**
+     * @return The date and time when maintenance will end.
+     * 
+     */
+    private @Nullable String timeMaintenanceEnd;
 
     private AutonomousDatabaseLocalStandbyDb() {}
     /**
@@ -66,6 +81,13 @@ public final class AutonomousDatabaseLocalStandbyDb {
         return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
+     * @return The component chosen for maintenance.
+     * 
+     */
+    public Optional<String> maintenanceTargetComponent() {
+        return Optional.ofNullable(this.maintenanceTargetComponent);
+    }
+    /**
      * @return The current state of the Autonomous Database.
      * 
      */
@@ -86,6 +108,20 @@ public final class AutonomousDatabaseLocalStandbyDb {
     public Optional<String> timeDisasterRecoveryRoleChanged() {
         return Optional.ofNullable(this.timeDisasterRecoveryRoleChanged);
     }
+    /**
+     * @return The date and time when maintenance will begin.
+     * 
+     */
+    public Optional<String> timeMaintenanceBegin() {
+        return Optional.ofNullable(this.timeMaintenanceBegin);
+    }
+    /**
+     * @return The date and time when maintenance will end.
+     * 
+     */
+    public Optional<String> timeMaintenanceEnd() {
+        return Optional.ofNullable(this.timeMaintenanceEnd);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -99,18 +135,24 @@ public final class AutonomousDatabaseLocalStandbyDb {
         private @Nullable String availabilityDomain;
         private @Nullable Integer lagTimeInSeconds;
         private @Nullable String lifecycleDetails;
+        private @Nullable String maintenanceTargetComponent;
         private @Nullable String state;
         private @Nullable String timeDataGuardRoleChanged;
         private @Nullable String timeDisasterRecoveryRoleChanged;
+        private @Nullable String timeMaintenanceBegin;
+        private @Nullable String timeMaintenanceEnd;
         public Builder() {}
         public Builder(AutonomousDatabaseLocalStandbyDb defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.lagTimeInSeconds = defaults.lagTimeInSeconds;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.maintenanceTargetComponent = defaults.maintenanceTargetComponent;
     	      this.state = defaults.state;
     	      this.timeDataGuardRoleChanged = defaults.timeDataGuardRoleChanged;
     	      this.timeDisasterRecoveryRoleChanged = defaults.timeDisasterRecoveryRoleChanged;
+    	      this.timeMaintenanceBegin = defaults.timeMaintenanceBegin;
+    	      this.timeMaintenanceEnd = defaults.timeMaintenanceEnd;
         }
 
         @CustomType.Setter
@@ -132,6 +174,12 @@ public final class AutonomousDatabaseLocalStandbyDb {
             return this;
         }
         @CustomType.Setter
+        public Builder maintenanceTargetComponent(@Nullable String maintenanceTargetComponent) {
+
+            this.maintenanceTargetComponent = maintenanceTargetComponent;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
 
             this.state = state;
@@ -149,14 +197,29 @@ public final class AutonomousDatabaseLocalStandbyDb {
             this.timeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
             return this;
         }
+        @CustomType.Setter
+        public Builder timeMaintenanceBegin(@Nullable String timeMaintenanceBegin) {
+
+            this.timeMaintenanceBegin = timeMaintenanceBegin;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeMaintenanceEnd(@Nullable String timeMaintenanceEnd) {
+
+            this.timeMaintenanceEnd = timeMaintenanceEnd;
+            return this;
+        }
         public AutonomousDatabaseLocalStandbyDb build() {
             final var _resultValue = new AutonomousDatabaseLocalStandbyDb();
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.lagTimeInSeconds = lagTimeInSeconds;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.maintenanceTargetComponent = maintenanceTargetComponent;
             _resultValue.state = state;
             _resultValue.timeDataGuardRoleChanged = timeDataGuardRoleChanged;
             _resultValue.timeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
+            _resultValue.timeMaintenanceBegin = timeMaintenanceBegin;
+            _resultValue.timeMaintenanceEnd = timeMaintenanceEnd;
             return _resultValue;
         }
     }

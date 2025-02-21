@@ -29,6 +29,11 @@ public final class GetClustersClusterOption {
      */
     private List<GetClustersClusterOptionAdmissionControllerOption> admissionControllerOptions;
     /**
+     * @return IP family to use for single stack or define the order of IP families for dual-stack
+     * 
+     */
+    private List<String> ipFamilies;
+    /**
      * @return Network configuration for Kubernetes.
      * 
      */
@@ -73,6 +78,13 @@ public final class GetClustersClusterOption {
      */
     public List<GetClustersClusterOptionAdmissionControllerOption> admissionControllerOptions() {
         return this.admissionControllerOptions;
+    }
+    /**
+     * @return IP family to use for single stack or define the order of IP families for dual-stack
+     * 
+     */
+    public List<String> ipFamilies() {
+        return this.ipFamilies;
     }
     /**
      * @return Network configuration for Kubernetes.
@@ -128,6 +140,7 @@ public final class GetClustersClusterOption {
     public static final class Builder {
         private List<GetClustersClusterOptionAddOn> addOns;
         private List<GetClustersClusterOptionAdmissionControllerOption> admissionControllerOptions;
+        private List<String> ipFamilies;
         private List<GetClustersClusterOptionKubernetesNetworkConfig> kubernetesNetworkConfigs;
         private List<GetClustersClusterOptionOpenIdConnectDiscovery> openIdConnectDiscoveries;
         private List<GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfig> openIdConnectTokenAuthenticationConfigs;
@@ -139,6 +152,7 @@ public final class GetClustersClusterOption {
     	      Objects.requireNonNull(defaults);
     	      this.addOns = defaults.addOns;
     	      this.admissionControllerOptions = defaults.admissionControllerOptions;
+    	      this.ipFamilies = defaults.ipFamilies;
     	      this.kubernetesNetworkConfigs = defaults.kubernetesNetworkConfigs;
     	      this.openIdConnectDiscoveries = defaults.openIdConnectDiscoveries;
     	      this.openIdConnectTokenAuthenticationConfigs = defaults.openIdConnectTokenAuthenticationConfigs;
@@ -168,6 +182,17 @@ public final class GetClustersClusterOption {
         }
         public Builder admissionControllerOptions(GetClustersClusterOptionAdmissionControllerOption... admissionControllerOptions) {
             return admissionControllerOptions(List.of(admissionControllerOptions));
+        }
+        @CustomType.Setter
+        public Builder ipFamilies(List<String> ipFamilies) {
+            if (ipFamilies == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterOption", "ipFamilies");
+            }
+            this.ipFamilies = ipFamilies;
+            return this;
+        }
+        public Builder ipFamilies(String... ipFamilies) {
+            return ipFamilies(List.of(ipFamilies));
         }
         @CustomType.Setter
         public Builder kubernetesNetworkConfigs(List<GetClustersClusterOptionKubernetesNetworkConfig> kubernetesNetworkConfigs) {
@@ -239,6 +264,7 @@ public final class GetClustersClusterOption {
             final var _resultValue = new GetClustersClusterOption();
             _resultValue.addOns = addOns;
             _resultValue.admissionControllerOptions = admissionControllerOptions;
+            _resultValue.ipFamilies = ipFamilies;
             _resultValue.kubernetesNetworkConfigs = kubernetesNetworkConfigs;
             _resultValue.openIdConnectDiscoveries = openIdConnectDiscoveries;
             _resultValue.openIdConnectTokenAuthenticationConfigs = openIdConnectTokenAuthenticationConfigs;

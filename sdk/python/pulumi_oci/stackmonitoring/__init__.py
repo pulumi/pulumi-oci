@@ -13,6 +13,7 @@ from .get_baselineable_metrics import *
 from .get_baselineable_metrics_evaluate import *
 from .get_config import *
 from .get_configs import *
+from .get_defined_monitoring_templates import *
 from .get_discovery_job import *
 from .get_discovery_job_logs import *
 from .get_discovery_jobs import *
@@ -26,6 +27,10 @@ from .get_monitored_resource_tasks import *
 from .get_monitored_resource_type import *
 from .get_monitored_resource_types import *
 from .get_monitored_resources import *
+from .get_monitoring_template import *
+from .get_monitoring_template_alarm_condition import *
+from .get_monitoring_template_alarm_conditions import *
+from .get_monitoring_templates import *
 from .get_process_set import *
 from .get_process_sets import *
 from .maintenance_window import *
@@ -41,6 +46,9 @@ from .monitored_resources_associate_monitored_resource import *
 from .monitored_resources_list_member import *
 from .monitored_resources_search import *
 from .monitored_resources_search_association import *
+from .monitoring_template import *
+from .monitoring_template_alarm_condition import *
+from .monitoring_template_monitoring_template_on_given_resources_management import *
 from .process_set import *
 from ._inputs import *
 from . import outputs

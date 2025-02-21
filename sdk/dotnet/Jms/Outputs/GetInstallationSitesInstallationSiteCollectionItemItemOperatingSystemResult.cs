@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Jms.Outputs
         /// </summary>
         public readonly string Architecture;
         /// <summary>
+        /// The name of the Operating System distribution, such as Oracle Linux 9, Windows 10, or macOS X.
+        /// </summary>
+        public readonly string Distribution;
+        /// <summary>
         /// The operating system type, such as Windows, Linux or macOS
         /// </summary>
         public readonly string Family;
@@ -38,6 +42,8 @@ namespace Pulumi.Oci.Jms.Outputs
         private GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemResult(
             string architecture,
 
+            string distribution,
+
             string family,
 
             int managedInstanceCount,
@@ -47,6 +53,7 @@ namespace Pulumi.Oci.Jms.Outputs
             string version)
         {
             Architecture = architecture;
+            Distribution = distribution;
             Family = family;
             ManagedInstanceCount = managedInstanceCount;
             Name = name;

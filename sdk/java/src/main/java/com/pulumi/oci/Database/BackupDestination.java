@@ -12,6 +12,7 @@ import com.pulumi.oci.Database.inputs.BackupDestinationState;
 import com.pulumi.oci.Database.outputs.BackupDestinationAssociatedDatabase;
 import com.pulumi.oci.Database.outputs.BackupDestinationMountTypeDetails;
 import com.pulumi.oci.Utilities;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -270,6 +271,20 @@ public class BackupDestination extends com.pulumi.resources.CustomResource {
         return this.state;
     }
     /**
+     * The time when the total storage size and the utilized storage size of the backup destination are updated.
+     * 
+     */
+    @Export(name="timeAtWhichStorageDetailsAreUpdated", refs={String.class}, tree="[0]")
+    private Output<String> timeAtWhichStorageDetailsAreUpdated;
+
+    /**
+     * @return The time when the total storage size and the utilized storage size of the backup destination are updated.
+     * 
+     */
+    public Output<String> timeAtWhichStorageDetailsAreUpdated() {
+        return this.timeAtWhichStorageDetailsAreUpdated;
+    }
+    /**
      * The date and time the backup destination was created.
      * 
      */
@@ -284,6 +299,20 @@ public class BackupDestination extends com.pulumi.resources.CustomResource {
         return this.timeCreated;
     }
     /**
+     * The total storage size of the backup destination in GBs, rounded to the nearest integer.
+     * 
+     */
+    @Export(name="totalStorageSizeInGbs", refs={Integer.class}, tree="[0]")
+    private Output<Integer> totalStorageSizeInGbs;
+
+    /**
+     * @return The total storage size of the backup destination in GBs, rounded to the nearest integer.
+     * 
+     */
+    public Output<Integer> totalStorageSizeInGbs() {
+        return this.totalStorageSizeInGbs;
+    }
+    /**
      * Type of the backup destination.
      * 
      */
@@ -296,6 +325,20 @@ public class BackupDestination extends com.pulumi.resources.CustomResource {
      */
     public Output<String> type() {
         return this.type;
+    }
+    /**
+     * The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
+     * 
+     */
+    @Export(name="utilizedStorageSizeInGbs", refs={Integer.class}, tree="[0]")
+    private Output<Integer> utilizedStorageSizeInGbs;
+
+    /**
+     * @return The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
+     * 
+     */
+    public Output<Integer> utilizedStorageSizeInGbs() {
+        return this.utilizedStorageSizeInGbs;
     }
     /**
      * (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.

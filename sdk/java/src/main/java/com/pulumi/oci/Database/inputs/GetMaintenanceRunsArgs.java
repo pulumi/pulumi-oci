@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.GetMaintenanceRunsFilterArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -53,6 +54,21 @@ public final class GetMaintenanceRunsArgs extends com.pulumi.resources.InvokeArg
 
     public Optional<Output<List<GetMaintenanceRunsFilterArgs>>> filters() {
         return Optional.ofNullable(this.filters);
+    }
+
+    /**
+     * A filter to return the maintenance history results for the local standby Autonomous Database Serverless only.
+     * 
+     */
+    @Import(name="isLocalAdg")
+    private @Nullable Output<Boolean> isLocalAdg;
+
+    /**
+     * @return A filter to return the maintenance history results for the local standby Autonomous Database Serverless only.
+     * 
+     */
+    public Optional<Output<Boolean>> isLocalAdg() {
+        return Optional.ofNullable(this.isLocalAdg);
     }
 
     /**
@@ -136,6 +152,7 @@ public final class GetMaintenanceRunsArgs extends com.pulumi.resources.InvokeArg
         this.availabilityDomain = $.availabilityDomain;
         this.compartmentId = $.compartmentId;
         this.filters = $.filters;
+        this.isLocalAdg = $.isLocalAdg;
         this.maintenanceSubtype = $.maintenanceSubtype;
         this.maintenanceType = $.maintenanceType;
         this.state = $.state;
@@ -214,6 +231,27 @@ public final class GetMaintenanceRunsArgs extends com.pulumi.resources.InvokeArg
 
         public Builder filters(GetMaintenanceRunsFilterArgs... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param isLocalAdg A filter to return the maintenance history results for the local standby Autonomous Database Serverless only.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isLocalAdg(@Nullable Output<Boolean> isLocalAdg) {
+            $.isLocalAdg = isLocalAdg;
+            return this;
+        }
+
+        /**
+         * @param isLocalAdg A filter to return the maintenance history results for the local standby Autonomous Database Serverless only.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isLocalAdg(Boolean isLocalAdg) {
+            return isLocalAdg(Output.of(isLocalAdg));
         }
 
         /**

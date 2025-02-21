@@ -38,6 +38,7 @@ import * as utilities from "../utilities";
  *         validPropertiesForCreates: monitoredResourceTypeMetadataValidPropertiesForCreate,
  *         validPropertiesForUpdates: monitoredResourceTypeMetadataValidPropertiesForUpdate,
  *         validPropertyValues: monitoredResourceTypeMetadataValidPropertyValues,
+ *         validSubResourceTypes: monitoredResourceTypeMetadataValidSubResourceTypes,
  *     },
  *     metricNamespace: monitoredResourceTypeMetricNamespace,
  *     resourceCategory: monitoredResourceTypeResourceCategory,
@@ -81,6 +82,10 @@ export class MonitoredResourceType extends pulumi.CustomResource {
         return obj['__pulumiType'] === MonitoredResourceType.__pulumiType;
     }
 
+    /**
+     * Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
+     */
+    public /*out*/ readonly additionalNamespaceMap!: pulumi.Output<{[key: string]: string}>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
      */
@@ -155,6 +160,7 @@ export class MonitoredResourceType extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MonitoredResourceTypeState | undefined;
+            resourceInputs["additionalNamespaceMap"] = state ? state.additionalNamespaceMap : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
@@ -184,6 +190,7 @@ export class MonitoredResourceType extends pulumi.CustomResource {
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["resourceCategory"] = args ? args.resourceCategory : undefined;
             resourceInputs["sourceType"] = args ? args.sourceType : undefined;
+            resourceInputs["additionalNamespaceMap"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -198,6 +205,10 @@ export class MonitoredResourceType extends pulumi.CustomResource {
  * Input properties used for looking up and filtering MonitoredResourceType resources.
  */
 export interface MonitoredResourceTypeState {
+    /**
+     * Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
+     */
+    additionalNamespaceMap?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
      */

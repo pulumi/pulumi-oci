@@ -17,6 +17,8 @@ from .get_fleet_crypto_analysis_results import *
 from .get_fleet_diagnoses import *
 from .get_fleet_drs_file import *
 from .get_fleet_drs_files import *
+from .get_fleet_error_analytics import *
+from .get_fleet_errors import *
 from .get_fleet_export_setting import *
 from .get_fleet_export_status import *
 from .get_fleet_java_migration_analysis_result import *
@@ -43,6 +45,8 @@ from .get_java_releases import *
 from .get_jms_plugin import *
 from .get_jms_plugins import *
 from .get_list_jre_usage import *
+from .get_plugin_error_analytics import *
+from .get_plugin_errors import *
 from .get_summarize_resource_inventory import *
 from .java_downloads_java_download_report import *
 from .java_downloads_java_download_token import *

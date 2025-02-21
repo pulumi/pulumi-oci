@@ -14,6 +14,10 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
     public sealed class GetClustersClusterEndpointResult
     {
         /// <summary>
+        /// The IPv6 networking Kubernetes API server endpoint.
+        /// </summary>
+        public readonly string Ipv6endpoint;
+        /// <summary>
         /// The non-native networking Kubernetes API server endpoint.
         /// </summary>
         public readonly string Kubernetes;
@@ -32,6 +36,8 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
         [OutputConstructor]
         private GetClustersClusterEndpointResult(
+            string ipv6endpoint,
+
             string kubernetes,
 
             string privateEndpoint,
@@ -40,6 +46,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
             string vcnHostnameEndpoint)
         {
+            Ipv6endpoint = ipv6endpoint;
             Kubernetes = kubernetes;
             PrivateEndpoint = privateEndpoint;
             PublicEndpoint = publicEndpoint;

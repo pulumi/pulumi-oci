@@ -102,6 +102,9 @@ public final class Config {
     public Optional<String> tenancyOcid() {
         return Codegen.stringProp("tenancyOcid").config(config).get();
     }
+    public Optional<String> testTimeMaintenanceRebootDue() {
+        return Codegen.stringProp("testTimeMaintenanceRebootDue").config(config).get();
+    }
 /**
  * (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if
  * auth is set to &#39;ApiKey&#39;, ignored otherwise.

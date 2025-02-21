@@ -80,6 +80,8 @@ type LookupFilesystemSnapshotPolicyResult struct {
 	Schedules []GetFilesystemSnapshotPolicySchedule `pulumi:"schedules"`
 	// The current state of this file system snapshot policy.
 	State string `pulumi:"state"`
+	// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 }
@@ -174,6 +176,11 @@ func (o LookupFilesystemSnapshotPolicyResultOutput) Schedules() GetFilesystemSna
 // The current state of this file system snapshot policy.
 func (o LookupFilesystemSnapshotPolicyResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFilesystemSnapshotPolicyResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+func (o LookupFilesystemSnapshotPolicyResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupFilesystemSnapshotPolicyResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`

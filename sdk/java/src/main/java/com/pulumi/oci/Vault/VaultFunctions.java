@@ -11,12 +11,12 @@ import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.Utilities;
 import com.pulumi.oci.Vault.inputs.GetSecretArgs;
 import com.pulumi.oci.Vault.inputs.GetSecretPlainArgs;
-import com.pulumi.oci.Vault.inputs.GetSecretVersionArgs;
-import com.pulumi.oci.Vault.inputs.GetSecretVersionPlainArgs;
+import com.pulumi.oci.Vault.inputs.GetSecretVersionSdkV2Args;
+import com.pulumi.oci.Vault.inputs.GetSecretVersionSdkV2PlainArgs;
 import com.pulumi.oci.Vault.inputs.GetSecretsArgs;
 import com.pulumi.oci.Vault.inputs.GetSecretsPlainArgs;
 import com.pulumi.oci.Vault.outputs.GetSecretResult;
-import com.pulumi.oci.Vault.outputs.GetSecretVersionResult;
+import com.pulumi.oci.Vault.outputs.GetSecretVersionSdkV2Result;
 import com.pulumi.oci.Vault.outputs.GetSecretsResult;
 import java.util.concurrent.CompletableFuture;
 
@@ -241,230 +241,20 @@ public final class VaultFunctions {
     public static CompletableFuture<GetSecretResult> getSecretPlain(GetSecretPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Vault/getSecret:getSecret", TypeShape.of(GetSecretResult.class), args, Utilities.withVersion(options));
     }
-    /**
-     * This data source provides details about a specific Secret Version resource in Oracle Cloud Infrastructure Vault service.
-     * 
-     * Gets information about the specified version of a secret.
-     * 
-     * ## Example Usage
-     * 
-     * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Vault.VaultFunctions;
-     * import com.pulumi.oci.Vault.inputs.GetSecretVersionArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testSecretVersion = VaultFunctions.getSecretVersion(GetSecretVersionArgs.builder()
-     *             .secretId(testSecret.id())
-     *             .secretVersionNumber(secretVersionSecretVersionNumber)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * &lt;!--End PulumiCodeChooser --&gt;
-     * 
-     */
-    public static Output<GetSecretVersionResult> getSecretVersion(GetSecretVersionArgs args) {
-        return getSecretVersion(args, InvokeOptions.Empty);
+    public static Output<GetSecretVersionSdkV2Result> getSecretVersionSdkV2(GetSecretVersionSdkV2Args args) {
+        return getSecretVersionSdkV2(args, InvokeOptions.Empty);
     }
-    /**
-     * This data source provides details about a specific Secret Version resource in Oracle Cloud Infrastructure Vault service.
-     * 
-     * Gets information about the specified version of a secret.
-     * 
-     * ## Example Usage
-     * 
-     * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Vault.VaultFunctions;
-     * import com.pulumi.oci.Vault.inputs.GetSecretVersionArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testSecretVersion = VaultFunctions.getSecretVersion(GetSecretVersionArgs.builder()
-     *             .secretId(testSecret.id())
-     *             .secretVersionNumber(secretVersionSecretVersionNumber)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * &lt;!--End PulumiCodeChooser --&gt;
-     * 
-     */
-    public static CompletableFuture<GetSecretVersionResult> getSecretVersionPlain(GetSecretVersionPlainArgs args) {
-        return getSecretVersionPlain(args, InvokeOptions.Empty);
+    public static CompletableFuture<GetSecretVersionSdkV2Result> getSecretVersionSdkV2Plain(GetSecretVersionSdkV2PlainArgs args) {
+        return getSecretVersionSdkV2Plain(args, InvokeOptions.Empty);
     }
-    /**
-     * This data source provides details about a specific Secret Version resource in Oracle Cloud Infrastructure Vault service.
-     * 
-     * Gets information about the specified version of a secret.
-     * 
-     * ## Example Usage
-     * 
-     * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Vault.VaultFunctions;
-     * import com.pulumi.oci.Vault.inputs.GetSecretVersionArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testSecretVersion = VaultFunctions.getSecretVersion(GetSecretVersionArgs.builder()
-     *             .secretId(testSecret.id())
-     *             .secretVersionNumber(secretVersionSecretVersionNumber)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * &lt;!--End PulumiCodeChooser --&gt;
-     * 
-     */
-    public static Output<GetSecretVersionResult> getSecretVersion(GetSecretVersionArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invoke("oci:Vault/getSecretVersion:getSecretVersion", TypeShape.of(GetSecretVersionResult.class), args, Utilities.withVersion(options));
+    public static Output<GetSecretVersionSdkV2Result> getSecretVersionSdkV2(GetSecretVersionSdkV2Args args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Vault/getSecretVersionSdkV2:getSecretVersionSdkV2", TypeShape.of(GetSecretVersionSdkV2Result.class), args, Utilities.withVersion(options));
     }
-    /**
-     * This data source provides details about a specific Secret Version resource in Oracle Cloud Infrastructure Vault service.
-     * 
-     * Gets information about the specified version of a secret.
-     * 
-     * ## Example Usage
-     * 
-     * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Vault.VaultFunctions;
-     * import com.pulumi.oci.Vault.inputs.GetSecretVersionArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testSecretVersion = VaultFunctions.getSecretVersion(GetSecretVersionArgs.builder()
-     *             .secretId(testSecret.id())
-     *             .secretVersionNumber(secretVersionSecretVersionNumber)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * &lt;!--End PulumiCodeChooser --&gt;
-     * 
-     */
-    public static Output<GetSecretVersionResult> getSecretVersion(GetSecretVersionArgs args, InvokeOutputOptions options) {
-        return Deployment.getInstance().invoke("oci:Vault/getSecretVersion:getSecretVersion", TypeShape.of(GetSecretVersionResult.class), args, Utilities.withVersion(options));
+    public static Output<GetSecretVersionSdkV2Result> getSecretVersionSdkV2(GetSecretVersionSdkV2Args args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Vault/getSecretVersionSdkV2:getSecretVersionSdkV2", TypeShape.of(GetSecretVersionSdkV2Result.class), args, Utilities.withVersion(options));
     }
-    /**
-     * This data source provides details about a specific Secret Version resource in Oracle Cloud Infrastructure Vault service.
-     * 
-     * Gets information about the specified version of a secret.
-     * 
-     * ## Example Usage
-     * 
-     * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Vault.VaultFunctions;
-     * import com.pulumi.oci.Vault.inputs.GetSecretVersionArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testSecretVersion = VaultFunctions.getSecretVersion(GetSecretVersionArgs.builder()
-     *             .secretId(testSecret.id())
-     *             .secretVersionNumber(secretVersionSecretVersionNumber)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * &lt;!--End PulumiCodeChooser --&gt;
-     * 
-     */
-    public static CompletableFuture<GetSecretVersionResult> getSecretVersionPlain(GetSecretVersionPlainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invokeAsync("oci:Vault/getSecretVersion:getSecretVersion", TypeShape.of(GetSecretVersionResult.class), args, Utilities.withVersion(options));
+    public static CompletableFuture<GetSecretVersionSdkV2Result> getSecretVersionSdkV2Plain(GetSecretVersionSdkV2PlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Vault/getSecretVersionSdkV2:getSecretVersionSdkV2", TypeShape.of(GetSecretVersionSdkV2Result.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Secrets in Oracle Cloud Infrastructure Vault service.

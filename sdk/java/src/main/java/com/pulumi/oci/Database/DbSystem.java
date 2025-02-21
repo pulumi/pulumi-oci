@@ -643,6 +643,20 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
         return this.privateIp;
     }
     /**
+     * A private IPv6 address of your choice. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value and the subnet is dual stack, Oracle automatically assigns a private IPv6 address from the subnet.
+     * 
+     */
+    @Export(name="privateIpV6", refs={String.class}, tree="[0]")
+    private Output<String> privateIpV6;
+
+    /**
+     * @return A private IPv6 address of your choice. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value and the subnet is dual stack, Oracle automatically assigns a private IPv6 address from the subnet.
+     * 
+     */
+    public Output<String> privateIpV6() {
+        return this.privateIpV6;
+    }
+    /**
      * The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
      * 
      */
@@ -685,18 +699,32 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
         return this.scanDnsRecordId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv4 addresses associated with the DB system. SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      * 
      */
     @Export(name="scanIpIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> scanIpIds;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv4 addresses associated with the DB system. SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      * 
      */
     public Output<List<String>> scanIpIds() {
         return this.scanIpIds;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv6 addresses associated with the DB system. SCAN IPv6 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+     * 
+     */
+    @Export(name="scanIpv6ids", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> scanIpv6ids;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv6 addresses associated with the DB system. SCAN IPv6 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+     * 
+     */
+    public Output<List<String>> scanIpv6ids() {
+        return this.scanIpv6ids;
     }
     /**
      * (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
@@ -893,18 +921,32 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
         return this.version;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IPv4 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIPv4 address for each node in the DB system to enable failover. If one node fails, the VIPv4 is reassigned to another active node in the cluster.
      * 
      */
     @Export(name="vipIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> vipIds;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IPv4 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIPv4 address for each node in the DB system to enable failover. If one node fails, the VIPv4 is reassigned to another active node in the cluster.
      * 
      */
     public Output<List<String>> vipIds() {
         return this.vipIds;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IPv6 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP IpV6 address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+     * 
+     */
+    @Export(name="vipv6ids", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> vipv6ids;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IPv6 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP IpV6 address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+     * 
+     */
+    public Output<List<String>> vipv6ids() {
+        return this.vipv6ids;
     }
     /**
      * The OCID of the zone the DB system is associated with.

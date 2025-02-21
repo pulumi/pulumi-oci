@@ -27,6 +27,11 @@ public final class GetAutonomousDatabaseStandbyDb {
      */
     private String lifecycleDetails;
     /**
+     * @return The component chosen for maintenance.
+     * 
+     */
+    private String maintenanceTargetComponent;
+    /**
      * @return The current state of the Autonomous Database.
      * 
      */
@@ -41,6 +46,16 @@ public final class GetAutonomousDatabaseStandbyDb {
      * 
      */
     private String timeDisasterRecoveryRoleChanged;
+    /**
+     * @return The date and time when maintenance will begin.
+     * 
+     */
+    private String timeMaintenanceBegin;
+    /**
+     * @return The date and time when maintenance will end.
+     * 
+     */
+    private String timeMaintenanceEnd;
 
     private GetAutonomousDatabaseStandbyDb() {}
     /**
@@ -65,6 +80,13 @@ public final class GetAutonomousDatabaseStandbyDb {
         return this.lifecycleDetails;
     }
     /**
+     * @return The component chosen for maintenance.
+     * 
+     */
+    public String maintenanceTargetComponent() {
+        return this.maintenanceTargetComponent;
+    }
+    /**
      * @return The current state of the Autonomous Database.
      * 
      */
@@ -85,6 +107,20 @@ public final class GetAutonomousDatabaseStandbyDb {
     public String timeDisasterRecoveryRoleChanged() {
         return this.timeDisasterRecoveryRoleChanged;
     }
+    /**
+     * @return The date and time when maintenance will begin.
+     * 
+     */
+    public String timeMaintenanceBegin() {
+        return this.timeMaintenanceBegin;
+    }
+    /**
+     * @return The date and time when maintenance will end.
+     * 
+     */
+    public String timeMaintenanceEnd() {
+        return this.timeMaintenanceEnd;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -98,18 +134,24 @@ public final class GetAutonomousDatabaseStandbyDb {
         private String availabilityDomain;
         private Integer lagTimeInSeconds;
         private String lifecycleDetails;
+        private String maintenanceTargetComponent;
         private String state;
         private String timeDataGuardRoleChanged;
         private String timeDisasterRecoveryRoleChanged;
+        private String timeMaintenanceBegin;
+        private String timeMaintenanceEnd;
         public Builder() {}
         public Builder(GetAutonomousDatabaseStandbyDb defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.lagTimeInSeconds = defaults.lagTimeInSeconds;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.maintenanceTargetComponent = defaults.maintenanceTargetComponent;
     	      this.state = defaults.state;
     	      this.timeDataGuardRoleChanged = defaults.timeDataGuardRoleChanged;
     	      this.timeDisasterRecoveryRoleChanged = defaults.timeDisasterRecoveryRoleChanged;
+    	      this.timeMaintenanceBegin = defaults.timeMaintenanceBegin;
+    	      this.timeMaintenanceEnd = defaults.timeMaintenanceEnd;
         }
 
         @CustomType.Setter
@@ -137,6 +179,14 @@ public final class GetAutonomousDatabaseStandbyDb {
             return this;
         }
         @CustomType.Setter
+        public Builder maintenanceTargetComponent(String maintenanceTargetComponent) {
+            if (maintenanceTargetComponent == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseStandbyDb", "maintenanceTargetComponent");
+            }
+            this.maintenanceTargetComponent = maintenanceTargetComponent;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetAutonomousDatabaseStandbyDb", "state");
@@ -160,14 +210,33 @@ public final class GetAutonomousDatabaseStandbyDb {
             this.timeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
             return this;
         }
+        @CustomType.Setter
+        public Builder timeMaintenanceBegin(String timeMaintenanceBegin) {
+            if (timeMaintenanceBegin == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseStandbyDb", "timeMaintenanceBegin");
+            }
+            this.timeMaintenanceBegin = timeMaintenanceBegin;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeMaintenanceEnd(String timeMaintenanceEnd) {
+            if (timeMaintenanceEnd == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseStandbyDb", "timeMaintenanceEnd");
+            }
+            this.timeMaintenanceEnd = timeMaintenanceEnd;
+            return this;
+        }
         public GetAutonomousDatabaseStandbyDb build() {
             final var _resultValue = new GetAutonomousDatabaseStandbyDb();
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.lagTimeInSeconds = lagTimeInSeconds;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.maintenanceTargetComponent = maintenanceTargetComponent;
             _resultValue.state = state;
             _resultValue.timeDataGuardRoleChanged = timeDataGuardRoleChanged;
             _resultValue.timeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
+            _resultValue.timeMaintenanceBegin = timeMaintenanceBegin;
+            _resultValue.timeMaintenanceEnd = timeMaintenanceEnd;
             return _resultValue;
         }
     }

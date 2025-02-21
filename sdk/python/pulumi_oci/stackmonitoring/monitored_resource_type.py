@@ -196,6 +196,7 @@ class MonitoredResourceTypeArgs:
 @pulumi.input_type
 class _MonitoredResourceTypeState:
     def __init__(__self__, *,
+                 additional_namespace_map: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
@@ -212,6 +213,7 @@ class _MonitoredResourceTypeState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering MonitoredResourceType resources.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_namespace_map: Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A friendly description.
@@ -231,6 +233,8 @@ class _MonitoredResourceTypeState:
         :param pulumi.Input[str] time_created: The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         :param pulumi.Input[str] time_updated: The date and time when the monitored resource was updated, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         """
+        if additional_namespace_map is not None:
+            pulumi.set(__self__, "additional_namespace_map", additional_namespace_map)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
@@ -259,6 +263,18 @@ class _MonitoredResourceTypeState:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="additionalNamespaceMap")
+    def additional_namespace_map(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
+        """
+        return pulumi.get(self, "additional_namespace_map")
+
+    @additional_namespace_map.setter
+    def additional_namespace_map(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "additional_namespace_map", value)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -481,6 +497,7 @@ class MonitoredResourceType(pulumi.CustomResource):
                 "valid_properties_for_creates": monitored_resource_type_metadata_valid_properties_for_create,
                 "valid_properties_for_updates": monitored_resource_type_metadata_valid_properties_for_update,
                 "valid_property_values": monitored_resource_type_metadata_valid_property_values,
+                "valid_sub_resource_types": monitored_resource_type_metadata_valid_sub_resource_types,
             },
             metric_namespace=monitored_resource_type_metric_namespace,
             resource_category=monitored_resource_type_resource_category,
@@ -550,6 +567,7 @@ class MonitoredResourceType(pulumi.CustomResource):
                 "valid_properties_for_creates": monitored_resource_type_metadata_valid_properties_for_create,
                 "valid_properties_for_updates": monitored_resource_type_metadata_valid_properties_for_update,
                 "valid_property_values": monitored_resource_type_metadata_valid_property_values,
+                "valid_sub_resource_types": monitored_resource_type_metadata_valid_sub_resource_types,
             },
             metric_namespace=monitored_resource_type_metric_namespace,
             resource_category=monitored_resource_type_resource_category,
@@ -610,6 +628,7 @@ class MonitoredResourceType(pulumi.CustomResource):
             __props__.__dict__["name"] = name
             __props__.__dict__["resource_category"] = resource_category
             __props__.__dict__["source_type"] = source_type
+            __props__.__dict__["additional_namespace_map"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
@@ -624,6 +643,7 @@ class MonitoredResourceType(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            additional_namespace_map: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             description: Optional[pulumi.Input[str]] = None,
@@ -645,6 +665,7 @@ class MonitoredResourceType(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_namespace_map: Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A friendly description.
@@ -668,6 +689,7 @@ class MonitoredResourceType(pulumi.CustomResource):
 
         __props__ = _MonitoredResourceTypeState.__new__(_MonitoredResourceTypeState)
 
+        __props__.__dict__["additional_namespace_map"] = additional_namespace_map
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
@@ -683,6 +705,14 @@ class MonitoredResourceType(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         return MonitoredResourceType(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter(name="additionalNamespaceMap")
+    def additional_namespace_map(self) -> pulumi.Output[Mapping[str, str]]:
+        """
+        Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
+        """
+        return pulumi.get(self, "additional_namespace_map")
 
     @property
     @pulumi.getter(name="compartmentId")

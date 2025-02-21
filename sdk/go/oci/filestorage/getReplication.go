@@ -92,6 +92,8 @@ type LookupReplicationResult struct {
 	SourceId string `pulumi:"sourceId"`
 	// The current state of this replication. This resource can be in a `FAILED` state if replication target is deleted instead of the replication resource.
 	State string `pulumi:"state"`
+	// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.
 	TargetId string `pulumi:"targetId"`
 	// The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
@@ -218,6 +220,11 @@ func (o LookupReplicationResultOutput) SourceId() pulumi.StringOutput {
 // The current state of this replication. This resource can be in a `FAILED` state if replication target is deleted instead of the replication resource.
 func (o LookupReplicationResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReplicationResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+func (o LookupReplicationResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupReplicationResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.

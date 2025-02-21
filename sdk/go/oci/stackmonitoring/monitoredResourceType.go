@@ -53,6 +53,7 @@ import (
 //					ValidPropertiesForCreates: pulumi.Any(monitoredResourceTypeMetadataValidPropertiesForCreate),
 //					ValidPropertiesForUpdates: pulumi.Any(monitoredResourceTypeMetadataValidPropertiesForUpdate),
 //					ValidPropertyValues:       pulumi.Any(monitoredResourceTypeMetadataValidPropertyValues),
+//					ValidSubResourceTypes:     pulumi.Any(monitoredResourceTypeMetadataValidSubResourceTypes),
 //				},
 //				MetricNamespace:  pulumi.Any(monitoredResourceTypeMetricNamespace),
 //				ResourceCategory: pulumi.Any(monitoredResourceTypeResourceCategory),
@@ -77,6 +78,8 @@ import (
 type MonitoredResourceType struct {
 	pulumi.CustomResourceState
 
+	// Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
+	AdditionalNamespaceMap pulumi.StringMapOutput `pulumi:"additionalNamespaceMap"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -143,6 +146,8 @@ func GetMonitoredResourceType(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering MonitoredResourceType resources.
 type monitoredResourceTypeState struct {
+	// Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
+	AdditionalNamespaceMap map[string]string `pulumi:"additionalNamespaceMap"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -177,6 +182,8 @@ type monitoredResourceTypeState struct {
 }
 
 type MonitoredResourceTypeState struct {
+	// Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
+	AdditionalNamespaceMap pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -352,6 +359,11 @@ func (o MonitoredResourceTypeOutput) ToMonitoredResourceTypeOutput() MonitoredRe
 
 func (o MonitoredResourceTypeOutput) ToMonitoredResourceTypeOutputWithContext(ctx context.Context) MonitoredResourceTypeOutput {
 	return o
+}
+
+// Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
+func (o MonitoredResourceTypeOutput) AdditionalNamespaceMap() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MonitoredResourceType) pulumi.StringMapOutput { return v.AdditionalNamespaceMap }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.

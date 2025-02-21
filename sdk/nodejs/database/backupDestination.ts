@@ -128,13 +128,25 @@ export class BackupDestination extends pulumi.CustomResource {
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
+     * The time when the total storage size and the utilized storage size of the backup destination are updated.
+     */
+    public /*out*/ readonly timeAtWhichStorageDetailsAreUpdated!: pulumi.Output<string>;
+    /**
      * The date and time the backup destination was created.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
+     * The total storage size of the backup destination in GBs, rounded to the nearest integer.
+     */
+    public /*out*/ readonly totalStorageSizeInGbs!: pulumi.Output<number>;
+    /**
      * Type of the backup destination.
      */
     public readonly type!: pulumi.Output<string>;
+    /**
+     * The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
+     */
+    public /*out*/ readonly utilizedStorageSizeInGbs!: pulumi.Output<number>;
     /**
      * (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
      *
@@ -170,8 +182,11 @@ export class BackupDestination extends pulumi.CustomResource {
             resourceInputs["nfsServerExport"] = state ? state.nfsServerExport : undefined;
             resourceInputs["nfsServers"] = state ? state.nfsServers : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["timeAtWhichStorageDetailsAreUpdated"] = state ? state.timeAtWhichStorageDetailsAreUpdated : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["totalStorageSizeInGbs"] = state ? state.totalStorageSizeInGbs : undefined;
             resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["utilizedStorageSizeInGbs"] = state ? state.utilizedStorageSizeInGbs : undefined;
             resourceInputs["vpcUsers"] = state ? state.vpcUsers : undefined;
         } else {
             const args = argsOrState as BackupDestinationArgs | undefined;
@@ -199,7 +214,10 @@ export class BackupDestination extends pulumi.CustomResource {
             resourceInputs["nfsServerExport"] = undefined /*out*/;
             resourceInputs["nfsServers"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["timeAtWhichStorageDetailsAreUpdated"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
+            resourceInputs["totalStorageSizeInGbs"] = undefined /*out*/;
+            resourceInputs["utilizedStorageSizeInGbs"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(BackupDestination.__pulumiType, name, resourceInputs, opts);
@@ -265,13 +283,25 @@ export interface BackupDestinationState {
      */
     state?: pulumi.Input<string>;
     /**
+     * The time when the total storage size and the utilized storage size of the backup destination are updated.
+     */
+    timeAtWhichStorageDetailsAreUpdated?: pulumi.Input<string>;
+    /**
      * The date and time the backup destination was created.
      */
     timeCreated?: pulumi.Input<string>;
     /**
+     * The total storage size of the backup destination in GBs, rounded to the nearest integer.
+     */
+    totalStorageSizeInGbs?: pulumi.Input<number>;
+    /**
      * Type of the backup destination.
      */
     type?: pulumi.Input<string>;
+    /**
+     * The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
+     */
+    utilizedStorageSizeInGbs?: pulumi.Input<number>;
     /**
      * (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
      *

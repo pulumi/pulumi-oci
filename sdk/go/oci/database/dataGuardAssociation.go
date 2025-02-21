@@ -72,6 +72,7 @@ import (
 //				PeerSidPrefix:                pulumi.Any(dataGuardAssociationPeerSidPrefix),
 //				PeerVmClusterId:              pulumi.Any(testVmCluster.Id),
 //				PrivateIp:                    pulumi.Any(dataGuardAssociationPrivateIp),
+//				PrivateIpV6:                  pulumi.Any(dataGuardAssociationPrivateIpV6),
 //				Shape:                        pulumi.Any(dataGuardAssociationShape),
 //				StorageVolumePerformanceMode: pulumi.Any(dataGuardAssociationStorageVolumePerformanceMode),
 //				SubnetId:                     pulumi.Any(testSubnet.Id),
@@ -182,6 +183,8 @@ type DataGuardAssociation struct {
 	PeerVmClusterId pulumi.StringOutput `pulumi:"peerVmClusterId"`
 	// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
 	PrivateIp pulumi.StringPtrOutput `pulumi:"privateIp"`
+	// The IPv6 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv6 address from the subnet.
+	PrivateIpV6 pulumi.StringOutput `pulumi:"privateIpV6"`
 	// (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
 	//
 	// **IMPORTANT** - The only protection mode currently supported by the Database service is MAXIMUM_PERFORMANCE.
@@ -361,6 +364,8 @@ type dataGuardAssociationState struct {
 	PeerVmClusterId *string `pulumi:"peerVmClusterId"`
 	// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
 	PrivateIp *string `pulumi:"privateIp"`
+	// The IPv6 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv6 address from the subnet.
+	PrivateIpV6 *string `pulumi:"privateIpV6"`
 	// (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
 	//
 	// **IMPORTANT** - The only protection mode currently supported by the Database service is MAXIMUM_PERFORMANCE.
@@ -486,6 +491,8 @@ type DataGuardAssociationState struct {
 	PeerVmClusterId pulumi.StringPtrInput
 	// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
 	PrivateIp pulumi.StringPtrInput
+	// The IPv6 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv6 address from the subnet.
+	PrivateIpV6 pulumi.StringPtrInput
 	// (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
 	//
 	// **IMPORTANT** - The only protection mode currently supported by the Database service is MAXIMUM_PERFORMANCE.
@@ -603,6 +610,8 @@ type dataGuardAssociationArgs struct {
 	PeerVmClusterId *string `pulumi:"peerVmClusterId"`
 	// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
 	PrivateIp *string `pulumi:"privateIp"`
+	// The IPv6 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv6 address from the subnet.
+	PrivateIpV6 *string `pulumi:"privateIpV6"`
 	// (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
 	//
 	// **IMPORTANT** - The only protection mode currently supported by the Database service is MAXIMUM_PERFORMANCE.
@@ -711,6 +720,8 @@ type DataGuardAssociationArgs struct {
 	PeerVmClusterId pulumi.StringPtrInput
 	// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
 	PrivateIp pulumi.StringPtrInput
+	// The IPv6 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv6 address from the subnet.
+	PrivateIpV6 pulumi.StringPtrInput
 	// (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
 	//
 	// **IMPORTANT** - The only protection mode currently supported by the Database service is MAXIMUM_PERFORMANCE.
@@ -1024,6 +1035,11 @@ func (o DataGuardAssociationOutput) PeerVmClusterId() pulumi.StringOutput {
 // The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
 func (o DataGuardAssociationOutput) PrivateIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringPtrOutput { return v.PrivateIp }).(pulumi.StringPtrOutput)
+}
+
+// The IPv6 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv6 address from the subnet.
+func (o DataGuardAssociationOutput) PrivateIpV6() pulumi.StringOutput {
+	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringOutput { return v.PrivateIpV6 }).(pulumi.StringOutput)
 }
 
 // (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.

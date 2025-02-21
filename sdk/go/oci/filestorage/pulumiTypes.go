@@ -2800,6 +2800,8 @@ type GetFileSystemsFileSystem struct {
 	SourceSnapshotId string `pulumi:"sourceSnapshotId"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
 	State string `pulumi:"state"`
+	// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 }
@@ -2858,6 +2860,8 @@ type GetFileSystemsFileSystemArgs struct {
 	SourceSnapshotId pulumi.StringInput `pulumi:"sourceSnapshotId"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
 	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 }
@@ -3019,6 +3023,11 @@ func (o GetFileSystemsFileSystemOutput) SourceSnapshotId() pulumi.StringOutput {
 // Filter results by the specified lifecycle state. Must be a valid state for the resource type.
 func (o GetFileSystemsFileSystemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFileSystemsFileSystem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+func (o GetFileSystemsFileSystemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFileSystemsFileSystem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
@@ -3404,6 +3413,8 @@ type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy struct {
 	Schedules []GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule `pulumi:"schedules"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
 	State string `pulumi:"state"`
+	// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 }
@@ -3441,6 +3452,8 @@ type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArgs struct {
 	Schedules GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayInput `pulumi:"schedules"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
 	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 }
@@ -3552,6 +3565,11 @@ func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) Schedules()
 // Filter results by the specified lifecycle state. Must be a valid state for the resource type.
 func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
@@ -4423,6 +4441,8 @@ type GetMountTargetsMountTarget struct {
 	State string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the mount target is in.
 	SubnetId string `pulumi:"subnetId"`
+	// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the mount target current billing cycle will end, expressed in  [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated  automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
 	TimeBillingCycleEnd string `pulumi:"timeBillingCycleEnd"`
 	// The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
@@ -4482,6 +4502,8 @@ type GetMountTargetsMountTargetArgs struct {
 	State pulumi.StringInput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the mount target is in.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time the mount target current billing cycle will end, expressed in  [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated  automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
 	TimeBillingCycleEnd pulumi.StringInput `pulumi:"timeBillingCycleEnd"`
 	// The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
@@ -4644,6 +4666,11 @@ func (o GetMountTargetsMountTargetOutput) State() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the mount target is in.
 func (o GetMountTargetsMountTargetOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMountTargetsMountTarget) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+func (o GetMountTargetsMountTargetOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTarget) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the mount target current billing cycle will end, expressed in  [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated  automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
@@ -5457,6 +5484,8 @@ type GetOutboundConnectorsOutboundConnector struct {
 	PasswordSecretVersion int `pulumi:"passwordSecretVersion"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
 	State string `pulumi:"state"`
+	// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 }
@@ -5500,6 +5529,8 @@ type GetOutboundConnectorsOutboundConnectorArgs struct {
 	PasswordSecretVersion pulumi.IntInput `pulumi:"passwordSecretVersion"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
 	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 }
@@ -5626,6 +5657,11 @@ func (o GetOutboundConnectorsOutboundConnectorOutput) PasswordSecretVersion() pu
 // Filter results by the specified lifecycle state. Must be a valid state for the resource type.
 func (o GetOutboundConnectorsOutboundConnectorOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+func (o GetOutboundConnectorsOutboundConnectorOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
@@ -6142,6 +6178,8 @@ type GetReplicationTargetsReplicationTarget struct {
 	SourceId string `pulumi:"sourceId"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
 	State string `pulumi:"state"`
+	// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of target filesystem.
 	TargetId string `pulumi:"targetId"`
 	// The date and time the replication target was created in target region. in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-01-04T20:01:29.100Z`
@@ -6188,6 +6226,8 @@ type GetReplicationTargetsReplicationTargetArgs struct {
 	SourceId pulumi.StringInput `pulumi:"sourceId"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
 	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of target filesystem.
 	TargetId pulumi.StringInput `pulumi:"targetId"`
 	// The date and time the replication target was created in target region. in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-01-04T20:01:29.100Z`
@@ -6313,6 +6353,11 @@ func (o GetReplicationTargetsReplicationTargetOutput) SourceId() pulumi.StringOu
 // Filter results by the specified lifecycle state. Must be a valid state for the resource type.
 func (o GetReplicationTargetsReplicationTargetOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+func (o GetReplicationTargetsReplicationTargetOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of target filesystem.
@@ -6485,6 +6530,8 @@ type GetReplicationsReplication struct {
 	SourceId string `pulumi:"sourceId"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
 	State string `pulumi:"state"`
+	// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.
 	TargetId string `pulumi:"targetId"`
 	// The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
@@ -6536,6 +6583,8 @@ type GetReplicationsReplicationArgs struct {
 	SourceId pulumi.StringInput `pulumi:"sourceId"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
 	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.
 	TargetId pulumi.StringInput `pulumi:"targetId"`
 	// The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
@@ -6675,6 +6724,11 @@ func (o GetReplicationsReplicationOutput) SourceId() pulumi.StringOutput {
 // Filter results by the specified lifecycle state. Must be a valid state for the resource type.
 func (o GetReplicationsReplicationOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReplicationsReplication) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+func (o GetReplicationsReplicationOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetReplicationsReplication) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.
@@ -7097,6 +7151,8 @@ type GetSnapshotsSnapshot struct {
 	SnapshotType string `pulumi:"snapshotType"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
 	State string `pulumi:"state"`
+	// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 }
@@ -7145,6 +7201,8 @@ type GetSnapshotsSnapshotArgs struct {
 	SnapshotType pulumi.StringInput `pulumi:"snapshotType"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
 	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 }
@@ -7275,6 +7333,11 @@ func (o GetSnapshotsSnapshotOutput) SnapshotType() pulumi.StringOutput {
 // Filter results by the specified lifecycle state. Must be a valid state for the resource type.
 func (o GetSnapshotsSnapshotOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSnapshotsSnapshot) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+func (o GetSnapshotsSnapshotOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSnapshotsSnapshot) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`

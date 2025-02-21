@@ -162,6 +162,10 @@ export class Replication extends pulumi.CustomResource {
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
+     * System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+     */
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system. 
      *
      *
@@ -203,6 +207,7 @@ export class Replication extends pulumi.CustomResource {
             resourceInputs["replicationTargetId"] = state ? state.replicationTargetId : undefined;
             resourceInputs["sourceId"] = state ? state.sourceId : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["targetId"] = state ? state.targetId : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
         } else {
@@ -233,6 +238,7 @@ export class Replication extends pulumi.CustomResource {
             resourceInputs["recoveryPointTime"] = undefined /*out*/;
             resourceInputs["replicationTargetId"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -305,6 +311,10 @@ export interface ReplicationState {
      * The current state of this replication. This resource can be in a `FAILED` state if replication target is deleted instead of the replication resource.
      */
     state?: pulumi.Input<string>;
+    /**
+     * System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+     */
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system. 
      *

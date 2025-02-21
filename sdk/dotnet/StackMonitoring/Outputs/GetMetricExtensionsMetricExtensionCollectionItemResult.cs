@@ -38,7 +38,7 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// List of resource objects on which this metric extension is enabled.
+        /// List of resource details objects having resourceIds on which this metric extension is enabled.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceResult> EnabledOnResources;
         /// <summary>

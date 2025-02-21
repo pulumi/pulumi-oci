@@ -585,6 +585,21 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
     }
 
     /**
+     * The IPv6 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv6 address from the subnet.
+     * 
+     */
+    @Import(name="privateIpV6")
+    private @Nullable Output<String> privateIpV6;
+
+    /**
+     * @return The IPv6 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv6 address from the subnet.
+     * 
+     */
+    public Optional<Output<String>> privateIpV6() {
+        return Optional.ofNullable(this.privateIpV6);
+    }
+
+    /**
      * (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      * 
      * **IMPORTANT** - The only protection mode currently supported by the Database service is MAXIMUM_PERFORMANCE.
@@ -786,6 +801,7 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
         this.peerSidPrefix = $.peerSidPrefix;
         this.peerVmClusterId = $.peerVmClusterId;
         this.privateIp = $.privateIp;
+        this.privateIpV6 = $.privateIpV6;
         this.protectionMode = $.protectionMode;
         this.role = $.role;
         this.shape = $.shape;
@@ -1624,6 +1640,27 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
          */
         public Builder privateIp(String privateIp) {
             return privateIp(Output.of(privateIp));
+        }
+
+        /**
+         * @param privateIpV6 The IPv6 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv6 address from the subnet.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateIpV6(@Nullable Output<String> privateIpV6) {
+            $.privateIpV6 = privateIpV6;
+            return this;
+        }
+
+        /**
+         * @param privateIpV6 The IPv6 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv6 address from the subnet.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateIpV6(String privateIpV6) {
+            return privateIpV6(Output.of(privateIpV6));
         }
 
         /**

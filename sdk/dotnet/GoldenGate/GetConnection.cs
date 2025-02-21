@@ -151,6 +151,9 @@ namespace Pulumi.Oci.GoldenGate
         /// Used authentication mechanism to be provided for the following connection types:
         /// * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE
         /// * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
+        /// * DATABRICKS - Required fields by authentication types:
+        /// * PERSONAL_ACCESS_TOKEN: username is always 'token', user must enter password
+        /// * OAUTH_M2M: user must enter clientId and clientSecret
         /// </summary>
         public readonly string AuthenticationType;
         /// <summary>
@@ -193,6 +196,7 @@ namespace Pulumi.Oci.GoldenGate
         /// * JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676'
         /// * SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;'
         /// * AMAZON_REDSHIFT: Connection URL. e.g.: 'jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb'
+        /// * DATABRICKS: Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
         /// </summary>
         public readonly string ConnectionUrl;
         /// <summary>
@@ -232,6 +236,9 @@ namespace Pulumi.Oci.GoldenGate
         /// Indicates that sensitive attributes are provided via Secrets.
         /// </summary>
         public readonly bool DoesUseSecretIds;
+        /// <summary>
+        /// Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+        /// </summary>
         public readonly string Endpoint;
         public readonly string Fingerprint;
         /// <summary>
@@ -334,7 +341,7 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string RedisClusterId;
         /// <summary>
-        /// The name of the region. e.g.: us-ashburn-1
+        /// The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
         /// </summary>
         public readonly string Region;
         /// <summary>
@@ -376,11 +383,15 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly bool ShouldUseJndi;
         /// <summary>
+        /// Indicates that the user intents to connect to the instance through resource principal.
+        /// </summary>
+        public readonly bool ShouldUseResourcePrincipal;
+        /// <summary>
         /// If set to true, the driver validates the certificate that is sent by the database server.
         /// </summary>
         public readonly bool ShouldValidateServerCertificate;
         /// <summary>
-        /// Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
+        /// Database Certificate - The base64 encoded content of a .pem or .crt file. containing the server public key (for 1-way SSL).
         /// </summary>
         public readonly string SslCa;
         public readonly string SslCert;
@@ -416,6 +427,10 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string State;
         /// <summary>
+        /// Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
+        /// </summary>
+        public readonly string StorageCredentialName;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
         /// </summary>
         public readonly string StreamPoolId;
@@ -436,6 +451,10 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string TenancyId;
         /// <summary>
+        /// Azure tenant ID of the application. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
+        /// </summary>
+        public readonly string TenantId;
+        /// <summary>
         /// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
         public readonly string TimeCreated;
@@ -443,6 +462,18 @@ namespace Pulumi.Oci.GoldenGate
         /// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
         public readonly string TimeUpdated;
+        public readonly string TlsCaFile;
+        public readonly string TlsCertificateKeyFile;
+        public readonly string TlsCertificateKeyFilePassword;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
+        /// </summary>
+        public readonly string TlsCertificateKeyFilePasswordSecretId;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
+        /// * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
+        /// </summary>
+        public readonly string TlsCertificateKeyFileSecretId;
         public readonly bool TriggerRefresh;
         public readonly string TrustStore;
         public readonly string TrustStorePassword;
@@ -451,7 +482,7 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string TrustStorePasswordSecretId;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided.
         /// </summary>
         public readonly string TrustStoreSecretId;
         /// <summary>
@@ -459,11 +490,11 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string Url;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/Object Storage. The user must have write access to the table they want to connect to.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
         /// </summary>
         public readonly string UserId;
         /// <summary>
-        /// The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
+        /// The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
         /// </summary>
         public readonly string Username;
         /// <summary>
@@ -622,6 +653,8 @@ namespace Pulumi.Oci.GoldenGate
 
             bool shouldUseJndi,
 
+            bool shouldUseResourcePrincipal,
+
             bool shouldValidateServerCertificate,
 
             string sslCa,
@@ -652,6 +685,8 @@ namespace Pulumi.Oci.GoldenGate
 
             string state,
 
+            string storageCredentialName,
+
             string streamPoolId,
 
             string subnetId,
@@ -662,9 +697,21 @@ namespace Pulumi.Oci.GoldenGate
 
             string tenancyId,
 
+            string tenantId,
+
             string timeCreated,
 
             string timeUpdated,
+
+            string tlsCaFile,
+
+            string tlsCertificateKeyFile,
+
+            string tlsCertificateKeyFilePassword,
+
+            string tlsCertificateKeyFilePasswordSecretId,
+
+            string tlsCertificateKeyFileSecretId,
 
             bool triggerRefresh,
 
@@ -760,6 +807,7 @@ namespace Pulumi.Oci.GoldenGate
             ServiceAccountKeyFileSecretId = serviceAccountKeyFileSecretId;
             SessionMode = sessionMode;
             ShouldUseJndi = shouldUseJndi;
+            ShouldUseResourcePrincipal = shouldUseResourcePrincipal;
             ShouldValidateServerCertificate = shouldValidateServerCertificate;
             SslCa = sslCa;
             SslCert = sslCert;
@@ -775,13 +823,20 @@ namespace Pulumi.Oci.GoldenGate
             SslMode = sslMode;
             SslServerCertificate = sslServerCertificate;
             State = state;
+            StorageCredentialName = storageCredentialName;
             StreamPoolId = streamPoolId;
             SubnetId = subnetId;
             SystemTags = systemTags;
             TechnologyType = technologyType;
             TenancyId = tenancyId;
+            TenantId = tenantId;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
+            TlsCaFile = tlsCaFile;
+            TlsCertificateKeyFile = tlsCertificateKeyFile;
+            TlsCertificateKeyFilePassword = tlsCertificateKeyFilePassword;
+            TlsCertificateKeyFilePasswordSecretId = tlsCertificateKeyFilePasswordSecretId;
+            TlsCertificateKeyFileSecretId = tlsCertificateKeyFileSecretId;
             TriggerRefresh = triggerRefresh;
             TrustStore = trustStore;
             TrustStorePassword = trustStorePassword;

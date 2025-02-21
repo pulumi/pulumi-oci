@@ -99,6 +99,10 @@ export interface GetReplicationTargetResult {
      */
     readonly state: string;
     /**
+     * System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+     */
+    readonly systemTags: {[key: string]: string};
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of target filesystem.
      */
     readonly targetId: string;

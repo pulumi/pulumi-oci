@@ -58,6 +58,8 @@ type LookupMonitoredResourceTypeArgs struct {
 
 // A collection of values returned by getMonitoredResourceType.
 type LookupMonitoredResourceTypeResult struct {
+	// Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
+	AdditionalNamespaceMap map[string]string `pulumi:"additionalNamespaceMap"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -123,6 +125,11 @@ func (o LookupMonitoredResourceTypeResultOutput) ToLookupMonitoredResourceTypeRe
 
 func (o LookupMonitoredResourceTypeResultOutput) ToLookupMonitoredResourceTypeResultOutputWithContext(ctx context.Context) LookupMonitoredResourceTypeResultOutput {
 	return o
+}
+
+// Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
+func (o LookupMonitoredResourceTypeResultOutput) AdditionalNamespaceMap() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceTypeResult) map[string]string { return v.AdditionalNamespaceMap }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.

@@ -27,7 +27,10 @@ class GetMonitoredResourceTypeResult:
     """
     A collection of values returned by getMonitoredResourceType.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, metadatas=None, metric_namespace=None, monitored_resource_type_id=None, name=None, resource_category=None, source_type=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, additional_namespace_map=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, metadatas=None, metric_namespace=None, monitored_resource_type_id=None, name=None, resource_category=None, source_type=None, state=None, system_tags=None, time_created=None, time_updated=None):
+        if additional_namespace_map and not isinstance(additional_namespace_map, dict):
+            raise TypeError("Expected argument 'additional_namespace_map' to be a dict")
+        pulumi.set(__self__, "additional_namespace_map", additional_namespace_map)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -76,6 +79,14 @@ class GetMonitoredResourceTypeResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="additionalNamespaceMap")
+    def additional_namespace_map(self) -> Mapping[str, str]:
+        """
+        Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
+        """
+        return pulumi.get(self, "additional_namespace_map")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -209,6 +220,7 @@ class AwaitableGetMonitoredResourceTypeResult(GetMonitoredResourceTypeResult):
         if False:
             yield self
         return GetMonitoredResourceTypeResult(
+            additional_namespace_map=self.additional_namespace_map,
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
             description=self.description,
@@ -252,6 +264,7 @@ def get_monitored_resource_type(monitored_resource_type_id: Optional[str] = None
     __ret__ = pulumi.runtime.invoke('oci:StackMonitoring/getMonitoredResourceType:getMonitoredResourceType', __args__, opts=opts, typ=GetMonitoredResourceTypeResult).value
 
     return AwaitableGetMonitoredResourceTypeResult(
+        additional_namespace_map=pulumi.get(__ret__, 'additional_namespace_map'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         description=pulumi.get(__ret__, 'description'),
@@ -292,6 +305,7 @@ def get_monitored_resource_type_output(monitored_resource_type_id: Optional[pulu
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:StackMonitoring/getMonitoredResourceType:getMonitoredResourceType', __args__, opts=opts, typ=GetMonitoredResourceTypeResult)
     return __ret__.apply(lambda __response__: GetMonitoredResourceTypeResult(
+        additional_namespace_map=pulumi.get(__response__, 'additional_namespace_map'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         description=pulumi.get(__response__, 'description'),

@@ -45,6 +45,11 @@ export const getConfigs: typeof import("./getConfigs").getConfigs = null as any;
 export const getConfigsOutput: typeof import("./getConfigs").getConfigsOutput = null as any;
 utilities.lazyLoad(exports, ["getConfigs","getConfigsOutput"], () => require("./getConfigs"));
 
+export { GetDefinedMonitoringTemplatesArgs, GetDefinedMonitoringTemplatesResult, GetDefinedMonitoringTemplatesOutputArgs } from "./getDefinedMonitoringTemplates";
+export const getDefinedMonitoringTemplates: typeof import("./getDefinedMonitoringTemplates").getDefinedMonitoringTemplates = null as any;
+export const getDefinedMonitoringTemplatesOutput: typeof import("./getDefinedMonitoringTemplates").getDefinedMonitoringTemplatesOutput = null as any;
+utilities.lazyLoad(exports, ["getDefinedMonitoringTemplates","getDefinedMonitoringTemplatesOutput"], () => require("./getDefinedMonitoringTemplates"));
+
 export { GetDiscoveryJobArgs, GetDiscoveryJobResult, GetDiscoveryJobOutputArgs } from "./getDiscoveryJob";
 export const getDiscoveryJob: typeof import("./getDiscoveryJob").getDiscoveryJob = null as any;
 export const getDiscoveryJobOutput: typeof import("./getDiscoveryJob").getDiscoveryJobOutput = null as any;
@@ -109,6 +114,26 @@ export { GetMonitoredResourcesArgs, GetMonitoredResourcesResult, GetMonitoredRes
 export const getMonitoredResources: typeof import("./getMonitoredResources").getMonitoredResources = null as any;
 export const getMonitoredResourcesOutput: typeof import("./getMonitoredResources").getMonitoredResourcesOutput = null as any;
 utilities.lazyLoad(exports, ["getMonitoredResources","getMonitoredResourcesOutput"], () => require("./getMonitoredResources"));
+
+export { GetMonitoringTemplateArgs, GetMonitoringTemplateResult, GetMonitoringTemplateOutputArgs } from "./getMonitoringTemplate";
+export const getMonitoringTemplate: typeof import("./getMonitoringTemplate").getMonitoringTemplate = null as any;
+export const getMonitoringTemplateOutput: typeof import("./getMonitoringTemplate").getMonitoringTemplateOutput = null as any;
+utilities.lazyLoad(exports, ["getMonitoringTemplate","getMonitoringTemplateOutput"], () => require("./getMonitoringTemplate"));
+
+export { GetMonitoringTemplateAlarmConditionArgs, GetMonitoringTemplateAlarmConditionResult, GetMonitoringTemplateAlarmConditionOutputArgs } from "./getMonitoringTemplateAlarmCondition";
+export const getMonitoringTemplateAlarmCondition: typeof import("./getMonitoringTemplateAlarmCondition").getMonitoringTemplateAlarmCondition = null as any;
+export const getMonitoringTemplateAlarmConditionOutput: typeof import("./getMonitoringTemplateAlarmCondition").getMonitoringTemplateAlarmConditionOutput = null as any;
+utilities.lazyLoad(exports, ["getMonitoringTemplateAlarmCondition","getMonitoringTemplateAlarmConditionOutput"], () => require("./getMonitoringTemplateAlarmCondition"));
+
+export { GetMonitoringTemplateAlarmConditionsArgs, GetMonitoringTemplateAlarmConditionsResult, GetMonitoringTemplateAlarmConditionsOutputArgs } from "./getMonitoringTemplateAlarmConditions";
+export const getMonitoringTemplateAlarmConditions: typeof import("./getMonitoringTemplateAlarmConditions").getMonitoringTemplateAlarmConditions = null as any;
+export const getMonitoringTemplateAlarmConditionsOutput: typeof import("./getMonitoringTemplateAlarmConditions").getMonitoringTemplateAlarmConditionsOutput = null as any;
+utilities.lazyLoad(exports, ["getMonitoringTemplateAlarmConditions","getMonitoringTemplateAlarmConditionsOutput"], () => require("./getMonitoringTemplateAlarmConditions"));
+
+export { GetMonitoringTemplatesArgs, GetMonitoringTemplatesResult, GetMonitoringTemplatesOutputArgs } from "./getMonitoringTemplates";
+export const getMonitoringTemplates: typeof import("./getMonitoringTemplates").getMonitoringTemplates = null as any;
+export const getMonitoringTemplatesOutput: typeof import("./getMonitoringTemplates").getMonitoringTemplatesOutput = null as any;
+utilities.lazyLoad(exports, ["getMonitoringTemplates","getMonitoringTemplatesOutput"], () => require("./getMonitoringTemplates"));
 
 export { GetProcessSetArgs, GetProcessSetResult, GetProcessSetOutputArgs } from "./getProcessSet";
 export const getProcessSet: typeof import("./getProcessSet").getProcessSet = null as any;
@@ -185,6 +210,21 @@ export type MonitoredResourcesSearchAssociation = import("./monitoredResourcesSe
 export const MonitoredResourcesSearchAssociation: typeof import("./monitoredResourcesSearchAssociation").MonitoredResourcesSearchAssociation = null as any;
 utilities.lazyLoad(exports, ["MonitoredResourcesSearchAssociation"], () => require("./monitoredResourcesSearchAssociation"));
 
+export { MonitoringTemplateArgs, MonitoringTemplateState } from "./monitoringTemplate";
+export type MonitoringTemplate = import("./monitoringTemplate").MonitoringTemplate;
+export const MonitoringTemplate: typeof import("./monitoringTemplate").MonitoringTemplate = null as any;
+utilities.lazyLoad(exports, ["MonitoringTemplate"], () => require("./monitoringTemplate"));
+
+export { MonitoringTemplateAlarmConditionArgs, MonitoringTemplateAlarmConditionState } from "./monitoringTemplateAlarmCondition";
+export type MonitoringTemplateAlarmCondition = import("./monitoringTemplateAlarmCondition").MonitoringTemplateAlarmCondition;
+export const MonitoringTemplateAlarmCondition: typeof import("./monitoringTemplateAlarmCondition").MonitoringTemplateAlarmCondition = null as any;
+utilities.lazyLoad(exports, ["MonitoringTemplateAlarmCondition"], () => require("./monitoringTemplateAlarmCondition"));
+
+export { MonitoringTemplateMonitoringTemplateOnGivenResourcesManagementArgs, MonitoringTemplateMonitoringTemplateOnGivenResourcesManagementState } from "./monitoringTemplateMonitoringTemplateOnGivenResourcesManagement";
+export type MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement = import("./monitoringTemplateMonitoringTemplateOnGivenResourcesManagement").MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement;
+export const MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement: typeof import("./monitoringTemplateMonitoringTemplateOnGivenResourcesManagement").MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement = null as any;
+utilities.lazyLoad(exports, ["MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement"], () => require("./monitoringTemplateMonitoringTemplateOnGivenResourcesManagement"));
+
 export { ProcessSetArgs, ProcessSetState } from "./processSet";
 export type ProcessSet = import("./processSet").ProcessSet;
 export const ProcessSet: typeof import("./processSet").ProcessSet = null as any;
@@ -227,6 +267,12 @@ const _module = {
                 return new MonitoredResourcesSearch(name, <any>undefined, { urn })
             case "oci:StackMonitoring/monitoredResourcesSearchAssociation:MonitoredResourcesSearchAssociation":
                 return new MonitoredResourcesSearchAssociation(name, <any>undefined, { urn })
+            case "oci:StackMonitoring/monitoringTemplate:MonitoringTemplate":
+                return new MonitoringTemplate(name, <any>undefined, { urn })
+            case "oci:StackMonitoring/monitoringTemplateAlarmCondition:MonitoringTemplateAlarmCondition":
+                return new MonitoringTemplateAlarmCondition(name, <any>undefined, { urn })
+            case "oci:StackMonitoring/monitoringTemplateMonitoringTemplateOnGivenResourcesManagement:MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement":
+                return new MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement(name, <any>undefined, { urn })
             case "oci:StackMonitoring/processSet:ProcessSet":
                 return new ProcessSet(name, <any>undefined, { urn })
             default:
@@ -250,4 +296,7 @@ pulumi.runtime.registerResourceModule("oci", "StackMonitoring/monitoredResources
 pulumi.runtime.registerResourceModule("oci", "StackMonitoring/monitoredResourcesListMember", _module)
 pulumi.runtime.registerResourceModule("oci", "StackMonitoring/monitoredResourcesSearch", _module)
 pulumi.runtime.registerResourceModule("oci", "StackMonitoring/monitoredResourcesSearchAssociation", _module)
+pulumi.runtime.registerResourceModule("oci", "StackMonitoring/monitoringTemplate", _module)
+pulumi.runtime.registerResourceModule("oci", "StackMonitoring/monitoringTemplateAlarmCondition", _module)
+pulumi.runtime.registerResourceModule("oci", "StackMonitoring/monitoringTemplateMonitoringTemplateOnGivenResourcesManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "StackMonitoring/processSet", _module)

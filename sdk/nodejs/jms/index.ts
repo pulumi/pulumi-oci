@@ -65,6 +65,16 @@ export const getFleetDrsFiles: typeof import("./getFleetDrsFiles").getFleetDrsFi
 export const getFleetDrsFilesOutput: typeof import("./getFleetDrsFiles").getFleetDrsFilesOutput = null as any;
 utilities.lazyLoad(exports, ["getFleetDrsFiles","getFleetDrsFilesOutput"], () => require("./getFleetDrsFiles"));
 
+export { GetFleetErrorAnalyticsArgs, GetFleetErrorAnalyticsResult, GetFleetErrorAnalyticsOutputArgs } from "./getFleetErrorAnalytics";
+export const getFleetErrorAnalytics: typeof import("./getFleetErrorAnalytics").getFleetErrorAnalytics = null as any;
+export const getFleetErrorAnalyticsOutput: typeof import("./getFleetErrorAnalytics").getFleetErrorAnalyticsOutput = null as any;
+utilities.lazyLoad(exports, ["getFleetErrorAnalytics","getFleetErrorAnalyticsOutput"], () => require("./getFleetErrorAnalytics"));
+
+export { GetFleetErrorsArgs, GetFleetErrorsResult, GetFleetErrorsOutputArgs } from "./getFleetErrors";
+export const getFleetErrors: typeof import("./getFleetErrors").getFleetErrors = null as any;
+export const getFleetErrorsOutput: typeof import("./getFleetErrors").getFleetErrorsOutput = null as any;
+utilities.lazyLoad(exports, ["getFleetErrors","getFleetErrorsOutput"], () => require("./getFleetErrors"));
+
 export { GetFleetExportSettingArgs, GetFleetExportSettingResult, GetFleetExportSettingOutputArgs } from "./getFleetExportSetting";
 export const getFleetExportSetting: typeof import("./getFleetExportSetting").getFleetExportSetting = null as any;
 export const getFleetExportSettingOutput: typeof import("./getFleetExportSetting").getFleetExportSettingOutput = null as any;
@@ -194,6 +204,16 @@ export { GetListJreUsageArgs, GetListJreUsageResult, GetListJreUsageOutputArgs }
 export const getListJreUsage: typeof import("./getListJreUsage").getListJreUsage = null as any;
 export const getListJreUsageOutput: typeof import("./getListJreUsage").getListJreUsageOutput = null as any;
 utilities.lazyLoad(exports, ["getListJreUsage","getListJreUsageOutput"], () => require("./getListJreUsage"));
+
+export { GetPluginErrorAnalyticsArgs, GetPluginErrorAnalyticsResult, GetPluginErrorAnalyticsOutputArgs } from "./getPluginErrorAnalytics";
+export const getPluginErrorAnalytics: typeof import("./getPluginErrorAnalytics").getPluginErrorAnalytics = null as any;
+export const getPluginErrorAnalyticsOutput: typeof import("./getPluginErrorAnalytics").getPluginErrorAnalyticsOutput = null as any;
+utilities.lazyLoad(exports, ["getPluginErrorAnalytics","getPluginErrorAnalyticsOutput"], () => require("./getPluginErrorAnalytics"));
+
+export { GetPluginErrorsArgs, GetPluginErrorsResult, GetPluginErrorsOutputArgs } from "./getPluginErrors";
+export const getPluginErrors: typeof import("./getPluginErrors").getPluginErrors = null as any;
+export const getPluginErrorsOutput: typeof import("./getPluginErrors").getPluginErrorsOutput = null as any;
+utilities.lazyLoad(exports, ["getPluginErrors","getPluginErrorsOutput"], () => require("./getPluginErrors"));
 
 export { GetSummarizeResourceInventoryArgs, GetSummarizeResourceInventoryResult, GetSummarizeResourceInventoryOutputArgs } from "./getSummarizeResourceInventory";
 export const getSummarizeResourceInventory: typeof import("./getSummarizeResourceInventory").getSummarizeResourceInventory = null as any;

@@ -5701,19 +5701,6 @@ public final class DatabaseFunctions {
         return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousDatabaseWallet:getAutonomousDatabaseWallet", TypeShape.of(GetAutonomousDatabaseWalletResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * ## 
-     * 
-     * ***
-     * ## subcategory: &#34;Database&#34;
-     * 
-     * layout: &#34;oci&#34;
-     * page_title: &#34;Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases&#34;
-     * sidebar_current: &#34;docs-oci-datasource-database-autonomous_databases&#34;
-     * description: |-
-     *   Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
-     * ---
-     * 
-     * # Data Source: oci.Database.getAutonomousDatabases
      * This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
      * 
      * Gets a list of Autonomous Databases based on the query parameters specified.
@@ -5770,19 +5757,6 @@ public final class DatabaseFunctions {
         return getAutonomousDatabases(args, InvokeOptions.Empty);
     }
     /**
-     * ## 
-     * 
-     * ***
-     * ## subcategory: &#34;Database&#34;
-     * 
-     * layout: &#34;oci&#34;
-     * page_title: &#34;Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases&#34;
-     * sidebar_current: &#34;docs-oci-datasource-database-autonomous_databases&#34;
-     * description: |-
-     *   Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
-     * ---
-     * 
-     * # Data Source: oci.Database.getAutonomousDatabases
      * This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
      * 
      * Gets a list of Autonomous Databases based on the query parameters specified.
@@ -5839,19 +5813,6 @@ public final class DatabaseFunctions {
         return getAutonomousDatabasesPlain(args, InvokeOptions.Empty);
     }
     /**
-     * ## 
-     * 
-     * ***
-     * ## subcategory: &#34;Database&#34;
-     * 
-     * layout: &#34;oci&#34;
-     * page_title: &#34;Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases&#34;
-     * sidebar_current: &#34;docs-oci-datasource-database-autonomous_databases&#34;
-     * description: |-
-     *   Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
-     * ---
-     * 
-     * # Data Source: oci.Database.getAutonomousDatabases
      * This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
      * 
      * Gets a list of Autonomous Databases based on the query parameters specified.
@@ -5908,19 +5869,6 @@ public final class DatabaseFunctions {
         return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabases:getAutonomousDatabases", TypeShape.of(GetAutonomousDatabasesResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * ## 
-     * 
-     * ***
-     * ## subcategory: &#34;Database&#34;
-     * 
-     * layout: &#34;oci&#34;
-     * page_title: &#34;Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases&#34;
-     * sidebar_current: &#34;docs-oci-datasource-database-autonomous_databases&#34;
-     * description: |-
-     *   Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
-     * ---
-     * 
-     * # Data Source: oci.Database.getAutonomousDatabases
      * This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
      * 
      * Gets a list of Autonomous Databases based on the query parameters specified.
@@ -5977,19 +5925,6 @@ public final class DatabaseFunctions {
         return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabases:getAutonomousDatabases", TypeShape.of(GetAutonomousDatabasesResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * ## 
-     * 
-     * ***
-     * ## subcategory: &#34;Database&#34;
-     * 
-     * layout: &#34;oci&#34;
-     * page_title: &#34;Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases&#34;
-     * sidebar_current: &#34;docs-oci-datasource-database-autonomous_databases&#34;
-     * description: |-
-     *   Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
-     * ---
-     * 
-     * # Data Source: oci.Database.getAutonomousDatabases
      * This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
      * 
      * Gets a list of Autonomous Databases based on the query parameters specified.
@@ -27253,6 +27188,7 @@ public final class DatabaseFunctions {
      *         final var testMaintenanceRuns = DatabaseFunctions.getMaintenanceRuns(GetMaintenanceRunsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(maintenanceRunAvailabilityDomain)
+     *             .isLocalAdg(maintenanceRunIsLocalAdg)
      *             .maintenanceSubtype(maintenanceRunMaintenanceSubtype)
      *             .maintenanceType(maintenanceRunMaintenanceType)
      *             .state(maintenanceRunState)
@@ -27303,6 +27239,7 @@ public final class DatabaseFunctions {
      *         final var testMaintenanceRuns = DatabaseFunctions.getMaintenanceRuns(GetMaintenanceRunsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(maintenanceRunAvailabilityDomain)
+     *             .isLocalAdg(maintenanceRunIsLocalAdg)
      *             .maintenanceSubtype(maintenanceRunMaintenanceSubtype)
      *             .maintenanceType(maintenanceRunMaintenanceType)
      *             .state(maintenanceRunState)
@@ -27353,6 +27290,7 @@ public final class DatabaseFunctions {
      *         final var testMaintenanceRuns = DatabaseFunctions.getMaintenanceRuns(GetMaintenanceRunsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(maintenanceRunAvailabilityDomain)
+     *             .isLocalAdg(maintenanceRunIsLocalAdg)
      *             .maintenanceSubtype(maintenanceRunMaintenanceSubtype)
      *             .maintenanceType(maintenanceRunMaintenanceType)
      *             .state(maintenanceRunState)
@@ -27403,6 +27341,7 @@ public final class DatabaseFunctions {
      *         final var testMaintenanceRuns = DatabaseFunctions.getMaintenanceRuns(GetMaintenanceRunsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(maintenanceRunAvailabilityDomain)
+     *             .isLocalAdg(maintenanceRunIsLocalAdg)
      *             .maintenanceSubtype(maintenanceRunMaintenanceSubtype)
      *             .maintenanceType(maintenanceRunMaintenanceType)
      *             .state(maintenanceRunState)
@@ -27453,6 +27392,7 @@ public final class DatabaseFunctions {
      *         final var testMaintenanceRuns = DatabaseFunctions.getMaintenanceRuns(GetMaintenanceRunsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(maintenanceRunAvailabilityDomain)
+     *             .isLocalAdg(maintenanceRunIsLocalAdg)
      *             .maintenanceSubtype(maintenanceRunMaintenanceSubtype)
      *             .maintenanceType(maintenanceRunMaintenanceType)
      *             .state(maintenanceRunState)

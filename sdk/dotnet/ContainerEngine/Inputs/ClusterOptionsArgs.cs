@@ -24,6 +24,18 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         [Input("admissionControllerOptions")]
         public Input<Inputs.ClusterOptionsAdmissionControllerOptionsArgs>? AdmissionControllerOptions { get; set; }
 
+        [Input("ipFamilies")]
+        private InputList<string>? _ipFamilies;
+
+        /// <summary>
+        /// IP family to use for single stack or define the order of IP families for dual-stack
+        /// </summary>
+        public InputList<string> IpFamilies
+        {
+            get => _ipFamilies ?? (_ipFamilies = new InputList<string>());
+            set => _ipFamilies = value;
+        }
+
         /// <summary>
         /// Network configuration for Kubernetes.
         /// </summary>

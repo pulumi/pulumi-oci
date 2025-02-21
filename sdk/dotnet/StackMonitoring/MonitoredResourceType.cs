@@ -53,6 +53,7 @@ namespace Pulumi.Oci.StackMonitoring
     ///             ValidPropertiesForCreates = monitoredResourceTypeMetadataValidPropertiesForCreate,
     ///             ValidPropertiesForUpdates = monitoredResourceTypeMetadataValidPropertiesForUpdate,
     ///             ValidPropertyValues = monitoredResourceTypeMetadataValidPropertyValues,
+    ///             ValidSubResourceTypes = monitoredResourceTypeMetadataValidSubResourceTypes,
     ///         },
     ///         MetricNamespace = monitoredResourceTypeMetricNamespace,
     ///         ResourceCategory = monitoredResourceTypeResourceCategory,
@@ -73,6 +74,12 @@ namespace Pulumi.Oci.StackMonitoring
     [OciResourceType("oci:StackMonitoring/monitoredResourceType:MonitoredResourceType")]
     public partial class MonitoredResourceType : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
+        /// </summary>
+        [Output("additionalNamespaceMap")]
+        public Output<ImmutableDictionary<string, string>> AdditionalNamespaceMap { get; private set; } = null!;
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
         /// </summary>
@@ -291,6 +298,18 @@ namespace Pulumi.Oci.StackMonitoring
 
     public sealed class MonitoredResourceTypeState : global::Pulumi.ResourceArgs
     {
+        [Input("additionalNamespaceMap")]
+        private InputMap<string>? _additionalNamespaceMap;
+
+        /// <summary>
+        /// Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
+        /// </summary>
+        public InputMap<string> AdditionalNamespaceMap
+        {
+            get => _additionalNamespaceMap ?? (_additionalNamespaceMap = new InputMap<string>());
+            set => _additionalNamespaceMap = value;
+        }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
         /// </summary>

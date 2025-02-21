@@ -206,6 +206,13 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.tenancyOcid);
     }
 
+    @Import(name="testTimeMaintenanceRebootDue")
+    private @Nullable Output<String> testTimeMaintenanceRebootDue;
+
+    public Optional<Output<String>> testTimeMaintenanceRebootDue() {
+        return Optional.ofNullable(this.testTimeMaintenanceRebootDue);
+    }
+
     /**
      * (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if
      * auth is set to &#39;ApiKey&#39;, ignored otherwise.
@@ -238,6 +245,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         this.region = $.region;
         this.retryDurationSeconds = $.retryDurationSeconds;
         this.tenancyOcid = $.tenancyOcid;
+        this.testTimeMaintenanceRebootDue = $.testTimeMaintenanceRebootDue;
         this.userOcid = $.userOcid;
     }
 
@@ -517,6 +525,15 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder tenancyOcid(String tenancyOcid) {
             return tenancyOcid(Output.of(tenancyOcid));
+        }
+
+        public Builder testTimeMaintenanceRebootDue(@Nullable Output<String> testTimeMaintenanceRebootDue) {
+            $.testTimeMaintenanceRebootDue = testTimeMaintenanceRebootDue;
+            return this;
+        }
+
+        public Builder testTimeMaintenanceRebootDue(String testTimeMaintenanceRebootDue) {
+            return testTimeMaintenanceRebootDue(Output.of(testTimeMaintenanceRebootDue));
         }
 
         /**

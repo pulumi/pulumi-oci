@@ -13,6 +13,1258 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetDbSystemPatchesPatch struct {
+	// Actions that can possibly be performed using this patch.
+	AvailableActions []string `pulumi:"availableActions"`
+	// The text describing this patch package.
+	Description string `pulumi:"description"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
+	Id string `pulumi:"id"`
+	// Action that is currently being performed or was completed last.
+	LastAction string `pulumi:"lastAction"`
+	// A descriptive text associated with the lifecycleState. Typically can contain additional displayable text.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The current state of the patch as a result of lastAction.
+	State string `pulumi:"state"`
+	// The date and time that the patch was released.
+	TimeReleased string `pulumi:"timeReleased"`
+	// The version of this patch package.
+	Version string `pulumi:"version"`
+}
+
+// GetDbSystemPatchesPatchInput is an input type that accepts GetDbSystemPatchesPatchArgs and GetDbSystemPatchesPatchOutput values.
+// You can construct a concrete instance of `GetDbSystemPatchesPatchInput` via:
+//
+//	GetDbSystemPatchesPatchArgs{...}
+type GetDbSystemPatchesPatchInput interface {
+	pulumi.Input
+
+	ToGetDbSystemPatchesPatchOutput() GetDbSystemPatchesPatchOutput
+	ToGetDbSystemPatchesPatchOutputWithContext(context.Context) GetDbSystemPatchesPatchOutput
+}
+
+type GetDbSystemPatchesPatchArgs struct {
+	// Actions that can possibly be performed using this patch.
+	AvailableActions pulumi.StringArrayInput `pulumi:"availableActions"`
+	// The text describing this patch package.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Action that is currently being performed or was completed last.
+	LastAction pulumi.StringInput `pulumi:"lastAction"`
+	// A descriptive text associated with the lifecycleState. Typically can contain additional displayable text.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The current state of the patch as a result of lastAction.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time that the patch was released.
+	TimeReleased pulumi.StringInput `pulumi:"timeReleased"`
+	// The version of this patch package.
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetDbSystemPatchesPatchArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemPatchesPatch)(nil)).Elem()
+}
+
+func (i GetDbSystemPatchesPatchArgs) ToGetDbSystemPatchesPatchOutput() GetDbSystemPatchesPatchOutput {
+	return i.ToGetDbSystemPatchesPatchOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemPatchesPatchArgs) ToGetDbSystemPatchesPatchOutputWithContext(ctx context.Context) GetDbSystemPatchesPatchOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemPatchesPatchOutput)
+}
+
+// GetDbSystemPatchesPatchArrayInput is an input type that accepts GetDbSystemPatchesPatchArray and GetDbSystemPatchesPatchArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemPatchesPatchArrayInput` via:
+//
+//	GetDbSystemPatchesPatchArray{ GetDbSystemPatchesPatchArgs{...} }
+type GetDbSystemPatchesPatchArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemPatchesPatchArrayOutput() GetDbSystemPatchesPatchArrayOutput
+	ToGetDbSystemPatchesPatchArrayOutputWithContext(context.Context) GetDbSystemPatchesPatchArrayOutput
+}
+
+type GetDbSystemPatchesPatchArray []GetDbSystemPatchesPatchInput
+
+func (GetDbSystemPatchesPatchArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemPatchesPatch)(nil)).Elem()
+}
+
+func (i GetDbSystemPatchesPatchArray) ToGetDbSystemPatchesPatchArrayOutput() GetDbSystemPatchesPatchArrayOutput {
+	return i.ToGetDbSystemPatchesPatchArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemPatchesPatchArray) ToGetDbSystemPatchesPatchArrayOutputWithContext(ctx context.Context) GetDbSystemPatchesPatchArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemPatchesPatchArrayOutput)
+}
+
+type GetDbSystemPatchesPatchOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemPatchesPatchOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemPatchesPatch)(nil)).Elem()
+}
+
+func (o GetDbSystemPatchesPatchOutput) ToGetDbSystemPatchesPatchOutput() GetDbSystemPatchesPatchOutput {
+	return o
+}
+
+func (o GetDbSystemPatchesPatchOutput) ToGetDbSystemPatchesPatchOutputWithContext(ctx context.Context) GetDbSystemPatchesPatchOutput {
+	return o
+}
+
+// Actions that can possibly be performed using this patch.
+func (o GetDbSystemPatchesPatchOutput) AvailableActions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbSystemPatchesPatch) []string { return v.AvailableActions }).(pulumi.StringArrayOutput)
+}
+
+// The text describing this patch package.
+func (o GetDbSystemPatchesPatchOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemPatchesPatch) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
+func (o GetDbSystemPatchesPatchOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemPatchesPatch) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Action that is currently being performed or was completed last.
+func (o GetDbSystemPatchesPatchOutput) LastAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemPatchesPatch) string { return v.LastAction }).(pulumi.StringOutput)
+}
+
+// A descriptive text associated with the lifecycleState. Typically can contain additional displayable text.
+func (o GetDbSystemPatchesPatchOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemPatchesPatch) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The current state of the patch as a result of lastAction.
+func (o GetDbSystemPatchesPatchOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemPatchesPatch) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time that the patch was released.
+func (o GetDbSystemPatchesPatchOutput) TimeReleased() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemPatchesPatch) string { return v.TimeReleased }).(pulumi.StringOutput)
+}
+
+// The version of this patch package.
+func (o GetDbSystemPatchesPatchOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemPatchesPatch) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetDbSystemPatchesPatchArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemPatchesPatchArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemPatchesPatch)(nil)).Elem()
+}
+
+func (o GetDbSystemPatchesPatchArrayOutput) ToGetDbSystemPatchesPatchArrayOutput() GetDbSystemPatchesPatchArrayOutput {
+	return o
+}
+
+func (o GetDbSystemPatchesPatchArrayOutput) ToGetDbSystemPatchesPatchArrayOutputWithContext(ctx context.Context) GetDbSystemPatchesPatchArrayOutput {
+	return o
+}
+
+func (o GetDbSystemPatchesPatchArrayOutput) Index(i pulumi.IntInput) GetDbSystemPatchesPatchOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemPatchesPatch {
+		return vs[0].([]GetDbSystemPatchesPatch)[vs[1].(int)]
+	}).(GetDbSystemPatchesPatchOutput)
+}
+
+type GetDbSystemShapesDbSystemShape struct {
+	// The maximum number of CPU cores that can be enabled on the DB system for this shape.
+	AvailableCoreCount int `pulumi:"availableCoreCount"`
+	// The maximum number of CPU cores per database node that can be enabled for this shape. Only applicable to the flex Exadata shape, ExaCC Elastic shapes and VM Flex shapes.
+	AvailableCoreCountPerNode int `pulumi:"availableCoreCountPerNode"`
+	// The maximum DATA storage that can be enabled for this shape.
+	AvailableDataStorageInTbs int `pulumi:"availableDataStorageInTbs"`
+	// The maximum data storage available per storage server for this shape. Only applicable to ExaCC Elastic shapes.
+	AvailableDataStoragePerServerInTbs float64 `pulumi:"availableDataStoragePerServerInTbs"`
+	// The maximum Db Node storage available per database node for this shape. Only applicable to ExaCC Elastic shapes.
+	AvailableDbNodePerNodeInGbs int `pulumi:"availableDbNodePerNodeInGbs"`
+	// The maximum Db Node storage that can be enabled for this shape.
+	AvailableDbNodeStorageInGbs int `pulumi:"availableDbNodeStorageInGbs"`
+	// The maximum memory that can be enabled for this shape.
+	AvailableMemoryInGbs int `pulumi:"availableMemoryInGbs"`
+	// The maximum memory available per database node for this shape. Only applicable to ExaCC Elastic shapes.
+	AvailableMemoryPerNodeInGbs int `pulumi:"availableMemoryPerNodeInGbs"`
+	// The discrete number by which the CPU core count for this shape can be increased or decreased.
+	CoreCountIncrement int `pulumi:"coreCountIncrement"`
+	// The maximum number of Exadata storage servers available for the Exadata infrastructure.
+	MaxStorageCount int `pulumi:"maxStorageCount"`
+	// The maximum number of compute servers available for this shape.
+	MaximumNodeCount int `pulumi:"maximumNodeCount"`
+	// The minimum number of CPU cores that can be enabled per node for this shape.
+	MinCoreCountPerNode int `pulumi:"minCoreCountPerNode"`
+	// The minimum data storage that need be allocated for this shape.
+	MinDataStorageInTbs int `pulumi:"minDataStorageInTbs"`
+	// The minimum Db Node storage that need be allocated per node for this shape.
+	MinDbNodeStoragePerNodeInGbs int `pulumi:"minDbNodeStoragePerNodeInGbs"`
+	// The minimum memory that need be allocated per node for this shape.
+	MinMemoryPerNodeInGbs int `pulumi:"minMemoryPerNodeInGbs"`
+	// The minimum number of Exadata storage servers available for the Exadata infrastructure.
+	MinStorageCount int `pulumi:"minStorageCount"`
+	// The minimum number of CPU cores that can be enabled on the DB system for this shape.
+	MinimumCoreCount int `pulumi:"minimumCoreCount"`
+	// The minimum number of compute servers available for this shape.
+	MinimumNodeCount int `pulumi:"minimumNodeCount"`
+	// The name of the shape used for the DB system.
+	Name string `pulumi:"name"`
+	// Deprecated. Use `name` instead of `shape`.
+	//
+	// Deprecated: The 'shape' field has been deprecated. Please use 'name' instead.
+	Shape string `pulumi:"shape"`
+	// The family of the shape used for the DB system.
+	ShapeFamily string `pulumi:"shapeFamily"`
+	// The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are `AMD` , `INTEL` or `INTEL_FLEX_X9`.
+	ShapeType string `pulumi:"shapeType"`
+}
+
+// GetDbSystemShapesDbSystemShapeInput is an input type that accepts GetDbSystemShapesDbSystemShapeArgs and GetDbSystemShapesDbSystemShapeOutput values.
+// You can construct a concrete instance of `GetDbSystemShapesDbSystemShapeInput` via:
+//
+//	GetDbSystemShapesDbSystemShapeArgs{...}
+type GetDbSystemShapesDbSystemShapeInput interface {
+	pulumi.Input
+
+	ToGetDbSystemShapesDbSystemShapeOutput() GetDbSystemShapesDbSystemShapeOutput
+	ToGetDbSystemShapesDbSystemShapeOutputWithContext(context.Context) GetDbSystemShapesDbSystemShapeOutput
+}
+
+type GetDbSystemShapesDbSystemShapeArgs struct {
+	// The maximum number of CPU cores that can be enabled on the DB system for this shape.
+	AvailableCoreCount pulumi.IntInput `pulumi:"availableCoreCount"`
+	// The maximum number of CPU cores per database node that can be enabled for this shape. Only applicable to the flex Exadata shape, ExaCC Elastic shapes and VM Flex shapes.
+	AvailableCoreCountPerNode pulumi.IntInput `pulumi:"availableCoreCountPerNode"`
+	// The maximum DATA storage that can be enabled for this shape.
+	AvailableDataStorageInTbs pulumi.IntInput `pulumi:"availableDataStorageInTbs"`
+	// The maximum data storage available per storage server for this shape. Only applicable to ExaCC Elastic shapes.
+	AvailableDataStoragePerServerInTbs pulumi.Float64Input `pulumi:"availableDataStoragePerServerInTbs"`
+	// The maximum Db Node storage available per database node for this shape. Only applicable to ExaCC Elastic shapes.
+	AvailableDbNodePerNodeInGbs pulumi.IntInput `pulumi:"availableDbNodePerNodeInGbs"`
+	// The maximum Db Node storage that can be enabled for this shape.
+	AvailableDbNodeStorageInGbs pulumi.IntInput `pulumi:"availableDbNodeStorageInGbs"`
+	// The maximum memory that can be enabled for this shape.
+	AvailableMemoryInGbs pulumi.IntInput `pulumi:"availableMemoryInGbs"`
+	// The maximum memory available per database node for this shape. Only applicable to ExaCC Elastic shapes.
+	AvailableMemoryPerNodeInGbs pulumi.IntInput `pulumi:"availableMemoryPerNodeInGbs"`
+	// The discrete number by which the CPU core count for this shape can be increased or decreased.
+	CoreCountIncrement pulumi.IntInput `pulumi:"coreCountIncrement"`
+	// The maximum number of Exadata storage servers available for the Exadata infrastructure.
+	MaxStorageCount pulumi.IntInput `pulumi:"maxStorageCount"`
+	// The maximum number of compute servers available for this shape.
+	MaximumNodeCount pulumi.IntInput `pulumi:"maximumNodeCount"`
+	// The minimum number of CPU cores that can be enabled per node for this shape.
+	MinCoreCountPerNode pulumi.IntInput `pulumi:"minCoreCountPerNode"`
+	// The minimum data storage that need be allocated for this shape.
+	MinDataStorageInTbs pulumi.IntInput `pulumi:"minDataStorageInTbs"`
+	// The minimum Db Node storage that need be allocated per node for this shape.
+	MinDbNodeStoragePerNodeInGbs pulumi.IntInput `pulumi:"minDbNodeStoragePerNodeInGbs"`
+	// The minimum memory that need be allocated per node for this shape.
+	MinMemoryPerNodeInGbs pulumi.IntInput `pulumi:"minMemoryPerNodeInGbs"`
+	// The minimum number of Exadata storage servers available for the Exadata infrastructure.
+	MinStorageCount pulumi.IntInput `pulumi:"minStorageCount"`
+	// The minimum number of CPU cores that can be enabled on the DB system for this shape.
+	MinimumCoreCount pulumi.IntInput `pulumi:"minimumCoreCount"`
+	// The minimum number of compute servers available for this shape.
+	MinimumNodeCount pulumi.IntInput `pulumi:"minimumNodeCount"`
+	// The name of the shape used for the DB system.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Deprecated. Use `name` instead of `shape`.
+	//
+	// Deprecated: The 'shape' field has been deprecated. Please use 'name' instead.
+	Shape pulumi.StringInput `pulumi:"shape"`
+	// The family of the shape used for the DB system.
+	ShapeFamily pulumi.StringInput `pulumi:"shapeFamily"`
+	// The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are `AMD` , `INTEL` or `INTEL_FLEX_X9`.
+	ShapeType pulumi.StringInput `pulumi:"shapeType"`
+}
+
+func (GetDbSystemShapesDbSystemShapeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemShapesDbSystemShape)(nil)).Elem()
+}
+
+func (i GetDbSystemShapesDbSystemShapeArgs) ToGetDbSystemShapesDbSystemShapeOutput() GetDbSystemShapesDbSystemShapeOutput {
+	return i.ToGetDbSystemShapesDbSystemShapeOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemShapesDbSystemShapeArgs) ToGetDbSystemShapesDbSystemShapeOutputWithContext(ctx context.Context) GetDbSystemShapesDbSystemShapeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemShapesDbSystemShapeOutput)
+}
+
+// GetDbSystemShapesDbSystemShapeArrayInput is an input type that accepts GetDbSystemShapesDbSystemShapeArray and GetDbSystemShapesDbSystemShapeArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemShapesDbSystemShapeArrayInput` via:
+//
+//	GetDbSystemShapesDbSystemShapeArray{ GetDbSystemShapesDbSystemShapeArgs{...} }
+type GetDbSystemShapesDbSystemShapeArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemShapesDbSystemShapeArrayOutput() GetDbSystemShapesDbSystemShapeArrayOutput
+	ToGetDbSystemShapesDbSystemShapeArrayOutputWithContext(context.Context) GetDbSystemShapesDbSystemShapeArrayOutput
+}
+
+type GetDbSystemShapesDbSystemShapeArray []GetDbSystemShapesDbSystemShapeInput
+
+func (GetDbSystemShapesDbSystemShapeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemShapesDbSystemShape)(nil)).Elem()
+}
+
+func (i GetDbSystemShapesDbSystemShapeArray) ToGetDbSystemShapesDbSystemShapeArrayOutput() GetDbSystemShapesDbSystemShapeArrayOutput {
+	return i.ToGetDbSystemShapesDbSystemShapeArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemShapesDbSystemShapeArray) ToGetDbSystemShapesDbSystemShapeArrayOutputWithContext(ctx context.Context) GetDbSystemShapesDbSystemShapeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemShapesDbSystemShapeArrayOutput)
+}
+
+type GetDbSystemShapesDbSystemShapeOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemShapesDbSystemShapeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemShapesDbSystemShape)(nil)).Elem()
+}
+
+func (o GetDbSystemShapesDbSystemShapeOutput) ToGetDbSystemShapesDbSystemShapeOutput() GetDbSystemShapesDbSystemShapeOutput {
+	return o
+}
+
+func (o GetDbSystemShapesDbSystemShapeOutput) ToGetDbSystemShapesDbSystemShapeOutputWithContext(ctx context.Context) GetDbSystemShapesDbSystemShapeOutput {
+	return o
+}
+
+// The maximum number of CPU cores that can be enabled on the DB system for this shape.
+func (o GetDbSystemShapesDbSystemShapeOutput) AvailableCoreCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemShapesDbSystemShape) int { return v.AvailableCoreCount }).(pulumi.IntOutput)
+}
+
+// The maximum number of CPU cores per database node that can be enabled for this shape. Only applicable to the flex Exadata shape, ExaCC Elastic shapes and VM Flex shapes.
+func (o GetDbSystemShapesDbSystemShapeOutput) AvailableCoreCountPerNode() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemShapesDbSystemShape) int { return v.AvailableCoreCountPerNode }).(pulumi.IntOutput)
+}
+
+// The maximum DATA storage that can be enabled for this shape.
+func (o GetDbSystemShapesDbSystemShapeOutput) AvailableDataStorageInTbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemShapesDbSystemShape) int { return v.AvailableDataStorageInTbs }).(pulumi.IntOutput)
+}
+
+// The maximum data storage available per storage server for this shape. Only applicable to ExaCC Elastic shapes.
+func (o GetDbSystemShapesDbSystemShapeOutput) AvailableDataStoragePerServerInTbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDbSystemShapesDbSystemShape) float64 { return v.AvailableDataStoragePerServerInTbs }).(pulumi.Float64Output)
+}
+
+// The maximum Db Node storage available per database node for this shape. Only applicable to ExaCC Elastic shapes.
+func (o GetDbSystemShapesDbSystemShapeOutput) AvailableDbNodePerNodeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemShapesDbSystemShape) int { return v.AvailableDbNodePerNodeInGbs }).(pulumi.IntOutput)
+}
+
+// The maximum Db Node storage that can be enabled for this shape.
+func (o GetDbSystemShapesDbSystemShapeOutput) AvailableDbNodeStorageInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemShapesDbSystemShape) int { return v.AvailableDbNodeStorageInGbs }).(pulumi.IntOutput)
+}
+
+// The maximum memory that can be enabled for this shape.
+func (o GetDbSystemShapesDbSystemShapeOutput) AvailableMemoryInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemShapesDbSystemShape) int { return v.AvailableMemoryInGbs }).(pulumi.IntOutput)
+}
+
+// The maximum memory available per database node for this shape. Only applicable to ExaCC Elastic shapes.
+func (o GetDbSystemShapesDbSystemShapeOutput) AvailableMemoryPerNodeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemShapesDbSystemShape) int { return v.AvailableMemoryPerNodeInGbs }).(pulumi.IntOutput)
+}
+
+// The discrete number by which the CPU core count for this shape can be increased or decreased.
+func (o GetDbSystemShapesDbSystemShapeOutput) CoreCountIncrement() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemShapesDbSystemShape) int { return v.CoreCountIncrement }).(pulumi.IntOutput)
+}
+
+// The maximum number of Exadata storage servers available for the Exadata infrastructure.
+func (o GetDbSystemShapesDbSystemShapeOutput) MaxStorageCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemShapesDbSystemShape) int { return v.MaxStorageCount }).(pulumi.IntOutput)
+}
+
+// The maximum number of compute servers available for this shape.
+func (o GetDbSystemShapesDbSystemShapeOutput) MaximumNodeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemShapesDbSystemShape) int { return v.MaximumNodeCount }).(pulumi.IntOutput)
+}
+
+// The minimum number of CPU cores that can be enabled per node for this shape.
+func (o GetDbSystemShapesDbSystemShapeOutput) MinCoreCountPerNode() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemShapesDbSystemShape) int { return v.MinCoreCountPerNode }).(pulumi.IntOutput)
+}
+
+// The minimum data storage that need be allocated for this shape.
+func (o GetDbSystemShapesDbSystemShapeOutput) MinDataStorageInTbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemShapesDbSystemShape) int { return v.MinDataStorageInTbs }).(pulumi.IntOutput)
+}
+
+// The minimum Db Node storage that need be allocated per node for this shape.
+func (o GetDbSystemShapesDbSystemShapeOutput) MinDbNodeStoragePerNodeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemShapesDbSystemShape) int { return v.MinDbNodeStoragePerNodeInGbs }).(pulumi.IntOutput)
+}
+
+// The minimum memory that need be allocated per node for this shape.
+func (o GetDbSystemShapesDbSystemShapeOutput) MinMemoryPerNodeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemShapesDbSystemShape) int { return v.MinMemoryPerNodeInGbs }).(pulumi.IntOutput)
+}
+
+// The minimum number of Exadata storage servers available for the Exadata infrastructure.
+func (o GetDbSystemShapesDbSystemShapeOutput) MinStorageCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemShapesDbSystemShape) int { return v.MinStorageCount }).(pulumi.IntOutput)
+}
+
+// The minimum number of CPU cores that can be enabled on the DB system for this shape.
+func (o GetDbSystemShapesDbSystemShapeOutput) MinimumCoreCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemShapesDbSystemShape) int { return v.MinimumCoreCount }).(pulumi.IntOutput)
+}
+
+// The minimum number of compute servers available for this shape.
+func (o GetDbSystemShapesDbSystemShapeOutput) MinimumNodeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemShapesDbSystemShape) int { return v.MinimumNodeCount }).(pulumi.IntOutput)
+}
+
+// The name of the shape used for the DB system.
+func (o GetDbSystemShapesDbSystemShapeOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemShapesDbSystemShape) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Deprecated. Use `name` instead of `shape`.
+//
+// Deprecated: The 'shape' field has been deprecated. Please use 'name' instead.
+func (o GetDbSystemShapesDbSystemShapeOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemShapesDbSystemShape) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+// The family of the shape used for the DB system.
+func (o GetDbSystemShapesDbSystemShapeOutput) ShapeFamily() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemShapesDbSystemShape) string { return v.ShapeFamily }).(pulumi.StringOutput)
+}
+
+// The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are `AMD` , `INTEL` or `INTEL_FLEX_X9`.
+func (o GetDbSystemShapesDbSystemShapeOutput) ShapeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemShapesDbSystemShape) string { return v.ShapeType }).(pulumi.StringOutput)
+}
+
+type GetDbSystemShapesDbSystemShapeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemShapesDbSystemShapeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemShapesDbSystemShape)(nil)).Elem()
+}
+
+func (o GetDbSystemShapesDbSystemShapeArrayOutput) ToGetDbSystemShapesDbSystemShapeArrayOutput() GetDbSystemShapesDbSystemShapeArrayOutput {
+	return o
+}
+
+func (o GetDbSystemShapesDbSystemShapeArrayOutput) ToGetDbSystemShapesDbSystemShapeArrayOutputWithContext(ctx context.Context) GetDbSystemShapesDbSystemShapeArrayOutput {
+	return o
+}
+
+func (o GetDbSystemShapesDbSystemShapeArrayOutput) Index(i pulumi.IntInput) GetDbSystemShapesDbSystemShapeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemShapesDbSystemShape {
+		return vs[0].([]GetDbSystemShapesDbSystemShape)[vs[1].(int)]
+	}).(GetDbSystemShapesDbSystemShapeOutput)
+}
+
+type GetDbSystemShapesFilter struct {
+	// The name of the shape used for the DB system.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDbSystemShapesFilterInput is an input type that accepts GetDbSystemShapesFilterArgs and GetDbSystemShapesFilterOutput values.
+// You can construct a concrete instance of `GetDbSystemShapesFilterInput` via:
+//
+//	GetDbSystemShapesFilterArgs{...}
+type GetDbSystemShapesFilterInput interface {
+	pulumi.Input
+
+	ToGetDbSystemShapesFilterOutput() GetDbSystemShapesFilterOutput
+	ToGetDbSystemShapesFilterOutputWithContext(context.Context) GetDbSystemShapesFilterOutput
+}
+
+type GetDbSystemShapesFilterArgs struct {
+	// The name of the shape used for the DB system.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDbSystemShapesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemShapesFilter)(nil)).Elem()
+}
+
+func (i GetDbSystemShapesFilterArgs) ToGetDbSystemShapesFilterOutput() GetDbSystemShapesFilterOutput {
+	return i.ToGetDbSystemShapesFilterOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemShapesFilterArgs) ToGetDbSystemShapesFilterOutputWithContext(ctx context.Context) GetDbSystemShapesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemShapesFilterOutput)
+}
+
+// GetDbSystemShapesFilterArrayInput is an input type that accepts GetDbSystemShapesFilterArray and GetDbSystemShapesFilterArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemShapesFilterArrayInput` via:
+//
+//	GetDbSystemShapesFilterArray{ GetDbSystemShapesFilterArgs{...} }
+type GetDbSystemShapesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemShapesFilterArrayOutput() GetDbSystemShapesFilterArrayOutput
+	ToGetDbSystemShapesFilterArrayOutputWithContext(context.Context) GetDbSystemShapesFilterArrayOutput
+}
+
+type GetDbSystemShapesFilterArray []GetDbSystemShapesFilterInput
+
+func (GetDbSystemShapesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemShapesFilter)(nil)).Elem()
+}
+
+func (i GetDbSystemShapesFilterArray) ToGetDbSystemShapesFilterArrayOutput() GetDbSystemShapesFilterArrayOutput {
+	return i.ToGetDbSystemShapesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemShapesFilterArray) ToGetDbSystemShapesFilterArrayOutputWithContext(ctx context.Context) GetDbSystemShapesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemShapesFilterArrayOutput)
+}
+
+type GetDbSystemShapesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemShapesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemShapesFilter)(nil)).Elem()
+}
+
+func (o GetDbSystemShapesFilterOutput) ToGetDbSystemShapesFilterOutput() GetDbSystemShapesFilterOutput {
+	return o
+}
+
+func (o GetDbSystemShapesFilterOutput) ToGetDbSystemShapesFilterOutputWithContext(ctx context.Context) GetDbSystemShapesFilterOutput {
+	return o
+}
+
+// The name of the shape used for the DB system.
+func (o GetDbSystemShapesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemShapesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemShapesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDbSystemShapesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDbSystemShapesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbSystemShapesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDbSystemShapesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemShapesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemShapesFilter)(nil)).Elem()
+}
+
+func (o GetDbSystemShapesFilterArrayOutput) ToGetDbSystemShapesFilterArrayOutput() GetDbSystemShapesFilterArrayOutput {
+	return o
+}
+
+func (o GetDbSystemShapesFilterArrayOutput) ToGetDbSystemShapesFilterArrayOutputWithContext(ctx context.Context) GetDbSystemShapesFilterArrayOutput {
+	return o
+}
+
+func (o GetDbSystemShapesFilterArrayOutput) Index(i pulumi.IntInput) GetDbSystemShapesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemShapesFilter {
+		return vs[0].([]GetDbSystemShapesFilter)[vs[1].(int)]
+	}).(GetDbSystemShapesFilterOutput)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformance struct {
+	// List of storage performance for the DATA disks
+	DataStoragePerformanceLists []GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList `pulumi:"dataStoragePerformanceLists"`
+	// List of storage performance for the RECO disks
+	RecoStoragePerformanceLists []GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList `pulumi:"recoStoragePerformanceLists"`
+	// Optional. Filters the performance results by shape type.
+	ShapeType string `pulumi:"shapeType"`
+}
+
+// GetDbSystemStoragePerformancesDbSystemStoragePerformanceInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceArgs and GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput values.
+// You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceInput` via:
+//
+//	GetDbSystemStoragePerformancesDbSystemStoragePerformanceArgs{...}
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceInput interface {
+	pulumi.Input
+
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceOutputWithContext(context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceArgs struct {
+	// List of storage performance for the DATA disks
+	DataStoragePerformanceLists GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayInput `pulumi:"dataStoragePerformanceLists"`
+	// List of storage performance for the RECO disks
+	RecoStoragePerformanceLists GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayInput `pulumi:"recoStoragePerformanceLists"`
+	// Optional. Filters the performance results by shape type.
+	ShapeType pulumi.StringInput `pulumi:"shapeType"`
+}
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformance)(nil)).Elem()
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceArgs) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput {
+	return i.ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceArgs) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput)
+}
+
+// GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceArray and GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayInput` via:
+//
+//	GetDbSystemStoragePerformancesDbSystemStoragePerformanceArray{ GetDbSystemStoragePerformancesDbSystemStoragePerformanceArgs{...} }
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutput
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutputWithContext(context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutput
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceArray []GetDbSystemStoragePerformancesDbSystemStoragePerformanceInput
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemStoragePerformancesDbSystemStoragePerformance)(nil)).Elem()
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceArray) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutput {
+	return i.ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceArray) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutput)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformance)(nil)).Elem()
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput {
+	return o
+}
+
+// List of storage performance for the DATA disks
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput) DataStoragePerformanceLists() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesDbSystemStoragePerformance) []GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList {
+		return v.DataStoragePerformanceLists
+	}).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput)
+}
+
+// List of storage performance for the RECO disks
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput) RecoStoragePerformanceLists() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesDbSystemStoragePerformance) []GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList {
+		return v.RecoStoragePerformanceLists
+	}).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput)
+}
+
+// Optional. Filters the performance results by shape type.
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput) ShapeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesDbSystemStoragePerformance) string { return v.ShapeType }).(pulumi.StringOutput)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemStoragePerformancesDbSystemStoragePerformance)(nil)).Elem()
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutput) Index(i pulumi.IntInput) GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemStoragePerformancesDbSystemStoragePerformance {
+		return vs[0].([]GetDbSystemStoragePerformancesDbSystemStoragePerformance)[vs[1].(int)]
+	}).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList struct {
+	// Representation of disk performance detail parameters.
+	BalancedDiskPerformances []GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformance `pulumi:"balancedDiskPerformances"`
+	// Representation of disk performance detail parameters.
+	HighDiskPerformances []GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformance `pulumi:"highDiskPerformances"`
+	// Size in GBs.
+	SizeInGbs int `pulumi:"sizeInGbs"`
+}
+
+// GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArgs and GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput values.
+// You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListInput` via:
+//
+//	GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArgs{...}
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListInput interface {
+	pulumi.Input
+
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutputWithContext(context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArgs struct {
+	// Representation of disk performance detail parameters.
+	BalancedDiskPerformances GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayInput `pulumi:"balancedDiskPerformances"`
+	// Representation of disk performance detail parameters.
+	HighDiskPerformances GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayInput `pulumi:"highDiskPerformances"`
+	// Size in GBs.
+	SizeInGbs pulumi.IntInput `pulumi:"sizeInGbs"`
+}
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList)(nil)).Elem()
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArgs) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput {
+	return i.ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArgs) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput)
+}
+
+// GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArray and GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayInput` via:
+//
+//	GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArray{ GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArgs{...} }
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutputWithContext(context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArray []GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListInput
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList)(nil)).Elem()
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArray) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput {
+	return i.ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArray) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList)(nil)).Elem()
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput {
+	return o
+}
+
+// Representation of disk performance detail parameters.
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput) BalancedDiskPerformances() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList) []GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformance {
+		return v.BalancedDiskPerformances
+	}).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput)
+}
+
+// Representation of disk performance detail parameters.
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput) HighDiskPerformances() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList) []GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformance {
+		return v.HighDiskPerformances
+	}).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput)
+}
+
+// Size in GBs.
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput) SizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList) int {
+		return v.SizeInGbs
+	}).(pulumi.IntOutput)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList)(nil)).Elem()
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput) Index(i pulumi.IntInput) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList {
+		return vs[0].([]GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList)[vs[1].(int)]
+	}).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformance struct {
+	// Disk IOPS in thousands.
+	DiskIops float64 `pulumi:"diskIops"`
+	// Disk Throughput in Mbps.
+	DiskThroughputInMbps float64 `pulumi:"diskThroughputInMbps"`
+}
+
+// GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArgs and GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput values.
+// You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceInput` via:
+//
+//	GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArgs{...}
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceInput interface {
+	pulumi.Input
+
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutputWithContext(context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArgs struct {
+	// Disk IOPS in thousands.
+	DiskIops pulumi.Float64Input `pulumi:"diskIops"`
+	// Disk Throughput in Mbps.
+	DiskThroughputInMbps pulumi.Float64Input `pulumi:"diskThroughputInMbps"`
+}
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformance)(nil)).Elem()
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArgs) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput {
+	return i.ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArgs) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput)
+}
+
+// GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArray and GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayInput` via:
+//
+//	GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArray{ GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArgs{...} }
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutputWithContext(context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArray []GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceInput
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformance)(nil)).Elem()
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArray) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput {
+	return i.ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArray) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformance)(nil)).Elem()
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput {
+	return o
+}
+
+// Disk IOPS in thousands.
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput) DiskIops() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformance) float64 {
+		return v.DiskIops
+	}).(pulumi.Float64Output)
+}
+
+// Disk Throughput in Mbps.
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput) DiskThroughputInMbps() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformance) float64 {
+		return v.DiskThroughputInMbps
+	}).(pulumi.Float64Output)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformance)(nil)).Elem()
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput) Index(i pulumi.IntInput) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformance {
+		return vs[0].([]GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformance)[vs[1].(int)]
+	}).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformance struct {
+	// Disk IOPS in thousands.
+	DiskIops float64 `pulumi:"diskIops"`
+	// Disk Throughput in Mbps.
+	DiskThroughputInMbps float64 `pulumi:"diskThroughputInMbps"`
+}
+
+// GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArgs and GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput values.
+// You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceInput` via:
+//
+//	GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArgs{...}
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceInput interface {
+	pulumi.Input
+
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutputWithContext(context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArgs struct {
+	// Disk IOPS in thousands.
+	DiskIops pulumi.Float64Input `pulumi:"diskIops"`
+	// Disk Throughput in Mbps.
+	DiskThroughputInMbps pulumi.Float64Input `pulumi:"diskThroughputInMbps"`
+}
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformance)(nil)).Elem()
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArgs) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput {
+	return i.ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArgs) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput)
+}
+
+// GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArray and GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayInput` via:
+//
+//	GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArray{ GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArgs{...} }
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutputWithContext(context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArray []GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceInput
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformance)(nil)).Elem()
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArray) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput {
+	return i.ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArray) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformance)(nil)).Elem()
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput {
+	return o
+}
+
+// Disk IOPS in thousands.
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput) DiskIops() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformance) float64 {
+		return v.DiskIops
+	}).(pulumi.Float64Output)
+}
+
+// Disk Throughput in Mbps.
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput) DiskThroughputInMbps() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformance) float64 {
+		return v.DiskThroughputInMbps
+	}).(pulumi.Float64Output)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformance)(nil)).Elem()
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput) Index(i pulumi.IntInput) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformance {
+		return vs[0].([]GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformance)[vs[1].(int)]
+	}).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList struct {
+	// Representation of disk performance detail parameters.
+	BalancedDiskPerformances []GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance `pulumi:"balancedDiskPerformances"`
+	// Representation of disk performance detail parameters.
+	HighDiskPerformances []GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance `pulumi:"highDiskPerformances"`
+	// Size in GBs.
+	SizeInGbs int `pulumi:"sizeInGbs"`
+}
+
+// GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArgs and GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput values.
+// You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListInput` via:
+//
+//	GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArgs{...}
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListInput interface {
+	pulumi.Input
+
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutputWithContext(context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArgs struct {
+	// Representation of disk performance detail parameters.
+	BalancedDiskPerformances GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayInput `pulumi:"balancedDiskPerformances"`
+	// Representation of disk performance detail parameters.
+	HighDiskPerformances GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayInput `pulumi:"highDiskPerformances"`
+	// Size in GBs.
+	SizeInGbs pulumi.IntInput `pulumi:"sizeInGbs"`
+}
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList)(nil)).Elem()
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArgs) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput {
+	return i.ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArgs) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput)
+}
+
+// GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArray and GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayInput` via:
+//
+//	GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArray{ GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArgs{...} }
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutputWithContext(context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArray []GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListInput
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList)(nil)).Elem()
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArray) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput {
+	return i.ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArray) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList)(nil)).Elem()
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput {
+	return o
+}
+
+// Representation of disk performance detail parameters.
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput) BalancedDiskPerformances() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList) []GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance {
+		return v.BalancedDiskPerformances
+	}).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput)
+}
+
+// Representation of disk performance detail parameters.
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput) HighDiskPerformances() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList) []GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance {
+		return v.HighDiskPerformances
+	}).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput)
+}
+
+// Size in GBs.
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput) SizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList) int {
+		return v.SizeInGbs
+	}).(pulumi.IntOutput)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList)(nil)).Elem()
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput) Index(i pulumi.IntInput) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList {
+		return vs[0].([]GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList)[vs[1].(int)]
+	}).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance struct {
+	// Disk IOPS in thousands.
+	DiskIops float64 `pulumi:"diskIops"`
+	// Disk Throughput in Mbps.
+	DiskThroughputInMbps float64 `pulumi:"diskThroughputInMbps"`
+}
+
+// GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArgs and GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput values.
+// You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceInput` via:
+//
+//	GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArgs{...}
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceInput interface {
+	pulumi.Input
+
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutputWithContext(context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArgs struct {
+	// Disk IOPS in thousands.
+	DiskIops pulumi.Float64Input `pulumi:"diskIops"`
+	// Disk Throughput in Mbps.
+	DiskThroughputInMbps pulumi.Float64Input `pulumi:"diskThroughputInMbps"`
+}
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance)(nil)).Elem()
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArgs) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput {
+	return i.ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArgs) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput)
+}
+
+// GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArray and GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayInput` via:
+//
+//	GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArray{ GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArgs{...} }
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutputWithContext(context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArray []GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceInput
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance)(nil)).Elem()
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArray) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput {
+	return i.ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArray) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance)(nil)).Elem()
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput {
+	return o
+}
+
+// Disk IOPS in thousands.
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput) DiskIops() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance) float64 {
+		return v.DiskIops
+	}).(pulumi.Float64Output)
+}
+
+// Disk Throughput in Mbps.
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput) DiskThroughputInMbps() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance) float64 {
+		return v.DiskThroughputInMbps
+	}).(pulumi.Float64Output)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance)(nil)).Elem()
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput) Index(i pulumi.IntInput) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance {
+		return vs[0].([]GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance)[vs[1].(int)]
+	}).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput)
+}
+
 type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance struct {
 	// Disk IOPS in thousands.
 	DiskIops float64 `pulumi:"diskIops"`
@@ -300,14 +1552,17 @@ type GetDbSystemsDbSystem struct {
 	// The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	PointInTimeDataDiskCloneTimestamp string `pulumi:"pointInTimeDataDiskCloneTimestamp"`
 	PrivateIp                         string `pulumi:"privateIp"`
+	PrivateIpV6                       string `pulumi:"privateIpV6"`
 	// The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
 	RecoStorageSizeInGb int `pulumi:"recoStorageSizeInGb"`
 	// The FQDN of the DNS record for the SCAN IP addresses that are associated with the DB system.
 	ScanDnsName string `pulumi:"scanDnsName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the DB system.
 	ScanDnsRecordId string `pulumi:"scanDnsRecordId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv4 addresses associated with the DB system. SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
 	ScanIpIds []string `pulumi:"scanIpIds"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv6 addresses associated with the DB system. SCAN IPv6 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+	ScanIpv6ids []string `pulumi:"scanIpv6ids"`
 	// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The shape of the DB system. The shape determines resources to allocate to the DB system.
@@ -333,8 +1588,10 @@ type GetDbSystemsDbSystem struct {
 	TimeZone string `pulumi:"timeZone"`
 	// The Oracle Database version of the DB system.
 	Version string `pulumi:"version"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IPv4 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIPv4 address for each node in the DB system to enable failover. If one node fails, the VIPv4 is reassigned to another active node in the cluster.
 	VipIds []string `pulumi:"vipIds"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IPv6 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP IpV6 address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+	Vipv6ids []string `pulumi:"vipv6ids"`
 	// The OCID of the zone the DB system is associated with.
 	ZoneId string `pulumi:"zoneId"`
 }
@@ -421,14 +1678,17 @@ type GetDbSystemsDbSystemArgs struct {
 	// The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	PointInTimeDataDiskCloneTimestamp pulumi.StringInput `pulumi:"pointInTimeDataDiskCloneTimestamp"`
 	PrivateIp                         pulumi.StringInput `pulumi:"privateIp"`
+	PrivateIpV6                       pulumi.StringInput `pulumi:"privateIpV6"`
 	// The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
 	RecoStorageSizeInGb pulumi.IntInput `pulumi:"recoStorageSizeInGb"`
 	// The FQDN of the DNS record for the SCAN IP addresses that are associated with the DB system.
 	ScanDnsName pulumi.StringInput `pulumi:"scanDnsName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the DB system.
 	ScanDnsRecordId pulumi.StringInput `pulumi:"scanDnsRecordId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv4 addresses associated with the DB system. SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
 	ScanIpIds pulumi.StringArrayInput `pulumi:"scanIpIds"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv6 addresses associated with the DB system. SCAN IPv6 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+	ScanIpv6ids pulumi.StringArrayInput `pulumi:"scanIpv6ids"`
 	// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
 	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// The shape of the DB system. The shape determines resources to allocate to the DB system.
@@ -454,8 +1714,10 @@ type GetDbSystemsDbSystemArgs struct {
 	TimeZone pulumi.StringInput `pulumi:"timeZone"`
 	// The Oracle Database version of the DB system.
 	Version pulumi.StringInput `pulumi:"version"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IPv4 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIPv4 address for each node in the DB system to enable failover. If one node fails, the VIPv4 is reassigned to another active node in the cluster.
 	VipIds pulumi.StringArrayInput `pulumi:"vipIds"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IPv6 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP IpV6 address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+	Vipv6ids pulumi.StringArrayInput `pulumi:"vipv6ids"`
 	// The OCID of the zone the DB system is associated with.
 	ZoneId pulumi.StringInput `pulumi:"zoneId"`
 }
@@ -696,6 +1958,10 @@ func (o GetDbSystemsDbSystemOutput) PrivateIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.PrivateIp }).(pulumi.StringOutput)
 }
 
+func (o GetDbSystemsDbSystemOutput) PrivateIpV6() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.PrivateIpV6 }).(pulumi.StringOutput)
+}
+
 // The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
 func (o GetDbSystemsDbSystemOutput) RecoStorageSizeInGb() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystem) int { return v.RecoStorageSizeInGb }).(pulumi.IntOutput)
@@ -711,9 +1977,14 @@ func (o GetDbSystemsDbSystemOutput) ScanDnsRecordId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.ScanDnsRecordId }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv4 addresses associated with the DB system. SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
 func (o GetDbSystemsDbSystemOutput) ScanIpIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystem) []string { return v.ScanIpIds }).(pulumi.StringArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv6 addresses associated with the DB system. SCAN IPv6 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+func (o GetDbSystemsDbSystemOutput) ScanIpv6ids() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) []string { return v.ScanIpv6ids }).(pulumi.StringArrayOutput)
 }
 
 // Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
@@ -777,9 +2048,14 @@ func (o GetDbSystemsDbSystemOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.Version }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IPv4 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIPv4 address for each node in the DB system to enable failover. If one node fails, the VIPv4 is reassigned to another active node in the cluster.
 func (o GetDbSystemsDbSystemOutput) VipIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystem) []string { return v.VipIds }).(pulumi.StringArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IPv6 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP IpV6 address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+func (o GetDbSystemsDbSystemOutput) Vipv6ids() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) []string { return v.Vipv6ids }).(pulumi.StringArrayOutput)
 }
 
 // The OCID of the zone the DB system is associated with.
@@ -26900,6 +28176,24 @@ func (o GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput) Index(i 
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemPatchesPatchInput)(nil)).Elem(), GetDbSystemPatchesPatchArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemPatchesPatchArrayInput)(nil)).Elem(), GetDbSystemPatchesPatchArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemShapesDbSystemShapeInput)(nil)).Elem(), GetDbSystemShapesDbSystemShapeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemShapesDbSystemShapeArrayInput)(nil)).Elem(), GetDbSystemShapesDbSystemShapeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemShapesFilterInput)(nil)).Elem(), GetDbSystemShapesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemShapesFilterArrayInput)(nil)).Elem(), GetDbSystemShapesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceInput)(nil)).Elem(), GetDbSystemStoragePerformancesDbSystemStoragePerformanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayInput)(nil)).Elem(), GetDbSystemStoragePerformancesDbSystemStoragePerformanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListInput)(nil)).Elem(), GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayInput)(nil)).Elem(), GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceInput)(nil)).Elem(), GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayInput)(nil)).Elem(), GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceInput)(nil)).Elem(), GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayInput)(nil)).Elem(), GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListInput)(nil)).Elem(), GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayInput)(nil)).Elem(), GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceInput)(nil)).Elem(), GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayInput)(nil)).Elem(), GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceInput)(nil)).Elem(), GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayInput)(nil)).Elem(), GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStoragePerformancesFilterInput)(nil)).Elem(), GetDbSystemStoragePerformancesFilterArgs{})
@@ -27288,6 +28582,24 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetVmClustersVmClusterDataCollectionOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailArrayInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArray{})
+	pulumi.RegisterOutputType(GetDbSystemPatchesPatchOutput{})
+	pulumi.RegisterOutputType(GetDbSystemPatchesPatchArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemShapesDbSystemShapeOutput{})
+	pulumi.RegisterOutputType(GetDbSystemShapesDbSystemShapeArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemShapesFilterOutput{})
+	pulumi.RegisterOutputType(GetDbSystemShapesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput{})
+	pulumi.RegisterOutputType(GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput{})
+	pulumi.RegisterOutputType(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput{})
+	pulumi.RegisterOutputType(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput{})
+	pulumi.RegisterOutputType(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput{})
+	pulumi.RegisterOutputType(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput{})
+	pulumi.RegisterOutputType(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput{})
 	pulumi.RegisterOutputType(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemStoragePerformancesFilterOutput{})

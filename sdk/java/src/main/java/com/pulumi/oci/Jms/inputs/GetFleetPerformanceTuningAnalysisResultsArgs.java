@@ -33,6 +33,21 @@ public final class GetFleetPerformanceTuningAnalysisResultsArgs extends com.pulu
         return Optional.ofNullable(this.applicationId);
     }
 
+    /**
+     * The name of the application.
+     * 
+     */
+    @Import(name="applicationName")
+    private @Nullable Output<String> applicationName;
+
+    /**
+     * @return The name of the application.
+     * 
+     */
+    public Optional<Output<String>> applicationName() {
+        return Optional.ofNullable(this.applicationName);
+    }
+
     @Import(name="filters")
     private @Nullable Output<List<GetFleetPerformanceTuningAnalysisResultsFilterArgs>> filters;
 
@@ -119,6 +134,7 @@ public final class GetFleetPerformanceTuningAnalysisResultsArgs extends com.pulu
 
     private GetFleetPerformanceTuningAnalysisResultsArgs(GetFleetPerformanceTuningAnalysisResultsArgs $) {
         this.applicationId = $.applicationId;
+        this.applicationName = $.applicationName;
         this.filters = $.filters;
         this.fleetId = $.fleetId;
         this.hostName = $.hostName;
@@ -164,6 +180,27 @@ public final class GetFleetPerformanceTuningAnalysisResultsArgs extends com.pulu
          */
         public Builder applicationId(String applicationId) {
             return applicationId(Output.of(applicationId));
+        }
+
+        /**
+         * @param applicationName The name of the application.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder applicationName(@Nullable Output<String> applicationName) {
+            $.applicationName = applicationName;
+            return this;
+        }
+
+        /**
+         * @param applicationName The name of the application.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder applicationName(String applicationName) {
+            return applicationName(Output.of(applicationName));
         }
 
         public Builder filters(@Nullable Output<List<GetFleetPerformanceTuningAnalysisResultsFilterArgs>> filters) {

@@ -27,7 +27,7 @@ class GetAutonomousDatabaseResult:
     """
     A collection of values returned by getAutonomousDatabase.
     """
-    def __init__(__self__, actual_used_data_storage_size_in_tbs=None, admin_password=None, allocated_storage_size_in_tbs=None, apex_details=None, are_primary_whitelisted_ips_used=None, auto_refresh_frequency_in_seconds=None, auto_refresh_point_lag_in_seconds=None, autonomous_container_database_id=None, autonomous_database_backup_id=None, autonomous_database_id=None, autonomous_maintenance_schedule_type=None, availability_domain=None, available_upgrade_versions=None, backup_configs=None, backup_retention_period_in_days=None, byol_compute_count_limit=None, character_set=None, clone_type=None, cluster_placement_group_id=None, compartment_id=None, compute_count=None, compute_model=None, connection_strings=None, connection_urls=None, cpu_core_count=None, customer_contacts=None, data_safe_status=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, database_edition=None, database_management_status=None, dataguard_region_type=None, db_name=None, db_tools_details=None, db_version=None, db_workload=None, defined_tags=None, disaster_recovery_region_type=None, disaster_recovery_type=None, display_name=None, encryption_key_history_entries=None, encryption_keys=None, failed_data_recovery_in_seconds=None, freeform_tags=None, id=None, in_memory_area_in_gbs=None, in_memory_percentage=None, infrastructure_type=None, is_access_control_enabled=None, is_auto_scaling_enabled=None, is_auto_scaling_for_storage_enabled=None, is_backup_retention_locked=None, is_data_guard_enabled=None, is_dedicated=None, is_dev_tier=None, is_disconnect_peer=None, is_free_tier=None, is_local_data_guard_enabled=None, is_mtls_connection_required=None, is_preview=None, is_preview_version_with_service_terms_accepted=None, is_reconnect_clone_enabled=None, is_refreshable_clone=None, is_remote_data_guard_enabled=None, is_replicate_automatic_backups=None, is_shrink_only=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, key_version_id=None, kms_key_id=None, kms_key_lifecycle_details=None, kms_key_version_id=None, license_model=None, lifecycle_details=None, local_adg_auto_failover_max_data_loss_limit=None, local_disaster_recovery_type=None, local_standby_dbs=None, long_term_backup_schedules=None, max_cpu_core_count=None, memory_per_oracle_compute_unit_in_gbs=None, ncharacter_set=None, net_services_architecture=None, next_long_term_backup_time_stamp=None, nsg_ids=None, ocpu_count=None, open_mode=None, operations_insights_status=None, peer_db_id=None, peer_db_ids=None, permission_level=None, private_endpoint=None, private_endpoint_ip=None, private_endpoint_label=None, provisionable_cpuses=None, public_connection_urls=None, public_endpoint=None, refreshable_mode=None, refreshable_status=None, remote_disaster_recovery_configurations=None, remote_disaster_recovery_type=None, resource_pool_leader_id=None, resource_pool_summaries=None, role=None, rotate_key_trigger=None, scheduled_operations=None, secret_id=None, secret_version_number=None, security_attributes=None, service_console_url=None, shrink_adb_trigger=None, source=None, source_id=None, standby_dbs=None, standby_whitelisted_ips=None, state=None, subnet_id=None, subscription_id=None, supported_regions_to_clone_tos=None, switchover_to=None, switchover_to_remote_peer_id=None, system_tags=None, time_created=None, time_data_guard_role_changed=None, time_deletion_of_free_autonomous_database=None, time_disaster_recovery_role_changed=None, time_local_data_guard_enabled=None, time_maintenance_begin=None, time_maintenance_end=None, time_of_auto_refresh_start=None, time_of_joining_resource_pool=None, time_of_last_failover=None, time_of_last_refresh=None, time_of_last_refresh_point=None, time_of_last_switchover=None, time_of_next_refresh=None, time_reclamation_of_free_autonomous_database=None, time_undeleted=None, time_until_reconnect_clone_enabled=None, timestamp=None, total_backup_storage_size_in_gbs=None, use_latest_available_backup_time_stamp=None, used_data_storage_size_in_gbs=None, used_data_storage_size_in_tbs=None, vault_id=None, whitelisted_ips=None):
+    def __init__(__self__, actual_used_data_storage_size_in_tbs=None, admin_password=None, allocated_storage_size_in_tbs=None, apex_details=None, are_primary_whitelisted_ips_used=None, auto_refresh_frequency_in_seconds=None, auto_refresh_point_lag_in_seconds=None, autonomous_container_database_id=None, autonomous_database_backup_id=None, autonomous_database_id=None, autonomous_maintenance_schedule_type=None, availability_domain=None, available_upgrade_versions=None, backup_configs=None, backup_retention_period_in_days=None, byol_compute_count_limit=None, character_set=None, clone_table_space_lists=None, clone_type=None, cluster_placement_group_id=None, compartment_id=None, compute_count=None, compute_model=None, connection_strings=None, connection_urls=None, cpu_core_count=None, customer_contacts=None, data_safe_status=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, database_edition=None, database_management_status=None, dataguard_region_type=None, db_name=None, db_tools_details=None, db_version=None, db_workload=None, defined_tags=None, disaster_recovery_region_type=None, disaster_recovery_type=None, display_name=None, encryption_key_history_entries=None, encryption_keys=None, failed_data_recovery_in_seconds=None, freeform_tags=None, id=None, in_memory_area_in_gbs=None, in_memory_percentage=None, infrastructure_type=None, is_access_control_enabled=None, is_auto_scaling_enabled=None, is_auto_scaling_for_storage_enabled=None, is_backup_retention_locked=None, is_data_guard_enabled=None, is_dedicated=None, is_dev_tier=None, is_disconnect_peer=None, is_free_tier=None, is_local_data_guard_enabled=None, is_mtls_connection_required=None, is_preview=None, is_preview_version_with_service_terms_accepted=None, is_reconnect_clone_enabled=None, is_refreshable_clone=None, is_remote_data_guard_enabled=None, is_replicate_automatic_backups=None, is_shrink_only=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, key_version_id=None, kms_key_id=None, kms_key_lifecycle_details=None, kms_key_version_id=None, license_model=None, lifecycle_details=None, local_adg_auto_failover_max_data_loss_limit=None, local_disaster_recovery_type=None, local_standby_dbs=None, long_term_backup_schedules=None, maintenance_target_component=None, max_cpu_core_count=None, memory_per_oracle_compute_unit_in_gbs=None, ncharacter_set=None, net_services_architecture=None, next_long_term_backup_time_stamp=None, nsg_ids=None, ocpu_count=None, open_mode=None, operations_insights_status=None, peer_db_id=None, peer_db_ids=None, permission_level=None, private_endpoint=None, private_endpoint_ip=None, private_endpoint_label=None, provisionable_cpuses=None, public_connection_urls=None, public_endpoint=None, refreshable_mode=None, refreshable_status=None, remote_disaster_recovery_configurations=None, remote_disaster_recovery_type=None, resource_pool_leader_id=None, resource_pool_summaries=None, role=None, rotate_key_trigger=None, scheduled_operations=None, secret_id=None, secret_version_number=None, security_attributes=None, service_console_url=None, shrink_adb_trigger=None, source=None, source_id=None, standby_dbs=None, standby_whitelisted_ips=None, state=None, subnet_id=None, subscription_id=None, supported_regions_to_clone_tos=None, switchover_to=None, switchover_to_remote_peer_id=None, system_tags=None, time_created=None, time_data_guard_role_changed=None, time_deletion_of_free_autonomous_database=None, time_disaster_recovery_role_changed=None, time_local_data_guard_enabled=None, time_maintenance_begin=None, time_maintenance_end=None, time_of_auto_refresh_start=None, time_of_joining_resource_pool=None, time_of_last_failover=None, time_of_last_refresh=None, time_of_last_refresh_point=None, time_of_last_switchover=None, time_of_next_refresh=None, time_reclamation_of_free_autonomous_database=None, time_undeleted=None, time_until_reconnect_clone_enabled=None, timestamp=None, total_backup_storage_size_in_gbs=None, use_latest_available_backup_time_stamp=None, used_data_storage_size_in_gbs=None, used_data_storage_size_in_tbs=None, vault_id=None, whitelisted_ips=None):
         if actual_used_data_storage_size_in_tbs and not isinstance(actual_used_data_storage_size_in_tbs, float):
             raise TypeError("Expected argument 'actual_used_data_storage_size_in_tbs' to be a float")
         pulumi.set(__self__, "actual_used_data_storage_size_in_tbs", actual_used_data_storage_size_in_tbs)
@@ -79,6 +79,9 @@ class GetAutonomousDatabaseResult:
         if character_set and not isinstance(character_set, str):
             raise TypeError("Expected argument 'character_set' to be a str")
         pulumi.set(__self__, "character_set", character_set)
+        if clone_table_space_lists and not isinstance(clone_table_space_lists, list):
+            raise TypeError("Expected argument 'clone_table_space_lists' to be a list")
+        pulumi.set(__self__, "clone_table_space_lists", clone_table_space_lists)
         if clone_type and not isinstance(clone_type, str):
             raise TypeError("Expected argument 'clone_type' to be a str")
         pulumi.set(__self__, "clone_type", clone_type)
@@ -265,6 +268,9 @@ class GetAutonomousDatabaseResult:
         if long_term_backup_schedules and not isinstance(long_term_backup_schedules, list):
             raise TypeError("Expected argument 'long_term_backup_schedules' to be a list")
         pulumi.set(__self__, "long_term_backup_schedules", long_term_backup_schedules)
+        if maintenance_target_component and not isinstance(maintenance_target_component, str):
+            raise TypeError("Expected argument 'maintenance_target_component' to be a str")
+        pulumi.set(__self__, "maintenance_target_component", maintenance_target_component)
         if max_cpu_core_count and not isinstance(max_cpu_core_count, int):
             raise TypeError("Expected argument 'max_cpu_core_count' to be a int")
         pulumi.set(__self__, "max_cpu_core_count", max_cpu_core_count)
@@ -590,6 +596,17 @@ class GetAutonomousDatabaseResult:
         The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
         """
         return pulumi.get(self, "character_set")
+
+    @property
+    @pulumi.getter(name="cloneTableSpaceLists")
+    def clone_table_space_lists(self) -> Sequence[int]:
+        """
+        A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
+        =======
+        AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
+        >>>>>>> theirs
+        """
+        return pulumi.get(self, "clone_table_space_lists")
 
     @property
     @pulumi.getter(name="cloneType")
@@ -1082,6 +1099,14 @@ class GetAutonomousDatabaseResult:
         Details for the long-term backup schedule.
         """
         return pulumi.get(self, "long_term_backup_schedules")
+
+    @property
+    @pulumi.getter(name="maintenanceTargetComponent")
+    def maintenance_target_component(self) -> str:
+        """
+        The component chosen for maintenance.
+        """
+        return pulumi.get(self, "maintenance_target_component")
 
     @property
     @pulumi.getter(name="maxCpuCoreCount")
@@ -1615,6 +1640,7 @@ class AwaitableGetAutonomousDatabaseResult(GetAutonomousDatabaseResult):
             backup_retention_period_in_days=self.backup_retention_period_in_days,
             byol_compute_count_limit=self.byol_compute_count_limit,
             character_set=self.character_set,
+            clone_table_space_lists=self.clone_table_space_lists,
             clone_type=self.clone_type,
             cluster_placement_group_id=self.cluster_placement_group_id,
             compartment_id=self.compartment_id,
@@ -1677,6 +1703,7 @@ class AwaitableGetAutonomousDatabaseResult(GetAutonomousDatabaseResult):
             local_disaster_recovery_type=self.local_disaster_recovery_type,
             local_standby_dbs=self.local_standby_dbs,
             long_term_backup_schedules=self.long_term_backup_schedules,
+            maintenance_target_component=self.maintenance_target_component,
             max_cpu_core_count=self.max_cpu_core_count,
             memory_per_oracle_compute_unit_in_gbs=self.memory_per_oracle_compute_unit_in_gbs,
             ncharacter_set=self.ncharacter_set,
@@ -1788,6 +1815,7 @@ def get_autonomous_database(autonomous_database_id: Optional[str] = None,
         backup_retention_period_in_days=pulumi.get(__ret__, 'backup_retention_period_in_days'),
         byol_compute_count_limit=pulumi.get(__ret__, 'byol_compute_count_limit'),
         character_set=pulumi.get(__ret__, 'character_set'),
+        clone_table_space_lists=pulumi.get(__ret__, 'clone_table_space_lists'),
         clone_type=pulumi.get(__ret__, 'clone_type'),
         cluster_placement_group_id=pulumi.get(__ret__, 'cluster_placement_group_id'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
@@ -1850,6 +1878,7 @@ def get_autonomous_database(autonomous_database_id: Optional[str] = None,
         local_disaster_recovery_type=pulumi.get(__ret__, 'local_disaster_recovery_type'),
         local_standby_dbs=pulumi.get(__ret__, 'local_standby_dbs'),
         long_term_backup_schedules=pulumi.get(__ret__, 'long_term_backup_schedules'),
+        maintenance_target_component=pulumi.get(__ret__, 'maintenance_target_component'),
         max_cpu_core_count=pulumi.get(__ret__, 'max_cpu_core_count'),
         memory_per_oracle_compute_unit_in_gbs=pulumi.get(__ret__, 'memory_per_oracle_compute_unit_in_gbs'),
         ncharacter_set=pulumi.get(__ret__, 'ncharacter_set'),
@@ -1958,6 +1987,7 @@ def get_autonomous_database_output(autonomous_database_id: Optional[pulumi.Input
         backup_retention_period_in_days=pulumi.get(__response__, 'backup_retention_period_in_days'),
         byol_compute_count_limit=pulumi.get(__response__, 'byol_compute_count_limit'),
         character_set=pulumi.get(__response__, 'character_set'),
+        clone_table_space_lists=pulumi.get(__response__, 'clone_table_space_lists'),
         clone_type=pulumi.get(__response__, 'clone_type'),
         cluster_placement_group_id=pulumi.get(__response__, 'cluster_placement_group_id'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
@@ -2020,6 +2050,7 @@ def get_autonomous_database_output(autonomous_database_id: Optional[pulumi.Input
         local_disaster_recovery_type=pulumi.get(__response__, 'local_disaster_recovery_type'),
         local_standby_dbs=pulumi.get(__response__, 'local_standby_dbs'),
         long_term_backup_schedules=pulumi.get(__response__, 'long_term_backup_schedules'),
+        maintenance_target_component=pulumi.get(__response__, 'maintenance_target_component'),
         max_cpu_core_count=pulumi.get(__response__, 'max_cpu_core_count'),
         memory_per_oracle_compute_unit_in_gbs=pulumi.get(__response__, 'memory_per_oracle_compute_unit_in_gbs'),
         ncharacter_set=pulumi.get(__response__, 'ncharacter_set'),

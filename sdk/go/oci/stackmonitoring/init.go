@@ -53,6 +53,12 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &MonitoredResourcesSearch{}
 	case "oci:StackMonitoring/monitoredResourcesSearchAssociation:MonitoredResourcesSearchAssociation":
 		r = &MonitoredResourcesSearchAssociation{}
+	case "oci:StackMonitoring/monitoringTemplate:MonitoringTemplate":
+		r = &MonitoringTemplate{}
+	case "oci:StackMonitoring/monitoringTemplateAlarmCondition:MonitoringTemplateAlarmCondition":
+		r = &MonitoringTemplateAlarmCondition{}
+	case "oci:StackMonitoring/monitoringTemplateMonitoringTemplateOnGivenResourcesManagement:MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement":
+		r = &MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement{}
 	case "oci:StackMonitoring/processSet:ProcessSet":
 		r = &ProcessSet{}
 	default:
@@ -146,6 +152,21 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"StackMonitoring/monitoredResourcesSearchAssociation",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"StackMonitoring/monitoringTemplate",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"StackMonitoring/monitoringTemplateAlarmCondition",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"StackMonitoring/monitoringTemplateMonitoringTemplateOnGivenResourcesManagement",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

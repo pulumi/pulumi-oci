@@ -14,6 +14,10 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
     public sealed class GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemResult
     {
         /// <summary>
+        /// Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> AdditionalNamespaceMap;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy for which  monitored resource types should be listed.
         /// </summary>
         public readonly string CompartmentId;
@@ -76,6 +80,8 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
 
         [OutputConstructor]
         private GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemResult(
+            ImmutableDictionary<string, string> additionalNamespaceMap,
+
             string compartmentId,
 
             ImmutableDictionary<string, string> definedTags,
@@ -106,6 +112,7 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
 
             string timeUpdated)
         {
+            AdditionalNamespaceMap = additionalNamespaceMap;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             Description = description;

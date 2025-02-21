@@ -83,6 +83,7 @@ namespace Pulumi.Oci.Database.Outputs
         public readonly string PeerSidPrefix;
         public readonly string PeerVmClusterId;
         public readonly string PrivateIp;
+        public readonly string PrivateIpV6;
         /// <summary>
         /// The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         /// </summary>
@@ -184,6 +185,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string privateIp,
 
+            string privateIpV6,
+
             string protectionMode,
 
             string role,
@@ -239,6 +242,7 @@ namespace Pulumi.Oci.Database.Outputs
             PeerSidPrefix = peerSidPrefix;
             PeerVmClusterId = peerVmClusterId;
             PrivateIp = privateIp;
+            PrivateIpV6 = privateIpV6;
             ProtectionMode = protectionMode;
             Role = role;
             Shape = shape;

@@ -58,7 +58,9 @@ type LookupAutonomousContainerDatabaseArgs struct {
 
 // A collection of values returned by getAutonomousContainerDatabase.
 type LookupAutonomousContainerDatabaseResult struct {
-	AutonomousContainerDatabaseId string `pulumi:"autonomousContainerDatabaseId"`
+	// A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
+	AssociatedBackupConfigurationDetails []GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetail `pulumi:"associatedBackupConfigurationDetails"`
+	AutonomousContainerDatabaseId        string                                                              `pulumi:"autonomousContainerDatabaseId"`
 	// **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
 	AutonomousExadataInfrastructureId string `pulumi:"autonomousExadataInfrastructureId"`
 	// The OCID of the Autonomous VM Cluster.
@@ -69,6 +71,8 @@ type LookupAutonomousContainerDatabaseResult struct {
 	AvailableCpus float64 `pulumi:"availableCpus"`
 	// Backup options for the Autonomous Container Database.
 	BackupConfigs []GetAutonomousContainerDatabaseBackupConfig `pulumi:"backupConfigs"`
+	// This list describes the backup destination properties associated with the Autonomous Container Database (ACD) 's preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
+	BackupDestinationPropertiesLists []GetAutonomousContainerDatabaseBackupDestinationPropertiesList `pulumi:"backupDestinationPropertiesLists"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
 	CloudAutonomousVmClusterId string `pulumi:"cloudAutonomousVmClusterId"`
 	// The OCID of the compartment.
@@ -146,6 +150,8 @@ type LookupAutonomousContainerDatabaseResult struct {
 	ProvisionedCpus float64 `pulumi:"provisionedCpus"`
 	// CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 	ReclaimableCpus float64 `pulumi:"reclaimableCpus"`
+	// Information about the recovery appliance configuration associated with the Autonomous Container Database.
+	RecoveryApplianceDetails []GetAutonomousContainerDatabaseRecoveryApplianceDetail `pulumi:"recoveryApplianceDetails"`
 	// The number of CPUs reserved in an Autonomous Container Database.
 	ReservedCpus float64 `pulumi:"reservedCpus"`
 	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
@@ -207,6 +213,13 @@ func (o LookupAutonomousContainerDatabaseResultOutput) ToLookupAutonomousContain
 	return o
 }
 
+// A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
+func (o LookupAutonomousContainerDatabaseResultOutput) AssociatedBackupConfigurationDetails() GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetailArrayOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) []GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetail {
+		return v.AssociatedBackupConfigurationDetails
+	}).(GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetailArrayOutput)
+}
+
 func (o LookupAutonomousContainerDatabaseResultOutput) AutonomousContainerDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.AutonomousContainerDatabaseId }).(pulumi.StringOutput)
 }
@@ -236,6 +249,13 @@ func (o LookupAutonomousContainerDatabaseResultOutput) BackupConfigs() GetAutono
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) []GetAutonomousContainerDatabaseBackupConfig {
 		return v.BackupConfigs
 	}).(GetAutonomousContainerDatabaseBackupConfigArrayOutput)
+}
+
+// This list describes the backup destination properties associated with the Autonomous Container Database (ACD) 's preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
+func (o LookupAutonomousContainerDatabaseResultOutput) BackupDestinationPropertiesLists() GetAutonomousContainerDatabaseBackupDestinationPropertiesListArrayOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) []GetAutonomousContainerDatabaseBackupDestinationPropertiesList {
+		return v.BackupDestinationPropertiesLists
+	}).(GetAutonomousContainerDatabaseBackupDestinationPropertiesListArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
@@ -462,6 +482,13 @@ func (o LookupAutonomousContainerDatabaseResultOutput) ProvisionedCpus() pulumi.
 // CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 func (o LookupAutonomousContainerDatabaseResultOutput) ReclaimableCpus() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) float64 { return v.ReclaimableCpus }).(pulumi.Float64Output)
+}
+
+// Information about the recovery appliance configuration associated with the Autonomous Container Database.
+func (o LookupAutonomousContainerDatabaseResultOutput) RecoveryApplianceDetails() GetAutonomousContainerDatabaseRecoveryApplianceDetailArrayOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) []GetAutonomousContainerDatabaseRecoveryApplianceDetail {
+		return v.RecoveryApplianceDetails
+	}).(GetAutonomousContainerDatabaseRecoveryApplianceDetailArrayOutput)
 }
 
 // The number of CPUs reserved in an Autonomous Container Database.

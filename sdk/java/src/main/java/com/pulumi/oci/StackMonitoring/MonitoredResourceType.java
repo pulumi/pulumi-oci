@@ -64,6 +64,7 @@ import javax.annotation.Nullable;
  *                 .validPropertiesForCreates(monitoredResourceTypeMetadataValidPropertiesForCreate)
  *                 .validPropertiesForUpdates(monitoredResourceTypeMetadataValidPropertiesForUpdate)
  *                 .validPropertyValues(monitoredResourceTypeMetadataValidPropertyValues)
+ *                 .validSubResourceTypes(monitoredResourceTypeMetadataValidSubResourceTypes)
  *                 .build())
  *             .metricNamespace(monitoredResourceTypeMetricNamespace)
  *             .resourceCategory(monitoredResourceTypeResourceCategory)
@@ -87,6 +88,20 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:StackMonitoring/monitoredResourceType:MonitoredResourceType")
 public class MonitoredResourceType extends com.pulumi.resources.CustomResource {
+    /**
+     * Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
+     * 
+     */
+    @Export(name="additionalNamespaceMap", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> additionalNamespaceMap;
+
+    /**
+     * @return Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
+     * 
+     */
+    public Output<Map<String,String>> additionalNamespaceMap() {
+        return this.additionalNamespaceMap;
+    }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
      * 

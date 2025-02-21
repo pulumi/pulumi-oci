@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.BackupDestinationAssociatedDatabaseArgs;
 import com.pulumi.oci.Database.inputs.BackupDestinationMountTypeDetailsArgs;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -223,6 +224,21 @@ public final class BackupDestinationState extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * The time when the total storage size and the utilized storage size of the backup destination are updated.
+     * 
+     */
+    @Import(name="timeAtWhichStorageDetailsAreUpdated")
+    private @Nullable Output<String> timeAtWhichStorageDetailsAreUpdated;
+
+    /**
+     * @return The time when the total storage size and the utilized storage size of the backup destination are updated.
+     * 
+     */
+    public Optional<Output<String>> timeAtWhichStorageDetailsAreUpdated() {
+        return Optional.ofNullable(this.timeAtWhichStorageDetailsAreUpdated);
+    }
+
+    /**
      * The date and time the backup destination was created.
      * 
      */
@@ -238,6 +254,21 @@ public final class BackupDestinationState extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * The total storage size of the backup destination in GBs, rounded to the nearest integer.
+     * 
+     */
+    @Import(name="totalStorageSizeInGbs")
+    private @Nullable Output<Integer> totalStorageSizeInGbs;
+
+    /**
+     * @return The total storage size of the backup destination in GBs, rounded to the nearest integer.
+     * 
+     */
+    public Optional<Output<Integer>> totalStorageSizeInGbs() {
+        return Optional.ofNullable(this.totalStorageSizeInGbs);
+    }
+
+    /**
      * Type of the backup destination.
      * 
      */
@@ -250,6 +281,21 @@ public final class BackupDestinationState extends com.pulumi.resources.ResourceA
      */
     public Optional<Output<String>> type() {
         return Optional.ofNullable(this.type);
+    }
+
+    /**
+     * The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
+     * 
+     */
+    @Import(name="utilizedStorageSizeInGbs")
+    private @Nullable Output<Integer> utilizedStorageSizeInGbs;
+
+    /**
+     * @return The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
+     * 
+     */
+    public Optional<Output<Integer>> utilizedStorageSizeInGbs() {
+        return Optional.ofNullable(this.utilizedStorageSizeInGbs);
     }
 
     /**
@@ -289,8 +335,11 @@ public final class BackupDestinationState extends com.pulumi.resources.ResourceA
         this.nfsServerExport = $.nfsServerExport;
         this.nfsServers = $.nfsServers;
         this.state = $.state;
+        this.timeAtWhichStorageDetailsAreUpdated = $.timeAtWhichStorageDetailsAreUpdated;
         this.timeCreated = $.timeCreated;
+        this.totalStorageSizeInGbs = $.totalStorageSizeInGbs;
         this.type = $.type;
+        this.utilizedStorageSizeInGbs = $.utilizedStorageSizeInGbs;
         this.vpcUsers = $.vpcUsers;
     }
 
@@ -614,6 +663,27 @@ public final class BackupDestinationState extends com.pulumi.resources.ResourceA
         }
 
         /**
+         * @param timeAtWhichStorageDetailsAreUpdated The time when the total storage size and the utilized storage size of the backup destination are updated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeAtWhichStorageDetailsAreUpdated(@Nullable Output<String> timeAtWhichStorageDetailsAreUpdated) {
+            $.timeAtWhichStorageDetailsAreUpdated = timeAtWhichStorageDetailsAreUpdated;
+            return this;
+        }
+
+        /**
+         * @param timeAtWhichStorageDetailsAreUpdated The time when the total storage size and the utilized storage size of the backup destination are updated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeAtWhichStorageDetailsAreUpdated(String timeAtWhichStorageDetailsAreUpdated) {
+            return timeAtWhichStorageDetailsAreUpdated(Output.of(timeAtWhichStorageDetailsAreUpdated));
+        }
+
+        /**
          * @param timeCreated The date and time the backup destination was created.
          * 
          * @return builder
@@ -635,6 +705,27 @@ public final class BackupDestinationState extends com.pulumi.resources.ResourceA
         }
 
         /**
+         * @param totalStorageSizeInGbs The total storage size of the backup destination in GBs, rounded to the nearest integer.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder totalStorageSizeInGbs(@Nullable Output<Integer> totalStorageSizeInGbs) {
+            $.totalStorageSizeInGbs = totalStorageSizeInGbs;
+            return this;
+        }
+
+        /**
+         * @param totalStorageSizeInGbs The total storage size of the backup destination in GBs, rounded to the nearest integer.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder totalStorageSizeInGbs(Integer totalStorageSizeInGbs) {
+            return totalStorageSizeInGbs(Output.of(totalStorageSizeInGbs));
+        }
+
+        /**
          * @param type Type of the backup destination.
          * 
          * @return builder
@@ -653,6 +744,27 @@ public final class BackupDestinationState extends com.pulumi.resources.ResourceA
          */
         public Builder type(String type) {
             return type(Output.of(type));
+        }
+
+        /**
+         * @param utilizedStorageSizeInGbs The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder utilizedStorageSizeInGbs(@Nullable Output<Integer> utilizedStorageSizeInGbs) {
+            $.utilizedStorageSizeInGbs = utilizedStorageSizeInGbs;
+            return this;
+        }
+
+        /**
+         * @param utilizedStorageSizeInGbs The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder utilizedStorageSizeInGbs(Integer utilizedStorageSizeInGbs) {
+            return utilizedStorageSizeInGbs(Output.of(utilizedStorageSizeInGbs));
         }
 
         /**

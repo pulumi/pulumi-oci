@@ -298,16 +298,20 @@ class ClusterEndpoint(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 ipv6endpoint: Optional[str] = None,
                  kubernetes: Optional[str] = None,
                  private_endpoint: Optional[str] = None,
                  public_endpoint: Optional[str] = None,
                  vcn_hostname_endpoint: Optional[str] = None):
         """
+        :param str ipv6endpoint: The IPv6 networking Kubernetes API server endpoint.
         :param str kubernetes: The non-native networking Kubernetes API server endpoint.
         :param str private_endpoint: The private native networking Kubernetes API server endpoint.
         :param str public_endpoint: The public native networking Kubernetes API server endpoint, if one was requested.
         :param str vcn_hostname_endpoint: The FQDN assigned to the Kubernetes API private endpoint. Example: 'https://yourVcnHostnameEndpoint'
         """
+        if ipv6endpoint is not None:
+            pulumi.set(__self__, "ipv6endpoint", ipv6endpoint)
         if kubernetes is not None:
             pulumi.set(__self__, "kubernetes", kubernetes)
         if private_endpoint is not None:
@@ -316,6 +320,14 @@ class ClusterEndpoint(dict):
             pulumi.set(__self__, "public_endpoint", public_endpoint)
         if vcn_hostname_endpoint is not None:
             pulumi.set(__self__, "vcn_hostname_endpoint", vcn_hostname_endpoint)
+
+    @property
+    @pulumi.getter
+    def ipv6endpoint(self) -> Optional[str]:
+        """
+        The IPv6 networking Kubernetes API server endpoint.
+        """
+        return pulumi.get(self, "ipv6endpoint")
 
     @property
     @pulumi.getter
@@ -670,6 +682,8 @@ class ClusterOptions(dict):
             suggest = "add_ons"
         elif key == "admissionControllerOptions":
             suggest = "admission_controller_options"
+        elif key == "ipFamilies":
+            suggest = "ip_families"
         elif key == "kubernetesNetworkConfig":
             suggest = "kubernetes_network_config"
         elif key == "openIdConnectDiscovery":
@@ -697,6 +711,7 @@ class ClusterOptions(dict):
     def __init__(__self__, *,
                  add_ons: Optional['outputs.ClusterOptionsAddOns'] = None,
                  admission_controller_options: Optional['outputs.ClusterOptionsAdmissionControllerOptions'] = None,
+                 ip_families: Optional[Sequence[str]] = None,
                  kubernetes_network_config: Optional['outputs.ClusterOptionsKubernetesNetworkConfig'] = None,
                  open_id_connect_discovery: Optional['outputs.ClusterOptionsOpenIdConnectDiscovery'] = None,
                  open_id_connect_token_authentication_config: Optional['outputs.ClusterOptionsOpenIdConnectTokenAuthenticationConfig'] = None,
@@ -706,6 +721,7 @@ class ClusterOptions(dict):
         """
         :param 'ClusterOptionsAddOnsArgs' add_ons: Configurable cluster add-ons
         :param 'ClusterOptionsAdmissionControllerOptionsArgs' admission_controller_options: (Updatable) Configurable cluster admission controllers
+        :param Sequence[str] ip_families: IP family to use for single stack or define the order of IP families for dual-stack
         :param 'ClusterOptionsKubernetesNetworkConfigArgs' kubernetes_network_config: Network configuration for Kubernetes.
         :param 'ClusterOptionsOpenIdConnectDiscoveryArgs' open_id_connect_discovery: (Updatable) The property that define the status of the OIDC Discovery feature for a cluster.
         :param 'ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs' open_id_connect_token_authentication_config: (Updatable) The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
@@ -717,6 +733,8 @@ class ClusterOptions(dict):
             pulumi.set(__self__, "add_ons", add_ons)
         if admission_controller_options is not None:
             pulumi.set(__self__, "admission_controller_options", admission_controller_options)
+        if ip_families is not None:
+            pulumi.set(__self__, "ip_families", ip_families)
         if kubernetes_network_config is not None:
             pulumi.set(__self__, "kubernetes_network_config", kubernetes_network_config)
         if open_id_connect_discovery is not None:
@@ -745,6 +763,14 @@ class ClusterOptions(dict):
         (Updatable) Configurable cluster admission controllers
         """
         return pulumi.get(self, "admission_controller_options")
+
+    @property
+    @pulumi.getter(name="ipFamilies")
+    def ip_families(self) -> Optional[Sequence[str]]:
+        """
+        IP family to use for single stack or define the order of IP families for dual-stack
+        """
+        return pulumi.get(self, "ip_families")
 
     @property
     @pulumi.getter(name="kubernetesNetworkConfig")
@@ -4506,20 +4532,31 @@ class GetClusterClusterPodNetworkOptionResult(dict):
 @pulumi.output_type
 class GetClusterEndpointResult(dict):
     def __init__(__self__, *,
+                 ipv6endpoint: str,
                  kubernetes: str,
                  private_endpoint: str,
                  public_endpoint: str,
                  vcn_hostname_endpoint: str):
         """
+        :param str ipv6endpoint: The IPv6 networking Kubernetes API server endpoint.
         :param str kubernetes: The non-native networking Kubernetes API server endpoint.
         :param str private_endpoint: The private native networking Kubernetes API server endpoint.
         :param str public_endpoint: The public native networking Kubernetes API server endpoint, if one was requested.
         :param str vcn_hostname_endpoint: The FQDN assigned to the Kubernetes API private endpoint. Example: 'https://yourVcnHostnameEndpoint'
         """
+        pulumi.set(__self__, "ipv6endpoint", ipv6endpoint)
         pulumi.set(__self__, "kubernetes", kubernetes)
         pulumi.set(__self__, "private_endpoint", private_endpoint)
         pulumi.set(__self__, "public_endpoint", public_endpoint)
         pulumi.set(__self__, "vcn_hostname_endpoint", vcn_hostname_endpoint)
+
+    @property
+    @pulumi.getter
+    def ipv6endpoint(self) -> str:
+        """
+        The IPv6 networking Kubernetes API server endpoint.
+        """
+        return pulumi.get(self, "ipv6endpoint")
 
     @property
     @pulumi.getter
@@ -4763,6 +4800,7 @@ class GetClusterOptionResult(dict):
     def __init__(__self__, *,
                  add_ons: Sequence['outputs.GetClusterOptionAddOnResult'],
                  admission_controller_options: Sequence['outputs.GetClusterOptionAdmissionControllerOptionResult'],
+                 ip_families: Sequence[str],
                  kubernetes_network_configs: Sequence['outputs.GetClusterOptionKubernetesNetworkConfigResult'],
                  open_id_connect_discoveries: Sequence['outputs.GetClusterOptionOpenIdConnectDiscoveryResult'],
                  open_id_connect_token_authentication_configs: Sequence['outputs.GetClusterOptionOpenIdConnectTokenAuthenticationConfigResult'],
@@ -4772,6 +4810,7 @@ class GetClusterOptionResult(dict):
         """
         :param Sequence['GetClusterOptionAddOnArgs'] add_ons: Configurable cluster add-ons
         :param Sequence['GetClusterOptionAdmissionControllerOptionArgs'] admission_controller_options: Configurable cluster admission controllers
+        :param Sequence[str] ip_families: IP family to use for single stack or define the order of IP families for dual-stack
         :param Sequence['GetClusterOptionKubernetesNetworkConfigArgs'] kubernetes_network_configs: Network configuration for Kubernetes.
         :param Sequence['GetClusterOptionPersistentVolumeConfigArgs'] persistent_volume_configs: Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
         :param Sequence['GetClusterOptionServiceLbConfigArgs'] service_lb_configs: Configuration to be applied to load balancers created by Kubernetes services
@@ -4779,6 +4818,7 @@ class GetClusterOptionResult(dict):
         """
         pulumi.set(__self__, "add_ons", add_ons)
         pulumi.set(__self__, "admission_controller_options", admission_controller_options)
+        pulumi.set(__self__, "ip_families", ip_families)
         pulumi.set(__self__, "kubernetes_network_configs", kubernetes_network_configs)
         pulumi.set(__self__, "open_id_connect_discoveries", open_id_connect_discoveries)
         pulumi.set(__self__, "open_id_connect_token_authentication_configs", open_id_connect_token_authentication_configs)
@@ -4801,6 +4841,14 @@ class GetClusterOptionResult(dict):
         Configurable cluster admission controllers
         """
         return pulumi.get(self, "admission_controller_options")
+
+    @property
+    @pulumi.getter(name="ipFamilies")
+    def ip_families(self) -> Sequence[str]:
+        """
+        IP family to use for single stack or define the order of IP families for dual-stack
+        """
+        return pulumi.get(self, "ip_families")
 
     @property
     @pulumi.getter(name="kubernetesNetworkConfigs")
@@ -5473,20 +5521,31 @@ class GetClustersClusterClusterPodNetworkOptionResult(dict):
 @pulumi.output_type
 class GetClustersClusterEndpointResult(dict):
     def __init__(__self__, *,
+                 ipv6endpoint: str,
                  kubernetes: str,
                  private_endpoint: str,
                  public_endpoint: str,
                  vcn_hostname_endpoint: str):
         """
+        :param str ipv6endpoint: The IPv6 networking Kubernetes API server endpoint.
         :param str kubernetes: The non-native networking Kubernetes API server endpoint.
         :param str private_endpoint: The private native networking Kubernetes API server endpoint.
         :param str public_endpoint: The public native networking Kubernetes API server endpoint, if one was requested.
         :param str vcn_hostname_endpoint: The FQDN assigned to the Kubernetes API private endpoint. Example: 'https://yourVcnHostnameEndpoint'
         """
+        pulumi.set(__self__, "ipv6endpoint", ipv6endpoint)
         pulumi.set(__self__, "kubernetes", kubernetes)
         pulumi.set(__self__, "private_endpoint", private_endpoint)
         pulumi.set(__self__, "public_endpoint", public_endpoint)
         pulumi.set(__self__, "vcn_hostname_endpoint", vcn_hostname_endpoint)
+
+    @property
+    @pulumi.getter
+    def ipv6endpoint(self) -> str:
+        """
+        The IPv6 networking Kubernetes API server endpoint.
+        """
+        return pulumi.get(self, "ipv6endpoint")
 
     @property
     @pulumi.getter
@@ -5730,6 +5789,7 @@ class GetClustersClusterOptionResult(dict):
     def __init__(__self__, *,
                  add_ons: Sequence['outputs.GetClustersClusterOptionAddOnResult'],
                  admission_controller_options: Sequence['outputs.GetClustersClusterOptionAdmissionControllerOptionResult'],
+                 ip_families: Sequence[str],
                  kubernetes_network_configs: Sequence['outputs.GetClustersClusterOptionKubernetesNetworkConfigResult'],
                  open_id_connect_discoveries: Sequence['outputs.GetClustersClusterOptionOpenIdConnectDiscoveryResult'],
                  open_id_connect_token_authentication_configs: Sequence['outputs.GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigResult'],
@@ -5739,6 +5799,7 @@ class GetClustersClusterOptionResult(dict):
         """
         :param Sequence['GetClustersClusterOptionAddOnArgs'] add_ons: Configurable cluster add-ons
         :param Sequence['GetClustersClusterOptionAdmissionControllerOptionArgs'] admission_controller_options: Configurable cluster admission controllers
+        :param Sequence[str] ip_families: IP family to use for single stack or define the order of IP families for dual-stack
         :param Sequence['GetClustersClusterOptionKubernetesNetworkConfigArgs'] kubernetes_network_configs: Network configuration for Kubernetes.
         :param Sequence['GetClustersClusterOptionOpenIdConnectDiscoveryArgs'] open_id_connect_discoveries: The property that define the status of the OIDC Discovery feature for a cluster.
         :param Sequence['GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArgs'] open_id_connect_token_authentication_configs: The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
@@ -5748,6 +5809,7 @@ class GetClustersClusterOptionResult(dict):
         """
         pulumi.set(__self__, "add_ons", add_ons)
         pulumi.set(__self__, "admission_controller_options", admission_controller_options)
+        pulumi.set(__self__, "ip_families", ip_families)
         pulumi.set(__self__, "kubernetes_network_configs", kubernetes_network_configs)
         pulumi.set(__self__, "open_id_connect_discoveries", open_id_connect_discoveries)
         pulumi.set(__self__, "open_id_connect_token_authentication_configs", open_id_connect_token_authentication_configs)
@@ -5770,6 +5832,14 @@ class GetClustersClusterOptionResult(dict):
         Configurable cluster admission controllers
         """
         return pulumi.get(self, "admission_controller_options")
+
+    @property
+    @pulumi.getter(name="ipFamilies")
+    def ip_families(self) -> Sequence[str]:
+        """
+        IP family to use for single stack or define the order of IP families for dual-stack
+        """
+        return pulumi.get(self, "ip_families")
 
     @property
     @pulumi.getter(name="kubernetesNetworkConfigs")

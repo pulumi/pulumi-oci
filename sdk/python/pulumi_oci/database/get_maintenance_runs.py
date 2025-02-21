@@ -28,7 +28,7 @@ class GetMaintenanceRunsResult:
     """
     A collection of values returned by getMaintenanceRuns.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, filters=None, id=None, maintenance_runs=None, maintenance_subtype=None, maintenance_type=None, state=None, target_resource_id=None, target_resource_type=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, filters=None, id=None, is_local_adg=None, maintenance_runs=None, maintenance_subtype=None, maintenance_type=None, state=None, target_resource_id=None, target_resource_type=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -41,6 +41,9 @@ class GetMaintenanceRunsResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_local_adg and not isinstance(is_local_adg, bool):
+            raise TypeError("Expected argument 'is_local_adg' to be a bool")
+        pulumi.set(__self__, "is_local_adg", is_local_adg)
         if maintenance_runs and not isinstance(maintenance_runs, list):
             raise TypeError("Expected argument 'maintenance_runs' to be a list")
         pulumi.set(__self__, "maintenance_runs", maintenance_runs)
@@ -85,6 +88,11 @@ class GetMaintenanceRunsResult:
         The provider-assigned unique ID for this managed resource.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isLocalAdg")
+    def is_local_adg(self) -> Optional[bool]:
+        return pulumi.get(self, "is_local_adg")
 
     @property
     @pulumi.getter(name="maintenanceRuns")
@@ -145,6 +153,7 @@ class AwaitableGetMaintenanceRunsResult(GetMaintenanceRunsResult):
             compartment_id=self.compartment_id,
             filters=self.filters,
             id=self.id,
+            is_local_adg=self.is_local_adg,
             maintenance_runs=self.maintenance_runs,
             maintenance_subtype=self.maintenance_subtype,
             maintenance_type=self.maintenance_type,
@@ -156,6 +165,7 @@ class AwaitableGetMaintenanceRunsResult(GetMaintenanceRunsResult):
 def get_maintenance_runs(availability_domain: Optional[str] = None,
                          compartment_id: Optional[str] = None,
                          filters: Optional[Sequence[Union['GetMaintenanceRunsFilterArgs', 'GetMaintenanceRunsFilterArgsDict']]] = None,
+                         is_local_adg: Optional[bool] = None,
                          maintenance_subtype: Optional[str] = None,
                          maintenance_type: Optional[str] = None,
                          state: Optional[str] = None,
@@ -175,6 +185,7 @@ def get_maintenance_runs(availability_domain: Optional[str] = None,
 
     test_maintenance_runs = oci.Database.get_maintenance_runs(compartment_id=compartment_id,
         availability_domain=maintenance_run_availability_domain,
+        is_local_adg=maintenance_run_is_local_adg,
         maintenance_subtype=maintenance_run_maintenance_subtype,
         maintenance_type=maintenance_run_maintenance_type,
         state=maintenance_run_state,
@@ -185,6 +196,7 @@ def get_maintenance_runs(availability_domain: Optional[str] = None,
 
     :param str availability_domain: A filter to return only resources that match the given availability domain exactly.
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    :param bool is_local_adg: A filter to return the maintenance history results for the local standby Autonomous Database Serverless only.
     :param str maintenance_subtype: The sub-type of the maintenance run.
     :param str maintenance_type: The maintenance type.
     :param str state: A filter to return only resources that match the given lifecycle state exactly.
@@ -195,6 +207,7 @@ def get_maintenance_runs(availability_domain: Optional[str] = None,
     __args__['availabilityDomain'] = availability_domain
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
+    __args__['isLocalAdg'] = is_local_adg
     __args__['maintenanceSubtype'] = maintenance_subtype
     __args__['maintenanceType'] = maintenance_type
     __args__['state'] = state
@@ -208,6 +221,7 @@ def get_maintenance_runs(availability_domain: Optional[str] = None,
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
+        is_local_adg=pulumi.get(__ret__, 'is_local_adg'),
         maintenance_runs=pulumi.get(__ret__, 'maintenance_runs'),
         maintenance_subtype=pulumi.get(__ret__, 'maintenance_subtype'),
         maintenance_type=pulumi.get(__ret__, 'maintenance_type'),
@@ -217,6 +231,7 @@ def get_maintenance_runs(availability_domain: Optional[str] = None,
 def get_maintenance_runs_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                                 compartment_id: Optional[pulumi.Input[str]] = None,
                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMaintenanceRunsFilterArgs', 'GetMaintenanceRunsFilterArgsDict']]]]] = None,
+                                is_local_adg: Optional[pulumi.Input[Optional[bool]]] = None,
                                 maintenance_subtype: Optional[pulumi.Input[Optional[str]]] = None,
                                 maintenance_type: Optional[pulumi.Input[Optional[str]]] = None,
                                 state: Optional[pulumi.Input[Optional[str]]] = None,
@@ -236,6 +251,7 @@ def get_maintenance_runs_output(availability_domain: Optional[pulumi.Input[Optio
 
     test_maintenance_runs = oci.Database.get_maintenance_runs(compartment_id=compartment_id,
         availability_domain=maintenance_run_availability_domain,
+        is_local_adg=maintenance_run_is_local_adg,
         maintenance_subtype=maintenance_run_maintenance_subtype,
         maintenance_type=maintenance_run_maintenance_type,
         state=maintenance_run_state,
@@ -246,6 +262,7 @@ def get_maintenance_runs_output(availability_domain: Optional[pulumi.Input[Optio
 
     :param str availability_domain: A filter to return only resources that match the given availability domain exactly.
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    :param bool is_local_adg: A filter to return the maintenance history results for the local standby Autonomous Database Serverless only.
     :param str maintenance_subtype: The sub-type of the maintenance run.
     :param str maintenance_type: The maintenance type.
     :param str state: A filter to return only resources that match the given lifecycle state exactly.
@@ -256,6 +273,7 @@ def get_maintenance_runs_output(availability_domain: Optional[pulumi.Input[Optio
     __args__['availabilityDomain'] = availability_domain
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
+    __args__['isLocalAdg'] = is_local_adg
     __args__['maintenanceSubtype'] = maintenance_subtype
     __args__['maintenanceType'] = maintenance_type
     __args__['state'] = state
@@ -268,6 +286,7 @@ def get_maintenance_runs_output(availability_domain: Optional[pulumi.Input[Optio
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
+        is_local_adg=pulumi.get(__response__, 'is_local_adg'),
         maintenance_runs=pulumi.get(__response__, 'maintenance_runs'),
         maintenance_subtype=pulumi.get(__response__, 'maintenance_subtype'),
         maintenance_type=pulumi.get(__response__, 'maintenance_type'),

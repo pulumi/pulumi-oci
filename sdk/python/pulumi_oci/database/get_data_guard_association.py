@@ -27,7 +27,7 @@ class GetDataGuardAssociationResult:
     """
     A collection of values returned by getDataGuardAssociation.
     """
-    def __init__(__self__, apply_lag=None, apply_rate=None, availability_domain=None, backup_network_nsg_ids=None, cpu_core_count=None, create_async=None, creation_type=None, data_collection_options=None, data_guard_association_id=None, database_admin_password=None, database_defined_tags=None, database_freeform_tags=None, database_id=None, database_software_image_id=None, db_system_defined_tags=None, db_system_freeform_tags=None, db_system_security_attributes=None, delete_standby_db_home_on_delete=None, display_name=None, domain=None, fault_domains=None, hostname=None, id=None, is_active_data_guard_enabled=None, license_model=None, lifecycle_details=None, migrate_trigger=None, node_count=None, nsg_ids=None, peer_data_guard_association_id=None, peer_database_id=None, peer_db_home_id=None, peer_db_system_id=None, peer_db_unique_name=None, peer_role=None, peer_sid_prefix=None, peer_vm_cluster_id=None, private_ip=None, protection_mode=None, role=None, shape=None, state=None, storage_volume_performance_mode=None, subnet_id=None, time_created=None, time_zone=None, transport_type=None):
+    def __init__(__self__, apply_lag=None, apply_rate=None, availability_domain=None, backup_network_nsg_ids=None, cpu_core_count=None, create_async=None, creation_type=None, data_collection_options=None, data_guard_association_id=None, database_admin_password=None, database_defined_tags=None, database_freeform_tags=None, database_id=None, database_software_image_id=None, db_system_defined_tags=None, db_system_freeform_tags=None, db_system_security_attributes=None, delete_standby_db_home_on_delete=None, display_name=None, domain=None, fault_domains=None, hostname=None, id=None, is_active_data_guard_enabled=None, license_model=None, lifecycle_details=None, migrate_trigger=None, node_count=None, nsg_ids=None, peer_data_guard_association_id=None, peer_database_id=None, peer_db_home_id=None, peer_db_system_id=None, peer_db_unique_name=None, peer_role=None, peer_sid_prefix=None, peer_vm_cluster_id=None, private_ip=None, private_ip_v6=None, protection_mode=None, role=None, shape=None, state=None, storage_volume_performance_mode=None, subnet_id=None, time_created=None, time_zone=None, transport_type=None):
         if apply_lag and not isinstance(apply_lag, str):
             raise TypeError("Expected argument 'apply_lag' to be a str")
         pulumi.set(__self__, "apply_lag", apply_lag)
@@ -142,6 +142,9 @@ class GetDataGuardAssociationResult:
         if private_ip and not isinstance(private_ip, str):
             raise TypeError("Expected argument 'private_ip' to be a str")
         pulumi.set(__self__, "private_ip", private_ip)
+        if private_ip_v6 and not isinstance(private_ip_v6, str):
+            raise TypeError("Expected argument 'private_ip_v6' to be a str")
+        pulumi.set(__self__, "private_ip_v6", private_ip_v6)
         if protection_mode and not isinstance(protection_mode, str):
             raise TypeError("Expected argument 'protection_mode' to be a str")
         pulumi.set(__self__, "protection_mode", protection_mode)
@@ -394,6 +397,11 @@ class GetDataGuardAssociationResult:
         return pulumi.get(self, "private_ip")
 
     @property
+    @pulumi.getter(name="privateIpV6")
+    def private_ip_v6(self) -> str:
+        return pulumi.get(self, "private_ip_v6")
+
+    @property
     @pulumi.getter(name="protectionMode")
     def protection_mode(self) -> str:
         """
@@ -498,6 +506,7 @@ class AwaitableGetDataGuardAssociationResult(GetDataGuardAssociationResult):
             peer_sid_prefix=self.peer_sid_prefix,
             peer_vm_cluster_id=self.peer_vm_cluster_id,
             private_ip=self.private_ip,
+            private_ip_v6=self.private_ip_v6,
             protection_mode=self.protection_mode,
             role=self.role,
             shape=self.shape,
@@ -576,6 +585,7 @@ def get_data_guard_association(data_guard_association_id: Optional[str] = None,
         peer_sid_prefix=pulumi.get(__ret__, 'peer_sid_prefix'),
         peer_vm_cluster_id=pulumi.get(__ret__, 'peer_vm_cluster_id'),
         private_ip=pulumi.get(__ret__, 'private_ip'),
+        private_ip_v6=pulumi.get(__ret__, 'private_ip_v6'),
         protection_mode=pulumi.get(__ret__, 'protection_mode'),
         role=pulumi.get(__ret__, 'role'),
         shape=pulumi.get(__ret__, 'shape'),
@@ -651,6 +661,7 @@ def get_data_guard_association_output(data_guard_association_id: Optional[pulumi
         peer_sid_prefix=pulumi.get(__response__, 'peer_sid_prefix'),
         peer_vm_cluster_id=pulumi.get(__response__, 'peer_vm_cluster_id'),
         private_ip=pulumi.get(__response__, 'private_ip'),
+        private_ip_v6=pulumi.get(__response__, 'private_ip_v6'),
         protection_mode=pulumi.get(__response__, 'protection_mode'),
         role=pulumi.get(__response__, 'role'),
         shape=pulumi.get(__response__, 'shape'),

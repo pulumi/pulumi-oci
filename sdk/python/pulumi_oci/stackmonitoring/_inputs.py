@@ -89,6 +89,10 @@ __all__ = [
     'MonitoredResourcesSearchItemArgsDict',
     'MonitoredResourcesSearchItemPropertyArgs',
     'MonitoredResourcesSearchItemPropertyArgsDict',
+    'MonitoringTemplateAlarmConditionConditionArgs',
+    'MonitoringTemplateAlarmConditionConditionArgsDict',
+    'MonitoringTemplateMemberArgs',
+    'MonitoringTemplateMemberArgsDict',
     'ProcessSetSpecificationArgs',
     'ProcessSetSpecificationArgsDict',
     'ProcessSetSpecificationItemArgs',
@@ -105,6 +109,8 @@ __all__ = [
     'GetBaselineableMetricsFilterArgsDict',
     'GetConfigsFilterArgs',
     'GetConfigsFilterArgsDict',
+    'GetDefinedMonitoringTemplatesFilterArgs',
+    'GetDefinedMonitoringTemplatesFilterArgsDict',
     'GetDiscoveryJobLogsFilterArgs',
     'GetDiscoveryJobLogsFilterArgsDict',
     'GetDiscoveryJobsFilterArgs',
@@ -119,6 +125,10 @@ __all__ = [
     'GetMonitoredResourceTypesFilterArgsDict',
     'GetMonitoredResourcesFilterArgs',
     'GetMonitoredResourcesFilterArgsDict',
+    'GetMonitoringTemplateAlarmConditionsFilterArgs',
+    'GetMonitoringTemplateAlarmConditionsFilterArgsDict',
+    'GetMonitoringTemplatesFilterArgs',
+    'GetMonitoringTemplatesFilterArgsDict',
     'GetProcessSetsFilterArgs',
     'GetProcessSetsFilterArgsDict',
 ]
@@ -2790,6 +2800,10 @@ if not MYPY:
         """
         (Updatable) List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{ "osType": "Linux,Windows,Solaris"}`
         """
+        valid_sub_resource_types: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) List of valid sub-resource types for a composite resource type. The sub-resource types will be obtained from the valid association pairs corresponding to the composite resource types. It will be empty for non composite resource types
+        """
 elif False:
     MonitoredResourceTypeMetadataArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -2802,7 +2816,8 @@ class MonitoredResourceTypeMetadataArgs:
                  unique_property_sets: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeMetadataUniquePropertySetArgs']]]] = None,
                  valid_properties_for_creates: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  valid_properties_for_updates: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 valid_property_values: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
+                 valid_property_values: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 valid_sub_resource_types: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         :param pulumi.Input[str] format: (Updatable) ResourceType metadata format to be used. Currently supports only one format. Possible values - SYSTEM_FORMAT.
                * SYSTEM_FORMAT - The resource type metadata is defined in machine friendly format.
@@ -2812,6 +2827,7 @@ class MonitoredResourceTypeMetadataArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] valid_properties_for_creates: (Updatable) List of valid properties for resource type while creating the monitored resource.  If resources of this type specifies any other properties during create operation,  the operation will fail.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] valid_properties_for_updates: (Updatable) List of valid properties for resource type while updating the monitored resource.  If resources of this type specifies any other properties during update operation,  the operation will fail.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] valid_property_values: (Updatable) List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{ "osType": "Linux,Windows,Solaris"}`
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] valid_sub_resource_types: (Updatable) List of valid sub-resource types for a composite resource type. The sub-resource types will be obtained from the valid association pairs corresponding to the composite resource types. It will be empty for non composite resource types
         """
         pulumi.set(__self__, "format", format)
         if agent_properties is not None:
@@ -2826,6 +2842,8 @@ class MonitoredResourceTypeMetadataArgs:
             pulumi.set(__self__, "valid_properties_for_updates", valid_properties_for_updates)
         if valid_property_values is not None:
             pulumi.set(__self__, "valid_property_values", valid_property_values)
+        if valid_sub_resource_types is not None:
+            pulumi.set(__self__, "valid_sub_resource_types", valid_sub_resource_types)
 
     @property
     @pulumi.getter
@@ -2911,6 +2929,18 @@ class MonitoredResourceTypeMetadataArgs:
     @valid_property_values.setter
     def valid_property_values(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "valid_property_values", value)
+
+    @property
+    @pulumi.getter(name="validSubResourceTypes")
+    def valid_sub_resource_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) List of valid sub-resource types for a composite resource type. The sub-resource types will be obtained from the valid association pairs corresponding to the composite resource types. It will be empty for non composite resource types
+        """
+        return pulumi.get(self, "valid_sub_resource_types")
+
+    @valid_sub_resource_types.setter
+    def valid_sub_resource_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "valid_sub_resource_types", value)
 
 
 if not MYPY:
@@ -4113,6 +4143,206 @@ class MonitoredResourcesSearchItemPropertyArgs:
 
 
 if not MYPY:
+    class MonitoringTemplateAlarmConditionConditionArgsDict(TypedDict):
+        query: pulumi.Input[str]
+        """
+        (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+        """
+        severity: pulumi.Input[str]
+        """
+        (Updatable) Severity - Critical/Warning
+        """
+        body: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.
+        """
+        should_append_note: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Whether the note need to add into bottom of the body for mapping the alarms information with template or not.
+        """
+        should_append_url: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Whether the URL need to add into bottom of the body for mapping the alarms information with template or not.
+        """
+        trigger_delay: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING".
+        """
+elif False:
+    MonitoringTemplateAlarmConditionConditionArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MonitoringTemplateAlarmConditionConditionArgs:
+    def __init__(__self__, *,
+                 query: pulumi.Input[str],
+                 severity: pulumi.Input[str],
+                 body: Optional[pulumi.Input[str]] = None,
+                 should_append_note: Optional[pulumi.Input[bool]] = None,
+                 should_append_url: Optional[pulumi.Input[bool]] = None,
+                 trigger_delay: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] query: (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+        :param pulumi.Input[str] severity: (Updatable) Severity - Critical/Warning
+        :param pulumi.Input[str] body: (Updatable) The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.
+        :param pulumi.Input[bool] should_append_note: (Updatable) Whether the note need to add into bottom of the body for mapping the alarms information with template or not.
+        :param pulumi.Input[bool] should_append_url: (Updatable) Whether the URL need to add into bottom of the body for mapping the alarms information with template or not.
+        :param pulumi.Input[str] trigger_delay: (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING".
+        """
+        pulumi.set(__self__, "query", query)
+        pulumi.set(__self__, "severity", severity)
+        if body is not None:
+            pulumi.set(__self__, "body", body)
+        if should_append_note is not None:
+            pulumi.set(__self__, "should_append_note", should_append_note)
+        if should_append_url is not None:
+            pulumi.set(__self__, "should_append_url", should_append_url)
+        if trigger_delay is not None:
+            pulumi.set(__self__, "trigger_delay", trigger_delay)
+
+    @property
+    @pulumi.getter
+    def query(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+        """
+        return pulumi.get(self, "query")
+
+    @query.setter
+    def query(self, value: pulumi.Input[str]):
+        pulumi.set(self, "query", value)
+
+    @property
+    @pulumi.getter
+    def severity(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Severity - Critical/Warning
+        """
+        return pulumi.get(self, "severity")
+
+    @severity.setter
+    def severity(self, value: pulumi.Input[str]):
+        pulumi.set(self, "severity", value)
+
+    @property
+    @pulumi.getter
+    def body(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "body")
+
+    @body.setter
+    def body(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "body", value)
+
+    @property
+    @pulumi.getter(name="shouldAppendNote")
+    def should_append_note(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Whether the note need to add into bottom of the body for mapping the alarms information with template or not.
+        """
+        return pulumi.get(self, "should_append_note")
+
+    @should_append_note.setter
+    def should_append_note(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "should_append_note", value)
+
+    @property
+    @pulumi.getter(name="shouldAppendUrl")
+    def should_append_url(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Whether the URL need to add into bottom of the body for mapping the alarms information with template or not.
+        """
+        return pulumi.get(self, "should_append_url")
+
+    @should_append_url.setter
+    def should_append_url(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "should_append_url", value)
+
+    @property
+    @pulumi.getter(name="triggerDelay")
+    def trigger_delay(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING".
+        """
+        return pulumi.get(self, "trigger_delay")
+
+    @trigger_delay.setter
+    def trigger_delay(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "trigger_delay", value)
+
+
+if not MYPY:
+    class MonitoringTemplateMemberArgsDict(TypedDict):
+        id: pulumi.Input[str]
+        """
+        (Updatable) The OCID of the resourceInstance/resourceType/resourceGroup
+        """
+        type: pulumi.Input[str]
+        """
+        (Updatable) Type of the member reference RESOURCE_INSTANCE, RESOURCE_TYPE, RESOURCE_GROUP
+        """
+        composite_type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the composite resource type like EBS or Peoplesoft.
+        """
+elif False:
+    MonitoringTemplateMemberArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MonitoringTemplateMemberArgs:
+    def __init__(__self__, *,
+                 id: pulumi.Input[str],
+                 type: pulumi.Input[str],
+                 composite_type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] id: (Updatable) The OCID of the resourceInstance/resourceType/resourceGroup
+        :param pulumi.Input[str] type: (Updatable) Type of the member reference RESOURCE_INSTANCE, RESOURCE_TYPE, RESOURCE_GROUP
+        :param pulumi.Input[str] composite_type: (Updatable) The OCID of the composite resource type like EBS or Peoplesoft.
+        """
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "type", type)
+        if composite_type is not None:
+            pulumi.set(__self__, "composite_type", composite_type)
+
+    @property
+    @pulumi.getter
+    def id(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The OCID of the resourceInstance/resourceType/resourceGroup
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "id", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Type of the member reference RESOURCE_INSTANCE, RESOURCE_TYPE, RESOURCE_GROUP
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="compositeType")
+    def composite_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the composite resource type like EBS or Peoplesoft.
+        """
+        return pulumi.get(self, "composite_type")
+
+    @composite_type.setter
+    def composite_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "composite_type", value)
+
+
+if not MYPY:
     class ProcessSetSpecificationArgsDict(TypedDict):
         items: pulumi.Input[Sequence[pulumi.Input['ProcessSetSpecificationItemArgsDict']]]
         """
@@ -4646,6 +4876,53 @@ class GetConfigsFilterArgs:
 
 
 if not MYPY:
+    class GetDefinedMonitoringTemplatesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetDefinedMonitoringTemplatesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetDefinedMonitoringTemplatesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
     class GetDiscoveryJobLogsFilterArgsDict(TypedDict):
         name: str
         values: Sequence[str]
@@ -5003,6 +5280,100 @@ class GetMonitoredResourcesFilterArgs:
         """
         A filter to return resources that match exact resource name.
         """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetMonitoringTemplateAlarmConditionsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetMonitoringTemplateAlarmConditionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetMonitoringTemplateAlarmConditionsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetMonitoringTemplatesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetMonitoringTemplatesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetMonitoringTemplatesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
         return pulumi.get(self, "name")
 
     @name.setter

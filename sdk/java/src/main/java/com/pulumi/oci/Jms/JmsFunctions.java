@@ -27,6 +27,10 @@ import com.pulumi.oci.Jms.inputs.GetFleetDrsFileArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetDrsFilePlainArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetDrsFilesArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetDrsFilesPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetFleetErrorAnalyticsArgs;
+import com.pulumi.oci.Jms.inputs.GetFleetErrorAnalyticsPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetFleetErrorsArgs;
+import com.pulumi.oci.Jms.inputs.GetFleetErrorsPlainArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetExportSettingArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetExportSettingPlainArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetExportStatusArgs;
@@ -80,6 +84,10 @@ import com.pulumi.oci.Jms.inputs.GetJmsPluginsArgs;
 import com.pulumi.oci.Jms.inputs.GetJmsPluginsPlainArgs;
 import com.pulumi.oci.Jms.inputs.GetListJreUsageArgs;
 import com.pulumi.oci.Jms.inputs.GetListJreUsagePlainArgs;
+import com.pulumi.oci.Jms.inputs.GetPluginErrorAnalyticsArgs;
+import com.pulumi.oci.Jms.inputs.GetPluginErrorAnalyticsPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetPluginErrorsArgs;
+import com.pulumi.oci.Jms.inputs.GetPluginErrorsPlainArgs;
 import com.pulumi.oci.Jms.inputs.GetSummarizeResourceInventoryArgs;
 import com.pulumi.oci.Jms.inputs.GetSummarizeResourceInventoryPlainArgs;
 import com.pulumi.oci.Jms.outputs.GetAgentInstallersResult;
@@ -91,6 +99,8 @@ import com.pulumi.oci.Jms.outputs.GetFleetCryptoAnalysisResultsResult;
 import com.pulumi.oci.Jms.outputs.GetFleetDiagnosesResult;
 import com.pulumi.oci.Jms.outputs.GetFleetDrsFileResult;
 import com.pulumi.oci.Jms.outputs.GetFleetDrsFilesResult;
+import com.pulumi.oci.Jms.outputs.GetFleetErrorAnalyticsResult;
+import com.pulumi.oci.Jms.outputs.GetFleetErrorsResult;
 import com.pulumi.oci.Jms.outputs.GetFleetExportSettingResult;
 import com.pulumi.oci.Jms.outputs.GetFleetExportStatusResult;
 import com.pulumi.oci.Jms.outputs.GetFleetJavaMigrationAnalysisResultResult;
@@ -118,6 +128,8 @@ import com.pulumi.oci.Jms.outputs.GetJavaReleasesResult;
 import com.pulumi.oci.Jms.outputs.GetJmsPluginResult;
 import com.pulumi.oci.Jms.outputs.GetJmsPluginsResult;
 import com.pulumi.oci.Jms.outputs.GetListJreUsageResult;
+import com.pulumi.oci.Jms.outputs.GetPluginErrorAnalyticsResult;
+import com.pulumi.oci.Jms.outputs.GetPluginErrorsResult;
 import com.pulumi.oci.Jms.outputs.GetSummarizeResourceInventoryResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
@@ -2600,6 +2612,671 @@ public final class JmsFunctions {
         return Deployment.getInstance().invokeAsync("oci:Jms/getFleetDrsFiles:getFleetDrsFiles", TypeShape.of(GetFleetDrsFilesResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Fleet Error Analytics in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a high level summary of FleetErrors.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetErrorAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetErrorAnalytics = JmsFunctions.getFleetErrorAnalytics(GetFleetErrorAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(fleetErrorAnalyticCompartmentIdInSubtree)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetFleetErrorAnalyticsResult> getFleetErrorAnalytics() {
+        return getFleetErrorAnalytics(GetFleetErrorAnalyticsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Fleet Error Analytics in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a high level summary of FleetErrors.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetErrorAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetErrorAnalytics = JmsFunctions.getFleetErrorAnalytics(GetFleetErrorAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(fleetErrorAnalyticCompartmentIdInSubtree)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetFleetErrorAnalyticsResult> getFleetErrorAnalyticsPlain() {
+        return getFleetErrorAnalyticsPlain(GetFleetErrorAnalyticsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Fleet Error Analytics in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a high level summary of FleetErrors.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetErrorAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetErrorAnalytics = JmsFunctions.getFleetErrorAnalytics(GetFleetErrorAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(fleetErrorAnalyticCompartmentIdInSubtree)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetFleetErrorAnalyticsResult> getFleetErrorAnalytics(GetFleetErrorAnalyticsArgs args) {
+        return getFleetErrorAnalytics(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Fleet Error Analytics in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a high level summary of FleetErrors.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetErrorAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetErrorAnalytics = JmsFunctions.getFleetErrorAnalytics(GetFleetErrorAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(fleetErrorAnalyticCompartmentIdInSubtree)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetFleetErrorAnalyticsResult> getFleetErrorAnalyticsPlain(GetFleetErrorAnalyticsPlainArgs args) {
+        return getFleetErrorAnalyticsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Fleet Error Analytics in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a high level summary of FleetErrors.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetErrorAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetErrorAnalytics = JmsFunctions.getFleetErrorAnalytics(GetFleetErrorAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(fleetErrorAnalyticCompartmentIdInSubtree)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetFleetErrorAnalyticsResult> getFleetErrorAnalytics(GetFleetErrorAnalyticsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getFleetErrorAnalytics:getFleetErrorAnalytics", TypeShape.of(GetFleetErrorAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fleet Error Analytics in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a high level summary of FleetErrors.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetErrorAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetErrorAnalytics = JmsFunctions.getFleetErrorAnalytics(GetFleetErrorAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(fleetErrorAnalyticCompartmentIdInSubtree)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetFleetErrorAnalyticsResult> getFleetErrorAnalytics(GetFleetErrorAnalyticsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getFleetErrorAnalytics:getFleetErrorAnalytics", TypeShape.of(GetFleetErrorAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fleet Error Analytics in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a high level summary of FleetErrors.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetErrorAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetErrorAnalytics = JmsFunctions.getFleetErrorAnalytics(GetFleetErrorAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(fleetErrorAnalyticCompartmentIdInSubtree)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetFleetErrorAnalyticsResult> getFleetErrorAnalyticsPlain(GetFleetErrorAnalyticsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getFleetErrorAnalytics:getFleetErrorAnalytics", TypeShape.of(GetFleetErrorAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fleet Errors in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of fleet errors that describe all detected errors.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetErrorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetErrors = JmsFunctions.getFleetErrors(GetFleetErrorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(fleetErrorCompartmentIdInSubtree)
+     *             .fleetId(testFleet.id())
+     *             .timeFirstSeenGreaterThanOrEqualTo(fleetErrorTimeFirstSeenGreaterThanOrEqualTo)
+     *             .timeFirstSeenLessThanOrEqualTo(fleetErrorTimeFirstSeenLessThanOrEqualTo)
+     *             .timeLastSeenGreaterThanOrEqualTo(fleetErrorTimeLastSeenGreaterThanOrEqualTo)
+     *             .timeLastSeenLessThanOrEqualTo(fleetErrorTimeLastSeenLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetFleetErrorsResult> getFleetErrors() {
+        return getFleetErrors(GetFleetErrorsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Fleet Errors in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of fleet errors that describe all detected errors.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetErrorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetErrors = JmsFunctions.getFleetErrors(GetFleetErrorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(fleetErrorCompartmentIdInSubtree)
+     *             .fleetId(testFleet.id())
+     *             .timeFirstSeenGreaterThanOrEqualTo(fleetErrorTimeFirstSeenGreaterThanOrEqualTo)
+     *             .timeFirstSeenLessThanOrEqualTo(fleetErrorTimeFirstSeenLessThanOrEqualTo)
+     *             .timeLastSeenGreaterThanOrEqualTo(fleetErrorTimeLastSeenGreaterThanOrEqualTo)
+     *             .timeLastSeenLessThanOrEqualTo(fleetErrorTimeLastSeenLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetFleetErrorsResult> getFleetErrorsPlain() {
+        return getFleetErrorsPlain(GetFleetErrorsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Fleet Errors in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of fleet errors that describe all detected errors.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetErrorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetErrors = JmsFunctions.getFleetErrors(GetFleetErrorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(fleetErrorCompartmentIdInSubtree)
+     *             .fleetId(testFleet.id())
+     *             .timeFirstSeenGreaterThanOrEqualTo(fleetErrorTimeFirstSeenGreaterThanOrEqualTo)
+     *             .timeFirstSeenLessThanOrEqualTo(fleetErrorTimeFirstSeenLessThanOrEqualTo)
+     *             .timeLastSeenGreaterThanOrEqualTo(fleetErrorTimeLastSeenGreaterThanOrEqualTo)
+     *             .timeLastSeenLessThanOrEqualTo(fleetErrorTimeLastSeenLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetFleetErrorsResult> getFleetErrors(GetFleetErrorsArgs args) {
+        return getFleetErrors(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Fleet Errors in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of fleet errors that describe all detected errors.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetErrorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetErrors = JmsFunctions.getFleetErrors(GetFleetErrorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(fleetErrorCompartmentIdInSubtree)
+     *             .fleetId(testFleet.id())
+     *             .timeFirstSeenGreaterThanOrEqualTo(fleetErrorTimeFirstSeenGreaterThanOrEqualTo)
+     *             .timeFirstSeenLessThanOrEqualTo(fleetErrorTimeFirstSeenLessThanOrEqualTo)
+     *             .timeLastSeenGreaterThanOrEqualTo(fleetErrorTimeLastSeenGreaterThanOrEqualTo)
+     *             .timeLastSeenLessThanOrEqualTo(fleetErrorTimeLastSeenLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetFleetErrorsResult> getFleetErrorsPlain(GetFleetErrorsPlainArgs args) {
+        return getFleetErrorsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Fleet Errors in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of fleet errors that describe all detected errors.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetErrorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetErrors = JmsFunctions.getFleetErrors(GetFleetErrorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(fleetErrorCompartmentIdInSubtree)
+     *             .fleetId(testFleet.id())
+     *             .timeFirstSeenGreaterThanOrEqualTo(fleetErrorTimeFirstSeenGreaterThanOrEqualTo)
+     *             .timeFirstSeenLessThanOrEqualTo(fleetErrorTimeFirstSeenLessThanOrEqualTo)
+     *             .timeLastSeenGreaterThanOrEqualTo(fleetErrorTimeLastSeenGreaterThanOrEqualTo)
+     *             .timeLastSeenLessThanOrEqualTo(fleetErrorTimeLastSeenLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetFleetErrorsResult> getFleetErrors(GetFleetErrorsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getFleetErrors:getFleetErrors", TypeShape.of(GetFleetErrorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fleet Errors in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of fleet errors that describe all detected errors.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetErrorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetErrors = JmsFunctions.getFleetErrors(GetFleetErrorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(fleetErrorCompartmentIdInSubtree)
+     *             .fleetId(testFleet.id())
+     *             .timeFirstSeenGreaterThanOrEqualTo(fleetErrorTimeFirstSeenGreaterThanOrEqualTo)
+     *             .timeFirstSeenLessThanOrEqualTo(fleetErrorTimeFirstSeenLessThanOrEqualTo)
+     *             .timeLastSeenGreaterThanOrEqualTo(fleetErrorTimeLastSeenGreaterThanOrEqualTo)
+     *             .timeLastSeenLessThanOrEqualTo(fleetErrorTimeLastSeenLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetFleetErrorsResult> getFleetErrors(GetFleetErrorsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getFleetErrors:getFleetErrors", TypeShape.of(GetFleetErrorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fleet Errors in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of fleet errors that describe all detected errors.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetErrorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetErrors = JmsFunctions.getFleetErrors(GetFleetErrorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(fleetErrorCompartmentIdInSubtree)
+     *             .fleetId(testFleet.id())
+     *             .timeFirstSeenGreaterThanOrEqualTo(fleetErrorTimeFirstSeenGreaterThanOrEqualTo)
+     *             .timeFirstSeenLessThanOrEqualTo(fleetErrorTimeFirstSeenLessThanOrEqualTo)
+     *             .timeLastSeenGreaterThanOrEqualTo(fleetErrorTimeLastSeenGreaterThanOrEqualTo)
+     *             .timeLastSeenLessThanOrEqualTo(fleetErrorTimeLastSeenLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetFleetErrorsResult> getFleetErrorsPlain(GetFleetErrorsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getFleetErrors:getFleetErrors", TypeShape.of(GetFleetErrorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides details about a specific Fleet Export Setting resource in Oracle Cloud Infrastructure Jms service.
      * 
      * Returns export setting for the specified fleet.
@@ -3767,6 +4444,7 @@ public final class JmsFunctions {
      *         final var testFleetPerformanceTuningAnalysisResults = JmsFunctions.getFleetPerformanceTuningAnalysisResults(GetFleetPerformanceTuningAnalysisResultsArgs.builder()
      *             .fleetId(testFleet.id())
      *             .applicationId(fleetPerformanceTuningAnalysisResultApplicationId)
+     *             .applicationName(fleetPerformanceTuningAnalysisResultApplicationName)
      *             .hostName(fleetPerformanceTuningAnalysisResultHostName)
      *             .managedInstanceId(fleetPerformanceTuningAnalysisResultManagedInstanceId)
      *             .timeEnd(fleetPerformanceTuningAnalysisResultTimeEnd)
@@ -3816,6 +4494,7 @@ public final class JmsFunctions {
      *         final var testFleetPerformanceTuningAnalysisResults = JmsFunctions.getFleetPerformanceTuningAnalysisResults(GetFleetPerformanceTuningAnalysisResultsArgs.builder()
      *             .fleetId(testFleet.id())
      *             .applicationId(fleetPerformanceTuningAnalysisResultApplicationId)
+     *             .applicationName(fleetPerformanceTuningAnalysisResultApplicationName)
      *             .hostName(fleetPerformanceTuningAnalysisResultHostName)
      *             .managedInstanceId(fleetPerformanceTuningAnalysisResultManagedInstanceId)
      *             .timeEnd(fleetPerformanceTuningAnalysisResultTimeEnd)
@@ -3865,6 +4544,7 @@ public final class JmsFunctions {
      *         final var testFleetPerformanceTuningAnalysisResults = JmsFunctions.getFleetPerformanceTuningAnalysisResults(GetFleetPerformanceTuningAnalysisResultsArgs.builder()
      *             .fleetId(testFleet.id())
      *             .applicationId(fleetPerformanceTuningAnalysisResultApplicationId)
+     *             .applicationName(fleetPerformanceTuningAnalysisResultApplicationName)
      *             .hostName(fleetPerformanceTuningAnalysisResultHostName)
      *             .managedInstanceId(fleetPerformanceTuningAnalysisResultManagedInstanceId)
      *             .timeEnd(fleetPerformanceTuningAnalysisResultTimeEnd)
@@ -3914,6 +4594,7 @@ public final class JmsFunctions {
      *         final var testFleetPerformanceTuningAnalysisResults = JmsFunctions.getFleetPerformanceTuningAnalysisResults(GetFleetPerformanceTuningAnalysisResultsArgs.builder()
      *             .fleetId(testFleet.id())
      *             .applicationId(fleetPerformanceTuningAnalysisResultApplicationId)
+     *             .applicationName(fleetPerformanceTuningAnalysisResultApplicationName)
      *             .hostName(fleetPerformanceTuningAnalysisResultHostName)
      *             .managedInstanceId(fleetPerformanceTuningAnalysisResultManagedInstanceId)
      *             .timeEnd(fleetPerformanceTuningAnalysisResultTimeEnd)
@@ -3963,6 +4644,7 @@ public final class JmsFunctions {
      *         final var testFleetPerformanceTuningAnalysisResults = JmsFunctions.getFleetPerformanceTuningAnalysisResults(GetFleetPerformanceTuningAnalysisResultsArgs.builder()
      *             .fleetId(testFleet.id())
      *             .applicationId(fleetPerformanceTuningAnalysisResultApplicationId)
+     *             .applicationName(fleetPerformanceTuningAnalysisResultApplicationName)
      *             .hostName(fleetPerformanceTuningAnalysisResultHostName)
      *             .managedInstanceId(fleetPerformanceTuningAnalysisResultManagedInstanceId)
      *             .timeEnd(fleetPerformanceTuningAnalysisResultTimeEnd)
@@ -8634,6 +9316,7 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testJmsPlugins = JmsFunctions.getJmsPlugins(GetJmsPluginsArgs.builder()
      *             .agentId(jmsPluginAgentId)
+     *             .agentType(jmsPluginAgentType)
      *             .availabilityStatus(jmsPluginAvailabilityStatus)
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(jmsPluginCompartmentIdInSubtree)
@@ -8687,6 +9370,7 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testJmsPlugins = JmsFunctions.getJmsPlugins(GetJmsPluginsArgs.builder()
      *             .agentId(jmsPluginAgentId)
+     *             .agentType(jmsPluginAgentType)
      *             .availabilityStatus(jmsPluginAvailabilityStatus)
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(jmsPluginCompartmentIdInSubtree)
@@ -8740,6 +9424,7 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testJmsPlugins = JmsFunctions.getJmsPlugins(GetJmsPluginsArgs.builder()
      *             .agentId(jmsPluginAgentId)
+     *             .agentType(jmsPluginAgentType)
      *             .availabilityStatus(jmsPluginAvailabilityStatus)
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(jmsPluginCompartmentIdInSubtree)
@@ -8793,6 +9478,7 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testJmsPlugins = JmsFunctions.getJmsPlugins(GetJmsPluginsArgs.builder()
      *             .agentId(jmsPluginAgentId)
+     *             .agentType(jmsPluginAgentType)
      *             .availabilityStatus(jmsPluginAvailabilityStatus)
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(jmsPluginCompartmentIdInSubtree)
@@ -8846,6 +9532,7 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testJmsPlugins = JmsFunctions.getJmsPlugins(GetJmsPluginsArgs.builder()
      *             .agentId(jmsPluginAgentId)
+     *             .agentType(jmsPluginAgentType)
      *             .availabilityStatus(jmsPluginAvailabilityStatus)
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(jmsPluginCompartmentIdInSubtree)
@@ -8899,6 +9586,7 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testJmsPlugins = JmsFunctions.getJmsPlugins(GetJmsPluginsArgs.builder()
      *             .agentId(jmsPluginAgentId)
+     *             .agentType(jmsPluginAgentType)
      *             .availabilityStatus(jmsPluginAvailabilityStatus)
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(jmsPluginCompartmentIdInSubtree)
@@ -8952,6 +9640,7 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testJmsPlugins = JmsFunctions.getJmsPlugins(GetJmsPluginsArgs.builder()
      *             .agentId(jmsPluginAgentId)
+     *             .agentType(jmsPluginAgentType)
      *             .availabilityStatus(jmsPluginAvailabilityStatus)
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(jmsPluginCompartmentIdInSubtree)
@@ -9315,6 +10004,671 @@ public final class JmsFunctions {
      */
     public static CompletableFuture<GetListJreUsageResult> getListJreUsagePlain(GetListJreUsagePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Jms/getListJreUsage:getListJreUsage", TypeShape.of(GetListJreUsageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Plugin Error Analytics in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a high level summary of PluginErrors.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetPluginErrorAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluginErrorAnalytics = JmsFunctions.getPluginErrorAnalytics(GetPluginErrorAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(pluginErrorAnalyticCompartmentIdInSubtree)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPluginErrorAnalyticsResult> getPluginErrorAnalytics() {
+        return getPluginErrorAnalytics(GetPluginErrorAnalyticsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Plugin Error Analytics in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a high level summary of PluginErrors.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetPluginErrorAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluginErrorAnalytics = JmsFunctions.getPluginErrorAnalytics(GetPluginErrorAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(pluginErrorAnalyticCompartmentIdInSubtree)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetPluginErrorAnalyticsResult> getPluginErrorAnalyticsPlain() {
+        return getPluginErrorAnalyticsPlain(GetPluginErrorAnalyticsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Plugin Error Analytics in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a high level summary of PluginErrors.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetPluginErrorAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluginErrorAnalytics = JmsFunctions.getPluginErrorAnalytics(GetPluginErrorAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(pluginErrorAnalyticCompartmentIdInSubtree)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPluginErrorAnalyticsResult> getPluginErrorAnalytics(GetPluginErrorAnalyticsArgs args) {
+        return getPluginErrorAnalytics(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Plugin Error Analytics in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a high level summary of PluginErrors.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetPluginErrorAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluginErrorAnalytics = JmsFunctions.getPluginErrorAnalytics(GetPluginErrorAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(pluginErrorAnalyticCompartmentIdInSubtree)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetPluginErrorAnalyticsResult> getPluginErrorAnalyticsPlain(GetPluginErrorAnalyticsPlainArgs args) {
+        return getPluginErrorAnalyticsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Plugin Error Analytics in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a high level summary of PluginErrors.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetPluginErrorAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluginErrorAnalytics = JmsFunctions.getPluginErrorAnalytics(GetPluginErrorAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(pluginErrorAnalyticCompartmentIdInSubtree)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPluginErrorAnalyticsResult> getPluginErrorAnalytics(GetPluginErrorAnalyticsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getPluginErrorAnalytics:getPluginErrorAnalytics", TypeShape.of(GetPluginErrorAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Plugin Error Analytics in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a high level summary of PluginErrors.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetPluginErrorAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluginErrorAnalytics = JmsFunctions.getPluginErrorAnalytics(GetPluginErrorAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(pluginErrorAnalyticCompartmentIdInSubtree)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPluginErrorAnalyticsResult> getPluginErrorAnalytics(GetPluginErrorAnalyticsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getPluginErrorAnalytics:getPluginErrorAnalytics", TypeShape.of(GetPluginErrorAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Plugin Error Analytics in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a high level summary of PluginErrors.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetPluginErrorAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluginErrorAnalytics = JmsFunctions.getPluginErrorAnalytics(GetPluginErrorAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(pluginErrorAnalyticCompartmentIdInSubtree)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetPluginErrorAnalyticsResult> getPluginErrorAnalyticsPlain(GetPluginErrorAnalyticsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getPluginErrorAnalytics:getPluginErrorAnalytics", TypeShape.of(GetPluginErrorAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Plugin Errors in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of plugin errors that describe all detected errors.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetPluginErrorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluginErrors = JmsFunctions.getPluginErrors(GetPluginErrorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(pluginErrorCompartmentIdInSubtree)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeFirstSeenGreaterThanOrEqualTo(pluginErrorTimeFirstSeenGreaterThanOrEqualTo)
+     *             .timeFirstSeenLessThanOrEqualTo(pluginErrorTimeFirstSeenLessThanOrEqualTo)
+     *             .timeLastSeenGreaterThanOrEqualTo(pluginErrorTimeLastSeenGreaterThanOrEqualTo)
+     *             .timeLastSeenLessThanOrEqualTo(pluginErrorTimeLastSeenLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPluginErrorsResult> getPluginErrors() {
+        return getPluginErrors(GetPluginErrorsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Plugin Errors in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of plugin errors that describe all detected errors.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetPluginErrorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluginErrors = JmsFunctions.getPluginErrors(GetPluginErrorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(pluginErrorCompartmentIdInSubtree)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeFirstSeenGreaterThanOrEqualTo(pluginErrorTimeFirstSeenGreaterThanOrEqualTo)
+     *             .timeFirstSeenLessThanOrEqualTo(pluginErrorTimeFirstSeenLessThanOrEqualTo)
+     *             .timeLastSeenGreaterThanOrEqualTo(pluginErrorTimeLastSeenGreaterThanOrEqualTo)
+     *             .timeLastSeenLessThanOrEqualTo(pluginErrorTimeLastSeenLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetPluginErrorsResult> getPluginErrorsPlain() {
+        return getPluginErrorsPlain(GetPluginErrorsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Plugin Errors in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of plugin errors that describe all detected errors.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetPluginErrorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluginErrors = JmsFunctions.getPluginErrors(GetPluginErrorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(pluginErrorCompartmentIdInSubtree)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeFirstSeenGreaterThanOrEqualTo(pluginErrorTimeFirstSeenGreaterThanOrEqualTo)
+     *             .timeFirstSeenLessThanOrEqualTo(pluginErrorTimeFirstSeenLessThanOrEqualTo)
+     *             .timeLastSeenGreaterThanOrEqualTo(pluginErrorTimeLastSeenGreaterThanOrEqualTo)
+     *             .timeLastSeenLessThanOrEqualTo(pluginErrorTimeLastSeenLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPluginErrorsResult> getPluginErrors(GetPluginErrorsArgs args) {
+        return getPluginErrors(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Plugin Errors in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of plugin errors that describe all detected errors.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetPluginErrorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluginErrors = JmsFunctions.getPluginErrors(GetPluginErrorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(pluginErrorCompartmentIdInSubtree)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeFirstSeenGreaterThanOrEqualTo(pluginErrorTimeFirstSeenGreaterThanOrEqualTo)
+     *             .timeFirstSeenLessThanOrEqualTo(pluginErrorTimeFirstSeenLessThanOrEqualTo)
+     *             .timeLastSeenGreaterThanOrEqualTo(pluginErrorTimeLastSeenGreaterThanOrEqualTo)
+     *             .timeLastSeenLessThanOrEqualTo(pluginErrorTimeLastSeenLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetPluginErrorsResult> getPluginErrorsPlain(GetPluginErrorsPlainArgs args) {
+        return getPluginErrorsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Plugin Errors in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of plugin errors that describe all detected errors.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetPluginErrorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluginErrors = JmsFunctions.getPluginErrors(GetPluginErrorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(pluginErrorCompartmentIdInSubtree)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeFirstSeenGreaterThanOrEqualTo(pluginErrorTimeFirstSeenGreaterThanOrEqualTo)
+     *             .timeFirstSeenLessThanOrEqualTo(pluginErrorTimeFirstSeenLessThanOrEqualTo)
+     *             .timeLastSeenGreaterThanOrEqualTo(pluginErrorTimeLastSeenGreaterThanOrEqualTo)
+     *             .timeLastSeenLessThanOrEqualTo(pluginErrorTimeLastSeenLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPluginErrorsResult> getPluginErrors(GetPluginErrorsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getPluginErrors:getPluginErrors", TypeShape.of(GetPluginErrorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Plugin Errors in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of plugin errors that describe all detected errors.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetPluginErrorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluginErrors = JmsFunctions.getPluginErrors(GetPluginErrorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(pluginErrorCompartmentIdInSubtree)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeFirstSeenGreaterThanOrEqualTo(pluginErrorTimeFirstSeenGreaterThanOrEqualTo)
+     *             .timeFirstSeenLessThanOrEqualTo(pluginErrorTimeFirstSeenLessThanOrEqualTo)
+     *             .timeLastSeenGreaterThanOrEqualTo(pluginErrorTimeLastSeenGreaterThanOrEqualTo)
+     *             .timeLastSeenLessThanOrEqualTo(pluginErrorTimeLastSeenLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPluginErrorsResult> getPluginErrors(GetPluginErrorsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getPluginErrors:getPluginErrors", TypeShape.of(GetPluginErrorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Plugin Errors in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of plugin errors that describe all detected errors.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetPluginErrorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluginErrors = JmsFunctions.getPluginErrors(GetPluginErrorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(pluginErrorCompartmentIdInSubtree)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeFirstSeenGreaterThanOrEqualTo(pluginErrorTimeFirstSeenGreaterThanOrEqualTo)
+     *             .timeFirstSeenLessThanOrEqualTo(pluginErrorTimeFirstSeenLessThanOrEqualTo)
+     *             .timeLastSeenGreaterThanOrEqualTo(pluginErrorTimeLastSeenGreaterThanOrEqualTo)
+     *             .timeLastSeenLessThanOrEqualTo(pluginErrorTimeLastSeenLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetPluginErrorsResult> getPluginErrorsPlain(GetPluginErrorsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getPluginErrors:getPluginErrors", TypeShape.of(GetPluginErrorsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Summarize Resource Inventory resource in Oracle Cloud Infrastructure Jms service.

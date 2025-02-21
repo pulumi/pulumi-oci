@@ -65,11 +65,14 @@ type LookupSecretResult struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A brief description of the secret. Avoid entering confidential information.
-	Description string `pulumi:"description"`
+	Description          string `pulumi:"description"`
+	EnableAutoGeneration bool   `pulumi:"enableAutoGeneration"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the secret.
 	Id string `pulumi:"id"`
+	// The value of this flag determines whether or not secret content will be generated automatically.
+	IsAutoGenerationEnabled bool `pulumi:"isAutoGenerationEnabled"`
 	// The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
 	KeyId string `pulumi:"keyId"`
 	// A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
@@ -85,7 +88,9 @@ type LookupSecretResult struct {
 	// Additional information about the status of the secret rotation
 	RotationStatus string                   `pulumi:"rotationStatus"`
 	SecretContents []GetSecretSecretContent `pulumi:"secretContents"`
-	SecretId       string                   `pulumi:"secretId"`
+	// Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
+	SecretGenerationContexts []GetSecretSecretGenerationContext `pulumi:"secretGenerationContexts"`
+	SecretId                 string                             `pulumi:"secretId"`
 	// The user-friendly name of the secret. Avoid entering confidential information.
 	SecretName string `pulumi:"secretName"`
 	// A list of rules that control how the secret is used and managed.
@@ -156,6 +161,10 @@ func (o LookupSecretResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSecretResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
+func (o LookupSecretResultOutput) EnableAutoGeneration() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupSecretResult) bool { return v.EnableAutoGeneration }).(pulumi.BoolOutput)
+}
+
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 func (o LookupSecretResultOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupSecretResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
@@ -164,6 +173,11 @@ func (o LookupSecretResultOutput) FreeformTags() pulumi.StringMapOutput {
 // The OCID of the secret.
 func (o LookupSecretResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSecretResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The value of this flag determines whether or not secret content will be generated automatically.
+func (o LookupSecretResultOutput) IsAutoGenerationEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupSecretResult) bool { return v.IsAutoGenerationEnabled }).(pulumi.BoolOutput)
 }
 
 // The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
@@ -203,6 +217,11 @@ func (o LookupSecretResultOutput) RotationStatus() pulumi.StringOutput {
 
 func (o LookupSecretResultOutput) SecretContents() GetSecretSecretContentArrayOutput {
 	return o.ApplyT(func(v LookupSecretResult) []GetSecretSecretContent { return v.SecretContents }).(GetSecretSecretContentArrayOutput)
+}
+
+// Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
+func (o LookupSecretResultOutput) SecretGenerationContexts() GetSecretSecretGenerationContextArrayOutput {
+	return o.ApplyT(func(v LookupSecretResult) []GetSecretSecretGenerationContext { return v.SecretGenerationContexts }).(GetSecretSecretGenerationContextArrayOutput)
 }
 
 func (o LookupSecretResultOutput) SecretId() pulumi.StringOutput {

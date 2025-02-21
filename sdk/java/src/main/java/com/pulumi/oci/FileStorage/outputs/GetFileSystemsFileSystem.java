@@ -119,6 +119,11 @@ public final class GetFileSystemsFileSystem {
      */
     private String state;
     /**
+     * @return System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+     * 
+     */
+    private Map<String,String> systemTags;
+    /**
      * @return The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
@@ -272,6 +277,13 @@ public final class GetFileSystemsFileSystem {
         return this.state;
     }
     /**
+     * @return System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
@@ -310,6 +322,7 @@ public final class GetFileSystemsFileSystem {
         private List<GetFileSystemsFileSystemSourceDetail> sourceDetails;
         private String sourceSnapshotId;
         private String state;
+        private Map<String,String> systemTags;
         private String timeCreated;
         public Builder() {}
         public Builder(GetFileSystemsFileSystem defaults) {
@@ -336,6 +349,7 @@ public final class GetFileSystemsFileSystem {
     	      this.sourceDetails = defaults.sourceDetails;
     	      this.sourceSnapshotId = defaults.sourceSnapshotId;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
         }
 
@@ -522,6 +536,14 @@ public final class GetFileSystemsFileSystem {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetFileSystemsFileSystem", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetFileSystemsFileSystem", "timeCreated");
@@ -553,6 +575,7 @@ public final class GetFileSystemsFileSystem {
             _resultValue.sourceDetails = sourceDetails;
             _resultValue.sourceSnapshotId = sourceSnapshotId;
             _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             return _resultValue;
         }

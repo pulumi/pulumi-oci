@@ -324,6 +324,20 @@ public class Replication extends com.pulumi.resources.CustomResource {
         return this.state;
     }
     /**
+     * System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+     * 
+     */
+    @Export(name="systemTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> systemTags;
+
+    /**
+     * @return System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+     * 
+     */
+    public Output<Map<String,String>> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.
      * 
      * ** IMPORTANT **

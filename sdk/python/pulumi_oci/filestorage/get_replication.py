@@ -27,7 +27,7 @@ class GetReplicationResult:
     """
     A collection of values returned by getReplication.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, defined_tags=None, delta_progress=None, delta_status=None, display_name=None, freeform_tags=None, id=None, is_lock_override=None, last_snapshot_id=None, lifecycle_details=None, locks=None, recovery_point_time=None, replication_id=None, replication_interval=None, replication_target_id=None, source_id=None, state=None, target_id=None, time_created=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, defined_tags=None, delta_progress=None, delta_status=None, display_name=None, freeform_tags=None, id=None, is_lock_override=None, last_snapshot_id=None, lifecycle_details=None, locks=None, recovery_point_time=None, replication_id=None, replication_interval=None, replication_target_id=None, source_id=None, state=None, system_tags=None, target_id=None, time_created=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -82,6 +82,9 @@ class GetReplicationResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if target_id and not isinstance(target_id, str):
             raise TypeError("Expected argument 'target_id' to be a str")
         pulumi.set(__self__, "target_id", target_id)
@@ -228,6 +231,14 @@ class GetReplicationResult:
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> str:
         """
@@ -268,6 +279,7 @@ class AwaitableGetReplicationResult(GetReplicationResult):
             replication_target_id=self.replication_target_id,
             source_id=self.source_id,
             state=self.state,
+            system_tags=self.system_tags,
             target_id=self.target_id,
             time_created=self.time_created)
 
@@ -315,6 +327,7 @@ def get_replication(replication_id: Optional[str] = None,
         replication_target_id=pulumi.get(__ret__, 'replication_target_id'),
         source_id=pulumi.get(__ret__, 'source_id'),
         state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         target_id=pulumi.get(__ret__, 'target_id'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_replication_output(replication_id: Optional[pulumi.Input[str]] = None,
@@ -359,5 +372,6 @@ def get_replication_output(replication_id: Optional[pulumi.Input[str]] = None,
         replication_target_id=pulumi.get(__response__, 'replication_target_id'),
         source_id=pulumi.get(__response__, 'source_id'),
         state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
         target_id=pulumi.get(__response__, 'target_id'),
         time_created=pulumi.get(__response__, 'time_created')))

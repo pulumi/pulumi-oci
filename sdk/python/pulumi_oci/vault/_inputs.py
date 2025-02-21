@@ -21,6 +21,8 @@ __all__ = [
     'SecretRotationConfigTargetSystemDetailsArgsDict',
     'SecretSecretContentArgs',
     'SecretSecretContentArgsDict',
+    'SecretSecretGenerationContextArgs',
+    'SecretSecretGenerationContextArgsDict',
     'SecretSecretRuleArgs',
     'SecretSecretRuleArgsDict',
     'GetSecretsFilterArgs',
@@ -260,6 +262,96 @@ class SecretSecretContentArgs:
     @stage.setter
     def stage(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "stage", value)
+
+
+if not MYPY:
+    class SecretSecretGenerationContextArgsDict(TypedDict):
+        generation_template: pulumi.Input[str]
+        """
+        (Updatable) Name of random bytes generation template for generating random byte type secret.
+        """
+        generation_type: pulumi.Input[str]
+        """
+        (Updatable) Name of the predefined secret generation type.
+        """
+        passphrase_length: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Length of the passphrase to be generated
+        """
+        secret_template: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) SecretTemplate captures structure in which customer wants to store secrets. This is optional and a default structure is available for each secret type.  The template can have any structure with static values that are not generated. Within the template, you can insert predefined placeholders to store secrets.  These placeholders are later replaced with the generated content and saved as a Base64 encoded content.
+        """
+elif False:
+    SecretSecretGenerationContextArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class SecretSecretGenerationContextArgs:
+    def __init__(__self__, *,
+                 generation_template: pulumi.Input[str],
+                 generation_type: pulumi.Input[str],
+                 passphrase_length: Optional[pulumi.Input[int]] = None,
+                 secret_template: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] generation_template: (Updatable) Name of random bytes generation template for generating random byte type secret.
+        :param pulumi.Input[str] generation_type: (Updatable) Name of the predefined secret generation type.
+        :param pulumi.Input[int] passphrase_length: (Updatable) Length of the passphrase to be generated
+        :param pulumi.Input[str] secret_template: (Updatable) SecretTemplate captures structure in which customer wants to store secrets. This is optional and a default structure is available for each secret type.  The template can have any structure with static values that are not generated. Within the template, you can insert predefined placeholders to store secrets.  These placeholders are later replaced with the generated content and saved as a Base64 encoded content.
+        """
+        pulumi.set(__self__, "generation_template", generation_template)
+        pulumi.set(__self__, "generation_type", generation_type)
+        if passphrase_length is not None:
+            pulumi.set(__self__, "passphrase_length", passphrase_length)
+        if secret_template is not None:
+            pulumi.set(__self__, "secret_template", secret_template)
+
+    @property
+    @pulumi.getter(name="generationTemplate")
+    def generation_template(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Name of random bytes generation template for generating random byte type secret.
+        """
+        return pulumi.get(self, "generation_template")
+
+    @generation_template.setter
+    def generation_template(self, value: pulumi.Input[str]):
+        pulumi.set(self, "generation_template", value)
+
+    @property
+    @pulumi.getter(name="generationType")
+    def generation_type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Name of the predefined secret generation type.
+        """
+        return pulumi.get(self, "generation_type")
+
+    @generation_type.setter
+    def generation_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "generation_type", value)
+
+    @property
+    @pulumi.getter(name="passphraseLength")
+    def passphrase_length(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Length of the passphrase to be generated
+        """
+        return pulumi.get(self, "passphrase_length")
+
+    @passphrase_length.setter
+    def passphrase_length(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "passphrase_length", value)
+
+    @property
+    @pulumi.getter(name="secretTemplate")
+    def secret_template(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) SecretTemplate captures structure in which customer wants to store secrets. This is optional and a default structure is available for each secret type.  The template can have any structure with static values that are not generated. Within the template, you can insert predefined placeholders to store secrets.  These placeholders are later replaced with the generated content and saved as a Base64 encoded content.
+        """
+        return pulumi.get(self, "secret_template")
+
+    @secret_template.setter
+    def secret_template(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "secret_template", value)
 
 
 if not MYPY:

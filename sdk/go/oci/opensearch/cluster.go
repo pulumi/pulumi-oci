@@ -40,9 +40,6 @@ type Cluster struct {
 	// The OCID of the compartment to create the cluster in.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ConfigureOutboundClusterTrigger pulumi.IntPtrOutput `pulumi:"configureOutboundClusterTrigger"`
 	// (Updatable) The number of data nodes to configure for the cluster.
 	DataNodeCount pulumi.IntOutput `pulumi:"dataNodeCount"`
@@ -124,6 +121,11 @@ type Cluster struct {
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// The size in GB of the cluster's total storage.
 	TotalStorageGb pulumi.IntOutput `pulumi:"totalStorageGb"`
+	// An optional property to upgrade the major version of the cluster. This workflow upgrades the cluster without creating a clone. If you want to create a clone and upgrade the clone for testing please use SDK or CLI.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	UpgradeMajorVersionTrigger pulumi.IntOutput `pulumi:"upgradeMajorVersionTrigger"`
 	// The OCID for the compartment where the cluster's VCN is located.
 	VcnCompartmentId pulumi.StringOutput `pulumi:"vcnCompartmentId"`
 	// The OCID of the cluster's VCN.
@@ -229,9 +231,6 @@ type clusterState struct {
 	// The OCID of the compartment to create the cluster in.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ConfigureOutboundClusterTrigger *int `pulumi:"configureOutboundClusterTrigger"`
 	// (Updatable) The number of data nodes to configure for the cluster.
 	DataNodeCount *int `pulumi:"dataNodeCount"`
@@ -313,6 +312,11 @@ type clusterState struct {
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The size in GB of the cluster's total storage.
 	TotalStorageGb *int `pulumi:"totalStorageGb"`
+	// An optional property to upgrade the major version of the cluster. This workflow upgrades the cluster without creating a clone. If you want to create a clone and upgrade the clone for testing please use SDK or CLI.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	UpgradeMajorVersionTrigger *int `pulumi:"upgradeMajorVersionTrigger"`
 	// The OCID for the compartment where the cluster's VCN is located.
 	VcnCompartmentId *string `pulumi:"vcnCompartmentId"`
 	// The OCID of the cluster's VCN.
@@ -325,9 +329,6 @@ type ClusterState struct {
 	// The OCID of the compartment to create the cluster in.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ConfigureOutboundClusterTrigger pulumi.IntPtrInput
 	// (Updatable) The number of data nodes to configure for the cluster.
 	DataNodeCount pulumi.IntPtrInput
@@ -409,6 +410,11 @@ type ClusterState struct {
 	TimeUpdated pulumi.StringPtrInput
 	// The size in GB of the cluster's total storage.
 	TotalStorageGb pulumi.IntPtrInput
+	// An optional property to upgrade the major version of the cluster. This workflow upgrades the cluster without creating a clone. If you want to create a clone and upgrade the clone for testing please use SDK or CLI.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	UpgradeMajorVersionTrigger pulumi.IntPtrInput
 	// The OCID for the compartment where the cluster's VCN is located.
 	VcnCompartmentId pulumi.StringPtrInput
 	// The OCID of the cluster's VCN.
@@ -423,9 +429,6 @@ type clusterArgs struct {
 	// The OCID of the compartment to create the cluster in.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ConfigureOutboundClusterTrigger *int `pulumi:"configureOutboundClusterTrigger"`
 	// (Updatable) The number of data nodes to configure for the cluster.
 	DataNodeCount int `pulumi:"dataNodeCount"`
@@ -483,6 +486,11 @@ type clusterArgs struct {
 	SubnetId string `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
+	// An optional property to upgrade the major version of the cluster. This workflow upgrades the cluster without creating a clone. If you want to create a clone and upgrade the clone for testing please use SDK or CLI.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	UpgradeMajorVersionTrigger *int `pulumi:"upgradeMajorVersionTrigger"`
 	// The OCID for the compartment where the cluster's VCN is located.
 	VcnCompartmentId string `pulumi:"vcnCompartmentId"`
 	// The OCID of the cluster's VCN.
@@ -494,9 +502,6 @@ type ClusterArgs struct {
 	// The OCID of the compartment to create the cluster in.
 	CompartmentId pulumi.StringInput
 	// (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ConfigureOutboundClusterTrigger pulumi.IntPtrInput
 	// (Updatable) The number of data nodes to configure for the cluster.
 	DataNodeCount pulumi.IntInput
@@ -554,6 +559,11 @@ type ClusterArgs struct {
 	SubnetId pulumi.StringInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput
+	// An optional property to upgrade the major version of the cluster. This workflow upgrades the cluster without creating a clone. If you want to create a clone and upgrade the clone for testing please use SDK or CLI.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	UpgradeMajorVersionTrigger pulumi.IntPtrInput
 	// The OCID for the compartment where the cluster's VCN is located.
 	VcnCompartmentId pulumi.StringInput
 	// The OCID of the cluster's VCN.
@@ -658,9 +668,6 @@ func (o ClusterOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ClusterOutput) ConfigureOutboundClusterTrigger() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.IntPtrOutput { return v.ConfigureOutboundClusterTrigger }).(pulumi.IntPtrOutput)
 }
@@ -863,6 +870,14 @@ func (o ClusterOutput) TimeUpdated() pulumi.StringOutput {
 // The size in GB of the cluster's total storage.
 func (o ClusterOutput) TotalStorageGb() pulumi.IntOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.IntOutput { return v.TotalStorageGb }).(pulumi.IntOutput)
+}
+
+// An optional property to upgrade the major version of the cluster. This workflow upgrades the cluster without creating a clone. If you want to create a clone and upgrade the clone for testing please use SDK or CLI.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ClusterOutput) UpgradeMajorVersionTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.IntOutput { return v.UpgradeMajorVersionTrigger }).(pulumi.IntOutput)
 }
 
 // The OCID for the compartment where the cluster's VCN is located.

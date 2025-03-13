@@ -246,14 +246,14 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+     * (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
      * 
      */
     @Import(name="softwareVersion")
     private @Nullable Output<String> softwareVersion;
 
     /**
-     * @return The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+     * @return (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
      * 
      */
     public Optional<Output<String>> softwareVersion() {
@@ -721,7 +721,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param softwareVersion The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+         * @param softwareVersion (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
          * 
          * @return builder
          * 
@@ -732,7 +732,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param softwareVersion The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+         * @param softwareVersion (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
          * 
          * @return builder
          * 

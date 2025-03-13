@@ -50,6 +50,21 @@ public final class ExascaleDbStorageVaultArgs extends com.pulumi.resources.Resou
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * 
+     */
+    @Import(name="clusterPlacementGroupId")
+    private @Nullable Output<String> clusterPlacementGroupId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * 
+     */
+    public Optional<Output<String>> clusterPlacementGroupId() {
+        return Optional.ofNullable(this.clusterPlacementGroupId);
+    }
+
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
@@ -110,6 +125,21 @@ public final class ExascaleDbStorageVaultArgs extends com.pulumi.resources.Resou
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+     * 
+     */
+    @Import(name="exadataInfrastructureId")
+    private @Nullable Output<String> exadataInfrastructureId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+     * 
+     */
+    public Optional<Output<String>> exadataInfrastructureId() {
+        return Optional.ofNullable(this.exadataInfrastructureId);
+    }
+
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -140,6 +170,21 @@ public final class ExascaleDbStorageVaultArgs extends com.pulumi.resources.Resou
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    @Import(name="subscriptionId")
+    private @Nullable Output<String> subscriptionId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    public Optional<Output<String>> subscriptionId() {
+        return Optional.ofNullable(this.subscriptionId);
+    }
+
+    /**
      * The time zone that you want to use for the Exadata Database Storage Vault. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
      * ** IMPORTANT **
@@ -165,12 +210,15 @@ public final class ExascaleDbStorageVaultArgs extends com.pulumi.resources.Resou
     private ExascaleDbStorageVaultArgs(ExascaleDbStorageVaultArgs $) {
         this.additionalFlashCacheInPercent = $.additionalFlashCacheInPercent;
         this.availabilityDomain = $.availabilityDomain;
+        this.clusterPlacementGroupId = $.clusterPlacementGroupId;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.description = $.description;
         this.displayName = $.displayName;
+        this.exadataInfrastructureId = $.exadataInfrastructureId;
         this.freeformTags = $.freeformTags;
         this.highCapacityDatabaseStorage = $.highCapacityDatabaseStorage;
+        this.subscriptionId = $.subscriptionId;
         this.timeZone = $.timeZone;
     }
 
@@ -232,6 +280,27 @@ public final class ExascaleDbStorageVaultArgs extends com.pulumi.resources.Resou
          */
         public Builder availabilityDomain(String availabilityDomain) {
             return availabilityDomain(Output.of(availabilityDomain));
+        }
+
+        /**
+         * @param clusterPlacementGroupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPlacementGroupId(@Nullable Output<String> clusterPlacementGroupId) {
+            $.clusterPlacementGroupId = clusterPlacementGroupId;
+            return this;
+        }
+
+        /**
+         * @param clusterPlacementGroupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            return clusterPlacementGroupId(Output.of(clusterPlacementGroupId));
         }
 
         /**
@@ -319,6 +388,27 @@ public final class ExascaleDbStorageVaultArgs extends com.pulumi.resources.Resou
         }
 
         /**
+         * @param exadataInfrastructureId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder exadataInfrastructureId(@Nullable Output<String> exadataInfrastructureId) {
+            $.exadataInfrastructureId = exadataInfrastructureId;
+            return this;
+        }
+
+        /**
+         * @param exadataInfrastructureId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder exadataInfrastructureId(String exadataInfrastructureId) {
+            return exadataInfrastructureId(Output.of(exadataInfrastructureId));
+        }
+
+        /**
          * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
          * @return builder
@@ -358,6 +448,27 @@ public final class ExascaleDbStorageVaultArgs extends com.pulumi.resources.Resou
          */
         public Builder highCapacityDatabaseStorage(ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs highCapacityDatabaseStorage) {
             return highCapacityDatabaseStorage(Output.of(highCapacityDatabaseStorage));
+        }
+
+        /**
+         * @param subscriptionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subscriptionId(@Nullable Output<String> subscriptionId) {
+            $.subscriptionId = subscriptionId;
+            return this;
+        }
+
+        /**
+         * @param subscriptionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            return subscriptionId(Output.of(subscriptionId));
         }
 
         /**

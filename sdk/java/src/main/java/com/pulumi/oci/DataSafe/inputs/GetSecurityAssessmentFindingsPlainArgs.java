@@ -48,6 +48,21 @@ public final class GetSecurityAssessmentFindingsPlainArgs extends com.pulumi.res
         return Optional.ofNullable(this.compartmentIdInSubtree);
     }
 
+    /**
+     * Specifies a subset of fields to be returned in the response.
+     * 
+     */
+    @Import(name="fields")
+    private @Nullable List<String> fields;
+
+    /**
+     * @return Specifies a subset of fields to be returned in the response.
+     * 
+     */
+    public Optional<List<String>> fields() {
+        return Optional.ofNullable(this.fields);
+    }
+
     @Import(name="filters")
     private @Nullable List<GetSecurityAssessmentFindingsFilter> filters;
 
@@ -86,18 +101,39 @@ public final class GetSecurityAssessmentFindingsPlainArgs extends com.pulumi.res
     }
 
     /**
-     * An optional filter to return only findings containing the specified reference.
+     * An optional filter to return only findings that match the specified reference.
      * 
      */
     @Import(name="references")
     private @Nullable String references;
 
     /**
-     * @return An optional filter to return only findings containing the specified reference.
+     * @return An optional filter to return only findings that match the specified reference.
      * 
      */
     public Optional<String> references() {
         return Optional.ofNullable(this.references);
+    }
+
+    /**
+     * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
+     * 
+     * **Example:** | scimQuery=(severity eq &#39;high&#39;) and (targetId eq &#39;target_1&#39;) scimQuery=(category eq &#34;Users&#34;) and (targetId eq &#34;target_1&#34;) scimQuery=(reference eq &#39;CIS&#39;) and (targetId eq &#39;target_1&#39;)
+     * Supported fields: severity findingKey reference targetId isTopFinding title category remarks details summary isRiskModified
+     * 
+     */
+    @Import(name="scimQuery")
+    private @Nullable String scimQuery;
+
+    /**
+     * @return The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
+     * 
+     * **Example:** | scimQuery=(severity eq &#39;high&#39;) and (targetId eq &#39;target_1&#39;) scimQuery=(category eq &#34;Users&#34;) and (targetId eq &#34;target_1&#34;) scimQuery=(reference eq &#39;CIS&#39;) and (targetId eq &#39;target_1&#39;)
+     * Supported fields: severity findingKey reference targetId isTopFinding title category remarks details summary isRiskModified
+     * 
+     */
+    public Optional<String> scimQuery() {
+        return Optional.ofNullable(this.scimQuery);
     }
 
     /**
@@ -165,10 +201,12 @@ public final class GetSecurityAssessmentFindingsPlainArgs extends com.pulumi.res
     private GetSecurityAssessmentFindingsPlainArgs(GetSecurityAssessmentFindingsPlainArgs $) {
         this.accessLevel = $.accessLevel;
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
+        this.fields = $.fields;
         this.filters = $.filters;
         this.findingKey = $.findingKey;
         this.isTopFinding = $.isTopFinding;
         this.references = $.references;
+        this.scimQuery = $.scimQuery;
         this.securityAssessmentId = $.securityAssessmentId;
         this.severity = $.severity;
         this.state = $.state;
@@ -215,6 +253,27 @@ public final class GetSecurityAssessmentFindingsPlainArgs extends com.pulumi.res
             return this;
         }
 
+        /**
+         * @param fields Specifies a subset of fields to be returned in the response.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder fields(@Nullable List<String> fields) {
+            $.fields = fields;
+            return this;
+        }
+
+        /**
+         * @param fields Specifies a subset of fields to be returned in the response.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder fields(String... fields) {
+            return fields(List.of(fields));
+        }
+
         public Builder filters(@Nullable List<GetSecurityAssessmentFindingsFilter> filters) {
             $.filters = filters;
             return this;
@@ -247,13 +306,27 @@ public final class GetSecurityAssessmentFindingsPlainArgs extends com.pulumi.res
         }
 
         /**
-         * @param references An optional filter to return only findings containing the specified reference.
+         * @param references An optional filter to return only findings that match the specified reference.
          * 
          * @return builder
          * 
          */
         public Builder references(@Nullable String references) {
             $.references = references;
+            return this;
+        }
+
+        /**
+         * @param scimQuery The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
+         * 
+         * **Example:** | scimQuery=(severity eq &#39;high&#39;) and (targetId eq &#39;target_1&#39;) scimQuery=(category eq &#34;Users&#34;) and (targetId eq &#34;target_1&#34;) scimQuery=(reference eq &#39;CIS&#39;) and (targetId eq &#39;target_1&#39;)
+         * Supported fields: severity findingKey reference targetId isTopFinding title category remarks details summary isRiskModified
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scimQuery(@Nullable String scimQuery) {
+            $.scimQuery = scimQuery;
             return this;
         }
 

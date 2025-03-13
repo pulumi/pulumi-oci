@@ -30,9 +30,15 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := database.GetBackups(ctx, &database.GetBackupsArgs{
-//				CompartmentId: pulumi.StringRef(compartmentId),
-//				DatabaseId:    pulumi.StringRef(testDatabase.Id),
-//				ShapeFamily:   pulumi.StringRef(backupShapeFamily),
+//				BackupDestinationType:                   pulumi.StringRef(backupBackupDestinationType),
+//				CompartmentId:                           pulumi.StringRef(compartmentId),
+//				DatabaseId:                              pulumi.StringRef(testDatabase.Id),
+//				ShapeFamily:                             pulumi.StringRef(backupShapeFamily),
+//				State:                                   pulumi.StringRef(backupState),
+//				TimeExpiryScheduledGreaterThanOrEqualTo: pulumi.StringRef(backupTimeExpiryScheduledGreaterThanOrEqualTo),
+//				TimeExpiryScheduledLessThan:             pulumi.StringRef(backupTimeExpiryScheduledLessThan),
+//				Type:                                    pulumi.StringRef(backupType),
+//				Version:                                 pulumi.StringRef(backupVersion),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -54,6 +60,8 @@ func GetBackups(ctx *pulumi.Context, args *GetBackupsArgs, opts ...pulumi.Invoke
 
 // A collection of arguments for invoking getBackups.
 type GetBackupsArgs struct {
+	// A filter to return only resources that match the given backup destination type.
+	BackupDestinationType *string `pulumi:"backupDestinationType"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
@@ -61,10 +69,22 @@ type GetBackupsArgs struct {
 	Filters    []GetBackupsFilter `pulumi:"filters"`
 	// If provided, filters the results to the set of database versions which are supported for the given shape family.
 	ShapeFamily *string `pulumi:"shapeFamily"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State *string `pulumi:"state"`
+	// The start of date-time range of expiration for the long term backups to be fetched.
+	TimeExpiryScheduledGreaterThanOrEqualTo *string `pulumi:"timeExpiryScheduledGreaterThanOrEqualTo"`
+	// The end of date-time range of expiration for the long term backups to be fetched.
+	TimeExpiryScheduledLessThan *string `pulumi:"timeExpiryScheduledLessThan"`
+	// A filter to return only backups that matches with the given type of Backup.
+	Type *string `pulumi:"type"`
+	// A filter to return only resources that match the given database version.
+	Version *string `pulumi:"version"`
 }
 
 // A collection of values returned by getBackups.
 type GetBackupsResult struct {
+	// Type of the backup destination.
+	BackupDestinationType *string `pulumi:"backupDestinationType"`
 	// The list of backups.
 	Backups []GetBackupsBackup `pulumi:"backups"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -75,6 +95,14 @@ type GetBackupsResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id          string  `pulumi:"id"`
 	ShapeFamily *string `pulumi:"shapeFamily"`
+	// The current state of the backup.
+	State                                   *string `pulumi:"state"`
+	TimeExpiryScheduledGreaterThanOrEqualTo *string `pulumi:"timeExpiryScheduledGreaterThanOrEqualTo"`
+	TimeExpiryScheduledLessThan             *string `pulumi:"timeExpiryScheduledLessThan"`
+	// The type of backup.
+	Type *string `pulumi:"type"`
+	// Version of the backup's source database
+	Version *string `pulumi:"version"`
 }
 
 func GetBackupsOutput(ctx *pulumi.Context, args GetBackupsOutputArgs, opts ...pulumi.InvokeOption) GetBackupsResultOutput {
@@ -88,6 +116,8 @@ func GetBackupsOutput(ctx *pulumi.Context, args GetBackupsOutputArgs, opts ...pu
 
 // A collection of arguments for invoking getBackups.
 type GetBackupsOutputArgs struct {
+	// A filter to return only resources that match the given backup destination type.
+	BackupDestinationType pulumi.StringPtrInput `pulumi:"backupDestinationType"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
@@ -95,6 +125,16 @@ type GetBackupsOutputArgs struct {
 	Filters    GetBackupsFilterArrayInput `pulumi:"filters"`
 	// If provided, filters the results to the set of database versions which are supported for the given shape family.
 	ShapeFamily pulumi.StringPtrInput `pulumi:"shapeFamily"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State pulumi.StringPtrInput `pulumi:"state"`
+	// The start of date-time range of expiration for the long term backups to be fetched.
+	TimeExpiryScheduledGreaterThanOrEqualTo pulumi.StringPtrInput `pulumi:"timeExpiryScheduledGreaterThanOrEqualTo"`
+	// The end of date-time range of expiration for the long term backups to be fetched.
+	TimeExpiryScheduledLessThan pulumi.StringPtrInput `pulumi:"timeExpiryScheduledLessThan"`
+	// A filter to return only backups that matches with the given type of Backup.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+	// A filter to return only resources that match the given database version.
+	Version pulumi.StringPtrInput `pulumi:"version"`
 }
 
 func (GetBackupsOutputArgs) ElementType() reflect.Type {
@@ -114,6 +154,11 @@ func (o GetBackupsResultOutput) ToGetBackupsResultOutput() GetBackupsResultOutpu
 
 func (o GetBackupsResultOutput) ToGetBackupsResultOutputWithContext(ctx context.Context) GetBackupsResultOutput {
 	return o
+}
+
+// Type of the backup destination.
+func (o GetBackupsResultOutput) BackupDestinationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackupsResult) *string { return v.BackupDestinationType }).(pulumi.StringPtrOutput)
 }
 
 // The list of backups.
@@ -142,6 +187,29 @@ func (o GetBackupsResultOutput) Id() pulumi.StringOutput {
 
 func (o GetBackupsResultOutput) ShapeFamily() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetBackupsResult) *string { return v.ShapeFamily }).(pulumi.StringPtrOutput)
+}
+
+// The current state of the backup.
+func (o GetBackupsResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackupsResult) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+func (o GetBackupsResultOutput) TimeExpiryScheduledGreaterThanOrEqualTo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackupsResult) *string { return v.TimeExpiryScheduledGreaterThanOrEqualTo }).(pulumi.StringPtrOutput)
+}
+
+func (o GetBackupsResultOutput) TimeExpiryScheduledLessThan() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackupsResult) *string { return v.TimeExpiryScheduledLessThan }).(pulumi.StringPtrOutput)
+}
+
+// The type of backup.
+func (o GetBackupsResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackupsResult) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+// Version of the backup's source database
+func (o GetBackupsResultOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackupsResult) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 func init() {

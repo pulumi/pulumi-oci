@@ -41,6 +41,7 @@ from .db_system import *
 from .db_systems_upgrade import *
 from .exadata_infrastructure import *
 from .exadata_infrastructure_compute import *
+from .exadata_infrastructure_configure_exascale_management import *
 from .exadata_infrastructure_storage import *
 from .exadata_iorm_config import *
 from .exadb_vm_cluster import *

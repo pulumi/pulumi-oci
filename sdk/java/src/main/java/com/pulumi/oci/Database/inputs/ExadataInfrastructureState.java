@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.ExadataInfrastructureContactArgs;
 import com.pulumi.oci.Database.inputs.ExadataInfrastructureDefinedFileSystemConfigurationArgs;
+import com.pulumi.oci.Database.inputs.ExadataInfrastructureExascaleConfigArgs;
 import com.pulumi.oci.Database.inputs.ExadataInfrastructureMaintenanceWindowArgs;
 import com.pulumi.oci.Database.inputs.ExadataInfrastructureNetworkBondingModeDetailsArgs;
 import java.lang.Boolean;
@@ -196,6 +197,21 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
     }
 
     /**
+     * The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     * 
+     */
+    @Import(name="computeModel")
+    private @Nullable Output<String> computeModel;
+
+    /**
+     * @return The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     * 
+     */
+    public Optional<Output<String>> computeModel() {
+        return Optional.ofNullable(this.computeModel);
+    }
+
+    /**
      * (Updatable) The list of contacts for the Exadata infrastructure.
      * 
      */
@@ -275,6 +291,21 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
      */
     public Optional<Output<Double>> dataStorageSizeInTbs() {
         return Optional.ofNullable(this.dataStorageSizeInTbs);
+    }
+
+    /**
+     * The database server type of the Exadata infrastructure.
+     * 
+     */
+    @Import(name="databaseServerType")
+    private @Nullable Output<String> databaseServerType;
+
+    /**
+     * @return The database server type of the Exadata infrastructure.
+     * 
+     */
+    public Optional<Output<String>> databaseServerType() {
+        return Optional.ofNullable(this.databaseServerType);
     }
 
     /**
@@ -365,6 +396,21 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
      */
     public Optional<Output<List<String>>> dnsServers() {
         return Optional.ofNullable(this.dnsServers);
+    }
+
+    /**
+     * The exascale config response details for the Exadata Cloud{@literal @}Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud{@literal @}Customer instances and Exadata Cloud Service instances.
+     * 
+     */
+    @Import(name="exascaleConfigs")
+    private @Nullable Output<List<ExadataInfrastructureExascaleConfigArgs>> exascaleConfigs;
+
+    /**
+     * @return The exascale config response details for the Exadata Cloud{@literal @}Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud{@literal @}Customer instances and Exadata Cloud Service instances.
+     * 
+     */
+    public Optional<Output<List<ExadataInfrastructureExascaleConfigArgs>>> exascaleConfigs() {
+        return Optional.ofNullable(this.exascaleConfigs);
     }
 
     /**
@@ -713,6 +759,21 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
     }
 
     /**
+     * The storage server type of the Exadata infrastructure.
+     * 
+     */
+    @Import(name="storageServerType")
+    private @Nullable Output<String> storageServerType;
+
+    /**
+     * @return The storage server type of the Exadata infrastructure.
+     * 
+     */
+    public Optional<Output<String>> storageServerType() {
+        return Optional.ofNullable(this.storageServerType);
+    }
+
+    /**
      * The software version of the storage servers (cells) in the Exadata infrastructure.
      * 
      */
@@ -771,18 +832,21 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
         this.cloudControlPlaneServer2 = $.cloudControlPlaneServer2;
         this.compartmentId = $.compartmentId;
         this.computeCount = $.computeCount;
+        this.computeModel = $.computeModel;
         this.contacts = $.contacts;
         this.corporateProxy = $.corporateProxy;
         this.cpusEnabled = $.cpusEnabled;
         this.createAsync = $.createAsync;
         this.csiNumber = $.csiNumber;
         this.dataStorageSizeInTbs = $.dataStorageSizeInTbs;
+        this.databaseServerType = $.databaseServerType;
         this.dbNodeStorageSizeInGbs = $.dbNodeStorageSizeInGbs;
         this.dbServerVersion = $.dbServerVersion;
         this.definedFileSystemConfigurations = $.definedFileSystemConfigurations;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.dnsServers = $.dnsServers;
+        this.exascaleConfigs = $.exascaleConfigs;
         this.freeformTags = $.freeformTags;
         this.gateway = $.gateway;
         this.infiniBandNetworkCidr = $.infiniBandNetworkCidr;
@@ -806,6 +870,7 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
         this.shape = $.shape;
         this.state = $.state;
         this.storageCount = $.storageCount;
+        this.storageServerType = $.storageServerType;
         this.storageServerVersion = $.storageServerVersion;
         this.timeCreated = $.timeCreated;
         this.timeZone = $.timeZone;
@@ -1067,6 +1132,27 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
         }
 
         /**
+         * @param computeModel The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeModel(@Nullable Output<String> computeModel) {
+            $.computeModel = computeModel;
+            return this;
+        }
+
+        /**
+         * @param computeModel The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeModel(String computeModel) {
+            return computeModel(Output.of(computeModel));
+        }
+
+        /**
          * @param contacts (Updatable) The list of contacts for the Exadata infrastructure.
          * 
          * @return builder
@@ -1188,6 +1274,27 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
          */
         public Builder dataStorageSizeInTbs(Double dataStorageSizeInTbs) {
             return dataStorageSizeInTbs(Output.of(dataStorageSizeInTbs));
+        }
+
+        /**
+         * @param databaseServerType The database server type of the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseServerType(@Nullable Output<String> databaseServerType) {
+            $.databaseServerType = databaseServerType;
+            return this;
+        }
+
+        /**
+         * @param databaseServerType The database server type of the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseServerType(String databaseServerType) {
+            return databaseServerType(Output.of(databaseServerType));
         }
 
         /**
@@ -1334,6 +1441,37 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
          */
         public Builder dnsServers(String... dnsServers) {
             return dnsServers(List.of(dnsServers));
+        }
+
+        /**
+         * @param exascaleConfigs The exascale config response details for the Exadata Cloud{@literal @}Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud{@literal @}Customer instances and Exadata Cloud Service instances.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder exascaleConfigs(@Nullable Output<List<ExadataInfrastructureExascaleConfigArgs>> exascaleConfigs) {
+            $.exascaleConfigs = exascaleConfigs;
+            return this;
+        }
+
+        /**
+         * @param exascaleConfigs The exascale config response details for the Exadata Cloud{@literal @}Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud{@literal @}Customer instances and Exadata Cloud Service instances.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder exascaleConfigs(List<ExadataInfrastructureExascaleConfigArgs> exascaleConfigs) {
+            return exascaleConfigs(Output.of(exascaleConfigs));
+        }
+
+        /**
+         * @param exascaleConfigs The exascale config response details for the Exadata Cloud{@literal @}Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud{@literal @}Customer instances and Exadata Cloud Service instances.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder exascaleConfigs(ExadataInfrastructureExascaleConfigArgs... exascaleConfigs) {
+            return exascaleConfigs(List.of(exascaleConfigs));
         }
 
         /**
@@ -1827,6 +1965,27 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
          */
         public Builder storageCount(Integer storageCount) {
             return storageCount(Output.of(storageCount));
+        }
+
+        /**
+         * @param storageServerType The storage server type of the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder storageServerType(@Nullable Output<String> storageServerType) {
+            $.storageServerType = storageServerType;
+            return this;
+        }
+
+        /**
+         * @param storageServerType The storage server type of the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder storageServerType(String storageServerType) {
+            return storageServerType(Output.of(storageServerType));
         }
 
         /**

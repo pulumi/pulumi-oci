@@ -54,6 +54,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly string State;
         /// <summary>
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SystemTags;
+        /// <summary>
         /// The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
         public readonly string TimeCreated;
@@ -92,6 +96,8 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             string state,
 
+            ImmutableDictionary<string, string> systemTags,
+
             string timeCreated,
 
             string timeUpdated,
@@ -110,6 +116,7 @@ namespace Pulumi.Oci.Mysql.Outputs
             ParentConfigurationId = parentConfigurationId;
             ShapeName = shapeName;
             State = state;
+            SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
             Type = type;

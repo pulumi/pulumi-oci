@@ -27,6 +27,7 @@ import * as utilities from "../utilities";
  *     customerContacts: [{
  *         email: cloudExadataInfrastructureCustomerContactsEmail,
  *     }],
+ *     databaseServerType: cloudExadataInfrastructureDatabaseServerType,
  *     definedTags: cloudExadataInfrastructureDefinedTags,
  *     freeformTags: {
  *         Department: "Finance",
@@ -48,6 +49,7 @@ import * as utilities from "../utilities";
  *         weeksOfMonths: cloudExadataInfrastructureMaintenanceWindowWeeksOfMonth,
  *     },
  *     storageCount: cloudExadataInfrastructureStorageCount,
+ *     storageServerType: cloudExadataInfrastructureStorageServerType,
  *     subscriptionId: tenantSubscriptionId,
  * });
  * ```
@@ -117,6 +119,10 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
      */
     public readonly computeCount!: pulumi.Output<number>;
     /**
+     * The compute model of the Exadata infrastructure.
+     */
+    public /*out*/ readonly computeModel!: pulumi.Output<string>;
+    /**
      * The total number of CPU cores allocated.
      */
     public /*out*/ readonly cpuCount!: pulumi.Output<number>;
@@ -128,6 +134,10 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
      * Size, in terabytes, of the DATA disk group.
      */
     public /*out*/ readonly dataStorageSizeInTbs!: pulumi.Output<number>;
+    /**
+     * The database server type of the Exadata infrastructure.
+     */
+    public readonly databaseServerType!: pulumi.Output<string>;
     /**
      * The local node storage allocated in GBs.
      */
@@ -213,6 +223,10 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
      */
     public readonly storageCount!: pulumi.Output<number>;
     /**
+     * The storage server type of the Exadata infrastructure.
+     */
+    public readonly storageServerType!: pulumi.Output<string>;
+    /**
      * The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
      */
     public /*out*/ readonly storageServerVersion!: pulumi.Output<string>;
@@ -257,9 +271,11 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["clusterPlacementGroupId"] = state ? state.clusterPlacementGroupId : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["computeCount"] = state ? state.computeCount : undefined;
+            resourceInputs["computeModel"] = state ? state.computeModel : undefined;
             resourceInputs["cpuCount"] = state ? state.cpuCount : undefined;
             resourceInputs["customerContacts"] = state ? state.customerContacts : undefined;
             resourceInputs["dataStorageSizeInTbs"] = state ? state.dataStorageSizeInTbs : undefined;
+            resourceInputs["databaseServerType"] = state ? state.databaseServerType : undefined;
             resourceInputs["dbNodeStorageSizeInGbs"] = state ? state.dbNodeStorageSizeInGbs : undefined;
             resourceInputs["dbServerVersion"] = state ? state.dbServerVersion : undefined;
             resourceInputs["definedFileSystemConfigurations"] = state ? state.definedFileSystemConfigurations : undefined;
@@ -281,6 +297,7 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["shape"] = state ? state.shape : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["storageCount"] = state ? state.storageCount : undefined;
+            resourceInputs["storageServerType"] = state ? state.storageServerType : undefined;
             resourceInputs["storageServerVersion"] = state ? state.storageServerVersion : undefined;
             resourceInputs["subscriptionId"] = state ? state.subscriptionId : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
@@ -305,16 +322,19 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["computeCount"] = args ? args.computeCount : undefined;
             resourceInputs["customerContacts"] = args ? args.customerContacts : undefined;
+            resourceInputs["databaseServerType"] = args ? args.databaseServerType : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["maintenanceWindow"] = args ? args.maintenanceWindow : undefined;
             resourceInputs["shape"] = args ? args.shape : undefined;
             resourceInputs["storageCount"] = args ? args.storageCount : undefined;
+            resourceInputs["storageServerType"] = args ? args.storageServerType : undefined;
             resourceInputs["subscriptionId"] = args ? args.subscriptionId : undefined;
             resourceInputs["activatedStorageCount"] = undefined /*out*/;
             resourceInputs["additionalStorageCount"] = undefined /*out*/;
             resourceInputs["availableStorageSizeInGbs"] = undefined /*out*/;
+            resourceInputs["computeModel"] = undefined /*out*/;
             resourceInputs["cpuCount"] = undefined /*out*/;
             resourceInputs["dataStorageSizeInTbs"] = undefined /*out*/;
             resourceInputs["dbNodeStorageSizeInGbs"] = undefined /*out*/;
@@ -375,6 +395,10 @@ export interface CloudExadataInfrastructureState {
      */
     computeCount?: pulumi.Input<number>;
     /**
+     * The compute model of the Exadata infrastructure.
+     */
+    computeModel?: pulumi.Input<string>;
+    /**
      * The total number of CPU cores allocated.
      */
     cpuCount?: pulumi.Input<number>;
@@ -386,6 +410,10 @@ export interface CloudExadataInfrastructureState {
      * Size, in terabytes, of the DATA disk group.
      */
     dataStorageSizeInTbs?: pulumi.Input<number>;
+    /**
+     * The database server type of the Exadata infrastructure.
+     */
+    databaseServerType?: pulumi.Input<string>;
     /**
      * The local node storage allocated in GBs.
      */
@@ -471,6 +499,10 @@ export interface CloudExadataInfrastructureState {
      */
     storageCount?: pulumi.Input<number>;
     /**
+     * The storage server type of the Exadata infrastructure.
+     */
+    storageServerType?: pulumi.Input<string>;
+    /**
      * The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
      */
     storageServerVersion?: pulumi.Input<string>;
@@ -521,6 +553,10 @@ export interface CloudExadataInfrastructureArgs {
      */
     customerContacts?: pulumi.Input<pulumi.Input<inputs.Database.CloudExadataInfrastructureCustomerContact>[]>;
     /**
+     * The database server type of the Exadata infrastructure.
+     */
+    databaseServerType?: pulumi.Input<string>;
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
@@ -544,6 +580,10 @@ export interface CloudExadataInfrastructureArgs {
      * (Updatable) The number of storage servers for the cloud Exadata infrastructure.
      */
     storageCount?: pulumi.Input<number>;
+    /**
+     * The storage server type of the Exadata infrastructure.
+     */
+    storageServerType?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
      *

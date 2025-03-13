@@ -26,7 +26,10 @@ class GetModelVersionSetResult:
     """
     A collection of values returned by getModelVersionSet.
     """
-    def __init__(__self__, compartment_id=None, created_by=None, defined_tags=None, description=None, freeform_tags=None, id=None, model_version_set_id=None, name=None, project_id=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, category=None, compartment_id=None, created_by=None, defined_tags=None, description=None, freeform_tags=None, id=None, model_version_set_id=None, name=None, project_id=None, state=None, system_tags=None, time_created=None, time_updated=None):
+        if category and not isinstance(category, str):
+            raise TypeError("Expected argument 'category' to be a str")
+        pulumi.set(__self__, "category", category)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -66,6 +69,14 @@ class GetModelVersionSetResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter
+    def category(self) -> str:
+        """
+        The category of the model version set.
+        """
+        return pulumi.get(self, "category")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -175,6 +186,7 @@ class AwaitableGetModelVersionSetResult(GetModelVersionSetResult):
         if False:
             yield self
         return GetModelVersionSetResult(
+            category=self.category,
             compartment_id=self.compartment_id,
             created_by=self.created_by,
             defined_tags=self.defined_tags,
@@ -215,6 +227,7 @@ def get_model_version_set(model_version_set_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataScience/getModelVersionSet:getModelVersionSet', __args__, opts=opts, typ=GetModelVersionSetResult).value
 
     return AwaitableGetModelVersionSetResult(
+        category=pulumi.get(__ret__, 'category'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         created_by=pulumi.get(__ret__, 'created_by'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
@@ -252,6 +265,7 @@ def get_model_version_set_output(model_version_set_id: Optional[pulumi.Input[str
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataScience/getModelVersionSet:getModelVersionSet', __args__, opts=opts, typ=GetModelVersionSetResult)
     return __ret__.apply(lambda __response__: GetModelVersionSetResult(
+        category=pulumi.get(__response__, 'category'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         created_by=pulumi.get(__response__, 'created_by'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),

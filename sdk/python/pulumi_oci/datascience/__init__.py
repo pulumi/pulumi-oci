@@ -13,6 +13,8 @@ from .get_job_runs import *
 from .get_job_shapes import *
 from .get_jobs import *
 from .get_model import *
+from .get_model_custom_metadata_artifact_content import *
+from .get_model_defined_metadata_artifact_content import *
 from .get_model_deployment import *
 from .get_model_deployment_shapes import *
 from .get_model_deployments import *
@@ -38,6 +40,8 @@ from .job_run import *
 from .model import *
 from .model_artifact_export import *
 from .model_artifact_import import *
+from .model_custom_metadata_artifact import *
+from .model_defined_metadata_artifact import *
 from .model_deployment import *
 from .model_provenance import *
 from .model_version_set import *

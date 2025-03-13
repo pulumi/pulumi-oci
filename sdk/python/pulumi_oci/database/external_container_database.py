@@ -122,7 +122,7 @@ class _ExternalContainerDatabaseState:
         :param pulumi.Input[str] character_set: The character set of the external database.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[str] database_configuration: The Oracle Database configuration
-        :param pulumi.Input[str] database_edition: The Oracle Database edition.
+        :param pulumi.Input[str] database_edition: The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
         :param pulumi.Input[Sequence[pulumi.Input['ExternalContainerDatabaseDatabaseManagementConfigArgs']]] database_management_configs: The configuration of the Database Management service.
         :param pulumi.Input[str] database_version: The Oracle Database version.
         :param pulumi.Input[str] db_id: The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
@@ -219,7 +219,7 @@ class _ExternalContainerDatabaseState:
     @pulumi.getter(name="databaseEdition")
     def database_edition(self) -> Optional[pulumi.Input[str]]:
         """
-        The Oracle Database edition.
+        The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
         """
         return pulumi.get(self, "database_edition")
 
@@ -571,7 +571,7 @@ class ExternalContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] character_set: The character set of the external database.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[str] database_configuration: The Oracle Database configuration
-        :param pulumi.Input[str] database_edition: The Oracle Database edition.
+        :param pulumi.Input[str] database_edition: The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ExternalContainerDatabaseDatabaseManagementConfigArgs', 'ExternalContainerDatabaseDatabaseManagementConfigArgsDict']]]] database_management_configs: The configuration of the Database Management service.
         :param pulumi.Input[str] database_version: The Oracle Database version.
         :param pulumi.Input[str] db_id: The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
@@ -643,7 +643,7 @@ class ExternalContainerDatabase(pulumi.CustomResource):
     @pulumi.getter(name="databaseEdition")
     def database_edition(self) -> pulumi.Output[str]:
         """
-        The Oracle Database edition.
+        The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
         """
         return pulumi.get(self, "database_edition")
 

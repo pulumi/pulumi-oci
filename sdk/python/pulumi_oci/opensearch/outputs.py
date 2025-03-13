@@ -20,9 +20,15 @@ __all__ = [
     'ClusterOutboundClusterConfig',
     'ClusterOutboundClusterConfigOutboundCluster',
     'ClusterReverseConnectionEndpoint',
+    'OpensearchClusterPipelineReverseConnectionEndpoint',
     'GetOpensearchClusterMaintenanceDetailResult',
     'GetOpensearchClusterOutboundClusterConfigResult',
     'GetOpensearchClusterOutboundClusterConfigOutboundClusterResult',
+    'GetOpensearchClusterPipelineReverseConnectionEndpointResult',
+    'GetOpensearchClusterPipelinesFilterResult',
+    'GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionResult',
+    'GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemResult',
+    'GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointResult',
     'GetOpensearchClusterReverseConnectionEndpointResult',
     'GetOpensearchClustersFilterResult',
     'GetOpensearchClustersOpensearchClusterCollectionResult',
@@ -300,6 +306,54 @@ class ClusterReverseConnectionEndpoint(dict):
 
 
 @pulumi.output_type
+class OpensearchClusterPipelineReverseConnectionEndpoint(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customerFqdn":
+            suggest = "customer_fqdn"
+        elif key == "customerIp":
+            suggest = "customer_ip"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OpensearchClusterPipelineReverseConnectionEndpoint. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OpensearchClusterPipelineReverseConnectionEndpoint.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OpensearchClusterPipelineReverseConnectionEndpoint.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 customer_fqdn: str,
+                 customer_ip: str):
+        """
+        :param str customer_fqdn: (Updatable) The fully qualified domain name of the customerIp in the customer VCN
+        :param str customer_ip: (Updatable) The IPv4 address in the customer VCN
+        """
+        pulumi.set(__self__, "customer_fqdn", customer_fqdn)
+        pulumi.set(__self__, "customer_ip", customer_ip)
+
+    @property
+    @pulumi.getter(name="customerFqdn")
+    def customer_fqdn(self) -> str:
+        """
+        (Updatable) The fully qualified domain name of the customerIp in the customer VCN
+        """
+        return pulumi.get(self, "customer_fqdn")
+
+    @property
+    @pulumi.getter(name="customerIp")
+    def customer_ip(self) -> str:
+        """
+        (Updatable) The IPv4 address in the customer VCN
+        """
+        return pulumi.get(self, "customer_ip")
+
+
+@pulumi.output_type
 class GetOpensearchClusterMaintenanceDetailResult(dict):
     def __init__(__self__, *,
                  end_time: str,
@@ -442,6 +496,370 @@ class GetOpensearchClusterOutboundClusterConfigOutboundClusterResult(dict):
 
 
 @pulumi.output_type
+class GetOpensearchClusterPipelineReverseConnectionEndpointResult(dict):
+    def __init__(__self__, *,
+                 customer_fqdn: str,
+                 customer_ip: str):
+        """
+        :param str customer_fqdn: The fully qualified domain name of the customerIp in the customer VCN
+        :param str customer_ip: The IPv4 address in the customer VCN
+        """
+        pulumi.set(__self__, "customer_fqdn", customer_fqdn)
+        pulumi.set(__self__, "customer_ip", customer_ip)
+
+    @property
+    @pulumi.getter(name="customerFqdn")
+    def customer_fqdn(self) -> str:
+        """
+        The fully qualified domain name of the customerIp in the customer VCN
+        """
+        return pulumi.get(self, "customer_fqdn")
+
+    @property
+    @pulumi.getter(name="customerIp")
+    def customer_ip(self) -> str:
+        """
+        The IPv4 address in the customer VCN
+        """
+        return pulumi.get(self, "customer_ip")
+
+
+@pulumi.output_type
+class GetOpensearchClusterPipelinesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 data_prepper_configuration_body: str,
+                 defined_tags: Mapping[str, str],
+                 display_name: str,
+                 freeform_tags: Mapping[str, str],
+                 id: str,
+                 memory_gb: int,
+                 node_count: int,
+                 nsg_id: str,
+                 ocpu_count: int,
+                 opc_dry_run: bool,
+                 opensearch_pipeline_fqdn: str,
+                 opensearch_pipeline_private_ip: str,
+                 pipeline_configuration_body: str,
+                 pipeline_mode: str,
+                 reverse_connection_endpoints: Sequence['outputs.GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointResult'],
+                 state: str,
+                 subnet_compartment_id: str,
+                 subnet_id: str,
+                 system_tags: Mapping[str, str],
+                 time_created: str,
+                 time_updated: str,
+                 vcn_compartment_id: str,
+                 vcn_id: str):
+        """
+        :param str compartment_id: The ID of the compartment in which to list resources.
+        :param str data_prepper_configuration_body: The data prepper config in YAML format. The command accepts the data prepper config as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \\.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param str display_name: A filter to return only resources that match the entire display name given.
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param str id: unique OpensearchClusterPipeline identifier
+        :param int memory_gb: The amount of memory in GB, for each pipeline node.
+        :param int node_count: The number of nodes configured for the pipeline.
+        :param str nsg_id: The OCID of the NSG where the pipeline private endpoint vnic will be attached.
+        :param int ocpu_count: The number of OCPUs configured for each pipeline node.
+        :param str opensearch_pipeline_fqdn: The fully qualified domain name (FQDN) for the cluster's API endpoint.
+        :param str opensearch_pipeline_private_ip: The pipeline's private IP address.
+        :param str pipeline_configuration_body: The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \\.
+        :param str pipeline_mode: The current state of the pipeline.
+        :param Sequence['GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArgs'] reverse_connection_endpoints: The customer IP and the corresponding fully qualified domain name that the pipeline will connect to.
+        :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+        :param str subnet_compartment_id: The OCID for the compartment where the pipeline's subnet is located.
+        :param str subnet_id: The OCID of the pipeline's subnet.
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The date and time the cluster pipeline was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_updated: The amount of time in milliseconds since the pipeline was updated.
+        :param str vcn_compartment_id: The OCID for the compartment where the pipeline's VCN is located.
+        :param str vcn_id: The OCID of the pipeline's VCN.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "data_prepper_configuration_body", data_prepper_configuration_body)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "memory_gb", memory_gb)
+        pulumi.set(__self__, "node_count", node_count)
+        pulumi.set(__self__, "nsg_id", nsg_id)
+        pulumi.set(__self__, "ocpu_count", ocpu_count)
+        pulumi.set(__self__, "opc_dry_run", opc_dry_run)
+        pulumi.set(__self__, "opensearch_pipeline_fqdn", opensearch_pipeline_fqdn)
+        pulumi.set(__self__, "opensearch_pipeline_private_ip", opensearch_pipeline_private_ip)
+        pulumi.set(__self__, "pipeline_configuration_body", pipeline_configuration_body)
+        pulumi.set(__self__, "pipeline_mode", pipeline_mode)
+        pulumi.set(__self__, "reverse_connection_endpoints", reverse_connection_endpoints)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "subnet_compartment_id", subnet_compartment_id)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "vcn_compartment_id", vcn_compartment_id)
+        pulumi.set(__self__, "vcn_id", vcn_id)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The ID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="dataPrepperConfigurationBody")
+    def data_prepper_configuration_body(self) -> str:
+        """
+        The data prepper config in YAML format. The command accepts the data prepper config as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \\.
+        """
+        return pulumi.get(self, "data_prepper_configuration_body")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        unique OpensearchClusterPipeline identifier
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="memoryGb")
+    def memory_gb(self) -> int:
+        """
+        The amount of memory in GB, for each pipeline node.
+        """
+        return pulumi.get(self, "memory_gb")
+
+    @property
+    @pulumi.getter(name="nodeCount")
+    def node_count(self) -> int:
+        """
+        The number of nodes configured for the pipeline.
+        """
+        return pulumi.get(self, "node_count")
+
+    @property
+    @pulumi.getter(name="nsgId")
+    def nsg_id(self) -> str:
+        """
+        The OCID of the NSG where the pipeline private endpoint vnic will be attached.
+        """
+        return pulumi.get(self, "nsg_id")
+
+    @property
+    @pulumi.getter(name="ocpuCount")
+    def ocpu_count(self) -> int:
+        """
+        The number of OCPUs configured for each pipeline node.
+        """
+        return pulumi.get(self, "ocpu_count")
+
+    @property
+    @pulumi.getter(name="opcDryRun")
+    def opc_dry_run(self) -> bool:
+        return pulumi.get(self, "opc_dry_run")
+
+    @property
+    @pulumi.getter(name="opensearchPipelineFqdn")
+    def opensearch_pipeline_fqdn(self) -> str:
+        """
+        The fully qualified domain name (FQDN) for the cluster's API endpoint.
+        """
+        return pulumi.get(self, "opensearch_pipeline_fqdn")
+
+    @property
+    @pulumi.getter(name="opensearchPipelinePrivateIp")
+    def opensearch_pipeline_private_ip(self) -> str:
+        """
+        The pipeline's private IP address.
+        """
+        return pulumi.get(self, "opensearch_pipeline_private_ip")
+
+    @property
+    @pulumi.getter(name="pipelineConfigurationBody")
+    def pipeline_configuration_body(self) -> str:
+        """
+        The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \\.
+        """
+        return pulumi.get(self, "pipeline_configuration_body")
+
+    @property
+    @pulumi.getter(name="pipelineMode")
+    def pipeline_mode(self) -> str:
+        """
+        The current state of the pipeline.
+        """
+        return pulumi.get(self, "pipeline_mode")
+
+    @property
+    @pulumi.getter(name="reverseConnectionEndpoints")
+    def reverse_connection_endpoints(self) -> Sequence['outputs.GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointResult']:
+        """
+        The customer IP and the corresponding fully qualified domain name that the pipeline will connect to.
+        """
+        return pulumi.get(self, "reverse_connection_endpoints")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only resources their lifecycleState matches the given lifecycleState.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="subnetCompartmentId")
+    def subnet_compartment_id(self) -> str:
+        """
+        The OCID for the compartment where the pipeline's subnet is located.
+        """
+        return pulumi.get(self, "subnet_compartment_id")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        The OCID of the pipeline's subnet.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the cluster pipeline was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The amount of time in milliseconds since the pipeline was updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="vcnCompartmentId")
+    def vcn_compartment_id(self) -> str:
+        """
+        The OCID for the compartment where the pipeline's VCN is located.
+        """
+        return pulumi.get(self, "vcn_compartment_id")
+
+    @property
+    @pulumi.getter(name="vcnId")
+    def vcn_id(self) -> str:
+        """
+        The OCID of the pipeline's VCN.
+        """
+        return pulumi.get(self, "vcn_id")
+
+
+@pulumi.output_type
+class GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointResult(dict):
+    def __init__(__self__, *,
+                 customer_fqdn: str,
+                 customer_ip: str):
+        """
+        :param str customer_fqdn: The fully qualified domain name of the customerIp in the customer VCN
+        :param str customer_ip: The IPv4 address in the customer VCN
+        """
+        pulumi.set(__self__, "customer_fqdn", customer_fqdn)
+        pulumi.set(__self__, "customer_ip", customer_ip)
+
+    @property
+    @pulumi.getter(name="customerFqdn")
+    def customer_fqdn(self) -> str:
+        """
+        The fully qualified domain name of the customerIp in the customer VCN
+        """
+        return pulumi.get(self, "customer_fqdn")
+
+    @property
+    @pulumi.getter(name="customerIp")
+    def customer_ip(self) -> str:
+        """
+        The IPv4 address in the customer VCN
+        """
+        return pulumi.get(self, "customer_ip")
+
+
+@pulumi.output_type
 class GetOpensearchClusterReverseConnectionEndpointResult(dict):
     def __init__(__self__, *,
                  customer_ip: str,
@@ -556,6 +974,7 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
                  time_deleted: str,
                  time_updated: str,
                  total_storage_gb: int,
+                 upgrade_major_version_trigger: int,
                  vcn_compartment_id: str,
                  vcn_id: str):
         """
@@ -649,6 +1068,7 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         pulumi.set(__self__, "time_deleted", time_deleted)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "total_storage_gb", total_storage_gb)
+        pulumi.set(__self__, "upgrade_major_version_trigger", upgrade_major_version_trigger)
         pulumi.set(__self__, "vcn_compartment_id", vcn_compartment_id)
         pulumi.set(__self__, "vcn_id", vcn_id)
 
@@ -1000,6 +1420,11 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         The size in GB of the cluster's total storage.
         """
         return pulumi.get(self, "total_storage_gb")
+
+    @property
+    @pulumi.getter(name="upgradeMajorVersionTrigger")
+    def upgrade_major_version_trigger(self) -> int:
+        return pulumi.get(self, "upgrade_major_version_trigger")
 
     @property
     @pulumi.getter(name="vcnCompartmentId")

@@ -23,6 +23,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "oci:Opensearch/cluster:Cluster":
 		r = &Cluster{}
+	case "oci:Opensearch/opensearchClusterPipeline:OpensearchClusterPipeline":
+		r = &OpensearchClusterPipeline{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -39,6 +41,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Opensearch/cluster",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Opensearch/opensearchClusterPipeline",
 		&module{version},
 	)
 }

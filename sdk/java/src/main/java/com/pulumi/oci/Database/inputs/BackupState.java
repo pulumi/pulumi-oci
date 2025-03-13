@@ -6,7 +6,9 @@ package com.pulumi.oci.Database.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.BackupEncryptionKeyLocationDetailArgs;
+import java.lang.Boolean;
 import java.lang.Double;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -33,6 +35,13 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.availabilityDomain);
     }
 
+    @Import(name="backupDestinationType")
+    private @Nullable Output<String> backupDestinationType;
+
+    public Optional<Output<String>> backupDestinationType() {
+        return Optional.ofNullable(this.backupDestinationType);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -49,14 +58,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The Oracle Database edition of the DB system from which the database backup was taken.
+     * The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      * 
      */
     @Import(name="databaseEdition")
     private @Nullable Output<String> databaseEdition;
 
     /**
-     * @return The Oracle Database edition of the DB system from which the database backup was taken.
+     * @return The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      * 
      */
     public Optional<Output<String>> databaseEdition() {
@@ -127,6 +136,13 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<List<BackupEncryptionKeyLocationDetailArgs>>> encryptionKeyLocationDetails() {
         return Optional.ofNullable(this.encryptionKeyLocationDetails);
+    }
+
+    @Import(name="isUsingOracleManagedKeys")
+    private @Nullable Output<Boolean> isUsingOracleManagedKeys;
+
+    public Optional<Output<Boolean>> isUsingOracleManagedKeys() {
+        return Optional.ofNullable(this.isUsingOracleManagedKeys);
     }
 
     /**
@@ -204,6 +220,27 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.lifecycleDetails);
     }
 
+    @Import(name="retentionPeriodInDays")
+    private @Nullable Output<Integer> retentionPeriodInDays;
+
+    public Optional<Output<Integer>> retentionPeriodInDays() {
+        return Optional.ofNullable(this.retentionPeriodInDays);
+    }
+
+    @Import(name="retentionPeriodInYears")
+    private @Nullable Output<Integer> retentionPeriodInYears;
+
+    public Optional<Output<Integer>> retentionPeriodInYears() {
+        return Optional.ofNullable(this.retentionPeriodInYears);
+    }
+
+    @Import(name="secondaryKmsKeyIds")
+    private @Nullable Output<List<String>> secondaryKmsKeyIds;
+
+    public Optional<Output<List<String>>> secondaryKmsKeyIds() {
+        return Optional.ofNullable(this.secondaryKmsKeyIds);
+    }
+
     /**
      * Shape of the backup&#39;s source database.
      * 
@@ -247,6 +284,13 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> timeEnded() {
         return Optional.ofNullable(this.timeEnded);
+    }
+
+    @Import(name="timeExpiryScheduled")
+    private @Nullable Output<String> timeExpiryScheduled;
+
+    public Optional<Output<String>> timeExpiryScheduled() {
+        return Optional.ofNullable(this.timeExpiryScheduled);
     }
 
     /**
@@ -313,20 +357,26 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     private BackupState(BackupState $) {
         this.availabilityDomain = $.availabilityDomain;
+        this.backupDestinationType = $.backupDestinationType;
         this.compartmentId = $.compartmentId;
         this.databaseEdition = $.databaseEdition;
         this.databaseId = $.databaseId;
         this.databaseSizeInGbs = $.databaseSizeInGbs;
         this.displayName = $.displayName;
         this.encryptionKeyLocationDetails = $.encryptionKeyLocationDetails;
+        this.isUsingOracleManagedKeys = $.isUsingOracleManagedKeys;
         this.keyStoreId = $.keyStoreId;
         this.keyStoreWalletName = $.keyStoreWalletName;
         this.kmsKeyId = $.kmsKeyId;
         this.kmsKeyVersionId = $.kmsKeyVersionId;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.retentionPeriodInDays = $.retentionPeriodInDays;
+        this.retentionPeriodInYears = $.retentionPeriodInYears;
+        this.secondaryKmsKeyIds = $.secondaryKmsKeyIds;
         this.shape = $.shape;
         this.state = $.state;
         this.timeEnded = $.timeEnded;
+        this.timeExpiryScheduled = $.timeExpiryScheduled;
         this.timeStarted = $.timeStarted;
         this.type = $.type;
         this.vaultId = $.vaultId;
@@ -372,6 +422,15 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
             return availabilityDomain(Output.of(availabilityDomain));
         }
 
+        public Builder backupDestinationType(@Nullable Output<String> backupDestinationType) {
+            $.backupDestinationType = backupDestinationType;
+            return this;
+        }
+
+        public Builder backupDestinationType(String backupDestinationType) {
+            return backupDestinationType(Output.of(backupDestinationType));
+        }
+
         /**
          * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * 
@@ -394,7 +453,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param databaseEdition The Oracle Database edition of the DB system from which the database backup was taken.
+         * @param databaseEdition The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
          * 
          * @return builder
          * 
@@ -405,7 +464,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param databaseEdition The Oracle Database edition of the DB system from which the database backup was taken.
+         * @param databaseEdition The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
          * 
          * @return builder
          * 
@@ -514,6 +573,15 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
             return encryptionKeyLocationDetails(List.of(encryptionKeyLocationDetails));
         }
 
+        public Builder isUsingOracleManagedKeys(@Nullable Output<Boolean> isUsingOracleManagedKeys) {
+            $.isUsingOracleManagedKeys = isUsingOracleManagedKeys;
+            return this;
+        }
+
+        public Builder isUsingOracleManagedKeys(Boolean isUsingOracleManagedKeys) {
+            return isUsingOracleManagedKeys(Output.of(isUsingOracleManagedKeys));
+        }
+
         /**
          * @param keyStoreId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
          * 
@@ -619,6 +687,37 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
             return lifecycleDetails(Output.of(lifecycleDetails));
         }
 
+        public Builder retentionPeriodInDays(@Nullable Output<Integer> retentionPeriodInDays) {
+            $.retentionPeriodInDays = retentionPeriodInDays;
+            return this;
+        }
+
+        public Builder retentionPeriodInDays(Integer retentionPeriodInDays) {
+            return retentionPeriodInDays(Output.of(retentionPeriodInDays));
+        }
+
+        public Builder retentionPeriodInYears(@Nullable Output<Integer> retentionPeriodInYears) {
+            $.retentionPeriodInYears = retentionPeriodInYears;
+            return this;
+        }
+
+        public Builder retentionPeriodInYears(Integer retentionPeriodInYears) {
+            return retentionPeriodInYears(Output.of(retentionPeriodInYears));
+        }
+
+        public Builder secondaryKmsKeyIds(@Nullable Output<List<String>> secondaryKmsKeyIds) {
+            $.secondaryKmsKeyIds = secondaryKmsKeyIds;
+            return this;
+        }
+
+        public Builder secondaryKmsKeyIds(List<String> secondaryKmsKeyIds) {
+            return secondaryKmsKeyIds(Output.of(secondaryKmsKeyIds));
+        }
+
+        public Builder secondaryKmsKeyIds(String... secondaryKmsKeyIds) {
+            return secondaryKmsKeyIds(List.of(secondaryKmsKeyIds));
+        }
+
         /**
          * @param shape Shape of the backup&#39;s source database.
          * 
@@ -680,6 +779,15 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder timeEnded(String timeEnded) {
             return timeEnded(Output.of(timeEnded));
+        }
+
+        public Builder timeExpiryScheduled(@Nullable Output<String> timeExpiryScheduled) {
+            $.timeExpiryScheduled = timeExpiryScheduled;
+            return this;
+        }
+
+        public Builder timeExpiryScheduled(String timeExpiryScheduled) {
+            return timeExpiryScheduled(Output.of(timeExpiryScheduled));
         }
 
         /**

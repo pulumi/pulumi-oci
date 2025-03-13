@@ -38,6 +38,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string MaskingPolicyId;
         /// <summary>
+        /// The status of the masking job.
+        /// </summary>
+        public readonly string MaskingStatus;
+        /// <summary>
         /// The OCID of the masking work request that resulted in this masking report.
         /// </summary>
         public readonly string MaskingWorkRequestId;
@@ -89,6 +93,14 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// The total number of masked values.
         /// </summary>
         public readonly string TotalMaskedValues;
+        /// <summary>
+        /// The total number of errors in post-masking script.
+        /// </summary>
+        public readonly string TotalPostMaskingScriptErrors;
+        /// <summary>
+        /// The total number of errors in pre-masking script.
+        /// </summary>
+        public readonly string TotalPreMaskingScriptErrors;
 
         [OutputConstructor]
         private GetMaskingReportsMaskingReportCollectionItemResult(
@@ -103,6 +115,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
             bool isRefreshStatsEnabled,
 
             string maskingPolicyId,
+
+            string maskingStatus,
 
             string maskingWorkRequestId,
 
@@ -128,7 +142,11 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string totalMaskedSensitiveTypes,
 
-            string totalMaskedValues)
+            string totalMaskedValues,
+
+            string totalPostMaskingScriptErrors,
+
+            string totalPreMaskingScriptErrors)
         {
             CompartmentId = compartmentId;
             Id = id;
@@ -136,6 +154,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
             IsRedoLoggingEnabled = isRedoLoggingEnabled;
             IsRefreshStatsEnabled = isRefreshStatsEnabled;
             MaskingPolicyId = maskingPolicyId;
+            MaskingStatus = maskingStatus;
             MaskingWorkRequestId = maskingWorkRequestId;
             ParallelDegree = parallelDegree;
             Recompile = recompile;
@@ -149,6 +168,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
             TotalMaskedSchemas = totalMaskedSchemas;
             TotalMaskedSensitiveTypes = totalMaskedSensitiveTypes;
             TotalMaskedValues = totalMaskedValues;
+            TotalPostMaskingScriptErrors = totalPostMaskingScriptErrors;
+            TotalPreMaskingScriptErrors = totalPreMaskingScriptErrors;
         }
     }
 }

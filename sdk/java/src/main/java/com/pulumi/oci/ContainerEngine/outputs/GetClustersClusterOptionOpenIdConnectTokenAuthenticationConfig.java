@@ -24,6 +24,11 @@ public final class GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfi
      */
     private String clientId;
     /**
+     * @return A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+     * 
+     */
+    private String configurationFile;
+    /**
      * @return JWT claim to use as the user&#39;s group. If the claim is present it must be an array of strings.
      * 
      */
@@ -78,6 +83,13 @@ public final class GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfi
      */
     public String clientId() {
         return this.clientId;
+    }
+    /**
+     * @return A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+     * 
+     */
+    public String configurationFile() {
+        return this.configurationFile;
     }
     /**
      * @return JWT claim to use as the user&#39;s group. If the claim is present it must be an array of strings.
@@ -147,6 +159,7 @@ public final class GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfi
     public static final class Builder {
         private String caCertificate;
         private String clientId;
+        private String configurationFile;
         private String groupsClaim;
         private String groupsPrefix;
         private Boolean isOpenIdConnectAuthEnabled;
@@ -160,6 +173,7 @@ public final class GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfi
     	      Objects.requireNonNull(defaults);
     	      this.caCertificate = defaults.caCertificate;
     	      this.clientId = defaults.clientId;
+    	      this.configurationFile = defaults.configurationFile;
     	      this.groupsClaim = defaults.groupsClaim;
     	      this.groupsPrefix = defaults.groupsPrefix;
     	      this.isOpenIdConnectAuthEnabled = defaults.isOpenIdConnectAuthEnabled;
@@ -184,6 +198,14 @@ public final class GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfi
               throw new MissingRequiredPropertyException("GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfig", "clientId");
             }
             this.clientId = clientId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder configurationFile(String configurationFile) {
+            if (configurationFile == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfig", "configurationFile");
+            }
+            this.configurationFile = configurationFile;
             return this;
         }
         @CustomType.Setter
@@ -260,6 +282,7 @@ public final class GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfi
             final var _resultValue = new GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfig();
             _resultValue.caCertificate = caCertificate;
             _resultValue.clientId = clientId;
+            _resultValue.configurationFile = configurationFile;
             _resultValue.groupsClaim = groupsClaim;
             _resultValue.groupsPrefix = groupsPrefix;
             _resultValue.isOpenIdConnectAuthEnabled = isOpenIdConnectAuthEnabled;

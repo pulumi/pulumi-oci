@@ -27,7 +27,7 @@ class GetVmClusterResult:
     """
     A collection of values returned by getVmCluster.
     """
-    def __init__(__self__, availability_domain=None, cloud_automation_update_details=None, compartment_id=None, cpu_core_count=None, cpus_enabled=None, data_collection_options=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, file_system_configuration_details=None, freeform_tags=None, gi_version=None, id=None, is_local_backup_enabled=None, is_sparse_diskgroup_enabled=None, last_patch_history_entry_id=None, license_model=None, lifecycle_details=None, memory_size_in_gbs=None, ocpu_count=None, ocpus_enabled=None, shape=None, ssh_public_keys=None, state=None, system_version=None, time_created=None, time_zone=None, vm_cluster_id=None, vm_cluster_network_id=None):
+    def __init__(__self__, availability_domain=None, cloud_automation_update_details=None, compartment_id=None, compute_model=None, cpu_core_count=None, cpus_enabled=None, data_collection_options=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, exascale_db_storage_vault_id=None, file_system_configuration_details=None, freeform_tags=None, gi_version=None, id=None, is_local_backup_enabled=None, is_sparse_diskgroup_enabled=None, last_patch_history_entry_id=None, license_model=None, lifecycle_details=None, memory_size_in_gbs=None, ocpu_count=None, ocpus_enabled=None, shape=None, ssh_public_keys=None, state=None, storage_management_type=None, system_version=None, time_created=None, time_zone=None, vm_cluster_id=None, vm_cluster_network_id=None, vm_cluster_type=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -37,6 +37,9 @@ class GetVmClusterResult:
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if compute_model and not isinstance(compute_model, str):
+            raise TypeError("Expected argument 'compute_model' to be a str")
+        pulumi.set(__self__, "compute_model", compute_model)
         if cpu_core_count and not isinstance(cpu_core_count, int):
             raise TypeError("Expected argument 'cpu_core_count' to be a int")
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
@@ -67,6 +70,9 @@ class GetVmClusterResult:
         if exadata_infrastructure_id and not isinstance(exadata_infrastructure_id, str):
             raise TypeError("Expected argument 'exadata_infrastructure_id' to be a str")
         pulumi.set(__self__, "exadata_infrastructure_id", exadata_infrastructure_id)
+        if exascale_db_storage_vault_id and not isinstance(exascale_db_storage_vault_id, str):
+            raise TypeError("Expected argument 'exascale_db_storage_vault_id' to be a str")
+        pulumi.set(__self__, "exascale_db_storage_vault_id", exascale_db_storage_vault_id)
         if file_system_configuration_details and not isinstance(file_system_configuration_details, list):
             raise TypeError("Expected argument 'file_system_configuration_details' to be a list")
         pulumi.set(__self__, "file_system_configuration_details", file_system_configuration_details)
@@ -112,6 +118,9 @@ class GetVmClusterResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if storage_management_type and not isinstance(storage_management_type, str):
+            raise TypeError("Expected argument 'storage_management_type' to be a str")
+        pulumi.set(__self__, "storage_management_type", storage_management_type)
         if system_version and not isinstance(system_version, str):
             raise TypeError("Expected argument 'system_version' to be a str")
         pulumi.set(__self__, "system_version", system_version)
@@ -127,6 +136,9 @@ class GetVmClusterResult:
         if vm_cluster_network_id and not isinstance(vm_cluster_network_id, str):
             raise TypeError("Expected argument 'vm_cluster_network_id' to be a str")
         pulumi.set(__self__, "vm_cluster_network_id", vm_cluster_network_id)
+        if vm_cluster_type and not isinstance(vm_cluster_type, str):
+            raise TypeError("Expected argument 'vm_cluster_type' to be a str")
+        pulumi.set(__self__, "vm_cluster_type", vm_cluster_type)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -151,6 +163,14 @@ class GetVmClusterResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> str:
+        """
+        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        """
+        return pulumi.get(self, "compute_model")
 
     @property
     @pulumi.getter(name="cpuCoreCount")
@@ -228,6 +248,14 @@ class GetVmClusterResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         """
         return pulumi.get(self, "exadata_infrastructure_id")
+
+    @property
+    @pulumi.getter(name="exascaleDbStorageVaultId")
+    def exascale_db_storage_vault_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+        """
+        return pulumi.get(self, "exascale_db_storage_vault_id")
 
     @property
     @pulumi.getter(name="fileSystemConfigurationDetails")
@@ -344,6 +372,14 @@ class GetVmClusterResult:
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="storageManagementType")
+    def storage_management_type(self) -> str:
+        """
+        Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
+        """
+        return pulumi.get(self, "storage_management_type")
+
+    @property
     @pulumi.getter(name="systemVersion")
     def system_version(self) -> str:
         """
@@ -380,6 +416,14 @@ class GetVmClusterResult:
         """
         return pulumi.get(self, "vm_cluster_network_id")
 
+    @property
+    @pulumi.getter(name="vmClusterType")
+    def vm_cluster_type(self) -> str:
+        """
+        The vmcluster type for the VM cluster/Cloud VM cluster.
+        """
+        return pulumi.get(self, "vm_cluster_type")
+
 
 class AwaitableGetVmClusterResult(GetVmClusterResult):
     # pylint: disable=using-constant-test
@@ -390,6 +434,7 @@ class AwaitableGetVmClusterResult(GetVmClusterResult):
             availability_domain=self.availability_domain,
             cloud_automation_update_details=self.cloud_automation_update_details,
             compartment_id=self.compartment_id,
+            compute_model=self.compute_model,
             cpu_core_count=self.cpu_core_count,
             cpus_enabled=self.cpus_enabled,
             data_collection_options=self.data_collection_options,
@@ -400,6 +445,7 @@ class AwaitableGetVmClusterResult(GetVmClusterResult):
             defined_tags=self.defined_tags,
             display_name=self.display_name,
             exadata_infrastructure_id=self.exadata_infrastructure_id,
+            exascale_db_storage_vault_id=self.exascale_db_storage_vault_id,
             file_system_configuration_details=self.file_system_configuration_details,
             freeform_tags=self.freeform_tags,
             gi_version=self.gi_version,
@@ -415,11 +461,13 @@ class AwaitableGetVmClusterResult(GetVmClusterResult):
             shape=self.shape,
             ssh_public_keys=self.ssh_public_keys,
             state=self.state,
+            storage_management_type=self.storage_management_type,
             system_version=self.system_version,
             time_created=self.time_created,
             time_zone=self.time_zone,
             vm_cluster_id=self.vm_cluster_id,
-            vm_cluster_network_id=self.vm_cluster_network_id)
+            vm_cluster_network_id=self.vm_cluster_network_id,
+            vm_cluster_type=self.vm_cluster_type)
 
 
 def get_vm_cluster(vm_cluster_id: Optional[str] = None,
@@ -450,6 +498,7 @@ def get_vm_cluster(vm_cluster_id: Optional[str] = None,
         availability_domain=pulumi.get(__ret__, 'availability_domain'),
         cloud_automation_update_details=pulumi.get(__ret__, 'cloud_automation_update_details'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compute_model=pulumi.get(__ret__, 'compute_model'),
         cpu_core_count=pulumi.get(__ret__, 'cpu_core_count'),
         cpus_enabled=pulumi.get(__ret__, 'cpus_enabled'),
         data_collection_options=pulumi.get(__ret__, 'data_collection_options'),
@@ -460,6 +509,7 @@ def get_vm_cluster(vm_cluster_id: Optional[str] = None,
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
         exadata_infrastructure_id=pulumi.get(__ret__, 'exadata_infrastructure_id'),
+        exascale_db_storage_vault_id=pulumi.get(__ret__, 'exascale_db_storage_vault_id'),
         file_system_configuration_details=pulumi.get(__ret__, 'file_system_configuration_details'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         gi_version=pulumi.get(__ret__, 'gi_version'),
@@ -475,11 +525,13 @@ def get_vm_cluster(vm_cluster_id: Optional[str] = None,
         shape=pulumi.get(__ret__, 'shape'),
         ssh_public_keys=pulumi.get(__ret__, 'ssh_public_keys'),
         state=pulumi.get(__ret__, 'state'),
+        storage_management_type=pulumi.get(__ret__, 'storage_management_type'),
         system_version=pulumi.get(__ret__, 'system_version'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_zone=pulumi.get(__ret__, 'time_zone'),
         vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'),
-        vm_cluster_network_id=pulumi.get(__ret__, 'vm_cluster_network_id'))
+        vm_cluster_network_id=pulumi.get(__ret__, 'vm_cluster_network_id'),
+        vm_cluster_type=pulumi.get(__ret__, 'vm_cluster_type'))
 def get_vm_cluster_output(vm_cluster_id: Optional[pulumi.Input[str]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVmClusterResult]:
     """
@@ -507,6 +559,7 @@ def get_vm_cluster_output(vm_cluster_id: Optional[pulumi.Input[str]] = None,
         availability_domain=pulumi.get(__response__, 'availability_domain'),
         cloud_automation_update_details=pulumi.get(__response__, 'cloud_automation_update_details'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compute_model=pulumi.get(__response__, 'compute_model'),
         cpu_core_count=pulumi.get(__response__, 'cpu_core_count'),
         cpus_enabled=pulumi.get(__response__, 'cpus_enabled'),
         data_collection_options=pulumi.get(__response__, 'data_collection_options'),
@@ -517,6 +570,7 @@ def get_vm_cluster_output(vm_cluster_id: Optional[pulumi.Input[str]] = None,
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         display_name=pulumi.get(__response__, 'display_name'),
         exadata_infrastructure_id=pulumi.get(__response__, 'exadata_infrastructure_id'),
+        exascale_db_storage_vault_id=pulumi.get(__response__, 'exascale_db_storage_vault_id'),
         file_system_configuration_details=pulumi.get(__response__, 'file_system_configuration_details'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         gi_version=pulumi.get(__response__, 'gi_version'),
@@ -532,8 +586,10 @@ def get_vm_cluster_output(vm_cluster_id: Optional[pulumi.Input[str]] = None,
         shape=pulumi.get(__response__, 'shape'),
         ssh_public_keys=pulumi.get(__response__, 'ssh_public_keys'),
         state=pulumi.get(__response__, 'state'),
+        storage_management_type=pulumi.get(__response__, 'storage_management_type'),
         system_version=pulumi.get(__response__, 'system_version'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_zone=pulumi.get(__response__, 'time_zone'),
         vm_cluster_id=pulumi.get(__response__, 'vm_cluster_id'),
-        vm_cluster_network_id=pulumi.get(__response__, 'vm_cluster_network_id')))
+        vm_cluster_network_id=pulumi.get(__response__, 'vm_cluster_network_id'),
+        vm_cluster_type=pulumi.get(__response__, 'vm_cluster_type')))

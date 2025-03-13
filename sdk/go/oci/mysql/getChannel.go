@@ -80,6 +80,8 @@ type LookupChannelResult struct {
 	Sources []GetChannelSource `pulumi:"sources"`
 	// The state of the Channel.
 	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Details about the Channel target.
 	Targets []GetChannelTarget `pulumi:"targets"`
 	// The date and time the Channel was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -173,6 +175,11 @@ func (o LookupChannelResultOutput) Sources() GetChannelSourceArrayOutput {
 // The state of the Channel.
 func (o LookupChannelResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupChannelResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o LookupChannelResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupChannelResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Details about the Channel target.

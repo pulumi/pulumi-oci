@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Psql.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// The type of configuration. Either user-created or a default configuration.
+        /// A filter to return only resources if their `configType` matches the given `configType`.
         /// </summary>
         public readonly string ConfigType;
         /// <summary>

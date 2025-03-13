@@ -341,6 +341,7 @@ class _ModelState:
                  artifact_last_modified: Optional[pulumi.Input[str]] = None,
                  backup_operation_details: Optional[pulumi.Input[Sequence[pulumi.Input['ModelBackupOperationDetailArgs']]]] = None,
                  backup_setting: Optional[pulumi.Input['ModelBackupSettingArgs']] = None,
+                 category: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  created_by: Optional[pulumi.Input[str]] = None,
                  custom_metadata_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ModelCustomMetadataListArgs']]]] = None,
@@ -351,6 +352,7 @@ class _ModelState:
                  empty_model: Optional[pulumi.Input[bool]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  input_schema: Optional[pulumi.Input[str]] = None,
+                 is_model_by_reference: Optional[pulumi.Input[bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  model_artifact: Optional[pulumi.Input[str]] = None,
                  model_version_set_id: Optional[pulumi.Input[str]] = None,
@@ -371,6 +373,7 @@ class _ModelState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input['ModelBackupOperationDetailArgs']]] backup_operation_details: Backup operation details of the model.
         :param pulumi.Input['ModelBackupSettingArgs'] backup_setting: (Updatable) Back up setting details of the model.
+        :param pulumi.Input[str] category: Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
         :param pulumi.Input[str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
         :param pulumi.Input[Sequence[pulumi.Input['ModelCustomMetadataListArgs']]] custom_metadata_lists: (Updatable) An array of custom metadata details for the model.
@@ -380,6 +383,7 @@ class _ModelState:
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My Model`
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] input_schema: Input schema file content in String format
+        :param pulumi.Input[bool] is_model_by_reference: Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
         :param pulumi.Input[str] lifecycle_details: Details about the lifecycle state of the model.
         :param pulumi.Input[str] model_artifact: The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
         :param pulumi.Input[str] model_version_set_id: The OCID of the model version set that the model is associated to.
@@ -404,6 +408,8 @@ class _ModelState:
             pulumi.set(__self__, "backup_operation_details", backup_operation_details)
         if backup_setting is not None:
             pulumi.set(__self__, "backup_setting", backup_setting)
+        if category is not None:
+            pulumi.set(__self__, "category", category)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if created_by is not None:
@@ -424,6 +430,8 @@ class _ModelState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if input_schema is not None:
             pulumi.set(__self__, "input_schema", input_schema)
+        if is_model_by_reference is not None:
+            pulumi.set(__self__, "is_model_by_reference", is_model_by_reference)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if model_artifact is not None:
@@ -515,6 +523,18 @@ class _ModelState:
     @backup_setting.setter
     def backup_setting(self, value: Optional[pulumi.Input['ModelBackupSettingArgs']]):
         pulumi.set(self, "backup_setting", value)
+
+    @property
+    @pulumi.getter
+    def category(self) -> Optional[pulumi.Input[str]]:
+        """
+        Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
+        """
+        return pulumi.get(self, "category")
+
+    @category.setter
+    def category(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "category", value)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -632,6 +652,18 @@ class _ModelState:
     @input_schema.setter
     def input_schema(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "input_schema", value)
+
+    @property
+    @pulumi.getter(name="isModelByReference")
+    def is_model_by_reference(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+        """
+        return pulumi.get(self, "is_model_by_reference")
+
+    @is_model_by_reference.setter
+    def is_model_by_reference(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_model_by_reference", value)
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -813,13 +845,17 @@ class Model(pulumi.CustomResource):
             custom_metadata_lists=[{
                 "category": model_custom_metadata_list_category,
                 "description": model_custom_metadata_list_description,
+                "has_artifact": model_custom_metadata_list_has_artifact,
                 "key": model_custom_metadata_list_key,
+                "keywords": model_custom_metadata_list_keywords,
                 "value": model_custom_metadata_list_value,
             }],
             defined_metadata_lists=[{
                 "category": model_defined_metadata_list_category,
                 "description": model_defined_metadata_list_description,
+                "has_artifact": model_defined_metadata_list_has_artifact,
                 "key": model_defined_metadata_list_key,
+                "keywords": model_defined_metadata_list_keywords,
                 "value": model_defined_metadata_list_value,
             }],
             defined_tags={
@@ -901,13 +937,17 @@ class Model(pulumi.CustomResource):
             custom_metadata_lists=[{
                 "category": model_custom_metadata_list_category,
                 "description": model_custom_metadata_list_description,
+                "has_artifact": model_custom_metadata_list_has_artifact,
                 "key": model_custom_metadata_list_key,
+                "keywords": model_custom_metadata_list_keywords,
                 "value": model_custom_metadata_list_value,
             }],
             defined_metadata_lists=[{
                 "category": model_defined_metadata_list_category,
                 "description": model_defined_metadata_list_description,
+                "has_artifact": model_defined_metadata_list_has_artifact,
                 "key": model_defined_metadata_list_key,
+                "keywords": model_defined_metadata_list_keywords,
                 "value": model_defined_metadata_list_value,
             }],
             defined_tags={
@@ -1009,8 +1049,10 @@ class Model(pulumi.CustomResource):
             __props__.__dict__["artifact_content_md5"] = None
             __props__.__dict__["artifact_last_modified"] = None
             __props__.__dict__["backup_operation_details"] = None
+            __props__.__dict__["category"] = None
             __props__.__dict__["created_by"] = None
             __props__.__dict__["empty_model"] = None
+            __props__.__dict__["is_model_by_reference"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["retention_operation_details"] = None
             __props__.__dict__["time_created"] = None
@@ -1030,6 +1072,7 @@ class Model(pulumi.CustomResource):
             artifact_last_modified: Optional[pulumi.Input[str]] = None,
             backup_operation_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelBackupOperationDetailArgs', 'ModelBackupOperationDetailArgsDict']]]]] = None,
             backup_setting: Optional[pulumi.Input[Union['ModelBackupSettingArgs', 'ModelBackupSettingArgsDict']]] = None,
+            category: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             created_by: Optional[pulumi.Input[str]] = None,
             custom_metadata_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelCustomMetadataListArgs', 'ModelCustomMetadataListArgsDict']]]]] = None,
@@ -1040,6 +1083,7 @@ class Model(pulumi.CustomResource):
             empty_model: Optional[pulumi.Input[bool]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             input_schema: Optional[pulumi.Input[str]] = None,
+            is_model_by_reference: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             model_artifact: Optional[pulumi.Input[str]] = None,
             model_version_set_id: Optional[pulumi.Input[str]] = None,
@@ -1065,6 +1109,7 @@ class Model(pulumi.CustomResource):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[Union['ModelBackupOperationDetailArgs', 'ModelBackupOperationDetailArgsDict']]]] backup_operation_details: Backup operation details of the model.
         :param pulumi.Input[Union['ModelBackupSettingArgs', 'ModelBackupSettingArgsDict']] backup_setting: (Updatable) Back up setting details of the model.
+        :param pulumi.Input[str] category: Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
         :param pulumi.Input[str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ModelCustomMetadataListArgs', 'ModelCustomMetadataListArgsDict']]]] custom_metadata_lists: (Updatable) An array of custom metadata details for the model.
@@ -1074,6 +1119,7 @@ class Model(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My Model`
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] input_schema: Input schema file content in String format
+        :param pulumi.Input[bool] is_model_by_reference: Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
         :param pulumi.Input[str] lifecycle_details: Details about the lifecycle state of the model.
         :param pulumi.Input[str] model_artifact: The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
         :param pulumi.Input[str] model_version_set_id: The OCID of the model version set that the model is associated to.
@@ -1096,6 +1142,7 @@ class Model(pulumi.CustomResource):
         __props__.__dict__["artifact_last_modified"] = artifact_last_modified
         __props__.__dict__["backup_operation_details"] = backup_operation_details
         __props__.__dict__["backup_setting"] = backup_setting
+        __props__.__dict__["category"] = category
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["created_by"] = created_by
         __props__.__dict__["custom_metadata_lists"] = custom_metadata_lists
@@ -1106,6 +1153,7 @@ class Model(pulumi.CustomResource):
         __props__.__dict__["empty_model"] = empty_model
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["input_schema"] = input_schema
+        __props__.__dict__["is_model_by_reference"] = is_model_by_reference
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["model_artifact"] = model_artifact
         __props__.__dict__["model_version_set_id"] = model_version_set_id
@@ -1163,6 +1211,14 @@ class Model(pulumi.CustomResource):
         (Updatable) Back up setting details of the model.
         """
         return pulumi.get(self, "backup_setting")
+
+    @property
+    @pulumi.getter
+    def category(self) -> pulumi.Output[str]:
+        """
+        Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
+        """
+        return pulumi.get(self, "category")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1240,6 +1296,14 @@ class Model(pulumi.CustomResource):
         Input schema file content in String format
         """
         return pulumi.get(self, "input_schema")
+
+    @property
+    @pulumi.getter(name="isModelByReference")
+    def is_model_by_reference(self) -> pulumi.Output[bool]:
+        """
+        Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+        """
+        return pulumi.get(self, "is_model_by_reference")
 
     @property
     @pulumi.getter(name="lifecycleDetails")

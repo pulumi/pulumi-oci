@@ -66,6 +66,8 @@ type Backup struct {
 	BackupSize pulumi.IntOutput `pulumi:"backupSize"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	// List of status for Backup Copy
+	CopyStatuses BackupCopyStatusArrayOutput `pulumi:"copyStatuses"`
 	// Information about the database system associated with a backup.
 	DbSystemDetails BackupDbSystemDetailArrayOutput `pulumi:"dbSystemDetails"`
 	// The ID of the database system.
@@ -89,7 +91,9 @@ type Backup struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetentionPeriod pulumi.IntOutput `pulumi:"retentionPeriod"`
-	// Specifies whether the backup was created manually, or by a management policy.
+	// Information about the Source Backup associated with a backup.
+	SourceBackupDetails BackupSourceBackupDetailsPtrOutput `pulumi:"sourceBackupDetails"`
+	// Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
 	SourceType pulumi.StringOutput `pulumi:"sourceType"`
 	// The current state of the backup.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -97,6 +101,8 @@ type Backup struct {
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the backup request was received, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	// The date and time the backup was created. This is the time the actual point-in-time data snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreatedPrecise pulumi.StringOutput `pulumi:"timeCreatedPrecise"`
 	// The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 }
@@ -110,12 +116,6 @@ func NewBackup(ctx *pulumi.Context,
 
 	if args.CompartmentId == nil {
 		return nil, errors.New("invalid value for required argument 'CompartmentId'")
-	}
-	if args.DbSystemId == nil {
-		return nil, errors.New("invalid value for required argument 'DbSystemId'")
-	}
-	if args.DisplayName == nil {
-		return nil, errors.New("invalid value for required argument 'DisplayName'")
 	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Backup
@@ -144,6 +144,8 @@ type backupState struct {
 	BackupSize *int `pulumi:"backupSize"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
 	CompartmentId *string `pulumi:"compartmentId"`
+	// List of status for Backup Copy
+	CopyStatuses []BackupCopyStatus `pulumi:"copyStatuses"`
 	// Information about the database system associated with a backup.
 	DbSystemDetails []BackupDbSystemDetail `pulumi:"dbSystemDetails"`
 	// The ID of the database system.
@@ -167,7 +169,9 @@ type backupState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetentionPeriod *int `pulumi:"retentionPeriod"`
-	// Specifies whether the backup was created manually, or by a management policy.
+	// Information about the Source Backup associated with a backup.
+	SourceBackupDetails *BackupSourceBackupDetails `pulumi:"sourceBackupDetails"`
+	// Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
 	SourceType *string `pulumi:"sourceType"`
 	// The current state of the backup.
 	State *string `pulumi:"state"`
@@ -175,6 +179,8 @@ type backupState struct {
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the backup request was received, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
+	// The date and time the backup was created. This is the time the actual point-in-time data snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreatedPrecise *string `pulumi:"timeCreatedPrecise"`
 	// The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated *string `pulumi:"timeUpdated"`
 }
@@ -184,6 +190,8 @@ type BackupState struct {
 	BackupSize pulumi.IntPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
 	CompartmentId pulumi.StringPtrInput
+	// List of status for Backup Copy
+	CopyStatuses BackupCopyStatusArrayInput
 	// Information about the database system associated with a backup.
 	DbSystemDetails BackupDbSystemDetailArrayInput
 	// The ID of the database system.
@@ -207,7 +215,9 @@ type BackupState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetentionPeriod pulumi.IntPtrInput
-	// Specifies whether the backup was created manually, or by a management policy.
+	// Information about the Source Backup associated with a backup.
+	SourceBackupDetails BackupSourceBackupDetailsPtrInput
+	// Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
 	SourceType pulumi.StringPtrInput
 	// The current state of the backup.
 	State pulumi.StringPtrInput
@@ -215,6 +225,8 @@ type BackupState struct {
 	SystemTags pulumi.StringMapInput
 	// The date and time the backup request was received, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
+	// The date and time the backup was created. This is the time the actual point-in-time data snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreatedPrecise pulumi.StringPtrInput
 	// The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated pulumi.StringPtrInput
 }
@@ -227,13 +239,13 @@ type backupArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The ID of the database system.
-	DbSystemId string `pulumi:"dbSystemId"`
+	DbSystemId *string `pulumi:"dbSystemId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A description for the backup.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Backup retention period in days.
@@ -241,6 +253,8 @@ type backupArgs struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetentionPeriod *int `pulumi:"retentionPeriod"`
+	// Information about the Source Backup associated with a backup.
+	SourceBackupDetails *BackupSourceBackupDetails `pulumi:"sourceBackupDetails"`
 }
 
 // The set of arguments for constructing a Backup resource.
@@ -248,13 +262,13 @@ type BackupArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
 	CompartmentId pulumi.StringInput
 	// The ID of the database system.
-	DbSystemId pulumi.StringInput
+	DbSystemId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) A description for the backup.
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
-	DisplayName pulumi.StringInput
+	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
 	// (Updatable) Backup retention period in days.
@@ -262,6 +276,8 @@ type BackupArgs struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetentionPeriod pulumi.IntPtrInput
+	// Information about the Source Backup associated with a backup.
+	SourceBackupDetails BackupSourceBackupDetailsPtrInput
 }
 
 func (BackupArgs) ElementType() reflect.Type {
@@ -361,6 +377,11 @@ func (o BackupOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// List of status for Backup Copy
+func (o BackupOutput) CopyStatuses() BackupCopyStatusArrayOutput {
+	return o.ApplyT(func(v *Backup) BackupCopyStatusArrayOutput { return v.CopyStatuses }).(BackupCopyStatusArrayOutput)
+}
+
 // Information about the database system associated with a backup.
 func (o BackupOutput) DbSystemDetails() BackupDbSystemDetailArrayOutput {
 	return o.ApplyT(func(v *Backup) BackupDbSystemDetailArrayOutput { return v.DbSystemDetails }).(BackupDbSystemDetailArrayOutput)
@@ -414,7 +435,12 @@ func (o BackupOutput) RetentionPeriod() pulumi.IntOutput {
 	return o.ApplyT(func(v *Backup) pulumi.IntOutput { return v.RetentionPeriod }).(pulumi.IntOutput)
 }
 
-// Specifies whether the backup was created manually, or by a management policy.
+// Information about the Source Backup associated with a backup.
+func (o BackupOutput) SourceBackupDetails() BackupSourceBackupDetailsPtrOutput {
+	return o.ApplyT(func(v *Backup) BackupSourceBackupDetailsPtrOutput { return v.SourceBackupDetails }).(BackupSourceBackupDetailsPtrOutput)
+}
+
+// Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
 func (o BackupOutput) SourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.SourceType }).(pulumi.StringOutput)
 }
@@ -432,6 +458,11 @@ func (o BackupOutput) SystemTags() pulumi.StringMapOutput {
 // The date and time the backup request was received, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 func (o BackupOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the backup was created. This is the time the actual point-in-time data snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+func (o BackupOutput) TimeCreatedPrecise() pulumi.StringOutput {
+	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.TimeCreatedPrecise }).(pulumi.StringOutput)
 }
 
 // The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`

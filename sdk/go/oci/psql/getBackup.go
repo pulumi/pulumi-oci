@@ -58,11 +58,14 @@ type LookupBackupArgs struct {
 
 // A collection of values returned by getBackup.
 type LookupBackupResult struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup in the source region
 	BackupId string `pulumi:"backupId"`
 	// The size of the backup, in gigabytes.
 	BackupSize int `pulumi:"backupSize"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
 	CompartmentId string `pulumi:"compartmentId"`
+	// List of status for Backup Copy
+	CopyStatuses []GetBackupCopyStatus `pulumi:"copyStatuses"`
 	// Information about the database system associated with a backup.
 	DbSystemDetails []GetBackupDbSystemDetail `pulumi:"dbSystemDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup's source database system.
@@ -85,7 +88,9 @@ type LookupBackupResult struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Backup retention period in days.
 	RetentionPeriod int `pulumi:"retentionPeriod"`
-	// Specifies whether the backup was created manually, or by a management policy.
+	// Information about the Source Backup associated with a backup.
+	SourceBackupDetails []GetBackupSourceBackupDetail `pulumi:"sourceBackupDetails"`
+	// Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
 	SourceType string `pulumi:"sourceType"`
 	// The current state of the backup.
 	State string `pulumi:"state"`
@@ -93,6 +98,8 @@ type LookupBackupResult struct {
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the backup request was received, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the backup was created. This is the time the actual point-in-time data snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreatedPrecise string `pulumi:"timeCreatedPrecise"`
 	// The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
@@ -131,6 +138,7 @@ func (o LookupBackupResultOutput) ToLookupBackupResultOutputWithContext(ctx cont
 	return o
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup in the source region
 func (o LookupBackupResultOutput) BackupId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBackupResult) string { return v.BackupId }).(pulumi.StringOutput)
 }
@@ -143,6 +151,11 @@ func (o LookupBackupResultOutput) BackupSize() pulumi.IntOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
 func (o LookupBackupResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBackupResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// List of status for Backup Copy
+func (o LookupBackupResultOutput) CopyStatuses() GetBackupCopyStatusArrayOutput {
+	return o.ApplyT(func(v LookupBackupResult) []GetBackupCopyStatus { return v.CopyStatuses }).(GetBackupCopyStatusArrayOutput)
 }
 
 // Information about the database system associated with a backup.
@@ -200,7 +213,12 @@ func (o LookupBackupResultOutput) RetentionPeriod() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupBackupResult) int { return v.RetentionPeriod }).(pulumi.IntOutput)
 }
 
-// Specifies whether the backup was created manually, or by a management policy.
+// Information about the Source Backup associated with a backup.
+func (o LookupBackupResultOutput) SourceBackupDetails() GetBackupSourceBackupDetailArrayOutput {
+	return o.ApplyT(func(v LookupBackupResult) []GetBackupSourceBackupDetail { return v.SourceBackupDetails }).(GetBackupSourceBackupDetailArrayOutput)
+}
+
+// Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
 func (o LookupBackupResultOutput) SourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBackupResult) string { return v.SourceType }).(pulumi.StringOutput)
 }
@@ -218,6 +236,11 @@ func (o LookupBackupResultOutput) SystemTags() pulumi.StringMapOutput {
 // The date and time the backup request was received, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 func (o LookupBackupResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBackupResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the backup was created. This is the time the actual point-in-time data snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+func (o LookupBackupResultOutput) TimeCreatedPrecise() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupBackupResult) string { return v.TimeCreatedPrecise }).(pulumi.StringOutput)
 }
 
 // The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`

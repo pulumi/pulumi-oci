@@ -5,7 +5,9 @@ package com.pulumi.oci.Psql.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Psql.inputs.BackupCopyStatusArgs;
 import com.pulumi.oci.Psql.inputs.BackupDbSystemDetailArgs;
+import com.pulumi.oci.Psql.inputs.BackupSourceBackupDetailsArgs;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -47,6 +49,21 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
+    }
+
+    /**
+     * List of status for Backup Copy
+     * 
+     */
+    @Import(name="copyStatuses")
+    private @Nullable Output<List<BackupCopyStatusArgs>> copyStatuses;
+
+    /**
+     * @return List of status for Backup Copy
+     * 
+     */
+    public Optional<Output<List<BackupCopyStatusArgs>>> copyStatuses() {
+        return Optional.ofNullable(this.copyStatuses);
     }
 
     /**
@@ -206,14 +223,29 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Specifies whether the backup was created manually, or by a management policy.
+     * Information about the Source Backup associated with a backup.
+     * 
+     */
+    @Import(name="sourceBackupDetails")
+    private @Nullable Output<BackupSourceBackupDetailsArgs> sourceBackupDetails;
+
+    /**
+     * @return Information about the Source Backup associated with a backup.
+     * 
+     */
+    public Optional<Output<BackupSourceBackupDetailsArgs>> sourceBackupDetails() {
+        return Optional.ofNullable(this.sourceBackupDetails);
+    }
+
+    /**
+     * Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
      * 
      */
     @Import(name="sourceType")
     private @Nullable Output<String> sourceType;
 
     /**
-     * @return Specifies whether the backup was created manually, or by a management policy.
+     * @return Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
      * 
      */
     public Optional<Output<String>> sourceType() {
@@ -266,6 +298,21 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The date and time the backup was created. This is the time the actual point-in-time data snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+     * 
+     */
+    @Import(name="timeCreatedPrecise")
+    private @Nullable Output<String> timeCreatedPrecise;
+
+    /**
+     * @return The date and time the backup was created. This is the time the actual point-in-time data snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+     * 
+     */
+    public Optional<Output<String>> timeCreatedPrecise() {
+        return Optional.ofNullable(this.timeCreatedPrecise);
+    }
+
+    /**
      * The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
@@ -285,6 +332,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     private BackupState(BackupState $) {
         this.backupSize = $.backupSize;
         this.compartmentId = $.compartmentId;
+        this.copyStatuses = $.copyStatuses;
         this.dbSystemDetails = $.dbSystemDetails;
         this.dbSystemId = $.dbSystemId;
         this.definedTags = $.definedTags;
@@ -295,10 +343,12 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         this.lastCompletedRequestToken = $.lastCompletedRequestToken;
         this.lifecycleDetails = $.lifecycleDetails;
         this.retentionPeriod = $.retentionPeriod;
+        this.sourceBackupDetails = $.sourceBackupDetails;
         this.sourceType = $.sourceType;
         this.state = $.state;
         this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
+        this.timeCreatedPrecise = $.timeCreatedPrecise;
         this.timeUpdated = $.timeUpdated;
     }
 
@@ -360,6 +410,37 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param copyStatuses List of status for Backup Copy
+         * 
+         * @return builder
+         * 
+         */
+        public Builder copyStatuses(@Nullable Output<List<BackupCopyStatusArgs>> copyStatuses) {
+            $.copyStatuses = copyStatuses;
+            return this;
+        }
+
+        /**
+         * @param copyStatuses List of status for Backup Copy
+         * 
+         * @return builder
+         * 
+         */
+        public Builder copyStatuses(List<BackupCopyStatusArgs> copyStatuses) {
+            return copyStatuses(Output.of(copyStatuses));
+        }
+
+        /**
+         * @param copyStatuses List of status for Backup Copy
+         * 
+         * @return builder
+         * 
+         */
+        public Builder copyStatuses(BackupCopyStatusArgs... copyStatuses) {
+            return copyStatuses(List.of(copyStatuses));
         }
 
         /**
@@ -589,7 +670,28 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sourceType Specifies whether the backup was created manually, or by a management policy.
+         * @param sourceBackupDetails Information about the Source Backup associated with a backup.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceBackupDetails(@Nullable Output<BackupSourceBackupDetailsArgs> sourceBackupDetails) {
+            $.sourceBackupDetails = sourceBackupDetails;
+            return this;
+        }
+
+        /**
+         * @param sourceBackupDetails Information about the Source Backup associated with a backup.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceBackupDetails(BackupSourceBackupDetailsArgs sourceBackupDetails) {
+            return sourceBackupDetails(Output.of(sourceBackupDetails));
+        }
+
+        /**
+         * @param sourceType Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
          * 
          * @return builder
          * 
@@ -600,7 +702,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sourceType Specifies whether the backup was created manually, or by a management policy.
+         * @param sourceType Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
          * 
          * @return builder
          * 
@@ -670,6 +772,27 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder timeCreated(String timeCreated) {
             return timeCreated(Output.of(timeCreated));
+        }
+
+        /**
+         * @param timeCreatedPrecise The date and time the backup was created. This is the time the actual point-in-time data snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeCreatedPrecise(@Nullable Output<String> timeCreatedPrecise) {
+            $.timeCreatedPrecise = timeCreatedPrecise;
+            return this;
+        }
+
+        /**
+         * @param timeCreatedPrecise The date and time the backup was created. This is the time the actual point-in-time data snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeCreatedPrecise(String timeCreatedPrecise) {
+            return timeCreatedPrecise(Output.of(timeCreatedPrecise));
         }
 
         /**

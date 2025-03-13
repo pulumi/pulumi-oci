@@ -18,10 +18,15 @@ public final class GetDbNodesDbNode {
      */
     private String additionalDetails;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address needed to make a database connection.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IPv4 address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IPv4 address needed to make a database connection.
      * 
      */
     private String backupIpId;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IPv6 address associated with the database node. Use this OCID with the [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6) API to get the IPv6 address needed to make a database connection.
+     * 
+     */
+    private String backupIpv6id;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
      * 
@@ -69,11 +74,15 @@ public final class GetDbNodesDbNode {
      */
     private Map<String,String> freeformTags;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
-     * **Note:** Applies only to Exadata Cloud Service.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IPv4 address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IPv4 address needed to make a database connection.
      * 
      */
     private String hostIpId;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IPv6 address associated with the database node. Use this OCID with the [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6) API to get the IPv6 address needed to make a database connection.
+     * 
+     */
+    private String hostIpv6id;
     /**
      * @return The host name for the database node.
      * 
@@ -149,11 +158,18 @@ public final class GetDbNodesDbNode {
         return this.additionalDetails;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address needed to make a database connection.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IPv4 address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IPv4 address needed to make a database connection.
      * 
      */
     public String backupIpId() {
         return this.backupIpId;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IPv6 address associated with the database node. Use this OCID with the [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6) API to get the IPv6 address needed to make a database connection.
+     * 
+     */
+    public String backupIpv6id() {
+        return this.backupIpv6id;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
@@ -222,12 +238,18 @@ public final class GetDbNodesDbNode {
         return this.freeformTags;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
-     * **Note:** Applies only to Exadata Cloud Service.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IPv4 address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IPv4 address needed to make a database connection.
      * 
      */
     public String hostIpId() {
         return this.hostIpId;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IPv6 address associated with the database node. Use this OCID with the [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6) API to get the IPv6 address needed to make a database connection.
+     * 
+     */
+    public String hostIpv6id() {
+        return this.hostIpv6id;
     }
     /**
      * @return The host name for the database node.
@@ -332,6 +354,7 @@ public final class GetDbNodesDbNode {
     public static final class Builder {
         private String additionalDetails;
         private String backupIpId;
+        private String backupIpv6id;
         private String backupVnic2id;
         private String backupVnicId;
         private Integer cpuCoreCount;
@@ -343,6 +366,7 @@ public final class GetDbNodesDbNode {
         private String faultDomain;
         private Map<String,String> freeformTags;
         private String hostIpId;
+        private String hostIpv6id;
         private String hostname;
         private String id;
         private String lifecycleDetails;
@@ -361,6 +385,7 @@ public final class GetDbNodesDbNode {
     	      Objects.requireNonNull(defaults);
     	      this.additionalDetails = defaults.additionalDetails;
     	      this.backupIpId = defaults.backupIpId;
+    	      this.backupIpv6id = defaults.backupIpv6id;
     	      this.backupVnic2id = defaults.backupVnic2id;
     	      this.backupVnicId = defaults.backupVnicId;
     	      this.cpuCoreCount = defaults.cpuCoreCount;
@@ -372,6 +397,7 @@ public final class GetDbNodesDbNode {
     	      this.faultDomain = defaults.faultDomain;
     	      this.freeformTags = defaults.freeformTags;
     	      this.hostIpId = defaults.hostIpId;
+    	      this.hostIpv6id = defaults.hostIpv6id;
     	      this.hostname = defaults.hostname;
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
@@ -401,6 +427,14 @@ public final class GetDbNodesDbNode {
               throw new MissingRequiredPropertyException("GetDbNodesDbNode", "backupIpId");
             }
             this.backupIpId = backupIpId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder backupIpv6id(String backupIpv6id) {
+            if (backupIpv6id == null) {
+              throw new MissingRequiredPropertyException("GetDbNodesDbNode", "backupIpv6id");
+            }
+            this.backupIpv6id = backupIpv6id;
             return this;
         }
         @CustomType.Setter
@@ -489,6 +523,14 @@ public final class GetDbNodesDbNode {
               throw new MissingRequiredPropertyException("GetDbNodesDbNode", "hostIpId");
             }
             this.hostIpId = hostIpId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder hostIpv6id(String hostIpv6id) {
+            if (hostIpv6id == null) {
+              throw new MissingRequiredPropertyException("GetDbNodesDbNode", "hostIpv6id");
+            }
+            this.hostIpv6id = hostIpv6id;
             return this;
         }
         @CustomType.Setter
@@ -599,6 +641,7 @@ public final class GetDbNodesDbNode {
             final var _resultValue = new GetDbNodesDbNode();
             _resultValue.additionalDetails = additionalDetails;
             _resultValue.backupIpId = backupIpId;
+            _resultValue.backupIpv6id = backupIpv6id;
             _resultValue.backupVnic2id = backupVnic2id;
             _resultValue.backupVnicId = backupVnicId;
             _resultValue.cpuCoreCount = cpuCoreCount;
@@ -610,6 +653,7 @@ public final class GetDbNodesDbNode {
             _resultValue.faultDomain = faultDomain;
             _resultValue.freeformTags = freeformTags;
             _resultValue.hostIpId = hostIpId;
+            _resultValue.hostIpv6id = hostIpv6id;
             _resultValue.hostname = hostname;
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;

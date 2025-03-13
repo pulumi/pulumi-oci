@@ -15,8 +15,12 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'BackupCopyStatusArgs',
+    'BackupCopyStatusArgsDict',
     'BackupDbSystemDetailArgs',
     'BackupDbSystemDetailArgsDict',
+    'BackupSourceBackupDetailsArgs',
+    'BackupSourceBackupDetailsArgsDict',
     'ConfigurationConfigurationDetailArgs',
     'ConfigurationConfigurationDetailArgsDict',
     'ConfigurationConfigurationDetailItemArgs',
@@ -37,6 +41,8 @@ __all__ = [
     'DbSystemManagementPolicyArgsDict',
     'DbSystemManagementPolicyBackupPolicyArgs',
     'DbSystemManagementPolicyBackupPolicyArgsDict',
+    'DbSystemManagementPolicyBackupPolicyCopyPolicyArgs',
+    'DbSystemManagementPolicyBackupPolicyCopyPolicyArgsDict',
     'DbSystemNetworkDetailsArgs',
     'DbSystemNetworkDetailsArgsDict',
     'DbSystemPatchOperationArgs',
@@ -60,7 +66,103 @@ __all__ = [
 MYPY = False
 
 if not MYPY:
+    class BackupCopyStatusArgsDict(TypedDict):
+        backup_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup in the source region
+        """
+        region: NotRequired[pulumi.Input[str]]
+        """
+        Region name of the remote region
+        """
+        state: NotRequired[pulumi.Input[str]]
+        """
+        The current state of the backup.
+        """
+        state_details: NotRequired[pulumi.Input[str]]
+        """
+        A message describing the current state of copy in more detail
+        """
+elif False:
+    BackupCopyStatusArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class BackupCopyStatusArgs:
+    def __init__(__self__, *,
+                 backup_id: Optional[pulumi.Input[str]] = None,
+                 region: Optional[pulumi.Input[str]] = None,
+                 state: Optional[pulumi.Input[str]] = None,
+                 state_details: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup in the source region
+        :param pulumi.Input[str] region: Region name of the remote region
+        :param pulumi.Input[str] state: The current state of the backup.
+        :param pulumi.Input[str] state_details: A message describing the current state of copy in more detail
+        """
+        if backup_id is not None:
+            pulumi.set(__self__, "backup_id", backup_id)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if state_details is not None:
+            pulumi.set(__self__, "state_details", state_details)
+
+    @property
+    @pulumi.getter(name="backupId")
+    def backup_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup in the source region
+        """
+        return pulumi.get(self, "backup_id")
+
+    @backup_id.setter
+    def backup_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "backup_id", value)
+
+    @property
+    @pulumi.getter
+    def region(self) -> Optional[pulumi.Input[str]]:
+        """
+        Region name of the remote region
+        """
+        return pulumi.get(self, "region")
+
+    @region.setter
+    def region(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "region", value)
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[pulumi.Input[str]]:
+        """
+        The current state of the backup.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "state", value)
+
+    @property
+    @pulumi.getter(name="stateDetails")
+    def state_details(self) -> Optional[pulumi.Input[str]]:
+        """
+        A message describing the current state of copy in more detail
+        """
+        return pulumi.get(self, "state_details")
+
+    @state_details.setter
+    def state_details(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "state_details", value)
+
+
+if not MYPY:
     class BackupDbSystemDetailArgsDict(TypedDict):
+        config_id: NotRequired[pulumi.Input[str]]
+        """
+        OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
+        """
         db_version: NotRequired[pulumi.Input[str]]
         """
         The major and minor versions of the database system software.
@@ -75,16 +177,32 @@ elif False:
 @pulumi.input_type
 class BackupDbSystemDetailArgs:
     def __init__(__self__, *,
+                 config_id: Optional[pulumi.Input[str]] = None,
                  db_version: Optional[pulumi.Input[str]] = None,
                  system_type: Optional[pulumi.Input[str]] = None):
         """
+        :param pulumi.Input[str] config_id: OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
         :param pulumi.Input[str] db_version: The major and minor versions of the database system software.
         :param pulumi.Input[str] system_type: Type of the database system.
         """
+        if config_id is not None:
+            pulumi.set(__self__, "config_id", config_id)
         if db_version is not None:
             pulumi.set(__self__, "db_version", db_version)
         if system_type is not None:
             pulumi.set(__self__, "system_type", system_type)
+
+    @property
+    @pulumi.getter(name="configId")
+    def config_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
+        """
+        return pulumi.get(self, "config_id")
+
+    @config_id.setter
+    def config_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "config_id", value)
 
     @property
     @pulumi.getter(name="dbVersion")
@@ -109,6 +227,56 @@ class BackupDbSystemDetailArgs:
     @system_type.setter
     def system_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "system_type", value)
+
+
+if not MYPY:
+    class BackupSourceBackupDetailsArgsDict(TypedDict):
+        source_backup_id: pulumi.Input[str]
+        """
+        Backup ID of the COPY source type.
+        """
+        source_region: pulumi.Input[str]
+        """
+        Backup Region of the COPY source type.
+        """
+elif False:
+    BackupSourceBackupDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class BackupSourceBackupDetailsArgs:
+    def __init__(__self__, *,
+                 source_backup_id: pulumi.Input[str],
+                 source_region: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] source_backup_id: Backup ID of the COPY source type.
+        :param pulumi.Input[str] source_region: Backup Region of the COPY source type.
+        """
+        pulumi.set(__self__, "source_backup_id", source_backup_id)
+        pulumi.set(__self__, "source_region", source_region)
+
+    @property
+    @pulumi.getter(name="sourceBackupId")
+    def source_backup_id(self) -> pulumi.Input[str]:
+        """
+        Backup ID of the COPY source type.
+        """
+        return pulumi.get(self, "source_backup_id")
+
+    @source_backup_id.setter
+    def source_backup_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "source_backup_id", value)
+
+    @property
+    @pulumi.getter(name="sourceRegion")
+    def source_region(self) -> pulumi.Input[str]:
+        """
+        Backup Region of the COPY source type.
+        """
+        return pulumi.get(self, "source_region")
+
+    @source_region.setter
+    def source_region(self, value: pulumi.Input[str]):
+        pulumi.set(self, "source_region", value)
 
 
 if not MYPY:
@@ -845,6 +1013,10 @@ if not MYPY:
         """
         (Updatable) Hour of the day when the backup starts.
         """
+        copy_policy: NotRequired[pulumi.Input['DbSystemManagementPolicyBackupPolicyCopyPolicyArgsDict']]
+        """
+        (Updatable) Backup copy details
+        """
         days_of_the_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[int]]]]
         """
         (Updatable) Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
@@ -868,12 +1040,14 @@ elif False:
 class DbSystemManagementPolicyBackupPolicyArgs:
     def __init__(__self__, *,
                  backup_start: Optional[pulumi.Input[str]] = None,
+                 copy_policy: Optional[pulumi.Input['DbSystemManagementPolicyBackupPolicyCopyPolicyArgs']] = None,
                  days_of_the_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
                  days_of_the_weeks: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  kind: Optional[pulumi.Input[str]] = None,
                  retention_days: Optional[pulumi.Input[int]] = None):
         """
         :param pulumi.Input[str] backup_start: (Updatable) Hour of the day when the backup starts.
+        :param pulumi.Input['DbSystemManagementPolicyBackupPolicyCopyPolicyArgs'] copy_policy: (Updatable) Backup copy details
         :param pulumi.Input[Sequence[pulumi.Input[int]]] days_of_the_months: (Updatable) Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] days_of_the_weeks: (Updatable) The day of the week that the backup starts.
         :param pulumi.Input[str] kind: (Updatable) The kind of backup policy.
@@ -881,6 +1055,8 @@ class DbSystemManagementPolicyBackupPolicyArgs:
         """
         if backup_start is not None:
             pulumi.set(__self__, "backup_start", backup_start)
+        if copy_policy is not None:
+            pulumi.set(__self__, "copy_policy", copy_policy)
         if days_of_the_months is not None:
             pulumi.set(__self__, "days_of_the_months", days_of_the_months)
         if days_of_the_weeks is not None:
@@ -901,6 +1077,18 @@ class DbSystemManagementPolicyBackupPolicyArgs:
     @backup_start.setter
     def backup_start(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "backup_start", value)
+
+    @property
+    @pulumi.getter(name="copyPolicy")
+    def copy_policy(self) -> Optional[pulumi.Input['DbSystemManagementPolicyBackupPolicyCopyPolicyArgs']]:
+        """
+        (Updatable) Backup copy details
+        """
+        return pulumi.get(self, "copy_policy")
+
+    @copy_policy.setter
+    def copy_policy(self, value: Optional[pulumi.Input['DbSystemManagementPolicyBackupPolicyCopyPolicyArgs']]):
+        pulumi.set(self, "copy_policy", value)
 
     @property
     @pulumi.getter(name="daysOfTheMonths")
@@ -949,6 +1137,76 @@ class DbSystemManagementPolicyBackupPolicyArgs:
     @retention_days.setter
     def retention_days(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "retention_days", value)
+
+
+if not MYPY:
+    class DbSystemManagementPolicyBackupPolicyCopyPolicyArgsDict(TypedDict):
+        compartment_id: pulumi.Input[str]
+        """
+        (Updatable) target compartment to place a new backup
+        """
+        regions: pulumi.Input[Sequence[pulumi.Input[str]]]
+        """
+        (Updatable) List of region names of the remote region
+        """
+        retention_period: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Retention period in days of the backup copy.
+        """
+elif False:
+    DbSystemManagementPolicyBackupPolicyCopyPolicyArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DbSystemManagementPolicyBackupPolicyCopyPolicyArgs:
+    def __init__(__self__, *,
+                 compartment_id: pulumi.Input[str],
+                 regions: pulumi.Input[Sequence[pulumi.Input[str]]],
+                 retention_period: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[str] compartment_id: (Updatable) target compartment to place a new backup
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] regions: (Updatable) List of region names of the remote region
+        :param pulumi.Input[int] retention_period: (Updatable) Retention period in days of the backup copy.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "regions", regions)
+        if retention_period is not None:
+            pulumi.set(__self__, "retention_period", retention_period)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> pulumi.Input[str]:
+        """
+        (Updatable) target compartment to place a new backup
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @compartment_id.setter
+    def compartment_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter
+    def regions(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
+        """
+        (Updatable) List of region names of the remote region
+        """
+        return pulumi.get(self, "regions")
+
+    @regions.setter
+    def regions(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
+        pulumi.set(self, "regions", value)
+
+    @property
+    @pulumi.getter(name="retentionPeriod")
+    def retention_period(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Retention period in days of the backup copy.
+        """
+        return pulumi.get(self, "retention_period")
+
+    @retention_period.setter
+    def retention_period(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "retention_period", value)
 
 
 if not MYPY:

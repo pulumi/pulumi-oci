@@ -37,6 +37,7 @@ import * as utilities from "../utilities";
  *     isIncludeAllSensitiveTypes: discoveryJobIsIncludeAllSensitiveTypes,
  *     isSampleDataCollectionEnabled: discoveryJobIsSampleDataCollectionEnabled,
  *     schemasForDiscoveries: discoveryJobSchemasForDiscovery,
+ *     sensitiveTypeGroupIdsForDiscoveries: discoveryJobSensitiveTypeGroupIdsForDiscovery,
  *     sensitiveTypeIdsForDiscoveries: discoveryJobSensitiveTypeIdsForDiscovery,
  *     tablesForDiscoveries: [{
  *         schemaName: discoveryJobTablesForDiscoverySchemaName,
@@ -126,6 +127,10 @@ export class DiscoveryMod extends pulumi.CustomResource {
      */
     public readonly sensitiveDataModelId!: pulumi.Output<string>;
     /**
+     * The OCIDs of the sensitive type groups to be used by the discovery job. All the sensitive types present in sensitive type group will be used for discovery.
+     */
+    public readonly sensitiveTypeGroupIdsForDiscoveries!: pulumi.Output<string[]>;
+    /**
      * The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
      */
     public readonly sensitiveTypeIdsForDiscoveries!: pulumi.Output<string[]>;
@@ -202,6 +207,7 @@ export class DiscoveryMod extends pulumi.CustomResource {
             resourceInputs["isSampleDataCollectionEnabled"] = state ? state.isSampleDataCollectionEnabled : undefined;
             resourceInputs["schemasForDiscoveries"] = state ? state.schemasForDiscoveries : undefined;
             resourceInputs["sensitiveDataModelId"] = state ? state.sensitiveDataModelId : undefined;
+            resourceInputs["sensitiveTypeGroupIdsForDiscoveries"] = state ? state.sensitiveTypeGroupIdsForDiscoveries : undefined;
             resourceInputs["sensitiveTypeIdsForDiscoveries"] = state ? state.sensitiveTypeIdsForDiscoveries : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
@@ -234,6 +240,7 @@ export class DiscoveryMod extends pulumi.CustomResource {
             resourceInputs["isSampleDataCollectionEnabled"] = args ? args.isSampleDataCollectionEnabled : undefined;
             resourceInputs["schemasForDiscoveries"] = args ? args.schemasForDiscoveries : undefined;
             resourceInputs["sensitiveDataModelId"] = args ? args.sensitiveDataModelId : undefined;
+            resourceInputs["sensitiveTypeGroupIdsForDiscoveries"] = args ? args.sensitiveTypeGroupIdsForDiscoveries : undefined;
             resourceInputs["sensitiveTypeIdsForDiscoveries"] = args ? args.sensitiveTypeIdsForDiscoveries : undefined;
             resourceInputs["tablesForDiscoveries"] = args ? args.tablesForDiscoveries : undefined;
             resourceInputs["state"] = undefined /*out*/;
@@ -301,6 +308,10 @@ export interface DiscoveryModState {
      * The OCID of the sensitive data model.
      */
     sensitiveDataModelId?: pulumi.Input<string>;
+    /**
+     * The OCIDs of the sensitive type groups to be used by the discovery job. All the sensitive types present in sensitive type group will be used for discovery.
+     */
+    sensitiveTypeGroupIdsForDiscoveries?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
      */
@@ -403,6 +414,10 @@ export interface DiscoveryModArgs {
      * The OCID of the sensitive data model.
      */
     sensitiveDataModelId: pulumi.Input<string>;
+    /**
+     * The OCIDs of the sensitive type groups to be used by the discovery job. All the sensitive types present in sensitive type group will be used for discovery.
+     */
+    sensitiveTypeGroupIdsForDiscoveries?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
      */

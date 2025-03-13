@@ -41,6 +41,7 @@ namespace Pulumi.Oci.Email
     ///             { "Department", "Finance" },
     ///         },
     ///         Name = dkimName,
+    ///         PrivateKey = dkimPrivateKey,
     ///     });
     /// 
     /// });
@@ -82,7 +83,7 @@ namespace Pulumi.Oci.Email
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
+        /// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
         /// </summary>
         [Output("dnsSubdomainName")]
         public Output<string> DnsSubdomainName { get; private set; } = null!;
@@ -100,6 +101,18 @@ namespace Pulumi.Oci.Email
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
+        /// Indicates whether the DKIM was imported.
+        /// </summary>
+        [Output("isImported")]
+        public Output<bool> IsImported { get; private set; } = null!;
+
+        /// <summary>
+        /// Length of the RSA key used in the DKIM.
+        /// </summary>
+        [Output("keyLength")]
+        public Output<int> KeyLength { get; private set; } = null!;
+
+        /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource.
         /// </summary>
         [Output("lifecycleDetails")]
@@ -111,13 +124,18 @@ namespace Pulumi.Oci.Email
         /// Avoid entering confidential information.
         /// 
         /// Example: `mydomain-phx-20210228`
-        /// 
+        /// </summary>
+        [Output("name")]
+        public Output<string> Name { get; private set; } = null!;
+
+        /// <summary>
+        /// The DKIM RSA Private Key in Privacy-Enhanced Mail (PEM) format. It is a text-based representation of the private key used for signing email messages.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Output("name")]
-        public Output<string> Name { get; private set; } = null!;
+        [Output("privateKey")]
+        public Output<string> PrivateKey { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the DKIM.
@@ -172,6 +190,10 @@ namespace Pulumi.Oci.Email
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                AdditionalSecretOutputs =
+                {
+                    "privateKey",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -237,13 +259,28 @@ namespace Pulumi.Oci.Email
         /// Avoid entering confidential information.
         /// 
         /// Example: `mydomain-phx-20210228`
-        /// 
+        /// </summary>
+        [Input("name")]
+        public Input<string>? Name { get; set; }
+
+        [Input("privateKey")]
+        private Input<string>? _privateKey;
+
+        /// <summary>
+        /// The DKIM RSA Private Key in Privacy-Enhanced Mail (PEM) format. It is a text-based representation of the private key used for signing email messages.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("name")]
-        public Input<string>? Name { get; set; }
+        public Input<string>? PrivateKey
+        {
+            get => _privateKey;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _privateKey = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         public DkimArgs()
         {
@@ -284,7 +321,7 @@ namespace Pulumi.Oci.Email
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
+        /// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
         /// </summary>
         [Input("dnsSubdomainName")]
         public Input<string>? DnsSubdomainName { get; set; }
@@ -308,6 +345,18 @@ namespace Pulumi.Oci.Email
         }
 
         /// <summary>
+        /// Indicates whether the DKIM was imported.
+        /// </summary>
+        [Input("isImported")]
+        public Input<bool>? IsImported { get; set; }
+
+        /// <summary>
+        /// Length of the RSA key used in the DKIM.
+        /// </summary>
+        [Input("keyLength")]
+        public Input<int>? KeyLength { get; set; }
+
+        /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource.
         /// </summary>
         [Input("lifecycleDetails")]
@@ -319,13 +368,28 @@ namespace Pulumi.Oci.Email
         /// Avoid entering confidential information.
         /// 
         /// Example: `mydomain-phx-20210228`
-        /// 
+        /// </summary>
+        [Input("name")]
+        public Input<string>? Name { get; set; }
+
+        [Input("privateKey")]
+        private Input<string>? _privateKey;
+
+        /// <summary>
+        /// The DKIM RSA Private Key in Privacy-Enhanced Mail (PEM) format. It is a text-based representation of the private key used for signing email messages.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("name")]
-        public Input<string>? Name { get; set; }
+        public Input<string>? PrivateKey
+        {
+            get => _privateKey;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _privateKey = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The current state of the DKIM.

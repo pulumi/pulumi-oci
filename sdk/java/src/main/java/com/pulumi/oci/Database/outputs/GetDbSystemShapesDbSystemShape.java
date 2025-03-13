@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
 import java.lang.String;
@@ -12,6 +13,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDbSystemShapesDbSystemShape {
+    /**
+     * @return If true, the shape supports configurable DB and Storage Server types.
+     * 
+     */
+    private Boolean areServerTypesSupported;
     /**
      * @return The maximum number of CPU cores that can be enabled on the DB system for this shape.
      * 
@@ -53,10 +59,20 @@ public final class GetDbSystemShapesDbSystemShape {
      */
     private Integer availableMemoryPerNodeInGbs;
     /**
+     * @return The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     * 
+     */
+    private String computeModel;
+    /**
      * @return The discrete number by which the CPU core count for this shape can be increased or decreased.
      * 
      */
     private Integer coreCountIncrement;
+    /**
+     * @return The display name of the shape used for the DB system.
+     * 
+     */
+    private String displayName;
     /**
      * @return The maximum number of Exadata storage servers available for the Exadata infrastructure.
      * 
@@ -129,6 +145,13 @@ public final class GetDbSystemShapesDbSystemShape {
 
     private GetDbSystemShapesDbSystemShape() {}
     /**
+     * @return If true, the shape supports configurable DB and Storage Server types.
+     * 
+     */
+    public Boolean areServerTypesSupported() {
+        return this.areServerTypesSupported;
+    }
+    /**
      * @return The maximum number of CPU cores that can be enabled on the DB system for this shape.
      * 
      */
@@ -185,11 +208,25 @@ public final class GetDbSystemShapesDbSystemShape {
         return this.availableMemoryPerNodeInGbs;
     }
     /**
+     * @return The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     * 
+     */
+    public String computeModel() {
+        return this.computeModel;
+    }
+    /**
      * @return The discrete number by which the CPU core count for this shape can be increased or decreased.
      * 
      */
     public Integer coreCountIncrement() {
         return this.coreCountIncrement;
+    }
+    /**
+     * @return The display name of the shape used for the DB system.
+     * 
+     */
+    public String displayName() {
+        return this.displayName;
     }
     /**
      * @return The maximum number of Exadata storage servers available for the Exadata infrastructure.
@@ -296,6 +333,7 @@ public final class GetDbSystemShapesDbSystemShape {
     }
     @CustomType.Builder
     public static final class Builder {
+        private Boolean areServerTypesSupported;
         private Integer availableCoreCount;
         private Integer availableCoreCountPerNode;
         private Integer availableDataStorageInTbs;
@@ -304,7 +342,9 @@ public final class GetDbSystemShapesDbSystemShape {
         private Integer availableDbNodeStorageInGbs;
         private Integer availableMemoryInGbs;
         private Integer availableMemoryPerNodeInGbs;
+        private String computeModel;
         private Integer coreCountIncrement;
+        private String displayName;
         private Integer maxStorageCount;
         private Integer maximumNodeCount;
         private Integer minCoreCountPerNode;
@@ -321,6 +361,7 @@ public final class GetDbSystemShapesDbSystemShape {
         public Builder() {}
         public Builder(GetDbSystemShapesDbSystemShape defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.areServerTypesSupported = defaults.areServerTypesSupported;
     	      this.availableCoreCount = defaults.availableCoreCount;
     	      this.availableCoreCountPerNode = defaults.availableCoreCountPerNode;
     	      this.availableDataStorageInTbs = defaults.availableDataStorageInTbs;
@@ -329,7 +370,9 @@ public final class GetDbSystemShapesDbSystemShape {
     	      this.availableDbNodeStorageInGbs = defaults.availableDbNodeStorageInGbs;
     	      this.availableMemoryInGbs = defaults.availableMemoryInGbs;
     	      this.availableMemoryPerNodeInGbs = defaults.availableMemoryPerNodeInGbs;
+    	      this.computeModel = defaults.computeModel;
     	      this.coreCountIncrement = defaults.coreCountIncrement;
+    	      this.displayName = defaults.displayName;
     	      this.maxStorageCount = defaults.maxStorageCount;
     	      this.maximumNodeCount = defaults.maximumNodeCount;
     	      this.minCoreCountPerNode = defaults.minCoreCountPerNode;
@@ -345,6 +388,14 @@ public final class GetDbSystemShapesDbSystemShape {
     	      this.shapeType = defaults.shapeType;
         }
 
+        @CustomType.Setter
+        public Builder areServerTypesSupported(Boolean areServerTypesSupported) {
+            if (areServerTypesSupported == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemShapesDbSystemShape", "areServerTypesSupported");
+            }
+            this.areServerTypesSupported = areServerTypesSupported;
+            return this;
+        }
         @CustomType.Setter
         public Builder availableCoreCount(Integer availableCoreCount) {
             if (availableCoreCount == null) {
@@ -410,11 +461,27 @@ public final class GetDbSystemShapesDbSystemShape {
             return this;
         }
         @CustomType.Setter
+        public Builder computeModel(String computeModel) {
+            if (computeModel == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemShapesDbSystemShape", "computeModel");
+            }
+            this.computeModel = computeModel;
+            return this;
+        }
+        @CustomType.Setter
         public Builder coreCountIncrement(Integer coreCountIncrement) {
             if (coreCountIncrement == null) {
               throw new MissingRequiredPropertyException("GetDbSystemShapesDbSystemShape", "coreCountIncrement");
             }
             this.coreCountIncrement = coreCountIncrement;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder displayName(String displayName) {
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemShapesDbSystemShape", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
@@ -523,6 +590,7 @@ public final class GetDbSystemShapesDbSystemShape {
         }
         public GetDbSystemShapesDbSystemShape build() {
             final var _resultValue = new GetDbSystemShapesDbSystemShape();
+            _resultValue.areServerTypesSupported = areServerTypesSupported;
             _resultValue.availableCoreCount = availableCoreCount;
             _resultValue.availableCoreCountPerNode = availableCoreCountPerNode;
             _resultValue.availableDataStorageInTbs = availableDataStorageInTbs;
@@ -531,7 +599,9 @@ public final class GetDbSystemShapesDbSystemShape {
             _resultValue.availableDbNodeStorageInGbs = availableDbNodeStorageInGbs;
             _resultValue.availableMemoryInGbs = availableMemoryInGbs;
             _resultValue.availableMemoryPerNodeInGbs = availableMemoryPerNodeInGbs;
+            _resultValue.computeModel = computeModel;
             _resultValue.coreCountIncrement = coreCountIncrement;
+            _resultValue.displayName = displayName;
             _resultValue.maxStorageCount = maxStorageCount;
             _resultValue.maximumNodeCount = maximumNodeCount;
             _resultValue.minCoreCountPerNode = minCoreCountPerNode;

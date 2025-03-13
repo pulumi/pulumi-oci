@@ -150,9 +150,13 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The application virtual IP (VIP) address.
+        /// The application virtual IP (VIP) IPv4 address.
         /// </summary>
         public readonly string IpAddress;
+        /// <summary>
+        /// The application virtual IP (VIP) IPv6 address.
+        /// </summary>
+        public readonly string Ipv6address;
         /// <summary>
         /// Additional information about the current lifecycle state of the application virtual IP (VIP) address.
         /// </summary>
@@ -190,6 +194,8 @@ namespace Pulumi.Oci.Database
 
             string ipAddress,
 
+            string ipv6address,
+
             string lifecycleDetails,
 
             string state,
@@ -207,6 +213,7 @@ namespace Pulumi.Oci.Database
             HostnameLabel = hostnameLabel;
             Id = id;
             IpAddress = ipAddress;
+            Ipv6address = ipv6address;
             LifecycleDetails = lifecycleDetails;
             State = state;
             SubnetId = subnetId;

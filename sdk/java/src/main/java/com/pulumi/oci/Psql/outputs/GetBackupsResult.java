@@ -20,6 +20,10 @@ public final class GetBackupsResult {
      * 
      */
     private List<GetBackupsBackupCollection> backupCollections;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup in the source region
+     * 
+     */
     private @Nullable String backupId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
@@ -53,6 +57,10 @@ public final class GetBackupsResult {
     public List<GetBackupsBackupCollection> backupCollections() {
         return this.backupCollections;
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup in the source region
+     * 
+     */
     public Optional<String> backupId() {
         return Optional.ofNullable(this.backupId);
     }

@@ -55,6 +55,10 @@ export interface GetVmClusterResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     readonly compartmentId: string;
+    /**
+     * The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     */
+    readonly computeModel: string;
     readonly cpuCoreCount: number;
     /**
      * The number of enabled CPU cores.
@@ -92,6 +96,10 @@ export interface GetVmClusterResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
     readonly exadataInfrastructureId: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+     */
+    readonly exascaleDbStorageVaultId: string;
     /**
      * Details of the file system configuration of the VM cluster.
      */
@@ -147,6 +155,10 @@ export interface GetVmClusterResult {
      */
     readonly state: string;
     /**
+     * Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
+     */
+    readonly storageManagementType: string;
+    /**
      * Operating system version of the image.
      */
     readonly systemVersion: string;
@@ -163,6 +175,10 @@ export interface GetVmClusterResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
      */
     readonly vmClusterNetworkId: string;
+    /**
+     * The vmcluster type for the VM cluster/Cloud VM cluster.
+     */
+    readonly vmClusterType: string;
 }
 /**
  * This data source provides details about a specific Vm Cluster resource in Oracle Cloud Infrastructure Database service.

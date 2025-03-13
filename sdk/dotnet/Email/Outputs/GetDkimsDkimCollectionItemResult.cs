@@ -46,6 +46,14 @@ namespace Pulumi.Oci.Email.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// Indicates whether the DKIM was imported.
+        /// </summary>
+        public readonly bool IsImported;
+        /// <summary>
+        /// Length of the RSA key used in the DKIM.
+        /// </summary>
+        public readonly int KeyLength;
+        /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource.
         /// </summary>
         public readonly string LifecycleDetails;
@@ -53,6 +61,7 @@ namespace Pulumi.Oci.Email.Outputs
         /// A filter to only return resources that match the given name exactly.
         /// </summary>
         public readonly string Name;
+        public readonly string PrivateKey;
         /// <summary>
         /// Filter returned list by specified lifecycle state. This parameter is case-insensitive.
         /// </summary>
@@ -92,9 +101,15 @@ namespace Pulumi.Oci.Email.Outputs
 
             string id,
 
+            bool isImported,
+
+            int keyLength,
+
             string lifecycleDetails,
 
             string name,
+
+            string privateKey,
 
             string state,
 
@@ -114,8 +129,11 @@ namespace Pulumi.Oci.Email.Outputs
             EmailDomainId = emailDomainId;
             FreeformTags = freeformTags;
             Id = id;
+            IsImported = isImported;
+            KeyLength = keyLength;
             LifecycleDetails = lifecycleDetails;
             Name = name;
+            PrivateKey = privateKey;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;

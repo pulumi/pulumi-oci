@@ -54,18 +54,12 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="configureOutboundClusterTrigger")
     private @Nullable Output<Integer> configureOutboundClusterTrigger;
 
     /**
      * @return (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Integer>> configureOutboundClusterTrigger() {
@@ -673,6 +667,27 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * An optional property to upgrade the major version of the cluster. This workflow upgrades the cluster without creating a clone. If you want to create a clone and upgrade the clone for testing please use SDK or CLI.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="upgradeMajorVersionTrigger")
+    private @Nullable Output<Integer> upgradeMajorVersionTrigger;
+
+    /**
+     * @return An optional property to upgrade the major version of the cluster. This workflow upgrades the cluster without creating a clone. If you want to create a clone and upgrade the clone for testing please use SDK or CLI.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<Integer>> upgradeMajorVersionTrigger() {
+        return Optional.ofNullable(this.upgradeMajorVersionTrigger);
+    }
+
+    /**
      * The OCID for the compartment where the cluster&#39;s VCN is located.
      * 
      */
@@ -748,6 +763,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         this.timeDeleted = $.timeDeleted;
         this.timeUpdated = $.timeUpdated;
         this.totalStorageGb = $.totalStorageGb;
+        this.upgradeMajorVersionTrigger = $.upgradeMajorVersionTrigger;
         this.vcnCompartmentId = $.vcnCompartmentId;
         this.vcnId = $.vcnId;
     }
@@ -825,9 +841,6 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param configureOutboundClusterTrigger (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -838,9 +851,6 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param configureOutboundClusterTrigger (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -1717,6 +1727,33 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder totalStorageGb(Integer totalStorageGb) {
             return totalStorageGb(Output.of(totalStorageGb));
+        }
+
+        /**
+         * @param upgradeMajorVersionTrigger An optional property to upgrade the major version of the cluster. This workflow upgrades the cluster without creating a clone. If you want to create a clone and upgrade the clone for testing please use SDK or CLI.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder upgradeMajorVersionTrigger(@Nullable Output<Integer> upgradeMajorVersionTrigger) {
+            $.upgradeMajorVersionTrigger = upgradeMajorVersionTrigger;
+            return this;
+        }
+
+        /**
+         * @param upgradeMajorVersionTrigger An optional property to upgrade the major version of the cluster. This workflow upgrades the cluster without creating a clone. If you want to create a clone and upgrade the clone for testing please use SDK or CLI.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder upgradeMajorVersionTrigger(Integer upgradeMajorVersionTrigger) {
+            return upgradeMajorVersionTrigger(Output.of(upgradeMajorVersionTrigger));
         }
 
         /**

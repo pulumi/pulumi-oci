@@ -61,6 +61,8 @@ import (
 type ModelVersionSet struct {
 	pulumi.CustomResourceState
 
+	// The category of the model version set.
+	Category pulumi.StringOutput `pulumi:"category"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model version set in.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model version set.
@@ -124,6 +126,8 @@ func GetModelVersionSet(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ModelVersionSet resources.
 type modelVersionSetState struct {
+	// The category of the model version set.
+	Category *string `pulumi:"category"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model version set in.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model version set.
@@ -152,6 +156,8 @@ type modelVersionSetState struct {
 }
 
 type ModelVersionSetState struct {
+	// The category of the model version set.
+	Category pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model version set in.
 	CompartmentId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model version set.
@@ -305,6 +311,11 @@ func (o ModelVersionSetOutput) ToModelVersionSetOutput() ModelVersionSetOutput {
 
 func (o ModelVersionSetOutput) ToModelVersionSetOutputWithContext(ctx context.Context) ModelVersionSetOutput {
 	return o
+}
+
+// The category of the model version set.
+func (o ModelVersionSetOutput) Category() pulumi.StringOutput {
+	return o.ApplyT(func(v *ModelVersionSet) pulumi.StringOutput { return v.Category }).(pulumi.StringOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model version set in.

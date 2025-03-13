@@ -26,9 +26,12 @@ class ExascaleDbStorageVaultArgs:
                  display_name: pulumi.Input[str],
                  high_capacity_database_storage: pulumi.Input['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs'],
                  additional_flash_cache_in_percent: Optional[pulumi.Input[int]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 subscription_id: Optional[pulumi.Input[str]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ExascaleDbStorageVault resource.
@@ -37,9 +40,12 @@ class ExascaleDbStorageVaultArgs:
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the Exadata Database Storage Vault. The name does not need to be unique.
         :param pulumi.Input['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs'] high_capacity_database_storage: (Updatable) Create exadata Database Storage Details
         :param pulumi.Input[int] additional_flash_cache_in_percent: (Updatable) The size of additional Flash Cache in percentage of High Capacity database storage.
+        :param pulumi.Input[str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] description: (Updatable) Exadata Database Storage Vault description.
+        :param pulumi.Input[str] exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[str] time_zone: The time zone that you want to use for the Exadata Database Storage Vault. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
                
                
@@ -52,12 +58,18 @@ class ExascaleDbStorageVaultArgs:
         pulumi.set(__self__, "high_capacity_database_storage", high_capacity_database_storage)
         if additional_flash_cache_in_percent is not None:
             pulumi.set(__self__, "additional_flash_cache_in_percent", additional_flash_cache_in_percent)
+        if cluster_placement_group_id is not None:
+            pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if exadata_infrastructure_id is not None:
+            pulumi.set(__self__, "exadata_infrastructure_id", exadata_infrastructure_id)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if subscription_id is not None:
+            pulumi.set(__self__, "subscription_id", subscription_id)
         if time_zone is not None:
             pulumi.set(__self__, "time_zone", time_zone)
 
@@ -122,6 +134,18 @@ class ExascaleDbStorageVaultArgs:
         pulumi.set(self, "additional_flash_cache_in_percent", value)
 
     @property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "cluster_placement_group_id", value)
+
+    @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
@@ -146,6 +170,18 @@ class ExascaleDbStorageVaultArgs:
         pulumi.set(self, "description", value)
 
     @property
+    @pulumi.getter(name="exadataInfrastructureId")
+    def exadata_infrastructure_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+        """
+        return pulumi.get(self, "exadata_infrastructure_id")
+
+    @exadata_infrastructure_id.setter
+    def exadata_infrastructure_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "exadata_infrastructure_id", value)
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
@@ -156,6 +192,18 @@ class ExascaleDbStorageVaultArgs:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        """
+        return pulumi.get(self, "subscription_id")
+
+    @subscription_id.setter
+    def subscription_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "subscription_id", value)
 
     @property
     @pulumi.getter(name="timeZone")
@@ -179,14 +227,17 @@ class _ExascaleDbStorageVaultState:
     def __init__(__self__, *,
                  additional_flash_cache_in_percent: Optional[pulumi.Input[int]] = None,
                  availability_domain: Optional[pulumi.Input[str]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  high_capacity_database_storage: Optional[pulumi.Input['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs']] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
+                 subscription_id: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None,
@@ -196,14 +247,17 @@ class _ExascaleDbStorageVaultState:
         Input properties used for looking up and filtering ExascaleDbStorageVault resources.
         :param pulumi.Input[int] additional_flash_cache_in_percent: (Updatable) The size of additional Flash Cache in percentage of High Capacity database storage.
         :param pulumi.Input[str] availability_domain: The name of the availability domain in which the Exadata Database Storage Vault is located.
+        :param pulumi.Input[str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] description: (Updatable) Exadata Database Storage Vault description.
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the Exadata Database Storage Vault. The name does not need to be unique.
+        :param pulumi.Input[str] exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs'] high_capacity_database_storage: (Updatable) Create exadata Database Storage Details
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[str] state: The current state of the Exadata Database Storage Vault.
+        :param pulumi.Input[str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] time_created: The date and time that the Exadata Database Storage Vault was created.
         :param pulumi.Input[str] time_zone: The time zone that you want to use for the Exadata Database Storage Vault. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
@@ -218,6 +272,8 @@ class _ExascaleDbStorageVaultState:
             pulumi.set(__self__, "additional_flash_cache_in_percent", additional_flash_cache_in_percent)
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
+        if cluster_placement_group_id is not None:
+            pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
@@ -226,6 +282,8 @@ class _ExascaleDbStorageVaultState:
             pulumi.set(__self__, "description", description)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if exadata_infrastructure_id is not None:
+            pulumi.set(__self__, "exadata_infrastructure_id", exadata_infrastructure_id)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if high_capacity_database_storage is not None:
@@ -234,6 +292,8 @@ class _ExascaleDbStorageVaultState:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if subscription_id is not None:
+            pulumi.set(__self__, "subscription_id", subscription_id)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
@@ -268,6 +328,18 @@ class _ExascaleDbStorageVaultState:
     @availability_domain.setter
     def availability_domain(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "availability_domain", value)
+
+    @property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "cluster_placement_group_id", value)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -318,6 +390,18 @@ class _ExascaleDbStorageVaultState:
         pulumi.set(self, "display_name", value)
 
     @property
+    @pulumi.getter(name="exadataInfrastructureId")
+    def exadata_infrastructure_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+        """
+        return pulumi.get(self, "exadata_infrastructure_id")
+
+    @exadata_infrastructure_id.setter
+    def exadata_infrastructure_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "exadata_infrastructure_id", value)
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
@@ -364,6 +448,18 @@ class _ExascaleDbStorageVaultState:
     @state.setter
     def state(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "state", value)
+
+    @property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        """
+        return pulumi.get(self, "subscription_id")
+
+    @subscription_id.setter
+    def subscription_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "subscription_id", value)
 
     @property
     @pulumi.getter(name="systemTags")
@@ -437,12 +533,15 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  additional_flash_cache_in_percent: Optional[pulumi.Input[int]] = None,
                  availability_domain: Optional[pulumi.Input[str]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  high_capacity_database_storage: Optional[pulumi.Input[Union['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs', 'ExascaleDbStorageVaultHighCapacityDatabaseStorageArgsDict']]] = None,
+                 subscription_id: Optional[pulumi.Input[str]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -464,11 +563,14 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
                 "total_size_in_gbs": exascale_db_storage_vault_high_capacity_database_storage_total_size_in_gbs,
             },
             additional_flash_cache_in_percent=exascale_db_storage_vault_additional_flash_cache_in_percent,
+            cluster_placement_group_id=test_cluster_placement_group["id"],
             defined_tags=exascale_db_storage_vault_defined_tags,
             description=exascale_db_storage_vault_description,
+            exadata_infrastructure_id=test_exadata_infrastructure["id"],
             freeform_tags={
                 "Department": "Finance",
             },
+            subscription_id=tenant_subscription_id,
             time_zone=exascale_db_storage_vault_time_zone)
         ```
 
@@ -484,12 +586,15 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] additional_flash_cache_in_percent: (Updatable) The size of additional Flash Cache in percentage of High Capacity database storage.
         :param pulumi.Input[str] availability_domain: The name of the availability domain in which the Exadata Database Storage Vault is located.
+        :param pulumi.Input[str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] description: (Updatable) Exadata Database Storage Vault description.
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the Exadata Database Storage Vault. The name does not need to be unique.
+        :param pulumi.Input[str] exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Union['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs', 'ExascaleDbStorageVaultHighCapacityDatabaseStorageArgsDict']] high_capacity_database_storage: (Updatable) Create exadata Database Storage Details
+        :param pulumi.Input[str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[str] time_zone: The time zone that you want to use for the Exadata Database Storage Vault. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
                
                
@@ -521,11 +626,14 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
                 "total_size_in_gbs": exascale_db_storage_vault_high_capacity_database_storage_total_size_in_gbs,
             },
             additional_flash_cache_in_percent=exascale_db_storage_vault_additional_flash_cache_in_percent,
+            cluster_placement_group_id=test_cluster_placement_group["id"],
             defined_tags=exascale_db_storage_vault_defined_tags,
             description=exascale_db_storage_vault_description,
+            exadata_infrastructure_id=test_exadata_infrastructure["id"],
             freeform_tags={
                 "Department": "Finance",
             },
+            subscription_id=tenant_subscription_id,
             time_zone=exascale_db_storage_vault_time_zone)
         ```
 
@@ -554,12 +662,15 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  additional_flash_cache_in_percent: Optional[pulumi.Input[int]] = None,
                  availability_domain: Optional[pulumi.Input[str]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  high_capacity_database_storage: Optional[pulumi.Input[Union['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs', 'ExascaleDbStorageVaultHighCapacityDatabaseStorageArgsDict']]] = None,
+                 subscription_id: Optional[pulumi.Input[str]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -574,6 +685,7 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
             if availability_domain is None and not opts.urn:
                 raise TypeError("Missing required property 'availability_domain'")
             __props__.__dict__["availability_domain"] = availability_domain
+            __props__.__dict__["cluster_placement_group_id"] = cluster_placement_group_id
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
@@ -582,10 +694,12 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
+            __props__.__dict__["exadata_infrastructure_id"] = exadata_infrastructure_id
             __props__.__dict__["freeform_tags"] = freeform_tags
             if high_capacity_database_storage is None and not opts.urn:
                 raise TypeError("Missing required property 'high_capacity_database_storage'")
             __props__.__dict__["high_capacity_database_storage"] = high_capacity_database_storage
+            __props__.__dict__["subscription_id"] = subscription_id
             __props__.__dict__["time_zone"] = time_zone
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
@@ -605,14 +719,17 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             additional_flash_cache_in_percent: Optional[pulumi.Input[int]] = None,
             availability_domain: Optional[pulumi.Input[str]] = None,
+            cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
+            exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             high_capacity_database_storage: Optional[pulumi.Input[Union['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs', 'ExascaleDbStorageVaultHighCapacityDatabaseStorageArgsDict']]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
+            subscription_id: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_zone: Optional[pulumi.Input[str]] = None,
@@ -627,14 +744,17 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] additional_flash_cache_in_percent: (Updatable) The size of additional Flash Cache in percentage of High Capacity database storage.
         :param pulumi.Input[str] availability_domain: The name of the availability domain in which the Exadata Database Storage Vault is located.
+        :param pulumi.Input[str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] description: (Updatable) Exadata Database Storage Vault description.
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the Exadata Database Storage Vault. The name does not need to be unique.
+        :param pulumi.Input[str] exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Union['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs', 'ExascaleDbStorageVaultHighCapacityDatabaseStorageArgsDict']] high_capacity_database_storage: (Updatable) Create exadata Database Storage Details
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[str] state: The current state of the Exadata Database Storage Vault.
+        :param pulumi.Input[str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] time_created: The date and time that the Exadata Database Storage Vault was created.
         :param pulumi.Input[str] time_zone: The time zone that you want to use for the Exadata Database Storage Vault. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
@@ -651,14 +771,17 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
 
         __props__.__dict__["additional_flash_cache_in_percent"] = additional_flash_cache_in_percent
         __props__.__dict__["availability_domain"] = availability_domain
+        __props__.__dict__["cluster_placement_group_id"] = cluster_placement_group_id
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
+        __props__.__dict__["exadata_infrastructure_id"] = exadata_infrastructure_id
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["high_capacity_database_storage"] = high_capacity_database_storage
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["state"] = state
+        __props__.__dict__["subscription_id"] = subscription_id
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_zone"] = time_zone
@@ -681,6 +804,14 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
         The name of the availability domain in which the Exadata Database Storage Vault is located.
         """
         return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> pulumi.Output[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -715,6 +846,14 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
         return pulumi.get(self, "display_name")
 
     @property
+    @pulumi.getter(name="exadataInfrastructureId")
+    def exadata_infrastructure_id(self) -> pulumi.Output[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+        """
+        return pulumi.get(self, "exadata_infrastructure_id")
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
@@ -745,6 +884,14 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
         The current state of the Exadata Database Storage Vault.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> pulumi.Output[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        """
+        return pulumi.get(self, "subscription_id")
 
     @property
     @pulumi.getter(name="systemTags")

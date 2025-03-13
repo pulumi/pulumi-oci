@@ -79,6 +79,8 @@ type LookupMysqlConfigurationResult struct {
 	ShapeName string `pulumi:"shapeName"`
 	// The current state of the Configuration.
 	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the Configuration was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -175,6 +177,11 @@ func (o LookupMysqlConfigurationResultOutput) ShapeName() pulumi.StringOutput {
 // The current state of the Configuration.
 func (o LookupMysqlConfigurationResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMysqlConfigurationResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o LookupMysqlConfigurationResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupMysqlConfigurationResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).

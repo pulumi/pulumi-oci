@@ -19,6 +19,21 @@ public final class GetExadbVmClustersArgs extends com.pulumi.resources.InvokeArg
     public static final GetExadbVmClustersArgs Empty = new GetExadbVmClustersArgs();
 
     /**
+     * A filter to return only resources that match the given cluster placement group ID exactly.
+     * 
+     */
+    @Import(name="clusterPlacementGroupId")
+    private @Nullable Output<String> clusterPlacementGroupId;
+
+    /**
+     * @return A filter to return only resources that match the given cluster placement group ID exactly.
+     * 
+     */
+    public Optional<Output<String>> clusterPlacementGroupId() {
+        return Optional.ofNullable(this.clusterPlacementGroupId);
+    }
+
+    /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -88,6 +103,7 @@ public final class GetExadbVmClustersArgs extends com.pulumi.resources.InvokeArg
     private GetExadbVmClustersArgs() {}
 
     private GetExadbVmClustersArgs(GetExadbVmClustersArgs $) {
+        this.clusterPlacementGroupId = $.clusterPlacementGroupId;
         this.compartmentId = $.compartmentId;
         this.displayName = $.displayName;
         this.exascaleDbStorageVaultId = $.exascaleDbStorageVaultId;
@@ -111,6 +127,27 @@ public final class GetExadbVmClustersArgs extends com.pulumi.resources.InvokeArg
 
         public Builder(GetExadbVmClustersArgs defaults) {
             $ = new GetExadbVmClustersArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param clusterPlacementGroupId A filter to return only resources that match the given cluster placement group ID exactly.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPlacementGroupId(@Nullable Output<String> clusterPlacementGroupId) {
+            $.clusterPlacementGroupId = clusterPlacementGroupId;
+            return this;
+        }
+
+        /**
+         * @param clusterPlacementGroupId A filter to return only resources that match the given cluster placement group ID exactly.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            return clusterPlacementGroupId(Output.of(clusterPlacementGroupId));
         }
 
         /**

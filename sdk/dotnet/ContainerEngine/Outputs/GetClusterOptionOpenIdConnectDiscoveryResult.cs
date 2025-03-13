@@ -13,6 +13,9 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
     [OutputType]
     public sealed class GetClusterOptionOpenIdConnectDiscoveryResult
     {
+        /// <summary>
+        /// Whether the cluster has OIDC Discovery enabled. Defaults to false. If set to true, the cluster will be assigned a public OIDC Discovery endpoint.
+        /// </summary>
         public readonly bool IsOpenIdConnectDiscoveryEnabled;
 
         [OutputConstructor]

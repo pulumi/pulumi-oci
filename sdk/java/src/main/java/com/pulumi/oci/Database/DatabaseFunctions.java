@@ -9616,9 +9616,15 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackups = DatabaseFunctions.getBackups(GetBackupsArgs.builder()
+     *             .backupDestinationType(backupBackupDestinationType)
      *             .compartmentId(compartmentId)
      *             .databaseId(testDatabase.id())
      *             .shapeFamily(backupShapeFamily)
+     *             .state(backupState)
+     *             .timeExpiryScheduledGreaterThanOrEqualTo(backupTimeExpiryScheduledGreaterThanOrEqualTo)
+     *             .timeExpiryScheduledLessThan(backupTimeExpiryScheduledLessThan)
+     *             .type(backupType)
+     *             .version(backupVersion)
      *             .build());
      * 
      *     }
@@ -9662,9 +9668,15 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackups = DatabaseFunctions.getBackups(GetBackupsArgs.builder()
+     *             .backupDestinationType(backupBackupDestinationType)
      *             .compartmentId(compartmentId)
      *             .databaseId(testDatabase.id())
      *             .shapeFamily(backupShapeFamily)
+     *             .state(backupState)
+     *             .timeExpiryScheduledGreaterThanOrEqualTo(backupTimeExpiryScheduledGreaterThanOrEqualTo)
+     *             .timeExpiryScheduledLessThan(backupTimeExpiryScheduledLessThan)
+     *             .type(backupType)
+     *             .version(backupVersion)
      *             .build());
      * 
      *     }
@@ -9708,9 +9720,15 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackups = DatabaseFunctions.getBackups(GetBackupsArgs.builder()
+     *             .backupDestinationType(backupBackupDestinationType)
      *             .compartmentId(compartmentId)
      *             .databaseId(testDatabase.id())
      *             .shapeFamily(backupShapeFamily)
+     *             .state(backupState)
+     *             .timeExpiryScheduledGreaterThanOrEqualTo(backupTimeExpiryScheduledGreaterThanOrEqualTo)
+     *             .timeExpiryScheduledLessThan(backupTimeExpiryScheduledLessThan)
+     *             .type(backupType)
+     *             .version(backupVersion)
      *             .build());
      * 
      *     }
@@ -9754,9 +9772,15 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackups = DatabaseFunctions.getBackups(GetBackupsArgs.builder()
+     *             .backupDestinationType(backupBackupDestinationType)
      *             .compartmentId(compartmentId)
      *             .databaseId(testDatabase.id())
      *             .shapeFamily(backupShapeFamily)
+     *             .state(backupState)
+     *             .timeExpiryScheduledGreaterThanOrEqualTo(backupTimeExpiryScheduledGreaterThanOrEqualTo)
+     *             .timeExpiryScheduledLessThan(backupTimeExpiryScheduledLessThan)
+     *             .type(backupType)
+     *             .version(backupVersion)
      *             .build());
      * 
      *     }
@@ -9800,9 +9824,15 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackups = DatabaseFunctions.getBackups(GetBackupsArgs.builder()
+     *             .backupDestinationType(backupBackupDestinationType)
      *             .compartmentId(compartmentId)
      *             .databaseId(testDatabase.id())
      *             .shapeFamily(backupShapeFamily)
+     *             .state(backupState)
+     *             .timeExpiryScheduledGreaterThanOrEqualTo(backupTimeExpiryScheduledGreaterThanOrEqualTo)
+     *             .timeExpiryScheduledLessThan(backupTimeExpiryScheduledLessThan)
+     *             .type(backupType)
+     *             .version(backupVersion)
      *             .build());
      * 
      *     }
@@ -9846,9 +9876,15 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackups = DatabaseFunctions.getBackups(GetBackupsArgs.builder()
+     *             .backupDestinationType(backupBackupDestinationType)
      *             .compartmentId(compartmentId)
      *             .databaseId(testDatabase.id())
      *             .shapeFamily(backupShapeFamily)
+     *             .state(backupState)
+     *             .timeExpiryScheduledGreaterThanOrEqualTo(backupTimeExpiryScheduledGreaterThanOrEqualTo)
+     *             .timeExpiryScheduledLessThan(backupTimeExpiryScheduledLessThan)
+     *             .type(backupType)
+     *             .version(backupVersion)
      *             .build());
      * 
      *     }
@@ -9892,9 +9928,15 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackups = DatabaseFunctions.getBackups(GetBackupsArgs.builder()
+     *             .backupDestinationType(backupBackupDestinationType)
      *             .compartmentId(compartmentId)
      *             .databaseId(testDatabase.id())
      *             .shapeFamily(backupShapeFamily)
+     *             .state(backupState)
+     *             .timeExpiryScheduledGreaterThanOrEqualTo(backupTimeExpiryScheduledGreaterThanOrEqualTo)
+     *             .timeExpiryScheduledLessThan(backupTimeExpiryScheduledLessThan)
+     *             .type(backupType)
+     *             .version(backupVersion)
      *             .build());
      * 
      *     }
@@ -11987,6 +12029,7 @@ public final class DatabaseFunctions {
      *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
      *             .displayName(cloudVmClusterDisplayName)
      *             .state(cloudVmClusterState)
+     *             .vmClusterType(cloudVmClusterVmClusterType)
      *             .build());
      * 
      *     }
@@ -12034,6 +12077,7 @@ public final class DatabaseFunctions {
      *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
      *             .displayName(cloudVmClusterDisplayName)
      *             .state(cloudVmClusterState)
+     *             .vmClusterType(cloudVmClusterVmClusterType)
      *             .build());
      * 
      *     }
@@ -12081,6 +12125,7 @@ public final class DatabaseFunctions {
      *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
      *             .displayName(cloudVmClusterDisplayName)
      *             .state(cloudVmClusterState)
+     *             .vmClusterType(cloudVmClusterVmClusterType)
      *             .build());
      * 
      *     }
@@ -12128,6 +12173,7 @@ public final class DatabaseFunctions {
      *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
      *             .displayName(cloudVmClusterDisplayName)
      *             .state(cloudVmClusterState)
+     *             .vmClusterType(cloudVmClusterVmClusterType)
      *             .build());
      * 
      *     }
@@ -12175,6 +12221,7 @@ public final class DatabaseFunctions {
      *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
      *             .displayName(cloudVmClusterDisplayName)
      *             .state(cloudVmClusterState)
+     *             .vmClusterType(cloudVmClusterVmClusterType)
      *             .build());
      * 
      *     }
@@ -14024,6 +14071,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseSoftwareImages = DatabaseFunctions.getDatabaseSoftwareImages(GetDatabaseSoftwareImagesArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .dbSystemId(testDbSystem.id())
      *             .displayName(databaseSoftwareImageDisplayName)
      *             .imageShapeFamily(databaseSoftwareImageImageShapeFamily)
      *             .imageType(databaseSoftwareImageImageType)
@@ -14073,6 +14121,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseSoftwareImages = DatabaseFunctions.getDatabaseSoftwareImages(GetDatabaseSoftwareImagesArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .dbSystemId(testDbSystem.id())
      *             .displayName(databaseSoftwareImageDisplayName)
      *             .imageShapeFamily(databaseSoftwareImageImageShapeFamily)
      *             .imageType(databaseSoftwareImageImageType)
@@ -14122,6 +14171,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseSoftwareImages = DatabaseFunctions.getDatabaseSoftwareImages(GetDatabaseSoftwareImagesArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .dbSystemId(testDbSystem.id())
      *             .displayName(databaseSoftwareImageDisplayName)
      *             .imageShapeFamily(databaseSoftwareImageImageShapeFamily)
      *             .imageType(databaseSoftwareImageImageType)
@@ -14171,6 +14221,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseSoftwareImages = DatabaseFunctions.getDatabaseSoftwareImages(GetDatabaseSoftwareImagesArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .dbSystemId(testDbSystem.id())
      *             .displayName(databaseSoftwareImageDisplayName)
      *             .imageShapeFamily(databaseSoftwareImageImageShapeFamily)
      *             .imageType(databaseSoftwareImageImageType)
@@ -14220,6 +14271,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseSoftwareImages = DatabaseFunctions.getDatabaseSoftwareImages(GetDatabaseSoftwareImagesArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .dbSystemId(testDbSystem.id())
      *             .displayName(databaseSoftwareImageDisplayName)
      *             .imageShapeFamily(databaseSoftwareImageImageShapeFamily)
      *             .imageType(databaseSoftwareImageImageType)
@@ -22177,6 +22229,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExadbVmClusters = DatabaseFunctions.getExadbVmClusters(GetExadbVmClustersArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .clusterPlacementGroupId(testClusterPlacementGroup.id())
      *             .displayName(exadbVmClusterDisplayName)
      *             .exascaleDbStorageVaultId(testExascaleDbStorageVault.id())
      *             .state(exadbVmClusterState)
@@ -22224,6 +22277,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExadbVmClusters = DatabaseFunctions.getExadbVmClusters(GetExadbVmClustersArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .clusterPlacementGroupId(testClusterPlacementGroup.id())
      *             .displayName(exadbVmClusterDisplayName)
      *             .exascaleDbStorageVaultId(testExascaleDbStorageVault.id())
      *             .state(exadbVmClusterState)
@@ -22271,6 +22325,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExadbVmClusters = DatabaseFunctions.getExadbVmClusters(GetExadbVmClustersArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .clusterPlacementGroupId(testClusterPlacementGroup.id())
      *             .displayName(exadbVmClusterDisplayName)
      *             .exascaleDbStorageVaultId(testExascaleDbStorageVault.id())
      *             .state(exadbVmClusterState)
@@ -22318,6 +22373,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExadbVmClusters = DatabaseFunctions.getExadbVmClusters(GetExadbVmClustersArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .clusterPlacementGroupId(testClusterPlacementGroup.id())
      *             .displayName(exadbVmClusterDisplayName)
      *             .exascaleDbStorageVaultId(testExascaleDbStorageVault.id())
      *             .state(exadbVmClusterState)
@@ -22365,6 +22421,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExadbVmClusters = DatabaseFunctions.getExadbVmClusters(GetExadbVmClustersArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .clusterPlacementGroupId(testClusterPlacementGroup.id())
      *             .displayName(exadbVmClusterDisplayName)
      *             .exascaleDbStorageVaultId(testExascaleDbStorageVault.id())
      *             .state(exadbVmClusterState)
@@ -22632,7 +22689,9 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExascaleDbStorageVaults = DatabaseFunctions.getExascaleDbStorageVaults(GetExascaleDbStorageVaultsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .clusterPlacementGroupId(testClusterPlacementGroup.id())
      *             .displayName(exascaleDbStorageVaultDisplayName)
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
      *             .state(exascaleDbStorageVaultState)
      *             .build());
      * 
@@ -22678,7 +22737,9 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExascaleDbStorageVaults = DatabaseFunctions.getExascaleDbStorageVaults(GetExascaleDbStorageVaultsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .clusterPlacementGroupId(testClusterPlacementGroup.id())
      *             .displayName(exascaleDbStorageVaultDisplayName)
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
      *             .state(exascaleDbStorageVaultState)
      *             .build());
      * 
@@ -22724,7 +22785,9 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExascaleDbStorageVaults = DatabaseFunctions.getExascaleDbStorageVaults(GetExascaleDbStorageVaultsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .clusterPlacementGroupId(testClusterPlacementGroup.id())
      *             .displayName(exascaleDbStorageVaultDisplayName)
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
      *             .state(exascaleDbStorageVaultState)
      *             .build());
      * 
@@ -22770,7 +22833,9 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExascaleDbStorageVaults = DatabaseFunctions.getExascaleDbStorageVaults(GetExascaleDbStorageVaultsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .clusterPlacementGroupId(testClusterPlacementGroup.id())
      *             .displayName(exascaleDbStorageVaultDisplayName)
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
      *             .state(exascaleDbStorageVaultState)
      *             .build());
      * 
@@ -22816,7 +22881,9 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExascaleDbStorageVaults = DatabaseFunctions.getExascaleDbStorageVaults(GetExascaleDbStorageVaultsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .clusterPlacementGroupId(testClusterPlacementGroup.id())
      *             .displayName(exascaleDbStorageVaultDisplayName)
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
      *             .state(exascaleDbStorageVaultState)
      *             .build());
      * 
@@ -25593,6 +25660,7 @@ public final class DatabaseFunctions {
      *         final var testFlexComponents = DatabaseFunctions.getFlexComponents(GetFlexComponentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .name(flexComponentName)
+     *             .shape(flexComponentShape)
      *             .build());
      * 
      *     }
@@ -25638,6 +25706,7 @@ public final class DatabaseFunctions {
      *         final var testFlexComponents = DatabaseFunctions.getFlexComponents(GetFlexComponentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .name(flexComponentName)
+     *             .shape(flexComponentShape)
      *             .build());
      * 
      *     }
@@ -25683,6 +25752,7 @@ public final class DatabaseFunctions {
      *         final var testFlexComponents = DatabaseFunctions.getFlexComponents(GetFlexComponentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .name(flexComponentName)
+     *             .shape(flexComponentShape)
      *             .build());
      * 
      *     }
@@ -25728,6 +25798,7 @@ public final class DatabaseFunctions {
      *         final var testFlexComponents = DatabaseFunctions.getFlexComponents(GetFlexComponentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .name(flexComponentName)
+     *             .shape(flexComponentShape)
      *             .build());
      * 
      *     }
@@ -25773,6 +25844,7 @@ public final class DatabaseFunctions {
      *         final var testFlexComponents = DatabaseFunctions.getFlexComponents(GetFlexComponentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .name(flexComponentName)
+     *             .shape(flexComponentShape)
      *             .build());
      * 
      *     }
@@ -34170,6 +34242,7 @@ public final class DatabaseFunctions {
      *             .displayName(vmClusterDisplayName)
      *             .exadataInfrastructureId(testExadataInfrastructure.id())
      *             .state(vmClusterState)
+     *             .vmClusterType(vmClusterVmClusterType)
      *             .build());
      * 
      *     }
@@ -34218,6 +34291,7 @@ public final class DatabaseFunctions {
      *             .displayName(vmClusterDisplayName)
      *             .exadataInfrastructureId(testExadataInfrastructure.id())
      *             .state(vmClusterState)
+     *             .vmClusterType(vmClusterVmClusterType)
      *             .build());
      * 
      *     }
@@ -34266,6 +34340,7 @@ public final class DatabaseFunctions {
      *             .displayName(vmClusterDisplayName)
      *             .exadataInfrastructureId(testExadataInfrastructure.id())
      *             .state(vmClusterState)
+     *             .vmClusterType(vmClusterVmClusterType)
      *             .build());
      * 
      *     }
@@ -34314,6 +34389,7 @@ public final class DatabaseFunctions {
      *             .displayName(vmClusterDisplayName)
      *             .exadataInfrastructureId(testExadataInfrastructure.id())
      *             .state(vmClusterState)
+     *             .vmClusterType(vmClusterVmClusterType)
      *             .build());
      * 
      *     }
@@ -34362,6 +34438,7 @@ public final class DatabaseFunctions {
      *             .displayName(vmClusterDisplayName)
      *             .exadataInfrastructureId(testExadataInfrastructure.id())
      *             .state(vmClusterState)
+     *             .vmClusterType(vmClusterVmClusterType)
      *             .build());
      * 
      *     }

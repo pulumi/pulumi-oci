@@ -31,6 +31,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := database.GetExadbVmClusters(ctx, &database.GetExadbVmClustersArgs{
 //				CompartmentId:            compartmentId,
+//				ClusterPlacementGroupId:  pulumi.StringRef(testClusterPlacementGroup.Id),
 //				DisplayName:              pulumi.StringRef(exadbVmClusterDisplayName),
 //				ExascaleDbStorageVaultId: pulumi.StringRef(testExascaleDbStorageVault.Id),
 //				State:                    pulumi.StringRef(exadbVmClusterState),
@@ -55,6 +56,8 @@ func GetExadbVmClusters(ctx *pulumi.Context, args *GetExadbVmClustersArgs, opts 
 
 // A collection of arguments for invoking getExadbVmClusters.
 type GetExadbVmClustersArgs struct {
+	// A filter to return only resources that match the given cluster placement group ID exactly.
+	ClusterPlacementGroupId *string `pulumi:"clusterPlacementGroupId"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
@@ -68,6 +71,8 @@ type GetExadbVmClustersArgs struct {
 
 // A collection of values returned by getExadbVmClusters.
 type GetExadbVmClustersResult struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+	ClusterPlacementGroupId *string `pulumi:"clusterPlacementGroupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does not need to be unique.
@@ -94,6 +99,8 @@ func GetExadbVmClustersOutput(ctx *pulumi.Context, args GetExadbVmClustersOutput
 
 // A collection of arguments for invoking getExadbVmClusters.
 type GetExadbVmClustersOutputArgs struct {
+	// A filter to return only resources that match the given cluster placement group ID exactly.
+	ClusterPlacementGroupId pulumi.StringPtrInput `pulumi:"clusterPlacementGroupId"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
@@ -122,6 +129,11 @@ func (o GetExadbVmClustersResultOutput) ToGetExadbVmClustersResultOutput() GetEx
 
 func (o GetExadbVmClustersResultOutput) ToGetExadbVmClustersResultOutputWithContext(ctx context.Context) GetExadbVmClustersResultOutput {
 	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+func (o GetExadbVmClustersResultOutput) ClusterPlacementGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadbVmClustersResult) *string { return v.ClusterPlacementGroupId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

@@ -26,6 +26,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetModelsModelBackupSettingResult> BackupSettings;
         /// <summary>
+        /// Specifies the type of models to list. By default, user models are listed.
+        /// </summary>
+        public readonly string Category;
+        /// <summary>
         /// &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         public readonly string CompartmentId;
@@ -66,6 +70,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// Input schema file content in String format
         /// </summary>
         public readonly string InputSchema;
+        /// <summary>
+        /// Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+        /// </summary>
+        public readonly bool IsModelByReference;
         /// <summary>
         /// Details about the lifecycle state of the model.
         /// </summary>
@@ -119,6 +127,8 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             ImmutableArray<Outputs.GetModelsModelBackupSettingResult> backupSettings,
 
+            string category,
+
             string compartmentId,
 
             string createdBy,
@@ -140,6 +150,8 @@ namespace Pulumi.Oci.DataScience.Outputs
             string id,
 
             string inputSchema,
+
+            bool isModelByReference,
 
             string lifecycleDetails,
 
@@ -169,6 +181,7 @@ namespace Pulumi.Oci.DataScience.Outputs
             ArtifactLastModified = artifactLastModified;
             BackupOperationDetails = backupOperationDetails;
             BackupSettings = backupSettings;
+            Category = category;
             CompartmentId = compartmentId;
             CreatedBy = createdBy;
             CustomMetadataLists = customMetadataLists;
@@ -180,6 +193,7 @@ namespace Pulumi.Oci.DataScience.Outputs
             FreeformTags = freeformTags;
             Id = id;
             InputSchema = inputSchema;
+            IsModelByReference = isModelByReference;
             LifecycleDetails = lifecycleDetails;
             ModelArtifact = modelArtifact;
             ModelVersionSetId = modelVersionSetId;

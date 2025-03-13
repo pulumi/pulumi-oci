@@ -25,10 +25,12 @@ func GetSecurityAssessmentFinding(ctx *pulumi.Context, args *GetSecurityAssessme
 type GetSecurityAssessmentFindingArgs struct {
 	AccessLevel            *string                              `pulumi:"accessLevel"`
 	CompartmentIdInSubtree *bool                                `pulumi:"compartmentIdInSubtree"`
+	Fields                 []string                             `pulumi:"fields"`
 	Filters                []GetSecurityAssessmentFindingFilter `pulumi:"filters"`
 	FindingKey             *string                              `pulumi:"findingKey"`
 	IsTopFinding           *bool                                `pulumi:"isTopFinding"`
 	References             *string                              `pulumi:"references"`
+	ScimQuery              *string                              `pulumi:"scimQuery"`
 	SecurityAssessmentId   string                               `pulumi:"securityAssessmentId"`
 	Severity               *string                              `pulumi:"severity"`
 	State                  *string                              `pulumi:"state"`
@@ -39,6 +41,7 @@ type GetSecurityAssessmentFindingArgs struct {
 type GetSecurityAssessmentFindingResult struct {
 	AccessLevel            *string                               `pulumi:"accessLevel"`
 	CompartmentIdInSubtree *bool                                 `pulumi:"compartmentIdInSubtree"`
+	Fields                 []string                              `pulumi:"fields"`
 	Filters                []GetSecurityAssessmentFindingFilter  `pulumi:"filters"`
 	FindingKey             *string                               `pulumi:"findingKey"`
 	Findings               []GetSecurityAssessmentFindingFinding `pulumi:"findings"`
@@ -46,6 +49,7 @@ type GetSecurityAssessmentFindingResult struct {
 	Id                   string  `pulumi:"id"`
 	IsTopFinding         *bool   `pulumi:"isTopFinding"`
 	References           *string `pulumi:"references"`
+	ScimQuery            *string `pulumi:"scimQuery"`
 	SecurityAssessmentId string  `pulumi:"securityAssessmentId"`
 	Severity             *string `pulumi:"severity"`
 	State                *string `pulumi:"state"`
@@ -65,10 +69,12 @@ func GetSecurityAssessmentFindingOutput(ctx *pulumi.Context, args GetSecurityAss
 type GetSecurityAssessmentFindingOutputArgs struct {
 	AccessLevel            pulumi.StringPtrInput                        `pulumi:"accessLevel"`
 	CompartmentIdInSubtree pulumi.BoolPtrInput                          `pulumi:"compartmentIdInSubtree"`
+	Fields                 pulumi.StringArrayInput                      `pulumi:"fields"`
 	Filters                GetSecurityAssessmentFindingFilterArrayInput `pulumi:"filters"`
 	FindingKey             pulumi.StringPtrInput                        `pulumi:"findingKey"`
 	IsTopFinding           pulumi.BoolPtrInput                          `pulumi:"isTopFinding"`
 	References             pulumi.StringPtrInput                        `pulumi:"references"`
+	ScimQuery              pulumi.StringPtrInput                        `pulumi:"scimQuery"`
 	SecurityAssessmentId   pulumi.StringInput                           `pulumi:"securityAssessmentId"`
 	Severity               pulumi.StringPtrInput                        `pulumi:"severity"`
 	State                  pulumi.StringPtrInput                        `pulumi:"state"`
@@ -102,6 +108,10 @@ func (o GetSecurityAssessmentFindingResultOutput) CompartmentIdInSubtree() pulum
 	return o.ApplyT(func(v GetSecurityAssessmentFindingResult) *bool { return v.CompartmentIdInSubtree }).(pulumi.BoolPtrOutput)
 }
 
+func (o GetSecurityAssessmentFindingResultOutput) Fields() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingResult) []string { return v.Fields }).(pulumi.StringArrayOutput)
+}
+
 func (o GetSecurityAssessmentFindingResultOutput) Filters() GetSecurityAssessmentFindingFilterArrayOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingResult) []GetSecurityAssessmentFindingFilter { return v.Filters }).(GetSecurityAssessmentFindingFilterArrayOutput)
 }
@@ -125,6 +135,10 @@ func (o GetSecurityAssessmentFindingResultOutput) IsTopFinding() pulumi.BoolPtrO
 
 func (o GetSecurityAssessmentFindingResultOutput) References() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingResult) *string { return v.References }).(pulumi.StringPtrOutput)
+}
+
+func (o GetSecurityAssessmentFindingResultOutput) ScimQuery() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingResult) *string { return v.ScimQuery }).(pulumi.StringPtrOutput)
 }
 
 func (o GetSecurityAssessmentFindingResultOutput) SecurityAssessmentId() pulumi.StringOutput {

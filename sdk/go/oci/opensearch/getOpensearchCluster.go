@@ -154,7 +154,8 @@ type GetOpensearchClusterResult struct {
 	// The amount of time in milliseconds since the cluster was updated.
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// The size in GB of the cluster's total storage.
-	TotalStorageGb int `pulumi:"totalStorageGb"`
+	TotalStorageGb             int `pulumi:"totalStorageGb"`
+	UpgradeMajorVersionTrigger int `pulumi:"upgradeMajorVersionTrigger"`
 	// The OCID for the compartment where the cluster's VCN is located.
 	VcnCompartmentId string `pulumi:"vcnCompartmentId"`
 	// The OCID of the cluster's VCN.
@@ -422,6 +423,10 @@ func (o GetOpensearchClusterResultOutput) TimeUpdated() pulumi.StringOutput {
 // The size in GB of the cluster's total storage.
 func (o GetOpensearchClusterResultOutput) TotalStorageGb() pulumi.IntOutput {
 	return o.ApplyT(func(v GetOpensearchClusterResult) int { return v.TotalStorageGb }).(pulumi.IntOutput)
+}
+
+func (o GetOpensearchClusterResultOutput) UpgradeMajorVersionTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) int { return v.UpgradeMajorVersionTrigger }).(pulumi.IntOutput)
 }
 
 // The OCID for the compartment where the cluster's VCN is located.

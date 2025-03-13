@@ -39,6 +39,12 @@ import (
 //				AdminPassword:      pulumi.Any(mysqlDbSystemAdminPassword),
 //				AdminUsername:      pulumi.Any(mysqlDbSystemAdminUsername),
 //				BackupPolicy: &mysql.MysqlDbSystemBackupPolicyArgs{
+//					CopyPolicies: mysql.MysqlDbSystemBackupPolicyCopyPolicyArray{
+//						&mysql.MysqlDbSystemBackupPolicyCopyPolicyArgs{
+//							CopyToRegion:              pulumi.Any(mysqlDbSystemBackupPolicyCopyPoliciesCopyToRegion),
+//							BackupCopyRetentionInDays: pulumi.Any(mysqlDbSystemBackupPolicyCopyPoliciesBackupCopyRetentionInDays),
+//						},
+//					},
 //					DefinedTags: pulumi.StringMap{
 //						"foo-namespace.bar-key": pulumi.String("value"),
 //					},
@@ -226,6 +232,8 @@ type MysqlDbSystem struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// The OCID of the subnet the DB System is associated with.
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the DB System was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the DB System was last updated.
@@ -383,6 +391,8 @@ type mysqlDbSystemState struct {
 	State *string `pulumi:"state"`
 	// The OCID of the subnet the DB System is associated with.
 	SubnetId *string `pulumi:"subnetId"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the DB System was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the DB System was last updated.
@@ -492,6 +502,8 @@ type MysqlDbSystemState struct {
 	State pulumi.StringPtrInput
 	// The OCID of the subnet the DB System is associated with.
 	SubnetId pulumi.StringPtrInput
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput
 	// The date and time the DB System was created.
 	TimeCreated pulumi.StringPtrInput
 	// The time the DB System was last updated.
@@ -994,6 +1006,11 @@ func (o MysqlDbSystemOutput) State() pulumi.StringOutput {
 // The OCID of the subnet the DB System is associated with.
 func (o MysqlDbSystemOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o MysqlDbSystemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the DB System was created.

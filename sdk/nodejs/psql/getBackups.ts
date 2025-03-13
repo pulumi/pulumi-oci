@@ -86,6 +86,9 @@ export interface GetBackupsResult {
      * The list of backup_collection.
      */
     readonly backupCollections: outputs.Psql.GetBackupsBackupCollection[];
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup in the source region
+     */
     readonly backupId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.

@@ -27,7 +27,7 @@ class GetCloudExadataInfrastructureResult:
     """
     A collection of values returned by getCloudExadataInfrastructure.
     """
-    def __init__(__self__, activated_storage_count=None, additional_storage_count=None, availability_domain=None, available_storage_size_in_gbs=None, cloud_exadata_infrastructure_id=None, cluster_placement_group_id=None, compartment_id=None, compute_count=None, cpu_count=None, customer_contacts=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_server_version=None, defined_file_system_configurations=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_scheduling_policy_associated=None, last_maintenance_run_id=None, lifecycle_details=None, maintenance_windows=None, max_cpu_count=None, max_data_storage_in_tbs=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, monthly_db_server_version=None, monthly_storage_server_version=None, next_maintenance_run_id=None, shape=None, state=None, storage_count=None, storage_server_version=None, subscription_id=None, system_tags=None, time_created=None, total_storage_size_in_gbs=None):
+    def __init__(__self__, activated_storage_count=None, additional_storage_count=None, availability_domain=None, available_storage_size_in_gbs=None, cloud_exadata_infrastructure_id=None, cluster_placement_group_id=None, compartment_id=None, compute_count=None, compute_model=None, cpu_count=None, customer_contacts=None, data_storage_size_in_tbs=None, database_server_type=None, db_node_storage_size_in_gbs=None, db_server_version=None, defined_file_system_configurations=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_scheduling_policy_associated=None, last_maintenance_run_id=None, lifecycle_details=None, maintenance_windows=None, max_cpu_count=None, max_data_storage_in_tbs=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, monthly_db_server_version=None, monthly_storage_server_version=None, next_maintenance_run_id=None, shape=None, state=None, storage_count=None, storage_server_type=None, storage_server_version=None, subscription_id=None, system_tags=None, time_created=None, total_storage_size_in_gbs=None):
         if activated_storage_count and not isinstance(activated_storage_count, int):
             raise TypeError("Expected argument 'activated_storage_count' to be a int")
         pulumi.set(__self__, "activated_storage_count", activated_storage_count)
@@ -52,6 +52,9 @@ class GetCloudExadataInfrastructureResult:
         if compute_count and not isinstance(compute_count, int):
             raise TypeError("Expected argument 'compute_count' to be a int")
         pulumi.set(__self__, "compute_count", compute_count)
+        if compute_model and not isinstance(compute_model, str):
+            raise TypeError("Expected argument 'compute_model' to be a str")
+        pulumi.set(__self__, "compute_model", compute_model)
         if cpu_count and not isinstance(cpu_count, int):
             raise TypeError("Expected argument 'cpu_count' to be a int")
         pulumi.set(__self__, "cpu_count", cpu_count)
@@ -61,6 +64,9 @@ class GetCloudExadataInfrastructureResult:
         if data_storage_size_in_tbs and not isinstance(data_storage_size_in_tbs, float):
             raise TypeError("Expected argument 'data_storage_size_in_tbs' to be a float")
         pulumi.set(__self__, "data_storage_size_in_tbs", data_storage_size_in_tbs)
+        if database_server_type and not isinstance(database_server_type, str):
+            raise TypeError("Expected argument 'database_server_type' to be a str")
+        pulumi.set(__self__, "database_server_type", database_server_type)
         if db_node_storage_size_in_gbs and not isinstance(db_node_storage_size_in_gbs, int):
             raise TypeError("Expected argument 'db_node_storage_size_in_gbs' to be a int")
         pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
@@ -127,6 +133,9 @@ class GetCloudExadataInfrastructureResult:
         if storage_count and not isinstance(storage_count, int):
             raise TypeError("Expected argument 'storage_count' to be a int")
         pulumi.set(__self__, "storage_count", storage_count)
+        if storage_server_type and not isinstance(storage_server_type, str):
+            raise TypeError("Expected argument 'storage_server_type' to be a str")
+        pulumi.set(__self__, "storage_server_type", storage_server_type)
         if storage_server_version and not isinstance(storage_server_version, str):
             raise TypeError("Expected argument 'storage_server_version' to be a str")
         pulumi.set(__self__, "storage_server_version", storage_server_version)
@@ -205,6 +214,14 @@ class GetCloudExadataInfrastructureResult:
         return pulumi.get(self, "compute_count")
 
     @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> str:
+        """
+        The compute model of the Exadata infrastructure.
+        """
+        return pulumi.get(self, "compute_model")
+
+    @property
     @pulumi.getter(name="cpuCount")
     def cpu_count(self) -> int:
         """
@@ -227,6 +244,14 @@ class GetCloudExadataInfrastructureResult:
         Size, in terabytes, of the DATA disk group.
         """
         return pulumi.get(self, "data_storage_size_in_tbs")
+
+    @property
+    @pulumi.getter(name="databaseServerType")
+    def database_server_type(self) -> str:
+        """
+        The database server type of the Exadata infrastructure.
+        """
+        return pulumi.get(self, "database_server_type")
 
     @property
     @pulumi.getter(name="dbNodeStorageSizeInGbs")
@@ -405,6 +430,14 @@ class GetCloudExadataInfrastructureResult:
         return pulumi.get(self, "storage_count")
 
     @property
+    @pulumi.getter(name="storageServerType")
+    def storage_server_type(self) -> str:
+        """
+        The storage server type of the Exadata infrastructure.
+        """
+        return pulumi.get(self, "storage_server_type")
+
+    @property
     @pulumi.getter(name="storageServerVersion")
     def storage_server_version(self) -> str:
         """
@@ -459,9 +492,11 @@ class AwaitableGetCloudExadataInfrastructureResult(GetCloudExadataInfrastructure
             cluster_placement_group_id=self.cluster_placement_group_id,
             compartment_id=self.compartment_id,
             compute_count=self.compute_count,
+            compute_model=self.compute_model,
             cpu_count=self.cpu_count,
             customer_contacts=self.customer_contacts,
             data_storage_size_in_tbs=self.data_storage_size_in_tbs,
+            database_server_type=self.database_server_type,
             db_node_storage_size_in_gbs=self.db_node_storage_size_in_gbs,
             db_server_version=self.db_server_version,
             defined_file_system_configurations=self.defined_file_system_configurations,
@@ -484,6 +519,7 @@ class AwaitableGetCloudExadataInfrastructureResult(GetCloudExadataInfrastructure
             shape=self.shape,
             state=self.state,
             storage_count=self.storage_count,
+            storage_server_type=self.storage_server_type,
             storage_server_version=self.storage_server_version,
             subscription_id=self.subscription_id,
             system_tags=self.system_tags,
@@ -524,9 +560,11 @@ def get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id: Optional[s
         cluster_placement_group_id=pulumi.get(__ret__, 'cluster_placement_group_id'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         compute_count=pulumi.get(__ret__, 'compute_count'),
+        compute_model=pulumi.get(__ret__, 'compute_model'),
         cpu_count=pulumi.get(__ret__, 'cpu_count'),
         customer_contacts=pulumi.get(__ret__, 'customer_contacts'),
         data_storage_size_in_tbs=pulumi.get(__ret__, 'data_storage_size_in_tbs'),
+        database_server_type=pulumi.get(__ret__, 'database_server_type'),
         db_node_storage_size_in_gbs=pulumi.get(__ret__, 'db_node_storage_size_in_gbs'),
         db_server_version=pulumi.get(__ret__, 'db_server_version'),
         defined_file_system_configurations=pulumi.get(__ret__, 'defined_file_system_configurations'),
@@ -549,6 +587,7 @@ def get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id: Optional[s
         shape=pulumi.get(__ret__, 'shape'),
         state=pulumi.get(__ret__, 'state'),
         storage_count=pulumi.get(__ret__, 'storage_count'),
+        storage_server_type=pulumi.get(__ret__, 'storage_server_type'),
         storage_server_version=pulumi.get(__ret__, 'storage_server_version'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
@@ -586,9 +625,11 @@ def get_cloud_exadata_infrastructure_output(cloud_exadata_infrastructure_id: Opt
         cluster_placement_group_id=pulumi.get(__response__, 'cluster_placement_group_id'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         compute_count=pulumi.get(__response__, 'compute_count'),
+        compute_model=pulumi.get(__response__, 'compute_model'),
         cpu_count=pulumi.get(__response__, 'cpu_count'),
         customer_contacts=pulumi.get(__response__, 'customer_contacts'),
         data_storage_size_in_tbs=pulumi.get(__response__, 'data_storage_size_in_tbs'),
+        database_server_type=pulumi.get(__response__, 'database_server_type'),
         db_node_storage_size_in_gbs=pulumi.get(__response__, 'db_node_storage_size_in_gbs'),
         db_server_version=pulumi.get(__response__, 'db_server_version'),
         defined_file_system_configurations=pulumi.get(__response__, 'defined_file_system_configurations'),
@@ -611,6 +652,7 @@ def get_cloud_exadata_infrastructure_output(cloud_exadata_infrastructure_id: Opt
         shape=pulumi.get(__response__, 'shape'),
         state=pulumi.get(__response__, 'state'),
         storage_count=pulumi.get(__response__, 'storage_count'),
+        storage_server_type=pulumi.get(__response__, 'storage_server_type'),
         storage_server_version=pulumi.get(__response__, 'storage_server_version'),
         subscription_id=pulumi.get(__response__, 'subscription_id'),
         system_tags=pulumi.get(__response__, 'system_tags'),

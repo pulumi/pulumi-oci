@@ -29,6 +29,7 @@ namespace Pulumi.Oci.DataScience
         ///     var testModelVersionSets = Oci.DataScience.GetModelVersionSets.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         Category = modelVersionSetCategory,
         ///         CreatedBy = modelVersionSetCreatedBy,
         ///         Id = modelVersionSetId,
         ///         Name = modelVersionSetName,
@@ -60,6 +61,7 @@ namespace Pulumi.Oci.DataScience
         ///     var testModelVersionSets = Oci.DataScience.GetModelVersionSets.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         Category = modelVersionSetCategory,
         ///         CreatedBy = modelVersionSetCreatedBy,
         ///         Id = modelVersionSetId,
         ///         Name = modelVersionSetName,
@@ -91,6 +93,7 @@ namespace Pulumi.Oci.DataScience
         ///     var testModelVersionSets = Oci.DataScience.GetModelVersionSets.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         Category = modelVersionSetCategory,
         ///         CreatedBy = modelVersionSetCreatedBy,
         ///         Id = modelVersionSetId,
         ///         Name = modelVersionSetName,
@@ -108,6 +111,12 @@ namespace Pulumi.Oci.DataScience
 
     public sealed class GetModelVersionSetsArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Specifies the type of model version sets to list. By default, user model version sets are listed.
+        /// </summary>
+        [Input("category")]
+        public string? Category { get; set; }
+
         /// <summary>
         /// &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
@@ -160,6 +169,12 @@ namespace Pulumi.Oci.DataScience
 
     public sealed class GetModelVersionSetsInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Specifies the type of model version sets to list. By default, user model version sets are listed.
+        /// </summary>
+        [Input("category")]
+        public Input<string>? Category { get; set; }
+
         /// <summary>
         /// &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
@@ -215,6 +230,10 @@ namespace Pulumi.Oci.DataScience
     public sealed class GetModelVersionSetsResult
     {
         /// <summary>
+        /// The category of the model version set.
+        /// </summary>
+        public readonly string? Category;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model version set compartment.
         /// </summary>
         public readonly string CompartmentId;
@@ -246,6 +265,8 @@ namespace Pulumi.Oci.DataScience
 
         [OutputConstructor]
         private GetModelVersionSetsResult(
+            string? category,
+
             string compartmentId,
 
             string? createdBy,
@@ -262,6 +283,7 @@ namespace Pulumi.Oci.DataScience
 
             string? state)
         {
+            Category = category;
             CompartmentId = compartmentId;
             CreatedBy = createdBy;
             Filters = filters;

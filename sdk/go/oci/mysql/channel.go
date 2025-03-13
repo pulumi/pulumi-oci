@@ -44,6 +44,8 @@ type Channel struct {
 	Source ChannelSourceOutput `pulumi:"source"`
 	// The state of the Channel.
 	State pulumi.StringOutput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// (Updatable) Parameters detailing how to provision the target for the given Channel.
 	Target ChannelTargetOutput `pulumi:"target"`
 	// The date and time the Channel was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -106,6 +108,8 @@ type channelState struct {
 	Source *ChannelSource `pulumi:"source"`
 	// The state of the Channel.
 	State *string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// (Updatable) Parameters detailing how to provision the target for the given Channel.
 	Target *ChannelTarget `pulumi:"target"`
 	// The date and time the Channel was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -133,6 +137,8 @@ type ChannelState struct {
 	Source ChannelSourcePtrInput
 	// The state of the Channel.
 	State pulumi.StringPtrInput
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput
 	// (Updatable) Parameters detailing how to provision the target for the given Channel.
 	Target ChannelTargetPtrInput
 	// The date and time the Channel was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -314,6 +320,11 @@ func (o ChannelOutput) Source() ChannelSourceOutput {
 // The state of the Channel.
 func (o ChannelOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *Channel) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o ChannelOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Channel) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Parameters detailing how to provision the target for the given Channel.

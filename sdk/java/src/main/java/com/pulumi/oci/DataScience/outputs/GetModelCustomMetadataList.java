@@ -5,7 +5,9 @@ package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -21,6 +23,11 @@ public final class GetModelCustomMetadataList {
      */
     private String description;
     /**
+     * @return Is there any artifact present for the metadata.
+     * 
+     */
+    private Boolean hasArtifact;
+    /**
      * @return Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
      * * useCaseType
      * * libraryName
@@ -28,9 +35,19 @@ public final class GetModelCustomMetadataList {
      * * estimatorClass
      * * hyperParameters
      * * testArtifactresults
+     * * fineTuningConfiguration
+     * * deploymentConfiguration
+     * * readme
+     * * license
+     * * evaluationConfiguration
      * 
      */
     private String key;
+    /**
+     * @return list of keywords for searching
+     * 
+     */
+    private List<String> keywords;
     /**
      * @return Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
      * 
@@ -53,6 +70,13 @@ public final class GetModelCustomMetadataList {
         return this.description;
     }
     /**
+     * @return Is there any artifact present for the metadata.
+     * 
+     */
+    public Boolean hasArtifact() {
+        return this.hasArtifact;
+    }
+    /**
      * @return Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
      * * useCaseType
      * * libraryName
@@ -60,10 +84,22 @@ public final class GetModelCustomMetadataList {
      * * estimatorClass
      * * hyperParameters
      * * testArtifactresults
+     * * fineTuningConfiguration
+     * * deploymentConfiguration
+     * * readme
+     * * license
+     * * evaluationConfiguration
      * 
      */
     public String key() {
         return this.key;
+    }
+    /**
+     * @return list of keywords for searching
+     * 
+     */
+    public List<String> keywords() {
+        return this.keywords;
     }
     /**
      * @return Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
@@ -84,14 +120,18 @@ public final class GetModelCustomMetadataList {
     public static final class Builder {
         private String category;
         private String description;
+        private Boolean hasArtifact;
         private String key;
+        private List<String> keywords;
         private String value;
         public Builder() {}
         public Builder(GetModelCustomMetadataList defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.category = defaults.category;
     	      this.description = defaults.description;
+    	      this.hasArtifact = defaults.hasArtifact;
     	      this.key = defaults.key;
+    	      this.keywords = defaults.keywords;
     	      this.value = defaults.value;
         }
 
@@ -112,12 +152,31 @@ public final class GetModelCustomMetadataList {
             return this;
         }
         @CustomType.Setter
+        public Builder hasArtifact(Boolean hasArtifact) {
+            if (hasArtifact == null) {
+              throw new MissingRequiredPropertyException("GetModelCustomMetadataList", "hasArtifact");
+            }
+            this.hasArtifact = hasArtifact;
+            return this;
+        }
+        @CustomType.Setter
         public Builder key(String key) {
             if (key == null) {
               throw new MissingRequiredPropertyException("GetModelCustomMetadataList", "key");
             }
             this.key = key;
             return this;
+        }
+        @CustomType.Setter
+        public Builder keywords(List<String> keywords) {
+            if (keywords == null) {
+              throw new MissingRequiredPropertyException("GetModelCustomMetadataList", "keywords");
+            }
+            this.keywords = keywords;
+            return this;
+        }
+        public Builder keywords(String... keywords) {
+            return keywords(List.of(keywords));
         }
         @CustomType.Setter
         public Builder value(String value) {
@@ -131,7 +190,9 @@ public final class GetModelCustomMetadataList {
             final var _resultValue = new GetModelCustomMetadataList();
             _resultValue.category = category;
             _resultValue.description = description;
+            _resultValue.hasArtifact = hasArtifact;
             _resultValue.key = key;
+            _resultValue.keywords = keywords;
             _resultValue.value = value;
             return _resultValue;
         }

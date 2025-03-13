@@ -11,10 +11,12 @@ export function getSecurityAssessmentFinding(args: GetSecurityAssessmentFindingA
     return pulumi.runtime.invoke("oci:DataSafe/getSecurityAssessmentFinding:getSecurityAssessmentFinding", {
         "accessLevel": args.accessLevel,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "fields": args.fields,
         "filters": args.filters,
         "findingKey": args.findingKey,
         "isTopFinding": args.isTopFinding,
         "references": args.references,
+        "scimQuery": args.scimQuery,
         "securityAssessmentId": args.securityAssessmentId,
         "severity": args.severity,
         "state": args.state,
@@ -28,10 +30,12 @@ export function getSecurityAssessmentFinding(args: GetSecurityAssessmentFindingA
 export interface GetSecurityAssessmentFindingArgs {
     accessLevel?: string;
     compartmentIdInSubtree?: boolean;
+    fields?: string[];
     filters?: inputs.DataSafe.GetSecurityAssessmentFindingFilter[];
     findingKey?: string;
     isTopFinding?: boolean;
     references?: string;
+    scimQuery?: string;
     securityAssessmentId: string;
     severity?: string;
     state?: string;
@@ -44,6 +48,7 @@ export interface GetSecurityAssessmentFindingArgs {
 export interface GetSecurityAssessmentFindingResult {
     readonly accessLevel?: string;
     readonly compartmentIdInSubtree?: boolean;
+    readonly fields?: string[];
     readonly filters?: outputs.DataSafe.GetSecurityAssessmentFindingFilter[];
     readonly findingKey?: string;
     readonly findings: outputs.DataSafe.GetSecurityAssessmentFindingFinding[];
@@ -53,6 +58,7 @@ export interface GetSecurityAssessmentFindingResult {
     readonly id: string;
     readonly isTopFinding?: boolean;
     readonly references?: string;
+    readonly scimQuery?: string;
     readonly securityAssessmentId: string;
     readonly severity?: string;
     readonly state?: string;
@@ -63,10 +69,12 @@ export function getSecurityAssessmentFindingOutput(args: GetSecurityAssessmentFi
     return pulumi.runtime.invokeOutput("oci:DataSafe/getSecurityAssessmentFinding:getSecurityAssessmentFinding", {
         "accessLevel": args.accessLevel,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "fields": args.fields,
         "filters": args.filters,
         "findingKey": args.findingKey,
         "isTopFinding": args.isTopFinding,
         "references": args.references,
+        "scimQuery": args.scimQuery,
         "securityAssessmentId": args.securityAssessmentId,
         "severity": args.severity,
         "state": args.state,
@@ -80,10 +88,12 @@ export function getSecurityAssessmentFindingOutput(args: GetSecurityAssessmentFi
 export interface GetSecurityAssessmentFindingOutputArgs {
     accessLevel?: pulumi.Input<string>;
     compartmentIdInSubtree?: pulumi.Input<boolean>;
+    fields?: pulumi.Input<pulumi.Input<string>[]>;
     filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSecurityAssessmentFindingFilterArgs>[]>;
     findingKey?: pulumi.Input<string>;
     isTopFinding?: pulumi.Input<boolean>;
     references?: pulumi.Input<string>;
+    scimQuery?: pulumi.Input<string>;
     securityAssessmentId: pulumi.Input<string>;
     severity?: pulumi.Input<string>;
     state?: pulumi.Input<string>;

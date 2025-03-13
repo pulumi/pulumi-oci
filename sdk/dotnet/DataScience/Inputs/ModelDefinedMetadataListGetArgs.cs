@@ -25,6 +25,12 @@ namespace Pulumi.Oci.DataScience.Inputs
         public Input<string>? Description { get; set; }
 
         /// <summary>
+        /// (Updatable) Is there any artifact present for the metadata.
+        /// </summary>
+        [Input("hasArtifact")]
+        public Input<bool>? HasArtifact { get; set; }
+
+        /// <summary>
         /// (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
         /// * useCaseType
         /// * libraryName
@@ -32,9 +38,26 @@ namespace Pulumi.Oci.DataScience.Inputs
         /// * estimatorClass
         /// * hyperParameters
         /// * testArtifactresults
+        /// * fineTuningConfiguration
+        /// * deploymentConfiguration
+        /// * readme
+        /// * license
+        /// * evaluationConfiguration
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
+
+        [Input("keywords")]
+        private InputList<string>? _keywords;
+
+        /// <summary>
+        /// (Updatable) list of keywords for searching
+        /// </summary>
+        public InputList<string> Keywords
+        {
+            get => _keywords ?? (_keywords = new InputList<string>());
+            set => _keywords = value;
+        }
 
         /// <summary>
         /// (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other

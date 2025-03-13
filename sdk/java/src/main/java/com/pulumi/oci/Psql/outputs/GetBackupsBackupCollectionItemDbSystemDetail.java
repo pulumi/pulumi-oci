@@ -11,6 +11,11 @@ import java.util.Objects;
 @CustomType
 public final class GetBackupsBackupCollectionItemDbSystemDetail {
     /**
+     * @return OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
+     * 
+     */
+    private String configId;
+    /**
      * @return The major and minor versions of the database system software.
      * 
      */
@@ -22,6 +27,13 @@ public final class GetBackupsBackupCollectionItemDbSystemDetail {
     private String systemType;
 
     private GetBackupsBackupCollectionItemDbSystemDetail() {}
+    /**
+     * @return OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
+     * 
+     */
+    public String configId() {
+        return this.configId;
+    }
     /**
      * @return The major and minor versions of the database system software.
      * 
@@ -46,15 +58,25 @@ public final class GetBackupsBackupCollectionItemDbSystemDetail {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String configId;
         private String dbVersion;
         private String systemType;
         public Builder() {}
         public Builder(GetBackupsBackupCollectionItemDbSystemDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.configId = defaults.configId;
     	      this.dbVersion = defaults.dbVersion;
     	      this.systemType = defaults.systemType;
         }
 
+        @CustomType.Setter
+        public Builder configId(String configId) {
+            if (configId == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackupCollectionItemDbSystemDetail", "configId");
+            }
+            this.configId = configId;
+            return this;
+        }
         @CustomType.Setter
         public Builder dbVersion(String dbVersion) {
             if (dbVersion == null) {
@@ -73,6 +95,7 @@ public final class GetBackupsBackupCollectionItemDbSystemDetail {
         }
         public GetBackupsBackupCollectionItemDbSystemDetail build() {
             final var _resultValue = new GetBackupsBackupCollectionItemDbSystemDetail();
+            _resultValue.configId = configId;
             _resultValue.dbVersion = dbVersion;
             _resultValue.systemType = systemType;
             return _resultValue;

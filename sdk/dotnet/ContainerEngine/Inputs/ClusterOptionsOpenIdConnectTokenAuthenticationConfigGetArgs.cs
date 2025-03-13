@@ -25,6 +25,12 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public Input<string>? ClientId { get; set; }
 
         /// <summary>
+        /// (Updatable) A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+        /// </summary>
+        [Input("configurationFile")]
+        public Input<string>? ConfigurationFile { get; set; }
+
+        /// <summary>
         /// (Updatable) JWT claim to use as the user's group. If the claim is present it must be an array of strings.
         /// </summary>
         [Input("groupsClaim")]

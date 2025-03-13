@@ -92,6 +92,7 @@ import javax.annotation.Nullable;
  *             .scanListenerPortTcp(exadbVmClusterScanListenerPortTcp)
  *             .scanListenerPortTcpSsl(exadbVmClusterScanListenerPortTcpSsl)
  *             .securityAttributes(exadbVmClusterSecurityAttributes)
+ *             .subscriptionId(tenantSubscriptionId)
  *             .systemVersion(exadbVmClusterSystemVersion)
  *             .timeZone(exadbVmClusterTimeZone)
  *             .build());
@@ -168,6 +169,20 @@ public class ExadbVmCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<String> clusterName() {
         return this.clusterName;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * 
+     */
+    @Export(name="clusterPlacementGroupId", refs={String.class}, tree="[0]")
+    private Output<String> clusterPlacementGroupId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * 
+     */
+    public Output<String> clusterPlacementGroupId() {
+        return this.clusterPlacementGroupId;
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -284,7 +299,7 @@ public class ExadbVmCluster extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Grid Setup will be done using this grid image id.
      * 
-     * The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=&lt;compartmentId&gt;&amp;shape=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt; 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=&lt;compartmentId&gt;&amp;shapeFamily=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt;
+     * The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=&lt;compartmentId&gt;&amp;shapeFamily=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt;. The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=&lt;compartmentId&gt;&amp;shape=ExaDbXS&amp;availabilityDomain=&lt;AD name&gt;
      * 
      */
     @Export(name="gridImageId", refs={String.class}, tree="[0]")
@@ -293,7 +308,7 @@ public class ExadbVmCluster extends com.pulumi.resources.CustomResource {
     /**
      * @return (Updatable) Grid Setup will be done using this grid image id.
      * 
-     * The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=&lt;compartmentId&gt;&amp;shape=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt; 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=&lt;compartmentId&gt;&amp;shapeFamily=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt;
+     * The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=&lt;compartmentId&gt;&amp;shapeFamily=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt;. The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=&lt;compartmentId&gt;&amp;shape=ExaDbXS&amp;availabilityDomain=&lt;AD name&gt;
      * 
      */
     public Output<String> gridImageId() {
@@ -602,6 +617,20 @@ public class ExadbVmCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<String> subnetId() {
         return this.subnetId;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    @Export(name="subscriptionId", refs={String.class}, tree="[0]")
+    private Output<String> subscriptionId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    public Output<String> subscriptionId() {
+        return this.subscriptionId;
     }
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).

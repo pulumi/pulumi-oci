@@ -68,7 +68,7 @@ namespace Pulumi.Oci.Database
         public Output<string> DatabaseConfiguration { get; private set; } = null!;
 
         /// <summary>
-        /// The Oracle Database edition.
+        /// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
         /// </summary>
         [Output("databaseEdition")]
         public Output<string> DatabaseEdition { get; private set; } = null!;
@@ -274,7 +274,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? DatabaseConfiguration { get; set; }
 
         /// <summary>
-        /// The Oracle Database edition.
+        /// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
         /// </summary>
         [Input("databaseEdition")]
         public Input<string>? DatabaseEdition { get; set; }

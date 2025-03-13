@@ -10,7 +10,10 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Email.DkimArgs;
 import com.pulumi.oci.Email.inputs.DkimState;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
@@ -54,6 +57,7 @@ import javax.annotation.Nullable;
  *             .description(dkimDescription)
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .name(dkimName)
+ *             .privateKey(dkimPrivateKey)
  *             .build());
  * 
  *     }
@@ -130,14 +134,14 @@ public class Dkim extends com.pulumi.resources.CustomResource {
         return this.description;
     }
     /**
-     * The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
+     * The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
      * 
      */
     @Export(name="dnsSubdomainName", refs={String.class}, tree="[0]")
     private Output<String> dnsSubdomainName;
 
     /**
-     * @return The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
+     * @return The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
      * 
      */
     public Output<String> dnsSubdomainName() {
@@ -172,6 +176,34 @@ public class Dkim extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
+     * Indicates whether the DKIM was imported.
+     * 
+     */
+    @Export(name="isImported", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isImported;
+
+    /**
+     * @return Indicates whether the DKIM was imported.
+     * 
+     */
+    public Output<Boolean> isImported() {
+        return this.isImported;
+    }
+    /**
+     * Length of the RSA key used in the DKIM.
+     * 
+     */
+    @Export(name="keyLength", refs={Integer.class}, tree="[0]")
+    private Output<Integer> keyLength;
+
+    /**
+     * @return Length of the RSA key used in the DKIM.
+     * 
+     */
+    public Output<Integer> keyLength() {
+        return this.keyLength;
+    }
+    /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource.
      * 
      */
@@ -192,9 +224,6 @@ public class Dkim extends com.pulumi.resources.CustomResource {
      * 
      * Example: `mydomain-phx-20210228`
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
@@ -206,12 +235,29 @@ public class Dkim extends com.pulumi.resources.CustomResource {
      * 
      * Example: `mydomain-phx-20210228`
      * 
+     */
+    public Output<String> name() {
+        return this.name;
+    }
+    /**
+     * The DKIM RSA Private Key in Privacy-Enhanced Mail (PEM) format. It is a text-based representation of the private key used for signing email messages.
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> name() {
-        return this.name;
+    @Export(name="privateKey", refs={String.class}, tree="[0]")
+    private Output<String> privateKey;
+
+    /**
+     * @return The DKIM RSA Private Key in Privacy-Enhanced Mail (PEM) format. It is a text-based representation of the private key used for signing email messages.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<String> privateKey() {
+        return this.privateKey;
     }
     /**
      * The current state of the DKIM.
@@ -323,6 +369,9 @@ public class Dkim extends com.pulumi.resources.CustomResource {
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
+            .additionalSecretOutputs(List.of(
+                "privateKey"
+            ))
             .build();
         return com.pulumi.resources.CustomResourceOptions.merge(defaultOptions, options, id);
     }

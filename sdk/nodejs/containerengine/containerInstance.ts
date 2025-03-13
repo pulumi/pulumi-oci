@@ -30,7 +30,7 @@ import * as utilities from "../utilities";
  *         freeformTags: containerInstanceContainersFreeformTags,
  *         healthChecks: [{
  *             healthCheckType: containerInstanceContainersHealthChecksHealthCheckType,
- *             commands: containerInstanceContainersHealthChecksCommand,
+ *             port: containerInstanceContainersHealthChecksPort,
  *             failureAction: containerInstanceContainersHealthChecksFailureAction,
  *             failureThreshold: containerInstanceContainersHealthChecksFailureThreshold,
  *             headers: [{
@@ -41,7 +41,6 @@ import * as utilities from "../utilities";
  *             intervalInSeconds: containerInstanceContainersHealthChecksIntervalInSeconds,
  *             name: containerInstanceContainersHealthChecksName,
  *             path: containerInstanceContainersHealthChecksPath,
- *             port: containerInstanceContainersHealthChecksPort,
  *             successThreshold: containerInstanceContainersHealthChecksSuccessThreshold,
  *             timeoutInSeconds: containerInstanceContainersHealthChecksTimeoutInSeconds,
  *         }],

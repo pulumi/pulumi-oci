@@ -23,7 +23,8 @@ class ApplicationVipArgs:
                  hostname_label: pulumi.Input[str],
                  subnet_id: pulumi.Input[str],
                  db_node_id: Optional[pulumi.Input[str]] = None,
-                 ip_address: Optional[pulumi.Input[str]] = None):
+                 ip_address: Optional[pulumi.Input[str]] = None,
+                 ipv6address: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ApplicationVip resource.
         :param pulumi.Input[str] cloud_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster associated with the application virtual IP (VIP) address.
@@ -34,7 +35,8 @@ class ApplicationVipArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] db_node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB node associated with the application virtual IP (VIP) address.
-        :param pulumi.Input[str] ip_address: The application virtual IP (VIP) address.
+        :param pulumi.Input[str] ip_address: The application virtual IP (VIP) IPv4 address.
+        :param pulumi.Input[str] ipv6address: The application virtual IP (VIP) IPv6 address.
         """
         pulumi.set(__self__, "cloud_vm_cluster_id", cloud_vm_cluster_id)
         pulumi.set(__self__, "hostname_label", hostname_label)
@@ -43,6 +45,8 @@ class ApplicationVipArgs:
             pulumi.set(__self__, "db_node_id", db_node_id)
         if ip_address is not None:
             pulumi.set(__self__, "ip_address", ip_address)
+        if ipv6address is not None:
+            pulumi.set(__self__, "ipv6address", ipv6address)
 
     @property
     @pulumi.getter(name="cloudVmClusterId")
@@ -100,13 +104,25 @@ class ApplicationVipArgs:
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> Optional[pulumi.Input[str]]:
         """
-        The application virtual IP (VIP) address.
+        The application virtual IP (VIP) IPv4 address.
         """
         return pulumi.get(self, "ip_address")
 
     @ip_address.setter
     def ip_address(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "ip_address", value)
+
+    @property
+    @pulumi.getter
+    def ipv6address(self) -> Optional[pulumi.Input[str]]:
+        """
+        The application virtual IP (VIP) IPv6 address.
+        """
+        return pulumi.get(self, "ipv6address")
+
+    @ipv6address.setter
+    def ipv6address(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ipv6address", value)
 
 
 @pulumi.input_type
@@ -119,6 +135,7 @@ class _ApplicationVipState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  hostname_label: Optional[pulumi.Input[str]] = None,
                  ip_address: Optional[pulumi.Input[str]] = None,
+                 ipv6address: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
@@ -131,7 +148,8 @@ class _ApplicationVipState:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] hostname_label: The hostname of the application virtual IP (VIP) address.
-        :param pulumi.Input[str] ip_address: The application virtual IP (VIP) address.
+        :param pulumi.Input[str] ip_address: The application virtual IP (VIP) IPv4 address.
+        :param pulumi.Input[str] ipv6address: The application virtual IP (VIP) IPv6 address.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state of the application virtual IP (VIP) address.
         :param pulumi.Input[str] state: The current lifecycle state of the application virtual IP (VIP) address.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
@@ -155,6 +173,8 @@ class _ApplicationVipState:
             pulumi.set(__self__, "hostname_label", hostname_label)
         if ip_address is not None:
             pulumi.set(__self__, "ip_address", ip_address)
+        if ipv6address is not None:
+            pulumi.set(__self__, "ipv6address", ipv6address)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if state is not None:
@@ -240,13 +260,25 @@ class _ApplicationVipState:
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> Optional[pulumi.Input[str]]:
         """
-        The application virtual IP (VIP) address.
+        The application virtual IP (VIP) IPv4 address.
         """
         return pulumi.get(self, "ip_address")
 
     @ip_address.setter
     def ip_address(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "ip_address", value)
+
+    @property
+    @pulumi.getter
+    def ipv6address(self) -> Optional[pulumi.Input[str]]:
+        """
+        The application virtual IP (VIP) IPv6 address.
+        """
+        return pulumi.get(self, "ipv6address")
+
+    @ipv6address.setter
+    def ipv6address(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ipv6address", value)
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -310,6 +342,7 @@ class ApplicationVip(pulumi.CustomResource):
                  db_node_id: Optional[pulumi.Input[str]] = None,
                  hostname_label: Optional[pulumi.Input[str]] = None,
                  ip_address: Optional[pulumi.Input[str]] = None,
+                 ipv6address: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -328,7 +361,8 @@ class ApplicationVip(pulumi.CustomResource):
             hostname_label=application_vip_hostname_label,
             subnet_id=test_subnet["id"],
             db_node_id=test_db_node["id"],
-            ip_address=application_vip_ip_address)
+            ip_address=application_vip_ip_address,
+            ipv6address=application_vip_ipv6address)
         ```
 
         ## Import
@@ -344,7 +378,8 @@ class ApplicationVip(pulumi.CustomResource):
         :param pulumi.Input[str] cloud_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster associated with the application virtual IP (VIP) address.
         :param pulumi.Input[str] db_node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB node associated with the application virtual IP (VIP) address.
         :param pulumi.Input[str] hostname_label: The hostname of the application virtual IP (VIP) address.
-        :param pulumi.Input[str] ip_address: The application virtual IP (VIP) address.
+        :param pulumi.Input[str] ip_address: The application virtual IP (VIP) IPv4 address.
+        :param pulumi.Input[str] ipv6address: The application virtual IP (VIP) IPv6 address.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
                
                
@@ -373,7 +408,8 @@ class ApplicationVip(pulumi.CustomResource):
             hostname_label=application_vip_hostname_label,
             subnet_id=test_subnet["id"],
             db_node_id=test_db_node["id"],
-            ip_address=application_vip_ip_address)
+            ip_address=application_vip_ip_address,
+            ipv6address=application_vip_ipv6address)
         ```
 
         ## Import
@@ -403,6 +439,7 @@ class ApplicationVip(pulumi.CustomResource):
                  db_node_id: Optional[pulumi.Input[str]] = None,
                  hostname_label: Optional[pulumi.Input[str]] = None,
                  ip_address: Optional[pulumi.Input[str]] = None,
+                 ipv6address: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -421,6 +458,7 @@ class ApplicationVip(pulumi.CustomResource):
                 raise TypeError("Missing required property 'hostname_label'")
             __props__.__dict__["hostname_label"] = hostname_label
             __props__.__dict__["ip_address"] = ip_address
+            __props__.__dict__["ipv6address"] = ipv6address
             if subnet_id is None and not opts.urn:
                 raise TypeError("Missing required property 'subnet_id'")
             __props__.__dict__["subnet_id"] = subnet_id
@@ -447,6 +485,7 @@ class ApplicationVip(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             hostname_label: Optional[pulumi.Input[str]] = None,
             ip_address: Optional[pulumi.Input[str]] = None,
+            ipv6address: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             subnet_id: Optional[pulumi.Input[str]] = None,
@@ -464,7 +503,8 @@ class ApplicationVip(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] hostname_label: The hostname of the application virtual IP (VIP) address.
-        :param pulumi.Input[str] ip_address: The application virtual IP (VIP) address.
+        :param pulumi.Input[str] ip_address: The application virtual IP (VIP) IPv4 address.
+        :param pulumi.Input[str] ipv6address: The application virtual IP (VIP) IPv6 address.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state of the application virtual IP (VIP) address.
         :param pulumi.Input[str] state: The current lifecycle state of the application virtual IP (VIP) address.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
@@ -485,6 +525,7 @@ class ApplicationVip(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["hostname_label"] = hostname_label
         __props__.__dict__["ip_address"] = ip_address
+        __props__.__dict__["ipv6address"] = ipv6address
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["state"] = state
         __props__.__dict__["subnet_id"] = subnet_id
@@ -543,9 +584,17 @@ class ApplicationVip(pulumi.CustomResource):
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> pulumi.Output[str]:
         """
-        The application virtual IP (VIP) address.
+        The application virtual IP (VIP) IPv4 address.
         """
         return pulumi.get(self, "ip_address")
+
+    @property
+    @pulumi.getter
+    def ipv6address(self) -> pulumi.Output[str]:
+        """
+        The application virtual IP (VIP) IPv6 address.
+        """
+        return pulumi.get(self, "ipv6address")
 
     @property
     @pulumi.getter(name="lifecycleDetails")

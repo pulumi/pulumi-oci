@@ -10,6 +10,7 @@ import com.pulumi.oci.DataScience.outputs.GetPipelineInfrastructureConfiguration
 import com.pulumi.oci.DataScience.outputs.GetPipelineLogConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetPipelineStepArtifact;
 import com.pulumi.oci.DataScience.outputs.GetPipelineStepDetail;
+import com.pulumi.oci.DataScience.outputs.GetPipelineStorageMountConfigurationDetailsList;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -95,6 +96,11 @@ public final class GetPipelineResult {
      * 
      */
     private List<GetPipelineStepDetail> stepDetails;
+    /**
+     * @return The storage mount details to mount to the instance running the pipeline step.
+     * 
+     */
+    private List<GetPipelineStorageMountConfigurationDetailsList> storageMountConfigurationDetailsLists;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
@@ -224,6 +230,13 @@ public final class GetPipelineResult {
         return this.stepDetails;
     }
     /**
+     * @return The storage mount details to mount to the instance running the pipeline step.
+     * 
+     */
+    public List<GetPipelineStorageMountConfigurationDetailsList> storageMountConfigurationDetailsLists() {
+        return this.storageMountConfigurationDetailsLists;
+    }
+    /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
@@ -271,6 +284,7 @@ public final class GetPipelineResult {
         private String state;
         private List<GetPipelineStepArtifact> stepArtifacts;
         private List<GetPipelineStepDetail> stepDetails;
+        private List<GetPipelineStorageMountConfigurationDetailsList> storageMountConfigurationDetailsLists;
         private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
@@ -294,6 +308,7 @@ public final class GetPipelineResult {
     	      this.state = defaults.state;
     	      this.stepArtifacts = defaults.stepArtifacts;
     	      this.stepDetails = defaults.stepDetails;
+    	      this.storageMountConfigurationDetailsLists = defaults.storageMountConfigurationDetailsLists;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -451,6 +466,17 @@ public final class GetPipelineResult {
             return stepDetails(List.of(stepDetails));
         }
         @CustomType.Setter
+        public Builder storageMountConfigurationDetailsLists(List<GetPipelineStorageMountConfigurationDetailsList> storageMountConfigurationDetailsLists) {
+            if (storageMountConfigurationDetailsLists == null) {
+              throw new MissingRequiredPropertyException("GetPipelineResult", "storageMountConfigurationDetailsLists");
+            }
+            this.storageMountConfigurationDetailsLists = storageMountConfigurationDetailsLists;
+            return this;
+        }
+        public Builder storageMountConfigurationDetailsLists(GetPipelineStorageMountConfigurationDetailsList... storageMountConfigurationDetailsLists) {
+            return storageMountConfigurationDetailsLists(List.of(storageMountConfigurationDetailsLists));
+        }
+        @CustomType.Setter
         public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetPipelineResult", "systemTags");
@@ -493,6 +519,7 @@ public final class GetPipelineResult {
             _resultValue.state = state;
             _resultValue.stepArtifacts = stepArtifacts;
             _resultValue.stepDetails = stepDetails;
+            _resultValue.storageMountConfigurationDetailsLists = storageMountConfigurationDetailsLists;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;

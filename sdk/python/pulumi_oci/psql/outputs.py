@@ -16,7 +16,9 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'BackupCopyStatus',
     'BackupDbSystemDetail',
+    'BackupSourceBackupDetails',
     'ConfigurationConfigurationDetail',
     'ConfigurationConfigurationDetailItem',
     'ConfigurationDbConfigurationOverrides',
@@ -27,14 +29,19 @@ __all__ = [
     'DbSystemInstancesDetail',
     'DbSystemManagementPolicy',
     'DbSystemManagementPolicyBackupPolicy',
+    'DbSystemManagementPolicyBackupPolicyCopyPolicy',
     'DbSystemNetworkDetails',
     'DbSystemPatchOperation',
     'DbSystemSource',
     'DbSystemStorageDetails',
+    'GetBackupCopyStatusResult',
     'GetBackupDbSystemDetailResult',
+    'GetBackupSourceBackupDetailResult',
     'GetBackupsBackupCollectionResult',
     'GetBackupsBackupCollectionItemResult',
+    'GetBackupsBackupCollectionItemCopyStatusResult',
     'GetBackupsBackupCollectionItemDbSystemDetailResult',
+    'GetBackupsBackupCollectionItemSourceBackupDetailResult',
     'GetBackupsFilterResult',
     'GetConfigurationConfigurationDetailResult',
     'GetConfigurationConfigurationDetailItemResult',
@@ -57,6 +64,7 @@ __all__ = [
     'GetDbSystemInstancesDetailResult',
     'GetDbSystemManagementPolicyResult',
     'GetDbSystemManagementPolicyBackupPolicyResult',
+    'GetDbSystemManagementPolicyBackupPolicyCopyPolicyResult',
     'GetDbSystemNetworkDetailResult',
     'GetDbSystemPatchOperationResult',
     'GetDbSystemSourceResult',
@@ -69,6 +77,7 @@ __all__ = [
     'GetDbSystemsDbSystemCollectionItemInstancesDetailResult',
     'GetDbSystemsDbSystemCollectionItemManagementPolicyResult',
     'GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyResult',
+    'GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyResult',
     'GetDbSystemsDbSystemCollectionItemNetworkDetailResult',
     'GetDbSystemsDbSystemCollectionItemPatchOperationResult',
     'GetDbSystemsDbSystemCollectionItemSourceResult',
@@ -89,11 +98,87 @@ __all__ = [
 ]
 
 @pulumi.output_type
+class BackupCopyStatus(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "backupId":
+            suggest = "backup_id"
+        elif key == "stateDetails":
+            suggest = "state_details"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BackupCopyStatus. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BackupCopyStatus.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BackupCopyStatus.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 backup_id: Optional[str] = None,
+                 region: Optional[str] = None,
+                 state: Optional[str] = None,
+                 state_details: Optional[str] = None):
+        """
+        :param str backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup in the source region
+        :param str region: Region name of the remote region
+        :param str state: The current state of the backup.
+        :param str state_details: A message describing the current state of copy in more detail
+        """
+        if backup_id is not None:
+            pulumi.set(__self__, "backup_id", backup_id)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if state_details is not None:
+            pulumi.set(__self__, "state_details", state_details)
+
+    @property
+    @pulumi.getter(name="backupId")
+    def backup_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup in the source region
+        """
+        return pulumi.get(self, "backup_id")
+
+    @property
+    @pulumi.getter
+    def region(self) -> Optional[str]:
+        """
+        Region name of the remote region
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[str]:
+        """
+        The current state of the backup.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="stateDetails")
+    def state_details(self) -> Optional[str]:
+        """
+        A message describing the current state of copy in more detail
+        """
+        return pulumi.get(self, "state_details")
+
+
+@pulumi.output_type
 class BackupDbSystemDetail(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "dbVersion":
+        if key == "configId":
+            suggest = "config_id"
+        elif key == "dbVersion":
             suggest = "db_version"
         elif key == "systemType":
             suggest = "system_type"
@@ -110,16 +195,28 @@ class BackupDbSystemDetail(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 config_id: Optional[str] = None,
                  db_version: Optional[str] = None,
                  system_type: Optional[str] = None):
         """
+        :param str config_id: OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
         :param str db_version: The major and minor versions of the database system software.
         :param str system_type: Type of the database system.
         """
+        if config_id is not None:
+            pulumi.set(__self__, "config_id", config_id)
         if db_version is not None:
             pulumi.set(__self__, "db_version", db_version)
         if system_type is not None:
             pulumi.set(__self__, "system_type", system_type)
+
+    @property
+    @pulumi.getter(name="configId")
+    def config_id(self) -> Optional[str]:
+        """
+        OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
+        """
+        return pulumi.get(self, "config_id")
 
     @property
     @pulumi.getter(name="dbVersion")
@@ -136,6 +233,54 @@ class BackupDbSystemDetail(dict):
         Type of the database system.
         """
         return pulumi.get(self, "system_type")
+
+
+@pulumi.output_type
+class BackupSourceBackupDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "sourceBackupId":
+            suggest = "source_backup_id"
+        elif key == "sourceRegion":
+            suggest = "source_region"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BackupSourceBackupDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BackupSourceBackupDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BackupSourceBackupDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 source_backup_id: str,
+                 source_region: str):
+        """
+        :param str source_backup_id: Backup ID of the COPY source type.
+        :param str source_region: Backup Region of the COPY source type.
+        """
+        pulumi.set(__self__, "source_backup_id", source_backup_id)
+        pulumi.set(__self__, "source_region", source_region)
+
+    @property
+    @pulumi.getter(name="sourceBackupId")
+    def source_backup_id(self) -> str:
+        """
+        Backup ID of the COPY source type.
+        """
+        return pulumi.get(self, "source_backup_id")
+
+    @property
+    @pulumi.getter(name="sourceRegion")
+    def source_region(self) -> str:
+        """
+        Backup Region of the COPY source type.
+        """
+        return pulumi.get(self, "source_region")
 
 
 @pulumi.output_type
@@ -727,6 +872,8 @@ class DbSystemManagementPolicyBackupPolicy(dict):
         suggest = None
         if key == "backupStart":
             suggest = "backup_start"
+        elif key == "copyPolicy":
+            suggest = "copy_policy"
         elif key == "daysOfTheMonths":
             suggest = "days_of_the_months"
         elif key == "daysOfTheWeeks":
@@ -747,12 +894,14 @@ class DbSystemManagementPolicyBackupPolicy(dict):
 
     def __init__(__self__, *,
                  backup_start: Optional[str] = None,
+                 copy_policy: Optional['outputs.DbSystemManagementPolicyBackupPolicyCopyPolicy'] = None,
                  days_of_the_months: Optional[Sequence[int]] = None,
                  days_of_the_weeks: Optional[Sequence[str]] = None,
                  kind: Optional[str] = None,
                  retention_days: Optional[int] = None):
         """
         :param str backup_start: (Updatable) Hour of the day when the backup starts.
+        :param 'DbSystemManagementPolicyBackupPolicyCopyPolicyArgs' copy_policy: (Updatable) Backup copy details
         :param Sequence[int] days_of_the_months: (Updatable) Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
         :param Sequence[str] days_of_the_weeks: (Updatable) The day of the week that the backup starts.
         :param str kind: (Updatable) The kind of backup policy.
@@ -760,6 +909,8 @@ class DbSystemManagementPolicyBackupPolicy(dict):
         """
         if backup_start is not None:
             pulumi.set(__self__, "backup_start", backup_start)
+        if copy_policy is not None:
+            pulumi.set(__self__, "copy_policy", copy_policy)
         if days_of_the_months is not None:
             pulumi.set(__self__, "days_of_the_months", days_of_the_months)
         if days_of_the_weeks is not None:
@@ -776,6 +927,14 @@ class DbSystemManagementPolicyBackupPolicy(dict):
         (Updatable) Hour of the day when the backup starts.
         """
         return pulumi.get(self, "backup_start")
+
+    @property
+    @pulumi.getter(name="copyPolicy")
+    def copy_policy(self) -> Optional['outputs.DbSystemManagementPolicyBackupPolicyCopyPolicy']:
+        """
+        (Updatable) Backup copy details
+        """
+        return pulumi.get(self, "copy_policy")
 
     @property
     @pulumi.getter(name="daysOfTheMonths")
@@ -808,6 +967,66 @@ class DbSystemManagementPolicyBackupPolicy(dict):
         (Updatable) How many days the data should be stored after the database system deletion.
         """
         return pulumi.get(self, "retention_days")
+
+
+@pulumi.output_type
+class DbSystemManagementPolicyBackupPolicyCopyPolicy(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compartmentId":
+            suggest = "compartment_id"
+        elif key == "retentionPeriod":
+            suggest = "retention_period"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DbSystemManagementPolicyBackupPolicyCopyPolicy. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DbSystemManagementPolicyBackupPolicyCopyPolicy.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DbSystemManagementPolicyBackupPolicyCopyPolicy.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 regions: Sequence[str],
+                 retention_period: Optional[int] = None):
+        """
+        :param str compartment_id: (Updatable) target compartment to place a new backup
+        :param Sequence[str] regions: (Updatable) List of region names of the remote region
+        :param int retention_period: (Updatable) Retention period in days of the backup copy.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "regions", regions)
+        if retention_period is not None:
+            pulumi.set(__self__, "retention_period", retention_period)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        (Updatable) target compartment to place a new backup
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def regions(self) -> Sequence[str]:
+        """
+        (Updatable) List of region names of the remote region
+        """
+        return pulumi.get(self, "regions")
+
+    @property
+    @pulumi.getter(name="retentionPeriod")
+    def retention_period(self) -> Optional[int]:
+        """
+        (Updatable) Retention period in days of the backup copy.
+        """
+        return pulumi.get(self, "retention_period")
 
 
 @pulumi.output_type
@@ -1109,16 +1328,78 @@ class DbSystemStorageDetails(dict):
 
 
 @pulumi.output_type
+class GetBackupCopyStatusResult(dict):
+    def __init__(__self__, *,
+                 backup_id: str,
+                 region: str,
+                 state: str,
+                 state_details: str):
+        """
+        :param str backup_id: A unique identifier for the backup.
+        :param str region: Region name of the remote region
+        :param str state: The current state of the backup.
+        :param str state_details: A message describing the current state of copy in more detail
+        """
+        pulumi.set(__self__, "backup_id", backup_id)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "state_details", state_details)
+
+    @property
+    @pulumi.getter(name="backupId")
+    def backup_id(self) -> str:
+        """
+        A unique identifier for the backup.
+        """
+        return pulumi.get(self, "backup_id")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        """
+        Region name of the remote region
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the backup.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="stateDetails")
+    def state_details(self) -> str:
+        """
+        A message describing the current state of copy in more detail
+        """
+        return pulumi.get(self, "state_details")
+
+
+@pulumi.output_type
 class GetBackupDbSystemDetailResult(dict):
     def __init__(__self__, *,
+                 config_id: str,
                  db_version: str,
                  system_type: str):
         """
+        :param str config_id: OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
         :param str db_version: The major and minor versions of the database system software.
         :param str system_type: Type of the database system.
         """
+        pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "db_version", db_version)
         pulumi.set(__self__, "system_type", system_type)
+
+    @property
+    @pulumi.getter(name="configId")
+    def config_id(self) -> str:
+        """
+        OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
+        """
+        return pulumi.get(self, "config_id")
 
     @property
     @pulumi.getter(name="dbVersion")
@@ -1138,6 +1419,35 @@ class GetBackupDbSystemDetailResult(dict):
 
 
 @pulumi.output_type
+class GetBackupSourceBackupDetailResult(dict):
+    def __init__(__self__, *,
+                 source_backup_id: str,
+                 source_region: str):
+        """
+        :param str source_backup_id: Backup ID of the COPY source type.
+        :param str source_region: Backup Region of the COPY source type.
+        """
+        pulumi.set(__self__, "source_backup_id", source_backup_id)
+        pulumi.set(__self__, "source_region", source_region)
+
+    @property
+    @pulumi.getter(name="sourceBackupId")
+    def source_backup_id(self) -> str:
+        """
+        Backup ID of the COPY source type.
+        """
+        return pulumi.get(self, "source_backup_id")
+
+    @property
+    @pulumi.getter(name="sourceRegion")
+    def source_region(self) -> str:
+        """
+        Backup Region of the COPY source type.
+        """
+        return pulumi.get(self, "source_region")
+
+
+@pulumi.output_type
 class GetBackupsBackupCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetBackupsBackupCollectionItemResult']):
@@ -1154,6 +1464,7 @@ class GetBackupsBackupCollectionItemResult(dict):
     def __init__(__self__, *,
                  backup_size: int,
                  compartment_id: str,
+                 copy_statuses: Sequence['outputs.GetBackupsBackupCollectionItemCopyStatusResult'],
                  db_system_details: Sequence['outputs.GetBackupsBackupCollectionItemDbSystemDetailResult'],
                  db_system_id: str,
                  defined_tags: Mapping[str, str],
@@ -1165,14 +1476,17 @@ class GetBackupsBackupCollectionItemResult(dict):
                  last_completed_request_token: str,
                  lifecycle_details: str,
                  retention_period: int,
+                 source_backup_details: Sequence['outputs.GetBackupsBackupCollectionItemSourceBackupDetailResult'],
                  source_type: str,
                  state: str,
                  system_tags: Mapping[str, str],
                  time_created: str,
+                 time_created_precise: str,
                  time_updated: str):
         """
         :param int backup_size: The size of the backup, in gigabytes.
         :param str compartment_id: The ID of the compartment in which to list resources.
+        :param Sequence['GetBackupsBackupCollectionItemCopyStatusArgs'] copy_statuses: List of status for Backup Copy
         :param Sequence['GetBackupsBackupCollectionItemDbSystemDetailArgs'] db_system_details: Information about the database system associated with a backup.
         :param str db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup's source database system.
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -1184,14 +1498,17 @@ class GetBackupsBackupCollectionItemResult(dict):
         :param str last_completed_request_token: lastCompletedRequestToken from MP.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param int retention_period: Backup retention period in days.
-        :param str source_type: Specifies whether the backup was created manually, or by a management policy.
+        :param Sequence['GetBackupsBackupCollectionItemSourceBackupDetailArgs'] source_backup_details: Information about the Source Backup associated with a backup.
+        :param str source_type: Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
         :param str state: A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
         :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time the backup request was received, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        :param str time_created_precise: The date and time the backup was created. This is the time the actual point-in-time data snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         :param str time_updated: The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         pulumi.set(__self__, "backup_size", backup_size)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "copy_statuses", copy_statuses)
         pulumi.set(__self__, "db_system_details", db_system_details)
         pulumi.set(__self__, "db_system_id", db_system_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -1203,10 +1520,12 @@ class GetBackupsBackupCollectionItemResult(dict):
         pulumi.set(__self__, "last_completed_request_token", last_completed_request_token)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "retention_period", retention_period)
+        pulumi.set(__self__, "source_backup_details", source_backup_details)
         pulumi.set(__self__, "source_type", source_type)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_created_precise", time_created_precise)
         pulumi.set(__self__, "time_updated", time_updated)
 
     @property
@@ -1224,6 +1543,14 @@ class GetBackupsBackupCollectionItemResult(dict):
         The ID of the compartment in which to list resources.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="copyStatuses")
+    def copy_statuses(self) -> Sequence['outputs.GetBackupsBackupCollectionItemCopyStatusResult']:
+        """
+        List of status for Backup Copy
+        """
+        return pulumi.get(self, "copy_statuses")
 
     @property
     @pulumi.getter(name="dbSystemDetails")
@@ -1314,10 +1641,18 @@ class GetBackupsBackupCollectionItemResult(dict):
         return pulumi.get(self, "retention_period")
 
     @property
+    @pulumi.getter(name="sourceBackupDetails")
+    def source_backup_details(self) -> Sequence['outputs.GetBackupsBackupCollectionItemSourceBackupDetailResult']:
+        """
+        Information about the Source Backup associated with a backup.
+        """
+        return pulumi.get(self, "source_backup_details")
+
+    @property
     @pulumi.getter(name="sourceType")
     def source_type(self) -> str:
         """
-        Specifies whether the backup was created manually, or by a management policy.
+        Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
         """
         return pulumi.get(self, "source_type")
 
@@ -1346,6 +1681,14 @@ class GetBackupsBackupCollectionItemResult(dict):
         return pulumi.get(self, "time_created")
 
     @property
+    @pulumi.getter(name="timeCreatedPrecise")
+    def time_created_precise(self) -> str:
+        """
+        The date and time the backup was created. This is the time the actual point-in-time data snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created_precise")
+
+    @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
@@ -1355,16 +1698,78 @@ class GetBackupsBackupCollectionItemResult(dict):
 
 
 @pulumi.output_type
+class GetBackupsBackupCollectionItemCopyStatusResult(dict):
+    def __init__(__self__, *,
+                 backup_id: str,
+                 region: str,
+                 state: str,
+                 state_details: str):
+        """
+        :param str backup_id: A unique identifier for the backup.
+        :param str region: Region name of the remote region
+        :param str state: A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
+        :param str state_details: A message describing the current state of copy in more detail
+        """
+        pulumi.set(__self__, "backup_id", backup_id)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "state_details", state_details)
+
+    @property
+    @pulumi.getter(name="backupId")
+    def backup_id(self) -> str:
+        """
+        A unique identifier for the backup.
+        """
+        return pulumi.get(self, "backup_id")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        """
+        Region name of the remote region
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="stateDetails")
+    def state_details(self) -> str:
+        """
+        A message describing the current state of copy in more detail
+        """
+        return pulumi.get(self, "state_details")
+
+
+@pulumi.output_type
 class GetBackupsBackupCollectionItemDbSystemDetailResult(dict):
     def __init__(__self__, *,
+                 config_id: str,
                  db_version: str,
                  system_type: str):
         """
+        :param str config_id: OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
         :param str db_version: The major and minor versions of the database system software.
         :param str system_type: Type of the database system.
         """
+        pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "db_version", db_version)
         pulumi.set(__self__, "system_type", system_type)
+
+    @property
+    @pulumi.getter(name="configId")
+    def config_id(self) -> str:
+        """
+        OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
+        """
+        return pulumi.get(self, "config_id")
 
     @property
     @pulumi.getter(name="dbVersion")
@@ -1381,6 +1786,35 @@ class GetBackupsBackupCollectionItemDbSystemDetailResult(dict):
         Type of the database system.
         """
         return pulumi.get(self, "system_type")
+
+
+@pulumi.output_type
+class GetBackupsBackupCollectionItemSourceBackupDetailResult(dict):
+    def __init__(__self__, *,
+                 source_backup_id: str,
+                 source_region: str):
+        """
+        :param str source_backup_id: Backup ID of the COPY source type.
+        :param str source_region: Backup Region of the COPY source type.
+        """
+        pulumi.set(__self__, "source_backup_id", source_backup_id)
+        pulumi.set(__self__, "source_region", source_region)
+
+    @property
+    @pulumi.getter(name="sourceBackupId")
+    def source_backup_id(self) -> str:
+        """
+        Backup ID of the COPY source type.
+        """
+        return pulumi.get(self, "source_backup_id")
+
+    @property
+    @pulumi.getter(name="sourceRegion")
+    def source_region(self) -> str:
+        """
+        Backup Region of the COPY source type.
+        """
+        return pulumi.get(self, "source_region")
 
 
 @pulumi.output_type
@@ -1611,7 +2045,7 @@ class GetConfigurationsConfigurationCollectionItemResult(dict):
                  time_created: str):
         """
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param str config_type: The type of configuration. Either user-created or a default configuration.
+        :param str config_type: A filter to return only resources if their `configType` matches the given `configType`.
         :param Sequence['GetConfigurationsConfigurationCollectionItemConfigurationDetailArgs'] configuration_details: List of configuration details.
         :param str db_version: Version of the PostgreSQL database, such as 14.9.
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -1659,7 +2093,7 @@ class GetConfigurationsConfigurationCollectionItemResult(dict):
     @pulumi.getter(name="configType")
     def config_type(self) -> str:
         """
-        The type of configuration. Either user-created or a default configuration.
+        A filter to return only resources if their `configType` matches the given `configType`.
         """
         return pulumi.get(self, "config_type")
 
@@ -2341,18 +2775,21 @@ class GetDbSystemManagementPolicyResult(dict):
 class GetDbSystemManagementPolicyBackupPolicyResult(dict):
     def __init__(__self__, *,
                  backup_start: str,
+                 copy_policies: Sequence['outputs.GetDbSystemManagementPolicyBackupPolicyCopyPolicyResult'],
                  days_of_the_months: Sequence[int],
                  days_of_the_weeks: Sequence[str],
                  kind: str,
                  retention_days: int):
         """
         :param str backup_start: Hour of the day when the backup starts.
+        :param Sequence['GetDbSystemManagementPolicyBackupPolicyCopyPolicyArgs'] copy_policies: Backup copy details
         :param Sequence[int] days_of_the_months: Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
         :param Sequence[str] days_of_the_weeks: The day of the week that the backup starts.
         :param str kind: The kind of backup policy.
         :param int retention_days: How many days the data should be stored after the database system deletion.
         """
         pulumi.set(__self__, "backup_start", backup_start)
+        pulumi.set(__self__, "copy_policies", copy_policies)
         pulumi.set(__self__, "days_of_the_months", days_of_the_months)
         pulumi.set(__self__, "days_of_the_weeks", days_of_the_weeks)
         pulumi.set(__self__, "kind", kind)
@@ -2365,6 +2802,14 @@ class GetDbSystemManagementPolicyBackupPolicyResult(dict):
         Hour of the day when the backup starts.
         """
         return pulumi.get(self, "backup_start")
+
+    @property
+    @pulumi.getter(name="copyPolicies")
+    def copy_policies(self) -> Sequence['outputs.GetDbSystemManagementPolicyBackupPolicyCopyPolicyResult']:
+        """
+        Backup copy details
+        """
+        return pulumi.get(self, "copy_policies")
 
     @property
     @pulumi.getter(name="daysOfTheMonths")
@@ -2397,6 +2842,46 @@ class GetDbSystemManagementPolicyBackupPolicyResult(dict):
         How many days the data should be stored after the database system deletion.
         """
         return pulumi.get(self, "retention_days")
+
+
+@pulumi.output_type
+class GetDbSystemManagementPolicyBackupPolicyCopyPolicyResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 regions: Sequence[str],
+                 retention_period: int):
+        """
+        :param str compartment_id: target compartment to place a new backup
+        :param Sequence[str] regions: List of region names of the remote region
+        :param int retention_period: Retention period in days of the backup copy.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "regions", regions)
+        pulumi.set(__self__, "retention_period", retention_period)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        target compartment to place a new backup
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def regions(self) -> Sequence[str]:
+        """
+        List of region names of the remote region
+        """
+        return pulumi.get(self, "regions")
+
+    @property
+    @pulumi.getter(name="retentionPeriod")
+    def retention_period(self) -> int:
+        """
+        Retention period in days of the backup copy.
+        """
+        return pulumi.get(self, "retention_period")
 
 
 @pulumi.output_type
@@ -3115,18 +3600,21 @@ class GetDbSystemsDbSystemCollectionItemManagementPolicyResult(dict):
 class GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyResult(dict):
     def __init__(__self__, *,
                  backup_start: str,
+                 copy_policies: Sequence['outputs.GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyResult'],
                  days_of_the_months: Sequence[int],
                  days_of_the_weeks: Sequence[str],
                  kind: str,
                  retention_days: int):
         """
         :param str backup_start: Hour of the day when the backup starts.
+        :param Sequence['GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArgs'] copy_policies: Backup copy details
         :param Sequence[int] days_of_the_months: Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
         :param Sequence[str] days_of_the_weeks: The day of the week that the backup starts.
         :param str kind: The kind of backup policy.
         :param int retention_days: How many days the data should be stored after the database system deletion.
         """
         pulumi.set(__self__, "backup_start", backup_start)
+        pulumi.set(__self__, "copy_policies", copy_policies)
         pulumi.set(__self__, "days_of_the_months", days_of_the_months)
         pulumi.set(__self__, "days_of_the_weeks", days_of_the_weeks)
         pulumi.set(__self__, "kind", kind)
@@ -3139,6 +3627,14 @@ class GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyResult(dict)
         Hour of the day when the backup starts.
         """
         return pulumi.get(self, "backup_start")
+
+    @property
+    @pulumi.getter(name="copyPolicies")
+    def copy_policies(self) -> Sequence['outputs.GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyResult']:
+        """
+        Backup copy details
+        """
+        return pulumi.get(self, "copy_policies")
 
     @property
     @pulumi.getter(name="daysOfTheMonths")
@@ -3171,6 +3667,46 @@ class GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyResult(dict)
         How many days the data should be stored after the database system deletion.
         """
         return pulumi.get(self, "retention_days")
+
+
+@pulumi.output_type
+class GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 regions: Sequence[str],
+                 retention_period: int):
+        """
+        :param str compartment_id: The ID of the compartment in which to list resources.
+        :param Sequence[str] regions: List of region names of the remote region
+        :param int retention_period: Retention period in days of the backup copy.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "regions", regions)
+        pulumi.set(__self__, "retention_period", retention_period)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The ID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def regions(self) -> Sequence[str]:
+        """
+        List of region names of the remote region
+        """
+        return pulumi.get(self, "regions")
+
+    @property
+    @pulumi.getter(name="retentionPeriod")
+    def retention_period(self) -> int:
+        """
+        Retention period in days of the backup copy.
+        """
+        return pulumi.get(self, "retention_period")
 
 
 @pulumi.output_type

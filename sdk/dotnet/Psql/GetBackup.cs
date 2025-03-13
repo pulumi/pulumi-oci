@@ -123,6 +123,9 @@ namespace Pulumi.Oci.Psql
     [OutputType]
     public sealed class GetBackupResult
     {
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup in the source region
+        /// </summary>
         public readonly string BackupId;
         /// <summary>
         /// The size of the backup, in gigabytes.
@@ -132,6 +135,10 @@ namespace Pulumi.Oci.Psql
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
         /// </summary>
         public readonly string CompartmentId;
+        /// <summary>
+        /// List of status for Backup Copy
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetBackupCopyStatusResult> CopyStatuses;
         /// <summary>
         /// Information about the database system associated with a backup.
         /// </summary>
@@ -177,7 +184,11 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         public readonly int RetentionPeriod;
         /// <summary>
-        /// Specifies whether the backup was created manually, or by a management policy.
+        /// Information about the Source Backup associated with a backup.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetBackupSourceBackupDetailResult> SourceBackupDetails;
+        /// <summary>
+        /// Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
         /// </summary>
         public readonly string SourceType;
         /// <summary>
@@ -193,6 +204,10 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
+        /// The date and time the backup was created. This is the time the actual point-in-time data snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        /// </summary>
+        public readonly string TimeCreatedPrecise;
+        /// <summary>
         /// The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeUpdated;
@@ -204,6 +219,8 @@ namespace Pulumi.Oci.Psql
             int backupSize,
 
             string compartmentId,
+
+            ImmutableArray<Outputs.GetBackupCopyStatusResult> copyStatuses,
 
             ImmutableArray<Outputs.GetBackupDbSystemDetailResult> dbSystemDetails,
 
@@ -227,6 +244,8 @@ namespace Pulumi.Oci.Psql
 
             int retentionPeriod,
 
+            ImmutableArray<Outputs.GetBackupSourceBackupDetailResult> sourceBackupDetails,
+
             string sourceType,
 
             string state,
@@ -235,11 +254,14 @@ namespace Pulumi.Oci.Psql
 
             string timeCreated,
 
+            string timeCreatedPrecise,
+
             string timeUpdated)
         {
             BackupId = backupId;
             BackupSize = backupSize;
             CompartmentId = compartmentId;
+            CopyStatuses = copyStatuses;
             DbSystemDetails = dbSystemDetails;
             DbSystemId = dbSystemId;
             DefinedTags = definedTags;
@@ -251,10 +273,12 @@ namespace Pulumi.Oci.Psql
             LastCompletedRequestToken = lastCompletedRequestToken;
             LifecycleDetails = lifecycleDetails;
             RetentionPeriod = retentionPeriod;
+            SourceBackupDetails = sourceBackupDetails;
             SourceType = sourceType;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;
+            TimeCreatedPrecise = timeCreatedPrecise;
             TimeUpdated = timeUpdated;
         }
     }

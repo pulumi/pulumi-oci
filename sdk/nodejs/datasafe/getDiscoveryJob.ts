@@ -93,6 +93,10 @@ export interface GetDiscoveryJobResult {
      */
     readonly sensitiveDataModelId: string;
     /**
+     * The OCIDs of the sensitive type groups to be used by data discovery jobs.
+     */
+    readonly sensitiveTypeGroupIdsForDiscoveries: string[];
+    /**
      * The OCIDs of the sensitive types used for data discovery.
      */
     readonly sensitiveTypeIdsForDiscoveries: string[];

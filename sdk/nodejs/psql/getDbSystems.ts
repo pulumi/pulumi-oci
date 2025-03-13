@@ -65,7 +65,7 @@ export interface GetDbSystemsArgs {
  */
 export interface GetDbSystemsResult {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
+     * target compartment to place a new backup
      */
     readonly compartmentId?: string;
     /**

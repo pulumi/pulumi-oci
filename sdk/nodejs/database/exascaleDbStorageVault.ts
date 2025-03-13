@@ -25,11 +25,14 @@ import * as utilities from "../utilities";
  *         totalSizeInGbs: exascaleDbStorageVaultHighCapacityDatabaseStorageTotalSizeInGbs,
  *     },
  *     additionalFlashCacheInPercent: exascaleDbStorageVaultAdditionalFlashCacheInPercent,
+ *     clusterPlacementGroupId: testClusterPlacementGroup.id,
  *     definedTags: exascaleDbStorageVaultDefinedTags,
  *     description: exascaleDbStorageVaultDescription,
+ *     exadataInfrastructureId: testExadataInfrastructure.id,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     subscriptionId: tenantSubscriptionId,
  *     timeZone: exascaleDbStorageVaultTimeZone,
  * });
  * ```
@@ -79,6 +82,10 @@ export class ExascaleDbStorageVault extends pulumi.CustomResource {
      */
     public readonly availabilityDomain!: pulumi.Output<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     */
+    public readonly clusterPlacementGroupId!: pulumi.Output<string>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     public readonly compartmentId!: pulumi.Output<string>;
@@ -95,6 +102,10 @@ export class ExascaleDbStorageVault extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+     */
+    public readonly exadataInfrastructureId!: pulumi.Output<string>;
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
@@ -110,6 +121,10 @@ export class ExascaleDbStorageVault extends pulumi.CustomResource {
      * The current state of the Exadata Database Storage Vault.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     */
+    public readonly subscriptionId!: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
@@ -150,14 +165,17 @@ export class ExascaleDbStorageVault extends pulumi.CustomResource {
             const state = argsOrState as ExascaleDbStorageVaultState | undefined;
             resourceInputs["additionalFlashCacheInPercent"] = state ? state.additionalFlashCacheInPercent : undefined;
             resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
+            resourceInputs["clusterPlacementGroupId"] = state ? state.clusterPlacementGroupId : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
+            resourceInputs["exadataInfrastructureId"] = state ? state.exadataInfrastructureId : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["highCapacityDatabaseStorage"] = state ? state.highCapacityDatabaseStorage : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["subscriptionId"] = state ? state.subscriptionId : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeZone"] = state ? state.timeZone : undefined;
@@ -179,12 +197,15 @@ export class ExascaleDbStorageVault extends pulumi.CustomResource {
             }
             resourceInputs["additionalFlashCacheInPercent"] = args ? args.additionalFlashCacheInPercent : undefined;
             resourceInputs["availabilityDomain"] = args ? args.availabilityDomain : undefined;
+            resourceInputs["clusterPlacementGroupId"] = args ? args.clusterPlacementGroupId : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
+            resourceInputs["exadataInfrastructureId"] = args ? args.exadataInfrastructureId : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["highCapacityDatabaseStorage"] = args ? args.highCapacityDatabaseStorage : undefined;
+            resourceInputs["subscriptionId"] = args ? args.subscriptionId : undefined;
             resourceInputs["timeZone"] = args ? args.timeZone : undefined;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -211,6 +232,10 @@ export interface ExascaleDbStorageVaultState {
      */
     availabilityDomain?: pulumi.Input<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     */
+    clusterPlacementGroupId?: pulumi.Input<string>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId?: pulumi.Input<string>;
@@ -227,6 +252,10 @@ export interface ExascaleDbStorageVaultState {
      */
     displayName?: pulumi.Input<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+     */
+    exadataInfrastructureId?: pulumi.Input<string>;
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
@@ -242,6 +271,10 @@ export interface ExascaleDbStorageVaultState {
      * The current state of the Exadata Database Storage Vault.
      */
     state?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     */
+    subscriptionId?: pulumi.Input<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
@@ -281,6 +314,10 @@ export interface ExascaleDbStorageVaultArgs {
      */
     availabilityDomain: pulumi.Input<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     */
+    clusterPlacementGroupId?: pulumi.Input<string>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: pulumi.Input<string>;
@@ -297,6 +334,10 @@ export interface ExascaleDbStorageVaultArgs {
      */
     displayName: pulumi.Input<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+     */
+    exadataInfrastructureId?: pulumi.Input<string>;
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
@@ -304,6 +345,10 @@ export interface ExascaleDbStorageVaultArgs {
      * (Updatable) Create exadata Database Storage Details
      */
     highCapacityDatabaseStorage: pulumi.Input<inputs.Database.ExascaleDbStorageVaultHighCapacityDatabaseStorage>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     */
+    subscriptionId?: pulumi.Input<string>;
     /**
      * The time zone that you want to use for the Exadata Database Storage Vault. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
      *

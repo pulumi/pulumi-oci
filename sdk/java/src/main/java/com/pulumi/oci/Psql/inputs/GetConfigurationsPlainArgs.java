@@ -32,6 +32,21 @@ public final class GetConfigurationsPlainArgs extends com.pulumi.resources.Invok
     }
 
     /**
+     * A filter to return only resources if their `configType` matches the given `configType`.
+     * 
+     */
+    @Import(name="configType")
+    private @Nullable String configType;
+
+    /**
+     * @return A filter to return only resources if their `configType` matches the given `configType`.
+     * 
+     */
+    public Optional<String> configType() {
+        return Optional.ofNullable(this.configType);
+    }
+
+    /**
      * A unique identifier for the configuration.
      * 
      */
@@ -117,6 +132,7 @@ public final class GetConfigurationsPlainArgs extends com.pulumi.resources.Invok
 
     private GetConfigurationsPlainArgs(GetConfigurationsPlainArgs $) {
         this.compartmentId = $.compartmentId;
+        this.configType = $.configType;
         this.configurationId = $.configurationId;
         this.dbVersion = $.dbVersion;
         this.displayName = $.displayName;
@@ -151,6 +167,17 @@ public final class GetConfigurationsPlainArgs extends com.pulumi.resources.Invok
          */
         public Builder compartmentId(@Nullable String compartmentId) {
             $.compartmentId = compartmentId;
+            return this;
+        }
+
+        /**
+         * @param configType A filter to return only resources if their `configType` matches the given `configType`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder configType(@Nullable String configType) {
+            $.configType = configType;
             return this;
         }
 

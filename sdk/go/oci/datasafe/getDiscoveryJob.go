@@ -83,6 +83,8 @@ type GetDiscoveryJobResult struct {
 	SchemasForDiscoveries []string `pulumi:"schemasForDiscoveries"`
 	// The OCID of the sensitive data model associated with the discovery job.
 	SensitiveDataModelId string `pulumi:"sensitiveDataModelId"`
+	// The OCIDs of the sensitive type groups to be used by data discovery jobs.
+	SensitiveTypeGroupIdsForDiscoveries []string `pulumi:"sensitiveTypeGroupIdsForDiscoveries"`
 	// The OCIDs of the sensitive types used for data discovery.
 	SensitiveTypeIdsForDiscoveries []string `pulumi:"sensitiveTypeIdsForDiscoveries"`
 	// The current state of the discovery job.
@@ -207,6 +209,11 @@ func (o GetDiscoveryJobResultOutput) SchemasForDiscoveries() pulumi.StringArrayO
 // The OCID of the sensitive data model associated with the discovery job.
 func (o GetDiscoveryJobResultOutput) SensitiveDataModelId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDiscoveryJobResult) string { return v.SensitiveDataModelId }).(pulumi.StringOutput)
+}
+
+// The OCIDs of the sensitive type groups to be used by data discovery jobs.
+func (o GetDiscoveryJobResultOutput) SensitiveTypeGroupIdsForDiscoveries() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDiscoveryJobResult) []string { return v.SensitiveTypeGroupIdsForDiscoveries }).(pulumi.StringArrayOutput)
 }
 
 // The OCIDs of the sensitive types used for data discovery.

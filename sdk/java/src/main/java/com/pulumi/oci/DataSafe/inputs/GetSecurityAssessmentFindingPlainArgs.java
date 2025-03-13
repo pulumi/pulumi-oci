@@ -32,6 +32,13 @@ public final class GetSecurityAssessmentFindingPlainArgs extends com.pulumi.reso
         return Optional.ofNullable(this.compartmentIdInSubtree);
     }
 
+    @Import(name="fields")
+    private @Nullable List<String> fields;
+
+    public Optional<List<String>> fields() {
+        return Optional.ofNullable(this.fields);
+    }
+
     @Import(name="filters")
     private @Nullable List<GetSecurityAssessmentFindingFilter> filters;
 
@@ -58,6 +65,13 @@ public final class GetSecurityAssessmentFindingPlainArgs extends com.pulumi.reso
 
     public Optional<String> references() {
         return Optional.ofNullable(this.references);
+    }
+
+    @Import(name="scimQuery")
+    private @Nullable String scimQuery;
+
+    public Optional<String> scimQuery() {
+        return Optional.ofNullable(this.scimQuery);
     }
 
     @Import(name="securityAssessmentId", required=true)
@@ -93,10 +107,12 @@ public final class GetSecurityAssessmentFindingPlainArgs extends com.pulumi.reso
     private GetSecurityAssessmentFindingPlainArgs(GetSecurityAssessmentFindingPlainArgs $) {
         this.accessLevel = $.accessLevel;
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
+        this.fields = $.fields;
         this.filters = $.filters;
         this.findingKey = $.findingKey;
         this.isTopFinding = $.isTopFinding;
         this.references = $.references;
+        this.scimQuery = $.scimQuery;
         this.securityAssessmentId = $.securityAssessmentId;
         this.severity = $.severity;
         this.state = $.state;
@@ -131,6 +147,15 @@ public final class GetSecurityAssessmentFindingPlainArgs extends com.pulumi.reso
             return this;
         }
 
+        public Builder fields(@Nullable List<String> fields) {
+            $.fields = fields;
+            return this;
+        }
+
+        public Builder fields(String... fields) {
+            return fields(List.of(fields));
+        }
+
         public Builder filters(@Nullable List<GetSecurityAssessmentFindingFilter> filters) {
             $.filters = filters;
             return this;
@@ -152,6 +177,11 @@ public final class GetSecurityAssessmentFindingPlainArgs extends com.pulumi.reso
 
         public Builder references(@Nullable String references) {
             $.references = references;
+            return this;
+        }
+
+        public Builder scimQuery(@Nullable String scimQuery) {
+            $.scimQuery = scimQuery;
             return this;
         }
 

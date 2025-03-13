@@ -299,7 +299,6 @@ func (o GetContainerInstanceContainerArrayOutput) Index(i pulumi.IntInput) GetCo
 }
 
 type GetContainerInstanceContainerHealthCheck struct {
-	Commands              []string                                         `pulumi:"commands"`
 	FailureAction         string                                           `pulumi:"failureAction"`
 	FailureThreshold      int                                              `pulumi:"failureThreshold"`
 	Headers               []GetContainerInstanceContainerHealthCheckHeader `pulumi:"headers"`
@@ -329,7 +328,6 @@ type GetContainerInstanceContainerHealthCheckInput interface {
 }
 
 type GetContainerInstanceContainerHealthCheckArgs struct {
-	Commands              pulumi.StringArrayInput                                  `pulumi:"commands"`
 	FailureAction         pulumi.StringInput                                       `pulumi:"failureAction"`
 	FailureThreshold      pulumi.IntInput                                          `pulumi:"failureThreshold"`
 	Headers               GetContainerInstanceContainerHealthCheckHeaderArrayInput `pulumi:"headers"`
@@ -396,10 +394,6 @@ func (o GetContainerInstanceContainerHealthCheckOutput) ToGetContainerInstanceCo
 
 func (o GetContainerInstanceContainerHealthCheckOutput) ToGetContainerInstanceContainerHealthCheckOutputWithContext(ctx context.Context) GetContainerInstanceContainerHealthCheckOutput {
 	return o
-}
-
-func (o GetContainerInstanceContainerHealthCheckOutput) Commands() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetContainerInstanceContainerHealthCheck) []string { return v.Commands }).(pulumi.StringArrayOutput)
 }
 
 func (o GetContainerInstanceContainerHealthCheckOutput) FailureAction() pulumi.StringOutput {
@@ -3706,7 +3700,6 @@ func (o GetContainerInstancesContainerInstanceCollectionItemContainerArrayOutput
 }
 
 type GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck struct {
-	Commands              []string                                                                         `pulumi:"commands"`
 	FailureAction         string                                                                           `pulumi:"failureAction"`
 	FailureThreshold      int                                                                              `pulumi:"failureThreshold"`
 	Headers               []GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeader `pulumi:"headers"`
@@ -3736,7 +3729,6 @@ type GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckInp
 }
 
 type GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckArgs struct {
-	Commands              pulumi.StringArrayInput                                                                  `pulumi:"commands"`
 	FailureAction         pulumi.StringInput                                                                       `pulumi:"failureAction"`
 	FailureThreshold      pulumi.IntInput                                                                          `pulumi:"failureThreshold"`
 	Headers               GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderArrayInput `pulumi:"headers"`
@@ -3803,12 +3795,6 @@ func (o GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck
 
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckOutput) ToGetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckOutputWithContext(ctx context.Context) GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckOutput {
 	return o
-}
-
-func (o GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckOutput) Commands() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck) []string {
-		return v.Commands
-	}).(pulumi.StringArrayOutput)
 }
 
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckOutput) FailureAction() pulumi.StringOutput {

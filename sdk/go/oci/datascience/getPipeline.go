@@ -90,6 +90,8 @@ type LookupPipelineResult struct {
 	StepArtifacts []GetPipelineStepArtifact `pulumi:"stepArtifacts"`
 	// Array of step details for each step.
 	StepDetails []GetPipelineStepDetail `pulumi:"stepDetails"`
+	// The storage mount details to mount to the instance running the pipeline step.
+	StorageMountConfigurationDetailsLists []GetPipelineStorageMountConfigurationDetailsList `pulumi:"storageMountConfigurationDetailsLists"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
@@ -215,6 +217,13 @@ func (o LookupPipelineResultOutput) StepArtifacts() GetPipelineStepArtifactArray
 // Array of step details for each step.
 func (o LookupPipelineResultOutput) StepDetails() GetPipelineStepDetailArrayOutput {
 	return o.ApplyT(func(v LookupPipelineResult) []GetPipelineStepDetail { return v.StepDetails }).(GetPipelineStepDetailArrayOutput)
+}
+
+// The storage mount details to mount to the instance running the pipeline step.
+func (o LookupPipelineResultOutput) StorageMountConfigurationDetailsLists() GetPipelineStorageMountConfigurationDetailsListArrayOutput {
+	return o.ApplyT(func(v LookupPipelineResult) []GetPipelineStorageMountConfigurationDetailsList {
+		return v.StorageMountConfigurationDetailsLists
+	}).(GetPipelineStorageMountConfigurationDetailsListArrayOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`

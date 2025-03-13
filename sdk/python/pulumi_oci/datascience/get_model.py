@@ -27,7 +27,7 @@ class GetModelResult:
     """
     A collection of values returned by getModel.
     """
-    def __init__(__self__, artifact_content_disposition=None, artifact_content_length=None, artifact_content_md5=None, artifact_last_modified=None, backup_operation_details=None, backup_settings=None, compartment_id=None, created_by=None, custom_metadata_lists=None, defined_metadata_lists=None, defined_tags=None, description=None, display_name=None, empty_model=None, freeform_tags=None, id=None, input_schema=None, lifecycle_details=None, model_artifact=None, model_id=None, model_version_set_id=None, model_version_set_name=None, output_schema=None, project_id=None, retention_operation_details=None, retention_settings=None, state=None, time_created=None, version_label=None):
+    def __init__(__self__, artifact_content_disposition=None, artifact_content_length=None, artifact_content_md5=None, artifact_last_modified=None, backup_operation_details=None, backup_settings=None, category=None, compartment_id=None, created_by=None, custom_metadata_lists=None, defined_metadata_lists=None, defined_tags=None, description=None, display_name=None, empty_model=None, freeform_tags=None, id=None, input_schema=None, is_model_by_reference=None, lifecycle_details=None, model_artifact=None, model_id=None, model_version_set_id=None, model_version_set_name=None, output_schema=None, project_id=None, retention_operation_details=None, retention_settings=None, state=None, time_created=None, version_label=None):
         if artifact_content_disposition and not isinstance(artifact_content_disposition, str):
             raise TypeError("Expected argument 'artifact_content_disposition' to be a str")
         pulumi.set(__self__, "artifact_content_disposition", artifact_content_disposition)
@@ -46,6 +46,9 @@ class GetModelResult:
         if backup_settings and not isinstance(backup_settings, list):
             raise TypeError("Expected argument 'backup_settings' to be a list")
         pulumi.set(__self__, "backup_settings", backup_settings)
+        if category and not isinstance(category, str):
+            raise TypeError("Expected argument 'category' to be a str")
+        pulumi.set(__self__, "category", category)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -79,6 +82,9 @@ class GetModelResult:
         if input_schema and not isinstance(input_schema, str):
             raise TypeError("Expected argument 'input_schema' to be a str")
         pulumi.set(__self__, "input_schema", input_schema)
+        if is_model_by_reference and not isinstance(is_model_by_reference, bool):
+            raise TypeError("Expected argument 'is_model_by_reference' to be a bool")
+        pulumi.set(__self__, "is_model_by_reference", is_model_by_reference)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -151,6 +157,14 @@ class GetModelResult:
         Back up setting details of the model.
         """
         return pulumi.get(self, "backup_settings")
+
+    @property
+    @pulumi.getter
+    def category(self) -> str:
+        """
+        Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
+        """
+        return pulumi.get(self, "category")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -236,6 +250,14 @@ class GetModelResult:
         Input schema file content in String format
         """
         return pulumi.get(self, "input_schema")
+
+    @property
+    @pulumi.getter(name="isModelByReference")
+    def is_model_by_reference(self) -> bool:
+        """
+        Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+        """
+        return pulumi.get(self, "is_model_by_reference")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -337,6 +359,7 @@ class AwaitableGetModelResult(GetModelResult):
             artifact_last_modified=self.artifact_last_modified,
             backup_operation_details=self.backup_operation_details,
             backup_settings=self.backup_settings,
+            category=self.category,
             compartment_id=self.compartment_id,
             created_by=self.created_by,
             custom_metadata_lists=self.custom_metadata_lists,
@@ -348,6 +371,7 @@ class AwaitableGetModelResult(GetModelResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             input_schema=self.input_schema,
+            is_model_by_reference=self.is_model_by_reference,
             lifecycle_details=self.lifecycle_details,
             model_artifact=self.model_artifact,
             model_id=self.model_id,
@@ -393,6 +417,7 @@ def get_model(model_id: Optional[str] = None,
         artifact_last_modified=pulumi.get(__ret__, 'artifact_last_modified'),
         backup_operation_details=pulumi.get(__ret__, 'backup_operation_details'),
         backup_settings=pulumi.get(__ret__, 'backup_settings'),
+        category=pulumi.get(__ret__, 'category'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         created_by=pulumi.get(__ret__, 'created_by'),
         custom_metadata_lists=pulumi.get(__ret__, 'custom_metadata_lists'),
@@ -404,6 +429,7 @@ def get_model(model_id: Optional[str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         input_schema=pulumi.get(__ret__, 'input_schema'),
+        is_model_by_reference=pulumi.get(__ret__, 'is_model_by_reference'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         model_artifact=pulumi.get(__ret__, 'model_artifact'),
         model_id=pulumi.get(__ret__, 'model_id'),
@@ -446,6 +472,7 @@ def get_model_output(model_id: Optional[pulumi.Input[str]] = None,
         artifact_last_modified=pulumi.get(__response__, 'artifact_last_modified'),
         backup_operation_details=pulumi.get(__response__, 'backup_operation_details'),
         backup_settings=pulumi.get(__response__, 'backup_settings'),
+        category=pulumi.get(__response__, 'category'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         created_by=pulumi.get(__response__, 'created_by'),
         custom_metadata_lists=pulumi.get(__response__, 'custom_metadata_lists'),
@@ -457,6 +484,7 @@ def get_model_output(model_id: Optional[pulumi.Input[str]] = None,
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         input_schema=pulumi.get(__response__, 'input_schema'),
+        is_model_by_reference=pulumi.get(__response__, 'is_model_by_reference'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         model_artifact=pulumi.get(__response__, 'model_artifact'),
         model_id=pulumi.get(__response__, 'model_id'),

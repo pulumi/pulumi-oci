@@ -18,6 +18,21 @@ public final class GetModelVersionSetsPlainArgs extends com.pulumi.resources.Inv
     public static final GetModelVersionSetsPlainArgs Empty = new GetModelVersionSetsPlainArgs();
 
     /**
+     * Specifies the type of model version sets to list. By default, user model version sets are listed.
+     * 
+     */
+    @Import(name="category")
+    private @Nullable String category;
+
+    /**
+     * @return Specifies the type of model version sets to list. By default, user model version sets are listed.
+     * 
+     */
+    public Optional<String> category() {
+        return Optional.ofNullable(this.category);
+    }
+
+    /**
      * &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
@@ -117,6 +132,7 @@ public final class GetModelVersionSetsPlainArgs extends com.pulumi.resources.Inv
     private GetModelVersionSetsPlainArgs() {}
 
     private GetModelVersionSetsPlainArgs(GetModelVersionSetsPlainArgs $) {
+        this.category = $.category;
         this.compartmentId = $.compartmentId;
         this.createdBy = $.createdBy;
         this.filters = $.filters;
@@ -142,6 +158,17 @@ public final class GetModelVersionSetsPlainArgs extends com.pulumi.resources.Inv
 
         public Builder(GetModelVersionSetsPlainArgs defaults) {
             $ = new GetModelVersionSetsPlainArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param category Specifies the type of model version sets to list. By default, user model version sets are listed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder category(@Nullable String category) {
+            $.category = category;
+            return this;
         }
 
         /**

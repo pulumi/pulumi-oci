@@ -54,8 +54,11 @@ class GetDkimsDkimCollectionItemResult(dict):
                  email_domain_id: str,
                  freeform_tags: Mapping[str, str],
                  id: str,
+                 is_imported: bool,
+                 key_length: int,
                  lifecycle_details: str,
                  name: str,
+                 private_key: str,
                  state: str,
                  system_tags: Mapping[str, str],
                  time_created: str,
@@ -70,6 +73,8 @@ class GetDkimsDkimCollectionItemResult(dict):
         :param str email_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain to which this DKIM belongs.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: A filter to only return resources that match the given id exactly.
+        :param bool is_imported: Indicates whether the DKIM was imported.
+        :param int key_length: Length of the RSA key used in the DKIM.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource.
         :param str name: A filter to only return resources that match the given name exactly.
         :param str state: Filter returned list by specified lifecycle state. This parameter is case-insensitive.
@@ -86,8 +91,11 @@ class GetDkimsDkimCollectionItemResult(dict):
         pulumi.set(__self__, "email_domain_id", email_domain_id)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_imported", is_imported)
+        pulumi.set(__self__, "key_length", key_length)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "private_key", private_key)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
@@ -159,6 +167,22 @@ class GetDkimsDkimCollectionItemResult(dict):
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isImported")
+    def is_imported(self) -> bool:
+        """
+        Indicates whether the DKIM was imported.
+        """
+        return pulumi.get(self, "is_imported")
+
+    @property
+    @pulumi.getter(name="keyLength")
+    def key_length(self) -> int:
+        """
+        Length of the RSA key used in the DKIM.
+        """
+        return pulumi.get(self, "key_length")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
@@ -173,6 +197,11 @@ class GetDkimsDkimCollectionItemResult(dict):
         A filter to only return resources that match the given name exactly.
         """
         return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="privateKey")
+    def private_key(self) -> str:
+        return pulumi.get(self, "private_key")
 
     @property
     @pulumi.getter

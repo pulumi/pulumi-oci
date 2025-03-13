@@ -107,6 +107,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &SensitiveDataModelsSensitiveColumn{}
 	case "oci:DataSafe/sensitiveType:SensitiveType":
 		r = &SensitiveType{}
+	case "oci:DataSafe/sensitiveTypeGroup:SensitiveTypeGroup":
+		r = &SensitiveTypeGroup{}
+	case "oci:DataSafe/sensitiveTypeGroupGroupedSensitiveType:SensitiveTypeGroupGroupedSensitiveType":
+		r = &SensitiveTypeGroupGroupedSensitiveType{}
 	case "oci:DataSafe/sensitiveTypesExport:SensitiveTypesExport":
 		r = &SensitiveTypesExport{}
 	case "oci:DataSafe/setSecurityAssessmentBaseline:SetSecurityAssessmentBaseline":
@@ -365,6 +369,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DataSafe/sensitiveType",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/sensitiveTypeGroup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/sensitiveTypeGroupGroupedSensitiveType",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

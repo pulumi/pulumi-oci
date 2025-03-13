@@ -12,6 +12,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class PipelineRunStepRun {
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow run triggered for this step run.
+     * 
+     */
+    private @Nullable String dataflowRunId;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
      * 
      */
@@ -48,6 +53,13 @@ public final class PipelineRunStepRun {
     private @Nullable String timeStarted;
 
     private PipelineRunStepRun() {}
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow run triggered for this step run.
+     * 
+     */
+    public Optional<String> dataflowRunId() {
+        return Optional.ofNullable(this.dataflowRunId);
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
      * 
@@ -107,6 +119,7 @@ public final class PipelineRunStepRun {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String dataflowRunId;
         private @Nullable String jobRunId;
         private @Nullable String lifecycleDetails;
         private @Nullable String state;
@@ -117,6 +130,7 @@ public final class PipelineRunStepRun {
         public Builder() {}
         public Builder(PipelineRunStepRun defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.dataflowRunId = defaults.dataflowRunId;
     	      this.jobRunId = defaults.jobRunId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.state = defaults.state;
@@ -126,6 +140,12 @@ public final class PipelineRunStepRun {
     	      this.timeStarted = defaults.timeStarted;
         }
 
+        @CustomType.Setter
+        public Builder dataflowRunId(@Nullable String dataflowRunId) {
+
+            this.dataflowRunId = dataflowRunId;
+            return this;
+        }
         @CustomType.Setter
         public Builder jobRunId(@Nullable String jobRunId) {
 
@@ -170,6 +190,7 @@ public final class PipelineRunStepRun {
         }
         public PipelineRunStepRun build() {
             final var _resultValue = new PipelineRunStepRun();
+            _resultValue.dataflowRunId = dataflowRunId;
             _resultValue.jobRunId = jobRunId;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.state = state;

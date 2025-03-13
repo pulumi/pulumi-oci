@@ -30,7 +30,7 @@ public final class GetExternalContainerDatabaseResult {
      */
     private String databaseConfiguration;
     /**
-     * @return The Oracle Database edition.
+     * @return The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      * 
      */
     private String databaseEdition;
@@ -134,7 +134,7 @@ public final class GetExternalContainerDatabaseResult {
         return this.databaseConfiguration;
     }
     /**
-     * @return The Oracle Database edition.
+     * @return The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      * 
      */
     public String databaseEdition() {

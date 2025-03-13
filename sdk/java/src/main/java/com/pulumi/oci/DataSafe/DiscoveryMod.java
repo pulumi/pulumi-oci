@@ -64,6 +64,7 @@ import javax.annotation.Nullable;
  *             .isIncludeAllSensitiveTypes(discoveryJobIsIncludeAllSensitiveTypes)
  *             .isSampleDataCollectionEnabled(discoveryJobIsSampleDataCollectionEnabled)
  *             .schemasForDiscoveries(discoveryJobSchemasForDiscovery)
+ *             .sensitiveTypeGroupIdsForDiscoveries(discoveryJobSensitiveTypeGroupIdsForDiscovery)
  *             .sensitiveTypeIdsForDiscoveries(discoveryJobSensitiveTypeIdsForDiscovery)
  *             .tablesForDiscoveries(DiscoveryModTablesForDiscoveryArgs.builder()
  *                 .schemaName(discoveryJobTablesForDiscoverySchemaName)
@@ -241,6 +242,20 @@ public class DiscoveryMod extends com.pulumi.resources.CustomResource {
      */
     public Output<String> sensitiveDataModelId() {
         return this.sensitiveDataModelId;
+    }
+    /**
+     * The OCIDs of the sensitive type groups to be used by the discovery job. All the sensitive types present in sensitive type group will be used for discovery.
+     * 
+     */
+    @Export(name="sensitiveTypeGroupIdsForDiscoveries", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> sensitiveTypeGroupIdsForDiscoveries;
+
+    /**
+     * @return The OCIDs of the sensitive type groups to be used by the discovery job. All the sensitive types present in sensitive type group will be used for discovery.
+     * 
+     */
+    public Output<List<String>> sensitiveTypeGroupIdsForDiscoveries() {
+        return this.sensitiveTypeGroupIdsForDiscoveries;
     }
     /**
      * The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.

@@ -66,6 +66,10 @@ export class ModelVersionSet extends pulumi.CustomResource {
     }
 
     /**
+     * The category of the model version set.
+     */
+    public /*out*/ readonly category!: pulumi.Output<string>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model version set in.
      */
     public readonly compartmentId!: pulumi.Output<string>;
@@ -127,6 +131,7 @@ export class ModelVersionSet extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ModelVersionSetState | undefined;
+            resourceInputs["category"] = state ? state.category : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["createdBy"] = state ? state.createdBy : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
@@ -152,6 +157,7 @@ export class ModelVersionSet extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["projectId"] = args ? args.projectId : undefined;
+            resourceInputs["category"] = undefined /*out*/;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
@@ -167,6 +173,10 @@ export class ModelVersionSet extends pulumi.CustomResource {
  * Input properties used for looking up and filtering ModelVersionSet resources.
  */
 export interface ModelVersionSetState {
+    /**
+     * The category of the model version set.
+     */
+    category?: pulumi.Input<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model version set in.
      */

@@ -706,7 +706,7 @@ class ContainerInstance(pulumi.CustomResource):
                 "freeform_tags": container_instance_containers_freeform_tags,
                 "health_checks": [{
                     "health_check_type": container_instance_containers_health_checks_health_check_type,
-                    "commands": container_instance_containers_health_checks_command,
+                    "port": container_instance_containers_health_checks_port,
                     "failure_action": container_instance_containers_health_checks_failure_action,
                     "failure_threshold": container_instance_containers_health_checks_failure_threshold,
                     "headers": [{
@@ -717,7 +717,6 @@ class ContainerInstance(pulumi.CustomResource):
                     "interval_in_seconds": container_instance_containers_health_checks_interval_in_seconds,
                     "name": container_instance_containers_health_checks_name,
                     "path": container_instance_containers_health_checks_path,
-                    "port": container_instance_containers_health_checks_port,
                     "success_threshold": container_instance_containers_health_checks_success_threshold,
                     "timeout_in_seconds": container_instance_containers_health_checks_timeout_in_seconds,
                 }],
@@ -859,7 +858,7 @@ class ContainerInstance(pulumi.CustomResource):
                 "freeform_tags": container_instance_containers_freeform_tags,
                 "health_checks": [{
                     "health_check_type": container_instance_containers_health_checks_health_check_type,
-                    "commands": container_instance_containers_health_checks_command,
+                    "port": container_instance_containers_health_checks_port,
                     "failure_action": container_instance_containers_health_checks_failure_action,
                     "failure_threshold": container_instance_containers_health_checks_failure_threshold,
                     "headers": [{
@@ -870,7 +869,6 @@ class ContainerInstance(pulumi.CustomResource):
                     "interval_in_seconds": container_instance_containers_health_checks_interval_in_seconds,
                     "name": container_instance_containers_health_checks_name,
                     "path": container_instance_containers_health_checks_path,
-                    "port": container_instance_containers_health_checks_port,
                     "success_threshold": container_instance_containers_health_checks_success_threshold,
                     "timeout_in_seconds": container_instance_containers_health_checks_timeout_in_seconds,
                 }],

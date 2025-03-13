@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetDbSystemsResult {
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
+     * @return target compartment to place a new backup
      * 
      */
     private @Nullable String compartmentId;
@@ -44,7 +44,7 @@ public final class GetDbSystemsResult {
 
     private GetDbSystemsResult() {}
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
+     * @return target compartment to place a new backup
      * 
      */
     public Optional<String> compartmentId() {

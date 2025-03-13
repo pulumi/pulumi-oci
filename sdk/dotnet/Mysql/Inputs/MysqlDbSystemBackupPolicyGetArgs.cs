@@ -12,6 +12,22 @@ namespace Pulumi.Oci.Mysql.Inputs
 
     public sealed class MysqlDbSystemBackupPolicyGetArgs : global::Pulumi.ResourceArgs
     {
+        [Input("copyPolicies")]
+        private InputList<Inputs.MysqlDbSystemBackupPolicyCopyPolicyGetArgs>? _copyPolicies;
+
+        /// <summary>
+        /// (Updatable) List of policies of a DB system to schedule cross-region DB system backup copy.
+        /// 
+        /// The policy includes the name of the destination region to which the DB system backup will be copied, and an optional parameter which specifies the retention period of the copied DB system backup in days.
+        /// 
+        /// **Note:** Currently, only one policy can be specified in the list.
+        /// </summary>
+        public InputList<Inputs.MysqlDbSystemBackupPolicyCopyPolicyGetArgs> CopyPolicies
+        {
+            get => _copyPolicies ?? (_copyPolicies = new InputList<Inputs.MysqlDbSystemBackupPolicyCopyPolicyGetArgs>());
+            set => _copyPolicies = value;
+        }
+
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
 

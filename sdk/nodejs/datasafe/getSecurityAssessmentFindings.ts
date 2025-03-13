@@ -16,10 +16,12 @@ export function getSecurityAssessmentFindings(args: GetSecurityAssessmentFinding
     return pulumi.runtime.invoke("oci:DataSafe/getSecurityAssessmentFindings:getSecurityAssessmentFindings", {
         "accessLevel": args.accessLevel,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "fields": args.fields,
         "filters": args.filters,
         "findingKey": args.findingKey,
         "isTopFinding": args.isTopFinding,
         "references": args.references,
+        "scimQuery": args.scimQuery,
         "securityAssessmentId": args.securityAssessmentId,
         "severity": args.severity,
         "state": args.state,
@@ -39,6 +41,10 @@ export interface GetSecurityAssessmentFindingsArgs {
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
     compartmentIdInSubtree?: boolean;
+    /**
+     * Specifies a subset of fields to be returned in the response.
+     */
+    fields?: string[];
     filters?: inputs.DataSafe.GetSecurityAssessmentFindingsFilter[];
     /**
      * Each finding in security assessment has an associated key (think of key as a finding's name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
@@ -49,9 +55,16 @@ export interface GetSecurityAssessmentFindingsArgs {
      */
     isTopFinding?: boolean;
     /**
-     * An optional filter to return only findings containing the specified reference.
+     * An optional filter to return only findings that match the specified reference.
      */
     references?: string;
+    /**
+     * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
+     *
+     * **Example:** | scimQuery=(severity eq 'high') and (targetId eq 'target_1') scimQuery=(category eq "Users") and (targetId eq "target1") scimQuery=(reference eq 'CIS') and (targetId eq 'target_1')
+     * Supported fields: severity findingKey reference targetId isTopFinding title category remarks details summary isRiskModified
+     */
+    scimQuery?: string;
     /**
      * The OCID of the security assessment.
      */
@@ -76,6 +89,7 @@ export interface GetSecurityAssessmentFindingsArgs {
 export interface GetSecurityAssessmentFindingsResult {
     readonly accessLevel?: string;
     readonly compartmentIdInSubtree?: boolean;
+    readonly fields?: string[];
     readonly filters?: outputs.DataSafe.GetSecurityAssessmentFindingsFilter[];
     readonly findingKey?: string;
     /**
@@ -94,6 +108,7 @@ export interface GetSecurityAssessmentFindingsResult {
      * Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
      */
     readonly references?: string;
+    readonly scimQuery?: string;
     readonly securityAssessmentId: string;
     /**
      * The severity of the finding as determined by security assessment and is same as oracleDefinedSeverity, unless modified by user.
@@ -118,10 +133,12 @@ export function getSecurityAssessmentFindingsOutput(args: GetSecurityAssessmentF
     return pulumi.runtime.invokeOutput("oci:DataSafe/getSecurityAssessmentFindings:getSecurityAssessmentFindings", {
         "accessLevel": args.accessLevel,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "fields": args.fields,
         "filters": args.filters,
         "findingKey": args.findingKey,
         "isTopFinding": args.isTopFinding,
         "references": args.references,
+        "scimQuery": args.scimQuery,
         "securityAssessmentId": args.securityAssessmentId,
         "severity": args.severity,
         "state": args.state,
@@ -141,6 +158,10 @@ export interface GetSecurityAssessmentFindingsOutputArgs {
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
     compartmentIdInSubtree?: pulumi.Input<boolean>;
+    /**
+     * Specifies a subset of fields to be returned in the response.
+     */
+    fields?: pulumi.Input<pulumi.Input<string>[]>;
     filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSecurityAssessmentFindingsFilterArgs>[]>;
     /**
      * Each finding in security assessment has an associated key (think of key as a finding's name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
@@ -151,9 +172,16 @@ export interface GetSecurityAssessmentFindingsOutputArgs {
      */
     isTopFinding?: pulumi.Input<boolean>;
     /**
-     * An optional filter to return only findings containing the specified reference.
+     * An optional filter to return only findings that match the specified reference.
      */
     references?: pulumi.Input<string>;
+    /**
+     * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
+     *
+     * **Example:** | scimQuery=(severity eq 'high') and (targetId eq 'target_1') scimQuery=(category eq "Users") and (targetId eq "target1") scimQuery=(reference eq 'CIS') and (targetId eq 'target_1')
+     * Supported fields: severity findingKey reference targetId isTopFinding title category remarks details summary isRiskModified
+     */
+    scimQuery?: pulumi.Input<string>;
     /**
      * The OCID of the security assessment.
      */

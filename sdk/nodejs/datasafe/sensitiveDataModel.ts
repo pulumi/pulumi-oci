@@ -36,6 +36,7 @@ import * as utilities from "../utilities";
  *     isIncludeAllSensitiveTypes: sensitiveDataModelIsIncludeAllSensitiveTypes,
  *     isSampleDataCollectionEnabled: sensitiveDataModelIsSampleDataCollectionEnabled,
  *     schemasForDiscoveries: sensitiveDataModelSchemasForDiscovery,
+ *     sensitiveTypeGroupIdsForDiscoveries: sensitiveDataModelSensitiveTypeGroupIdsForDiscovery,
  *     sensitiveTypeIdsForDiscoveries: sensitiveDataModelSensitiveTypeIdsForDiscovery,
  *     tablesForDiscoveries: [{
  *         schemaName: sensitiveDataModelTablesForDiscoverySchemaName,
@@ -125,6 +126,10 @@ export class SensitiveDataModel extends pulumi.CustomResource {
      */
     public readonly schemasForDiscoveries!: pulumi.Output<string[]>;
     /**
+     * (Updatable) The OCIDs of the sensitive type groups to be used by data discovery jobs. All the sensitive types present in sensitive type group will be used for discovery.
+     */
+    public readonly sensitiveTypeGroupIdsForDiscoveries!: pulumi.Output<string[]>;
+    /**
      * (Updatable) The OCIDs of the sensitive types to be used by data discovery jobs. If OCID of a sensitive category is provided, all its child sensitive types are used for data discovery.
      */
     public readonly sensitiveTypeIdsForDiscoveries!: pulumi.Output<string[]>;
@@ -181,6 +186,7 @@ export class SensitiveDataModel extends pulumi.CustomResource {
             resourceInputs["isIncludeAllSensitiveTypes"] = state ? state.isIncludeAllSensitiveTypes : undefined;
             resourceInputs["isSampleDataCollectionEnabled"] = state ? state.isSampleDataCollectionEnabled : undefined;
             resourceInputs["schemasForDiscoveries"] = state ? state.schemasForDiscoveries : undefined;
+            resourceInputs["sensitiveTypeGroupIdsForDiscoveries"] = state ? state.sensitiveTypeGroupIdsForDiscoveries : undefined;
             resourceInputs["sensitiveTypeIdsForDiscoveries"] = state ? state.sensitiveTypeIdsForDiscoveries : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
@@ -207,6 +213,7 @@ export class SensitiveDataModel extends pulumi.CustomResource {
             resourceInputs["isIncludeAllSensitiveTypes"] = args ? args.isIncludeAllSensitiveTypes : undefined;
             resourceInputs["isSampleDataCollectionEnabled"] = args ? args.isSampleDataCollectionEnabled : undefined;
             resourceInputs["schemasForDiscoveries"] = args ? args.schemasForDiscoveries : undefined;
+            resourceInputs["sensitiveTypeGroupIdsForDiscoveries"] = args ? args.sensitiveTypeGroupIdsForDiscoveries : undefined;
             resourceInputs["sensitiveTypeIdsForDiscoveries"] = args ? args.sensitiveTypeIdsForDiscoveries : undefined;
             resourceInputs["tablesForDiscoveries"] = args ? args.tablesForDiscoveries : undefined;
             resourceInputs["targetId"] = args ? args.targetId : undefined;
@@ -268,6 +275,10 @@ export interface SensitiveDataModelState {
      * (Updatable) The schemas to be scanned by data discovery jobs.
      */
     schemasForDiscoveries?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * (Updatable) The OCIDs of the sensitive type groups to be used by data discovery jobs. All the sensitive types present in sensitive type group will be used for discovery.
+     */
+    sensitiveTypeGroupIdsForDiscoveries?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * (Updatable) The OCIDs of the sensitive types to be used by data discovery jobs. If OCID of a sensitive category is provided, all its child sensitive types are used for data discovery.
      */
@@ -350,6 +361,10 @@ export interface SensitiveDataModelArgs {
      * (Updatable) The schemas to be scanned by data discovery jobs.
      */
     schemasForDiscoveries?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * (Updatable) The OCIDs of the sensitive type groups to be used by data discovery jobs. All the sensitive types present in sensitive type group will be used for discovery.
+     */
+    sensitiveTypeGroupIdsForDiscoveries?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * (Updatable) The OCIDs of the sensitive types to be used by data discovery jobs. If OCID of a sensitive category is provided, all its child sensitive types are used for data discovery.
      */

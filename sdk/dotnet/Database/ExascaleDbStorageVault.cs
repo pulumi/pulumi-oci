@@ -34,12 +34,15 @@ namespace Pulumi.Oci.Database
     ///             TotalSizeInGbs = exascaleDbStorageVaultHighCapacityDatabaseStorageTotalSizeInGbs,
     ///         },
     ///         AdditionalFlashCacheInPercent = exascaleDbStorageVaultAdditionalFlashCacheInPercent,
+    ///         ClusterPlacementGroupId = testClusterPlacementGroup.Id,
     ///         DefinedTags = exascaleDbStorageVaultDefinedTags,
     ///         Description = exascaleDbStorageVaultDescription,
+    ///         ExadataInfrastructureId = testExadataInfrastructure.Id,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         SubscriptionId = tenantSubscriptionId,
     ///         TimeZone = exascaleDbStorageVaultTimeZone,
     ///     });
     /// 
@@ -70,6 +73,12 @@ namespace Pulumi.Oci.Database
         public Output<string> AvailabilityDomain { get; private set; } = null!;
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        /// </summary>
+        [Output("clusterPlacementGroupId")]
+        public Output<string> ClusterPlacementGroupId { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         [Output("compartmentId")]
@@ -94,6 +103,12 @@ namespace Pulumi.Oci.Database
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+        /// </summary>
+        [Output("exadataInfrastructureId")]
+        public Output<string> ExadataInfrastructureId { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
@@ -116,6 +131,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        /// </summary>
+        [Output("subscriptionId")]
+        public Output<string> SubscriptionId { get; private set; } = null!;
 
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -210,6 +231,12 @@ namespace Pulumi.Oci.Database
         public Input<string> AvailabilityDomain { get; set; } = null!;
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        /// </summary>
+        [Input("clusterPlacementGroupId")]
+        public Input<string>? ClusterPlacementGroupId { get; set; }
+
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         [Input("compartmentId", required: true)]
@@ -239,6 +266,12 @@ namespace Pulumi.Oci.Database
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+        /// </summary>
+        [Input("exadataInfrastructureId")]
+        public Input<string>? ExadataInfrastructureId { get; set; }
+
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;
 
@@ -256,6 +289,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("highCapacityDatabaseStorage", required: true)]
         public Input<Inputs.ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs> HighCapacityDatabaseStorage { get; set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        /// </summary>
+        [Input("subscriptionId")]
+        public Input<string>? SubscriptionId { get; set; }
 
         /// <summary>
         /// The time zone that you want to use for the Exadata Database Storage Vault. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
@@ -288,6 +327,12 @@ namespace Pulumi.Oci.Database
         public Input<string>? AvailabilityDomain { get; set; }
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        /// </summary>
+        [Input("clusterPlacementGroupId")]
+        public Input<string>? ClusterPlacementGroupId { get; set; }
+
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         [Input("compartmentId")]
@@ -316,6 +361,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+        /// </summary>
+        [Input("exadataInfrastructureId")]
+        public Input<string>? ExadataInfrastructureId { get; set; }
 
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;
@@ -346,6 +397,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        /// </summary>
+        [Input("subscriptionId")]
+        public Input<string>? SubscriptionId { get; set; }
 
         [Input("systemTags")]
         private InputMap<string>? _systemTags;

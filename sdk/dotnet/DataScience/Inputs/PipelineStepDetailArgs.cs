@@ -12,6 +12,12 @@ namespace Pulumi.Oci.DataScience.Inputs
 
     public sealed class PipelineStepDetailArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow application to be used as a step.
+        /// </summary>
+        [Input("applicationId")]
+        public Input<string>? ApplicationId { get; set; }
+
         [Input("dependsOns")]
         private InputList<string>? _dependsOns;
 
@@ -55,6 +61,12 @@ namespace Pulumi.Oci.DataScience.Inputs
         public Input<Inputs.PipelineStepDetailStepContainerConfigurationDetailsArgs>? StepContainerConfigurationDetails { get; set; }
 
         /// <summary>
+        /// (Updatable) The configuration details of a Dataflow step.
+        /// </summary>
+        [Input("stepDataflowConfigurationDetails")]
+        public Input<Inputs.PipelineStepDetailStepDataflowConfigurationDetailsArgs>? StepDataflowConfigurationDetails { get; set; }
+
+        /// <summary>
         /// (Updatable) The infrastructure configuration details of a pipeline or a step.
         /// </summary>
         [Input("stepInfrastructureConfigurationDetails")]
@@ -66,12 +78,20 @@ namespace Pulumi.Oci.DataScience.Inputs
         [Input("stepName", required: true)]
         public Input<string> StepName { get; set; } = null!;
 
+        [Input("stepStorageMountConfigurationDetailsLists")]
+        private InputList<Inputs.PipelineStepDetailStepStorageMountConfigurationDetailsListArgs>? _stepStorageMountConfigurationDetailsLists;
+
+        /// <summary>
+        /// (Updatable) The storage mount details to mount to the instance running the pipeline step.
+        /// </summary>
+        public InputList<Inputs.PipelineStepDetailStepStorageMountConfigurationDetailsListArgs> StepStorageMountConfigurationDetailsLists
+        {
+            get => _stepStorageMountConfigurationDetailsLists ?? (_stepStorageMountConfigurationDetailsLists = new InputList<Inputs.PipelineStepDetailStepStorageMountConfigurationDetailsListArgs>());
+            set => _stepStorageMountConfigurationDetailsLists = value;
+        }
+
         /// <summary>
         /// (Updatable) The type of step.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("stepType", required: true)]
         public Input<string> StepType { get; set; } = null!;

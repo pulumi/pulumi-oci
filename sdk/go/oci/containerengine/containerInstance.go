@@ -45,7 +45,7 @@ import (
 //						HealthChecks: containerengine.ContainerInstanceContainerHealthCheckArray{
 //							&containerengine.ContainerInstanceContainerHealthCheckArgs{
 //								HealthCheckType:  pulumi.Any(containerInstanceContainersHealthChecksHealthCheckType),
-//								Commands:         pulumi.Any(containerInstanceContainersHealthChecksCommand),
+//								Port:             pulumi.Any(containerInstanceContainersHealthChecksPort),
 //								FailureAction:    pulumi.Any(containerInstanceContainersHealthChecksFailureAction),
 //								FailureThreshold: pulumi.Any(containerInstanceContainersHealthChecksFailureThreshold),
 //								Headers: containerengine.ContainerInstanceContainerHealthCheckHeaderArray{
@@ -58,7 +58,6 @@ import (
 //								IntervalInSeconds:     pulumi.Any(containerInstanceContainersHealthChecksIntervalInSeconds),
 //								Name:                  pulumi.Any(containerInstanceContainersHealthChecksName),
 //								Path:                  pulumi.Any(containerInstanceContainersHealthChecksPath),
-//								Port:                  pulumi.Any(containerInstanceContainersHealthChecksPort),
 //								SuccessThreshold:      pulumi.Any(containerInstanceContainersHealthChecksSuccessThreshold),
 //								TimeoutInSeconds:      pulumi.Any(containerInstanceContainersHealthChecksTimeoutInSeconds),
 //							},

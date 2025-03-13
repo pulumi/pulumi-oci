@@ -18,9 +18,15 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testBackups = oci.Database.getBackups({
+ *     backupDestinationType: backupBackupDestinationType,
  *     compartmentId: compartmentId,
  *     databaseId: testDatabase.id,
  *     shapeFamily: backupShapeFamily,
+ *     state: backupState,
+ *     timeExpiryScheduledGreaterThanOrEqualTo: backupTimeExpiryScheduledGreaterThanOrEqualTo,
+ *     timeExpiryScheduledLessThan: backupTimeExpiryScheduledLessThan,
+ *     type: backupType,
+ *     version: backupVersion,
  * });
  * ```
  */
@@ -28,10 +34,16 @@ export function getBackups(args?: GetBackupsArgs, opts?: pulumi.InvokeOptions): 
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getBackups:getBackups", {
+        "backupDestinationType": args.backupDestinationType,
         "compartmentId": args.compartmentId,
         "databaseId": args.databaseId,
         "filters": args.filters,
         "shapeFamily": args.shapeFamily,
+        "state": args.state,
+        "timeExpiryScheduledGreaterThanOrEqualTo": args.timeExpiryScheduledGreaterThanOrEqualTo,
+        "timeExpiryScheduledLessThan": args.timeExpiryScheduledLessThan,
+        "type": args.type,
+        "version": args.version,
     }, opts);
 }
 
@@ -39,6 +51,10 @@ export function getBackups(args?: GetBackupsArgs, opts?: pulumi.InvokeOptions): 
  * A collection of arguments for invoking getBackups.
  */
 export interface GetBackupsArgs {
+    /**
+     * A filter to return only resources that match the given backup destination type.
+     */
+    backupDestinationType?: string;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -52,12 +68,36 @@ export interface GetBackupsArgs {
      * If provided, filters the results to the set of database versions which are supported for the given shape family.
      */
     shapeFamily?: string;
+    /**
+     * A filter to return only resources that match the given lifecycle state exactly.
+     */
+    state?: string;
+    /**
+     * The start of date-time range of expiration for the long term backups to be fetched.
+     */
+    timeExpiryScheduledGreaterThanOrEqualTo?: string;
+    /**
+     * The end of date-time range of expiration for the long term backups to be fetched.
+     */
+    timeExpiryScheduledLessThan?: string;
+    /**
+     * A filter to return only backups that matches with the given type of Backup.
+     */
+    type?: string;
+    /**
+     * A filter to return only resources that match the given database version.
+     */
+    version?: string;
 }
 
 /**
  * A collection of values returned by getBackups.
  */
 export interface GetBackupsResult {
+    /**
+     * Type of the backup destination.
+     */
+    readonly backupDestinationType?: string;
     /**
      * The list of backups.
      */
@@ -76,6 +116,20 @@ export interface GetBackupsResult {
      */
     readonly id: string;
     readonly shapeFamily?: string;
+    /**
+     * The current state of the backup.
+     */
+    readonly state?: string;
+    readonly timeExpiryScheduledGreaterThanOrEqualTo?: string;
+    readonly timeExpiryScheduledLessThan?: string;
+    /**
+     * The type of backup.
+     */
+    readonly type?: string;
+    /**
+     * Version of the backup's source database
+     */
+    readonly version?: string;
 }
 /**
  * This data source provides the list of Backups in Oracle Cloud Infrastructure Database service.
@@ -89,9 +143,15 @@ export interface GetBackupsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testBackups = oci.Database.getBackups({
+ *     backupDestinationType: backupBackupDestinationType,
  *     compartmentId: compartmentId,
  *     databaseId: testDatabase.id,
  *     shapeFamily: backupShapeFamily,
+ *     state: backupState,
+ *     timeExpiryScheduledGreaterThanOrEqualTo: backupTimeExpiryScheduledGreaterThanOrEqualTo,
+ *     timeExpiryScheduledLessThan: backupTimeExpiryScheduledLessThan,
+ *     type: backupType,
+ *     version: backupVersion,
  * });
  * ```
  */
@@ -99,10 +159,16 @@ export function getBackupsOutput(args?: GetBackupsOutputArgs, opts?: pulumi.Invo
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getBackups:getBackups", {
+        "backupDestinationType": args.backupDestinationType,
         "compartmentId": args.compartmentId,
         "databaseId": args.databaseId,
         "filters": args.filters,
         "shapeFamily": args.shapeFamily,
+        "state": args.state,
+        "timeExpiryScheduledGreaterThanOrEqualTo": args.timeExpiryScheduledGreaterThanOrEqualTo,
+        "timeExpiryScheduledLessThan": args.timeExpiryScheduledLessThan,
+        "type": args.type,
+        "version": args.version,
     }, opts);
 }
 
@@ -110,6 +176,10 @@ export function getBackupsOutput(args?: GetBackupsOutputArgs, opts?: pulumi.Invo
  * A collection of arguments for invoking getBackups.
  */
 export interface GetBackupsOutputArgs {
+    /**
+     * A filter to return only resources that match the given backup destination type.
+     */
+    backupDestinationType?: pulumi.Input<string>;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -123,4 +193,24 @@ export interface GetBackupsOutputArgs {
      * If provided, filters the results to the set of database versions which are supported for the given shape family.
      */
     shapeFamily?: pulumi.Input<string>;
+    /**
+     * A filter to return only resources that match the given lifecycle state exactly.
+     */
+    state?: pulumi.Input<string>;
+    /**
+     * The start of date-time range of expiration for the long term backups to be fetched.
+     */
+    timeExpiryScheduledGreaterThanOrEqualTo?: pulumi.Input<string>;
+    /**
+     * The end of date-time range of expiration for the long term backups to be fetched.
+     */
+    timeExpiryScheduledLessThan?: pulumi.Input<string>;
+    /**
+     * A filter to return only backups that matches with the given type of Backup.
+     */
+    type?: pulumi.Input<string>;
+    /**
+     * A filter to return only resources that match the given database version.
+     */
+    version?: pulumi.Input<string>;
 }

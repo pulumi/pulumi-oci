@@ -15,8 +15,8 @@ namespace Pulumi.Oci.DataScience.Inputs
         [Input("artifactContentDisposition")]
         public Input<string>? ArtifactContentDisposition { get; set; }
 
-        [Input("artifactContentLength", required: true)]
-        public Input<string> ArtifactContentLength { get; set; } = null!;
+        [Input("artifactContentLength")]
+        public Input<string>? ArtifactContentLength { get; set; }
 
         [Input("artifactContentMd5")]
         public Input<string>? ArtifactContentMd5 { get; set; }

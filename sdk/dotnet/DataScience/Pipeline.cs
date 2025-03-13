@@ -14,98 +14,6 @@ namespace Pulumi.Oci.DataScience
     /// 
     /// Creates a new Pipeline.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testPipeline = new Oci.DataScience.Pipeline("test_pipeline", new()
-    ///     {
-    ///         CompartmentId = compartmentId,
-    ///         ProjectId = testProject.Id,
-    ///         StepDetails = new[]
-    ///         {
-    ///             new Oci.DataScience.Inputs.PipelineStepDetailArgs
-    ///             {
-    ///                 StepName = pipelineStepDetailsStepName,
-    ///                 StepType = pipelineStepDetailsStepType,
-    ///                 DependsOns = pipelineStepDetailsDependsOn,
-    ///                 Description = pipelineStepDetailsDescription,
-    ///                 IsArtifactUploaded = pipelineStepDetailsIsArtifactUploaded,
-    ///                 JobId = testJob.Id,
-    ///                 StepConfigurationDetails = new Oci.DataScience.Inputs.PipelineStepDetailStepConfigurationDetailsArgs
-    ///                 {
-    ///                     CommandLineArguments = pipelineStepDetailsStepConfigurationDetailsCommandLineArguments,
-    ///                     EnvironmentVariables = pipelineStepDetailsStepConfigurationDetailsEnvironmentVariables,
-    ///                     MaximumRuntimeInMinutes = pipelineStepDetailsStepConfigurationDetailsMaximumRuntimeInMinutes,
-    ///                 },
-    ///                 StepContainerConfigurationDetails = new Oci.DataScience.Inputs.PipelineStepDetailStepContainerConfigurationDetailsArgs
-    ///                 {
-    ///                     ContainerType = pipelineStepDetailsStepContainerConfigurationDetailsContainerType,
-    ///                     Image = pipelineStepDetailsStepContainerConfigurationDetailsImage,
-    ///                     Cmds = pipelineStepDetailsStepContainerConfigurationDetailsCmd,
-    ///                     Entrypoints = pipelineStepDetailsStepContainerConfigurationDetailsEntrypoint,
-    ///                     ImageDigest = pipelineStepDetailsStepContainerConfigurationDetailsImageDigest,
-    ///                     ImageSignatureId = testImageSignature.Id,
-    ///                 },
-    ///                 StepInfrastructureConfigurationDetails = new Oci.DataScience.Inputs.PipelineStepDetailStepInfrastructureConfigurationDetailsArgs
-    ///                 {
-    ///                     BlockStorageSizeInGbs = pipelineStepDetailsStepInfrastructureConfigurationDetailsBlockStorageSizeInGbs,
-    ///                     ShapeConfigDetails = new Oci.DataScience.Inputs.PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs
-    ///                     {
-    ///                         MemoryInGbs = pipelineStepDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsMemoryInGbs,
-    ///                         Ocpus = pipelineStepDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsOcpus,
-    ///                     },
-    ///                     ShapeName = testShape.Name,
-    ///                     SubnetId = testSubnet.Id,
-    ///                 },
-    ///             },
-    ///         },
-    ///         ConfigurationDetails = new Oci.DataScience.Inputs.PipelineConfigurationDetailsArgs
-    ///         {
-    ///             Type = pipelineConfigurationDetailsType,
-    ///             CommandLineArguments = pipelineConfigurationDetailsCommandLineArguments,
-    ///             EnvironmentVariables = pipelineConfigurationDetailsEnvironmentVariables,
-    ///             MaximumRuntimeInMinutes = pipelineConfigurationDetailsMaximumRuntimeInMinutes,
-    ///         },
-    ///         DefinedTags = 
-    ///         {
-    ///             { "Operations.CostCenter", "42" },
-    ///         },
-    ///         Description = pipelineDescription,
-    ///         DisplayName = pipelineDisplayName,
-    ///         FreeformTags = 
-    ///         {
-    ///             { "Department", "Finance" },
-    ///         },
-    ///         InfrastructureConfigurationDetails = new Oci.DataScience.Inputs.PipelineInfrastructureConfigurationDetailsArgs
-    ///         {
-    ///             BlockStorageSizeInGbs = pipelineInfrastructureConfigurationDetailsBlockStorageSizeInGbs,
-    ///             ShapeName = testShape.Name,
-    ///             ShapeConfigDetails = new Oci.DataScience.Inputs.PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgs
-    ///             {
-    ///                 MemoryInGbs = pipelineInfrastructureConfigurationDetailsShapeConfigDetailsMemoryInGbs,
-    ///                 Ocpus = pipelineInfrastructureConfigurationDetailsShapeConfigDetailsOcpus,
-    ///             },
-    ///             SubnetId = testSubnet.Id,
-    ///         },
-    ///         LogConfigurationDetails = new Oci.DataScience.Inputs.PipelineLogConfigurationDetailsArgs
-    ///         {
-    ///             EnableAutoLogCreation = pipelineLogConfigurationDetailsEnableAutoLogCreation,
-    ///             EnableLogging = pipelineLogConfigurationDetailsEnableLogging,
-    ///             LogGroupId = testLogGroup.Id,
-    ///             LogId = testLog.Id,
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// Pipelines can be imported using the `id`, e.g.
@@ -200,6 +108,12 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Output("stepDetails")]
         public Output<ImmutableArray<Outputs.PipelineStepDetail>> StepDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The storage mount details to mount to the instance running the pipeline step.
+        /// </summary>
+        [Output("storageMountConfigurationDetailsLists")]
+        public Output<ImmutableArray<Outputs.PipelineStorageMountConfigurationDetailsList>> StorageMountConfigurationDetailsLists { get; private set; } = null!;
 
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -354,6 +268,18 @@ namespace Pulumi.Oci.DataScience
             set => _stepDetails = value;
         }
 
+        [Input("storageMountConfigurationDetailsLists")]
+        private InputList<Inputs.PipelineStorageMountConfigurationDetailsListArgs>? _storageMountConfigurationDetailsLists;
+
+        /// <summary>
+        /// (Updatable) The storage mount details to mount to the instance running the pipeline step.
+        /// </summary>
+        public InputList<Inputs.PipelineStorageMountConfigurationDetailsListArgs> StorageMountConfigurationDetailsLists
+        {
+            get => _storageMountConfigurationDetailsLists ?? (_storageMountConfigurationDetailsLists = new InputList<Inputs.PipelineStorageMountConfigurationDetailsListArgs>());
+            set => _storageMountConfigurationDetailsLists = value;
+        }
+
         public PipelineArgs()
         {
         }
@@ -467,6 +393,18 @@ namespace Pulumi.Oci.DataScience
         {
             get => _stepDetails ?? (_stepDetails = new InputList<Inputs.PipelineStepDetailGetArgs>());
             set => _stepDetails = value;
+        }
+
+        [Input("storageMountConfigurationDetailsLists")]
+        private InputList<Inputs.PipelineStorageMountConfigurationDetailsListGetArgs>? _storageMountConfigurationDetailsLists;
+
+        /// <summary>
+        /// (Updatable) The storage mount details to mount to the instance running the pipeline step.
+        /// </summary>
+        public InputList<Inputs.PipelineStorageMountConfigurationDetailsListGetArgs> StorageMountConfigurationDetailsLists
+        {
+            get => _storageMountConfigurationDetailsLists ?? (_storageMountConfigurationDetailsLists = new InputList<Inputs.PipelineStorageMountConfigurationDetailsListGetArgs>());
+            set => _storageMountConfigurationDetailsLists = value;
         }
 
         [Input("systemTags")]

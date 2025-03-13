@@ -28,13 +28,17 @@ import * as utilities from "../utilities";
  *     customMetadataLists: [{
  *         category: modelCustomMetadataListCategory,
  *         description: modelCustomMetadataListDescription,
+ *         hasArtifact: modelCustomMetadataListHasArtifact,
  *         key: modelCustomMetadataListKey,
+ *         keywords: modelCustomMetadataListKeywords,
  *         value: modelCustomMetadataListValue,
  *     }],
  *     definedMetadataLists: [{
  *         category: modelDefinedMetadataListCategory,
  *         description: modelDefinedMetadataListDescription,
+ *         hasArtifact: modelDefinedMetadataListHasArtifact,
  *         key: modelDefinedMetadataListKey,
+ *         keywords: modelDefinedMetadataListKeywords,
  *         value: modelDefinedMetadataListValue,
  *     }],
  *     definedTags: {
@@ -114,6 +118,10 @@ export class Model extends pulumi.CustomResource {
      */
     public readonly backupSetting!: pulumi.Output<outputs.DataScience.ModelBackupSetting>;
     /**
+     * Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
+     */
+    public /*out*/ readonly category!: pulumi.Output<string>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
      */
     public readonly compartmentId!: pulumi.Output<string>;
@@ -150,6 +158,10 @@ export class Model extends pulumi.CustomResource {
      * Input schema file content in String format
      */
     public readonly inputSchema!: pulumi.Output<string>;
+    /**
+     * Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+     */
+    public /*out*/ readonly isModelByReference!: pulumi.Output<boolean>;
     /**
      * Details about the lifecycle state of the model.
      */
@@ -214,6 +226,7 @@ export class Model extends pulumi.CustomResource {
             resourceInputs["artifactLastModified"] = state ? state.artifactLastModified : undefined;
             resourceInputs["backupOperationDetails"] = state ? state.backupOperationDetails : undefined;
             resourceInputs["backupSetting"] = state ? state.backupSetting : undefined;
+            resourceInputs["category"] = state ? state.category : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["createdBy"] = state ? state.createdBy : undefined;
             resourceInputs["customMetadataLists"] = state ? state.customMetadataLists : undefined;
@@ -224,6 +237,7 @@ export class Model extends pulumi.CustomResource {
             resourceInputs["emptyModel"] = state ? state.emptyModel : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["inputSchema"] = state ? state.inputSchema : undefined;
+            resourceInputs["isModelByReference"] = state ? state.isModelByReference : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["modelArtifact"] = state ? state.modelArtifact : undefined;
             resourceInputs["modelVersionSetId"] = state ? state.modelVersionSetId : undefined;
@@ -271,8 +285,10 @@ export class Model extends pulumi.CustomResource {
             resourceInputs["artifactContentMd5"] = undefined /*out*/;
             resourceInputs["artifactLastModified"] = undefined /*out*/;
             resourceInputs["backupOperationDetails"] = undefined /*out*/;
+            resourceInputs["category"] = undefined /*out*/;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["emptyModel"] = undefined /*out*/;
+            resourceInputs["isModelByReference"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["retentionOperationDetails"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -307,6 +323,10 @@ export interface ModelState {
      * (Updatable) Back up setting details of the model.
      */
     backupSetting?: pulumi.Input<inputs.DataScience.ModelBackupSetting>;
+    /**
+     * Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
+     */
+    category?: pulumi.Input<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
      */
@@ -344,6 +364,10 @@ export interface ModelState {
      * Input schema file content in String format
      */
     inputSchema?: pulumi.Input<string>;
+    /**
+     * Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+     */
+    isModelByReference?: pulumi.Input<boolean>;
     /**
      * Details about the lifecycle state of the model.
      */

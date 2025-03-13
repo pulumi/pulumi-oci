@@ -67,13 +67,17 @@ import javax.annotation.Nullable;
  *             .customMetadataLists(ModelCustomMetadataListArgs.builder()
  *                 .category(modelCustomMetadataListCategory)
  *                 .description(modelCustomMetadataListDescription)
+ *                 .hasArtifact(modelCustomMetadataListHasArtifact)
  *                 .key(modelCustomMetadataListKey)
+ *                 .keywords(modelCustomMetadataListKeywords)
  *                 .value(modelCustomMetadataListValue)
  *                 .build())
  *             .definedMetadataLists(ModelDefinedMetadataListArgs.builder()
  *                 .category(modelDefinedMetadataListCategory)
  *                 .description(modelDefinedMetadataListDescription)
+ *                 .hasArtifact(modelDefinedMetadataListHasArtifact)
  *                 .key(modelDefinedMetadataListKey)
+ *                 .keywords(modelDefinedMetadataListKeywords)
  *                 .value(modelDefinedMetadataListValue)
  *                 .build())
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
@@ -180,6 +184,20 @@ public class Model extends com.pulumi.resources.CustomResource {
      */
     public Output<ModelBackupSetting> backupSetting() {
         return this.backupSetting;
+    }
+    /**
+     * Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values &#34;Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other&#34;.
+     * 
+     */
+    @Export(name="category", refs={String.class}, tree="[0]")
+    private Output<String> category;
+
+    /**
+     * @return Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values &#34;Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other&#34;.
+     * 
+     */
+    public Output<String> category() {
+        return this.category;
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
@@ -312,6 +330,20 @@ public class Model extends com.pulumi.resources.CustomResource {
      */
     public Output<String> inputSchema() {
         return this.inputSchema;
+    }
+    /**
+     * Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+     * 
+     */
+    @Export(name="isModelByReference", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isModelByReference;
+
+    /**
+     * @return Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+     * 
+     */
+    public Output<Boolean> isModelByReference() {
+        return this.isModelByReference;
     }
     /**
      * Details about the lifecycle state of the model.

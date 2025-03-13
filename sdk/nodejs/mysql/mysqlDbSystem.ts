@@ -26,6 +26,10 @@ import * as utilities from "../utilities";
  *     adminPassword: mysqlDbSystemAdminPassword,
  *     adminUsername: mysqlDbSystemAdminUsername,
  *     backupPolicy: {
+ *         copyPolicies: [{
+ *             copyToRegion: mysqlDbSystemBackupPolicyCopyPoliciesCopyToRegion,
+ *             backupCopyRetentionInDays: mysqlDbSystemBackupPolicyCopyPoliciesBackupCopyRetentionInDays,
+ *         }],
  *         definedTags: {
  *             "foo-namespace.bar-key": "value",
  *         },
@@ -309,6 +313,10 @@ export class MysqlDbSystem extends pulumi.CustomResource {
      */
     public readonly subnetId!: pulumi.Output<string>;
     /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    /**
      * The date and time the DB System was created.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
@@ -370,6 +378,7 @@ export class MysqlDbSystem extends pulumi.CustomResource {
             resourceInputs["source"] = state ? state.source : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["subnetId"] = state ? state.subnetId : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
         } else {
@@ -426,6 +435,7 @@ export class MysqlDbSystem extends pulumi.CustomResource {
             resourceInputs["isHeatWaveClusterAttached"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["pointInTimeRecoveryDetails"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
@@ -622,6 +632,10 @@ export interface MysqlDbSystemState {
      * The OCID of the subnet the DB System is associated with.
      */
     subnetId?: pulumi.Input<string>;
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The date and time the DB System was created.
      */

@@ -27,7 +27,7 @@ class GetSensitiveDataModelResult:
     """
     A collection of values returned by getSensitiveDataModel.
     """
-    def __init__(__self__, app_suite_name=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_app_defined_relation_discovery_enabled=None, is_include_all_schemas=None, is_include_all_sensitive_types=None, is_sample_data_collection_enabled=None, schemas_for_discoveries=None, sensitive_data_model_id=None, sensitive_type_ids_for_discoveries=None, state=None, system_tags=None, tables_for_discoveries=None, target_id=None, time_created=None, time_updated=None):
+    def __init__(__self__, app_suite_name=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_app_defined_relation_discovery_enabled=None, is_include_all_schemas=None, is_include_all_sensitive_types=None, is_sample_data_collection_enabled=None, schemas_for_discoveries=None, sensitive_data_model_id=None, sensitive_type_group_ids_for_discoveries=None, sensitive_type_ids_for_discoveries=None, state=None, system_tags=None, tables_for_discoveries=None, target_id=None, time_created=None, time_updated=None):
         if app_suite_name and not isinstance(app_suite_name, str):
             raise TypeError("Expected argument 'app_suite_name' to be a str")
         pulumi.set(__self__, "app_suite_name", app_suite_name)
@@ -67,6 +67,9 @@ class GetSensitiveDataModelResult:
         if sensitive_data_model_id and not isinstance(sensitive_data_model_id, str):
             raise TypeError("Expected argument 'sensitive_data_model_id' to be a str")
         pulumi.set(__self__, "sensitive_data_model_id", sensitive_data_model_id)
+        if sensitive_type_group_ids_for_discoveries and not isinstance(sensitive_type_group_ids_for_discoveries, list):
+            raise TypeError("Expected argument 'sensitive_type_group_ids_for_discoveries' to be a list")
+        pulumi.set(__self__, "sensitive_type_group_ids_for_discoveries", sensitive_type_group_ids_for_discoveries)
         if sensitive_type_ids_for_discoveries and not isinstance(sensitive_type_ids_for_discoveries, list):
             raise TypeError("Expected argument 'sensitive_type_ids_for_discoveries' to be a list")
         pulumi.set(__self__, "sensitive_type_ids_for_discoveries", sensitive_type_ids_for_discoveries)
@@ -191,6 +194,14 @@ class GetSensitiveDataModelResult:
         return pulumi.get(self, "sensitive_data_model_id")
 
     @property
+    @pulumi.getter(name="sensitiveTypeGroupIdsForDiscoveries")
+    def sensitive_type_group_ids_for_discoveries(self) -> Sequence[str]:
+        """
+        The OCIDs of the sensitive type groups to be used by data discovery jobs.
+        """
+        return pulumi.get(self, "sensitive_type_group_ids_for_discoveries")
+
+    @property
     @pulumi.getter(name="sensitiveTypeIdsForDiscoveries")
     def sensitive_type_ids_for_discoveries(self) -> Sequence[str]:
         """
@@ -266,6 +277,7 @@ class AwaitableGetSensitiveDataModelResult(GetSensitiveDataModelResult):
             is_sample_data_collection_enabled=self.is_sample_data_collection_enabled,
             schemas_for_discoveries=self.schemas_for_discoveries,
             sensitive_data_model_id=self.sensitive_data_model_id,
+            sensitive_type_group_ids_for_discoveries=self.sensitive_type_group_ids_for_discoveries,
             sensitive_type_ids_for_discoveries=self.sensitive_type_ids_for_discoveries,
             state=self.state,
             system_tags=self.system_tags,
@@ -313,6 +325,7 @@ def get_sensitive_data_model(sensitive_data_model_id: Optional[str] = None,
         is_sample_data_collection_enabled=pulumi.get(__ret__, 'is_sample_data_collection_enabled'),
         schemas_for_discoveries=pulumi.get(__ret__, 'schemas_for_discoveries'),
         sensitive_data_model_id=pulumi.get(__ret__, 'sensitive_data_model_id'),
+        sensitive_type_group_ids_for_discoveries=pulumi.get(__ret__, 'sensitive_type_group_ids_for_discoveries'),
         sensitive_type_ids_for_discoveries=pulumi.get(__ret__, 'sensitive_type_ids_for_discoveries'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
@@ -357,6 +370,7 @@ def get_sensitive_data_model_output(sensitive_data_model_id: Optional[pulumi.Inp
         is_sample_data_collection_enabled=pulumi.get(__response__, 'is_sample_data_collection_enabled'),
         schemas_for_discoveries=pulumi.get(__response__, 'schemas_for_discoveries'),
         sensitive_data_model_id=pulumi.get(__response__, 'sensitive_data_model_id'),
+        sensitive_type_group_ids_for_discoveries=pulumi.get(__response__, 'sensitive_type_group_ids_for_discoveries'),
         sensitive_type_ids_for_discoveries=pulumi.get(__response__, 'sensitive_type_ids_for_discoveries'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),

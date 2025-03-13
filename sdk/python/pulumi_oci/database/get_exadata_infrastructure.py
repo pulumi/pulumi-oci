@@ -27,7 +27,7 @@ class GetExadataInfrastructureResult:
     """
     A collection of values returned by getExadataInfrastructure.
     """
-    def __init__(__self__, activated_storage_count=None, activation_file=None, additional_compute_count=None, additional_compute_system_model=None, additional_storage_count=None, admin_network_cidr=None, availability_domain=None, cloud_control_plane_server1=None, cloud_control_plane_server2=None, compartment_id=None, compute_count=None, contacts=None, corporate_proxy=None, cpus_enabled=None, create_async=None, csi_number=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_server_version=None, defined_file_system_configurations=None, defined_tags=None, display_name=None, dns_servers=None, exadata_infrastructure_id=None, freeform_tags=None, gateway=None, id=None, infini_band_network_cidr=None, is_cps_offline_report_enabled=None, is_multi_rack_deployment=None, is_scheduling_policy_associated=None, lifecycle_details=None, maintenance_slo_status=None, maintenance_windows=None, max_cpu_count=None, max_data_storage_in_tbs=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, monthly_db_server_version=None, multi_rack_configuration_file=None, netmask=None, network_bonding_mode_details=None, ntp_servers=None, rack_serial_number=None, shape=None, state=None, storage_count=None, storage_server_version=None, time_created=None, time_zone=None):
+    def __init__(__self__, activated_storage_count=None, activation_file=None, additional_compute_count=None, additional_compute_system_model=None, additional_storage_count=None, admin_network_cidr=None, availability_domain=None, cloud_control_plane_server1=None, cloud_control_plane_server2=None, compartment_id=None, compute_count=None, compute_model=None, contacts=None, corporate_proxy=None, cpus_enabled=None, create_async=None, csi_number=None, data_storage_size_in_tbs=None, database_server_type=None, db_node_storage_size_in_gbs=None, db_server_version=None, defined_file_system_configurations=None, defined_tags=None, display_name=None, dns_servers=None, exadata_infrastructure_id=None, exascale_configs=None, freeform_tags=None, gateway=None, id=None, infini_band_network_cidr=None, is_cps_offline_report_enabled=None, is_multi_rack_deployment=None, is_scheduling_policy_associated=None, lifecycle_details=None, maintenance_slo_status=None, maintenance_windows=None, max_cpu_count=None, max_data_storage_in_tbs=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, monthly_db_server_version=None, multi_rack_configuration_file=None, netmask=None, network_bonding_mode_details=None, ntp_servers=None, rack_serial_number=None, shape=None, state=None, storage_count=None, storage_server_type=None, storage_server_version=None, time_created=None, time_zone=None):
         if activated_storage_count and not isinstance(activated_storage_count, int):
             raise TypeError("Expected argument 'activated_storage_count' to be a int")
         pulumi.set(__self__, "activated_storage_count", activated_storage_count)
@@ -61,6 +61,9 @@ class GetExadataInfrastructureResult:
         if compute_count and not isinstance(compute_count, int):
             raise TypeError("Expected argument 'compute_count' to be a int")
         pulumi.set(__self__, "compute_count", compute_count)
+        if compute_model and not isinstance(compute_model, str):
+            raise TypeError("Expected argument 'compute_model' to be a str")
+        pulumi.set(__self__, "compute_model", compute_model)
         if contacts and not isinstance(contacts, list):
             raise TypeError("Expected argument 'contacts' to be a list")
         pulumi.set(__self__, "contacts", contacts)
@@ -79,6 +82,9 @@ class GetExadataInfrastructureResult:
         if data_storage_size_in_tbs and not isinstance(data_storage_size_in_tbs, float):
             raise TypeError("Expected argument 'data_storage_size_in_tbs' to be a float")
         pulumi.set(__self__, "data_storage_size_in_tbs", data_storage_size_in_tbs)
+        if database_server_type and not isinstance(database_server_type, str):
+            raise TypeError("Expected argument 'database_server_type' to be a str")
+        pulumi.set(__self__, "database_server_type", database_server_type)
         if db_node_storage_size_in_gbs and not isinstance(db_node_storage_size_in_gbs, int):
             raise TypeError("Expected argument 'db_node_storage_size_in_gbs' to be a int")
         pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
@@ -100,6 +106,9 @@ class GetExadataInfrastructureResult:
         if exadata_infrastructure_id and not isinstance(exadata_infrastructure_id, str):
             raise TypeError("Expected argument 'exadata_infrastructure_id' to be a str")
         pulumi.set(__self__, "exadata_infrastructure_id", exadata_infrastructure_id)
+        if exascale_configs and not isinstance(exascale_configs, list):
+            raise TypeError("Expected argument 'exascale_configs' to be a list")
+        pulumi.set(__self__, "exascale_configs", exascale_configs)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -172,6 +181,9 @@ class GetExadataInfrastructureResult:
         if storage_count and not isinstance(storage_count, int):
             raise TypeError("Expected argument 'storage_count' to be a int")
         pulumi.set(__self__, "storage_count", storage_count)
+        if storage_server_type and not isinstance(storage_server_type, str):
+            raise TypeError("Expected argument 'storage_server_type' to be a str")
+        pulumi.set(__self__, "storage_server_type", storage_server_type)
         if storage_server_version and not isinstance(storage_server_version, str):
             raise TypeError("Expected argument 'storage_server_version' to be a str")
         pulumi.set(__self__, "storage_server_version", storage_server_version)
@@ -268,6 +280,14 @@ class GetExadataInfrastructureResult:
         return pulumi.get(self, "compute_count")
 
     @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> str:
+        """
+        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        """
+        return pulumi.get(self, "compute_model")
+
+    @property
     @pulumi.getter
     def contacts(self) -> Sequence['outputs.GetExadataInfrastructureContactResult']:
         """
@@ -311,6 +331,14 @@ class GetExadataInfrastructureResult:
         Size, in terabytes, of the DATA disk group.
         """
         return pulumi.get(self, "data_storage_size_in_tbs")
+
+    @property
+    @pulumi.getter(name="databaseServerType")
+    def database_server_type(self) -> str:
+        """
+        The database server type of the Exadata infrastructure.
+        """
+        return pulumi.get(self, "database_server_type")
 
     @property
     @pulumi.getter(name="dbNodeStorageSizeInGbs")
@@ -364,6 +392,14 @@ class GetExadataInfrastructureResult:
     @pulumi.getter(name="exadataInfrastructureId")
     def exadata_infrastructure_id(self) -> str:
         return pulumi.get(self, "exadata_infrastructure_id")
+
+    @property
+    @pulumi.getter(name="exascaleConfigs")
+    def exascale_configs(self) -> Sequence['outputs.GetExadataInfrastructureExascaleConfigResult']:
+        """
+        The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+        """
+        return pulumi.get(self, "exascale_configs")
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -558,6 +594,14 @@ class GetExadataInfrastructureResult:
         return pulumi.get(self, "storage_count")
 
     @property
+    @pulumi.getter(name="storageServerType")
+    def storage_server_type(self) -> str:
+        """
+        The storage server type of the Exadata infrastructure.
+        """
+        return pulumi.get(self, "storage_server_type")
+
+    @property
     @pulumi.getter(name="storageServerVersion")
     def storage_server_version(self) -> str:
         """
@@ -599,12 +643,14 @@ class AwaitableGetExadataInfrastructureResult(GetExadataInfrastructureResult):
             cloud_control_plane_server2=self.cloud_control_plane_server2,
             compartment_id=self.compartment_id,
             compute_count=self.compute_count,
+            compute_model=self.compute_model,
             contacts=self.contacts,
             corporate_proxy=self.corporate_proxy,
             cpus_enabled=self.cpus_enabled,
             create_async=self.create_async,
             csi_number=self.csi_number,
             data_storage_size_in_tbs=self.data_storage_size_in_tbs,
+            database_server_type=self.database_server_type,
             db_node_storage_size_in_gbs=self.db_node_storage_size_in_gbs,
             db_server_version=self.db_server_version,
             defined_file_system_configurations=self.defined_file_system_configurations,
@@ -612,6 +658,7 @@ class AwaitableGetExadataInfrastructureResult(GetExadataInfrastructureResult):
             display_name=self.display_name,
             dns_servers=self.dns_servers,
             exadata_infrastructure_id=self.exadata_infrastructure_id,
+            exascale_configs=self.exascale_configs,
             freeform_tags=self.freeform_tags,
             gateway=self.gateway,
             id=self.id,
@@ -636,6 +683,7 @@ class AwaitableGetExadataInfrastructureResult(GetExadataInfrastructureResult):
             shape=self.shape,
             state=self.state,
             storage_count=self.storage_count,
+            storage_server_type=self.storage_server_type,
             storage_server_version=self.storage_server_version,
             time_created=self.time_created,
             time_zone=self.time_zone)
@@ -669,12 +717,14 @@ def get_exadata_infrastructure(exadata_infrastructure_id: Optional[str] = None,
         cloud_control_plane_server2=pulumi.get(__ret__, 'cloud_control_plane_server2'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         compute_count=pulumi.get(__ret__, 'compute_count'),
+        compute_model=pulumi.get(__ret__, 'compute_model'),
         contacts=pulumi.get(__ret__, 'contacts'),
         corporate_proxy=pulumi.get(__ret__, 'corporate_proxy'),
         cpus_enabled=pulumi.get(__ret__, 'cpus_enabled'),
         create_async=pulumi.get(__ret__, 'create_async'),
         csi_number=pulumi.get(__ret__, 'csi_number'),
         data_storage_size_in_tbs=pulumi.get(__ret__, 'data_storage_size_in_tbs'),
+        database_server_type=pulumi.get(__ret__, 'database_server_type'),
         db_node_storage_size_in_gbs=pulumi.get(__ret__, 'db_node_storage_size_in_gbs'),
         db_server_version=pulumi.get(__ret__, 'db_server_version'),
         defined_file_system_configurations=pulumi.get(__ret__, 'defined_file_system_configurations'),
@@ -682,6 +732,7 @@ def get_exadata_infrastructure(exadata_infrastructure_id: Optional[str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         dns_servers=pulumi.get(__ret__, 'dns_servers'),
         exadata_infrastructure_id=pulumi.get(__ret__, 'exadata_infrastructure_id'),
+        exascale_configs=pulumi.get(__ret__, 'exascale_configs'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         gateway=pulumi.get(__ret__, 'gateway'),
         id=pulumi.get(__ret__, 'id'),
@@ -706,6 +757,7 @@ def get_exadata_infrastructure(exadata_infrastructure_id: Optional[str] = None,
         shape=pulumi.get(__ret__, 'shape'),
         state=pulumi.get(__ret__, 'state'),
         storage_count=pulumi.get(__ret__, 'storage_count'),
+        storage_server_type=pulumi.get(__ret__, 'storage_server_type'),
         storage_server_version=pulumi.get(__ret__, 'storage_server_version'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_zone=pulumi.get(__ret__, 'time_zone'))
@@ -736,12 +788,14 @@ def get_exadata_infrastructure_output(exadata_infrastructure_id: Optional[pulumi
         cloud_control_plane_server2=pulumi.get(__response__, 'cloud_control_plane_server2'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         compute_count=pulumi.get(__response__, 'compute_count'),
+        compute_model=pulumi.get(__response__, 'compute_model'),
         contacts=pulumi.get(__response__, 'contacts'),
         corporate_proxy=pulumi.get(__response__, 'corporate_proxy'),
         cpus_enabled=pulumi.get(__response__, 'cpus_enabled'),
         create_async=pulumi.get(__response__, 'create_async'),
         csi_number=pulumi.get(__response__, 'csi_number'),
         data_storage_size_in_tbs=pulumi.get(__response__, 'data_storage_size_in_tbs'),
+        database_server_type=pulumi.get(__response__, 'database_server_type'),
         db_node_storage_size_in_gbs=pulumi.get(__response__, 'db_node_storage_size_in_gbs'),
         db_server_version=pulumi.get(__response__, 'db_server_version'),
         defined_file_system_configurations=pulumi.get(__response__, 'defined_file_system_configurations'),
@@ -749,6 +803,7 @@ def get_exadata_infrastructure_output(exadata_infrastructure_id: Optional[pulumi
         display_name=pulumi.get(__response__, 'display_name'),
         dns_servers=pulumi.get(__response__, 'dns_servers'),
         exadata_infrastructure_id=pulumi.get(__response__, 'exadata_infrastructure_id'),
+        exascale_configs=pulumi.get(__response__, 'exascale_configs'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         gateway=pulumi.get(__response__, 'gateway'),
         id=pulumi.get(__response__, 'id'),
@@ -773,6 +828,7 @@ def get_exadata_infrastructure_output(exadata_infrastructure_id: Optional[pulumi
         shape=pulumi.get(__response__, 'shape'),
         state=pulumi.get(__response__, 'state'),
         storage_count=pulumi.get(__response__, 'storage_count'),
+        storage_server_type=pulumi.get(__response__, 'storage_server_type'),
         storage_server_version=pulumi.get(__response__, 'storage_server_version'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_zone=pulumi.get(__response__, 'time_zone')))

@@ -68,9 +68,13 @@ export interface GetApplicationVipResult {
      */
     readonly id: string;
     /**
-     * The application virtual IP (VIP) address.
+     * The application virtual IP (VIP) IPv4 address.
      */
     readonly ipAddress: string;
+    /**
+     * The application virtual IP (VIP) IPv6 address.
+     */
+    readonly ipv6address: string;
     /**
      * Additional information about the current lifecycle state of the application virtual IP (VIP) address.
      */

@@ -56,6 +56,10 @@ export interface GetModelResult {
      */
     readonly backupSettings: outputs.DataScience.GetModelBackupSetting[];
     /**
+     * Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
+     */
+    readonly category: string;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model's compartment.
      */
     readonly compartmentId: string;
@@ -96,6 +100,10 @@ export interface GetModelResult {
      * Input schema file content in String format
      */
     readonly inputSchema: string;
+    /**
+     * Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+     */
+    readonly isModelByReference: boolean;
     /**
      * Details about the lifecycle state of the model.
      */

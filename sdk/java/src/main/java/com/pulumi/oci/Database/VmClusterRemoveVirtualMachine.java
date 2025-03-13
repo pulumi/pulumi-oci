@@ -120,6 +120,20 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
         return this.compartmentId;
     }
     /**
+     * The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     * 
+     */
+    @Export(name="computeModel", refs={String.class}, tree="[0]")
+    private Output<String> computeModel;
+
+    /**
+     * @return The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     * 
+     */
+    public Output<String> computeModel() {
+        return this.computeModel;
+    }
+    /**
      * The number of enabled CPU cores.
      * 
      */
@@ -230,6 +244,20 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      */
     public Output<String> exadataInfrastructureId() {
         return this.exadataInfrastructureId;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+     * 
+     */
+    @Export(name="exascaleDbStorageVaultId", refs={String.class}, tree="[0]")
+    private Output<String> exascaleDbStorageVaultId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+     * 
+     */
+    public Output<String> exascaleDbStorageVaultId() {
+        return this.exascaleDbStorageVaultId;
     }
     /**
      * Details of the file system configuration of the VM cluster.
@@ -400,6 +428,20 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
         return this.state;
     }
     /**
+     * Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
+     * 
+     */
+    @Export(name="storageManagementType", refs={String.class}, tree="[0]")
+    private Output<String> storageManagementType;
+
+    /**
+     * @return Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
+     * 
+     */
+    public Output<String> storageManagementType() {
+        return this.storageManagementType;
+    }
+    /**
      * Operating system version of the image.
      * 
      */
@@ -474,6 +516,20 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      */
     public Output<String> vmClusterNetworkId() {
         return this.vmClusterNetworkId;
+    }
+    /**
+     * The vmcluster type for the VM cluster/Cloud VM cluster.
+     * 
+     */
+    @Export(name="vmClusterType", refs={String.class}, tree="[0]")
+    private Output<String> vmClusterType;
+
+    /**
+     * @return The vmcluster type for the VM cluster/Cloud VM cluster.
+     * 
+     */
+    public Output<String> vmClusterType() {
+        return this.vmClusterType;
     }
 
     /**

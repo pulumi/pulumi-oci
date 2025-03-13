@@ -82,6 +82,12 @@ namespace Pulumi.Oci.Psql
     ///             BackupPolicy = new Oci.Psql.Inputs.DbSystemManagementPolicyBackupPolicyArgs
     ///             {
     ///                 BackupStart = dbSystemManagementPolicyBackupPolicyBackupStart,
+    ///                 CopyPolicy = new Oci.Psql.Inputs.DbSystemManagementPolicyBackupPolicyCopyPolicyArgs
+    ///                 {
+    ///                     CompartmentId = compartmentId,
+    ///                     Regions = dbSystemManagementPolicyBackupPolicyCopyPolicyRegions,
+    ///                     RetentionPeriod = dbSystemManagementPolicyBackupPolicyCopyPolicyRetentionPeriod,
+    ///                 },
     ///                 DaysOfTheMonths = dbSystemManagementPolicyBackupPolicyDaysOfTheMonth,
     ///                 DaysOfTheWeeks = dbSystemManagementPolicyBackupPolicyDaysOfTheWeek,
     ///                 Kind = dbSystemManagementPolicyBackupPolicyKind,

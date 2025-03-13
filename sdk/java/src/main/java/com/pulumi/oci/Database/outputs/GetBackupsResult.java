@@ -16,6 +16,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetBackupsResult {
     /**
+     * @return Type of the backup destination.
+     * 
+     */
+    private @Nullable String backupDestinationType;
+    /**
      * @return The list of backups.
      * 
      */
@@ -37,8 +42,32 @@ public final class GetBackupsResult {
      */
     private String id;
     private @Nullable String shapeFamily;
+    /**
+     * @return The current state of the backup.
+     * 
+     */
+    private @Nullable String state;
+    private @Nullable String timeExpiryScheduledGreaterThanOrEqualTo;
+    private @Nullable String timeExpiryScheduledLessThan;
+    /**
+     * @return The type of backup.
+     * 
+     */
+    private @Nullable String type;
+    /**
+     * @return Version of the backup&#39;s source database
+     * 
+     */
+    private @Nullable String version;
 
     private GetBackupsResult() {}
+    /**
+     * @return Type of the backup destination.
+     * 
+     */
+    public Optional<String> backupDestinationType() {
+        return Optional.ofNullable(this.backupDestinationType);
+    }
     /**
      * @return The list of backups.
      * 
@@ -73,6 +102,33 @@ public final class GetBackupsResult {
     public Optional<String> shapeFamily() {
         return Optional.ofNullable(this.shapeFamily);
     }
+    /**
+     * @return The current state of the backup.
+     * 
+     */
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
+    }
+    public Optional<String> timeExpiryScheduledGreaterThanOrEqualTo() {
+        return Optional.ofNullable(this.timeExpiryScheduledGreaterThanOrEqualTo);
+    }
+    public Optional<String> timeExpiryScheduledLessThan() {
+        return Optional.ofNullable(this.timeExpiryScheduledLessThan);
+    }
+    /**
+     * @return The type of backup.
+     * 
+     */
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
+    }
+    /**
+     * @return Version of the backup&#39;s source database
+     * 
+     */
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -83,23 +139,41 @@ public final class GetBackupsResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String backupDestinationType;
         private List<GetBackupsBackup> backups;
         private @Nullable String compartmentId;
         private @Nullable String databaseId;
         private @Nullable List<GetBackupsFilter> filters;
         private String id;
         private @Nullable String shapeFamily;
+        private @Nullable String state;
+        private @Nullable String timeExpiryScheduledGreaterThanOrEqualTo;
+        private @Nullable String timeExpiryScheduledLessThan;
+        private @Nullable String type;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetBackupsResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.backupDestinationType = defaults.backupDestinationType;
     	      this.backups = defaults.backups;
     	      this.compartmentId = defaults.compartmentId;
     	      this.databaseId = defaults.databaseId;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.shapeFamily = defaults.shapeFamily;
+    	      this.state = defaults.state;
+    	      this.timeExpiryScheduledGreaterThanOrEqualTo = defaults.timeExpiryScheduledGreaterThanOrEqualTo;
+    	      this.timeExpiryScheduledLessThan = defaults.timeExpiryScheduledLessThan;
+    	      this.type = defaults.type;
+    	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
+        public Builder backupDestinationType(@Nullable String backupDestinationType) {
+
+            this.backupDestinationType = backupDestinationType;
+            return this;
+        }
         @CustomType.Setter
         public Builder backups(List<GetBackupsBackup> backups) {
             if (backups == null) {
@@ -146,14 +220,50 @@ public final class GetBackupsResult {
             this.shapeFamily = shapeFamily;
             return this;
         }
+        @CustomType.Setter
+        public Builder state(@Nullable String state) {
+
+            this.state = state;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeExpiryScheduledGreaterThanOrEqualTo(@Nullable String timeExpiryScheduledGreaterThanOrEqualTo) {
+
+            this.timeExpiryScheduledGreaterThanOrEqualTo = timeExpiryScheduledGreaterThanOrEqualTo;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeExpiryScheduledLessThan(@Nullable String timeExpiryScheduledLessThan) {
+
+            this.timeExpiryScheduledLessThan = timeExpiryScheduledLessThan;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder type(@Nullable String type) {
+
+            this.type = type;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder version(@Nullable String version) {
+
+            this.version = version;
+            return this;
+        }
         public GetBackupsResult build() {
             final var _resultValue = new GetBackupsResult();
+            _resultValue.backupDestinationType = backupDestinationType;
             _resultValue.backups = backups;
             _resultValue.compartmentId = compartmentId;
             _resultValue.databaseId = databaseId;
             _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.shapeFamily = shapeFamily;
+            _resultValue.state = state;
+            _resultValue.timeExpiryScheduledGreaterThanOrEqualTo = timeExpiryScheduledGreaterThanOrEqualTo;
+            _resultValue.timeExpiryScheduledLessThan = timeExpiryScheduledLessThan;
+            _resultValue.type = type;
+            _resultValue.version = version;
             return _resultValue;
         }
     }

@@ -43,7 +43,8 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
-//				Name: pulumi.Any(dkimName),
+//				Name:       pulumi.Any(dkimName),
+//				PrivateKey: pulumi.Any(dkimPrivateKey),
 //			})
 //			if err != nil {
 //				return err
@@ -72,12 +73,16 @@ type Dkim struct {
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A string that describes the details about the DKIM. It does not have to be unique, and you can change it. Avoid entering confidential information.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
+	// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
 	DnsSubdomainName pulumi.StringOutput `pulumi:"dnsSubdomainName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this DKIM.
 	EmailDomainId pulumi.StringOutput `pulumi:"emailDomainId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	// Indicates whether the DKIM was imported.
+	IsImported pulumi.BoolOutput `pulumi:"isImported"`
+	// Length of the RSA key used in the DKIM.
+	KeyLength pulumi.IntOutput `pulumi:"keyLength"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The DKIM selector. This selector is required to be globally unique for this email domain. If you do not provide the selector, we will generate one for you. If you do provide the selector, we suggest adding a short region indicator to differentiate from your signing of emails in other regions you might be subscribed to. Selectors limited to ASCII characters can use alphanumeric, dash ("-"), and dot (".") characters. Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
@@ -85,10 +90,12 @@ type Dkim struct {
 	// Avoid entering confidential information.
 	//
 	// Example: `mydomain-phx-20210228`
+	Name pulumi.StringOutput `pulumi:"name"`
+	// The DKIM RSA Private Key in Privacy-Enhanced Mail (PEM) format. It is a text-based representation of the private key used for signing email messages.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Name pulumi.StringOutput `pulumi:"name"`
+	PrivateKey pulumi.StringOutput `pulumi:"privateKey"`
 	// The current state of the DKIM.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -111,6 +118,13 @@ func NewDkim(ctx *pulumi.Context,
 	if args.EmailDomainId == nil {
 		return nil, errors.New("invalid value for required argument 'EmailDomainId'")
 	}
+	if args.PrivateKey != nil {
+		args.PrivateKey = pulumi.ToSecret(args.PrivateKey).(pulumi.StringPtrInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"privateKey",
+	})
+	opts = append(opts, secrets)
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Dkim
 	err := ctx.RegisterResource("oci:Email/dkim:Dkim", name, args, &resource, opts...)
@@ -142,12 +156,16 @@ type dkimState struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A string that describes the details about the DKIM. It does not have to be unique, and you can change it. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
-	// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
+	// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
 	DnsSubdomainName *string `pulumi:"dnsSubdomainName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this DKIM.
 	EmailDomainId *string `pulumi:"emailDomainId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Indicates whether the DKIM was imported.
+	IsImported *bool `pulumi:"isImported"`
+	// Length of the RSA key used in the DKIM.
+	KeyLength *int `pulumi:"keyLength"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The DKIM selector. This selector is required to be globally unique for this email domain. If you do not provide the selector, we will generate one for you. If you do provide the selector, we suggest adding a short region indicator to differentiate from your signing of emails in other regions you might be subscribed to. Selectors limited to ASCII characters can use alphanumeric, dash ("-"), and dot (".") characters. Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
@@ -155,10 +173,12 @@ type dkimState struct {
 	// Avoid entering confidential information.
 	//
 	// Example: `mydomain-phx-20210228`
+	Name *string `pulumi:"name"`
+	// The DKIM RSA Private Key in Privacy-Enhanced Mail (PEM) format. It is a text-based representation of the private key used for signing email messages.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Name *string `pulumi:"name"`
+	PrivateKey *string `pulumi:"privateKey"`
 	// The current state of the DKIM.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -180,12 +200,16 @@ type DkimState struct {
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) A string that describes the details about the DKIM. It does not have to be unique, and you can change it. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
-	// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
+	// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
 	DnsSubdomainName pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this DKIM.
 	EmailDomainId pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// Indicates whether the DKIM was imported.
+	IsImported pulumi.BoolPtrInput
+	// Length of the RSA key used in the DKIM.
+	KeyLength pulumi.IntPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource.
 	LifecycleDetails pulumi.StringPtrInput
 	// The DKIM selector. This selector is required to be globally unique for this email domain. If you do not provide the selector, we will generate one for you. If you do provide the selector, we suggest adding a short region indicator to differentiate from your signing of emails in other regions you might be subscribed to. Selectors limited to ASCII characters can use alphanumeric, dash ("-"), and dot (".") characters. Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
@@ -193,10 +217,12 @@ type DkimState struct {
 	// Avoid entering confidential information.
 	//
 	// Example: `mydomain-phx-20210228`
+	Name pulumi.StringPtrInput
+	// The DKIM RSA Private Key in Privacy-Enhanced Mail (PEM) format. It is a text-based representation of the private key used for signing email messages.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Name pulumi.StringPtrInput
+	PrivateKey pulumi.StringPtrInput
 	// The current state of the DKIM.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -227,10 +253,12 @@ type dkimArgs struct {
 	// Avoid entering confidential information.
 	//
 	// Example: `mydomain-phx-20210228`
+	Name *string `pulumi:"name"`
+	// The DKIM RSA Private Key in Privacy-Enhanced Mail (PEM) format. It is a text-based representation of the private key used for signing email messages.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Name *string `pulumi:"name"`
+	PrivateKey *string `pulumi:"privateKey"`
 }
 
 // The set of arguments for constructing a Dkim resource.
@@ -248,10 +276,12 @@ type DkimArgs struct {
 	// Avoid entering confidential information.
 	//
 	// Example: `mydomain-phx-20210228`
+	Name pulumi.StringPtrInput
+	// The DKIM RSA Private Key in Privacy-Enhanced Mail (PEM) format. It is a text-based representation of the private key used for signing email messages.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Name pulumi.StringPtrInput
+	PrivateKey pulumi.StringPtrInput
 }
 
 func (DkimArgs) ElementType() reflect.Type {
@@ -361,7 +391,7 @@ func (o DkimOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Dkim) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
+// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
 func (o DkimOutput) DnsSubdomainName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Dkim) pulumi.StringOutput { return v.DnsSubdomainName }).(pulumi.StringOutput)
 }
@@ -376,6 +406,16 @@ func (o DkimOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Dkim) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
+// Indicates whether the DKIM was imported.
+func (o DkimOutput) IsImported() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Dkim) pulumi.BoolOutput { return v.IsImported }).(pulumi.BoolOutput)
+}
+
+// Length of the RSA key used in the DKIM.
+func (o DkimOutput) KeyLength() pulumi.IntOutput {
+	return o.ApplyT(func(v *Dkim) pulumi.IntOutput { return v.KeyLength }).(pulumi.IntOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource.
 func (o DkimOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *Dkim) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
@@ -386,11 +426,16 @@ func (o DkimOutput) LifecycleDetails() pulumi.StringOutput {
 // Avoid entering confidential information.
 //
 // Example: `mydomain-phx-20210228`
+func (o DkimOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *Dkim) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// The DKIM RSA Private Key in Privacy-Enhanced Mail (PEM) format. It is a text-based representation of the private key used for signing email messages.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o DkimOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v *Dkim) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+func (o DkimOutput) PrivateKey() pulumi.StringOutput {
+	return o.ApplyT(func(v *Dkim) pulumi.StringOutput { return v.PrivateKey }).(pulumi.StringOutput)
 }
 
 // The current state of the DKIM.

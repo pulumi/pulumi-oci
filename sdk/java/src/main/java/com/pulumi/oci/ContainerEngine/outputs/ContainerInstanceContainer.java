@@ -79,7 +79,7 @@ public final class ContainerInstanceContainer {
      */
     private @Nullable Map<String,String> freeformTags;
     /**
-     * @return list of container health checks to check container status and take appropriate action if container status is failed. There are three types of health checks that we currently support HTTP, TCP, and Command.
+     * @return list of container health checks to check container status and take appropriate action if container status is failed. There are two types of health checks that we currently support HTTP and TCP.
      * 
      */
     private @Nullable List<ContainerInstanceContainerHealthCheck> healthChecks;
@@ -233,7 +233,7 @@ public final class ContainerInstanceContainer {
         return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
-     * @return list of container health checks to check container status and take appropriate action if container status is failed. There are three types of health checks that we currently support HTTP, TCP, and Command.
+     * @return list of container health checks to check container status and take appropriate action if container status is failed. There are two types of health checks that we currently support HTTP and TCP.
      * 
      */
     public List<ContainerInstanceContainerHealthCheck> healthChecks() {

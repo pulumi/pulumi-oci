@@ -17,6 +17,11 @@ import java.util.Objects;
 @CustomType
 public final class GetFileSystemsFileSystem {
     /**
+     * @return Specifies the enforcement of quota rules on the file system.
+     * 
+     */
+    private Boolean areQuotaRulesEnabled;
+    /**
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
@@ -99,6 +104,16 @@ public final class GetFileSystemsFileSystem {
      */
     private String meteredBytes;
     /**
+     * @return Displays the state of enforcement of quota rules on the file system.
+     * 
+     */
+    private String quotaEnforcementState;
+    /**
+     * @return Specifies the total number of replications for which this file system is a source.
+     * 
+     */
+    private Integer replicationSourceCount;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
      * 
      */
@@ -130,6 +145,13 @@ public final class GetFileSystemsFileSystem {
     private String timeCreated;
 
     private GetFileSystemsFileSystem() {}
+    /**
+     * @return Specifies the enforcement of quota rules on the file system.
+     * 
+     */
+    public Boolean areQuotaRulesEnabled() {
+        return this.areQuotaRulesEnabled;
+    }
     /**
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
@@ -249,6 +271,20 @@ public final class GetFileSystemsFileSystem {
         return this.meteredBytes;
     }
     /**
+     * @return Displays the state of enforcement of quota rules on the file system.
+     * 
+     */
+    public String quotaEnforcementState() {
+        return this.quotaEnforcementState;
+    }
+    /**
+     * @return Specifies the total number of replications for which this file system is a source.
+     * 
+     */
+    public Integer replicationSourceCount() {
+        return this.replicationSourceCount;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
      * 
      */
@@ -300,6 +336,7 @@ public final class GetFileSystemsFileSystem {
     }
     @CustomType.Builder
     public static final class Builder {
+        private Boolean areQuotaRulesEnabled;
         private String availabilityDomain;
         private String cloneAttachStatus;
         private Integer cloneCount;
@@ -318,6 +355,8 @@ public final class GetFileSystemsFileSystem {
         private String lifecycleDetails;
         private List<GetFileSystemsFileSystemLock> locks;
         private String meteredBytes;
+        private String quotaEnforcementState;
+        private Integer replicationSourceCount;
         private String replicationTargetId;
         private List<GetFileSystemsFileSystemSourceDetail> sourceDetails;
         private String sourceSnapshotId;
@@ -327,6 +366,7 @@ public final class GetFileSystemsFileSystem {
         public Builder() {}
         public Builder(GetFileSystemsFileSystem defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.areQuotaRulesEnabled = defaults.areQuotaRulesEnabled;
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.cloneAttachStatus = defaults.cloneAttachStatus;
     	      this.cloneCount = defaults.cloneCount;
@@ -345,6 +385,8 @@ public final class GetFileSystemsFileSystem {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.locks = defaults.locks;
     	      this.meteredBytes = defaults.meteredBytes;
+    	      this.quotaEnforcementState = defaults.quotaEnforcementState;
+    	      this.replicationSourceCount = defaults.replicationSourceCount;
     	      this.replicationTargetId = defaults.replicationTargetId;
     	      this.sourceDetails = defaults.sourceDetails;
     	      this.sourceSnapshotId = defaults.sourceSnapshotId;
@@ -353,6 +395,14 @@ public final class GetFileSystemsFileSystem {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
+        public Builder areQuotaRulesEnabled(Boolean areQuotaRulesEnabled) {
+            if (areQuotaRulesEnabled == null) {
+              throw new MissingRequiredPropertyException("GetFileSystemsFileSystem", "areQuotaRulesEnabled");
+            }
+            this.areQuotaRulesEnabled = areQuotaRulesEnabled;
+            return this;
+        }
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             if (availabilityDomain == null) {
@@ -501,6 +551,22 @@ public final class GetFileSystemsFileSystem {
             return this;
         }
         @CustomType.Setter
+        public Builder quotaEnforcementState(String quotaEnforcementState) {
+            if (quotaEnforcementState == null) {
+              throw new MissingRequiredPropertyException("GetFileSystemsFileSystem", "quotaEnforcementState");
+            }
+            this.quotaEnforcementState = quotaEnforcementState;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder replicationSourceCount(Integer replicationSourceCount) {
+            if (replicationSourceCount == null) {
+              throw new MissingRequiredPropertyException("GetFileSystemsFileSystem", "replicationSourceCount");
+            }
+            this.replicationSourceCount = replicationSourceCount;
+            return this;
+        }
+        @CustomType.Setter
         public Builder replicationTargetId(String replicationTargetId) {
             if (replicationTargetId == null) {
               throw new MissingRequiredPropertyException("GetFileSystemsFileSystem", "replicationTargetId");
@@ -553,6 +619,7 @@ public final class GetFileSystemsFileSystem {
         }
         public GetFileSystemsFileSystem build() {
             final var _resultValue = new GetFileSystemsFileSystem();
+            _resultValue.areQuotaRulesEnabled = areQuotaRulesEnabled;
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.cloneAttachStatus = cloneAttachStatus;
             _resultValue.cloneCount = cloneCount;
@@ -571,6 +638,8 @@ public final class GetFileSystemsFileSystem {
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.locks = locks;
             _resultValue.meteredBytes = meteredBytes;
+            _resultValue.quotaEnforcementState = quotaEnforcementState;
+            _resultValue.replicationSourceCount = replicationSourceCount;
             _resultValue.replicationTargetId = replicationTargetId;
             _resultValue.sourceDetails = sourceDetails;
             _resultValue.sourceSnapshotId = sourceSnapshotId;

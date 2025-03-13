@@ -22,6 +22,21 @@ public final class FileSystemState extends com.pulumi.resources.ResourceArgs {
     public static final FileSystemState Empty = new FileSystemState();
 
     /**
+     * (Updatable) Specifies the enforcement of quota rules on the file system.
+     * 
+     */
+    @Import(name="areQuotaRulesEnabled")
+    private @Nullable Output<Boolean> areQuotaRulesEnabled;
+
+    /**
+     * @return (Updatable) Specifies the enforcement of quota rules on the file system.
+     * 
+     */
+    public Optional<Output<Boolean>> areQuotaRulesEnabled() {
+        return Optional.ofNullable(this.areQuotaRulesEnabled);
+    }
+
+    /**
      * The availability domain to create the file system in.  Example: `Uocm:PHX-AD-1`
      * 
      */
@@ -279,6 +294,36 @@ public final class FileSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Displays the state of enforcement of quota rules on the file system.
+     * 
+     */
+    @Import(name="quotaEnforcementState")
+    private @Nullable Output<String> quotaEnforcementState;
+
+    /**
+     * @return Displays the state of enforcement of quota rules on the file system.
+     * 
+     */
+    public Optional<Output<String>> quotaEnforcementState() {
+        return Optional.ofNullable(this.quotaEnforcementState);
+    }
+
+    /**
+     * Specifies the total number of replications for which this file system is a source.
+     * 
+     */
+    @Import(name="replicationSourceCount")
+    private @Nullable Output<Integer> replicationSourceCount;
+
+    /**
+     * @return Specifies the total number of replications for which this file system is a source.
+     * 
+     */
+    public Optional<Output<Integer>> replicationSourceCount() {
+        return Optional.ofNullable(this.replicationSourceCount);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
      * 
      */
@@ -371,6 +416,7 @@ public final class FileSystemState extends com.pulumi.resources.ResourceArgs {
     private FileSystemState() {}
 
     private FileSystemState(FileSystemState $) {
+        this.areQuotaRulesEnabled = $.areQuotaRulesEnabled;
         this.availabilityDomain = $.availabilityDomain;
         this.cloneAttachStatus = $.cloneAttachStatus;
         this.cloneCount = $.cloneCount;
@@ -388,6 +434,8 @@ public final class FileSystemState extends com.pulumi.resources.ResourceArgs {
         this.lifecycleDetails = $.lifecycleDetails;
         this.locks = $.locks;
         this.meteredBytes = $.meteredBytes;
+        this.quotaEnforcementState = $.quotaEnforcementState;
+        this.replicationSourceCount = $.replicationSourceCount;
         this.replicationTargetId = $.replicationTargetId;
         this.sourceDetails = $.sourceDetails;
         this.sourceSnapshotId = $.sourceSnapshotId;
@@ -412,6 +460,27 @@ public final class FileSystemState extends com.pulumi.resources.ResourceArgs {
 
         public Builder(FileSystemState defaults) {
             $ = new FileSystemState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param areQuotaRulesEnabled (Updatable) Specifies the enforcement of quota rules on the file system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder areQuotaRulesEnabled(@Nullable Output<Boolean> areQuotaRulesEnabled) {
+            $.areQuotaRulesEnabled = areQuotaRulesEnabled;
+            return this;
+        }
+
+        /**
+         * @param areQuotaRulesEnabled (Updatable) Specifies the enforcement of quota rules on the file system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder areQuotaRulesEnabled(Boolean areQuotaRulesEnabled) {
+            return areQuotaRulesEnabled(Output.of(areQuotaRulesEnabled));
         }
 
         /**
@@ -777,6 +846,48 @@ public final class FileSystemState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder meteredBytes(String meteredBytes) {
             return meteredBytes(Output.of(meteredBytes));
+        }
+
+        /**
+         * @param quotaEnforcementState Displays the state of enforcement of quota rules on the file system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder quotaEnforcementState(@Nullable Output<String> quotaEnforcementState) {
+            $.quotaEnforcementState = quotaEnforcementState;
+            return this;
+        }
+
+        /**
+         * @param quotaEnforcementState Displays the state of enforcement of quota rules on the file system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder quotaEnforcementState(String quotaEnforcementState) {
+            return quotaEnforcementState(Output.of(quotaEnforcementState));
+        }
+
+        /**
+         * @param replicationSourceCount Specifies the total number of replications for which this file system is a source.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder replicationSourceCount(@Nullable Output<Integer> replicationSourceCount) {
+            $.replicationSourceCount = replicationSourceCount;
+            return this;
+        }
+
+        /**
+         * @param replicationSourceCount Specifies the total number of replications for which this file system is a source.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder replicationSourceCount(Integer replicationSourceCount) {
+            return replicationSourceCount(Output.of(replicationSourceCount));
         }
 
         /**

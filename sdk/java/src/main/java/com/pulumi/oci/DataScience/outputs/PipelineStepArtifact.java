@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class PipelineStepArtifact {
     private @Nullable String artifactContentDisposition;
-    private String artifactContentLength;
+    private @Nullable String artifactContentLength;
     private @Nullable String artifactContentMd5;
     private @Nullable String artifactLastModified;
     private String pipelineStepArtifact;
@@ -27,8 +27,8 @@ public final class PipelineStepArtifact {
     public Optional<String> artifactContentDisposition() {
         return Optional.ofNullable(this.artifactContentDisposition);
     }
-    public String artifactContentLength() {
-        return this.artifactContentLength;
+    public Optional<String> artifactContentLength() {
+        return Optional.ofNullable(this.artifactContentLength);
     }
     public Optional<String> artifactContentMd5() {
         return Optional.ofNullable(this.artifactContentMd5);
@@ -57,7 +57,7 @@ public final class PipelineStepArtifact {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String artifactContentDisposition;
-        private String artifactContentLength;
+        private @Nullable String artifactContentLength;
         private @Nullable String artifactContentMd5;
         private @Nullable String artifactLastModified;
         private String pipelineStepArtifact;
@@ -80,10 +80,8 @@ public final class PipelineStepArtifact {
             return this;
         }
         @CustomType.Setter
-        public Builder artifactContentLength(String artifactContentLength) {
-            if (artifactContentLength == null) {
-              throw new MissingRequiredPropertyException("PipelineStepArtifact", "artifactContentLength");
-            }
+        public Builder artifactContentLength(@Nullable String artifactContentLength) {
+
             this.artifactContentLength = artifactContentLength;
             return this;
         }

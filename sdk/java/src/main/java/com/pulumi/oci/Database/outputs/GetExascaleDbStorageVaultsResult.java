@@ -16,6 +16,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetExascaleDbStorageVaultsResult {
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * 
+     */
+    private @Nullable String clusterPlacementGroupId;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
@@ -25,6 +30,11 @@ public final class GetExascaleDbStorageVaultsResult {
      * 
      */
     private @Nullable String displayName;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+     * 
+     */
+    private @Nullable String exadataInfrastructureId;
     /**
      * @return The list of exascale_db_storage_vaults.
      * 
@@ -44,6 +54,13 @@ public final class GetExascaleDbStorageVaultsResult {
 
     private GetExascaleDbStorageVaultsResult() {}
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * 
+     */
+    public Optional<String> clusterPlacementGroupId() {
+        return Optional.ofNullable(this.clusterPlacementGroupId);
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
@@ -56,6 +73,13 @@ public final class GetExascaleDbStorageVaultsResult {
      */
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+     * 
+     */
+    public Optional<String> exadataInfrastructureId() {
+        return Optional.ofNullable(this.exadataInfrastructureId);
     }
     /**
      * @return The list of exascale_db_storage_vaults.
@@ -91,8 +115,10 @@ public final class GetExascaleDbStorageVaultsResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String clusterPlacementGroupId;
         private String compartmentId;
         private @Nullable String displayName;
+        private @Nullable String exadataInfrastructureId;
         private List<GetExascaleDbStorageVaultsExascaleDbStorageVault> exascaleDbStorageVaults;
         private @Nullable List<GetExascaleDbStorageVaultsFilter> filters;
         private String id;
@@ -100,14 +126,22 @@ public final class GetExascaleDbStorageVaultsResult {
         public Builder() {}
         public Builder(GetExascaleDbStorageVaultsResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.displayName = defaults.displayName;
+    	      this.exadataInfrastructureId = defaults.exadataInfrastructureId;
     	      this.exascaleDbStorageVaults = defaults.exascaleDbStorageVaults;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
+        public Builder clusterPlacementGroupId(@Nullable String clusterPlacementGroupId) {
+
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            return this;
+        }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             if (compartmentId == null) {
@@ -120,6 +154,12 @@ public final class GetExascaleDbStorageVaultsResult {
         public Builder displayName(@Nullable String displayName) {
 
             this.displayName = displayName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder exadataInfrastructureId(@Nullable String exadataInfrastructureId) {
+
+            this.exadataInfrastructureId = exadataInfrastructureId;
             return this;
         }
         @CustomType.Setter
@@ -158,8 +198,10 @@ public final class GetExascaleDbStorageVaultsResult {
         }
         public GetExascaleDbStorageVaultsResult build() {
             final var _resultValue = new GetExascaleDbStorageVaultsResult();
+            _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.displayName = displayName;
+            _resultValue.exadataInfrastructureId = exadataInfrastructureId;
             _resultValue.exascaleDbStorageVaults = exascaleDbStorageVaults;
             _resultValue.filters = filters;
             _resultValue.id = id;

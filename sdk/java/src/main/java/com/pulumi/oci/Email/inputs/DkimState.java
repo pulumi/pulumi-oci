@@ -5,6 +5,8 @@ package com.pulumi.oci.Email.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -77,14 +79,14 @@ public final class DkimState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
+     * The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
      * 
      */
     @Import(name="dnsSubdomainName")
     private @Nullable Output<String> dnsSubdomainName;
 
     /**
-     * @return The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
+     * @return The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
      * 
      */
     public Optional<Output<String>> dnsSubdomainName() {
@@ -122,6 +124,36 @@ public final class DkimState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Indicates whether the DKIM was imported.
+     * 
+     */
+    @Import(name="isImported")
+    private @Nullable Output<Boolean> isImported;
+
+    /**
+     * @return Indicates whether the DKIM was imported.
+     * 
+     */
+    public Optional<Output<Boolean>> isImported() {
+        return Optional.ofNullable(this.isImported);
+    }
+
+    /**
+     * Length of the RSA key used in the DKIM.
+     * 
+     */
+    @Import(name="keyLength")
+    private @Nullable Output<Integer> keyLength;
+
+    /**
+     * @return Length of the RSA key used in the DKIM.
+     * 
+     */
+    public Optional<Output<Integer>> keyLength() {
+        return Optional.ofNullable(this.keyLength);
+    }
+
+    /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource.
      * 
      */
@@ -143,9 +175,6 @@ public final class DkimState extends com.pulumi.resources.ResourceArgs {
      * 
      * Example: `mydomain-phx-20210228`
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
@@ -157,12 +186,30 @@ public final class DkimState extends com.pulumi.resources.ResourceArgs {
      * 
      * Example: `mydomain-phx-20210228`
      * 
+     */
+    public Optional<Output<String>> name() {
+        return Optional.ofNullable(this.name);
+    }
+
+    /**
+     * The DKIM RSA Private Key in Privacy-Enhanced Mail (PEM) format. It is a text-based representation of the private key used for signing email messages.
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Optional<Output<String>> name() {
-        return Optional.ofNullable(this.name);
+    @Import(name="privateKey")
+    private @Nullable Output<String> privateKey;
+
+    /**
+     * @return The DKIM RSA Private Key in Privacy-Enhanced Mail (PEM) format. It is a text-based representation of the private key used for signing email messages.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<String>> privateKey() {
+        return Optional.ofNullable(this.privateKey);
     }
 
     /**
@@ -250,8 +297,11 @@ public final class DkimState extends com.pulumi.resources.ResourceArgs {
         this.dnsSubdomainName = $.dnsSubdomainName;
         this.emailDomainId = $.emailDomainId;
         this.freeformTags = $.freeformTags;
+        this.isImported = $.isImported;
+        this.keyLength = $.keyLength;
         this.lifecycleDetails = $.lifecycleDetails;
         this.name = $.name;
+        this.privateKey = $.privateKey;
         this.state = $.state;
         this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
@@ -362,7 +412,7 @@ public final class DkimState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dnsSubdomainName The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
+         * @param dnsSubdomainName The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
          * 
          * @return builder
          * 
@@ -373,7 +423,7 @@ public final class DkimState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dnsSubdomainName The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
+         * @param dnsSubdomainName The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
          * 
          * @return builder
          * 
@@ -425,6 +475,48 @@ public final class DkimState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param isImported Indicates whether the DKIM was imported.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isImported(@Nullable Output<Boolean> isImported) {
+            $.isImported = isImported;
+            return this;
+        }
+
+        /**
+         * @param isImported Indicates whether the DKIM was imported.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isImported(Boolean isImported) {
+            return isImported(Output.of(isImported));
+        }
+
+        /**
+         * @param keyLength Length of the RSA key used in the DKIM.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyLength(@Nullable Output<Integer> keyLength) {
+            $.keyLength = keyLength;
+            return this;
+        }
+
+        /**
+         * @param keyLength Length of the RSA key used in the DKIM.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyLength(Integer keyLength) {
+            return keyLength(Output.of(keyLength));
+        }
+
+        /**
          * @param lifecycleDetails A message describing the current state in more detail. For example, can be used to provide actionable information for a resource.
          * 
          * @return builder
@@ -452,9 +544,6 @@ public final class DkimState extends com.pulumi.resources.ResourceArgs {
          * 
          * Example: `mydomain-phx-20210228`
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -470,14 +559,38 @@ public final class DkimState extends com.pulumi.resources.ResourceArgs {
          * 
          * Example: `mydomain-phx-20210228`
          * 
+         * @return builder
+         * 
+         */
+        public Builder name(String name) {
+            return name(Output.of(name));
+        }
+
+        /**
+         * @param privateKey The DKIM RSA Private Key in Privacy-Enhanced Mail (PEM) format. It is a text-based representation of the private key used for signing email messages.
+         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
          */
-        public Builder name(String name) {
-            return name(Output.of(name));
+        public Builder privateKey(@Nullable Output<String> privateKey) {
+            $.privateKey = privateKey;
+            return this;
+        }
+
+        /**
+         * @param privateKey The DKIM RSA Private Key in Privacy-Enhanced Mail (PEM) format. It is a text-based representation of the private key used for signing email messages.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateKey(String privateKey) {
+            return privateKey(Output.of(privateKey));
         }
 
         /**

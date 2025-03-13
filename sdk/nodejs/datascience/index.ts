@@ -45,6 +45,16 @@ export const getModel: typeof import("./getModel").getModel = null as any;
 export const getModelOutput: typeof import("./getModel").getModelOutput = null as any;
 utilities.lazyLoad(exports, ["getModel","getModelOutput"], () => require("./getModel"));
 
+export { GetModelCustomMetadataArtifactContentArgs, GetModelCustomMetadataArtifactContentResult, GetModelCustomMetadataArtifactContentOutputArgs } from "./getModelCustomMetadataArtifactContent";
+export const getModelCustomMetadataArtifactContent: typeof import("./getModelCustomMetadataArtifactContent").getModelCustomMetadataArtifactContent = null as any;
+export const getModelCustomMetadataArtifactContentOutput: typeof import("./getModelCustomMetadataArtifactContent").getModelCustomMetadataArtifactContentOutput = null as any;
+utilities.lazyLoad(exports, ["getModelCustomMetadataArtifactContent","getModelCustomMetadataArtifactContentOutput"], () => require("./getModelCustomMetadataArtifactContent"));
+
+export { GetModelDefinedMetadataArtifactContentArgs, GetModelDefinedMetadataArtifactContentResult, GetModelDefinedMetadataArtifactContentOutputArgs } from "./getModelDefinedMetadataArtifactContent";
+export const getModelDefinedMetadataArtifactContent: typeof import("./getModelDefinedMetadataArtifactContent").getModelDefinedMetadataArtifactContent = null as any;
+export const getModelDefinedMetadataArtifactContentOutput: typeof import("./getModelDefinedMetadataArtifactContent").getModelDefinedMetadataArtifactContentOutput = null as any;
+utilities.lazyLoad(exports, ["getModelDefinedMetadataArtifactContent","getModelDefinedMetadataArtifactContentOutput"], () => require("./getModelDefinedMetadataArtifactContent"));
+
 export { GetModelDeploymentArgs, GetModelDeploymentResult, GetModelDeploymentOutputArgs } from "./getModelDeployment";
 export const getModelDeployment: typeof import("./getModelDeployment").getModelDeployment = null as any;
 export const getModelDeploymentOutput: typeof import("./getModelDeployment").getModelDeploymentOutput = null as any;
@@ -170,6 +180,16 @@ export type ModelArtifactImport = import("./modelArtifactImport").ModelArtifactI
 export const ModelArtifactImport: typeof import("./modelArtifactImport").ModelArtifactImport = null as any;
 utilities.lazyLoad(exports, ["ModelArtifactImport"], () => require("./modelArtifactImport"));
 
+export { ModelCustomMetadataArtifactArgs, ModelCustomMetadataArtifactState } from "./modelCustomMetadataArtifact";
+export type ModelCustomMetadataArtifact = import("./modelCustomMetadataArtifact").ModelCustomMetadataArtifact;
+export const ModelCustomMetadataArtifact: typeof import("./modelCustomMetadataArtifact").ModelCustomMetadataArtifact = null as any;
+utilities.lazyLoad(exports, ["ModelCustomMetadataArtifact"], () => require("./modelCustomMetadataArtifact"));
+
+export { ModelDefinedMetadataArtifactArgs, ModelDefinedMetadataArtifactState } from "./modelDefinedMetadataArtifact";
+export type ModelDefinedMetadataArtifact = import("./modelDefinedMetadataArtifact").ModelDefinedMetadataArtifact;
+export const ModelDefinedMetadataArtifact: typeof import("./modelDefinedMetadataArtifact").ModelDefinedMetadataArtifact = null as any;
+utilities.lazyLoad(exports, ["ModelDefinedMetadataArtifact"], () => require("./modelDefinedMetadataArtifact"));
+
 export { ModelDeploymentArgs, ModelDeploymentState } from "./modelDeployment";
 export type ModelDeployment = import("./modelDeployment").ModelDeployment;
 export const ModelDeployment: typeof import("./modelDeployment").ModelDeployment = null as any;
@@ -230,6 +250,10 @@ const _module = {
                 return new ModelArtifactExport(name, <any>undefined, { urn })
             case "oci:DataScience/modelArtifactImport:ModelArtifactImport":
                 return new ModelArtifactImport(name, <any>undefined, { urn })
+            case "oci:DataScience/modelCustomMetadataArtifact:ModelCustomMetadataArtifact":
+                return new ModelCustomMetadataArtifact(name, <any>undefined, { urn })
+            case "oci:DataScience/modelDefinedMetadataArtifact:ModelDefinedMetadataArtifact":
+                return new ModelDefinedMetadataArtifact(name, <any>undefined, { urn })
             case "oci:DataScience/modelDeployment:ModelDeployment":
                 return new ModelDeployment(name, <any>undefined, { urn })
             case "oci:DataScience/modelProvenance:ModelProvenance":
@@ -258,6 +282,8 @@ pulumi.runtime.registerResourceModule("oci", "DataScience/jobRun", _module)
 pulumi.runtime.registerResourceModule("oci", "DataScience/model", _module)
 pulumi.runtime.registerResourceModule("oci", "DataScience/modelArtifactExport", _module)
 pulumi.runtime.registerResourceModule("oci", "DataScience/modelArtifactImport", _module)
+pulumi.runtime.registerResourceModule("oci", "DataScience/modelCustomMetadataArtifact", _module)
+pulumi.runtime.registerResourceModule("oci", "DataScience/modelDefinedMetadataArtifact", _module)
 pulumi.runtime.registerResourceModule("oci", "DataScience/modelDeployment", _module)
 pulumi.runtime.registerResourceModule("oci", "DataScience/modelProvenance", _module)
 pulumi.runtime.registerResourceModule("oci", "DataScience/modelVersionSet", _module)

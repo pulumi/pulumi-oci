@@ -12,6 +12,10 @@ import com.pulumi.oci.FileStorage.inputs.GetExportSetsArgs;
 import com.pulumi.oci.FileStorage.inputs.GetExportSetsPlainArgs;
 import com.pulumi.oci.FileStorage.inputs.GetExportsArgs;
 import com.pulumi.oci.FileStorage.inputs.GetExportsPlainArgs;
+import com.pulumi.oci.FileStorage.inputs.GetFileSystemQuotaRuleArgs;
+import com.pulumi.oci.FileStorage.inputs.GetFileSystemQuotaRulePlainArgs;
+import com.pulumi.oci.FileStorage.inputs.GetFileSystemQuotaRulesArgs;
+import com.pulumi.oci.FileStorage.inputs.GetFileSystemQuotaRulesPlainArgs;
 import com.pulumi.oci.FileStorage.inputs.GetFileSystemsArgs;
 import com.pulumi.oci.FileStorage.inputs.GetFileSystemsPlainArgs;
 import com.pulumi.oci.FileStorage.inputs.GetFilesystemSnapshotPoliciesArgs;
@@ -38,6 +42,8 @@ import com.pulumi.oci.FileStorage.inputs.GetSnapshotsArgs;
 import com.pulumi.oci.FileStorage.inputs.GetSnapshotsPlainArgs;
 import com.pulumi.oci.FileStorage.outputs.GetExportSetsResult;
 import com.pulumi.oci.FileStorage.outputs.GetExportsResult;
+import com.pulumi.oci.FileStorage.outputs.GetFileSystemQuotaRuleResult;
+import com.pulumi.oci.FileStorage.outputs.GetFileSystemQuotaRulesResult;
 import com.pulumi.oci.FileStorage.outputs.GetFileSystemsResult;
 import com.pulumi.oci.FileStorage.outputs.GetFilesystemSnapshotPoliciesResult;
 import com.pulumi.oci.FileStorage.outputs.GetFilesystemSnapshotPolicyResult;
@@ -643,6 +649,466 @@ public final class FileStorageFunctions {
      */
     public static CompletableFuture<GetExportsResult> getExportsPlain(GetExportsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:FileStorage/getExports:getExports", TypeShape.of(GetExportsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific File System Quota Rule resource in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Get an FS level, user or group quota rule given the `fileSystemId` and `quotaRuleId` parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetFileSystemQuotaRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFileSystemQuotaRule = FileStorageFunctions.getFileSystemQuotaRule(GetFileSystemQuotaRuleArgs.builder()
+     *             .fileSystemId(testFileSystem.id())
+     *             .quotaRuleId(testRule.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetFileSystemQuotaRuleResult> getFileSystemQuotaRule(GetFileSystemQuotaRuleArgs args) {
+        return getFileSystemQuotaRule(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific File System Quota Rule resource in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Get an FS level, user or group quota rule given the `fileSystemId` and `quotaRuleId` parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetFileSystemQuotaRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFileSystemQuotaRule = FileStorageFunctions.getFileSystemQuotaRule(GetFileSystemQuotaRuleArgs.builder()
+     *             .fileSystemId(testFileSystem.id())
+     *             .quotaRuleId(testRule.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetFileSystemQuotaRuleResult> getFileSystemQuotaRulePlain(GetFileSystemQuotaRulePlainArgs args) {
+        return getFileSystemQuotaRulePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific File System Quota Rule resource in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Get an FS level, user or group quota rule given the `fileSystemId` and `quotaRuleId` parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetFileSystemQuotaRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFileSystemQuotaRule = FileStorageFunctions.getFileSystemQuotaRule(GetFileSystemQuotaRuleArgs.builder()
+     *             .fileSystemId(testFileSystem.id())
+     *             .quotaRuleId(testRule.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetFileSystemQuotaRuleResult> getFileSystemQuotaRule(GetFileSystemQuotaRuleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:FileStorage/getFileSystemQuotaRule:getFileSystemQuotaRule", TypeShape.of(GetFileSystemQuotaRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific File System Quota Rule resource in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Get an FS level, user or group quota rule given the `fileSystemId` and `quotaRuleId` parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetFileSystemQuotaRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFileSystemQuotaRule = FileStorageFunctions.getFileSystemQuotaRule(GetFileSystemQuotaRuleArgs.builder()
+     *             .fileSystemId(testFileSystem.id())
+     *             .quotaRuleId(testRule.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetFileSystemQuotaRuleResult> getFileSystemQuotaRule(GetFileSystemQuotaRuleArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:FileStorage/getFileSystemQuotaRule:getFileSystemQuotaRule", TypeShape.of(GetFileSystemQuotaRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific File System Quota Rule resource in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Get an FS level, user or group quota rule given the `fileSystemId` and `quotaRuleId` parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetFileSystemQuotaRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFileSystemQuotaRule = FileStorageFunctions.getFileSystemQuotaRule(GetFileSystemQuotaRuleArgs.builder()
+     *             .fileSystemId(testFileSystem.id())
+     *             .quotaRuleId(testRule.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetFileSystemQuotaRuleResult> getFileSystemQuotaRulePlain(GetFileSystemQuotaRulePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:FileStorage/getFileSystemQuotaRule:getFileSystemQuotaRule", TypeShape.of(GetFileSystemQuotaRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of File System Quota Rules in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * List user or group usages and their quota rules by certain principal type.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetFileSystemQuotaRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFileSystemQuotaRules = FileStorageFunctions.getFileSystemQuotaRules(GetFileSystemQuotaRulesArgs.builder()
+     *             .fileSystemId(testFileSystem.id())
+     *             .principalType(fileSystemQuotaRulePrincipalType)
+     *             .areViolatorsOnly(fileSystemQuotaRuleAreViolatorsOnly)
+     *             .principalId(testPrincipal.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetFileSystemQuotaRulesResult> getFileSystemQuotaRules(GetFileSystemQuotaRulesArgs args) {
+        return getFileSystemQuotaRules(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of File System Quota Rules in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * List user or group usages and their quota rules by certain principal type.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetFileSystemQuotaRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFileSystemQuotaRules = FileStorageFunctions.getFileSystemQuotaRules(GetFileSystemQuotaRulesArgs.builder()
+     *             .fileSystemId(testFileSystem.id())
+     *             .principalType(fileSystemQuotaRulePrincipalType)
+     *             .areViolatorsOnly(fileSystemQuotaRuleAreViolatorsOnly)
+     *             .principalId(testPrincipal.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetFileSystemQuotaRulesResult> getFileSystemQuotaRulesPlain(GetFileSystemQuotaRulesPlainArgs args) {
+        return getFileSystemQuotaRulesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of File System Quota Rules in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * List user or group usages and their quota rules by certain principal type.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetFileSystemQuotaRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFileSystemQuotaRules = FileStorageFunctions.getFileSystemQuotaRules(GetFileSystemQuotaRulesArgs.builder()
+     *             .fileSystemId(testFileSystem.id())
+     *             .principalType(fileSystemQuotaRulePrincipalType)
+     *             .areViolatorsOnly(fileSystemQuotaRuleAreViolatorsOnly)
+     *             .principalId(testPrincipal.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetFileSystemQuotaRulesResult> getFileSystemQuotaRules(GetFileSystemQuotaRulesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:FileStorage/getFileSystemQuotaRules:getFileSystemQuotaRules", TypeShape.of(GetFileSystemQuotaRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of File System Quota Rules in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * List user or group usages and their quota rules by certain principal type.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetFileSystemQuotaRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFileSystemQuotaRules = FileStorageFunctions.getFileSystemQuotaRules(GetFileSystemQuotaRulesArgs.builder()
+     *             .fileSystemId(testFileSystem.id())
+     *             .principalType(fileSystemQuotaRulePrincipalType)
+     *             .areViolatorsOnly(fileSystemQuotaRuleAreViolatorsOnly)
+     *             .principalId(testPrincipal.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetFileSystemQuotaRulesResult> getFileSystemQuotaRules(GetFileSystemQuotaRulesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:FileStorage/getFileSystemQuotaRules:getFileSystemQuotaRules", TypeShape.of(GetFileSystemQuotaRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of File System Quota Rules in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * List user or group usages and their quota rules by certain principal type.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetFileSystemQuotaRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFileSystemQuotaRules = FileStorageFunctions.getFileSystemQuotaRules(GetFileSystemQuotaRulesArgs.builder()
+     *             .fileSystemId(testFileSystem.id())
+     *             .principalType(fileSystemQuotaRulePrincipalType)
+     *             .areViolatorsOnly(fileSystemQuotaRuleAreViolatorsOnly)
+     *             .principalId(testPrincipal.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetFileSystemQuotaRulesResult> getFileSystemQuotaRulesPlain(GetFileSystemQuotaRulesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:FileStorage/getFileSystemQuotaRules:getFileSystemQuotaRules", TypeShape.of(GetFileSystemQuotaRulesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of File Systems in Oracle Cloud Infrastructure File Storage service.

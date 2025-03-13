@@ -28,7 +28,10 @@ class GetBackupsResult:
     """
     A collection of values returned by getBackups.
     """
-    def __init__(__self__, backups=None, compartment_id=None, database_id=None, filters=None, id=None, shape_family=None):
+    def __init__(__self__, backup_destination_type=None, backups=None, compartment_id=None, database_id=None, filters=None, id=None, shape_family=None, state=None, time_expiry_scheduled_greater_than_or_equal_to=None, time_expiry_scheduled_less_than=None, type=None, version=None):
+        if backup_destination_type and not isinstance(backup_destination_type, str):
+            raise TypeError("Expected argument 'backup_destination_type' to be a str")
+        pulumi.set(__self__, "backup_destination_type", backup_destination_type)
         if backups and not isinstance(backups, list):
             raise TypeError("Expected argument 'backups' to be a list")
         pulumi.set(__self__, "backups", backups)
@@ -47,6 +50,29 @@ class GetBackupsResult:
         if shape_family and not isinstance(shape_family, str):
             raise TypeError("Expected argument 'shape_family' to be a str")
         pulumi.set(__self__, "shape_family", shape_family)
+        if state and not isinstance(state, str):
+            raise TypeError("Expected argument 'state' to be a str")
+        pulumi.set(__self__, "state", state)
+        if time_expiry_scheduled_greater_than_or_equal_to and not isinstance(time_expiry_scheduled_greater_than_or_equal_to, str):
+            raise TypeError("Expected argument 'time_expiry_scheduled_greater_than_or_equal_to' to be a str")
+        pulumi.set(__self__, "time_expiry_scheduled_greater_than_or_equal_to", time_expiry_scheduled_greater_than_or_equal_to)
+        if time_expiry_scheduled_less_than and not isinstance(time_expiry_scheduled_less_than, str):
+            raise TypeError("Expected argument 'time_expiry_scheduled_less_than' to be a str")
+        pulumi.set(__self__, "time_expiry_scheduled_less_than", time_expiry_scheduled_less_than)
+        if type and not isinstance(type, str):
+            raise TypeError("Expected argument 'type' to be a str")
+        pulumi.set(__self__, "type", type)
+        if version and not isinstance(version, str):
+            raise TypeError("Expected argument 'version' to be a str")
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="backupDestinationType")
+    def backup_destination_type(self) -> Optional[str]:
+        """
+        Type of the backup destination.
+        """
+        return pulumi.get(self, "backup_destination_type")
 
     @property
     @pulumi.getter
@@ -90,6 +116,40 @@ class GetBackupsResult:
     def shape_family(self) -> Optional[str]:
         return pulumi.get(self, "shape_family")
 
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[str]:
+        """
+        The current state of the backup.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeExpiryScheduledGreaterThanOrEqualTo")
+    def time_expiry_scheduled_greater_than_or_equal_to(self) -> Optional[str]:
+        return pulumi.get(self, "time_expiry_scheduled_greater_than_or_equal_to")
+
+    @property
+    @pulumi.getter(name="timeExpiryScheduledLessThan")
+    def time_expiry_scheduled_less_than(self) -> Optional[str]:
+        return pulumi.get(self, "time_expiry_scheduled_less_than")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
+        """
+        The type of backup.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[str]:
+        """
+        Version of the backup's source database
+        """
+        return pulumi.get(self, "version")
+
 
 class AwaitableGetBackupsResult(GetBackupsResult):
     # pylint: disable=using-constant-test
@@ -97,18 +157,30 @@ class AwaitableGetBackupsResult(GetBackupsResult):
         if False:
             yield self
         return GetBackupsResult(
+            backup_destination_type=self.backup_destination_type,
             backups=self.backups,
             compartment_id=self.compartment_id,
             database_id=self.database_id,
             filters=self.filters,
             id=self.id,
-            shape_family=self.shape_family)
+            shape_family=self.shape_family,
+            state=self.state,
+            time_expiry_scheduled_greater_than_or_equal_to=self.time_expiry_scheduled_greater_than_or_equal_to,
+            time_expiry_scheduled_less_than=self.time_expiry_scheduled_less_than,
+            type=self.type,
+            version=self.version)
 
 
-def get_backups(compartment_id: Optional[str] = None,
+def get_backups(backup_destination_type: Optional[str] = None,
+                compartment_id: Optional[str] = None,
                 database_id: Optional[str] = None,
                 filters: Optional[Sequence[Union['GetBackupsFilterArgs', 'GetBackupsFilterArgsDict']]] = None,
                 shape_family: Optional[str] = None,
+                state: Optional[str] = None,
+                time_expiry_scheduled_greater_than_or_equal_to: Optional[str] = None,
+                time_expiry_scheduled_less_than: Optional[str] = None,
+                type: Optional[str] = None,
+                version: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBackupsResult:
     """
     This data source provides the list of Backups in Oracle Cloud Infrastructure Database service.
@@ -121,35 +193,65 @@ def get_backups(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_backups = oci.Database.get_backups(compartment_id=compartment_id,
+    test_backups = oci.Database.get_backups(backup_destination_type=backup_backup_destination_type,
+        compartment_id=compartment_id,
         database_id=test_database["id"],
-        shape_family=backup_shape_family)
+        shape_family=backup_shape_family,
+        state=backup_state,
+        time_expiry_scheduled_greater_than_or_equal_to=backup_time_expiry_scheduled_greater_than_or_equal_to,
+        time_expiry_scheduled_less_than=backup_time_expiry_scheduled_less_than,
+        type=backup_type,
+        version=backup_version)
     ```
 
 
+    :param str backup_destination_type: A filter to return only resources that match the given backup destination type.
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
     :param str shape_family: If provided, filters the results to the set of database versions which are supported for the given shape family.
+    :param str state: A filter to return only resources that match the given lifecycle state exactly.
+    :param str time_expiry_scheduled_greater_than_or_equal_to: The start of date-time range of expiration for the long term backups to be fetched.
+    :param str time_expiry_scheduled_less_than: The end of date-time range of expiration for the long term backups to be fetched.
+    :param str type: A filter to return only backups that matches with the given type of Backup.
+    :param str version: A filter to return only resources that match the given database version.
     """
     __args__ = dict()
+    __args__['backupDestinationType'] = backup_destination_type
     __args__['compartmentId'] = compartment_id
     __args__['databaseId'] = database_id
     __args__['filters'] = filters
     __args__['shapeFamily'] = shape_family
+    __args__['state'] = state
+    __args__['timeExpiryScheduledGreaterThanOrEqualTo'] = time_expiry_scheduled_greater_than_or_equal_to
+    __args__['timeExpiryScheduledLessThan'] = time_expiry_scheduled_less_than
+    __args__['type'] = type
+    __args__['version'] = version
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:Database/getBackups:getBackups', __args__, opts=opts, typ=GetBackupsResult).value
 
     return AwaitableGetBackupsResult(
+        backup_destination_type=pulumi.get(__ret__, 'backup_destination_type'),
         backups=pulumi.get(__ret__, 'backups'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         database_id=pulumi.get(__ret__, 'database_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
-        shape_family=pulumi.get(__ret__, 'shape_family'))
-def get_backups_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
+        shape_family=pulumi.get(__ret__, 'shape_family'),
+        state=pulumi.get(__ret__, 'state'),
+        time_expiry_scheduled_greater_than_or_equal_to=pulumi.get(__ret__, 'time_expiry_scheduled_greater_than_or_equal_to'),
+        time_expiry_scheduled_less_than=pulumi.get(__ret__, 'time_expiry_scheduled_less_than'),
+        type=pulumi.get(__ret__, 'type'),
+        version=pulumi.get(__ret__, 'version'))
+def get_backups_output(backup_destination_type: Optional[pulumi.Input[Optional[str]]] = None,
+                       compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                        database_id: Optional[pulumi.Input[Optional[str]]] = None,
                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBackupsFilterArgs', 'GetBackupsFilterArgsDict']]]]] = None,
                        shape_family: Optional[pulumi.Input[Optional[str]]] = None,
+                       state: Optional[pulumi.Input[Optional[str]]] = None,
+                       time_expiry_scheduled_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
+                       time_expiry_scheduled_less_than: Optional[pulumi.Input[Optional[str]]] = None,
+                       type: Optional[pulumi.Input[Optional[str]]] = None,
+                       version: Optional[pulumi.Input[Optional[str]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBackupsResult]:
     """
     This data source provides the list of Backups in Oracle Cloud Infrastructure Database service.
@@ -162,27 +264,51 @@ def get_backups_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_backups = oci.Database.get_backups(compartment_id=compartment_id,
+    test_backups = oci.Database.get_backups(backup_destination_type=backup_backup_destination_type,
+        compartment_id=compartment_id,
         database_id=test_database["id"],
-        shape_family=backup_shape_family)
+        shape_family=backup_shape_family,
+        state=backup_state,
+        time_expiry_scheduled_greater_than_or_equal_to=backup_time_expiry_scheduled_greater_than_or_equal_to,
+        time_expiry_scheduled_less_than=backup_time_expiry_scheduled_less_than,
+        type=backup_type,
+        version=backup_version)
     ```
 
 
+    :param str backup_destination_type: A filter to return only resources that match the given backup destination type.
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
     :param str shape_family: If provided, filters the results to the set of database versions which are supported for the given shape family.
+    :param str state: A filter to return only resources that match the given lifecycle state exactly.
+    :param str time_expiry_scheduled_greater_than_or_equal_to: The start of date-time range of expiration for the long term backups to be fetched.
+    :param str time_expiry_scheduled_less_than: The end of date-time range of expiration for the long term backups to be fetched.
+    :param str type: A filter to return only backups that matches with the given type of Backup.
+    :param str version: A filter to return only resources that match the given database version.
     """
     __args__ = dict()
+    __args__['backupDestinationType'] = backup_destination_type
     __args__['compartmentId'] = compartment_id
     __args__['databaseId'] = database_id
     __args__['filters'] = filters
     __args__['shapeFamily'] = shape_family
+    __args__['state'] = state
+    __args__['timeExpiryScheduledGreaterThanOrEqualTo'] = time_expiry_scheduled_greater_than_or_equal_to
+    __args__['timeExpiryScheduledLessThan'] = time_expiry_scheduled_less_than
+    __args__['type'] = type
+    __args__['version'] = version
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getBackups:getBackups', __args__, opts=opts, typ=GetBackupsResult)
     return __ret__.apply(lambda __response__: GetBackupsResult(
+        backup_destination_type=pulumi.get(__response__, 'backup_destination_type'),
         backups=pulumi.get(__response__, 'backups'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         database_id=pulumi.get(__response__, 'database_id'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
-        shape_family=pulumi.get(__response__, 'shape_family')))
+        shape_family=pulumi.get(__response__, 'shape_family'),
+        state=pulumi.get(__response__, 'state'),
+        time_expiry_scheduled_greater_than_or_equal_to=pulumi.get(__response__, 'time_expiry_scheduled_greater_than_or_equal_to'),
+        time_expiry_scheduled_less_than=pulumi.get(__response__, 'time_expiry_scheduled_less_than'),
+        type=pulumi.get(__response__, 'type'),
+        version=pulumi.get(__response__, 'version')))

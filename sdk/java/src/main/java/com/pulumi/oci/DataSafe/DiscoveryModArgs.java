@@ -186,6 +186,21 @@ public final class DiscoveryModArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The OCIDs of the sensitive type groups to be used by the discovery job. All the sensitive types present in sensitive type group will be used for discovery.
+     * 
+     */
+    @Import(name="sensitiveTypeGroupIdsForDiscoveries")
+    private @Nullable Output<List<String>> sensitiveTypeGroupIdsForDiscoveries;
+
+    /**
+     * @return The OCIDs of the sensitive type groups to be used by the discovery job. All the sensitive types present in sensitive type group will be used for discovery.
+     * 
+     */
+    public Optional<Output<List<String>>> sensitiveTypeGroupIdsForDiscoveries() {
+        return Optional.ofNullable(this.sensitiveTypeGroupIdsForDiscoveries);
+    }
+
+    /**
      * The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
      * 
      */
@@ -229,6 +244,7 @@ public final class DiscoveryModArgs extends com.pulumi.resources.ResourceArgs {
         this.isSampleDataCollectionEnabled = $.isSampleDataCollectionEnabled;
         this.schemasForDiscoveries = $.schemasForDiscoveries;
         this.sensitiveDataModelId = $.sensitiveDataModelId;
+        this.sensitiveTypeGroupIdsForDiscoveries = $.sensitiveTypeGroupIdsForDiscoveries;
         this.sensitiveTypeIdsForDiscoveries = $.sensitiveTypeIdsForDiscoveries;
         this.tablesForDiscoveries = $.tablesForDiscoveries;
     }
@@ -490,6 +506,37 @@ public final class DiscoveryModArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder sensitiveDataModelId(String sensitiveDataModelId) {
             return sensitiveDataModelId(Output.of(sensitiveDataModelId));
+        }
+
+        /**
+         * @param sensitiveTypeGroupIdsForDiscoveries The OCIDs of the sensitive type groups to be used by the discovery job. All the sensitive types present in sensitive type group will be used for discovery.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sensitiveTypeGroupIdsForDiscoveries(@Nullable Output<List<String>> sensitiveTypeGroupIdsForDiscoveries) {
+            $.sensitiveTypeGroupIdsForDiscoveries = sensitiveTypeGroupIdsForDiscoveries;
+            return this;
+        }
+
+        /**
+         * @param sensitiveTypeGroupIdsForDiscoveries The OCIDs of the sensitive type groups to be used by the discovery job. All the sensitive types present in sensitive type group will be used for discovery.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sensitiveTypeGroupIdsForDiscoveries(List<String> sensitiveTypeGroupIdsForDiscoveries) {
+            return sensitiveTypeGroupIdsForDiscoveries(Output.of(sensitiveTypeGroupIdsForDiscoveries));
+        }
+
+        /**
+         * @param sensitiveTypeGroupIdsForDiscoveries The OCIDs of the sensitive type groups to be used by the discovery job. All the sensitive types present in sensitive type group will be used for discovery.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sensitiveTypeGroupIdsForDiscoveries(String... sensitiveTypeGroupIdsForDiscoveries) {
+            return sensitiveTypeGroupIdsForDiscoveries(List.of(sensitiveTypeGroupIdsForDiscoveries));
         }
 
         /**

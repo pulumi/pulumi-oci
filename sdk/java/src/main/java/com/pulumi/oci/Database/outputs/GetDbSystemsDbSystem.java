@@ -66,7 +66,7 @@ public final class GetDbSystemsDbSystem {
      */
     private Integer dataStorageSizeInGb;
     /**
-     * @return The Oracle Database edition that applies to all the databases on the DB system.
+     * @return The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      * 
      */
     private String databaseEdition;
@@ -351,7 +351,7 @@ public final class GetDbSystemsDbSystem {
         return this.dataStorageSizeInGb;
     }
     /**
-     * @return The Oracle Database edition that applies to all the databases on the DB system.
+     * @return The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      * 
      */
     public String databaseEdition() {

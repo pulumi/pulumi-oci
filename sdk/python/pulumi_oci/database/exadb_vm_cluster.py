@@ -45,6 +45,7 @@ class ExadbVmClusterArgs:
                  scan_listener_port_tcp: Optional[pulumi.Input[int]] = None,
                  scan_listener_port_tcp_ssl: Optional[pulumi.Input[int]] = None,
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 subscription_id: Optional[pulumi.Input[str]] = None,
                  system_version: Optional[pulumi.Input[str]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None):
         """
@@ -56,7 +57,7 @@ class ExadbVmClusterArgs:
         :param pulumi.Input[str] exascale_db_storage_vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
         :param pulumi.Input[str] grid_image_id: (Updatable) Grid Setup will be done using this grid image id.
                
-               The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name> 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
+               The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>. The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD name>
         :param pulumi.Input[str] hostname: The hostname for the Exadata VM cluster on Exascale Infrastructure. The hostname must begin with an alphabetic character, and  can contain alphanumeric characters and hyphens (-). For Exadata systems, the maximum length of the hostname is 12 characters.
                
                The maximum length of the combined hostname and domain is 63 characters.
@@ -80,6 +81,7 @@ class ExadbVmClusterArgs:
         :param pulumi.Input[int] scan_listener_port_tcp: The TCP Single Client Access Name (SCAN) port. The default port is 1521.
         :param pulumi.Input[int] scan_listener_port_tcp_ssl: The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        :param pulumi.Input[str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[str] system_version: (Updatable) Operating system version of the image.
         :param pulumi.Input[str] time_zone: The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
                
@@ -124,6 +126,8 @@ class ExadbVmClusterArgs:
             pulumi.set(__self__, "scan_listener_port_tcp_ssl", scan_listener_port_tcp_ssl)
         if security_attributes is not None:
             pulumi.set(__self__, "security_attributes", security_attributes)
+        if subscription_id is not None:
+            pulumi.set(__self__, "subscription_id", subscription_id)
         if system_version is not None:
             pulumi.set(__self__, "system_version", system_version)
         if time_zone is not None:
@@ -195,7 +199,7 @@ class ExadbVmClusterArgs:
         """
         (Updatable) Grid Setup will be done using this grid image id.
 
-        The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name> 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
+        The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>. The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD name>
         """
         return pulumi.get(self, "grid_image_id")
 
@@ -425,6 +429,18 @@ class ExadbVmClusterArgs:
         pulumi.set(self, "security_attributes", value)
 
     @property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        """
+        return pulumi.get(self, "subscription_id")
+
+    @subscription_id.setter
+    def subscription_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "subscription_id", value)
+
+    @property
     @pulumi.getter(name="systemVersion")
     def system_version(self) -> Optional[pulumi.Input[str]]:
         """
@@ -460,6 +476,7 @@ class _ExadbVmClusterState:
                  backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  backup_subnet_id: Optional[pulumi.Input[str]] = None,
                  cluster_name: Optional[pulumi.Input[str]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  data_collection_options: Optional[pulumi.Input['ExadbVmClusterDataCollectionOptionsArgs']] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -490,6 +507,7 @@ class _ExadbVmClusterState:
                  ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
+                 subscription_id: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  system_version: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
@@ -502,6 +520,7 @@ class _ExadbVmClusterState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] backup_network_nsg_ids: (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
         :param pulumi.Input[str] backup_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[str] cluster_name: The cluster name for Exadata VM cluster on Exascale Infrastructure. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
+        :param pulumi.Input[str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input['ExadbVmClusterDataCollectionOptionsArgs'] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -512,7 +531,7 @@ class _ExadbVmClusterState:
         :param pulumi.Input[str] gi_version: A valid Oracle Grid Infrastructure (GI) software version.
         :param pulumi.Input[str] grid_image_id: (Updatable) Grid Setup will be done using this grid image id.
                
-               The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name> 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
+               The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>. The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD name>
         :param pulumi.Input[str] grid_image_type: The type of Grid Image
         :param pulumi.Input[str] hostname: The hostname for the Exadata VM cluster on Exascale Infrastructure. The hostname must begin with an alphabetic character, and  can contain alphanumeric characters and hyphens (-). For Exadata systems, the maximum length of the hostname is 12 characters.
                
@@ -539,6 +558,7 @@ class _ExadbVmClusterState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ssh_public_keys: (Updatable) The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[str] state: The current state of the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+        :param pulumi.Input[str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] system_version: (Updatable) Operating system version of the image.
         :param pulumi.Input[str] time_created: The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
@@ -558,6 +578,8 @@ class _ExadbVmClusterState:
             pulumi.set(__self__, "backup_subnet_id", backup_subnet_id)
         if cluster_name is not None:
             pulumi.set(__self__, "cluster_name", cluster_name)
+        if cluster_placement_group_id is not None:
+            pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if data_collection_options is not None:
@@ -618,6 +640,8 @@ class _ExadbVmClusterState:
             pulumi.set(__self__, "state", state)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
+        if subscription_id is not None:
+            pulumi.set(__self__, "subscription_id", subscription_id)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
         if system_version is not None:
@@ -678,6 +702,18 @@ class _ExadbVmClusterState:
     @cluster_name.setter
     def cluster_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "cluster_name", value)
+
+    @property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "cluster_placement_group_id", value)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -781,7 +817,7 @@ class _ExadbVmClusterState:
         """
         (Updatable) Grid Setup will be done using this grid image id.
 
-        The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name> 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
+        The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>. The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD name>
         """
         return pulumi.get(self, "grid_image_id")
 
@@ -1047,6 +1083,18 @@ class _ExadbVmClusterState:
         pulumi.set(self, "subnet_id", value)
 
     @property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        """
+        return pulumi.get(self, "subscription_id")
+
+    @subscription_id.setter
+    def subscription_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "subscription_id", value)
+
+    @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
@@ -1152,6 +1200,7 @@ class ExadbVmCluster(pulumi.CustomResource):
                  shape: Optional[pulumi.Input[str]] = None,
                  ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
+                 subscription_id: Optional[pulumi.Input[str]] = None,
                  system_version: Optional[pulumi.Input[str]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -1208,6 +1257,7 @@ class ExadbVmCluster(pulumi.CustomResource):
             scan_listener_port_tcp=exadb_vm_cluster_scan_listener_port_tcp,
             scan_listener_port_tcp_ssl=exadb_vm_cluster_scan_listener_port_tcp_ssl,
             security_attributes=exadb_vm_cluster_security_attributes,
+            subscription_id=tenant_subscription_id,
             system_version=exadb_vm_cluster_system_version,
             time_zone=exadb_vm_cluster_time_zone)
         ```
@@ -1235,7 +1285,7 @@ class ExadbVmCluster(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] grid_image_id: (Updatable) Grid Setup will be done using this grid image id.
                
-               The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name> 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
+               The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>. The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD name>
         :param pulumi.Input[str] hostname: The hostname for the Exadata VM cluster on Exascale Infrastructure. The hostname must begin with an alphabetic character, and  can contain alphanumeric characters and hyphens (-). For Exadata systems, the maximum length of the hostname is 12 characters.
                
                The maximum length of the combined hostname and domain is 63 characters.
@@ -1253,6 +1303,7 @@ class ExadbVmCluster(pulumi.CustomResource):
         :param pulumi.Input[str] shape: The shape of the Exadata VM cluster on Exascale Infrastructure resource
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ssh_public_keys: (Updatable) The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+        :param pulumi.Input[str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[str] system_version: (Updatable) Operating system version of the image.
         :param pulumi.Input[str] time_zone: The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
                
@@ -1319,6 +1370,7 @@ class ExadbVmCluster(pulumi.CustomResource):
             scan_listener_port_tcp=exadb_vm_cluster_scan_listener_port_tcp,
             scan_listener_port_tcp_ssl=exadb_vm_cluster_scan_listener_port_tcp_ssl,
             security_attributes=exadb_vm_cluster_security_attributes,
+            subscription_id=tenant_subscription_id,
             system_version=exadb_vm_cluster_system_version,
             time_zone=exadb_vm_cluster_time_zone)
         ```
@@ -1370,6 +1422,7 @@ class ExadbVmCluster(pulumi.CustomResource):
                  shape: Optional[pulumi.Input[str]] = None,
                  ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
+                 subscription_id: Optional[pulumi.Input[str]] = None,
                  system_version: Optional[pulumi.Input[str]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -1427,8 +1480,10 @@ class ExadbVmCluster(pulumi.CustomResource):
             if subnet_id is None and not opts.urn:
                 raise TypeError("Missing required property 'subnet_id'")
             __props__.__dict__["subnet_id"] = subnet_id
+            __props__.__dict__["subscription_id"] = subscription_id
             __props__.__dict__["system_version"] = system_version
             __props__.__dict__["time_zone"] = time_zone
+            __props__.__dict__["cluster_placement_group_id"] = None
             __props__.__dict__["gi_version"] = None
             __props__.__dict__["grid_image_type"] = None
             __props__.__dict__["iorm_config_caches"] = None
@@ -1457,6 +1512,7 @@ class ExadbVmCluster(pulumi.CustomResource):
             backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             backup_subnet_id: Optional[pulumi.Input[str]] = None,
             cluster_name: Optional[pulumi.Input[str]] = None,
+            cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             data_collection_options: Optional[pulumi.Input[Union['ExadbVmClusterDataCollectionOptionsArgs', 'ExadbVmClusterDataCollectionOptionsArgsDict']]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -1487,6 +1543,7 @@ class ExadbVmCluster(pulumi.CustomResource):
             ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             subnet_id: Optional[pulumi.Input[str]] = None,
+            subscription_id: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             system_version: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -1504,6 +1561,7 @@ class ExadbVmCluster(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] backup_network_nsg_ids: (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
         :param pulumi.Input[str] backup_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[str] cluster_name: The cluster name for Exadata VM cluster on Exascale Infrastructure. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
+        :param pulumi.Input[str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Union['ExadbVmClusterDataCollectionOptionsArgs', 'ExadbVmClusterDataCollectionOptionsArgsDict']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -1514,7 +1572,7 @@ class ExadbVmCluster(pulumi.CustomResource):
         :param pulumi.Input[str] gi_version: A valid Oracle Grid Infrastructure (GI) software version.
         :param pulumi.Input[str] grid_image_id: (Updatable) Grid Setup will be done using this grid image id.
                
-               The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name> 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
+               The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>. The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD name>
         :param pulumi.Input[str] grid_image_type: The type of Grid Image
         :param pulumi.Input[str] hostname: The hostname for the Exadata VM cluster on Exascale Infrastructure. The hostname must begin with an alphabetic character, and  can contain alphanumeric characters and hyphens (-). For Exadata systems, the maximum length of the hostname is 12 characters.
                
@@ -1541,6 +1599,7 @@ class ExadbVmCluster(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ssh_public_keys: (Updatable) The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[str] state: The current state of the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+        :param pulumi.Input[str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] system_version: (Updatable) Operating system version of the image.
         :param pulumi.Input[str] time_created: The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
@@ -1560,6 +1619,7 @@ class ExadbVmCluster(pulumi.CustomResource):
         __props__.__dict__["backup_network_nsg_ids"] = backup_network_nsg_ids
         __props__.__dict__["backup_subnet_id"] = backup_subnet_id
         __props__.__dict__["cluster_name"] = cluster_name
+        __props__.__dict__["cluster_placement_group_id"] = cluster_placement_group_id
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["data_collection_options"] = data_collection_options
         __props__.__dict__["defined_tags"] = defined_tags
@@ -1590,6 +1650,7 @@ class ExadbVmCluster(pulumi.CustomResource):
         __props__.__dict__["ssh_public_keys"] = ssh_public_keys
         __props__.__dict__["state"] = state
         __props__.__dict__["subnet_id"] = subnet_id
+        __props__.__dict__["subscription_id"] = subscription_id
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["system_version"] = system_version
         __props__.__dict__["time_created"] = time_created
@@ -1629,6 +1690,14 @@ class ExadbVmCluster(pulumi.CustomResource):
         The cluster name for Exadata VM cluster on Exascale Infrastructure. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
         """
         return pulumi.get(self, "cluster_name")
+
+    @property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> pulumi.Output[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1700,7 +1769,7 @@ class ExadbVmCluster(pulumi.CustomResource):
         """
         (Updatable) Grid Setup will be done using this grid image id.
 
-        The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name> 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
+        The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>. The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD name>
         """
         return pulumi.get(self, "grid_image_id")
 
@@ -1876,6 +1945,14 @@ class ExadbVmCluster(pulumi.CustomResource):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
         """
         return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> pulumi.Output[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        """
+        return pulumi.get(self, "subscription_id")
 
     @property
     @pulumi.getter(name="systemTags")

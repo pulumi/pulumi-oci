@@ -74,6 +74,10 @@ export class VmClusterRemoveVirtualMachine extends pulumi.CustomResource {
      */
     public /*out*/ readonly compartmentId!: pulumi.Output<string>;
     /**
+     * The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     */
+    public /*out*/ readonly computeModel!: pulumi.Output<string>;
+    /**
      * The number of enabled CPU cores.
      */
     public /*out*/ readonly cpusEnabled!: pulumi.Output<number>;
@@ -105,6 +109,10 @@ export class VmClusterRemoveVirtualMachine extends pulumi.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
     public /*out*/ readonly exadataInfrastructureId!: pulumi.Output<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+     */
+    public /*out*/ readonly exascaleDbStorageVaultId!: pulumi.Output<string>;
     /**
      * Details of the file system configuration of the VM cluster.
      */
@@ -154,6 +162,10 @@ export class VmClusterRemoveVirtualMachine extends pulumi.CustomResource {
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
+     * Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
+     */
+    public /*out*/ readonly storageManagementType!: pulumi.Output<string>;
+    /**
      * Operating system version of the image.
      */
     public /*out*/ readonly systemVersion!: pulumi.Output<string>;
@@ -177,6 +189,10 @@ export class VmClusterRemoveVirtualMachine extends pulumi.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
      */
     public /*out*/ readonly vmClusterNetworkId!: pulumi.Output<string>;
+    /**
+     * The vmcluster type for the VM cluster/Cloud VM cluster.
+     */
+    public /*out*/ readonly vmClusterType!: pulumi.Output<string>;
 
     /**
      * Create a VmClusterRemoveVirtualMachine resource with the given unique name, arguments, and options.
@@ -194,6 +210,7 @@ export class VmClusterRemoveVirtualMachine extends pulumi.CustomResource {
             resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
             resourceInputs["cloudAutomationUpdateDetails"] = state ? state.cloudAutomationUpdateDetails : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
+            resourceInputs["computeModel"] = state ? state.computeModel : undefined;
             resourceInputs["cpusEnabled"] = state ? state.cpusEnabled : undefined;
             resourceInputs["dataCollectionOptions"] = state ? state.dataCollectionOptions : undefined;
             resourceInputs["dataStorageSizeInTbs"] = state ? state.dataStorageSizeInTbs : undefined;
@@ -202,6 +219,7 @@ export class VmClusterRemoveVirtualMachine extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["exadataInfrastructureId"] = state ? state.exadataInfrastructureId : undefined;
+            resourceInputs["exascaleDbStorageVaultId"] = state ? state.exascaleDbStorageVaultId : undefined;
             resourceInputs["fileSystemConfigurationDetails"] = state ? state.fileSystemConfigurationDetails : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["giVersion"] = state ? state.giVersion : undefined;
@@ -214,11 +232,13 @@ export class VmClusterRemoveVirtualMachine extends pulumi.CustomResource {
             resourceInputs["shape"] = state ? state.shape : undefined;
             resourceInputs["sshPublicKeys"] = state ? state.sshPublicKeys : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["storageManagementType"] = state ? state.storageManagementType : undefined;
             resourceInputs["systemVersion"] = state ? state.systemVersion : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeZone"] = state ? state.timeZone : undefined;
             resourceInputs["vmClusterId"] = state ? state.vmClusterId : undefined;
             resourceInputs["vmClusterNetworkId"] = state ? state.vmClusterNetworkId : undefined;
+            resourceInputs["vmClusterType"] = state ? state.vmClusterType : undefined;
         } else {
             const args = argsOrState as VmClusterRemoveVirtualMachineArgs | undefined;
             if ((!args || args.dbServers === undefined) && !opts.urn) {
@@ -232,6 +252,7 @@ export class VmClusterRemoveVirtualMachine extends pulumi.CustomResource {
             resourceInputs["availabilityDomain"] = undefined /*out*/;
             resourceInputs["cloudAutomationUpdateDetails"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
+            resourceInputs["computeModel"] = undefined /*out*/;
             resourceInputs["cpusEnabled"] = undefined /*out*/;
             resourceInputs["dataCollectionOptions"] = undefined /*out*/;
             resourceInputs["dataStorageSizeInTbs"] = undefined /*out*/;
@@ -239,6 +260,7 @@ export class VmClusterRemoveVirtualMachine extends pulumi.CustomResource {
             resourceInputs["definedTags"] = undefined /*out*/;
             resourceInputs["displayName"] = undefined /*out*/;
             resourceInputs["exadataInfrastructureId"] = undefined /*out*/;
+            resourceInputs["exascaleDbStorageVaultId"] = undefined /*out*/;
             resourceInputs["fileSystemConfigurationDetails"] = undefined /*out*/;
             resourceInputs["freeformTags"] = undefined /*out*/;
             resourceInputs["giVersion"] = undefined /*out*/;
@@ -251,10 +273,12 @@ export class VmClusterRemoveVirtualMachine extends pulumi.CustomResource {
             resourceInputs["shape"] = undefined /*out*/;
             resourceInputs["sshPublicKeys"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["storageManagementType"] = undefined /*out*/;
             resourceInputs["systemVersion"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeZone"] = undefined /*out*/;
             resourceInputs["vmClusterNetworkId"] = undefined /*out*/;
+            resourceInputs["vmClusterType"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(VmClusterRemoveVirtualMachine.__pulumiType, name, resourceInputs, opts);
@@ -277,6 +301,10 @@ export interface VmClusterRemoveVirtualMachineState {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId?: pulumi.Input<string>;
+    /**
+     * The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     */
+    computeModel?: pulumi.Input<string>;
     /**
      * The number of enabled CPU cores.
      */
@@ -309,6 +337,10 @@ export interface VmClusterRemoveVirtualMachineState {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
     exadataInfrastructureId?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+     */
+    exascaleDbStorageVaultId?: pulumi.Input<string>;
     /**
      * Details of the file system configuration of the VM cluster.
      */
@@ -358,6 +390,10 @@ export interface VmClusterRemoveVirtualMachineState {
      */
     state?: pulumi.Input<string>;
     /**
+     * Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
+     */
+    storageManagementType?: pulumi.Input<string>;
+    /**
      * Operating system version of the image.
      */
     systemVersion?: pulumi.Input<string>;
@@ -381,6 +417,10 @@ export interface VmClusterRemoveVirtualMachineState {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
      */
     vmClusterNetworkId?: pulumi.Input<string>;
+    /**
+     * The vmcluster type for the VM cluster/Cloud VM cluster.
+     */
+    vmClusterType?: pulumi.Input<string>;
 }
 
 /**

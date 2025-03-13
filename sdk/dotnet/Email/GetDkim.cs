@@ -157,6 +157,14 @@ namespace Pulumi.Oci.Email
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// Indicates whether the DKIM was imported.
+        /// </summary>
+        public readonly bool IsImported;
+        /// <summary>
+        /// Length of the RSA key used in the DKIM.
+        /// </summary>
+        public readonly int KeyLength;
+        /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource.
         /// </summary>
         public readonly string LifecycleDetails;
@@ -164,6 +172,7 @@ namespace Pulumi.Oci.Email
         /// The DKIM selector. If the same domain is managed in more than one region, each region must use different selectors.
         /// </summary>
         public readonly string Name;
+        public readonly string PrivateKey;
         /// <summary>
         /// The current state of the DKIM.
         /// </summary>
@@ -205,9 +214,15 @@ namespace Pulumi.Oci.Email
 
             string id,
 
+            bool isImported,
+
+            int keyLength,
+
             string lifecycleDetails,
 
             string name,
+
+            string privateKey,
 
             string state,
 
@@ -228,8 +243,11 @@ namespace Pulumi.Oci.Email
             EmailDomainId = emailDomainId;
             FreeformTags = freeformTags;
             Id = id;
+            IsImported = isImported;
+            KeyLength = keyLength;
             LifecycleDetails = lifecycleDetails;
             Name = name;
+            PrivateKey = privateKey;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;

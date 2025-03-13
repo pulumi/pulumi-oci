@@ -62,6 +62,11 @@ import * as utilities from "../utilities";
  *     managementPolicy: {
  *         backupPolicy: {
  *             backupStart: dbSystemManagementPolicyBackupPolicyBackupStart,
+ *             copyPolicy: {
+ *                 compartmentId: compartmentId,
+ *                 regions: dbSystemManagementPolicyBackupPolicyCopyPolicyRegions,
+ *                 retentionPeriod: dbSystemManagementPolicyBackupPolicyCopyPolicyRetentionPeriod,
+ *             },
  *             daysOfTheMonths: dbSystemManagementPolicyBackupPolicyDaysOfTheMonth,
  *             daysOfTheWeeks: dbSystemManagementPolicyBackupPolicyDaysOfTheWeek,
  *             kind: dbSystemManagementPolicyBackupPolicyKind,

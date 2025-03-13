@@ -31,6 +31,8 @@ __all__ = [
     'MysqlBackupDbSystemSnapshotArgsDict',
     'MysqlBackupDbSystemSnapshotBackupPolicyArgs',
     'MysqlBackupDbSystemSnapshotBackupPolicyArgsDict',
+    'MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs',
+    'MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgsDict',
     'MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs',
     'MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgsDict',
     'MysqlBackupDbSystemSnapshotDataStorageArgs',
@@ -55,6 +57,8 @@ __all__ = [
     'MysqlConfigurationVariablesArgsDict',
     'MysqlDbSystemBackupPolicyArgs',
     'MysqlDbSystemBackupPolicyArgsDict',
+    'MysqlDbSystemBackupPolicyCopyPolicyArgs',
+    'MysqlDbSystemBackupPolicyCopyPolicyArgsDict',
     'MysqlDbSystemBackupPolicyPitrPolicyArgs',
     'MysqlDbSystemBackupPolicyPitrPolicyArgsDict',
     'MysqlDbSystemChannelArgs',
@@ -1334,6 +1338,10 @@ class MysqlBackupDbSystemSnapshotArgs:
 
 if not MYPY:
     class MysqlBackupDbSystemSnapshotBackupPolicyArgsDict(TypedDict):
+        copy_policies: NotRequired[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgsDict']]]]
+        """
+        List of policies of a DB system to schedule cross-region DB system backup copy.
+        """
         defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -1364,6 +1372,7 @@ elif False:
 @pulumi.input_type
 class MysqlBackupDbSystemSnapshotBackupPolicyArgs:
     def __init__(__self__, *,
+                 copy_policies: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs']]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
@@ -1371,6 +1380,7 @@ class MysqlBackupDbSystemSnapshotBackupPolicyArgs:
                  retention_in_days: Optional[pulumi.Input[int]] = None,
                  window_start_time: Optional[pulumi.Input[str]] = None):
         """
+        :param pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs']]] copy_policies: List of policies of a DB system to schedule cross-region DB system backup copy.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_enabled: Specifies if the DB System read endpoint is enabled or not.
@@ -1378,6 +1388,8 @@ class MysqlBackupDbSystemSnapshotBackupPolicyArgs:
         :param pulumi.Input[int] retention_in_days: (Updatable) Number of days to retain this backup.
         :param pulumi.Input[str] window_start_time: The start time of the maintenance window.
         """
+        if copy_policies is not None:
+            pulumi.set(__self__, "copy_policies", copy_policies)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
@@ -1390,6 +1402,18 @@ class MysqlBackupDbSystemSnapshotBackupPolicyArgs:
             pulumi.set(__self__, "retention_in_days", retention_in_days)
         if window_start_time is not None:
             pulumi.set(__self__, "window_start_time", window_start_time)
+
+    @property
+    @pulumi.getter(name="copyPolicies")
+    def copy_policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs']]]]:
+        """
+        List of policies of a DB system to schedule cross-region DB system backup copy.
+        """
+        return pulumi.get(self, "copy_policies")
+
+    @copy_policies.setter
+    def copy_policies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs']]]]):
+        pulumi.set(self, "copy_policies", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -1462,6 +1486,58 @@ class MysqlBackupDbSystemSnapshotBackupPolicyArgs:
     @window_start_time.setter
     def window_start_time(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "window_start_time", value)
+
+
+if not MYPY:
+    class MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgsDict(TypedDict):
+        backup_copy_retention_in_days: NotRequired[pulumi.Input[int]]
+        """
+        Number of days to retain the copied DB system backup.
+        """
+        copy_to_region: NotRequired[pulumi.Input[str]]
+        """
+        The destination region name to which the DB system backup will be copied.
+        """
+elif False:
+    MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs:
+    def __init__(__self__, *,
+                 backup_copy_retention_in_days: Optional[pulumi.Input[int]] = None,
+                 copy_to_region: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[int] backup_copy_retention_in_days: Number of days to retain the copied DB system backup.
+        :param pulumi.Input[str] copy_to_region: The destination region name to which the DB system backup will be copied.
+        """
+        if backup_copy_retention_in_days is not None:
+            pulumi.set(__self__, "backup_copy_retention_in_days", backup_copy_retention_in_days)
+        if copy_to_region is not None:
+            pulumi.set(__self__, "copy_to_region", copy_to_region)
+
+    @property
+    @pulumi.getter(name="backupCopyRetentionInDays")
+    def backup_copy_retention_in_days(self) -> Optional[pulumi.Input[int]]:
+        """
+        Number of days to retain the copied DB system backup.
+        """
+        return pulumi.get(self, "backup_copy_retention_in_days")
+
+    @backup_copy_retention_in_days.setter
+    def backup_copy_retention_in_days(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "backup_copy_retention_in_days", value)
+
+    @property
+    @pulumi.getter(name="copyToRegion")
+    def copy_to_region(self) -> Optional[pulumi.Input[str]]:
+        """
+        The destination region name to which the DB system backup will be copied.
+        """
+        return pulumi.get(self, "copy_to_region")
+
+    @copy_to_region.setter
+    def copy_to_region(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "copy_to_region", value)
 
 
 if not MYPY:
@@ -2241,6 +2317,18 @@ class MysqlConfigurationInitVariablesArgs:
 
 if not MYPY:
     class MysqlConfigurationVariablesArgsDict(TypedDict):
+        auto_increment_increment: NotRequired[pulumi.Input[int]]
+        """
+        auto_increment_increment and auto_increment_offset are intended for use with circular (source-to-source) replication, and can be used to control the operation of AUTO_INCREMENT columns. Both variables have global and session values, and each can assume an integer value between 1 and 65,535 inclusive.
+
+        autoIncrementIncrement corresponds to the MySQL Replication Source Options variable [auto_increment_increment] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-source.html#sysvar_auto_increment_increment).
+        """
+        auto_increment_offset: NotRequired[pulumi.Input[int]]
+        """
+        This variable has a default value of 1. If it is left with its default value, and Group Replication is started on the server in multi-primary mode, it is changed to the server ID.
+
+        autoIncrementOffset corresponds to the MySQL Replication Source Options variable [auto_increment_offset] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-source.html#sysvar_auto_increment_offset).
+        """
         autocommit: NotRequired[pulumi.Input[bool]]
         """
         ("autocommit")
@@ -2255,6 +2343,18 @@ if not MYPY:
         """
         Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlog_expire_logs_seconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
         """
+        binlog_group_commit_sync_delay: NotRequired[pulumi.Input[int]]
+        """
+        Controls how many microseconds the binary log commit waits before synchronizing the binary log file to disk. There is no delay by default. Setting this variable to a microsecond delay enables more transactions to be synchronized together to disk at once, reducing the overall time to commit a group of transactions because the larger groups required fewer time units per group.
+
+        binlogGroupCommitSyncDelay corresponds to the MySQL Replication system variable [binlog_group_commit_sync_delay](https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_binlog_group_commit_sync_delay)
+        """
+        binlog_group_commit_sync_no_delay_count: NotRequired[pulumi.Input[int]]
+        """
+        The maximum number of transactions to wait for before aborting the current delay as specified by binlog_group_commit_sync_delay. If binlog_group_commit_sync_delay is set to 0, then this option has no effect.
+
+        binlogGroupCommitSyncNoDelayCount corresponds to the MySQL Replication system variable [binlog_group_commit_sync_no_delay_count](https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_binlog_group_commit_sync_no_delay_count)
+        """
         binlog_row_metadata: NotRequired[pulumi.Input[str]]
         """
         Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlog_row_metadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
@@ -2266,6 +2366,24 @@ if not MYPY:
         binlog_transaction_compression: NotRequired[pulumi.Input[bool]]
         """
         Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlog_transaction_compression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
+        """
+        block_encryption_mode: NotRequired[pulumi.Input[str]]
+        """
+        This variable controls the block encryption mode for block-based algorithms such as AES. It affects encryption for AES_ENCRYPT() and AES_DECRYPT(). block_encryption_mode takes a value in aes-keylen-mode format, where keylen is the key length in bits and mode is the encryption mode. The value is not case-sensitive. Permitted keylen values are 128, 192, and 256. Permitted mode values are ECB, CBC, CFB1, CFB8, CFB128, and OFB.
+
+        block_encryption_mode corresponds to the MySQL Server Administration system variable [block_encryption_mode](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_block_encryption_mode)
+        """
+        character_set_server: NotRequired[pulumi.Input[str]]
+        """
+        The server's default character set. If you set this variable, you should also set collation_server to specify the collation for the character set.
+
+        characterSetServer corresponds to the MySQL server variable [character_set_server](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_character_set_server).
+        """
+        collation_server: NotRequired[pulumi.Input[str]]
+        """
+        The server's default collation.
+
+        collationServer corresponds to the MySQL server variable [collation_server](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_collation_server).
         """
         completion_type: NotRequired[pulumi.Input[str]]
         """
@@ -2297,7 +2415,23 @@ if not MYPY:
         """
         default_authentication_plugin: NotRequired[pulumi.Input[str]]
         """
-        ("default_authentication_plugin")
+        The default authentication plugin. This must be a plugin that uses internal credentials storage, so these values are permitted: mysql_native_password, sha256_password, caching_sha2_password.
+
+        As of MySQL 8.0.27, which introduces multifactor authentication, default_authentication_plugin is still used, but in conjunction with and at a lower precedence than the authentication_policy system variable. For details, see The Default Authentication Plugin. Because of this diminished role, default_authentication_plugin is deprecated as of MySQL 8.0.27 and subject to removal in a future MySQL version.
+
+        defaultAuthenticationPlugin corresponds to the MySQL system variable [default_authentication_plugin](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_default_authentication_plugin).
+        """
+        explain_format: NotRequired[pulumi.Input[str]]
+        """
+        This variable determines the default output format used by EXPLAIN in the absence of a FORMAT option when displaying a query execution plan.
+
+        explainFormat corresponds to the MySQL system variable [explain_format](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_explain_format).
+        """
+        explicit_defaults_for_timestamp: NotRequired[pulumi.Input[bool]]
+        """
+        This system variable determines whether the server enables certain nonstandard behaviors for default values and NULL-value handling in TIMESTAMP columns. By default, explicit_defaults_for_timestamp is enabled, which disables the nonstandard behaviors. Disabling explicit_defaults_for_timestamp results in a warning.
+
+        explicit_defaults_for_timestamp corresponds to the MySQL Server Administration system variable [explicit_defaults_for_timestamp](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_explicit_defaults_for_timestamp)
         """
         foreign_key_checks: NotRequired[pulumi.Input[bool]]
         """
@@ -2319,6 +2453,12 @@ if not MYPY:
 
         globalConnectionMemoryTracking corresponds to the MySQL system variable [global_connection_memory_tracking](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_tracking).
         """
+        group_concat_max_len: NotRequired[pulumi.Input[str]]
+        """
+        Specifies the maximum permitted result length in bytes for the GROUP_CONCAT() function.
+
+        This is the MySQL variable "group_concat_max_len". For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_group_concat_max_len)
+        """
         group_replication_consistency: NotRequired[pulumi.Input[str]]
         """
         * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
@@ -2330,6 +2470,18 @@ if not MYPY:
         information_schema_stats_expiry: NotRequired[pulumi.Input[int]]
         """
         ("information_schema_stats_expiry")
+        """
+        innodb_adaptive_hash_index: NotRequired[pulumi.Input[bool]]
+        """
+        Whether the InnoDB adaptive hash index is enabled or disabled. It may be desirable, depending on your workload, to dynamically enable or disable adaptive hash indexing to improve query performance. Because the adaptive hash index may not be useful for all workloads, conduct benchmarks with it both enabled and disabled, using realistic workloads.
+
+        innodbAdaptiveHashIndex corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_adaptive_hash_index] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_adaptive_hash_index).
+        """
+        innodb_autoinc_lock_mode: NotRequired[pulumi.Input[int]]
+        """
+        The lock mode to use for generating auto-increment values. Permissible values are 0, 1, or 2, for traditional, consecutive, or interleaved, respectively.
+
+        innodbAutoincLockMode corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_autoinc_lock_mode] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_autoinc_lock_mode).
         """
         innodb_buffer_pool_dump_pct: NotRequired[pulumi.Input[int]]
         """
@@ -2352,6 +2504,12 @@ if not MYPY:
         innodbBufferPoolSize corresponds to the MySQL server system variable [innodb_buffer_pool_size](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_buffer_pool_size).
 
         The default and maximum values depend on the amount of RAM provisioned by the shape. See [Default User Variables](https://www.terraform.io/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
+        """
+        innodb_change_buffering: NotRequired[pulumi.Input[str]]
+        """
+        Whether InnoDB performs change buffering, an optimization that delays write operations to secondary indexes so that the I/O operations can be performed sequentially. Permitted values are described in the following table. Values may also be specified numerically.
+
+        innodbChangeBuffering corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_change_buffering] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_change_buffering).
         """
         innodb_ddl_buffer_size: NotRequired[pulumi.Input[str]]
         """
@@ -2415,6 +2573,38 @@ if not MYPY:
 
         innodbMaxPurgeLagDelay corresponds to the MySQL server system variable [innodb_max_purge_lag_delay](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag_delay).
         """
+        innodb_numa_interleave: NotRequired[pulumi.Input[bool]]
+        """
+        Enables the NUMA interleave memory policy for allocation of the InnoDB buffer pool. When innodb_numa_interleave is enabled, the NUMA memory policy is set to MPOL_INTERLEAVE for the mysqld process. After the InnoDB buffer pool is allocated, the NUMA memory policy is set back to MPOL_DEFAULT. For the innodb_numa_interleave option to be available, MySQL must be compiled on a NUMA-enabled Linux system.
+
+        innodbNumaInterleave corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_numa_interleave] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_numa_interleave).
+        """
+        innodb_online_alter_log_max_size: NotRequired[pulumi.Input[str]]
+        """
+        Specifies an upper limit in bytes on the size of the temporary log files used during online DDL operations for InnoDB tables. There is one such log file for each index being created or table being altered. This log file stores data inserted, updated, or deleted in the table during the DDL operation.
+
+        innodbOnlineAlterLogMaxSize corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_online_alter_log_max_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_online_alter_log_max_size).
+        """
+        innodb_redo_log_capacity: NotRequired[pulumi.Input[str]]
+        """
+        Defines the amount of disk space occupied by redo log files. innodb_redo_log_capacity supercedes the innodb_log_files_in_group and innodb_log_file_size variables, which are both ignored if innodb_redo_log_capacity is defined. If innodb_redo_log_capacity is not defined, and if neither innodb_log_file_size or innodb_log_files_in_group are defined, then the default innodb_redo_log_capacity value is used.
+
+        innodbRedoLogCapacity corresponds to the InnoDB Startup Options and System Variables [innodb_redo_log_capacity](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_redo_log_capacity)
+        """
+        innodb_rollback_on_timeout: NotRequired[pulumi.Input[bool]]
+        """
+        InnoDB rolls back only the last statement on a transaction timeout by default. If --innodb-rollback-on-timeout is specified, a transaction timeout causes InnoDB to abort and roll back the entire transaction.
+
+        innodbRollbackOnTimeout corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_rollback_on_timeout] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_rollback_on_timeout).
+        """
+        innodb_sort_buffer_size: NotRequired[pulumi.Input[int]]
+        """
+        This variable defines:
+        * The sort buffer size for online DDL operations that create or rebuild secondary indexes. However, as of MySQL 8.0.27, this responsibility is subsumed by the innodb_ddl_buffer_size variable.
+        * The amount by which the temporary log file is extended when recording concurrent DML during an online DDL operation, and the size of the temporary log file read buffer and write buffer.
+
+        innodbSortBufferSize corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_sort_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_sort_buffer_size).
+        """
         innodb_stats_persistent_sample_pages: NotRequired[pulumi.Input[str]]
         """
         The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
@@ -2433,15 +2623,41 @@ if not MYPY:
 
         innodb_stats_persistent is ON by default and cannot be changed. It is possible to override it using the STATS_PERSISTENT clause of the [CREATE TABLE](https://dev.mysql.com/doc/refman/8.0/en/create-table.html) and [ALTER TABLE](https://dev.mysql.com/doc/refman/8.0/en/alter-table.html) statements.
         """
+        innodb_strict_mode: NotRequired[pulumi.Input[bool]]
+        """
+        When you enable innodbStrictMode, the InnoDB storage engine returns errors instead of warnings for invalid or incompatible table options.
+
+        innodbStrictMode corresponds to the MySQL InnoDB system variable [innodb_strict_mode](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_strict_mode)
+        """
+        innodb_undo_log_truncate: NotRequired[pulumi.Input[bool]]
+        """
+        When enabled, undo tablespaces that exceed the threshold value defined by innodb_max_undo_log_size are marked for truncation. Only undo tablespaces can be truncated. Truncating undo logs that reside in the system tablespace is not supported. For truncation to occur, there must be at least two undo tablespaces.
+
+        innodbUndoLogTruncate corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_undo_log_truncate] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_undo_log_truncate).
+        """
         interactive_timeout: NotRequired[pulumi.Input[int]]
         """
         The number of seconds the server waits for activity on an interactive connection before closing it.
 
         interactiveTimeout corresponds to the MySQL system variable. [interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_interactive_timeout)
         """
+        join_buffer_size: NotRequired[pulumi.Input[str]]
+        """
+        The minimum size of the buffer that is used for plain index scans, range index scans, and joins that do not use indexes and thus perform full table scans. In MySQL 8.0.18 and later, this variable also controls the amount of memory used for hash joins. Normally, the best way to get fast joins is to add indexes. Increase the value of join_buffer_size to get a faster full join when adding indexes is not possible. One join buffer is allocated for each full join between two tables. For a complex join between several tables for which indexes are not used, multiple join buffers might be necessary.
+
+        joinBufferSize corresponds to the MySQL Server System variable [join_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_join_buffer_size).
+        """
         local_infile: NotRequired[pulumi.Input[bool]]
         """
-        ("local_infile")
+        This variable controls server-side LOCAL capability for LOAD DATA statements. Depending on the local_infile setting, the server refuses or permits local data loading by clients that have LOCAL enabled on the client side. 
+
+        local_infile corresponds to the MySQL Server system variable [local_infile](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_local_infile)
+        """
+        long_query_time: NotRequired[pulumi.Input[int]]
+        """
+        If a query takes longer than this many seconds, the server increments the Slow_queries status variable. If the slow query log is enabled, the query is logged to the slow query log file. This value is measured in real time, not CPU time, so a query that is under the threshold on a lightly loaded system might be above the threshold on a heavily loaded one.
+
+        longQueryTime corresponds to the MySQL Server System variable [long_query_time] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_long_query_time).
         """
         mandatory_roles: NotRequired[pulumi.Input[str]]
         """
@@ -2480,6 +2696,18 @@ if not MYPY:
         max_prepared_stmt_count: NotRequired[pulumi.Input[int]]
         """
         ("max_prepared_stmt_count")
+        """
+        max_seeks_for_key: NotRequired[pulumi.Input[str]]
+        """
+        Limit the assumed maximum number of seeks when looking up rows based on a key. The MySQL optimizer assumes that no more than this number of key seeks are required when searching for matching rows in a table by scanning an index, regardless of the actual cardinality of the index (see Section 15.7.7.22, “SHOW INDEX Statement”). By setting this to a low value (say, 100), you can force MySQL to prefer indexes instead of table scans.
+
+        maxSeeksForKey corresponds to the MySQL Server System variable [max_seeks_for_key] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_seeks_for_key).
+        """
+        max_user_connections: NotRequired[pulumi.Input[str]]
+        """
+        The maximum number of simultaneous connections permitted to any given MySQL user account. A value of 0 (the default) means “no limit.” This variable has a global value that can be set at server startup or runtime. It also has a read-only session value that indicates the effective simultaneous-connection limit that applies to the account associated with the current session.
+
+        maxUserConnections corresponds to the MySQL Server System variable [max_user_connections] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_user_connections).
         """
         mysql_firewall_mode: NotRequired[pulumi.Input[bool]]
         """
@@ -2577,6 +2805,14 @@ if not MYPY:
 
         netWriteTimeout corresponds to the MySQL system variable [net_write_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_write_timeout)
         """
+        optimizer_switch: NotRequired[pulumi.Input[str]]
+        """
+        The optimizer_switch system variable enables control over optimizer behavior. The value of this variable is a set of flags, each of which has a value of on or off to indicate whether the corresponding optimizer behavior is enabled or disabled. This variable has global and session values and can be changed at runtime. The global default can be set at server startup.
+
+        Setting hypergraph_optimizer=on for cloud builds below 9.0.0 will fail.
+
+        optimizerSwitch corresponds to the MySQL Server System variable [optimizer_switch] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_optimizer_switch).
+        """
         parser_max_mem_size: NotRequired[pulumi.Input[str]]
         """
         ("parser_max_mem_size")
@@ -2589,15 +2825,65 @@ if not MYPY:
         """
         ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
         """
+        range_optimizer_max_mem_size: NotRequired[pulumi.Input[str]]
+        """
+        The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans. 
+
+        rangeOptimizerMaxMemSize corresponds to the MySQL Server System variable [range_optimizer_max_mem_size] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_range_optimizer_max_mem_size).
+        """
         regexp_time_limit: NotRequired[pulumi.Input[int]]
         """
         regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+        """
+        relay_log_space_limit: NotRequired[pulumi.Input[str]]
+        """
+        The maximum amount of space to use for all relay logs.
+
+        relayLogSpaceLimit corresponds to the MySQL Replica Server Options variable [relay_log_space_limit] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_relay_log_space_limit).
+        """
+        replica_net_timeout: NotRequired[pulumi.Input[int]]
+        """
+        Specifies the number of seconds to wait for more data or a heartbeat signal from the source before the replica considers the connection broken, aborts the read, and tries to reconnect. Setting this variable has no immediate effect. The state of the variable applies on all subsequent START REPLICA commands.
+
+        replicaNetTimeout corresponds to the MySQL Replica server system variable [replica_net_timeout](https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_net_timeout)
+        """
+        replica_parallel_workers: NotRequired[pulumi.Input[int]]
+        """
+        Beginning with MySQL 8.0.26, slave_parallel_workers is deprecated, and you should use replica_parallel_workers instead. (Prior to MySQL 8.0.26, you must use slave_parallel_workers to set the number of applier threads.)
+
+        replicaParallelWorkers corresponds to the MySQL Replica Server Options variable [replica_parallel_workers] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_parallel_workers).
+        """
+        replica_type_conversions: NotRequired[pulumi.Input[str]]
+        """
+        From MySQL 8.0.26, use replica_type_conversions in place of slave_type_conversions, which is deprecated from that release. In releases before MySQL 8.0.26, use slave_type_conversions.
+
+        replica_type_conversions controls the type conversion mode in effect on the replica when using row-based replication. Its value is a comma-delimited set of zero or more elements from the list: ALL_LOSSY, ALL_NON_LOSSY, ALL_SIGNED, ALL_UNSIGNED. Set this variable to an empty string to disallow type conversions between the source and the replica. Setting this variable takes effect for all replication channels immediately, including running channels.
+
+        replica_type_conversions corresponds to the MySQL Replica Server Options variable [replica_type_conversions] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_type_conversions).
+        """
+        require_secure_transport: NotRequired[pulumi.Input[bool]]
+        """
+        Whether client connections to the server are required to use some form of secure transport. When this variable is enabled, the server permits only TCP/IP connections encrypted using TLS/SSL, or connections that use a socket file or shared memory. The server rejects nonsecure connection attempts, which fail with an ER_SECURE_TRANSPORT_REQUIRED error.
+
+        require_secure_transport corresponds to the MySQL Server Administration system variable [require_secure_transport](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_require_secure_transport)
+        """
+        skip_name_resolve: NotRequired[pulumi.Input[bool]]
+        """
+        Whether to resolve host names when checking client connections. If this variable is OFF, mysqld resolves host names when checking client connections. If it is ON, mysqld uses only IP numbers; in this case, all Host column values in the grant tables must be IP addresses. See Section 7.1.12.3, “DNS Lookups and the Host Cache”.
+
+        skipNameResolve corresponds to the MySQL Server System variable [skip_name_resolve] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_skip_name_resolve).
         """
         sort_buffer_size: NotRequired[pulumi.Input[str]]
         """
         Each session that must perform a sort allocates a buffer of this size.
 
         sortBufferSize corresponds to the MySQL system variable [sort_buffer_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_sort_buffer_size)
+        """
+        sql_generate_invisible_primary_key: NotRequired[pulumi.Input[bool]]
+        """
+        Whether GIPK mode is in effect, in which case a MySQL replication source server adds a generated invisible primary key to any InnoDB table that is created without one.
+
+        sqlGenerateInvisiblePrimaryKey corresponds to the MySQL system variable [sql_generate_invisible_primary_key] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_sql_generate_invisible_primary_key).
         """
         sql_mode: NotRequired[pulumi.Input[str]]
         """
@@ -2611,6 +2897,24 @@ if not MYPY:
         """
         ("sql_warnings")
         """
+        table_definition_cache: NotRequired[pulumi.Input[int]]
+        """
+        The number of table definitions that can be stored in the table definition cache. If you use a large number of tables, you can create a large table definition cache to speed up opening of tables. The table definition cache takes less space and does not use file descriptors, unlike the normal table cache.
+
+        table_definition_cache corresponds to the MySQL Server Administration system variable [table_definition_cache](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_table_definition_cache)
+        """
+        table_open_cache: NotRequired[pulumi.Input[int]]
+        """
+        The number of open tables for all threads. Increasing this value increases the number of file descriptors that mysqld requires.
+
+        table_open_cache corresponds to the MySQL Server Administration system variable [table_open_cache](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_table_open_cache)
+        """
+        temptable_max_ram: NotRequired[pulumi.Input[str]]
+        """
+        Defines the maximum amount of memory that can be occupied by the TempTable storage engine before it starts storing data on disk. The default value is 1073741824 bytes (1GiB). For more information, see Section 10.4.4, “Internal Temporary Table Use in MySQL”.
+
+        temptableMaxRam corresponds to the MySQL system variable [temptable_max_ram] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_temptable_max_ram).
+        """
         thread_pool_dedicated_listeners: NotRequired[pulumi.Input[bool]]
         """
         Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
@@ -2618,6 +2922,24 @@ if not MYPY:
         thread_pool_max_transactions_limit: NotRequired[pulumi.Input[int]]
         """
         Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
+        """
+        thread_pool_query_threads_per_group: NotRequired[pulumi.Input[int]]
+        """
+        The maximum number of query threads permitted in a thread group. The maximum value is 4096, but if thread_pool_max_transactions_limit is set, thread_pool_query_threads_per_group must not exceed that value. The default value of 1 means there is one active query thread in each thread group, which works well for many loads. When you are using the high concurrency thread pool algorithm (thread_pool_algorithm = 1), consider increasing the value if you experience slower response times due to long-running transactions. 
+
+        threadPoolQueryThreadsPerGroup corresponds to the MySQL Server system variable [thread_pool_query_threads_per_group](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_query_threads_per_group)
+        """
+        thread_pool_size: NotRequired[pulumi.Input[int]]
+        """
+        The number of thread groups in the thread pool. This is the most important parameter controlling thread pool performance. It affects how many statements can execute simultaneously. If a value outside the range of permissible values is specified, the thread pool plugin does not load and the server writes a message to the error log.
+
+        threadPoolSize corresponds to the MySQL Server System variable [thread_pool_size] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_size).
+        """
+        thread_pool_transaction_delay: NotRequired[pulumi.Input[int]]
+        """
+        The delay period before executing a new transaction, in milliseconds. The maximum value is 300000 (5 minutes). A transaction delay can be used in cases where parallel transactions affect the performance of other operations due to resource contention. For example, if parallel transactions affect index creation or an online buffer pool resizing operation, you can configure a transaction delay to reduce resource contention while those operations are running. 
+
+        threadPoolTransactionDelay corresponds to the MySQL Server system variable [thread_pool_transaction_delay](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_transaction_delay)
         """
         time_zone: NotRequired[pulumi.Input[str]]
         """
@@ -2655,27 +2977,40 @@ elif False:
 @pulumi.input_type
 class MysqlConfigurationVariablesArgs:
     def __init__(__self__, *,
+                 auto_increment_increment: Optional[pulumi.Input[int]] = None,
+                 auto_increment_offset: Optional[pulumi.Input[int]] = None,
                  autocommit: Optional[pulumi.Input[bool]] = None,
                  big_tables: Optional[pulumi.Input[bool]] = None,
                  binlog_expire_logs_seconds: Optional[pulumi.Input[int]] = None,
+                 binlog_group_commit_sync_delay: Optional[pulumi.Input[int]] = None,
+                 binlog_group_commit_sync_no_delay_count: Optional[pulumi.Input[int]] = None,
                  binlog_row_metadata: Optional[pulumi.Input[str]] = None,
                  binlog_row_value_options: Optional[pulumi.Input[str]] = None,
                  binlog_transaction_compression: Optional[pulumi.Input[bool]] = None,
+                 block_encryption_mode: Optional[pulumi.Input[str]] = None,
+                 character_set_server: Optional[pulumi.Input[str]] = None,
+                 collation_server: Optional[pulumi.Input[str]] = None,
                  completion_type: Optional[pulumi.Input[str]] = None,
                  connect_timeout: Optional[pulumi.Input[int]] = None,
                  connection_memory_chunk_size: Optional[pulumi.Input[int]] = None,
                  connection_memory_limit: Optional[pulumi.Input[str]] = None,
                  cte_max_recursion_depth: Optional[pulumi.Input[str]] = None,
                  default_authentication_plugin: Optional[pulumi.Input[str]] = None,
+                 explain_format: Optional[pulumi.Input[str]] = None,
+                 explicit_defaults_for_timestamp: Optional[pulumi.Input[bool]] = None,
                  foreign_key_checks: Optional[pulumi.Input[bool]] = None,
                  generated_random_password_length: Optional[pulumi.Input[int]] = None,
                  global_connection_memory_limit: Optional[pulumi.Input[str]] = None,
                  global_connection_memory_tracking: Optional[pulumi.Input[bool]] = None,
+                 group_concat_max_len: Optional[pulumi.Input[str]] = None,
                  group_replication_consistency: Optional[pulumi.Input[str]] = None,
                  information_schema_stats_expiry: Optional[pulumi.Input[int]] = None,
+                 innodb_adaptive_hash_index: Optional[pulumi.Input[bool]] = None,
+                 innodb_autoinc_lock_mode: Optional[pulumi.Input[int]] = None,
                  innodb_buffer_pool_dump_pct: Optional[pulumi.Input[int]] = None,
                  innodb_buffer_pool_instances: Optional[pulumi.Input[int]] = None,
                  innodb_buffer_pool_size: Optional[pulumi.Input[str]] = None,
+                 innodb_change_buffering: Optional[pulumi.Input[str]] = None,
                  innodb_ddl_buffer_size: Optional[pulumi.Input[str]] = None,
                  innodb_ddl_threads: Optional[pulumi.Input[int]] = None,
                  innodb_ft_enable_stopword: Optional[pulumi.Input[bool]] = None,
@@ -2688,10 +3023,19 @@ class MysqlConfigurationVariablesArgs:
                  innodb_log_writer_threads: Optional[pulumi.Input[bool]] = None,
                  innodb_max_purge_lag: Optional[pulumi.Input[str]] = None,
                  innodb_max_purge_lag_delay: Optional[pulumi.Input[int]] = None,
+                 innodb_numa_interleave: Optional[pulumi.Input[bool]] = None,
+                 innodb_online_alter_log_max_size: Optional[pulumi.Input[str]] = None,
+                 innodb_redo_log_capacity: Optional[pulumi.Input[str]] = None,
+                 innodb_rollback_on_timeout: Optional[pulumi.Input[bool]] = None,
+                 innodb_sort_buffer_size: Optional[pulumi.Input[int]] = None,
                  innodb_stats_persistent_sample_pages: Optional[pulumi.Input[str]] = None,
                  innodb_stats_transient_sample_pages: Optional[pulumi.Input[str]] = None,
+                 innodb_strict_mode: Optional[pulumi.Input[bool]] = None,
+                 innodb_undo_log_truncate: Optional[pulumi.Input[bool]] = None,
                  interactive_timeout: Optional[pulumi.Input[int]] = None,
+                 join_buffer_size: Optional[pulumi.Input[str]] = None,
                  local_infile: Optional[pulumi.Input[bool]] = None,
+                 long_query_time: Optional[pulumi.Input[int]] = None,
                  mandatory_roles: Optional[pulumi.Input[str]] = None,
                  max_allowed_packet: Optional[pulumi.Input[int]] = None,
                  max_binlog_cache_size: Optional[pulumi.Input[str]] = None,
@@ -2700,6 +3044,8 @@ class MysqlConfigurationVariablesArgs:
                  max_execution_time: Optional[pulumi.Input[str]] = None,
                  max_heap_table_size: Optional[pulumi.Input[str]] = None,
                  max_prepared_stmt_count: Optional[pulumi.Input[int]] = None,
+                 max_seeks_for_key: Optional[pulumi.Input[str]] = None,
+                 max_user_connections: Optional[pulumi.Input[str]] = None,
                  mysql_firewall_mode: Optional[pulumi.Input[bool]] = None,
                  mysql_zstd_default_compression_level: Optional[pulumi.Input[int]] = None,
                  mysqlx_connect_timeout: Optional[pulumi.Input[int]] = None,
@@ -2720,29 +3066,65 @@ class MysqlConfigurationVariablesArgs:
                  mysqlx_zstd_max_client_compression_level: Optional[pulumi.Input[int]] = None,
                  net_read_timeout: Optional[pulumi.Input[int]] = None,
                  net_write_timeout: Optional[pulumi.Input[int]] = None,
+                 optimizer_switch: Optional[pulumi.Input[str]] = None,
                  parser_max_mem_size: Optional[pulumi.Input[str]] = None,
                  query_alloc_block_size: Optional[pulumi.Input[str]] = None,
                  query_prealloc_size: Optional[pulumi.Input[str]] = None,
+                 range_optimizer_max_mem_size: Optional[pulumi.Input[str]] = None,
                  regexp_time_limit: Optional[pulumi.Input[int]] = None,
+                 relay_log_space_limit: Optional[pulumi.Input[str]] = None,
+                 replica_net_timeout: Optional[pulumi.Input[int]] = None,
+                 replica_parallel_workers: Optional[pulumi.Input[int]] = None,
+                 replica_type_conversions: Optional[pulumi.Input[str]] = None,
+                 require_secure_transport: Optional[pulumi.Input[bool]] = None,
+                 skip_name_resolve: Optional[pulumi.Input[bool]] = None,
                  sort_buffer_size: Optional[pulumi.Input[str]] = None,
+                 sql_generate_invisible_primary_key: Optional[pulumi.Input[bool]] = None,
                  sql_mode: Optional[pulumi.Input[str]] = None,
                  sql_require_primary_key: Optional[pulumi.Input[bool]] = None,
                  sql_warnings: Optional[pulumi.Input[bool]] = None,
+                 table_definition_cache: Optional[pulumi.Input[int]] = None,
+                 table_open_cache: Optional[pulumi.Input[int]] = None,
+                 temptable_max_ram: Optional[pulumi.Input[str]] = None,
                  thread_pool_dedicated_listeners: Optional[pulumi.Input[bool]] = None,
                  thread_pool_max_transactions_limit: Optional[pulumi.Input[int]] = None,
+                 thread_pool_query_threads_per_group: Optional[pulumi.Input[int]] = None,
+                 thread_pool_size: Optional[pulumi.Input[int]] = None,
+                 thread_pool_transaction_delay: Optional[pulumi.Input[int]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None,
                  tmp_table_size: Optional[pulumi.Input[str]] = None,
                  transaction_isolation: Optional[pulumi.Input[str]] = None,
                  wait_timeout: Optional[pulumi.Input[int]] = None):
         """
+        :param pulumi.Input[int] auto_increment_increment: auto_increment_increment and auto_increment_offset are intended for use with circular (source-to-source) replication, and can be used to control the operation of AUTO_INCREMENT columns. Both variables have global and session values, and each can assume an integer value between 1 and 65,535 inclusive.
+               
+               autoIncrementIncrement corresponds to the MySQL Replication Source Options variable [auto_increment_increment] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-source.html#sysvar_auto_increment_increment).
+        :param pulumi.Input[int] auto_increment_offset: This variable has a default value of 1. If it is left with its default value, and Group Replication is started on the server in multi-primary mode, it is changed to the server ID.
+               
+               autoIncrementOffset corresponds to the MySQL Replication Source Options variable [auto_increment_offset] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-source.html#sysvar_auto_increment_offset).
         :param pulumi.Input[bool] autocommit: ("autocommit")
         :param pulumi.Input[bool] big_tables: If enabled, the server stores all temporary tables on disk rather than in memory.
                
                bigTables corresponds to the MySQL server variable [big_tables](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_big_tables).
         :param pulumi.Input[int] binlog_expire_logs_seconds: Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlog_expire_logs_seconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
+        :param pulumi.Input[int] binlog_group_commit_sync_delay: Controls how many microseconds the binary log commit waits before synchronizing the binary log file to disk. There is no delay by default. Setting this variable to a microsecond delay enables more transactions to be synchronized together to disk at once, reducing the overall time to commit a group of transactions because the larger groups required fewer time units per group.
+               
+               binlogGroupCommitSyncDelay corresponds to the MySQL Replication system variable [binlog_group_commit_sync_delay](https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_binlog_group_commit_sync_delay)
+        :param pulumi.Input[int] binlog_group_commit_sync_no_delay_count: The maximum number of transactions to wait for before aborting the current delay as specified by binlog_group_commit_sync_delay. If binlog_group_commit_sync_delay is set to 0, then this option has no effect.
+               
+               binlogGroupCommitSyncNoDelayCount corresponds to the MySQL Replication system variable [binlog_group_commit_sync_no_delay_count](https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_binlog_group_commit_sync_no_delay_count)
         :param pulumi.Input[str] binlog_row_metadata: Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlog_row_metadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
         :param pulumi.Input[str] binlog_row_value_options: When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document. binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlog_row_value_options](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
         :param pulumi.Input[bool] binlog_transaction_compression: Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlog_transaction_compression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
+        :param pulumi.Input[str] block_encryption_mode: This variable controls the block encryption mode for block-based algorithms such as AES. It affects encryption for AES_ENCRYPT() and AES_DECRYPT(). block_encryption_mode takes a value in aes-keylen-mode format, where keylen is the key length in bits and mode is the encryption mode. The value is not case-sensitive. Permitted keylen values are 128, 192, and 256. Permitted mode values are ECB, CBC, CFB1, CFB8, CFB128, and OFB.
+               
+               block_encryption_mode corresponds to the MySQL Server Administration system variable [block_encryption_mode](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_block_encryption_mode)
+        :param pulumi.Input[str] character_set_server: The server's default character set. If you set this variable, you should also set collation_server to specify the collation for the character set.
+               
+               characterSetServer corresponds to the MySQL server variable [character_set_server](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_character_set_server).
+        :param pulumi.Input[str] collation_server: The server's default collation.
+               
+               collationServer corresponds to the MySQL server variable [collation_server](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_collation_server).
         :param pulumi.Input[str] completion_type: ("completion_type")
         :param pulumi.Input[int] connect_timeout: The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
                
@@ -2756,7 +3138,17 @@ class MysqlConfigurationVariablesArgs:
                
                connectionMemoryLimit corresponds to the MySQL system variable [connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_limit).
         :param pulumi.Input[str] cte_max_recursion_depth: ("cte_max_recursion_depth")
-        :param pulumi.Input[str] default_authentication_plugin: ("default_authentication_plugin")
+        :param pulumi.Input[str] default_authentication_plugin: The default authentication plugin. This must be a plugin that uses internal credentials storage, so these values are permitted: mysql_native_password, sha256_password, caching_sha2_password.
+               
+               As of MySQL 8.0.27, which introduces multifactor authentication, default_authentication_plugin is still used, but in conjunction with and at a lower precedence than the authentication_policy system variable. For details, see The Default Authentication Plugin. Because of this diminished role, default_authentication_plugin is deprecated as of MySQL 8.0.27 and subject to removal in a future MySQL version.
+               
+               defaultAuthenticationPlugin corresponds to the MySQL system variable [default_authentication_plugin](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_default_authentication_plugin).
+        :param pulumi.Input[str] explain_format: This variable determines the default output format used by EXPLAIN in the absence of a FORMAT option when displaying a query execution plan.
+               
+               explainFormat corresponds to the MySQL system variable [explain_format](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_explain_format).
+        :param pulumi.Input[bool] explicit_defaults_for_timestamp: This system variable determines whether the server enables certain nonstandard behaviors for default values and NULL-value handling in TIMESTAMP columns. By default, explicit_defaults_for_timestamp is enabled, which disables the nonstandard behaviors. Disabling explicit_defaults_for_timestamp results in a warning.
+               
+               explicit_defaults_for_timestamp corresponds to the MySQL Server Administration system variable [explicit_defaults_for_timestamp](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_explicit_defaults_for_timestamp)
         :param pulumi.Input[bool] foreign_key_checks: ("foreign_key_checks")
         :param pulumi.Input[int] generated_random_password_length: ("generated_random_password_length") DEPRECATED -- variable should not be settable and will be ignored
         :param pulumi.Input[str] global_connection_memory_limit: Set the total amount of memory that can be used by all user connections.
@@ -2765,12 +3157,21 @@ class MysqlConfigurationVariablesArgs:
         :param pulumi.Input[bool] global_connection_memory_tracking: Determines whether the MySQL server calculates Global_connection_memory.
                
                globalConnectionMemoryTracking corresponds to the MySQL system variable [global_connection_memory_tracking](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_tracking).
+        :param pulumi.Input[str] group_concat_max_len: Specifies the maximum permitted result length in bytes for the GROUP_CONCAT() function.
+               
+               This is the MySQL variable "group_concat_max_len". For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_group_concat_max_len)
         :param pulumi.Input[str] group_replication_consistency: * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
                * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
                * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
                * AFTER: A RW transaction waits until its changes have been applied to all of the other members. This value has no effect on RO transactions. This mode ensures that when a transaction is committed on the local member, any subsequent transaction reads the written value or a more recent value on any group member. Use this mode with a group that is used for predominantly RO operations to ensure that applied RW transactions are applied everywhere once they commit. This could be used by your application to ensure that subsequent reads fetch the latest data which includes the latest writes. This reduces the overhead of synchronization on every RO transaction, by ensuring synchronization is used only on RW transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
                * BEFORE_AND_AFTER: A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
         :param pulumi.Input[int] information_schema_stats_expiry: ("information_schema_stats_expiry")
+        :param pulumi.Input[bool] innodb_adaptive_hash_index: Whether the InnoDB adaptive hash index is enabled or disabled. It may be desirable, depending on your workload, to dynamically enable or disable adaptive hash indexing to improve query performance. Because the adaptive hash index may not be useful for all workloads, conduct benchmarks with it both enabled and disabled, using realistic workloads.
+               
+               innodbAdaptiveHashIndex corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_adaptive_hash_index] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_adaptive_hash_index).
+        :param pulumi.Input[int] innodb_autoinc_lock_mode: The lock mode to use for generating auto-increment values. Permissible values are 0, 1, or 2, for traditional, consecutive, or interleaved, respectively.
+               
+               innodbAutoincLockMode corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_autoinc_lock_mode] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_autoinc_lock_mode).
         :param pulumi.Input[int] innodb_buffer_pool_dump_pct: Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
                
                innodbBufferPoolDumpPct corresponds to the MySQL InnoDB system variable [innodb_buffer_pool_dump_pct](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_buffer_pool_dump_pct).
@@ -2784,6 +3185,9 @@ class MysqlConfigurationVariablesArgs:
                innodbBufferPoolSize corresponds to the MySQL server system variable [innodb_buffer_pool_size](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_buffer_pool_size).
                
                The default and maximum values depend on the amount of RAM provisioned by the shape. See [Default User Variables](https://www.terraform.io/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
+        :param pulumi.Input[str] innodb_change_buffering: Whether InnoDB performs change buffering, an optimization that delays write operations to secondary indexes so that the I/O operations can be performed sequentially. Permitted values are described in the following table. Values may also be specified numerically.
+               
+               innodbChangeBuffering corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_change_buffering] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_change_buffering).
         :param pulumi.Input[str] innodb_ddl_buffer_size: innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
         :param pulumi.Input[int] innodb_ddl_threads: innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
         :param pulumi.Input[bool] innodb_ft_enable_stopword: ("innodb_ft_enable_stopword")
@@ -2810,6 +3214,23 @@ class MysqlConfigurationVariablesArgs:
                The specified innodb_max_purge_lag_delay value is an upper limit on the delay period.
                
                innodbMaxPurgeLagDelay corresponds to the MySQL server system variable [innodb_max_purge_lag_delay](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag_delay).
+        :param pulumi.Input[bool] innodb_numa_interleave: Enables the NUMA interleave memory policy for allocation of the InnoDB buffer pool. When innodb_numa_interleave is enabled, the NUMA memory policy is set to MPOL_INTERLEAVE for the mysqld process. After the InnoDB buffer pool is allocated, the NUMA memory policy is set back to MPOL_DEFAULT. For the innodb_numa_interleave option to be available, MySQL must be compiled on a NUMA-enabled Linux system.
+               
+               innodbNumaInterleave corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_numa_interleave] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_numa_interleave).
+        :param pulumi.Input[str] innodb_online_alter_log_max_size: Specifies an upper limit in bytes on the size of the temporary log files used during online DDL operations for InnoDB tables. There is one such log file for each index being created or table being altered. This log file stores data inserted, updated, or deleted in the table during the DDL operation.
+               
+               innodbOnlineAlterLogMaxSize corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_online_alter_log_max_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_online_alter_log_max_size).
+        :param pulumi.Input[str] innodb_redo_log_capacity: Defines the amount of disk space occupied by redo log files. innodb_redo_log_capacity supercedes the innodb_log_files_in_group and innodb_log_file_size variables, which are both ignored if innodb_redo_log_capacity is defined. If innodb_redo_log_capacity is not defined, and if neither innodb_log_file_size or innodb_log_files_in_group are defined, then the default innodb_redo_log_capacity value is used.
+               
+               innodbRedoLogCapacity corresponds to the InnoDB Startup Options and System Variables [innodb_redo_log_capacity](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_redo_log_capacity)
+        :param pulumi.Input[bool] innodb_rollback_on_timeout: InnoDB rolls back only the last statement on a transaction timeout by default. If --innodb-rollback-on-timeout is specified, a transaction timeout causes InnoDB to abort and roll back the entire transaction.
+               
+               innodbRollbackOnTimeout corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_rollback_on_timeout] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_rollback_on_timeout).
+        :param pulumi.Input[int] innodb_sort_buffer_size: This variable defines:
+               * The sort buffer size for online DDL operations that create or rebuild secondary indexes. However, as of MySQL 8.0.27, this responsibility is subsumed by the innodb_ddl_buffer_size variable.
+               * The amount by which the temporary log file is extended when recording concurrent DML during an online DDL operation, and the size of the temporary log file read buffer and write buffer.
+               
+               innodbSortBufferSize corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_sort_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_sort_buffer_size).
         :param pulumi.Input[str] innodb_stats_persistent_sample_pages: The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
                
                innodbStatsPersistentSamplePages corresponds to the MySQL InnoDB system variable [innodb_stats_persistent_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_persistent_sample_pages)
@@ -2822,10 +3243,24 @@ class MysqlConfigurationVariablesArgs:
                innodb_stats_transient_sample_pages only applies when innodb_stats_persistent is disabled for a table; when innodb_stats_persistent is enabled, innodb_stats_persistent_sample_pages applies instead.
                
                innodb_stats_persistent is ON by default and cannot be changed. It is possible to override it using the STATS_PERSISTENT clause of the [CREATE TABLE](https://dev.mysql.com/doc/refman/8.0/en/create-table.html) and [ALTER TABLE](https://dev.mysql.com/doc/refman/8.0/en/alter-table.html) statements.
+        :param pulumi.Input[bool] innodb_strict_mode: When you enable innodbStrictMode, the InnoDB storage engine returns errors instead of warnings for invalid or incompatible table options.
+               
+               innodbStrictMode corresponds to the MySQL InnoDB system variable [innodb_strict_mode](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_strict_mode)
+        :param pulumi.Input[bool] innodb_undo_log_truncate: When enabled, undo tablespaces that exceed the threshold value defined by innodb_max_undo_log_size are marked for truncation. Only undo tablespaces can be truncated. Truncating undo logs that reside in the system tablespace is not supported. For truncation to occur, there must be at least two undo tablespaces.
+               
+               innodbUndoLogTruncate corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_undo_log_truncate] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_undo_log_truncate).
         :param pulumi.Input[int] interactive_timeout: The number of seconds the server waits for activity on an interactive connection before closing it.
                
                interactiveTimeout corresponds to the MySQL system variable. [interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_interactive_timeout)
-        :param pulumi.Input[bool] local_infile: ("local_infile")
+        :param pulumi.Input[str] join_buffer_size: The minimum size of the buffer that is used for plain index scans, range index scans, and joins that do not use indexes and thus perform full table scans. In MySQL 8.0.18 and later, this variable also controls the amount of memory used for hash joins. Normally, the best way to get fast joins is to add indexes. Increase the value of join_buffer_size to get a faster full join when adding indexes is not possible. One join buffer is allocated for each full join between two tables. For a complex join between several tables for which indexes are not used, multiple join buffers might be necessary.
+               
+               joinBufferSize corresponds to the MySQL Server System variable [join_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_join_buffer_size).
+        :param pulumi.Input[bool] local_infile: This variable controls server-side LOCAL capability for LOAD DATA statements. Depending on the local_infile setting, the server refuses or permits local data loading by clients that have LOCAL enabled on the client side. 
+               
+               local_infile corresponds to the MySQL Server system variable [local_infile](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_local_infile)
+        :param pulumi.Input[int] long_query_time: If a query takes longer than this many seconds, the server increments the Slow_queries status variable. If the slow query log is enabled, the query is logged to the slow query log file. This value is measured in real time, not CPU time, so a query that is under the threshold on a lightly loaded system might be above the threshold on a heavily loaded one.
+               
+               longQueryTime corresponds to the MySQL Server System variable [long_query_time] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_long_query_time).
         :param pulumi.Input[str] mandatory_roles: ("mandatory_roles")
         :param pulumi.Input[int] max_allowed_packet: The maximum size of one packet or any generated/intermediate string.
                
@@ -2840,6 +3275,12 @@ class MysqlConfigurationVariablesArgs:
                
                maxHeapTableSize corresponds to the MySQL system variable [max_heap_table_size](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_heap_table_size)
         :param pulumi.Input[int] max_prepared_stmt_count: ("max_prepared_stmt_count")
+        :param pulumi.Input[str] max_seeks_for_key: Limit the assumed maximum number of seeks when looking up rows based on a key. The MySQL optimizer assumes that no more than this number of key seeks are required when searching for matching rows in a table by scanning an index, regardless of the actual cardinality of the index (see Section 15.7.7.22, “SHOW INDEX Statement”). By setting this to a low value (say, 100), you can force MySQL to prefer indexes instead of table scans.
+               
+               maxSeeksForKey corresponds to the MySQL Server System variable [max_seeks_for_key] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_seeks_for_key).
+        :param pulumi.Input[str] max_user_connections: The maximum number of simultaneous connections permitted to any given MySQL user account. A value of 0 (the default) means “no limit.” This variable has a global value that can be set at server startup or runtime. It also has a read-only session value that indicates the effective simultaneous-connection limit that applies to the account associated with the current session.
+               
+               maxUserConnections corresponds to the MySQL Server System variable [max_user_connections] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_user_connections).
         :param pulumi.Input[bool] mysql_firewall_mode: ("mysql_firewall_mode")
         :param pulumi.Input[int] mysql_zstd_default_compression_level: DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
         :param pulumi.Input[int] mysqlx_connect_timeout: The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
@@ -2876,18 +3317,67 @@ class MysqlConfigurationVariablesArgs:
         :param pulumi.Input[int] net_write_timeout: The number of seconds to wait for a block to be written to a connection before aborting the write.
                
                netWriteTimeout corresponds to the MySQL system variable [net_write_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_write_timeout)
+        :param pulumi.Input[str] optimizer_switch: The optimizer_switch system variable enables control over optimizer behavior. The value of this variable is a set of flags, each of which has a value of on or off to indicate whether the corresponding optimizer behavior is enabled or disabled. This variable has global and session values and can be changed at runtime. The global default can be set at server startup.
+               
+               Setting hypergraph_optimizer=on for cloud builds below 9.0.0 will fail.
+               
+               optimizerSwitch corresponds to the MySQL Server System variable [optimizer_switch] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_optimizer_switch).
         :param pulumi.Input[str] parser_max_mem_size: ("parser_max_mem_size")
         :param pulumi.Input[str] query_alloc_block_size: ("query_alloc_block_size") DEPRECATED -- variable should not be settable and will be ignored
         :param pulumi.Input[str] query_prealloc_size: ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
+        :param pulumi.Input[str] range_optimizer_max_mem_size: The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans. 
+               
+               rangeOptimizerMaxMemSize corresponds to the MySQL Server System variable [range_optimizer_max_mem_size] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_range_optimizer_max_mem_size).
         :param pulumi.Input[int] regexp_time_limit: regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+        :param pulumi.Input[str] relay_log_space_limit: The maximum amount of space to use for all relay logs.
+               
+               relayLogSpaceLimit corresponds to the MySQL Replica Server Options variable [relay_log_space_limit] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_relay_log_space_limit).
+        :param pulumi.Input[int] replica_net_timeout: Specifies the number of seconds to wait for more data or a heartbeat signal from the source before the replica considers the connection broken, aborts the read, and tries to reconnect. Setting this variable has no immediate effect. The state of the variable applies on all subsequent START REPLICA commands.
+               
+               replicaNetTimeout corresponds to the MySQL Replica server system variable [replica_net_timeout](https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_net_timeout)
+        :param pulumi.Input[int] replica_parallel_workers: Beginning with MySQL 8.0.26, slave_parallel_workers is deprecated, and you should use replica_parallel_workers instead. (Prior to MySQL 8.0.26, you must use slave_parallel_workers to set the number of applier threads.)
+               
+               replicaParallelWorkers corresponds to the MySQL Replica Server Options variable [replica_parallel_workers] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_parallel_workers).
+        :param pulumi.Input[str] replica_type_conversions: From MySQL 8.0.26, use replica_type_conversions in place of slave_type_conversions, which is deprecated from that release. In releases before MySQL 8.0.26, use slave_type_conversions.
+               
+               replica_type_conversions controls the type conversion mode in effect on the replica when using row-based replication. Its value is a comma-delimited set of zero or more elements from the list: ALL_LOSSY, ALL_NON_LOSSY, ALL_SIGNED, ALL_UNSIGNED. Set this variable to an empty string to disallow type conversions between the source and the replica. Setting this variable takes effect for all replication channels immediately, including running channels.
+               
+               replica_type_conversions corresponds to the MySQL Replica Server Options variable [replica_type_conversions] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_type_conversions).
+        :param pulumi.Input[bool] require_secure_transport: Whether client connections to the server are required to use some form of secure transport. When this variable is enabled, the server permits only TCP/IP connections encrypted using TLS/SSL, or connections that use a socket file or shared memory. The server rejects nonsecure connection attempts, which fail with an ER_SECURE_TRANSPORT_REQUIRED error.
+               
+               require_secure_transport corresponds to the MySQL Server Administration system variable [require_secure_transport](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_require_secure_transport)
+        :param pulumi.Input[bool] skip_name_resolve: Whether to resolve host names when checking client connections. If this variable is OFF, mysqld resolves host names when checking client connections. If it is ON, mysqld uses only IP numbers; in this case, all Host column values in the grant tables must be IP addresses. See Section 7.1.12.3, “DNS Lookups and the Host Cache”.
+               
+               skipNameResolve corresponds to the MySQL Server System variable [skip_name_resolve] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_skip_name_resolve).
         :param pulumi.Input[str] sort_buffer_size: Each session that must perform a sort allocates a buffer of this size.
                
                sortBufferSize corresponds to the MySQL system variable [sort_buffer_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_sort_buffer_size)
+        :param pulumi.Input[bool] sql_generate_invisible_primary_key: Whether GIPK mode is in effect, in which case a MySQL replication source server adds a generated invisible primary key to any InnoDB table that is created without one.
+               
+               sqlGenerateInvisiblePrimaryKey corresponds to the MySQL system variable [sql_generate_invisible_primary_key] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_sql_generate_invisible_primary_key).
         :param pulumi.Input[str] sql_mode: ("sql_mode")
         :param pulumi.Input[bool] sql_require_primary_key: ("sql_require_primary_key")
         :param pulumi.Input[bool] sql_warnings: ("sql_warnings")
+        :param pulumi.Input[int] table_definition_cache: The number of table definitions that can be stored in the table definition cache. If you use a large number of tables, you can create a large table definition cache to speed up opening of tables. The table definition cache takes less space and does not use file descriptors, unlike the normal table cache.
+               
+               table_definition_cache corresponds to the MySQL Server Administration system variable [table_definition_cache](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_table_definition_cache)
+        :param pulumi.Input[int] table_open_cache: The number of open tables for all threads. Increasing this value increases the number of file descriptors that mysqld requires.
+               
+               table_open_cache corresponds to the MySQL Server Administration system variable [table_open_cache](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_table_open_cache)
+        :param pulumi.Input[str] temptable_max_ram: Defines the maximum amount of memory that can be occupied by the TempTable storage engine before it starts storing data on disk. The default value is 1073741824 bytes (1GiB). For more information, see Section 10.4.4, “Internal Temporary Table Use in MySQL”.
+               
+               temptableMaxRam corresponds to the MySQL system variable [temptable_max_ram] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_temptable_max_ram).
         :param pulumi.Input[bool] thread_pool_dedicated_listeners: Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
         :param pulumi.Input[int] thread_pool_max_transactions_limit: Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
+        :param pulumi.Input[int] thread_pool_query_threads_per_group: The maximum number of query threads permitted in a thread group. The maximum value is 4096, but if thread_pool_max_transactions_limit is set, thread_pool_query_threads_per_group must not exceed that value. The default value of 1 means there is one active query thread in each thread group, which works well for many loads. When you are using the high concurrency thread pool algorithm (thread_pool_algorithm = 1), consider increasing the value if you experience slower response times due to long-running transactions. 
+               
+               threadPoolQueryThreadsPerGroup corresponds to the MySQL Server system variable [thread_pool_query_threads_per_group](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_query_threads_per_group)
+        :param pulumi.Input[int] thread_pool_size: The number of thread groups in the thread pool. This is the most important parameter controlling thread pool performance. It affects how many statements can execute simultaneously. If a value outside the range of permissible values is specified, the thread pool plugin does not load and the server writes a message to the error log.
+               
+               threadPoolSize corresponds to the MySQL Server System variable [thread_pool_size] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_size).
+        :param pulumi.Input[int] thread_pool_transaction_delay: The delay period before executing a new transaction, in milliseconds. The maximum value is 300000 (5 minutes). A transaction delay can be used in cases where parallel transactions affect the performance of other operations due to resource contention. For example, if parallel transactions affect index creation or an online buffer pool resizing operation, you can configure a transaction delay to reduce resource contention while those operations are running. 
+               
+               threadPoolTransactionDelay corresponds to the MySQL Server system variable [thread_pool_transaction_delay](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_transaction_delay)
         :param pulumi.Input[str] time_zone: Initializes the time zone for each client that connects.
                
                This corresponds to the MySQL System Variable "time_zone".
@@ -2907,18 +3397,32 @@ class MysqlConfigurationVariablesArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        if auto_increment_increment is not None:
+            pulumi.set(__self__, "auto_increment_increment", auto_increment_increment)
+        if auto_increment_offset is not None:
+            pulumi.set(__self__, "auto_increment_offset", auto_increment_offset)
         if autocommit is not None:
             pulumi.set(__self__, "autocommit", autocommit)
         if big_tables is not None:
             pulumi.set(__self__, "big_tables", big_tables)
         if binlog_expire_logs_seconds is not None:
             pulumi.set(__self__, "binlog_expire_logs_seconds", binlog_expire_logs_seconds)
+        if binlog_group_commit_sync_delay is not None:
+            pulumi.set(__self__, "binlog_group_commit_sync_delay", binlog_group_commit_sync_delay)
+        if binlog_group_commit_sync_no_delay_count is not None:
+            pulumi.set(__self__, "binlog_group_commit_sync_no_delay_count", binlog_group_commit_sync_no_delay_count)
         if binlog_row_metadata is not None:
             pulumi.set(__self__, "binlog_row_metadata", binlog_row_metadata)
         if binlog_row_value_options is not None:
             pulumi.set(__self__, "binlog_row_value_options", binlog_row_value_options)
         if binlog_transaction_compression is not None:
             pulumi.set(__self__, "binlog_transaction_compression", binlog_transaction_compression)
+        if block_encryption_mode is not None:
+            pulumi.set(__self__, "block_encryption_mode", block_encryption_mode)
+        if character_set_server is not None:
+            pulumi.set(__self__, "character_set_server", character_set_server)
+        if collation_server is not None:
+            pulumi.set(__self__, "collation_server", collation_server)
         if completion_type is not None:
             pulumi.set(__self__, "completion_type", completion_type)
         if connect_timeout is not None:
@@ -2931,6 +3435,10 @@ class MysqlConfigurationVariablesArgs:
             pulumi.set(__self__, "cte_max_recursion_depth", cte_max_recursion_depth)
         if default_authentication_plugin is not None:
             pulumi.set(__self__, "default_authentication_plugin", default_authentication_plugin)
+        if explain_format is not None:
+            pulumi.set(__self__, "explain_format", explain_format)
+        if explicit_defaults_for_timestamp is not None:
+            pulumi.set(__self__, "explicit_defaults_for_timestamp", explicit_defaults_for_timestamp)
         if foreign_key_checks is not None:
             pulumi.set(__self__, "foreign_key_checks", foreign_key_checks)
         if generated_random_password_length is not None:
@@ -2942,16 +3450,24 @@ class MysqlConfigurationVariablesArgs:
             pulumi.set(__self__, "global_connection_memory_limit", global_connection_memory_limit)
         if global_connection_memory_tracking is not None:
             pulumi.set(__self__, "global_connection_memory_tracking", global_connection_memory_tracking)
+        if group_concat_max_len is not None:
+            pulumi.set(__self__, "group_concat_max_len", group_concat_max_len)
         if group_replication_consistency is not None:
             pulumi.set(__self__, "group_replication_consistency", group_replication_consistency)
         if information_schema_stats_expiry is not None:
             pulumi.set(__self__, "information_schema_stats_expiry", information_schema_stats_expiry)
+        if innodb_adaptive_hash_index is not None:
+            pulumi.set(__self__, "innodb_adaptive_hash_index", innodb_adaptive_hash_index)
+        if innodb_autoinc_lock_mode is not None:
+            pulumi.set(__self__, "innodb_autoinc_lock_mode", innodb_autoinc_lock_mode)
         if innodb_buffer_pool_dump_pct is not None:
             pulumi.set(__self__, "innodb_buffer_pool_dump_pct", innodb_buffer_pool_dump_pct)
         if innodb_buffer_pool_instances is not None:
             pulumi.set(__self__, "innodb_buffer_pool_instances", innodb_buffer_pool_instances)
         if innodb_buffer_pool_size is not None:
             pulumi.set(__self__, "innodb_buffer_pool_size", innodb_buffer_pool_size)
+        if innodb_change_buffering is not None:
+            pulumi.set(__self__, "innodb_change_buffering", innodb_change_buffering)
         if innodb_ddl_buffer_size is not None:
             pulumi.set(__self__, "innodb_ddl_buffer_size", innodb_ddl_buffer_size)
         if innodb_ddl_threads is not None:
@@ -2976,14 +3492,32 @@ class MysqlConfigurationVariablesArgs:
             pulumi.set(__self__, "innodb_max_purge_lag", innodb_max_purge_lag)
         if innodb_max_purge_lag_delay is not None:
             pulumi.set(__self__, "innodb_max_purge_lag_delay", innodb_max_purge_lag_delay)
+        if innodb_numa_interleave is not None:
+            pulumi.set(__self__, "innodb_numa_interleave", innodb_numa_interleave)
+        if innodb_online_alter_log_max_size is not None:
+            pulumi.set(__self__, "innodb_online_alter_log_max_size", innodb_online_alter_log_max_size)
+        if innodb_redo_log_capacity is not None:
+            pulumi.set(__self__, "innodb_redo_log_capacity", innodb_redo_log_capacity)
+        if innodb_rollback_on_timeout is not None:
+            pulumi.set(__self__, "innodb_rollback_on_timeout", innodb_rollback_on_timeout)
+        if innodb_sort_buffer_size is not None:
+            pulumi.set(__self__, "innodb_sort_buffer_size", innodb_sort_buffer_size)
         if innodb_stats_persistent_sample_pages is not None:
             pulumi.set(__self__, "innodb_stats_persistent_sample_pages", innodb_stats_persistent_sample_pages)
         if innodb_stats_transient_sample_pages is not None:
             pulumi.set(__self__, "innodb_stats_transient_sample_pages", innodb_stats_transient_sample_pages)
+        if innodb_strict_mode is not None:
+            pulumi.set(__self__, "innodb_strict_mode", innodb_strict_mode)
+        if innodb_undo_log_truncate is not None:
+            pulumi.set(__self__, "innodb_undo_log_truncate", innodb_undo_log_truncate)
         if interactive_timeout is not None:
             pulumi.set(__self__, "interactive_timeout", interactive_timeout)
+        if join_buffer_size is not None:
+            pulumi.set(__self__, "join_buffer_size", join_buffer_size)
         if local_infile is not None:
             pulumi.set(__self__, "local_infile", local_infile)
+        if long_query_time is not None:
+            pulumi.set(__self__, "long_query_time", long_query_time)
         if mandatory_roles is not None:
             pulumi.set(__self__, "mandatory_roles", mandatory_roles)
         if max_allowed_packet is not None:
@@ -3000,6 +3534,10 @@ class MysqlConfigurationVariablesArgs:
             pulumi.set(__self__, "max_heap_table_size", max_heap_table_size)
         if max_prepared_stmt_count is not None:
             pulumi.set(__self__, "max_prepared_stmt_count", max_prepared_stmt_count)
+        if max_seeks_for_key is not None:
+            pulumi.set(__self__, "max_seeks_for_key", max_seeks_for_key)
+        if max_user_connections is not None:
+            pulumi.set(__self__, "max_user_connections", max_user_connections)
         if mysql_firewall_mode is not None:
             pulumi.set(__self__, "mysql_firewall_mode", mysql_firewall_mode)
         if mysql_zstd_default_compression_level is not None:
@@ -3052,6 +3590,8 @@ class MysqlConfigurationVariablesArgs:
             pulumi.set(__self__, "net_read_timeout", net_read_timeout)
         if net_write_timeout is not None:
             pulumi.set(__self__, "net_write_timeout", net_write_timeout)
+        if optimizer_switch is not None:
+            pulumi.set(__self__, "optimizer_switch", optimizer_switch)
         if parser_max_mem_size is not None:
             pulumi.set(__self__, "parser_max_mem_size", parser_max_mem_size)
         if query_alloc_block_size is not None:
@@ -3060,24 +3600,52 @@ class MysqlConfigurationVariablesArgs:
         if query_alloc_block_size is not None:
             pulumi.set(__self__, "query_alloc_block_size", query_alloc_block_size)
         if query_prealloc_size is not None:
-            warnings.warn("""The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
-            pulumi.log.warn("""query_prealloc_size is deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.""")
-        if query_prealloc_size is not None:
             pulumi.set(__self__, "query_prealloc_size", query_prealloc_size)
+        if range_optimizer_max_mem_size is not None:
+            warnings.warn("""The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+            pulumi.log.warn("""range_optimizer_max_mem_size is deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.""")
+        if range_optimizer_max_mem_size is not None:
+            pulumi.set(__self__, "range_optimizer_max_mem_size", range_optimizer_max_mem_size)
         if regexp_time_limit is not None:
             pulumi.set(__self__, "regexp_time_limit", regexp_time_limit)
+        if relay_log_space_limit is not None:
+            pulumi.set(__self__, "relay_log_space_limit", relay_log_space_limit)
+        if replica_net_timeout is not None:
+            pulumi.set(__self__, "replica_net_timeout", replica_net_timeout)
+        if replica_parallel_workers is not None:
+            pulumi.set(__self__, "replica_parallel_workers", replica_parallel_workers)
+        if replica_type_conversions is not None:
+            pulumi.set(__self__, "replica_type_conversions", replica_type_conversions)
+        if require_secure_transport is not None:
+            pulumi.set(__self__, "require_secure_transport", require_secure_transport)
+        if skip_name_resolve is not None:
+            pulumi.set(__self__, "skip_name_resolve", skip_name_resolve)
         if sort_buffer_size is not None:
             pulumi.set(__self__, "sort_buffer_size", sort_buffer_size)
+        if sql_generate_invisible_primary_key is not None:
+            pulumi.set(__self__, "sql_generate_invisible_primary_key", sql_generate_invisible_primary_key)
         if sql_mode is not None:
             pulumi.set(__self__, "sql_mode", sql_mode)
         if sql_require_primary_key is not None:
             pulumi.set(__self__, "sql_require_primary_key", sql_require_primary_key)
         if sql_warnings is not None:
             pulumi.set(__self__, "sql_warnings", sql_warnings)
+        if table_definition_cache is not None:
+            pulumi.set(__self__, "table_definition_cache", table_definition_cache)
+        if table_open_cache is not None:
+            pulumi.set(__self__, "table_open_cache", table_open_cache)
+        if temptable_max_ram is not None:
+            pulumi.set(__self__, "temptable_max_ram", temptable_max_ram)
         if thread_pool_dedicated_listeners is not None:
             pulumi.set(__self__, "thread_pool_dedicated_listeners", thread_pool_dedicated_listeners)
         if thread_pool_max_transactions_limit is not None:
             pulumi.set(__self__, "thread_pool_max_transactions_limit", thread_pool_max_transactions_limit)
+        if thread_pool_query_threads_per_group is not None:
+            pulumi.set(__self__, "thread_pool_query_threads_per_group", thread_pool_query_threads_per_group)
+        if thread_pool_size is not None:
+            pulumi.set(__self__, "thread_pool_size", thread_pool_size)
+        if thread_pool_transaction_delay is not None:
+            pulumi.set(__self__, "thread_pool_transaction_delay", thread_pool_transaction_delay)
         if time_zone is not None:
             pulumi.set(__self__, "time_zone", time_zone)
         if tmp_table_size is not None:
@@ -3086,6 +3654,34 @@ class MysqlConfigurationVariablesArgs:
             pulumi.set(__self__, "transaction_isolation", transaction_isolation)
         if wait_timeout is not None:
             pulumi.set(__self__, "wait_timeout", wait_timeout)
+
+    @property
+    @pulumi.getter(name="autoIncrementIncrement")
+    def auto_increment_increment(self) -> Optional[pulumi.Input[int]]:
+        """
+        auto_increment_increment and auto_increment_offset are intended for use with circular (source-to-source) replication, and can be used to control the operation of AUTO_INCREMENT columns. Both variables have global and session values, and each can assume an integer value between 1 and 65,535 inclusive.
+
+        autoIncrementIncrement corresponds to the MySQL Replication Source Options variable [auto_increment_increment] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-source.html#sysvar_auto_increment_increment).
+        """
+        return pulumi.get(self, "auto_increment_increment")
+
+    @auto_increment_increment.setter
+    def auto_increment_increment(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "auto_increment_increment", value)
+
+    @property
+    @pulumi.getter(name="autoIncrementOffset")
+    def auto_increment_offset(self) -> Optional[pulumi.Input[int]]:
+        """
+        This variable has a default value of 1. If it is left with its default value, and Group Replication is started on the server in multi-primary mode, it is changed to the server ID.
+
+        autoIncrementOffset corresponds to the MySQL Replication Source Options variable [auto_increment_offset] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-source.html#sysvar_auto_increment_offset).
+        """
+        return pulumi.get(self, "auto_increment_offset")
+
+    @auto_increment_offset.setter
+    def auto_increment_offset(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "auto_increment_offset", value)
 
     @property
     @pulumi.getter
@@ -3126,6 +3722,34 @@ class MysqlConfigurationVariablesArgs:
         pulumi.set(self, "binlog_expire_logs_seconds", value)
 
     @property
+    @pulumi.getter(name="binlogGroupCommitSyncDelay")
+    def binlog_group_commit_sync_delay(self) -> Optional[pulumi.Input[int]]:
+        """
+        Controls how many microseconds the binary log commit waits before synchronizing the binary log file to disk. There is no delay by default. Setting this variable to a microsecond delay enables more transactions to be synchronized together to disk at once, reducing the overall time to commit a group of transactions because the larger groups required fewer time units per group.
+
+        binlogGroupCommitSyncDelay corresponds to the MySQL Replication system variable [binlog_group_commit_sync_delay](https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_binlog_group_commit_sync_delay)
+        """
+        return pulumi.get(self, "binlog_group_commit_sync_delay")
+
+    @binlog_group_commit_sync_delay.setter
+    def binlog_group_commit_sync_delay(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "binlog_group_commit_sync_delay", value)
+
+    @property
+    @pulumi.getter(name="binlogGroupCommitSyncNoDelayCount")
+    def binlog_group_commit_sync_no_delay_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        The maximum number of transactions to wait for before aborting the current delay as specified by binlog_group_commit_sync_delay. If binlog_group_commit_sync_delay is set to 0, then this option has no effect.
+
+        binlogGroupCommitSyncNoDelayCount corresponds to the MySQL Replication system variable [binlog_group_commit_sync_no_delay_count](https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_binlog_group_commit_sync_no_delay_count)
+        """
+        return pulumi.get(self, "binlog_group_commit_sync_no_delay_count")
+
+    @binlog_group_commit_sync_no_delay_count.setter
+    def binlog_group_commit_sync_no_delay_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "binlog_group_commit_sync_no_delay_count", value)
+
+    @property
     @pulumi.getter(name="binlogRowMetadata")
     def binlog_row_metadata(self) -> Optional[pulumi.Input[str]]:
         """
@@ -3160,6 +3784,48 @@ class MysqlConfigurationVariablesArgs:
     @binlog_transaction_compression.setter
     def binlog_transaction_compression(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "binlog_transaction_compression", value)
+
+    @property
+    @pulumi.getter(name="blockEncryptionMode")
+    def block_encryption_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        This variable controls the block encryption mode for block-based algorithms such as AES. It affects encryption for AES_ENCRYPT() and AES_DECRYPT(). block_encryption_mode takes a value in aes-keylen-mode format, where keylen is the key length in bits and mode is the encryption mode. The value is not case-sensitive. Permitted keylen values are 128, 192, and 256. Permitted mode values are ECB, CBC, CFB1, CFB8, CFB128, and OFB.
+
+        block_encryption_mode corresponds to the MySQL Server Administration system variable [block_encryption_mode](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_block_encryption_mode)
+        """
+        return pulumi.get(self, "block_encryption_mode")
+
+    @block_encryption_mode.setter
+    def block_encryption_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "block_encryption_mode", value)
+
+    @property
+    @pulumi.getter(name="characterSetServer")
+    def character_set_server(self) -> Optional[pulumi.Input[str]]:
+        """
+        The server's default character set. If you set this variable, you should also set collation_server to specify the collation for the character set.
+
+        characterSetServer corresponds to the MySQL server variable [character_set_server](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_character_set_server).
+        """
+        return pulumi.get(self, "character_set_server")
+
+    @character_set_server.setter
+    def character_set_server(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "character_set_server", value)
+
+    @property
+    @pulumi.getter(name="collationServer")
+    def collation_server(self) -> Optional[pulumi.Input[str]]:
+        """
+        The server's default collation.
+
+        collationServer corresponds to the MySQL server variable [collation_server](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_collation_server).
+        """
+        return pulumi.get(self, "collation_server")
+
+    @collation_server.setter
+    def collation_server(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "collation_server", value)
 
     @property
     @pulumi.getter(name="completionType")
@@ -3233,13 +3899,45 @@ class MysqlConfigurationVariablesArgs:
     @pulumi.getter(name="defaultAuthenticationPlugin")
     def default_authentication_plugin(self) -> Optional[pulumi.Input[str]]:
         """
-        ("default_authentication_plugin")
+        The default authentication plugin. This must be a plugin that uses internal credentials storage, so these values are permitted: mysql_native_password, sha256_password, caching_sha2_password.
+
+        As of MySQL 8.0.27, which introduces multifactor authentication, default_authentication_plugin is still used, but in conjunction with and at a lower precedence than the authentication_policy system variable. For details, see The Default Authentication Plugin. Because of this diminished role, default_authentication_plugin is deprecated as of MySQL 8.0.27 and subject to removal in a future MySQL version.
+
+        defaultAuthenticationPlugin corresponds to the MySQL system variable [default_authentication_plugin](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_default_authentication_plugin).
         """
         return pulumi.get(self, "default_authentication_plugin")
 
     @default_authentication_plugin.setter
     def default_authentication_plugin(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "default_authentication_plugin", value)
+
+    @property
+    @pulumi.getter(name="explainFormat")
+    def explain_format(self) -> Optional[pulumi.Input[str]]:
+        """
+        This variable determines the default output format used by EXPLAIN in the absence of a FORMAT option when displaying a query execution plan.
+
+        explainFormat corresponds to the MySQL system variable [explain_format](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_explain_format).
+        """
+        return pulumi.get(self, "explain_format")
+
+    @explain_format.setter
+    def explain_format(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "explain_format", value)
+
+    @property
+    @pulumi.getter(name="explicitDefaultsForTimestamp")
+    def explicit_defaults_for_timestamp(self) -> Optional[pulumi.Input[bool]]:
+        """
+        This system variable determines whether the server enables certain nonstandard behaviors for default values and NULL-value handling in TIMESTAMP columns. By default, explicit_defaults_for_timestamp is enabled, which disables the nonstandard behaviors. Disabling explicit_defaults_for_timestamp results in a warning.
+
+        explicit_defaults_for_timestamp corresponds to the MySQL Server Administration system variable [explicit_defaults_for_timestamp](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_explicit_defaults_for_timestamp)
+        """
+        return pulumi.get(self, "explicit_defaults_for_timestamp")
+
+    @explicit_defaults_for_timestamp.setter
+    def explicit_defaults_for_timestamp(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "explicit_defaults_for_timestamp", value)
 
     @property
     @pulumi.getter(name="foreignKeyChecks")
@@ -3295,6 +3993,20 @@ class MysqlConfigurationVariablesArgs:
         pulumi.set(self, "global_connection_memory_tracking", value)
 
     @property
+    @pulumi.getter(name="groupConcatMaxLen")
+    def group_concat_max_len(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specifies the maximum permitted result length in bytes for the GROUP_CONCAT() function.
+
+        This is the MySQL variable "group_concat_max_len". For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_group_concat_max_len)
+        """
+        return pulumi.get(self, "group_concat_max_len")
+
+    @group_concat_max_len.setter
+    def group_concat_max_len(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "group_concat_max_len", value)
+
+    @property
     @pulumi.getter(name="groupReplicationConsistency")
     def group_replication_consistency(self) -> Optional[pulumi.Input[str]]:
         """
@@ -3321,6 +4033,34 @@ class MysqlConfigurationVariablesArgs:
     @information_schema_stats_expiry.setter
     def information_schema_stats_expiry(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "information_schema_stats_expiry", value)
+
+    @property
+    @pulumi.getter(name="innodbAdaptiveHashIndex")
+    def innodb_adaptive_hash_index(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether the InnoDB adaptive hash index is enabled or disabled. It may be desirable, depending on your workload, to dynamically enable or disable adaptive hash indexing to improve query performance. Because the adaptive hash index may not be useful for all workloads, conduct benchmarks with it both enabled and disabled, using realistic workloads.
+
+        innodbAdaptiveHashIndex corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_adaptive_hash_index] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_adaptive_hash_index).
+        """
+        return pulumi.get(self, "innodb_adaptive_hash_index")
+
+    @innodb_adaptive_hash_index.setter
+    def innodb_adaptive_hash_index(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "innodb_adaptive_hash_index", value)
+
+    @property
+    @pulumi.getter(name="innodbAutoincLockMode")
+    def innodb_autoinc_lock_mode(self) -> Optional[pulumi.Input[int]]:
+        """
+        The lock mode to use for generating auto-increment values. Permissible values are 0, 1, or 2, for traditional, consecutive, or interleaved, respectively.
+
+        innodbAutoincLockMode corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_autoinc_lock_mode] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_autoinc_lock_mode).
+        """
+        return pulumi.get(self, "innodb_autoinc_lock_mode")
+
+    @innodb_autoinc_lock_mode.setter
+    def innodb_autoinc_lock_mode(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "innodb_autoinc_lock_mode", value)
 
     @property
     @pulumi.getter(name="innodbBufferPoolDumpPct")
@@ -3367,6 +4107,20 @@ class MysqlConfigurationVariablesArgs:
     @innodb_buffer_pool_size.setter
     def innodb_buffer_pool_size(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "innodb_buffer_pool_size", value)
+
+    @property
+    @pulumi.getter(name="innodbChangeBuffering")
+    def innodb_change_buffering(self) -> Optional[pulumi.Input[str]]:
+        """
+        Whether InnoDB performs change buffering, an optimization that delays write operations to secondary indexes so that the I/O operations can be performed sequentially. Permitted values are described in the following table. Values may also be specified numerically.
+
+        innodbChangeBuffering corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_change_buffering] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_change_buffering).
+        """
+        return pulumi.get(self, "innodb_change_buffering")
+
+    @innodb_change_buffering.setter
+    def innodb_change_buffering(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "innodb_change_buffering", value)
 
     @property
     @pulumi.getter(name="innodbDdlBufferSize")
@@ -3527,6 +4281,78 @@ class MysqlConfigurationVariablesArgs:
         pulumi.set(self, "innodb_max_purge_lag_delay", value)
 
     @property
+    @pulumi.getter(name="innodbNumaInterleave")
+    def innodb_numa_interleave(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Enables the NUMA interleave memory policy for allocation of the InnoDB buffer pool. When innodb_numa_interleave is enabled, the NUMA memory policy is set to MPOL_INTERLEAVE for the mysqld process. After the InnoDB buffer pool is allocated, the NUMA memory policy is set back to MPOL_DEFAULT. For the innodb_numa_interleave option to be available, MySQL must be compiled on a NUMA-enabled Linux system.
+
+        innodbNumaInterleave corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_numa_interleave] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_numa_interleave).
+        """
+        return pulumi.get(self, "innodb_numa_interleave")
+
+    @innodb_numa_interleave.setter
+    def innodb_numa_interleave(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "innodb_numa_interleave", value)
+
+    @property
+    @pulumi.getter(name="innodbOnlineAlterLogMaxSize")
+    def innodb_online_alter_log_max_size(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specifies an upper limit in bytes on the size of the temporary log files used during online DDL operations for InnoDB tables. There is one such log file for each index being created or table being altered. This log file stores data inserted, updated, or deleted in the table during the DDL operation.
+
+        innodbOnlineAlterLogMaxSize corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_online_alter_log_max_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_online_alter_log_max_size).
+        """
+        return pulumi.get(self, "innodb_online_alter_log_max_size")
+
+    @innodb_online_alter_log_max_size.setter
+    def innodb_online_alter_log_max_size(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "innodb_online_alter_log_max_size", value)
+
+    @property
+    @pulumi.getter(name="innodbRedoLogCapacity")
+    def innodb_redo_log_capacity(self) -> Optional[pulumi.Input[str]]:
+        """
+        Defines the amount of disk space occupied by redo log files. innodb_redo_log_capacity supercedes the innodb_log_files_in_group and innodb_log_file_size variables, which are both ignored if innodb_redo_log_capacity is defined. If innodb_redo_log_capacity is not defined, and if neither innodb_log_file_size or innodb_log_files_in_group are defined, then the default innodb_redo_log_capacity value is used.
+
+        innodbRedoLogCapacity corresponds to the InnoDB Startup Options and System Variables [innodb_redo_log_capacity](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_redo_log_capacity)
+        """
+        return pulumi.get(self, "innodb_redo_log_capacity")
+
+    @innodb_redo_log_capacity.setter
+    def innodb_redo_log_capacity(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "innodb_redo_log_capacity", value)
+
+    @property
+    @pulumi.getter(name="innodbRollbackOnTimeout")
+    def innodb_rollback_on_timeout(self) -> Optional[pulumi.Input[bool]]:
+        """
+        InnoDB rolls back only the last statement on a transaction timeout by default. If --innodb-rollback-on-timeout is specified, a transaction timeout causes InnoDB to abort and roll back the entire transaction.
+
+        innodbRollbackOnTimeout corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_rollback_on_timeout] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_rollback_on_timeout).
+        """
+        return pulumi.get(self, "innodb_rollback_on_timeout")
+
+    @innodb_rollback_on_timeout.setter
+    def innodb_rollback_on_timeout(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "innodb_rollback_on_timeout", value)
+
+    @property
+    @pulumi.getter(name="innodbSortBufferSize")
+    def innodb_sort_buffer_size(self) -> Optional[pulumi.Input[int]]:
+        """
+        This variable defines:
+        * The sort buffer size for online DDL operations that create or rebuild secondary indexes. However, as of MySQL 8.0.27, this responsibility is subsumed by the innodb_ddl_buffer_size variable.
+        * The amount by which the temporary log file is extended when recording concurrent DML during an online DDL operation, and the size of the temporary log file read buffer and write buffer.
+
+        innodbSortBufferSize corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_sort_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_sort_buffer_size).
+        """
+        return pulumi.get(self, "innodb_sort_buffer_size")
+
+    @innodb_sort_buffer_size.setter
+    def innodb_sort_buffer_size(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "innodb_sort_buffer_size", value)
+
+    @property
     @pulumi.getter(name="innodbStatsPersistentSamplePages")
     def innodb_stats_persistent_sample_pages(self) -> Optional[pulumi.Input[str]]:
         """
@@ -3561,6 +4387,34 @@ class MysqlConfigurationVariablesArgs:
         pulumi.set(self, "innodb_stats_transient_sample_pages", value)
 
     @property
+    @pulumi.getter(name="innodbStrictMode")
+    def innodb_strict_mode(self) -> Optional[pulumi.Input[bool]]:
+        """
+        When you enable innodbStrictMode, the InnoDB storage engine returns errors instead of warnings for invalid or incompatible table options.
+
+        innodbStrictMode corresponds to the MySQL InnoDB system variable [innodb_strict_mode](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_strict_mode)
+        """
+        return pulumi.get(self, "innodb_strict_mode")
+
+    @innodb_strict_mode.setter
+    def innodb_strict_mode(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "innodb_strict_mode", value)
+
+    @property
+    @pulumi.getter(name="innodbUndoLogTruncate")
+    def innodb_undo_log_truncate(self) -> Optional[pulumi.Input[bool]]:
+        """
+        When enabled, undo tablespaces that exceed the threshold value defined by innodb_max_undo_log_size are marked for truncation. Only undo tablespaces can be truncated. Truncating undo logs that reside in the system tablespace is not supported. For truncation to occur, there must be at least two undo tablespaces.
+
+        innodbUndoLogTruncate corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_undo_log_truncate] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_undo_log_truncate).
+        """
+        return pulumi.get(self, "innodb_undo_log_truncate")
+
+    @innodb_undo_log_truncate.setter
+    def innodb_undo_log_truncate(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "innodb_undo_log_truncate", value)
+
+    @property
     @pulumi.getter(name="interactiveTimeout")
     def interactive_timeout(self) -> Optional[pulumi.Input[int]]:
         """
@@ -3575,16 +4429,46 @@ class MysqlConfigurationVariablesArgs:
         pulumi.set(self, "interactive_timeout", value)
 
     @property
+    @pulumi.getter(name="joinBufferSize")
+    def join_buffer_size(self) -> Optional[pulumi.Input[str]]:
+        """
+        The minimum size of the buffer that is used for plain index scans, range index scans, and joins that do not use indexes and thus perform full table scans. In MySQL 8.0.18 and later, this variable also controls the amount of memory used for hash joins. Normally, the best way to get fast joins is to add indexes. Increase the value of join_buffer_size to get a faster full join when adding indexes is not possible. One join buffer is allocated for each full join between two tables. For a complex join between several tables for which indexes are not used, multiple join buffers might be necessary.
+
+        joinBufferSize corresponds to the MySQL Server System variable [join_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_join_buffer_size).
+        """
+        return pulumi.get(self, "join_buffer_size")
+
+    @join_buffer_size.setter
+    def join_buffer_size(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "join_buffer_size", value)
+
+    @property
     @pulumi.getter(name="localInfile")
     def local_infile(self) -> Optional[pulumi.Input[bool]]:
         """
-        ("local_infile")
+        This variable controls server-side LOCAL capability for LOAD DATA statements. Depending on the local_infile setting, the server refuses or permits local data loading by clients that have LOCAL enabled on the client side. 
+
+        local_infile corresponds to the MySQL Server system variable [local_infile](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_local_infile)
         """
         return pulumi.get(self, "local_infile")
 
     @local_infile.setter
     def local_infile(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "local_infile", value)
+
+    @property
+    @pulumi.getter(name="longQueryTime")
+    def long_query_time(self) -> Optional[pulumi.Input[int]]:
+        """
+        If a query takes longer than this many seconds, the server increments the Slow_queries status variable. If the slow query log is enabled, the query is logged to the slow query log file. This value is measured in real time, not CPU time, so a query that is under the threshold on a lightly loaded system might be above the threshold on a heavily loaded one.
+
+        longQueryTime corresponds to the MySQL Server System variable [long_query_time] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_long_query_time).
+        """
+        return pulumi.get(self, "long_query_time")
+
+    @long_query_time.setter
+    def long_query_time(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "long_query_time", value)
 
     @property
     @pulumi.getter(name="mandatoryRoles")
@@ -3687,6 +4571,34 @@ class MysqlConfigurationVariablesArgs:
     @max_prepared_stmt_count.setter
     def max_prepared_stmt_count(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "max_prepared_stmt_count", value)
+
+    @property
+    @pulumi.getter(name="maxSeeksForKey")
+    def max_seeks_for_key(self) -> Optional[pulumi.Input[str]]:
+        """
+        Limit the assumed maximum number of seeks when looking up rows based on a key. The MySQL optimizer assumes that no more than this number of key seeks are required when searching for matching rows in a table by scanning an index, regardless of the actual cardinality of the index (see Section 15.7.7.22, “SHOW INDEX Statement”). By setting this to a low value (say, 100), you can force MySQL to prefer indexes instead of table scans.
+
+        maxSeeksForKey corresponds to the MySQL Server System variable [max_seeks_for_key] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_seeks_for_key).
+        """
+        return pulumi.get(self, "max_seeks_for_key")
+
+    @max_seeks_for_key.setter
+    def max_seeks_for_key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "max_seeks_for_key", value)
+
+    @property
+    @pulumi.getter(name="maxUserConnections")
+    def max_user_connections(self) -> Optional[pulumi.Input[str]]:
+        """
+        The maximum number of simultaneous connections permitted to any given MySQL user account. A value of 0 (the default) means “no limit.” This variable has a global value that can be set at server startup or runtime. It also has a read-only session value that indicates the effective simultaneous-connection limit that applies to the account associated with the current session.
+
+        maxUserConnections corresponds to the MySQL Server System variable [max_user_connections] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_user_connections).
+        """
+        return pulumi.get(self, "max_user_connections")
+
+    @max_user_connections.setter
+    def max_user_connections(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "max_user_connections", value)
 
     @property
     @pulumi.getter(name="mysqlFirewallMode")
@@ -3949,6 +4861,22 @@ class MysqlConfigurationVariablesArgs:
         pulumi.set(self, "net_write_timeout", value)
 
     @property
+    @pulumi.getter(name="optimizerSwitch")
+    def optimizer_switch(self) -> Optional[pulumi.Input[str]]:
+        """
+        The optimizer_switch system variable enables control over optimizer behavior. The value of this variable is a set of flags, each of which has a value of on or off to indicate whether the corresponding optimizer behavior is enabled or disabled. This variable has global and session values and can be changed at runtime. The global default can be set at server startup.
+
+        Setting hypergraph_optimizer=on for cloud builds below 9.0.0 will fail.
+
+        optimizerSwitch corresponds to the MySQL Server System variable [optimizer_switch] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_optimizer_switch).
+        """
+        return pulumi.get(self, "optimizer_switch")
+
+    @optimizer_switch.setter
+    def optimizer_switch(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "optimizer_switch", value)
+
+    @property
     @pulumi.getter(name="parserMaxMemSize")
     def parser_max_mem_size(self) -> Optional[pulumi.Input[str]]:
         """
@@ -3975,7 +4903,6 @@ class MysqlConfigurationVariablesArgs:
 
     @property
     @pulumi.getter(name="queryPreallocSize")
-    @_utilities.deprecated("""The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.""")
     def query_prealloc_size(self) -> Optional[pulumi.Input[str]]:
         """
         ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
@@ -3985,6 +4912,21 @@ class MysqlConfigurationVariablesArgs:
     @query_prealloc_size.setter
     def query_prealloc_size(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "query_prealloc_size", value)
+
+    @property
+    @pulumi.getter(name="rangeOptimizerMaxMemSize")
+    @_utilities.deprecated("""The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.""")
+    def range_optimizer_max_mem_size(self) -> Optional[pulumi.Input[str]]:
+        """
+        The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans. 
+
+        rangeOptimizerMaxMemSize corresponds to the MySQL Server System variable [range_optimizer_max_mem_size] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_range_optimizer_max_mem_size).
+        """
+        return pulumi.get(self, "range_optimizer_max_mem_size")
+
+    @range_optimizer_max_mem_size.setter
+    def range_optimizer_max_mem_size(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "range_optimizer_max_mem_size", value)
 
     @property
     @pulumi.getter(name="regexpTimeLimit")
@@ -3999,6 +4941,92 @@ class MysqlConfigurationVariablesArgs:
         pulumi.set(self, "regexp_time_limit", value)
 
     @property
+    @pulumi.getter(name="relayLogSpaceLimit")
+    def relay_log_space_limit(self) -> Optional[pulumi.Input[str]]:
+        """
+        The maximum amount of space to use for all relay logs.
+
+        relayLogSpaceLimit corresponds to the MySQL Replica Server Options variable [relay_log_space_limit] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_relay_log_space_limit).
+        """
+        return pulumi.get(self, "relay_log_space_limit")
+
+    @relay_log_space_limit.setter
+    def relay_log_space_limit(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "relay_log_space_limit", value)
+
+    @property
+    @pulumi.getter(name="replicaNetTimeout")
+    def replica_net_timeout(self) -> Optional[pulumi.Input[int]]:
+        """
+        Specifies the number of seconds to wait for more data or a heartbeat signal from the source before the replica considers the connection broken, aborts the read, and tries to reconnect. Setting this variable has no immediate effect. The state of the variable applies on all subsequent START REPLICA commands.
+
+        replicaNetTimeout corresponds to the MySQL Replica server system variable [replica_net_timeout](https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_net_timeout)
+        """
+        return pulumi.get(self, "replica_net_timeout")
+
+    @replica_net_timeout.setter
+    def replica_net_timeout(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "replica_net_timeout", value)
+
+    @property
+    @pulumi.getter(name="replicaParallelWorkers")
+    def replica_parallel_workers(self) -> Optional[pulumi.Input[int]]:
+        """
+        Beginning with MySQL 8.0.26, slave_parallel_workers is deprecated, and you should use replica_parallel_workers instead. (Prior to MySQL 8.0.26, you must use slave_parallel_workers to set the number of applier threads.)
+
+        replicaParallelWorkers corresponds to the MySQL Replica Server Options variable [replica_parallel_workers] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_parallel_workers).
+        """
+        return pulumi.get(self, "replica_parallel_workers")
+
+    @replica_parallel_workers.setter
+    def replica_parallel_workers(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "replica_parallel_workers", value)
+
+    @property
+    @pulumi.getter(name="replicaTypeConversions")
+    def replica_type_conversions(self) -> Optional[pulumi.Input[str]]:
+        """
+        From MySQL 8.0.26, use replica_type_conversions in place of slave_type_conversions, which is deprecated from that release. In releases before MySQL 8.0.26, use slave_type_conversions.
+
+        replica_type_conversions controls the type conversion mode in effect on the replica when using row-based replication. Its value is a comma-delimited set of zero or more elements from the list: ALL_LOSSY, ALL_NON_LOSSY, ALL_SIGNED, ALL_UNSIGNED. Set this variable to an empty string to disallow type conversions between the source and the replica. Setting this variable takes effect for all replication channels immediately, including running channels.
+
+        replica_type_conversions corresponds to the MySQL Replica Server Options variable [replica_type_conversions] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_type_conversions).
+        """
+        return pulumi.get(self, "replica_type_conversions")
+
+    @replica_type_conversions.setter
+    def replica_type_conversions(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "replica_type_conversions", value)
+
+    @property
+    @pulumi.getter(name="requireSecureTransport")
+    def require_secure_transport(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether client connections to the server are required to use some form of secure transport. When this variable is enabled, the server permits only TCP/IP connections encrypted using TLS/SSL, or connections that use a socket file or shared memory. The server rejects nonsecure connection attempts, which fail with an ER_SECURE_TRANSPORT_REQUIRED error.
+
+        require_secure_transport corresponds to the MySQL Server Administration system variable [require_secure_transport](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_require_secure_transport)
+        """
+        return pulumi.get(self, "require_secure_transport")
+
+    @require_secure_transport.setter
+    def require_secure_transport(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "require_secure_transport", value)
+
+    @property
+    @pulumi.getter(name="skipNameResolve")
+    def skip_name_resolve(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether to resolve host names when checking client connections. If this variable is OFF, mysqld resolves host names when checking client connections. If it is ON, mysqld uses only IP numbers; in this case, all Host column values in the grant tables must be IP addresses. See Section 7.1.12.3, “DNS Lookups and the Host Cache”.
+
+        skipNameResolve corresponds to the MySQL Server System variable [skip_name_resolve] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_skip_name_resolve).
+        """
+        return pulumi.get(self, "skip_name_resolve")
+
+    @skip_name_resolve.setter
+    def skip_name_resolve(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "skip_name_resolve", value)
+
+    @property
     @pulumi.getter(name="sortBufferSize")
     def sort_buffer_size(self) -> Optional[pulumi.Input[str]]:
         """
@@ -4011,6 +5039,20 @@ class MysqlConfigurationVariablesArgs:
     @sort_buffer_size.setter
     def sort_buffer_size(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "sort_buffer_size", value)
+
+    @property
+    @pulumi.getter(name="sqlGenerateInvisiblePrimaryKey")
+    def sql_generate_invisible_primary_key(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether GIPK mode is in effect, in which case a MySQL replication source server adds a generated invisible primary key to any InnoDB table that is created without one.
+
+        sqlGenerateInvisiblePrimaryKey corresponds to the MySQL system variable [sql_generate_invisible_primary_key] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_sql_generate_invisible_primary_key).
+        """
+        return pulumi.get(self, "sql_generate_invisible_primary_key")
+
+    @sql_generate_invisible_primary_key.setter
+    def sql_generate_invisible_primary_key(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "sql_generate_invisible_primary_key", value)
 
     @property
     @pulumi.getter(name="sqlMode")
@@ -4049,6 +5091,48 @@ class MysqlConfigurationVariablesArgs:
         pulumi.set(self, "sql_warnings", value)
 
     @property
+    @pulumi.getter(name="tableDefinitionCache")
+    def table_definition_cache(self) -> Optional[pulumi.Input[int]]:
+        """
+        The number of table definitions that can be stored in the table definition cache. If you use a large number of tables, you can create a large table definition cache to speed up opening of tables. The table definition cache takes less space and does not use file descriptors, unlike the normal table cache.
+
+        table_definition_cache corresponds to the MySQL Server Administration system variable [table_definition_cache](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_table_definition_cache)
+        """
+        return pulumi.get(self, "table_definition_cache")
+
+    @table_definition_cache.setter
+    def table_definition_cache(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "table_definition_cache", value)
+
+    @property
+    @pulumi.getter(name="tableOpenCache")
+    def table_open_cache(self) -> Optional[pulumi.Input[int]]:
+        """
+        The number of open tables for all threads. Increasing this value increases the number of file descriptors that mysqld requires.
+
+        table_open_cache corresponds to the MySQL Server Administration system variable [table_open_cache](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_table_open_cache)
+        """
+        return pulumi.get(self, "table_open_cache")
+
+    @table_open_cache.setter
+    def table_open_cache(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "table_open_cache", value)
+
+    @property
+    @pulumi.getter(name="temptableMaxRam")
+    def temptable_max_ram(self) -> Optional[pulumi.Input[str]]:
+        """
+        Defines the maximum amount of memory that can be occupied by the TempTable storage engine before it starts storing data on disk. The default value is 1073741824 bytes (1GiB). For more information, see Section 10.4.4, “Internal Temporary Table Use in MySQL”.
+
+        temptableMaxRam corresponds to the MySQL system variable [temptable_max_ram] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_temptable_max_ram).
+        """
+        return pulumi.get(self, "temptable_max_ram")
+
+    @temptable_max_ram.setter
+    def temptable_max_ram(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "temptable_max_ram", value)
+
+    @property
     @pulumi.getter(name="threadPoolDedicatedListeners")
     def thread_pool_dedicated_listeners(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -4071,6 +5155,48 @@ class MysqlConfigurationVariablesArgs:
     @thread_pool_max_transactions_limit.setter
     def thread_pool_max_transactions_limit(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "thread_pool_max_transactions_limit", value)
+
+    @property
+    @pulumi.getter(name="threadPoolQueryThreadsPerGroup")
+    def thread_pool_query_threads_per_group(self) -> Optional[pulumi.Input[int]]:
+        """
+        The maximum number of query threads permitted in a thread group. The maximum value is 4096, but if thread_pool_max_transactions_limit is set, thread_pool_query_threads_per_group must not exceed that value. The default value of 1 means there is one active query thread in each thread group, which works well for many loads. When you are using the high concurrency thread pool algorithm (thread_pool_algorithm = 1), consider increasing the value if you experience slower response times due to long-running transactions. 
+
+        threadPoolQueryThreadsPerGroup corresponds to the MySQL Server system variable [thread_pool_query_threads_per_group](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_query_threads_per_group)
+        """
+        return pulumi.get(self, "thread_pool_query_threads_per_group")
+
+    @thread_pool_query_threads_per_group.setter
+    def thread_pool_query_threads_per_group(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "thread_pool_query_threads_per_group", value)
+
+    @property
+    @pulumi.getter(name="threadPoolSize")
+    def thread_pool_size(self) -> Optional[pulumi.Input[int]]:
+        """
+        The number of thread groups in the thread pool. This is the most important parameter controlling thread pool performance. It affects how many statements can execute simultaneously. If a value outside the range of permissible values is specified, the thread pool plugin does not load and the server writes a message to the error log.
+
+        threadPoolSize corresponds to the MySQL Server System variable [thread_pool_size] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_size).
+        """
+        return pulumi.get(self, "thread_pool_size")
+
+    @thread_pool_size.setter
+    def thread_pool_size(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "thread_pool_size", value)
+
+    @property
+    @pulumi.getter(name="threadPoolTransactionDelay")
+    def thread_pool_transaction_delay(self) -> Optional[pulumi.Input[int]]:
+        """
+        The delay period before executing a new transaction, in milliseconds. The maximum value is 300000 (5 minutes). A transaction delay can be used in cases where parallel transactions affect the performance of other operations due to resource contention. For example, if parallel transactions affect index creation or an online buffer pool resizing operation, you can configure a transaction delay to reduce resource contention while those operations are running. 
+
+        threadPoolTransactionDelay corresponds to the MySQL Server system variable [thread_pool_transaction_delay](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_transaction_delay)
+        """
+        return pulumi.get(self, "thread_pool_transaction_delay")
+
+    @thread_pool_transaction_delay.setter
+    def thread_pool_transaction_delay(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "thread_pool_transaction_delay", value)
 
     @property
     @pulumi.getter(name="timeZone")
@@ -4137,6 +5263,14 @@ class MysqlConfigurationVariablesArgs:
 
 if not MYPY:
     class MysqlDbSystemBackupPolicyArgsDict(TypedDict):
+        copy_policies: NotRequired[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemBackupPolicyCopyPolicyArgsDict']]]]
+        """
+        (Updatable) List of policies of a DB system to schedule cross-region DB system backup copy.
+
+        The policy includes the name of the destination region to which the DB system backup will be copied, and an optional parameter which specifies the retention period of the copied DB system backup in days.
+
+        **Note:** Currently, only one policy can be specified in the list.
+        """
         defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
         """
         (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces.
@@ -4179,6 +5313,7 @@ elif False:
 @pulumi.input_type
 class MysqlDbSystemBackupPolicyArgs:
     def __init__(__self__, *,
+                 copy_policies: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemBackupPolicyCopyPolicyArgs']]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
@@ -4186,6 +5321,11 @@ class MysqlDbSystemBackupPolicyArgs:
                  retention_in_days: Optional[pulumi.Input[int]] = None,
                  window_start_time: Optional[pulumi.Input[str]] = None):
         """
+        :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemBackupPolicyCopyPolicyArgs']]] copy_policies: (Updatable) List of policies of a DB system to schedule cross-region DB system backup copy.
+               
+               The policy includes the name of the destination region to which the DB system backup will be copied, and an optional parameter which specifies the retention period of the copied DB system backup in days.
+               
+               **Note:** Currently, only one policy can be specified in the list.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces.
                
                Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
@@ -4205,6 +5345,8 @@ class MysqlDbSystemBackupPolicyArgs:
                
                At some point in the window, the system may incur a brief service disruption as the backup is performed.
         """
+        if copy_policies is not None:
+            pulumi.set(__self__, "copy_policies", copy_policies)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
@@ -4217,6 +5359,22 @@ class MysqlDbSystemBackupPolicyArgs:
             pulumi.set(__self__, "retention_in_days", retention_in_days)
         if window_start_time is not None:
             pulumi.set(__self__, "window_start_time", window_start_time)
+
+    @property
+    @pulumi.getter(name="copyPolicies")
+    def copy_policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemBackupPolicyCopyPolicyArgs']]]]:
+        """
+        (Updatable) List of policies of a DB system to schedule cross-region DB system backup copy.
+
+        The policy includes the name of the destination region to which the DB system backup will be copied, and an optional parameter which specifies the retention period of the copied DB system backup in days.
+
+        **Note:** Currently, only one policy can be specified in the list.
+        """
+        return pulumi.get(self, "copy_policies")
+
+    @copy_policies.setter
+    def copy_policies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemBackupPolicyCopyPolicyArgs']]]]):
+        pulumi.set(self, "copy_policies", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -4304,6 +5462,57 @@ class MysqlDbSystemBackupPolicyArgs:
 
 
 if not MYPY:
+    class MysqlDbSystemBackupPolicyCopyPolicyArgsDict(TypedDict):
+        copy_to_region: pulumi.Input[str]
+        """
+        (Updatable) The destination region name to which the DB system backup will be copied.
+        """
+        backup_copy_retention_in_days: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Number of days to retain the copied DB system backup.
+        """
+elif False:
+    MysqlDbSystemBackupPolicyCopyPolicyArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MysqlDbSystemBackupPolicyCopyPolicyArgs:
+    def __init__(__self__, *,
+                 copy_to_region: pulumi.Input[str],
+                 backup_copy_retention_in_days: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[str] copy_to_region: (Updatable) The destination region name to which the DB system backup will be copied.
+        :param pulumi.Input[int] backup_copy_retention_in_days: (Updatable) Number of days to retain the copied DB system backup.
+        """
+        pulumi.set(__self__, "copy_to_region", copy_to_region)
+        if backup_copy_retention_in_days is not None:
+            pulumi.set(__self__, "backup_copy_retention_in_days", backup_copy_retention_in_days)
+
+    @property
+    @pulumi.getter(name="copyToRegion")
+    def copy_to_region(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The destination region name to which the DB system backup will be copied.
+        """
+        return pulumi.get(self, "copy_to_region")
+
+    @copy_to_region.setter
+    def copy_to_region(self, value: pulumi.Input[str]):
+        pulumi.set(self, "copy_to_region", value)
+
+    @property
+    @pulumi.getter(name="backupCopyRetentionInDays")
+    def backup_copy_retention_in_days(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Number of days to retain the copied DB system backup.
+        """
+        return pulumi.get(self, "backup_copy_retention_in_days")
+
+    @backup_copy_retention_in_days.setter
+    def backup_copy_retention_in_days(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "backup_copy_retention_in_days", value)
+
+
+if not MYPY:
     class MysqlDbSystemBackupPolicyPitrPolicyArgsDict(TypedDict):
         is_enabled: NotRequired[pulumi.Input[bool]]
         """
@@ -4373,6 +5582,10 @@ if not MYPY:
         """
         (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
         """
+        system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
         targets: NotRequired[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelTargetArgsDict']]]]
         """
         Details about the Channel target.
@@ -4400,6 +5613,7 @@ class MysqlDbSystemChannelArgs:
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  sources: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelSourceArgs']]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  targets: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelTargetArgs']]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None):
@@ -4413,6 +5627,7 @@ class MysqlDbSystemChannelArgs:
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycleState.
         :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelSourceArgs']]] sources: Parameters detailing how to provision the initial data of the system.
         :param pulumi.Input[str] state: (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelTargetArgs']]] targets: Details about the Channel target.
         :param pulumi.Input[str] time_created: The date and time the DB System was created.
         :param pulumi.Input[str] time_updated: The time the DB System was last updated.
@@ -4435,6 +5650,8 @@ class MysqlDbSystemChannelArgs:
             pulumi.set(__self__, "sources", sources)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if targets is not None:
             pulumi.set(__self__, "targets", targets)
         if time_created is not None:
@@ -4549,6 +5766,18 @@ class MysqlDbSystemChannelArgs:
     @state.setter
     def state(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "state", value)
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "system_tags", value)
 
     @property
     @pulumi.getter

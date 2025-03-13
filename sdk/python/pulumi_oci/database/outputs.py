@@ -135,8 +135,16 @@ __all__ = [
     'ExadataInfrastructureComputeMaintenanceWindow',
     'ExadataInfrastructureComputeMaintenanceWindowDaysOfWeek',
     'ExadataInfrastructureComputeMaintenanceWindowMonth',
+    'ExadataInfrastructureConfigureExascaleManagementContact',
+    'ExadataInfrastructureConfigureExascaleManagementDefinedFileSystemConfiguration',
+    'ExadataInfrastructureConfigureExascaleManagementExascaleConfig',
+    'ExadataInfrastructureConfigureExascaleManagementMaintenanceWindow',
+    'ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeek',
+    'ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonth',
+    'ExadataInfrastructureConfigureExascaleManagementNetworkBondingModeDetail',
     'ExadataInfrastructureContact',
     'ExadataInfrastructureDefinedFileSystemConfiguration',
+    'ExadataInfrastructureExascaleConfig',
     'ExadataInfrastructureMaintenanceWindow',
     'ExadataInfrastructureMaintenanceWindowDaysOfWeek',
     'ExadataInfrastructureMaintenanceWindowMonth',
@@ -550,6 +558,7 @@ __all__ = [
     'GetDbVersionsFilterResult',
     'GetExadataInfrastructureContactResult',
     'GetExadataInfrastructureDefinedFileSystemConfigurationResult',
+    'GetExadataInfrastructureExascaleConfigResult',
     'GetExadataInfrastructureMaintenanceWindowResult',
     'GetExadataInfrastructureMaintenanceWindowDaysOfWeekResult',
     'GetExadataInfrastructureMaintenanceWindowMonthResult',
@@ -558,6 +567,7 @@ __all__ = [
     'GetExadataInfrastructuresExadataInfrastructureResult',
     'GetExadataInfrastructuresExadataInfrastructureContactResult',
     'GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationResult',
+    'GetExadataInfrastructuresExadataInfrastructureExascaleConfigResult',
     'GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowResult',
     'GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowDaysOfWeekResult',
     'GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowMonthResult',
@@ -10846,6 +10856,504 @@ class ExadataInfrastructureComputeMaintenanceWindowMonth(dict):
 
 
 @pulumi.output_type
+class ExadataInfrastructureConfigureExascaleManagementContact(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isContactMosValidated":
+            suggest = "is_contact_mos_validated"
+        elif key == "isPrimary":
+            suggest = "is_primary"
+        elif key == "phoneNumber":
+            suggest = "phone_number"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExadataInfrastructureConfigureExascaleManagementContact. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExadataInfrastructureConfigureExascaleManagementContact.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExadataInfrastructureConfigureExascaleManagementContact.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 email: Optional[str] = None,
+                 is_contact_mos_validated: Optional[bool] = None,
+                 is_primary: Optional[bool] = None,
+                 name: Optional[str] = None,
+                 phone_number: Optional[str] = None):
+        """
+        :param str email: The email for the Exadata Infrastructure contact.
+        :param bool is_contact_mos_validated: If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
+        :param bool is_primary: If `true`, this Exadata Infrastructure contact is a primary contact. If `false`, this Exadata Infrastructure is a secondary contact.
+        :param str name: Name of the month of the year.
+        :param str phone_number: The phone number for the Exadata Infrastructure contact.
+        """
+        if email is not None:
+            pulumi.set(__self__, "email", email)
+        if is_contact_mos_validated is not None:
+            pulumi.set(__self__, "is_contact_mos_validated", is_contact_mos_validated)
+        if is_primary is not None:
+            pulumi.set(__self__, "is_primary", is_primary)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if phone_number is not None:
+            pulumi.set(__self__, "phone_number", phone_number)
+
+    @property
+    @pulumi.getter
+    def email(self) -> Optional[str]:
+        """
+        The email for the Exadata Infrastructure contact.
+        """
+        return pulumi.get(self, "email")
+
+    @property
+    @pulumi.getter(name="isContactMosValidated")
+    def is_contact_mos_validated(self) -> Optional[bool]:
+        """
+        If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
+        """
+        return pulumi.get(self, "is_contact_mos_validated")
+
+    @property
+    @pulumi.getter(name="isPrimary")
+    def is_primary(self) -> Optional[bool]:
+        """
+        If `true`, this Exadata Infrastructure contact is a primary contact. If `false`, this Exadata Infrastructure is a secondary contact.
+        """
+        return pulumi.get(self, "is_primary")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="phoneNumber")
+    def phone_number(self) -> Optional[str]:
+        """
+        The phone number for the Exadata Infrastructure contact.
+        """
+        return pulumi.get(self, "phone_number")
+
+
+@pulumi.output_type
+class ExadataInfrastructureConfigureExascaleManagementDefinedFileSystemConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isBackupPartition":
+            suggest = "is_backup_partition"
+        elif key == "isResizable":
+            suggest = "is_resizable"
+        elif key == "minSizeGb":
+            suggest = "min_size_gb"
+        elif key == "mountPoint":
+            suggest = "mount_point"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExadataInfrastructureConfigureExascaleManagementDefinedFileSystemConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExadataInfrastructureConfigureExascaleManagementDefinedFileSystemConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExadataInfrastructureConfigureExascaleManagementDefinedFileSystemConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 is_backup_partition: Optional[bool] = None,
+                 is_resizable: Optional[bool] = None,
+                 min_size_gb: Optional[int] = None,
+                 mount_point: Optional[str] = None):
+        """
+        :param bool is_backup_partition: If true, the file system is used to create a backup prior to Exadata VM OS update.
+        :param bool is_resizable: If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+        :param int min_size_gb: The minimum size of file system.
+        :param str mount_point: The mount point of file system.
+        """
+        if is_backup_partition is not None:
+            pulumi.set(__self__, "is_backup_partition", is_backup_partition)
+        if is_resizable is not None:
+            pulumi.set(__self__, "is_resizable", is_resizable)
+        if min_size_gb is not None:
+            pulumi.set(__self__, "min_size_gb", min_size_gb)
+        if mount_point is not None:
+            pulumi.set(__self__, "mount_point", mount_point)
+
+    @property
+    @pulumi.getter(name="isBackupPartition")
+    def is_backup_partition(self) -> Optional[bool]:
+        """
+        If true, the file system is used to create a backup prior to Exadata VM OS update.
+        """
+        return pulumi.get(self, "is_backup_partition")
+
+    @property
+    @pulumi.getter(name="isResizable")
+    def is_resizable(self) -> Optional[bool]:
+        """
+        If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+        """
+        return pulumi.get(self, "is_resizable")
+
+    @property
+    @pulumi.getter(name="minSizeGb")
+    def min_size_gb(self) -> Optional[int]:
+        """
+        The minimum size of file system.
+        """
+        return pulumi.get(self, "min_size_gb")
+
+    @property
+    @pulumi.getter(name="mountPoint")
+    def mount_point(self) -> Optional[str]:
+        """
+        The mount point of file system.
+        """
+        return pulumi.get(self, "mount_point")
+
+
+@pulumi.output_type
+class ExadataInfrastructureConfigureExascaleManagementExascaleConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "availableStorageInGbs":
+            suggest = "available_storage_in_gbs"
+        elif key == "totalStorageInGbs":
+            suggest = "total_storage_in_gbs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExadataInfrastructureConfigureExascaleManagementExascaleConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExadataInfrastructureConfigureExascaleManagementExascaleConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExadataInfrastructureConfigureExascaleManagementExascaleConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 available_storage_in_gbs: Optional[int] = None,
+                 total_storage_in_gbs: Optional[int] = None):
+        """
+        :param int available_storage_in_gbs: Available storage size for Exascale in GBs.
+        :param int total_storage_in_gbs: Storage size needed for Exascale in GBs.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if available_storage_in_gbs is not None:
+            pulumi.set(__self__, "available_storage_in_gbs", available_storage_in_gbs)
+        if total_storage_in_gbs is not None:
+            pulumi.set(__self__, "total_storage_in_gbs", total_storage_in_gbs)
+
+    @property
+    @pulumi.getter(name="availableStorageInGbs")
+    def available_storage_in_gbs(self) -> Optional[int]:
+        """
+        Available storage size for Exascale in GBs.
+        """
+        return pulumi.get(self, "available_storage_in_gbs")
+
+    @property
+    @pulumi.getter(name="totalStorageInGbs")
+    def total_storage_in_gbs(self) -> Optional[int]:
+        """
+        Storage size needed for Exascale in GBs.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "total_storage_in_gbs")
+
+
+@pulumi.output_type
+class ExadataInfrastructureConfigureExascaleManagementMaintenanceWindow(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customActionTimeoutInMins":
+            suggest = "custom_action_timeout_in_mins"
+        elif key == "daysOfWeeks":
+            suggest = "days_of_weeks"
+        elif key == "hoursOfDays":
+            suggest = "hours_of_days"
+        elif key == "isCustomActionTimeoutEnabled":
+            suggest = "is_custom_action_timeout_enabled"
+        elif key == "isMonthlyPatchingEnabled":
+            suggest = "is_monthly_patching_enabled"
+        elif key == "leadTimeInWeeks":
+            suggest = "lead_time_in_weeks"
+        elif key == "patchingMode":
+            suggest = "patching_mode"
+        elif key == "skipRus":
+            suggest = "skip_rus"
+        elif key == "weeksOfMonths":
+            suggest = "weeks_of_months"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExadataInfrastructureConfigureExascaleManagementMaintenanceWindow. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExadataInfrastructureConfigureExascaleManagementMaintenanceWindow.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExadataInfrastructureConfigureExascaleManagementMaintenanceWindow.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 custom_action_timeout_in_mins: Optional[int] = None,
+                 days_of_weeks: Optional[Sequence['outputs.ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeek']] = None,
+                 hours_of_days: Optional[Sequence[int]] = None,
+                 is_custom_action_timeout_enabled: Optional[bool] = None,
+                 is_monthly_patching_enabled: Optional[bool] = None,
+                 lead_time_in_weeks: Optional[int] = None,
+                 months: Optional[Sequence['outputs.ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonth']] = None,
+                 patching_mode: Optional[str] = None,
+                 preference: Optional[str] = None,
+                 skip_rus: Optional[Sequence[bool]] = None,
+                 weeks_of_months: Optional[Sequence[int]] = None):
+        """
+        :param int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+        :param Sequence['ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeekArgs'] days_of_weeks: Days during the week when maintenance should be performed.
+        :param Sequence[int] hours_of_days: The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        :param bool is_custom_action_timeout_enabled: If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        :param bool is_monthly_patching_enabled: If true, enables the monthly patching option.
+        :param int lead_time_in_weeks: Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+        :param Sequence['ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonthArgs'] months: Months during the year when maintenance should be performed.
+        :param str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        :param str preference: The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        """
+        if custom_action_timeout_in_mins is not None:
+            pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+        if days_of_weeks is not None:
+            pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+        if hours_of_days is not None:
+            pulumi.set(__self__, "hours_of_days", hours_of_days)
+        if is_custom_action_timeout_enabled is not None:
+            pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+        if is_monthly_patching_enabled is not None:
+            pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
+        if lead_time_in_weeks is not None:
+            pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
+        if months is not None:
+            pulumi.set(__self__, "months", months)
+        if patching_mode is not None:
+            pulumi.set(__self__, "patching_mode", patching_mode)
+        if preference is not None:
+            pulumi.set(__self__, "preference", preference)
+        if skip_rus is not None:
+            pulumi.set(__self__, "skip_rus", skip_rus)
+        if weeks_of_months is not None:
+            pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+
+    @property
+    @pulumi.getter(name="customActionTimeoutInMins")
+    def custom_action_timeout_in_mins(self) -> Optional[int]:
+        """
+        Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+        """
+        return pulumi.get(self, "custom_action_timeout_in_mins")
+
+    @property
+    @pulumi.getter(name="daysOfWeeks")
+    def days_of_weeks(self) -> Optional[Sequence['outputs.ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeek']]:
+        """
+        Days during the week when maintenance should be performed.
+        """
+        return pulumi.get(self, "days_of_weeks")
+
+    @property
+    @pulumi.getter(name="hoursOfDays")
+    def hours_of_days(self) -> Optional[Sequence[int]]:
+        """
+        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        """
+        return pulumi.get(self, "hours_of_days")
+
+    @property
+    @pulumi.getter(name="isCustomActionTimeoutEnabled")
+    def is_custom_action_timeout_enabled(self) -> Optional[bool]:
+        """
+        If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        """
+        return pulumi.get(self, "is_custom_action_timeout_enabled")
+
+    @property
+    @pulumi.getter(name="isMonthlyPatchingEnabled")
+    def is_monthly_patching_enabled(self) -> Optional[bool]:
+        """
+        If true, enables the monthly patching option.
+        """
+        return pulumi.get(self, "is_monthly_patching_enabled")
+
+    @property
+    @pulumi.getter(name="leadTimeInWeeks")
+    def lead_time_in_weeks(self) -> Optional[int]:
+        """
+        Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+        """
+        return pulumi.get(self, "lead_time_in_weeks")
+
+    @property
+    @pulumi.getter
+    def months(self) -> Optional[Sequence['outputs.ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonth']]:
+        """
+        Months during the year when maintenance should be performed.
+        """
+        return pulumi.get(self, "months")
+
+    @property
+    @pulumi.getter(name="patchingMode")
+    def patching_mode(self) -> Optional[str]:
+        """
+        Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        """
+        return pulumi.get(self, "patching_mode")
+
+    @property
+    @pulumi.getter
+    def preference(self) -> Optional[str]:
+        """
+        The maintenance window scheduling preference.
+        """
+        return pulumi.get(self, "preference")
+
+    @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Optional[Sequence[bool]]:
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
+        return pulumi.get(self, "skip_rus")
+
+    @property
+    @pulumi.getter(name="weeksOfMonths")
+    def weeks_of_months(self) -> Optional[Sequence[int]]:
+        """
+        Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        """
+        return pulumi.get(self, "weeks_of_months")
+
+
+@pulumi.output_type
+class ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeek(dict):
+    def __init__(__self__, *,
+                 name: Optional[str] = None):
+        """
+        :param str name: Name of the month of the year.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonth(dict):
+    def __init__(__self__, *,
+                 name: Optional[str] = None):
+        """
+        :param str name: Name of the month of the year.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class ExadataInfrastructureConfigureExascaleManagementNetworkBondingModeDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "backupNetworkBondingMode":
+            suggest = "backup_network_bonding_mode"
+        elif key == "clientNetworkBondingMode":
+            suggest = "client_network_bonding_mode"
+        elif key == "drNetworkBondingMode":
+            suggest = "dr_network_bonding_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExadataInfrastructureConfigureExascaleManagementNetworkBondingModeDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExadataInfrastructureConfigureExascaleManagementNetworkBondingModeDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExadataInfrastructureConfigureExascaleManagementNetworkBondingModeDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 backup_network_bonding_mode: Optional[str] = None,
+                 client_network_bonding_mode: Optional[str] = None,
+                 dr_network_bonding_mode: Optional[str] = None):
+        """
+        :param str backup_network_bonding_mode: The network bonding mode for the Exadata infrastructure.
+        :param str client_network_bonding_mode: The network bonding mode for the Exadata infrastructure.
+        :param str dr_network_bonding_mode: The network bonding mode for the Exadata infrastructure.
+        """
+        if backup_network_bonding_mode is not None:
+            pulumi.set(__self__, "backup_network_bonding_mode", backup_network_bonding_mode)
+        if client_network_bonding_mode is not None:
+            pulumi.set(__self__, "client_network_bonding_mode", client_network_bonding_mode)
+        if dr_network_bonding_mode is not None:
+            pulumi.set(__self__, "dr_network_bonding_mode", dr_network_bonding_mode)
+
+    @property
+    @pulumi.getter(name="backupNetworkBondingMode")
+    def backup_network_bonding_mode(self) -> Optional[str]:
+        """
+        The network bonding mode for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "backup_network_bonding_mode")
+
+    @property
+    @pulumi.getter(name="clientNetworkBondingMode")
+    def client_network_bonding_mode(self) -> Optional[str]:
+        """
+        The network bonding mode for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "client_network_bonding_mode")
+
+    @property
+    @pulumi.getter(name="drNetworkBondingMode")
+    def dr_network_bonding_mode(self) -> Optional[str]:
+        """
+        The network bonding mode for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "dr_network_bonding_mode")
+
+
+@pulumi.output_type
 class ExadataInfrastructureContact(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -11006,6 +11514,56 @@ class ExadataInfrastructureDefinedFileSystemConfiguration(dict):
         The mount point of file system.
         """
         return pulumi.get(self, "mount_point")
+
+
+@pulumi.output_type
+class ExadataInfrastructureExascaleConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "availableStorageInGbs":
+            suggest = "available_storage_in_gbs"
+        elif key == "totalStorageInGbs":
+            suggest = "total_storage_in_gbs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExadataInfrastructureExascaleConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExadataInfrastructureExascaleConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExadataInfrastructureExascaleConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 available_storage_in_gbs: Optional[int] = None,
+                 total_storage_in_gbs: Optional[int] = None):
+        """
+        :param int available_storage_in_gbs: Available storage size for Exascale in GBs.
+        :param int total_storage_in_gbs: Storage size needed for Exascale in GBs.
+        """
+        if available_storage_in_gbs is not None:
+            pulumi.set(__self__, "available_storage_in_gbs", available_storage_in_gbs)
+        if total_storage_in_gbs is not None:
+            pulumi.set(__self__, "total_storage_in_gbs", total_storage_in_gbs)
+
+    @property
+    @pulumi.getter(name="availableStorageInGbs")
+    def available_storage_in_gbs(self) -> Optional[int]:
+        """
+        Available storage size for Exascale in GBs.
+        """
+        return pulumi.get(self, "available_storage_in_gbs")
+
+    @property
+    @pulumi.getter(name="totalStorageInGbs")
+    def total_storage_in_gbs(self) -> Optional[int]:
+        """
+        Storage size needed for Exascale in GBs.
+        """
+        return pulumi.get(self, "total_storage_in_gbs")
 
 
 @pulumi.output_type
@@ -15267,6 +15825,7 @@ class GetApplicationVipsApplicationVipResult(dict):
                  hostname_label: str,
                  id: str,
                  ip_address: str,
+                 ipv6address: str,
                  lifecycle_details: str,
                  state: str,
                  subnet_id: str,
@@ -15278,7 +15837,8 @@ class GetApplicationVipsApplicationVipResult(dict):
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname_label: The hostname of the application virtual IP (VIP) address.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application virtual IP (VIP) address.
-        :param str ip_address: The application virtual IP (VIP) address.
+        :param str ip_address: The application virtual IP (VIP) IPv4 address.
+        :param str ipv6address: The application virtual IP (VIP) IPv6 address.
         :param str lifecycle_details: Additional information about the current lifecycle state of the application virtual IP (VIP) address.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
@@ -15292,6 +15852,7 @@ class GetApplicationVipsApplicationVipResult(dict):
         pulumi.set(__self__, "hostname_label", hostname_label)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "ip_address", ip_address)
+        pulumi.set(__self__, "ipv6address", ipv6address)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -15354,9 +15915,17 @@ class GetApplicationVipsApplicationVipResult(dict):
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> str:
         """
-        The application virtual IP (VIP) address.
+        The application virtual IP (VIP) IPv4 address.
         """
         return pulumi.get(self, "ip_address")
+
+    @property
+    @pulumi.getter
+    def ipv6address(self) -> str:
+        """
+        The application virtual IP (VIP) IPv6 address.
+        """
+        return pulumi.get(self, "ipv6address")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -20882,9 +21451,6 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param int backup_retention_period_in_days: Retention period, in days, for backups.
         :param str character_set: The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
         :param Sequence[int] clone_table_space_lists: A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
-               =======
-               AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
-               >>>>>>> theirs
         :param str cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param float compute_count: Compute used by database tools.
@@ -21283,9 +21849,6 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     def clone_table_space_lists(self) -> Sequence[int]:
         """
         A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
-        =======
-        AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
-        >>>>>>> theirs
         """
         return pulumi.get(self, "clone_table_space_lists")
 
@@ -23729,9 +24292,6 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param int backup_retention_period_in_days: Retention period, in days, for backups.
         :param str character_set: The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
         :param Sequence[int] clone_table_space_lists: A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
-               =======
-               AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
-               >>>>>>> theirs
         :param str cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param float compute_count: Compute used by database tools.
@@ -24087,9 +24647,6 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     def clone_table_space_lists(self) -> Sequence[int]:
         """
         A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
-        =======
-        AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
-        >>>>>>> theirs
         """
         return pulumi.get(self, "clone_table_space_lists")
 
@@ -29782,6 +30339,7 @@ class GetBackupDestinationsFilterResult(dict):
 class GetBackupsBackupResult(dict):
     def __init__(__self__, *,
                  availability_domain: str,
+                 backup_destination_type: str,
                  compartment_id: str,
                  database_edition: str,
                  database_id: str,
@@ -29789,41 +30347,53 @@ class GetBackupsBackupResult(dict):
                  display_name: str,
                  encryption_key_location_details: Sequence['outputs.GetBackupsBackupEncryptionKeyLocationDetailResult'],
                  id: str,
+                 is_using_oracle_managed_keys: bool,
                  key_store_id: str,
                  key_store_wallet_name: str,
                  kms_key_id: str,
                  kms_key_version_id: str,
                  lifecycle_details: str,
+                 retention_period_in_days: int,
+                 retention_period_in_years: int,
+                 secondary_kms_key_ids: Sequence[str],
                  shape: str,
                  state: str,
                  time_ended: str,
+                 time_expiry_scheduled: str,
                  time_started: str,
                  type: str,
                  vault_id: str,
                  version: str):
         """
         :param str availability_domain: The name of the availability domain where the database backup is stored.
+        :param str backup_destination_type: A filter to return only resources that match the given backup destination type.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param str database_edition: The Oracle Database edition of the DB system from which the database backup was taken.
+        :param str database_edition: The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
         :param str database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param float database_size_in_gbs: The size of the database in gigabytes at the time the backup was taken.
         :param str display_name: The user-friendly name for the backup. The name does not have to be unique.
         :param Sequence['GetBackupsBackupEncryptionKeyLocationDetailArgs'] encryption_key_location_details: Types of providers supported for managing database encryption keys
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup.
+        :param bool is_using_oracle_managed_keys: True if Oracle Managed Keys is required for restore of the backup.
         :param str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param str key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param int retention_period_in_days: The retention period of the long term backup in days.
+        :param int retention_period_in_years: The retention period of the long term backup in years.
+        :param Sequence[str] secondary_kms_key_ids: List of OCIDs of the key containers used as the secondary encryption key in database transparent data encryption (TDE) operations.
         :param str shape: Shape of the backup's source database.
-        :param str state: The current state of the backup.
+        :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param str time_ended: The date and time the backup was completed.
+        :param str time_expiry_scheduled: Expiration time of the long term database backup.
         :param str time_started: The date and time the backup started.
-        :param str type: The type of backup.
+        :param str type: A filter to return only backups that matches with the given type of Backup.
         :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
-        :param str version: Version of the backup's source database
+        :param str version: A filter to return only resources that match the given database version.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "backup_destination_type", backup_destination_type)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "database_edition", database_edition)
         pulumi.set(__self__, "database_id", database_id)
@@ -29831,14 +30401,19 @@ class GetBackupsBackupResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "encryption_key_location_details", encryption_key_location_details)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_using_oracle_managed_keys", is_using_oracle_managed_keys)
         pulumi.set(__self__, "key_store_id", key_store_id)
         pulumi.set(__self__, "key_store_wallet_name", key_store_wallet_name)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
         pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "retention_period_in_days", retention_period_in_days)
+        pulumi.set(__self__, "retention_period_in_years", retention_period_in_years)
+        pulumi.set(__self__, "secondary_kms_key_ids", secondary_kms_key_ids)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_ended", time_ended)
+        pulumi.set(__self__, "time_expiry_scheduled", time_expiry_scheduled)
         pulumi.set(__self__, "time_started", time_started)
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "vault_id", vault_id)
@@ -29853,6 +30428,14 @@ class GetBackupsBackupResult(dict):
         return pulumi.get(self, "availability_domain")
 
     @property
+    @pulumi.getter(name="backupDestinationType")
+    def backup_destination_type(self) -> str:
+        """
+        A filter to return only resources that match the given backup destination type.
+        """
+        return pulumi.get(self, "backup_destination_type")
+
+    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
@@ -29864,7 +30447,7 @@ class GetBackupsBackupResult(dict):
     @pulumi.getter(name="databaseEdition")
     def database_edition(self) -> str:
         """
-        The Oracle Database edition of the DB system from which the database backup was taken.
+        The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
         """
         return pulumi.get(self, "database_edition")
 
@@ -29909,6 +30492,14 @@ class GetBackupsBackupResult(dict):
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isUsingOracleManagedKeys")
+    def is_using_oracle_managed_keys(self) -> bool:
+        """
+        True if Oracle Managed Keys is required for restore of the backup.
+        """
+        return pulumi.get(self, "is_using_oracle_managed_keys")
+
+    @property
     @pulumi.getter(name="keyStoreId")
     def key_store_id(self) -> str:
         """
@@ -29949,6 +30540,30 @@ class GetBackupsBackupResult(dict):
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="retentionPeriodInDays")
+    def retention_period_in_days(self) -> int:
+        """
+        The retention period of the long term backup in days.
+        """
+        return pulumi.get(self, "retention_period_in_days")
+
+    @property
+    @pulumi.getter(name="retentionPeriodInYears")
+    def retention_period_in_years(self) -> int:
+        """
+        The retention period of the long term backup in years.
+        """
+        return pulumi.get(self, "retention_period_in_years")
+
+    @property
+    @pulumi.getter(name="secondaryKmsKeyIds")
+    def secondary_kms_key_ids(self) -> Sequence[str]:
+        """
+        List of OCIDs of the key containers used as the secondary encryption key in database transparent data encryption (TDE) operations.
+        """
+        return pulumi.get(self, "secondary_kms_key_ids")
+
+    @property
     @pulumi.getter
     def shape(self) -> str:
         """
@@ -29960,7 +30575,7 @@ class GetBackupsBackupResult(dict):
     @pulumi.getter
     def state(self) -> str:
         """
-        The current state of the backup.
+        A filter to return only resources that match the given lifecycle state exactly.
         """
         return pulumi.get(self, "state")
 
@@ -29971,6 +30586,14 @@ class GetBackupsBackupResult(dict):
         The date and time the backup was completed.
         """
         return pulumi.get(self, "time_ended")
+
+    @property
+    @pulumi.getter(name="timeExpiryScheduled")
+    def time_expiry_scheduled(self) -> str:
+        """
+        Expiration time of the long term database backup.
+        """
+        return pulumi.get(self, "time_expiry_scheduled")
 
     @property
     @pulumi.getter(name="timeStarted")
@@ -29984,7 +30607,7 @@ class GetBackupsBackupResult(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        The type of backup.
+        A filter to return only backups that matches with the given type of Backup.
         """
         return pulumi.get(self, "type")
 
@@ -30000,7 +30623,7 @@ class GetBackupsBackupResult(dict):
     @pulumi.getter
     def version(self) -> str:
         """
-        Version of the backup's source database
+        A filter to return only resources that match the given database version.
         """
         return pulumi.get(self, "version")
 
@@ -32104,9 +32727,11 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
                  cluster_placement_group_id: str,
                  compartment_id: str,
                  compute_count: int,
+                 compute_model: str,
                  cpu_count: int,
                  customer_contacts: Sequence['outputs.GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactResult'],
                  data_storage_size_in_tbs: float,
+                 database_server_type: str,
                  db_node_storage_size_in_gbs: int,
                  db_server_version: str,
                  defined_file_system_configurations: Sequence['outputs.GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationResult'],
@@ -32129,6 +32754,7 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
                  shape: str,
                  state: str,
                  storage_count: int,
+                 storage_server_type: str,
                  storage_server_version: str,
                  subscription_id: str,
                  system_tags: Mapping[str, str],
@@ -32142,9 +32768,11 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         :param str cluster_placement_group_id: A filter to return only resources that match the given cluster placement group ID exactly.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param int compute_count: The number of compute servers for the cloud Exadata infrastructure.
+        :param str compute_model: The compute model of the Exadata infrastructure.
         :param int cpu_count: The total number of CPU cores allocated.
         :param Sequence['GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArgs'] customer_contacts: The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure Database service resource. Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators. Up to 10 email addresses can be added to the customer contacts for a cloud Exadata infrastructure instance.
         :param float data_storage_size_in_tbs: Size, in terabytes, of the DATA disk group.
+        :param str database_server_type: The database server type of the Exadata infrastructure.
         :param int db_node_storage_size_in_gbs: The local node storage allocated in GBs.
         :param str db_server_version: The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
         :param Sequence['GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArgs'] defined_file_system_configurations: Details of the file system configuration of the Exadata infrastructure.
@@ -32167,6 +32795,7 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         :param str shape: The model name of the cloud Exadata infrastructure resource.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param int storage_count: The number of storage servers for the cloud Exadata infrastructure.
+        :param str storage_server_type: The storage server type of the Exadata infrastructure.
         :param str storage_server_version: The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
         :param str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -32180,9 +32809,11 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "compute_count", compute_count)
+        pulumi.set(__self__, "compute_model", compute_model)
         pulumi.set(__self__, "cpu_count", cpu_count)
         pulumi.set(__self__, "customer_contacts", customer_contacts)
         pulumi.set(__self__, "data_storage_size_in_tbs", data_storage_size_in_tbs)
+        pulumi.set(__self__, "database_server_type", database_server_type)
         pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
         pulumi.set(__self__, "db_server_version", db_server_version)
         pulumi.set(__self__, "defined_file_system_configurations", defined_file_system_configurations)
@@ -32205,6 +32836,7 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "storage_count", storage_count)
+        pulumi.set(__self__, "storage_server_type", storage_server_type)
         pulumi.set(__self__, "storage_server_version", storage_server_version)
         pulumi.set(__self__, "subscription_id", subscription_id)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -32268,6 +32900,14 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         return pulumi.get(self, "compute_count")
 
     @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> str:
+        """
+        The compute model of the Exadata infrastructure.
+        """
+        return pulumi.get(self, "compute_model")
+
+    @property
     @pulumi.getter(name="cpuCount")
     def cpu_count(self) -> int:
         """
@@ -32290,6 +32930,14 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         Size, in terabytes, of the DATA disk group.
         """
         return pulumi.get(self, "data_storage_size_in_tbs")
+
+    @property
+    @pulumi.getter(name="databaseServerType")
+    def database_server_type(self) -> str:
+        """
+        The database server type of the Exadata infrastructure.
+        """
+        return pulumi.get(self, "database_server_type")
 
     @property
     @pulumi.getter(name="dbNodeStorageSizeInGbs")
@@ -32466,6 +33114,14 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         The number of storage servers for the cloud Exadata infrastructure.
         """
         return pulumi.get(self, "storage_count")
+
+    @property
+    @pulumi.getter(name="storageServerType")
+    def storage_server_type(self) -> str:
+        """
+        The storage server type of the Exadata infrastructure.
+        """
+        return pulumi.get(self, "storage_server_type")
 
     @property
     @pulumi.getter(name="storageServerVersion")
@@ -33091,6 +33747,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
                  cloud_exadata_infrastructure_id: str,
                  cluster_name: str,
                  compartment_id: str,
+                 compute_model: str,
                  cpu_core_count: int,
                  create_async: bool,
                  data_collection_options: Sequence['outputs.GetCloudVmClustersCloudVmClusterDataCollectionOptionResult'],
@@ -33122,6 +33779,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
                  scan_dns_name: str,
                  scan_dns_record_id: str,
                  scan_ip_ids: Sequence[str],
+                 scan_ipv6ids: Sequence[str],
                  scan_listener_port_tcp: int,
                  scan_listener_port_tcp_ssl: int,
                  security_attributes: Mapping[str, str],
@@ -33136,6 +33794,8 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
                  time_created: str,
                  time_zone: str,
                  vip_ids: Sequence[str],
+                 vipv6ids: Sequence[str],
+                 vm_cluster_type: str,
                  zone_id: str):
         """
         :param str availability_domain: The name of the availability domain that the cloud Exadata infrastructure resource is located in.
@@ -33145,6 +33805,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         :param str cloud_exadata_infrastructure_id: If provided, filters the results for the specified cloud Exadata infrastructure.
         :param str cluster_name: The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str compute_model: The compute model of the cloud VM cluster.
         :param int cpu_core_count: The number of CPU cores enabled on the cloud VM cluster.
         :param Sequence['GetCloudVmClustersCloudVmClusterDataCollectionOptionArgs'] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param int data_storage_percentage: The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
@@ -33173,7 +33834,8 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         :param float ocpu_count: The number of OCPU cores to enable on the cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
         :param str scan_dns_name: The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
         :param str scan_dns_record_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
-        :param Sequence[str] scan_ip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+        :param Sequence[str] scan_ip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv4 addresses associated with the cloud VM cluster. SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+        :param Sequence[str] scan_ipv6ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv6 addresses associated with the cloud VM cluster. SCAN IPv6 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
         :param int scan_listener_port_tcp: The TCP Single Client Access Name (SCAN) port. The default port is 1521.
         :param int scan_listener_port_tcp_ssl: The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
         :param Mapping[str, str] security_attributes: Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
@@ -33187,7 +33849,9 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         :param str system_version: Operating system version of the image.
         :param str time_created: The date and time that the cloud VM cluster was created.
         :param str time_zone: The time zone of the cloud VM cluster. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-        :param Sequence[str] vip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+        :param Sequence[str] vip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+        :param Sequence[str] vipv6ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+        :param str vm_cluster_type: A filter to return only cloud vmclusters that match the given cloud vmcluster type exactly.
         :param str zone_id: The OCID of the zone the cloud VM cluster is associated with.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -33197,6 +33861,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         pulumi.set(__self__, "cloud_exadata_infrastructure_id", cloud_exadata_infrastructure_id)
         pulumi.set(__self__, "cluster_name", cluster_name)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compute_model", compute_model)
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         pulumi.set(__self__, "create_async", create_async)
         pulumi.set(__self__, "data_collection_options", data_collection_options)
@@ -33228,6 +33893,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         pulumi.set(__self__, "scan_dns_name", scan_dns_name)
         pulumi.set(__self__, "scan_dns_record_id", scan_dns_record_id)
         pulumi.set(__self__, "scan_ip_ids", scan_ip_ids)
+        pulumi.set(__self__, "scan_ipv6ids", scan_ipv6ids)
         pulumi.set(__self__, "scan_listener_port_tcp", scan_listener_port_tcp)
         pulumi.set(__self__, "scan_listener_port_tcp_ssl", scan_listener_port_tcp_ssl)
         pulumi.set(__self__, "security_attributes", security_attributes)
@@ -33242,6 +33908,8 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_zone", time_zone)
         pulumi.set(__self__, "vip_ids", vip_ids)
+        pulumi.set(__self__, "vipv6ids", vipv6ids)
+        pulumi.set(__self__, "vm_cluster_type", vm_cluster_type)
         pulumi.set(__self__, "zone_id", zone_id)
 
     @property
@@ -33299,6 +33967,14 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> str:
+        """
+        The compute model of the cloud VM cluster.
+        """
+        return pulumi.get(self, "compute_model")
 
     @property
     @pulumi.getter(name="cpuCoreCount")
@@ -33536,9 +34212,17 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
     @pulumi.getter(name="scanIpIds")
     def scan_ip_ids(self) -> Sequence[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv4 addresses associated with the cloud VM cluster. SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
         """
         return pulumi.get(self, "scan_ip_ids")
+
+    @property
+    @pulumi.getter(name="scanIpv6ids")
+    def scan_ipv6ids(self) -> Sequence[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv6 addresses associated with the cloud VM cluster. SCAN IPv6 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+        """
+        return pulumi.get(self, "scan_ipv6ids")
 
     @property
     @pulumi.getter(name="scanListenerPortTcp")
@@ -33648,9 +34332,25 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
     @pulumi.getter(name="vipIds")
     def vip_ids(self) -> Sequence[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
         """
         return pulumi.get(self, "vip_ids")
+
+    @property
+    @pulumi.getter
+    def vipv6ids(self) -> Sequence[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+        """
+        return pulumi.get(self, "vipv6ids")
+
+    @property
+    @pulumi.getter(name="vmClusterType")
+    def vm_cluster_type(self) -> str:
+        """
+        A filter to return only cloud vmclusters that match the given cloud vmcluster type exactly.
+        """
+        return pulumi.get(self, "vm_cluster_type")
 
     @property
     @pulumi.getter(name="zoneId")
@@ -40798,6 +41498,7 @@ class GetDbNodesDbNodeResult(dict):
     def __init__(__self__, *,
                  additional_details: str,
                  backup_ip_id: str,
+                 backup_ipv6id: str,
                  backup_vnic2id: str,
                  backup_vnic_id: str,
                  cpu_core_count: int,
@@ -40809,6 +41510,7 @@ class GetDbNodesDbNodeResult(dict):
                  fault_domain: str,
                  freeform_tags: Mapping[str, str],
                  host_ip_id: str,
+                 host_ipv6id: str,
                  hostname: str,
                  id: str,
                  lifecycle_details: str,
@@ -40824,7 +41526,8 @@ class GetDbNodesDbNodeResult(dict):
                  vnic_id: str):
         """
         :param str additional_details: Additional information about the planned maintenance.
-        :param str backup_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address needed to make a database connection.
+        :param str backup_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IPv4 address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IPv4 address needed to make a database connection.
+        :param str backup_ipv6id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IPv6 address associated with the database node. Use this OCID with the [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6) API to get the IPv6 address needed to make a database connection.
         :param str backup_vnic2id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
         :param str backup_vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup VNIC.
         :param int cpu_core_count: The number of CPU cores enabled on the Db node.
@@ -40834,8 +41537,8 @@ class GetDbNodesDbNodeResult(dict):
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str fault_domain: The name of the Fault Domain the instance is contained in.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param str host_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
-               **Note:** Applies only to Exadata Cloud Service.
+        :param str host_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IPv4 address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IPv4 address needed to make a database connection.
+        :param str host_ipv6id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IPv6 address associated with the database node. Use this OCID with the [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6) API to get the IPv6 address needed to make a database connection.
         :param str hostname: The host name for the database node.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database node.
         :param str lifecycle_details: Information about the current lifecycle state.
@@ -40852,6 +41555,7 @@ class GetDbNodesDbNodeResult(dict):
         """
         pulumi.set(__self__, "additional_details", additional_details)
         pulumi.set(__self__, "backup_ip_id", backup_ip_id)
+        pulumi.set(__self__, "backup_ipv6id", backup_ipv6id)
         pulumi.set(__self__, "backup_vnic2id", backup_vnic2id)
         pulumi.set(__self__, "backup_vnic_id", backup_vnic_id)
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
@@ -40863,6 +41567,7 @@ class GetDbNodesDbNodeResult(dict):
         pulumi.set(__self__, "fault_domain", fault_domain)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "host_ip_id", host_ip_id)
+        pulumi.set(__self__, "host_ipv6id", host_ipv6id)
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -40889,9 +41594,17 @@ class GetDbNodesDbNodeResult(dict):
     @pulumi.getter(name="backupIpId")
     def backup_ip_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address needed to make a database connection.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IPv4 address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IPv4 address needed to make a database connection.
         """
         return pulumi.get(self, "backup_ip_id")
+
+    @property
+    @pulumi.getter(name="backupIpv6id")
+    def backup_ipv6id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IPv6 address associated with the database node. Use this OCID with the [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6) API to get the IPv6 address needed to make a database connection.
+        """
+        return pulumi.get(self, "backup_ipv6id")
 
     @property
     @pulumi.getter(name="backupVnic2id")
@@ -40974,10 +41687,17 @@ class GetDbNodesDbNodeResult(dict):
     @pulumi.getter(name="hostIpId")
     def host_ip_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
-        **Note:** Applies only to Exadata Cloud Service.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IPv4 address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IPv4 address needed to make a database connection.
         """
         return pulumi.get(self, "host_ip_id")
+
+    @property
+    @pulumi.getter(name="hostIpv6id")
+    def host_ipv6id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IPv6 address associated with the database node. Use this OCID with the [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6) API to get the IPv6 address needed to make a database connection.
+        """
+        return pulumi.get(self, "host_ipv6id")
 
     @property
     @pulumi.getter
@@ -41168,6 +41888,7 @@ class GetDbServersDbServerResult(dict):
                  autonomous_virtual_machine_ids: Sequence[str],
                  autonomous_vm_cluster_ids: Sequence[str],
                  compartment_id: str,
+                 compute_model: str,
                  cpu_core_count: int,
                  db_node_ids: Sequence[str],
                  db_node_storage_size_in_gbs: int,
@@ -41190,6 +41911,7 @@ class GetDbServersDbServerResult(dict):
         :param Sequence[str] autonomous_virtual_machine_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Virtual Machines associated with the Db server.
         :param Sequence[str] autonomous_vm_cluster_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM Clusters associated with the Db server.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         :param int cpu_core_count: The number of CPU cores enabled on the Db server.
         :param Sequence[str] db_node_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db nodes associated with the Db server.
         :param int db_node_storage_size_in_gbs: The allocated local node storage in GBs on the Db server.
@@ -41212,6 +41934,7 @@ class GetDbServersDbServerResult(dict):
         pulumi.set(__self__, "autonomous_virtual_machine_ids", autonomous_virtual_machine_ids)
         pulumi.set(__self__, "autonomous_vm_cluster_ids", autonomous_vm_cluster_ids)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compute_model", compute_model)
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         pulumi.set(__self__, "db_node_ids", db_node_ids)
         pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
@@ -41254,6 +41977,14 @@ class GetDbServersDbServerResult(dict):
         The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> str:
+        """
+        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        """
+        return pulumi.get(self, "compute_model")
 
     @property
     @pulumi.getter(name="cpuCoreCount")
@@ -41843,6 +42574,7 @@ class GetDbSystemPatchesPatchResult(dict):
 @pulumi.output_type
 class GetDbSystemShapesDbSystemShapeResult(dict):
     def __init__(__self__, *,
+                 are_server_types_supported: bool,
                  available_core_count: int,
                  available_core_count_per_node: int,
                  available_data_storage_in_tbs: int,
@@ -41851,7 +42583,9 @@ class GetDbSystemShapesDbSystemShapeResult(dict):
                  available_db_node_storage_in_gbs: int,
                  available_memory_in_gbs: int,
                  available_memory_per_node_in_gbs: int,
+                 compute_model: str,
                  core_count_increment: int,
+                 display_name: str,
                  max_storage_count: int,
                  maximum_node_count: int,
                  min_core_count_per_node: int,
@@ -41866,6 +42600,7 @@ class GetDbSystemShapesDbSystemShapeResult(dict):
                  shape_family: str,
                  shape_type: str):
         """
+        :param bool are_server_types_supported: If true, the shape supports configurable DB and Storage Server types.
         :param int available_core_count: The maximum number of CPU cores that can be enabled on the DB system for this shape.
         :param int available_core_count_per_node: The maximum number of CPU cores per database node that can be enabled for this shape. Only applicable to the flex Exadata shape, ExaCC Elastic shapes and VM Flex shapes.
         :param int available_data_storage_in_tbs: The maximum DATA storage that can be enabled for this shape.
@@ -41874,7 +42609,9 @@ class GetDbSystemShapesDbSystemShapeResult(dict):
         :param int available_db_node_storage_in_gbs: The maximum Db Node storage that can be enabled for this shape.
         :param int available_memory_in_gbs: The maximum memory that can be enabled for this shape.
         :param int available_memory_per_node_in_gbs: The maximum memory available per database node for this shape. Only applicable to ExaCC Elastic shapes.
+        :param str compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         :param int core_count_increment: The discrete number by which the CPU core count for this shape can be increased or decreased.
+        :param str display_name: The display name of the shape used for the DB system.
         :param int max_storage_count: The maximum number of Exadata storage servers available for the Exadata infrastructure.
         :param int maximum_node_count: The maximum number of compute servers available for this shape.
         :param int min_core_count_per_node: The minimum number of CPU cores that can be enabled per node for this shape.
@@ -41889,6 +42626,7 @@ class GetDbSystemShapesDbSystemShapeResult(dict):
         :param str shape_family: The family of the shape used for the DB system.
         :param str shape_type: The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are `AMD` , `INTEL` or `INTEL_FLEX_X9`.
         """
+        pulumi.set(__self__, "are_server_types_supported", are_server_types_supported)
         pulumi.set(__self__, "available_core_count", available_core_count)
         pulumi.set(__self__, "available_core_count_per_node", available_core_count_per_node)
         pulumi.set(__self__, "available_data_storage_in_tbs", available_data_storage_in_tbs)
@@ -41897,7 +42635,9 @@ class GetDbSystemShapesDbSystemShapeResult(dict):
         pulumi.set(__self__, "available_db_node_storage_in_gbs", available_db_node_storage_in_gbs)
         pulumi.set(__self__, "available_memory_in_gbs", available_memory_in_gbs)
         pulumi.set(__self__, "available_memory_per_node_in_gbs", available_memory_per_node_in_gbs)
+        pulumi.set(__self__, "compute_model", compute_model)
         pulumi.set(__self__, "core_count_increment", core_count_increment)
+        pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "max_storage_count", max_storage_count)
         pulumi.set(__self__, "maximum_node_count", maximum_node_count)
         pulumi.set(__self__, "min_core_count_per_node", min_core_count_per_node)
@@ -41911,6 +42651,14 @@ class GetDbSystemShapesDbSystemShapeResult(dict):
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "shape_family", shape_family)
         pulumi.set(__self__, "shape_type", shape_type)
+
+    @property
+    @pulumi.getter(name="areServerTypesSupported")
+    def are_server_types_supported(self) -> bool:
+        """
+        If true, the shape supports configurable DB and Storage Server types.
+        """
+        return pulumi.get(self, "are_server_types_supported")
 
     @property
     @pulumi.getter(name="availableCoreCount")
@@ -41977,12 +42725,28 @@ class GetDbSystemShapesDbSystemShapeResult(dict):
         return pulumi.get(self, "available_memory_per_node_in_gbs")
 
     @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> str:
+        """
+        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        """
+        return pulumi.get(self, "compute_model")
+
+    @property
     @pulumi.getter(name="coreCountIncrement")
     def core_count_increment(self) -> int:
         """
         The discrete number by which the CPU core count for this shape can be increased or decreased.
         """
         return pulumi.get(self, "core_count_increment")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The display name of the shape used for the DB system.
+        """
+        return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="maxStorageCount")
@@ -42457,7 +43221,7 @@ class GetDbSystemsDbSystemResult(dict):
         :param Sequence['GetDbSystemsDbSystemDataCollectionOptionArgs'] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param int data_storage_percentage: The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 40 and 80. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
         :param int data_storage_size_in_gb: The data storage size, in gigabytes, that is currently available to the DB system. Applies only for virtual machine DB systems. Required for VMDBs.
-        :param str database_edition: The Oracle Database edition that applies to all the databases on the DB system.
+        :param str database_edition: The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
         :param Sequence['GetDbSystemsDbSystemDbSystemOptionArgs'] db_system_options: The DB system options.
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str disk_redundancy: The type of redundancy configured for the DB system. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
@@ -42638,7 +43402,7 @@ class GetDbSystemsDbSystemResult(dict):
     @pulumi.getter(name="databaseEdition")
     def database_edition(self) -> str:
         """
-        The Oracle Database edition that applies to all the databases on the DB system.
+        The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
         """
         return pulumi.get(self, "database_edition")
 
@@ -44335,6 +45099,35 @@ class GetExadataInfrastructureDefinedFileSystemConfigurationResult(dict):
 
 
 @pulumi.output_type
+class GetExadataInfrastructureExascaleConfigResult(dict):
+    def __init__(__self__, *,
+                 available_storage_in_gbs: int,
+                 total_storage_in_gbs: int):
+        """
+        :param int available_storage_in_gbs: Available storage size for Exascale in GBs.
+        :param int total_storage_in_gbs: Storage size needed for Exascale in GBs.
+        """
+        pulumi.set(__self__, "available_storage_in_gbs", available_storage_in_gbs)
+        pulumi.set(__self__, "total_storage_in_gbs", total_storage_in_gbs)
+
+    @property
+    @pulumi.getter(name="availableStorageInGbs")
+    def available_storage_in_gbs(self) -> int:
+        """
+        Available storage size for Exascale in GBs.
+        """
+        return pulumi.get(self, "available_storage_in_gbs")
+
+    @property
+    @pulumi.getter(name="totalStorageInGbs")
+    def total_storage_in_gbs(self) -> int:
+        """
+        Storage size needed for Exascale in GBs.
+        """
+        return pulumi.get(self, "total_storage_in_gbs")
+
+
+@pulumi.output_type
 class GetExadataInfrastructureMaintenanceWindowResult(dict):
     def __init__(__self__, *,
                  custom_action_timeout_in_mins: int,
@@ -44579,18 +45372,21 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
                  cloud_control_plane_server2: str,
                  compartment_id: str,
                  compute_count: int,
+                 compute_model: str,
                  contacts: Sequence['outputs.GetExadataInfrastructuresExadataInfrastructureContactResult'],
                  corporate_proxy: str,
                  cpus_enabled: int,
                  create_async: bool,
                  csi_number: str,
                  data_storage_size_in_tbs: float,
+                 database_server_type: str,
                  db_node_storage_size_in_gbs: int,
                  db_server_version: str,
                  defined_file_system_configurations: Sequence['outputs.GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationResult'],
                  defined_tags: Mapping[str, str],
                  display_name: str,
                  dns_servers: Sequence[str],
+                 exascale_configs: Sequence['outputs.GetExadataInfrastructuresExadataInfrastructureExascaleConfigResult'],
                  freeform_tags: Mapping[str, str],
                  gateway: str,
                  id: str,
@@ -44615,6 +45411,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
                  shape: str,
                  state: str,
                  storage_count: int,
+                 storage_server_type: str,
                  storage_server_version: str,
                  time_created: str,
                  time_zone: str):
@@ -44629,17 +45426,20 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         :param str cloud_control_plane_server2: The IP address for the second control plane server.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param int compute_count: The number of compute servers for the Exadata infrastructure.
+        :param str compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         :param Sequence['GetExadataInfrastructuresExadataInfrastructureContactArgs'] contacts: The list of contacts for the Exadata infrastructure.
         :param str corporate_proxy: The corporate network proxy for access to the control plane network.
         :param int cpus_enabled: The number of enabled CPU cores.
         :param str csi_number: The CSI Number of the Exadata infrastructure.
         :param float data_storage_size_in_tbs: Size, in terabytes, of the DATA disk group.
+        :param str database_server_type: The database server type of the Exadata infrastructure.
         :param int db_node_storage_size_in_gbs: The local node storage allocated in GBs.
         :param str db_server_version: The software version of the database servers (dom0) in the Exadata infrastructure.
         :param Sequence['GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArgs'] defined_file_system_configurations: Details of the file system configuration of the Exadata infrastructure.
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param Sequence[str] dns_servers: The list of DNS server IP addresses. Maximum of 3 allowed.
+        :param Sequence['GetExadataInfrastructuresExadataInfrastructureExascaleConfigArgs'] exascale_configs: The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str gateway: The gateway for the control plane network.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
@@ -44664,6 +45464,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         :param str shape: The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param int storage_count: The number of Exadata storage servers for the Exadata infrastructure.
+        :param str storage_server_type: The storage server type of the Exadata infrastructure.
         :param str storage_server_version: The software version of the storage servers (cells) in the Exadata infrastructure.
         :param str time_created: The date and time the Exadata infrastructure was created.
         :param str time_zone: The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -44679,18 +45480,21 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         pulumi.set(__self__, "cloud_control_plane_server2", cloud_control_plane_server2)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "compute_count", compute_count)
+        pulumi.set(__self__, "compute_model", compute_model)
         pulumi.set(__self__, "contacts", contacts)
         pulumi.set(__self__, "corporate_proxy", corporate_proxy)
         pulumi.set(__self__, "cpus_enabled", cpus_enabled)
         pulumi.set(__self__, "create_async", create_async)
         pulumi.set(__self__, "csi_number", csi_number)
         pulumi.set(__self__, "data_storage_size_in_tbs", data_storage_size_in_tbs)
+        pulumi.set(__self__, "database_server_type", database_server_type)
         pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
         pulumi.set(__self__, "db_server_version", db_server_version)
         pulumi.set(__self__, "defined_file_system_configurations", defined_file_system_configurations)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "dns_servers", dns_servers)
+        pulumi.set(__self__, "exascale_configs", exascale_configs)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "gateway", gateway)
         pulumi.set(__self__, "id", id)
@@ -44715,6 +45519,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "storage_count", storage_count)
+        pulumi.set(__self__, "storage_server_type", storage_server_type)
         pulumi.set(__self__, "storage_server_version", storage_server_version)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_zone", time_zone)
@@ -44805,6 +45610,14 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         return pulumi.get(self, "compute_count")
 
     @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> str:
+        """
+        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        """
+        return pulumi.get(self, "compute_model")
+
+    @property
     @pulumi.getter
     def contacts(self) -> Sequence['outputs.GetExadataInfrastructuresExadataInfrastructureContactResult']:
         """
@@ -44848,6 +45661,14 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         Size, in terabytes, of the DATA disk group.
         """
         return pulumi.get(self, "data_storage_size_in_tbs")
+
+    @property
+    @pulumi.getter(name="databaseServerType")
+    def database_server_type(self) -> str:
+        """
+        The database server type of the Exadata infrastructure.
+        """
+        return pulumi.get(self, "database_server_type")
 
     @property
     @pulumi.getter(name="dbNodeStorageSizeInGbs")
@@ -44896,6 +45717,14 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         The list of DNS server IP addresses. Maximum of 3 allowed.
         """
         return pulumi.get(self, "dns_servers")
+
+    @property
+    @pulumi.getter(name="exascaleConfigs")
+    def exascale_configs(self) -> Sequence['outputs.GetExadataInfrastructuresExadataInfrastructureExascaleConfigResult']:
+        """
+        The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+        """
+        return pulumi.get(self, "exascale_configs")
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -45090,6 +45919,14 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         return pulumi.get(self, "storage_count")
 
     @property
+    @pulumi.getter(name="storageServerType")
+    def storage_server_type(self) -> str:
+        """
+        The storage server type of the Exadata infrastructure.
+        """
+        return pulumi.get(self, "storage_server_type")
+
+    @property
     @pulumi.getter(name="storageServerVersion")
     def storage_server_version(self) -> str:
         """
@@ -45225,6 +46062,35 @@ class GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurati
         The mount point of file system.
         """
         return pulumi.get(self, "mount_point")
+
+
+@pulumi.output_type
+class GetExadataInfrastructuresExadataInfrastructureExascaleConfigResult(dict):
+    def __init__(__self__, *,
+                 available_storage_in_gbs: int,
+                 total_storage_in_gbs: int):
+        """
+        :param int available_storage_in_gbs: Available storage size for Exascale in GBs.
+        :param int total_storage_in_gbs: Storage size needed for Exascale in GBs.
+        """
+        pulumi.set(__self__, "available_storage_in_gbs", available_storage_in_gbs)
+        pulumi.set(__self__, "total_storage_in_gbs", total_storage_in_gbs)
+
+    @property
+    @pulumi.getter(name="availableStorageInGbs")
+    def available_storage_in_gbs(self) -> int:
+        """
+        Available storage size for Exascale in GBs.
+        """
+        return pulumi.get(self, "available_storage_in_gbs")
+
+    @property
+    @pulumi.getter(name="totalStorageInGbs")
+    def total_storage_in_gbs(self) -> int:
+        """
+        Storage size needed for Exascale in GBs.
+        """
+        return pulumi.get(self, "total_storage_in_gbs")
 
 
 @pulumi.output_type
@@ -46026,6 +46892,7 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
                  backup_network_nsg_ids: Sequence[str],
                  backup_subnet_id: str,
                  cluster_name: str,
+                 cluster_placement_group_id: str,
                  compartment_id: str,
                  data_collection_options: Sequence['outputs.GetExadbVmClustersExadbVmClusterDataCollectionOptionResult'],
                  defined_tags: Mapping[str, str],
@@ -46057,6 +46924,7 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
                  ssh_public_keys: Sequence[str],
                  state: str,
                  subnet_id: str,
+                 subscription_id: str,
                  system_tags: Mapping[str, str],
                  system_version: str,
                  time_created: str,
@@ -46068,6 +46936,7 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
         :param Sequence[str] backup_network_nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
         :param str backup_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
         :param str cluster_name: The cluster name for Exadata VM cluster on Exascale Infrastructure. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
+        :param str cluster_placement_group_id: A filter to return only resources that match the given cluster placement group ID exactly.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param Sequence['GetExadbVmClustersExadbVmClusterDataCollectionOptionArgs'] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -46100,6 +46969,7 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
         :param Sequence[str] ssh_public_keys: The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
         :param str state: A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given lifecycle state exactly.
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+        :param str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str system_version: Operating system version of the image.
         :param str time_created: The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
@@ -46111,6 +46981,7 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
         pulumi.set(__self__, "backup_network_nsg_ids", backup_network_nsg_ids)
         pulumi.set(__self__, "backup_subnet_id", backup_subnet_id)
         pulumi.set(__self__, "cluster_name", cluster_name)
+        pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "data_collection_options", data_collection_options)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -46142,6 +47013,7 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
         pulumi.set(__self__, "ssh_public_keys", ssh_public_keys)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "subscription_id", subscription_id)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "system_version", system_version)
         pulumi.set(__self__, "time_created", time_created)
@@ -46180,6 +47052,14 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
         The cluster name for Exadata VM cluster on Exascale Infrastructure. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
         """
         return pulumi.get(self, "cluster_name")
+
+    @property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> str:
+        """
+        A filter to return only resources that match the given cluster placement group ID exactly.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -46429,6 +47309,14 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
         """
         return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        """
+        return pulumi.get(self, "subscription_id")
 
     @property
     @pulumi.getter(name="systemTags")
@@ -46783,15 +47671,18 @@ class GetExascaleDbStorageVaultsExascaleDbStorageVaultResult(dict):
     def __init__(__self__, *,
                  additional_flash_cache_in_percent: int,
                  availability_domain: str,
+                 cluster_placement_group_id: str,
                  compartment_id: str,
                  defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
+                 exadata_infrastructure_id: str,
                  freeform_tags: Mapping[str, str],
                  high_capacity_database_storages: Sequence['outputs.GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageResult'],
                  id: str,
                  lifecycle_details: str,
                  state: str,
+                 subscription_id: str,
                  system_tags: Mapping[str, str],
                  time_created: str,
                  time_zone: str,
@@ -46800,15 +47691,18 @@ class GetExascaleDbStorageVaultsExascaleDbStorageVaultResult(dict):
         """
         :param int additional_flash_cache_in_percent: The size of additional Flash Cache in percentage of High Capacity database storage.
         :param str availability_domain: The name of the availability domain in which the Exadata Database Storage Vault is located.
+        :param str cluster_placement_group_id: A filter to return only resources that match the given cluster placement group ID exactly.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str description: Exadata Database Storage Vault description.
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
+        :param str exadata_infrastructure_id: A filter to return only list of Vaults that are linked to the exadata infrastructure Id.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param Sequence['GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArgs'] high_capacity_database_storages: Exadata Database Storage Details
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str state: A filter to return only Exadata Database Storage Vaults that match the given lifecycle state exactly.
+        :param str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str time_created: The date and time that the Exadata Database Storage Vault was created.
         :param str time_zone: The time zone that you want to use for the Exadata Database Storage Vault. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -46817,15 +47711,18 @@ class GetExascaleDbStorageVaultsExascaleDbStorageVaultResult(dict):
         """
         pulumi.set(__self__, "additional_flash_cache_in_percent", additional_flash_cache_in_percent)
         pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "exadata_infrastructure_id", exadata_infrastructure_id)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "high_capacity_database_storages", high_capacity_database_storages)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "subscription_id", subscription_id)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_zone", time_zone)
@@ -46847,6 +47744,14 @@ class GetExascaleDbStorageVaultsExascaleDbStorageVaultResult(dict):
         The name of the availability domain in which the Exadata Database Storage Vault is located.
         """
         return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> str:
+        """
+        A filter to return only resources that match the given cluster placement group ID exactly.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -46879,6 +47784,14 @@ class GetExascaleDbStorageVaultsExascaleDbStorageVaultResult(dict):
         A filter to return only resources that match the entire display name given. The match is not case sensitive.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="exadataInfrastructureId")
+    def exadata_infrastructure_id(self) -> str:
+        """
+        A filter to return only list of Vaults that are linked to the exadata infrastructure Id.
+        """
+        return pulumi.get(self, "exadata_infrastructure_id")
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -46919,6 +47832,14 @@ class GetExascaleDbStorageVaultsExascaleDbStorageVaultResult(dict):
         A filter to return only Exadata Database Storage Vaults that match the given lifecycle state exactly.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        """
+        return pulumi.get(self, "subscription_id")
 
     @property
     @pulumi.getter(name="systemTags")
@@ -47750,7 +48671,7 @@ class GetExternalContainerDatabasesExternalContainerDatabaseResult(dict):
         :param str character_set: The character set of the external database.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str database_configuration: The Oracle Database configuration
-        :param str database_edition: The Oracle Database edition.
+        :param str database_edition: The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
         :param Sequence['GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArgs'] database_management_configs: The configuration of the Database Management service.
         :param str database_version: The Oracle Database version.
         :param str db_id: The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
@@ -47815,7 +48736,7 @@ class GetExternalContainerDatabasesExternalContainerDatabaseResult(dict):
     @pulumi.getter(name="databaseEdition")
     def database_edition(self) -> str:
         """
-        The Oracle Database edition.
+        The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
         """
         return pulumi.get(self, "database_edition")
 
@@ -48608,7 +49529,7 @@ class GetExternalNonContainerDatabasesExternalNonContainerDatabaseResult(dict):
         :param str character_set: The character set of the external database.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str database_configuration: The Oracle Database configuration
-        :param str database_edition: The Oracle Database edition.
+        :param str database_edition: The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
         :param Sequence['GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArgs'] database_management_configs: The configuration of the Database Management service.
         :param str database_version: The Oracle Database version.
         :param str db_id: The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
@@ -48675,7 +49596,7 @@ class GetExternalNonContainerDatabasesExternalNonContainerDatabaseResult(dict):
     @pulumi.getter(name="databaseEdition")
     def database_edition(self) -> str:
         """
-        The Oracle Database edition.
+        The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
         """
         return pulumi.get(self, "database_edition")
 
@@ -49060,7 +49981,7 @@ class GetExternalPluggableDatabasesExternalPluggableDatabaseResult(dict):
         :param str character_set: The character set of the external database.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str database_configuration: The Oracle Database configuration
-        :param str database_edition: The Oracle Database edition.
+        :param str database_edition: The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
         :param Sequence['GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArgs'] database_management_configs: The configuration of the Database Management service.
         :param str database_version: The Oracle Database version.
         :param str db_id: The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
@@ -49131,7 +50052,7 @@ class GetExternalPluggableDatabasesExternalPluggableDatabaseResult(dict):
     @pulumi.getter(name="databaseEdition")
     def database_edition(self) -> str:
         """
-        The Oracle Database edition.
+        The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
         """
         return pulumi.get(self, "database_edition")
 
@@ -49455,18 +50376,39 @@ class GetFlexComponentsFlexComponentCollectionItemResult(dict):
     def __init__(__self__, *,
                  available_core_count: int,
                  available_db_storage_in_gbs: int,
+                 available_local_storage_in_gbs: int,
+                 available_memory_in_gbs: int,
+                 compute_model: str,
+                 description_summary: str,
+                 hardware_type: str,
                  minimum_core_count: int,
-                 name: str):
+                 name: str,
+                 runtime_minimum_core_count: int,
+                 shape: str):
         """
         :param int available_core_count: The maximum number of CPU cores that can ben enabled on the DB Server for this Flex Component.
         :param int available_db_storage_in_gbs: The maximum  storage that can be enabled on the Storage Server for this Flex Component.
+        :param int available_local_storage_in_gbs: The maximum local storage that can be enabled on the DB Server for this Flex Component.
+        :param int available_memory_in_gbs: The maximum memory size that can be enabled on the DB Server for this Flex Component.
+        :param str compute_model: The compute model of the DB Server for this Flex Component.
+        :param str description_summary: The description summary for this Flex Component.
+        :param str hardware_type: The hardware type of the DB (Compute) or Storage (Cell) Server for this Flex Component.
         :param int minimum_core_count: The minimum number of CPU cores that can be enabled on the DB Server for this Flex Component.
         :param str name: A filter to return only resources that match the entire name given. The match is not case sensitive.
+        :param int runtime_minimum_core_count: The runtime minimum number of CPU cores that can be enabled for this Flex Component.
+        :param str shape: A filter to return only resources that belong to the entire shape name given. The match is not case sensitive.
         """
         pulumi.set(__self__, "available_core_count", available_core_count)
         pulumi.set(__self__, "available_db_storage_in_gbs", available_db_storage_in_gbs)
+        pulumi.set(__self__, "available_local_storage_in_gbs", available_local_storage_in_gbs)
+        pulumi.set(__self__, "available_memory_in_gbs", available_memory_in_gbs)
+        pulumi.set(__self__, "compute_model", compute_model)
+        pulumi.set(__self__, "description_summary", description_summary)
+        pulumi.set(__self__, "hardware_type", hardware_type)
         pulumi.set(__self__, "minimum_core_count", minimum_core_count)
         pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "runtime_minimum_core_count", runtime_minimum_core_count)
+        pulumi.set(__self__, "shape", shape)
 
     @property
     @pulumi.getter(name="availableCoreCount")
@@ -49485,6 +50427,46 @@ class GetFlexComponentsFlexComponentCollectionItemResult(dict):
         return pulumi.get(self, "available_db_storage_in_gbs")
 
     @property
+    @pulumi.getter(name="availableLocalStorageInGbs")
+    def available_local_storage_in_gbs(self) -> int:
+        """
+        The maximum local storage that can be enabled on the DB Server for this Flex Component.
+        """
+        return pulumi.get(self, "available_local_storage_in_gbs")
+
+    @property
+    @pulumi.getter(name="availableMemoryInGbs")
+    def available_memory_in_gbs(self) -> int:
+        """
+        The maximum memory size that can be enabled on the DB Server for this Flex Component.
+        """
+        return pulumi.get(self, "available_memory_in_gbs")
+
+    @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> str:
+        """
+        The compute model of the DB Server for this Flex Component.
+        """
+        return pulumi.get(self, "compute_model")
+
+    @property
+    @pulumi.getter(name="descriptionSummary")
+    def description_summary(self) -> str:
+        """
+        The description summary for this Flex Component.
+        """
+        return pulumi.get(self, "description_summary")
+
+    @property
+    @pulumi.getter(name="hardwareType")
+    def hardware_type(self) -> str:
+        """
+        The hardware type of the DB (Compute) or Storage (Cell) Server for this Flex Component.
+        """
+        return pulumi.get(self, "hardware_type")
+
+    @property
     @pulumi.getter(name="minimumCoreCount")
     def minimum_core_count(self) -> int:
         """
@@ -49499,6 +50481,22 @@ class GetFlexComponentsFlexComponentCollectionItemResult(dict):
         A filter to return only resources that match the entire name given. The match is not case sensitive.
         """
         return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="runtimeMinimumCoreCount")
+    def runtime_minimum_core_count(self) -> int:
+        """
+        The runtime minimum number of CPU cores that can be enabled for this Flex Component.
+        """
+        return pulumi.get(self, "runtime_minimum_core_count")
+
+    @property
+    @pulumi.getter
+    def shape(self) -> str:
+        """
+        A filter to return only resources that belong to the entire shape name given. The match is not case sensitive.
+        """
+        return pulumi.get(self, "shape")
 
 
 @pulumi.output_type
@@ -54616,6 +55614,7 @@ class GetVmClustersVmClusterResult(dict):
                  availability_domain: str,
                  cloud_automation_update_details: Sequence['outputs.GetVmClustersVmClusterCloudAutomationUpdateDetailResult'],
                  compartment_id: str,
+                 compute_model: str,
                  cpu_core_count: int,
                  cpus_enabled: int,
                  data_collection_options: Sequence['outputs.GetVmClustersVmClusterDataCollectionOptionResult'],
@@ -54626,6 +55625,7 @@ class GetVmClustersVmClusterResult(dict):
                  defined_tags: Mapping[str, str],
                  display_name: str,
                  exadata_infrastructure_id: str,
+                 exascale_db_storage_vault_id: str,
                  file_system_configuration_details: Sequence['outputs.GetVmClustersVmClusterFileSystemConfigurationDetailResult'],
                  freeform_tags: Mapping[str, str],
                  gi_version: str,
@@ -54641,14 +55641,17 @@ class GetVmClustersVmClusterResult(dict):
                  shape: str,
                  ssh_public_keys: Sequence[str],
                  state: str,
+                 storage_management_type: str,
                  system_version: str,
                  time_created: str,
                  time_zone: str,
-                 vm_cluster_network_id: str):
+                 vm_cluster_network_id: str,
+                 vm_cluster_type: str):
         """
         :param str availability_domain: The name of the availability domain that the VM cluster is located in.
         :param Sequence['GetVmClustersVmClusterCloudAutomationUpdateDetailArgs'] cloud_automation_update_details: Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         :param int cpus_enabled: The number of enabled CPU cores.
         :param Sequence['GetVmClustersVmClusterDataCollectionOptionArgs'] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param float data_storage_size_in_gb: Size of the DATA disk group in GBs.
@@ -54658,6 +55661,7 @@ class GetVmClustersVmClusterResult(dict):
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param str exadata_infrastructure_id: If provided, filters the results for the given Exadata Infrastructure.
+        :param str exascale_db_storage_vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
         :param Sequence['GetVmClustersVmClusterFileSystemConfigurationDetailArgs'] file_system_configuration_details: Details of the file system configuration of the VM cluster.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str gi_version: The Oracle Grid Infrastructure software version for the VM cluster.
@@ -54671,14 +55675,17 @@ class GetVmClustersVmClusterResult(dict):
         :param str shape: The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
         :param Sequence[str] ssh_public_keys: The public key portion of one or more key pairs used for SSH access to the VM cluster.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
+        :param str storage_management_type: Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
         :param str system_version: Operating system version of the image.
         :param str time_created: The date and time that the VM cluster was created.
         :param str time_zone: The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param str vm_cluster_network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+        :param str vm_cluster_type: A filter to return only vmclusters that match the given vmcluster type exactly.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "cloud_automation_update_details", cloud_automation_update_details)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compute_model", compute_model)
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         pulumi.set(__self__, "cpus_enabled", cpus_enabled)
         pulumi.set(__self__, "data_collection_options", data_collection_options)
@@ -54689,6 +55696,7 @@ class GetVmClustersVmClusterResult(dict):
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "exadata_infrastructure_id", exadata_infrastructure_id)
+        pulumi.set(__self__, "exascale_db_storage_vault_id", exascale_db_storage_vault_id)
         pulumi.set(__self__, "file_system_configuration_details", file_system_configuration_details)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "gi_version", gi_version)
@@ -54704,10 +55712,12 @@ class GetVmClustersVmClusterResult(dict):
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "ssh_public_keys", ssh_public_keys)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "storage_management_type", storage_management_type)
         pulumi.set(__self__, "system_version", system_version)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_zone", time_zone)
         pulumi.set(__self__, "vm_cluster_network_id", vm_cluster_network_id)
+        pulumi.set(__self__, "vm_cluster_type", vm_cluster_type)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -54732,6 +55742,14 @@ class GetVmClustersVmClusterResult(dict):
         The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> str:
+        """
+        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        """
+        return pulumi.get(self, "compute_model")
 
     @property
     @pulumi.getter(name="cpuCoreCount")
@@ -54809,6 +55827,14 @@ class GetVmClustersVmClusterResult(dict):
         If provided, filters the results for the given Exadata Infrastructure.
         """
         return pulumi.get(self, "exadata_infrastructure_id")
+
+    @property
+    @pulumi.getter(name="exascaleDbStorageVaultId")
+    def exascale_db_storage_vault_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+        """
+        return pulumi.get(self, "exascale_db_storage_vault_id")
 
     @property
     @pulumi.getter(name="fileSystemConfigurationDetails")
@@ -54925,6 +55951,14 @@ class GetVmClustersVmClusterResult(dict):
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="storageManagementType")
+    def storage_management_type(self) -> str:
+        """
+        Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
+        """
+        return pulumi.get(self, "storage_management_type")
+
+    @property
     @pulumi.getter(name="systemVersion")
     def system_version(self) -> str:
         """
@@ -54955,6 +55989,14 @@ class GetVmClustersVmClusterResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
         """
         return pulumi.get(self, "vm_cluster_network_id")
+
+    @property
+    @pulumi.getter(name="vmClusterType")
+    def vm_cluster_type(self) -> str:
+        """
+        A filter to return only vmclusters that match the given vmcluster type exactly.
+        """
+        return pulumi.get(self, "vm_cluster_type")
 
 
 @pulumi.output_type

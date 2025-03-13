@@ -55,7 +55,8 @@ class CloudVmClusterArgs:
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  subscription_id: Optional[pulumi.Input[str]] = None,
                  system_version: Optional[pulumi.Input[str]] = None,
-                 time_zone: Optional[pulumi.Input[str]] = None):
+                 time_zone: Optional[pulumi.Input[str]] = None,
+                 vm_cluster_type: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a CloudVmCluster resource.
         :param pulumi.Input[str] backup_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
@@ -103,7 +104,8 @@ class CloudVmClusterArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[str] system_version: Operating system version of the image.
-        :param pulumi.Input[str] time_zone: The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
+        :param pulumi.Input[str] time_zone: The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        :param pulumi.Input[str] vm_cluster_type: The vmcluster type for the VM cluster/Cloud VM cluster.
                
                
                ** IMPORTANT **
@@ -170,6 +172,8 @@ class CloudVmClusterArgs:
             pulumi.set(__self__, "system_version", system_version)
         if time_zone is not None:
             pulumi.set(__self__, "time_zone", time_zone)
+        if vm_cluster_type is not None:
+            pulumi.set(__self__, "vm_cluster_type", vm_cluster_type)
 
     @property
     @pulumi.getter(name="backupSubnetId")
@@ -592,17 +596,29 @@ class CloudVmClusterArgs:
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> Optional[pulumi.Input[str]]:
         """
-        The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         """
         return pulumi.get(self, "time_zone")
 
     @time_zone.setter
     def time_zone(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_zone", value)
+
+    @property
+    @pulumi.getter(name="vmClusterType")
+    def vm_cluster_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The vmcluster type for the VM cluster/Cloud VM cluster.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "vm_cluster_type")
+
+    @vm_cluster_type.setter
+    def vm_cluster_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "vm_cluster_type", value)
 
 
 @pulumi.input_type
@@ -615,6 +631,7 @@ class _CloudVmClusterState:
                  cloud_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
                  cluster_name: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 compute_model: Optional[pulumi.Input[str]] = None,
                  cpu_core_count: Optional[pulumi.Input[int]] = None,
                  create_async: Optional[pulumi.Input[bool]] = None,
                  data_collection_options: Optional[pulumi.Input['CloudVmClusterDataCollectionOptionsArgs']] = None,
@@ -645,6 +662,7 @@ class _CloudVmClusterState:
                  scan_dns_name: Optional[pulumi.Input[str]] = None,
                  scan_dns_record_id: Optional[pulumi.Input[str]] = None,
                  scan_ip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 scan_ipv6ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  scan_listener_port_tcp: Optional[pulumi.Input[int]] = None,
                  scan_listener_port_tcp_ssl: Optional[pulumi.Input[int]] = None,
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -659,6 +677,8 @@ class _CloudVmClusterState:
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None,
                  vip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 vipv6ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 vm_cluster_type: Optional[pulumi.Input[str]] = None,
                  zone_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering CloudVmCluster resources.
@@ -669,6 +689,7 @@ class _CloudVmClusterState:
         :param pulumi.Input[str] cloud_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
         :param pulumi.Input[str] cluster_name: The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param pulumi.Input[str] compute_model: The compute model of the cloud VM cluster.
         :param pulumi.Input[int] cpu_core_count: (Updatable) The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:
                * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
                * Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
@@ -709,7 +730,8 @@ class _CloudVmClusterState:
         :param pulumi.Input[str] private_zone_id: The private zone id in which DNS records need to be created.
         :param pulumi.Input[str] scan_dns_name: The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
         :param pulumi.Input[str] scan_dns_record_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] scan_ip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] scan_ip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv4 addresses associated with the cloud VM cluster. SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] scan_ipv6ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv6 addresses associated with the cloud VM cluster. SCAN IPv6 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
         :param pulumi.Input[int] scan_listener_port_tcp: The TCP Single Client Access Name (SCAN) port. The default port is 1521.
         :param pulumi.Input[int] scan_listener_port_tcp_ssl: The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
@@ -722,12 +744,14 @@ class _CloudVmClusterState:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] system_version: Operating system version of the image.
         :param pulumi.Input[str] time_created: The date and time that the cloud VM cluster was created.
-        :param pulumi.Input[str] time_zone: The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
+        :param pulumi.Input[str] time_zone: The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] vip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] vipv6ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+        :param pulumi.Input[str] vm_cluster_type: The vmcluster type for the VM cluster/Cloud VM cluster.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] vip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
         :param pulumi.Input[str] zone_id: The OCID of the zone the cloud VM cluster is associated with.
         """
         if availability_domain is not None:
@@ -744,6 +768,8 @@ class _CloudVmClusterState:
             pulumi.set(__self__, "cluster_name", cluster_name)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if compute_model is not None:
+            pulumi.set(__self__, "compute_model", compute_model)
         if cpu_core_count is not None:
             pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         if create_async is not None:
@@ -804,6 +830,8 @@ class _CloudVmClusterState:
             pulumi.set(__self__, "scan_dns_record_id", scan_dns_record_id)
         if scan_ip_ids is not None:
             pulumi.set(__self__, "scan_ip_ids", scan_ip_ids)
+        if scan_ipv6ids is not None:
+            pulumi.set(__self__, "scan_ipv6ids", scan_ipv6ids)
         if scan_listener_port_tcp is not None:
             pulumi.set(__self__, "scan_listener_port_tcp", scan_listener_port_tcp)
         if scan_listener_port_tcp_ssl is not None:
@@ -832,6 +860,10 @@ class _CloudVmClusterState:
             pulumi.set(__self__, "time_zone", time_zone)
         if vip_ids is not None:
             pulumi.set(__self__, "vip_ids", vip_ids)
+        if vipv6ids is not None:
+            pulumi.set(__self__, "vipv6ids", vipv6ids)
+        if vm_cluster_type is not None:
+            pulumi.set(__self__, "vm_cluster_type", vm_cluster_type)
         if zone_id is not None:
             pulumi.set(__self__, "zone_id", zone_id)
 
@@ -918,6 +950,18 @@ class _CloudVmClusterState:
     @compartment_id.setter
     def compartment_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> Optional[pulumi.Input[str]]:
+        """
+        The compute model of the cloud VM cluster.
+        """
+        return pulumi.get(self, "compute_model")
+
+    @compute_model.setter
+    def compute_model(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "compute_model", value)
 
     @property
     @pulumi.getter(name="cpuCoreCount")
@@ -1280,13 +1324,25 @@ class _CloudVmClusterState:
     @pulumi.getter(name="scanIpIds")
     def scan_ip_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv4 addresses associated with the cloud VM cluster. SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
         """
         return pulumi.get(self, "scan_ip_ids")
 
     @scan_ip_ids.setter
     def scan_ip_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "scan_ip_ids", value)
+
+    @property
+    @pulumi.getter(name="scanIpv6ids")
+    def scan_ipv6ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv6 addresses associated with the cloud VM cluster. SCAN IPv6 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+        """
+        return pulumi.get(self, "scan_ipv6ids")
+
+    @scan_ipv6ids.setter
+    def scan_ipv6ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "scan_ipv6ids", value)
 
     @property
     @pulumi.getter(name="scanListenerPortTcp")
@@ -1436,11 +1492,7 @@ class _CloudVmClusterState:
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> Optional[pulumi.Input[str]]:
         """
-        The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         """
         return pulumi.get(self, "time_zone")
 
@@ -1452,13 +1504,41 @@ class _CloudVmClusterState:
     @pulumi.getter(name="vipIds")
     def vip_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
         """
         return pulumi.get(self, "vip_ids")
 
     @vip_ids.setter
     def vip_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "vip_ids", value)
+
+    @property
+    @pulumi.getter
+    def vipv6ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+        """
+        return pulumi.get(self, "vipv6ids")
+
+    @vipv6ids.setter
+    def vipv6ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "vipv6ids", value)
+
+    @property
+    @pulumi.getter(name="vmClusterType")
+    def vm_cluster_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The vmcluster type for the VM cluster/Cloud VM cluster.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "vm_cluster_type")
+
+    @vm_cluster_type.setter
+    def vm_cluster_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "vm_cluster_type", value)
 
     @property
     @pulumi.getter(name="zoneId")
@@ -1513,6 +1593,7 @@ class CloudVmCluster(pulumi.CustomResource):
                  subscription_id: Optional[pulumi.Input[str]] = None,
                  system_version: Optional[pulumi.Input[str]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None,
+                 vm_cluster_type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         This resource provides the Cloud Vm Cluster resource in Oracle Cloud Infrastructure Database service.
@@ -1579,7 +1660,8 @@ class CloudVmCluster(pulumi.CustomResource):
             security_attributes=cloud_vm_cluster_security_attributes,
             subscription_id=tenant_subscription_id,
             system_version=cloud_vm_cluster_system_version,
-            time_zone=cloud_vm_cluster_time_zone)
+            time_zone=cloud_vm_cluster_time_zone,
+            vm_cluster_type=cloud_vm_cluster_vm_cluster_type)
         ```
 
         ## Import
@@ -1637,7 +1719,8 @@ class CloudVmCluster(pulumi.CustomResource):
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
         :param pulumi.Input[str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[str] system_version: Operating system version of the image.
-        :param pulumi.Input[str] time_zone: The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
+        :param pulumi.Input[str] time_zone: The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        :param pulumi.Input[str] vm_cluster_type: The vmcluster type for the VM cluster/Cloud VM cluster.
                
                
                ** IMPORTANT **
@@ -1714,7 +1797,8 @@ class CloudVmCluster(pulumi.CustomResource):
             security_attributes=cloud_vm_cluster_security_attributes,
             subscription_id=tenant_subscription_id,
             system_version=cloud_vm_cluster_system_version,
-            time_zone=cloud_vm_cluster_time_zone)
+            time_zone=cloud_vm_cluster_time_zone,
+            vm_cluster_type=cloud_vm_cluster_vm_cluster_type)
         ```
 
         ## Import
@@ -1775,6 +1859,7 @@ class CloudVmCluster(pulumi.CustomResource):
                  subscription_id: Optional[pulumi.Input[str]] = None,
                  system_version: Optional[pulumi.Input[str]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None,
+                 vm_cluster_type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1837,7 +1922,9 @@ class CloudVmCluster(pulumi.CustomResource):
             __props__.__dict__["subscription_id"] = subscription_id
             __props__.__dict__["system_version"] = system_version
             __props__.__dict__["time_zone"] = time_zone
+            __props__.__dict__["vm_cluster_type"] = vm_cluster_type
             __props__.__dict__["availability_domain"] = None
+            __props__.__dict__["compute_model"] = None
             __props__.__dict__["disk_redundancy"] = None
             __props__.__dict__["iorm_config_caches"] = None
             __props__.__dict__["last_update_history_entry_id"] = None
@@ -1847,12 +1934,14 @@ class CloudVmCluster(pulumi.CustomResource):
             __props__.__dict__["scan_dns_name"] = None
             __props__.__dict__["scan_dns_record_id"] = None
             __props__.__dict__["scan_ip_ids"] = None
+            __props__.__dict__["scan_ipv6ids"] = None
             __props__.__dict__["shape"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["storage_size_in_gbs"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["vip_ids"] = None
+            __props__.__dict__["vipv6ids"] = None
             __props__.__dict__["zone_id"] = None
         super(CloudVmCluster, __self__).__init__(
             'oci:Database/cloudVmCluster:CloudVmCluster',
@@ -1871,6 +1960,7 @@ class CloudVmCluster(pulumi.CustomResource):
             cloud_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
             cluster_name: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
+            compute_model: Optional[pulumi.Input[str]] = None,
             cpu_core_count: Optional[pulumi.Input[int]] = None,
             create_async: Optional[pulumi.Input[bool]] = None,
             data_collection_options: Optional[pulumi.Input[Union['CloudVmClusterDataCollectionOptionsArgs', 'CloudVmClusterDataCollectionOptionsArgsDict']]] = None,
@@ -1901,6 +1991,7 @@ class CloudVmCluster(pulumi.CustomResource):
             scan_dns_name: Optional[pulumi.Input[str]] = None,
             scan_dns_record_id: Optional[pulumi.Input[str]] = None,
             scan_ip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            scan_ipv6ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             scan_listener_port_tcp: Optional[pulumi.Input[int]] = None,
             scan_listener_port_tcp_ssl: Optional[pulumi.Input[int]] = None,
             security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -1915,6 +2006,8 @@ class CloudVmCluster(pulumi.CustomResource):
             time_created: Optional[pulumi.Input[str]] = None,
             time_zone: Optional[pulumi.Input[str]] = None,
             vip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            vipv6ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            vm_cluster_type: Optional[pulumi.Input[str]] = None,
             zone_id: Optional[pulumi.Input[str]] = None) -> 'CloudVmCluster':
         """
         Get an existing CloudVmCluster resource's state with the given name, id, and optional extra
@@ -1930,6 +2023,7 @@ class CloudVmCluster(pulumi.CustomResource):
         :param pulumi.Input[str] cloud_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
         :param pulumi.Input[str] cluster_name: The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param pulumi.Input[str] compute_model: The compute model of the cloud VM cluster.
         :param pulumi.Input[int] cpu_core_count: (Updatable) The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:
                * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
                * Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
@@ -1970,7 +2064,8 @@ class CloudVmCluster(pulumi.CustomResource):
         :param pulumi.Input[str] private_zone_id: The private zone id in which DNS records need to be created.
         :param pulumi.Input[str] scan_dns_name: The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
         :param pulumi.Input[str] scan_dns_record_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] scan_ip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] scan_ip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv4 addresses associated with the cloud VM cluster. SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] scan_ipv6ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv6 addresses associated with the cloud VM cluster. SCAN IPv6 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
         :param pulumi.Input[int] scan_listener_port_tcp: The TCP Single Client Access Name (SCAN) port. The default port is 1521.
         :param pulumi.Input[int] scan_listener_port_tcp_ssl: The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
@@ -1983,12 +2078,14 @@ class CloudVmCluster(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] system_version: Operating system version of the image.
         :param pulumi.Input[str] time_created: The date and time that the cloud VM cluster was created.
-        :param pulumi.Input[str] time_zone: The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
+        :param pulumi.Input[str] time_zone: The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] vip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] vipv6ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+        :param pulumi.Input[str] vm_cluster_type: The vmcluster type for the VM cluster/Cloud VM cluster.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] vip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
         :param pulumi.Input[str] zone_id: The OCID of the zone the cloud VM cluster is associated with.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -2002,6 +2099,7 @@ class CloudVmCluster(pulumi.CustomResource):
         __props__.__dict__["cloud_exadata_infrastructure_id"] = cloud_exadata_infrastructure_id
         __props__.__dict__["cluster_name"] = cluster_name
         __props__.__dict__["compartment_id"] = compartment_id
+        __props__.__dict__["compute_model"] = compute_model
         __props__.__dict__["cpu_core_count"] = cpu_core_count
         __props__.__dict__["create_async"] = create_async
         __props__.__dict__["data_collection_options"] = data_collection_options
@@ -2032,6 +2130,7 @@ class CloudVmCluster(pulumi.CustomResource):
         __props__.__dict__["scan_dns_name"] = scan_dns_name
         __props__.__dict__["scan_dns_record_id"] = scan_dns_record_id
         __props__.__dict__["scan_ip_ids"] = scan_ip_ids
+        __props__.__dict__["scan_ipv6ids"] = scan_ipv6ids
         __props__.__dict__["scan_listener_port_tcp"] = scan_listener_port_tcp
         __props__.__dict__["scan_listener_port_tcp_ssl"] = scan_listener_port_tcp_ssl
         __props__.__dict__["security_attributes"] = security_attributes
@@ -2046,6 +2145,8 @@ class CloudVmCluster(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_zone"] = time_zone
         __props__.__dict__["vip_ids"] = vip_ids
+        __props__.__dict__["vipv6ids"] = vipv6ids
+        __props__.__dict__["vm_cluster_type"] = vm_cluster_type
         __props__.__dict__["zone_id"] = zone_id
         return CloudVmCluster(resource_name, opts=opts, __props__=__props__)
 
@@ -2104,6 +2205,14 @@ class CloudVmCluster(pulumi.CustomResource):
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> pulumi.Output[str]:
+        """
+        The compute model of the cloud VM cluster.
+        """
+        return pulumi.get(self, "compute_model")
 
     @property
     @pulumi.getter(name="cpuCoreCount")
@@ -2350,9 +2459,17 @@ class CloudVmCluster(pulumi.CustomResource):
     @pulumi.getter(name="scanIpIds")
     def scan_ip_ids(self) -> pulumi.Output[Sequence[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv4 addresses associated with the cloud VM cluster. SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
         """
         return pulumi.get(self, "scan_ip_ids")
+
+    @property
+    @pulumi.getter(name="scanIpv6ids")
+    def scan_ipv6ids(self) -> pulumi.Output[Sequence[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv6 addresses associated with the cloud VM cluster. SCAN IPv6 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+        """
+        return pulumi.get(self, "scan_ipv6ids")
 
     @property
     @pulumi.getter(name="scanListenerPortTcp")
@@ -2454,11 +2571,7 @@ class CloudVmCluster(pulumi.CustomResource):
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> pulumi.Output[str]:
         """
-        The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         """
         return pulumi.get(self, "time_zone")
 
@@ -2466,9 +2579,29 @@ class CloudVmCluster(pulumi.CustomResource):
     @pulumi.getter(name="vipIds")
     def vip_ids(self) -> pulumi.Output[Sequence[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
         """
         return pulumi.get(self, "vip_ids")
+
+    @property
+    @pulumi.getter
+    def vipv6ids(self) -> pulumi.Output[Sequence[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+        """
+        return pulumi.get(self, "vipv6ids")
+
+    @property
+    @pulumi.getter(name="vmClusterType")
+    def vm_cluster_type(self) -> pulumi.Output[str]:
+        """
+        The vmcluster type for the VM cluster/Cloud VM cluster.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "vm_cluster_type")
 
     @property
     @pulumi.getter(name="zoneId")

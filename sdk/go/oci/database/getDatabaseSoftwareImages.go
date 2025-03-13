@@ -31,6 +31,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := database.GetDatabaseSoftwareImages(ctx, &database.GetDatabaseSoftwareImagesArgs{
 //				CompartmentId:      compartmentId,
+//				DbSystemId:         pulumi.StringRef(testDbSystem.Id),
 //				DisplayName:        pulumi.StringRef(databaseSoftwareImageDisplayName),
 //				ImageShapeFamily:   pulumi.StringRef(databaseSoftwareImageImageShapeFamily),
 //				ImageType:          pulumi.StringRef(databaseSoftwareImageImageType),
@@ -59,6 +60,8 @@ func GetDatabaseSoftwareImages(ctx *pulumi.Context, args *GetDatabaseSoftwareIma
 type GetDatabaseSoftwareImagesArgs struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
+	// The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
+	DbSystemId *string `pulumi:"dbSystemId"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
 	DisplayName *string                           `pulumi:"displayName"`
 	Filters     []GetDatabaseSoftwareImagesFilter `pulumi:"filters"`
@@ -78,6 +81,7 @@ type GetDatabaseSoftwareImagesResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The list of database_software_images.
 	DatabaseSoftwareImages []GetDatabaseSoftwareImagesDatabaseSoftwareImage `pulumi:"databaseSoftwareImages"`
+	DbSystemId             *string                                          `pulumi:"dbSystemId"`
 	// The user-friendly name for the database software image. The name does not have to be unique.
 	DisplayName *string                           `pulumi:"displayName"`
 	Filters     []GetDatabaseSoftwareImagesFilter `pulumi:"filters"`
@@ -106,6 +110,8 @@ func GetDatabaseSoftwareImagesOutput(ctx *pulumi.Context, args GetDatabaseSoftwa
 type GetDatabaseSoftwareImagesOutputArgs struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
+	DbSystemId pulumi.StringPtrInput `pulumi:"dbSystemId"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
 	DisplayName pulumi.StringPtrInput                     `pulumi:"displayName"`
 	Filters     GetDatabaseSoftwareImagesFilterArrayInput `pulumi:"filters"`
@@ -148,6 +154,10 @@ func (o GetDatabaseSoftwareImagesResultOutput) DatabaseSoftwareImages() GetDatab
 	return o.ApplyT(func(v GetDatabaseSoftwareImagesResult) []GetDatabaseSoftwareImagesDatabaseSoftwareImage {
 		return v.DatabaseSoftwareImages
 	}).(GetDatabaseSoftwareImagesDatabaseSoftwareImageArrayOutput)
+}
+
+func (o GetDatabaseSoftwareImagesResultOutput) DbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseSoftwareImagesResult) *string { return v.DbSystemId }).(pulumi.StringPtrOutput)
 }
 
 // The user-friendly name for the database software image. The name does not have to be unique.

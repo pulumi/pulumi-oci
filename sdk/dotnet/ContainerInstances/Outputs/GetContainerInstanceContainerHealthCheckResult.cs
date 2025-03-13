@@ -13,7 +13,6 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
     [OutputType]
     public sealed class GetContainerInstanceContainerHealthCheckResult
     {
-        public readonly ImmutableArray<string> Commands;
         public readonly string FailureAction;
         public readonly int FailureThreshold;
         public readonly ImmutableArray<Outputs.GetContainerInstanceContainerHealthCheckHeaderResult> Headers;
@@ -36,8 +35,6 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
 
         [OutputConstructor]
         private GetContainerInstanceContainerHealthCheckResult(
-            ImmutableArray<string> commands,
-
             string failureAction,
 
             int failureThreshold,
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
 
             int timeoutInSeconds)
         {
-            Commands = commands;
             FailureAction = failureAction;
             FailureThreshold = failureThreshold;
             Headers = headers;

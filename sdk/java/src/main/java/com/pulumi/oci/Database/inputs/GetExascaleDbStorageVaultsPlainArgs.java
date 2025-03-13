@@ -18,6 +18,21 @@ public final class GetExascaleDbStorageVaultsPlainArgs extends com.pulumi.resour
     public static final GetExascaleDbStorageVaultsPlainArgs Empty = new GetExascaleDbStorageVaultsPlainArgs();
 
     /**
+     * A filter to return only resources that match the given cluster placement group ID exactly.
+     * 
+     */
+    @Import(name="clusterPlacementGroupId")
+    private @Nullable String clusterPlacementGroupId;
+
+    /**
+     * @return A filter to return only resources that match the given cluster placement group ID exactly.
+     * 
+     */
+    public Optional<String> clusterPlacementGroupId() {
+        return Optional.ofNullable(this.clusterPlacementGroupId);
+    }
+
+    /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -47,6 +62,21 @@ public final class GetExascaleDbStorageVaultsPlainArgs extends com.pulumi.resour
         return Optional.ofNullable(this.displayName);
     }
 
+    /**
+     * A filter to return only list of Vaults that are linked to the exadata infrastructure Id.
+     * 
+     */
+    @Import(name="exadataInfrastructureId")
+    private @Nullable String exadataInfrastructureId;
+
+    /**
+     * @return A filter to return only list of Vaults that are linked to the exadata infrastructure Id.
+     * 
+     */
+    public Optional<String> exadataInfrastructureId() {
+        return Optional.ofNullable(this.exadataInfrastructureId);
+    }
+
     @Import(name="filters")
     private @Nullable List<GetExascaleDbStorageVaultsFilter> filters;
 
@@ -72,8 +102,10 @@ public final class GetExascaleDbStorageVaultsPlainArgs extends com.pulumi.resour
     private GetExascaleDbStorageVaultsPlainArgs() {}
 
     private GetExascaleDbStorageVaultsPlainArgs(GetExascaleDbStorageVaultsPlainArgs $) {
+        this.clusterPlacementGroupId = $.clusterPlacementGroupId;
         this.compartmentId = $.compartmentId;
         this.displayName = $.displayName;
+        this.exadataInfrastructureId = $.exadataInfrastructureId;
         this.filters = $.filters;
         this.state = $.state;
     }
@@ -97,6 +129,17 @@ public final class GetExascaleDbStorageVaultsPlainArgs extends com.pulumi.resour
         }
 
         /**
+         * @param clusterPlacementGroupId A filter to return only resources that match the given cluster placement group ID exactly.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPlacementGroupId(@Nullable String clusterPlacementGroupId) {
+            $.clusterPlacementGroupId = clusterPlacementGroupId;
+            return this;
+        }
+
+        /**
          * @param compartmentId The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
@@ -115,6 +158,17 @@ public final class GetExascaleDbStorageVaultsPlainArgs extends com.pulumi.resour
          */
         public Builder displayName(@Nullable String displayName) {
             $.displayName = displayName;
+            return this;
+        }
+
+        /**
+         * @param exadataInfrastructureId A filter to return only list of Vaults that are linked to the exadata infrastructure Id.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder exadataInfrastructureId(@Nullable String exadataInfrastructureId) {
+            $.exadataInfrastructureId = exadataInfrastructureId;
             return this;
         }
 

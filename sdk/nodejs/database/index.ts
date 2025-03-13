@@ -185,6 +185,11 @@ export type ExadataInfrastructureCompute = import("./exadataInfrastructureComput
 export const ExadataInfrastructureCompute: typeof import("./exadataInfrastructureCompute").ExadataInfrastructureCompute = null as any;
 utilities.lazyLoad(exports, ["ExadataInfrastructureCompute"], () => require("./exadataInfrastructureCompute"));
 
+export { ExadataInfrastructureConfigureExascaleManagementArgs, ExadataInfrastructureConfigureExascaleManagementState } from "./exadataInfrastructureConfigureExascaleManagement";
+export type ExadataInfrastructureConfigureExascaleManagement = import("./exadataInfrastructureConfigureExascaleManagement").ExadataInfrastructureConfigureExascaleManagement;
+export const ExadataInfrastructureConfigureExascaleManagement: typeof import("./exadataInfrastructureConfigureExascaleManagement").ExadataInfrastructureConfigureExascaleManagement = null as any;
+utilities.lazyLoad(exports, ["ExadataInfrastructureConfigureExascaleManagement"], () => require("./exadataInfrastructureConfigureExascaleManagement"));
+
 export { ExadataInfrastructureStorageArgs, ExadataInfrastructureStorageState } from "./exadataInfrastructureStorage";
 export type ExadataInfrastructureStorage = import("./exadataInfrastructureStorage").ExadataInfrastructureStorage;
 export const ExadataInfrastructureStorage: typeof import("./exadataInfrastructureStorage").ExadataInfrastructureStorage = null as any;
@@ -1167,6 +1172,8 @@ const _module = {
                 return new ExadataInfrastructure(name, <any>undefined, { urn })
             case "oci:Database/exadataInfrastructureCompute:ExadataInfrastructureCompute":
                 return new ExadataInfrastructureCompute(name, <any>undefined, { urn })
+            case "oci:Database/exadataInfrastructureConfigureExascaleManagement:ExadataInfrastructureConfigureExascaleManagement":
+                return new ExadataInfrastructureConfigureExascaleManagement(name, <any>undefined, { urn })
             case "oci:Database/exadataInfrastructureStorage:ExadataInfrastructureStorage":
                 return new ExadataInfrastructureStorage(name, <any>undefined, { urn })
             case "oci:Database/exadataIormConfig:ExadataIormConfig":
@@ -1274,6 +1281,7 @@ pulumi.runtime.registerResourceModule("oci", "Database/dbSystem", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/dbSystemsUpgrade", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/exadataInfrastructure", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/exadataInfrastructureCompute", _module)
+pulumi.runtime.registerResourceModule("oci", "Database/exadataInfrastructureConfigureExascaleManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/exadataInfrastructureStorage", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/exadataIormConfig", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/exadbVmCluster", _module)

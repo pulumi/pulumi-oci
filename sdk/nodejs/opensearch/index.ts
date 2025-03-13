@@ -15,6 +15,16 @@ export const getOpensearchCluster: typeof import("./getOpensearchCluster").getOp
 export const getOpensearchClusterOutput: typeof import("./getOpensearchCluster").getOpensearchClusterOutput = null as any;
 utilities.lazyLoad(exports, ["getOpensearchCluster","getOpensearchClusterOutput"], () => require("./getOpensearchCluster"));
 
+export { GetOpensearchClusterPipelineArgs, GetOpensearchClusterPipelineResult, GetOpensearchClusterPipelineOutputArgs } from "./getOpensearchClusterPipeline";
+export const getOpensearchClusterPipeline: typeof import("./getOpensearchClusterPipeline").getOpensearchClusterPipeline = null as any;
+export const getOpensearchClusterPipelineOutput: typeof import("./getOpensearchClusterPipeline").getOpensearchClusterPipelineOutput = null as any;
+utilities.lazyLoad(exports, ["getOpensearchClusterPipeline","getOpensearchClusterPipelineOutput"], () => require("./getOpensearchClusterPipeline"));
+
+export { GetOpensearchClusterPipelinesArgs, GetOpensearchClusterPipelinesResult, GetOpensearchClusterPipelinesOutputArgs } from "./getOpensearchClusterPipelines";
+export const getOpensearchClusterPipelines: typeof import("./getOpensearchClusterPipelines").getOpensearchClusterPipelines = null as any;
+export const getOpensearchClusterPipelinesOutput: typeof import("./getOpensearchClusterPipelines").getOpensearchClusterPipelinesOutput = null as any;
+utilities.lazyLoad(exports, ["getOpensearchClusterPipelines","getOpensearchClusterPipelinesOutput"], () => require("./getOpensearchClusterPipelines"));
+
 export { GetOpensearchClustersArgs, GetOpensearchClustersResult, GetOpensearchClustersOutputArgs } from "./getOpensearchClusters";
 export const getOpensearchClusters: typeof import("./getOpensearchClusters").getOpensearchClusters = null as any;
 export const getOpensearchClustersOutput: typeof import("./getOpensearchClusters").getOpensearchClustersOutput = null as any;
@@ -30,6 +40,11 @@ export const getOpensearchVersions: typeof import("./getOpensearchVersions").get
 export const getOpensearchVersionsOutput: typeof import("./getOpensearchVersions").getOpensearchVersionsOutput = null as any;
 utilities.lazyLoad(exports, ["getOpensearchVersions","getOpensearchVersionsOutput"], () => require("./getOpensearchVersions"));
 
+export { OpensearchClusterPipelineArgs, OpensearchClusterPipelineState } from "./opensearchClusterPipeline";
+export type OpensearchClusterPipeline = import("./opensearchClusterPipeline").OpensearchClusterPipeline;
+export const OpensearchClusterPipeline: typeof import("./opensearchClusterPipeline").OpensearchClusterPipeline = null as any;
+utilities.lazyLoad(exports, ["OpensearchClusterPipeline"], () => require("./opensearchClusterPipeline"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -37,9 +52,12 @@ const _module = {
         switch (type) {
             case "oci:Opensearch/cluster:Cluster":
                 return new Cluster(name, <any>undefined, { urn })
+            case "oci:Opensearch/opensearchClusterPipeline:OpensearchClusterPipeline":
+                return new OpensearchClusterPipeline(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
 pulumi.runtime.registerResourceModule("oci", "Opensearch/cluster", _module)
+pulumi.runtime.registerResourceModule("oci", "Opensearch/opensearchClusterPipeline", _module)

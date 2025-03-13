@@ -19,8 +19,6 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs extends com.p
     /**
      * (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
      * 
-     * NOTE: Only the latest secret version will be used.
-     * 
      */
     @Import(name="connectivityAssociationKeySecretId", required=true)
     private Output<String> connectivityAssociationKeySecretId;
@@ -28,22 +26,24 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs extends com.p
     /**
      * @return (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
      * 
-     * NOTE: Only the latest secret version will be used.
-     * 
      */
     public Output<String> connectivityAssociationKeySecretId() {
         return this.connectivityAssociationKeySecretId;
     }
 
     /**
-     * The secret version of the `connectivityAssociationKey` secret in Vault.
+     * (Updatable) The secret version of the `connectivity_association_key_secret_id` secret in Vault.
+     * 
+     * NOTE: Only the latest secret version will be used.
      * 
      */
     @Import(name="connectivityAssociationKeySecretVersion")
     private @Nullable Output<String> connectivityAssociationKeySecretVersion;
 
     /**
-     * @return The secret version of the `connectivityAssociationKey` secret in Vault.
+     * @return (Updatable) The secret version of the `connectivity_association_key_secret_id` secret in Vault.
+     * 
+     * NOTE: Only the latest secret version will be used.
      * 
      */
     public Optional<Output<String>> connectivityAssociationKeySecretVersion() {
@@ -53,8 +53,6 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs extends com.p
     /**
      * (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
      * 
-     * NOTE: Only the latest secret version will be used.
-     * 
      */
     @Import(name="connectivityAssociationNameSecretId", required=true)
     private Output<String> connectivityAssociationNameSecretId;
@@ -62,22 +60,24 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs extends com.p
     /**
      * @return (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
      * 
-     * NOTE: Only the latest secret version will be used.
-     * 
      */
     public Output<String> connectivityAssociationNameSecretId() {
         return this.connectivityAssociationNameSecretId;
     }
 
     /**
-     * The secret version of the connectivity association name secret in Vault.
+     * (Updatable) The secret version of the `connectivity_association_name_secret_id` secret in Vault.
+     * 
+     * NOTE: Only the latest secret version will be used.
      * 
      */
     @Import(name="connectivityAssociationNameSecretVersion")
     private @Nullable Output<String> connectivityAssociationNameSecretVersion;
 
     /**
-     * @return The secret version of the connectivity association name secret in Vault.
+     * @return (Updatable) The secret version of the `connectivity_association_name_secret_id` secret in Vault.
+     * 
+     * NOTE: Only the latest secret version will be used.
      * 
      */
     public Optional<Output<String>> connectivityAssociationNameSecretVersion() {
@@ -114,8 +114,6 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs extends com.p
         /**
          * @param connectivityAssociationKeySecretId (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
          * 
-         * NOTE: Only the latest secret version will be used.
-         * 
          * @return builder
          * 
          */
@@ -127,8 +125,6 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs extends com.p
         /**
          * @param connectivityAssociationKeySecretId (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
          * 
-         * NOTE: Only the latest secret version will be used.
-         * 
          * @return builder
          * 
          */
@@ -137,7 +133,9 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs extends com.p
         }
 
         /**
-         * @param connectivityAssociationKeySecretVersion The secret version of the `connectivityAssociationKey` secret in Vault.
+         * @param connectivityAssociationKeySecretVersion (Updatable) The secret version of the `connectivity_association_key_secret_id` secret in Vault.
+         * 
+         * NOTE: Only the latest secret version will be used.
          * 
          * @return builder
          * 
@@ -148,7 +146,9 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs extends com.p
         }
 
         /**
-         * @param connectivityAssociationKeySecretVersion The secret version of the `connectivityAssociationKey` secret in Vault.
+         * @param connectivityAssociationKeySecretVersion (Updatable) The secret version of the `connectivity_association_key_secret_id` secret in Vault.
+         * 
+         * NOTE: Only the latest secret version will be used.
          * 
          * @return builder
          * 
@@ -159,8 +159,6 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs extends com.p
 
         /**
          * @param connectivityAssociationNameSecretId (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
-         * 
-         * NOTE: Only the latest secret version will be used.
          * 
          * @return builder
          * 
@@ -173,8 +171,6 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs extends com.p
         /**
          * @param connectivityAssociationNameSecretId (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
          * 
-         * NOTE: Only the latest secret version will be used.
-         * 
          * @return builder
          * 
          */
@@ -183,7 +179,9 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs extends com.p
         }
 
         /**
-         * @param connectivityAssociationNameSecretVersion The secret version of the connectivity association name secret in Vault.
+         * @param connectivityAssociationNameSecretVersion (Updatable) The secret version of the `connectivity_association_name_secret_id` secret in Vault.
+         * 
+         * NOTE: Only the latest secret version will be used.
          * 
          * @return builder
          * 
@@ -194,7 +192,9 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs extends com.p
         }
 
         /**
-         * @param connectivityAssociationNameSecretVersion The secret version of the connectivity association name secret in Vault.
+         * @param connectivityAssociationNameSecretVersion (Updatable) The secret version of the `connectivity_association_name_secret_id` secret in Vault.
+         * 
+         * NOTE: Only the latest secret version will be used.
          * 
          * @return builder
          * 

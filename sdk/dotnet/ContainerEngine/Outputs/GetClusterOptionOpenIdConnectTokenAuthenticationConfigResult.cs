@@ -13,15 +13,49 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
     [OutputType]
     public sealed class GetClusterOptionOpenIdConnectTokenAuthenticationConfigResult
     {
+        /// <summary>
+        /// A Base64 encoded public RSA or ECDSA certificates used to signed your identity provider's web certificate.
+        /// </summary>
         public readonly string CaCertificate;
+        /// <summary>
+        /// A client id that all tokens must be issued for.
+        /// </summary>
         public readonly string ClientId;
+        /// <summary>
+        /// A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+        /// </summary>
+        public readonly string ConfigurationFile;
+        /// <summary>
+        /// JWT claim to use as the user's group. If the claim is present it must be an array of strings.
+        /// </summary>
         public readonly string GroupsClaim;
+        /// <summary>
+        /// Prefix prepended to group claims to prevent clashes with existing names (such as system:groups).
+        /// </summary>
         public readonly string GroupsPrefix;
+        /// <summary>
+        /// Whether the cluster has OIDC Auth Config enabled. Defaults to false.
+        /// </summary>
         public readonly bool IsOpenIdConnectAuthEnabled;
+        /// <summary>
+        /// URL of the provider that allows the API server to discover public signing keys.  Only URLs that use the https:// scheme are accepted. This is typically the provider's discovery URL,  changed to have an empty path.
+        /// </summary>
         public readonly string IssuerUrl;
+        /// <summary>
+        /// A key=value pair that describes a required claim in the ID Token. If set, the claim is verified to be present  in the ID Token with a matching value. Repeat this flag to specify multiple claims.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimResult> RequiredClaims;
+        /// <summary>
+        /// The signing algorithms accepted. Default is ["RS256"].
+        /// </summary>
         public readonly ImmutableArray<string> SigningAlgorithms;
+        /// <summary>
+        /// JWT claim to use as the user name. By default sub, which is expected to be a unique identifier of the end  user. Admins can choose other claims, such as email or name, depending on their provider. However, claims  other than email will be prefixed with the issuer URL to prevent naming clashes with other plugins.
+        /// </summary>
         public readonly string UsernameClaim;
+        /// <summary>
+        /// Prefix prepended to username claims to prevent clashes with existing names (such as system:users).  For example, the value oidc: will create usernames like oidc:jane.doe. If this flag isn't provided and  --oidc-username-claim is a value other than email the prefix defaults to ( Issuer URL )# where  ( Issuer URL ) is the value of --oidc-issuer-url. The value - can be used to disable all prefixing.
+        /// </summary>
         public readonly string UsernamePrefix;
 
         [OutputConstructor]
@@ -29,6 +63,8 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
             string caCertificate,
 
             string clientId,
+
+            string configurationFile,
 
             string groupsClaim,
 
@@ -48,6 +84,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         {
             CaCertificate = caCertificate;
             ClientId = clientId;
+            ConfigurationFile = configurationFile;
             GroupsClaim = groupsClaim;
             GroupsPrefix = groupsPrefix;
             IsOpenIdConnectAuthEnabled = isOpenIdConnectAuthEnabled;

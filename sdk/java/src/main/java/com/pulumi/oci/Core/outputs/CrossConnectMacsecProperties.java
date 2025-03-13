@@ -30,7 +30,7 @@ public final class CrossConnectMacsecProperties {
      */
     private @Nullable CrossConnectMacsecPropertiesPrimaryKey primaryKey;
     /**
-     * @return (Updatable) Indicates whether or not MACsec is enabled.
+     * @return The cross-connect&#39;s current state.
      * 
      */
     private String state;
@@ -58,7 +58,7 @@ public final class CrossConnectMacsecProperties {
         return Optional.ofNullable(this.primaryKey);
     }
     /**
-     * @return (Updatable) Indicates whether or not MACsec is enabled.
+     * @return The cross-connect&#39;s current state.
      * 
      */
     public String state() {

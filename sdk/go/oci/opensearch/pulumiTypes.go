@@ -604,6 +604,112 @@ func (o ClusterReverseConnectionEndpointArrayOutput) Index(i pulumi.IntInput) Cl
 	}).(ClusterReverseConnectionEndpointOutput)
 }
 
+type OpensearchClusterPipelineReverseConnectionEndpoint struct {
+	// (Updatable) The fully qualified domain name of the customerIp in the customer VCN
+	CustomerFqdn string `pulumi:"customerFqdn"`
+	// (Updatable) The IPv4 address in the customer VCN
+	CustomerIp string `pulumi:"customerIp"`
+}
+
+// OpensearchClusterPipelineReverseConnectionEndpointInput is an input type that accepts OpensearchClusterPipelineReverseConnectionEndpointArgs and OpensearchClusterPipelineReverseConnectionEndpointOutput values.
+// You can construct a concrete instance of `OpensearchClusterPipelineReverseConnectionEndpointInput` via:
+//
+//	OpensearchClusterPipelineReverseConnectionEndpointArgs{...}
+type OpensearchClusterPipelineReverseConnectionEndpointInput interface {
+	pulumi.Input
+
+	ToOpensearchClusterPipelineReverseConnectionEndpointOutput() OpensearchClusterPipelineReverseConnectionEndpointOutput
+	ToOpensearchClusterPipelineReverseConnectionEndpointOutputWithContext(context.Context) OpensearchClusterPipelineReverseConnectionEndpointOutput
+}
+
+type OpensearchClusterPipelineReverseConnectionEndpointArgs struct {
+	// (Updatable) The fully qualified domain name of the customerIp in the customer VCN
+	CustomerFqdn pulumi.StringInput `pulumi:"customerFqdn"`
+	// (Updatable) The IPv4 address in the customer VCN
+	CustomerIp pulumi.StringInput `pulumi:"customerIp"`
+}
+
+func (OpensearchClusterPipelineReverseConnectionEndpointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OpensearchClusterPipelineReverseConnectionEndpoint)(nil)).Elem()
+}
+
+func (i OpensearchClusterPipelineReverseConnectionEndpointArgs) ToOpensearchClusterPipelineReverseConnectionEndpointOutput() OpensearchClusterPipelineReverseConnectionEndpointOutput {
+	return i.ToOpensearchClusterPipelineReverseConnectionEndpointOutputWithContext(context.Background())
+}
+
+func (i OpensearchClusterPipelineReverseConnectionEndpointArgs) ToOpensearchClusterPipelineReverseConnectionEndpointOutputWithContext(ctx context.Context) OpensearchClusterPipelineReverseConnectionEndpointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpensearchClusterPipelineReverseConnectionEndpointOutput)
+}
+
+// OpensearchClusterPipelineReverseConnectionEndpointArrayInput is an input type that accepts OpensearchClusterPipelineReverseConnectionEndpointArray and OpensearchClusterPipelineReverseConnectionEndpointArrayOutput values.
+// You can construct a concrete instance of `OpensearchClusterPipelineReverseConnectionEndpointArrayInput` via:
+//
+//	OpensearchClusterPipelineReverseConnectionEndpointArray{ OpensearchClusterPipelineReverseConnectionEndpointArgs{...} }
+type OpensearchClusterPipelineReverseConnectionEndpointArrayInput interface {
+	pulumi.Input
+
+	ToOpensearchClusterPipelineReverseConnectionEndpointArrayOutput() OpensearchClusterPipelineReverseConnectionEndpointArrayOutput
+	ToOpensearchClusterPipelineReverseConnectionEndpointArrayOutputWithContext(context.Context) OpensearchClusterPipelineReverseConnectionEndpointArrayOutput
+}
+
+type OpensearchClusterPipelineReverseConnectionEndpointArray []OpensearchClusterPipelineReverseConnectionEndpointInput
+
+func (OpensearchClusterPipelineReverseConnectionEndpointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OpensearchClusterPipelineReverseConnectionEndpoint)(nil)).Elem()
+}
+
+func (i OpensearchClusterPipelineReverseConnectionEndpointArray) ToOpensearchClusterPipelineReverseConnectionEndpointArrayOutput() OpensearchClusterPipelineReverseConnectionEndpointArrayOutput {
+	return i.ToOpensearchClusterPipelineReverseConnectionEndpointArrayOutputWithContext(context.Background())
+}
+
+func (i OpensearchClusterPipelineReverseConnectionEndpointArray) ToOpensearchClusterPipelineReverseConnectionEndpointArrayOutputWithContext(ctx context.Context) OpensearchClusterPipelineReverseConnectionEndpointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpensearchClusterPipelineReverseConnectionEndpointArrayOutput)
+}
+
+type OpensearchClusterPipelineReverseConnectionEndpointOutput struct{ *pulumi.OutputState }
+
+func (OpensearchClusterPipelineReverseConnectionEndpointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OpensearchClusterPipelineReverseConnectionEndpoint)(nil)).Elem()
+}
+
+func (o OpensearchClusterPipelineReverseConnectionEndpointOutput) ToOpensearchClusterPipelineReverseConnectionEndpointOutput() OpensearchClusterPipelineReverseConnectionEndpointOutput {
+	return o
+}
+
+func (o OpensearchClusterPipelineReverseConnectionEndpointOutput) ToOpensearchClusterPipelineReverseConnectionEndpointOutputWithContext(ctx context.Context) OpensearchClusterPipelineReverseConnectionEndpointOutput {
+	return o
+}
+
+// (Updatable) The fully qualified domain name of the customerIp in the customer VCN
+func (o OpensearchClusterPipelineReverseConnectionEndpointOutput) CustomerFqdn() pulumi.StringOutput {
+	return o.ApplyT(func(v OpensearchClusterPipelineReverseConnectionEndpoint) string { return v.CustomerFqdn }).(pulumi.StringOutput)
+}
+
+// (Updatable) The IPv4 address in the customer VCN
+func (o OpensearchClusterPipelineReverseConnectionEndpointOutput) CustomerIp() pulumi.StringOutput {
+	return o.ApplyT(func(v OpensearchClusterPipelineReverseConnectionEndpoint) string { return v.CustomerIp }).(pulumi.StringOutput)
+}
+
+type OpensearchClusterPipelineReverseConnectionEndpointArrayOutput struct{ *pulumi.OutputState }
+
+func (OpensearchClusterPipelineReverseConnectionEndpointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OpensearchClusterPipelineReverseConnectionEndpoint)(nil)).Elem()
+}
+
+func (o OpensearchClusterPipelineReverseConnectionEndpointArrayOutput) ToOpensearchClusterPipelineReverseConnectionEndpointArrayOutput() OpensearchClusterPipelineReverseConnectionEndpointArrayOutput {
+	return o
+}
+
+func (o OpensearchClusterPipelineReverseConnectionEndpointArrayOutput) ToOpensearchClusterPipelineReverseConnectionEndpointArrayOutputWithContext(ctx context.Context) OpensearchClusterPipelineReverseConnectionEndpointArrayOutput {
+	return o
+}
+
+func (o OpensearchClusterPipelineReverseConnectionEndpointArrayOutput) Index(i pulumi.IntInput) OpensearchClusterPipelineReverseConnectionEndpointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OpensearchClusterPipelineReverseConnectionEndpoint {
+		return vs[0].([]OpensearchClusterPipelineReverseConnectionEndpoint)[vs[1].(int)]
+	}).(OpensearchClusterPipelineReverseConnectionEndpointOutput)
+}
+
 type GetOpensearchClusterMaintenanceDetail struct {
 	// End time of the maintenance activity
 	EndTime string `pulumi:"endTime"`
@@ -967,6 +1073,755 @@ func (o GetOpensearchClusterOutboundClusterConfigOutboundClusterArrayOutput) Ind
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClusterOutboundClusterConfigOutboundCluster {
 		return vs[0].([]GetOpensearchClusterOutboundClusterConfigOutboundCluster)[vs[1].(int)]
 	}).(GetOpensearchClusterOutboundClusterConfigOutboundClusterOutput)
+}
+
+type GetOpensearchClusterPipelineReverseConnectionEndpoint struct {
+	// The fully qualified domain name of the customerIp in the customer VCN
+	CustomerFqdn string `pulumi:"customerFqdn"`
+	// The IPv4 address in the customer VCN
+	CustomerIp string `pulumi:"customerIp"`
+}
+
+// GetOpensearchClusterPipelineReverseConnectionEndpointInput is an input type that accepts GetOpensearchClusterPipelineReverseConnectionEndpointArgs and GetOpensearchClusterPipelineReverseConnectionEndpointOutput values.
+// You can construct a concrete instance of `GetOpensearchClusterPipelineReverseConnectionEndpointInput` via:
+//
+//	GetOpensearchClusterPipelineReverseConnectionEndpointArgs{...}
+type GetOpensearchClusterPipelineReverseConnectionEndpointInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClusterPipelineReverseConnectionEndpointOutput() GetOpensearchClusterPipelineReverseConnectionEndpointOutput
+	ToGetOpensearchClusterPipelineReverseConnectionEndpointOutputWithContext(context.Context) GetOpensearchClusterPipelineReverseConnectionEndpointOutput
+}
+
+type GetOpensearchClusterPipelineReverseConnectionEndpointArgs struct {
+	// The fully qualified domain name of the customerIp in the customer VCN
+	CustomerFqdn pulumi.StringInput `pulumi:"customerFqdn"`
+	// The IPv4 address in the customer VCN
+	CustomerIp pulumi.StringInput `pulumi:"customerIp"`
+}
+
+func (GetOpensearchClusterPipelineReverseConnectionEndpointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClusterPipelineReverseConnectionEndpoint)(nil)).Elem()
+}
+
+func (i GetOpensearchClusterPipelineReverseConnectionEndpointArgs) ToGetOpensearchClusterPipelineReverseConnectionEndpointOutput() GetOpensearchClusterPipelineReverseConnectionEndpointOutput {
+	return i.ToGetOpensearchClusterPipelineReverseConnectionEndpointOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClusterPipelineReverseConnectionEndpointArgs) ToGetOpensearchClusterPipelineReverseConnectionEndpointOutputWithContext(ctx context.Context) GetOpensearchClusterPipelineReverseConnectionEndpointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClusterPipelineReverseConnectionEndpointOutput)
+}
+
+// GetOpensearchClusterPipelineReverseConnectionEndpointArrayInput is an input type that accepts GetOpensearchClusterPipelineReverseConnectionEndpointArray and GetOpensearchClusterPipelineReverseConnectionEndpointArrayOutput values.
+// You can construct a concrete instance of `GetOpensearchClusterPipelineReverseConnectionEndpointArrayInput` via:
+//
+//	GetOpensearchClusterPipelineReverseConnectionEndpointArray{ GetOpensearchClusterPipelineReverseConnectionEndpointArgs{...} }
+type GetOpensearchClusterPipelineReverseConnectionEndpointArrayInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClusterPipelineReverseConnectionEndpointArrayOutput() GetOpensearchClusterPipelineReverseConnectionEndpointArrayOutput
+	ToGetOpensearchClusterPipelineReverseConnectionEndpointArrayOutputWithContext(context.Context) GetOpensearchClusterPipelineReverseConnectionEndpointArrayOutput
+}
+
+type GetOpensearchClusterPipelineReverseConnectionEndpointArray []GetOpensearchClusterPipelineReverseConnectionEndpointInput
+
+func (GetOpensearchClusterPipelineReverseConnectionEndpointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClusterPipelineReverseConnectionEndpoint)(nil)).Elem()
+}
+
+func (i GetOpensearchClusterPipelineReverseConnectionEndpointArray) ToGetOpensearchClusterPipelineReverseConnectionEndpointArrayOutput() GetOpensearchClusterPipelineReverseConnectionEndpointArrayOutput {
+	return i.ToGetOpensearchClusterPipelineReverseConnectionEndpointArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClusterPipelineReverseConnectionEndpointArray) ToGetOpensearchClusterPipelineReverseConnectionEndpointArrayOutputWithContext(ctx context.Context) GetOpensearchClusterPipelineReverseConnectionEndpointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClusterPipelineReverseConnectionEndpointArrayOutput)
+}
+
+type GetOpensearchClusterPipelineReverseConnectionEndpointOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClusterPipelineReverseConnectionEndpointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClusterPipelineReverseConnectionEndpoint)(nil)).Elem()
+}
+
+func (o GetOpensearchClusterPipelineReverseConnectionEndpointOutput) ToGetOpensearchClusterPipelineReverseConnectionEndpointOutput() GetOpensearchClusterPipelineReverseConnectionEndpointOutput {
+	return o
+}
+
+func (o GetOpensearchClusterPipelineReverseConnectionEndpointOutput) ToGetOpensearchClusterPipelineReverseConnectionEndpointOutputWithContext(ctx context.Context) GetOpensearchClusterPipelineReverseConnectionEndpointOutput {
+	return o
+}
+
+// The fully qualified domain name of the customerIp in the customer VCN
+func (o GetOpensearchClusterPipelineReverseConnectionEndpointOutput) CustomerFqdn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterPipelineReverseConnectionEndpoint) string { return v.CustomerFqdn }).(pulumi.StringOutput)
+}
+
+// The IPv4 address in the customer VCN
+func (o GetOpensearchClusterPipelineReverseConnectionEndpointOutput) CustomerIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterPipelineReverseConnectionEndpoint) string { return v.CustomerIp }).(pulumi.StringOutput)
+}
+
+type GetOpensearchClusterPipelineReverseConnectionEndpointArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClusterPipelineReverseConnectionEndpointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClusterPipelineReverseConnectionEndpoint)(nil)).Elem()
+}
+
+func (o GetOpensearchClusterPipelineReverseConnectionEndpointArrayOutput) ToGetOpensearchClusterPipelineReverseConnectionEndpointArrayOutput() GetOpensearchClusterPipelineReverseConnectionEndpointArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClusterPipelineReverseConnectionEndpointArrayOutput) ToGetOpensearchClusterPipelineReverseConnectionEndpointArrayOutputWithContext(ctx context.Context) GetOpensearchClusterPipelineReverseConnectionEndpointArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClusterPipelineReverseConnectionEndpointArrayOutput) Index(i pulumi.IntInput) GetOpensearchClusterPipelineReverseConnectionEndpointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClusterPipelineReverseConnectionEndpoint {
+		return vs[0].([]GetOpensearchClusterPipelineReverseConnectionEndpoint)[vs[1].(int)]
+	}).(GetOpensearchClusterPipelineReverseConnectionEndpointOutput)
+}
+
+type GetOpensearchClusterPipelinesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetOpensearchClusterPipelinesFilterInput is an input type that accepts GetOpensearchClusterPipelinesFilterArgs and GetOpensearchClusterPipelinesFilterOutput values.
+// You can construct a concrete instance of `GetOpensearchClusterPipelinesFilterInput` via:
+//
+//	GetOpensearchClusterPipelinesFilterArgs{...}
+type GetOpensearchClusterPipelinesFilterInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClusterPipelinesFilterOutput() GetOpensearchClusterPipelinesFilterOutput
+	ToGetOpensearchClusterPipelinesFilterOutputWithContext(context.Context) GetOpensearchClusterPipelinesFilterOutput
+}
+
+type GetOpensearchClusterPipelinesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetOpensearchClusterPipelinesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClusterPipelinesFilter)(nil)).Elem()
+}
+
+func (i GetOpensearchClusterPipelinesFilterArgs) ToGetOpensearchClusterPipelinesFilterOutput() GetOpensearchClusterPipelinesFilterOutput {
+	return i.ToGetOpensearchClusterPipelinesFilterOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClusterPipelinesFilterArgs) ToGetOpensearchClusterPipelinesFilterOutputWithContext(ctx context.Context) GetOpensearchClusterPipelinesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClusterPipelinesFilterOutput)
+}
+
+// GetOpensearchClusterPipelinesFilterArrayInput is an input type that accepts GetOpensearchClusterPipelinesFilterArray and GetOpensearchClusterPipelinesFilterArrayOutput values.
+// You can construct a concrete instance of `GetOpensearchClusterPipelinesFilterArrayInput` via:
+//
+//	GetOpensearchClusterPipelinesFilterArray{ GetOpensearchClusterPipelinesFilterArgs{...} }
+type GetOpensearchClusterPipelinesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClusterPipelinesFilterArrayOutput() GetOpensearchClusterPipelinesFilterArrayOutput
+	ToGetOpensearchClusterPipelinesFilterArrayOutputWithContext(context.Context) GetOpensearchClusterPipelinesFilterArrayOutput
+}
+
+type GetOpensearchClusterPipelinesFilterArray []GetOpensearchClusterPipelinesFilterInput
+
+func (GetOpensearchClusterPipelinesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClusterPipelinesFilter)(nil)).Elem()
+}
+
+func (i GetOpensearchClusterPipelinesFilterArray) ToGetOpensearchClusterPipelinesFilterArrayOutput() GetOpensearchClusterPipelinesFilterArrayOutput {
+	return i.ToGetOpensearchClusterPipelinesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClusterPipelinesFilterArray) ToGetOpensearchClusterPipelinesFilterArrayOutputWithContext(ctx context.Context) GetOpensearchClusterPipelinesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClusterPipelinesFilterArrayOutput)
+}
+
+type GetOpensearchClusterPipelinesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClusterPipelinesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClusterPipelinesFilter)(nil)).Elem()
+}
+
+func (o GetOpensearchClusterPipelinesFilterOutput) ToGetOpensearchClusterPipelinesFilterOutput() GetOpensearchClusterPipelinesFilterOutput {
+	return o
+}
+
+func (o GetOpensearchClusterPipelinesFilterOutput) ToGetOpensearchClusterPipelinesFilterOutputWithContext(ctx context.Context) GetOpensearchClusterPipelinesFilterOutput {
+	return o
+}
+
+func (o GetOpensearchClusterPipelinesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterPipelinesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetOpensearchClusterPipelinesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterPipelinesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetOpensearchClusterPipelinesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOpensearchClusterPipelinesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetOpensearchClusterPipelinesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClusterPipelinesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClusterPipelinesFilter)(nil)).Elem()
+}
+
+func (o GetOpensearchClusterPipelinesFilterArrayOutput) ToGetOpensearchClusterPipelinesFilterArrayOutput() GetOpensearchClusterPipelinesFilterArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClusterPipelinesFilterArrayOutput) ToGetOpensearchClusterPipelinesFilterArrayOutputWithContext(ctx context.Context) GetOpensearchClusterPipelinesFilterArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClusterPipelinesFilterArrayOutput) Index(i pulumi.IntInput) GetOpensearchClusterPipelinesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClusterPipelinesFilter {
+		return vs[0].([]GetOpensearchClusterPipelinesFilter)[vs[1].(int)]
+	}).(GetOpensearchClusterPipelinesFilterOutput)
+}
+
+type GetOpensearchClusterPipelinesOpensearchClusterPipelineCollection struct {
+	Items []GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem `pulumi:"items"`
+}
+
+// GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionInput is an input type that accepts GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArgs and GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionOutput values.
+// You can construct a concrete instance of `GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionInput` via:
+//
+//	GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArgs{...}
+type GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionOutput() GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionOutput
+	ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionOutputWithContext(context.Context) GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionOutput
+}
+
+type GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArgs struct {
+	Items GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClusterPipelinesOpensearchClusterPipelineCollection)(nil)).Elem()
+}
+
+func (i GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArgs) ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionOutput() GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionOutput {
+	return i.ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArgs) ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionOutputWithContext(ctx context.Context) GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionOutput)
+}
+
+// GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArrayInput is an input type that accepts GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArray and GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArrayOutput values.
+// You can construct a concrete instance of `GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArrayInput` via:
+//
+//	GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArray{ GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArgs{...} }
+type GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArrayOutput() GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArrayOutput
+	ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArrayOutputWithContext(context.Context) GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArrayOutput
+}
+
+type GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArray []GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionInput
+
+func (GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClusterPipelinesOpensearchClusterPipelineCollection)(nil)).Elem()
+}
+
+func (i GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArray) ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArrayOutput() GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArrayOutput {
+	return i.ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArray) ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArrayOutputWithContext(ctx context.Context) GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArrayOutput)
+}
+
+type GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClusterPipelinesOpensearchClusterPipelineCollection)(nil)).Elem()
+}
+
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionOutput) ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionOutput() GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionOutput {
+	return o
+}
+
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionOutput) ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionOutputWithContext(ctx context.Context) GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionOutput {
+	return o
+}
+
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionOutput) Items() GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetOpensearchClusterPipelinesOpensearchClusterPipelineCollection) []GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem {
+		return v.Items
+	}).(GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArrayOutput)
+}
+
+type GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClusterPipelinesOpensearchClusterPipelineCollection)(nil)).Elem()
+}
+
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArrayOutput) ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArrayOutput() GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArrayOutput) ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArrayOutputWithContext(ctx context.Context) GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArrayOutput) Index(i pulumi.IntInput) GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClusterPipelinesOpensearchClusterPipelineCollection {
+		return vs[0].([]GetOpensearchClusterPipelinesOpensearchClusterPipelineCollection)[vs[1].(int)]
+	}).(GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionOutput)
+}
+
+type GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The data prepper config in YAML format. The command accepts the data prepper config as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \.
+	DataPrepperConfigurationBody string `pulumi:"dataPrepperConfigurationBody"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// unique OpensearchClusterPipeline identifier
+	Id string `pulumi:"id"`
+	// The amount of memory in GB, for each pipeline node.
+	MemoryGb int `pulumi:"memoryGb"`
+	// The number of nodes configured for the pipeline.
+	NodeCount int `pulumi:"nodeCount"`
+	// The OCID of the NSG where the pipeline private endpoint vnic will be attached.
+	NsgId string `pulumi:"nsgId"`
+	// The number of OCPUs configured for each pipeline node.
+	OcpuCount int  `pulumi:"ocpuCount"`
+	OpcDryRun bool `pulumi:"opcDryRun"`
+	// The fully qualified domain name (FQDN) for the cluster's API endpoint.
+	OpensearchPipelineFqdn string `pulumi:"opensearchPipelineFqdn"`
+	// The pipeline's private IP address.
+	OpensearchPipelinePrivateIp string `pulumi:"opensearchPipelinePrivateIp"`
+	// The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \.
+	PipelineConfigurationBody string `pulumi:"pipelineConfigurationBody"`
+	// The current state of the pipeline.
+	PipelineMode string `pulumi:"pipelineMode"`
+	// The customer IP and the corresponding fully qualified domain name that the pipeline will connect to.
+	ReverseConnectionEndpoints []GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpoint `pulumi:"reverseConnectionEndpoints"`
+	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	State string `pulumi:"state"`
+	// The OCID for the compartment where the pipeline's subnet is located.
+	SubnetCompartmentId string `pulumi:"subnetCompartmentId"`
+	// The OCID of the pipeline's subnet.
+	SubnetId string `pulumi:"subnetId"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the cluster pipeline was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated string `pulumi:"timeCreated"`
+	// The amount of time in milliseconds since the pipeline was updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The OCID for the compartment where the pipeline's VCN is located.
+	VcnCompartmentId string `pulumi:"vcnCompartmentId"`
+	// The OCID of the pipeline's VCN.
+	VcnId string `pulumi:"vcnId"`
+}
+
+// GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemInput is an input type that accepts GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArgs and GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput values.
+// You can construct a concrete instance of `GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemInput` via:
+//
+//	GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArgs{...}
+type GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput() GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput
+	ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutputWithContext(context.Context) GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput
+}
+
+type GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArgs struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The data prepper config in YAML format. The command accepts the data prepper config as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \.
+	DataPrepperConfigurationBody pulumi.StringInput `pulumi:"dataPrepperConfigurationBody"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// unique OpensearchClusterPipeline identifier
+	Id pulumi.StringInput `pulumi:"id"`
+	// The amount of memory in GB, for each pipeline node.
+	MemoryGb pulumi.IntInput `pulumi:"memoryGb"`
+	// The number of nodes configured for the pipeline.
+	NodeCount pulumi.IntInput `pulumi:"nodeCount"`
+	// The OCID of the NSG where the pipeline private endpoint vnic will be attached.
+	NsgId pulumi.StringInput `pulumi:"nsgId"`
+	// The number of OCPUs configured for each pipeline node.
+	OcpuCount pulumi.IntInput  `pulumi:"ocpuCount"`
+	OpcDryRun pulumi.BoolInput `pulumi:"opcDryRun"`
+	// The fully qualified domain name (FQDN) for the cluster's API endpoint.
+	OpensearchPipelineFqdn pulumi.StringInput `pulumi:"opensearchPipelineFqdn"`
+	// The pipeline's private IP address.
+	OpensearchPipelinePrivateIp pulumi.StringInput `pulumi:"opensearchPipelinePrivateIp"`
+	// The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \.
+	PipelineConfigurationBody pulumi.StringInput `pulumi:"pipelineConfigurationBody"`
+	// The current state of the pipeline.
+	PipelineMode pulumi.StringInput `pulumi:"pipelineMode"`
+	// The customer IP and the corresponding fully qualified domain name that the pipeline will connect to.
+	ReverseConnectionEndpoints GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArrayInput `pulumi:"reverseConnectionEndpoints"`
+	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	State pulumi.StringInput `pulumi:"state"`
+	// The OCID for the compartment where the pipeline's subnet is located.
+	SubnetCompartmentId pulumi.StringInput `pulumi:"subnetCompartmentId"`
+	// The OCID of the pipeline's subnet.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the cluster pipeline was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The amount of time in milliseconds since the pipeline was updated.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The OCID for the compartment where the pipeline's VCN is located.
+	VcnCompartmentId pulumi.StringInput `pulumi:"vcnCompartmentId"`
+	// The OCID of the pipeline's VCN.
+	VcnId pulumi.StringInput `pulumi:"vcnId"`
+}
+
+func (GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem)(nil)).Elem()
+}
+
+func (i GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArgs) ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput() GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput {
+	return i.ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArgs) ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutputWithContext(ctx context.Context) GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput)
+}
+
+// GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArrayInput is an input type that accepts GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArray and GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArrayInput` via:
+//
+//	GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArray{ GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArgs{...} }
+type GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArrayOutput() GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArrayOutput
+	ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArrayOutputWithContext(context.Context) GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArrayOutput
+}
+
+type GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArray []GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemInput
+
+func (GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem)(nil)).Elem()
+}
+
+func (i GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArray) ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArrayOutput() GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArrayOutput {
+	return i.ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArray) ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArrayOutputWithContext(ctx context.Context) GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArrayOutput)
+}
+
+type GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem)(nil)).Elem()
+}
+
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput) ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput() GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput {
+	return o
+}
+
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput) ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutputWithContext(ctx context.Context) GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput {
+	return o
+}
+
+// The ID of the compartment in which to list resources.
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// The data prepper config in YAML format. The command accepts the data prepper config as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \.
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput) DataPrepperConfigurationBody() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem) string {
+		return v.DataPrepperConfigurationBody
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// unique OpensearchClusterPipeline identifier
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The amount of memory in GB, for each pipeline node.
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput) MemoryGb() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem) int { return v.MemoryGb }).(pulumi.IntOutput)
+}
+
+// The number of nodes configured for the pipeline.
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput) NodeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem) int { return v.NodeCount }).(pulumi.IntOutput)
+}
+
+// The OCID of the NSG where the pipeline private endpoint vnic will be attached.
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput) NsgId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem) string { return v.NsgId }).(pulumi.StringOutput)
+}
+
+// The number of OCPUs configured for each pipeline node.
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput) OcpuCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem) int { return v.OcpuCount }).(pulumi.IntOutput)
+}
+
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput) OpcDryRun() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem) bool { return v.OpcDryRun }).(pulumi.BoolOutput)
+}
+
+// The fully qualified domain name (FQDN) for the cluster's API endpoint.
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput) OpensearchPipelineFqdn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem) string {
+		return v.OpensearchPipelineFqdn
+	}).(pulumi.StringOutput)
+}
+
+// The pipeline's private IP address.
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput) OpensearchPipelinePrivateIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem) string {
+		return v.OpensearchPipelinePrivateIp
+	}).(pulumi.StringOutput)
+}
+
+// The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \.
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput) PipelineConfigurationBody() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem) string {
+		return v.PipelineConfigurationBody
+	}).(pulumi.StringOutput)
+}
+
+// The current state of the pipeline.
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput) PipelineMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem) string {
+		return v.PipelineMode
+	}).(pulumi.StringOutput)
+}
+
+// The customer IP and the corresponding fully qualified domain name that the pipeline will connect to.
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput) ReverseConnectionEndpoints() GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArrayOutput {
+	return o.ApplyT(func(v GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem) []GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpoint {
+		return v.ReverseConnectionEndpoints
+	}).(GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArrayOutput)
+}
+
+// A filter to return only resources their lifecycleState matches the given lifecycleState.
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The OCID for the compartment where the pipeline's subnet is located.
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput) SubnetCompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem) string {
+		return v.SubnetCompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the pipeline's subnet.
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The date and time the cluster pipeline was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The amount of time in milliseconds since the pipeline was updated.
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+// The OCID for the compartment where the pipeline's VCN is located.
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput) VcnCompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem) string {
+		return v.VcnCompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the pipeline's VCN.
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput) VcnId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem) string { return v.VcnId }).(pulumi.StringOutput)
+}
+
+type GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem)(nil)).Elem()
+}
+
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArrayOutput) ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArrayOutput() GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArrayOutput) ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArrayOutputWithContext(ctx context.Context) GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArrayOutput) Index(i pulumi.IntInput) GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem {
+		return vs[0].([]GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem)[vs[1].(int)]
+	}).(GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput)
+}
+
+type GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpoint struct {
+	// The fully qualified domain name of the customerIp in the customer VCN
+	CustomerFqdn string `pulumi:"customerFqdn"`
+	// The IPv4 address in the customer VCN
+	CustomerIp string `pulumi:"customerIp"`
+}
+
+// GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointInput is an input type that accepts GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArgs and GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointOutput values.
+// You can construct a concrete instance of `GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointInput` via:
+//
+//	GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArgs{...}
+type GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointOutput() GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointOutput
+	ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointOutputWithContext(context.Context) GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointOutput
+}
+
+type GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArgs struct {
+	// The fully qualified domain name of the customerIp in the customer VCN
+	CustomerFqdn pulumi.StringInput `pulumi:"customerFqdn"`
+	// The IPv4 address in the customer VCN
+	CustomerIp pulumi.StringInput `pulumi:"customerIp"`
+}
+
+func (GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpoint)(nil)).Elem()
+}
+
+func (i GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArgs) ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointOutput() GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointOutput {
+	return i.ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArgs) ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointOutputWithContext(ctx context.Context) GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointOutput)
+}
+
+// GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArrayInput is an input type that accepts GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArray and GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArrayOutput values.
+// You can construct a concrete instance of `GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArrayInput` via:
+//
+//	GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArray{ GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArgs{...} }
+type GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArrayInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArrayOutput() GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArrayOutput
+	ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArrayOutputWithContext(context.Context) GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArrayOutput
+}
+
+type GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArray []GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointInput
+
+func (GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpoint)(nil)).Elem()
+}
+
+func (i GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArray) ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArrayOutput() GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArrayOutput {
+	return i.ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArray) ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArrayOutputWithContext(ctx context.Context) GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArrayOutput)
+}
+
+type GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpoint)(nil)).Elem()
+}
+
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointOutput) ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointOutput() GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointOutput {
+	return o
+}
+
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointOutput) ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointOutputWithContext(ctx context.Context) GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointOutput {
+	return o
+}
+
+// The fully qualified domain name of the customerIp in the customer VCN
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointOutput) CustomerFqdn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpoint) string {
+		return v.CustomerFqdn
+	}).(pulumi.StringOutput)
+}
+
+// The IPv4 address in the customer VCN
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointOutput) CustomerIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpoint) string {
+		return v.CustomerIp
+	}).(pulumi.StringOutput)
+}
+
+type GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpoint)(nil)).Elem()
+}
+
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArrayOutput) ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArrayOutput() GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArrayOutput) ToGetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArrayOutputWithContext(ctx context.Context) GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArrayOutput) Index(i pulumi.IntInput) GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpoint {
+		return vs[0].([]GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpoint)[vs[1].(int)]
+	}).(GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointOutput)
 }
 
 type GetOpensearchClusterReverseConnectionEndpoint struct {
@@ -1364,7 +2219,8 @@ type GetOpensearchClustersOpensearchClusterCollectionItem struct {
 	// The amount of time in milliseconds since the cluster was updated.
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// The size in GB of the cluster's total storage.
-	TotalStorageGb int `pulumi:"totalStorageGb"`
+	TotalStorageGb             int `pulumi:"totalStorageGb"`
+	UpgradeMajorVersionTrigger int `pulumi:"upgradeMajorVersionTrigger"`
 	// The OCID for the compartment where the cluster's VCN is located.
 	VcnCompartmentId string `pulumi:"vcnCompartmentId"`
 	// The OCID of the cluster's VCN.
@@ -1469,7 +2325,8 @@ type GetOpensearchClustersOpensearchClusterCollectionItemArgs struct {
 	// The amount of time in milliseconds since the cluster was updated.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// The size in GB of the cluster's total storage.
-	TotalStorageGb pulumi.IntInput `pulumi:"totalStorageGb"`
+	TotalStorageGb             pulumi.IntInput `pulumi:"totalStorageGb"`
+	UpgradeMajorVersionTrigger pulumi.IntInput `pulumi:"upgradeMajorVersionTrigger"`
 	// The OCID for the compartment where the cluster's VCN is located.
 	VcnCompartmentId pulumi.StringInput `pulumi:"vcnCompartmentId"`
 	// The OCID of the cluster's VCN.
@@ -1764,6 +2621,10 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) TimeUpdated(
 // The size in GB of the cluster's total storage.
 func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) TotalStorageGb() pulumi.IntOutput {
 	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) int { return v.TotalStorageGb }).(pulumi.IntOutput)
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) UpgradeMajorVersionTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) int { return v.UpgradeMajorVersionTrigger }).(pulumi.IntOutput)
 }
 
 // The OCID for the compartment where the cluster's VCN is located.
@@ -2695,12 +3556,24 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterOutboundClusterConfigOutboundClusterArrayInput)(nil)).Elem(), ClusterOutboundClusterConfigOutboundClusterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterReverseConnectionEndpointInput)(nil)).Elem(), ClusterReverseConnectionEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterReverseConnectionEndpointArrayInput)(nil)).Elem(), ClusterReverseConnectionEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OpensearchClusterPipelineReverseConnectionEndpointInput)(nil)).Elem(), OpensearchClusterPipelineReverseConnectionEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OpensearchClusterPipelineReverseConnectionEndpointArrayInput)(nil)).Elem(), OpensearchClusterPipelineReverseConnectionEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterMaintenanceDetailInput)(nil)).Elem(), GetOpensearchClusterMaintenanceDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterMaintenanceDetailArrayInput)(nil)).Elem(), GetOpensearchClusterMaintenanceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterOutboundClusterConfigInput)(nil)).Elem(), GetOpensearchClusterOutboundClusterConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterOutboundClusterConfigArrayInput)(nil)).Elem(), GetOpensearchClusterOutboundClusterConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterOutboundClusterConfigOutboundClusterInput)(nil)).Elem(), GetOpensearchClusterOutboundClusterConfigOutboundClusterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterOutboundClusterConfigOutboundClusterArrayInput)(nil)).Elem(), GetOpensearchClusterOutboundClusterConfigOutboundClusterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterPipelineReverseConnectionEndpointInput)(nil)).Elem(), GetOpensearchClusterPipelineReverseConnectionEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterPipelineReverseConnectionEndpointArrayInput)(nil)).Elem(), GetOpensearchClusterPipelineReverseConnectionEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterPipelinesFilterInput)(nil)).Elem(), GetOpensearchClusterPipelinesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterPipelinesFilterArrayInput)(nil)).Elem(), GetOpensearchClusterPipelinesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionInput)(nil)).Elem(), GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArrayInput)(nil)).Elem(), GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemInput)(nil)).Elem(), GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArrayInput)(nil)).Elem(), GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointInput)(nil)).Elem(), GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArrayInput)(nil)).Elem(), GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterReverseConnectionEndpointInput)(nil)).Elem(), GetOpensearchClusterReverseConnectionEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterReverseConnectionEndpointArrayInput)(nil)).Elem(), GetOpensearchClusterReverseConnectionEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersFilterInput)(nil)).Elem(), GetOpensearchClustersFilterArgs{})
@@ -2733,12 +3606,24 @@ func init() {
 	pulumi.RegisterOutputType(ClusterOutboundClusterConfigOutboundClusterArrayOutput{})
 	pulumi.RegisterOutputType(ClusterReverseConnectionEndpointOutput{})
 	pulumi.RegisterOutputType(ClusterReverseConnectionEndpointArrayOutput{})
+	pulumi.RegisterOutputType(OpensearchClusterPipelineReverseConnectionEndpointOutput{})
+	pulumi.RegisterOutputType(OpensearchClusterPipelineReverseConnectionEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClusterMaintenanceDetailOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClusterMaintenanceDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClusterOutboundClusterConfigOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClusterOutboundClusterConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClusterOutboundClusterConfigOutboundClusterOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClusterOutboundClusterConfigOutboundClusterArrayOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClusterPipelineReverseConnectionEndpointOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClusterPipelineReverseConnectionEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClusterPipelinesFilterOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClusterPipelinesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClusterReverseConnectionEndpointOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClusterReverseConnectionEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClustersFilterOutput{})

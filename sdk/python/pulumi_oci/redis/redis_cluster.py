@@ -38,7 +38,7 @@ class RedisClusterArgs:
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[int] node_count: (Updatable) The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
         :param pulumi.Input[float] node_memory_in_gbs: (Updatable) The amount of memory allocated to the cluster's nodes, in gigabytes.
-        :param pulumi.Input[str] software_version: The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+        :param pulumi.Input[str] software_version: (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
                
                
@@ -119,7 +119,7 @@ class RedisClusterArgs:
     @pulumi.getter(name="softwareVersion")
     def software_version(self) -> pulumi.Input[str]:
         """
-        The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+        (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
         """
         return pulumi.get(self, "software_version")
 
@@ -245,7 +245,7 @@ class _RedisClusterState:
         :param pulumi.Input[str] replicas_endpoint_ip_address: The private IP address of the API endpoint for the cluster's replica nodes.
         :param pulumi.Input[str] replicas_fqdn: The fully qualified domain name (FQDN) of the API endpoint for the cluster's replica nodes.
         :param pulumi.Input[int] shard_count: (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
-        :param pulumi.Input[str] software_version: The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+        :param pulumi.Input[str] software_version: (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
         :param pulumi.Input[str] state: The current state of the cluster.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
                
@@ -483,7 +483,7 @@ class _RedisClusterState:
     @pulumi.getter(name="softwareVersion")
     def software_version(self) -> Optional[pulumi.Input[str]]:
         """
-        The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+        (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
         """
         return pulumi.get(self, "software_version")
 
@@ -621,7 +621,7 @@ class RedisCluster(pulumi.CustomResource):
         :param pulumi.Input[float] node_memory_in_gbs: (Updatable) The amount of memory allocated to the cluster's nodes, in gigabytes.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
         :param pulumi.Input[int] shard_count: (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
-        :param pulumi.Input[str] software_version: The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+        :param pulumi.Input[str] software_version: (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
                
                
@@ -792,7 +792,7 @@ class RedisCluster(pulumi.CustomResource):
         :param pulumi.Input[str] replicas_endpoint_ip_address: The private IP address of the API endpoint for the cluster's replica nodes.
         :param pulumi.Input[str] replicas_fqdn: The fully qualified domain name (FQDN) of the API endpoint for the cluster's replica nodes.
         :param pulumi.Input[int] shard_count: (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
-        :param pulumi.Input[str] software_version: The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+        :param pulumi.Input[str] software_version: (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
         :param pulumi.Input[str] state: The current state of the cluster.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
                
@@ -954,7 +954,7 @@ class RedisCluster(pulumi.CustomResource):
     @pulumi.getter(name="softwareVersion")
     def software_version(self) -> pulumi.Output[str]:
         """
-        The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+        (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
         """
         return pulumi.get(self, "software_version")
 

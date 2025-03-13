@@ -31,7 +31,7 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<Inputs.CrossConnectMacsecPropertiesPrimaryKeyArgs>? PrimaryKey { get; set; }
 
         /// <summary>
-        /// (Updatable) Indicates whether or not MACsec is enabled.
+        /// The cross-connect's current state.
         /// </summary>
         [Input("state", required: true)]
         public Input<string> State { get; set; } = null!;

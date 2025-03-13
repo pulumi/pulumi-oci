@@ -99,6 +99,8 @@ type LookupMysqlBackupResult struct {
 	SourceDetails []GetMysqlBackupSourceDetail `pulumi:"sourceDetails"`
 	// The state of the backup.
 	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCopyCreated string `pulumi:"timeCopyCreated"`
 	// The time the backup record was created.
@@ -248,6 +250,11 @@ func (o LookupMysqlBackupResultOutput) SourceDetails() GetMysqlBackupSourceDetai
 // The state of the backup.
 func (o LookupMysqlBackupResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMysqlBackupResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o LookupMysqlBackupResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupMysqlBackupResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).

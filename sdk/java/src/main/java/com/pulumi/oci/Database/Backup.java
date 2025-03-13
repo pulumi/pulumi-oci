@@ -11,7 +11,9 @@ import com.pulumi.oci.Database.BackupArgs;
 import com.pulumi.oci.Database.inputs.BackupState;
 import com.pulumi.oci.Database.outputs.BackupEncryptionKeyLocationDetail;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.Double;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import javax.annotation.Nullable;
@@ -82,6 +84,12 @@ public class Backup extends com.pulumi.resources.CustomResource {
     public Output<String> availabilityDomain() {
         return this.availabilityDomain;
     }
+    @Export(name="backupDestinationType", refs={String.class}, tree="[0]")
+    private Output<String> backupDestinationType;
+
+    public Output<String> backupDestinationType() {
+        return this.backupDestinationType;
+    }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -97,14 +105,14 @@ public class Backup extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
-     * The Oracle Database edition of the DB system from which the database backup was taken.
+     * The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      * 
      */
     @Export(name="databaseEdition", refs={String.class}, tree="[0]")
     private Output<String> databaseEdition;
 
     /**
-     * @return The Oracle Database edition of the DB system from which the database backup was taken.
+     * @return The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      * 
      */
     public Output<String> databaseEdition() {
@@ -171,6 +179,12 @@ public class Backup extends com.pulumi.resources.CustomResource {
      */
     public Output<List<BackupEncryptionKeyLocationDetail>> encryptionKeyLocationDetails() {
         return this.encryptionKeyLocationDetails;
+    }
+    @Export(name="isUsingOracleManagedKeys", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isUsingOracleManagedKeys;
+
+    public Output<Boolean> isUsingOracleManagedKeys() {
+        return this.isUsingOracleManagedKeys;
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
@@ -242,6 +256,24 @@ public class Backup extends com.pulumi.resources.CustomResource {
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
     }
+    @Export(name="retentionPeriodInDays", refs={Integer.class}, tree="[0]")
+    private Output<Integer> retentionPeriodInDays;
+
+    public Output<Integer> retentionPeriodInDays() {
+        return this.retentionPeriodInDays;
+    }
+    @Export(name="retentionPeriodInYears", refs={Integer.class}, tree="[0]")
+    private Output<Integer> retentionPeriodInYears;
+
+    public Output<Integer> retentionPeriodInYears() {
+        return this.retentionPeriodInYears;
+    }
+    @Export(name="secondaryKmsKeyIds", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> secondaryKmsKeyIds;
+
+    public Output<List<String>> secondaryKmsKeyIds() {
+        return this.secondaryKmsKeyIds;
+    }
     /**
      * Shape of the backup&#39;s source database.
      * 
@@ -283,6 +315,12 @@ public class Backup extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeEnded() {
         return this.timeEnded;
+    }
+    @Export(name="timeExpiryScheduled", refs={String.class}, tree="[0]")
+    private Output<String> timeExpiryScheduled;
+
+    public Output<String> timeExpiryScheduled() {
+        return this.timeExpiryScheduled;
     }
     /**
      * The date and time the backup started.

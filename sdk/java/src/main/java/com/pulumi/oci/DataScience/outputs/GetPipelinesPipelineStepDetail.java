@@ -7,7 +7,9 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetPipelinesPipelineStepDetailStepConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetPipelinesPipelineStepDetailStepContainerConfigurationDetail;
+import com.pulumi.oci.DataScience.outputs.GetPipelinesPipelineStepDetailStepDataflowConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetail;
+import com.pulumi.oci.DataScience.outputs.GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsList;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -15,6 +17,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetPipelinesPipelineStepDetail {
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow application to be used as a step.
+     * 
+     */
+    private String applicationId;
     /**
      * @return The list of step names this current step depends on for execution.
      * 
@@ -46,6 +53,11 @@ public final class GetPipelinesPipelineStepDetail {
      */
     private List<GetPipelinesPipelineStepDetailStepContainerConfigurationDetail> stepContainerConfigurationDetails;
     /**
+     * @return The configuration details of a Dataflow step.
+     * 
+     */
+    private List<GetPipelinesPipelineStepDetailStepDataflowConfigurationDetail> stepDataflowConfigurationDetails;
+    /**
      * @return The infrastructure configuration details of a pipeline or a step.
      * 
      */
@@ -56,12 +68,24 @@ public final class GetPipelinesPipelineStepDetail {
      */
     private String stepName;
     /**
+     * @return The storage mount details to mount to the instance running the pipeline step.
+     * 
+     */
+    private List<GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsList> stepStorageMountConfigurationDetailsLists;
+    /**
      * @return The type of step.
      * 
      */
     private String stepType;
 
     private GetPipelinesPipelineStepDetail() {}
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow application to be used as a step.
+     * 
+     */
+    public String applicationId() {
+        return this.applicationId;
+    }
     /**
      * @return The list of step names this current step depends on for execution.
      * 
@@ -105,6 +129,13 @@ public final class GetPipelinesPipelineStepDetail {
         return this.stepContainerConfigurationDetails;
     }
     /**
+     * @return The configuration details of a Dataflow step.
+     * 
+     */
+    public List<GetPipelinesPipelineStepDetailStepDataflowConfigurationDetail> stepDataflowConfigurationDetails() {
+        return this.stepDataflowConfigurationDetails;
+    }
+    /**
      * @return The infrastructure configuration details of a pipeline or a step.
      * 
      */
@@ -117,6 +148,13 @@ public final class GetPipelinesPipelineStepDetail {
      */
     public String stepName() {
         return this.stepName;
+    }
+    /**
+     * @return The storage mount details to mount to the instance running the pipeline step.
+     * 
+     */
+    public List<GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsList> stepStorageMountConfigurationDetailsLists() {
+        return this.stepStorageMountConfigurationDetailsLists;
     }
     /**
      * @return The type of step.
@@ -135,29 +173,43 @@ public final class GetPipelinesPipelineStepDetail {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String applicationId;
         private List<String> dependsOns;
         private String description;
         private Boolean isArtifactUploaded;
         private String jobId;
         private List<GetPipelinesPipelineStepDetailStepConfigurationDetail> stepConfigurationDetails;
         private List<GetPipelinesPipelineStepDetailStepContainerConfigurationDetail> stepContainerConfigurationDetails;
+        private List<GetPipelinesPipelineStepDetailStepDataflowConfigurationDetail> stepDataflowConfigurationDetails;
         private List<GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetail> stepInfrastructureConfigurationDetails;
         private String stepName;
+        private List<GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsList> stepStorageMountConfigurationDetailsLists;
         private String stepType;
         public Builder() {}
         public Builder(GetPipelinesPipelineStepDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.applicationId = defaults.applicationId;
     	      this.dependsOns = defaults.dependsOns;
     	      this.description = defaults.description;
     	      this.isArtifactUploaded = defaults.isArtifactUploaded;
     	      this.jobId = defaults.jobId;
     	      this.stepConfigurationDetails = defaults.stepConfigurationDetails;
     	      this.stepContainerConfigurationDetails = defaults.stepContainerConfigurationDetails;
+    	      this.stepDataflowConfigurationDetails = defaults.stepDataflowConfigurationDetails;
     	      this.stepInfrastructureConfigurationDetails = defaults.stepInfrastructureConfigurationDetails;
     	      this.stepName = defaults.stepName;
+    	      this.stepStorageMountConfigurationDetailsLists = defaults.stepStorageMountConfigurationDetailsLists;
     	      this.stepType = defaults.stepType;
         }
 
+        @CustomType.Setter
+        public Builder applicationId(String applicationId) {
+            if (applicationId == null) {
+              throw new MissingRequiredPropertyException("GetPipelinesPipelineStepDetail", "applicationId");
+            }
+            this.applicationId = applicationId;
+            return this;
+        }
         @CustomType.Setter
         public Builder dependsOns(List<String> dependsOns) {
             if (dependsOns == null) {
@@ -216,6 +268,17 @@ public final class GetPipelinesPipelineStepDetail {
             return stepContainerConfigurationDetails(List.of(stepContainerConfigurationDetails));
         }
         @CustomType.Setter
+        public Builder stepDataflowConfigurationDetails(List<GetPipelinesPipelineStepDetailStepDataflowConfigurationDetail> stepDataflowConfigurationDetails) {
+            if (stepDataflowConfigurationDetails == null) {
+              throw new MissingRequiredPropertyException("GetPipelinesPipelineStepDetail", "stepDataflowConfigurationDetails");
+            }
+            this.stepDataflowConfigurationDetails = stepDataflowConfigurationDetails;
+            return this;
+        }
+        public Builder stepDataflowConfigurationDetails(GetPipelinesPipelineStepDetailStepDataflowConfigurationDetail... stepDataflowConfigurationDetails) {
+            return stepDataflowConfigurationDetails(List.of(stepDataflowConfigurationDetails));
+        }
+        @CustomType.Setter
         public Builder stepInfrastructureConfigurationDetails(List<GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetail> stepInfrastructureConfigurationDetails) {
             if (stepInfrastructureConfigurationDetails == null) {
               throw new MissingRequiredPropertyException("GetPipelinesPipelineStepDetail", "stepInfrastructureConfigurationDetails");
@@ -235,6 +298,17 @@ public final class GetPipelinesPipelineStepDetail {
             return this;
         }
         @CustomType.Setter
+        public Builder stepStorageMountConfigurationDetailsLists(List<GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsList> stepStorageMountConfigurationDetailsLists) {
+            if (stepStorageMountConfigurationDetailsLists == null) {
+              throw new MissingRequiredPropertyException("GetPipelinesPipelineStepDetail", "stepStorageMountConfigurationDetailsLists");
+            }
+            this.stepStorageMountConfigurationDetailsLists = stepStorageMountConfigurationDetailsLists;
+            return this;
+        }
+        public Builder stepStorageMountConfigurationDetailsLists(GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsList... stepStorageMountConfigurationDetailsLists) {
+            return stepStorageMountConfigurationDetailsLists(List.of(stepStorageMountConfigurationDetailsLists));
+        }
+        @CustomType.Setter
         public Builder stepType(String stepType) {
             if (stepType == null) {
               throw new MissingRequiredPropertyException("GetPipelinesPipelineStepDetail", "stepType");
@@ -244,14 +318,17 @@ public final class GetPipelinesPipelineStepDetail {
         }
         public GetPipelinesPipelineStepDetail build() {
             final var _resultValue = new GetPipelinesPipelineStepDetail();
+            _resultValue.applicationId = applicationId;
             _resultValue.dependsOns = dependsOns;
             _resultValue.description = description;
             _resultValue.isArtifactUploaded = isArtifactUploaded;
             _resultValue.jobId = jobId;
             _resultValue.stepConfigurationDetails = stepConfigurationDetails;
             _resultValue.stepContainerConfigurationDetails = stepContainerConfigurationDetails;
+            _resultValue.stepDataflowConfigurationDetails = stepDataflowConfigurationDetails;
             _resultValue.stepInfrastructureConfigurationDetails = stepInfrastructureConfigurationDetails;
             _resultValue.stepName = stepName;
+            _resultValue.stepStorageMountConfigurationDetailsLists = stepStorageMountConfigurationDetailsLists;
             _resultValue.stepType = stepType;
             return _resultValue;
         }

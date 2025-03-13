@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Mysql.outputs.MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicy;
 import com.pulumi.oci.Mysql.outputs.MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -16,6 +17,11 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class MysqlBackupDbSystemSnapshotBackupPolicy {
+    /**
+     * @return List of policies of a DB system to schedule cross-region DB system backup copy.
+     * 
+     */
+    private @Nullable List<MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicy> copyPolicies;
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
@@ -48,6 +54,13 @@ public final class MysqlBackupDbSystemSnapshotBackupPolicy {
     private @Nullable String windowStartTime;
 
     private MysqlBackupDbSystemSnapshotBackupPolicy() {}
+    /**
+     * @return List of policies of a DB system to schedule cross-region DB system backup copy.
+     * 
+     */
+    public List<MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicy> copyPolicies() {
+        return this.copyPolicies == null ? List.of() : this.copyPolicies;
+    }
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
@@ -100,6 +113,7 @@ public final class MysqlBackupDbSystemSnapshotBackupPolicy {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable List<MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicy> copyPolicies;
         private @Nullable Map<String,String> definedTags;
         private @Nullable Map<String,String> freeformTags;
         private @Nullable Boolean isEnabled;
@@ -109,6 +123,7 @@ public final class MysqlBackupDbSystemSnapshotBackupPolicy {
         public Builder() {}
         public Builder(MysqlBackupDbSystemSnapshotBackupPolicy defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.copyPolicies = defaults.copyPolicies;
     	      this.definedTags = defaults.definedTags;
     	      this.freeformTags = defaults.freeformTags;
     	      this.isEnabled = defaults.isEnabled;
@@ -117,6 +132,15 @@ public final class MysqlBackupDbSystemSnapshotBackupPolicy {
     	      this.windowStartTime = defaults.windowStartTime;
         }
 
+        @CustomType.Setter
+        public Builder copyPolicies(@Nullable List<MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicy> copyPolicies) {
+
+            this.copyPolicies = copyPolicies;
+            return this;
+        }
+        public Builder copyPolicies(MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicy... copyPolicies) {
+            return copyPolicies(List.of(copyPolicies));
+        }
         @CustomType.Setter
         public Builder definedTags(@Nullable Map<String,String> definedTags) {
 
@@ -158,6 +182,7 @@ public final class MysqlBackupDbSystemSnapshotBackupPolicy {
         }
         public MysqlBackupDbSystemSnapshotBackupPolicy build() {
             final var _resultValue = new MysqlBackupDbSystemSnapshotBackupPolicy();
+            _resultValue.copyPolicies = copyPolicies;
             _resultValue.definedTags = definedTags;
             _resultValue.freeformTags = freeformTags;
             _resultValue.isEnabled = isEnabled;

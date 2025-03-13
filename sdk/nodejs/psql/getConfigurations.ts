@@ -19,6 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testConfigurations = oci.Psql.getConfigurations({
  *     compartmentId: compartmentId,
+ *     configType: configurationConfigType,
  *     configurationId: testConfiguration.id,
  *     dbVersion: configurationDbVersion,
  *     displayName: configurationDisplayName,
@@ -32,6 +33,7 @@ export function getConfigurations(args?: GetConfigurationsArgs, opts?: pulumi.In
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Psql/getConfigurations:getConfigurations", {
         "compartmentId": args.compartmentId,
+        "configType": args.configType,
         "configurationId": args.configurationId,
         "dbVersion": args.dbVersion,
         "displayName": args.displayName,
@@ -49,6 +51,10 @@ export interface GetConfigurationsArgs {
      * The ID of the compartment in which to list resources.
      */
     compartmentId?: string;
+    /**
+     * A filter to return only resources if their `configType` matches the given `configType`.
+     */
+    configType?: string;
     /**
      * A unique identifier for the configuration.
      */
@@ -80,6 +86,10 @@ export interface GetConfigurationsResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
      */
     readonly compartmentId?: string;
+    /**
+     * The type of configuration. Either user-created or a default configuration.
+     */
+    readonly configType?: string;
     /**
      * The list of configuration_collection.
      */
@@ -120,6 +130,7 @@ export interface GetConfigurationsResult {
  *
  * const testConfigurations = oci.Psql.getConfigurations({
  *     compartmentId: compartmentId,
+ *     configType: configurationConfigType,
  *     configurationId: testConfiguration.id,
  *     dbVersion: configurationDbVersion,
  *     displayName: configurationDisplayName,
@@ -133,6 +144,7 @@ export function getConfigurationsOutput(args?: GetConfigurationsOutputArgs, opts
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Psql/getConfigurations:getConfigurations", {
         "compartmentId": args.compartmentId,
+        "configType": args.configType,
         "configurationId": args.configurationId,
         "dbVersion": args.dbVersion,
         "displayName": args.displayName,
@@ -150,6 +162,10 @@ export interface GetConfigurationsOutputArgs {
      * The ID of the compartment in which to list resources.
      */
     compartmentId?: pulumi.Input<string>;
+    /**
+     * A filter to return only resources if their `configType` matches the given `configType`.
+     */
+    configType?: pulumi.Input<string>;
     /**
      * A unique identifier for the configuration.
      */

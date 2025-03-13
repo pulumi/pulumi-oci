@@ -55,8 +55,9 @@ import (
 //						PhoneNumber:           pulumi.Any(exadataInfrastructureContactsPhoneNumber),
 //					},
 //				},
-//				CorporateProxy: pulumi.Any(exadataInfrastructureCorporateProxy),
-//				DefinedTags:    pulumi.Any(exadataInfrastructureDefinedTags),
+//				CorporateProxy:     pulumi.Any(exadataInfrastructureCorporateProxy),
+//				DatabaseServerType: pulumi.Any(exadataInfrastructureDatabaseServerType),
+//				DefinedTags:        pulumi.Any(exadataInfrastructureDefinedTags),
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
@@ -88,7 +89,8 @@ import (
 //					ClientNetworkBondingMode: pulumi.Any(exadataInfrastructureNetworkBondingModeDetailsClientNetworkBondingMode),
 //					DrNetworkBondingMode:     pulumi.Any(exadataInfrastructureNetworkBondingModeDetailsDrNetworkBondingMode),
 //				},
-//				StorageCount: pulumi.Any(exadataInfrastructureStorageCount),
+//				StorageCount:      pulumi.Any(exadataInfrastructureStorageCount),
+//				StorageServerType: pulumi.Any(exadataInfrastructureStorageServerType),
 //			})
 //			if err != nil {
 //				return err
@@ -134,6 +136,8 @@ type ExadataInfrastructure struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The number of compute servers for the Exadata infrastructure.
 	ComputeCount pulumi.IntOutput `pulumi:"computeCount"`
+	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+	ComputeModel pulumi.StringOutput `pulumi:"computeModel"`
 	// (Updatable) The list of contacts for the Exadata infrastructure.
 	Contacts ExadataInfrastructureContactArrayOutput `pulumi:"contacts"`
 	// (Updatable) The corporate network proxy for access to the control plane network. Oracle recommends using an HTTPS proxy when possible for enhanced security.
@@ -145,6 +149,8 @@ type ExadataInfrastructure struct {
 	CsiNumber pulumi.StringOutput `pulumi:"csiNumber"`
 	// Size, in terabytes, of the DATA disk group.
 	DataStorageSizeInTbs pulumi.Float64Output `pulumi:"dataStorageSizeInTbs"`
+	// The database server type of the Exadata infrastructure.
+	DatabaseServerType pulumi.StringOutput `pulumi:"databaseServerType"`
 	// The local node storage allocated in GBs.
 	DbNodeStorageSizeInGbs pulumi.IntOutput `pulumi:"dbNodeStorageSizeInGbs"`
 	// The software version of the database servers (dom0) in the Exadata infrastructure.
@@ -157,6 +163,8 @@ type ExadataInfrastructure struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
 	DnsServers pulumi.StringArrayOutput `pulumi:"dnsServers"`
+	// The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+	ExascaleConfigs ExadataInfrastructureExascaleConfigArrayOutput `pulumi:"exascaleConfigs"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) The gateway for the control plane network.
@@ -203,6 +211,8 @@ type ExadataInfrastructure struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// The number of storage servers for the Exadata infrastructure.
 	StorageCount pulumi.IntOutput `pulumi:"storageCount"`
+	// The storage server type of the Exadata infrastructure.
+	StorageServerType pulumi.StringOutput `pulumi:"storageServerType"`
 	// The software version of the storage servers (cells) in the Exadata infrastructure.
 	StorageServerVersion pulumi.StringOutput `pulumi:"storageServerVersion"`
 	// The date and time the Exadata infrastructure was created.
@@ -302,6 +312,8 @@ type exadataInfrastructureState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The number of compute servers for the Exadata infrastructure.
 	ComputeCount *int `pulumi:"computeCount"`
+	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+	ComputeModel *string `pulumi:"computeModel"`
 	// (Updatable) The list of contacts for the Exadata infrastructure.
 	Contacts []ExadataInfrastructureContact `pulumi:"contacts"`
 	// (Updatable) The corporate network proxy for access to the control plane network. Oracle recommends using an HTTPS proxy when possible for enhanced security.
@@ -313,6 +325,8 @@ type exadataInfrastructureState struct {
 	CsiNumber *string `pulumi:"csiNumber"`
 	// Size, in terabytes, of the DATA disk group.
 	DataStorageSizeInTbs *float64 `pulumi:"dataStorageSizeInTbs"`
+	// The database server type of the Exadata infrastructure.
+	DatabaseServerType *string `pulumi:"databaseServerType"`
 	// The local node storage allocated in GBs.
 	DbNodeStorageSizeInGbs *int `pulumi:"dbNodeStorageSizeInGbs"`
 	// The software version of the database servers (dom0) in the Exadata infrastructure.
@@ -325,6 +339,8 @@ type exadataInfrastructureState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
 	DnsServers []string `pulumi:"dnsServers"`
+	// The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+	ExascaleConfigs []ExadataInfrastructureExascaleConfig `pulumi:"exascaleConfigs"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The gateway for the control plane network.
@@ -371,6 +387,8 @@ type exadataInfrastructureState struct {
 	State *string `pulumi:"state"`
 	// The number of storage servers for the Exadata infrastructure.
 	StorageCount *int `pulumi:"storageCount"`
+	// The storage server type of the Exadata infrastructure.
+	StorageServerType *string `pulumi:"storageServerType"`
 	// The software version of the storage servers (cells) in the Exadata infrastructure.
 	StorageServerVersion *string `pulumi:"storageServerVersion"`
 	// The date and time the Exadata infrastructure was created.
@@ -405,6 +423,8 @@ type ExadataInfrastructureState struct {
 	CompartmentId pulumi.StringPtrInput
 	// The number of compute servers for the Exadata infrastructure.
 	ComputeCount pulumi.IntPtrInput
+	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+	ComputeModel pulumi.StringPtrInput
 	// (Updatable) The list of contacts for the Exadata infrastructure.
 	Contacts ExadataInfrastructureContactArrayInput
 	// (Updatable) The corporate network proxy for access to the control plane network. Oracle recommends using an HTTPS proxy when possible for enhanced security.
@@ -416,6 +436,8 @@ type ExadataInfrastructureState struct {
 	CsiNumber pulumi.StringPtrInput
 	// Size, in terabytes, of the DATA disk group.
 	DataStorageSizeInTbs pulumi.Float64PtrInput
+	// The database server type of the Exadata infrastructure.
+	DatabaseServerType pulumi.StringPtrInput
 	// The local node storage allocated in GBs.
 	DbNodeStorageSizeInGbs pulumi.IntPtrInput
 	// The software version of the database servers (dom0) in the Exadata infrastructure.
@@ -428,6 +450,8 @@ type ExadataInfrastructureState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
 	DnsServers pulumi.StringArrayInput
+	// The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+	ExascaleConfigs ExadataInfrastructureExascaleConfigArrayInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
 	// (Updatable) The gateway for the control plane network.
@@ -474,6 +498,8 @@ type ExadataInfrastructureState struct {
 	State pulumi.StringPtrInput
 	// The number of storage servers for the Exadata infrastructure.
 	StorageCount pulumi.IntPtrInput
+	// The storage server type of the Exadata infrastructure.
+	StorageServerType pulumi.StringPtrInput
 	// The software version of the storage servers (cells) in the Exadata infrastructure.
 	StorageServerVersion pulumi.StringPtrInput
 	// The date and time the Exadata infrastructure was created.
@@ -509,6 +535,8 @@ type exadataInfrastructureArgs struct {
 	// (Updatable) The corporate network proxy for access to the control plane network. Oracle recommends using an HTTPS proxy when possible for enhanced security.
 	CorporateProxy *string `pulumi:"corporateProxy"`
 	CreateAsync    *bool   `pulumi:"createAsync"`
+	// The database server type of the Exadata infrastructure.
+	DatabaseServerType *string `pulumi:"databaseServerType"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name for the Exadata infrastructure. The name does not need to be unique.
@@ -539,6 +567,8 @@ type exadataInfrastructureArgs struct {
 	Shape string `pulumi:"shape"`
 	// The number of storage servers for the Exadata infrastructure.
 	StorageCount *int `pulumi:"storageCount"`
+	// The storage server type of the Exadata infrastructure.
+	StorageServerType *string `pulumi:"storageServerType"`
 	// (Updatable) The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone string `pulumi:"timeZone"`
 }
@@ -567,6 +597,8 @@ type ExadataInfrastructureArgs struct {
 	// (Updatable) The corporate network proxy for access to the control plane network. Oracle recommends using an HTTPS proxy when possible for enhanced security.
 	CorporateProxy pulumi.StringPtrInput
 	CreateAsync    pulumi.BoolPtrInput
+	// The database server type of the Exadata infrastructure.
+	DatabaseServerType pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.StringMapInput
 	// The user-friendly name for the Exadata infrastructure. The name does not need to be unique.
@@ -597,6 +629,8 @@ type ExadataInfrastructureArgs struct {
 	Shape pulumi.StringInput
 	// The number of storage servers for the Exadata infrastructure.
 	StorageCount pulumi.IntPtrInput
+	// The storage server type of the Exadata infrastructure.
+	StorageServerType pulumi.StringPtrInput
 	// (Updatable) The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone pulumi.StringInput
 }
@@ -746,6 +780,11 @@ func (o ExadataInfrastructureOutput) ComputeCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *ExadataInfrastructure) pulumi.IntOutput { return v.ComputeCount }).(pulumi.IntOutput)
 }
 
+// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+func (o ExadataInfrastructureOutput) ComputeModel() pulumi.StringOutput {
+	return o.ApplyT(func(v *ExadataInfrastructure) pulumi.StringOutput { return v.ComputeModel }).(pulumi.StringOutput)
+}
+
 // (Updatable) The list of contacts for the Exadata infrastructure.
 func (o ExadataInfrastructureOutput) Contacts() ExadataInfrastructureContactArrayOutput {
 	return o.ApplyT(func(v *ExadataInfrastructure) ExadataInfrastructureContactArrayOutput { return v.Contacts }).(ExadataInfrastructureContactArrayOutput)
@@ -773,6 +812,11 @@ func (o ExadataInfrastructureOutput) CsiNumber() pulumi.StringOutput {
 // Size, in terabytes, of the DATA disk group.
 func (o ExadataInfrastructureOutput) DataStorageSizeInTbs() pulumi.Float64Output {
 	return o.ApplyT(func(v *ExadataInfrastructure) pulumi.Float64Output { return v.DataStorageSizeInTbs }).(pulumi.Float64Output)
+}
+
+// The database server type of the Exadata infrastructure.
+func (o ExadataInfrastructureOutput) DatabaseServerType() pulumi.StringOutput {
+	return o.ApplyT(func(v *ExadataInfrastructure) pulumi.StringOutput { return v.DatabaseServerType }).(pulumi.StringOutput)
 }
 
 // The local node storage allocated in GBs.
@@ -805,6 +849,13 @@ func (o ExadataInfrastructureOutput) DisplayName() pulumi.StringOutput {
 // (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
 func (o ExadataInfrastructureOutput) DnsServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ExadataInfrastructure) pulumi.StringArrayOutput { return v.DnsServers }).(pulumi.StringArrayOutput)
+}
+
+// The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+func (o ExadataInfrastructureOutput) ExascaleConfigs() ExadataInfrastructureExascaleConfigArrayOutput {
+	return o.ApplyT(func(v *ExadataInfrastructure) ExadataInfrastructureExascaleConfigArrayOutput {
+		return v.ExascaleConfigs
+	}).(ExadataInfrastructureExascaleConfigArrayOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -924,6 +975,11 @@ func (o ExadataInfrastructureOutput) State() pulumi.StringOutput {
 // The number of storage servers for the Exadata infrastructure.
 func (o ExadataInfrastructureOutput) StorageCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *ExadataInfrastructure) pulumi.IntOutput { return v.StorageCount }).(pulumi.IntOutput)
+}
+
+// The storage server type of the Exadata infrastructure.
+func (o ExadataInfrastructureOutput) StorageServerType() pulumi.StringOutput {
+	return o.ApplyT(func(v *ExadataInfrastructure) pulumi.StringOutput { return v.StorageServerType }).(pulumi.StringOutput)
 }
 
 // The software version of the storage servers (cells) in the Exadata infrastructure.

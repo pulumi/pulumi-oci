@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetPipelineRunStepOverrideDetailStepConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail;
+import com.pulumi.oci.DataScience.outputs.GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -23,6 +24,11 @@ public final class GetPipelineRunStepOverrideDetail {
      * 
      */
     private List<GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail> stepContainerConfigurationDetails;
+    /**
+     * @return The configuration details of a Dataflow step.
+     * 
+     */
+    private List<GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail> stepDataflowConfigurationDetails;
     /**
      * @return The name of the step.
      * 
@@ -45,6 +51,13 @@ public final class GetPipelineRunStepOverrideDetail {
         return this.stepContainerConfigurationDetails;
     }
     /**
+     * @return The configuration details of a Dataflow step.
+     * 
+     */
+    public List<GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail> stepDataflowConfigurationDetails() {
+        return this.stepDataflowConfigurationDetails;
+    }
+    /**
      * @return The name of the step.
      * 
      */
@@ -63,12 +76,14 @@ public final class GetPipelineRunStepOverrideDetail {
     public static final class Builder {
         private List<GetPipelineRunStepOverrideDetailStepConfigurationDetail> stepConfigurationDetails;
         private List<GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail> stepContainerConfigurationDetails;
+        private List<GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail> stepDataflowConfigurationDetails;
         private String stepName;
         public Builder() {}
         public Builder(GetPipelineRunStepOverrideDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.stepConfigurationDetails = defaults.stepConfigurationDetails;
     	      this.stepContainerConfigurationDetails = defaults.stepContainerConfigurationDetails;
+    	      this.stepDataflowConfigurationDetails = defaults.stepDataflowConfigurationDetails;
     	      this.stepName = defaults.stepName;
         }
 
@@ -95,6 +110,17 @@ public final class GetPipelineRunStepOverrideDetail {
             return stepContainerConfigurationDetails(List.of(stepContainerConfigurationDetails));
         }
         @CustomType.Setter
+        public Builder stepDataflowConfigurationDetails(List<GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail> stepDataflowConfigurationDetails) {
+            if (stepDataflowConfigurationDetails == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunStepOverrideDetail", "stepDataflowConfigurationDetails");
+            }
+            this.stepDataflowConfigurationDetails = stepDataflowConfigurationDetails;
+            return this;
+        }
+        public Builder stepDataflowConfigurationDetails(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail... stepDataflowConfigurationDetails) {
+            return stepDataflowConfigurationDetails(List.of(stepDataflowConfigurationDetails));
+        }
+        @CustomType.Setter
         public Builder stepName(String stepName) {
             if (stepName == null) {
               throw new MissingRequiredPropertyException("GetPipelineRunStepOverrideDetail", "stepName");
@@ -106,6 +132,7 @@ public final class GetPipelineRunStepOverrideDetail {
             final var _resultValue = new GetPipelineRunStepOverrideDetail();
             _resultValue.stepConfigurationDetails = stepConfigurationDetails;
             _resultValue.stepContainerConfigurationDetails = stepContainerConfigurationDetails;
+            _resultValue.stepDataflowConfigurationDetails = stepDataflowConfigurationDetails;
             _resultValue.stepName = stepName;
             return _resultValue;
         }

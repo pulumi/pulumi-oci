@@ -207,6 +207,10 @@ export interface GetMysqlDbSystemResult {
      */
     readonly subnetId: string;
     /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    readonly systemTags: {[key: string]: string};
+    /**
      * The date and time the DB System was created.
      */
     readonly timeCreated: string;

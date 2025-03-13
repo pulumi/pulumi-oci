@@ -50,6 +50,9 @@ namespace Pulumi.Oci.Database
         [Output("availabilityDomain")]
         public Output<string> AvailabilityDomain { get; private set; } = null!;
 
+        [Output("backupDestinationType")]
+        public Output<string> BackupDestinationType { get; private set; } = null!;
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
@@ -57,7 +60,7 @@ namespace Pulumi.Oci.Database
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// The Oracle Database edition of the DB system from which the database backup was taken.
+        /// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
         /// </summary>
         [Output("databaseEdition")]
         public Output<string> DatabaseEdition { get; private set; } = null!;
@@ -90,6 +93,9 @@ namespace Pulumi.Oci.Database
         [Output("encryptionKeyLocationDetails")]
         public Output<ImmutableArray<Outputs.BackupEncryptionKeyLocationDetail>> EncryptionKeyLocationDetails { get; private set; } = null!;
 
+        [Output("isUsingOracleManagedKeys")]
+        public Output<bool> IsUsingOracleManagedKeys { get; private set; } = null!;
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         /// </summary>
@@ -120,6 +126,15 @@ namespace Pulumi.Oci.Database
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
+        [Output("retentionPeriodInDays")]
+        public Output<int> RetentionPeriodInDays { get; private set; } = null!;
+
+        [Output("retentionPeriodInYears")]
+        public Output<int> RetentionPeriodInYears { get; private set; } = null!;
+
+        [Output("secondaryKmsKeyIds")]
+        public Output<ImmutableArray<string>> SecondaryKmsKeyIds { get; private set; } = null!;
+
         /// <summary>
         /// Shape of the backup's source database.
         /// </summary>
@@ -137,6 +152,9 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("timeEnded")]
         public Output<string> TimeEnded { get; private set; } = null!;
+
+        [Output("timeExpiryScheduled")]
+        public Output<string> TimeExpiryScheduled { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the backup started.
@@ -224,6 +242,12 @@ namespace Pulumi.Oci.Database
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
 
+        [Input("retentionPeriodInDays")]
+        public Input<int>? RetentionPeriodInDays { get; set; }
+
+        [Input("retentionPeriodInYears")]
+        public Input<int>? RetentionPeriodInYears { get; set; }
+
         public BackupArgs()
         {
         }
@@ -238,6 +262,9 @@ namespace Pulumi.Oci.Database
         [Input("availabilityDomain")]
         public Input<string>? AvailabilityDomain { get; set; }
 
+        [Input("backupDestinationType")]
+        public Input<string>? BackupDestinationType { get; set; }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
@@ -245,7 +272,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// The Oracle Database edition of the DB system from which the database backup was taken.
+        /// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
         /// </summary>
         [Input("databaseEdition")]
         public Input<string>? DatabaseEdition { get; set; }
@@ -284,6 +311,9 @@ namespace Pulumi.Oci.Database
             set => _encryptionKeyLocationDetails = value;
         }
 
+        [Input("isUsingOracleManagedKeys")]
+        public Input<bool>? IsUsingOracleManagedKeys { get; set; }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         /// </summary>
@@ -314,6 +344,20 @@ namespace Pulumi.Oci.Database
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
 
+        [Input("retentionPeriodInDays")]
+        public Input<int>? RetentionPeriodInDays { get; set; }
+
+        [Input("retentionPeriodInYears")]
+        public Input<int>? RetentionPeriodInYears { get; set; }
+
+        [Input("secondaryKmsKeyIds")]
+        private InputList<string>? _secondaryKmsKeyIds;
+        public InputList<string> SecondaryKmsKeyIds
+        {
+            get => _secondaryKmsKeyIds ?? (_secondaryKmsKeyIds = new InputList<string>());
+            set => _secondaryKmsKeyIds = value;
+        }
+
         /// <summary>
         /// Shape of the backup's source database.
         /// </summary>
@@ -331,6 +375,9 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("timeEnded")]
         public Input<string>? TimeEnded { get; set; }
+
+        [Input("timeExpiryScheduled")]
+        public Input<string>? TimeExpiryScheduled { get; set; }
 
         /// <summary>
         /// The date and time the backup started.

@@ -28,13 +28,16 @@ class GetDatabaseSoftwareImagesResult:
     """
     A collection of values returned by getDatabaseSoftwareImages.
     """
-    def __init__(__self__, compartment_id=None, database_software_images=None, display_name=None, filters=None, id=None, image_shape_family=None, image_type=None, is_upgrade_supported=None, state=None):
+    def __init__(__self__, compartment_id=None, database_software_images=None, db_system_id=None, display_name=None, filters=None, id=None, image_shape_family=None, image_type=None, is_upgrade_supported=None, state=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
         if database_software_images and not isinstance(database_software_images, list):
             raise TypeError("Expected argument 'database_software_images' to be a list")
         pulumi.set(__self__, "database_software_images", database_software_images)
+        if db_system_id and not isinstance(db_system_id, str):
+            raise TypeError("Expected argument 'db_system_id' to be a str")
+        pulumi.set(__self__, "db_system_id", db_system_id)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -72,6 +75,11 @@ class GetDatabaseSoftwareImagesResult:
         The list of database_software_images.
         """
         return pulumi.get(self, "database_software_images")
+
+    @property
+    @pulumi.getter(name="dbSystemId")
+    def db_system_id(self) -> Optional[str]:
+        return pulumi.get(self, "db_system_id")
 
     @property
     @pulumi.getter(name="displayName")
@@ -135,6 +143,7 @@ class AwaitableGetDatabaseSoftwareImagesResult(GetDatabaseSoftwareImagesResult):
         return GetDatabaseSoftwareImagesResult(
             compartment_id=self.compartment_id,
             database_software_images=self.database_software_images,
+            db_system_id=self.db_system_id,
             display_name=self.display_name,
             filters=self.filters,
             id=self.id,
@@ -145,6 +154,7 @@ class AwaitableGetDatabaseSoftwareImagesResult(GetDatabaseSoftwareImagesResult):
 
 
 def get_database_software_images(compartment_id: Optional[str] = None,
+                                 db_system_id: Optional[str] = None,
                                  display_name: Optional[str] = None,
                                  filters: Optional[Sequence[Union['GetDatabaseSoftwareImagesFilterArgs', 'GetDatabaseSoftwareImagesFilterArgsDict']]] = None,
                                  image_shape_family: Optional[str] = None,
@@ -164,6 +174,7 @@ def get_database_software_images(compartment_id: Optional[str] = None,
     import pulumi_oci as oci
 
     test_database_software_images = oci.Database.get_database_software_images(compartment_id=compartment_id,
+        db_system_id=test_db_system["id"],
         display_name=database_software_image_display_name,
         image_shape_family=database_software_image_image_shape_family,
         image_type=database_software_image_image_type,
@@ -173,6 +184,7 @@ def get_database_software_images(compartment_id: Optional[str] = None,
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    :param str db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
     :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
     :param str image_shape_family: A filter to return only resources that match the given image shape family exactly.
     :param str image_type: A filter to return only resources that match the given image type exactly.
@@ -181,6 +193,7 @@ def get_database_software_images(compartment_id: Optional[str] = None,
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
+    __args__['dbSystemId'] = db_system_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['imageShapeFamily'] = image_shape_family
@@ -193,6 +206,7 @@ def get_database_software_images(compartment_id: Optional[str] = None,
     return AwaitableGetDatabaseSoftwareImagesResult(
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         database_software_images=pulumi.get(__ret__, 'database_software_images'),
+        db_system_id=pulumi.get(__ret__, 'db_system_id'),
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
@@ -201,6 +215,7 @@ def get_database_software_images(compartment_id: Optional[str] = None,
         is_upgrade_supported=pulumi.get(__ret__, 'is_upgrade_supported'),
         state=pulumi.get(__ret__, 'state'))
 def get_database_software_images_output(compartment_id: Optional[pulumi.Input[str]] = None,
+                                        db_system_id: Optional[pulumi.Input[Optional[str]]] = None,
                                         display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDatabaseSoftwareImagesFilterArgs', 'GetDatabaseSoftwareImagesFilterArgsDict']]]]] = None,
                                         image_shape_family: Optional[pulumi.Input[Optional[str]]] = None,
@@ -220,6 +235,7 @@ def get_database_software_images_output(compartment_id: Optional[pulumi.Input[st
     import pulumi_oci as oci
 
     test_database_software_images = oci.Database.get_database_software_images(compartment_id=compartment_id,
+        db_system_id=test_db_system["id"],
         display_name=database_software_image_display_name,
         image_shape_family=database_software_image_image_shape_family,
         image_type=database_software_image_image_type,
@@ -229,6 +245,7 @@ def get_database_software_images_output(compartment_id: Optional[pulumi.Input[st
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    :param str db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
     :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
     :param str image_shape_family: A filter to return only resources that match the given image shape family exactly.
     :param str image_type: A filter to return only resources that match the given image type exactly.
@@ -237,6 +254,7 @@ def get_database_software_images_output(compartment_id: Optional[pulumi.Input[st
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
+    __args__['dbSystemId'] = db_system_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['imageShapeFamily'] = image_shape_family
@@ -248,6 +266,7 @@ def get_database_software_images_output(compartment_id: Optional[pulumi.Input[st
     return __ret__.apply(lambda __response__: GetDatabaseSoftwareImagesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         database_software_images=pulumi.get(__response__, 'database_software_images'),
+        db_system_id=pulumi.get(__response__, 'db_system_id'),
         display_name=pulumi.get(__response__, 'display_name'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),

@@ -342,6 +342,7 @@ namespace Pulumi.Oci.Opensearch
         /// The size in GB of the cluster's total storage.
         /// </summary>
         public readonly int TotalStorageGb;
+        public readonly int UpgradeMajorVersionTrigger;
         /// <summary>
         /// The OCID for the compartment where the cluster's VCN is located.
         /// </summary>
@@ -443,6 +444,8 @@ namespace Pulumi.Oci.Opensearch
 
             int totalStorageGb,
 
+            int upgradeMajorVersionTrigger,
+
             string vcnCompartmentId,
 
             string vcnId)
@@ -492,6 +495,7 @@ namespace Pulumi.Oci.Opensearch
             TimeDeleted = timeDeleted;
             TimeUpdated = timeUpdated;
             TotalStorageGb = totalStorageGb;
+            UpgradeMajorVersionTrigger = upgradeMajorVersionTrigger;
             VcnCompartmentId = vcnCompartmentId;
             VcnId = vcnId;
         }

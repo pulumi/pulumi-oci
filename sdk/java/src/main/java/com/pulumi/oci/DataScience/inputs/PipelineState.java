@@ -10,6 +10,7 @@ import com.pulumi.oci.DataScience.inputs.PipelineInfrastructureConfigurationDeta
 import com.pulumi.oci.DataScience.inputs.PipelineLogConfigurationDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.PipelineStepArtifactArgs;
 import com.pulumi.oci.DataScience.inputs.PipelineStepDetailArgs;
+import com.pulumi.oci.DataScience.inputs.PipelineStorageMountConfigurationDetailsListArgs;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -233,6 +234,21 @@ public final class PipelineState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The storage mount details to mount to the instance running the pipeline step.
+     * 
+     */
+    @Import(name="storageMountConfigurationDetailsLists")
+    private @Nullable Output<List<PipelineStorageMountConfigurationDetailsListArgs>> storageMountConfigurationDetailsLists;
+
+    /**
+     * @return (Updatable) The storage mount details to mount to the instance running the pipeline step.
+     * 
+     */
+    public Optional<Output<List<PipelineStorageMountConfigurationDetailsListArgs>>> storageMountConfigurationDetailsLists() {
+        return Optional.ofNullable(this.storageMountConfigurationDetailsLists);
+    }
+
+    /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
@@ -295,6 +311,7 @@ public final class PipelineState extends com.pulumi.resources.ResourceArgs {
         this.state = $.state;
         this.stepArtifacts = $.stepArtifacts;
         this.stepDetails = $.stepDetails;
+        this.storageMountConfigurationDetailsLists = $.storageMountConfigurationDetailsLists;
         this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
@@ -621,6 +638,37 @@ public final class PipelineState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder stepDetails(PipelineStepDetailArgs... stepDetails) {
             return stepDetails(List.of(stepDetails));
+        }
+
+        /**
+         * @param storageMountConfigurationDetailsLists (Updatable) The storage mount details to mount to the instance running the pipeline step.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder storageMountConfigurationDetailsLists(@Nullable Output<List<PipelineStorageMountConfigurationDetailsListArgs>> storageMountConfigurationDetailsLists) {
+            $.storageMountConfigurationDetailsLists = storageMountConfigurationDetailsLists;
+            return this;
+        }
+
+        /**
+         * @param storageMountConfigurationDetailsLists (Updatable) The storage mount details to mount to the instance running the pipeline step.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder storageMountConfigurationDetailsLists(List<PipelineStorageMountConfigurationDetailsListArgs> storageMountConfigurationDetailsLists) {
+            return storageMountConfigurationDetailsLists(Output.of(storageMountConfigurationDetailsLists));
+        }
+
+        /**
+         * @param storageMountConfigurationDetailsLists (Updatable) The storage mount details to mount to the instance running the pipeline step.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder storageMountConfigurationDetailsLists(PipelineStorageMountConfigurationDetailsListArgs... storageMountConfigurationDetailsLists) {
+            return storageMountConfigurationDetailsLists(List.of(storageMountConfigurationDetailsLists));
         }
 
         /**

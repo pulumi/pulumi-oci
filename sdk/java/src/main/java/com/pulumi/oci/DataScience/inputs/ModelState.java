@@ -105,6 +105,21 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values &#34;Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other&#34;.
+     * 
+     */
+    @Import(name="category")
+    private @Nullable Output<String> category;
+
+    /**
+     * @return Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values &#34;Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other&#34;.
+     * 
+     */
+    public Optional<Output<String>> category() {
+        return Optional.ofNullable(this.category);
+    }
+
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
      * 
      */
@@ -244,6 +259,21 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> inputSchema() {
         return Optional.ofNullable(this.inputSchema);
+    }
+
+    /**
+     * Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+     * 
+     */
+    @Import(name="isModelByReference")
+    private @Nullable Output<Boolean> isModelByReference;
+
+    /**
+     * @return Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+     * 
+     */
+    public Optional<Output<Boolean>> isModelByReference() {
+        return Optional.ofNullable(this.isModelByReference);
     }
 
     /**
@@ -420,6 +450,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         this.artifactLastModified = $.artifactLastModified;
         this.backupOperationDetails = $.backupOperationDetails;
         this.backupSetting = $.backupSetting;
+        this.category = $.category;
         this.compartmentId = $.compartmentId;
         this.createdBy = $.createdBy;
         this.customMetadataLists = $.customMetadataLists;
@@ -430,6 +461,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         this.emptyModel = $.emptyModel;
         this.freeformTags = $.freeformTags;
         this.inputSchema = $.inputSchema;
+        this.isModelByReference = $.isModelByReference;
         this.lifecycleDetails = $.lifecycleDetails;
         this.modelArtifact = $.modelArtifact;
         this.modelVersionSetId = $.modelVersionSetId;
@@ -577,6 +609,27 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder backupSetting(ModelBackupSettingArgs backupSetting) {
             return backupSetting(Output.of(backupSetting));
+        }
+
+        /**
+         * @param category Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values &#34;Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other&#34;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder category(@Nullable Output<String> category) {
+            $.category = category;
+            return this;
+        }
+
+        /**
+         * @param category Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values &#34;Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other&#34;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder category(String category) {
+            return category(Output.of(category));
         }
 
         /**
@@ -795,6 +848,27 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder inputSchema(String inputSchema) {
             return inputSchema(Output.of(inputSchema));
+        }
+
+        /**
+         * @param isModelByReference Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isModelByReference(@Nullable Output<Boolean> isModelByReference) {
+            $.isModelByReference = isModelByReference;
+            return this;
+        }
+
+        /**
+         * @param isModelByReference Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isModelByReference(Boolean isModelByReference) {
+            return isModelByReference(Output.of(isModelByReference));
         }
 
         /**

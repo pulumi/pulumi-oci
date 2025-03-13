@@ -13,7 +13,133 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type BackupCopyStatus struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup in the source region
+	BackupId *string `pulumi:"backupId"`
+	// Region name of the remote region
+	Region *string `pulumi:"region"`
+	// The current state of the backup.
+	State *string `pulumi:"state"`
+	// A message describing the current state of copy in more detail
+	StateDetails *string `pulumi:"stateDetails"`
+}
+
+// BackupCopyStatusInput is an input type that accepts BackupCopyStatusArgs and BackupCopyStatusOutput values.
+// You can construct a concrete instance of `BackupCopyStatusInput` via:
+//
+//	BackupCopyStatusArgs{...}
+type BackupCopyStatusInput interface {
+	pulumi.Input
+
+	ToBackupCopyStatusOutput() BackupCopyStatusOutput
+	ToBackupCopyStatusOutputWithContext(context.Context) BackupCopyStatusOutput
+}
+
+type BackupCopyStatusArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup in the source region
+	BackupId pulumi.StringPtrInput `pulumi:"backupId"`
+	// Region name of the remote region
+	Region pulumi.StringPtrInput `pulumi:"region"`
+	// The current state of the backup.
+	State pulumi.StringPtrInput `pulumi:"state"`
+	// A message describing the current state of copy in more detail
+	StateDetails pulumi.StringPtrInput `pulumi:"stateDetails"`
+}
+
+func (BackupCopyStatusArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BackupCopyStatus)(nil)).Elem()
+}
+
+func (i BackupCopyStatusArgs) ToBackupCopyStatusOutput() BackupCopyStatusOutput {
+	return i.ToBackupCopyStatusOutputWithContext(context.Background())
+}
+
+func (i BackupCopyStatusArgs) ToBackupCopyStatusOutputWithContext(ctx context.Context) BackupCopyStatusOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BackupCopyStatusOutput)
+}
+
+// BackupCopyStatusArrayInput is an input type that accepts BackupCopyStatusArray and BackupCopyStatusArrayOutput values.
+// You can construct a concrete instance of `BackupCopyStatusArrayInput` via:
+//
+//	BackupCopyStatusArray{ BackupCopyStatusArgs{...} }
+type BackupCopyStatusArrayInput interface {
+	pulumi.Input
+
+	ToBackupCopyStatusArrayOutput() BackupCopyStatusArrayOutput
+	ToBackupCopyStatusArrayOutputWithContext(context.Context) BackupCopyStatusArrayOutput
+}
+
+type BackupCopyStatusArray []BackupCopyStatusInput
+
+func (BackupCopyStatusArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BackupCopyStatus)(nil)).Elem()
+}
+
+func (i BackupCopyStatusArray) ToBackupCopyStatusArrayOutput() BackupCopyStatusArrayOutput {
+	return i.ToBackupCopyStatusArrayOutputWithContext(context.Background())
+}
+
+func (i BackupCopyStatusArray) ToBackupCopyStatusArrayOutputWithContext(ctx context.Context) BackupCopyStatusArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BackupCopyStatusArrayOutput)
+}
+
+type BackupCopyStatusOutput struct{ *pulumi.OutputState }
+
+func (BackupCopyStatusOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BackupCopyStatus)(nil)).Elem()
+}
+
+func (o BackupCopyStatusOutput) ToBackupCopyStatusOutput() BackupCopyStatusOutput {
+	return o
+}
+
+func (o BackupCopyStatusOutput) ToBackupCopyStatusOutputWithContext(ctx context.Context) BackupCopyStatusOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup in the source region
+func (o BackupCopyStatusOutput) BackupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BackupCopyStatus) *string { return v.BackupId }).(pulumi.StringPtrOutput)
+}
+
+// Region name of the remote region
+func (o BackupCopyStatusOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BackupCopyStatus) *string { return v.Region }).(pulumi.StringPtrOutput)
+}
+
+// The current state of the backup.
+func (o BackupCopyStatusOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BackupCopyStatus) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+// A message describing the current state of copy in more detail
+func (o BackupCopyStatusOutput) StateDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BackupCopyStatus) *string { return v.StateDetails }).(pulumi.StringPtrOutput)
+}
+
+type BackupCopyStatusArrayOutput struct{ *pulumi.OutputState }
+
+func (BackupCopyStatusArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BackupCopyStatus)(nil)).Elem()
+}
+
+func (o BackupCopyStatusArrayOutput) ToBackupCopyStatusArrayOutput() BackupCopyStatusArrayOutput {
+	return o
+}
+
+func (o BackupCopyStatusArrayOutput) ToBackupCopyStatusArrayOutputWithContext(ctx context.Context) BackupCopyStatusArrayOutput {
+	return o
+}
+
+func (o BackupCopyStatusArrayOutput) Index(i pulumi.IntInput) BackupCopyStatusOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BackupCopyStatus {
+		return vs[0].([]BackupCopyStatus)[vs[1].(int)]
+	}).(BackupCopyStatusOutput)
+}
+
 type BackupDbSystemDetail struct {
+	// OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
+	ConfigId *string `pulumi:"configId"`
 	// The major and minor versions of the database system software.
 	DbVersion *string `pulumi:"dbVersion"`
 	// Type of the database system.
@@ -32,6 +158,8 @@ type BackupDbSystemDetailInput interface {
 }
 
 type BackupDbSystemDetailArgs struct {
+	// OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
+	ConfigId pulumi.StringPtrInput `pulumi:"configId"`
 	// The major and minor versions of the database system software.
 	DbVersion pulumi.StringPtrInput `pulumi:"dbVersion"`
 	// Type of the database system.
@@ -89,6 +217,11 @@ func (o BackupDbSystemDetailOutput) ToBackupDbSystemDetailOutputWithContext(ctx 
 	return o
 }
 
+// OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
+func (o BackupDbSystemDetailOutput) ConfigId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BackupDbSystemDetail) *string { return v.ConfigId }).(pulumi.StringPtrOutput)
+}
+
 // The major and minor versions of the database system software.
 func (o BackupDbSystemDetailOutput) DbVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BackupDbSystemDetail) *string { return v.DbVersion }).(pulumi.StringPtrOutput)
@@ -117,6 +250,162 @@ func (o BackupDbSystemDetailArrayOutput) Index(i pulumi.IntInput) BackupDbSystem
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BackupDbSystemDetail {
 		return vs[0].([]BackupDbSystemDetail)[vs[1].(int)]
 	}).(BackupDbSystemDetailOutput)
+}
+
+type BackupSourceBackupDetails struct {
+	// Backup ID of the COPY source type.
+	SourceBackupId string `pulumi:"sourceBackupId"`
+	// Backup Region of the COPY source type.
+	SourceRegion string `pulumi:"sourceRegion"`
+}
+
+// BackupSourceBackupDetailsInput is an input type that accepts BackupSourceBackupDetailsArgs and BackupSourceBackupDetailsOutput values.
+// You can construct a concrete instance of `BackupSourceBackupDetailsInput` via:
+//
+//	BackupSourceBackupDetailsArgs{...}
+type BackupSourceBackupDetailsInput interface {
+	pulumi.Input
+
+	ToBackupSourceBackupDetailsOutput() BackupSourceBackupDetailsOutput
+	ToBackupSourceBackupDetailsOutputWithContext(context.Context) BackupSourceBackupDetailsOutput
+}
+
+type BackupSourceBackupDetailsArgs struct {
+	// Backup ID of the COPY source type.
+	SourceBackupId pulumi.StringInput `pulumi:"sourceBackupId"`
+	// Backup Region of the COPY source type.
+	SourceRegion pulumi.StringInput `pulumi:"sourceRegion"`
+}
+
+func (BackupSourceBackupDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BackupSourceBackupDetails)(nil)).Elem()
+}
+
+func (i BackupSourceBackupDetailsArgs) ToBackupSourceBackupDetailsOutput() BackupSourceBackupDetailsOutput {
+	return i.ToBackupSourceBackupDetailsOutputWithContext(context.Background())
+}
+
+func (i BackupSourceBackupDetailsArgs) ToBackupSourceBackupDetailsOutputWithContext(ctx context.Context) BackupSourceBackupDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BackupSourceBackupDetailsOutput)
+}
+
+func (i BackupSourceBackupDetailsArgs) ToBackupSourceBackupDetailsPtrOutput() BackupSourceBackupDetailsPtrOutput {
+	return i.ToBackupSourceBackupDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i BackupSourceBackupDetailsArgs) ToBackupSourceBackupDetailsPtrOutputWithContext(ctx context.Context) BackupSourceBackupDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BackupSourceBackupDetailsOutput).ToBackupSourceBackupDetailsPtrOutputWithContext(ctx)
+}
+
+// BackupSourceBackupDetailsPtrInput is an input type that accepts BackupSourceBackupDetailsArgs, BackupSourceBackupDetailsPtr and BackupSourceBackupDetailsPtrOutput values.
+// You can construct a concrete instance of `BackupSourceBackupDetailsPtrInput` via:
+//
+//	        BackupSourceBackupDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type BackupSourceBackupDetailsPtrInput interface {
+	pulumi.Input
+
+	ToBackupSourceBackupDetailsPtrOutput() BackupSourceBackupDetailsPtrOutput
+	ToBackupSourceBackupDetailsPtrOutputWithContext(context.Context) BackupSourceBackupDetailsPtrOutput
+}
+
+type backupSourceBackupDetailsPtrType BackupSourceBackupDetailsArgs
+
+func BackupSourceBackupDetailsPtr(v *BackupSourceBackupDetailsArgs) BackupSourceBackupDetailsPtrInput {
+	return (*backupSourceBackupDetailsPtrType)(v)
+}
+
+func (*backupSourceBackupDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**BackupSourceBackupDetails)(nil)).Elem()
+}
+
+func (i *backupSourceBackupDetailsPtrType) ToBackupSourceBackupDetailsPtrOutput() BackupSourceBackupDetailsPtrOutput {
+	return i.ToBackupSourceBackupDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *backupSourceBackupDetailsPtrType) ToBackupSourceBackupDetailsPtrOutputWithContext(ctx context.Context) BackupSourceBackupDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BackupSourceBackupDetailsPtrOutput)
+}
+
+type BackupSourceBackupDetailsOutput struct{ *pulumi.OutputState }
+
+func (BackupSourceBackupDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BackupSourceBackupDetails)(nil)).Elem()
+}
+
+func (o BackupSourceBackupDetailsOutput) ToBackupSourceBackupDetailsOutput() BackupSourceBackupDetailsOutput {
+	return o
+}
+
+func (o BackupSourceBackupDetailsOutput) ToBackupSourceBackupDetailsOutputWithContext(ctx context.Context) BackupSourceBackupDetailsOutput {
+	return o
+}
+
+func (o BackupSourceBackupDetailsOutput) ToBackupSourceBackupDetailsPtrOutput() BackupSourceBackupDetailsPtrOutput {
+	return o.ToBackupSourceBackupDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o BackupSourceBackupDetailsOutput) ToBackupSourceBackupDetailsPtrOutputWithContext(ctx context.Context) BackupSourceBackupDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v BackupSourceBackupDetails) *BackupSourceBackupDetails {
+		return &v
+	}).(BackupSourceBackupDetailsPtrOutput)
+}
+
+// Backup ID of the COPY source type.
+func (o BackupSourceBackupDetailsOutput) SourceBackupId() pulumi.StringOutput {
+	return o.ApplyT(func(v BackupSourceBackupDetails) string { return v.SourceBackupId }).(pulumi.StringOutput)
+}
+
+// Backup Region of the COPY source type.
+func (o BackupSourceBackupDetailsOutput) SourceRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v BackupSourceBackupDetails) string { return v.SourceRegion }).(pulumi.StringOutput)
+}
+
+type BackupSourceBackupDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (BackupSourceBackupDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**BackupSourceBackupDetails)(nil)).Elem()
+}
+
+func (o BackupSourceBackupDetailsPtrOutput) ToBackupSourceBackupDetailsPtrOutput() BackupSourceBackupDetailsPtrOutput {
+	return o
+}
+
+func (o BackupSourceBackupDetailsPtrOutput) ToBackupSourceBackupDetailsPtrOutputWithContext(ctx context.Context) BackupSourceBackupDetailsPtrOutput {
+	return o
+}
+
+func (o BackupSourceBackupDetailsPtrOutput) Elem() BackupSourceBackupDetailsOutput {
+	return o.ApplyT(func(v *BackupSourceBackupDetails) BackupSourceBackupDetails {
+		if v != nil {
+			return *v
+		}
+		var ret BackupSourceBackupDetails
+		return ret
+	}).(BackupSourceBackupDetailsOutput)
+}
+
+// Backup ID of the COPY source type.
+func (o BackupSourceBackupDetailsPtrOutput) SourceBackupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BackupSourceBackupDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SourceBackupId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Backup Region of the COPY source type.
+func (o BackupSourceBackupDetailsPtrOutput) SourceRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BackupSourceBackupDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SourceRegion
+	}).(pulumi.StringPtrOutput)
 }
 
 type ConfigurationConfigurationDetail struct {
@@ -1413,6 +1702,8 @@ func (o DbSystemManagementPolicyPtrOutput) MaintenanceWindowStart() pulumi.Strin
 type DbSystemManagementPolicyBackupPolicy struct {
 	// (Updatable) Hour of the day when the backup starts.
 	BackupStart *string `pulumi:"backupStart"`
+	// (Updatable) Backup copy details
+	CopyPolicy *DbSystemManagementPolicyBackupPolicyCopyPolicy `pulumi:"copyPolicy"`
 	// (Updatable) Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
 	DaysOfTheMonths []int `pulumi:"daysOfTheMonths"`
 	// (Updatable) The day of the week that the backup starts.
@@ -1437,6 +1728,8 @@ type DbSystemManagementPolicyBackupPolicyInput interface {
 type DbSystemManagementPolicyBackupPolicyArgs struct {
 	// (Updatable) Hour of the day when the backup starts.
 	BackupStart pulumi.StringPtrInput `pulumi:"backupStart"`
+	// (Updatable) Backup copy details
+	CopyPolicy DbSystemManagementPolicyBackupPolicyCopyPolicyPtrInput `pulumi:"copyPolicy"`
 	// (Updatable) Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
 	DaysOfTheMonths pulumi.IntArrayInput `pulumi:"daysOfTheMonths"`
 	// (Updatable) The day of the week that the backup starts.
@@ -1529,6 +1822,13 @@ func (o DbSystemManagementPolicyBackupPolicyOutput) BackupStart() pulumi.StringP
 	return o.ApplyT(func(v DbSystemManagementPolicyBackupPolicy) *string { return v.BackupStart }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Backup copy details
+func (o DbSystemManagementPolicyBackupPolicyOutput) CopyPolicy() DbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutput {
+	return o.ApplyT(func(v DbSystemManagementPolicyBackupPolicy) *DbSystemManagementPolicyBackupPolicyCopyPolicy {
+		return v.CopyPolicy
+	}).(DbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutput)
+}
+
 // (Updatable) Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
 func (o DbSystemManagementPolicyBackupPolicyOutput) DaysOfTheMonths() pulumi.IntArrayOutput {
 	return o.ApplyT(func(v DbSystemManagementPolicyBackupPolicy) []int { return v.DaysOfTheMonths }).(pulumi.IntArrayOutput)
@@ -1583,6 +1883,16 @@ func (o DbSystemManagementPolicyBackupPolicyPtrOutput) BackupStart() pulumi.Stri
 	}).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Backup copy details
+func (o DbSystemManagementPolicyBackupPolicyPtrOutput) CopyPolicy() DbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutput {
+	return o.ApplyT(func(v *DbSystemManagementPolicyBackupPolicy) *DbSystemManagementPolicyBackupPolicyCopyPolicy {
+		if v == nil {
+			return nil
+		}
+		return v.CopyPolicy
+	}).(DbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutput)
+}
+
 // (Updatable) Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
 func (o DbSystemManagementPolicyBackupPolicyPtrOutput) DaysOfTheMonths() pulumi.IntArrayOutput {
 	return o.ApplyT(func(v *DbSystemManagementPolicyBackupPolicy) []int {
@@ -1620,6 +1930,181 @@ func (o DbSystemManagementPolicyBackupPolicyPtrOutput) RetentionDays() pulumi.In
 			return nil
 		}
 		return v.RetentionDays
+	}).(pulumi.IntPtrOutput)
+}
+
+type DbSystemManagementPolicyBackupPolicyCopyPolicy struct {
+	// (Updatable) target compartment to place a new backup
+	CompartmentId string `pulumi:"compartmentId"`
+	// (Updatable) List of region names of the remote region
+	Regions []string `pulumi:"regions"`
+	// (Updatable) Retention period in days of the backup copy.
+	RetentionPeriod *int `pulumi:"retentionPeriod"`
+}
+
+// DbSystemManagementPolicyBackupPolicyCopyPolicyInput is an input type that accepts DbSystemManagementPolicyBackupPolicyCopyPolicyArgs and DbSystemManagementPolicyBackupPolicyCopyPolicyOutput values.
+// You can construct a concrete instance of `DbSystemManagementPolicyBackupPolicyCopyPolicyInput` via:
+//
+//	DbSystemManagementPolicyBackupPolicyCopyPolicyArgs{...}
+type DbSystemManagementPolicyBackupPolicyCopyPolicyInput interface {
+	pulumi.Input
+
+	ToDbSystemManagementPolicyBackupPolicyCopyPolicyOutput() DbSystemManagementPolicyBackupPolicyCopyPolicyOutput
+	ToDbSystemManagementPolicyBackupPolicyCopyPolicyOutputWithContext(context.Context) DbSystemManagementPolicyBackupPolicyCopyPolicyOutput
+}
+
+type DbSystemManagementPolicyBackupPolicyCopyPolicyArgs struct {
+	// (Updatable) target compartment to place a new backup
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// (Updatable) List of region names of the remote region
+	Regions pulumi.StringArrayInput `pulumi:"regions"`
+	// (Updatable) Retention period in days of the backup copy.
+	RetentionPeriod pulumi.IntPtrInput `pulumi:"retentionPeriod"`
+}
+
+func (DbSystemManagementPolicyBackupPolicyCopyPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbSystemManagementPolicyBackupPolicyCopyPolicy)(nil)).Elem()
+}
+
+func (i DbSystemManagementPolicyBackupPolicyCopyPolicyArgs) ToDbSystemManagementPolicyBackupPolicyCopyPolicyOutput() DbSystemManagementPolicyBackupPolicyCopyPolicyOutput {
+	return i.ToDbSystemManagementPolicyBackupPolicyCopyPolicyOutputWithContext(context.Background())
+}
+
+func (i DbSystemManagementPolicyBackupPolicyCopyPolicyArgs) ToDbSystemManagementPolicyBackupPolicyCopyPolicyOutputWithContext(ctx context.Context) DbSystemManagementPolicyBackupPolicyCopyPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbSystemManagementPolicyBackupPolicyCopyPolicyOutput)
+}
+
+func (i DbSystemManagementPolicyBackupPolicyCopyPolicyArgs) ToDbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutput() DbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutput {
+	return i.ToDbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutputWithContext(context.Background())
+}
+
+func (i DbSystemManagementPolicyBackupPolicyCopyPolicyArgs) ToDbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutputWithContext(ctx context.Context) DbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbSystemManagementPolicyBackupPolicyCopyPolicyOutput).ToDbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutputWithContext(ctx)
+}
+
+// DbSystemManagementPolicyBackupPolicyCopyPolicyPtrInput is an input type that accepts DbSystemManagementPolicyBackupPolicyCopyPolicyArgs, DbSystemManagementPolicyBackupPolicyCopyPolicyPtr and DbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutput values.
+// You can construct a concrete instance of `DbSystemManagementPolicyBackupPolicyCopyPolicyPtrInput` via:
+//
+//	        DbSystemManagementPolicyBackupPolicyCopyPolicyArgs{...}
+//
+//	or:
+//
+//	        nil
+type DbSystemManagementPolicyBackupPolicyCopyPolicyPtrInput interface {
+	pulumi.Input
+
+	ToDbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutput() DbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutput
+	ToDbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutputWithContext(context.Context) DbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutput
+}
+
+type dbSystemManagementPolicyBackupPolicyCopyPolicyPtrType DbSystemManagementPolicyBackupPolicyCopyPolicyArgs
+
+func DbSystemManagementPolicyBackupPolicyCopyPolicyPtr(v *DbSystemManagementPolicyBackupPolicyCopyPolicyArgs) DbSystemManagementPolicyBackupPolicyCopyPolicyPtrInput {
+	return (*dbSystemManagementPolicyBackupPolicyCopyPolicyPtrType)(v)
+}
+
+func (*dbSystemManagementPolicyBackupPolicyCopyPolicyPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DbSystemManagementPolicyBackupPolicyCopyPolicy)(nil)).Elem()
+}
+
+func (i *dbSystemManagementPolicyBackupPolicyCopyPolicyPtrType) ToDbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutput() DbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutput {
+	return i.ToDbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutputWithContext(context.Background())
+}
+
+func (i *dbSystemManagementPolicyBackupPolicyCopyPolicyPtrType) ToDbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutputWithContext(ctx context.Context) DbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutput)
+}
+
+type DbSystemManagementPolicyBackupPolicyCopyPolicyOutput struct{ *pulumi.OutputState }
+
+func (DbSystemManagementPolicyBackupPolicyCopyPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbSystemManagementPolicyBackupPolicyCopyPolicy)(nil)).Elem()
+}
+
+func (o DbSystemManagementPolicyBackupPolicyCopyPolicyOutput) ToDbSystemManagementPolicyBackupPolicyCopyPolicyOutput() DbSystemManagementPolicyBackupPolicyCopyPolicyOutput {
+	return o
+}
+
+func (o DbSystemManagementPolicyBackupPolicyCopyPolicyOutput) ToDbSystemManagementPolicyBackupPolicyCopyPolicyOutputWithContext(ctx context.Context) DbSystemManagementPolicyBackupPolicyCopyPolicyOutput {
+	return o
+}
+
+func (o DbSystemManagementPolicyBackupPolicyCopyPolicyOutput) ToDbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutput() DbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutput {
+	return o.ToDbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutputWithContext(context.Background())
+}
+
+func (o DbSystemManagementPolicyBackupPolicyCopyPolicyOutput) ToDbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutputWithContext(ctx context.Context) DbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DbSystemManagementPolicyBackupPolicyCopyPolicy) *DbSystemManagementPolicyBackupPolicyCopyPolicy {
+		return &v
+	}).(DbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutput)
+}
+
+// (Updatable) target compartment to place a new backup
+func (o DbSystemManagementPolicyBackupPolicyCopyPolicyOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v DbSystemManagementPolicyBackupPolicyCopyPolicy) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// (Updatable) List of region names of the remote region
+func (o DbSystemManagementPolicyBackupPolicyCopyPolicyOutput) Regions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v DbSystemManagementPolicyBackupPolicyCopyPolicy) []string { return v.Regions }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Retention period in days of the backup copy.
+func (o DbSystemManagementPolicyBackupPolicyCopyPolicyOutput) RetentionPeriod() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DbSystemManagementPolicyBackupPolicyCopyPolicy) *int { return v.RetentionPeriod }).(pulumi.IntPtrOutput)
+}
+
+type DbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutput struct{ *pulumi.OutputState }
+
+func (DbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DbSystemManagementPolicyBackupPolicyCopyPolicy)(nil)).Elem()
+}
+
+func (o DbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutput) ToDbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutput() DbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutput {
+	return o
+}
+
+func (o DbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutput) ToDbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutputWithContext(ctx context.Context) DbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutput {
+	return o
+}
+
+func (o DbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutput) Elem() DbSystemManagementPolicyBackupPolicyCopyPolicyOutput {
+	return o.ApplyT(func(v *DbSystemManagementPolicyBackupPolicyCopyPolicy) DbSystemManagementPolicyBackupPolicyCopyPolicy {
+		if v != nil {
+			return *v
+		}
+		var ret DbSystemManagementPolicyBackupPolicyCopyPolicy
+		return ret
+	}).(DbSystemManagementPolicyBackupPolicyCopyPolicyOutput)
+}
+
+// (Updatable) target compartment to place a new backup
+func (o DbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystemManagementPolicyBackupPolicyCopyPolicy) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.CompartmentId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) List of region names of the remote region
+func (o DbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutput) Regions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *DbSystemManagementPolicyBackupPolicyCopyPolicy) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Regions
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Retention period in days of the backup copy.
+func (o DbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutput) RetentionPeriod() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DbSystemManagementPolicyBackupPolicyCopyPolicy) *int {
+		if v == nil {
+			return nil
+		}
+		return v.RetentionPeriod
 	}).(pulumi.IntPtrOutput)
 }
 
@@ -2319,7 +2804,133 @@ func (o DbSystemStorageDetailsPtrOutput) SystemType() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+type GetBackupCopyStatus struct {
+	// A unique identifier for the backup.
+	BackupId string `pulumi:"backupId"`
+	// Region name of the remote region
+	Region string `pulumi:"region"`
+	// The current state of the backup.
+	State string `pulumi:"state"`
+	// A message describing the current state of copy in more detail
+	StateDetails string `pulumi:"stateDetails"`
+}
+
+// GetBackupCopyStatusInput is an input type that accepts GetBackupCopyStatusArgs and GetBackupCopyStatusOutput values.
+// You can construct a concrete instance of `GetBackupCopyStatusInput` via:
+//
+//	GetBackupCopyStatusArgs{...}
+type GetBackupCopyStatusInput interface {
+	pulumi.Input
+
+	ToGetBackupCopyStatusOutput() GetBackupCopyStatusOutput
+	ToGetBackupCopyStatusOutputWithContext(context.Context) GetBackupCopyStatusOutput
+}
+
+type GetBackupCopyStatusArgs struct {
+	// A unique identifier for the backup.
+	BackupId pulumi.StringInput `pulumi:"backupId"`
+	// Region name of the remote region
+	Region pulumi.StringInput `pulumi:"region"`
+	// The current state of the backup.
+	State pulumi.StringInput `pulumi:"state"`
+	// A message describing the current state of copy in more detail
+	StateDetails pulumi.StringInput `pulumi:"stateDetails"`
+}
+
+func (GetBackupCopyStatusArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupCopyStatus)(nil)).Elem()
+}
+
+func (i GetBackupCopyStatusArgs) ToGetBackupCopyStatusOutput() GetBackupCopyStatusOutput {
+	return i.ToGetBackupCopyStatusOutputWithContext(context.Background())
+}
+
+func (i GetBackupCopyStatusArgs) ToGetBackupCopyStatusOutputWithContext(ctx context.Context) GetBackupCopyStatusOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupCopyStatusOutput)
+}
+
+// GetBackupCopyStatusArrayInput is an input type that accepts GetBackupCopyStatusArray and GetBackupCopyStatusArrayOutput values.
+// You can construct a concrete instance of `GetBackupCopyStatusArrayInput` via:
+//
+//	GetBackupCopyStatusArray{ GetBackupCopyStatusArgs{...} }
+type GetBackupCopyStatusArrayInput interface {
+	pulumi.Input
+
+	ToGetBackupCopyStatusArrayOutput() GetBackupCopyStatusArrayOutput
+	ToGetBackupCopyStatusArrayOutputWithContext(context.Context) GetBackupCopyStatusArrayOutput
+}
+
+type GetBackupCopyStatusArray []GetBackupCopyStatusInput
+
+func (GetBackupCopyStatusArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupCopyStatus)(nil)).Elem()
+}
+
+func (i GetBackupCopyStatusArray) ToGetBackupCopyStatusArrayOutput() GetBackupCopyStatusArrayOutput {
+	return i.ToGetBackupCopyStatusArrayOutputWithContext(context.Background())
+}
+
+func (i GetBackupCopyStatusArray) ToGetBackupCopyStatusArrayOutputWithContext(ctx context.Context) GetBackupCopyStatusArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupCopyStatusArrayOutput)
+}
+
+type GetBackupCopyStatusOutput struct{ *pulumi.OutputState }
+
+func (GetBackupCopyStatusOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupCopyStatus)(nil)).Elem()
+}
+
+func (o GetBackupCopyStatusOutput) ToGetBackupCopyStatusOutput() GetBackupCopyStatusOutput {
+	return o
+}
+
+func (o GetBackupCopyStatusOutput) ToGetBackupCopyStatusOutputWithContext(ctx context.Context) GetBackupCopyStatusOutput {
+	return o
+}
+
+// A unique identifier for the backup.
+func (o GetBackupCopyStatusOutput) BackupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupCopyStatus) string { return v.BackupId }).(pulumi.StringOutput)
+}
+
+// Region name of the remote region
+func (o GetBackupCopyStatusOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupCopyStatus) string { return v.Region }).(pulumi.StringOutput)
+}
+
+// The current state of the backup.
+func (o GetBackupCopyStatusOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupCopyStatus) string { return v.State }).(pulumi.StringOutput)
+}
+
+// A message describing the current state of copy in more detail
+func (o GetBackupCopyStatusOutput) StateDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupCopyStatus) string { return v.StateDetails }).(pulumi.StringOutput)
+}
+
+type GetBackupCopyStatusArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBackupCopyStatusArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupCopyStatus)(nil)).Elem()
+}
+
+func (o GetBackupCopyStatusArrayOutput) ToGetBackupCopyStatusArrayOutput() GetBackupCopyStatusArrayOutput {
+	return o
+}
+
+func (o GetBackupCopyStatusArrayOutput) ToGetBackupCopyStatusArrayOutputWithContext(ctx context.Context) GetBackupCopyStatusArrayOutput {
+	return o
+}
+
+func (o GetBackupCopyStatusArrayOutput) Index(i pulumi.IntInput) GetBackupCopyStatusOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackupCopyStatus {
+		return vs[0].([]GetBackupCopyStatus)[vs[1].(int)]
+	}).(GetBackupCopyStatusOutput)
+}
+
 type GetBackupDbSystemDetail struct {
+	// OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
+	ConfigId string `pulumi:"configId"`
 	// The major and minor versions of the database system software.
 	DbVersion string `pulumi:"dbVersion"`
 	// Type of the database system.
@@ -2338,6 +2949,8 @@ type GetBackupDbSystemDetailInput interface {
 }
 
 type GetBackupDbSystemDetailArgs struct {
+	// OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
+	ConfigId pulumi.StringInput `pulumi:"configId"`
 	// The major and minor versions of the database system software.
 	DbVersion pulumi.StringInput `pulumi:"dbVersion"`
 	// Type of the database system.
@@ -2395,6 +3008,11 @@ func (o GetBackupDbSystemDetailOutput) ToGetBackupDbSystemDetailOutputWithContex
 	return o
 }
 
+// OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
+func (o GetBackupDbSystemDetailOutput) ConfigId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupDbSystemDetail) string { return v.ConfigId }).(pulumi.StringOutput)
+}
+
 // The major and minor versions of the database system software.
 func (o GetBackupDbSystemDetailOutput) DbVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackupDbSystemDetail) string { return v.DbVersion }).(pulumi.StringOutput)
@@ -2423,6 +3041,112 @@ func (o GetBackupDbSystemDetailArrayOutput) Index(i pulumi.IntInput) GetBackupDb
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackupDbSystemDetail {
 		return vs[0].([]GetBackupDbSystemDetail)[vs[1].(int)]
 	}).(GetBackupDbSystemDetailOutput)
+}
+
+type GetBackupSourceBackupDetail struct {
+	// Backup ID of the COPY source type.
+	SourceBackupId string `pulumi:"sourceBackupId"`
+	// Backup Region of the COPY source type.
+	SourceRegion string `pulumi:"sourceRegion"`
+}
+
+// GetBackupSourceBackupDetailInput is an input type that accepts GetBackupSourceBackupDetailArgs and GetBackupSourceBackupDetailOutput values.
+// You can construct a concrete instance of `GetBackupSourceBackupDetailInput` via:
+//
+//	GetBackupSourceBackupDetailArgs{...}
+type GetBackupSourceBackupDetailInput interface {
+	pulumi.Input
+
+	ToGetBackupSourceBackupDetailOutput() GetBackupSourceBackupDetailOutput
+	ToGetBackupSourceBackupDetailOutputWithContext(context.Context) GetBackupSourceBackupDetailOutput
+}
+
+type GetBackupSourceBackupDetailArgs struct {
+	// Backup ID of the COPY source type.
+	SourceBackupId pulumi.StringInput `pulumi:"sourceBackupId"`
+	// Backup Region of the COPY source type.
+	SourceRegion pulumi.StringInput `pulumi:"sourceRegion"`
+}
+
+func (GetBackupSourceBackupDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupSourceBackupDetail)(nil)).Elem()
+}
+
+func (i GetBackupSourceBackupDetailArgs) ToGetBackupSourceBackupDetailOutput() GetBackupSourceBackupDetailOutput {
+	return i.ToGetBackupSourceBackupDetailOutputWithContext(context.Background())
+}
+
+func (i GetBackupSourceBackupDetailArgs) ToGetBackupSourceBackupDetailOutputWithContext(ctx context.Context) GetBackupSourceBackupDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupSourceBackupDetailOutput)
+}
+
+// GetBackupSourceBackupDetailArrayInput is an input type that accepts GetBackupSourceBackupDetailArray and GetBackupSourceBackupDetailArrayOutput values.
+// You can construct a concrete instance of `GetBackupSourceBackupDetailArrayInput` via:
+//
+//	GetBackupSourceBackupDetailArray{ GetBackupSourceBackupDetailArgs{...} }
+type GetBackupSourceBackupDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetBackupSourceBackupDetailArrayOutput() GetBackupSourceBackupDetailArrayOutput
+	ToGetBackupSourceBackupDetailArrayOutputWithContext(context.Context) GetBackupSourceBackupDetailArrayOutput
+}
+
+type GetBackupSourceBackupDetailArray []GetBackupSourceBackupDetailInput
+
+func (GetBackupSourceBackupDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupSourceBackupDetail)(nil)).Elem()
+}
+
+func (i GetBackupSourceBackupDetailArray) ToGetBackupSourceBackupDetailArrayOutput() GetBackupSourceBackupDetailArrayOutput {
+	return i.ToGetBackupSourceBackupDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetBackupSourceBackupDetailArray) ToGetBackupSourceBackupDetailArrayOutputWithContext(ctx context.Context) GetBackupSourceBackupDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupSourceBackupDetailArrayOutput)
+}
+
+type GetBackupSourceBackupDetailOutput struct{ *pulumi.OutputState }
+
+func (GetBackupSourceBackupDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupSourceBackupDetail)(nil)).Elem()
+}
+
+func (o GetBackupSourceBackupDetailOutput) ToGetBackupSourceBackupDetailOutput() GetBackupSourceBackupDetailOutput {
+	return o
+}
+
+func (o GetBackupSourceBackupDetailOutput) ToGetBackupSourceBackupDetailOutputWithContext(ctx context.Context) GetBackupSourceBackupDetailOutput {
+	return o
+}
+
+// Backup ID of the COPY source type.
+func (o GetBackupSourceBackupDetailOutput) SourceBackupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupSourceBackupDetail) string { return v.SourceBackupId }).(pulumi.StringOutput)
+}
+
+// Backup Region of the COPY source type.
+func (o GetBackupSourceBackupDetailOutput) SourceRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupSourceBackupDetail) string { return v.SourceRegion }).(pulumi.StringOutput)
+}
+
+type GetBackupSourceBackupDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBackupSourceBackupDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupSourceBackupDetail)(nil)).Elem()
+}
+
+func (o GetBackupSourceBackupDetailArrayOutput) ToGetBackupSourceBackupDetailArrayOutput() GetBackupSourceBackupDetailArrayOutput {
+	return o
+}
+
+func (o GetBackupSourceBackupDetailArrayOutput) ToGetBackupSourceBackupDetailArrayOutputWithContext(ctx context.Context) GetBackupSourceBackupDetailArrayOutput {
+	return o
+}
+
+func (o GetBackupSourceBackupDetailArrayOutput) Index(i pulumi.IntInput) GetBackupSourceBackupDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackupSourceBackupDetail {
+		return vs[0].([]GetBackupSourceBackupDetail)[vs[1].(int)]
+	}).(GetBackupSourceBackupDetailOutput)
 }
 
 type GetBackupsBackupCollection struct {
@@ -2524,6 +3248,8 @@ type GetBackupsBackupCollectionItem struct {
 	BackupSize int `pulumi:"backupSize"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
+	// List of status for Backup Copy
+	CopyStatuses []GetBackupsBackupCollectionItemCopyStatus `pulumi:"copyStatuses"`
 	// Information about the database system associated with a backup.
 	DbSystemDetails []GetBackupsBackupCollectionItemDbSystemDetail `pulumi:"dbSystemDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup's source database system.
@@ -2546,7 +3272,9 @@ type GetBackupsBackupCollectionItem struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Backup retention period in days.
 	RetentionPeriod int `pulumi:"retentionPeriod"`
-	// Specifies whether the backup was created manually, or by a management policy.
+	// Information about the Source Backup associated with a backup.
+	SourceBackupDetails []GetBackupsBackupCollectionItemSourceBackupDetail `pulumi:"sourceBackupDetails"`
+	// Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
 	SourceType string `pulumi:"sourceType"`
 	// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 	State string `pulumi:"state"`
@@ -2554,6 +3282,8 @@ type GetBackupsBackupCollectionItem struct {
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the backup request was received, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the backup was created. This is the time the actual point-in-time data snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreatedPrecise string `pulumi:"timeCreatedPrecise"`
 	// The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
@@ -2574,6 +3304,8 @@ type GetBackupsBackupCollectionItemArgs struct {
 	BackupSize pulumi.IntInput `pulumi:"backupSize"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// List of status for Backup Copy
+	CopyStatuses GetBackupsBackupCollectionItemCopyStatusArrayInput `pulumi:"copyStatuses"`
 	// Information about the database system associated with a backup.
 	DbSystemDetails GetBackupsBackupCollectionItemDbSystemDetailArrayInput `pulumi:"dbSystemDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup's source database system.
@@ -2596,7 +3328,9 @@ type GetBackupsBackupCollectionItemArgs struct {
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// Backup retention period in days.
 	RetentionPeriod pulumi.IntInput `pulumi:"retentionPeriod"`
-	// Specifies whether the backup was created manually, or by a management policy.
+	// Information about the Source Backup associated with a backup.
+	SourceBackupDetails GetBackupsBackupCollectionItemSourceBackupDetailArrayInput `pulumi:"sourceBackupDetails"`
+	// Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
 	// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 	State pulumi.StringInput `pulumi:"state"`
@@ -2604,6 +3338,8 @@ type GetBackupsBackupCollectionItemArgs struct {
 	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time the backup request was received, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the backup was created. This is the time the actual point-in-time data snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreatedPrecise pulumi.StringInput `pulumi:"timeCreatedPrecise"`
 	// The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 }
@@ -2669,6 +3405,13 @@ func (o GetBackupsBackupCollectionItemOutput) CompartmentId() pulumi.StringOutpu
 	return o.ApplyT(func(v GetBackupsBackupCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// List of status for Backup Copy
+func (o GetBackupsBackupCollectionItemOutput) CopyStatuses() GetBackupsBackupCollectionItemCopyStatusArrayOutput {
+	return o.ApplyT(func(v GetBackupsBackupCollectionItem) []GetBackupsBackupCollectionItemCopyStatus {
+		return v.CopyStatuses
+	}).(GetBackupsBackupCollectionItemCopyStatusArrayOutput)
+}
+
 // Information about the database system associated with a backup.
 func (o GetBackupsBackupCollectionItemOutput) DbSystemDetails() GetBackupsBackupCollectionItemDbSystemDetailArrayOutput {
 	return o.ApplyT(func(v GetBackupsBackupCollectionItem) []GetBackupsBackupCollectionItemDbSystemDetail {
@@ -2726,7 +3469,14 @@ func (o GetBackupsBackupCollectionItemOutput) RetentionPeriod() pulumi.IntOutput
 	return o.ApplyT(func(v GetBackupsBackupCollectionItem) int { return v.RetentionPeriod }).(pulumi.IntOutput)
 }
 
-// Specifies whether the backup was created manually, or by a management policy.
+// Information about the Source Backup associated with a backup.
+func (o GetBackupsBackupCollectionItemOutput) SourceBackupDetails() GetBackupsBackupCollectionItemSourceBackupDetailArrayOutput {
+	return o.ApplyT(func(v GetBackupsBackupCollectionItem) []GetBackupsBackupCollectionItemSourceBackupDetail {
+		return v.SourceBackupDetails
+	}).(GetBackupsBackupCollectionItemSourceBackupDetailArrayOutput)
+}
+
+// Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
 func (o GetBackupsBackupCollectionItemOutput) SourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackupsBackupCollectionItem) string { return v.SourceType }).(pulumi.StringOutput)
 }
@@ -2744,6 +3494,11 @@ func (o GetBackupsBackupCollectionItemOutput) SystemTags() pulumi.StringMapOutpu
 // The date and time the backup request was received, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 func (o GetBackupsBackupCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackupsBackupCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the backup was created. This is the time the actual point-in-time data snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+func (o GetBackupsBackupCollectionItemOutput) TimeCreatedPrecise() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupsBackupCollectionItem) string { return v.TimeCreatedPrecise }).(pulumi.StringOutput)
 }
 
 // The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
@@ -2771,7 +3526,133 @@ func (o GetBackupsBackupCollectionItemArrayOutput) Index(i pulumi.IntInput) GetB
 	}).(GetBackupsBackupCollectionItemOutput)
 }
 
+type GetBackupsBackupCollectionItemCopyStatus struct {
+	// A unique identifier for the backup.
+	BackupId string `pulumi:"backupId"`
+	// Region name of the remote region
+	Region string `pulumi:"region"`
+	// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
+	State string `pulumi:"state"`
+	// A message describing the current state of copy in more detail
+	StateDetails string `pulumi:"stateDetails"`
+}
+
+// GetBackupsBackupCollectionItemCopyStatusInput is an input type that accepts GetBackupsBackupCollectionItemCopyStatusArgs and GetBackupsBackupCollectionItemCopyStatusOutput values.
+// You can construct a concrete instance of `GetBackupsBackupCollectionItemCopyStatusInput` via:
+//
+//	GetBackupsBackupCollectionItemCopyStatusArgs{...}
+type GetBackupsBackupCollectionItemCopyStatusInput interface {
+	pulumi.Input
+
+	ToGetBackupsBackupCollectionItemCopyStatusOutput() GetBackupsBackupCollectionItemCopyStatusOutput
+	ToGetBackupsBackupCollectionItemCopyStatusOutputWithContext(context.Context) GetBackupsBackupCollectionItemCopyStatusOutput
+}
+
+type GetBackupsBackupCollectionItemCopyStatusArgs struct {
+	// A unique identifier for the backup.
+	BackupId pulumi.StringInput `pulumi:"backupId"`
+	// Region name of the remote region
+	Region pulumi.StringInput `pulumi:"region"`
+	// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
+	State pulumi.StringInput `pulumi:"state"`
+	// A message describing the current state of copy in more detail
+	StateDetails pulumi.StringInput `pulumi:"stateDetails"`
+}
+
+func (GetBackupsBackupCollectionItemCopyStatusArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupsBackupCollectionItemCopyStatus)(nil)).Elem()
+}
+
+func (i GetBackupsBackupCollectionItemCopyStatusArgs) ToGetBackupsBackupCollectionItemCopyStatusOutput() GetBackupsBackupCollectionItemCopyStatusOutput {
+	return i.ToGetBackupsBackupCollectionItemCopyStatusOutputWithContext(context.Background())
+}
+
+func (i GetBackupsBackupCollectionItemCopyStatusArgs) ToGetBackupsBackupCollectionItemCopyStatusOutputWithContext(ctx context.Context) GetBackupsBackupCollectionItemCopyStatusOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupsBackupCollectionItemCopyStatusOutput)
+}
+
+// GetBackupsBackupCollectionItemCopyStatusArrayInput is an input type that accepts GetBackupsBackupCollectionItemCopyStatusArray and GetBackupsBackupCollectionItemCopyStatusArrayOutput values.
+// You can construct a concrete instance of `GetBackupsBackupCollectionItemCopyStatusArrayInput` via:
+//
+//	GetBackupsBackupCollectionItemCopyStatusArray{ GetBackupsBackupCollectionItemCopyStatusArgs{...} }
+type GetBackupsBackupCollectionItemCopyStatusArrayInput interface {
+	pulumi.Input
+
+	ToGetBackupsBackupCollectionItemCopyStatusArrayOutput() GetBackupsBackupCollectionItemCopyStatusArrayOutput
+	ToGetBackupsBackupCollectionItemCopyStatusArrayOutputWithContext(context.Context) GetBackupsBackupCollectionItemCopyStatusArrayOutput
+}
+
+type GetBackupsBackupCollectionItemCopyStatusArray []GetBackupsBackupCollectionItemCopyStatusInput
+
+func (GetBackupsBackupCollectionItemCopyStatusArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupsBackupCollectionItemCopyStatus)(nil)).Elem()
+}
+
+func (i GetBackupsBackupCollectionItemCopyStatusArray) ToGetBackupsBackupCollectionItemCopyStatusArrayOutput() GetBackupsBackupCollectionItemCopyStatusArrayOutput {
+	return i.ToGetBackupsBackupCollectionItemCopyStatusArrayOutputWithContext(context.Background())
+}
+
+func (i GetBackupsBackupCollectionItemCopyStatusArray) ToGetBackupsBackupCollectionItemCopyStatusArrayOutputWithContext(ctx context.Context) GetBackupsBackupCollectionItemCopyStatusArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupsBackupCollectionItemCopyStatusArrayOutput)
+}
+
+type GetBackupsBackupCollectionItemCopyStatusOutput struct{ *pulumi.OutputState }
+
+func (GetBackupsBackupCollectionItemCopyStatusOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupsBackupCollectionItemCopyStatus)(nil)).Elem()
+}
+
+func (o GetBackupsBackupCollectionItemCopyStatusOutput) ToGetBackupsBackupCollectionItemCopyStatusOutput() GetBackupsBackupCollectionItemCopyStatusOutput {
+	return o
+}
+
+func (o GetBackupsBackupCollectionItemCopyStatusOutput) ToGetBackupsBackupCollectionItemCopyStatusOutputWithContext(ctx context.Context) GetBackupsBackupCollectionItemCopyStatusOutput {
+	return o
+}
+
+// A unique identifier for the backup.
+func (o GetBackupsBackupCollectionItemCopyStatusOutput) BackupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupsBackupCollectionItemCopyStatus) string { return v.BackupId }).(pulumi.StringOutput)
+}
+
+// Region name of the remote region
+func (o GetBackupsBackupCollectionItemCopyStatusOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupsBackupCollectionItemCopyStatus) string { return v.Region }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
+func (o GetBackupsBackupCollectionItemCopyStatusOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupsBackupCollectionItemCopyStatus) string { return v.State }).(pulumi.StringOutput)
+}
+
+// A message describing the current state of copy in more detail
+func (o GetBackupsBackupCollectionItemCopyStatusOutput) StateDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupsBackupCollectionItemCopyStatus) string { return v.StateDetails }).(pulumi.StringOutput)
+}
+
+type GetBackupsBackupCollectionItemCopyStatusArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBackupsBackupCollectionItemCopyStatusArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupsBackupCollectionItemCopyStatus)(nil)).Elem()
+}
+
+func (o GetBackupsBackupCollectionItemCopyStatusArrayOutput) ToGetBackupsBackupCollectionItemCopyStatusArrayOutput() GetBackupsBackupCollectionItemCopyStatusArrayOutput {
+	return o
+}
+
+func (o GetBackupsBackupCollectionItemCopyStatusArrayOutput) ToGetBackupsBackupCollectionItemCopyStatusArrayOutputWithContext(ctx context.Context) GetBackupsBackupCollectionItemCopyStatusArrayOutput {
+	return o
+}
+
+func (o GetBackupsBackupCollectionItemCopyStatusArrayOutput) Index(i pulumi.IntInput) GetBackupsBackupCollectionItemCopyStatusOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackupsBackupCollectionItemCopyStatus {
+		return vs[0].([]GetBackupsBackupCollectionItemCopyStatus)[vs[1].(int)]
+	}).(GetBackupsBackupCollectionItemCopyStatusOutput)
+}
+
 type GetBackupsBackupCollectionItemDbSystemDetail struct {
+	// OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
+	ConfigId string `pulumi:"configId"`
 	// The major and minor versions of the database system software.
 	DbVersion string `pulumi:"dbVersion"`
 	// Type of the database system.
@@ -2790,6 +3671,8 @@ type GetBackupsBackupCollectionItemDbSystemDetailInput interface {
 }
 
 type GetBackupsBackupCollectionItemDbSystemDetailArgs struct {
+	// OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
+	ConfigId pulumi.StringInput `pulumi:"configId"`
 	// The major and minor versions of the database system software.
 	DbVersion pulumi.StringInput `pulumi:"dbVersion"`
 	// Type of the database system.
@@ -2847,6 +3730,11 @@ func (o GetBackupsBackupCollectionItemDbSystemDetailOutput) ToGetBackupsBackupCo
 	return o
 }
 
+// OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
+func (o GetBackupsBackupCollectionItemDbSystemDetailOutput) ConfigId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupsBackupCollectionItemDbSystemDetail) string { return v.ConfigId }).(pulumi.StringOutput)
+}
+
 // The major and minor versions of the database system software.
 func (o GetBackupsBackupCollectionItemDbSystemDetailOutput) DbVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackupsBackupCollectionItemDbSystemDetail) string { return v.DbVersion }).(pulumi.StringOutput)
@@ -2875,6 +3763,112 @@ func (o GetBackupsBackupCollectionItemDbSystemDetailArrayOutput) Index(i pulumi.
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackupsBackupCollectionItemDbSystemDetail {
 		return vs[0].([]GetBackupsBackupCollectionItemDbSystemDetail)[vs[1].(int)]
 	}).(GetBackupsBackupCollectionItemDbSystemDetailOutput)
+}
+
+type GetBackupsBackupCollectionItemSourceBackupDetail struct {
+	// Backup ID of the COPY source type.
+	SourceBackupId string `pulumi:"sourceBackupId"`
+	// Backup Region of the COPY source type.
+	SourceRegion string `pulumi:"sourceRegion"`
+}
+
+// GetBackupsBackupCollectionItemSourceBackupDetailInput is an input type that accepts GetBackupsBackupCollectionItemSourceBackupDetailArgs and GetBackupsBackupCollectionItemSourceBackupDetailOutput values.
+// You can construct a concrete instance of `GetBackupsBackupCollectionItemSourceBackupDetailInput` via:
+//
+//	GetBackupsBackupCollectionItemSourceBackupDetailArgs{...}
+type GetBackupsBackupCollectionItemSourceBackupDetailInput interface {
+	pulumi.Input
+
+	ToGetBackupsBackupCollectionItemSourceBackupDetailOutput() GetBackupsBackupCollectionItemSourceBackupDetailOutput
+	ToGetBackupsBackupCollectionItemSourceBackupDetailOutputWithContext(context.Context) GetBackupsBackupCollectionItemSourceBackupDetailOutput
+}
+
+type GetBackupsBackupCollectionItemSourceBackupDetailArgs struct {
+	// Backup ID of the COPY source type.
+	SourceBackupId pulumi.StringInput `pulumi:"sourceBackupId"`
+	// Backup Region of the COPY source type.
+	SourceRegion pulumi.StringInput `pulumi:"sourceRegion"`
+}
+
+func (GetBackupsBackupCollectionItemSourceBackupDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupsBackupCollectionItemSourceBackupDetail)(nil)).Elem()
+}
+
+func (i GetBackupsBackupCollectionItemSourceBackupDetailArgs) ToGetBackupsBackupCollectionItemSourceBackupDetailOutput() GetBackupsBackupCollectionItemSourceBackupDetailOutput {
+	return i.ToGetBackupsBackupCollectionItemSourceBackupDetailOutputWithContext(context.Background())
+}
+
+func (i GetBackupsBackupCollectionItemSourceBackupDetailArgs) ToGetBackupsBackupCollectionItemSourceBackupDetailOutputWithContext(ctx context.Context) GetBackupsBackupCollectionItemSourceBackupDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupsBackupCollectionItemSourceBackupDetailOutput)
+}
+
+// GetBackupsBackupCollectionItemSourceBackupDetailArrayInput is an input type that accepts GetBackupsBackupCollectionItemSourceBackupDetailArray and GetBackupsBackupCollectionItemSourceBackupDetailArrayOutput values.
+// You can construct a concrete instance of `GetBackupsBackupCollectionItemSourceBackupDetailArrayInput` via:
+//
+//	GetBackupsBackupCollectionItemSourceBackupDetailArray{ GetBackupsBackupCollectionItemSourceBackupDetailArgs{...} }
+type GetBackupsBackupCollectionItemSourceBackupDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetBackupsBackupCollectionItemSourceBackupDetailArrayOutput() GetBackupsBackupCollectionItemSourceBackupDetailArrayOutput
+	ToGetBackupsBackupCollectionItemSourceBackupDetailArrayOutputWithContext(context.Context) GetBackupsBackupCollectionItemSourceBackupDetailArrayOutput
+}
+
+type GetBackupsBackupCollectionItemSourceBackupDetailArray []GetBackupsBackupCollectionItemSourceBackupDetailInput
+
+func (GetBackupsBackupCollectionItemSourceBackupDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupsBackupCollectionItemSourceBackupDetail)(nil)).Elem()
+}
+
+func (i GetBackupsBackupCollectionItemSourceBackupDetailArray) ToGetBackupsBackupCollectionItemSourceBackupDetailArrayOutput() GetBackupsBackupCollectionItemSourceBackupDetailArrayOutput {
+	return i.ToGetBackupsBackupCollectionItemSourceBackupDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetBackupsBackupCollectionItemSourceBackupDetailArray) ToGetBackupsBackupCollectionItemSourceBackupDetailArrayOutputWithContext(ctx context.Context) GetBackupsBackupCollectionItemSourceBackupDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupsBackupCollectionItemSourceBackupDetailArrayOutput)
+}
+
+type GetBackupsBackupCollectionItemSourceBackupDetailOutput struct{ *pulumi.OutputState }
+
+func (GetBackupsBackupCollectionItemSourceBackupDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupsBackupCollectionItemSourceBackupDetail)(nil)).Elem()
+}
+
+func (o GetBackupsBackupCollectionItemSourceBackupDetailOutput) ToGetBackupsBackupCollectionItemSourceBackupDetailOutput() GetBackupsBackupCollectionItemSourceBackupDetailOutput {
+	return o
+}
+
+func (o GetBackupsBackupCollectionItemSourceBackupDetailOutput) ToGetBackupsBackupCollectionItemSourceBackupDetailOutputWithContext(ctx context.Context) GetBackupsBackupCollectionItemSourceBackupDetailOutput {
+	return o
+}
+
+// Backup ID of the COPY source type.
+func (o GetBackupsBackupCollectionItemSourceBackupDetailOutput) SourceBackupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupsBackupCollectionItemSourceBackupDetail) string { return v.SourceBackupId }).(pulumi.StringOutput)
+}
+
+// Backup Region of the COPY source type.
+func (o GetBackupsBackupCollectionItemSourceBackupDetailOutput) SourceRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupsBackupCollectionItemSourceBackupDetail) string { return v.SourceRegion }).(pulumi.StringOutput)
+}
+
+type GetBackupsBackupCollectionItemSourceBackupDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBackupsBackupCollectionItemSourceBackupDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupsBackupCollectionItemSourceBackupDetail)(nil)).Elem()
+}
+
+func (o GetBackupsBackupCollectionItemSourceBackupDetailArrayOutput) ToGetBackupsBackupCollectionItemSourceBackupDetailArrayOutput() GetBackupsBackupCollectionItemSourceBackupDetailArrayOutput {
+	return o
+}
+
+func (o GetBackupsBackupCollectionItemSourceBackupDetailArrayOutput) ToGetBackupsBackupCollectionItemSourceBackupDetailArrayOutputWithContext(ctx context.Context) GetBackupsBackupCollectionItemSourceBackupDetailArrayOutput {
+	return o
+}
+
+func (o GetBackupsBackupCollectionItemSourceBackupDetailArrayOutput) Index(i pulumi.IntInput) GetBackupsBackupCollectionItemSourceBackupDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackupsBackupCollectionItemSourceBackupDetail {
+		return vs[0].([]GetBackupsBackupCollectionItemSourceBackupDetail)[vs[1].(int)]
+	}).(GetBackupsBackupCollectionItemSourceBackupDetailOutput)
 }
 
 type GetBackupsFilter struct {
@@ -3547,7 +4541,7 @@ func (o GetConfigurationsConfigurationCollectionArrayOutput) Index(i pulumi.IntI
 type GetConfigurationsConfigurationCollectionItem struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
-	// The type of configuration. Either user-created or a default configuration.
+	// A filter to return only resources if their `configType` matches the given `configType`.
 	ConfigType string `pulumi:"configType"`
 	// List of configuration details.
 	ConfigurationDetails     []GetConfigurationsConfigurationCollectionItemConfigurationDetail     `pulumi:"configurationDetails"`
@@ -3596,7 +4590,7 @@ type GetConfigurationsConfigurationCollectionItemInput interface {
 type GetConfigurationsConfigurationCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// The type of configuration. Either user-created or a default configuration.
+	// A filter to return only resources if their `configType` matches the given `configType`.
 	ConfigType pulumi.StringInput `pulumi:"configType"`
 	// List of configuration details.
 	ConfigurationDetails     GetConfigurationsConfigurationCollectionItemConfigurationDetailArrayInput     `pulumi:"configurationDetails"`
@@ -3687,7 +4681,7 @@ func (o GetConfigurationsConfigurationCollectionItemOutput) CompartmentId() pulu
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The type of configuration. Either user-created or a default configuration.
+// A filter to return only resources if their `configType` matches the given `configType`.
 func (o GetConfigurationsConfigurationCollectionItemOutput) ConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) string { return v.ConfigType }).(pulumi.StringOutput)
 }
@@ -5427,6 +6421,8 @@ func (o GetDbSystemManagementPolicyArrayOutput) Index(i pulumi.IntInput) GetDbSy
 type GetDbSystemManagementPolicyBackupPolicy struct {
 	// Hour of the day when the backup starts.
 	BackupStart string `pulumi:"backupStart"`
+	// Backup copy details
+	CopyPolicies []GetDbSystemManagementPolicyBackupPolicyCopyPolicy `pulumi:"copyPolicies"`
 	// Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
 	DaysOfTheMonths []int `pulumi:"daysOfTheMonths"`
 	// The day of the week that the backup starts.
@@ -5451,6 +6447,8 @@ type GetDbSystemManagementPolicyBackupPolicyInput interface {
 type GetDbSystemManagementPolicyBackupPolicyArgs struct {
 	// Hour of the day when the backup starts.
 	BackupStart pulumi.StringInput `pulumi:"backupStart"`
+	// Backup copy details
+	CopyPolicies GetDbSystemManagementPolicyBackupPolicyCopyPolicyArrayInput `pulumi:"copyPolicies"`
 	// Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
 	DaysOfTheMonths pulumi.IntArrayInput `pulumi:"daysOfTheMonths"`
 	// The day of the week that the backup starts.
@@ -5517,6 +6515,13 @@ func (o GetDbSystemManagementPolicyBackupPolicyOutput) BackupStart() pulumi.Stri
 	return o.ApplyT(func(v GetDbSystemManagementPolicyBackupPolicy) string { return v.BackupStart }).(pulumi.StringOutput)
 }
 
+// Backup copy details
+func (o GetDbSystemManagementPolicyBackupPolicyOutput) CopyPolicies() GetDbSystemManagementPolicyBackupPolicyCopyPolicyArrayOutput {
+	return o.ApplyT(func(v GetDbSystemManagementPolicyBackupPolicy) []GetDbSystemManagementPolicyBackupPolicyCopyPolicy {
+		return v.CopyPolicies
+	}).(GetDbSystemManagementPolicyBackupPolicyCopyPolicyArrayOutput)
+}
+
 // Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
 func (o GetDbSystemManagementPolicyBackupPolicyOutput) DaysOfTheMonths() pulumi.IntArrayOutput {
 	return o.ApplyT(func(v GetDbSystemManagementPolicyBackupPolicy) []int { return v.DaysOfTheMonths }).(pulumi.IntArrayOutput)
@@ -5555,6 +6560,121 @@ func (o GetDbSystemManagementPolicyBackupPolicyArrayOutput) Index(i pulumi.IntIn
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemManagementPolicyBackupPolicy {
 		return vs[0].([]GetDbSystemManagementPolicyBackupPolicy)[vs[1].(int)]
 	}).(GetDbSystemManagementPolicyBackupPolicyOutput)
+}
+
+type GetDbSystemManagementPolicyBackupPolicyCopyPolicy struct {
+	// target compartment to place a new backup
+	CompartmentId string `pulumi:"compartmentId"`
+	// List of region names of the remote region
+	Regions []string `pulumi:"regions"`
+	// Retention period in days of the backup copy.
+	RetentionPeriod int `pulumi:"retentionPeriod"`
+}
+
+// GetDbSystemManagementPolicyBackupPolicyCopyPolicyInput is an input type that accepts GetDbSystemManagementPolicyBackupPolicyCopyPolicyArgs and GetDbSystemManagementPolicyBackupPolicyCopyPolicyOutput values.
+// You can construct a concrete instance of `GetDbSystemManagementPolicyBackupPolicyCopyPolicyInput` via:
+//
+//	GetDbSystemManagementPolicyBackupPolicyCopyPolicyArgs{...}
+type GetDbSystemManagementPolicyBackupPolicyCopyPolicyInput interface {
+	pulumi.Input
+
+	ToGetDbSystemManagementPolicyBackupPolicyCopyPolicyOutput() GetDbSystemManagementPolicyBackupPolicyCopyPolicyOutput
+	ToGetDbSystemManagementPolicyBackupPolicyCopyPolicyOutputWithContext(context.Context) GetDbSystemManagementPolicyBackupPolicyCopyPolicyOutput
+}
+
+type GetDbSystemManagementPolicyBackupPolicyCopyPolicyArgs struct {
+	// target compartment to place a new backup
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// List of region names of the remote region
+	Regions pulumi.StringArrayInput `pulumi:"regions"`
+	// Retention period in days of the backup copy.
+	RetentionPeriod pulumi.IntInput `pulumi:"retentionPeriod"`
+}
+
+func (GetDbSystemManagementPolicyBackupPolicyCopyPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemManagementPolicyBackupPolicyCopyPolicy)(nil)).Elem()
+}
+
+func (i GetDbSystemManagementPolicyBackupPolicyCopyPolicyArgs) ToGetDbSystemManagementPolicyBackupPolicyCopyPolicyOutput() GetDbSystemManagementPolicyBackupPolicyCopyPolicyOutput {
+	return i.ToGetDbSystemManagementPolicyBackupPolicyCopyPolicyOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemManagementPolicyBackupPolicyCopyPolicyArgs) ToGetDbSystemManagementPolicyBackupPolicyCopyPolicyOutputWithContext(ctx context.Context) GetDbSystemManagementPolicyBackupPolicyCopyPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemManagementPolicyBackupPolicyCopyPolicyOutput)
+}
+
+// GetDbSystemManagementPolicyBackupPolicyCopyPolicyArrayInput is an input type that accepts GetDbSystemManagementPolicyBackupPolicyCopyPolicyArray and GetDbSystemManagementPolicyBackupPolicyCopyPolicyArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemManagementPolicyBackupPolicyCopyPolicyArrayInput` via:
+//
+//	GetDbSystemManagementPolicyBackupPolicyCopyPolicyArray{ GetDbSystemManagementPolicyBackupPolicyCopyPolicyArgs{...} }
+type GetDbSystemManagementPolicyBackupPolicyCopyPolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemManagementPolicyBackupPolicyCopyPolicyArrayOutput() GetDbSystemManagementPolicyBackupPolicyCopyPolicyArrayOutput
+	ToGetDbSystemManagementPolicyBackupPolicyCopyPolicyArrayOutputWithContext(context.Context) GetDbSystemManagementPolicyBackupPolicyCopyPolicyArrayOutput
+}
+
+type GetDbSystemManagementPolicyBackupPolicyCopyPolicyArray []GetDbSystemManagementPolicyBackupPolicyCopyPolicyInput
+
+func (GetDbSystemManagementPolicyBackupPolicyCopyPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemManagementPolicyBackupPolicyCopyPolicy)(nil)).Elem()
+}
+
+func (i GetDbSystemManagementPolicyBackupPolicyCopyPolicyArray) ToGetDbSystemManagementPolicyBackupPolicyCopyPolicyArrayOutput() GetDbSystemManagementPolicyBackupPolicyCopyPolicyArrayOutput {
+	return i.ToGetDbSystemManagementPolicyBackupPolicyCopyPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemManagementPolicyBackupPolicyCopyPolicyArray) ToGetDbSystemManagementPolicyBackupPolicyCopyPolicyArrayOutputWithContext(ctx context.Context) GetDbSystemManagementPolicyBackupPolicyCopyPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemManagementPolicyBackupPolicyCopyPolicyArrayOutput)
+}
+
+type GetDbSystemManagementPolicyBackupPolicyCopyPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemManagementPolicyBackupPolicyCopyPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemManagementPolicyBackupPolicyCopyPolicy)(nil)).Elem()
+}
+
+func (o GetDbSystemManagementPolicyBackupPolicyCopyPolicyOutput) ToGetDbSystemManagementPolicyBackupPolicyCopyPolicyOutput() GetDbSystemManagementPolicyBackupPolicyCopyPolicyOutput {
+	return o
+}
+
+func (o GetDbSystemManagementPolicyBackupPolicyCopyPolicyOutput) ToGetDbSystemManagementPolicyBackupPolicyCopyPolicyOutputWithContext(ctx context.Context) GetDbSystemManagementPolicyBackupPolicyCopyPolicyOutput {
+	return o
+}
+
+// target compartment to place a new backup
+func (o GetDbSystemManagementPolicyBackupPolicyCopyPolicyOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemManagementPolicyBackupPolicyCopyPolicy) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// List of region names of the remote region
+func (o GetDbSystemManagementPolicyBackupPolicyCopyPolicyOutput) Regions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbSystemManagementPolicyBackupPolicyCopyPolicy) []string { return v.Regions }).(pulumi.StringArrayOutput)
+}
+
+// Retention period in days of the backup copy.
+func (o GetDbSystemManagementPolicyBackupPolicyCopyPolicyOutput) RetentionPeriod() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemManagementPolicyBackupPolicyCopyPolicy) int { return v.RetentionPeriod }).(pulumi.IntOutput)
+}
+
+type GetDbSystemManagementPolicyBackupPolicyCopyPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemManagementPolicyBackupPolicyCopyPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemManagementPolicyBackupPolicyCopyPolicy)(nil)).Elem()
+}
+
+func (o GetDbSystemManagementPolicyBackupPolicyCopyPolicyArrayOutput) ToGetDbSystemManagementPolicyBackupPolicyCopyPolicyArrayOutput() GetDbSystemManagementPolicyBackupPolicyCopyPolicyArrayOutput {
+	return o
+}
+
+func (o GetDbSystemManagementPolicyBackupPolicyCopyPolicyArrayOutput) ToGetDbSystemManagementPolicyBackupPolicyCopyPolicyArrayOutputWithContext(ctx context.Context) GetDbSystemManagementPolicyBackupPolicyCopyPolicyArrayOutput {
+	return o
+}
+
+func (o GetDbSystemManagementPolicyBackupPolicyCopyPolicyArrayOutput) Index(i pulumi.IntInput) GetDbSystemManagementPolicyBackupPolicyCopyPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemManagementPolicyBackupPolicyCopyPolicy {
+		return vs[0].([]GetDbSystemManagementPolicyBackupPolicyCopyPolicy)[vs[1].(int)]
+	}).(GetDbSystemManagementPolicyBackupPolicyCopyPolicyOutput)
 }
 
 type GetDbSystemNetworkDetail struct {
@@ -7079,6 +8199,8 @@ func (o GetDbSystemsDbSystemCollectionItemManagementPolicyArrayOutput) Index(i p
 type GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicy struct {
 	// Hour of the day when the backup starts.
 	BackupStart string `pulumi:"backupStart"`
+	// Backup copy details
+	CopyPolicies []GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicy `pulumi:"copyPolicies"`
 	// Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
 	DaysOfTheMonths []int `pulumi:"daysOfTheMonths"`
 	// The day of the week that the backup starts.
@@ -7103,6 +8225,8 @@ type GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyInput interfa
 type GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyArgs struct {
 	// Hour of the day when the backup starts.
 	BackupStart pulumi.StringInput `pulumi:"backupStart"`
+	// Backup copy details
+	CopyPolicies GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArrayInput `pulumi:"copyPolicies"`
 	// Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
 	DaysOfTheMonths pulumi.IntArrayInput `pulumi:"daysOfTheMonths"`
 	// The day of the week that the backup starts.
@@ -7169,6 +8293,13 @@ func (o GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyOutput) Ba
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicy) string { return v.BackupStart }).(pulumi.StringOutput)
 }
 
+// Backup copy details
+func (o GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyOutput) CopyPolicies() GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicy) []GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicy {
+		return v.CopyPolicies
+	}).(GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArrayOutput)
+}
+
 // Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
 func (o GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyOutput) DaysOfTheMonths() pulumi.IntArrayOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicy) []int { return v.DaysOfTheMonths }).(pulumi.IntArrayOutput)
@@ -7209,6 +8340,127 @@ func (o GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyArrayOutpu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicy {
 		return vs[0].([]GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicy)[vs[1].(int)]
 	}).(GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyOutput)
+}
+
+type GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicy struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// List of region names of the remote region
+	Regions []string `pulumi:"regions"`
+	// Retention period in days of the backup copy.
+	RetentionPeriod int `pulumi:"retentionPeriod"`
+}
+
+// GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyInput is an input type that accepts GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArgs and GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyInput` via:
+//
+//	GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArgs{...}
+type GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyOutput() GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyOutput
+	ToGetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyOutputWithContext(context.Context) GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyOutput
+}
+
+type GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArgs struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// List of region names of the remote region
+	Regions pulumi.StringArrayInput `pulumi:"regions"`
+	// Retention period in days of the backup copy.
+	RetentionPeriod pulumi.IntInput `pulumi:"retentionPeriod"`
+}
+
+func (GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicy)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArgs) ToGetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyOutput() GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyOutput {
+	return i.ToGetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArgs) ToGetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyOutput)
+}
+
+// GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArrayInput is an input type that accepts GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArray and GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArrayInput` via:
+//
+//	GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArray{ GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArgs{...} }
+type GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArrayOutput() GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArrayOutput
+	ToGetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArrayOutputWithContext(context.Context) GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArrayOutput
+}
+
+type GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArray []GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyInput
+
+func (GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicy)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArray) ToGetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArrayOutput() GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArrayOutput {
+	return i.ToGetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArray) ToGetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArrayOutput)
+}
+
+type GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicy)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyOutput) ToGetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyOutput() GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyOutput) ToGetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyOutput {
+	return o
+}
+
+// The ID of the compartment in which to list resources.
+func (o GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicy) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// List of region names of the remote region
+func (o GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyOutput) Regions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicy) []string {
+		return v.Regions
+	}).(pulumi.StringArrayOutput)
+}
+
+// Retention period in days of the backup copy.
+func (o GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyOutput) RetentionPeriod() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicy) int {
+		return v.RetentionPeriod
+	}).(pulumi.IntOutput)
+}
+
+type GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicy)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArrayOutput) ToGetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArrayOutput() GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArrayOutput) ToGetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArrayOutput) Index(i pulumi.IntInput) GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicy {
+		return vs[0].([]GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicy)[vs[1].(int)]
+	}).(GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyOutput)
 }
 
 type GetDbSystemsDbSystemCollectionItemNetworkDetail struct {
@@ -9321,8 +10573,12 @@ func (o GetShapesShapeCollectionItemShapeOcpuOptionArrayOutput) Index(i pulumi.I
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*BackupCopyStatusInput)(nil)).Elem(), BackupCopyStatusArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BackupCopyStatusArrayInput)(nil)).Elem(), BackupCopyStatusArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BackupDbSystemDetailInput)(nil)).Elem(), BackupDbSystemDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BackupDbSystemDetailArrayInput)(nil)).Elem(), BackupDbSystemDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BackupSourceBackupDetailsInput)(nil)).Elem(), BackupSourceBackupDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BackupSourceBackupDetailsPtrInput)(nil)).Elem(), BackupSourceBackupDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigurationConfigurationDetailInput)(nil)).Elem(), ConfigurationConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigurationConfigurationDetailArrayInput)(nil)).Elem(), ConfigurationConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigurationConfigurationDetailItemInput)(nil)).Elem(), ConfigurationConfigurationDetailItemArgs{})
@@ -9343,6 +10599,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemManagementPolicyPtrInput)(nil)).Elem(), DbSystemManagementPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemManagementPolicyBackupPolicyInput)(nil)).Elem(), DbSystemManagementPolicyBackupPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemManagementPolicyBackupPolicyPtrInput)(nil)).Elem(), DbSystemManagementPolicyBackupPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemManagementPolicyBackupPolicyCopyPolicyInput)(nil)).Elem(), DbSystemManagementPolicyBackupPolicyCopyPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemManagementPolicyBackupPolicyCopyPolicyPtrInput)(nil)).Elem(), DbSystemManagementPolicyBackupPolicyCopyPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemNetworkDetailsInput)(nil)).Elem(), DbSystemNetworkDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemNetworkDetailsPtrInput)(nil)).Elem(), DbSystemNetworkDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemPatchOperationInput)(nil)).Elem(), DbSystemPatchOperationArgs{})
@@ -9351,14 +10609,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemSourcePtrInput)(nil)).Elem(), DbSystemSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemStorageDetailsInput)(nil)).Elem(), DbSystemStorageDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemStorageDetailsPtrInput)(nil)).Elem(), DbSystemStorageDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupCopyStatusInput)(nil)).Elem(), GetBackupCopyStatusArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupCopyStatusArrayInput)(nil)).Elem(), GetBackupCopyStatusArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDbSystemDetailInput)(nil)).Elem(), GetBackupDbSystemDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDbSystemDetailArrayInput)(nil)).Elem(), GetBackupDbSystemDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupSourceBackupDetailInput)(nil)).Elem(), GetBackupSourceBackupDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupSourceBackupDetailArrayInput)(nil)).Elem(), GetBackupSourceBackupDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupsBackupCollectionInput)(nil)).Elem(), GetBackupsBackupCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupsBackupCollectionArrayInput)(nil)).Elem(), GetBackupsBackupCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupsBackupCollectionItemInput)(nil)).Elem(), GetBackupsBackupCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupsBackupCollectionItemArrayInput)(nil)).Elem(), GetBackupsBackupCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupsBackupCollectionItemCopyStatusInput)(nil)).Elem(), GetBackupsBackupCollectionItemCopyStatusArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupsBackupCollectionItemCopyStatusArrayInput)(nil)).Elem(), GetBackupsBackupCollectionItemCopyStatusArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupsBackupCollectionItemDbSystemDetailInput)(nil)).Elem(), GetBackupsBackupCollectionItemDbSystemDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupsBackupCollectionItemDbSystemDetailArrayInput)(nil)).Elem(), GetBackupsBackupCollectionItemDbSystemDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupsBackupCollectionItemSourceBackupDetailInput)(nil)).Elem(), GetBackupsBackupCollectionItemSourceBackupDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupsBackupCollectionItemSourceBackupDetailArrayInput)(nil)).Elem(), GetBackupsBackupCollectionItemSourceBackupDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupsFilterInput)(nil)).Elem(), GetBackupsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupsFilterArrayInput)(nil)).Elem(), GetBackupsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigurationConfigurationDetailInput)(nil)).Elem(), GetConfigurationConfigurationDetailArgs{})
@@ -9403,6 +10669,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemManagementPolicyArrayInput)(nil)).Elem(), GetDbSystemManagementPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemManagementPolicyBackupPolicyInput)(nil)).Elem(), GetDbSystemManagementPolicyBackupPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemManagementPolicyBackupPolicyArrayInput)(nil)).Elem(), GetDbSystemManagementPolicyBackupPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemManagementPolicyBackupPolicyCopyPolicyInput)(nil)).Elem(), GetDbSystemManagementPolicyBackupPolicyCopyPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemManagementPolicyBackupPolicyCopyPolicyArrayInput)(nil)).Elem(), GetDbSystemManagementPolicyBackupPolicyCopyPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemNetworkDetailInput)(nil)).Elem(), GetDbSystemNetworkDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemNetworkDetailArrayInput)(nil)).Elem(), GetDbSystemNetworkDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemPatchOperationInput)(nil)).Elem(), GetDbSystemPatchOperationArgs{})
@@ -9427,6 +10695,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemManagementPolicyArrayInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemManagementPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyArrayInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArrayInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemNetworkDetailInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemNetworkDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemNetworkDetailArrayInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemNetworkDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemPatchOperationInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemPatchOperationArgs{})
@@ -9461,8 +10731,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeCollectionItemShapeMemoryOptionArrayInput)(nil)).Elem(), GetShapesShapeCollectionItemShapeMemoryOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeCollectionItemShapeOcpuOptionInput)(nil)).Elem(), GetShapesShapeCollectionItemShapeOcpuOptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeCollectionItemShapeOcpuOptionArrayInput)(nil)).Elem(), GetShapesShapeCollectionItemShapeOcpuOptionArray{})
+	pulumi.RegisterOutputType(BackupCopyStatusOutput{})
+	pulumi.RegisterOutputType(BackupCopyStatusArrayOutput{})
 	pulumi.RegisterOutputType(BackupDbSystemDetailOutput{})
 	pulumi.RegisterOutputType(BackupDbSystemDetailArrayOutput{})
+	pulumi.RegisterOutputType(BackupSourceBackupDetailsOutput{})
+	pulumi.RegisterOutputType(BackupSourceBackupDetailsPtrOutput{})
 	pulumi.RegisterOutputType(ConfigurationConfigurationDetailOutput{})
 	pulumi.RegisterOutputType(ConfigurationConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(ConfigurationConfigurationDetailItemOutput{})
@@ -9483,6 +10757,8 @@ func init() {
 	pulumi.RegisterOutputType(DbSystemManagementPolicyPtrOutput{})
 	pulumi.RegisterOutputType(DbSystemManagementPolicyBackupPolicyOutput{})
 	pulumi.RegisterOutputType(DbSystemManagementPolicyBackupPolicyPtrOutput{})
+	pulumi.RegisterOutputType(DbSystemManagementPolicyBackupPolicyCopyPolicyOutput{})
+	pulumi.RegisterOutputType(DbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutput{})
 	pulumi.RegisterOutputType(DbSystemNetworkDetailsOutput{})
 	pulumi.RegisterOutputType(DbSystemNetworkDetailsPtrOutput{})
 	pulumi.RegisterOutputType(DbSystemPatchOperationOutput{})
@@ -9491,14 +10767,22 @@ func init() {
 	pulumi.RegisterOutputType(DbSystemSourcePtrOutput{})
 	pulumi.RegisterOutputType(DbSystemStorageDetailsOutput{})
 	pulumi.RegisterOutputType(DbSystemStorageDetailsPtrOutput{})
+	pulumi.RegisterOutputType(GetBackupCopyStatusOutput{})
+	pulumi.RegisterOutputType(GetBackupCopyStatusArrayOutput{})
 	pulumi.RegisterOutputType(GetBackupDbSystemDetailOutput{})
 	pulumi.RegisterOutputType(GetBackupDbSystemDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetBackupSourceBackupDetailOutput{})
+	pulumi.RegisterOutputType(GetBackupSourceBackupDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetBackupsBackupCollectionOutput{})
 	pulumi.RegisterOutputType(GetBackupsBackupCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetBackupsBackupCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetBackupsBackupCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetBackupsBackupCollectionItemCopyStatusOutput{})
+	pulumi.RegisterOutputType(GetBackupsBackupCollectionItemCopyStatusArrayOutput{})
 	pulumi.RegisterOutputType(GetBackupsBackupCollectionItemDbSystemDetailOutput{})
 	pulumi.RegisterOutputType(GetBackupsBackupCollectionItemDbSystemDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetBackupsBackupCollectionItemSourceBackupDetailOutput{})
+	pulumi.RegisterOutputType(GetBackupsBackupCollectionItemSourceBackupDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetBackupsFilterOutput{})
 	pulumi.RegisterOutputType(GetBackupsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetConfigurationConfigurationDetailOutput{})
@@ -9543,6 +10827,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDbSystemManagementPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemManagementPolicyBackupPolicyOutput{})
 	pulumi.RegisterOutputType(GetDbSystemManagementPolicyBackupPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemManagementPolicyBackupPolicyCopyPolicyOutput{})
+	pulumi.RegisterOutputType(GetDbSystemManagementPolicyBackupPolicyCopyPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemNetworkDetailOutput{})
 	pulumi.RegisterOutputType(GetDbSystemNetworkDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemPatchOperationOutput{})
@@ -9567,6 +10853,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemManagementPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemNetworkDetailOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemNetworkDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemPatchOperationOutput{})

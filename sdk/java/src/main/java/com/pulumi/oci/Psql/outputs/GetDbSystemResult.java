@@ -30,7 +30,7 @@ public final class GetDbSystemResult {
     private String adminUsername;
     private String applyConfig;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
+     * @return target compartment to place a new backup
      * 
      */
     private String compartmentId;
@@ -162,7 +162,7 @@ public final class GetDbSystemResult {
         return this.applyConfig;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
+     * @return target compartment to place a new backup
      * 
      */
     public String compartmentId() {

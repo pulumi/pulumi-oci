@@ -30,6 +30,7 @@ namespace Pulumi.Oci.Database
         ///     var testExadbVmClusters = Oci.Database.GetExadbVmClusters.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         ClusterPlacementGroupId = testClusterPlacementGroup.Id,
         ///         DisplayName = exadbVmClusterDisplayName,
         ///         ExascaleDbStorageVaultId = testExascaleDbStorageVault.Id,
         ///         State = exadbVmClusterState,
@@ -60,6 +61,7 @@ namespace Pulumi.Oci.Database
         ///     var testExadbVmClusters = Oci.Database.GetExadbVmClusters.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         ClusterPlacementGroupId = testClusterPlacementGroup.Id,
         ///         DisplayName = exadbVmClusterDisplayName,
         ///         ExascaleDbStorageVaultId = testExascaleDbStorageVault.Id,
         ///         State = exadbVmClusterState,
@@ -90,6 +92,7 @@ namespace Pulumi.Oci.Database
         ///     var testExadbVmClusters = Oci.Database.GetExadbVmClusters.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         ClusterPlacementGroupId = testClusterPlacementGroup.Id,
         ///         DisplayName = exadbVmClusterDisplayName,
         ///         ExascaleDbStorageVaultId = testExascaleDbStorageVault.Id,
         ///         State = exadbVmClusterState,
@@ -105,6 +108,12 @@ namespace Pulumi.Oci.Database
 
     public sealed class GetExadbVmClustersArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// A filter to return only resources that match the given cluster placement group ID exactly.
+        /// </summary>
+        [Input("clusterPlacementGroupId")]
+        public string? ClusterPlacementGroupId { get; set; }
+
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
@@ -145,6 +154,12 @@ namespace Pulumi.Oci.Database
 
     public sealed class GetExadbVmClustersInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// A filter to return only resources that match the given cluster placement group ID exactly.
+        /// </summary>
+        [Input("clusterPlacementGroupId")]
+        public Input<string>? ClusterPlacementGroupId { get; set; }
+
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
@@ -188,6 +203,10 @@ namespace Pulumi.Oci.Database
     public sealed class GetExadbVmClustersResult
     {
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        /// </summary>
+        public readonly string? ClusterPlacementGroupId;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         public readonly string CompartmentId;
@@ -215,6 +234,8 @@ namespace Pulumi.Oci.Database
 
         [OutputConstructor]
         private GetExadbVmClustersResult(
+            string? clusterPlacementGroupId,
+
             string compartmentId,
 
             string? displayName,
@@ -229,6 +250,7 @@ namespace Pulumi.Oci.Database
 
             string? state)
         {
+            ClusterPlacementGroupId = clusterPlacementGroupId;
             CompartmentId = compartmentId;
             DisplayName = displayName;
             ExadbVmClusters = exadbVmClusters;

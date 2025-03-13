@@ -12,6 +12,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class BackupDbSystemDetail {
     /**
+     * @return OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
+     * 
+     */
+    private @Nullable String configId;
+    /**
      * @return The major and minor versions of the database system software.
      * 
      */
@@ -23,6 +28,13 @@ public final class BackupDbSystemDetail {
     private @Nullable String systemType;
 
     private BackupDbSystemDetail() {}
+    /**
+     * @return OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
+     * 
+     */
+    public Optional<String> configId() {
+        return Optional.ofNullable(this.configId);
+    }
     /**
      * @return The major and minor versions of the database system software.
      * 
@@ -47,15 +59,23 @@ public final class BackupDbSystemDetail {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String configId;
         private @Nullable String dbVersion;
         private @Nullable String systemType;
         public Builder() {}
         public Builder(BackupDbSystemDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.configId = defaults.configId;
     	      this.dbVersion = defaults.dbVersion;
     	      this.systemType = defaults.systemType;
         }
 
+        @CustomType.Setter
+        public Builder configId(@Nullable String configId) {
+
+            this.configId = configId;
+            return this;
+        }
         @CustomType.Setter
         public Builder dbVersion(@Nullable String dbVersion) {
 
@@ -70,6 +90,7 @@ public final class BackupDbSystemDetail {
         }
         public BackupDbSystemDetail build() {
             final var _resultValue = new BackupDbSystemDetail();
+            _resultValue.configId = configId;
             _resultValue.dbVersion = dbVersion;
             _resultValue.systemType = systemType;
             return _resultValue;

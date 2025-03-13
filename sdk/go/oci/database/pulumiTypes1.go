@@ -13,6 +13,965 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetDbServersDbServerDbServerPatchingDetail struct {
+	// Estimated time, in minutes, to patch one database server.
+	EstimatedPatchDuration int `pulumi:"estimatedPatchDuration"`
+	// The status of the patching operation.
+	PatchingStatus string `pulumi:"patchingStatus"`
+	// The time when the patching operation ended.
+	TimePatchingEnded string `pulumi:"timePatchingEnded"`
+	// The time when the patching operation started.
+	TimePatchingStarted string `pulumi:"timePatchingStarted"`
+}
+
+// GetDbServersDbServerDbServerPatchingDetailInput is an input type that accepts GetDbServersDbServerDbServerPatchingDetailArgs and GetDbServersDbServerDbServerPatchingDetailOutput values.
+// You can construct a concrete instance of `GetDbServersDbServerDbServerPatchingDetailInput` via:
+//
+//	GetDbServersDbServerDbServerPatchingDetailArgs{...}
+type GetDbServersDbServerDbServerPatchingDetailInput interface {
+	pulumi.Input
+
+	ToGetDbServersDbServerDbServerPatchingDetailOutput() GetDbServersDbServerDbServerPatchingDetailOutput
+	ToGetDbServersDbServerDbServerPatchingDetailOutputWithContext(context.Context) GetDbServersDbServerDbServerPatchingDetailOutput
+}
+
+type GetDbServersDbServerDbServerPatchingDetailArgs struct {
+	// Estimated time, in minutes, to patch one database server.
+	EstimatedPatchDuration pulumi.IntInput `pulumi:"estimatedPatchDuration"`
+	// The status of the patching operation.
+	PatchingStatus pulumi.StringInput `pulumi:"patchingStatus"`
+	// The time when the patching operation ended.
+	TimePatchingEnded pulumi.StringInput `pulumi:"timePatchingEnded"`
+	// The time when the patching operation started.
+	TimePatchingStarted pulumi.StringInput `pulumi:"timePatchingStarted"`
+}
+
+func (GetDbServersDbServerDbServerPatchingDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbServersDbServerDbServerPatchingDetail)(nil)).Elem()
+}
+
+func (i GetDbServersDbServerDbServerPatchingDetailArgs) ToGetDbServersDbServerDbServerPatchingDetailOutput() GetDbServersDbServerDbServerPatchingDetailOutput {
+	return i.ToGetDbServersDbServerDbServerPatchingDetailOutputWithContext(context.Background())
+}
+
+func (i GetDbServersDbServerDbServerPatchingDetailArgs) ToGetDbServersDbServerDbServerPatchingDetailOutputWithContext(ctx context.Context) GetDbServersDbServerDbServerPatchingDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbServersDbServerDbServerPatchingDetailOutput)
+}
+
+// GetDbServersDbServerDbServerPatchingDetailArrayInput is an input type that accepts GetDbServersDbServerDbServerPatchingDetailArray and GetDbServersDbServerDbServerPatchingDetailArrayOutput values.
+// You can construct a concrete instance of `GetDbServersDbServerDbServerPatchingDetailArrayInput` via:
+//
+//	GetDbServersDbServerDbServerPatchingDetailArray{ GetDbServersDbServerDbServerPatchingDetailArgs{...} }
+type GetDbServersDbServerDbServerPatchingDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDbServersDbServerDbServerPatchingDetailArrayOutput() GetDbServersDbServerDbServerPatchingDetailArrayOutput
+	ToGetDbServersDbServerDbServerPatchingDetailArrayOutputWithContext(context.Context) GetDbServersDbServerDbServerPatchingDetailArrayOutput
+}
+
+type GetDbServersDbServerDbServerPatchingDetailArray []GetDbServersDbServerDbServerPatchingDetailInput
+
+func (GetDbServersDbServerDbServerPatchingDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbServersDbServerDbServerPatchingDetail)(nil)).Elem()
+}
+
+func (i GetDbServersDbServerDbServerPatchingDetailArray) ToGetDbServersDbServerDbServerPatchingDetailArrayOutput() GetDbServersDbServerDbServerPatchingDetailArrayOutput {
+	return i.ToGetDbServersDbServerDbServerPatchingDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbServersDbServerDbServerPatchingDetailArray) ToGetDbServersDbServerDbServerPatchingDetailArrayOutputWithContext(ctx context.Context) GetDbServersDbServerDbServerPatchingDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbServersDbServerDbServerPatchingDetailArrayOutput)
+}
+
+type GetDbServersDbServerDbServerPatchingDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDbServersDbServerDbServerPatchingDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbServersDbServerDbServerPatchingDetail)(nil)).Elem()
+}
+
+func (o GetDbServersDbServerDbServerPatchingDetailOutput) ToGetDbServersDbServerDbServerPatchingDetailOutput() GetDbServersDbServerDbServerPatchingDetailOutput {
+	return o
+}
+
+func (o GetDbServersDbServerDbServerPatchingDetailOutput) ToGetDbServersDbServerDbServerPatchingDetailOutputWithContext(ctx context.Context) GetDbServersDbServerDbServerPatchingDetailOutput {
+	return o
+}
+
+// Estimated time, in minutes, to patch one database server.
+func (o GetDbServersDbServerDbServerPatchingDetailOutput) EstimatedPatchDuration() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbServersDbServerDbServerPatchingDetail) int { return v.EstimatedPatchDuration }).(pulumi.IntOutput)
+}
+
+// The status of the patching operation.
+func (o GetDbServersDbServerDbServerPatchingDetailOutput) PatchingStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbServersDbServerDbServerPatchingDetail) string { return v.PatchingStatus }).(pulumi.StringOutput)
+}
+
+// The time when the patching operation ended.
+func (o GetDbServersDbServerDbServerPatchingDetailOutput) TimePatchingEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbServersDbServerDbServerPatchingDetail) string { return v.TimePatchingEnded }).(pulumi.StringOutput)
+}
+
+// The time when the patching operation started.
+func (o GetDbServersDbServerDbServerPatchingDetailOutput) TimePatchingStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbServersDbServerDbServerPatchingDetail) string { return v.TimePatchingStarted }).(pulumi.StringOutput)
+}
+
+type GetDbServersDbServerDbServerPatchingDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbServersDbServerDbServerPatchingDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbServersDbServerDbServerPatchingDetail)(nil)).Elem()
+}
+
+func (o GetDbServersDbServerDbServerPatchingDetailArrayOutput) ToGetDbServersDbServerDbServerPatchingDetailArrayOutput() GetDbServersDbServerDbServerPatchingDetailArrayOutput {
+	return o
+}
+
+func (o GetDbServersDbServerDbServerPatchingDetailArrayOutput) ToGetDbServersDbServerDbServerPatchingDetailArrayOutputWithContext(ctx context.Context) GetDbServersDbServerDbServerPatchingDetailArrayOutput {
+	return o
+}
+
+func (o GetDbServersDbServerDbServerPatchingDetailArrayOutput) Index(i pulumi.IntInput) GetDbServersDbServerDbServerPatchingDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbServersDbServerDbServerPatchingDetail {
+		return vs[0].([]GetDbServersDbServerDbServerPatchingDetail)[vs[1].(int)]
+	}).(GetDbServersDbServerDbServerPatchingDetailOutput)
+}
+
+type GetDbServersFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDbServersFilterInput is an input type that accepts GetDbServersFilterArgs and GetDbServersFilterOutput values.
+// You can construct a concrete instance of `GetDbServersFilterInput` via:
+//
+//	GetDbServersFilterArgs{...}
+type GetDbServersFilterInput interface {
+	pulumi.Input
+
+	ToGetDbServersFilterOutput() GetDbServersFilterOutput
+	ToGetDbServersFilterOutputWithContext(context.Context) GetDbServersFilterOutput
+}
+
+type GetDbServersFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDbServersFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbServersFilter)(nil)).Elem()
+}
+
+func (i GetDbServersFilterArgs) ToGetDbServersFilterOutput() GetDbServersFilterOutput {
+	return i.ToGetDbServersFilterOutputWithContext(context.Background())
+}
+
+func (i GetDbServersFilterArgs) ToGetDbServersFilterOutputWithContext(ctx context.Context) GetDbServersFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbServersFilterOutput)
+}
+
+// GetDbServersFilterArrayInput is an input type that accepts GetDbServersFilterArray and GetDbServersFilterArrayOutput values.
+// You can construct a concrete instance of `GetDbServersFilterArrayInput` via:
+//
+//	GetDbServersFilterArray{ GetDbServersFilterArgs{...} }
+type GetDbServersFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDbServersFilterArrayOutput() GetDbServersFilterArrayOutput
+	ToGetDbServersFilterArrayOutputWithContext(context.Context) GetDbServersFilterArrayOutput
+}
+
+type GetDbServersFilterArray []GetDbServersFilterInput
+
+func (GetDbServersFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbServersFilter)(nil)).Elem()
+}
+
+func (i GetDbServersFilterArray) ToGetDbServersFilterArrayOutput() GetDbServersFilterArrayOutput {
+	return i.ToGetDbServersFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbServersFilterArray) ToGetDbServersFilterArrayOutputWithContext(ctx context.Context) GetDbServersFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbServersFilterArrayOutput)
+}
+
+type GetDbServersFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDbServersFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbServersFilter)(nil)).Elem()
+}
+
+func (o GetDbServersFilterOutput) ToGetDbServersFilterOutput() GetDbServersFilterOutput {
+	return o
+}
+
+func (o GetDbServersFilterOutput) ToGetDbServersFilterOutputWithContext(ctx context.Context) GetDbServersFilterOutput {
+	return o
+}
+
+func (o GetDbServersFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbServersFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDbServersFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDbServersFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDbServersFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbServersFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDbServersFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbServersFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbServersFilter)(nil)).Elem()
+}
+
+func (o GetDbServersFilterArrayOutput) ToGetDbServersFilterArrayOutput() GetDbServersFilterArrayOutput {
+	return o
+}
+
+func (o GetDbServersFilterArrayOutput) ToGetDbServersFilterArrayOutputWithContext(ctx context.Context) GetDbServersFilterArrayOutput {
+	return o
+}
+
+func (o GetDbServersFilterArrayOutput) Index(i pulumi.IntInput) GetDbServersFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbServersFilter {
+		return vs[0].([]GetDbServersFilter)[vs[1].(int)]
+	}).(GetDbServersFilterOutput)
+}
+
+type GetDbSystemComputePerformancesDbSystemComputePerformance struct {
+	// List of Compute performance details for the specified DB system shape.
+	ComputePerformanceLists []GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList `pulumi:"computePerformanceLists"`
+	// The shape of the DB system.
+	Shape string `pulumi:"shape"`
+}
+
+// GetDbSystemComputePerformancesDbSystemComputePerformanceInput is an input type that accepts GetDbSystemComputePerformancesDbSystemComputePerformanceArgs and GetDbSystemComputePerformancesDbSystemComputePerformanceOutput values.
+// You can construct a concrete instance of `GetDbSystemComputePerformancesDbSystemComputePerformanceInput` via:
+//
+//	GetDbSystemComputePerformancesDbSystemComputePerformanceArgs{...}
+type GetDbSystemComputePerformancesDbSystemComputePerformanceInput interface {
+	pulumi.Input
+
+	ToGetDbSystemComputePerformancesDbSystemComputePerformanceOutput() GetDbSystemComputePerformancesDbSystemComputePerformanceOutput
+	ToGetDbSystemComputePerformancesDbSystemComputePerformanceOutputWithContext(context.Context) GetDbSystemComputePerformancesDbSystemComputePerformanceOutput
+}
+
+type GetDbSystemComputePerformancesDbSystemComputePerformanceArgs struct {
+	// List of Compute performance details for the specified DB system shape.
+	ComputePerformanceLists GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayInput `pulumi:"computePerformanceLists"`
+	// The shape of the DB system.
+	Shape pulumi.StringInput `pulumi:"shape"`
+}
+
+func (GetDbSystemComputePerformancesDbSystemComputePerformanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemComputePerformancesDbSystemComputePerformance)(nil)).Elem()
+}
+
+func (i GetDbSystemComputePerformancesDbSystemComputePerformanceArgs) ToGetDbSystemComputePerformancesDbSystemComputePerformanceOutput() GetDbSystemComputePerformancesDbSystemComputePerformanceOutput {
+	return i.ToGetDbSystemComputePerformancesDbSystemComputePerformanceOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemComputePerformancesDbSystemComputePerformanceArgs) ToGetDbSystemComputePerformancesDbSystemComputePerformanceOutputWithContext(ctx context.Context) GetDbSystemComputePerformancesDbSystemComputePerformanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemComputePerformancesDbSystemComputePerformanceOutput)
+}
+
+// GetDbSystemComputePerformancesDbSystemComputePerformanceArrayInput is an input type that accepts GetDbSystemComputePerformancesDbSystemComputePerformanceArray and GetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemComputePerformancesDbSystemComputePerformanceArrayInput` via:
+//
+//	GetDbSystemComputePerformancesDbSystemComputePerformanceArray{ GetDbSystemComputePerformancesDbSystemComputePerformanceArgs{...} }
+type GetDbSystemComputePerformancesDbSystemComputePerformanceArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutput() GetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutput
+	ToGetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutputWithContext(context.Context) GetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutput
+}
+
+type GetDbSystemComputePerformancesDbSystemComputePerformanceArray []GetDbSystemComputePerformancesDbSystemComputePerformanceInput
+
+func (GetDbSystemComputePerformancesDbSystemComputePerformanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemComputePerformancesDbSystemComputePerformance)(nil)).Elem()
+}
+
+func (i GetDbSystemComputePerformancesDbSystemComputePerformanceArray) ToGetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutput() GetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutput {
+	return i.ToGetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemComputePerformancesDbSystemComputePerformanceArray) ToGetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutputWithContext(ctx context.Context) GetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutput)
+}
+
+type GetDbSystemComputePerformancesDbSystemComputePerformanceOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemComputePerformancesDbSystemComputePerformanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemComputePerformancesDbSystemComputePerformance)(nil)).Elem()
+}
+
+func (o GetDbSystemComputePerformancesDbSystemComputePerformanceOutput) ToGetDbSystemComputePerformancesDbSystemComputePerformanceOutput() GetDbSystemComputePerformancesDbSystemComputePerformanceOutput {
+	return o
+}
+
+func (o GetDbSystemComputePerformancesDbSystemComputePerformanceOutput) ToGetDbSystemComputePerformancesDbSystemComputePerformanceOutputWithContext(ctx context.Context) GetDbSystemComputePerformancesDbSystemComputePerformanceOutput {
+	return o
+}
+
+// List of Compute performance details for the specified DB system shape.
+func (o GetDbSystemComputePerformancesDbSystemComputePerformanceOutput) ComputePerformanceLists() GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput {
+	return o.ApplyT(func(v GetDbSystemComputePerformancesDbSystemComputePerformance) []GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList {
+		return v.ComputePerformanceLists
+	}).(GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput)
+}
+
+// The shape of the DB system.
+func (o GetDbSystemComputePerformancesDbSystemComputePerformanceOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemComputePerformancesDbSystemComputePerformance) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+type GetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemComputePerformancesDbSystemComputePerformance)(nil)).Elem()
+}
+
+func (o GetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutput) ToGetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutput() GetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutput {
+	return o
+}
+
+func (o GetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutput) ToGetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutputWithContext(ctx context.Context) GetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutput {
+	return o
+}
+
+func (o GetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutput) Index(i pulumi.IntInput) GetDbSystemComputePerformancesDbSystemComputePerformanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemComputePerformancesDbSystemComputePerformance {
+		return vs[0].([]GetDbSystemComputePerformancesDbSystemComputePerformance)[vs[1].(int)]
+	}).(GetDbSystemComputePerformancesDbSystemComputePerformanceOutput)
+}
+
+type GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList struct {
+	// The number of OCPU cores available.
+	CpuCoreCount int `pulumi:"cpuCoreCount"`
+	// The amount of memory allocated for the VMDB System.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// The network bandwidth of the VMDB system in gbps.
+	NetworkBandwidthInGbps float64 `pulumi:"networkBandwidthInGbps"`
+	// IOPS for the VMDB System.
+	NetworkIops float64 `pulumi:"networkIops"`
+	// Network throughput for the VMDB System.
+	NetworkThroughputInMbps float64 `pulumi:"networkThroughputInMbps"`
+}
+
+// GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListInput is an input type that accepts GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArgs and GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput values.
+// You can construct a concrete instance of `GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListInput` via:
+//
+//	GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArgs{...}
+type GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListInput interface {
+	pulumi.Input
+
+	ToGetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput() GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput
+	ToGetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutputWithContext(context.Context) GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput
+}
+
+type GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArgs struct {
+	// The number of OCPU cores available.
+	CpuCoreCount pulumi.IntInput `pulumi:"cpuCoreCount"`
+	// The amount of memory allocated for the VMDB System.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// The network bandwidth of the VMDB system in gbps.
+	NetworkBandwidthInGbps pulumi.Float64Input `pulumi:"networkBandwidthInGbps"`
+	// IOPS for the VMDB System.
+	NetworkIops pulumi.Float64Input `pulumi:"networkIops"`
+	// Network throughput for the VMDB System.
+	NetworkThroughputInMbps pulumi.Float64Input `pulumi:"networkThroughputInMbps"`
+}
+
+func (GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList)(nil)).Elem()
+}
+
+func (i GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArgs) ToGetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput() GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput {
+	return i.ToGetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArgs) ToGetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutputWithContext(ctx context.Context) GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput)
+}
+
+// GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayInput is an input type that accepts GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArray and GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayInput` via:
+//
+//	GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArray{ GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArgs{...} }
+type GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput() GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput
+	ToGetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutputWithContext(context.Context) GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput
+}
+
+type GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArray []GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListInput
+
+func (GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList)(nil)).Elem()
+}
+
+func (i GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArray) ToGetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput() GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput {
+	return i.ToGetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArray) ToGetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutputWithContext(ctx context.Context) GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput)
+}
+
+type GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList)(nil)).Elem()
+}
+
+func (o GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput) ToGetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput() GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput {
+	return o
+}
+
+func (o GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput) ToGetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutputWithContext(ctx context.Context) GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput {
+	return o
+}
+
+// The number of OCPU cores available.
+func (o GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput) CpuCoreCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList) int {
+		return v.CpuCoreCount
+	}).(pulumi.IntOutput)
+}
+
+// The amount of memory allocated for the VMDB System.
+func (o GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList) float64 {
+		return v.MemoryInGbs
+	}).(pulumi.Float64Output)
+}
+
+// The network bandwidth of the VMDB system in gbps.
+func (o GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput) NetworkBandwidthInGbps() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList) float64 {
+		return v.NetworkBandwidthInGbps
+	}).(pulumi.Float64Output)
+}
+
+// IOPS for the VMDB System.
+func (o GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput) NetworkIops() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList) float64 {
+		return v.NetworkIops
+	}).(pulumi.Float64Output)
+}
+
+// Network throughput for the VMDB System.
+func (o GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput) NetworkThroughputInMbps() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList) float64 {
+		return v.NetworkThroughputInMbps
+	}).(pulumi.Float64Output)
+}
+
+type GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList)(nil)).Elem()
+}
+
+func (o GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput) ToGetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput() GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput {
+	return o
+}
+
+func (o GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput) ToGetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutputWithContext(ctx context.Context) GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput {
+	return o
+}
+
+func (o GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput) Index(i pulumi.IntInput) GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList {
+		return vs[0].([]GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList)[vs[1].(int)]
+	}).(GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput)
+}
+
+type GetDbSystemComputePerformancesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDbSystemComputePerformancesFilterInput is an input type that accepts GetDbSystemComputePerformancesFilterArgs and GetDbSystemComputePerformancesFilterOutput values.
+// You can construct a concrete instance of `GetDbSystemComputePerformancesFilterInput` via:
+//
+//	GetDbSystemComputePerformancesFilterArgs{...}
+type GetDbSystemComputePerformancesFilterInput interface {
+	pulumi.Input
+
+	ToGetDbSystemComputePerformancesFilterOutput() GetDbSystemComputePerformancesFilterOutput
+	ToGetDbSystemComputePerformancesFilterOutputWithContext(context.Context) GetDbSystemComputePerformancesFilterOutput
+}
+
+type GetDbSystemComputePerformancesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDbSystemComputePerformancesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemComputePerformancesFilter)(nil)).Elem()
+}
+
+func (i GetDbSystemComputePerformancesFilterArgs) ToGetDbSystemComputePerformancesFilterOutput() GetDbSystemComputePerformancesFilterOutput {
+	return i.ToGetDbSystemComputePerformancesFilterOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemComputePerformancesFilterArgs) ToGetDbSystemComputePerformancesFilterOutputWithContext(ctx context.Context) GetDbSystemComputePerformancesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemComputePerformancesFilterOutput)
+}
+
+// GetDbSystemComputePerformancesFilterArrayInput is an input type that accepts GetDbSystemComputePerformancesFilterArray and GetDbSystemComputePerformancesFilterArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemComputePerformancesFilterArrayInput` via:
+//
+//	GetDbSystemComputePerformancesFilterArray{ GetDbSystemComputePerformancesFilterArgs{...} }
+type GetDbSystemComputePerformancesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemComputePerformancesFilterArrayOutput() GetDbSystemComputePerformancesFilterArrayOutput
+	ToGetDbSystemComputePerformancesFilterArrayOutputWithContext(context.Context) GetDbSystemComputePerformancesFilterArrayOutput
+}
+
+type GetDbSystemComputePerformancesFilterArray []GetDbSystemComputePerformancesFilterInput
+
+func (GetDbSystemComputePerformancesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemComputePerformancesFilter)(nil)).Elem()
+}
+
+func (i GetDbSystemComputePerformancesFilterArray) ToGetDbSystemComputePerformancesFilterArrayOutput() GetDbSystemComputePerformancesFilterArrayOutput {
+	return i.ToGetDbSystemComputePerformancesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemComputePerformancesFilterArray) ToGetDbSystemComputePerformancesFilterArrayOutputWithContext(ctx context.Context) GetDbSystemComputePerformancesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemComputePerformancesFilterArrayOutput)
+}
+
+type GetDbSystemComputePerformancesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemComputePerformancesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemComputePerformancesFilter)(nil)).Elem()
+}
+
+func (o GetDbSystemComputePerformancesFilterOutput) ToGetDbSystemComputePerformancesFilterOutput() GetDbSystemComputePerformancesFilterOutput {
+	return o
+}
+
+func (o GetDbSystemComputePerformancesFilterOutput) ToGetDbSystemComputePerformancesFilterOutputWithContext(ctx context.Context) GetDbSystemComputePerformancesFilterOutput {
+	return o
+}
+
+func (o GetDbSystemComputePerformancesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemComputePerformancesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemComputePerformancesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDbSystemComputePerformancesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDbSystemComputePerformancesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbSystemComputePerformancesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDbSystemComputePerformancesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemComputePerformancesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemComputePerformancesFilter)(nil)).Elem()
+}
+
+func (o GetDbSystemComputePerformancesFilterArrayOutput) ToGetDbSystemComputePerformancesFilterArrayOutput() GetDbSystemComputePerformancesFilterArrayOutput {
+	return o
+}
+
+func (o GetDbSystemComputePerformancesFilterArrayOutput) ToGetDbSystemComputePerformancesFilterArrayOutputWithContext(ctx context.Context) GetDbSystemComputePerformancesFilterArrayOutput {
+	return o
+}
+
+func (o GetDbSystemComputePerformancesFilterArrayOutput) Index(i pulumi.IntInput) GetDbSystemComputePerformancesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemComputePerformancesFilter {
+		return vs[0].([]GetDbSystemComputePerformancesFilter)[vs[1].(int)]
+	}).(GetDbSystemComputePerformancesFilterOutput)
+}
+
+type GetDbSystemHistoryEntriesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDbSystemHistoryEntriesFilterInput is an input type that accepts GetDbSystemHistoryEntriesFilterArgs and GetDbSystemHistoryEntriesFilterOutput values.
+// You can construct a concrete instance of `GetDbSystemHistoryEntriesFilterInput` via:
+//
+//	GetDbSystemHistoryEntriesFilterArgs{...}
+type GetDbSystemHistoryEntriesFilterInput interface {
+	pulumi.Input
+
+	ToGetDbSystemHistoryEntriesFilterOutput() GetDbSystemHistoryEntriesFilterOutput
+	ToGetDbSystemHistoryEntriesFilterOutputWithContext(context.Context) GetDbSystemHistoryEntriesFilterOutput
+}
+
+type GetDbSystemHistoryEntriesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDbSystemHistoryEntriesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemHistoryEntriesFilter)(nil)).Elem()
+}
+
+func (i GetDbSystemHistoryEntriesFilterArgs) ToGetDbSystemHistoryEntriesFilterOutput() GetDbSystemHistoryEntriesFilterOutput {
+	return i.ToGetDbSystemHistoryEntriesFilterOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemHistoryEntriesFilterArgs) ToGetDbSystemHistoryEntriesFilterOutputWithContext(ctx context.Context) GetDbSystemHistoryEntriesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemHistoryEntriesFilterOutput)
+}
+
+// GetDbSystemHistoryEntriesFilterArrayInput is an input type that accepts GetDbSystemHistoryEntriesFilterArray and GetDbSystemHistoryEntriesFilterArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemHistoryEntriesFilterArrayInput` via:
+//
+//	GetDbSystemHistoryEntriesFilterArray{ GetDbSystemHistoryEntriesFilterArgs{...} }
+type GetDbSystemHistoryEntriesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemHistoryEntriesFilterArrayOutput() GetDbSystemHistoryEntriesFilterArrayOutput
+	ToGetDbSystemHistoryEntriesFilterArrayOutputWithContext(context.Context) GetDbSystemHistoryEntriesFilterArrayOutput
+}
+
+type GetDbSystemHistoryEntriesFilterArray []GetDbSystemHistoryEntriesFilterInput
+
+func (GetDbSystemHistoryEntriesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemHistoryEntriesFilter)(nil)).Elem()
+}
+
+func (i GetDbSystemHistoryEntriesFilterArray) ToGetDbSystemHistoryEntriesFilterArrayOutput() GetDbSystemHistoryEntriesFilterArrayOutput {
+	return i.ToGetDbSystemHistoryEntriesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemHistoryEntriesFilterArray) ToGetDbSystemHistoryEntriesFilterArrayOutputWithContext(ctx context.Context) GetDbSystemHistoryEntriesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemHistoryEntriesFilterArrayOutput)
+}
+
+type GetDbSystemHistoryEntriesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemHistoryEntriesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemHistoryEntriesFilter)(nil)).Elem()
+}
+
+func (o GetDbSystemHistoryEntriesFilterOutput) ToGetDbSystemHistoryEntriesFilterOutput() GetDbSystemHistoryEntriesFilterOutput {
+	return o
+}
+
+func (o GetDbSystemHistoryEntriesFilterOutput) ToGetDbSystemHistoryEntriesFilterOutputWithContext(ctx context.Context) GetDbSystemHistoryEntriesFilterOutput {
+	return o
+}
+
+func (o GetDbSystemHistoryEntriesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemHistoryEntriesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemHistoryEntriesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDbSystemHistoryEntriesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDbSystemHistoryEntriesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbSystemHistoryEntriesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDbSystemHistoryEntriesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemHistoryEntriesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemHistoryEntriesFilter)(nil)).Elem()
+}
+
+func (o GetDbSystemHistoryEntriesFilterArrayOutput) ToGetDbSystemHistoryEntriesFilterArrayOutput() GetDbSystemHistoryEntriesFilterArrayOutput {
+	return o
+}
+
+func (o GetDbSystemHistoryEntriesFilterArrayOutput) ToGetDbSystemHistoryEntriesFilterArrayOutputWithContext(ctx context.Context) GetDbSystemHistoryEntriesFilterArrayOutput {
+	return o
+}
+
+func (o GetDbSystemHistoryEntriesFilterArrayOutput) Index(i pulumi.IntInput) GetDbSystemHistoryEntriesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemHistoryEntriesFilter {
+		return vs[0].([]GetDbSystemHistoryEntriesFilter)[vs[1].(int)]
+	}).(GetDbSystemHistoryEntriesFilterOutput)
+}
+
+type GetDbSystemHistoryEntriesPatchHistoryEntry struct {
+	// The action being performed or was completed.
+	Action string `pulumi:"action"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch history entry.
+	Id string `pulumi:"id"`
+	// A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
+	PatchId string `pulumi:"patchId"`
+	// The type of Patch operation.
+	PatchType string `pulumi:"patchType"`
+	// The current state of the action.
+	State string `pulumi:"state"`
+	// The date and time when the patch action completed
+	TimeEnded string `pulumi:"timeEnded"`
+	// The date and time when the patch action started.
+	TimeStarted string `pulumi:"timeStarted"`
+}
+
+// GetDbSystemHistoryEntriesPatchHistoryEntryInput is an input type that accepts GetDbSystemHistoryEntriesPatchHistoryEntryArgs and GetDbSystemHistoryEntriesPatchHistoryEntryOutput values.
+// You can construct a concrete instance of `GetDbSystemHistoryEntriesPatchHistoryEntryInput` via:
+//
+//	GetDbSystemHistoryEntriesPatchHistoryEntryArgs{...}
+type GetDbSystemHistoryEntriesPatchHistoryEntryInput interface {
+	pulumi.Input
+
+	ToGetDbSystemHistoryEntriesPatchHistoryEntryOutput() GetDbSystemHistoryEntriesPatchHistoryEntryOutput
+	ToGetDbSystemHistoryEntriesPatchHistoryEntryOutputWithContext(context.Context) GetDbSystemHistoryEntriesPatchHistoryEntryOutput
+}
+
+type GetDbSystemHistoryEntriesPatchHistoryEntryArgs struct {
+	// The action being performed or was completed.
+	Action pulumi.StringInput `pulumi:"action"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch history entry.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
+	PatchId pulumi.StringInput `pulumi:"patchId"`
+	// The type of Patch operation.
+	PatchType pulumi.StringInput `pulumi:"patchType"`
+	// The current state of the action.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time when the patch action completed
+	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	// The date and time when the patch action started.
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+}
+
+func (GetDbSystemHistoryEntriesPatchHistoryEntryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemHistoryEntriesPatchHistoryEntry)(nil)).Elem()
+}
+
+func (i GetDbSystemHistoryEntriesPatchHistoryEntryArgs) ToGetDbSystemHistoryEntriesPatchHistoryEntryOutput() GetDbSystemHistoryEntriesPatchHistoryEntryOutput {
+	return i.ToGetDbSystemHistoryEntriesPatchHistoryEntryOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemHistoryEntriesPatchHistoryEntryArgs) ToGetDbSystemHistoryEntriesPatchHistoryEntryOutputWithContext(ctx context.Context) GetDbSystemHistoryEntriesPatchHistoryEntryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemHistoryEntriesPatchHistoryEntryOutput)
+}
+
+// GetDbSystemHistoryEntriesPatchHistoryEntryArrayInput is an input type that accepts GetDbSystemHistoryEntriesPatchHistoryEntryArray and GetDbSystemHistoryEntriesPatchHistoryEntryArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemHistoryEntriesPatchHistoryEntryArrayInput` via:
+//
+//	GetDbSystemHistoryEntriesPatchHistoryEntryArray{ GetDbSystemHistoryEntriesPatchHistoryEntryArgs{...} }
+type GetDbSystemHistoryEntriesPatchHistoryEntryArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemHistoryEntriesPatchHistoryEntryArrayOutput() GetDbSystemHistoryEntriesPatchHistoryEntryArrayOutput
+	ToGetDbSystemHistoryEntriesPatchHistoryEntryArrayOutputWithContext(context.Context) GetDbSystemHistoryEntriesPatchHistoryEntryArrayOutput
+}
+
+type GetDbSystemHistoryEntriesPatchHistoryEntryArray []GetDbSystemHistoryEntriesPatchHistoryEntryInput
+
+func (GetDbSystemHistoryEntriesPatchHistoryEntryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemHistoryEntriesPatchHistoryEntry)(nil)).Elem()
+}
+
+func (i GetDbSystemHistoryEntriesPatchHistoryEntryArray) ToGetDbSystemHistoryEntriesPatchHistoryEntryArrayOutput() GetDbSystemHistoryEntriesPatchHistoryEntryArrayOutput {
+	return i.ToGetDbSystemHistoryEntriesPatchHistoryEntryArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemHistoryEntriesPatchHistoryEntryArray) ToGetDbSystemHistoryEntriesPatchHistoryEntryArrayOutputWithContext(ctx context.Context) GetDbSystemHistoryEntriesPatchHistoryEntryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemHistoryEntriesPatchHistoryEntryArrayOutput)
+}
+
+type GetDbSystemHistoryEntriesPatchHistoryEntryOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemHistoryEntriesPatchHistoryEntryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemHistoryEntriesPatchHistoryEntry)(nil)).Elem()
+}
+
+func (o GetDbSystemHistoryEntriesPatchHistoryEntryOutput) ToGetDbSystemHistoryEntriesPatchHistoryEntryOutput() GetDbSystemHistoryEntriesPatchHistoryEntryOutput {
+	return o
+}
+
+func (o GetDbSystemHistoryEntriesPatchHistoryEntryOutput) ToGetDbSystemHistoryEntriesPatchHistoryEntryOutputWithContext(ctx context.Context) GetDbSystemHistoryEntriesPatchHistoryEntryOutput {
+	return o
+}
+
+// The action being performed or was completed.
+func (o GetDbSystemHistoryEntriesPatchHistoryEntryOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemHistoryEntriesPatchHistoryEntry) string { return v.Action }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch history entry.
+func (o GetDbSystemHistoryEntriesPatchHistoryEntryOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemHistoryEntriesPatchHistoryEntry) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
+func (o GetDbSystemHistoryEntriesPatchHistoryEntryOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemHistoryEntriesPatchHistoryEntry) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
+func (o GetDbSystemHistoryEntriesPatchHistoryEntryOutput) PatchId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemHistoryEntriesPatchHistoryEntry) string { return v.PatchId }).(pulumi.StringOutput)
+}
+
+// The type of Patch operation.
+func (o GetDbSystemHistoryEntriesPatchHistoryEntryOutput) PatchType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemHistoryEntriesPatchHistoryEntry) string { return v.PatchType }).(pulumi.StringOutput)
+}
+
+// The current state of the action.
+func (o GetDbSystemHistoryEntriesPatchHistoryEntryOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemHistoryEntriesPatchHistoryEntry) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time when the patch action completed
+func (o GetDbSystemHistoryEntriesPatchHistoryEntryOutput) TimeEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemHistoryEntriesPatchHistoryEntry) string { return v.TimeEnded }).(pulumi.StringOutput)
+}
+
+// The date and time when the patch action started.
+func (o GetDbSystemHistoryEntriesPatchHistoryEntryOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemHistoryEntriesPatchHistoryEntry) string { return v.TimeStarted }).(pulumi.StringOutput)
+}
+
+type GetDbSystemHistoryEntriesPatchHistoryEntryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemHistoryEntriesPatchHistoryEntryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemHistoryEntriesPatchHistoryEntry)(nil)).Elem()
+}
+
+func (o GetDbSystemHistoryEntriesPatchHistoryEntryArrayOutput) ToGetDbSystemHistoryEntriesPatchHistoryEntryArrayOutput() GetDbSystemHistoryEntriesPatchHistoryEntryArrayOutput {
+	return o
+}
+
+func (o GetDbSystemHistoryEntriesPatchHistoryEntryArrayOutput) ToGetDbSystemHistoryEntriesPatchHistoryEntryArrayOutputWithContext(ctx context.Context) GetDbSystemHistoryEntriesPatchHistoryEntryArrayOutput {
+	return o
+}
+
+func (o GetDbSystemHistoryEntriesPatchHistoryEntryArrayOutput) Index(i pulumi.IntInput) GetDbSystemHistoryEntriesPatchHistoryEntryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemHistoryEntriesPatchHistoryEntry {
+		return vs[0].([]GetDbSystemHistoryEntriesPatchHistoryEntry)[vs[1].(int)]
+	}).(GetDbSystemHistoryEntriesPatchHistoryEntryOutput)
+}
+
+type GetDbSystemPatchesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDbSystemPatchesFilterInput is an input type that accepts GetDbSystemPatchesFilterArgs and GetDbSystemPatchesFilterOutput values.
+// You can construct a concrete instance of `GetDbSystemPatchesFilterInput` via:
+//
+//	GetDbSystemPatchesFilterArgs{...}
+type GetDbSystemPatchesFilterInput interface {
+	pulumi.Input
+
+	ToGetDbSystemPatchesFilterOutput() GetDbSystemPatchesFilterOutput
+	ToGetDbSystemPatchesFilterOutputWithContext(context.Context) GetDbSystemPatchesFilterOutput
+}
+
+type GetDbSystemPatchesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDbSystemPatchesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemPatchesFilter)(nil)).Elem()
+}
+
+func (i GetDbSystemPatchesFilterArgs) ToGetDbSystemPatchesFilterOutput() GetDbSystemPatchesFilterOutput {
+	return i.ToGetDbSystemPatchesFilterOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemPatchesFilterArgs) ToGetDbSystemPatchesFilterOutputWithContext(ctx context.Context) GetDbSystemPatchesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemPatchesFilterOutput)
+}
+
+// GetDbSystemPatchesFilterArrayInput is an input type that accepts GetDbSystemPatchesFilterArray and GetDbSystemPatchesFilterArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemPatchesFilterArrayInput` via:
+//
+//	GetDbSystemPatchesFilterArray{ GetDbSystemPatchesFilterArgs{...} }
+type GetDbSystemPatchesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemPatchesFilterArrayOutput() GetDbSystemPatchesFilterArrayOutput
+	ToGetDbSystemPatchesFilterArrayOutputWithContext(context.Context) GetDbSystemPatchesFilterArrayOutput
+}
+
+type GetDbSystemPatchesFilterArray []GetDbSystemPatchesFilterInput
+
+func (GetDbSystemPatchesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemPatchesFilter)(nil)).Elem()
+}
+
+func (i GetDbSystemPatchesFilterArray) ToGetDbSystemPatchesFilterArrayOutput() GetDbSystemPatchesFilterArrayOutput {
+	return i.ToGetDbSystemPatchesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemPatchesFilterArray) ToGetDbSystemPatchesFilterArrayOutputWithContext(ctx context.Context) GetDbSystemPatchesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemPatchesFilterArrayOutput)
+}
+
+type GetDbSystemPatchesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemPatchesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemPatchesFilter)(nil)).Elem()
+}
+
+func (o GetDbSystemPatchesFilterOutput) ToGetDbSystemPatchesFilterOutput() GetDbSystemPatchesFilterOutput {
+	return o
+}
+
+func (o GetDbSystemPatchesFilterOutput) ToGetDbSystemPatchesFilterOutputWithContext(ctx context.Context) GetDbSystemPatchesFilterOutput {
+	return o
+}
+
+func (o GetDbSystemPatchesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemPatchesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemPatchesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDbSystemPatchesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDbSystemPatchesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbSystemPatchesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDbSystemPatchesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemPatchesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemPatchesFilter)(nil)).Elem()
+}
+
+func (o GetDbSystemPatchesFilterArrayOutput) ToGetDbSystemPatchesFilterArrayOutput() GetDbSystemPatchesFilterArrayOutput {
+	return o
+}
+
+func (o GetDbSystemPatchesFilterArrayOutput) ToGetDbSystemPatchesFilterArrayOutputWithContext(ctx context.Context) GetDbSystemPatchesFilterArrayOutput {
+	return o
+}
+
+func (o GetDbSystemPatchesFilterArrayOutput) Index(i pulumi.IntInput) GetDbSystemPatchesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemPatchesFilter {
+		return vs[0].([]GetDbSystemPatchesFilter)[vs[1].(int)]
+	}).(GetDbSystemPatchesFilterOutput)
+}
+
 type GetDbSystemPatchesPatch struct {
 	// Actions that can possibly be performed using this patch.
 	AvailableActions []string `pulumi:"availableActions"`
@@ -174,6 +1133,8 @@ func (o GetDbSystemPatchesPatchArrayOutput) Index(i pulumi.IntInput) GetDbSystem
 }
 
 type GetDbSystemShapesDbSystemShape struct {
+	// If true, the shape supports configurable DB and Storage Server types.
+	AreServerTypesSupported bool `pulumi:"areServerTypesSupported"`
 	// The maximum number of CPU cores that can be enabled on the DB system for this shape.
 	AvailableCoreCount int `pulumi:"availableCoreCount"`
 	// The maximum number of CPU cores per database node that can be enabled for this shape. Only applicable to the flex Exadata shape, ExaCC Elastic shapes and VM Flex shapes.
@@ -190,8 +1151,12 @@ type GetDbSystemShapesDbSystemShape struct {
 	AvailableMemoryInGbs int `pulumi:"availableMemoryInGbs"`
 	// The maximum memory available per database node for this shape. Only applicable to ExaCC Elastic shapes.
 	AvailableMemoryPerNodeInGbs int `pulumi:"availableMemoryPerNodeInGbs"`
+	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+	ComputeModel string `pulumi:"computeModel"`
 	// The discrete number by which the CPU core count for this shape can be increased or decreased.
 	CoreCountIncrement int `pulumi:"coreCountIncrement"`
+	// The display name of the shape used for the DB system.
+	DisplayName string `pulumi:"displayName"`
 	// The maximum number of Exadata storage servers available for the Exadata infrastructure.
 	MaxStorageCount int `pulumi:"maxStorageCount"`
 	// The maximum number of compute servers available for this shape.
@@ -234,6 +1199,8 @@ type GetDbSystemShapesDbSystemShapeInput interface {
 }
 
 type GetDbSystemShapesDbSystemShapeArgs struct {
+	// If true, the shape supports configurable DB and Storage Server types.
+	AreServerTypesSupported pulumi.BoolInput `pulumi:"areServerTypesSupported"`
 	// The maximum number of CPU cores that can be enabled on the DB system for this shape.
 	AvailableCoreCount pulumi.IntInput `pulumi:"availableCoreCount"`
 	// The maximum number of CPU cores per database node that can be enabled for this shape. Only applicable to the flex Exadata shape, ExaCC Elastic shapes and VM Flex shapes.
@@ -250,8 +1217,12 @@ type GetDbSystemShapesDbSystemShapeArgs struct {
 	AvailableMemoryInGbs pulumi.IntInput `pulumi:"availableMemoryInGbs"`
 	// The maximum memory available per database node for this shape. Only applicable to ExaCC Elastic shapes.
 	AvailableMemoryPerNodeInGbs pulumi.IntInput `pulumi:"availableMemoryPerNodeInGbs"`
+	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+	ComputeModel pulumi.StringInput `pulumi:"computeModel"`
 	// The discrete number by which the CPU core count for this shape can be increased or decreased.
 	CoreCountIncrement pulumi.IntInput `pulumi:"coreCountIncrement"`
+	// The display name of the shape used for the DB system.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The maximum number of Exadata storage servers available for the Exadata infrastructure.
 	MaxStorageCount pulumi.IntInput `pulumi:"maxStorageCount"`
 	// The maximum number of compute servers available for this shape.
@@ -333,6 +1304,11 @@ func (o GetDbSystemShapesDbSystemShapeOutput) ToGetDbSystemShapesDbSystemShapeOu
 	return o
 }
 
+// If true, the shape supports configurable DB and Storage Server types.
+func (o GetDbSystemShapesDbSystemShapeOutput) AreServerTypesSupported() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbSystemShapesDbSystemShape) bool { return v.AreServerTypesSupported }).(pulumi.BoolOutput)
+}
+
 // The maximum number of CPU cores that can be enabled on the DB system for this shape.
 func (o GetDbSystemShapesDbSystemShapeOutput) AvailableCoreCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDbSystemShapesDbSystemShape) int { return v.AvailableCoreCount }).(pulumi.IntOutput)
@@ -373,9 +1349,19 @@ func (o GetDbSystemShapesDbSystemShapeOutput) AvailableMemoryPerNodeInGbs() pulu
 	return o.ApplyT(func(v GetDbSystemShapesDbSystemShape) int { return v.AvailableMemoryPerNodeInGbs }).(pulumi.IntOutput)
 }
 
+// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+func (o GetDbSystemShapesDbSystemShapeOutput) ComputeModel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemShapesDbSystemShape) string { return v.ComputeModel }).(pulumi.StringOutput)
+}
+
 // The discrete number by which the CPU core count for this shape can be increased or decreased.
 func (o GetDbSystemShapesDbSystemShapeOutput) CoreCountIncrement() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDbSystemShapesDbSystemShape) int { return v.CoreCountIncrement }).(pulumi.IntOutput)
+}
+
+// The display name of the shape used for the DB system.
+func (o GetDbSystemShapesDbSystemShapeOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemShapesDbSystemShape) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
 // The maximum number of Exadata storage servers available for the Exadata infrastructure.
@@ -1500,7 +2486,7 @@ type GetDbSystemsDbSystem struct {
 	DataStoragePercentage int `pulumi:"dataStoragePercentage"`
 	// The data storage size, in gigabytes, that is currently available to the DB system. Applies only for virtual machine DB systems. Required for VMDBs.
 	DataStorageSizeInGb int `pulumi:"dataStorageSizeInGb"`
-	// The Oracle Database edition that applies to all the databases on the DB system.
+	// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
 	DatabaseEdition string                       `pulumi:"databaseEdition"`
 	DbHomes         []GetDbSystemsDbSystemDbHome `pulumi:"dbHomes"`
 	// The DB system options.
@@ -1626,7 +2612,7 @@ type GetDbSystemsDbSystemArgs struct {
 	DataStoragePercentage pulumi.IntInput `pulumi:"dataStoragePercentage"`
 	// The data storage size, in gigabytes, that is currently available to the DB system. Applies only for virtual machine DB systems. Required for VMDBs.
 	DataStorageSizeInGb pulumi.IntInput `pulumi:"dataStorageSizeInGb"`
-	// The Oracle Database edition that applies to all the databases on the DB system.
+	// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
 	DatabaseEdition pulumi.StringInput                   `pulumi:"databaseEdition"`
 	DbHomes         GetDbSystemsDbSystemDbHomeArrayInput `pulumi:"dbHomes"`
 	// The DB system options.
@@ -1820,7 +2806,7 @@ func (o GetDbSystemsDbSystemOutput) DataStorageSizeInGb() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystem) int { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
 }
 
-// The Oracle Database edition that applies to all the databases on the DB system.
+// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
 func (o GetDbSystemsDbSystemOutput) DatabaseEdition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.DatabaseEdition }).(pulumi.StringOutput)
 }
@@ -5022,6 +6008,112 @@ func (o GetExadataInfrastructureDefinedFileSystemConfigurationArrayOutput) Index
 	}).(GetExadataInfrastructureDefinedFileSystemConfigurationOutput)
 }
 
+type GetExadataInfrastructureExascaleConfig struct {
+	// Available storage size for Exascale in GBs.
+	AvailableStorageInGbs int `pulumi:"availableStorageInGbs"`
+	// Storage size needed for Exascale in GBs.
+	TotalStorageInGbs int `pulumi:"totalStorageInGbs"`
+}
+
+// GetExadataInfrastructureExascaleConfigInput is an input type that accepts GetExadataInfrastructureExascaleConfigArgs and GetExadataInfrastructureExascaleConfigOutput values.
+// You can construct a concrete instance of `GetExadataInfrastructureExascaleConfigInput` via:
+//
+//	GetExadataInfrastructureExascaleConfigArgs{...}
+type GetExadataInfrastructureExascaleConfigInput interface {
+	pulumi.Input
+
+	ToGetExadataInfrastructureExascaleConfigOutput() GetExadataInfrastructureExascaleConfigOutput
+	ToGetExadataInfrastructureExascaleConfigOutputWithContext(context.Context) GetExadataInfrastructureExascaleConfigOutput
+}
+
+type GetExadataInfrastructureExascaleConfigArgs struct {
+	// Available storage size for Exascale in GBs.
+	AvailableStorageInGbs pulumi.IntInput `pulumi:"availableStorageInGbs"`
+	// Storage size needed for Exascale in GBs.
+	TotalStorageInGbs pulumi.IntInput `pulumi:"totalStorageInGbs"`
+}
+
+func (GetExadataInfrastructureExascaleConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInfrastructureExascaleConfig)(nil)).Elem()
+}
+
+func (i GetExadataInfrastructureExascaleConfigArgs) ToGetExadataInfrastructureExascaleConfigOutput() GetExadataInfrastructureExascaleConfigOutput {
+	return i.ToGetExadataInfrastructureExascaleConfigOutputWithContext(context.Background())
+}
+
+func (i GetExadataInfrastructureExascaleConfigArgs) ToGetExadataInfrastructureExascaleConfigOutputWithContext(ctx context.Context) GetExadataInfrastructureExascaleConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInfrastructureExascaleConfigOutput)
+}
+
+// GetExadataInfrastructureExascaleConfigArrayInput is an input type that accepts GetExadataInfrastructureExascaleConfigArray and GetExadataInfrastructureExascaleConfigArrayOutput values.
+// You can construct a concrete instance of `GetExadataInfrastructureExascaleConfigArrayInput` via:
+//
+//	GetExadataInfrastructureExascaleConfigArray{ GetExadataInfrastructureExascaleConfigArgs{...} }
+type GetExadataInfrastructureExascaleConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetExadataInfrastructureExascaleConfigArrayOutput() GetExadataInfrastructureExascaleConfigArrayOutput
+	ToGetExadataInfrastructureExascaleConfigArrayOutputWithContext(context.Context) GetExadataInfrastructureExascaleConfigArrayOutput
+}
+
+type GetExadataInfrastructureExascaleConfigArray []GetExadataInfrastructureExascaleConfigInput
+
+func (GetExadataInfrastructureExascaleConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInfrastructureExascaleConfig)(nil)).Elem()
+}
+
+func (i GetExadataInfrastructureExascaleConfigArray) ToGetExadataInfrastructureExascaleConfigArrayOutput() GetExadataInfrastructureExascaleConfigArrayOutput {
+	return i.ToGetExadataInfrastructureExascaleConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadataInfrastructureExascaleConfigArray) ToGetExadataInfrastructureExascaleConfigArrayOutputWithContext(ctx context.Context) GetExadataInfrastructureExascaleConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInfrastructureExascaleConfigArrayOutput)
+}
+
+type GetExadataInfrastructureExascaleConfigOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInfrastructureExascaleConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInfrastructureExascaleConfig)(nil)).Elem()
+}
+
+func (o GetExadataInfrastructureExascaleConfigOutput) ToGetExadataInfrastructureExascaleConfigOutput() GetExadataInfrastructureExascaleConfigOutput {
+	return o
+}
+
+func (o GetExadataInfrastructureExascaleConfigOutput) ToGetExadataInfrastructureExascaleConfigOutputWithContext(ctx context.Context) GetExadataInfrastructureExascaleConfigOutput {
+	return o
+}
+
+// Available storage size for Exascale in GBs.
+func (o GetExadataInfrastructureExascaleConfigOutput) AvailableStorageInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureExascaleConfig) int { return v.AvailableStorageInGbs }).(pulumi.IntOutput)
+}
+
+// Storage size needed for Exascale in GBs.
+func (o GetExadataInfrastructureExascaleConfigOutput) TotalStorageInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureExascaleConfig) int { return v.TotalStorageInGbs }).(pulumi.IntOutput)
+}
+
+type GetExadataInfrastructureExascaleConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInfrastructureExascaleConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInfrastructureExascaleConfig)(nil)).Elem()
+}
+
+func (o GetExadataInfrastructureExascaleConfigArrayOutput) ToGetExadataInfrastructureExascaleConfigArrayOutput() GetExadataInfrastructureExascaleConfigArrayOutput {
+	return o
+}
+
+func (o GetExadataInfrastructureExascaleConfigArrayOutput) ToGetExadataInfrastructureExascaleConfigArrayOutputWithContext(ctx context.Context) GetExadataInfrastructureExascaleConfigArrayOutput {
+	return o
+}
+
+func (o GetExadataInfrastructureExascaleConfigArrayOutput) Index(i pulumi.IntInput) GetExadataInfrastructureExascaleConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInfrastructureExascaleConfig {
+		return vs[0].([]GetExadataInfrastructureExascaleConfig)[vs[1].(int)]
+	}).(GetExadataInfrastructureExascaleConfigOutput)
+}
+
 type GetExadataInfrastructureMaintenanceWindow struct {
 	// Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
 	CustomActionTimeoutInMins int `pulumi:"customActionTimeoutInMins"`
@@ -5652,6 +6744,8 @@ type GetExadataInfrastructuresExadataInfrastructure struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The number of compute servers for the Exadata infrastructure.
 	ComputeCount int `pulumi:"computeCount"`
+	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+	ComputeModel string `pulumi:"computeModel"`
 	// The list of contacts for the Exadata infrastructure.
 	Contacts []GetExadataInfrastructuresExadataInfrastructureContact `pulumi:"contacts"`
 	// The corporate network proxy for access to the control plane network.
@@ -5663,6 +6757,8 @@ type GetExadataInfrastructuresExadataInfrastructure struct {
 	CsiNumber string `pulumi:"csiNumber"`
 	// Size, in terabytes, of the DATA disk group.
 	DataStorageSizeInTbs float64 `pulumi:"dataStorageSizeInTbs"`
+	// The database server type of the Exadata infrastructure.
+	DatabaseServerType string `pulumi:"databaseServerType"`
 	// The local node storage allocated in GBs.
 	DbNodeStorageSizeInGbs int `pulumi:"dbNodeStorageSizeInGbs"`
 	// The software version of the database servers (dom0) in the Exadata infrastructure.
@@ -5675,6 +6771,8 @@ type GetExadataInfrastructuresExadataInfrastructure struct {
 	DisplayName string `pulumi:"displayName"`
 	// The list of DNS server IP addresses. Maximum of 3 allowed.
 	DnsServers []string `pulumi:"dnsServers"`
+	// The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+	ExascaleConfigs []GetExadataInfrastructuresExadataInfrastructureExascaleConfig `pulumi:"exascaleConfigs"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The gateway for the control plane network.
@@ -5723,6 +6821,8 @@ type GetExadataInfrastructuresExadataInfrastructure struct {
 	State string `pulumi:"state"`
 	// The number of Exadata storage servers for the Exadata infrastructure.
 	StorageCount int `pulumi:"storageCount"`
+	// The storage server type of the Exadata infrastructure.
+	StorageServerType string `pulumi:"storageServerType"`
 	// The software version of the storage servers (cells) in the Exadata infrastructure.
 	StorageServerVersion string `pulumi:"storageServerVersion"`
 	// The date and time the Exadata infrastructure was created.
@@ -5764,6 +6864,8 @@ type GetExadataInfrastructuresExadataInfrastructureArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The number of compute servers for the Exadata infrastructure.
 	ComputeCount pulumi.IntInput `pulumi:"computeCount"`
+	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+	ComputeModel pulumi.StringInput `pulumi:"computeModel"`
 	// The list of contacts for the Exadata infrastructure.
 	Contacts GetExadataInfrastructuresExadataInfrastructureContactArrayInput `pulumi:"contacts"`
 	// The corporate network proxy for access to the control plane network.
@@ -5775,6 +6877,8 @@ type GetExadataInfrastructuresExadataInfrastructureArgs struct {
 	CsiNumber pulumi.StringInput `pulumi:"csiNumber"`
 	// Size, in terabytes, of the DATA disk group.
 	DataStorageSizeInTbs pulumi.Float64Input `pulumi:"dataStorageSizeInTbs"`
+	// The database server type of the Exadata infrastructure.
+	DatabaseServerType pulumi.StringInput `pulumi:"databaseServerType"`
 	// The local node storage allocated in GBs.
 	DbNodeStorageSizeInGbs pulumi.IntInput `pulumi:"dbNodeStorageSizeInGbs"`
 	// The software version of the database servers (dom0) in the Exadata infrastructure.
@@ -5787,6 +6891,8 @@ type GetExadataInfrastructuresExadataInfrastructureArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The list of DNS server IP addresses. Maximum of 3 allowed.
 	DnsServers pulumi.StringArrayInput `pulumi:"dnsServers"`
+	// The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+	ExascaleConfigs GetExadataInfrastructuresExadataInfrastructureExascaleConfigArrayInput `pulumi:"exascaleConfigs"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The gateway for the control plane network.
@@ -5835,6 +6941,8 @@ type GetExadataInfrastructuresExadataInfrastructureArgs struct {
 	State pulumi.StringInput `pulumi:"state"`
 	// The number of Exadata storage servers for the Exadata infrastructure.
 	StorageCount pulumi.IntInput `pulumi:"storageCount"`
+	// The storage server type of the Exadata infrastructure.
+	StorageServerType pulumi.StringInput `pulumi:"storageServerType"`
 	// The software version of the storage servers (cells) in the Exadata infrastructure.
 	StorageServerVersion pulumi.StringInput `pulumi:"storageServerVersion"`
 	// The date and time the Exadata infrastructure was created.
@@ -5948,6 +7056,11 @@ func (o GetExadataInfrastructuresExadataInfrastructureOutput) ComputeCount() pul
 	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) int { return v.ComputeCount }).(pulumi.IntOutput)
 }
 
+// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) ComputeModel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) string { return v.ComputeModel }).(pulumi.StringOutput)
+}
+
 // The list of contacts for the Exadata infrastructure.
 func (o GetExadataInfrastructuresExadataInfrastructureOutput) Contacts() GetExadataInfrastructuresExadataInfrastructureContactArrayOutput {
 	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) []GetExadataInfrastructuresExadataInfrastructureContact {
@@ -5977,6 +7090,11 @@ func (o GetExadataInfrastructuresExadataInfrastructureOutput) CsiNumber() pulumi
 // Size, in terabytes, of the DATA disk group.
 func (o GetExadataInfrastructuresExadataInfrastructureOutput) DataStorageSizeInTbs() pulumi.Float64Output {
 	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) float64 { return v.DataStorageSizeInTbs }).(pulumi.Float64Output)
+}
+
+// The database server type of the Exadata infrastructure.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) DatabaseServerType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) string { return v.DatabaseServerType }).(pulumi.StringOutput)
 }
 
 // The local node storage allocated in GBs.
@@ -6009,6 +7127,13 @@ func (o GetExadataInfrastructuresExadataInfrastructureOutput) DisplayName() pulu
 // The list of DNS server IP addresses. Maximum of 3 allowed.
 func (o GetExadataInfrastructuresExadataInfrastructureOutput) DnsServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) []string { return v.DnsServers }).(pulumi.StringArrayOutput)
+}
+
+// The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) ExascaleConfigs() GetExadataInfrastructuresExadataInfrastructureExascaleConfigArrayOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) []GetExadataInfrastructuresExadataInfrastructureExascaleConfig {
+		return v.ExascaleConfigs
+	}).(GetExadataInfrastructuresExadataInfrastructureExascaleConfigArrayOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -6133,6 +7258,11 @@ func (o GetExadataInfrastructuresExadataInfrastructureOutput) State() pulumi.Str
 // The number of Exadata storage servers for the Exadata infrastructure.
 func (o GetExadataInfrastructuresExadataInfrastructureOutput) StorageCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) int { return v.StorageCount }).(pulumi.IntOutput)
+}
+
+// The storage server type of the Exadata infrastructure.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) StorageServerType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) string { return v.StorageServerType }).(pulumi.StringOutput)
 }
 
 // The software version of the storage servers (cells) in the Exadata infrastructure.
@@ -6433,6 +7563,114 @@ func (o GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigura
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfiguration {
 		return vs[0].([]GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfiguration)[vs[1].(int)]
 	}).(GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationOutput)
+}
+
+type GetExadataInfrastructuresExadataInfrastructureExascaleConfig struct {
+	// Available storage size for Exascale in GBs.
+	AvailableStorageInGbs int `pulumi:"availableStorageInGbs"`
+	// Storage size needed for Exascale in GBs.
+	TotalStorageInGbs int `pulumi:"totalStorageInGbs"`
+}
+
+// GetExadataInfrastructuresExadataInfrastructureExascaleConfigInput is an input type that accepts GetExadataInfrastructuresExadataInfrastructureExascaleConfigArgs and GetExadataInfrastructuresExadataInfrastructureExascaleConfigOutput values.
+// You can construct a concrete instance of `GetExadataInfrastructuresExadataInfrastructureExascaleConfigInput` via:
+//
+//	GetExadataInfrastructuresExadataInfrastructureExascaleConfigArgs{...}
+type GetExadataInfrastructuresExadataInfrastructureExascaleConfigInput interface {
+	pulumi.Input
+
+	ToGetExadataInfrastructuresExadataInfrastructureExascaleConfigOutput() GetExadataInfrastructuresExadataInfrastructureExascaleConfigOutput
+	ToGetExadataInfrastructuresExadataInfrastructureExascaleConfigOutputWithContext(context.Context) GetExadataInfrastructuresExadataInfrastructureExascaleConfigOutput
+}
+
+type GetExadataInfrastructuresExadataInfrastructureExascaleConfigArgs struct {
+	// Available storage size for Exascale in GBs.
+	AvailableStorageInGbs pulumi.IntInput `pulumi:"availableStorageInGbs"`
+	// Storage size needed for Exascale in GBs.
+	TotalStorageInGbs pulumi.IntInput `pulumi:"totalStorageInGbs"`
+}
+
+func (GetExadataInfrastructuresExadataInfrastructureExascaleConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureExascaleConfig)(nil)).Elem()
+}
+
+func (i GetExadataInfrastructuresExadataInfrastructureExascaleConfigArgs) ToGetExadataInfrastructuresExadataInfrastructureExascaleConfigOutput() GetExadataInfrastructuresExadataInfrastructureExascaleConfigOutput {
+	return i.ToGetExadataInfrastructuresExadataInfrastructureExascaleConfigOutputWithContext(context.Background())
+}
+
+func (i GetExadataInfrastructuresExadataInfrastructureExascaleConfigArgs) ToGetExadataInfrastructuresExadataInfrastructureExascaleConfigOutputWithContext(ctx context.Context) GetExadataInfrastructuresExadataInfrastructureExascaleConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInfrastructuresExadataInfrastructureExascaleConfigOutput)
+}
+
+// GetExadataInfrastructuresExadataInfrastructureExascaleConfigArrayInput is an input type that accepts GetExadataInfrastructuresExadataInfrastructureExascaleConfigArray and GetExadataInfrastructuresExadataInfrastructureExascaleConfigArrayOutput values.
+// You can construct a concrete instance of `GetExadataInfrastructuresExadataInfrastructureExascaleConfigArrayInput` via:
+//
+//	GetExadataInfrastructuresExadataInfrastructureExascaleConfigArray{ GetExadataInfrastructuresExadataInfrastructureExascaleConfigArgs{...} }
+type GetExadataInfrastructuresExadataInfrastructureExascaleConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetExadataInfrastructuresExadataInfrastructureExascaleConfigArrayOutput() GetExadataInfrastructuresExadataInfrastructureExascaleConfigArrayOutput
+	ToGetExadataInfrastructuresExadataInfrastructureExascaleConfigArrayOutputWithContext(context.Context) GetExadataInfrastructuresExadataInfrastructureExascaleConfigArrayOutput
+}
+
+type GetExadataInfrastructuresExadataInfrastructureExascaleConfigArray []GetExadataInfrastructuresExadataInfrastructureExascaleConfigInput
+
+func (GetExadataInfrastructuresExadataInfrastructureExascaleConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInfrastructuresExadataInfrastructureExascaleConfig)(nil)).Elem()
+}
+
+func (i GetExadataInfrastructuresExadataInfrastructureExascaleConfigArray) ToGetExadataInfrastructuresExadataInfrastructureExascaleConfigArrayOutput() GetExadataInfrastructuresExadataInfrastructureExascaleConfigArrayOutput {
+	return i.ToGetExadataInfrastructuresExadataInfrastructureExascaleConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadataInfrastructuresExadataInfrastructureExascaleConfigArray) ToGetExadataInfrastructuresExadataInfrastructureExascaleConfigArrayOutputWithContext(ctx context.Context) GetExadataInfrastructuresExadataInfrastructureExascaleConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInfrastructuresExadataInfrastructureExascaleConfigArrayOutput)
+}
+
+type GetExadataInfrastructuresExadataInfrastructureExascaleConfigOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInfrastructuresExadataInfrastructureExascaleConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureExascaleConfig)(nil)).Elem()
+}
+
+func (o GetExadataInfrastructuresExadataInfrastructureExascaleConfigOutput) ToGetExadataInfrastructuresExadataInfrastructureExascaleConfigOutput() GetExadataInfrastructuresExadataInfrastructureExascaleConfigOutput {
+	return o
+}
+
+func (o GetExadataInfrastructuresExadataInfrastructureExascaleConfigOutput) ToGetExadataInfrastructuresExadataInfrastructureExascaleConfigOutputWithContext(ctx context.Context) GetExadataInfrastructuresExadataInfrastructureExascaleConfigOutput {
+	return o
+}
+
+// Available storage size for Exascale in GBs.
+func (o GetExadataInfrastructuresExadataInfrastructureExascaleConfigOutput) AvailableStorageInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructureExascaleConfig) int {
+		return v.AvailableStorageInGbs
+	}).(pulumi.IntOutput)
+}
+
+// Storage size needed for Exascale in GBs.
+func (o GetExadataInfrastructuresExadataInfrastructureExascaleConfigOutput) TotalStorageInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructureExascaleConfig) int { return v.TotalStorageInGbs }).(pulumi.IntOutput)
+}
+
+type GetExadataInfrastructuresExadataInfrastructureExascaleConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInfrastructuresExadataInfrastructureExascaleConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInfrastructuresExadataInfrastructureExascaleConfig)(nil)).Elem()
+}
+
+func (o GetExadataInfrastructuresExadataInfrastructureExascaleConfigArrayOutput) ToGetExadataInfrastructuresExadataInfrastructureExascaleConfigArrayOutput() GetExadataInfrastructuresExadataInfrastructureExascaleConfigArrayOutput {
+	return o
+}
+
+func (o GetExadataInfrastructuresExadataInfrastructureExascaleConfigArrayOutput) ToGetExadataInfrastructuresExadataInfrastructureExascaleConfigArrayOutputWithContext(ctx context.Context) GetExadataInfrastructuresExadataInfrastructureExascaleConfigArrayOutput {
+	return o
+}
+
+func (o GetExadataInfrastructuresExadataInfrastructureExascaleConfigArrayOutput) Index(i pulumi.IntInput) GetExadataInfrastructuresExadataInfrastructureExascaleConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInfrastructuresExadataInfrastructureExascaleConfig {
+		return vs[0].([]GetExadataInfrastructuresExadataInfrastructureExascaleConfig)[vs[1].(int)]
+	}).(GetExadataInfrastructuresExadataInfrastructureExascaleConfigOutput)
 }
 
 type GetExadataInfrastructuresExadataInfrastructureMaintenanceWindow struct {
@@ -8361,6 +9599,8 @@ type GetExadbVmClustersExadbVmCluster struct {
 	BackupSubnetId string `pulumi:"backupSubnetId"`
 	// The cluster name for Exadata VM cluster on Exascale Infrastructure. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
 	ClusterName string `pulumi:"clusterName"`
+	// A filter to return only resources that match the given cluster placement group ID exactly.
+	ClusterPlacementGroupId string `pulumi:"clusterPlacementGroupId"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
 	// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
@@ -8424,6 +9664,8 @@ type GetExadbVmClustersExadbVmCluster struct {
 	State string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
 	SubnetId string `pulumi:"subnetId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+	SubscriptionId string `pulumi:"subscriptionId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// Operating system version of the image.
@@ -8458,6 +9700,8 @@ type GetExadbVmClustersExadbVmClusterArgs struct {
 	BackupSubnetId pulumi.StringInput `pulumi:"backupSubnetId"`
 	// The cluster name for Exadata VM cluster on Exascale Infrastructure. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
 	ClusterName pulumi.StringInput `pulumi:"clusterName"`
+	// A filter to return only resources that match the given cluster placement group ID exactly.
+	ClusterPlacementGroupId pulumi.StringInput `pulumi:"clusterPlacementGroupId"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
@@ -8521,6 +9765,8 @@ type GetExadbVmClustersExadbVmClusterArgs struct {
 	State pulumi.StringInput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// Operating system version of the image.
@@ -8604,6 +9850,11 @@ func (o GetExadbVmClustersExadbVmClusterOutput) BackupSubnetId() pulumi.StringOu
 // The cluster name for Exadata VM cluster on Exascale Infrastructure. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
 func (o GetExadbVmClustersExadbVmClusterOutput) ClusterName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.ClusterName }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given cluster placement group ID exactly.
+func (o GetExadbVmClustersExadbVmClusterOutput) ClusterPlacementGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.ClusterPlacementGroupId }).(pulumi.StringOutput)
 }
 
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -8768,6 +10019,11 @@ func (o GetExadbVmClustersExadbVmClusterOutput) State() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
 func (o GetExadbVmClustersExadbVmClusterOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+func (o GetExadbVmClustersExadbVmClusterOutput) SubscriptionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.SubscriptionId }).(pulumi.StringOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -9652,6 +10908,8 @@ type GetExascaleDbStorageVaultsExascaleDbStorageVault struct {
 	AdditionalFlashCacheInPercent int `pulumi:"additionalFlashCacheInPercent"`
 	// The name of the availability domain in which the Exadata Database Storage Vault is located.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// A filter to return only resources that match the given cluster placement group ID exactly.
+	ClusterPlacementGroupId string `pulumi:"clusterPlacementGroupId"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -9660,6 +10918,8 @@ type GetExascaleDbStorageVaultsExascaleDbStorageVault struct {
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
 	DisplayName string `pulumi:"displayName"`
+	// A filter to return only list of Vaults that are linked to the exadata infrastructure Id.
+	ExadataInfrastructureId string `pulumi:"exadataInfrastructureId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Exadata Database Storage Details
@@ -9670,6 +10930,8 @@ type GetExascaleDbStorageVaultsExascaleDbStorageVault struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// A filter to return only Exadata Database Storage Vaults that match the given lifecycle state exactly.
 	State string `pulumi:"state"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+	SubscriptionId string `pulumi:"subscriptionId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time that the Exadata Database Storage Vault was created.
@@ -9698,6 +10960,8 @@ type GetExascaleDbStorageVaultsExascaleDbStorageVaultArgs struct {
 	AdditionalFlashCacheInPercent pulumi.IntInput `pulumi:"additionalFlashCacheInPercent"`
 	// The name of the availability domain in which the Exadata Database Storage Vault is located.
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// A filter to return only resources that match the given cluster placement group ID exactly.
+	ClusterPlacementGroupId pulumi.StringInput `pulumi:"clusterPlacementGroupId"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -9706,6 +10970,8 @@ type GetExascaleDbStorageVaultsExascaleDbStorageVaultArgs struct {
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// A filter to return only list of Vaults that are linked to the exadata infrastructure Id.
+	ExadataInfrastructureId pulumi.StringInput `pulumi:"exadataInfrastructureId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Exadata Database Storage Details
@@ -9716,6 +10982,8 @@ type GetExascaleDbStorageVaultsExascaleDbStorageVaultArgs struct {
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// A filter to return only Exadata Database Storage Vaults that match the given lifecycle state exactly.
 	State pulumi.StringInput `pulumi:"state"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time that the Exadata Database Storage Vault was created.
@@ -9789,6 +11057,11 @@ func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput) AvailabilityDoma
 	return o.ApplyT(func(v GetExascaleDbStorageVaultsExascaleDbStorageVault) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
+// A filter to return only resources that match the given cluster placement group ID exactly.
+func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput) ClusterPlacementGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExascaleDbStorageVaultsExascaleDbStorageVault) string { return v.ClusterPlacementGroupId }).(pulumi.StringOutput)
+}
+
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExascaleDbStorageVaultsExascaleDbStorageVault) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -9807,6 +11080,11 @@ func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput) Description() pu
 // A filter to return only resources that match the entire display name given. The match is not case sensitive.
 func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExascaleDbStorageVaultsExascaleDbStorageVault) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// A filter to return only list of Vaults that are linked to the exadata infrastructure Id.
+func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput) ExadataInfrastructureId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExascaleDbStorageVaultsExascaleDbStorageVault) string { return v.ExadataInfrastructureId }).(pulumi.StringOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -9834,6 +11112,11 @@ func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput) LifecycleDetails
 // A filter to return only Exadata Database Storage Vaults that match the given lifecycle state exactly.
 func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExascaleDbStorageVaultsExascaleDbStorageVault) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput) SubscriptionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExascaleDbStorageVaultsExascaleDbStorageVault) string { return v.SubscriptionId }).(pulumi.StringOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -11367,7 +12650,7 @@ type GetExternalContainerDatabasesExternalContainerDatabase struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The Oracle Database configuration
 	DatabaseConfiguration string `pulumi:"databaseConfiguration"`
-	// The Oracle Database edition.
+	// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
 	DatabaseEdition string `pulumi:"databaseEdition"`
 	// The configuration of the Database Management service.
 	DatabaseManagementConfigs []GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfig `pulumi:"databaseManagementConfigs"`
@@ -11419,7 +12702,7 @@ type GetExternalContainerDatabasesExternalContainerDatabaseArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The Oracle Database configuration
 	DatabaseConfiguration pulumi.StringInput `pulumi:"databaseConfiguration"`
-	// The Oracle Database edition.
+	// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
 	DatabaseEdition pulumi.StringInput `pulumi:"databaseEdition"`
 	// The configuration of the Database Management service.
 	DatabaseManagementConfigs GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArrayInput `pulumi:"databaseManagementConfigs"`
@@ -11519,7 +12802,7 @@ func (o GetExternalContainerDatabasesExternalContainerDatabaseOutput) DatabaseCo
 	return o.ApplyT(func(v GetExternalContainerDatabasesExternalContainerDatabase) string { return v.DatabaseConfiguration }).(pulumi.StringOutput)
 }
 
-// The Oracle Database edition.
+// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
 func (o GetExternalContainerDatabasesExternalContainerDatabaseOutput) DatabaseEdition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalContainerDatabasesExternalContainerDatabase) string { return v.DatabaseEdition }).(pulumi.StringOutput)
 }
@@ -13193,7 +14476,7 @@ type GetExternalNonContainerDatabasesExternalNonContainerDatabase struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The Oracle Database configuration
 	DatabaseConfiguration string `pulumi:"databaseConfiguration"`
-	// The Oracle Database edition.
+	// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
 	DatabaseEdition string `pulumi:"databaseEdition"`
 	// The configuration of the Database Management service.
 	DatabaseManagementConfigs []GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfig `pulumi:"databaseManagementConfigs"`
@@ -13247,7 +14530,7 @@ type GetExternalNonContainerDatabasesExternalNonContainerDatabaseArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The Oracle Database configuration
 	DatabaseConfiguration pulumi.StringInput `pulumi:"databaseConfiguration"`
-	// The Oracle Database edition.
+	// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
 	DatabaseEdition pulumi.StringInput `pulumi:"databaseEdition"`
 	// The configuration of the Database Management service.
 	DatabaseManagementConfigs GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArrayInput `pulumi:"databaseManagementConfigs"`
@@ -13351,7 +14634,7 @@ func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput) Data
 	}).(pulumi.StringOutput)
 }
 
-// The Oracle Database edition.
+// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
 func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput) DatabaseEdition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalNonContainerDatabasesExternalNonContainerDatabase) string { return v.DatabaseEdition }).(pulumi.StringOutput)
 }
@@ -14251,7 +15534,7 @@ type GetExternalPluggableDatabasesExternalPluggableDatabase struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The Oracle Database configuration
 	DatabaseConfiguration string `pulumi:"databaseConfiguration"`
-	// The Oracle Database edition.
+	// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
 	DatabaseEdition string `pulumi:"databaseEdition"`
 	// The configuration of the Database Management service.
 	DatabaseManagementConfigs []GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfig `pulumi:"databaseManagementConfigs"`
@@ -14309,7 +15592,7 @@ type GetExternalPluggableDatabasesExternalPluggableDatabaseArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The Oracle Database configuration
 	DatabaseConfiguration pulumi.StringInput `pulumi:"databaseConfiguration"`
-	// The Oracle Database edition.
+	// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
 	DatabaseEdition pulumi.StringInput `pulumi:"databaseEdition"`
 	// The configuration of the Database Management service.
 	DatabaseManagementConfigs GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArrayInput `pulumi:"databaseManagementConfigs"`
@@ -14415,7 +15698,7 @@ func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOutput) DatabaseCo
 	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabase) string { return v.DatabaseConfiguration }).(pulumi.StringOutput)
 }
 
-// The Oracle Database edition.
+// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
 func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOutput) DatabaseEdition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabase) string { return v.DatabaseEdition }).(pulumi.StringOutput)
 }
@@ -15197,10 +16480,24 @@ type GetFlexComponentsFlexComponentCollectionItem struct {
 	AvailableCoreCount int `pulumi:"availableCoreCount"`
 	// The maximum  storage that can be enabled on the Storage Server for this Flex Component.
 	AvailableDbStorageInGbs int `pulumi:"availableDbStorageInGbs"`
+	// The maximum local storage that can be enabled on the DB Server for this Flex Component.
+	AvailableLocalStorageInGbs int `pulumi:"availableLocalStorageInGbs"`
+	// The maximum memory size that can be enabled on the DB Server for this Flex Component.
+	AvailableMemoryInGbs int `pulumi:"availableMemoryInGbs"`
+	// The compute model of the DB Server for this Flex Component.
+	ComputeModel string `pulumi:"computeModel"`
+	// The description summary for this Flex Component.
+	DescriptionSummary string `pulumi:"descriptionSummary"`
+	// The hardware type of the DB (Compute) or Storage (Cell) Server for this Flex Component.
+	HardwareType string `pulumi:"hardwareType"`
 	// The minimum number of CPU cores that can be enabled on the DB Server for this Flex Component.
 	MinimumCoreCount int `pulumi:"minimumCoreCount"`
 	// A filter to return only resources that match the entire name given. The match is not case sensitive.
 	Name string `pulumi:"name"`
+	// The runtime minimum number of CPU cores that can be enabled for this Flex Component.
+	RuntimeMinimumCoreCount int `pulumi:"runtimeMinimumCoreCount"`
+	// A filter to return only resources that belong to the entire shape name given. The match is not case sensitive.
+	Shape string `pulumi:"shape"`
 }
 
 // GetFlexComponentsFlexComponentCollectionItemInput is an input type that accepts GetFlexComponentsFlexComponentCollectionItemArgs and GetFlexComponentsFlexComponentCollectionItemOutput values.
@@ -15219,10 +16516,24 @@ type GetFlexComponentsFlexComponentCollectionItemArgs struct {
 	AvailableCoreCount pulumi.IntInput `pulumi:"availableCoreCount"`
 	// The maximum  storage that can be enabled on the Storage Server for this Flex Component.
 	AvailableDbStorageInGbs pulumi.IntInput `pulumi:"availableDbStorageInGbs"`
+	// The maximum local storage that can be enabled on the DB Server for this Flex Component.
+	AvailableLocalStorageInGbs pulumi.IntInput `pulumi:"availableLocalStorageInGbs"`
+	// The maximum memory size that can be enabled on the DB Server for this Flex Component.
+	AvailableMemoryInGbs pulumi.IntInput `pulumi:"availableMemoryInGbs"`
+	// The compute model of the DB Server for this Flex Component.
+	ComputeModel pulumi.StringInput `pulumi:"computeModel"`
+	// The description summary for this Flex Component.
+	DescriptionSummary pulumi.StringInput `pulumi:"descriptionSummary"`
+	// The hardware type of the DB (Compute) or Storage (Cell) Server for this Flex Component.
+	HardwareType pulumi.StringInput `pulumi:"hardwareType"`
 	// The minimum number of CPU cores that can be enabled on the DB Server for this Flex Component.
 	MinimumCoreCount pulumi.IntInput `pulumi:"minimumCoreCount"`
 	// A filter to return only resources that match the entire name given. The match is not case sensitive.
 	Name pulumi.StringInput `pulumi:"name"`
+	// The runtime minimum number of CPU cores that can be enabled for this Flex Component.
+	RuntimeMinimumCoreCount pulumi.IntInput `pulumi:"runtimeMinimumCoreCount"`
+	// A filter to return only resources that belong to the entire shape name given. The match is not case sensitive.
+	Shape pulumi.StringInput `pulumi:"shape"`
 }
 
 func (GetFlexComponentsFlexComponentCollectionItemArgs) ElementType() reflect.Type {
@@ -15286,6 +16597,31 @@ func (o GetFlexComponentsFlexComponentCollectionItemOutput) AvailableDbStorageIn
 	return o.ApplyT(func(v GetFlexComponentsFlexComponentCollectionItem) int { return v.AvailableDbStorageInGbs }).(pulumi.IntOutput)
 }
 
+// The maximum local storage that can be enabled on the DB Server for this Flex Component.
+func (o GetFlexComponentsFlexComponentCollectionItemOutput) AvailableLocalStorageInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFlexComponentsFlexComponentCollectionItem) int { return v.AvailableLocalStorageInGbs }).(pulumi.IntOutput)
+}
+
+// The maximum memory size that can be enabled on the DB Server for this Flex Component.
+func (o GetFlexComponentsFlexComponentCollectionItemOutput) AvailableMemoryInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFlexComponentsFlexComponentCollectionItem) int { return v.AvailableMemoryInGbs }).(pulumi.IntOutput)
+}
+
+// The compute model of the DB Server for this Flex Component.
+func (o GetFlexComponentsFlexComponentCollectionItemOutput) ComputeModel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFlexComponentsFlexComponentCollectionItem) string { return v.ComputeModel }).(pulumi.StringOutput)
+}
+
+// The description summary for this Flex Component.
+func (o GetFlexComponentsFlexComponentCollectionItemOutput) DescriptionSummary() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFlexComponentsFlexComponentCollectionItem) string { return v.DescriptionSummary }).(pulumi.StringOutput)
+}
+
+// The hardware type of the DB (Compute) or Storage (Cell) Server for this Flex Component.
+func (o GetFlexComponentsFlexComponentCollectionItemOutput) HardwareType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFlexComponentsFlexComponentCollectionItem) string { return v.HardwareType }).(pulumi.StringOutput)
+}
+
 // The minimum number of CPU cores that can be enabled on the DB Server for this Flex Component.
 func (o GetFlexComponentsFlexComponentCollectionItemOutput) MinimumCoreCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFlexComponentsFlexComponentCollectionItem) int { return v.MinimumCoreCount }).(pulumi.IntOutput)
@@ -15294,6 +16630,16 @@ func (o GetFlexComponentsFlexComponentCollectionItemOutput) MinimumCoreCount() p
 // A filter to return only resources that match the entire name given. The match is not case sensitive.
 func (o GetFlexComponentsFlexComponentCollectionItemOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFlexComponentsFlexComponentCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The runtime minimum number of CPU cores that can be enabled for this Flex Component.
+func (o GetFlexComponentsFlexComponentCollectionItemOutput) RuntimeMinimumCoreCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFlexComponentsFlexComponentCollectionItem) int { return v.RuntimeMinimumCoreCount }).(pulumi.IntOutput)
+}
+
+// A filter to return only resources that belong to the entire shape name given. The match is not case sensitive.
+func (o GetFlexComponentsFlexComponentCollectionItemOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFlexComponentsFlexComponentCollectionItem) string { return v.Shape }).(pulumi.StringOutput)
 }
 
 type GetFlexComponentsFlexComponentCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -27240,7 +28586,9 @@ type GetVmClustersVmCluster struct {
 	CloudAutomationUpdateDetails []GetVmClustersVmClusterCloudAutomationUpdateDetail `pulumi:"cloudAutomationUpdateDetails"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
-	CpuCoreCount  int    `pulumi:"cpuCoreCount"`
+	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+	ComputeModel string `pulumi:"computeModel"`
+	CpuCoreCount int    `pulumi:"cpuCoreCount"`
 	// The number of enabled CPU cores.
 	CpusEnabled int `pulumi:"cpusEnabled"`
 	// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
@@ -27259,6 +28607,8 @@ type GetVmClustersVmCluster struct {
 	DisplayName string `pulumi:"displayName"`
 	// If provided, filters the results for the given Exadata Infrastructure.
 	ExadataInfrastructureId string `pulumi:"exadataInfrastructureId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+	ExascaleDbStorageVaultId string `pulumi:"exascaleDbStorageVaultId"`
 	// Details of the file system configuration of the VM cluster.
 	FileSystemConfigurationDetails []GetVmClustersVmClusterFileSystemConfigurationDetail `pulumi:"fileSystemConfigurationDetails"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -27287,6 +28637,8 @@ type GetVmClustersVmCluster struct {
 	SshPublicKeys []string `pulumi:"sshPublicKeys"`
 	// A filter to return only resources that match the given lifecycle state exactly.
 	State string `pulumi:"state"`
+	// Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
+	StorageManagementType string `pulumi:"storageManagementType"`
 	// Operating system version of the image.
 	SystemVersion string `pulumi:"systemVersion"`
 	// The date and time that the VM cluster was created.
@@ -27295,6 +28647,8 @@ type GetVmClustersVmCluster struct {
 	TimeZone string `pulumi:"timeZone"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
 	VmClusterNetworkId string `pulumi:"vmClusterNetworkId"`
+	// A filter to return only vmclusters that match the given vmcluster type exactly.
+	VmClusterType string `pulumi:"vmClusterType"`
 }
 
 // GetVmClustersVmClusterInput is an input type that accepts GetVmClustersVmClusterArgs and GetVmClustersVmClusterOutput values.
@@ -27315,7 +28669,9 @@ type GetVmClustersVmClusterArgs struct {
 	CloudAutomationUpdateDetails GetVmClustersVmClusterCloudAutomationUpdateDetailArrayInput `pulumi:"cloudAutomationUpdateDetails"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	CpuCoreCount  pulumi.IntInput    `pulumi:"cpuCoreCount"`
+	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+	ComputeModel pulumi.StringInput `pulumi:"computeModel"`
+	CpuCoreCount pulumi.IntInput    `pulumi:"cpuCoreCount"`
 	// The number of enabled CPU cores.
 	CpusEnabled pulumi.IntInput `pulumi:"cpusEnabled"`
 	// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
@@ -27334,6 +28690,8 @@ type GetVmClustersVmClusterArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// If provided, filters the results for the given Exadata Infrastructure.
 	ExadataInfrastructureId pulumi.StringInput `pulumi:"exadataInfrastructureId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+	ExascaleDbStorageVaultId pulumi.StringInput `pulumi:"exascaleDbStorageVaultId"`
 	// Details of the file system configuration of the VM cluster.
 	FileSystemConfigurationDetails GetVmClustersVmClusterFileSystemConfigurationDetailArrayInput `pulumi:"fileSystemConfigurationDetails"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -27362,6 +28720,8 @@ type GetVmClustersVmClusterArgs struct {
 	SshPublicKeys pulumi.StringArrayInput `pulumi:"sshPublicKeys"`
 	// A filter to return only resources that match the given lifecycle state exactly.
 	State pulumi.StringInput `pulumi:"state"`
+	// Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
+	StorageManagementType pulumi.StringInput `pulumi:"storageManagementType"`
 	// Operating system version of the image.
 	SystemVersion pulumi.StringInput `pulumi:"systemVersion"`
 	// The date and time that the VM cluster was created.
@@ -27370,6 +28730,8 @@ type GetVmClustersVmClusterArgs struct {
 	TimeZone pulumi.StringInput `pulumi:"timeZone"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
 	VmClusterNetworkId pulumi.StringInput `pulumi:"vmClusterNetworkId"`
+	// A filter to return only vmclusters that match the given vmcluster type exactly.
+	VmClusterType pulumi.StringInput `pulumi:"vmClusterType"`
 }
 
 func (GetVmClustersVmClusterArgs) ElementType() reflect.Type {
@@ -27440,6 +28802,11 @@ func (o GetVmClustersVmClusterOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVmClustersVmCluster) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+func (o GetVmClustersVmClusterOutput) ComputeModel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) string { return v.ComputeModel }).(pulumi.StringOutput)
+}
+
 func (o GetVmClustersVmClusterOutput) CpuCoreCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetVmClustersVmCluster) int { return v.CpuCoreCount }).(pulumi.IntOutput)
 }
@@ -27489,6 +28856,11 @@ func (o GetVmClustersVmClusterOutput) DisplayName() pulumi.StringOutput {
 // If provided, filters the results for the given Exadata Infrastructure.
 func (o GetVmClustersVmClusterOutput) ExadataInfrastructureId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVmClustersVmCluster) string { return v.ExadataInfrastructureId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+func (o GetVmClustersVmClusterOutput) ExascaleDbStorageVaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) string { return v.ExascaleDbStorageVaultId }).(pulumi.StringOutput)
 }
 
 // Details of the file system configuration of the VM cluster.
@@ -27566,6 +28938,11 @@ func (o GetVmClustersVmClusterOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVmClustersVmCluster) string { return v.State }).(pulumi.StringOutput)
 }
 
+// Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
+func (o GetVmClustersVmClusterOutput) StorageManagementType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) string { return v.StorageManagementType }).(pulumi.StringOutput)
+}
+
 // Operating system version of the image.
 func (o GetVmClustersVmClusterOutput) SystemVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVmClustersVmCluster) string { return v.SystemVersion }).(pulumi.StringOutput)
@@ -27584,6 +28961,11 @@ func (o GetVmClustersVmClusterOutput) TimeZone() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
 func (o GetVmClustersVmClusterOutput) VmClusterNetworkId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVmClustersVmCluster) string { return v.VmClusterNetworkId }).(pulumi.StringOutput)
+}
+
+// A filter to return only vmclusters that match the given vmcluster type exactly.
+func (o GetVmClustersVmClusterOutput) VmClusterType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) string { return v.VmClusterType }).(pulumi.StringOutput)
 }
 
 type GetVmClustersVmClusterArrayOutput struct{ *pulumi.OutputState }
@@ -28176,6 +29558,22 @@ func (o GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput) Index(i 
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbServersDbServerDbServerPatchingDetailInput)(nil)).Elem(), GetDbServersDbServerDbServerPatchingDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbServersDbServerDbServerPatchingDetailArrayInput)(nil)).Elem(), GetDbServersDbServerDbServerPatchingDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbServersFilterInput)(nil)).Elem(), GetDbServersFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbServersFilterArrayInput)(nil)).Elem(), GetDbServersFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemComputePerformancesDbSystemComputePerformanceInput)(nil)).Elem(), GetDbSystemComputePerformancesDbSystemComputePerformanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemComputePerformancesDbSystemComputePerformanceArrayInput)(nil)).Elem(), GetDbSystemComputePerformancesDbSystemComputePerformanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListInput)(nil)).Elem(), GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayInput)(nil)).Elem(), GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemComputePerformancesFilterInput)(nil)).Elem(), GetDbSystemComputePerformancesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemComputePerformancesFilterArrayInput)(nil)).Elem(), GetDbSystemComputePerformancesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemHistoryEntriesFilterInput)(nil)).Elem(), GetDbSystemHistoryEntriesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemHistoryEntriesFilterArrayInput)(nil)).Elem(), GetDbSystemHistoryEntriesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemHistoryEntriesPatchHistoryEntryInput)(nil)).Elem(), GetDbSystemHistoryEntriesPatchHistoryEntryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemHistoryEntriesPatchHistoryEntryArrayInput)(nil)).Elem(), GetDbSystemHistoryEntriesPatchHistoryEntryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemPatchesFilterInput)(nil)).Elem(), GetDbSystemPatchesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemPatchesFilterArrayInput)(nil)).Elem(), GetDbSystemPatchesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemPatchesPatchInput)(nil)).Elem(), GetDbSystemPatchesPatchArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemPatchesPatchArrayInput)(nil)).Elem(), GetDbSystemPatchesPatchArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemShapesDbSystemShapeInput)(nil)).Elem(), GetDbSystemShapesDbSystemShapeArgs{})
@@ -28244,6 +29642,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureContactArrayInput)(nil)).Elem(), GetExadataInfrastructureContactArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureDefinedFileSystemConfigurationInput)(nil)).Elem(), GetExadataInfrastructureDefinedFileSystemConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureDefinedFileSystemConfigurationArrayInput)(nil)).Elem(), GetExadataInfrastructureDefinedFileSystemConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureExascaleConfigInput)(nil)).Elem(), GetExadataInfrastructureExascaleConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureExascaleConfigArrayInput)(nil)).Elem(), GetExadataInfrastructureExascaleConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureMaintenanceWindowInput)(nil)).Elem(), GetExadataInfrastructureMaintenanceWindowArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureMaintenanceWindowArrayInput)(nil)).Elem(), GetExadataInfrastructureMaintenanceWindowArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureMaintenanceWindowDaysOfWeekInput)(nil)).Elem(), GetExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{})
@@ -28260,6 +29660,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureContactArrayInput)(nil)).Elem(), GetExadataInfrastructuresExadataInfrastructureContactArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationInput)(nil)).Elem(), GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArrayInput)(nil)).Elem(), GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureExascaleConfigInput)(nil)).Elem(), GetExadataInfrastructuresExadataInfrastructureExascaleConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureExascaleConfigArrayInput)(nil)).Elem(), GetExadataInfrastructuresExadataInfrastructureExascaleConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowInput)(nil)).Elem(), GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowArrayInput)(nil)).Elem(), GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowDaysOfWeekInput)(nil)).Elem(), GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{})
@@ -28582,6 +29984,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetVmClustersVmClusterDataCollectionOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailArrayInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArray{})
+	pulumi.RegisterOutputType(GetDbServersDbServerDbServerPatchingDetailOutput{})
+	pulumi.RegisterOutputType(GetDbServersDbServerDbServerPatchingDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDbServersFilterOutput{})
+	pulumi.RegisterOutputType(GetDbServersFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemComputePerformancesDbSystemComputePerformanceOutput{})
+	pulumi.RegisterOutputType(GetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput{})
+	pulumi.RegisterOutputType(GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemComputePerformancesFilterOutput{})
+	pulumi.RegisterOutputType(GetDbSystemComputePerformancesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemHistoryEntriesFilterOutput{})
+	pulumi.RegisterOutputType(GetDbSystemHistoryEntriesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemHistoryEntriesPatchHistoryEntryOutput{})
+	pulumi.RegisterOutputType(GetDbSystemHistoryEntriesPatchHistoryEntryArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemPatchesFilterOutput{})
+	pulumi.RegisterOutputType(GetDbSystemPatchesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemPatchesPatchOutput{})
 	pulumi.RegisterOutputType(GetDbSystemPatchesPatchArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemShapesDbSystemShapeOutput{})
@@ -28650,6 +30068,8 @@ func init() {
 	pulumi.RegisterOutputType(GetExadataInfrastructureContactArrayOutput{})
 	pulumi.RegisterOutputType(GetExadataInfrastructureDefinedFileSystemConfigurationOutput{})
 	pulumi.RegisterOutputType(GetExadataInfrastructureDefinedFileSystemConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetExadataInfrastructureExascaleConfigOutput{})
+	pulumi.RegisterOutputType(GetExadataInfrastructureExascaleConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetExadataInfrastructureMaintenanceWindowOutput{})
 	pulumi.RegisterOutputType(GetExadataInfrastructureMaintenanceWindowArrayOutput{})
 	pulumi.RegisterOutputType(GetExadataInfrastructureMaintenanceWindowDaysOfWeekOutput{})
@@ -28666,6 +30086,8 @@ func init() {
 	pulumi.RegisterOutputType(GetExadataInfrastructuresExadataInfrastructureContactArrayOutput{})
 	pulumi.RegisterOutputType(GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationOutput{})
 	pulumi.RegisterOutputType(GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetExadataInfrastructuresExadataInfrastructureExascaleConfigOutput{})
+	pulumi.RegisterOutputType(GetExadataInfrastructuresExadataInfrastructureExascaleConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowOutput{})
 	pulumi.RegisterOutputType(GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowArrayOutput{})
 	pulumi.RegisterOutputType(GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowDaysOfWeekOutput{})

@@ -115,6 +115,11 @@ public final class GetMysqlBackupResult {
      */
     private String state;
     /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    private Map<String,String> systemTags;
+    /**
      * @return The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
@@ -274,6 +279,13 @@ public final class GetMysqlBackupResult {
         return this.state;
     }
     /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
@@ -326,6 +338,7 @@ public final class GetMysqlBackupResult {
         private String shapeName;
         private List<GetMysqlBackupSourceDetail> sourceDetails;
         private String state;
+        private Map<String,String> systemTags;
         private String timeCopyCreated;
         private String timeCreated;
         private String timeUpdated;
@@ -354,6 +367,7 @@ public final class GetMysqlBackupResult {
     	      this.shapeName = defaults.shapeName;
     	      this.sourceDetails = defaults.sourceDetails;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCopyCreated = defaults.timeCopyCreated;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -545,6 +559,14 @@ public final class GetMysqlBackupResult {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupResult", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCopyCreated(String timeCopyCreated) {
             if (timeCopyCreated == null) {
               throw new MissingRequiredPropertyException("GetMysqlBackupResult", "timeCopyCreated");
@@ -592,6 +614,7 @@ public final class GetMysqlBackupResult {
             _resultValue.shapeName = shapeName;
             _resultValue.sourceDetails = sourceDetails;
             _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCopyCreated = timeCopyCreated;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;

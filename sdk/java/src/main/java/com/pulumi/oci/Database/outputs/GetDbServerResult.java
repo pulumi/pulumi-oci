@@ -30,6 +30,11 @@ public final class GetDbServerResult {
      */
     private String compartmentId;
     /**
+     * @return The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     * 
+     */
+    private String computeModel;
+    /**
      * @return The number of CPU cores enabled on the Db server.
      * 
      */
@@ -142,6 +147,13 @@ public final class GetDbServerResult {
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     * 
+     */
+    public String computeModel() {
+        return this.computeModel;
     }
     /**
      * @return The number of CPU cores enabled on the Db server.
@@ -285,6 +297,7 @@ public final class GetDbServerResult {
         private List<String> autonomousVirtualMachineIds;
         private List<String> autonomousVmClusterIds;
         private String compartmentId;
+        private String computeModel;
         private Integer cpuCoreCount;
         private List<String> dbNodeIds;
         private Integer dbNodeStorageSizeInGbs;
@@ -310,6 +323,7 @@ public final class GetDbServerResult {
     	      this.autonomousVirtualMachineIds = defaults.autonomousVirtualMachineIds;
     	      this.autonomousVmClusterIds = defaults.autonomousVmClusterIds;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.computeModel = defaults.computeModel;
     	      this.cpuCoreCount = defaults.cpuCoreCount;
     	      this.dbNodeIds = defaults.dbNodeIds;
     	      this.dbNodeStorageSizeInGbs = defaults.dbNodeStorageSizeInGbs;
@@ -359,6 +373,14 @@ public final class GetDbServerResult {
               throw new MissingRequiredPropertyException("GetDbServerResult", "compartmentId");
             }
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder computeModel(String computeModel) {
+            if (computeModel == null) {
+              throw new MissingRequiredPropertyException("GetDbServerResult", "computeModel");
+            }
+            this.computeModel = computeModel;
             return this;
         }
         @CustomType.Setter
@@ -527,6 +549,7 @@ public final class GetDbServerResult {
             _resultValue.autonomousVirtualMachineIds = autonomousVirtualMachineIds;
             _resultValue.autonomousVmClusterIds = autonomousVmClusterIds;
             _resultValue.compartmentId = compartmentId;
+            _resultValue.computeModel = computeModel;
             _resultValue.cpuCoreCount = cpuCoreCount;
             _resultValue.dbNodeIds = dbNodeIds;
             _resultValue.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;

@@ -14,6 +14,10 @@ namespace Pulumi.Oci.DataScience.Outputs
     public sealed class GetPipelineStepDetailResult
     {
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow application to be used as a step.
+        /// </summary>
+        public readonly string ApplicationId;
+        /// <summary>
         /// The list of step names this current step depends on for execution.
         /// </summary>
         public readonly ImmutableArray<string> DependsOns;
@@ -38,6 +42,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPipelineStepDetailStepContainerConfigurationDetailResult> StepContainerConfigurationDetails;
         /// <summary>
+        /// The configuration details of a Dataflow step.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetPipelineStepDetailStepDataflowConfigurationDetailResult> StepDataflowConfigurationDetails;
+        /// <summary>
         /// The infrastructure configuration details of a pipeline or a step.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPipelineStepDetailStepInfrastructureConfigurationDetailResult> StepInfrastructureConfigurationDetails;
@@ -46,12 +54,18 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly string StepName;
         /// <summary>
+        /// The storage mount details to mount to the instance running the pipeline step.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetPipelineStepDetailStepStorageMountConfigurationDetailsListResult> StepStorageMountConfigurationDetailsLists;
+        /// <summary>
         /// The type of step.
         /// </summary>
         public readonly string StepType;
 
         [OutputConstructor]
         private GetPipelineStepDetailResult(
+            string applicationId,
+
             ImmutableArray<string> dependsOns,
 
             string description,
@@ -64,20 +78,27 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             ImmutableArray<Outputs.GetPipelineStepDetailStepContainerConfigurationDetailResult> stepContainerConfigurationDetails,
 
+            ImmutableArray<Outputs.GetPipelineStepDetailStepDataflowConfigurationDetailResult> stepDataflowConfigurationDetails,
+
             ImmutableArray<Outputs.GetPipelineStepDetailStepInfrastructureConfigurationDetailResult> stepInfrastructureConfigurationDetails,
 
             string stepName,
 
+            ImmutableArray<Outputs.GetPipelineStepDetailStepStorageMountConfigurationDetailsListResult> stepStorageMountConfigurationDetailsLists,
+
             string stepType)
         {
+            ApplicationId = applicationId;
             DependsOns = dependsOns;
             Description = description;
             IsArtifactUploaded = isArtifactUploaded;
             JobId = jobId;
             StepConfigurationDetails = stepConfigurationDetails;
             StepContainerConfigurationDetails = stepContainerConfigurationDetails;
+            StepDataflowConfigurationDetails = stepDataflowConfigurationDetails;
             StepInfrastructureConfigurationDetails = stepInfrastructureConfigurationDetails;
             StepName = stepName;
+            StepStorageMountConfigurationDetailsLists = stepStorageMountConfigurationDetailsLists;
             StepType = stepType;
         }
     }

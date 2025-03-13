@@ -34,6 +34,7 @@ namespace Pulumi.Oci.Database
         ///         DisplayName = vmClusterDisplayName,
         ///         ExadataInfrastructureId = testExadataInfrastructure.Id,
         ///         State = vmClusterState,
+        ///         VmClusterType = vmClusterVmClusterType,
         ///     });
         /// 
         /// });
@@ -65,6 +66,7 @@ namespace Pulumi.Oci.Database
         ///         DisplayName = vmClusterDisplayName,
         ///         ExadataInfrastructureId = testExadataInfrastructure.Id,
         ///         State = vmClusterState,
+        ///         VmClusterType = vmClusterVmClusterType,
         ///     });
         /// 
         /// });
@@ -96,6 +98,7 @@ namespace Pulumi.Oci.Database
         ///         DisplayName = vmClusterDisplayName,
         ///         ExadataInfrastructureId = testExadataInfrastructure.Id,
         ///         State = vmClusterState,
+        ///         VmClusterType = vmClusterVmClusterType,
         ///     });
         /// 
         /// });
@@ -140,6 +143,12 @@ namespace Pulumi.Oci.Database
         [Input("state")]
         public string? State { get; set; }
 
+        /// <summary>
+        /// A filter to return only vmclusters that match the given vmcluster type exactly.
+        /// </summary>
+        [Input("vmClusterType")]
+        public string? VmClusterType { get; set; }
+
         public GetVmClustersArgs()
         {
         }
@@ -180,6 +189,12 @@ namespace Pulumi.Oci.Database
         [Input("state")]
         public Input<string>? State { get; set; }
 
+        /// <summary>
+        /// A filter to return only vmclusters that match the given vmcluster type exactly.
+        /// </summary>
+        [Input("vmClusterType")]
+        public Input<string>? VmClusterType { get; set; }
+
         public GetVmClustersInvokeArgs()
         {
         }
@@ -212,6 +227,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string? State;
         /// <summary>
+        /// The vmcluster type for the VM cluster/Cloud VM cluster.
+        /// </summary>
+        public readonly string? VmClusterType;
+        /// <summary>
         /// The list of vm_clusters.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetVmClustersVmClusterResult> VmClusters;
@@ -230,6 +249,8 @@ namespace Pulumi.Oci.Database
 
             string? state,
 
+            string? vmClusterType,
+
             ImmutableArray<Outputs.GetVmClustersVmClusterResult> vmClusters)
         {
             CompartmentId = compartmentId;
@@ -238,6 +259,7 @@ namespace Pulumi.Oci.Database
             Filters = filters;
             Id = id;
             State = state;
+            VmClusterType = vmClusterType;
             VmClusters = vmClusters;
         }
     }

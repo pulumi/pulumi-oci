@@ -637,6 +637,7 @@ class _MysqlDbSystemState:
                  source: Optional[pulumi.Input['MysqlDbSystemSourceArgs']] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
@@ -703,6 +704,7 @@ class _MysqlDbSystemState:
         :param pulumi.Input['MysqlDbSystemSourceArgs'] source: Parameters detailing how to provision the initial data of the system.
         :param pulumi.Input[str] state: (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
         :param pulumi.Input[str] subnet_id: The OCID of the subnet the DB System is associated with.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the DB System was created.
         :param pulumi.Input[str] time_updated: The time the DB System was last updated.
         """
@@ -786,6 +788,8 @@ class _MysqlDbSystemState:
             pulumi.set(__self__, "state", state)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
@@ -1294,6 +1298,18 @@ class _MysqlDbSystemState:
         pulumi.set(self, "subnet_id", value)
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "system_tags", value)
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1377,6 +1393,10 @@ class MysqlDbSystem(pulumi.CustomResource):
             admin_password=mysql_db_system_admin_password,
             admin_username=mysql_db_system_admin_username,
             backup_policy={
+                "copy_policies": [{
+                    "copy_to_region": mysql_db_system_backup_policy_copy_policies_copy_to_region,
+                    "backup_copy_retention_in_days": mysql_db_system_backup_policy_copy_policies_backup_copy_retention_in_days,
+                }],
                 "defined_tags": {
                     "foo-namespace.bar-key": "value",
                 },
@@ -1532,6 +1552,10 @@ class MysqlDbSystem(pulumi.CustomResource):
             admin_password=mysql_db_system_admin_password,
             admin_username=mysql_db_system_admin_username,
             backup_policy={
+                "copy_policies": [{
+                    "copy_to_region": mysql_db_system_backup_policy_copy_policies_copy_to_region,
+                    "backup_copy_retention_in_days": mysql_db_system_backup_policy_copy_policies_backup_copy_retention_in_days,
+                }],
                 "defined_tags": {
                     "foo-namespace.bar-key": "value",
                 },
@@ -1708,6 +1732,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             __props__.__dict__["is_heat_wave_cluster_attached"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["point_in_time_recovery_details"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
         secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["adminPassword"])
@@ -1762,6 +1787,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             source: Optional[pulumi.Input[Union['MysqlDbSystemSourceArgs', 'MysqlDbSystemSourceArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
             subnet_id: Optional[pulumi.Input[str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None) -> 'MysqlDbSystem':
         """
@@ -1833,6 +1859,7 @@ class MysqlDbSystem(pulumi.CustomResource):
         :param pulumi.Input[Union['MysqlDbSystemSourceArgs', 'MysqlDbSystemSourceArgsDict']] source: Parameters detailing how to provision the initial data of the system.
         :param pulumi.Input[str] state: (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
         :param pulumi.Input[str] subnet_id: The OCID of the subnet the DB System is associated with.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the DB System was created.
         :param pulumi.Input[str] time_updated: The time the DB System was last updated.
         """
@@ -1880,6 +1907,7 @@ class MysqlDbSystem(pulumi.CustomResource):
         __props__.__dict__["source"] = source
         __props__.__dict__["state"] = state
         __props__.__dict__["subnet_id"] = subnet_id
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         return MysqlDbSystem(resource_name, opts=opts, __props__=__props__)
@@ -2225,6 +2253,14 @@ class MysqlDbSystem(pulumi.CustomResource):
         The OCID of the subnet the DB System is associated with.
         """
         return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, str]]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")

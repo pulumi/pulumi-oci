@@ -75,6 +75,11 @@ public final class GetSensitiveDataModelsSensitiveDataModelCollectionItem {
      */
     private List<String> schemasForDiscoveries;
     /**
+     * @return The OCIDs of the sensitive type groups to be used by data discovery jobs.
+     * 
+     */
+    private List<String> sensitiveTypeGroupIdsForDiscoveries;
+    /**
      * @return The OCIDs of the sensitive types to be used by data discovery jobs.
      * 
      */
@@ -196,6 +201,13 @@ public final class GetSensitiveDataModelsSensitiveDataModelCollectionItem {
         return this.schemasForDiscoveries;
     }
     /**
+     * @return The OCIDs of the sensitive type groups to be used by data discovery jobs.
+     * 
+     */
+    public List<String> sensitiveTypeGroupIdsForDiscoveries() {
+        return this.sensitiveTypeGroupIdsForDiscoveries;
+    }
+    /**
      * @return The OCIDs of the sensitive types to be used by data discovery jobs.
      * 
      */
@@ -266,6 +278,7 @@ public final class GetSensitiveDataModelsSensitiveDataModelCollectionItem {
         private Boolean isIncludeAllSensitiveTypes;
         private Boolean isSampleDataCollectionEnabled;
         private List<String> schemasForDiscoveries;
+        private List<String> sensitiveTypeGroupIdsForDiscoveries;
         private List<String> sensitiveTypeIdsForDiscoveries;
         private String state;
         private Map<String,String> systemTags;
@@ -288,6 +301,7 @@ public final class GetSensitiveDataModelsSensitiveDataModelCollectionItem {
     	      this.isIncludeAllSensitiveTypes = defaults.isIncludeAllSensitiveTypes;
     	      this.isSampleDataCollectionEnabled = defaults.isSampleDataCollectionEnabled;
     	      this.schemasForDiscoveries = defaults.schemasForDiscoveries;
+    	      this.sensitiveTypeGroupIdsForDiscoveries = defaults.sensitiveTypeGroupIdsForDiscoveries;
     	      this.sensitiveTypeIdsForDiscoveries = defaults.sensitiveTypeIdsForDiscoveries;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
@@ -397,6 +411,17 @@ public final class GetSensitiveDataModelsSensitiveDataModelCollectionItem {
             return schemasForDiscoveries(List.of(schemasForDiscoveries));
         }
         @CustomType.Setter
+        public Builder sensitiveTypeGroupIdsForDiscoveries(List<String> sensitiveTypeGroupIdsForDiscoveries) {
+            if (sensitiveTypeGroupIdsForDiscoveries == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveDataModelCollectionItem", "sensitiveTypeGroupIdsForDiscoveries");
+            }
+            this.sensitiveTypeGroupIdsForDiscoveries = sensitiveTypeGroupIdsForDiscoveries;
+            return this;
+        }
+        public Builder sensitiveTypeGroupIdsForDiscoveries(String... sensitiveTypeGroupIdsForDiscoveries) {
+            return sensitiveTypeGroupIdsForDiscoveries(List.of(sensitiveTypeGroupIdsForDiscoveries));
+        }
+        @CustomType.Setter
         public Builder sensitiveTypeIdsForDiscoveries(List<String> sensitiveTypeIdsForDiscoveries) {
             if (sensitiveTypeIdsForDiscoveries == null) {
               throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveDataModelCollectionItem", "sensitiveTypeIdsForDiscoveries");
@@ -472,6 +497,7 @@ public final class GetSensitiveDataModelsSensitiveDataModelCollectionItem {
             _resultValue.isIncludeAllSensitiveTypes = isIncludeAllSensitiveTypes;
             _resultValue.isSampleDataCollectionEnabled = isSampleDataCollectionEnabled;
             _resultValue.schemasForDiscoveries = schemasForDiscoveries;
+            _resultValue.sensitiveTypeGroupIdsForDiscoveries = sensitiveTypeGroupIdsForDiscoveries;
             _resultValue.sensitiveTypeIdsForDiscoveries = sensitiveTypeIdsForDiscoveries;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;

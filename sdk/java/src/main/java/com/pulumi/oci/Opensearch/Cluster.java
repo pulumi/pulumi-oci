@@ -76,18 +76,12 @@ public class Cluster extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="configureOutboundClusterTrigger", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> configureOutboundClusterTrigger;
 
     /**
      * @return (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Optional<Integer>> configureOutboundClusterTrigger() {
@@ -652,6 +646,26 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> totalStorageGb() {
         return this.totalStorageGb;
+    }
+    /**
+     * An optional property to upgrade the major version of the cluster. This workflow upgrades the cluster without creating a clone. If you want to create a clone and upgrade the clone for testing please use SDK or CLI.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="upgradeMajorVersionTrigger", refs={Integer.class}, tree="[0]")
+    private Output<Integer> upgradeMajorVersionTrigger;
+
+    /**
+     * @return An optional property to upgrade the major version of the cluster. This workflow upgrades the cluster without creating a clone. If you want to create a clone and upgrade the clone for testing please use SDK or CLI.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<Integer> upgradeMajorVersionTrigger() {
+        return this.upgradeMajorVersionTrigger;
     }
     /**
      * The OCID for the compartment where the cluster&#39;s VCN is located.

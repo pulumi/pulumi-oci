@@ -48,6 +48,7 @@ import * as utilities from "../utilities";
  * const testFileSystem = new oci.filestorage.FileSystem("test_file_system", {
  *     availabilityDomain: fileSystemAvailabilityDomain,
  *     compartmentId: compartmentId,
+ *     areQuotaRulesEnabled: fileSystemAreQuotaRulesEnabled,
  *     cloneAttachStatus: fileSystemCloneAttachStatus,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
@@ -104,6 +105,10 @@ export class FileSystem extends pulumi.CustomResource {
         return obj['__pulumiType'] === FileSystem.__pulumiType;
     }
 
+    /**
+     * (Updatable) Specifies the enforcement of quota rules on the file system.
+     */
+    public readonly areQuotaRulesEnabled!: pulumi.Output<boolean>;
     /**
      * The availability domain to create the file system in.  Example: `Uocm:PHX-AD-1`
      */
@@ -176,6 +181,14 @@ export class FileSystem extends pulumi.CustomResource {
      */
     public /*out*/ readonly meteredBytes!: pulumi.Output<string>;
     /**
+     * Displays the state of enforcement of quota rules on the file system.
+     */
+    public /*out*/ readonly quotaEnforcementState!: pulumi.Output<string>;
+    /**
+     * Specifies the total number of replications for which this file system is a source.
+     */
+    public /*out*/ readonly replicationSourceCount!: pulumi.Output<number>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
      */
     public /*out*/ readonly replicationTargetId!: pulumi.Output<string>;
@@ -213,6 +226,7 @@ export class FileSystem extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as FileSystemState | undefined;
+            resourceInputs["areQuotaRulesEnabled"] = state ? state.areQuotaRulesEnabled : undefined;
             resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
             resourceInputs["cloneAttachStatus"] = state ? state.cloneAttachStatus : undefined;
             resourceInputs["cloneCount"] = state ? state.cloneCount : undefined;
@@ -230,6 +244,8 @@ export class FileSystem extends pulumi.CustomResource {
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["locks"] = state ? state.locks : undefined;
             resourceInputs["meteredBytes"] = state ? state.meteredBytes : undefined;
+            resourceInputs["quotaEnforcementState"] = state ? state.quotaEnforcementState : undefined;
+            resourceInputs["replicationSourceCount"] = state ? state.replicationSourceCount : undefined;
             resourceInputs["replicationTargetId"] = state ? state.replicationTargetId : undefined;
             resourceInputs["sourceDetails"] = state ? state.sourceDetails : undefined;
             resourceInputs["sourceSnapshotId"] = state ? state.sourceSnapshotId : undefined;
@@ -244,6 +260,7 @@ export class FileSystem extends pulumi.CustomResource {
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
+            resourceInputs["areQuotaRulesEnabled"] = args ? args.areQuotaRulesEnabled : undefined;
             resourceInputs["availabilityDomain"] = args ? args.availabilityDomain : undefined;
             resourceInputs["cloneAttachStatus"] = args ? args.cloneAttachStatus : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
@@ -262,6 +279,8 @@ export class FileSystem extends pulumi.CustomResource {
             resourceInputs["isTargetable"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["meteredBytes"] = undefined /*out*/;
+            resourceInputs["quotaEnforcementState"] = undefined /*out*/;
+            resourceInputs["replicationSourceCount"] = undefined /*out*/;
             resourceInputs["replicationTargetId"] = undefined /*out*/;
             resourceInputs["sourceDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -277,6 +296,10 @@ export class FileSystem extends pulumi.CustomResource {
  * Input properties used for looking up and filtering FileSystem resources.
  */
 export interface FileSystemState {
+    /**
+     * (Updatable) Specifies the enforcement of quota rules on the file system.
+     */
+    areQuotaRulesEnabled?: pulumi.Input<boolean>;
     /**
      * The availability domain to create the file system in.  Example: `Uocm:PHX-AD-1`
      */
@@ -349,6 +372,14 @@ export interface FileSystemState {
      */
     meteredBytes?: pulumi.Input<string>;
     /**
+     * Displays the state of enforcement of quota rules on the file system.
+     */
+    quotaEnforcementState?: pulumi.Input<string>;
+    /**
+     * Specifies the total number of replications for which this file system is a source.
+     */
+    replicationSourceCount?: pulumi.Input<number>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
      */
     replicationTargetId?: pulumi.Input<string>;
@@ -378,6 +409,10 @@ export interface FileSystemState {
  * The set of arguments for constructing a FileSystem resource.
  */
 export interface FileSystemArgs {
+    /**
+     * (Updatable) Specifies the enforcement of quota rules on the file system.
+     */
+    areQuotaRulesEnabled?: pulumi.Input<boolean>;
     /**
      * The availability domain to create the file system in.  Example: `Uocm:PHX-AD-1`
      */

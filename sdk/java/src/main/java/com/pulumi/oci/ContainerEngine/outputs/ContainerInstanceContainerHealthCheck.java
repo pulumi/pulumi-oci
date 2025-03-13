@@ -16,11 +16,6 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ContainerInstanceContainerHealthCheck {
     /**
-     * @return The list of strings that will be simplified to a single command for checking the status of the container.
-     * 
-     */
-    private @Nullable List<String> commands;
-    /**
      * @return The action will be triggered when the container health check fails. There are two types of action: KILL or NONE. The default action is KILL. If failure action is KILL, the container will be subject to the container restart policy.
      * 
      */
@@ -64,7 +59,7 @@ public final class ContainerInstanceContainerHealthCheck {
      * @return Container health check HTTP port.
      * 
      */
-    private @Nullable Integer port;
+    private Integer port;
     private @Nullable String status;
     private @Nullable String statusDetails;
     /**
@@ -79,13 +74,6 @@ public final class ContainerInstanceContainerHealthCheck {
     private @Nullable Integer timeoutInSeconds;
 
     private ContainerInstanceContainerHealthCheck() {}
-    /**
-     * @return The list of strings that will be simplified to a single command for checking the status of the container.
-     * 
-     */
-    public List<String> commands() {
-        return this.commands == null ? List.of() : this.commands;
-    }
     /**
      * @return The action will be triggered when the container health check fails. There are two types of action: KILL or NONE. The default action is KILL. If failure action is KILL, the container will be subject to the container restart policy.
      * 
@@ -146,8 +134,8 @@ public final class ContainerInstanceContainerHealthCheck {
      * @return Container health check HTTP port.
      * 
      */
-    public Optional<Integer> port() {
-        return Optional.ofNullable(this.port);
+    public Integer port() {
+        return this.port;
     }
     public Optional<String> status() {
         return Optional.ofNullable(this.status);
@@ -179,7 +167,6 @@ public final class ContainerInstanceContainerHealthCheck {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable List<String> commands;
         private @Nullable String failureAction;
         private @Nullable Integer failureThreshold;
         private @Nullable List<ContainerInstanceContainerHealthCheckHeader> headers;
@@ -188,7 +175,7 @@ public final class ContainerInstanceContainerHealthCheck {
         private @Nullable Integer intervalInSeconds;
         private @Nullable String name;
         private @Nullable String path;
-        private @Nullable Integer port;
+        private Integer port;
         private @Nullable String status;
         private @Nullable String statusDetails;
         private @Nullable Integer successThreshold;
@@ -196,7 +183,6 @@ public final class ContainerInstanceContainerHealthCheck {
         public Builder() {}
         public Builder(ContainerInstanceContainerHealthCheck defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.commands = defaults.commands;
     	      this.failureAction = defaults.failureAction;
     	      this.failureThreshold = defaults.failureThreshold;
     	      this.headers = defaults.headers;
@@ -212,15 +198,6 @@ public final class ContainerInstanceContainerHealthCheck {
     	      this.timeoutInSeconds = defaults.timeoutInSeconds;
         }
 
-        @CustomType.Setter
-        public Builder commands(@Nullable List<String> commands) {
-
-            this.commands = commands;
-            return this;
-        }
-        public Builder commands(String... commands) {
-            return commands(List.of(commands));
-        }
         @CustomType.Setter
         public Builder failureAction(@Nullable String failureAction) {
 
@@ -275,8 +252,10 @@ public final class ContainerInstanceContainerHealthCheck {
             return this;
         }
         @CustomType.Setter
-        public Builder port(@Nullable Integer port) {
-
+        public Builder port(Integer port) {
+            if (port == null) {
+              throw new MissingRequiredPropertyException("ContainerInstanceContainerHealthCheck", "port");
+            }
             this.port = port;
             return this;
         }
@@ -306,7 +285,6 @@ public final class ContainerInstanceContainerHealthCheck {
         }
         public ContainerInstanceContainerHealthCheck build() {
             final var _resultValue = new ContainerInstanceContainerHealthCheck();
-            _resultValue.commands = commands;
             _resultValue.failureAction = failureAction;
             _resultValue.failureThreshold = failureThreshold;
             _resultValue.headers = headers;

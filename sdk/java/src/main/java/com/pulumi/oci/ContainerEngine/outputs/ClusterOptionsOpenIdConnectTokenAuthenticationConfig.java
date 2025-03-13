@@ -26,6 +26,11 @@ public final class ClusterOptionsOpenIdConnectTokenAuthenticationConfig {
      */
     private @Nullable String clientId;
     /**
+     * @return (Updatable) A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+     * 
+     */
+    private @Nullable String configurationFile;
+    /**
      * @return (Updatable) JWT claim to use as the user&#39;s group. If the claim is present it must be an array of strings.
      * 
      */
@@ -80,6 +85,13 @@ public final class ClusterOptionsOpenIdConnectTokenAuthenticationConfig {
      */
     public Optional<String> clientId() {
         return Optional.ofNullable(this.clientId);
+    }
+    /**
+     * @return (Updatable) A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+     * 
+     */
+    public Optional<String> configurationFile() {
+        return Optional.ofNullable(this.configurationFile);
     }
     /**
      * @return (Updatable) JWT claim to use as the user&#39;s group. If the claim is present it must be an array of strings.
@@ -149,6 +161,7 @@ public final class ClusterOptionsOpenIdConnectTokenAuthenticationConfig {
     public static final class Builder {
         private @Nullable String caCertificate;
         private @Nullable String clientId;
+        private @Nullable String configurationFile;
         private @Nullable String groupsClaim;
         private @Nullable String groupsPrefix;
         private Boolean isOpenIdConnectAuthEnabled;
@@ -162,6 +175,7 @@ public final class ClusterOptionsOpenIdConnectTokenAuthenticationConfig {
     	      Objects.requireNonNull(defaults);
     	      this.caCertificate = defaults.caCertificate;
     	      this.clientId = defaults.clientId;
+    	      this.configurationFile = defaults.configurationFile;
     	      this.groupsClaim = defaults.groupsClaim;
     	      this.groupsPrefix = defaults.groupsPrefix;
     	      this.isOpenIdConnectAuthEnabled = defaults.isOpenIdConnectAuthEnabled;
@@ -182,6 +196,12 @@ public final class ClusterOptionsOpenIdConnectTokenAuthenticationConfig {
         public Builder clientId(@Nullable String clientId) {
 
             this.clientId = clientId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder configurationFile(@Nullable String configurationFile) {
+
+            this.configurationFile = configurationFile;
             return this;
         }
         @CustomType.Setter
@@ -244,6 +264,7 @@ public final class ClusterOptionsOpenIdConnectTokenAuthenticationConfig {
             final var _resultValue = new ClusterOptionsOpenIdConnectTokenAuthenticationConfig();
             _resultValue.caCertificate = caCertificate;
             _resultValue.clientId = clientId;
+            _resultValue.configurationFile = configurationFile;
             _resultValue.groupsClaim = groupsClaim;
             _resultValue.groupsPrefix = groupsPrefix;
             _resultValue.isOpenIdConnectAuthEnabled = isOpenIdConnectAuthEnabled;

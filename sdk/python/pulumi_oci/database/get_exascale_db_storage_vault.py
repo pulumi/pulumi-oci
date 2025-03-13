@@ -27,13 +27,16 @@ class GetExascaleDbStorageVaultResult:
     """
     A collection of values returned by getExascaleDbStorageVault.
     """
-    def __init__(__self__, additional_flash_cache_in_percent=None, availability_domain=None, compartment_id=None, defined_tags=None, description=None, display_name=None, exascale_db_storage_vault_id=None, freeform_tags=None, high_capacity_database_storages=None, id=None, lifecycle_details=None, state=None, system_tags=None, time_created=None, time_zone=None, vm_cluster_count=None, vm_cluster_ids=None):
+    def __init__(__self__, additional_flash_cache_in_percent=None, availability_domain=None, cluster_placement_group_id=None, compartment_id=None, defined_tags=None, description=None, display_name=None, exadata_infrastructure_id=None, exascale_db_storage_vault_id=None, freeform_tags=None, high_capacity_database_storages=None, id=None, lifecycle_details=None, state=None, subscription_id=None, system_tags=None, time_created=None, time_zone=None, vm_cluster_count=None, vm_cluster_ids=None):
         if additional_flash_cache_in_percent and not isinstance(additional_flash_cache_in_percent, int):
             raise TypeError("Expected argument 'additional_flash_cache_in_percent' to be a int")
         pulumi.set(__self__, "additional_flash_cache_in_percent", additional_flash_cache_in_percent)
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
+        if cluster_placement_group_id and not isinstance(cluster_placement_group_id, str):
+            raise TypeError("Expected argument 'cluster_placement_group_id' to be a str")
+        pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -46,6 +49,9 @@ class GetExascaleDbStorageVaultResult:
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if exadata_infrastructure_id and not isinstance(exadata_infrastructure_id, str):
+            raise TypeError("Expected argument 'exadata_infrastructure_id' to be a str")
+        pulumi.set(__self__, "exadata_infrastructure_id", exadata_infrastructure_id)
         if exascale_db_storage_vault_id and not isinstance(exascale_db_storage_vault_id, str):
             raise TypeError("Expected argument 'exascale_db_storage_vault_id' to be a str")
         pulumi.set(__self__, "exascale_db_storage_vault_id", exascale_db_storage_vault_id)
@@ -64,6 +70,9 @@ class GetExascaleDbStorageVaultResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if subscription_id and not isinstance(subscription_id, str):
+            raise TypeError("Expected argument 'subscription_id' to be a str")
+        pulumi.set(__self__, "subscription_id", subscription_id)
         if system_tags and not isinstance(system_tags, dict):
             raise TypeError("Expected argument 'system_tags' to be a dict")
         pulumi.set(__self__, "system_tags", system_tags)
@@ -97,6 +106,14 @@ class GetExascaleDbStorageVaultResult:
         return pulumi.get(self, "availability_domain")
 
     @property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
+
+    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
@@ -127,6 +144,14 @@ class GetExascaleDbStorageVaultResult:
         The user-friendly name for the Exadata Database Storage Vault. The name does not need to be unique.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="exadataInfrastructureId")
+    def exadata_infrastructure_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+        """
+        return pulumi.get(self, "exadata_infrastructure_id")
 
     @property
     @pulumi.getter(name="exascaleDbStorageVaultId")
@@ -172,6 +197,14 @@ class GetExascaleDbStorageVaultResult:
         The current state of the Exadata Database Storage Vault.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        """
+        return pulumi.get(self, "subscription_id")
 
     @property
     @pulumi.getter(name="systemTags")
@@ -222,16 +255,19 @@ class AwaitableGetExascaleDbStorageVaultResult(GetExascaleDbStorageVaultResult):
         return GetExascaleDbStorageVaultResult(
             additional_flash_cache_in_percent=self.additional_flash_cache_in_percent,
             availability_domain=self.availability_domain,
+            cluster_placement_group_id=self.cluster_placement_group_id,
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
             description=self.description,
             display_name=self.display_name,
+            exadata_infrastructure_id=self.exadata_infrastructure_id,
             exascale_db_storage_vault_id=self.exascale_db_storage_vault_id,
             freeform_tags=self.freeform_tags,
             high_capacity_database_storages=self.high_capacity_database_storages,
             id=self.id,
             lifecycle_details=self.lifecycle_details,
             state=self.state,
+            subscription_id=self.subscription_id,
             system_tags=self.system_tags,
             time_created=self.time_created,
             time_zone=self.time_zone,
@@ -266,16 +302,19 @@ def get_exascale_db_storage_vault(exascale_db_storage_vault_id: Optional[str] = 
     return AwaitableGetExascaleDbStorageVaultResult(
         additional_flash_cache_in_percent=pulumi.get(__ret__, 'additional_flash_cache_in_percent'),
         availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        cluster_placement_group_id=pulumi.get(__ret__, 'cluster_placement_group_id'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         description=pulumi.get(__ret__, 'description'),
         display_name=pulumi.get(__ret__, 'display_name'),
+        exadata_infrastructure_id=pulumi.get(__ret__, 'exadata_infrastructure_id'),
         exascale_db_storage_vault_id=pulumi.get(__ret__, 'exascale_db_storage_vault_id'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         high_capacity_database_storages=pulumi.get(__ret__, 'high_capacity_database_storages'),
         id=pulumi.get(__ret__, 'id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         state=pulumi.get(__ret__, 'state'),
+        subscription_id=pulumi.get(__ret__, 'subscription_id'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_zone=pulumi.get(__ret__, 'time_zone'),
@@ -307,16 +346,19 @@ def get_exascale_db_storage_vault_output(exascale_db_storage_vault_id: Optional[
     return __ret__.apply(lambda __response__: GetExascaleDbStorageVaultResult(
         additional_flash_cache_in_percent=pulumi.get(__response__, 'additional_flash_cache_in_percent'),
         availability_domain=pulumi.get(__response__, 'availability_domain'),
+        cluster_placement_group_id=pulumi.get(__response__, 'cluster_placement_group_id'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         description=pulumi.get(__response__, 'description'),
         display_name=pulumi.get(__response__, 'display_name'),
+        exadata_infrastructure_id=pulumi.get(__response__, 'exadata_infrastructure_id'),
         exascale_db_storage_vault_id=pulumi.get(__response__, 'exascale_db_storage_vault_id'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         high_capacity_database_storages=pulumi.get(__response__, 'high_capacity_database_storages'),
         id=pulumi.get(__response__, 'id'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         state=pulumi.get(__response__, 'state'),
+        subscription_id=pulumi.get(__response__, 'subscription_id'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_zone=pulumi.get(__response__, 'time_zone'),

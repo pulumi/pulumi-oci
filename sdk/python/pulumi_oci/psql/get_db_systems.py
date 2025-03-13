@@ -52,7 +52,7 @@ class GetDbSystemsResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
+        target compartment to place a new backup
         """
         return pulumi.get(self, "compartment_id")
 

@@ -60,6 +60,7 @@ import * as utilities from "../utilities";
  *             isOpenIdConnectAuthEnabled: clusterOptionsOpenIdConnectTokenAuthenticationConfigIsOpenIdConnectAuthEnabled,
  *             caCertificate: clusterOptionsOpenIdConnectTokenAuthenticationConfigCaCertificate,
  *             clientId: testClient.id,
+ *             configurationFile: clusterOptionsOpenIdConnectTokenAuthenticationConfigConfigurationFile,
  *             groupsClaim: clusterOptionsOpenIdConnectTokenAuthenticationConfigGroupsClaim,
  *             groupsPrefix: clusterOptionsOpenIdConnectTokenAuthenticationConfigGroupsPrefix,
  *             issuerUrl: clusterOptionsOpenIdConnectTokenAuthenticationConfigIssuerUrl,

@@ -33,6 +33,7 @@ namespace Pulumi.Oci.Database
         ///         CloudExadataInfrastructureId = testCloudExadataInfrastructure.Id,
         ///         DisplayName = cloudVmClusterDisplayName,
         ///         State = cloudVmClusterState,
+        ///         VmClusterType = cloudVmClusterVmClusterType,
         ///     });
         /// 
         /// });
@@ -63,6 +64,7 @@ namespace Pulumi.Oci.Database
         ///         CloudExadataInfrastructureId = testCloudExadataInfrastructure.Id,
         ///         DisplayName = cloudVmClusterDisplayName,
         ///         State = cloudVmClusterState,
+        ///         VmClusterType = cloudVmClusterVmClusterType,
         ///     });
         /// 
         /// });
@@ -93,6 +95,7 @@ namespace Pulumi.Oci.Database
         ///         CloudExadataInfrastructureId = testCloudExadataInfrastructure.Id,
         ///         DisplayName = cloudVmClusterDisplayName,
         ///         State = cloudVmClusterState,
+        ///         VmClusterType = cloudVmClusterVmClusterType,
         ///     });
         /// 
         /// });
@@ -137,6 +140,12 @@ namespace Pulumi.Oci.Database
         [Input("state")]
         public string? State { get; set; }
 
+        /// <summary>
+        /// A filter to return only cloud vmclusters that match the given cloud vmcluster type exactly.
+        /// </summary>
+        [Input("vmClusterType")]
+        public string? VmClusterType { get; set; }
+
         public GetCloudVmClustersArgs()
         {
         }
@@ -177,6 +186,12 @@ namespace Pulumi.Oci.Database
         [Input("state")]
         public Input<string>? State { get; set; }
 
+        /// <summary>
+        /// A filter to return only cloud vmclusters that match the given cloud vmcluster type exactly.
+        /// </summary>
+        [Input("vmClusterType")]
+        public Input<string>? VmClusterType { get; set; }
+
         public GetCloudVmClustersInvokeArgs()
         {
         }
@@ -212,6 +227,10 @@ namespace Pulumi.Oci.Database
         /// The current state of the cloud VM cluster.
         /// </summary>
         public readonly string? State;
+        /// <summary>
+        /// The vmcluster type for the VM cluster/Cloud VM cluster.
+        /// </summary>
+        public readonly string? VmClusterType;
 
         [OutputConstructor]
         private GetCloudVmClustersResult(
@@ -227,7 +246,9 @@ namespace Pulumi.Oci.Database
 
             string id,
 
-            string? state)
+            string? state,
+
+            string? vmClusterType)
         {
             CloudExadataInfrastructureId = cloudExadataInfrastructureId;
             CloudVmClusters = cloudVmClusters;
@@ -236,6 +257,7 @@ namespace Pulumi.Oci.Database
             Filters = filters;
             Id = id;
             State = state;
+            VmClusterType = vmClusterType;
         }
     }
 }

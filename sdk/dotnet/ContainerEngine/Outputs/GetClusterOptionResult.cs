@@ -29,7 +29,13 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// Network configuration for Kubernetes.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetClusterOptionKubernetesNetworkConfigResult> KubernetesNetworkConfigs;
+        /// <summary>
+        /// The property that define the status of the OIDC Discovery feature for a cluster.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetClusterOptionOpenIdConnectDiscoveryResult> OpenIdConnectDiscoveries;
+        /// <summary>
+        /// The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetClusterOptionOpenIdConnectTokenAuthenticationConfigResult> OpenIdConnectTokenAuthenticationConfigs;
         /// <summary>
         /// Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)

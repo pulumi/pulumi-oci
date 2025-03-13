@@ -14,10 +14,6 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
     public sealed class ContainerInstanceContainerHealthCheck
     {
         /// <summary>
-        /// The list of strings that will be simplified to a single command for checking the status of the container.
-        /// </summary>
-        public readonly ImmutableArray<string> Commands;
-        /// <summary>
         /// The action will be triggered when the container health check fails. There are two types of action: KILL or NONE. The default action is KILL. If failure action is KILL, the container will be subject to the container restart policy.
         /// </summary>
         public readonly string? FailureAction;
@@ -52,7 +48,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// Container health check HTTP port.
         /// </summary>
-        public readonly int? Port;
+        public readonly int Port;
         public readonly string? Status;
         public readonly string? StatusDetails;
         /// <summary>
@@ -66,8 +62,6 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
         [OutputConstructor]
         private ContainerInstanceContainerHealthCheck(
-            ImmutableArray<string> commands,
-
             string? failureAction,
 
             int? failureThreshold,
@@ -84,7 +78,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
             string? path,
 
-            int? port,
+            int port,
 
             string? status,
 
@@ -94,7 +88,6 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
             int? timeoutInSeconds)
         {
-            Commands = commands;
             FailureAction = failureAction;
             FailureThreshold = failureThreshold;
             Headers = headers;

@@ -36,6 +36,7 @@ import (
 //				SubnetId:         pulumi.Any(testSubnet.Id),
 //				DbNodeId:         pulumi.Any(testDbNode.Id),
 //				IpAddress:        pulumi.Any(applicationVipIpAddress),
+//				Ipv6address:      pulumi.Any(applicationVipIpv6address),
 //			})
 //			if err != nil {
 //				return err
@@ -68,8 +69,10 @@ type ApplicationVip struct {
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The hostname of the application virtual IP (VIP) address.
 	HostnameLabel pulumi.StringOutput `pulumi:"hostnameLabel"`
-	// The application virtual IP (VIP) address.
+	// The application virtual IP (VIP) IPv4 address.
 	IpAddress pulumi.StringOutput `pulumi:"ipAddress"`
+	// The application virtual IP (VIP) IPv6 address.
+	Ipv6address pulumi.StringOutput `pulumi:"ipv6address"`
 	// Additional information about the current lifecycle state of the application virtual IP (VIP) address.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The current lifecycle state of the application virtual IP (VIP) address.
@@ -134,8 +137,10 @@ type applicationVipState struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The hostname of the application virtual IP (VIP) address.
 	HostnameLabel *string `pulumi:"hostnameLabel"`
-	// The application virtual IP (VIP) address.
+	// The application virtual IP (VIP) IPv4 address.
 	IpAddress *string `pulumi:"ipAddress"`
+	// The application virtual IP (VIP) IPv6 address.
+	Ipv6address *string `pulumi:"ipv6address"`
 	// Additional information about the current lifecycle state of the application virtual IP (VIP) address.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The current lifecycle state of the application virtual IP (VIP) address.
@@ -162,8 +167,10 @@ type ApplicationVipState struct {
 	FreeformTags pulumi.StringMapInput
 	// The hostname of the application virtual IP (VIP) address.
 	HostnameLabel pulumi.StringPtrInput
-	// The application virtual IP (VIP) address.
+	// The application virtual IP (VIP) IPv4 address.
 	IpAddress pulumi.StringPtrInput
+	// The application virtual IP (VIP) IPv6 address.
+	Ipv6address pulumi.StringPtrInput
 	// Additional information about the current lifecycle state of the application virtual IP (VIP) address.
 	LifecycleDetails pulumi.StringPtrInput
 	// The current lifecycle state of the application virtual IP (VIP) address.
@@ -188,8 +195,10 @@ type applicationVipArgs struct {
 	DbNodeId *string `pulumi:"dbNodeId"`
 	// The hostname of the application virtual IP (VIP) address.
 	HostnameLabel string `pulumi:"hostnameLabel"`
-	// The application virtual IP (VIP) address.
+	// The application virtual IP (VIP) IPv4 address.
 	IpAddress *string `pulumi:"ipAddress"`
+	// The application virtual IP (VIP) IPv6 address.
+	Ipv6address *string `pulumi:"ipv6address"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
 	//
 	// ** IMPORTANT **
@@ -205,8 +214,10 @@ type ApplicationVipArgs struct {
 	DbNodeId pulumi.StringPtrInput
 	// The hostname of the application virtual IP (VIP) address.
 	HostnameLabel pulumi.StringInput
-	// The application virtual IP (VIP) address.
+	// The application virtual IP (VIP) IPv4 address.
 	IpAddress pulumi.StringPtrInput
+	// The application virtual IP (VIP) IPv6 address.
+	Ipv6address pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
 	//
 	// ** IMPORTANT **
@@ -331,9 +342,14 @@ func (o ApplicationVipOutput) HostnameLabel() pulumi.StringOutput {
 	return o.ApplyT(func(v *ApplicationVip) pulumi.StringOutput { return v.HostnameLabel }).(pulumi.StringOutput)
 }
 
-// The application virtual IP (VIP) address.
+// The application virtual IP (VIP) IPv4 address.
 func (o ApplicationVipOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v *ApplicationVip) pulumi.StringOutput { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+// The application virtual IP (VIP) IPv6 address.
+func (o ApplicationVipOutput) Ipv6address() pulumi.StringOutput {
+	return o.ApplyT(func(v *ApplicationVip) pulumi.StringOutput { return v.Ipv6address }).(pulumi.StringOutput)
 }
 
 // Additional information about the current lifecycle state of the application virtual IP (VIP) address.

@@ -85,6 +85,21 @@ public final class GetVmClustersArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.state);
     }
 
+    /**
+     * A filter to return only vmclusters that match the given vmcluster type exactly.
+     * 
+     */
+    @Import(name="vmClusterType")
+    private @Nullable Output<String> vmClusterType;
+
+    /**
+     * @return A filter to return only vmclusters that match the given vmcluster type exactly.
+     * 
+     */
+    public Optional<Output<String>> vmClusterType() {
+        return Optional.ofNullable(this.vmClusterType);
+    }
+
     private GetVmClustersArgs() {}
 
     private GetVmClustersArgs(GetVmClustersArgs $) {
@@ -93,6 +108,7 @@ public final class GetVmClustersArgs extends com.pulumi.resources.InvokeArgs {
         this.exadataInfrastructureId = $.exadataInfrastructureId;
         this.filters = $.filters;
         this.state = $.state;
+        this.vmClusterType = $.vmClusterType;
     }
 
     public static Builder builder() {
@@ -208,6 +224,27 @@ public final class GetVmClustersArgs extends com.pulumi.resources.InvokeArgs {
          */
         public Builder state(String state) {
             return state(Output.of(state));
+        }
+
+        /**
+         * @param vmClusterType A filter to return only vmclusters that match the given vmcluster type exactly.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vmClusterType(@Nullable Output<String> vmClusterType) {
+            $.vmClusterType = vmClusterType;
+            return this;
+        }
+
+        /**
+         * @param vmClusterType A filter to return only vmclusters that match the given vmcluster type exactly.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vmClusterType(String vmClusterType) {
+            return vmClusterType(Output.of(vmClusterType));
         }
 
         public GetVmClustersArgs build() {

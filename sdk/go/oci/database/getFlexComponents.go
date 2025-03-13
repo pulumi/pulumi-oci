@@ -32,6 +32,7 @@ import (
 //			_, err := database.GetFlexComponents(ctx, &database.GetFlexComponentsArgs{
 //				CompartmentId: compartmentId,
 //				Name:          pulumi.StringRef(flexComponentName),
+//				Shape:         pulumi.StringRef(flexComponentShape),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -58,6 +59,8 @@ type GetFlexComponentsArgs struct {
 	Filters       []GetFlexComponentsFilter `pulumi:"filters"`
 	// A filter to return only resources that match the entire name given. The match is not case sensitive.
 	Name *string `pulumi:"name"`
+	// A filter to return only resources that belong to the entire shape name given. The match is not case sensitive.
+	Shape *string `pulumi:"shape"`
 }
 
 // A collection of values returned by getFlexComponents.
@@ -70,6 +73,8 @@ type GetFlexComponentsResult struct {
 	Id string `pulumi:"id"`
 	// The name of the Flex Component used for the DB system.
 	Name *string `pulumi:"name"`
+	// The name of the DB system shape for this Flex Component.
+	Shape *string `pulumi:"shape"`
 }
 
 func GetFlexComponentsOutput(ctx *pulumi.Context, args GetFlexComponentsOutputArgs, opts ...pulumi.InvokeOption) GetFlexComponentsResultOutput {
@@ -88,6 +93,8 @@ type GetFlexComponentsOutputArgs struct {
 	Filters       GetFlexComponentsFilterArrayInput `pulumi:"filters"`
 	// A filter to return only resources that match the entire name given. The match is not case sensitive.
 	Name pulumi.StringPtrInput `pulumi:"name"`
+	// A filter to return only resources that belong to the entire shape name given. The match is not case sensitive.
+	Shape pulumi.StringPtrInput `pulumi:"shape"`
 }
 
 func (GetFlexComponentsOutputArgs) ElementType() reflect.Type {
@@ -132,6 +139,11 @@ func (o GetFlexComponentsResultOutput) Id() pulumi.StringOutput {
 // The name of the Flex Component used for the DB system.
 func (o GetFlexComponentsResultOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetFlexComponentsResult) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// The name of the DB system shape for this Flex Component.
+func (o GetFlexComponentsResultOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFlexComponentsResult) *string { return v.Shape }).(pulumi.StringPtrOutput)
 }
 
 func init() {

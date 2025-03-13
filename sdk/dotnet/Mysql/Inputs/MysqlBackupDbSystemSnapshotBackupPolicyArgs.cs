@@ -12,6 +12,18 @@ namespace Pulumi.Oci.Mysql.Inputs
 
     public sealed class MysqlBackupDbSystemSnapshotBackupPolicyArgs : global::Pulumi.ResourceArgs
     {
+        [Input("copyPolicies")]
+        private InputList<Inputs.MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs>? _copyPolicies;
+
+        /// <summary>
+        /// List of policies of a DB system to schedule cross-region DB system backup copy.
+        /// </summary>
+        public InputList<Inputs.MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs> CopyPolicies
+        {
+            get => _copyPolicies ?? (_copyPolicies = new InputList<Inputs.MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs>());
+            set => _copyPolicies = value;
+        }
+
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
 

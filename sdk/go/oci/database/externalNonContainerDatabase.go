@@ -63,7 +63,7 @@ type ExternalNonContainerDatabase struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The Oracle Database configuration
 	DatabaseConfiguration pulumi.StringOutput `pulumi:"databaseConfiguration"`
-	// The Oracle Database edition.
+	// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
 	DatabaseEdition pulumi.StringOutput `pulumi:"databaseEdition"`
 	// The configuration of the Database Management service.
 	DatabaseManagementConfigs ExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput `pulumi:"databaseManagementConfigs"`
@@ -142,7 +142,7 @@ type externalNonContainerDatabaseState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The Oracle Database configuration
 	DatabaseConfiguration *string `pulumi:"databaseConfiguration"`
-	// The Oracle Database edition.
+	// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
 	DatabaseEdition *string `pulumi:"databaseEdition"`
 	// The configuration of the Database Management service.
 	DatabaseManagementConfigs []ExternalNonContainerDatabaseDatabaseManagementConfig `pulumi:"databaseManagementConfigs"`
@@ -186,7 +186,7 @@ type ExternalNonContainerDatabaseState struct {
 	CompartmentId pulumi.StringPtrInput
 	// The Oracle Database configuration
 	DatabaseConfiguration pulumi.StringPtrInput
-	// The Oracle Database edition.
+	// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
 	DatabaseEdition pulumi.StringPtrInput
 	// The configuration of the Database Management service.
 	DatabaseManagementConfigs ExternalNonContainerDatabaseDatabaseManagementConfigArrayInput
@@ -358,7 +358,7 @@ func (o ExternalNonContainerDatabaseOutput) DatabaseConfiguration() pulumi.Strin
 	return o.ApplyT(func(v *ExternalNonContainerDatabase) pulumi.StringOutput { return v.DatabaseConfiguration }).(pulumi.StringOutput)
 }
 
-// The Oracle Database edition.
+// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
 func (o ExternalNonContainerDatabaseOutput) DatabaseEdition() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExternalNonContainerDatabase) pulumi.StringOutput { return v.DatabaseEdition }).(pulumi.StringOutput)
 }

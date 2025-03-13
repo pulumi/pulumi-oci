@@ -1497,6 +1497,8 @@ func (o MysqlBackupDbSystemSnapshotArrayOutput) Index(i pulumi.IntInput) MysqlBa
 }
 
 type MysqlBackupDbSystemSnapshotBackupPolicy struct {
+	// List of policies of a DB system to schedule cross-region DB system backup copy.
+	CopyPolicies []MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicy `pulumi:"copyPolicies"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -1523,6 +1525,8 @@ type MysqlBackupDbSystemSnapshotBackupPolicyInput interface {
 }
 
 type MysqlBackupDbSystemSnapshotBackupPolicyArgs struct {
+	// List of policies of a DB system to schedule cross-region DB system backup copy.
+	CopyPolicies MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayInput `pulumi:"copyPolicies"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -1588,6 +1592,13 @@ func (o MysqlBackupDbSystemSnapshotBackupPolicyOutput) ToMysqlBackupDbSystemSnap
 	return o
 }
 
+// List of policies of a DB system to schedule cross-region DB system backup copy.
+func (o MysqlBackupDbSystemSnapshotBackupPolicyOutput) CopyPolicies() MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotBackupPolicy) []MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicy {
+		return v.CopyPolicies
+	}).(MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput)
+}
+
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o MysqlBackupDbSystemSnapshotBackupPolicyOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotBackupPolicy) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
@@ -1638,6 +1649,112 @@ func (o MysqlBackupDbSystemSnapshotBackupPolicyArrayOutput) Index(i pulumi.IntIn
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlBackupDbSystemSnapshotBackupPolicy {
 		return vs[0].([]MysqlBackupDbSystemSnapshotBackupPolicy)[vs[1].(int)]
 	}).(MysqlBackupDbSystemSnapshotBackupPolicyOutput)
+}
+
+type MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicy struct {
+	// Number of days to retain the copied DB system backup.
+	BackupCopyRetentionInDays *int `pulumi:"backupCopyRetentionInDays"`
+	// The destination region name to which the DB system backup will be copied.
+	CopyToRegion *string `pulumi:"copyToRegion"`
+}
+
+// MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyInput is an input type that accepts MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs and MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput values.
+// You can construct a concrete instance of `MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyInput` via:
+//
+//	MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs{...}
+type MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyInput interface {
+	pulumi.Input
+
+	ToMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput() MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput
+	ToMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutputWithContext(context.Context) MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput
+}
+
+type MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs struct {
+	// Number of days to retain the copied DB system backup.
+	BackupCopyRetentionInDays pulumi.IntPtrInput `pulumi:"backupCopyRetentionInDays"`
+	// The destination region name to which the DB system backup will be copied.
+	CopyToRegion pulumi.StringPtrInput `pulumi:"copyToRegion"`
+}
+
+func (MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicy)(nil)).Elem()
+}
+
+func (i MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs) ToMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput() MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput {
+	return i.ToMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutputWithContext(context.Background())
+}
+
+func (i MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs) ToMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput)
+}
+
+// MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayInput is an input type that accepts MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArray and MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput values.
+// You can construct a concrete instance of `MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayInput` via:
+//
+//	MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArray{ MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs{...} }
+type MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayInput interface {
+	pulumi.Input
+
+	ToMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput() MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput
+	ToMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutputWithContext(context.Context) MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput
+}
+
+type MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArray []MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyInput
+
+func (MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicy)(nil)).Elem()
+}
+
+func (i MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArray) ToMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput() MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput {
+	return i.ToMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArray) ToMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput)
+}
+
+type MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput struct{ *pulumi.OutputState }
+
+func (MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicy)(nil)).Elem()
+}
+
+func (o MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput) ToMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput() MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput) ToMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput {
+	return o
+}
+
+// Number of days to retain the copied DB system backup.
+func (o MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput) BackupCopyRetentionInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicy) *int { return v.BackupCopyRetentionInDays }).(pulumi.IntPtrOutput)
+}
+
+// The destination region name to which the DB system backup will be copied.
+func (o MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput) CopyToRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicy) *string { return v.CopyToRegion }).(pulumi.StringPtrOutput)
+}
+
+type MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicy)(nil)).Elem()
+}
+
+func (o MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput) ToMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput() MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput) ToMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput) Index(i pulumi.IntInput) MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicy {
+		return vs[0].([]MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicy)[vs[1].(int)]
+	}).(MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput)
 }
 
 type MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy struct {
@@ -2933,6 +3050,14 @@ func (o MysqlConfigurationInitVariablesPtrOutput) LowerCaseTableNames() pulumi.S
 }
 
 type MysqlConfigurationVariables struct {
+	// auto_increment_increment and autoIncrementOffset are intended for use with circular (source-to-source) replication, and can be used to control the operation of AUTO_INCREMENT columns. Both variables have global and session values, and each can assume an integer value between 1 and 65,535 inclusive.
+	//
+	// autoIncrementIncrement corresponds to the MySQL Replication Source Options variable [autoIncrementIncrement] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-source.html#sysvar_auto_increment_increment).
+	AutoIncrementIncrement *int `pulumi:"autoIncrementIncrement"`
+	// This variable has a default value of 1. If it is left with its default value, and Group Replication is started on the server in multi-primary mode, it is changed to the server ID.
+	//
+	// autoIncrementOffset corresponds to the MySQL Replication Source Options variable [autoIncrementOffset] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-source.html#sysvar_auto_increment_offset).
+	AutoIncrementOffset *int `pulumi:"autoIncrementOffset"`
 	// ("autocommit")
 	Autocommit *bool `pulumi:"autocommit"`
 	// If enabled, the server stores all temporary tables on disk rather than in memory.
@@ -2941,12 +3066,32 @@ type MysqlConfigurationVariables struct {
 	BigTables *bool `pulumi:"bigTables"`
 	// Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlogExpireLogsSeconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
 	BinlogExpireLogsSeconds *int `pulumi:"binlogExpireLogsSeconds"`
+	// Controls how many microseconds the binary log commit waits before synchronizing the binary log file to disk. There is no delay by default. Setting this variable to a microsecond delay enables more transactions to be synchronized together to disk at once, reducing the overall time to commit a group of transactions because the larger groups required fewer time units per group.
+	//
+	// binlogGroupCommitSyncDelay corresponds to the MySQL Replication system variable [binlogGroupCommitSyncDelay](https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_binlog_group_commit_sync_delay)
+	BinlogGroupCommitSyncDelay *int `pulumi:"binlogGroupCommitSyncDelay"`
+	// The maximum number of transactions to wait for before aborting the current delay as specified by binlog_group_commit_sync_delay. If binlogGroupCommitSyncDelay is set to 0, then this option has no effect.
+	//
+	// binlogGroupCommitSyncNoDelayCount corresponds to the MySQL Replication system variable [binlogGroupCommitSyncNoDelayCount](https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_binlog_group_commit_sync_no_delay_count)
+	BinlogGroupCommitSyncNoDelayCount *int `pulumi:"binlogGroupCommitSyncNoDelayCount"`
 	// Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlogRowMetadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
 	BinlogRowMetadata *string `pulumi:"binlogRowMetadata"`
 	// When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document. binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlogRowValueOptions](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
 	BinlogRowValueOptions *string `pulumi:"binlogRowValueOptions"`
 	// Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlogTransactionCompression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
 	BinlogTransactionCompression *bool `pulumi:"binlogTransactionCompression"`
+	// This variable controls the block encryption mode for block-based algorithms such as AES. It affects encryption for AES_ENCRYPT() and AES_DECRYPT(). blockEncryptionMode takes a value in aes-keylen-mode format, where keylen is the key length in bits and mode is the encryption mode. The value is not case-sensitive. Permitted keylen values are 128, 192, and 256. Permitted mode values are ECB, CBC, CFB1, CFB8, CFB128, and OFB.
+	//
+	// blockEncryptionMode corresponds to the MySQL Server Administration system variable [blockEncryptionMode](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_block_encryption_mode)
+	BlockEncryptionMode *string `pulumi:"blockEncryptionMode"`
+	// The server's default character set. If you set this variable, you should also set collationServer to specify the collation for the character set.
+	//
+	// characterSetServer corresponds to the MySQL server variable [characterSetServer](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_character_set_server).
+	CharacterSetServer *string `pulumi:"characterSetServer"`
+	// The server's default collation.
+	//
+	// collationServer corresponds to the MySQL server variable [collationServer](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_collation_server).
+	CollationServer *string `pulumi:"collationServer"`
 	// ("completionType")
 	CompletionType *string `pulumi:"completionType"`
 	// The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
@@ -2965,8 +3110,20 @@ type MysqlConfigurationVariables struct {
 	ConnectionMemoryLimit *string `pulumi:"connectionMemoryLimit"`
 	// ("cteMaxRecursionDepth")
 	CteMaxRecursionDepth *string `pulumi:"cteMaxRecursionDepth"`
-	// ("defaultAuthenticationPlugin")
+	// The default authentication plugin. This must be a plugin that uses internal credentials storage, so these values are permitted: mysql_native_password, sha256_password, caching_sha2_password.
+	//
+	// As of MySQL 8.0.27, which introduces multifactor authentication, defaultAuthenticationPlugin is still used, but in conjunction with and at a lower precedence than the authenticationPolicy system variable. For details, see The Default Authentication Plugin. Because of this diminished role, defaultAuthenticationPlugin is deprecated as of MySQL 8.0.27 and subject to removal in a future MySQL version.
+	//
+	// defaultAuthenticationPlugin corresponds to the MySQL system variable [defaultAuthenticationPlugin](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_default_authentication_plugin).
 	DefaultAuthenticationPlugin *string `pulumi:"defaultAuthenticationPlugin"`
+	// This variable determines the default output format used by EXPLAIN in the absence of a FORMAT option when displaying a query execution plan.
+	//
+	// explainFormat corresponds to the MySQL system variable [explainFormat](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_explain_format).
+	ExplainFormat *string `pulumi:"explainFormat"`
+	// This system variable determines whether the server enables certain nonstandard behaviors for default values and NULL-value handling in TIMESTAMP columns. By default, explicitDefaultsForTimestamp is enabled, which disables the nonstandard behaviors. Disabling explicitDefaultsForTimestamp results in a warning.
+	//
+	// explicitDefaultsForTimestamp corresponds to the MySQL Server Administration system variable [explicitDefaultsForTimestamp](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_explicit_defaults_for_timestamp)
+	ExplicitDefaultsForTimestamp *bool `pulumi:"explicitDefaultsForTimestamp"`
 	// ("foreignKeyChecks")
 	ForeignKeyChecks *bool `pulumi:"foreignKeyChecks"`
 	// ("generatedRandomPasswordLength") DEPRECATED -- variable should not be settable and will be ignored
@@ -2981,6 +3138,10 @@ type MysqlConfigurationVariables struct {
 	//
 	// globalConnectionMemoryTracking corresponds to the MySQL system variable [globalConnectionMemoryTracking](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_tracking).
 	GlobalConnectionMemoryTracking *bool `pulumi:"globalConnectionMemoryTracking"`
+	// Specifies the maximum permitted result length in bytes for the GROUP_CONCAT() function.
+	//
+	// This is the MySQL variable "groupConcatMaxLen". For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_group_concat_max_len)
+	GroupConcatMaxLen *string `pulumi:"groupConcatMaxLen"`
 	// * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
 	// * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
 	// * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
@@ -2989,6 +3150,14 @@ type MysqlConfigurationVariables struct {
 	GroupReplicationConsistency *string `pulumi:"groupReplicationConsistency"`
 	// ("informationSchemaStatsExpiry")
 	InformationSchemaStatsExpiry *int `pulumi:"informationSchemaStatsExpiry"`
+	// Whether the InnoDB adaptive hash index is enabled or disabled. It may be desirable, depending on your workload, to dynamically enable or disable adaptive hash indexing to improve query performance. Because the adaptive hash index may not be useful for all workloads, conduct benchmarks with it both enabled and disabled, using realistic workloads.
+	//
+	// innodbAdaptiveHashIndex corresponds to the MySQL InnoDB Startup Options and System Variables [innodbAdaptiveHashIndex] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_adaptive_hash_index).
+	InnodbAdaptiveHashIndex *bool `pulumi:"innodbAdaptiveHashIndex"`
+	// The lock mode to use for generating auto-increment values. Permissible values are 0, 1, or 2, for traditional, consecutive, or interleaved, respectively.
+	//
+	// innodbAutoincLockMode corresponds to the MySQL InnoDB Startup Options and System Variables [innodbAutoincLockMode] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_autoinc_lock_mode).
+	InnodbAutoincLockMode *int `pulumi:"innodbAutoincLockMode"`
 	// Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
 	//
 	// innodbBufferPoolDumpPct corresponds to the MySQL InnoDB system variable [innodbBufferPoolDumpPct](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_buffer_pool_dump_pct).
@@ -3005,6 +3174,10 @@ type MysqlConfigurationVariables struct {
 	//
 	// The default and maximum values depend on the amount of RAM provisioned by the shape. See [Default User Variables](https://www.terraform.io/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
 	InnodbBufferPoolSize *string `pulumi:"innodbBufferPoolSize"`
+	// Whether InnoDB performs change buffering, an optimization that delays write operations to secondary indexes so that the I/O operations can be performed sequentially. Permitted values are described in the following table. Values may also be specified numerically.
+	//
+	// innodbChangeBuffering corresponds to the MySQL InnoDB Startup Options and System Variables [innodbChangeBuffering] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_change_buffering).
+	InnodbChangeBuffering *string `pulumi:"innodbChangeBuffering"`
 	// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
 	InnodbDdlBufferSize *string `pulumi:"innodbDdlBufferSize"`
 	// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
@@ -3043,6 +3216,28 @@ type MysqlConfigurationVariables struct {
 	//
 	// innodbMaxPurgeLagDelay corresponds to the MySQL server system variable [innodbMaxPurgeLagDelay](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag_delay).
 	InnodbMaxPurgeLagDelay *int `pulumi:"innodbMaxPurgeLagDelay"`
+	// Enables the NUMA interleave memory policy for allocation of the InnoDB buffer pool. When innodbNumaInterleave is enabled, the NUMA memory policy is set to MPOL_INTERLEAVE for the mysqld process. After the InnoDB buffer pool is allocated, the NUMA memory policy is set back to MPOL_DEFAULT. For the innodbNumaInterleave option to be available, MySQL must be compiled on a NUMA-enabled Linux system.
+	//
+	// innodbNumaInterleave corresponds to the MySQL InnoDB Startup Options and System Variables [innodbNumaInterleave] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_numa_interleave).
+	InnodbNumaInterleave *bool `pulumi:"innodbNumaInterleave"`
+	// Specifies an upper limit in bytes on the size of the temporary log files used during online DDL operations for InnoDB tables. There is one such log file for each index being created or table being altered. This log file stores data inserted, updated, or deleted in the table during the DDL operation.
+	//
+	// innodbOnlineAlterLogMaxSize corresponds to the MySQL InnoDB Startup Options and System Variables [innodbOnlineAlterLogMaxSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_online_alter_log_max_size).
+	InnodbOnlineAlterLogMaxSize *string `pulumi:"innodbOnlineAlterLogMaxSize"`
+	// Defines the amount of disk space occupied by redo log files. innodbRedoLogCapacity supercedes the innodbLogFilesInGroup and innodbLogFileSize variables, which are both ignored if innodbRedoLogCapacity is defined. If innodbRedoLogCapacity is not defined, and if neither innodbLogFileSize or innodbLogFilesInGroup are defined, then the default innodbRedoLogCapacity value is used.
+	//
+	// innodbRedoLogCapacity corresponds to the InnoDB Startup Options and System Variables [innodbRedoLogCapacity](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_redo_log_capacity)
+	InnodbRedoLogCapacity *string `pulumi:"innodbRedoLogCapacity"`
+	// InnoDB rolls back only the last statement on a transaction timeout by default. If --innodb-rollback-on-timeout is specified, a transaction timeout causes InnoDB to abort and roll back the entire transaction.
+	//
+	// innodbRollbackOnTimeout corresponds to the MySQL InnoDB Startup Options and System Variables [innodbRollbackOnTimeout] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_rollback_on_timeout).
+	InnodbRollbackOnTimeout *bool `pulumi:"innodbRollbackOnTimeout"`
+	// This variable defines:
+	// * The sort buffer size for online DDL operations that create or rebuild secondary indexes. However, as of MySQL 8.0.27, this responsibility is subsumed by the innodbDdlBufferSize variable.
+	// * The amount by which the temporary log file is extended when recording concurrent DML during an online DDL operation, and the size of the temporary log file read buffer and write buffer.
+	//
+	// innodbSortBufferSize corresponds to the MySQL InnoDB Startup Options and System Variables [innodbSortBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_sort_buffer_size).
+	InnodbSortBufferSize *int `pulumi:"innodbSortBufferSize"`
 	// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
 	//
 	// innodbStatsPersistentSamplePages corresponds to the MySQL InnoDB system variable [innodbStatsPersistentSamplePages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_persistent_sample_pages)
@@ -3057,12 +3252,30 @@ type MysqlConfigurationVariables struct {
 	//
 	// innodbStatsPersistent is ON by default and cannot be changed. It is possible to override it using the STATS_PERSISTENT clause of the [CREATE TABLE](https://dev.mysql.com/doc/refman/8.0/en/create-table.html) and [ALTER TABLE](https://dev.mysql.com/doc/refman/8.0/en/alter-table.html) statements.
 	InnodbStatsTransientSamplePages *string `pulumi:"innodbStatsTransientSamplePages"`
+	// When you enable innodbStrictMode, the InnoDB storage engine returns errors instead of warnings for invalid or incompatible table options.
+	//
+	// innodbStrictMode corresponds to the MySQL InnoDB system variable [innodbStrictMode](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_strict_mode)
+	InnodbStrictMode *bool `pulumi:"innodbStrictMode"`
+	// When enabled, undo tablespaces that exceed the threshold value defined by innodbMaxUndoLogSize are marked for truncation. Only undo tablespaces can be truncated. Truncating undo logs that reside in the system tablespace is not supported. For truncation to occur, there must be at least two undo tablespaces.
+	//
+	// innodbUndoLogTruncate corresponds to the MySQL InnoDB Startup Options and System Variables [innodbUndoLogTruncate] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_undo_log_truncate).
+	InnodbUndoLogTruncate *bool `pulumi:"innodbUndoLogTruncate"`
 	// The number of seconds the server waits for activity on an interactive connection before closing it.
 	//
 	// interactiveTimeout corresponds to the MySQL system variable. [interactiveTimeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_interactive_timeout)
 	InteractiveTimeout *int `pulumi:"interactiveTimeout"`
-	// ("localInfile")
+	// The minimum size of the buffer that is used for plain index scans, range index scans, and joins that do not use indexes and thus perform full table scans. In MySQL 8.0.18 and later, this variable also controls the amount of memory used for hash joins. Normally, the best way to get fast joins is to add indexes. Increase the value of joinBufferSize to get a faster full join when adding indexes is not possible. One join buffer is allocated for each full join between two tables. For a complex join between several tables for which indexes are not used, multiple join buffers might be necessary.
+	//
+	// joinBufferSize corresponds to the MySQL Server System variable [joinBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_join_buffer_size).
+	JoinBufferSize *string `pulumi:"joinBufferSize"`
+	// This variable controls server-side LOCAL capability for LOAD DATA statements. Depending on the localInfile setting, the server refuses or permits local data loading by clients that have LOCAL enabled on the client side.
+	//
+	// localInfile corresponds to the MySQL Server system variable [localInfile](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_local_infile)
 	LocalInfile *bool `pulumi:"localInfile"`
+	// If a query takes longer than this many seconds, the server increments the Slow_queries status variable. If the slow query log is enabled, the query is logged to the slow query log file. This value is measured in real time, not CPU time, so a query that is under the threshold on a lightly loaded system might be above the threshold on a heavily loaded one.
+	//
+	// longQueryTime corresponds to the MySQL Server System variable [longQueryTime] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_long_query_time).
+	LongQueryTime *int `pulumi:"longQueryTime"`
 	// ("mandatoryRoles")
 	MandatoryRoles *string `pulumi:"mandatoryRoles"`
 	// The maximum size of one packet or any generated/intermediate string.
@@ -3085,6 +3298,14 @@ type MysqlConfigurationVariables struct {
 	MaxHeapTableSize *string `pulumi:"maxHeapTableSize"`
 	// ("maxPreparedStmtCount")
 	MaxPreparedStmtCount *int `pulumi:"maxPreparedStmtCount"`
+	// Limit the assumed maximum number of seeks when looking up rows based on a key. The MySQL optimizer assumes that no more than this number of key seeks are required when searching for matching rows in a table by scanning an index, regardless of the actual cardinality of the index (see Section 15.7.7.22, “SHOW INDEX Statement”). By setting this to a low value (say, 100), you can force MySQL to prefer indexes instead of table scans.
+	//
+	// maxSeeksForKey corresponds to the MySQL Server System variable [maxSeeksForKey] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_seeks_for_key).
+	MaxSeeksForKey *string `pulumi:"maxSeeksForKey"`
+	// The maximum number of simultaneous connections permitted to any given MySQL user account. A value of 0 (the default) means “no limit.” This variable has a global value that can be set at server startup or runtime. It also has a read-only session value that indicates the effective simultaneous-connection limit that applies to the account associated with the current session.
+	//
+	// maxUserConnections corresponds to the MySQL Server System variable [maxUserConnections] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_user_connections).
+	MaxUserConnections *string `pulumi:"maxUserConnections"`
 	// ("mysqlFirewallMode")
 	MysqlFirewallMode *bool `pulumi:"mysqlFirewallMode"`
 	// DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
@@ -3149,6 +3370,12 @@ type MysqlConfigurationVariables struct {
 	//
 	// netWriteTimeout corresponds to the MySQL system variable [netWriteTimeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_write_timeout)
 	NetWriteTimeout *int `pulumi:"netWriteTimeout"`
+	// The optimizerSwitch system variable enables control over optimizer behavior. The value of this variable is a set of flags, each of which has a value of on or off to indicate whether the corresponding optimizer behavior is enabled or disabled. This variable has global and session values and can be changed at runtime. The global default can be set at server startup.
+	//
+	// Setting hypergraph_optimizer=on for cloud builds below 9.0.0 will fail.
+	//
+	// optimizerSwitch corresponds to the MySQL Server System variable [optimizerSwitch] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_optimizer_switch).
+	OptimizerSwitch *string `pulumi:"optimizerSwitch"`
 	// ("parserMaxMemSize")
 	ParserMaxMemSize *string `pulumi:"parserMaxMemSize"`
 	// ("queryAllocBlockSize") DEPRECATED -- variable should not be settable and will be ignored
@@ -3156,25 +3383,83 @@ type MysqlConfigurationVariables struct {
 	// Deprecated: The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.
 	QueryAllocBlockSize *string `pulumi:"queryAllocBlockSize"`
 	// ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
+	QueryPreallocSize *string `pulumi:"queryPreallocSize"`
+	// The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans.
+	//
+	// rangeOptimizerMaxMemSize corresponds to the MySQL Server System variable [rangeOptimizerMaxMemSize] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_range_optimizer_max_mem_size).
 	//
 	// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
-	QueryPreallocSize *string `pulumi:"queryPreallocSize"`
+	RangeOptimizerMaxMemSize *string `pulumi:"rangeOptimizerMaxMemSize"`
 	// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
 	RegexpTimeLimit *int `pulumi:"regexpTimeLimit"`
+	// The maximum amount of space to use for all relay logs.
+	//
+	// relayLogSpaceLimit corresponds to the MySQL Replica Server Options variable [relayLogSpaceLimit] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_relay_log_space_limit).
+	RelayLogSpaceLimit *string `pulumi:"relayLogSpaceLimit"`
+	// Specifies the number of seconds to wait for more data or a heartbeat signal from the source before the replica considers the connection broken, aborts the read, and tries to reconnect. Setting this variable has no immediate effect. The state of the variable applies on all subsequent START REPLICA commands.
+	//
+	// replicaNetTimeout corresponds to the MySQL Replica server system variable [replicaNetTimeout](https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_net_timeout)
+	ReplicaNetTimeout *int `pulumi:"replicaNetTimeout"`
+	// Beginning with MySQL 8.0.26, slaveParallelWorkers is deprecated, and you should use replicaParallelWorkers instead. (Prior to MySQL 8.0.26, you must use slaveParallelWorkers to set the number of applier threads.)
+	//
+	// replicaParallelWorkers corresponds to the MySQL Replica Server Options variable [replicaParallelWorkers] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_parallel_workers).
+	ReplicaParallelWorkers *int `pulumi:"replicaParallelWorkers"`
+	// From MySQL 8.0.26, use replicaTypeConversions in place of slave_type_conversions, which is deprecated from that release. In releases before MySQL 8.0.26, use slave_type_conversions.
+	//
+	// replicaTypeConversions controls the type conversion mode in effect on the replica when using row-based replication. Its value is a comma-delimited set of zero or more elements from the list: ALL_LOSSY, ALL_NON_LOSSY, ALL_SIGNED, ALL_UNSIGNED. Set this variable to an empty string to disallow type conversions between the source and the replica. Setting this variable takes effect for all replication channels immediately, including running channels.
+	//
+	// replicaTypeConversions corresponds to the MySQL Replica Server Options variable [replicaTypeConversions] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_type_conversions).
+	ReplicaTypeConversions *string `pulumi:"replicaTypeConversions"`
+	// Whether client connections to the server are required to use some form of secure transport. When this variable is enabled, the server permits only TCP/IP connections encrypted using TLS/SSL, or connections that use a socket file or shared memory. The server rejects nonsecure connection attempts, which fail with an ER_SECURE_TRANSPORT_REQUIRED error.
+	//
+	// requireSecureTransport corresponds to the MySQL Server Administration system variable [requireSecureTransport](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_require_secure_transport)
+	RequireSecureTransport *bool `pulumi:"requireSecureTransport"`
+	// Whether to resolve host names when checking client connections. If this variable is OFF, mysqld resolves host names when checking client connections. If it is ON, mysqld uses only IP numbers; in this case, all Host column values in the grant tables must be IP addresses. See Section 7.1.12.3, “DNS Lookups and the Host Cache”.
+	//
+	// skipNameResolve corresponds to the MySQL Server System variable [skipNameResolve] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_skip_name_resolve).
+	SkipNameResolve *bool `pulumi:"skipNameResolve"`
 	// Each session that must perform a sort allocates a buffer of this size.
 	//
 	// sortBufferSize corresponds to the MySQL system variable [sortBufferSize](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_sort_buffer_size)
 	SortBufferSize *string `pulumi:"sortBufferSize"`
+	// Whether GIPK mode is in effect, in which case a MySQL replication source server adds a generated invisible primary key to any InnoDB table that is created without one.
+	//
+	// sqlGenerateInvisiblePrimaryKey corresponds to the MySQL system variable [sqlGenerateInvisiblePrimaryKey] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_sql_generate_invisible_primary_key).
+	SqlGenerateInvisiblePrimaryKey *bool `pulumi:"sqlGenerateInvisiblePrimaryKey"`
 	// ("sqlMode")
 	SqlMode *string `pulumi:"sqlMode"`
 	// ("sqlRequirePrimaryKey")
 	SqlRequirePrimaryKey *bool `pulumi:"sqlRequirePrimaryKey"`
 	// ("sqlWarnings")
 	SqlWarnings *bool `pulumi:"sqlWarnings"`
+	// The number of table definitions that can be stored in the table definition cache. If you use a large number of tables, you can create a large table definition cache to speed up opening of tables. The table definition cache takes less space and does not use file descriptors, unlike the normal table cache.
+	//
+	// tableDefinitionCache corresponds to the MySQL Server Administration system variable [tableDefinitionCache](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_table_definition_cache)
+	TableDefinitionCache *int `pulumi:"tableDefinitionCache"`
+	// The number of open tables for all threads. Increasing this value increases the number of file descriptors that mysqld requires.
+	//
+	// tableOpenCache corresponds to the MySQL Server Administration system variable [tableOpenCache](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_table_open_cache)
+	TableOpenCache *int `pulumi:"tableOpenCache"`
+	// Defines the maximum amount of memory that can be occupied by the TempTable storage engine before it starts storing data on disk. The default value is 1073741824 bytes (1GiB). For more information, see Section 10.4.4, “Internal Temporary Table Use in MySQL”.
+	//
+	// temptableMaxRam corresponds to the MySQL system variable [temptableMaxRam] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_temptable_max_ram).
+	TemptableMaxRam *string `pulumi:"temptableMaxRam"`
 	// Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
 	ThreadPoolDedicatedListeners *bool `pulumi:"threadPoolDedicatedListeners"`
 	// Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
 	ThreadPoolMaxTransactionsLimit *int `pulumi:"threadPoolMaxTransactionsLimit"`
+	// The maximum number of query threads permitted in a thread group. The maximum value is 4096, but if threadPoolMaxTransactionsLimit is set, threadPoolQueryThreadsPerGroup must not exceed that value. The default value of 1 means there is one active query thread in each thread group, which works well for many loads. When you are using the high concurrency thread pool algorithm (thread_pool_algorithm = 1), consider increasing the value if you experience slower response times due to long-running transactions.
+	//
+	// threadPoolQueryThreadsPerGroup corresponds to the MySQL Server system variable [threadPoolQueryThreadsPerGroup](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_query_threads_per_group)
+	ThreadPoolQueryThreadsPerGroup *int `pulumi:"threadPoolQueryThreadsPerGroup"`
+	// The number of thread groups in the thread pool. This is the most important parameter controlling thread pool performance. It affects how many statements can execute simultaneously. If a value outside the range of permissible values is specified, the thread pool plugin does not load and the server writes a message to the error log.
+	//
+	// threadPoolSize corresponds to the MySQL Server System variable [threadPoolSize] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_size).
+	ThreadPoolSize *int `pulumi:"threadPoolSize"`
+	// The delay period before executing a new transaction, in milliseconds. The maximum value is 300000 (5 minutes). A transaction delay can be used in cases where parallel transactions affect the performance of other operations due to resource contention. For example, if parallel transactions affect index creation or an online buffer pool resizing operation, you can configure a transaction delay to reduce resource contention while those operations are running.
+	//
+	// threadPoolTransactionDelay corresponds to the MySQL Server system variable [threadPoolTransactionDelay](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_transaction_delay)
+	ThreadPoolTransactionDelay *int `pulumi:"threadPoolTransactionDelay"`
 	// Initializes the time zone for each client that connects.
 	//
 	// This corresponds to the MySQL System Variable "timeZone".
@@ -3210,6 +3495,14 @@ type MysqlConfigurationVariablesInput interface {
 }
 
 type MysqlConfigurationVariablesArgs struct {
+	// auto_increment_increment and autoIncrementOffset are intended for use with circular (source-to-source) replication, and can be used to control the operation of AUTO_INCREMENT columns. Both variables have global and session values, and each can assume an integer value between 1 and 65,535 inclusive.
+	//
+	// autoIncrementIncrement corresponds to the MySQL Replication Source Options variable [autoIncrementIncrement] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-source.html#sysvar_auto_increment_increment).
+	AutoIncrementIncrement pulumi.IntPtrInput `pulumi:"autoIncrementIncrement"`
+	// This variable has a default value of 1. If it is left with its default value, and Group Replication is started on the server in multi-primary mode, it is changed to the server ID.
+	//
+	// autoIncrementOffset corresponds to the MySQL Replication Source Options variable [autoIncrementOffset] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-source.html#sysvar_auto_increment_offset).
+	AutoIncrementOffset pulumi.IntPtrInput `pulumi:"autoIncrementOffset"`
 	// ("autocommit")
 	Autocommit pulumi.BoolPtrInput `pulumi:"autocommit"`
 	// If enabled, the server stores all temporary tables on disk rather than in memory.
@@ -3218,12 +3511,32 @@ type MysqlConfigurationVariablesArgs struct {
 	BigTables pulumi.BoolPtrInput `pulumi:"bigTables"`
 	// Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlogExpireLogsSeconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
 	BinlogExpireLogsSeconds pulumi.IntPtrInput `pulumi:"binlogExpireLogsSeconds"`
+	// Controls how many microseconds the binary log commit waits before synchronizing the binary log file to disk. There is no delay by default. Setting this variable to a microsecond delay enables more transactions to be synchronized together to disk at once, reducing the overall time to commit a group of transactions because the larger groups required fewer time units per group.
+	//
+	// binlogGroupCommitSyncDelay corresponds to the MySQL Replication system variable [binlogGroupCommitSyncDelay](https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_binlog_group_commit_sync_delay)
+	BinlogGroupCommitSyncDelay pulumi.IntPtrInput `pulumi:"binlogGroupCommitSyncDelay"`
+	// The maximum number of transactions to wait for before aborting the current delay as specified by binlog_group_commit_sync_delay. If binlogGroupCommitSyncDelay is set to 0, then this option has no effect.
+	//
+	// binlogGroupCommitSyncNoDelayCount corresponds to the MySQL Replication system variable [binlogGroupCommitSyncNoDelayCount](https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_binlog_group_commit_sync_no_delay_count)
+	BinlogGroupCommitSyncNoDelayCount pulumi.IntPtrInput `pulumi:"binlogGroupCommitSyncNoDelayCount"`
 	// Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlogRowMetadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
 	BinlogRowMetadata pulumi.StringPtrInput `pulumi:"binlogRowMetadata"`
 	// When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document. binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlogRowValueOptions](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
 	BinlogRowValueOptions pulumi.StringPtrInput `pulumi:"binlogRowValueOptions"`
 	// Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlogTransactionCompression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
 	BinlogTransactionCompression pulumi.BoolPtrInput `pulumi:"binlogTransactionCompression"`
+	// This variable controls the block encryption mode for block-based algorithms such as AES. It affects encryption for AES_ENCRYPT() and AES_DECRYPT(). blockEncryptionMode takes a value in aes-keylen-mode format, where keylen is the key length in bits and mode is the encryption mode. The value is not case-sensitive. Permitted keylen values are 128, 192, and 256. Permitted mode values are ECB, CBC, CFB1, CFB8, CFB128, and OFB.
+	//
+	// blockEncryptionMode corresponds to the MySQL Server Administration system variable [blockEncryptionMode](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_block_encryption_mode)
+	BlockEncryptionMode pulumi.StringPtrInput `pulumi:"blockEncryptionMode"`
+	// The server's default character set. If you set this variable, you should also set collationServer to specify the collation for the character set.
+	//
+	// characterSetServer corresponds to the MySQL server variable [characterSetServer](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_character_set_server).
+	CharacterSetServer pulumi.StringPtrInput `pulumi:"characterSetServer"`
+	// The server's default collation.
+	//
+	// collationServer corresponds to the MySQL server variable [collationServer](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_collation_server).
+	CollationServer pulumi.StringPtrInput `pulumi:"collationServer"`
 	// ("completionType")
 	CompletionType pulumi.StringPtrInput `pulumi:"completionType"`
 	// The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
@@ -3242,8 +3555,20 @@ type MysqlConfigurationVariablesArgs struct {
 	ConnectionMemoryLimit pulumi.StringPtrInput `pulumi:"connectionMemoryLimit"`
 	// ("cteMaxRecursionDepth")
 	CteMaxRecursionDepth pulumi.StringPtrInput `pulumi:"cteMaxRecursionDepth"`
-	// ("defaultAuthenticationPlugin")
+	// The default authentication plugin. This must be a plugin that uses internal credentials storage, so these values are permitted: mysql_native_password, sha256_password, caching_sha2_password.
+	//
+	// As of MySQL 8.0.27, which introduces multifactor authentication, defaultAuthenticationPlugin is still used, but in conjunction with and at a lower precedence than the authenticationPolicy system variable. For details, see The Default Authentication Plugin. Because of this diminished role, defaultAuthenticationPlugin is deprecated as of MySQL 8.0.27 and subject to removal in a future MySQL version.
+	//
+	// defaultAuthenticationPlugin corresponds to the MySQL system variable [defaultAuthenticationPlugin](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_default_authentication_plugin).
 	DefaultAuthenticationPlugin pulumi.StringPtrInput `pulumi:"defaultAuthenticationPlugin"`
+	// This variable determines the default output format used by EXPLAIN in the absence of a FORMAT option when displaying a query execution plan.
+	//
+	// explainFormat corresponds to the MySQL system variable [explainFormat](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_explain_format).
+	ExplainFormat pulumi.StringPtrInput `pulumi:"explainFormat"`
+	// This system variable determines whether the server enables certain nonstandard behaviors for default values and NULL-value handling in TIMESTAMP columns. By default, explicitDefaultsForTimestamp is enabled, which disables the nonstandard behaviors. Disabling explicitDefaultsForTimestamp results in a warning.
+	//
+	// explicitDefaultsForTimestamp corresponds to the MySQL Server Administration system variable [explicitDefaultsForTimestamp](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_explicit_defaults_for_timestamp)
+	ExplicitDefaultsForTimestamp pulumi.BoolPtrInput `pulumi:"explicitDefaultsForTimestamp"`
 	// ("foreignKeyChecks")
 	ForeignKeyChecks pulumi.BoolPtrInput `pulumi:"foreignKeyChecks"`
 	// ("generatedRandomPasswordLength") DEPRECATED -- variable should not be settable and will be ignored
@@ -3258,6 +3583,10 @@ type MysqlConfigurationVariablesArgs struct {
 	//
 	// globalConnectionMemoryTracking corresponds to the MySQL system variable [globalConnectionMemoryTracking](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_tracking).
 	GlobalConnectionMemoryTracking pulumi.BoolPtrInput `pulumi:"globalConnectionMemoryTracking"`
+	// Specifies the maximum permitted result length in bytes for the GROUP_CONCAT() function.
+	//
+	// This is the MySQL variable "groupConcatMaxLen". For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_group_concat_max_len)
+	GroupConcatMaxLen pulumi.StringPtrInput `pulumi:"groupConcatMaxLen"`
 	// * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
 	// * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
 	// * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
@@ -3266,6 +3595,14 @@ type MysqlConfigurationVariablesArgs struct {
 	GroupReplicationConsistency pulumi.StringPtrInput `pulumi:"groupReplicationConsistency"`
 	// ("informationSchemaStatsExpiry")
 	InformationSchemaStatsExpiry pulumi.IntPtrInput `pulumi:"informationSchemaStatsExpiry"`
+	// Whether the InnoDB adaptive hash index is enabled or disabled. It may be desirable, depending on your workload, to dynamically enable or disable adaptive hash indexing to improve query performance. Because the adaptive hash index may not be useful for all workloads, conduct benchmarks with it both enabled and disabled, using realistic workloads.
+	//
+	// innodbAdaptiveHashIndex corresponds to the MySQL InnoDB Startup Options and System Variables [innodbAdaptiveHashIndex] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_adaptive_hash_index).
+	InnodbAdaptiveHashIndex pulumi.BoolPtrInput `pulumi:"innodbAdaptiveHashIndex"`
+	// The lock mode to use for generating auto-increment values. Permissible values are 0, 1, or 2, for traditional, consecutive, or interleaved, respectively.
+	//
+	// innodbAutoincLockMode corresponds to the MySQL InnoDB Startup Options and System Variables [innodbAutoincLockMode] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_autoinc_lock_mode).
+	InnodbAutoincLockMode pulumi.IntPtrInput `pulumi:"innodbAutoincLockMode"`
 	// Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
 	//
 	// innodbBufferPoolDumpPct corresponds to the MySQL InnoDB system variable [innodbBufferPoolDumpPct](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_buffer_pool_dump_pct).
@@ -3282,6 +3619,10 @@ type MysqlConfigurationVariablesArgs struct {
 	//
 	// The default and maximum values depend on the amount of RAM provisioned by the shape. See [Default User Variables](https://www.terraform.io/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
 	InnodbBufferPoolSize pulumi.StringPtrInput `pulumi:"innodbBufferPoolSize"`
+	// Whether InnoDB performs change buffering, an optimization that delays write operations to secondary indexes so that the I/O operations can be performed sequentially. Permitted values are described in the following table. Values may also be specified numerically.
+	//
+	// innodbChangeBuffering corresponds to the MySQL InnoDB Startup Options and System Variables [innodbChangeBuffering] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_change_buffering).
+	InnodbChangeBuffering pulumi.StringPtrInput `pulumi:"innodbChangeBuffering"`
 	// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
 	InnodbDdlBufferSize pulumi.StringPtrInput `pulumi:"innodbDdlBufferSize"`
 	// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
@@ -3320,6 +3661,28 @@ type MysqlConfigurationVariablesArgs struct {
 	//
 	// innodbMaxPurgeLagDelay corresponds to the MySQL server system variable [innodbMaxPurgeLagDelay](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag_delay).
 	InnodbMaxPurgeLagDelay pulumi.IntPtrInput `pulumi:"innodbMaxPurgeLagDelay"`
+	// Enables the NUMA interleave memory policy for allocation of the InnoDB buffer pool. When innodbNumaInterleave is enabled, the NUMA memory policy is set to MPOL_INTERLEAVE for the mysqld process. After the InnoDB buffer pool is allocated, the NUMA memory policy is set back to MPOL_DEFAULT. For the innodbNumaInterleave option to be available, MySQL must be compiled on a NUMA-enabled Linux system.
+	//
+	// innodbNumaInterleave corresponds to the MySQL InnoDB Startup Options and System Variables [innodbNumaInterleave] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_numa_interleave).
+	InnodbNumaInterleave pulumi.BoolPtrInput `pulumi:"innodbNumaInterleave"`
+	// Specifies an upper limit in bytes on the size of the temporary log files used during online DDL operations for InnoDB tables. There is one such log file for each index being created or table being altered. This log file stores data inserted, updated, or deleted in the table during the DDL operation.
+	//
+	// innodbOnlineAlterLogMaxSize corresponds to the MySQL InnoDB Startup Options and System Variables [innodbOnlineAlterLogMaxSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_online_alter_log_max_size).
+	InnodbOnlineAlterLogMaxSize pulumi.StringPtrInput `pulumi:"innodbOnlineAlterLogMaxSize"`
+	// Defines the amount of disk space occupied by redo log files. innodbRedoLogCapacity supercedes the innodbLogFilesInGroup and innodbLogFileSize variables, which are both ignored if innodbRedoLogCapacity is defined. If innodbRedoLogCapacity is not defined, and if neither innodbLogFileSize or innodbLogFilesInGroup are defined, then the default innodbRedoLogCapacity value is used.
+	//
+	// innodbRedoLogCapacity corresponds to the InnoDB Startup Options and System Variables [innodbRedoLogCapacity](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_redo_log_capacity)
+	InnodbRedoLogCapacity pulumi.StringPtrInput `pulumi:"innodbRedoLogCapacity"`
+	// InnoDB rolls back only the last statement on a transaction timeout by default. If --innodb-rollback-on-timeout is specified, a transaction timeout causes InnoDB to abort and roll back the entire transaction.
+	//
+	// innodbRollbackOnTimeout corresponds to the MySQL InnoDB Startup Options and System Variables [innodbRollbackOnTimeout] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_rollback_on_timeout).
+	InnodbRollbackOnTimeout pulumi.BoolPtrInput `pulumi:"innodbRollbackOnTimeout"`
+	// This variable defines:
+	// * The sort buffer size for online DDL operations that create or rebuild secondary indexes. However, as of MySQL 8.0.27, this responsibility is subsumed by the innodbDdlBufferSize variable.
+	// * The amount by which the temporary log file is extended when recording concurrent DML during an online DDL operation, and the size of the temporary log file read buffer and write buffer.
+	//
+	// innodbSortBufferSize corresponds to the MySQL InnoDB Startup Options and System Variables [innodbSortBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_sort_buffer_size).
+	InnodbSortBufferSize pulumi.IntPtrInput `pulumi:"innodbSortBufferSize"`
 	// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
 	//
 	// innodbStatsPersistentSamplePages corresponds to the MySQL InnoDB system variable [innodbStatsPersistentSamplePages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_persistent_sample_pages)
@@ -3334,12 +3697,30 @@ type MysqlConfigurationVariablesArgs struct {
 	//
 	// innodbStatsPersistent is ON by default and cannot be changed. It is possible to override it using the STATS_PERSISTENT clause of the [CREATE TABLE](https://dev.mysql.com/doc/refman/8.0/en/create-table.html) and [ALTER TABLE](https://dev.mysql.com/doc/refman/8.0/en/alter-table.html) statements.
 	InnodbStatsTransientSamplePages pulumi.StringPtrInput `pulumi:"innodbStatsTransientSamplePages"`
+	// When you enable innodbStrictMode, the InnoDB storage engine returns errors instead of warnings for invalid or incompatible table options.
+	//
+	// innodbStrictMode corresponds to the MySQL InnoDB system variable [innodbStrictMode](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_strict_mode)
+	InnodbStrictMode pulumi.BoolPtrInput `pulumi:"innodbStrictMode"`
+	// When enabled, undo tablespaces that exceed the threshold value defined by innodbMaxUndoLogSize are marked for truncation. Only undo tablespaces can be truncated. Truncating undo logs that reside in the system tablespace is not supported. For truncation to occur, there must be at least two undo tablespaces.
+	//
+	// innodbUndoLogTruncate corresponds to the MySQL InnoDB Startup Options and System Variables [innodbUndoLogTruncate] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_undo_log_truncate).
+	InnodbUndoLogTruncate pulumi.BoolPtrInput `pulumi:"innodbUndoLogTruncate"`
 	// The number of seconds the server waits for activity on an interactive connection before closing it.
 	//
 	// interactiveTimeout corresponds to the MySQL system variable. [interactiveTimeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_interactive_timeout)
 	InteractiveTimeout pulumi.IntPtrInput `pulumi:"interactiveTimeout"`
-	// ("localInfile")
+	// The minimum size of the buffer that is used for plain index scans, range index scans, and joins that do not use indexes and thus perform full table scans. In MySQL 8.0.18 and later, this variable also controls the amount of memory used for hash joins. Normally, the best way to get fast joins is to add indexes. Increase the value of joinBufferSize to get a faster full join when adding indexes is not possible. One join buffer is allocated for each full join between two tables. For a complex join between several tables for which indexes are not used, multiple join buffers might be necessary.
+	//
+	// joinBufferSize corresponds to the MySQL Server System variable [joinBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_join_buffer_size).
+	JoinBufferSize pulumi.StringPtrInput `pulumi:"joinBufferSize"`
+	// This variable controls server-side LOCAL capability for LOAD DATA statements. Depending on the localInfile setting, the server refuses or permits local data loading by clients that have LOCAL enabled on the client side.
+	//
+	// localInfile corresponds to the MySQL Server system variable [localInfile](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_local_infile)
 	LocalInfile pulumi.BoolPtrInput `pulumi:"localInfile"`
+	// If a query takes longer than this many seconds, the server increments the Slow_queries status variable. If the slow query log is enabled, the query is logged to the slow query log file. This value is measured in real time, not CPU time, so a query that is under the threshold on a lightly loaded system might be above the threshold on a heavily loaded one.
+	//
+	// longQueryTime corresponds to the MySQL Server System variable [longQueryTime] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_long_query_time).
+	LongQueryTime pulumi.IntPtrInput `pulumi:"longQueryTime"`
 	// ("mandatoryRoles")
 	MandatoryRoles pulumi.StringPtrInput `pulumi:"mandatoryRoles"`
 	// The maximum size of one packet or any generated/intermediate string.
@@ -3362,6 +3743,14 @@ type MysqlConfigurationVariablesArgs struct {
 	MaxHeapTableSize pulumi.StringPtrInput `pulumi:"maxHeapTableSize"`
 	// ("maxPreparedStmtCount")
 	MaxPreparedStmtCount pulumi.IntPtrInput `pulumi:"maxPreparedStmtCount"`
+	// Limit the assumed maximum number of seeks when looking up rows based on a key. The MySQL optimizer assumes that no more than this number of key seeks are required when searching for matching rows in a table by scanning an index, regardless of the actual cardinality of the index (see Section 15.7.7.22, “SHOW INDEX Statement”). By setting this to a low value (say, 100), you can force MySQL to prefer indexes instead of table scans.
+	//
+	// maxSeeksForKey corresponds to the MySQL Server System variable [maxSeeksForKey] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_seeks_for_key).
+	MaxSeeksForKey pulumi.StringPtrInput `pulumi:"maxSeeksForKey"`
+	// The maximum number of simultaneous connections permitted to any given MySQL user account. A value of 0 (the default) means “no limit.” This variable has a global value that can be set at server startup or runtime. It also has a read-only session value that indicates the effective simultaneous-connection limit that applies to the account associated with the current session.
+	//
+	// maxUserConnections corresponds to the MySQL Server System variable [maxUserConnections] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_user_connections).
+	MaxUserConnections pulumi.StringPtrInput `pulumi:"maxUserConnections"`
 	// ("mysqlFirewallMode")
 	MysqlFirewallMode pulumi.BoolPtrInput `pulumi:"mysqlFirewallMode"`
 	// DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
@@ -3426,6 +3815,12 @@ type MysqlConfigurationVariablesArgs struct {
 	//
 	// netWriteTimeout corresponds to the MySQL system variable [netWriteTimeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_write_timeout)
 	NetWriteTimeout pulumi.IntPtrInput `pulumi:"netWriteTimeout"`
+	// The optimizerSwitch system variable enables control over optimizer behavior. The value of this variable is a set of flags, each of which has a value of on or off to indicate whether the corresponding optimizer behavior is enabled or disabled. This variable has global and session values and can be changed at runtime. The global default can be set at server startup.
+	//
+	// Setting hypergraph_optimizer=on for cloud builds below 9.0.0 will fail.
+	//
+	// optimizerSwitch corresponds to the MySQL Server System variable [optimizerSwitch] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_optimizer_switch).
+	OptimizerSwitch pulumi.StringPtrInput `pulumi:"optimizerSwitch"`
 	// ("parserMaxMemSize")
 	ParserMaxMemSize pulumi.StringPtrInput `pulumi:"parserMaxMemSize"`
 	// ("queryAllocBlockSize") DEPRECATED -- variable should not be settable and will be ignored
@@ -3433,25 +3828,83 @@ type MysqlConfigurationVariablesArgs struct {
 	// Deprecated: The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.
 	QueryAllocBlockSize pulumi.StringPtrInput `pulumi:"queryAllocBlockSize"`
 	// ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
+	QueryPreallocSize pulumi.StringPtrInput `pulumi:"queryPreallocSize"`
+	// The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans.
+	//
+	// rangeOptimizerMaxMemSize corresponds to the MySQL Server System variable [rangeOptimizerMaxMemSize] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_range_optimizer_max_mem_size).
 	//
 	// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
-	QueryPreallocSize pulumi.StringPtrInput `pulumi:"queryPreallocSize"`
+	RangeOptimizerMaxMemSize pulumi.StringPtrInput `pulumi:"rangeOptimizerMaxMemSize"`
 	// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
 	RegexpTimeLimit pulumi.IntPtrInput `pulumi:"regexpTimeLimit"`
+	// The maximum amount of space to use for all relay logs.
+	//
+	// relayLogSpaceLimit corresponds to the MySQL Replica Server Options variable [relayLogSpaceLimit] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_relay_log_space_limit).
+	RelayLogSpaceLimit pulumi.StringPtrInput `pulumi:"relayLogSpaceLimit"`
+	// Specifies the number of seconds to wait for more data or a heartbeat signal from the source before the replica considers the connection broken, aborts the read, and tries to reconnect. Setting this variable has no immediate effect. The state of the variable applies on all subsequent START REPLICA commands.
+	//
+	// replicaNetTimeout corresponds to the MySQL Replica server system variable [replicaNetTimeout](https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_net_timeout)
+	ReplicaNetTimeout pulumi.IntPtrInput `pulumi:"replicaNetTimeout"`
+	// Beginning with MySQL 8.0.26, slaveParallelWorkers is deprecated, and you should use replicaParallelWorkers instead. (Prior to MySQL 8.0.26, you must use slaveParallelWorkers to set the number of applier threads.)
+	//
+	// replicaParallelWorkers corresponds to the MySQL Replica Server Options variable [replicaParallelWorkers] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_parallel_workers).
+	ReplicaParallelWorkers pulumi.IntPtrInput `pulumi:"replicaParallelWorkers"`
+	// From MySQL 8.0.26, use replicaTypeConversions in place of slave_type_conversions, which is deprecated from that release. In releases before MySQL 8.0.26, use slave_type_conversions.
+	//
+	// replicaTypeConversions controls the type conversion mode in effect on the replica when using row-based replication. Its value is a comma-delimited set of zero or more elements from the list: ALL_LOSSY, ALL_NON_LOSSY, ALL_SIGNED, ALL_UNSIGNED. Set this variable to an empty string to disallow type conversions between the source and the replica. Setting this variable takes effect for all replication channels immediately, including running channels.
+	//
+	// replicaTypeConversions corresponds to the MySQL Replica Server Options variable [replicaTypeConversions] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_type_conversions).
+	ReplicaTypeConversions pulumi.StringPtrInput `pulumi:"replicaTypeConversions"`
+	// Whether client connections to the server are required to use some form of secure transport. When this variable is enabled, the server permits only TCP/IP connections encrypted using TLS/SSL, or connections that use a socket file or shared memory. The server rejects nonsecure connection attempts, which fail with an ER_SECURE_TRANSPORT_REQUIRED error.
+	//
+	// requireSecureTransport corresponds to the MySQL Server Administration system variable [requireSecureTransport](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_require_secure_transport)
+	RequireSecureTransport pulumi.BoolPtrInput `pulumi:"requireSecureTransport"`
+	// Whether to resolve host names when checking client connections. If this variable is OFF, mysqld resolves host names when checking client connections. If it is ON, mysqld uses only IP numbers; in this case, all Host column values in the grant tables must be IP addresses. See Section 7.1.12.3, “DNS Lookups and the Host Cache”.
+	//
+	// skipNameResolve corresponds to the MySQL Server System variable [skipNameResolve] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_skip_name_resolve).
+	SkipNameResolve pulumi.BoolPtrInput `pulumi:"skipNameResolve"`
 	// Each session that must perform a sort allocates a buffer of this size.
 	//
 	// sortBufferSize corresponds to the MySQL system variable [sortBufferSize](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_sort_buffer_size)
 	SortBufferSize pulumi.StringPtrInput `pulumi:"sortBufferSize"`
+	// Whether GIPK mode is in effect, in which case a MySQL replication source server adds a generated invisible primary key to any InnoDB table that is created without one.
+	//
+	// sqlGenerateInvisiblePrimaryKey corresponds to the MySQL system variable [sqlGenerateInvisiblePrimaryKey] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_sql_generate_invisible_primary_key).
+	SqlGenerateInvisiblePrimaryKey pulumi.BoolPtrInput `pulumi:"sqlGenerateInvisiblePrimaryKey"`
 	// ("sqlMode")
 	SqlMode pulumi.StringPtrInput `pulumi:"sqlMode"`
 	// ("sqlRequirePrimaryKey")
 	SqlRequirePrimaryKey pulumi.BoolPtrInput `pulumi:"sqlRequirePrimaryKey"`
 	// ("sqlWarnings")
 	SqlWarnings pulumi.BoolPtrInput `pulumi:"sqlWarnings"`
+	// The number of table definitions that can be stored in the table definition cache. If you use a large number of tables, you can create a large table definition cache to speed up opening of tables. The table definition cache takes less space and does not use file descriptors, unlike the normal table cache.
+	//
+	// tableDefinitionCache corresponds to the MySQL Server Administration system variable [tableDefinitionCache](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_table_definition_cache)
+	TableDefinitionCache pulumi.IntPtrInput `pulumi:"tableDefinitionCache"`
+	// The number of open tables for all threads. Increasing this value increases the number of file descriptors that mysqld requires.
+	//
+	// tableOpenCache corresponds to the MySQL Server Administration system variable [tableOpenCache](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_table_open_cache)
+	TableOpenCache pulumi.IntPtrInput `pulumi:"tableOpenCache"`
+	// Defines the maximum amount of memory that can be occupied by the TempTable storage engine before it starts storing data on disk. The default value is 1073741824 bytes (1GiB). For more information, see Section 10.4.4, “Internal Temporary Table Use in MySQL”.
+	//
+	// temptableMaxRam corresponds to the MySQL system variable [temptableMaxRam] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_temptable_max_ram).
+	TemptableMaxRam pulumi.StringPtrInput `pulumi:"temptableMaxRam"`
 	// Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
 	ThreadPoolDedicatedListeners pulumi.BoolPtrInput `pulumi:"threadPoolDedicatedListeners"`
 	// Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
 	ThreadPoolMaxTransactionsLimit pulumi.IntPtrInput `pulumi:"threadPoolMaxTransactionsLimit"`
+	// The maximum number of query threads permitted in a thread group. The maximum value is 4096, but if threadPoolMaxTransactionsLimit is set, threadPoolQueryThreadsPerGroup must not exceed that value. The default value of 1 means there is one active query thread in each thread group, which works well for many loads. When you are using the high concurrency thread pool algorithm (thread_pool_algorithm = 1), consider increasing the value if you experience slower response times due to long-running transactions.
+	//
+	// threadPoolQueryThreadsPerGroup corresponds to the MySQL Server system variable [threadPoolQueryThreadsPerGroup](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_query_threads_per_group)
+	ThreadPoolQueryThreadsPerGroup pulumi.IntPtrInput `pulumi:"threadPoolQueryThreadsPerGroup"`
+	// The number of thread groups in the thread pool. This is the most important parameter controlling thread pool performance. It affects how many statements can execute simultaneously. If a value outside the range of permissible values is specified, the thread pool plugin does not load and the server writes a message to the error log.
+	//
+	// threadPoolSize corresponds to the MySQL Server System variable [threadPoolSize] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_size).
+	ThreadPoolSize pulumi.IntPtrInput `pulumi:"threadPoolSize"`
+	// The delay period before executing a new transaction, in milliseconds. The maximum value is 300000 (5 minutes). A transaction delay can be used in cases where parallel transactions affect the performance of other operations due to resource contention. For example, if parallel transactions affect index creation or an online buffer pool resizing operation, you can configure a transaction delay to reduce resource contention while those operations are running.
+	//
+	// threadPoolTransactionDelay corresponds to the MySQL Server system variable [threadPoolTransactionDelay](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_transaction_delay)
+	ThreadPoolTransactionDelay pulumi.IntPtrInput `pulumi:"threadPoolTransactionDelay"`
 	// Initializes the time zone for each client that connects.
 	//
 	// This corresponds to the MySQL System Variable "timeZone".
@@ -3552,6 +4005,20 @@ func (o MysqlConfigurationVariablesOutput) ToMysqlConfigurationVariablesPtrOutpu
 	}).(MysqlConfigurationVariablesPtrOutput)
 }
 
+// auto_increment_increment and autoIncrementOffset are intended for use with circular (source-to-source) replication, and can be used to control the operation of AUTO_INCREMENT columns. Both variables have global and session values, and each can assume an integer value between 1 and 65,535 inclusive.
+//
+// autoIncrementIncrement corresponds to the MySQL Replication Source Options variable [autoIncrementIncrement] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-source.html#sysvar_auto_increment_increment).
+func (o MysqlConfigurationVariablesOutput) AutoIncrementIncrement() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.AutoIncrementIncrement }).(pulumi.IntPtrOutput)
+}
+
+// This variable has a default value of 1. If it is left with its default value, and Group Replication is started on the server in multi-primary mode, it is changed to the server ID.
+//
+// autoIncrementOffset corresponds to the MySQL Replication Source Options variable [autoIncrementOffset] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-source.html#sysvar_auto_increment_offset).
+func (o MysqlConfigurationVariablesOutput) AutoIncrementOffset() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.AutoIncrementOffset }).(pulumi.IntPtrOutput)
+}
+
 // ("autocommit")
 func (o MysqlConfigurationVariablesOutput) Autocommit() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v MysqlConfigurationVariables) *bool { return v.Autocommit }).(pulumi.BoolPtrOutput)
@@ -3569,6 +4036,20 @@ func (o MysqlConfigurationVariablesOutput) BinlogExpireLogsSeconds() pulumi.IntP
 	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.BinlogExpireLogsSeconds }).(pulumi.IntPtrOutput)
 }
 
+// Controls how many microseconds the binary log commit waits before synchronizing the binary log file to disk. There is no delay by default. Setting this variable to a microsecond delay enables more transactions to be synchronized together to disk at once, reducing the overall time to commit a group of transactions because the larger groups required fewer time units per group.
+//
+// binlogGroupCommitSyncDelay corresponds to the MySQL Replication system variable [binlogGroupCommitSyncDelay](https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_binlog_group_commit_sync_delay)
+func (o MysqlConfigurationVariablesOutput) BinlogGroupCommitSyncDelay() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.BinlogGroupCommitSyncDelay }).(pulumi.IntPtrOutput)
+}
+
+// The maximum number of transactions to wait for before aborting the current delay as specified by binlog_group_commit_sync_delay. If binlogGroupCommitSyncDelay is set to 0, then this option has no effect.
+//
+// binlogGroupCommitSyncNoDelayCount corresponds to the MySQL Replication system variable [binlogGroupCommitSyncNoDelayCount](https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_binlog_group_commit_sync_no_delay_count)
+func (o MysqlConfigurationVariablesOutput) BinlogGroupCommitSyncNoDelayCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.BinlogGroupCommitSyncNoDelayCount }).(pulumi.IntPtrOutput)
+}
+
 // Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlogRowMetadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
 func (o MysqlConfigurationVariablesOutput) BinlogRowMetadata() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.BinlogRowMetadata }).(pulumi.StringPtrOutput)
@@ -3582,6 +4063,27 @@ func (o MysqlConfigurationVariablesOutput) BinlogRowValueOptions() pulumi.String
 // Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlogTransactionCompression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
 func (o MysqlConfigurationVariablesOutput) BinlogTransactionCompression() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v MysqlConfigurationVariables) *bool { return v.BinlogTransactionCompression }).(pulumi.BoolPtrOutput)
+}
+
+// This variable controls the block encryption mode for block-based algorithms such as AES. It affects encryption for AES_ENCRYPT() and AES_DECRYPT(). blockEncryptionMode takes a value in aes-keylen-mode format, where keylen is the key length in bits and mode is the encryption mode. The value is not case-sensitive. Permitted keylen values are 128, 192, and 256. Permitted mode values are ECB, CBC, CFB1, CFB8, CFB128, and OFB.
+//
+// blockEncryptionMode corresponds to the MySQL Server Administration system variable [blockEncryptionMode](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_block_encryption_mode)
+func (o MysqlConfigurationVariablesOutput) BlockEncryptionMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.BlockEncryptionMode }).(pulumi.StringPtrOutput)
+}
+
+// The server's default character set. If you set this variable, you should also set collationServer to specify the collation for the character set.
+//
+// characterSetServer corresponds to the MySQL server variable [characterSetServer](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_character_set_server).
+func (o MysqlConfigurationVariablesOutput) CharacterSetServer() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.CharacterSetServer }).(pulumi.StringPtrOutput)
+}
+
+// The server's default collation.
+//
+// collationServer corresponds to the MySQL server variable [collationServer](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_collation_server).
+func (o MysqlConfigurationVariablesOutput) CollationServer() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.CollationServer }).(pulumi.StringPtrOutput)
 }
 
 // ("completionType")
@@ -3617,9 +4119,27 @@ func (o MysqlConfigurationVariablesOutput) CteMaxRecursionDepth() pulumi.StringP
 	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.CteMaxRecursionDepth }).(pulumi.StringPtrOutput)
 }
 
-// ("defaultAuthenticationPlugin")
+// The default authentication plugin. This must be a plugin that uses internal credentials storage, so these values are permitted: mysql_native_password, sha256_password, caching_sha2_password.
+//
+// As of MySQL 8.0.27, which introduces multifactor authentication, defaultAuthenticationPlugin is still used, but in conjunction with and at a lower precedence than the authenticationPolicy system variable. For details, see The Default Authentication Plugin. Because of this diminished role, defaultAuthenticationPlugin is deprecated as of MySQL 8.0.27 and subject to removal in a future MySQL version.
+//
+// defaultAuthenticationPlugin corresponds to the MySQL system variable [defaultAuthenticationPlugin](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_default_authentication_plugin).
 func (o MysqlConfigurationVariablesOutput) DefaultAuthenticationPlugin() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.DefaultAuthenticationPlugin }).(pulumi.StringPtrOutput)
+}
+
+// This variable determines the default output format used by EXPLAIN in the absence of a FORMAT option when displaying a query execution plan.
+//
+// explainFormat corresponds to the MySQL system variable [explainFormat](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_explain_format).
+func (o MysqlConfigurationVariablesOutput) ExplainFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.ExplainFormat }).(pulumi.StringPtrOutput)
+}
+
+// This system variable determines whether the server enables certain nonstandard behaviors for default values and NULL-value handling in TIMESTAMP columns. By default, explicitDefaultsForTimestamp is enabled, which disables the nonstandard behaviors. Disabling explicitDefaultsForTimestamp results in a warning.
+//
+// explicitDefaultsForTimestamp corresponds to the MySQL Server Administration system variable [explicitDefaultsForTimestamp](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_explicit_defaults_for_timestamp)
+func (o MysqlConfigurationVariablesOutput) ExplicitDefaultsForTimestamp() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *bool { return v.ExplicitDefaultsForTimestamp }).(pulumi.BoolPtrOutput)
 }
 
 // ("foreignKeyChecks")
@@ -3648,6 +4168,13 @@ func (o MysqlConfigurationVariablesOutput) GlobalConnectionMemoryTracking() pulu
 	return o.ApplyT(func(v MysqlConfigurationVariables) *bool { return v.GlobalConnectionMemoryTracking }).(pulumi.BoolPtrOutput)
 }
 
+// Specifies the maximum permitted result length in bytes for the GROUP_CONCAT() function.
+//
+// This is the MySQL variable "groupConcatMaxLen". For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_group_concat_max_len)
+func (o MysqlConfigurationVariablesOutput) GroupConcatMaxLen() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.GroupConcatMaxLen }).(pulumi.StringPtrOutput)
+}
+
 // * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
 // * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
 // * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
@@ -3660,6 +4187,20 @@ func (o MysqlConfigurationVariablesOutput) GroupReplicationConsistency() pulumi.
 // ("informationSchemaStatsExpiry")
 func (o MysqlConfigurationVariablesOutput) InformationSchemaStatsExpiry() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.InformationSchemaStatsExpiry }).(pulumi.IntPtrOutput)
+}
+
+// Whether the InnoDB adaptive hash index is enabled or disabled. It may be desirable, depending on your workload, to dynamically enable or disable adaptive hash indexing to improve query performance. Because the adaptive hash index may not be useful for all workloads, conduct benchmarks with it both enabled and disabled, using realistic workloads.
+//
+// innodbAdaptiveHashIndex corresponds to the MySQL InnoDB Startup Options and System Variables [innodbAdaptiveHashIndex] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_adaptive_hash_index).
+func (o MysqlConfigurationVariablesOutput) InnodbAdaptiveHashIndex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *bool { return v.InnodbAdaptiveHashIndex }).(pulumi.BoolPtrOutput)
+}
+
+// The lock mode to use for generating auto-increment values. Permissible values are 0, 1, or 2, for traditional, consecutive, or interleaved, respectively.
+//
+// innodbAutoincLockMode corresponds to the MySQL InnoDB Startup Options and System Variables [innodbAutoincLockMode] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_autoinc_lock_mode).
+func (o MysqlConfigurationVariablesOutput) InnodbAutoincLockMode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.InnodbAutoincLockMode }).(pulumi.IntPtrOutput)
 }
 
 // Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
@@ -3685,6 +4226,13 @@ func (o MysqlConfigurationVariablesOutput) InnodbBufferPoolInstances() pulumi.In
 // The default and maximum values depend on the amount of RAM provisioned by the shape. See [Default User Variables](https://www.terraform.io/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
 func (o MysqlConfigurationVariablesOutput) InnodbBufferPoolSize() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.InnodbBufferPoolSize }).(pulumi.StringPtrOutput)
+}
+
+// Whether InnoDB performs change buffering, an optimization that delays write operations to secondary indexes so that the I/O operations can be performed sequentially. Permitted values are described in the following table. Values may also be specified numerically.
+//
+// innodbChangeBuffering corresponds to the MySQL InnoDB Startup Options and System Variables [innodbChangeBuffering] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_change_buffering).
+func (o MysqlConfigurationVariablesOutput) InnodbChangeBuffering() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.InnodbChangeBuffering }).(pulumi.StringPtrOutput)
 }
 
 // innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
@@ -3761,6 +4309,43 @@ func (o MysqlConfigurationVariablesOutput) InnodbMaxPurgeLagDelay() pulumi.IntPt
 	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.InnodbMaxPurgeLagDelay }).(pulumi.IntPtrOutput)
 }
 
+// Enables the NUMA interleave memory policy for allocation of the InnoDB buffer pool. When innodbNumaInterleave is enabled, the NUMA memory policy is set to MPOL_INTERLEAVE for the mysqld process. After the InnoDB buffer pool is allocated, the NUMA memory policy is set back to MPOL_DEFAULT. For the innodbNumaInterleave option to be available, MySQL must be compiled on a NUMA-enabled Linux system.
+//
+// innodbNumaInterleave corresponds to the MySQL InnoDB Startup Options and System Variables [innodbNumaInterleave] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_numa_interleave).
+func (o MysqlConfigurationVariablesOutput) InnodbNumaInterleave() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *bool { return v.InnodbNumaInterleave }).(pulumi.BoolPtrOutput)
+}
+
+// Specifies an upper limit in bytes on the size of the temporary log files used during online DDL operations for InnoDB tables. There is one such log file for each index being created or table being altered. This log file stores data inserted, updated, or deleted in the table during the DDL operation.
+//
+// innodbOnlineAlterLogMaxSize corresponds to the MySQL InnoDB Startup Options and System Variables [innodbOnlineAlterLogMaxSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_online_alter_log_max_size).
+func (o MysqlConfigurationVariablesOutput) InnodbOnlineAlterLogMaxSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.InnodbOnlineAlterLogMaxSize }).(pulumi.StringPtrOutput)
+}
+
+// Defines the amount of disk space occupied by redo log files. innodbRedoLogCapacity supercedes the innodbLogFilesInGroup and innodbLogFileSize variables, which are both ignored if innodbRedoLogCapacity is defined. If innodbRedoLogCapacity is not defined, and if neither innodbLogFileSize or innodbLogFilesInGroup are defined, then the default innodbRedoLogCapacity value is used.
+//
+// innodbRedoLogCapacity corresponds to the InnoDB Startup Options and System Variables [innodbRedoLogCapacity](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_redo_log_capacity)
+func (o MysqlConfigurationVariablesOutput) InnodbRedoLogCapacity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.InnodbRedoLogCapacity }).(pulumi.StringPtrOutput)
+}
+
+// InnoDB rolls back only the last statement on a transaction timeout by default. If --innodb-rollback-on-timeout is specified, a transaction timeout causes InnoDB to abort and roll back the entire transaction.
+//
+// innodbRollbackOnTimeout corresponds to the MySQL InnoDB Startup Options and System Variables [innodbRollbackOnTimeout] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_rollback_on_timeout).
+func (o MysqlConfigurationVariablesOutput) InnodbRollbackOnTimeout() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *bool { return v.InnodbRollbackOnTimeout }).(pulumi.BoolPtrOutput)
+}
+
+// This variable defines:
+// * The sort buffer size for online DDL operations that create or rebuild secondary indexes. However, as of MySQL 8.0.27, this responsibility is subsumed by the innodbDdlBufferSize variable.
+// * The amount by which the temporary log file is extended when recording concurrent DML during an online DDL operation, and the size of the temporary log file read buffer and write buffer.
+//
+// innodbSortBufferSize corresponds to the MySQL InnoDB Startup Options and System Variables [innodbSortBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_sort_buffer_size).
+func (o MysqlConfigurationVariablesOutput) InnodbSortBufferSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.InnodbSortBufferSize }).(pulumi.IntPtrOutput)
+}
+
 // The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
 //
 // innodbStatsPersistentSamplePages corresponds to the MySQL InnoDB system variable [innodbStatsPersistentSamplePages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_persistent_sample_pages)
@@ -3781,6 +4366,20 @@ func (o MysqlConfigurationVariablesOutput) InnodbStatsTransientSamplePages() pul
 	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.InnodbStatsTransientSamplePages }).(pulumi.StringPtrOutput)
 }
 
+// When you enable innodbStrictMode, the InnoDB storage engine returns errors instead of warnings for invalid or incompatible table options.
+//
+// innodbStrictMode corresponds to the MySQL InnoDB system variable [innodbStrictMode](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_strict_mode)
+func (o MysqlConfigurationVariablesOutput) InnodbStrictMode() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *bool { return v.InnodbStrictMode }).(pulumi.BoolPtrOutput)
+}
+
+// When enabled, undo tablespaces that exceed the threshold value defined by innodbMaxUndoLogSize are marked for truncation. Only undo tablespaces can be truncated. Truncating undo logs that reside in the system tablespace is not supported. For truncation to occur, there must be at least two undo tablespaces.
+//
+// innodbUndoLogTruncate corresponds to the MySQL InnoDB Startup Options and System Variables [innodbUndoLogTruncate] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_undo_log_truncate).
+func (o MysqlConfigurationVariablesOutput) InnodbUndoLogTruncate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *bool { return v.InnodbUndoLogTruncate }).(pulumi.BoolPtrOutput)
+}
+
 // The number of seconds the server waits for activity on an interactive connection before closing it.
 //
 // interactiveTimeout corresponds to the MySQL system variable. [interactiveTimeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_interactive_timeout)
@@ -3788,9 +4387,25 @@ func (o MysqlConfigurationVariablesOutput) InteractiveTimeout() pulumi.IntPtrOut
 	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.InteractiveTimeout }).(pulumi.IntPtrOutput)
 }
 
-// ("localInfile")
+// The minimum size of the buffer that is used for plain index scans, range index scans, and joins that do not use indexes and thus perform full table scans. In MySQL 8.0.18 and later, this variable also controls the amount of memory used for hash joins. Normally, the best way to get fast joins is to add indexes. Increase the value of joinBufferSize to get a faster full join when adding indexes is not possible. One join buffer is allocated for each full join between two tables. For a complex join between several tables for which indexes are not used, multiple join buffers might be necessary.
+//
+// joinBufferSize corresponds to the MySQL Server System variable [joinBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_join_buffer_size).
+func (o MysqlConfigurationVariablesOutput) JoinBufferSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.JoinBufferSize }).(pulumi.StringPtrOutput)
+}
+
+// This variable controls server-side LOCAL capability for LOAD DATA statements. Depending on the localInfile setting, the server refuses or permits local data loading by clients that have LOCAL enabled on the client side.
+//
+// localInfile corresponds to the MySQL Server system variable [localInfile](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_local_infile)
 func (o MysqlConfigurationVariablesOutput) LocalInfile() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v MysqlConfigurationVariables) *bool { return v.LocalInfile }).(pulumi.BoolPtrOutput)
+}
+
+// If a query takes longer than this many seconds, the server increments the Slow_queries status variable. If the slow query log is enabled, the query is logged to the slow query log file. This value is measured in real time, not CPU time, so a query that is under the threshold on a lightly loaded system might be above the threshold on a heavily loaded one.
+//
+// longQueryTime corresponds to the MySQL Server System variable [longQueryTime] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_long_query_time).
+func (o MysqlConfigurationVariablesOutput) LongQueryTime() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.LongQueryTime }).(pulumi.IntPtrOutput)
 }
 
 // ("mandatoryRoles")
@@ -3837,6 +4452,20 @@ func (o MysqlConfigurationVariablesOutput) MaxHeapTableSize() pulumi.StringPtrOu
 // ("maxPreparedStmtCount")
 func (o MysqlConfigurationVariablesOutput) MaxPreparedStmtCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.MaxPreparedStmtCount }).(pulumi.IntPtrOutput)
+}
+
+// Limit the assumed maximum number of seeks when looking up rows based on a key. The MySQL optimizer assumes that no more than this number of key seeks are required when searching for matching rows in a table by scanning an index, regardless of the actual cardinality of the index (see Section 15.7.7.22, “SHOW INDEX Statement”). By setting this to a low value (say, 100), you can force MySQL to prefer indexes instead of table scans.
+//
+// maxSeeksForKey corresponds to the MySQL Server System variable [maxSeeksForKey] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_seeks_for_key).
+func (o MysqlConfigurationVariablesOutput) MaxSeeksForKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.MaxSeeksForKey }).(pulumi.StringPtrOutput)
+}
+
+// The maximum number of simultaneous connections permitted to any given MySQL user account. A value of 0 (the default) means “no limit.” This variable has a global value that can be set at server startup or runtime. It also has a read-only session value that indicates the effective simultaneous-connection limit that applies to the account associated with the current session.
+//
+// maxUserConnections corresponds to the MySQL Server System variable [maxUserConnections] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_user_connections).
+func (o MysqlConfigurationVariablesOutput) MaxUserConnections() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.MaxUserConnections }).(pulumi.StringPtrOutput)
 }
 
 // ("mysqlFirewallMode")
@@ -3963,6 +4592,15 @@ func (o MysqlConfigurationVariablesOutput) NetWriteTimeout() pulumi.IntPtrOutput
 	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.NetWriteTimeout }).(pulumi.IntPtrOutput)
 }
 
+// The optimizerSwitch system variable enables control over optimizer behavior. The value of this variable is a set of flags, each of which has a value of on or off to indicate whether the corresponding optimizer behavior is enabled or disabled. This variable has global and session values and can be changed at runtime. The global default can be set at server startup.
+//
+// Setting hypergraph_optimizer=on for cloud builds below 9.0.0 will fail.
+//
+// optimizerSwitch corresponds to the MySQL Server System variable [optimizerSwitch] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_optimizer_switch).
+func (o MysqlConfigurationVariablesOutput) OptimizerSwitch() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.OptimizerSwitch }).(pulumi.StringPtrOutput)
+}
+
 // ("parserMaxMemSize")
 func (o MysqlConfigurationVariablesOutput) ParserMaxMemSize() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.ParserMaxMemSize }).(pulumi.StringPtrOutput)
@@ -3976,10 +4614,17 @@ func (o MysqlConfigurationVariablesOutput) QueryAllocBlockSize() pulumi.StringPt
 }
 
 // ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
-//
-// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
 func (o MysqlConfigurationVariablesOutput) QueryPreallocSize() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.QueryPreallocSize }).(pulumi.StringPtrOutput)
+}
+
+// The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans.
+//
+// rangeOptimizerMaxMemSize corresponds to the MySQL Server System variable [rangeOptimizerMaxMemSize] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_range_optimizer_max_mem_size).
+//
+// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
+func (o MysqlConfigurationVariablesOutput) RangeOptimizerMaxMemSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.RangeOptimizerMaxMemSize }).(pulumi.StringPtrOutput)
 }
 
 // regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
@@ -3987,11 +4632,62 @@ func (o MysqlConfigurationVariablesOutput) RegexpTimeLimit() pulumi.IntPtrOutput
 	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.RegexpTimeLimit }).(pulumi.IntPtrOutput)
 }
 
+// The maximum amount of space to use for all relay logs.
+//
+// relayLogSpaceLimit corresponds to the MySQL Replica Server Options variable [relayLogSpaceLimit] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_relay_log_space_limit).
+func (o MysqlConfigurationVariablesOutput) RelayLogSpaceLimit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.RelayLogSpaceLimit }).(pulumi.StringPtrOutput)
+}
+
+// Specifies the number of seconds to wait for more data or a heartbeat signal from the source before the replica considers the connection broken, aborts the read, and tries to reconnect. Setting this variable has no immediate effect. The state of the variable applies on all subsequent START REPLICA commands.
+//
+// replicaNetTimeout corresponds to the MySQL Replica server system variable [replicaNetTimeout](https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_net_timeout)
+func (o MysqlConfigurationVariablesOutput) ReplicaNetTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.ReplicaNetTimeout }).(pulumi.IntPtrOutput)
+}
+
+// Beginning with MySQL 8.0.26, slaveParallelWorkers is deprecated, and you should use replicaParallelWorkers instead. (Prior to MySQL 8.0.26, you must use slaveParallelWorkers to set the number of applier threads.)
+//
+// replicaParallelWorkers corresponds to the MySQL Replica Server Options variable [replicaParallelWorkers] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_parallel_workers).
+func (o MysqlConfigurationVariablesOutput) ReplicaParallelWorkers() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.ReplicaParallelWorkers }).(pulumi.IntPtrOutput)
+}
+
+// From MySQL 8.0.26, use replicaTypeConversions in place of slave_type_conversions, which is deprecated from that release. In releases before MySQL 8.0.26, use slave_type_conversions.
+//
+// replicaTypeConversions controls the type conversion mode in effect on the replica when using row-based replication. Its value is a comma-delimited set of zero or more elements from the list: ALL_LOSSY, ALL_NON_LOSSY, ALL_SIGNED, ALL_UNSIGNED. Set this variable to an empty string to disallow type conversions between the source and the replica. Setting this variable takes effect for all replication channels immediately, including running channels.
+//
+// replicaTypeConversions corresponds to the MySQL Replica Server Options variable [replicaTypeConversions] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_type_conversions).
+func (o MysqlConfigurationVariablesOutput) ReplicaTypeConversions() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.ReplicaTypeConversions }).(pulumi.StringPtrOutput)
+}
+
+// Whether client connections to the server are required to use some form of secure transport. When this variable is enabled, the server permits only TCP/IP connections encrypted using TLS/SSL, or connections that use a socket file or shared memory. The server rejects nonsecure connection attempts, which fail with an ER_SECURE_TRANSPORT_REQUIRED error.
+//
+// requireSecureTransport corresponds to the MySQL Server Administration system variable [requireSecureTransport](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_require_secure_transport)
+func (o MysqlConfigurationVariablesOutput) RequireSecureTransport() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *bool { return v.RequireSecureTransport }).(pulumi.BoolPtrOutput)
+}
+
+// Whether to resolve host names when checking client connections. If this variable is OFF, mysqld resolves host names when checking client connections. If it is ON, mysqld uses only IP numbers; in this case, all Host column values in the grant tables must be IP addresses. See Section 7.1.12.3, “DNS Lookups and the Host Cache”.
+//
+// skipNameResolve corresponds to the MySQL Server System variable [skipNameResolve] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_skip_name_resolve).
+func (o MysqlConfigurationVariablesOutput) SkipNameResolve() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *bool { return v.SkipNameResolve }).(pulumi.BoolPtrOutput)
+}
+
 // Each session that must perform a sort allocates a buffer of this size.
 //
 // sortBufferSize corresponds to the MySQL system variable [sortBufferSize](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_sort_buffer_size)
 func (o MysqlConfigurationVariablesOutput) SortBufferSize() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.SortBufferSize }).(pulumi.StringPtrOutput)
+}
+
+// Whether GIPK mode is in effect, in which case a MySQL replication source server adds a generated invisible primary key to any InnoDB table that is created without one.
+//
+// sqlGenerateInvisiblePrimaryKey corresponds to the MySQL system variable [sqlGenerateInvisiblePrimaryKey] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_sql_generate_invisible_primary_key).
+func (o MysqlConfigurationVariablesOutput) SqlGenerateInvisiblePrimaryKey() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *bool { return v.SqlGenerateInvisiblePrimaryKey }).(pulumi.BoolPtrOutput)
 }
 
 // ("sqlMode")
@@ -4009,6 +4705,27 @@ func (o MysqlConfigurationVariablesOutput) SqlWarnings() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v MysqlConfigurationVariables) *bool { return v.SqlWarnings }).(pulumi.BoolPtrOutput)
 }
 
+// The number of table definitions that can be stored in the table definition cache. If you use a large number of tables, you can create a large table definition cache to speed up opening of tables. The table definition cache takes less space and does not use file descriptors, unlike the normal table cache.
+//
+// tableDefinitionCache corresponds to the MySQL Server Administration system variable [tableDefinitionCache](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_table_definition_cache)
+func (o MysqlConfigurationVariablesOutput) TableDefinitionCache() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.TableDefinitionCache }).(pulumi.IntPtrOutput)
+}
+
+// The number of open tables for all threads. Increasing this value increases the number of file descriptors that mysqld requires.
+//
+// tableOpenCache corresponds to the MySQL Server Administration system variable [tableOpenCache](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_table_open_cache)
+func (o MysqlConfigurationVariablesOutput) TableOpenCache() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.TableOpenCache }).(pulumi.IntPtrOutput)
+}
+
+// Defines the maximum amount of memory that can be occupied by the TempTable storage engine before it starts storing data on disk. The default value is 1073741824 bytes (1GiB). For more information, see Section 10.4.4, “Internal Temporary Table Use in MySQL”.
+//
+// temptableMaxRam corresponds to the MySQL system variable [temptableMaxRam] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_temptable_max_ram).
+func (o MysqlConfigurationVariablesOutput) TemptableMaxRam() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.TemptableMaxRam }).(pulumi.StringPtrOutput)
+}
+
 // Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
 func (o MysqlConfigurationVariablesOutput) ThreadPoolDedicatedListeners() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v MysqlConfigurationVariables) *bool { return v.ThreadPoolDedicatedListeners }).(pulumi.BoolPtrOutput)
@@ -4017,6 +4734,27 @@ func (o MysqlConfigurationVariablesOutput) ThreadPoolDedicatedListeners() pulumi
 // Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
 func (o MysqlConfigurationVariablesOutput) ThreadPoolMaxTransactionsLimit() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.ThreadPoolMaxTransactionsLimit }).(pulumi.IntPtrOutput)
+}
+
+// The maximum number of query threads permitted in a thread group. The maximum value is 4096, but if threadPoolMaxTransactionsLimit is set, threadPoolQueryThreadsPerGroup must not exceed that value. The default value of 1 means there is one active query thread in each thread group, which works well for many loads. When you are using the high concurrency thread pool algorithm (thread_pool_algorithm = 1), consider increasing the value if you experience slower response times due to long-running transactions.
+//
+// threadPoolQueryThreadsPerGroup corresponds to the MySQL Server system variable [threadPoolQueryThreadsPerGroup](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_query_threads_per_group)
+func (o MysqlConfigurationVariablesOutput) ThreadPoolQueryThreadsPerGroup() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.ThreadPoolQueryThreadsPerGroup }).(pulumi.IntPtrOutput)
+}
+
+// The number of thread groups in the thread pool. This is the most important parameter controlling thread pool performance. It affects how many statements can execute simultaneously. If a value outside the range of permissible values is specified, the thread pool plugin does not load and the server writes a message to the error log.
+//
+// threadPoolSize corresponds to the MySQL Server System variable [threadPoolSize] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_size).
+func (o MysqlConfigurationVariablesOutput) ThreadPoolSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.ThreadPoolSize }).(pulumi.IntPtrOutput)
+}
+
+// The delay period before executing a new transaction, in milliseconds. The maximum value is 300000 (5 minutes). A transaction delay can be used in cases where parallel transactions affect the performance of other operations due to resource contention. For example, if parallel transactions affect index creation or an online buffer pool resizing operation, you can configure a transaction delay to reduce resource contention while those operations are running.
+//
+// threadPoolTransactionDelay corresponds to the MySQL Server system variable [threadPoolTransactionDelay](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_transaction_delay)
+func (o MysqlConfigurationVariablesOutput) ThreadPoolTransactionDelay() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.ThreadPoolTransactionDelay }).(pulumi.IntPtrOutput)
 }
 
 // Initializes the time zone for each client that connects.
@@ -4076,6 +4814,30 @@ func (o MysqlConfigurationVariablesPtrOutput) Elem() MysqlConfigurationVariables
 	}).(MysqlConfigurationVariablesOutput)
 }
 
+// auto_increment_increment and autoIncrementOffset are intended for use with circular (source-to-source) replication, and can be used to control the operation of AUTO_INCREMENT columns. Both variables have global and session values, and each can assume an integer value between 1 and 65,535 inclusive.
+//
+// autoIncrementIncrement corresponds to the MySQL Replication Source Options variable [autoIncrementIncrement] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-source.html#sysvar_auto_increment_increment).
+func (o MysqlConfigurationVariablesPtrOutput) AutoIncrementIncrement() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.AutoIncrementIncrement
+	}).(pulumi.IntPtrOutput)
+}
+
+// This variable has a default value of 1. If it is left with its default value, and Group Replication is started on the server in multi-primary mode, it is changed to the server ID.
+//
+// autoIncrementOffset corresponds to the MySQL Replication Source Options variable [autoIncrementOffset] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-source.html#sysvar_auto_increment_offset).
+func (o MysqlConfigurationVariablesPtrOutput) AutoIncrementOffset() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.AutoIncrementOffset
+	}).(pulumi.IntPtrOutput)
+}
+
 // ("autocommit")
 func (o MysqlConfigurationVariablesPtrOutput) Autocommit() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *MysqlConfigurationVariables) *bool {
@@ -4108,6 +4870,30 @@ func (o MysqlConfigurationVariablesPtrOutput) BinlogExpireLogsSeconds() pulumi.I
 	}).(pulumi.IntPtrOutput)
 }
 
+// Controls how many microseconds the binary log commit waits before synchronizing the binary log file to disk. There is no delay by default. Setting this variable to a microsecond delay enables more transactions to be synchronized together to disk at once, reducing the overall time to commit a group of transactions because the larger groups required fewer time units per group.
+//
+// binlogGroupCommitSyncDelay corresponds to the MySQL Replication system variable [binlogGroupCommitSyncDelay](https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_binlog_group_commit_sync_delay)
+func (o MysqlConfigurationVariablesPtrOutput) BinlogGroupCommitSyncDelay() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.BinlogGroupCommitSyncDelay
+	}).(pulumi.IntPtrOutput)
+}
+
+// The maximum number of transactions to wait for before aborting the current delay as specified by binlog_group_commit_sync_delay. If binlogGroupCommitSyncDelay is set to 0, then this option has no effect.
+//
+// binlogGroupCommitSyncNoDelayCount corresponds to the MySQL Replication system variable [binlogGroupCommitSyncNoDelayCount](https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_binlog_group_commit_sync_no_delay_count)
+func (o MysqlConfigurationVariablesPtrOutput) BinlogGroupCommitSyncNoDelayCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.BinlogGroupCommitSyncNoDelayCount
+	}).(pulumi.IntPtrOutput)
+}
+
 // Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlogRowMetadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
 func (o MysqlConfigurationVariablesPtrOutput) BinlogRowMetadata() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
@@ -4136,6 +4922,42 @@ func (o MysqlConfigurationVariablesPtrOutput) BinlogTransactionCompression() pul
 		}
 		return v.BinlogTransactionCompression
 	}).(pulumi.BoolPtrOutput)
+}
+
+// This variable controls the block encryption mode for block-based algorithms such as AES. It affects encryption for AES_ENCRYPT() and AES_DECRYPT(). blockEncryptionMode takes a value in aes-keylen-mode format, where keylen is the key length in bits and mode is the encryption mode. The value is not case-sensitive. Permitted keylen values are 128, 192, and 256. Permitted mode values are ECB, CBC, CFB1, CFB8, CFB128, and OFB.
+//
+// blockEncryptionMode corresponds to the MySQL Server Administration system variable [blockEncryptionMode](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_block_encryption_mode)
+func (o MysqlConfigurationVariablesPtrOutput) BlockEncryptionMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BlockEncryptionMode
+	}).(pulumi.StringPtrOutput)
+}
+
+// The server's default character set. If you set this variable, you should also set collationServer to specify the collation for the character set.
+//
+// characterSetServer corresponds to the MySQL server variable [characterSetServer](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_character_set_server).
+func (o MysqlConfigurationVariablesPtrOutput) CharacterSetServer() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CharacterSetServer
+	}).(pulumi.StringPtrOutput)
+}
+
+// The server's default collation.
+//
+// collationServer corresponds to the MySQL server variable [collationServer](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_collation_server).
+func (o MysqlConfigurationVariablesPtrOutput) CollationServer() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CollationServer
+	}).(pulumi.StringPtrOutput)
 }
 
 // ("completionType")
@@ -4196,7 +5018,11 @@ func (o MysqlConfigurationVariablesPtrOutput) CteMaxRecursionDepth() pulumi.Stri
 	}).(pulumi.StringPtrOutput)
 }
 
-// ("defaultAuthenticationPlugin")
+// The default authentication plugin. This must be a plugin that uses internal credentials storage, so these values are permitted: mysql_native_password, sha256_password, caching_sha2_password.
+//
+// As of MySQL 8.0.27, which introduces multifactor authentication, defaultAuthenticationPlugin is still used, but in conjunction with and at a lower precedence than the authenticationPolicy system variable. For details, see The Default Authentication Plugin. Because of this diminished role, defaultAuthenticationPlugin is deprecated as of MySQL 8.0.27 and subject to removal in a future MySQL version.
+//
+// defaultAuthenticationPlugin corresponds to the MySQL system variable [defaultAuthenticationPlugin](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_default_authentication_plugin).
 func (o MysqlConfigurationVariablesPtrOutput) DefaultAuthenticationPlugin() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
 		if v == nil {
@@ -4204,6 +5030,30 @@ func (o MysqlConfigurationVariablesPtrOutput) DefaultAuthenticationPlugin() pulu
 		}
 		return v.DefaultAuthenticationPlugin
 	}).(pulumi.StringPtrOutput)
+}
+
+// This variable determines the default output format used by EXPLAIN in the absence of a FORMAT option when displaying a query execution plan.
+//
+// explainFormat corresponds to the MySQL system variable [explainFormat](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_explain_format).
+func (o MysqlConfigurationVariablesPtrOutput) ExplainFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ExplainFormat
+	}).(pulumi.StringPtrOutput)
+}
+
+// This system variable determines whether the server enables certain nonstandard behaviors for default values and NULL-value handling in TIMESTAMP columns. By default, explicitDefaultsForTimestamp is enabled, which disables the nonstandard behaviors. Disabling explicitDefaultsForTimestamp results in a warning.
+//
+// explicitDefaultsForTimestamp corresponds to the MySQL Server Administration system variable [explicitDefaultsForTimestamp](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_explicit_defaults_for_timestamp)
+func (o MysqlConfigurationVariablesPtrOutput) ExplicitDefaultsForTimestamp() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.ExplicitDefaultsForTimestamp
+	}).(pulumi.BoolPtrOutput)
 }
 
 // ("foreignKeyChecks")
@@ -4252,6 +5102,18 @@ func (o MysqlConfigurationVariablesPtrOutput) GlobalConnectionMemoryTracking() p
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Specifies the maximum permitted result length in bytes for the GROUP_CONCAT() function.
+//
+// This is the MySQL variable "groupConcatMaxLen". For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_group_concat_max_len)
+func (o MysqlConfigurationVariablesPtrOutput) GroupConcatMaxLen() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GroupConcatMaxLen
+	}).(pulumi.StringPtrOutput)
+}
+
 // * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
 // * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
 // * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
@@ -4273,6 +5135,30 @@ func (o MysqlConfigurationVariablesPtrOutput) InformationSchemaStatsExpiry() pul
 			return nil
 		}
 		return v.InformationSchemaStatsExpiry
+	}).(pulumi.IntPtrOutput)
+}
+
+// Whether the InnoDB adaptive hash index is enabled or disabled. It may be desirable, depending on your workload, to dynamically enable or disable adaptive hash indexing to improve query performance. Because the adaptive hash index may not be useful for all workloads, conduct benchmarks with it both enabled and disabled, using realistic workloads.
+//
+// innodbAdaptiveHashIndex corresponds to the MySQL InnoDB Startup Options and System Variables [innodbAdaptiveHashIndex] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_adaptive_hash_index).
+func (o MysqlConfigurationVariablesPtrOutput) InnodbAdaptiveHashIndex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.InnodbAdaptiveHashIndex
+	}).(pulumi.BoolPtrOutput)
+}
+
+// The lock mode to use for generating auto-increment values. Permissible values are 0, 1, or 2, for traditional, consecutive, or interleaved, respectively.
+//
+// innodbAutoincLockMode corresponds to the MySQL InnoDB Startup Options and System Variables [innodbAutoincLockMode] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_autoinc_lock_mode).
+func (o MysqlConfigurationVariablesPtrOutput) InnodbAutoincLockMode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.InnodbAutoincLockMode
 	}).(pulumi.IntPtrOutput)
 }
 
@@ -4313,6 +5199,18 @@ func (o MysqlConfigurationVariablesPtrOutput) InnodbBufferPoolSize() pulumi.Stri
 			return nil
 		}
 		return v.InnodbBufferPoolSize
+	}).(pulumi.StringPtrOutput)
+}
+
+// Whether InnoDB performs change buffering, an optimization that delays write operations to secondary indexes so that the I/O operations can be performed sequentially. Permitted values are described in the following table. Values may also be specified numerically.
+//
+// innodbChangeBuffering corresponds to the MySQL InnoDB Startup Options and System Variables [innodbChangeBuffering] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_change_buffering).
+func (o MysqlConfigurationVariablesPtrOutput) InnodbChangeBuffering() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.InnodbChangeBuffering
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -4450,6 +5348,68 @@ func (o MysqlConfigurationVariablesPtrOutput) InnodbMaxPurgeLagDelay() pulumi.In
 	}).(pulumi.IntPtrOutput)
 }
 
+// Enables the NUMA interleave memory policy for allocation of the InnoDB buffer pool. When innodbNumaInterleave is enabled, the NUMA memory policy is set to MPOL_INTERLEAVE for the mysqld process. After the InnoDB buffer pool is allocated, the NUMA memory policy is set back to MPOL_DEFAULT. For the innodbNumaInterleave option to be available, MySQL must be compiled on a NUMA-enabled Linux system.
+//
+// innodbNumaInterleave corresponds to the MySQL InnoDB Startup Options and System Variables [innodbNumaInterleave] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_numa_interleave).
+func (o MysqlConfigurationVariablesPtrOutput) InnodbNumaInterleave() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.InnodbNumaInterleave
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Specifies an upper limit in bytes on the size of the temporary log files used during online DDL operations for InnoDB tables. There is one such log file for each index being created or table being altered. This log file stores data inserted, updated, or deleted in the table during the DDL operation.
+//
+// innodbOnlineAlterLogMaxSize corresponds to the MySQL InnoDB Startup Options and System Variables [innodbOnlineAlterLogMaxSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_online_alter_log_max_size).
+func (o MysqlConfigurationVariablesPtrOutput) InnodbOnlineAlterLogMaxSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.InnodbOnlineAlterLogMaxSize
+	}).(pulumi.StringPtrOutput)
+}
+
+// Defines the amount of disk space occupied by redo log files. innodbRedoLogCapacity supercedes the innodbLogFilesInGroup and innodbLogFileSize variables, which are both ignored if innodbRedoLogCapacity is defined. If innodbRedoLogCapacity is not defined, and if neither innodbLogFileSize or innodbLogFilesInGroup are defined, then the default innodbRedoLogCapacity value is used.
+//
+// innodbRedoLogCapacity corresponds to the InnoDB Startup Options and System Variables [innodbRedoLogCapacity](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_redo_log_capacity)
+func (o MysqlConfigurationVariablesPtrOutput) InnodbRedoLogCapacity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.InnodbRedoLogCapacity
+	}).(pulumi.StringPtrOutput)
+}
+
+// InnoDB rolls back only the last statement on a transaction timeout by default. If --innodb-rollback-on-timeout is specified, a transaction timeout causes InnoDB to abort and roll back the entire transaction.
+//
+// innodbRollbackOnTimeout corresponds to the MySQL InnoDB Startup Options and System Variables [innodbRollbackOnTimeout] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_rollback_on_timeout).
+func (o MysqlConfigurationVariablesPtrOutput) InnodbRollbackOnTimeout() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.InnodbRollbackOnTimeout
+	}).(pulumi.BoolPtrOutput)
+}
+
+// This variable defines:
+// * The sort buffer size for online DDL operations that create or rebuild secondary indexes. However, as of MySQL 8.0.27, this responsibility is subsumed by the innodbDdlBufferSize variable.
+// * The amount by which the temporary log file is extended when recording concurrent DML during an online DDL operation, and the size of the temporary log file read buffer and write buffer.
+//
+// innodbSortBufferSize corresponds to the MySQL InnoDB Startup Options and System Variables [innodbSortBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_sort_buffer_size).
+func (o MysqlConfigurationVariablesPtrOutput) InnodbSortBufferSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.InnodbSortBufferSize
+	}).(pulumi.IntPtrOutput)
+}
+
 // The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
 //
 // innodbStatsPersistentSamplePages corresponds to the MySQL InnoDB system variable [innodbStatsPersistentSamplePages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_persistent_sample_pages)
@@ -4480,6 +5440,30 @@ func (o MysqlConfigurationVariablesPtrOutput) InnodbStatsTransientSamplePages() 
 	}).(pulumi.StringPtrOutput)
 }
 
+// When you enable innodbStrictMode, the InnoDB storage engine returns errors instead of warnings for invalid or incompatible table options.
+//
+// innodbStrictMode corresponds to the MySQL InnoDB system variable [innodbStrictMode](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_strict_mode)
+func (o MysqlConfigurationVariablesPtrOutput) InnodbStrictMode() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.InnodbStrictMode
+	}).(pulumi.BoolPtrOutput)
+}
+
+// When enabled, undo tablespaces that exceed the threshold value defined by innodbMaxUndoLogSize are marked for truncation. Only undo tablespaces can be truncated. Truncating undo logs that reside in the system tablespace is not supported. For truncation to occur, there must be at least two undo tablespaces.
+//
+// innodbUndoLogTruncate corresponds to the MySQL InnoDB Startup Options and System Variables [innodbUndoLogTruncate] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_undo_log_truncate).
+func (o MysqlConfigurationVariablesPtrOutput) InnodbUndoLogTruncate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.InnodbUndoLogTruncate
+	}).(pulumi.BoolPtrOutput)
+}
+
 // The number of seconds the server waits for activity on an interactive connection before closing it.
 //
 // interactiveTimeout corresponds to the MySQL system variable. [interactiveTimeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_interactive_timeout)
@@ -4492,7 +5476,21 @@ func (o MysqlConfigurationVariablesPtrOutput) InteractiveTimeout() pulumi.IntPtr
 	}).(pulumi.IntPtrOutput)
 }
 
-// ("localInfile")
+// The minimum size of the buffer that is used for plain index scans, range index scans, and joins that do not use indexes and thus perform full table scans. In MySQL 8.0.18 and later, this variable also controls the amount of memory used for hash joins. Normally, the best way to get fast joins is to add indexes. Increase the value of joinBufferSize to get a faster full join when adding indexes is not possible. One join buffer is allocated for each full join between two tables. For a complex join between several tables for which indexes are not used, multiple join buffers might be necessary.
+//
+// joinBufferSize corresponds to the MySQL Server System variable [joinBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_join_buffer_size).
+func (o MysqlConfigurationVariablesPtrOutput) JoinBufferSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.JoinBufferSize
+	}).(pulumi.StringPtrOutput)
+}
+
+// This variable controls server-side LOCAL capability for LOAD DATA statements. Depending on the localInfile setting, the server refuses or permits local data loading by clients that have LOCAL enabled on the client side.
+//
+// localInfile corresponds to the MySQL Server system variable [localInfile](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_local_infile)
 func (o MysqlConfigurationVariablesPtrOutput) LocalInfile() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *MysqlConfigurationVariables) *bool {
 		if v == nil {
@@ -4500,6 +5498,18 @@ func (o MysqlConfigurationVariablesPtrOutput) LocalInfile() pulumi.BoolPtrOutput
 		}
 		return v.LocalInfile
 	}).(pulumi.BoolPtrOutput)
+}
+
+// If a query takes longer than this many seconds, the server increments the Slow_queries status variable. If the slow query log is enabled, the query is logged to the slow query log file. This value is measured in real time, not CPU time, so a query that is under the threshold on a lightly loaded system might be above the threshold on a heavily loaded one.
+//
+// longQueryTime corresponds to the MySQL Server System variable [longQueryTime] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_long_query_time).
+func (o MysqlConfigurationVariablesPtrOutput) LongQueryTime() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.LongQueryTime
+	}).(pulumi.IntPtrOutput)
 }
 
 // ("mandatoryRoles")
@@ -4586,6 +5596,30 @@ func (o MysqlConfigurationVariablesPtrOutput) MaxPreparedStmtCount() pulumi.IntP
 		}
 		return v.MaxPreparedStmtCount
 	}).(pulumi.IntPtrOutput)
+}
+
+// Limit the assumed maximum number of seeks when looking up rows based on a key. The MySQL optimizer assumes that no more than this number of key seeks are required when searching for matching rows in a table by scanning an index, regardless of the actual cardinality of the index (see Section 15.7.7.22, “SHOW INDEX Statement”). By setting this to a low value (say, 100), you can force MySQL to prefer indexes instead of table scans.
+//
+// maxSeeksForKey corresponds to the MySQL Server System variable [maxSeeksForKey] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_seeks_for_key).
+func (o MysqlConfigurationVariablesPtrOutput) MaxSeeksForKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MaxSeeksForKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// The maximum number of simultaneous connections permitted to any given MySQL user account. A value of 0 (the default) means “no limit.” This variable has a global value that can be set at server startup or runtime. It also has a read-only session value that indicates the effective simultaneous-connection limit that applies to the account associated with the current session.
+//
+// maxUserConnections corresponds to the MySQL Server System variable [maxUserConnections] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_user_connections).
+func (o MysqlConfigurationVariablesPtrOutput) MaxUserConnections() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MaxUserConnections
+	}).(pulumi.StringPtrOutput)
 }
 
 // ("mysqlFirewallMode")
@@ -4812,6 +5846,20 @@ func (o MysqlConfigurationVariablesPtrOutput) NetWriteTimeout() pulumi.IntPtrOut
 	}).(pulumi.IntPtrOutput)
 }
 
+// The optimizerSwitch system variable enables control over optimizer behavior. The value of this variable is a set of flags, each of which has a value of on or off to indicate whether the corresponding optimizer behavior is enabled or disabled. This variable has global and session values and can be changed at runtime. The global default can be set at server startup.
+//
+// Setting hypergraph_optimizer=on for cloud builds below 9.0.0 will fail.
+//
+// optimizerSwitch corresponds to the MySQL Server System variable [optimizerSwitch] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_optimizer_switch).
+func (o MysqlConfigurationVariablesPtrOutput) OptimizerSwitch() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.OptimizerSwitch
+	}).(pulumi.StringPtrOutput)
+}
+
 // ("parserMaxMemSize")
 func (o MysqlConfigurationVariablesPtrOutput) ParserMaxMemSize() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
@@ -4835,14 +5883,26 @@ func (o MysqlConfigurationVariablesPtrOutput) QueryAllocBlockSize() pulumi.Strin
 }
 
 // ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
-//
-// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
 func (o MysqlConfigurationVariablesPtrOutput) QueryPreallocSize() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
 		if v == nil {
 			return nil
 		}
 		return v.QueryPreallocSize
+	}).(pulumi.StringPtrOutput)
+}
+
+// The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans.
+//
+// rangeOptimizerMaxMemSize corresponds to the MySQL Server System variable [rangeOptimizerMaxMemSize] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_range_optimizer_max_mem_size).
+//
+// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
+func (o MysqlConfigurationVariablesPtrOutput) RangeOptimizerMaxMemSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RangeOptimizerMaxMemSize
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -4856,6 +5916,80 @@ func (o MysqlConfigurationVariablesPtrOutput) RegexpTimeLimit() pulumi.IntPtrOut
 	}).(pulumi.IntPtrOutput)
 }
 
+// The maximum amount of space to use for all relay logs.
+//
+// relayLogSpaceLimit corresponds to the MySQL Replica Server Options variable [relayLogSpaceLimit] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_relay_log_space_limit).
+func (o MysqlConfigurationVariablesPtrOutput) RelayLogSpaceLimit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RelayLogSpaceLimit
+	}).(pulumi.StringPtrOutput)
+}
+
+// Specifies the number of seconds to wait for more data or a heartbeat signal from the source before the replica considers the connection broken, aborts the read, and tries to reconnect. Setting this variable has no immediate effect. The state of the variable applies on all subsequent START REPLICA commands.
+//
+// replicaNetTimeout corresponds to the MySQL Replica server system variable [replicaNetTimeout](https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_net_timeout)
+func (o MysqlConfigurationVariablesPtrOutput) ReplicaNetTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ReplicaNetTimeout
+	}).(pulumi.IntPtrOutput)
+}
+
+// Beginning with MySQL 8.0.26, slaveParallelWorkers is deprecated, and you should use replicaParallelWorkers instead. (Prior to MySQL 8.0.26, you must use slaveParallelWorkers to set the number of applier threads.)
+//
+// replicaParallelWorkers corresponds to the MySQL Replica Server Options variable [replicaParallelWorkers] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_parallel_workers).
+func (o MysqlConfigurationVariablesPtrOutput) ReplicaParallelWorkers() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ReplicaParallelWorkers
+	}).(pulumi.IntPtrOutput)
+}
+
+// From MySQL 8.0.26, use replicaTypeConversions in place of slave_type_conversions, which is deprecated from that release. In releases before MySQL 8.0.26, use slave_type_conversions.
+//
+// replicaTypeConversions controls the type conversion mode in effect on the replica when using row-based replication. Its value is a comma-delimited set of zero or more elements from the list: ALL_LOSSY, ALL_NON_LOSSY, ALL_SIGNED, ALL_UNSIGNED. Set this variable to an empty string to disallow type conversions between the source and the replica. Setting this variable takes effect for all replication channels immediately, including running channels.
+//
+// replicaTypeConversions corresponds to the MySQL Replica Server Options variable [replicaTypeConversions] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_type_conversions).
+func (o MysqlConfigurationVariablesPtrOutput) ReplicaTypeConversions() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ReplicaTypeConversions
+	}).(pulumi.StringPtrOutput)
+}
+
+// Whether client connections to the server are required to use some form of secure transport. When this variable is enabled, the server permits only TCP/IP connections encrypted using TLS/SSL, or connections that use a socket file or shared memory. The server rejects nonsecure connection attempts, which fail with an ER_SECURE_TRANSPORT_REQUIRED error.
+//
+// requireSecureTransport corresponds to the MySQL Server Administration system variable [requireSecureTransport](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_require_secure_transport)
+func (o MysqlConfigurationVariablesPtrOutput) RequireSecureTransport() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.RequireSecureTransport
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Whether to resolve host names when checking client connections. If this variable is OFF, mysqld resolves host names when checking client connections. If it is ON, mysqld uses only IP numbers; in this case, all Host column values in the grant tables must be IP addresses. See Section 7.1.12.3, “DNS Lookups and the Host Cache”.
+//
+// skipNameResolve corresponds to the MySQL Server System variable [skipNameResolve] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_skip_name_resolve).
+func (o MysqlConfigurationVariablesPtrOutput) SkipNameResolve() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.SkipNameResolve
+	}).(pulumi.BoolPtrOutput)
+}
+
 // Each session that must perform a sort allocates a buffer of this size.
 //
 // sortBufferSize corresponds to the MySQL system variable [sortBufferSize](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_sort_buffer_size)
@@ -4866,6 +6000,18 @@ func (o MysqlConfigurationVariablesPtrOutput) SortBufferSize() pulumi.StringPtrO
 		}
 		return v.SortBufferSize
 	}).(pulumi.StringPtrOutput)
+}
+
+// Whether GIPK mode is in effect, in which case a MySQL replication source server adds a generated invisible primary key to any InnoDB table that is created without one.
+//
+// sqlGenerateInvisiblePrimaryKey corresponds to the MySQL system variable [sqlGenerateInvisiblePrimaryKey] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_sql_generate_invisible_primary_key).
+func (o MysqlConfigurationVariablesPtrOutput) SqlGenerateInvisiblePrimaryKey() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.SqlGenerateInvisiblePrimaryKey
+	}).(pulumi.BoolPtrOutput)
 }
 
 // ("sqlMode")
@@ -4898,6 +6044,42 @@ func (o MysqlConfigurationVariablesPtrOutput) SqlWarnings() pulumi.BoolPtrOutput
 	}).(pulumi.BoolPtrOutput)
 }
 
+// The number of table definitions that can be stored in the table definition cache. If you use a large number of tables, you can create a large table definition cache to speed up opening of tables. The table definition cache takes less space and does not use file descriptors, unlike the normal table cache.
+//
+// tableDefinitionCache corresponds to the MySQL Server Administration system variable [tableDefinitionCache](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_table_definition_cache)
+func (o MysqlConfigurationVariablesPtrOutput) TableDefinitionCache() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.TableDefinitionCache
+	}).(pulumi.IntPtrOutput)
+}
+
+// The number of open tables for all threads. Increasing this value increases the number of file descriptors that mysqld requires.
+//
+// tableOpenCache corresponds to the MySQL Server Administration system variable [tableOpenCache](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_table_open_cache)
+func (o MysqlConfigurationVariablesPtrOutput) TableOpenCache() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.TableOpenCache
+	}).(pulumi.IntPtrOutput)
+}
+
+// Defines the maximum amount of memory that can be occupied by the TempTable storage engine before it starts storing data on disk. The default value is 1073741824 bytes (1GiB). For more information, see Section 10.4.4, “Internal Temporary Table Use in MySQL”.
+//
+// temptableMaxRam corresponds to the MySQL system variable [temptableMaxRam] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_temptable_max_ram).
+func (o MysqlConfigurationVariablesPtrOutput) TemptableMaxRam() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TemptableMaxRam
+	}).(pulumi.StringPtrOutput)
+}
+
 // Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
 func (o MysqlConfigurationVariablesPtrOutput) ThreadPoolDedicatedListeners() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *MysqlConfigurationVariables) *bool {
@@ -4915,6 +6097,42 @@ func (o MysqlConfigurationVariablesPtrOutput) ThreadPoolMaxTransactionsLimit() p
 			return nil
 		}
 		return v.ThreadPoolMaxTransactionsLimit
+	}).(pulumi.IntPtrOutput)
+}
+
+// The maximum number of query threads permitted in a thread group. The maximum value is 4096, but if threadPoolMaxTransactionsLimit is set, threadPoolQueryThreadsPerGroup must not exceed that value. The default value of 1 means there is one active query thread in each thread group, which works well for many loads. When you are using the high concurrency thread pool algorithm (thread_pool_algorithm = 1), consider increasing the value if you experience slower response times due to long-running transactions.
+//
+// threadPoolQueryThreadsPerGroup corresponds to the MySQL Server system variable [threadPoolQueryThreadsPerGroup](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_query_threads_per_group)
+func (o MysqlConfigurationVariablesPtrOutput) ThreadPoolQueryThreadsPerGroup() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ThreadPoolQueryThreadsPerGroup
+	}).(pulumi.IntPtrOutput)
+}
+
+// The number of thread groups in the thread pool. This is the most important parameter controlling thread pool performance. It affects how many statements can execute simultaneously. If a value outside the range of permissible values is specified, the thread pool plugin does not load and the server writes a message to the error log.
+//
+// threadPoolSize corresponds to the MySQL Server System variable [threadPoolSize] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_size).
+func (o MysqlConfigurationVariablesPtrOutput) ThreadPoolSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ThreadPoolSize
+	}).(pulumi.IntPtrOutput)
+}
+
+// The delay period before executing a new transaction, in milliseconds. The maximum value is 300000 (5 minutes). A transaction delay can be used in cases where parallel transactions affect the performance of other operations due to resource contention. For example, if parallel transactions affect index creation or an online buffer pool resizing operation, you can configure a transaction delay to reduce resource contention while those operations are running.
+//
+// threadPoolTransactionDelay corresponds to the MySQL Server system variable [threadPoolTransactionDelay](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_transaction_delay)
+func (o MysqlConfigurationVariablesPtrOutput) ThreadPoolTransactionDelay() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ThreadPoolTransactionDelay
 	}).(pulumi.IntPtrOutput)
 }
 
@@ -4972,6 +6190,12 @@ func (o MysqlConfigurationVariablesPtrOutput) WaitTimeout() pulumi.IntPtrOutput 
 }
 
 type MysqlDbSystemBackupPolicy struct {
+	// (Updatable) List of policies of a DB system to schedule cross-region DB system backup copy.
+	//
+	// The policy includes the name of the destination region to which the DB system backup will be copied, and an optional parameter which specifies the retention period of the copied DB system backup in days.
+	//
+	// **Note:** Currently, only one policy can be specified in the list.
+	CopyPolicies []MysqlDbSystemBackupPolicyCopyPolicy `pulumi:"copyPolicies"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces.
 	//
 	// Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
@@ -5010,6 +6234,12 @@ type MysqlDbSystemBackupPolicyInput interface {
 }
 
 type MysqlDbSystemBackupPolicyArgs struct {
+	// (Updatable) List of policies of a DB system to schedule cross-region DB system backup copy.
+	//
+	// The policy includes the name of the destination region to which the DB system backup will be copied, and an optional parameter which specifies the retention period of the copied DB system backup in days.
+	//
+	// **Note:** Currently, only one policy can be specified in the list.
+	CopyPolicies MysqlDbSystemBackupPolicyCopyPolicyArrayInput `pulumi:"copyPolicies"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces.
 	//
 	// Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
@@ -5113,6 +6343,15 @@ func (o MysqlDbSystemBackupPolicyOutput) ToMysqlDbSystemBackupPolicyPtrOutputWit
 	}).(MysqlDbSystemBackupPolicyPtrOutput)
 }
 
+// (Updatable) List of policies of a DB system to schedule cross-region DB system backup copy.
+//
+// The policy includes the name of the destination region to which the DB system backup will be copied, and an optional parameter which specifies the retention period of the copied DB system backup in days.
+//
+// **Note:** Currently, only one policy can be specified in the list.
+func (o MysqlDbSystemBackupPolicyOutput) CopyPolicies() MysqlDbSystemBackupPolicyCopyPolicyArrayOutput {
+	return o.ApplyT(func(v MysqlDbSystemBackupPolicy) []MysqlDbSystemBackupPolicyCopyPolicy { return v.CopyPolicies }).(MysqlDbSystemBackupPolicyCopyPolicyArrayOutput)
+}
+
 // (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces.
 //
 // Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
@@ -5177,6 +6416,20 @@ func (o MysqlDbSystemBackupPolicyPtrOutput) Elem() MysqlDbSystemBackupPolicyOutp
 		var ret MysqlDbSystemBackupPolicy
 		return ret
 	}).(MysqlDbSystemBackupPolicyOutput)
+}
+
+// (Updatable) List of policies of a DB system to schedule cross-region DB system backup copy.
+//
+// The policy includes the name of the destination region to which the DB system backup will be copied, and an optional parameter which specifies the retention period of the copied DB system backup in days.
+//
+// **Note:** Currently, only one policy can be specified in the list.
+func (o MysqlDbSystemBackupPolicyPtrOutput) CopyPolicies() MysqlDbSystemBackupPolicyCopyPolicyArrayOutput {
+	return o.ApplyT(func(v *MysqlDbSystemBackupPolicy) []MysqlDbSystemBackupPolicyCopyPolicy {
+		if v == nil {
+			return nil
+		}
+		return v.CopyPolicies
+	}).(MysqlDbSystemBackupPolicyCopyPolicyArrayOutput)
 }
 
 // (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces.
@@ -5249,6 +6502,112 @@ func (o MysqlDbSystemBackupPolicyPtrOutput) WindowStartTime() pulumi.StringPtrOu
 		}
 		return v.WindowStartTime
 	}).(pulumi.StringPtrOutput)
+}
+
+type MysqlDbSystemBackupPolicyCopyPolicy struct {
+	// (Updatable) Number of days to retain the copied DB system backup.
+	BackupCopyRetentionInDays *int `pulumi:"backupCopyRetentionInDays"`
+	// (Updatable) The destination region name to which the DB system backup will be copied.
+	CopyToRegion string `pulumi:"copyToRegion"`
+}
+
+// MysqlDbSystemBackupPolicyCopyPolicyInput is an input type that accepts MysqlDbSystemBackupPolicyCopyPolicyArgs and MysqlDbSystemBackupPolicyCopyPolicyOutput values.
+// You can construct a concrete instance of `MysqlDbSystemBackupPolicyCopyPolicyInput` via:
+//
+//	MysqlDbSystemBackupPolicyCopyPolicyArgs{...}
+type MysqlDbSystemBackupPolicyCopyPolicyInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemBackupPolicyCopyPolicyOutput() MysqlDbSystemBackupPolicyCopyPolicyOutput
+	ToMysqlDbSystemBackupPolicyCopyPolicyOutputWithContext(context.Context) MysqlDbSystemBackupPolicyCopyPolicyOutput
+}
+
+type MysqlDbSystemBackupPolicyCopyPolicyArgs struct {
+	// (Updatable) Number of days to retain the copied DB system backup.
+	BackupCopyRetentionInDays pulumi.IntPtrInput `pulumi:"backupCopyRetentionInDays"`
+	// (Updatable) The destination region name to which the DB system backup will be copied.
+	CopyToRegion pulumi.StringInput `pulumi:"copyToRegion"`
+}
+
+func (MysqlDbSystemBackupPolicyCopyPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemBackupPolicyCopyPolicy)(nil)).Elem()
+}
+
+func (i MysqlDbSystemBackupPolicyCopyPolicyArgs) ToMysqlDbSystemBackupPolicyCopyPolicyOutput() MysqlDbSystemBackupPolicyCopyPolicyOutput {
+	return i.ToMysqlDbSystemBackupPolicyCopyPolicyOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemBackupPolicyCopyPolicyArgs) ToMysqlDbSystemBackupPolicyCopyPolicyOutputWithContext(ctx context.Context) MysqlDbSystemBackupPolicyCopyPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemBackupPolicyCopyPolicyOutput)
+}
+
+// MysqlDbSystemBackupPolicyCopyPolicyArrayInput is an input type that accepts MysqlDbSystemBackupPolicyCopyPolicyArray and MysqlDbSystemBackupPolicyCopyPolicyArrayOutput values.
+// You can construct a concrete instance of `MysqlDbSystemBackupPolicyCopyPolicyArrayInput` via:
+//
+//	MysqlDbSystemBackupPolicyCopyPolicyArray{ MysqlDbSystemBackupPolicyCopyPolicyArgs{...} }
+type MysqlDbSystemBackupPolicyCopyPolicyArrayInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemBackupPolicyCopyPolicyArrayOutput() MysqlDbSystemBackupPolicyCopyPolicyArrayOutput
+	ToMysqlDbSystemBackupPolicyCopyPolicyArrayOutputWithContext(context.Context) MysqlDbSystemBackupPolicyCopyPolicyArrayOutput
+}
+
+type MysqlDbSystemBackupPolicyCopyPolicyArray []MysqlDbSystemBackupPolicyCopyPolicyInput
+
+func (MysqlDbSystemBackupPolicyCopyPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlDbSystemBackupPolicyCopyPolicy)(nil)).Elem()
+}
+
+func (i MysqlDbSystemBackupPolicyCopyPolicyArray) ToMysqlDbSystemBackupPolicyCopyPolicyArrayOutput() MysqlDbSystemBackupPolicyCopyPolicyArrayOutput {
+	return i.ToMysqlDbSystemBackupPolicyCopyPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemBackupPolicyCopyPolicyArray) ToMysqlDbSystemBackupPolicyCopyPolicyArrayOutputWithContext(ctx context.Context) MysqlDbSystemBackupPolicyCopyPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemBackupPolicyCopyPolicyArrayOutput)
+}
+
+type MysqlDbSystemBackupPolicyCopyPolicyOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemBackupPolicyCopyPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemBackupPolicyCopyPolicy)(nil)).Elem()
+}
+
+func (o MysqlDbSystemBackupPolicyCopyPolicyOutput) ToMysqlDbSystemBackupPolicyCopyPolicyOutput() MysqlDbSystemBackupPolicyCopyPolicyOutput {
+	return o
+}
+
+func (o MysqlDbSystemBackupPolicyCopyPolicyOutput) ToMysqlDbSystemBackupPolicyCopyPolicyOutputWithContext(ctx context.Context) MysqlDbSystemBackupPolicyCopyPolicyOutput {
+	return o
+}
+
+// (Updatable) Number of days to retain the copied DB system backup.
+func (o MysqlDbSystemBackupPolicyCopyPolicyOutput) BackupCopyRetentionInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemBackupPolicyCopyPolicy) *int { return v.BackupCopyRetentionInDays }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The destination region name to which the DB system backup will be copied.
+func (o MysqlDbSystemBackupPolicyCopyPolicyOutput) CopyToRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v MysqlDbSystemBackupPolicyCopyPolicy) string { return v.CopyToRegion }).(pulumi.StringOutput)
+}
+
+type MysqlDbSystemBackupPolicyCopyPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemBackupPolicyCopyPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlDbSystemBackupPolicyCopyPolicy)(nil)).Elem()
+}
+
+func (o MysqlDbSystemBackupPolicyCopyPolicyArrayOutput) ToMysqlDbSystemBackupPolicyCopyPolicyArrayOutput() MysqlDbSystemBackupPolicyCopyPolicyArrayOutput {
+	return o
+}
+
+func (o MysqlDbSystemBackupPolicyCopyPolicyArrayOutput) ToMysqlDbSystemBackupPolicyCopyPolicyArrayOutputWithContext(ctx context.Context) MysqlDbSystemBackupPolicyCopyPolicyArrayOutput {
+	return o
+}
+
+func (o MysqlDbSystemBackupPolicyCopyPolicyArrayOutput) Index(i pulumi.IntInput) MysqlDbSystemBackupPolicyCopyPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlDbSystemBackupPolicyCopyPolicy {
+		return vs[0].([]MysqlDbSystemBackupPolicyCopyPolicy)[vs[1].(int)]
+	}).(MysqlDbSystemBackupPolicyCopyPolicyOutput)
 }
 
 type MysqlDbSystemBackupPolicyPitrPolicy struct {
@@ -5407,6 +6766,8 @@ type MysqlDbSystemChannel struct {
 	Sources []MysqlDbSystemChannelSource `pulumi:"sources"`
 	// (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
 	State *string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Details about the Channel target.
 	Targets []MysqlDbSystemChannelTarget `pulumi:"targets"`
 	// The date and time the DB System was created.
@@ -5445,6 +6806,8 @@ type MysqlDbSystemChannelArgs struct {
 	Sources MysqlDbSystemChannelSourceArrayInput `pulumi:"sources"`
 	// (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
 	State pulumi.StringPtrInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// Details about the Channel target.
 	Targets MysqlDbSystemChannelTargetArrayInput `pulumi:"targets"`
 	// The date and time the DB System was created.
@@ -5547,6 +6910,11 @@ func (o MysqlDbSystemChannelOutput) Sources() MysqlDbSystemChannelSourceArrayOut
 // (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
 func (o MysqlDbSystemChannelOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemChannel) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o MysqlDbSystemChannelOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v MysqlDbSystemChannel) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Details about the Channel target.
@@ -8929,6 +10297,8 @@ type GetChannelsChannel struct {
 	Sources []GetChannelsChannelSource `pulumi:"sources"`
 	// The LifecycleState of the Channel.
 	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Details about the Channel target.
 	Targets []GetChannelsChannelTarget `pulumi:"targets"`
 	// The date and time the Channel was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -8969,6 +10339,8 @@ type GetChannelsChannelArgs struct {
 	Sources GetChannelsChannelSourceArrayInput `pulumi:"sources"`
 	// The LifecycleState of the Channel.
 	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// Details about the Channel target.
 	Targets GetChannelsChannelTargetArrayInput `pulumi:"targets"`
 	// The date and time the Channel was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -9076,6 +10448,11 @@ func (o GetChannelsChannelOutput) Sources() GetChannelsChannelSourceArrayOutput 
 // The LifecycleState of the Channel.
 func (o GetChannelsChannelOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetChannelsChannel) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetChannelsChannelOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetChannelsChannel) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Details about the Channel target.
@@ -10355,6 +11732,8 @@ func (o GetMysqlBackupDbSystemSnapshotArrayOutput) Index(i pulumi.IntInput) GetM
 }
 
 type GetMysqlBackupDbSystemSnapshotBackupPolicy struct {
+	// List of policies of a DB system to schedule cross-region DB system backup copy.
+	CopyPolicies []GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicy `pulumi:"copyPolicies"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -10381,6 +11760,8 @@ type GetMysqlBackupDbSystemSnapshotBackupPolicyInput interface {
 }
 
 type GetMysqlBackupDbSystemSnapshotBackupPolicyArgs struct {
+	// List of policies of a DB system to schedule cross-region DB system backup copy.
+	CopyPolicies GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayInput `pulumi:"copyPolicies"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -10446,6 +11827,13 @@ func (o GetMysqlBackupDbSystemSnapshotBackupPolicyOutput) ToGetMysqlBackupDbSyst
 	return o
 }
 
+// List of policies of a DB system to schedule cross-region DB system backup copy.
+func (o GetMysqlBackupDbSystemSnapshotBackupPolicyOutput) CopyPolicies() GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotBackupPolicy) []GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicy {
+		return v.CopyPolicies
+	}).(GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput)
+}
+
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o GetMysqlBackupDbSystemSnapshotBackupPolicyOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotBackupPolicy) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
@@ -10496,6 +11884,112 @@ func (o GetMysqlBackupDbSystemSnapshotBackupPolicyArrayOutput) Index(i pulumi.In
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupDbSystemSnapshotBackupPolicy {
 		return vs[0].([]GetMysqlBackupDbSystemSnapshotBackupPolicy)[vs[1].(int)]
 	}).(GetMysqlBackupDbSystemSnapshotBackupPolicyOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicy struct {
+	// Number of days to retain the copied DB system backup.
+	BackupCopyRetentionInDays int `pulumi:"backupCopyRetentionInDays"`
+	// The destination region name to which the DB system backup will be copied.
+	CopyToRegion string `pulumi:"copyToRegion"`
+}
+
+// GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyInput is an input type that accepts GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs and GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput values.
+// You can construct a concrete instance of `GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyInput` via:
+//
+//	GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs{...}
+type GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput() GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput
+	ToGetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutputWithContext(context.Context) GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput
+}
+
+type GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs struct {
+	// Number of days to retain the copied DB system backup.
+	BackupCopyRetentionInDays pulumi.IntInput `pulumi:"backupCopyRetentionInDays"`
+	// The destination region name to which the DB system backup will be copied.
+	CopyToRegion pulumi.StringInput `pulumi:"copyToRegion"`
+}
+
+func (GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicy)(nil)).Elem()
+}
+
+func (i GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs) ToGetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput() GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput {
+	return i.ToGetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs) ToGetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput)
+}
+
+// GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayInput is an input type that accepts GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArray and GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput values.
+// You can construct a concrete instance of `GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayInput` via:
+//
+//	GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArray{ GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs{...} }
+type GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput() GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput
+	ToGetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutputWithContext(context.Context) GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput
+}
+
+type GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArray []GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyInput
+
+func (GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicy)(nil)).Elem()
+}
+
+func (i GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArray) ToGetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput() GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput {
+	return i.ToGetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArray) ToGetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicy)(nil)).Elem()
+}
+
+func (o GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput) ToGetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput() GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput) ToGetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput {
+	return o
+}
+
+// Number of days to retain the copied DB system backup.
+func (o GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput) BackupCopyRetentionInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicy) int { return v.BackupCopyRetentionInDays }).(pulumi.IntOutput)
+}
+
+// The destination region name to which the DB system backup will be copied.
+func (o GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput) CopyToRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicy) string { return v.CopyToRegion }).(pulumi.StringOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicy)(nil)).Elem()
+}
+
+func (o GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput) ToGetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput() GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput) ToGetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicy {
+		return vs[0].([]GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicy)[vs[1].(int)]
+	}).(GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput)
 }
 
 type GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy struct {
@@ -11610,6 +13104,8 @@ type GetMysqlBackupsBackup struct {
 	SourceDetails []GetMysqlBackupsBackupSourceDetail `pulumi:"sourceDetails"`
 	// Backup Lifecycle State
 	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCopyCreated string `pulumi:"timeCopyCreated"`
 	// The time the backup record was created.
@@ -11670,6 +13166,8 @@ type GetMysqlBackupsBackupArgs struct {
 	SourceDetails GetMysqlBackupsBackupSourceDetailArrayInput `pulumi:"sourceDetails"`
 	// Backup Lifecycle State
 	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCopyCreated pulumi.StringInput `pulumi:"timeCopyCreated"`
 	// The time the backup record was created.
@@ -11832,6 +13330,11 @@ func (o GetMysqlBackupsBackupOutput) SourceDetails() GetMysqlBackupsBackupSource
 // Backup Lifecycle State
 func (o GetMysqlBackupsBackupOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlBackupsBackup) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetMysqlBackupsBackupOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackup) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -12233,6 +13736,8 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotArrayOutput) Index(i pulumi.IntInpu
 }
 
 type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy struct {
+	// List of policies of a DB system to schedule cross-region DB system backup copy.
+	CopyPolicies []GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicy `pulumi:"copyPolicies"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -12259,6 +13764,8 @@ type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyInput interface {
 }
 
 type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArgs struct {
+	// List of policies of a DB system to schedule cross-region DB system backup copy.
+	CopyPolicies GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayInput `pulumi:"copyPolicies"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -12324,6 +13831,13 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) ToGetMysqlBacku
 	return o
 }
 
+// List of policies of a DB system to schedule cross-region DB system backup copy.
+func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) CopyPolicies() GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy) []GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicy {
+		return v.CopyPolicies
+	}).(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput)
+}
+
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
@@ -12374,6 +13888,114 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput) Index(i pu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy {
 		return vs[0].([]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy)[vs[1].(int)]
 	}).(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput)
+}
+
+type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicy struct {
+	// Number of days to retain the copied DB system backup.
+	BackupCopyRetentionInDays int `pulumi:"backupCopyRetentionInDays"`
+	// The destination region name to which the DB system backup will be copied.
+	CopyToRegion string `pulumi:"copyToRegion"`
+}
+
+// GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs and GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput values.
+// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyInput` via:
+//
+//	GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs{...}
+type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput() GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput
+	ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput
+}
+
+type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs struct {
+	// Number of days to retain the copied DB system backup.
+	BackupCopyRetentionInDays pulumi.IntInput `pulumi:"backupCopyRetentionInDays"`
+	// The destination region name to which the DB system backup will be copied.
+	CopyToRegion pulumi.StringInput `pulumi:"copyToRegion"`
+}
+
+func (GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicy)(nil)).Elem()
+}
+
+func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput() GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput {
+	return i.ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput)
+}
+
+// GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArray and GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput values.
+// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayInput` via:
+//
+//	GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArray{ GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs{...} }
+type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput
+	ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput
+}
+
+type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArray []GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyInput
+
+func (GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicy)(nil)).Elem()
+}
+
+func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArray) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput {
+	return i.ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArray) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput)
+}
+
+type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicy)(nil)).Elem()
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput() GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput {
+	return o
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput {
+	return o
+}
+
+// Number of days to retain the copied DB system backup.
+func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput) BackupCopyRetentionInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicy) int {
+		return v.BackupCopyRetentionInDays
+	}).(pulumi.IntOutput)
+}
+
+// The destination region name to which the DB system backup will be copied.
+func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput) CopyToRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicy) string { return v.CopyToRegion }).(pulumi.StringOutput)
+}
+
+type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicy)(nil)).Elem()
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicy {
+		return vs[0].([]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicy)[vs[1].(int)]
+	}).(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput)
 }
 
 type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy struct {
@@ -13653,18 +15275,32 @@ func (o GetMysqlConfigurationInitVariableArrayOutput) Index(i pulumi.IntInput) G
 }
 
 type GetMysqlConfigurationVariable struct {
+	// auto_increment_increment and autoIncrementOffset are intended for use with circular (source-to-source) replication, and can be used to control the operation of AUTO_INCREMENT columns. Both variables have global and session values, and each can assume an integer value between 1 and 65,535 inclusive.
+	AutoIncrementIncrement int `pulumi:"autoIncrementIncrement"`
+	// This variable has a default value of 1. If it is left with its default value, and Group Replication is started on the server in multi-primary mode, it is changed to the server ID.
+	AutoIncrementOffset int `pulumi:"autoIncrementOffset"`
 	// ("autocommit")
 	Autocommit bool `pulumi:"autocommit"`
 	// If enabled, the server stores all temporary tables on disk rather than in memory.
 	BigTables bool `pulumi:"bigTables"`
 	// Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlogExpireLogsSeconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
 	BinlogExpireLogsSeconds int `pulumi:"binlogExpireLogsSeconds"`
+	// Controls how many microseconds the binary log commit waits before synchronizing the binary log file to disk. There is no delay by default. Setting this variable to a microsecond delay enables more transactions to be synchronized together to disk at once, reducing the overall time to commit a group of transactions because the larger groups required fewer time units per group.
+	BinlogGroupCommitSyncDelay int `pulumi:"binlogGroupCommitSyncDelay"`
+	// The maximum number of transactions to wait for before aborting the current delay as specified by binlog_group_commit_sync_delay. If binlogGroupCommitSyncDelay is set to 0, then this option has no effect.
+	BinlogGroupCommitSyncNoDelayCount int `pulumi:"binlogGroupCommitSyncNoDelayCount"`
 	// Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlogRowMetadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
 	BinlogRowMetadata string `pulumi:"binlogRowMetadata"`
 	// When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document. binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlogRowValueOptions](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
 	BinlogRowValueOptions string `pulumi:"binlogRowValueOptions"`
 	// Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlogTransactionCompression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
 	BinlogTransactionCompression bool `pulumi:"binlogTransactionCompression"`
+	// This variable controls the block encryption mode for block-based algorithms such as AES. It affects encryption for AES_ENCRYPT() and AES_DECRYPT(). blockEncryptionMode takes a value in aes-keylen-mode format, where keylen is the key length in bits and mode is the encryption mode. The value is not case-sensitive. Permitted keylen values are 128, 192, and 256. Permitted mode values are ECB, CBC, CFB1, CFB8, CFB128, and OFB.
+	BlockEncryptionMode string `pulumi:"blockEncryptionMode"`
+	// The server's default character set. If you set this variable, you should also set collationServer to specify the collation for the character set.
+	CharacterSetServer string `pulumi:"characterSetServer"`
+	// The server's default collation.
+	CollationServer string `pulumi:"collationServer"`
 	// ("completionType")
 	CompletionType string `pulumi:"completionType"`
 	// The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
@@ -13675,8 +15311,12 @@ type GetMysqlConfigurationVariable struct {
 	ConnectionMemoryLimit string `pulumi:"connectionMemoryLimit"`
 	// ("cteMaxRecursionDepth")
 	CteMaxRecursionDepth string `pulumi:"cteMaxRecursionDepth"`
-	// ("defaultAuthenticationPlugin")
+	// The default authentication plugin. This must be a plugin that uses internal credentials storage, so these values are permitted: mysql_native_password, sha256_password, caching_sha2_password.
 	DefaultAuthenticationPlugin string `pulumi:"defaultAuthenticationPlugin"`
+	// This variable determines the default output format used by EXPLAIN in the absence of a FORMAT option when displaying a query execution plan.
+	ExplainFormat string `pulumi:"explainFormat"`
+	// This system variable determines whether the server enables certain nonstandard behaviors for default values and NULL-value handling in TIMESTAMP columns. By default, explicitDefaultsForTimestamp is enabled, which disables the nonstandard behaviors. Disabling explicitDefaultsForTimestamp results in a warning.
+	ExplicitDefaultsForTimestamp bool `pulumi:"explicitDefaultsForTimestamp"`
 	// ("foreignKeyChecks")
 	ForeignKeyChecks bool `pulumi:"foreignKeyChecks"`
 	// ("generatedRandomPasswordLength") DEPRECATED -- variable should not be settable and will be ignored
@@ -13687,6 +15327,8 @@ type GetMysqlConfigurationVariable struct {
 	GlobalConnectionMemoryLimit string `pulumi:"globalConnectionMemoryLimit"`
 	// Determines whether the MySQL server calculates Global_connection_memory.
 	GlobalConnectionMemoryTracking bool `pulumi:"globalConnectionMemoryTracking"`
+	// Specifies the maximum permitted result length in bytes for the GROUP_CONCAT() function.
+	GroupConcatMaxLen string `pulumi:"groupConcatMaxLen"`
 	// * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
 	// * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
 	// * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
@@ -13695,12 +15337,18 @@ type GetMysqlConfigurationVariable struct {
 	GroupReplicationConsistency string `pulumi:"groupReplicationConsistency"`
 	// ("informationSchemaStatsExpiry")
 	InformationSchemaStatsExpiry int `pulumi:"informationSchemaStatsExpiry"`
+	// Whether the InnoDB adaptive hash index is enabled or disabled. It may be desirable, depending on your workload, to dynamically enable or disable adaptive hash indexing to improve query performance. Because the adaptive hash index may not be useful for all workloads, conduct benchmarks with it both enabled and disabled, using realistic workloads.
+	InnodbAdaptiveHashIndex bool `pulumi:"innodbAdaptiveHashIndex"`
+	// The lock mode to use for generating auto-increment values. Permissible values are 0, 1, or 2, for traditional, consecutive, or interleaved, respectively.
+	InnodbAutoincLockMode int `pulumi:"innodbAutoincLockMode"`
 	// Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
 	InnodbBufferPoolDumpPct int `pulumi:"innodbBufferPoolDumpPct"`
 	// ("innodbBufferPoolInstances")
 	InnodbBufferPoolInstances int `pulumi:"innodbBufferPoolInstances"`
 	// The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
 	InnodbBufferPoolSize string `pulumi:"innodbBufferPoolSize"`
+	// Whether InnoDB performs change buffering, an optimization that delays write operations to secondary indexes so that the I/O operations can be performed sequentially. Permitted values are described in the following table. Values may also be specified numerically.
+	InnodbChangeBuffering string `pulumi:"innodbChangeBuffering"`
 	// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
 	InnodbDdlBufferSize string `pulumi:"innodbDdlBufferSize"`
 	// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
@@ -13725,14 +15373,34 @@ type GetMysqlConfigurationVariable struct {
 	InnodbMaxPurgeLag string `pulumi:"innodbMaxPurgeLag"`
 	// The maximum delay in microseconds for the delay imposed when the innodbMaxPurgeLag threshold is exceeded.
 	InnodbMaxPurgeLagDelay int `pulumi:"innodbMaxPurgeLagDelay"`
+	// Enables the NUMA interleave memory policy for allocation of the InnoDB buffer pool. When innodbNumaInterleave is enabled, the NUMA memory policy is set to MPOL_INTERLEAVE for the mysqld process. After the InnoDB buffer pool is allocated, the NUMA memory policy is set back to MPOL_DEFAULT. For the innodbNumaInterleave option to be available, MySQL must be compiled on a NUMA-enabled Linux system.
+	InnodbNumaInterleave bool `pulumi:"innodbNumaInterleave"`
+	// Specifies an upper limit in bytes on the size of the temporary log files used during online DDL operations for InnoDB tables. There is one such log file for each index being created or table being altered. This log file stores data inserted, updated, or deleted in the table during the DDL operation.
+	InnodbOnlineAlterLogMaxSize string `pulumi:"innodbOnlineAlterLogMaxSize"`
+	// Defines the amount of disk space occupied by redo log files. innodbRedoLogCapacity supercedes the innodbLogFilesInGroup and innodbLogFileSize variables, which are both ignored if innodbRedoLogCapacity is defined. If innodbRedoLogCapacity is not defined, and if neither innodbLogFileSize or innodbLogFilesInGroup are defined, then the default innodbRedoLogCapacity value is used.
+	InnodbRedoLogCapacity string `pulumi:"innodbRedoLogCapacity"`
+	// InnoDB rolls back only the last statement on a transaction timeout by default. If --innodb-rollback-on-timeout is specified, a transaction timeout causes InnoDB to abort and roll back the entire transaction.
+	InnodbRollbackOnTimeout bool `pulumi:"innodbRollbackOnTimeout"`
+	// This variable defines:
+	// * The sort buffer size for online DDL operations that create or rebuild secondary indexes. However, as of MySQL 8.0.27, this responsibility is subsumed by the innodbDdlBufferSize variable.
+	// * The amount by which the temporary log file is extended when recording concurrent DML during an online DDL operation, and the size of the temporary log file read buffer and write buffer.
+	InnodbSortBufferSize int `pulumi:"innodbSortBufferSize"`
 	// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
 	InnodbStatsPersistentSamplePages string `pulumi:"innodbStatsPersistentSamplePages"`
 	// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
 	InnodbStatsTransientSamplePages string `pulumi:"innodbStatsTransientSamplePages"`
+	// When you enable innodbStrictMode, the InnoDB storage engine returns errors instead of warnings for invalid or incompatible table options.
+	InnodbStrictMode bool `pulumi:"innodbStrictMode"`
+	// When enabled, undo tablespaces that exceed the threshold value defined by innodbMaxUndoLogSize are marked for truncation. Only undo tablespaces can be truncated. Truncating undo logs that reside in the system tablespace is not supported. For truncation to occur, there must be at least two undo tablespaces.
+	InnodbUndoLogTruncate bool `pulumi:"innodbUndoLogTruncate"`
 	// The number of seconds the server waits for activity on an interactive connection before closing it.
 	InteractiveTimeout int `pulumi:"interactiveTimeout"`
-	// ("localInfile")
+	// The minimum size of the buffer that is used for plain index scans, range index scans, and joins that do not use indexes and thus perform full table scans. In MySQL 8.0.18 and later, this variable also controls the amount of memory used for hash joins. Normally, the best way to get fast joins is to add indexes. Increase the value of joinBufferSize to get a faster full join when adding indexes is not possible. One join buffer is allocated for each full join between two tables. For a complex join between several tables for which indexes are not used, multiple join buffers might be necessary.
+	JoinBufferSize string `pulumi:"joinBufferSize"`
+	// This variable controls server-side LOCAL capability for LOAD DATA statements. Depending on the localInfile setting, the server refuses or permits local data loading by clients that have LOCAL enabled on the client side.
 	LocalInfile bool `pulumi:"localInfile"`
+	// If a query takes longer than this many seconds, the server increments the Slow_queries status variable. If the slow query log is enabled, the query is logged to the slow query log file. This value is measured in real time, not CPU time, so a query that is under the threshold on a lightly loaded system might be above the threshold on a heavily loaded one.
+	LongQueryTime int `pulumi:"longQueryTime"`
 	// ("mandatoryRoles")
 	MandatoryRoles string `pulumi:"mandatoryRoles"`
 	// The maximum size of one packet or any generated/intermediate string.
@@ -13749,6 +15417,10 @@ type GetMysqlConfigurationVariable struct {
 	MaxHeapTableSize string `pulumi:"maxHeapTableSize"`
 	// ("maxPreparedStmtCount")
 	MaxPreparedStmtCount int `pulumi:"maxPreparedStmtCount"`
+	// Limit the assumed maximum number of seeks when looking up rows based on a key. The MySQL optimizer assumes that no more than this number of key seeks are required when searching for matching rows in a table by scanning an index, regardless of the actual cardinality of the index (see Section 15.7.7.22, “SHOW INDEX Statement”). By setting this to a low value (say, 100), you can force MySQL to prefer indexes instead of table scans.
+	MaxSeeksForKey string `pulumi:"maxSeeksForKey"`
+	// The maximum number of simultaneous connections permitted to any given MySQL user account. A value of 0 (the default) means “no limit.” This variable has a global value that can be set at server startup or runtime. It also has a read-only session value that indicates the effective simultaneous-connection limit that applies to the account associated with the current session.
+	MaxUserConnections string `pulumi:"maxUserConnections"`
 	// ("mysqlFirewallMode")
 	MysqlFirewallMode bool `pulumi:"mysqlFirewallMode"`
 	// DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
@@ -13797,6 +15469,8 @@ type GetMysqlConfigurationVariable struct {
 	NetReadTimeout int `pulumi:"netReadTimeout"`
 	// The number of seconds to wait for a block to be written to a connection before aborting the write.
 	NetWriteTimeout int `pulumi:"netWriteTimeout"`
+	// The optimizerSwitch system variable enables control over optimizer behavior. The value of this variable is a set of flags, each of which has a value of on or off to indicate whether the corresponding optimizer behavior is enabled or disabled. This variable has global and session values and can be changed at runtime. The global default can be set at server startup.
+	OptimizerSwitch string `pulumi:"optimizerSwitch"`
 	// ("parserMaxMemSize")
 	ParserMaxMemSize string `pulumi:"parserMaxMemSize"`
 	// ("queryAllocBlockSize") DEPRECATED -- variable should not be settable and will be ignored
@@ -13804,23 +15478,51 @@ type GetMysqlConfigurationVariable struct {
 	// Deprecated: The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.
 	QueryAllocBlockSize string `pulumi:"queryAllocBlockSize"`
 	// ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
+	QueryPreallocSize string `pulumi:"queryPreallocSize"`
+	// The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans.
 	//
 	// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
-	QueryPreallocSize string `pulumi:"queryPreallocSize"`
+	RangeOptimizerMaxMemSize string `pulumi:"rangeOptimizerMaxMemSize"`
 	// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
 	RegexpTimeLimit int `pulumi:"regexpTimeLimit"`
+	// The maximum amount of space to use for all relay logs.
+	RelayLogSpaceLimit string `pulumi:"relayLogSpaceLimit"`
+	// Specifies the number of seconds to wait for more data or a heartbeat signal from the source before the replica considers the connection broken, aborts the read, and tries to reconnect. Setting this variable has no immediate effect. The state of the variable applies on all subsequent START REPLICA commands.
+	ReplicaNetTimeout int `pulumi:"replicaNetTimeout"`
+	// Beginning with MySQL 8.0.26, slaveParallelWorkers is deprecated, and you should use replicaParallelWorkers instead. (Prior to MySQL 8.0.26, you must use slaveParallelWorkers to set the number of applier threads.)
+	ReplicaParallelWorkers int `pulumi:"replicaParallelWorkers"`
+	// From MySQL 8.0.26, use replicaTypeConversions in place of slave_type_conversions, which is deprecated from that release. In releases before MySQL 8.0.26, use slave_type_conversions.
+	ReplicaTypeConversions string `pulumi:"replicaTypeConversions"`
+	// Whether client connections to the server are required to use some form of secure transport. When this variable is enabled, the server permits only TCP/IP connections encrypted using TLS/SSL, or connections that use a socket file or shared memory. The server rejects nonsecure connection attempts, which fail with an ER_SECURE_TRANSPORT_REQUIRED error.
+	RequireSecureTransport bool `pulumi:"requireSecureTransport"`
+	// Whether to resolve host names when checking client connections. If this variable is OFF, mysqld resolves host names when checking client connections. If it is ON, mysqld uses only IP numbers; in this case, all Host column values in the grant tables must be IP addresses. See Section 7.1.12.3, “DNS Lookups and the Host Cache”.
+	SkipNameResolve bool `pulumi:"skipNameResolve"`
 	// Each session that must perform a sort allocates a buffer of this size.
 	SortBufferSize string `pulumi:"sortBufferSize"`
+	// Whether GIPK mode is in effect, in which case a MySQL replication source server adds a generated invisible primary key to any InnoDB table that is created without one.
+	SqlGenerateInvisiblePrimaryKey bool `pulumi:"sqlGenerateInvisiblePrimaryKey"`
 	// ("sqlMode")
 	SqlMode string `pulumi:"sqlMode"`
 	// ("sqlRequirePrimaryKey")
 	SqlRequirePrimaryKey bool `pulumi:"sqlRequirePrimaryKey"`
 	// ("sqlWarnings")
 	SqlWarnings bool `pulumi:"sqlWarnings"`
+	// The number of table definitions that can be stored in the table definition cache. If you use a large number of tables, you can create a large table definition cache to speed up opening of tables. The table definition cache takes less space and does not use file descriptors, unlike the normal table cache.
+	TableDefinitionCache int `pulumi:"tableDefinitionCache"`
+	// The number of open tables for all threads. Increasing this value increases the number of file descriptors that mysqld requires.
+	TableOpenCache int `pulumi:"tableOpenCache"`
+	// Defines the maximum amount of memory that can be occupied by the TempTable storage engine before it starts storing data on disk. The default value is 1073741824 bytes (1GiB). For more information, see Section 10.4.4, “Internal Temporary Table Use in MySQL”.
+	TemptableMaxRam string `pulumi:"temptableMaxRam"`
 	// Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
 	ThreadPoolDedicatedListeners bool `pulumi:"threadPoolDedicatedListeners"`
 	// Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
 	ThreadPoolMaxTransactionsLimit int `pulumi:"threadPoolMaxTransactionsLimit"`
+	// The maximum number of query threads permitted in a thread group. The maximum value is 4096, but if threadPoolMaxTransactionsLimit is set, threadPoolQueryThreadsPerGroup must not exceed that value. The default value of 1 means there is one active query thread in each thread group, which works well for many loads. When you are using the high concurrency thread pool algorithm (thread_pool_algorithm = 1), consider increasing the value if you experience slower response times due to long-running transactions.
+	ThreadPoolQueryThreadsPerGroup int `pulumi:"threadPoolQueryThreadsPerGroup"`
+	// The number of thread groups in the thread pool. This is the most important parameter controlling thread pool performance. It affects how many statements can execute simultaneously. If a value outside the range of permissible values is specified, the thread pool plugin does not load and the server writes a message to the error log.
+	ThreadPoolSize int `pulumi:"threadPoolSize"`
+	// The delay period before executing a new transaction, in milliseconds. The maximum value is 300000 (5 minutes). A transaction delay can be used in cases where parallel transactions affect the performance of other operations due to resource contention. For example, if parallel transactions affect index creation or an online buffer pool resizing operation, you can configure a transaction delay to reduce resource contention while those operations are running.
+	ThreadPoolTransactionDelay int `pulumi:"threadPoolTransactionDelay"`
 	// Initializes the time zone for each client that connects.
 	TimeZone string `pulumi:"timeZone"`
 	// The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
@@ -13843,18 +15545,32 @@ type GetMysqlConfigurationVariableInput interface {
 }
 
 type GetMysqlConfigurationVariableArgs struct {
+	// auto_increment_increment and autoIncrementOffset are intended for use with circular (source-to-source) replication, and can be used to control the operation of AUTO_INCREMENT columns. Both variables have global and session values, and each can assume an integer value between 1 and 65,535 inclusive.
+	AutoIncrementIncrement pulumi.IntInput `pulumi:"autoIncrementIncrement"`
+	// This variable has a default value of 1. If it is left with its default value, and Group Replication is started on the server in multi-primary mode, it is changed to the server ID.
+	AutoIncrementOffset pulumi.IntInput `pulumi:"autoIncrementOffset"`
 	// ("autocommit")
 	Autocommit pulumi.BoolInput `pulumi:"autocommit"`
 	// If enabled, the server stores all temporary tables on disk rather than in memory.
 	BigTables pulumi.BoolInput `pulumi:"bigTables"`
 	// Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlogExpireLogsSeconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
 	BinlogExpireLogsSeconds pulumi.IntInput `pulumi:"binlogExpireLogsSeconds"`
+	// Controls how many microseconds the binary log commit waits before synchronizing the binary log file to disk. There is no delay by default. Setting this variable to a microsecond delay enables more transactions to be synchronized together to disk at once, reducing the overall time to commit a group of transactions because the larger groups required fewer time units per group.
+	BinlogGroupCommitSyncDelay pulumi.IntInput `pulumi:"binlogGroupCommitSyncDelay"`
+	// The maximum number of transactions to wait for before aborting the current delay as specified by binlog_group_commit_sync_delay. If binlogGroupCommitSyncDelay is set to 0, then this option has no effect.
+	BinlogGroupCommitSyncNoDelayCount pulumi.IntInput `pulumi:"binlogGroupCommitSyncNoDelayCount"`
 	// Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlogRowMetadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
 	BinlogRowMetadata pulumi.StringInput `pulumi:"binlogRowMetadata"`
 	// When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document. binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlogRowValueOptions](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
 	BinlogRowValueOptions pulumi.StringInput `pulumi:"binlogRowValueOptions"`
 	// Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlogTransactionCompression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
 	BinlogTransactionCompression pulumi.BoolInput `pulumi:"binlogTransactionCompression"`
+	// This variable controls the block encryption mode for block-based algorithms such as AES. It affects encryption for AES_ENCRYPT() and AES_DECRYPT(). blockEncryptionMode takes a value in aes-keylen-mode format, where keylen is the key length in bits and mode is the encryption mode. The value is not case-sensitive. Permitted keylen values are 128, 192, and 256. Permitted mode values are ECB, CBC, CFB1, CFB8, CFB128, and OFB.
+	BlockEncryptionMode pulumi.StringInput `pulumi:"blockEncryptionMode"`
+	// The server's default character set. If you set this variable, you should also set collationServer to specify the collation for the character set.
+	CharacterSetServer pulumi.StringInput `pulumi:"characterSetServer"`
+	// The server's default collation.
+	CollationServer pulumi.StringInput `pulumi:"collationServer"`
 	// ("completionType")
 	CompletionType pulumi.StringInput `pulumi:"completionType"`
 	// The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
@@ -13865,8 +15581,12 @@ type GetMysqlConfigurationVariableArgs struct {
 	ConnectionMemoryLimit pulumi.StringInput `pulumi:"connectionMemoryLimit"`
 	// ("cteMaxRecursionDepth")
 	CteMaxRecursionDepth pulumi.StringInput `pulumi:"cteMaxRecursionDepth"`
-	// ("defaultAuthenticationPlugin")
+	// The default authentication plugin. This must be a plugin that uses internal credentials storage, so these values are permitted: mysql_native_password, sha256_password, caching_sha2_password.
 	DefaultAuthenticationPlugin pulumi.StringInput `pulumi:"defaultAuthenticationPlugin"`
+	// This variable determines the default output format used by EXPLAIN in the absence of a FORMAT option when displaying a query execution plan.
+	ExplainFormat pulumi.StringInput `pulumi:"explainFormat"`
+	// This system variable determines whether the server enables certain nonstandard behaviors for default values and NULL-value handling in TIMESTAMP columns. By default, explicitDefaultsForTimestamp is enabled, which disables the nonstandard behaviors. Disabling explicitDefaultsForTimestamp results in a warning.
+	ExplicitDefaultsForTimestamp pulumi.BoolInput `pulumi:"explicitDefaultsForTimestamp"`
 	// ("foreignKeyChecks")
 	ForeignKeyChecks pulumi.BoolInput `pulumi:"foreignKeyChecks"`
 	// ("generatedRandomPasswordLength") DEPRECATED -- variable should not be settable and will be ignored
@@ -13877,6 +15597,8 @@ type GetMysqlConfigurationVariableArgs struct {
 	GlobalConnectionMemoryLimit pulumi.StringInput `pulumi:"globalConnectionMemoryLimit"`
 	// Determines whether the MySQL server calculates Global_connection_memory.
 	GlobalConnectionMemoryTracking pulumi.BoolInput `pulumi:"globalConnectionMemoryTracking"`
+	// Specifies the maximum permitted result length in bytes for the GROUP_CONCAT() function.
+	GroupConcatMaxLen pulumi.StringInput `pulumi:"groupConcatMaxLen"`
 	// * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
 	// * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
 	// * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
@@ -13885,12 +15607,18 @@ type GetMysqlConfigurationVariableArgs struct {
 	GroupReplicationConsistency pulumi.StringInput `pulumi:"groupReplicationConsistency"`
 	// ("informationSchemaStatsExpiry")
 	InformationSchemaStatsExpiry pulumi.IntInput `pulumi:"informationSchemaStatsExpiry"`
+	// Whether the InnoDB adaptive hash index is enabled or disabled. It may be desirable, depending on your workload, to dynamically enable or disable adaptive hash indexing to improve query performance. Because the adaptive hash index may not be useful for all workloads, conduct benchmarks with it both enabled and disabled, using realistic workloads.
+	InnodbAdaptiveHashIndex pulumi.BoolInput `pulumi:"innodbAdaptiveHashIndex"`
+	// The lock mode to use for generating auto-increment values. Permissible values are 0, 1, or 2, for traditional, consecutive, or interleaved, respectively.
+	InnodbAutoincLockMode pulumi.IntInput `pulumi:"innodbAutoincLockMode"`
 	// Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
 	InnodbBufferPoolDumpPct pulumi.IntInput `pulumi:"innodbBufferPoolDumpPct"`
 	// ("innodbBufferPoolInstances")
 	InnodbBufferPoolInstances pulumi.IntInput `pulumi:"innodbBufferPoolInstances"`
 	// The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
 	InnodbBufferPoolSize pulumi.StringInput `pulumi:"innodbBufferPoolSize"`
+	// Whether InnoDB performs change buffering, an optimization that delays write operations to secondary indexes so that the I/O operations can be performed sequentially. Permitted values are described in the following table. Values may also be specified numerically.
+	InnodbChangeBuffering pulumi.StringInput `pulumi:"innodbChangeBuffering"`
 	// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
 	InnodbDdlBufferSize pulumi.StringInput `pulumi:"innodbDdlBufferSize"`
 	// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
@@ -13915,14 +15643,34 @@ type GetMysqlConfigurationVariableArgs struct {
 	InnodbMaxPurgeLag pulumi.StringInput `pulumi:"innodbMaxPurgeLag"`
 	// The maximum delay in microseconds for the delay imposed when the innodbMaxPurgeLag threshold is exceeded.
 	InnodbMaxPurgeLagDelay pulumi.IntInput `pulumi:"innodbMaxPurgeLagDelay"`
+	// Enables the NUMA interleave memory policy for allocation of the InnoDB buffer pool. When innodbNumaInterleave is enabled, the NUMA memory policy is set to MPOL_INTERLEAVE for the mysqld process. After the InnoDB buffer pool is allocated, the NUMA memory policy is set back to MPOL_DEFAULT. For the innodbNumaInterleave option to be available, MySQL must be compiled on a NUMA-enabled Linux system.
+	InnodbNumaInterleave pulumi.BoolInput `pulumi:"innodbNumaInterleave"`
+	// Specifies an upper limit in bytes on the size of the temporary log files used during online DDL operations for InnoDB tables. There is one such log file for each index being created or table being altered. This log file stores data inserted, updated, or deleted in the table during the DDL operation.
+	InnodbOnlineAlterLogMaxSize pulumi.StringInput `pulumi:"innodbOnlineAlterLogMaxSize"`
+	// Defines the amount of disk space occupied by redo log files. innodbRedoLogCapacity supercedes the innodbLogFilesInGroup and innodbLogFileSize variables, which are both ignored if innodbRedoLogCapacity is defined. If innodbRedoLogCapacity is not defined, and if neither innodbLogFileSize or innodbLogFilesInGroup are defined, then the default innodbRedoLogCapacity value is used.
+	InnodbRedoLogCapacity pulumi.StringInput `pulumi:"innodbRedoLogCapacity"`
+	// InnoDB rolls back only the last statement on a transaction timeout by default. If --innodb-rollback-on-timeout is specified, a transaction timeout causes InnoDB to abort and roll back the entire transaction.
+	InnodbRollbackOnTimeout pulumi.BoolInput `pulumi:"innodbRollbackOnTimeout"`
+	// This variable defines:
+	// * The sort buffer size for online DDL operations that create or rebuild secondary indexes. However, as of MySQL 8.0.27, this responsibility is subsumed by the innodbDdlBufferSize variable.
+	// * The amount by which the temporary log file is extended when recording concurrent DML during an online DDL operation, and the size of the temporary log file read buffer and write buffer.
+	InnodbSortBufferSize pulumi.IntInput `pulumi:"innodbSortBufferSize"`
 	// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
 	InnodbStatsPersistentSamplePages pulumi.StringInput `pulumi:"innodbStatsPersistentSamplePages"`
 	// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
 	InnodbStatsTransientSamplePages pulumi.StringInput `pulumi:"innodbStatsTransientSamplePages"`
+	// When you enable innodbStrictMode, the InnoDB storage engine returns errors instead of warnings for invalid or incompatible table options.
+	InnodbStrictMode pulumi.BoolInput `pulumi:"innodbStrictMode"`
+	// When enabled, undo tablespaces that exceed the threshold value defined by innodbMaxUndoLogSize are marked for truncation. Only undo tablespaces can be truncated. Truncating undo logs that reside in the system tablespace is not supported. For truncation to occur, there must be at least two undo tablespaces.
+	InnodbUndoLogTruncate pulumi.BoolInput `pulumi:"innodbUndoLogTruncate"`
 	// The number of seconds the server waits for activity on an interactive connection before closing it.
 	InteractiveTimeout pulumi.IntInput `pulumi:"interactiveTimeout"`
-	// ("localInfile")
+	// The minimum size of the buffer that is used for plain index scans, range index scans, and joins that do not use indexes and thus perform full table scans. In MySQL 8.0.18 and later, this variable also controls the amount of memory used for hash joins. Normally, the best way to get fast joins is to add indexes. Increase the value of joinBufferSize to get a faster full join when adding indexes is not possible. One join buffer is allocated for each full join between two tables. For a complex join between several tables for which indexes are not used, multiple join buffers might be necessary.
+	JoinBufferSize pulumi.StringInput `pulumi:"joinBufferSize"`
+	// This variable controls server-side LOCAL capability for LOAD DATA statements. Depending on the localInfile setting, the server refuses or permits local data loading by clients that have LOCAL enabled on the client side.
 	LocalInfile pulumi.BoolInput `pulumi:"localInfile"`
+	// If a query takes longer than this many seconds, the server increments the Slow_queries status variable. If the slow query log is enabled, the query is logged to the slow query log file. This value is measured in real time, not CPU time, so a query that is under the threshold on a lightly loaded system might be above the threshold on a heavily loaded one.
+	LongQueryTime pulumi.IntInput `pulumi:"longQueryTime"`
 	// ("mandatoryRoles")
 	MandatoryRoles pulumi.StringInput `pulumi:"mandatoryRoles"`
 	// The maximum size of one packet or any generated/intermediate string.
@@ -13939,6 +15687,10 @@ type GetMysqlConfigurationVariableArgs struct {
 	MaxHeapTableSize pulumi.StringInput `pulumi:"maxHeapTableSize"`
 	// ("maxPreparedStmtCount")
 	MaxPreparedStmtCount pulumi.IntInput `pulumi:"maxPreparedStmtCount"`
+	// Limit the assumed maximum number of seeks when looking up rows based on a key. The MySQL optimizer assumes that no more than this number of key seeks are required when searching for matching rows in a table by scanning an index, regardless of the actual cardinality of the index (see Section 15.7.7.22, “SHOW INDEX Statement”). By setting this to a low value (say, 100), you can force MySQL to prefer indexes instead of table scans.
+	MaxSeeksForKey pulumi.StringInput `pulumi:"maxSeeksForKey"`
+	// The maximum number of simultaneous connections permitted to any given MySQL user account. A value of 0 (the default) means “no limit.” This variable has a global value that can be set at server startup or runtime. It also has a read-only session value that indicates the effective simultaneous-connection limit that applies to the account associated with the current session.
+	MaxUserConnections pulumi.StringInput `pulumi:"maxUserConnections"`
 	// ("mysqlFirewallMode")
 	MysqlFirewallMode pulumi.BoolInput `pulumi:"mysqlFirewallMode"`
 	// DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
@@ -13987,6 +15739,8 @@ type GetMysqlConfigurationVariableArgs struct {
 	NetReadTimeout pulumi.IntInput `pulumi:"netReadTimeout"`
 	// The number of seconds to wait for a block to be written to a connection before aborting the write.
 	NetWriteTimeout pulumi.IntInput `pulumi:"netWriteTimeout"`
+	// The optimizerSwitch system variable enables control over optimizer behavior. The value of this variable is a set of flags, each of which has a value of on or off to indicate whether the corresponding optimizer behavior is enabled or disabled. This variable has global and session values and can be changed at runtime. The global default can be set at server startup.
+	OptimizerSwitch pulumi.StringInput `pulumi:"optimizerSwitch"`
 	// ("parserMaxMemSize")
 	ParserMaxMemSize pulumi.StringInput `pulumi:"parserMaxMemSize"`
 	// ("queryAllocBlockSize") DEPRECATED -- variable should not be settable and will be ignored
@@ -13994,23 +15748,51 @@ type GetMysqlConfigurationVariableArgs struct {
 	// Deprecated: The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.
 	QueryAllocBlockSize pulumi.StringInput `pulumi:"queryAllocBlockSize"`
 	// ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
+	QueryPreallocSize pulumi.StringInput `pulumi:"queryPreallocSize"`
+	// The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans.
 	//
 	// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
-	QueryPreallocSize pulumi.StringInput `pulumi:"queryPreallocSize"`
+	RangeOptimizerMaxMemSize pulumi.StringInput `pulumi:"rangeOptimizerMaxMemSize"`
 	// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
 	RegexpTimeLimit pulumi.IntInput `pulumi:"regexpTimeLimit"`
+	// The maximum amount of space to use for all relay logs.
+	RelayLogSpaceLimit pulumi.StringInput `pulumi:"relayLogSpaceLimit"`
+	// Specifies the number of seconds to wait for more data or a heartbeat signal from the source before the replica considers the connection broken, aborts the read, and tries to reconnect. Setting this variable has no immediate effect. The state of the variable applies on all subsequent START REPLICA commands.
+	ReplicaNetTimeout pulumi.IntInput `pulumi:"replicaNetTimeout"`
+	// Beginning with MySQL 8.0.26, slaveParallelWorkers is deprecated, and you should use replicaParallelWorkers instead. (Prior to MySQL 8.0.26, you must use slaveParallelWorkers to set the number of applier threads.)
+	ReplicaParallelWorkers pulumi.IntInput `pulumi:"replicaParallelWorkers"`
+	// From MySQL 8.0.26, use replicaTypeConversions in place of slave_type_conversions, which is deprecated from that release. In releases before MySQL 8.0.26, use slave_type_conversions.
+	ReplicaTypeConversions pulumi.StringInput `pulumi:"replicaTypeConversions"`
+	// Whether client connections to the server are required to use some form of secure transport. When this variable is enabled, the server permits only TCP/IP connections encrypted using TLS/SSL, or connections that use a socket file or shared memory. The server rejects nonsecure connection attempts, which fail with an ER_SECURE_TRANSPORT_REQUIRED error.
+	RequireSecureTransport pulumi.BoolInput `pulumi:"requireSecureTransport"`
+	// Whether to resolve host names when checking client connections. If this variable is OFF, mysqld resolves host names when checking client connections. If it is ON, mysqld uses only IP numbers; in this case, all Host column values in the grant tables must be IP addresses. See Section 7.1.12.3, “DNS Lookups and the Host Cache”.
+	SkipNameResolve pulumi.BoolInput `pulumi:"skipNameResolve"`
 	// Each session that must perform a sort allocates a buffer of this size.
 	SortBufferSize pulumi.StringInput `pulumi:"sortBufferSize"`
+	// Whether GIPK mode is in effect, in which case a MySQL replication source server adds a generated invisible primary key to any InnoDB table that is created without one.
+	SqlGenerateInvisiblePrimaryKey pulumi.BoolInput `pulumi:"sqlGenerateInvisiblePrimaryKey"`
 	// ("sqlMode")
 	SqlMode pulumi.StringInput `pulumi:"sqlMode"`
 	// ("sqlRequirePrimaryKey")
 	SqlRequirePrimaryKey pulumi.BoolInput `pulumi:"sqlRequirePrimaryKey"`
 	// ("sqlWarnings")
 	SqlWarnings pulumi.BoolInput `pulumi:"sqlWarnings"`
+	// The number of table definitions that can be stored in the table definition cache. If you use a large number of tables, you can create a large table definition cache to speed up opening of tables. The table definition cache takes less space and does not use file descriptors, unlike the normal table cache.
+	TableDefinitionCache pulumi.IntInput `pulumi:"tableDefinitionCache"`
+	// The number of open tables for all threads. Increasing this value increases the number of file descriptors that mysqld requires.
+	TableOpenCache pulumi.IntInput `pulumi:"tableOpenCache"`
+	// Defines the maximum amount of memory that can be occupied by the TempTable storage engine before it starts storing data on disk. The default value is 1073741824 bytes (1GiB). For more information, see Section 10.4.4, “Internal Temporary Table Use in MySQL”.
+	TemptableMaxRam pulumi.StringInput `pulumi:"temptableMaxRam"`
 	// Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
 	ThreadPoolDedicatedListeners pulumi.BoolInput `pulumi:"threadPoolDedicatedListeners"`
 	// Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
 	ThreadPoolMaxTransactionsLimit pulumi.IntInput `pulumi:"threadPoolMaxTransactionsLimit"`
+	// The maximum number of query threads permitted in a thread group. The maximum value is 4096, but if threadPoolMaxTransactionsLimit is set, threadPoolQueryThreadsPerGroup must not exceed that value. The default value of 1 means there is one active query thread in each thread group, which works well for many loads. When you are using the high concurrency thread pool algorithm (thread_pool_algorithm = 1), consider increasing the value if you experience slower response times due to long-running transactions.
+	ThreadPoolQueryThreadsPerGroup pulumi.IntInput `pulumi:"threadPoolQueryThreadsPerGroup"`
+	// The number of thread groups in the thread pool. This is the most important parameter controlling thread pool performance. It affects how many statements can execute simultaneously. If a value outside the range of permissible values is specified, the thread pool plugin does not load and the server writes a message to the error log.
+	ThreadPoolSize pulumi.IntInput `pulumi:"threadPoolSize"`
+	// The delay period before executing a new transaction, in milliseconds. The maximum value is 300000 (5 minutes). A transaction delay can be used in cases where parallel transactions affect the performance of other operations due to resource contention. For example, if parallel transactions affect index creation or an online buffer pool resizing operation, you can configure a transaction delay to reduce resource contention while those operations are running.
+	ThreadPoolTransactionDelay pulumi.IntInput `pulumi:"threadPoolTransactionDelay"`
 	// Initializes the time zone for each client that connects.
 	TimeZone pulumi.StringInput `pulumi:"timeZone"`
 	// The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
@@ -14072,6 +15854,16 @@ func (o GetMysqlConfigurationVariableOutput) ToGetMysqlConfigurationVariableOutp
 	return o
 }
 
+// auto_increment_increment and autoIncrementOffset are intended for use with circular (source-to-source) replication, and can be used to control the operation of AUTO_INCREMENT columns. Both variables have global and session values, and each can assume an integer value between 1 and 65,535 inclusive.
+func (o GetMysqlConfigurationVariableOutput) AutoIncrementIncrement() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.AutoIncrementIncrement }).(pulumi.IntOutput)
+}
+
+// This variable has a default value of 1. If it is left with its default value, and Group Replication is started on the server in multi-primary mode, it is changed to the server ID.
+func (o GetMysqlConfigurationVariableOutput) AutoIncrementOffset() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.AutoIncrementOffset }).(pulumi.IntOutput)
+}
+
 // ("autocommit")
 func (o GetMysqlConfigurationVariableOutput) Autocommit() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) bool { return v.Autocommit }).(pulumi.BoolOutput)
@@ -14087,6 +15879,16 @@ func (o GetMysqlConfigurationVariableOutput) BinlogExpireLogsSeconds() pulumi.In
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.BinlogExpireLogsSeconds }).(pulumi.IntOutput)
 }
 
+// Controls how many microseconds the binary log commit waits before synchronizing the binary log file to disk. There is no delay by default. Setting this variable to a microsecond delay enables more transactions to be synchronized together to disk at once, reducing the overall time to commit a group of transactions because the larger groups required fewer time units per group.
+func (o GetMysqlConfigurationVariableOutput) BinlogGroupCommitSyncDelay() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.BinlogGroupCommitSyncDelay }).(pulumi.IntOutput)
+}
+
+// The maximum number of transactions to wait for before aborting the current delay as specified by binlog_group_commit_sync_delay. If binlogGroupCommitSyncDelay is set to 0, then this option has no effect.
+func (o GetMysqlConfigurationVariableOutput) BinlogGroupCommitSyncNoDelayCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.BinlogGroupCommitSyncNoDelayCount }).(pulumi.IntOutput)
+}
+
 // Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlogRowMetadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
 func (o GetMysqlConfigurationVariableOutput) BinlogRowMetadata() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.BinlogRowMetadata }).(pulumi.StringOutput)
@@ -14100,6 +15902,21 @@ func (o GetMysqlConfigurationVariableOutput) BinlogRowValueOptions() pulumi.Stri
 // Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlogTransactionCompression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
 func (o GetMysqlConfigurationVariableOutput) BinlogTransactionCompression() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) bool { return v.BinlogTransactionCompression }).(pulumi.BoolOutput)
+}
+
+// This variable controls the block encryption mode for block-based algorithms such as AES. It affects encryption for AES_ENCRYPT() and AES_DECRYPT(). blockEncryptionMode takes a value in aes-keylen-mode format, where keylen is the key length in bits and mode is the encryption mode. The value is not case-sensitive. Permitted keylen values are 128, 192, and 256. Permitted mode values are ECB, CBC, CFB1, CFB8, CFB128, and OFB.
+func (o GetMysqlConfigurationVariableOutput) BlockEncryptionMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.BlockEncryptionMode }).(pulumi.StringOutput)
+}
+
+// The server's default character set. If you set this variable, you should also set collationServer to specify the collation for the character set.
+func (o GetMysqlConfigurationVariableOutput) CharacterSetServer() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.CharacterSetServer }).(pulumi.StringOutput)
+}
+
+// The server's default collation.
+func (o GetMysqlConfigurationVariableOutput) CollationServer() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.CollationServer }).(pulumi.StringOutput)
 }
 
 // ("completionType")
@@ -14127,9 +15944,19 @@ func (o GetMysqlConfigurationVariableOutput) CteMaxRecursionDepth() pulumi.Strin
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.CteMaxRecursionDepth }).(pulumi.StringOutput)
 }
 
-// ("defaultAuthenticationPlugin")
+// The default authentication plugin. This must be a plugin that uses internal credentials storage, so these values are permitted: mysql_native_password, sha256_password, caching_sha2_password.
 func (o GetMysqlConfigurationVariableOutput) DefaultAuthenticationPlugin() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.DefaultAuthenticationPlugin }).(pulumi.StringOutput)
+}
+
+// This variable determines the default output format used by EXPLAIN in the absence of a FORMAT option when displaying a query execution plan.
+func (o GetMysqlConfigurationVariableOutput) ExplainFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.ExplainFormat }).(pulumi.StringOutput)
+}
+
+// This system variable determines whether the server enables certain nonstandard behaviors for default values and NULL-value handling in TIMESTAMP columns. By default, explicitDefaultsForTimestamp is enabled, which disables the nonstandard behaviors. Disabling explicitDefaultsForTimestamp results in a warning.
+func (o GetMysqlConfigurationVariableOutput) ExplicitDefaultsForTimestamp() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) bool { return v.ExplicitDefaultsForTimestamp }).(pulumi.BoolOutput)
 }
 
 // ("foreignKeyChecks")
@@ -14154,6 +15981,11 @@ func (o GetMysqlConfigurationVariableOutput) GlobalConnectionMemoryTracking() pu
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) bool { return v.GlobalConnectionMemoryTracking }).(pulumi.BoolOutput)
 }
 
+// Specifies the maximum permitted result length in bytes for the GROUP_CONCAT() function.
+func (o GetMysqlConfigurationVariableOutput) GroupConcatMaxLen() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.GroupConcatMaxLen }).(pulumi.StringOutput)
+}
+
 // * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
 // * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
 // * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
@@ -14166,6 +15998,16 @@ func (o GetMysqlConfigurationVariableOutput) GroupReplicationConsistency() pulum
 // ("informationSchemaStatsExpiry")
 func (o GetMysqlConfigurationVariableOutput) InformationSchemaStatsExpiry() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.InformationSchemaStatsExpiry }).(pulumi.IntOutput)
+}
+
+// Whether the InnoDB adaptive hash index is enabled or disabled. It may be desirable, depending on your workload, to dynamically enable or disable adaptive hash indexing to improve query performance. Because the adaptive hash index may not be useful for all workloads, conduct benchmarks with it both enabled and disabled, using realistic workloads.
+func (o GetMysqlConfigurationVariableOutput) InnodbAdaptiveHashIndex() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) bool { return v.InnodbAdaptiveHashIndex }).(pulumi.BoolOutput)
+}
+
+// The lock mode to use for generating auto-increment values. Permissible values are 0, 1, or 2, for traditional, consecutive, or interleaved, respectively.
+func (o GetMysqlConfigurationVariableOutput) InnodbAutoincLockMode() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.InnodbAutoincLockMode }).(pulumi.IntOutput)
 }
 
 // Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
@@ -14181,6 +16023,11 @@ func (o GetMysqlConfigurationVariableOutput) InnodbBufferPoolInstances() pulumi.
 // The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
 func (o GetMysqlConfigurationVariableOutput) InnodbBufferPoolSize() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.InnodbBufferPoolSize }).(pulumi.StringOutput)
+}
+
+// Whether InnoDB performs change buffering, an optimization that delays write operations to secondary indexes so that the I/O operations can be performed sequentially. Permitted values are described in the following table. Values may also be specified numerically.
+func (o GetMysqlConfigurationVariableOutput) InnodbChangeBuffering() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.InnodbChangeBuffering }).(pulumi.StringOutput)
 }
 
 // innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
@@ -14243,6 +16090,33 @@ func (o GetMysqlConfigurationVariableOutput) InnodbMaxPurgeLagDelay() pulumi.Int
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.InnodbMaxPurgeLagDelay }).(pulumi.IntOutput)
 }
 
+// Enables the NUMA interleave memory policy for allocation of the InnoDB buffer pool. When innodbNumaInterleave is enabled, the NUMA memory policy is set to MPOL_INTERLEAVE for the mysqld process. After the InnoDB buffer pool is allocated, the NUMA memory policy is set back to MPOL_DEFAULT. For the innodbNumaInterleave option to be available, MySQL must be compiled on a NUMA-enabled Linux system.
+func (o GetMysqlConfigurationVariableOutput) InnodbNumaInterleave() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) bool { return v.InnodbNumaInterleave }).(pulumi.BoolOutput)
+}
+
+// Specifies an upper limit in bytes on the size of the temporary log files used during online DDL operations for InnoDB tables. There is one such log file for each index being created or table being altered. This log file stores data inserted, updated, or deleted in the table during the DDL operation.
+func (o GetMysqlConfigurationVariableOutput) InnodbOnlineAlterLogMaxSize() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.InnodbOnlineAlterLogMaxSize }).(pulumi.StringOutput)
+}
+
+// Defines the amount of disk space occupied by redo log files. innodbRedoLogCapacity supercedes the innodbLogFilesInGroup and innodbLogFileSize variables, which are both ignored if innodbRedoLogCapacity is defined. If innodbRedoLogCapacity is not defined, and if neither innodbLogFileSize or innodbLogFilesInGroup are defined, then the default innodbRedoLogCapacity value is used.
+func (o GetMysqlConfigurationVariableOutput) InnodbRedoLogCapacity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.InnodbRedoLogCapacity }).(pulumi.StringOutput)
+}
+
+// InnoDB rolls back only the last statement on a transaction timeout by default. If --innodb-rollback-on-timeout is specified, a transaction timeout causes InnoDB to abort and roll back the entire transaction.
+func (o GetMysqlConfigurationVariableOutput) InnodbRollbackOnTimeout() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) bool { return v.InnodbRollbackOnTimeout }).(pulumi.BoolOutput)
+}
+
+// This variable defines:
+// * The sort buffer size for online DDL operations that create or rebuild secondary indexes. However, as of MySQL 8.0.27, this responsibility is subsumed by the innodbDdlBufferSize variable.
+// * The amount by which the temporary log file is extended when recording concurrent DML during an online DDL operation, and the size of the temporary log file read buffer and write buffer.
+func (o GetMysqlConfigurationVariableOutput) InnodbSortBufferSize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.InnodbSortBufferSize }).(pulumi.IntOutput)
+}
+
 // The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
 func (o GetMysqlConfigurationVariableOutput) InnodbStatsPersistentSamplePages() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.InnodbStatsPersistentSamplePages }).(pulumi.StringOutput)
@@ -14253,14 +16127,34 @@ func (o GetMysqlConfigurationVariableOutput) InnodbStatsTransientSamplePages() p
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.InnodbStatsTransientSamplePages }).(pulumi.StringOutput)
 }
 
+// When you enable innodbStrictMode, the InnoDB storage engine returns errors instead of warnings for invalid or incompatible table options.
+func (o GetMysqlConfigurationVariableOutput) InnodbStrictMode() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) bool { return v.InnodbStrictMode }).(pulumi.BoolOutput)
+}
+
+// When enabled, undo tablespaces that exceed the threshold value defined by innodbMaxUndoLogSize are marked for truncation. Only undo tablespaces can be truncated. Truncating undo logs that reside in the system tablespace is not supported. For truncation to occur, there must be at least two undo tablespaces.
+func (o GetMysqlConfigurationVariableOutput) InnodbUndoLogTruncate() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) bool { return v.InnodbUndoLogTruncate }).(pulumi.BoolOutput)
+}
+
 // The number of seconds the server waits for activity on an interactive connection before closing it.
 func (o GetMysqlConfigurationVariableOutput) InteractiveTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.InteractiveTimeout }).(pulumi.IntOutput)
 }
 
-// ("localInfile")
+// The minimum size of the buffer that is used for plain index scans, range index scans, and joins that do not use indexes and thus perform full table scans. In MySQL 8.0.18 and later, this variable also controls the amount of memory used for hash joins. Normally, the best way to get fast joins is to add indexes. Increase the value of joinBufferSize to get a faster full join when adding indexes is not possible. One join buffer is allocated for each full join between two tables. For a complex join between several tables for which indexes are not used, multiple join buffers might be necessary.
+func (o GetMysqlConfigurationVariableOutput) JoinBufferSize() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.JoinBufferSize }).(pulumi.StringOutput)
+}
+
+// This variable controls server-side LOCAL capability for LOAD DATA statements. Depending on the localInfile setting, the server refuses or permits local data loading by clients that have LOCAL enabled on the client side.
 func (o GetMysqlConfigurationVariableOutput) LocalInfile() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) bool { return v.LocalInfile }).(pulumi.BoolOutput)
+}
+
+// If a query takes longer than this many seconds, the server increments the Slow_queries status variable. If the slow query log is enabled, the query is logged to the slow query log file. This value is measured in real time, not CPU time, so a query that is under the threshold on a lightly loaded system might be above the threshold on a heavily loaded one.
+func (o GetMysqlConfigurationVariableOutput) LongQueryTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.LongQueryTime }).(pulumi.IntOutput)
 }
 
 // ("mandatoryRoles")
@@ -14301,6 +16195,16 @@ func (o GetMysqlConfigurationVariableOutput) MaxHeapTableSize() pulumi.StringOut
 // ("maxPreparedStmtCount")
 func (o GetMysqlConfigurationVariableOutput) MaxPreparedStmtCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.MaxPreparedStmtCount }).(pulumi.IntOutput)
+}
+
+// Limit the assumed maximum number of seeks when looking up rows based on a key. The MySQL optimizer assumes that no more than this number of key seeks are required when searching for matching rows in a table by scanning an index, regardless of the actual cardinality of the index (see Section 15.7.7.22, “SHOW INDEX Statement”). By setting this to a low value (say, 100), you can force MySQL to prefer indexes instead of table scans.
+func (o GetMysqlConfigurationVariableOutput) MaxSeeksForKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.MaxSeeksForKey }).(pulumi.StringOutput)
+}
+
+// The maximum number of simultaneous connections permitted to any given MySQL user account. A value of 0 (the default) means “no limit.” This variable has a global value that can be set at server startup or runtime. It also has a read-only session value that indicates the effective simultaneous-connection limit that applies to the account associated with the current session.
+func (o GetMysqlConfigurationVariableOutput) MaxUserConnections() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.MaxUserConnections }).(pulumi.StringOutput)
 }
 
 // ("mysqlFirewallMode")
@@ -14411,6 +16315,11 @@ func (o GetMysqlConfigurationVariableOutput) NetWriteTimeout() pulumi.IntOutput 
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.NetWriteTimeout }).(pulumi.IntOutput)
 }
 
+// The optimizerSwitch system variable enables control over optimizer behavior. The value of this variable is a set of flags, each of which has a value of on or off to indicate whether the corresponding optimizer behavior is enabled or disabled. This variable has global and session values and can be changed at runtime. The global default can be set at server startup.
+func (o GetMysqlConfigurationVariableOutput) OptimizerSwitch() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.OptimizerSwitch }).(pulumi.StringOutput)
+}
+
 // ("parserMaxMemSize")
 func (o GetMysqlConfigurationVariableOutput) ParserMaxMemSize() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.ParserMaxMemSize }).(pulumi.StringOutput)
@@ -14424,10 +16333,15 @@ func (o GetMysqlConfigurationVariableOutput) QueryAllocBlockSize() pulumi.String
 }
 
 // ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
-//
-// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
 func (o GetMysqlConfigurationVariableOutput) QueryPreallocSize() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.QueryPreallocSize }).(pulumi.StringOutput)
+}
+
+// The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans.
+//
+// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
+func (o GetMysqlConfigurationVariableOutput) RangeOptimizerMaxMemSize() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.RangeOptimizerMaxMemSize }).(pulumi.StringOutput)
 }
 
 // regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
@@ -14435,9 +16349,44 @@ func (o GetMysqlConfigurationVariableOutput) RegexpTimeLimit() pulumi.IntOutput 
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.RegexpTimeLimit }).(pulumi.IntOutput)
 }
 
+// The maximum amount of space to use for all relay logs.
+func (o GetMysqlConfigurationVariableOutput) RelayLogSpaceLimit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.RelayLogSpaceLimit }).(pulumi.StringOutput)
+}
+
+// Specifies the number of seconds to wait for more data or a heartbeat signal from the source before the replica considers the connection broken, aborts the read, and tries to reconnect. Setting this variable has no immediate effect. The state of the variable applies on all subsequent START REPLICA commands.
+func (o GetMysqlConfigurationVariableOutput) ReplicaNetTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.ReplicaNetTimeout }).(pulumi.IntOutput)
+}
+
+// Beginning with MySQL 8.0.26, slaveParallelWorkers is deprecated, and you should use replicaParallelWorkers instead. (Prior to MySQL 8.0.26, you must use slaveParallelWorkers to set the number of applier threads.)
+func (o GetMysqlConfigurationVariableOutput) ReplicaParallelWorkers() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.ReplicaParallelWorkers }).(pulumi.IntOutput)
+}
+
+// From MySQL 8.0.26, use replicaTypeConversions in place of slave_type_conversions, which is deprecated from that release. In releases before MySQL 8.0.26, use slave_type_conversions.
+func (o GetMysqlConfigurationVariableOutput) ReplicaTypeConversions() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.ReplicaTypeConversions }).(pulumi.StringOutput)
+}
+
+// Whether client connections to the server are required to use some form of secure transport. When this variable is enabled, the server permits only TCP/IP connections encrypted using TLS/SSL, or connections that use a socket file or shared memory. The server rejects nonsecure connection attempts, which fail with an ER_SECURE_TRANSPORT_REQUIRED error.
+func (o GetMysqlConfigurationVariableOutput) RequireSecureTransport() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) bool { return v.RequireSecureTransport }).(pulumi.BoolOutput)
+}
+
+// Whether to resolve host names when checking client connections. If this variable is OFF, mysqld resolves host names when checking client connections. If it is ON, mysqld uses only IP numbers; in this case, all Host column values in the grant tables must be IP addresses. See Section 7.1.12.3, “DNS Lookups and the Host Cache”.
+func (o GetMysqlConfigurationVariableOutput) SkipNameResolve() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) bool { return v.SkipNameResolve }).(pulumi.BoolOutput)
+}
+
 // Each session that must perform a sort allocates a buffer of this size.
 func (o GetMysqlConfigurationVariableOutput) SortBufferSize() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.SortBufferSize }).(pulumi.StringOutput)
+}
+
+// Whether GIPK mode is in effect, in which case a MySQL replication source server adds a generated invisible primary key to any InnoDB table that is created without one.
+func (o GetMysqlConfigurationVariableOutput) SqlGenerateInvisiblePrimaryKey() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) bool { return v.SqlGenerateInvisiblePrimaryKey }).(pulumi.BoolOutput)
 }
 
 // ("sqlMode")
@@ -14455,6 +16404,21 @@ func (o GetMysqlConfigurationVariableOutput) SqlWarnings() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) bool { return v.SqlWarnings }).(pulumi.BoolOutput)
 }
 
+// The number of table definitions that can be stored in the table definition cache. If you use a large number of tables, you can create a large table definition cache to speed up opening of tables. The table definition cache takes less space and does not use file descriptors, unlike the normal table cache.
+func (o GetMysqlConfigurationVariableOutput) TableDefinitionCache() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.TableDefinitionCache }).(pulumi.IntOutput)
+}
+
+// The number of open tables for all threads. Increasing this value increases the number of file descriptors that mysqld requires.
+func (o GetMysqlConfigurationVariableOutput) TableOpenCache() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.TableOpenCache }).(pulumi.IntOutput)
+}
+
+// Defines the maximum amount of memory that can be occupied by the TempTable storage engine before it starts storing data on disk. The default value is 1073741824 bytes (1GiB). For more information, see Section 10.4.4, “Internal Temporary Table Use in MySQL”.
+func (o GetMysqlConfigurationVariableOutput) TemptableMaxRam() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.TemptableMaxRam }).(pulumi.StringOutput)
+}
+
 // Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
 func (o GetMysqlConfigurationVariableOutput) ThreadPoolDedicatedListeners() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) bool { return v.ThreadPoolDedicatedListeners }).(pulumi.BoolOutput)
@@ -14463,6 +16427,21 @@ func (o GetMysqlConfigurationVariableOutput) ThreadPoolDedicatedListeners() pulu
 // Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
 func (o GetMysqlConfigurationVariableOutput) ThreadPoolMaxTransactionsLimit() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.ThreadPoolMaxTransactionsLimit }).(pulumi.IntOutput)
+}
+
+// The maximum number of query threads permitted in a thread group. The maximum value is 4096, but if threadPoolMaxTransactionsLimit is set, threadPoolQueryThreadsPerGroup must not exceed that value. The default value of 1 means there is one active query thread in each thread group, which works well for many loads. When you are using the high concurrency thread pool algorithm (thread_pool_algorithm = 1), consider increasing the value if you experience slower response times due to long-running transactions.
+func (o GetMysqlConfigurationVariableOutput) ThreadPoolQueryThreadsPerGroup() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.ThreadPoolQueryThreadsPerGroup }).(pulumi.IntOutput)
+}
+
+// The number of thread groups in the thread pool. This is the most important parameter controlling thread pool performance. It affects how many statements can execute simultaneously. If a value outside the range of permissible values is specified, the thread pool plugin does not load and the server writes a message to the error log.
+func (o GetMysqlConfigurationVariableOutput) ThreadPoolSize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.ThreadPoolSize }).(pulumi.IntOutput)
+}
+
+// The delay period before executing a new transaction, in milliseconds. The maximum value is 300000 (5 minutes). A transaction delay can be used in cases where parallel transactions affect the performance of other operations due to resource contention. For example, if parallel transactions affect index creation or an online buffer pool resizing operation, you can configure a transaction delay to reduce resource contention while those operations are running.
+func (o GetMysqlConfigurationVariableOutput) ThreadPoolTransactionDelay() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.ThreadPoolTransactionDelay }).(pulumi.IntOutput)
 }
 
 // Initializes the time zone for each client that connects.
@@ -14526,6 +16505,8 @@ type GetMysqlConfigurationsConfiguration struct {
 	ShapeName string `pulumi:"shapeName"`
 	// Configuration Lifecycle State
 	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the Configuration was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -14568,6 +16549,8 @@ type GetMysqlConfigurationsConfigurationArgs struct {
 	ShapeName pulumi.StringInput `pulumi:"shapeName"`
 	// Configuration Lifecycle State
 	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time the Configuration was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -14679,6 +16662,11 @@ func (o GetMysqlConfigurationsConfigurationOutput) ShapeName() pulumi.StringOutp
 // Configuration Lifecycle State
 func (o GetMysqlConfigurationsConfigurationOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetMysqlConfigurationsConfigurationOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -14821,18 +16809,32 @@ func (o GetMysqlConfigurationsConfigurationInitVariableArrayOutput) Index(i pulu
 }
 
 type GetMysqlConfigurationsConfigurationVariable struct {
+	// auto_increment_increment and autoIncrementOffset are intended for use with circular (source-to-source) replication, and can be used to control the operation of AUTO_INCREMENT columns. Both variables have global and session values, and each can assume an integer value between 1 and 65,535 inclusive.
+	AutoIncrementIncrement int `pulumi:"autoIncrementIncrement"`
+	// This variable has a default value of 1. If it is left with its default value, and Group Replication is started on the server in multi-primary mode, it is changed to the server ID.
+	AutoIncrementOffset int `pulumi:"autoIncrementOffset"`
 	// ("autocommit")
 	Autocommit bool `pulumi:"autocommit"`
 	// If enabled, the server stores all temporary tables on disk rather than in memory.
 	BigTables bool `pulumi:"bigTables"`
 	// Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlogExpireLogsSeconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
 	BinlogExpireLogsSeconds int `pulumi:"binlogExpireLogsSeconds"`
+	// Controls how many microseconds the binary log commit waits before synchronizing the binary log file to disk. There is no delay by default. Setting this variable to a microsecond delay enables more transactions to be synchronized together to disk at once, reducing the overall time to commit a group of transactions because the larger groups required fewer time units per group.
+	BinlogGroupCommitSyncDelay int `pulumi:"binlogGroupCommitSyncDelay"`
+	// The maximum number of transactions to wait for before aborting the current delay as specified by binlog_group_commit_sync_delay. If binlogGroupCommitSyncDelay is set to 0, then this option has no effect.
+	BinlogGroupCommitSyncNoDelayCount int `pulumi:"binlogGroupCommitSyncNoDelayCount"`
 	// Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlogRowMetadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
 	BinlogRowMetadata string `pulumi:"binlogRowMetadata"`
 	// When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document. binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlogRowValueOptions](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
 	BinlogRowValueOptions string `pulumi:"binlogRowValueOptions"`
 	// Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlogTransactionCompression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
 	BinlogTransactionCompression bool `pulumi:"binlogTransactionCompression"`
+	// This variable controls the block encryption mode for block-based algorithms such as AES. It affects encryption for AES_ENCRYPT() and AES_DECRYPT(). blockEncryptionMode takes a value in aes-keylen-mode format, where keylen is the key length in bits and mode is the encryption mode. The value is not case-sensitive. Permitted keylen values are 128, 192, and 256. Permitted mode values are ECB, CBC, CFB1, CFB8, CFB128, and OFB.
+	BlockEncryptionMode string `pulumi:"blockEncryptionMode"`
+	// The server's default character set. If you set this variable, you should also set collationServer to specify the collation for the character set.
+	CharacterSetServer string `pulumi:"characterSetServer"`
+	// The server's default collation.
+	CollationServer string `pulumi:"collationServer"`
 	// ("completionType")
 	CompletionType string `pulumi:"completionType"`
 	// The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
@@ -14843,8 +16845,12 @@ type GetMysqlConfigurationsConfigurationVariable struct {
 	ConnectionMemoryLimit string `pulumi:"connectionMemoryLimit"`
 	// ("cteMaxRecursionDepth")
 	CteMaxRecursionDepth string `pulumi:"cteMaxRecursionDepth"`
-	// ("defaultAuthenticationPlugin")
+	// The default authentication plugin. This must be a plugin that uses internal credentials storage, so these values are permitted: mysql_native_password, sha256_password, caching_sha2_password.
 	DefaultAuthenticationPlugin string `pulumi:"defaultAuthenticationPlugin"`
+	// This variable determines the default output format used by EXPLAIN in the absence of a FORMAT option when displaying a query execution plan.
+	ExplainFormat string `pulumi:"explainFormat"`
+	// This system variable determines whether the server enables certain nonstandard behaviors for default values and NULL-value handling in TIMESTAMP columns. By default, explicitDefaultsForTimestamp is enabled, which disables the nonstandard behaviors. Disabling explicitDefaultsForTimestamp results in a warning.
+	ExplicitDefaultsForTimestamp bool `pulumi:"explicitDefaultsForTimestamp"`
 	// ("foreignKeyChecks")
 	ForeignKeyChecks bool `pulumi:"foreignKeyChecks"`
 	// ("generatedRandomPasswordLength") DEPRECATED -- variable should not be settable and will be ignored
@@ -14855,6 +16861,8 @@ type GetMysqlConfigurationsConfigurationVariable struct {
 	GlobalConnectionMemoryLimit string `pulumi:"globalConnectionMemoryLimit"`
 	// Determines whether the MySQL server calculates Global_connection_memory.
 	GlobalConnectionMemoryTracking bool `pulumi:"globalConnectionMemoryTracking"`
+	// Specifies the maximum permitted result length in bytes for the GROUP_CONCAT() function.
+	GroupConcatMaxLen string `pulumi:"groupConcatMaxLen"`
 	// * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
 	// * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
 	// * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
@@ -14863,12 +16871,18 @@ type GetMysqlConfigurationsConfigurationVariable struct {
 	GroupReplicationConsistency string `pulumi:"groupReplicationConsistency"`
 	// ("informationSchemaStatsExpiry")
 	InformationSchemaStatsExpiry int `pulumi:"informationSchemaStatsExpiry"`
+	// Whether the InnoDB adaptive hash index is enabled or disabled. It may be desirable, depending on your workload, to dynamically enable or disable adaptive hash indexing to improve query performance. Because the adaptive hash index may not be useful for all workloads, conduct benchmarks with it both enabled and disabled, using realistic workloads.
+	InnodbAdaptiveHashIndex bool `pulumi:"innodbAdaptiveHashIndex"`
+	// The lock mode to use for generating auto-increment values. Permissible values are 0, 1, or 2, for traditional, consecutive, or interleaved, respectively.
+	InnodbAutoincLockMode int `pulumi:"innodbAutoincLockMode"`
 	// Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
 	InnodbBufferPoolDumpPct int `pulumi:"innodbBufferPoolDumpPct"`
 	// ("innodbBufferPoolInstances")
 	InnodbBufferPoolInstances int `pulumi:"innodbBufferPoolInstances"`
 	// The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
 	InnodbBufferPoolSize string `pulumi:"innodbBufferPoolSize"`
+	// Whether InnoDB performs change buffering, an optimization that delays write operations to secondary indexes so that the I/O operations can be performed sequentially. Permitted values are described in the following table. Values may also be specified numerically.
+	InnodbChangeBuffering string `pulumi:"innodbChangeBuffering"`
 	// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
 	InnodbDdlBufferSize string `pulumi:"innodbDdlBufferSize"`
 	// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
@@ -14893,14 +16907,34 @@ type GetMysqlConfigurationsConfigurationVariable struct {
 	InnodbMaxPurgeLag string `pulumi:"innodbMaxPurgeLag"`
 	// The maximum delay in microseconds for the delay imposed when the innodbMaxPurgeLag threshold is exceeded.
 	InnodbMaxPurgeLagDelay int `pulumi:"innodbMaxPurgeLagDelay"`
+	// Enables the NUMA interleave memory policy for allocation of the InnoDB buffer pool. When innodbNumaInterleave is enabled, the NUMA memory policy is set to MPOL_INTERLEAVE for the mysqld process. After the InnoDB buffer pool is allocated, the NUMA memory policy is set back to MPOL_DEFAULT. For the innodbNumaInterleave option to be available, MySQL must be compiled on a NUMA-enabled Linux system.
+	InnodbNumaInterleave bool `pulumi:"innodbNumaInterleave"`
+	// Specifies an upper limit in bytes on the size of the temporary log files used during online DDL operations for InnoDB tables. There is one such log file for each index being created or table being altered. This log file stores data inserted, updated, or deleted in the table during the DDL operation.
+	InnodbOnlineAlterLogMaxSize string `pulumi:"innodbOnlineAlterLogMaxSize"`
+	// Defines the amount of disk space occupied by redo log files. innodbRedoLogCapacity supercedes the innodbLogFilesInGroup and innodbLogFileSize variables, which are both ignored if innodbRedoLogCapacity is defined. If innodbRedoLogCapacity is not defined, and if neither innodbLogFileSize or innodbLogFilesInGroup are defined, then the default innodbRedoLogCapacity value is used.
+	InnodbRedoLogCapacity string `pulumi:"innodbRedoLogCapacity"`
+	// InnoDB rolls back only the last statement on a transaction timeout by default. If --innodb-rollback-on-timeout is specified, a transaction timeout causes InnoDB to abort and roll back the entire transaction.
+	InnodbRollbackOnTimeout bool `pulumi:"innodbRollbackOnTimeout"`
+	// This variable defines:
+	// * The sort buffer size for online DDL operations that create or rebuild secondary indexes. However, as of MySQL 8.0.27, this responsibility is subsumed by the innodbDdlBufferSize variable.
+	// * The amount by which the temporary log file is extended when recording concurrent DML during an online DDL operation, and the size of the temporary log file read buffer and write buffer.
+	InnodbSortBufferSize int `pulumi:"innodbSortBufferSize"`
 	// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
 	InnodbStatsPersistentSamplePages string `pulumi:"innodbStatsPersistentSamplePages"`
 	// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
 	InnodbStatsTransientSamplePages string `pulumi:"innodbStatsTransientSamplePages"`
+	// When you enable innodbStrictMode, the InnoDB storage engine returns errors instead of warnings for invalid or incompatible table options.
+	InnodbStrictMode bool `pulumi:"innodbStrictMode"`
+	// When enabled, undo tablespaces that exceed the threshold value defined by innodbMaxUndoLogSize are marked for truncation. Only undo tablespaces can be truncated. Truncating undo logs that reside in the system tablespace is not supported. For truncation to occur, there must be at least two undo tablespaces.
+	InnodbUndoLogTruncate bool `pulumi:"innodbUndoLogTruncate"`
 	// The number of seconds the server waits for activity on an interactive connection before closing it.
 	InteractiveTimeout int `pulumi:"interactiveTimeout"`
-	// ("localInfile")
+	// The minimum size of the buffer that is used for plain index scans, range index scans, and joins that do not use indexes and thus perform full table scans. In MySQL 8.0.18 and later, this variable also controls the amount of memory used for hash joins. Normally, the best way to get fast joins is to add indexes. Increase the value of joinBufferSize to get a faster full join when adding indexes is not possible. One join buffer is allocated for each full join between two tables. For a complex join between several tables for which indexes are not used, multiple join buffers might be necessary.
+	JoinBufferSize string `pulumi:"joinBufferSize"`
+	// This variable controls server-side LOCAL capability for LOAD DATA statements. Depending on the localInfile setting, the server refuses or permits local data loading by clients that have LOCAL enabled on the client side.
 	LocalInfile bool `pulumi:"localInfile"`
+	// If a query takes longer than this many seconds, the server increments the Slow_queries status variable. If the slow query log is enabled, the query is logged to the slow query log file. This value is measured in real time, not CPU time, so a query that is under the threshold on a lightly loaded system might be above the threshold on a heavily loaded one.
+	LongQueryTime int `pulumi:"longQueryTime"`
 	// ("mandatoryRoles")
 	MandatoryRoles string `pulumi:"mandatoryRoles"`
 	// The maximum size of one packet or any generated/intermediate string.
@@ -14917,6 +16951,10 @@ type GetMysqlConfigurationsConfigurationVariable struct {
 	MaxHeapTableSize string `pulumi:"maxHeapTableSize"`
 	// ("maxPreparedStmtCount")
 	MaxPreparedStmtCount int `pulumi:"maxPreparedStmtCount"`
+	// Limit the assumed maximum number of seeks when looking up rows based on a key. The MySQL optimizer assumes that no more than this number of key seeks are required when searching for matching rows in a table by scanning an index, regardless of the actual cardinality of the index (see Section 15.7.7.22, “SHOW INDEX Statement”). By setting this to a low value (say, 100), you can force MySQL to prefer indexes instead of table scans.
+	MaxSeeksForKey string `pulumi:"maxSeeksForKey"`
+	// The maximum number of simultaneous connections permitted to any given MySQL user account. A value of 0 (the default) means “no limit.” This variable has a global value that can be set at server startup or runtime. It also has a read-only session value that indicates the effective simultaneous-connection limit that applies to the account associated with the current session.
+	MaxUserConnections string `pulumi:"maxUserConnections"`
 	// ("mysqlFirewallMode")
 	MysqlFirewallMode bool `pulumi:"mysqlFirewallMode"`
 	// DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
@@ -14965,6 +17003,8 @@ type GetMysqlConfigurationsConfigurationVariable struct {
 	NetReadTimeout int `pulumi:"netReadTimeout"`
 	// The number of seconds to wait for a block to be written to a connection before aborting the write.
 	NetWriteTimeout int `pulumi:"netWriteTimeout"`
+	// The optimizerSwitch system variable enables control over optimizer behavior. The value of this variable is a set of flags, each of which has a value of on or off to indicate whether the corresponding optimizer behavior is enabled or disabled. This variable has global and session values and can be changed at runtime. The global default can be set at server startup.
+	OptimizerSwitch string `pulumi:"optimizerSwitch"`
 	// ("parserMaxMemSize")
 	ParserMaxMemSize string `pulumi:"parserMaxMemSize"`
 	// ("queryAllocBlockSize") DEPRECATED -- variable should not be settable and will be ignored
@@ -14972,23 +17012,51 @@ type GetMysqlConfigurationsConfigurationVariable struct {
 	// Deprecated: The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.
 	QueryAllocBlockSize string `pulumi:"queryAllocBlockSize"`
 	// ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
+	QueryPreallocSize string `pulumi:"queryPreallocSize"`
+	// The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans.
 	//
 	// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
-	QueryPreallocSize string `pulumi:"queryPreallocSize"`
+	RangeOptimizerMaxMemSize string `pulumi:"rangeOptimizerMaxMemSize"`
 	// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
 	RegexpTimeLimit int `pulumi:"regexpTimeLimit"`
+	// The maximum amount of space to use for all relay logs.
+	RelayLogSpaceLimit string `pulumi:"relayLogSpaceLimit"`
+	// Specifies the number of seconds to wait for more data or a heartbeat signal from the source before the replica considers the connection broken, aborts the read, and tries to reconnect. Setting this variable has no immediate effect. The state of the variable applies on all subsequent START REPLICA commands.
+	ReplicaNetTimeout int `pulumi:"replicaNetTimeout"`
+	// Beginning with MySQL 8.0.26, slaveParallelWorkers is deprecated, and you should use replicaParallelWorkers instead. (Prior to MySQL 8.0.26, you must use slaveParallelWorkers to set the number of applier threads.)
+	ReplicaParallelWorkers int `pulumi:"replicaParallelWorkers"`
+	// From MySQL 8.0.26, use replicaTypeConversions in place of slave_type_conversions, which is deprecated from that release. In releases before MySQL 8.0.26, use slave_type_conversions.
+	ReplicaTypeConversions string `pulumi:"replicaTypeConversions"`
+	// Whether client connections to the server are required to use some form of secure transport. When this variable is enabled, the server permits only TCP/IP connections encrypted using TLS/SSL, or connections that use a socket file or shared memory. The server rejects nonsecure connection attempts, which fail with an ER_SECURE_TRANSPORT_REQUIRED error.
+	RequireSecureTransport bool `pulumi:"requireSecureTransport"`
+	// Whether to resolve host names when checking client connections. If this variable is OFF, mysqld resolves host names when checking client connections. If it is ON, mysqld uses only IP numbers; in this case, all Host column values in the grant tables must be IP addresses. See Section 7.1.12.3, “DNS Lookups and the Host Cache”.
+	SkipNameResolve bool `pulumi:"skipNameResolve"`
 	// Each session that must perform a sort allocates a buffer of this size.
 	SortBufferSize string `pulumi:"sortBufferSize"`
+	// Whether GIPK mode is in effect, in which case a MySQL replication source server adds a generated invisible primary key to any InnoDB table that is created without one.
+	SqlGenerateInvisiblePrimaryKey bool `pulumi:"sqlGenerateInvisiblePrimaryKey"`
 	// ("sqlMode")
 	SqlMode string `pulumi:"sqlMode"`
 	// ("sqlRequirePrimaryKey")
 	SqlRequirePrimaryKey bool `pulumi:"sqlRequirePrimaryKey"`
 	// ("sqlWarnings")
 	SqlWarnings bool `pulumi:"sqlWarnings"`
+	// The number of table definitions that can be stored in the table definition cache. If you use a large number of tables, you can create a large table definition cache to speed up opening of tables. The table definition cache takes less space and does not use file descriptors, unlike the normal table cache.
+	TableDefinitionCache int `pulumi:"tableDefinitionCache"`
+	// The number of open tables for all threads. Increasing this value increases the number of file descriptors that mysqld requires.
+	TableOpenCache int `pulumi:"tableOpenCache"`
+	// Defines the maximum amount of memory that can be occupied by the TempTable storage engine before it starts storing data on disk. The default value is 1073741824 bytes (1GiB). For more information, see Section 10.4.4, “Internal Temporary Table Use in MySQL”.
+	TemptableMaxRam string `pulumi:"temptableMaxRam"`
 	// Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
 	ThreadPoolDedicatedListeners bool `pulumi:"threadPoolDedicatedListeners"`
 	// Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
 	ThreadPoolMaxTransactionsLimit int `pulumi:"threadPoolMaxTransactionsLimit"`
+	// The maximum number of query threads permitted in a thread group. The maximum value is 4096, but if threadPoolMaxTransactionsLimit is set, threadPoolQueryThreadsPerGroup must not exceed that value. The default value of 1 means there is one active query thread in each thread group, which works well for many loads. When you are using the high concurrency thread pool algorithm (thread_pool_algorithm = 1), consider increasing the value if you experience slower response times due to long-running transactions.
+	ThreadPoolQueryThreadsPerGroup int `pulumi:"threadPoolQueryThreadsPerGroup"`
+	// The number of thread groups in the thread pool. This is the most important parameter controlling thread pool performance. It affects how many statements can execute simultaneously. If a value outside the range of permissible values is specified, the thread pool plugin does not load and the server writes a message to the error log.
+	ThreadPoolSize int `pulumi:"threadPoolSize"`
+	// The delay period before executing a new transaction, in milliseconds. The maximum value is 300000 (5 minutes). A transaction delay can be used in cases where parallel transactions affect the performance of other operations due to resource contention. For example, if parallel transactions affect index creation or an online buffer pool resizing operation, you can configure a transaction delay to reduce resource contention while those operations are running.
+	ThreadPoolTransactionDelay int `pulumi:"threadPoolTransactionDelay"`
 	// Initializes the time zone for each client that connects.
 	TimeZone string `pulumi:"timeZone"`
 	// The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
@@ -15011,18 +17079,32 @@ type GetMysqlConfigurationsConfigurationVariableInput interface {
 }
 
 type GetMysqlConfigurationsConfigurationVariableArgs struct {
+	// auto_increment_increment and autoIncrementOffset are intended for use with circular (source-to-source) replication, and can be used to control the operation of AUTO_INCREMENT columns. Both variables have global and session values, and each can assume an integer value between 1 and 65,535 inclusive.
+	AutoIncrementIncrement pulumi.IntInput `pulumi:"autoIncrementIncrement"`
+	// This variable has a default value of 1. If it is left with its default value, and Group Replication is started on the server in multi-primary mode, it is changed to the server ID.
+	AutoIncrementOffset pulumi.IntInput `pulumi:"autoIncrementOffset"`
 	// ("autocommit")
 	Autocommit pulumi.BoolInput `pulumi:"autocommit"`
 	// If enabled, the server stores all temporary tables on disk rather than in memory.
 	BigTables pulumi.BoolInput `pulumi:"bigTables"`
 	// Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlogExpireLogsSeconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
 	BinlogExpireLogsSeconds pulumi.IntInput `pulumi:"binlogExpireLogsSeconds"`
+	// Controls how many microseconds the binary log commit waits before synchronizing the binary log file to disk. There is no delay by default. Setting this variable to a microsecond delay enables more transactions to be synchronized together to disk at once, reducing the overall time to commit a group of transactions because the larger groups required fewer time units per group.
+	BinlogGroupCommitSyncDelay pulumi.IntInput `pulumi:"binlogGroupCommitSyncDelay"`
+	// The maximum number of transactions to wait for before aborting the current delay as specified by binlog_group_commit_sync_delay. If binlogGroupCommitSyncDelay is set to 0, then this option has no effect.
+	BinlogGroupCommitSyncNoDelayCount pulumi.IntInput `pulumi:"binlogGroupCommitSyncNoDelayCount"`
 	// Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlogRowMetadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
 	BinlogRowMetadata pulumi.StringInput `pulumi:"binlogRowMetadata"`
 	// When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document. binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlogRowValueOptions](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
 	BinlogRowValueOptions pulumi.StringInput `pulumi:"binlogRowValueOptions"`
 	// Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlogTransactionCompression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
 	BinlogTransactionCompression pulumi.BoolInput `pulumi:"binlogTransactionCompression"`
+	// This variable controls the block encryption mode for block-based algorithms such as AES. It affects encryption for AES_ENCRYPT() and AES_DECRYPT(). blockEncryptionMode takes a value in aes-keylen-mode format, where keylen is the key length in bits and mode is the encryption mode. The value is not case-sensitive. Permitted keylen values are 128, 192, and 256. Permitted mode values are ECB, CBC, CFB1, CFB8, CFB128, and OFB.
+	BlockEncryptionMode pulumi.StringInput `pulumi:"blockEncryptionMode"`
+	// The server's default character set. If you set this variable, you should also set collationServer to specify the collation for the character set.
+	CharacterSetServer pulumi.StringInput `pulumi:"characterSetServer"`
+	// The server's default collation.
+	CollationServer pulumi.StringInput `pulumi:"collationServer"`
 	// ("completionType")
 	CompletionType pulumi.StringInput `pulumi:"completionType"`
 	// The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
@@ -15033,8 +17115,12 @@ type GetMysqlConfigurationsConfigurationVariableArgs struct {
 	ConnectionMemoryLimit pulumi.StringInput `pulumi:"connectionMemoryLimit"`
 	// ("cteMaxRecursionDepth")
 	CteMaxRecursionDepth pulumi.StringInput `pulumi:"cteMaxRecursionDepth"`
-	// ("defaultAuthenticationPlugin")
+	// The default authentication plugin. This must be a plugin that uses internal credentials storage, so these values are permitted: mysql_native_password, sha256_password, caching_sha2_password.
 	DefaultAuthenticationPlugin pulumi.StringInput `pulumi:"defaultAuthenticationPlugin"`
+	// This variable determines the default output format used by EXPLAIN in the absence of a FORMAT option when displaying a query execution plan.
+	ExplainFormat pulumi.StringInput `pulumi:"explainFormat"`
+	// This system variable determines whether the server enables certain nonstandard behaviors for default values and NULL-value handling in TIMESTAMP columns. By default, explicitDefaultsForTimestamp is enabled, which disables the nonstandard behaviors. Disabling explicitDefaultsForTimestamp results in a warning.
+	ExplicitDefaultsForTimestamp pulumi.BoolInput `pulumi:"explicitDefaultsForTimestamp"`
 	// ("foreignKeyChecks")
 	ForeignKeyChecks pulumi.BoolInput `pulumi:"foreignKeyChecks"`
 	// ("generatedRandomPasswordLength") DEPRECATED -- variable should not be settable and will be ignored
@@ -15045,6 +17131,8 @@ type GetMysqlConfigurationsConfigurationVariableArgs struct {
 	GlobalConnectionMemoryLimit pulumi.StringInput `pulumi:"globalConnectionMemoryLimit"`
 	// Determines whether the MySQL server calculates Global_connection_memory.
 	GlobalConnectionMemoryTracking pulumi.BoolInput `pulumi:"globalConnectionMemoryTracking"`
+	// Specifies the maximum permitted result length in bytes for the GROUP_CONCAT() function.
+	GroupConcatMaxLen pulumi.StringInput `pulumi:"groupConcatMaxLen"`
 	// * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
 	// * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
 	// * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
@@ -15053,12 +17141,18 @@ type GetMysqlConfigurationsConfigurationVariableArgs struct {
 	GroupReplicationConsistency pulumi.StringInput `pulumi:"groupReplicationConsistency"`
 	// ("informationSchemaStatsExpiry")
 	InformationSchemaStatsExpiry pulumi.IntInput `pulumi:"informationSchemaStatsExpiry"`
+	// Whether the InnoDB adaptive hash index is enabled or disabled. It may be desirable, depending on your workload, to dynamically enable or disable adaptive hash indexing to improve query performance. Because the adaptive hash index may not be useful for all workloads, conduct benchmarks with it both enabled and disabled, using realistic workloads.
+	InnodbAdaptiveHashIndex pulumi.BoolInput `pulumi:"innodbAdaptiveHashIndex"`
+	// The lock mode to use for generating auto-increment values. Permissible values are 0, 1, or 2, for traditional, consecutive, or interleaved, respectively.
+	InnodbAutoincLockMode pulumi.IntInput `pulumi:"innodbAutoincLockMode"`
 	// Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
 	InnodbBufferPoolDumpPct pulumi.IntInput `pulumi:"innodbBufferPoolDumpPct"`
 	// ("innodbBufferPoolInstances")
 	InnodbBufferPoolInstances pulumi.IntInput `pulumi:"innodbBufferPoolInstances"`
 	// The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
 	InnodbBufferPoolSize pulumi.StringInput `pulumi:"innodbBufferPoolSize"`
+	// Whether InnoDB performs change buffering, an optimization that delays write operations to secondary indexes so that the I/O operations can be performed sequentially. Permitted values are described in the following table. Values may also be specified numerically.
+	InnodbChangeBuffering pulumi.StringInput `pulumi:"innodbChangeBuffering"`
 	// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
 	InnodbDdlBufferSize pulumi.StringInput `pulumi:"innodbDdlBufferSize"`
 	// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
@@ -15083,14 +17177,34 @@ type GetMysqlConfigurationsConfigurationVariableArgs struct {
 	InnodbMaxPurgeLag pulumi.StringInput `pulumi:"innodbMaxPurgeLag"`
 	// The maximum delay in microseconds for the delay imposed when the innodbMaxPurgeLag threshold is exceeded.
 	InnodbMaxPurgeLagDelay pulumi.IntInput `pulumi:"innodbMaxPurgeLagDelay"`
+	// Enables the NUMA interleave memory policy for allocation of the InnoDB buffer pool. When innodbNumaInterleave is enabled, the NUMA memory policy is set to MPOL_INTERLEAVE for the mysqld process. After the InnoDB buffer pool is allocated, the NUMA memory policy is set back to MPOL_DEFAULT. For the innodbNumaInterleave option to be available, MySQL must be compiled on a NUMA-enabled Linux system.
+	InnodbNumaInterleave pulumi.BoolInput `pulumi:"innodbNumaInterleave"`
+	// Specifies an upper limit in bytes on the size of the temporary log files used during online DDL operations for InnoDB tables. There is one such log file for each index being created or table being altered. This log file stores data inserted, updated, or deleted in the table during the DDL operation.
+	InnodbOnlineAlterLogMaxSize pulumi.StringInput `pulumi:"innodbOnlineAlterLogMaxSize"`
+	// Defines the amount of disk space occupied by redo log files. innodbRedoLogCapacity supercedes the innodbLogFilesInGroup and innodbLogFileSize variables, which are both ignored if innodbRedoLogCapacity is defined. If innodbRedoLogCapacity is not defined, and if neither innodbLogFileSize or innodbLogFilesInGroup are defined, then the default innodbRedoLogCapacity value is used.
+	InnodbRedoLogCapacity pulumi.StringInput `pulumi:"innodbRedoLogCapacity"`
+	// InnoDB rolls back only the last statement on a transaction timeout by default. If --innodb-rollback-on-timeout is specified, a transaction timeout causes InnoDB to abort and roll back the entire transaction.
+	InnodbRollbackOnTimeout pulumi.BoolInput `pulumi:"innodbRollbackOnTimeout"`
+	// This variable defines:
+	// * The sort buffer size for online DDL operations that create or rebuild secondary indexes. However, as of MySQL 8.0.27, this responsibility is subsumed by the innodbDdlBufferSize variable.
+	// * The amount by which the temporary log file is extended when recording concurrent DML during an online DDL operation, and the size of the temporary log file read buffer and write buffer.
+	InnodbSortBufferSize pulumi.IntInput `pulumi:"innodbSortBufferSize"`
 	// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
 	InnodbStatsPersistentSamplePages pulumi.StringInput `pulumi:"innodbStatsPersistentSamplePages"`
 	// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
 	InnodbStatsTransientSamplePages pulumi.StringInput `pulumi:"innodbStatsTransientSamplePages"`
+	// When you enable innodbStrictMode, the InnoDB storage engine returns errors instead of warnings for invalid or incompatible table options.
+	InnodbStrictMode pulumi.BoolInput `pulumi:"innodbStrictMode"`
+	// When enabled, undo tablespaces that exceed the threshold value defined by innodbMaxUndoLogSize are marked for truncation. Only undo tablespaces can be truncated. Truncating undo logs that reside in the system tablespace is not supported. For truncation to occur, there must be at least two undo tablespaces.
+	InnodbUndoLogTruncate pulumi.BoolInput `pulumi:"innodbUndoLogTruncate"`
 	// The number of seconds the server waits for activity on an interactive connection before closing it.
 	InteractiveTimeout pulumi.IntInput `pulumi:"interactiveTimeout"`
-	// ("localInfile")
+	// The minimum size of the buffer that is used for plain index scans, range index scans, and joins that do not use indexes and thus perform full table scans. In MySQL 8.0.18 and later, this variable also controls the amount of memory used for hash joins. Normally, the best way to get fast joins is to add indexes. Increase the value of joinBufferSize to get a faster full join when adding indexes is not possible. One join buffer is allocated for each full join between two tables. For a complex join between several tables for which indexes are not used, multiple join buffers might be necessary.
+	JoinBufferSize pulumi.StringInput `pulumi:"joinBufferSize"`
+	// This variable controls server-side LOCAL capability for LOAD DATA statements. Depending on the localInfile setting, the server refuses or permits local data loading by clients that have LOCAL enabled on the client side.
 	LocalInfile pulumi.BoolInput `pulumi:"localInfile"`
+	// If a query takes longer than this many seconds, the server increments the Slow_queries status variable. If the slow query log is enabled, the query is logged to the slow query log file. This value is measured in real time, not CPU time, so a query that is under the threshold on a lightly loaded system might be above the threshold on a heavily loaded one.
+	LongQueryTime pulumi.IntInput `pulumi:"longQueryTime"`
 	// ("mandatoryRoles")
 	MandatoryRoles pulumi.StringInput `pulumi:"mandatoryRoles"`
 	// The maximum size of one packet or any generated/intermediate string.
@@ -15107,6 +17221,10 @@ type GetMysqlConfigurationsConfigurationVariableArgs struct {
 	MaxHeapTableSize pulumi.StringInput `pulumi:"maxHeapTableSize"`
 	// ("maxPreparedStmtCount")
 	MaxPreparedStmtCount pulumi.IntInput `pulumi:"maxPreparedStmtCount"`
+	// Limit the assumed maximum number of seeks when looking up rows based on a key. The MySQL optimizer assumes that no more than this number of key seeks are required when searching for matching rows in a table by scanning an index, regardless of the actual cardinality of the index (see Section 15.7.7.22, “SHOW INDEX Statement”). By setting this to a low value (say, 100), you can force MySQL to prefer indexes instead of table scans.
+	MaxSeeksForKey pulumi.StringInput `pulumi:"maxSeeksForKey"`
+	// The maximum number of simultaneous connections permitted to any given MySQL user account. A value of 0 (the default) means “no limit.” This variable has a global value that can be set at server startup or runtime. It also has a read-only session value that indicates the effective simultaneous-connection limit that applies to the account associated with the current session.
+	MaxUserConnections pulumi.StringInput `pulumi:"maxUserConnections"`
 	// ("mysqlFirewallMode")
 	MysqlFirewallMode pulumi.BoolInput `pulumi:"mysqlFirewallMode"`
 	// DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
@@ -15155,6 +17273,8 @@ type GetMysqlConfigurationsConfigurationVariableArgs struct {
 	NetReadTimeout pulumi.IntInput `pulumi:"netReadTimeout"`
 	// The number of seconds to wait for a block to be written to a connection before aborting the write.
 	NetWriteTimeout pulumi.IntInput `pulumi:"netWriteTimeout"`
+	// The optimizerSwitch system variable enables control over optimizer behavior. The value of this variable is a set of flags, each of which has a value of on or off to indicate whether the corresponding optimizer behavior is enabled or disabled. This variable has global and session values and can be changed at runtime. The global default can be set at server startup.
+	OptimizerSwitch pulumi.StringInput `pulumi:"optimizerSwitch"`
 	// ("parserMaxMemSize")
 	ParserMaxMemSize pulumi.StringInput `pulumi:"parserMaxMemSize"`
 	// ("queryAllocBlockSize") DEPRECATED -- variable should not be settable and will be ignored
@@ -15162,23 +17282,51 @@ type GetMysqlConfigurationsConfigurationVariableArgs struct {
 	// Deprecated: The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.
 	QueryAllocBlockSize pulumi.StringInput `pulumi:"queryAllocBlockSize"`
 	// ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
+	QueryPreallocSize pulumi.StringInput `pulumi:"queryPreallocSize"`
+	// The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans.
 	//
 	// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
-	QueryPreallocSize pulumi.StringInput `pulumi:"queryPreallocSize"`
+	RangeOptimizerMaxMemSize pulumi.StringInput `pulumi:"rangeOptimizerMaxMemSize"`
 	// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
 	RegexpTimeLimit pulumi.IntInput `pulumi:"regexpTimeLimit"`
+	// The maximum amount of space to use for all relay logs.
+	RelayLogSpaceLimit pulumi.StringInput `pulumi:"relayLogSpaceLimit"`
+	// Specifies the number of seconds to wait for more data or a heartbeat signal from the source before the replica considers the connection broken, aborts the read, and tries to reconnect. Setting this variable has no immediate effect. The state of the variable applies on all subsequent START REPLICA commands.
+	ReplicaNetTimeout pulumi.IntInput `pulumi:"replicaNetTimeout"`
+	// Beginning with MySQL 8.0.26, slaveParallelWorkers is deprecated, and you should use replicaParallelWorkers instead. (Prior to MySQL 8.0.26, you must use slaveParallelWorkers to set the number of applier threads.)
+	ReplicaParallelWorkers pulumi.IntInput `pulumi:"replicaParallelWorkers"`
+	// From MySQL 8.0.26, use replicaTypeConversions in place of slave_type_conversions, which is deprecated from that release. In releases before MySQL 8.0.26, use slave_type_conversions.
+	ReplicaTypeConversions pulumi.StringInput `pulumi:"replicaTypeConversions"`
+	// Whether client connections to the server are required to use some form of secure transport. When this variable is enabled, the server permits only TCP/IP connections encrypted using TLS/SSL, or connections that use a socket file or shared memory. The server rejects nonsecure connection attempts, which fail with an ER_SECURE_TRANSPORT_REQUIRED error.
+	RequireSecureTransport pulumi.BoolInput `pulumi:"requireSecureTransport"`
+	// Whether to resolve host names when checking client connections. If this variable is OFF, mysqld resolves host names when checking client connections. If it is ON, mysqld uses only IP numbers; in this case, all Host column values in the grant tables must be IP addresses. See Section 7.1.12.3, “DNS Lookups and the Host Cache”.
+	SkipNameResolve pulumi.BoolInput `pulumi:"skipNameResolve"`
 	// Each session that must perform a sort allocates a buffer of this size.
 	SortBufferSize pulumi.StringInput `pulumi:"sortBufferSize"`
+	// Whether GIPK mode is in effect, in which case a MySQL replication source server adds a generated invisible primary key to any InnoDB table that is created without one.
+	SqlGenerateInvisiblePrimaryKey pulumi.BoolInput `pulumi:"sqlGenerateInvisiblePrimaryKey"`
 	// ("sqlMode")
 	SqlMode pulumi.StringInput `pulumi:"sqlMode"`
 	// ("sqlRequirePrimaryKey")
 	SqlRequirePrimaryKey pulumi.BoolInput `pulumi:"sqlRequirePrimaryKey"`
 	// ("sqlWarnings")
 	SqlWarnings pulumi.BoolInput `pulumi:"sqlWarnings"`
+	// The number of table definitions that can be stored in the table definition cache. If you use a large number of tables, you can create a large table definition cache to speed up opening of tables. The table definition cache takes less space and does not use file descriptors, unlike the normal table cache.
+	TableDefinitionCache pulumi.IntInput `pulumi:"tableDefinitionCache"`
+	// The number of open tables for all threads. Increasing this value increases the number of file descriptors that mysqld requires.
+	TableOpenCache pulumi.IntInput `pulumi:"tableOpenCache"`
+	// Defines the maximum amount of memory that can be occupied by the TempTable storage engine before it starts storing data on disk. The default value is 1073741824 bytes (1GiB). For more information, see Section 10.4.4, “Internal Temporary Table Use in MySQL”.
+	TemptableMaxRam pulumi.StringInput `pulumi:"temptableMaxRam"`
 	// Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
 	ThreadPoolDedicatedListeners pulumi.BoolInput `pulumi:"threadPoolDedicatedListeners"`
 	// Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
 	ThreadPoolMaxTransactionsLimit pulumi.IntInput `pulumi:"threadPoolMaxTransactionsLimit"`
+	// The maximum number of query threads permitted in a thread group. The maximum value is 4096, but if threadPoolMaxTransactionsLimit is set, threadPoolQueryThreadsPerGroup must not exceed that value. The default value of 1 means there is one active query thread in each thread group, which works well for many loads. When you are using the high concurrency thread pool algorithm (thread_pool_algorithm = 1), consider increasing the value if you experience slower response times due to long-running transactions.
+	ThreadPoolQueryThreadsPerGroup pulumi.IntInput `pulumi:"threadPoolQueryThreadsPerGroup"`
+	// The number of thread groups in the thread pool. This is the most important parameter controlling thread pool performance. It affects how many statements can execute simultaneously. If a value outside the range of permissible values is specified, the thread pool plugin does not load and the server writes a message to the error log.
+	ThreadPoolSize pulumi.IntInput `pulumi:"threadPoolSize"`
+	// The delay period before executing a new transaction, in milliseconds. The maximum value is 300000 (5 minutes). A transaction delay can be used in cases where parallel transactions affect the performance of other operations due to resource contention. For example, if parallel transactions affect index creation or an online buffer pool resizing operation, you can configure a transaction delay to reduce resource contention while those operations are running.
+	ThreadPoolTransactionDelay pulumi.IntInput `pulumi:"threadPoolTransactionDelay"`
 	// Initializes the time zone for each client that connects.
 	TimeZone pulumi.StringInput `pulumi:"timeZone"`
 	// The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
@@ -15240,6 +17388,16 @@ func (o GetMysqlConfigurationsConfigurationVariableOutput) ToGetMysqlConfigurati
 	return o
 }
 
+// auto_increment_increment and autoIncrementOffset are intended for use with circular (source-to-source) replication, and can be used to control the operation of AUTO_INCREMENT columns. Both variables have global and session values, and each can assume an integer value between 1 and 65,535 inclusive.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) AutoIncrementIncrement() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.AutoIncrementIncrement }).(pulumi.IntOutput)
+}
+
+// This variable has a default value of 1. If it is left with its default value, and Group Replication is started on the server in multi-primary mode, it is changed to the server ID.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) AutoIncrementOffset() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.AutoIncrementOffset }).(pulumi.IntOutput)
+}
+
 // ("autocommit")
 func (o GetMysqlConfigurationsConfigurationVariableOutput) Autocommit() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.Autocommit }).(pulumi.BoolOutput)
@@ -15255,6 +17413,16 @@ func (o GetMysqlConfigurationsConfigurationVariableOutput) BinlogExpireLogsSecon
 	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.BinlogExpireLogsSeconds }).(pulumi.IntOutput)
 }
 
+// Controls how many microseconds the binary log commit waits before synchronizing the binary log file to disk. There is no delay by default. Setting this variable to a microsecond delay enables more transactions to be synchronized together to disk at once, reducing the overall time to commit a group of transactions because the larger groups required fewer time units per group.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) BinlogGroupCommitSyncDelay() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.BinlogGroupCommitSyncDelay }).(pulumi.IntOutput)
+}
+
+// The maximum number of transactions to wait for before aborting the current delay as specified by binlog_group_commit_sync_delay. If binlogGroupCommitSyncDelay is set to 0, then this option has no effect.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) BinlogGroupCommitSyncNoDelayCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.BinlogGroupCommitSyncNoDelayCount }).(pulumi.IntOutput)
+}
+
 // Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlogRowMetadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
 func (o GetMysqlConfigurationsConfigurationVariableOutput) BinlogRowMetadata() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.BinlogRowMetadata }).(pulumi.StringOutput)
@@ -15268,6 +17436,21 @@ func (o GetMysqlConfigurationsConfigurationVariableOutput) BinlogRowValueOptions
 // Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlogTransactionCompression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
 func (o GetMysqlConfigurationsConfigurationVariableOutput) BinlogTransactionCompression() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.BinlogTransactionCompression }).(pulumi.BoolOutput)
+}
+
+// This variable controls the block encryption mode for block-based algorithms such as AES. It affects encryption for AES_ENCRYPT() and AES_DECRYPT(). blockEncryptionMode takes a value in aes-keylen-mode format, where keylen is the key length in bits and mode is the encryption mode. The value is not case-sensitive. Permitted keylen values are 128, 192, and 256. Permitted mode values are ECB, CBC, CFB1, CFB8, CFB128, and OFB.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) BlockEncryptionMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.BlockEncryptionMode }).(pulumi.StringOutput)
+}
+
+// The server's default character set. If you set this variable, you should also set collationServer to specify the collation for the character set.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) CharacterSetServer() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.CharacterSetServer }).(pulumi.StringOutput)
+}
+
+// The server's default collation.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) CollationServer() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.CollationServer }).(pulumi.StringOutput)
 }
 
 // ("completionType")
@@ -15295,9 +17478,19 @@ func (o GetMysqlConfigurationsConfigurationVariableOutput) CteMaxRecursionDepth(
 	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.CteMaxRecursionDepth }).(pulumi.StringOutput)
 }
 
-// ("defaultAuthenticationPlugin")
+// The default authentication plugin. This must be a plugin that uses internal credentials storage, so these values are permitted: mysql_native_password, sha256_password, caching_sha2_password.
 func (o GetMysqlConfigurationsConfigurationVariableOutput) DefaultAuthenticationPlugin() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.DefaultAuthenticationPlugin }).(pulumi.StringOutput)
+}
+
+// This variable determines the default output format used by EXPLAIN in the absence of a FORMAT option when displaying a query execution plan.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) ExplainFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.ExplainFormat }).(pulumi.StringOutput)
+}
+
+// This system variable determines whether the server enables certain nonstandard behaviors for default values and NULL-value handling in TIMESTAMP columns. By default, explicitDefaultsForTimestamp is enabled, which disables the nonstandard behaviors. Disabling explicitDefaultsForTimestamp results in a warning.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) ExplicitDefaultsForTimestamp() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.ExplicitDefaultsForTimestamp }).(pulumi.BoolOutput)
 }
 
 // ("foreignKeyChecks")
@@ -15322,6 +17515,11 @@ func (o GetMysqlConfigurationsConfigurationVariableOutput) GlobalConnectionMemor
 	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.GlobalConnectionMemoryTracking }).(pulumi.BoolOutput)
 }
 
+// Specifies the maximum permitted result length in bytes for the GROUP_CONCAT() function.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) GroupConcatMaxLen() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.GroupConcatMaxLen }).(pulumi.StringOutput)
+}
+
 // * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
 // * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
 // * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
@@ -15334,6 +17532,16 @@ func (o GetMysqlConfigurationsConfigurationVariableOutput) GroupReplicationConsi
 // ("informationSchemaStatsExpiry")
 func (o GetMysqlConfigurationsConfigurationVariableOutput) InformationSchemaStatsExpiry() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.InformationSchemaStatsExpiry }).(pulumi.IntOutput)
+}
+
+// Whether the InnoDB adaptive hash index is enabled or disabled. It may be desirable, depending on your workload, to dynamically enable or disable adaptive hash indexing to improve query performance. Because the adaptive hash index may not be useful for all workloads, conduct benchmarks with it both enabled and disabled, using realistic workloads.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbAdaptiveHashIndex() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.InnodbAdaptiveHashIndex }).(pulumi.BoolOutput)
+}
+
+// The lock mode to use for generating auto-increment values. Permissible values are 0, 1, or 2, for traditional, consecutive, or interleaved, respectively.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbAutoincLockMode() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.InnodbAutoincLockMode }).(pulumi.IntOutput)
 }
 
 // Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
@@ -15349,6 +17557,11 @@ func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbBufferPoolInsta
 // The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
 func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbBufferPoolSize() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.InnodbBufferPoolSize }).(pulumi.StringOutput)
+}
+
+// Whether InnoDB performs change buffering, an optimization that delays write operations to secondary indexes so that the I/O operations can be performed sequentially. Permitted values are described in the following table. Values may also be specified numerically.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbChangeBuffering() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.InnodbChangeBuffering }).(pulumi.StringOutput)
 }
 
 // innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
@@ -15411,6 +17624,33 @@ func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbMaxPurgeLagDela
 	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.InnodbMaxPurgeLagDelay }).(pulumi.IntOutput)
 }
 
+// Enables the NUMA interleave memory policy for allocation of the InnoDB buffer pool. When innodbNumaInterleave is enabled, the NUMA memory policy is set to MPOL_INTERLEAVE for the mysqld process. After the InnoDB buffer pool is allocated, the NUMA memory policy is set back to MPOL_DEFAULT. For the innodbNumaInterleave option to be available, MySQL must be compiled on a NUMA-enabled Linux system.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbNumaInterleave() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.InnodbNumaInterleave }).(pulumi.BoolOutput)
+}
+
+// Specifies an upper limit in bytes on the size of the temporary log files used during online DDL operations for InnoDB tables. There is one such log file for each index being created or table being altered. This log file stores data inserted, updated, or deleted in the table during the DDL operation.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbOnlineAlterLogMaxSize() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.InnodbOnlineAlterLogMaxSize }).(pulumi.StringOutput)
+}
+
+// Defines the amount of disk space occupied by redo log files. innodbRedoLogCapacity supercedes the innodbLogFilesInGroup and innodbLogFileSize variables, which are both ignored if innodbRedoLogCapacity is defined. If innodbRedoLogCapacity is not defined, and if neither innodbLogFileSize or innodbLogFilesInGroup are defined, then the default innodbRedoLogCapacity value is used.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbRedoLogCapacity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.InnodbRedoLogCapacity }).(pulumi.StringOutput)
+}
+
+// InnoDB rolls back only the last statement on a transaction timeout by default. If --innodb-rollback-on-timeout is specified, a transaction timeout causes InnoDB to abort and roll back the entire transaction.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbRollbackOnTimeout() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.InnodbRollbackOnTimeout }).(pulumi.BoolOutput)
+}
+
+// This variable defines:
+// * The sort buffer size for online DDL operations that create or rebuild secondary indexes. However, as of MySQL 8.0.27, this responsibility is subsumed by the innodbDdlBufferSize variable.
+// * The amount by which the temporary log file is extended when recording concurrent DML during an online DDL operation, and the size of the temporary log file read buffer and write buffer.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbSortBufferSize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.InnodbSortBufferSize }).(pulumi.IntOutput)
+}
+
 // The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
 func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbStatsPersistentSamplePages() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.InnodbStatsPersistentSamplePages }).(pulumi.StringOutput)
@@ -15421,14 +17661,34 @@ func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbStatsTransientS
 	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.InnodbStatsTransientSamplePages }).(pulumi.StringOutput)
 }
 
+// When you enable innodbStrictMode, the InnoDB storage engine returns errors instead of warnings for invalid or incompatible table options.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbStrictMode() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.InnodbStrictMode }).(pulumi.BoolOutput)
+}
+
+// When enabled, undo tablespaces that exceed the threshold value defined by innodbMaxUndoLogSize are marked for truncation. Only undo tablespaces can be truncated. Truncating undo logs that reside in the system tablespace is not supported. For truncation to occur, there must be at least two undo tablespaces.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbUndoLogTruncate() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.InnodbUndoLogTruncate }).(pulumi.BoolOutput)
+}
+
 // The number of seconds the server waits for activity on an interactive connection before closing it.
 func (o GetMysqlConfigurationsConfigurationVariableOutput) InteractiveTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.InteractiveTimeout }).(pulumi.IntOutput)
 }
 
-// ("localInfile")
+// The minimum size of the buffer that is used for plain index scans, range index scans, and joins that do not use indexes and thus perform full table scans. In MySQL 8.0.18 and later, this variable also controls the amount of memory used for hash joins. Normally, the best way to get fast joins is to add indexes. Increase the value of joinBufferSize to get a faster full join when adding indexes is not possible. One join buffer is allocated for each full join between two tables. For a complex join between several tables for which indexes are not used, multiple join buffers might be necessary.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) JoinBufferSize() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.JoinBufferSize }).(pulumi.StringOutput)
+}
+
+// This variable controls server-side LOCAL capability for LOAD DATA statements. Depending on the localInfile setting, the server refuses or permits local data loading by clients that have LOCAL enabled on the client side.
 func (o GetMysqlConfigurationsConfigurationVariableOutput) LocalInfile() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.LocalInfile }).(pulumi.BoolOutput)
+}
+
+// If a query takes longer than this many seconds, the server increments the Slow_queries status variable. If the slow query log is enabled, the query is logged to the slow query log file. This value is measured in real time, not CPU time, so a query that is under the threshold on a lightly loaded system might be above the threshold on a heavily loaded one.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) LongQueryTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.LongQueryTime }).(pulumi.IntOutput)
 }
 
 // ("mandatoryRoles")
@@ -15469,6 +17729,16 @@ func (o GetMysqlConfigurationsConfigurationVariableOutput) MaxHeapTableSize() pu
 // ("maxPreparedStmtCount")
 func (o GetMysqlConfigurationsConfigurationVariableOutput) MaxPreparedStmtCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MaxPreparedStmtCount }).(pulumi.IntOutput)
+}
+
+// Limit the assumed maximum number of seeks when looking up rows based on a key. The MySQL optimizer assumes that no more than this number of key seeks are required when searching for matching rows in a table by scanning an index, regardless of the actual cardinality of the index (see Section 15.7.7.22, “SHOW INDEX Statement”). By setting this to a low value (say, 100), you can force MySQL to prefer indexes instead of table scans.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MaxSeeksForKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.MaxSeeksForKey }).(pulumi.StringOutput)
+}
+
+// The maximum number of simultaneous connections permitted to any given MySQL user account. A value of 0 (the default) means “no limit.” This variable has a global value that can be set at server startup or runtime. It also has a read-only session value that indicates the effective simultaneous-connection limit that applies to the account associated with the current session.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MaxUserConnections() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.MaxUserConnections }).(pulumi.StringOutput)
 }
 
 // ("mysqlFirewallMode")
@@ -15581,6 +17851,11 @@ func (o GetMysqlConfigurationsConfigurationVariableOutput) NetWriteTimeout() pul
 	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.NetWriteTimeout }).(pulumi.IntOutput)
 }
 
+// The optimizerSwitch system variable enables control over optimizer behavior. The value of this variable is a set of flags, each of which has a value of on or off to indicate whether the corresponding optimizer behavior is enabled or disabled. This variable has global and session values and can be changed at runtime. The global default can be set at server startup.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) OptimizerSwitch() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.OptimizerSwitch }).(pulumi.StringOutput)
+}
+
 // ("parserMaxMemSize")
 func (o GetMysqlConfigurationsConfigurationVariableOutput) ParserMaxMemSize() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.ParserMaxMemSize }).(pulumi.StringOutput)
@@ -15594,10 +17869,15 @@ func (o GetMysqlConfigurationsConfigurationVariableOutput) QueryAllocBlockSize()
 }
 
 // ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
-//
-// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
 func (o GetMysqlConfigurationsConfigurationVariableOutput) QueryPreallocSize() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.QueryPreallocSize }).(pulumi.StringOutput)
+}
+
+// The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans.
+//
+// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) RangeOptimizerMaxMemSize() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.RangeOptimizerMaxMemSize }).(pulumi.StringOutput)
 }
 
 // regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
@@ -15605,9 +17885,44 @@ func (o GetMysqlConfigurationsConfigurationVariableOutput) RegexpTimeLimit() pul
 	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.RegexpTimeLimit }).(pulumi.IntOutput)
 }
 
+// The maximum amount of space to use for all relay logs.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) RelayLogSpaceLimit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.RelayLogSpaceLimit }).(pulumi.StringOutput)
+}
+
+// Specifies the number of seconds to wait for more data or a heartbeat signal from the source before the replica considers the connection broken, aborts the read, and tries to reconnect. Setting this variable has no immediate effect. The state of the variable applies on all subsequent START REPLICA commands.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) ReplicaNetTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.ReplicaNetTimeout }).(pulumi.IntOutput)
+}
+
+// Beginning with MySQL 8.0.26, slaveParallelWorkers is deprecated, and you should use replicaParallelWorkers instead. (Prior to MySQL 8.0.26, you must use slaveParallelWorkers to set the number of applier threads.)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) ReplicaParallelWorkers() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.ReplicaParallelWorkers }).(pulumi.IntOutput)
+}
+
+// From MySQL 8.0.26, use replicaTypeConversions in place of slave_type_conversions, which is deprecated from that release. In releases before MySQL 8.0.26, use slave_type_conversions.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) ReplicaTypeConversions() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.ReplicaTypeConversions }).(pulumi.StringOutput)
+}
+
+// Whether client connections to the server are required to use some form of secure transport. When this variable is enabled, the server permits only TCP/IP connections encrypted using TLS/SSL, or connections that use a socket file or shared memory. The server rejects nonsecure connection attempts, which fail with an ER_SECURE_TRANSPORT_REQUIRED error.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) RequireSecureTransport() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.RequireSecureTransport }).(pulumi.BoolOutput)
+}
+
+// Whether to resolve host names when checking client connections. If this variable is OFF, mysqld resolves host names when checking client connections. If it is ON, mysqld uses only IP numbers; in this case, all Host column values in the grant tables must be IP addresses. See Section 7.1.12.3, “DNS Lookups and the Host Cache”.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) SkipNameResolve() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.SkipNameResolve }).(pulumi.BoolOutput)
+}
+
 // Each session that must perform a sort allocates a buffer of this size.
 func (o GetMysqlConfigurationsConfigurationVariableOutput) SortBufferSize() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.SortBufferSize }).(pulumi.StringOutput)
+}
+
+// Whether GIPK mode is in effect, in which case a MySQL replication source server adds a generated invisible primary key to any InnoDB table that is created without one.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) SqlGenerateInvisiblePrimaryKey() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.SqlGenerateInvisiblePrimaryKey }).(pulumi.BoolOutput)
 }
 
 // ("sqlMode")
@@ -15625,6 +17940,21 @@ func (o GetMysqlConfigurationsConfigurationVariableOutput) SqlWarnings() pulumi.
 	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.SqlWarnings }).(pulumi.BoolOutput)
 }
 
+// The number of table definitions that can be stored in the table definition cache. If you use a large number of tables, you can create a large table definition cache to speed up opening of tables. The table definition cache takes less space and does not use file descriptors, unlike the normal table cache.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) TableDefinitionCache() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.TableDefinitionCache }).(pulumi.IntOutput)
+}
+
+// The number of open tables for all threads. Increasing this value increases the number of file descriptors that mysqld requires.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) TableOpenCache() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.TableOpenCache }).(pulumi.IntOutput)
+}
+
+// Defines the maximum amount of memory that can be occupied by the TempTable storage engine before it starts storing data on disk. The default value is 1073741824 bytes (1GiB). For more information, see Section 10.4.4, “Internal Temporary Table Use in MySQL”.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) TemptableMaxRam() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.TemptableMaxRam }).(pulumi.StringOutput)
+}
+
 // Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
 func (o GetMysqlConfigurationsConfigurationVariableOutput) ThreadPoolDedicatedListeners() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.ThreadPoolDedicatedListeners }).(pulumi.BoolOutput)
@@ -15633,6 +17963,21 @@ func (o GetMysqlConfigurationsConfigurationVariableOutput) ThreadPoolDedicatedLi
 // Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
 func (o GetMysqlConfigurationsConfigurationVariableOutput) ThreadPoolMaxTransactionsLimit() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.ThreadPoolMaxTransactionsLimit }).(pulumi.IntOutput)
+}
+
+// The maximum number of query threads permitted in a thread group. The maximum value is 4096, but if threadPoolMaxTransactionsLimit is set, threadPoolQueryThreadsPerGroup must not exceed that value. The default value of 1 means there is one active query thread in each thread group, which works well for many loads. When you are using the high concurrency thread pool algorithm (thread_pool_algorithm = 1), consider increasing the value if you experience slower response times due to long-running transactions.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) ThreadPoolQueryThreadsPerGroup() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.ThreadPoolQueryThreadsPerGroup }).(pulumi.IntOutput)
+}
+
+// The number of thread groups in the thread pool. This is the most important parameter controlling thread pool performance. It affects how many statements can execute simultaneously. If a value outside the range of permissible values is specified, the thread pool plugin does not load and the server writes a message to the error log.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) ThreadPoolSize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.ThreadPoolSize }).(pulumi.IntOutput)
+}
+
+// The delay period before executing a new transaction, in milliseconds. The maximum value is 300000 (5 minutes). A transaction delay can be used in cases where parallel transactions affect the performance of other operations due to resource contention. For example, if parallel transactions affect index creation or an online buffer pool resizing operation, you can configure a transaction delay to reduce resource contention while those operations are running.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) ThreadPoolTransactionDelay() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.ThreadPoolTransactionDelay }).(pulumi.IntOutput)
 }
 
 // Initializes the time zone for each client that connects.
@@ -15782,6 +18127,8 @@ func (o GetMysqlConfigurationsFilterArrayOutput) Index(i pulumi.IntInput) GetMys
 }
 
 type GetMysqlDbSystemBackupPolicy struct {
+	// List of policies of a DB system to schedule cross-region DB system backup copy.
+	CopyPolicies []GetMysqlDbSystemBackupPolicyCopyPolicy `pulumi:"copyPolicies"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -15808,6 +18155,8 @@ type GetMysqlDbSystemBackupPolicyInput interface {
 }
 
 type GetMysqlDbSystemBackupPolicyArgs struct {
+	// List of policies of a DB system to schedule cross-region DB system backup copy.
+	CopyPolicies GetMysqlDbSystemBackupPolicyCopyPolicyArrayInput `pulumi:"copyPolicies"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -15873,6 +18222,11 @@ func (o GetMysqlDbSystemBackupPolicyOutput) ToGetMysqlDbSystemBackupPolicyOutput
 	return o
 }
 
+// List of policies of a DB system to schedule cross-region DB system backup copy.
+func (o GetMysqlDbSystemBackupPolicyOutput) CopyPolicies() GetMysqlDbSystemBackupPolicyCopyPolicyArrayOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemBackupPolicy) []GetMysqlDbSystemBackupPolicyCopyPolicy { return v.CopyPolicies }).(GetMysqlDbSystemBackupPolicyCopyPolicyArrayOutput)
+}
+
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o GetMysqlDbSystemBackupPolicyOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemBackupPolicy) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
@@ -15921,6 +18275,112 @@ func (o GetMysqlDbSystemBackupPolicyArrayOutput) Index(i pulumi.IntInput) GetMys
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemBackupPolicy {
 		return vs[0].([]GetMysqlDbSystemBackupPolicy)[vs[1].(int)]
 	}).(GetMysqlDbSystemBackupPolicyOutput)
+}
+
+type GetMysqlDbSystemBackupPolicyCopyPolicy struct {
+	// Number of days to retain the copied DB system backup.
+	BackupCopyRetentionInDays int `pulumi:"backupCopyRetentionInDays"`
+	// The destination region name to which the DB system backup will be copied.
+	CopyToRegion string `pulumi:"copyToRegion"`
+}
+
+// GetMysqlDbSystemBackupPolicyCopyPolicyInput is an input type that accepts GetMysqlDbSystemBackupPolicyCopyPolicyArgs and GetMysqlDbSystemBackupPolicyCopyPolicyOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemBackupPolicyCopyPolicyInput` via:
+//
+//	GetMysqlDbSystemBackupPolicyCopyPolicyArgs{...}
+type GetMysqlDbSystemBackupPolicyCopyPolicyInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemBackupPolicyCopyPolicyOutput() GetMysqlDbSystemBackupPolicyCopyPolicyOutput
+	ToGetMysqlDbSystemBackupPolicyCopyPolicyOutputWithContext(context.Context) GetMysqlDbSystemBackupPolicyCopyPolicyOutput
+}
+
+type GetMysqlDbSystemBackupPolicyCopyPolicyArgs struct {
+	// Number of days to retain the copied DB system backup.
+	BackupCopyRetentionInDays pulumi.IntInput `pulumi:"backupCopyRetentionInDays"`
+	// The destination region name to which the DB system backup will be copied.
+	CopyToRegion pulumi.StringInput `pulumi:"copyToRegion"`
+}
+
+func (GetMysqlDbSystemBackupPolicyCopyPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemBackupPolicyCopyPolicy)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemBackupPolicyCopyPolicyArgs) ToGetMysqlDbSystemBackupPolicyCopyPolicyOutput() GetMysqlDbSystemBackupPolicyCopyPolicyOutput {
+	return i.ToGetMysqlDbSystemBackupPolicyCopyPolicyOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemBackupPolicyCopyPolicyArgs) ToGetMysqlDbSystemBackupPolicyCopyPolicyOutputWithContext(ctx context.Context) GetMysqlDbSystemBackupPolicyCopyPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemBackupPolicyCopyPolicyOutput)
+}
+
+// GetMysqlDbSystemBackupPolicyCopyPolicyArrayInput is an input type that accepts GetMysqlDbSystemBackupPolicyCopyPolicyArray and GetMysqlDbSystemBackupPolicyCopyPolicyArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemBackupPolicyCopyPolicyArrayInput` via:
+//
+//	GetMysqlDbSystemBackupPolicyCopyPolicyArray{ GetMysqlDbSystemBackupPolicyCopyPolicyArgs{...} }
+type GetMysqlDbSystemBackupPolicyCopyPolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemBackupPolicyCopyPolicyArrayOutput() GetMysqlDbSystemBackupPolicyCopyPolicyArrayOutput
+	ToGetMysqlDbSystemBackupPolicyCopyPolicyArrayOutputWithContext(context.Context) GetMysqlDbSystemBackupPolicyCopyPolicyArrayOutput
+}
+
+type GetMysqlDbSystemBackupPolicyCopyPolicyArray []GetMysqlDbSystemBackupPolicyCopyPolicyInput
+
+func (GetMysqlDbSystemBackupPolicyCopyPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemBackupPolicyCopyPolicy)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemBackupPolicyCopyPolicyArray) ToGetMysqlDbSystemBackupPolicyCopyPolicyArrayOutput() GetMysqlDbSystemBackupPolicyCopyPolicyArrayOutput {
+	return i.ToGetMysqlDbSystemBackupPolicyCopyPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemBackupPolicyCopyPolicyArray) ToGetMysqlDbSystemBackupPolicyCopyPolicyArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemBackupPolicyCopyPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemBackupPolicyCopyPolicyArrayOutput)
+}
+
+type GetMysqlDbSystemBackupPolicyCopyPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemBackupPolicyCopyPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemBackupPolicyCopyPolicy)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemBackupPolicyCopyPolicyOutput) ToGetMysqlDbSystemBackupPolicyCopyPolicyOutput() GetMysqlDbSystemBackupPolicyCopyPolicyOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemBackupPolicyCopyPolicyOutput) ToGetMysqlDbSystemBackupPolicyCopyPolicyOutputWithContext(ctx context.Context) GetMysqlDbSystemBackupPolicyCopyPolicyOutput {
+	return o
+}
+
+// Number of days to retain the copied DB system backup.
+func (o GetMysqlDbSystemBackupPolicyCopyPolicyOutput) BackupCopyRetentionInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemBackupPolicyCopyPolicy) int { return v.BackupCopyRetentionInDays }).(pulumi.IntOutput)
+}
+
+// The destination region name to which the DB system backup will be copied.
+func (o GetMysqlDbSystemBackupPolicyCopyPolicyOutput) CopyToRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemBackupPolicyCopyPolicy) string { return v.CopyToRegion }).(pulumi.StringOutput)
+}
+
+type GetMysqlDbSystemBackupPolicyCopyPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemBackupPolicyCopyPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemBackupPolicyCopyPolicy)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemBackupPolicyCopyPolicyArrayOutput) ToGetMysqlDbSystemBackupPolicyCopyPolicyArrayOutput() GetMysqlDbSystemBackupPolicyCopyPolicyArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemBackupPolicyCopyPolicyArrayOutput) ToGetMysqlDbSystemBackupPolicyCopyPolicyArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemBackupPolicyCopyPolicyArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemBackupPolicyCopyPolicyArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemBackupPolicyCopyPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemBackupPolicyCopyPolicy {
+		return vs[0].([]GetMysqlDbSystemBackupPolicyCopyPolicy)[vs[1].(int)]
+	}).(GetMysqlDbSystemBackupPolicyCopyPolicyOutput)
 }
 
 type GetMysqlDbSystemBackupPolicyPitrPolicy struct {
@@ -16039,6 +18499,8 @@ type GetMysqlDbSystemChannel struct {
 	Sources []GetMysqlDbSystemChannelSource `pulumi:"sources"`
 	// The current state of the DB System.
 	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Details about the Channel target.
 	Targets []GetMysqlDbSystemChannelTarget `pulumi:"targets"`
 	// The date and time the DB System was created.
@@ -16077,6 +18539,8 @@ type GetMysqlDbSystemChannelArgs struct {
 	Sources GetMysqlDbSystemChannelSourceArrayInput `pulumi:"sources"`
 	// The current state of the DB System.
 	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// Details about the Channel target.
 	Targets GetMysqlDbSystemChannelTargetArrayInput `pulumi:"targets"`
 	// The date and time the DB System was created.
@@ -16179,6 +18643,11 @@ func (o GetMysqlDbSystemChannelOutput) Sources() GetMysqlDbSystemChannelSourceAr
 // The current state of the DB System.
 func (o GetMysqlDbSystemChannelOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemChannel) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetMysqlDbSystemChannelOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannel) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Details about the Channel target.
@@ -18271,6 +20740,8 @@ type GetMysqlDbSystemsDbSystem struct {
 	State string `pulumi:"state"`
 	// The OCID of the subnet the DB System is associated with.
 	SubnetId string `pulumi:"subnetId"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the DB System was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the DB System was last updated.
@@ -18372,6 +20843,8 @@ type GetMysqlDbSystemsDbSystemArgs struct {
 	State pulumi.StringInput `pulumi:"state"`
 	// The OCID of the subnet the DB System is associated with.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time the DB System was created.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the DB System was last updated.
@@ -18645,6 +21118,11 @@ func (o GetMysqlDbSystemsDbSystemOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetMysqlDbSystemsDbSystemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
 // The date and time the DB System was created.
 func (o GetMysqlDbSystemsDbSystemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) string { return v.TimeCreated }).(pulumi.StringOutput)
@@ -18676,6 +21154,8 @@ func (o GetMysqlDbSystemsDbSystemArrayOutput) Index(i pulumi.IntInput) GetMysqlD
 }
 
 type GetMysqlDbSystemsDbSystemBackupPolicy struct {
+	// List of policies of a DB system to schedule cross-region DB system backup copy.
+	CopyPolicies []GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicy `pulumi:"copyPolicies"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -18702,6 +21182,8 @@ type GetMysqlDbSystemsDbSystemBackupPolicyInput interface {
 }
 
 type GetMysqlDbSystemsDbSystemBackupPolicyArgs struct {
+	// List of policies of a DB system to schedule cross-region DB system backup copy.
+	CopyPolicies GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArrayInput `pulumi:"copyPolicies"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -18767,6 +21249,13 @@ func (o GetMysqlDbSystemsDbSystemBackupPolicyOutput) ToGetMysqlDbSystemsDbSystem
 	return o
 }
 
+// List of policies of a DB system to schedule cross-region DB system backup copy.
+func (o GetMysqlDbSystemsDbSystemBackupPolicyOutput) CopyPolicies() GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArrayOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemBackupPolicy) []GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicy {
+		return v.CopyPolicies
+	}).(GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArrayOutput)
+}
+
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o GetMysqlDbSystemsDbSystemBackupPolicyOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemBackupPolicy) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
@@ -18817,6 +21306,112 @@ func (o GetMysqlDbSystemsDbSystemBackupPolicyArrayOutput) Index(i pulumi.IntInpu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemBackupPolicy {
 		return vs[0].([]GetMysqlDbSystemsDbSystemBackupPolicy)[vs[1].(int)]
 	}).(GetMysqlDbSystemsDbSystemBackupPolicyOutput)
+}
+
+type GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicy struct {
+	// Number of days to retain the copied DB system backup.
+	BackupCopyRetentionInDays int `pulumi:"backupCopyRetentionInDays"`
+	// The destination region name to which the DB system backup will be copied.
+	CopyToRegion string `pulumi:"copyToRegion"`
+}
+
+// GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyInput is an input type that accepts GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArgs and GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyInput` via:
+//
+//	GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArgs{...}
+type GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyOutput() GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyOutput
+	ToGetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyOutput
+}
+
+type GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArgs struct {
+	// Number of days to retain the copied DB system backup.
+	BackupCopyRetentionInDays pulumi.IntInput `pulumi:"backupCopyRetentionInDays"`
+	// The destination region name to which the DB system backup will be copied.
+	CopyToRegion pulumi.StringInput `pulumi:"copyToRegion"`
+}
+
+func (GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicy)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArgs) ToGetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyOutput() GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyOutput {
+	return i.ToGetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArgs) ToGetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyOutput)
+}
+
+// GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArray and GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArrayInput` via:
+//
+//	GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArray{ GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArgs{...} }
+type GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArrayOutput() GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArrayOutput
+	ToGetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArrayOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArrayOutput
+}
+
+type GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArray []GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyInput
+
+func (GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicy)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArray) ToGetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArrayOutput() GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArrayOutput {
+	return i.ToGetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArray) ToGetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArrayOutput)
+}
+
+type GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicy)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyOutput) ToGetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyOutput() GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyOutput) ToGetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyOutput {
+	return o
+}
+
+// Number of days to retain the copied DB system backup.
+func (o GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyOutput) BackupCopyRetentionInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicy) int { return v.BackupCopyRetentionInDays }).(pulumi.IntOutput)
+}
+
+// The destination region name to which the DB system backup will be copied.
+func (o GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyOutput) CopyToRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicy) string { return v.CopyToRegion }).(pulumi.StringOutput)
+}
+
+type GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicy)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArrayOutput) ToGetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArrayOutput() GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArrayOutput) ToGetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicy {
+		return vs[0].([]GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicy)[vs[1].(int)]
+	}).(GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyOutput)
 }
 
 type GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy struct {
@@ -18935,6 +21530,8 @@ type GetMysqlDbSystemsDbSystemChannel struct {
 	Sources []GetMysqlDbSystemsDbSystemChannelSource `pulumi:"sources"`
 	// DbSystem Lifecycle State
 	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Details about the Channel target.
 	Targets []GetMysqlDbSystemsDbSystemChannelTarget `pulumi:"targets"`
 	// The date and time the DB System was created.
@@ -18973,6 +21570,8 @@ type GetMysqlDbSystemsDbSystemChannelArgs struct {
 	Sources GetMysqlDbSystemsDbSystemChannelSourceArrayInput `pulumi:"sources"`
 	// DbSystem Lifecycle State
 	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// Details about the Channel target.
 	Targets GetMysqlDbSystemsDbSystemChannelTargetArrayInput `pulumi:"targets"`
 	// The date and time the DB System was created.
@@ -19075,6 +21674,11 @@ func (o GetMysqlDbSystemsDbSystemChannelOutput) Sources() GetMysqlDbSystemsDbSys
 // DbSystem Lifecycle State
 func (o GetMysqlDbSystemsDbSystemChannelOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannel) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetMysqlDbSystemsDbSystemChannelOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannel) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Details about the Channel target.
@@ -22593,6 +25197,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotBackupPolicyInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotBackupPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotBackupPolicyArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotBackupPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotDataStorageInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotDataStorageArgs{})
@@ -22617,6 +25223,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlConfigurationVariablesPtrInput)(nil)).Elem(), MysqlConfigurationVariablesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemBackupPolicyInput)(nil)).Elem(), MysqlDbSystemBackupPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemBackupPolicyPtrInput)(nil)).Elem(), MysqlDbSystemBackupPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemBackupPolicyCopyPolicyInput)(nil)).Elem(), MysqlDbSystemBackupPolicyCopyPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemBackupPolicyCopyPolicyArrayInput)(nil)).Elem(), MysqlDbSystemBackupPolicyCopyPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemBackupPolicyPitrPolicyInput)(nil)).Elem(), MysqlDbSystemBackupPolicyPitrPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemBackupPolicyPitrPolicyPtrInput)(nil)).Elem(), MysqlDbSystemBackupPolicyPitrPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemChannelInput)(nil)).Elem(), MysqlDbSystemChannelArgs{})
@@ -22687,6 +25295,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotBackupPolicyInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotBackupPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotBackupPolicyArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotBackupPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotDataStorageInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotDataStorageArgs{})
@@ -22711,6 +25321,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotDataStorageInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotDataStorageArgs{})
@@ -22745,6 +25357,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlConfigurationsFilterArrayInput)(nil)).Elem(), GetMysqlConfigurationsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemBackupPolicyInput)(nil)).Elem(), GetMysqlDbSystemBackupPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemBackupPolicyArrayInput)(nil)).Elem(), GetMysqlDbSystemBackupPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemBackupPolicyCopyPolicyInput)(nil)).Elem(), GetMysqlDbSystemBackupPolicyCopyPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemBackupPolicyCopyPolicyArrayInput)(nil)).Elem(), GetMysqlDbSystemBackupPolicyCopyPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemBackupPolicyPitrPolicyInput)(nil)).Elem(), GetMysqlDbSystemBackupPolicyPitrPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemBackupPolicyPitrPolicyArrayInput)(nil)).Elem(), GetMysqlDbSystemBackupPolicyPitrPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemChannelInput)(nil)).Elem(), GetMysqlDbSystemChannelArgs{})
@@ -22785,6 +25399,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemBackupPolicyInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemBackupPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemBackupPolicyArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemBackupPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemChannelInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemChannelArgs{})
@@ -22861,6 +25477,8 @@ func init() {
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotArrayOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotBackupPolicyOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotBackupPolicyArrayOutput{})
+	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput{})
+	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotDataStorageOutput{})
@@ -22885,6 +25503,8 @@ func init() {
 	pulumi.RegisterOutputType(MysqlConfigurationVariablesPtrOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemBackupPolicyOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemBackupPolicyPtrOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemBackupPolicyCopyPolicyOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemBackupPolicyCopyPolicyArrayOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemBackupPolicyPitrPolicyOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemBackupPolicyPitrPolicyPtrOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemChannelOutput{})
@@ -22955,6 +25575,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotBackupPolicyOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotBackupPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotDataStorageOutput{})
@@ -22979,6 +25601,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput{})
@@ -23013,6 +25637,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlConfigurationsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemBackupPolicyOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemBackupPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemBackupPolicyCopyPolicyOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemBackupPolicyCopyPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemBackupPolicyPitrPolicyOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemBackupPolicyPitrPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemChannelOutput{})
@@ -23053,6 +25679,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemBackupPolicyOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemBackupPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemChannelOutput{})

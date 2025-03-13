@@ -26,7 +26,7 @@ class GetApplicationVipResult:
     """
     A collection of values returned by getApplicationVip.
     """
-    def __init__(__self__, application_vip_id=None, cloud_vm_cluster_id=None, compartment_id=None, db_node_id=None, defined_tags=None, freeform_tags=None, hostname_label=None, id=None, ip_address=None, lifecycle_details=None, state=None, subnet_id=None, time_assigned=None):
+    def __init__(__self__, application_vip_id=None, cloud_vm_cluster_id=None, compartment_id=None, db_node_id=None, defined_tags=None, freeform_tags=None, hostname_label=None, id=None, ip_address=None, ipv6address=None, lifecycle_details=None, state=None, subnet_id=None, time_assigned=None):
         if application_vip_id and not isinstance(application_vip_id, str):
             raise TypeError("Expected argument 'application_vip_id' to be a str")
         pulumi.set(__self__, "application_vip_id", application_vip_id)
@@ -54,6 +54,9 @@ class GetApplicationVipResult:
         if ip_address and not isinstance(ip_address, str):
             raise TypeError("Expected argument 'ip_address' to be a str")
         pulumi.set(__self__, "ip_address", ip_address)
+        if ipv6address and not isinstance(ipv6address, str):
+            raise TypeError("Expected argument 'ipv6address' to be a str")
+        pulumi.set(__self__, "ipv6address", ipv6address)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -129,9 +132,17 @@ class GetApplicationVipResult:
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> str:
         """
-        The application virtual IP (VIP) address.
+        The application virtual IP (VIP) IPv4 address.
         """
         return pulumi.get(self, "ip_address")
+
+    @property
+    @pulumi.getter
+    def ipv6address(self) -> str:
+        """
+        The application virtual IP (VIP) IPv6 address.
+        """
+        return pulumi.get(self, "ipv6address")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -181,6 +192,7 @@ class AwaitableGetApplicationVipResult(GetApplicationVipResult):
             hostname_label=self.hostname_label,
             id=self.id,
             ip_address=self.ip_address,
+            ipv6address=self.ipv6address,
             lifecycle_details=self.lifecycle_details,
             state=self.state,
             subnet_id=self.subnet_id,
@@ -221,6 +233,7 @@ def get_application_vip(application_vip_id: Optional[str] = None,
         hostname_label=pulumi.get(__ret__, 'hostname_label'),
         id=pulumi.get(__ret__, 'id'),
         ip_address=pulumi.get(__ret__, 'ip_address'),
+        ipv6address=pulumi.get(__ret__, 'ipv6address'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         state=pulumi.get(__ret__, 'state'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
@@ -258,6 +271,7 @@ def get_application_vip_output(application_vip_id: Optional[pulumi.Input[str]] =
         hostname_label=pulumi.get(__response__, 'hostname_label'),
         id=pulumi.get(__response__, 'id'),
         ip_address=pulumi.get(__response__, 'ip_address'),
+        ipv6address=pulumi.get(__response__, 'ipv6address'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         state=pulumi.get(__response__, 'state'),
         subnet_id=pulumi.get(__response__, 'subnet_id'),

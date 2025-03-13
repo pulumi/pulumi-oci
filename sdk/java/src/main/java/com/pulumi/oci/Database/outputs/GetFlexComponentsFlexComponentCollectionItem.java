@@ -22,6 +22,31 @@ public final class GetFlexComponentsFlexComponentCollectionItem {
      */
     private Integer availableDbStorageInGbs;
     /**
+     * @return The maximum local storage that can be enabled on the DB Server for this Flex Component.
+     * 
+     */
+    private Integer availableLocalStorageInGbs;
+    /**
+     * @return The maximum memory size that can be enabled on the DB Server for this Flex Component.
+     * 
+     */
+    private Integer availableMemoryInGbs;
+    /**
+     * @return The compute model of the DB Server for this Flex Component.
+     * 
+     */
+    private String computeModel;
+    /**
+     * @return The description summary for this Flex Component.
+     * 
+     */
+    private String descriptionSummary;
+    /**
+     * @return The hardware type of the DB (Compute) or Storage (Cell) Server for this Flex Component.
+     * 
+     */
+    private String hardwareType;
+    /**
      * @return The minimum number of CPU cores that can be enabled on the DB Server for this Flex Component.
      * 
      */
@@ -31,6 +56,16 @@ public final class GetFlexComponentsFlexComponentCollectionItem {
      * 
      */
     private String name;
+    /**
+     * @return The runtime minimum number of CPU cores that can be enabled for this Flex Component.
+     * 
+     */
+    private Integer runtimeMinimumCoreCount;
+    /**
+     * @return A filter to return only resources that belong to the entire shape name given. The match is not case sensitive.
+     * 
+     */
+    private String shape;
 
     private GetFlexComponentsFlexComponentCollectionItem() {}
     /**
@@ -48,6 +83,41 @@ public final class GetFlexComponentsFlexComponentCollectionItem {
         return this.availableDbStorageInGbs;
     }
     /**
+     * @return The maximum local storage that can be enabled on the DB Server for this Flex Component.
+     * 
+     */
+    public Integer availableLocalStorageInGbs() {
+        return this.availableLocalStorageInGbs;
+    }
+    /**
+     * @return The maximum memory size that can be enabled on the DB Server for this Flex Component.
+     * 
+     */
+    public Integer availableMemoryInGbs() {
+        return this.availableMemoryInGbs;
+    }
+    /**
+     * @return The compute model of the DB Server for this Flex Component.
+     * 
+     */
+    public String computeModel() {
+        return this.computeModel;
+    }
+    /**
+     * @return The description summary for this Flex Component.
+     * 
+     */
+    public String descriptionSummary() {
+        return this.descriptionSummary;
+    }
+    /**
+     * @return The hardware type of the DB (Compute) or Storage (Cell) Server for this Flex Component.
+     * 
+     */
+    public String hardwareType() {
+        return this.hardwareType;
+    }
+    /**
      * @return The minimum number of CPU cores that can be enabled on the DB Server for this Flex Component.
      * 
      */
@@ -61,6 +131,20 @@ public final class GetFlexComponentsFlexComponentCollectionItem {
     public String name() {
         return this.name;
     }
+    /**
+     * @return The runtime minimum number of CPU cores that can be enabled for this Flex Component.
+     * 
+     */
+    public Integer runtimeMinimumCoreCount() {
+        return this.runtimeMinimumCoreCount;
+    }
+    /**
+     * @return A filter to return only resources that belong to the entire shape name given. The match is not case sensitive.
+     * 
+     */
+    public String shape() {
+        return this.shape;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -73,15 +157,29 @@ public final class GetFlexComponentsFlexComponentCollectionItem {
     public static final class Builder {
         private Integer availableCoreCount;
         private Integer availableDbStorageInGbs;
+        private Integer availableLocalStorageInGbs;
+        private Integer availableMemoryInGbs;
+        private String computeModel;
+        private String descriptionSummary;
+        private String hardwareType;
         private Integer minimumCoreCount;
         private String name;
+        private Integer runtimeMinimumCoreCount;
+        private String shape;
         public Builder() {}
         public Builder(GetFlexComponentsFlexComponentCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availableCoreCount = defaults.availableCoreCount;
     	      this.availableDbStorageInGbs = defaults.availableDbStorageInGbs;
+    	      this.availableLocalStorageInGbs = defaults.availableLocalStorageInGbs;
+    	      this.availableMemoryInGbs = defaults.availableMemoryInGbs;
+    	      this.computeModel = defaults.computeModel;
+    	      this.descriptionSummary = defaults.descriptionSummary;
+    	      this.hardwareType = defaults.hardwareType;
     	      this.minimumCoreCount = defaults.minimumCoreCount;
     	      this.name = defaults.name;
+    	      this.runtimeMinimumCoreCount = defaults.runtimeMinimumCoreCount;
+    	      this.shape = defaults.shape;
         }
 
         @CustomType.Setter
@@ -101,6 +199,46 @@ public final class GetFlexComponentsFlexComponentCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder availableLocalStorageInGbs(Integer availableLocalStorageInGbs) {
+            if (availableLocalStorageInGbs == null) {
+              throw new MissingRequiredPropertyException("GetFlexComponentsFlexComponentCollectionItem", "availableLocalStorageInGbs");
+            }
+            this.availableLocalStorageInGbs = availableLocalStorageInGbs;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder availableMemoryInGbs(Integer availableMemoryInGbs) {
+            if (availableMemoryInGbs == null) {
+              throw new MissingRequiredPropertyException("GetFlexComponentsFlexComponentCollectionItem", "availableMemoryInGbs");
+            }
+            this.availableMemoryInGbs = availableMemoryInGbs;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder computeModel(String computeModel) {
+            if (computeModel == null) {
+              throw new MissingRequiredPropertyException("GetFlexComponentsFlexComponentCollectionItem", "computeModel");
+            }
+            this.computeModel = computeModel;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder descriptionSummary(String descriptionSummary) {
+            if (descriptionSummary == null) {
+              throw new MissingRequiredPropertyException("GetFlexComponentsFlexComponentCollectionItem", "descriptionSummary");
+            }
+            this.descriptionSummary = descriptionSummary;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder hardwareType(String hardwareType) {
+            if (hardwareType == null) {
+              throw new MissingRequiredPropertyException("GetFlexComponentsFlexComponentCollectionItem", "hardwareType");
+            }
+            this.hardwareType = hardwareType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder minimumCoreCount(Integer minimumCoreCount) {
             if (minimumCoreCount == null) {
               throw new MissingRequiredPropertyException("GetFlexComponentsFlexComponentCollectionItem", "minimumCoreCount");
@@ -116,12 +254,35 @@ public final class GetFlexComponentsFlexComponentCollectionItem {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
+        public Builder runtimeMinimumCoreCount(Integer runtimeMinimumCoreCount) {
+            if (runtimeMinimumCoreCount == null) {
+              throw new MissingRequiredPropertyException("GetFlexComponentsFlexComponentCollectionItem", "runtimeMinimumCoreCount");
+            }
+            this.runtimeMinimumCoreCount = runtimeMinimumCoreCount;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder shape(String shape) {
+            if (shape == null) {
+              throw new MissingRequiredPropertyException("GetFlexComponentsFlexComponentCollectionItem", "shape");
+            }
+            this.shape = shape;
+            return this;
+        }
         public GetFlexComponentsFlexComponentCollectionItem build() {
             final var _resultValue = new GetFlexComponentsFlexComponentCollectionItem();
             _resultValue.availableCoreCount = availableCoreCount;
             _resultValue.availableDbStorageInGbs = availableDbStorageInGbs;
+            _resultValue.availableLocalStorageInGbs = availableLocalStorageInGbs;
+            _resultValue.availableMemoryInGbs = availableMemoryInGbs;
+            _resultValue.computeModel = computeModel;
+            _resultValue.descriptionSummary = descriptionSummary;
+            _resultValue.hardwareType = hardwareType;
             _resultValue.minimumCoreCount = minimumCoreCount;
             _resultValue.name = name;
+            _resultValue.runtimeMinimumCoreCount = runtimeMinimumCoreCount;
+            _resultValue.shape = shape;
             return _resultValue;
         }
     }

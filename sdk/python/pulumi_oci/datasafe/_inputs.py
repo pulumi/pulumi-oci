@@ -83,6 +83,10 @@ __all__ = [
     'SensitiveDataModelReferentialRelationParentArgsDict',
     'SensitiveDataModelTablesForDiscoveryArgs',
     'SensitiveDataModelTablesForDiscoveryArgsDict',
+    'SensitiveTypeGroupGroupedSensitiveTypeItemArgs',
+    'SensitiveTypeGroupGroupedSensitiveTypeItemArgsDict',
+    'SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs',
+    'SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgsDict',
     'TargetDatabaseConnectionOptionArgs',
     'TargetDatabaseConnectionOptionArgsDict',
     'TargetDatabaseCredentialsArgs',
@@ -157,6 +161,8 @@ __all__ = [
     'GetMaskingPolicyReferentialRelationsFilterArgsDict',
     'GetMaskingReportMaskedColumnsFilterArgs',
     'GetMaskingReportMaskedColumnsFilterArgsDict',
+    'GetMaskingReportMaskingErrorsFilterArgs',
+    'GetMaskingReportMaskingErrorsFilterArgsDict',
     'GetMaskingReportsFilterArgs',
     'GetMaskingReportsFilterArgsDict',
     'GetOnpremConnectorsFilterArgs',
@@ -197,6 +203,8 @@ __all__ = [
     'GetSecurityPolicyReportRoleGrantPathsFilterArgsDict',
     'GetSecurityPolicyReportsFilterArgs',
     'GetSecurityPolicyReportsFilterArgsDict',
+    'GetSensitiveColumnAnalyticsFilterArgs',
+    'GetSensitiveColumnAnalyticsFilterArgsDict',
     'GetSensitiveDataModelReferentialRelationsFilterArgs',
     'GetSensitiveDataModelReferentialRelationsFilterArgsDict',
     'GetSensitiveDataModelSensitiveObjectsFilterArgs',
@@ -209,6 +217,10 @@ __all__ = [
     'GetSensitiveDataModelsFilterArgsDict',
     'GetSensitiveDataModelsSensitiveColumnsFilterArgs',
     'GetSensitiveDataModelsSensitiveColumnsFilterArgsDict',
+    'GetSensitiveTypeGroupGroupedSensitiveTypesFilterArgs',
+    'GetSensitiveTypeGroupGroupedSensitiveTypesFilterArgsDict',
+    'GetSensitiveTypeGroupsFilterArgs',
+    'GetSensitiveTypeGroupsFilterArgsDict',
     'GetSensitiveTypesExportsFilterArgs',
     'GetSensitiveTypesExportsFilterArgsDict',
     'GetSensitiveTypesFilterArgs',
@@ -5461,6 +5473,107 @@ class SensitiveDataModelTablesForDiscoveryArgs:
 
 
 if not MYPY:
+    class SensitiveTypeGroupGroupedSensitiveTypeItemArgsDict(TypedDict):
+        sensitive_type_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the sensitive type.
+        """
+elif False:
+    SensitiveTypeGroupGroupedSensitiveTypeItemArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class SensitiveTypeGroupGroupedSensitiveTypeItemArgs:
+    def __init__(__self__, *,
+                 sensitive_type_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] sensitive_type_id: The OCID of the sensitive type.
+        """
+        if sensitive_type_id is not None:
+            pulumi.set(__self__, "sensitive_type_id", sensitive_type_id)
+
+    @property
+    @pulumi.getter(name="sensitiveTypeId")
+    def sensitive_type_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the sensitive type.
+        """
+        return pulumi.get(self, "sensitive_type_id")
+
+    @sensitive_type_id.setter
+    def sensitive_type_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "sensitive_type_id", value)
+
+
+if not MYPY:
+    class SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgsDict(TypedDict):
+        operation: pulumi.Input[str]
+        """
+        (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
+        """
+        selection: pulumi.Input[str]
+        """
+        (Updatable)
+        """
+        value: pulumi.Input[Mapping[str, pulumi.Input[str]]]
+        """
+        (Updatable)
+        """
+elif False:
+    SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs:
+    def __init__(__self__, *,
+                 operation: pulumi.Input[str],
+                 selection: pulumi.Input[str],
+                 value: pulumi.Input[Mapping[str, pulumi.Input[str]]]):
+        """
+        :param pulumi.Input[str] operation: (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
+        :param pulumi.Input[str] selection: (Updatable)
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] value: (Updatable)
+        """
+        pulumi.set(__self__, "operation", operation)
+        pulumi.set(__self__, "selection", selection)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def operation(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
+        """
+        return pulumi.get(self, "operation")
+
+    @operation.setter
+    def operation(self, value: pulumi.Input[str]):
+        pulumi.set(self, "operation", value)
+
+    @property
+    @pulumi.getter
+    def selection(self) -> pulumi.Input[str]:
+        """
+        (Updatable)
+        """
+        return pulumi.get(self, "selection")
+
+    @selection.setter
+    def selection(self, value: pulumi.Input[str]):
+        pulumi.set(self, "selection", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Mapping[str, pulumi.Input[str]]]:
+        """
+        (Updatable)
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Mapping[str, pulumi.Input[str]]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
     class TargetDatabaseConnectionOptionArgsDict(TypedDict):
         connection_type: pulumi.Input[str]
         """
@@ -8295,6 +8408,53 @@ class GetMaskingReportMaskedColumnsFilterArgs:
 
 
 if not MYPY:
+    class GetMaskingReportMaskingErrorsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetMaskingReportMaskingErrorsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetMaskingReportMaskingErrorsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
     class GetMaskingReportsFilterArgsDict(TypedDict):
         name: str
         values: Sequence[str]
@@ -9244,6 +9404,53 @@ class GetSecurityPolicyReportsFilterArgs:
 
 
 if not MYPY:
+    class GetSensitiveColumnAnalyticsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSensitiveColumnAnalyticsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetSensitiveColumnAnalyticsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
     class GetSensitiveDataModelReferentialRelationsFilterArgsDict(TypedDict):
         name: str
         values: Sequence[str]
@@ -9488,6 +9695,100 @@ elif False:
 
 @pulumi.input_type
 class GetSensitiveDataModelsSensitiveColumnsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetSensitiveTypeGroupGroupedSensitiveTypesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSensitiveTypeGroupGroupedSensitiveTypesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetSensitiveTypeGroupGroupedSensitiveTypesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetSensitiveTypeGroupsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSensitiveTypeGroupsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetSensitiveTypeGroupsFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

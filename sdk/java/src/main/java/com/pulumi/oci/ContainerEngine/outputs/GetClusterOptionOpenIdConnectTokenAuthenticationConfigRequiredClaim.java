@@ -10,13 +10,29 @@ import java.util.Objects;
 
 @CustomType
 public final class GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaim {
+    /**
+     * @return The key of the pair.
+     * 
+     */
     private String key;
+    /**
+     * @return The value of the pair.
+     * 
+     */
     private String value;
 
     private GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaim() {}
+    /**
+     * @return The key of the pair.
+     * 
+     */
     public String key() {
         return this.key;
     }
+    /**
+     * @return The value of the pair.
+     * 
+     */
     public String value() {
         return this.value;
     }

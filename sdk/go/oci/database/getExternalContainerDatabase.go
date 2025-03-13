@@ -64,7 +64,7 @@ type LookupExternalContainerDatabaseResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The Oracle Database configuration
 	DatabaseConfiguration string `pulumi:"databaseConfiguration"`
-	// The Oracle Database edition.
+	// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
 	DatabaseEdition string `pulumi:"databaseEdition"`
 	// The configuration of the Database Management service.
 	DatabaseManagementConfigs []GetExternalContainerDatabaseDatabaseManagementConfig `pulumi:"databaseManagementConfigs"`
@@ -148,7 +148,7 @@ func (o LookupExternalContainerDatabaseResultOutput) DatabaseConfiguration() pul
 	return o.ApplyT(func(v LookupExternalContainerDatabaseResult) string { return v.DatabaseConfiguration }).(pulumi.StringOutput)
 }
 
-// The Oracle Database edition.
+// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
 func (o LookupExternalContainerDatabaseResultOutput) DatabaseEdition() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExternalContainerDatabaseResult) string { return v.DatabaseEdition }).(pulumi.StringOutput)
 }

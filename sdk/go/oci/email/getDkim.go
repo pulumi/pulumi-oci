@@ -75,10 +75,15 @@ type LookupDkimResult struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DKIM.
 	Id string `pulumi:"id"`
+	// Indicates whether the DKIM was imported.
+	IsImported bool `pulumi:"isImported"`
+	// Length of the RSA key used in the DKIM.
+	KeyLength int `pulumi:"keyLength"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The DKIM selector. If the same domain is managed in more than one region, each region must use different selectors.
-	Name string `pulumi:"name"`
+	Name       string `pulumi:"name"`
+	PrivateKey string `pulumi:"privateKey"`
 	// The current state of the DKIM.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -169,6 +174,16 @@ func (o LookupDkimResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDkimResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// Indicates whether the DKIM was imported.
+func (o LookupDkimResultOutput) IsImported() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupDkimResult) bool { return v.IsImported }).(pulumi.BoolOutput)
+}
+
+// Length of the RSA key used in the DKIM.
+func (o LookupDkimResultOutput) KeyLength() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupDkimResult) int { return v.KeyLength }).(pulumi.IntOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource.
 func (o LookupDkimResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDkimResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
@@ -177,6 +192,10 @@ func (o LookupDkimResultOutput) LifecycleDetails() pulumi.StringOutput {
 // The DKIM selector. If the same domain is managed in more than one region, each region must use different selectors.
 func (o LookupDkimResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDkimResult) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o LookupDkimResultOutput) PrivateKey() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDkimResult) string { return v.PrivateKey }).(pulumi.StringOutput)
 }
 
 // The current state of the DKIM.

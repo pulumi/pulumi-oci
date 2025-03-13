@@ -31,6 +31,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := datascience.GetModels(ctx, &datascience.GetModelsArgs{
 //				CompartmentId:       compartmentId,
+//				Category:            pulumi.StringRef(modelCategory),
 //				CreatedBy:           pulumi.StringRef(modelCreatedBy),
 //				DisplayName:         pulumi.StringRef(modelDisplayName),
 //				Id:                  pulumi.StringRef(modelId),
@@ -58,6 +59,8 @@ func GetModels(ctx *pulumi.Context, args *GetModelsArgs, opts ...pulumi.InvokeOp
 
 // A collection of arguments for invoking getModels.
 type GetModelsArgs struct {
+	// Specifies the type of models to list. By default, user models are listed.
+	Category *string `pulumi:"category"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
@@ -80,6 +83,8 @@ type GetModelsArgs struct {
 
 // A collection of values returned by getModels.
 type GetModelsResult struct {
+	// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
+	Category *string `pulumi:"category"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model's compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
@@ -113,6 +118,8 @@ func GetModelsOutput(ctx *pulumi.Context, args GetModelsOutputArgs, opts ...pulu
 
 // A collection of arguments for invoking getModels.
 type GetModelsOutputArgs struct {
+	// Specifies the type of models to list. By default, user models are listed.
+	Category pulumi.StringPtrInput `pulumi:"category"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
@@ -150,6 +157,11 @@ func (o GetModelsResultOutput) ToGetModelsResultOutput() GetModelsResultOutput {
 
 func (o GetModelsResultOutput) ToGetModelsResultOutputWithContext(ctx context.Context) GetModelsResultOutput {
 	return o
+}
+
+// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
+func (o GetModelsResultOutput) Category() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelsResult) *string { return v.Category }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model's compartment.

@@ -61,6 +61,11 @@ public final class GetMysqlDbSystemChannel {
      */
     private String state;
     /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    private Map<String,String> systemTags;
+    /**
      * @return Details about the Channel target.
      * 
      */
@@ -141,6 +146,13 @@ public final class GetMysqlDbSystemChannel {
         return this.state;
     }
     /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return Details about the Channel target.
      * 
      */
@@ -180,6 +192,7 @@ public final class GetMysqlDbSystemChannel {
         private String lifecycleDetails;
         private List<GetMysqlDbSystemChannelSource> sources;
         private String state;
+        private Map<String,String> systemTags;
         private List<GetMysqlDbSystemChannelTarget> targets;
         private String timeCreated;
         private String timeUpdated;
@@ -195,6 +208,7 @@ public final class GetMysqlDbSystemChannel {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.sources = defaults.sources;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
     	      this.targets = defaults.targets;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -276,6 +290,14 @@ public final class GetMysqlDbSystemChannel {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemChannel", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder targets(List<GetMysqlDbSystemChannelTarget> targets) {
             if (targets == null) {
               throw new MissingRequiredPropertyException("GetMysqlDbSystemChannel", "targets");
@@ -313,6 +335,7 @@ public final class GetMysqlDbSystemChannel {
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.sources = sources;
             _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
             _resultValue.targets = targets;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;

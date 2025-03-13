@@ -1004,6 +1004,8 @@ class ClusterOptionsOpenIdConnectTokenAuthenticationConfig(dict):
             suggest = "ca_certificate"
         elif key == "clientId":
             suggest = "client_id"
+        elif key == "configurationFile":
+            suggest = "configuration_file"
         elif key == "groupsClaim":
             suggest = "groups_claim"
         elif key == "groupsPrefix":
@@ -1034,6 +1036,7 @@ class ClusterOptionsOpenIdConnectTokenAuthenticationConfig(dict):
                  is_open_id_connect_auth_enabled: bool,
                  ca_certificate: Optional[str] = None,
                  client_id: Optional[str] = None,
+                 configuration_file: Optional[str] = None,
                  groups_claim: Optional[str] = None,
                  groups_prefix: Optional[str] = None,
                  issuer_url: Optional[str] = None,
@@ -1045,6 +1048,7 @@ class ClusterOptionsOpenIdConnectTokenAuthenticationConfig(dict):
         :param bool is_open_id_connect_auth_enabled: (Updatable) Whether the cluster has OIDC Auth Config enabled. Defaults to false.
         :param str ca_certificate: (Updatable) A Base64 encoded public RSA or ECDSA certificates used to signed your identity provider's web certificate.
         :param str client_id: (Updatable) A client id that all tokens must be issued for.
+        :param str configuration_file: (Updatable) A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
         :param str groups_claim: (Updatable) JWT claim to use as the user's group. If the claim is present it must be an array of strings.
         :param str groups_prefix: (Updatable) Prefix prepended to group claims to prevent clashes with existing names (such as system:groups).
         :param str issuer_url: (Updatable) URL of the provider that allows the API server to discover public signing keys.  Only URLs that use the https:// scheme are accepted. This is typically the provider's discovery URL,  changed to have an empty path.
@@ -1058,6 +1062,8 @@ class ClusterOptionsOpenIdConnectTokenAuthenticationConfig(dict):
             pulumi.set(__self__, "ca_certificate", ca_certificate)
         if client_id is not None:
             pulumi.set(__self__, "client_id", client_id)
+        if configuration_file is not None:
+            pulumi.set(__self__, "configuration_file", configuration_file)
         if groups_claim is not None:
             pulumi.set(__self__, "groups_claim", groups_claim)
         if groups_prefix is not None:
@@ -1096,6 +1102,14 @@ class ClusterOptionsOpenIdConnectTokenAuthenticationConfig(dict):
         (Updatable) A client id that all tokens must be issued for.
         """
         return pulumi.get(self, "client_id")
+
+    @property
+    @pulumi.getter(name="configurationFile")
+    def configuration_file(self) -> Optional[str]:
+        """
+        (Updatable) A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+        """
+        return pulumi.get(self, "configuration_file")
 
     @property
     @pulumi.getter(name="groupsClaim")
@@ -1394,7 +1408,7 @@ class ContainerInstanceContainer(dict):
                The total size of all environment variables combined, name and values, must be 64 KB or smaller.
         :param str fault_domain: The fault domain where the container instance runs.
         :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param Sequence['ContainerInstanceContainerHealthCheckArgs'] health_checks: list of container health checks to check container status and take appropriate action if container status is failed. There are three types of health checks that we currently support HTTP, TCP, and Command.
+        :param Sequence['ContainerInstanceContainerHealthCheckArgs'] health_checks: list of container health checks to check container status and take appropriate action if container status is failed. There are two types of health checks that we currently support HTTP and TCP.
         :param bool is_resource_principal_disabled: Determines if the container will have access to the container instance resource principal.
                
                This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
@@ -1574,7 +1588,7 @@ class ContainerInstanceContainer(dict):
     @pulumi.getter(name="healthChecks")
     def health_checks(self) -> Optional[Sequence['outputs.ContainerInstanceContainerHealthCheck']]:
         """
-        list of container health checks to check container status and take appropriate action if container status is failed. There are three types of health checks that we currently support HTTP, TCP, and Command.
+        list of container health checks to check container status and take appropriate action if container status is failed. There are two types of health checks that we currently support HTTP and TCP.
         """
         return pulumi.get(self, "health_checks")
 
@@ -1705,7 +1719,7 @@ class ContainerInstanceContainerHealthCheck(dict):
 
     def __init__(__self__, *,
                  health_check_type: str,
-                 commands: Optional[Sequence[str]] = None,
+                 port: int,
                  failure_action: Optional[str] = None,
                  failure_threshold: Optional[int] = None,
                  headers: Optional[Sequence['outputs.ContainerInstanceContainerHealthCheckHeader']] = None,
@@ -1713,14 +1727,13 @@ class ContainerInstanceContainerHealthCheck(dict):
                  interval_in_seconds: Optional[int] = None,
                  name: Optional[str] = None,
                  path: Optional[str] = None,
-                 port: Optional[int] = None,
                  status: Optional[str] = None,
                  status_details: Optional[str] = None,
                  success_threshold: Optional[int] = None,
                  timeout_in_seconds: Optional[int] = None):
         """
         :param str health_check_type: Container health check type.
-        :param Sequence[str] commands: The list of strings that will be simplified to a single command for checking the status of the container.
+        :param int port: Container health check HTTP port.
         :param str failure_action: The action will be triggered when the container health check fails. There are two types of action: KILL or NONE. The default action is KILL. If failure action is KILL, the container will be subject to the container restart policy.
         :param int failure_threshold: Number of consecutive failures at which we consider the check failed.
         :param Sequence['ContainerInstanceContainerHealthCheckHeaderArgs'] headers: Container health check HTTP headers.
@@ -1728,13 +1741,11 @@ class ContainerInstanceContainerHealthCheck(dict):
         :param int interval_in_seconds: Number of seconds between two consecutive runs for checking container health.
         :param str name: Health check name.
         :param str path: Container health check HTTP path.
-        :param int port: Container health check HTTP port.
         :param int success_threshold: Number of consecutive successes at which we consider the check succeeded again after it was in failure state.
         :param int timeout_in_seconds: Length of waiting time in seconds before marking health check failed.
         """
         pulumi.set(__self__, "health_check_type", health_check_type)
-        if commands is not None:
-            pulumi.set(__self__, "commands", commands)
+        pulumi.set(__self__, "port", port)
         if failure_action is not None:
             pulumi.set(__self__, "failure_action", failure_action)
         if failure_threshold is not None:
@@ -1749,8 +1760,6 @@ class ContainerInstanceContainerHealthCheck(dict):
             pulumi.set(__self__, "name", name)
         if path is not None:
             pulumi.set(__self__, "path", path)
-        if port is not None:
-            pulumi.set(__self__, "port", port)
         if status is not None:
             pulumi.set(__self__, "status", status)
         if status_details is not None:
@@ -1770,11 +1779,11 @@ class ContainerInstanceContainerHealthCheck(dict):
 
     @property
     @pulumi.getter
-    def commands(self) -> Optional[Sequence[str]]:
+    def port(self) -> int:
         """
-        The list of strings that will be simplified to a single command for checking the status of the container.
+        Container health check HTTP port.
         """
-        return pulumi.get(self, "commands")
+        return pulumi.get(self, "port")
 
     @property
     @pulumi.getter(name="failureAction")
@@ -1831,14 +1840,6 @@ class ContainerInstanceContainerHealthCheck(dict):
         Container health check HTTP path.
         """
         return pulumi.get(self, "path")
-
-    @property
-    @pulumi.getter
-    def port(self) -> Optional[int]:
-        """
-        Container health check HTTP port.
-        """
-        return pulumi.get(self, "port")
 
     @property
     @pulumi.getter
@@ -4812,6 +4813,8 @@ class GetClusterOptionResult(dict):
         :param Sequence['GetClusterOptionAdmissionControllerOptionArgs'] admission_controller_options: Configurable cluster admission controllers
         :param Sequence[str] ip_families: IP family to use for single stack or define the order of IP families for dual-stack
         :param Sequence['GetClusterOptionKubernetesNetworkConfigArgs'] kubernetes_network_configs: Network configuration for Kubernetes.
+        :param Sequence['GetClusterOptionOpenIdConnectDiscoveryArgs'] open_id_connect_discoveries: The property that define the status of the OIDC Discovery feature for a cluster.
+        :param Sequence['GetClusterOptionOpenIdConnectTokenAuthenticationConfigArgs'] open_id_connect_token_authentication_configs: The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
         :param Sequence['GetClusterOptionPersistentVolumeConfigArgs'] persistent_volume_configs: Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
         :param Sequence['GetClusterOptionServiceLbConfigArgs'] service_lb_configs: Configuration to be applied to load balancers created by Kubernetes services
         :param Sequence[str] service_lb_subnet_ids: The OCIDs of the subnets used for Kubernetes services load balancers.
@@ -4861,11 +4864,17 @@ class GetClusterOptionResult(dict):
     @property
     @pulumi.getter(name="openIdConnectDiscoveries")
     def open_id_connect_discoveries(self) -> Sequence['outputs.GetClusterOptionOpenIdConnectDiscoveryResult']:
+        """
+        The property that define the status of the OIDC Discovery feature for a cluster.
+        """
         return pulumi.get(self, "open_id_connect_discoveries")
 
     @property
     @pulumi.getter(name="openIdConnectTokenAuthenticationConfigs")
     def open_id_connect_token_authentication_configs(self) -> Sequence['outputs.GetClusterOptionOpenIdConnectTokenAuthenticationConfigResult']:
+        """
+        The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
+        """
         return pulumi.get(self, "open_id_connect_token_authentication_configs")
 
     @property
@@ -4991,11 +5000,17 @@ class GetClusterOptionKubernetesNetworkConfigResult(dict):
 class GetClusterOptionOpenIdConnectDiscoveryResult(dict):
     def __init__(__self__, *,
                  is_open_id_connect_discovery_enabled: bool):
+        """
+        :param bool is_open_id_connect_discovery_enabled: Whether the cluster has OIDC Discovery enabled. Defaults to false. If set to true, the cluster will be assigned a public OIDC Discovery endpoint.
+        """
         pulumi.set(__self__, "is_open_id_connect_discovery_enabled", is_open_id_connect_discovery_enabled)
 
     @property
     @pulumi.getter(name="isOpenIdConnectDiscoveryEnabled")
     def is_open_id_connect_discovery_enabled(self) -> bool:
+        """
+        Whether the cluster has OIDC Discovery enabled. Defaults to false. If set to true, the cluster will be assigned a public OIDC Discovery endpoint.
+        """
         return pulumi.get(self, "is_open_id_connect_discovery_enabled")
 
 
@@ -5004,6 +5019,7 @@ class GetClusterOptionOpenIdConnectTokenAuthenticationConfigResult(dict):
     def __init__(__self__, *,
                  ca_certificate: str,
                  client_id: str,
+                 configuration_file: str,
                  groups_claim: str,
                  groups_prefix: str,
                  is_open_id_connect_auth_enabled: bool,
@@ -5012,8 +5028,22 @@ class GetClusterOptionOpenIdConnectTokenAuthenticationConfigResult(dict):
                  signing_algorithms: Sequence[str],
                  username_claim: str,
                  username_prefix: str):
+        """
+        :param str ca_certificate: A Base64 encoded public RSA or ECDSA certificates used to signed your identity provider's web certificate.
+        :param str client_id: A client id that all tokens must be issued for.
+        :param str configuration_file: A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+        :param str groups_claim: JWT claim to use as the user's group. If the claim is present it must be an array of strings.
+        :param str groups_prefix: Prefix prepended to group claims to prevent clashes with existing names (such as system:groups).
+        :param bool is_open_id_connect_auth_enabled: Whether the cluster has OIDC Auth Config enabled. Defaults to false.
+        :param str issuer_url: URL of the provider that allows the API server to discover public signing keys.  Only URLs that use the https:// scheme are accepted. This is typically the provider's discovery URL,  changed to have an empty path.
+        :param Sequence['GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs'] required_claims: A key=value pair that describes a required claim in the ID Token. If set, the claim is verified to be present  in the ID Token with a matching value. Repeat this flag to specify multiple claims.
+        :param Sequence[str] signing_algorithms: The signing algorithms accepted. Default is ["RS256"].
+        :param str username_claim: JWT claim to use as the user name. By default sub, which is expected to be a unique identifier of the end  user. Admins can choose other claims, such as email or name, depending on their provider. However, claims  other than email will be prefixed with the issuer URL to prevent naming clashes with other plugins.
+        :param str username_prefix: Prefix prepended to username claims to prevent clashes with existing names (such as system:users).  For example, the value oidc: will create usernames like oidc:jane.doe. If this flag isn't provided and  --oidc-username-claim is a value other than email the prefix defaults to ( Issuer URL )# where  ( Issuer URL ) is the value of --oidc-issuer-url. The value - can be used to disable all prefixing.
+        """
         pulumi.set(__self__, "ca_certificate", ca_certificate)
         pulumi.set(__self__, "client_id", client_id)
+        pulumi.set(__self__, "configuration_file", configuration_file)
         pulumi.set(__self__, "groups_claim", groups_claim)
         pulumi.set(__self__, "groups_prefix", groups_prefix)
         pulumi.set(__self__, "is_open_id_connect_auth_enabled", is_open_id_connect_auth_enabled)
@@ -5026,51 +5056,89 @@ class GetClusterOptionOpenIdConnectTokenAuthenticationConfigResult(dict):
     @property
     @pulumi.getter(name="caCertificate")
     def ca_certificate(self) -> str:
+        """
+        A Base64 encoded public RSA or ECDSA certificates used to signed your identity provider's web certificate.
+        """
         return pulumi.get(self, "ca_certificate")
 
     @property
     @pulumi.getter(name="clientId")
     def client_id(self) -> str:
+        """
+        A client id that all tokens must be issued for.
+        """
         return pulumi.get(self, "client_id")
+
+    @property
+    @pulumi.getter(name="configurationFile")
+    def configuration_file(self) -> str:
+        """
+        A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+        """
+        return pulumi.get(self, "configuration_file")
 
     @property
     @pulumi.getter(name="groupsClaim")
     def groups_claim(self) -> str:
+        """
+        JWT claim to use as the user's group. If the claim is present it must be an array of strings.
+        """
         return pulumi.get(self, "groups_claim")
 
     @property
     @pulumi.getter(name="groupsPrefix")
     def groups_prefix(self) -> str:
+        """
+        Prefix prepended to group claims to prevent clashes with existing names (such as system:groups).
+        """
         return pulumi.get(self, "groups_prefix")
 
     @property
     @pulumi.getter(name="isOpenIdConnectAuthEnabled")
     def is_open_id_connect_auth_enabled(self) -> bool:
+        """
+        Whether the cluster has OIDC Auth Config enabled. Defaults to false.
+        """
         return pulumi.get(self, "is_open_id_connect_auth_enabled")
 
     @property
     @pulumi.getter(name="issuerUrl")
     def issuer_url(self) -> str:
+        """
+        URL of the provider that allows the API server to discover public signing keys.  Only URLs that use the https:// scheme are accepted. This is typically the provider's discovery URL,  changed to have an empty path.
+        """
         return pulumi.get(self, "issuer_url")
 
     @property
     @pulumi.getter(name="requiredClaims")
     def required_claims(self) -> Sequence['outputs.GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimResult']:
+        """
+        A key=value pair that describes a required claim in the ID Token. If set, the claim is verified to be present  in the ID Token with a matching value. Repeat this flag to specify multiple claims.
+        """
         return pulumi.get(self, "required_claims")
 
     @property
     @pulumi.getter(name="signingAlgorithms")
     def signing_algorithms(self) -> Sequence[str]:
+        """
+        The signing algorithms accepted. Default is ["RS256"].
+        """
         return pulumi.get(self, "signing_algorithms")
 
     @property
     @pulumi.getter(name="usernameClaim")
     def username_claim(self) -> str:
+        """
+        JWT claim to use as the user name. By default sub, which is expected to be a unique identifier of the end  user. Admins can choose other claims, such as email or name, depending on their provider. However, claims  other than email will be prefixed with the issuer URL to prevent naming clashes with other plugins.
+        """
         return pulumi.get(self, "username_claim")
 
     @property
     @pulumi.getter(name="usernamePrefix")
     def username_prefix(self) -> str:
+        """
+        Prefix prepended to username claims to prevent clashes with existing names (such as system:users).  For example, the value oidc: will create usernames like oidc:jane.doe. If this flag isn't provided and  --oidc-username-claim is a value other than email the prefix defaults to ( Issuer URL )# where  ( Issuer URL ) is the value of --oidc-issuer-url. The value - can be used to disable all prefixing.
+        """
         return pulumi.get(self, "username_prefix")
 
 
@@ -5079,17 +5147,27 @@ class GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimResult(
     def __init__(__self__, *,
                  key: str,
                  value: str):
+        """
+        :param str key: The key of the pair.
+        :param str value: The value of the pair.
+        """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
     def key(self) -> str:
+        """
+        The key of the pair.
+        """
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
     def value(self) -> str:
+        """
+        The value of the pair.
+        """
         return pulumi.get(self, "value")
 
 
@@ -5989,6 +6067,7 @@ class GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigResult(dict)
     def __init__(__self__, *,
                  ca_certificate: str,
                  client_id: str,
+                 configuration_file: str,
                  groups_claim: str,
                  groups_prefix: str,
                  is_open_id_connect_auth_enabled: bool,
@@ -6000,6 +6079,7 @@ class GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigResult(dict)
         """
         :param str ca_certificate: A Base64 encoded public RSA or ECDSA certificates used to signed your identity provider's web certificate.
         :param str client_id: A client id that all tokens must be issued for.
+        :param str configuration_file: A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
         :param str groups_claim: JWT claim to use as the user's group. If the claim is present it must be an array of strings.
         :param str groups_prefix: Prefix prepended to group claims to prevent clashes with existing names (such as system:groups).
         :param bool is_open_id_connect_auth_enabled: Whether the cluster has OIDC Auth Config enabled. Defaults to false.
@@ -6011,6 +6091,7 @@ class GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigResult(dict)
         """
         pulumi.set(__self__, "ca_certificate", ca_certificate)
         pulumi.set(__self__, "client_id", client_id)
+        pulumi.set(__self__, "configuration_file", configuration_file)
         pulumi.set(__self__, "groups_claim", groups_claim)
         pulumi.set(__self__, "groups_prefix", groups_prefix)
         pulumi.set(__self__, "is_open_id_connect_auth_enabled", is_open_id_connect_auth_enabled)
@@ -6035,6 +6116,14 @@ class GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigResult(dict)
         A client id that all tokens must be issued for.
         """
         return pulumi.get(self, "client_id")
+
+    @property
+    @pulumi.getter(name="configurationFile")
+    def configuration_file(self) -> str:
+        """
+        A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+        """
+        return pulumi.get(self, "configuration_file")
 
     @property
     @pulumi.getter(name="groupsClaim")

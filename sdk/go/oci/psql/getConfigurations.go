@@ -31,6 +31,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := psql.GetConfigurations(ctx, &psql.GetConfigurationsArgs{
 //				CompartmentId:   pulumi.StringRef(compartmentId),
+//				ConfigType:      pulumi.StringRef(configurationConfigType),
 //				ConfigurationId: pulumi.StringRef(testConfiguration.Id),
 //				DbVersion:       pulumi.StringRef(configurationDbVersion),
 //				DisplayName:     pulumi.StringRef(configurationDisplayName),
@@ -59,6 +60,8 @@ func GetConfigurations(ctx *pulumi.Context, args *GetConfigurationsArgs, opts ..
 type GetConfigurationsArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId *string `pulumi:"compartmentId"`
+	// A filter to return only resources if their `configType` matches the given `configType`.
+	ConfigType *string `pulumi:"configType"`
 	// A unique identifier for the configuration.
 	ConfigurationId *string `pulumi:"configurationId"`
 	// Version of the PostgreSQL database, such as 14.9.
@@ -76,6 +79,8 @@ type GetConfigurationsArgs struct {
 type GetConfigurationsResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
 	CompartmentId *string `pulumi:"compartmentId"`
+	// The type of configuration. Either user-created or a default configuration.
+	ConfigType *string `pulumi:"configType"`
 	// The list of configuration_collection.
 	ConfigurationCollections []GetConfigurationsConfigurationCollection `pulumi:"configurationCollections"`
 	ConfigurationId          *string                                    `pulumi:"configurationId"`
@@ -105,6 +110,8 @@ func GetConfigurationsOutput(ctx *pulumi.Context, args GetConfigurationsOutputAr
 type GetConfigurationsOutputArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
+	// A filter to return only resources if their `configType` matches the given `configType`.
+	ConfigType pulumi.StringPtrInput `pulumi:"configType"`
 	// A unique identifier for the configuration.
 	ConfigurationId pulumi.StringPtrInput `pulumi:"configurationId"`
 	// Version of the PostgreSQL database, such as 14.9.
@@ -140,6 +147,11 @@ func (o GetConfigurationsResultOutput) ToGetConfigurationsResultOutputWithContex
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
 func (o GetConfigurationsResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetConfigurationsResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
+}
+
+// The type of configuration. Either user-created or a default configuration.
+func (o GetConfigurationsResultOutput) ConfigType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigurationsResult) *string { return v.ConfigType }).(pulumi.StringPtrOutput)
 }
 
 // The list of configuration_collection.

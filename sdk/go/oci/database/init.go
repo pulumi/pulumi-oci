@@ -93,6 +93,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ExadataInfrastructure{}
 	case "oci:Database/exadataInfrastructureCompute:ExadataInfrastructureCompute":
 		r = &ExadataInfrastructureCompute{}
+	case "oci:Database/exadataInfrastructureConfigureExascaleManagement:ExadataInfrastructureConfigureExascaleManagement":
+		r = &ExadataInfrastructureConfigureExascaleManagement{}
 	case "oci:Database/exadataInfrastructureStorage:ExadataInfrastructureStorage":
 		r = &ExadataInfrastructureStorage{}
 	case "oci:Database/exadataIormConfig:ExadataIormConfig":
@@ -350,6 +352,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Database/exadataInfrastructureCompute",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Database/exadataInfrastructureConfigureExascaleManagement",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

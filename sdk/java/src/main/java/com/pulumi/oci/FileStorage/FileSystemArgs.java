@@ -22,6 +22,21 @@ public final class FileSystemArgs extends com.pulumi.resources.ResourceArgs {
     public static final FileSystemArgs Empty = new FileSystemArgs();
 
     /**
+     * (Updatable) Specifies the enforcement of quota rules on the file system.
+     * 
+     */
+    @Import(name="areQuotaRulesEnabled")
+    private @Nullable Output<Boolean> areQuotaRulesEnabled;
+
+    /**
+     * @return (Updatable) Specifies the enforcement of quota rules on the file system.
+     * 
+     */
+    public Optional<Output<Boolean>> areQuotaRulesEnabled() {
+        return Optional.ofNullable(this.areQuotaRulesEnabled);
+    }
+
+    /**
      * The availability domain to create the file system in.  Example: `Uocm:PHX-AD-1`
      * 
      */
@@ -206,6 +221,7 @@ public final class FileSystemArgs extends com.pulumi.resources.ResourceArgs {
     private FileSystemArgs() {}
 
     private FileSystemArgs(FileSystemArgs $) {
+        this.areQuotaRulesEnabled = $.areQuotaRulesEnabled;
         this.availabilityDomain = $.availabilityDomain;
         this.cloneAttachStatus = $.cloneAttachStatus;
         this.compartmentId = $.compartmentId;
@@ -236,6 +252,27 @@ public final class FileSystemArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder(FileSystemArgs defaults) {
             $ = new FileSystemArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param areQuotaRulesEnabled (Updatable) Specifies the enforcement of quota rules on the file system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder areQuotaRulesEnabled(@Nullable Output<Boolean> areQuotaRulesEnabled) {
+            $.areQuotaRulesEnabled = areQuotaRulesEnabled;
+            return this;
+        }
+
+        /**
+         * @param areQuotaRulesEnabled (Updatable) Specifies the enforcement of quota rules on the file system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder areQuotaRulesEnabled(Boolean areQuotaRulesEnabled) {
+            return areQuotaRulesEnabled(Output.of(areQuotaRulesEnabled));
         }
 
         /**

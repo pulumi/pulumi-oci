@@ -28,13 +28,19 @@ class GetExascaleDbStorageVaultsResult:
     """
     A collection of values returned by getExascaleDbStorageVaults.
     """
-    def __init__(__self__, compartment_id=None, display_name=None, exascale_db_storage_vaults=None, filters=None, id=None, state=None):
+    def __init__(__self__, cluster_placement_group_id=None, compartment_id=None, display_name=None, exadata_infrastructure_id=None, exascale_db_storage_vaults=None, filters=None, id=None, state=None):
+        if cluster_placement_group_id and not isinstance(cluster_placement_group_id, str):
+            raise TypeError("Expected argument 'cluster_placement_group_id' to be a str")
+        pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if exadata_infrastructure_id and not isinstance(exadata_infrastructure_id, str):
+            raise TypeError("Expected argument 'exadata_infrastructure_id' to be a str")
+        pulumi.set(__self__, "exadata_infrastructure_id", exadata_infrastructure_id)
         if exascale_db_storage_vaults and not isinstance(exascale_db_storage_vaults, list):
             raise TypeError("Expected argument 'exascale_db_storage_vaults' to be a list")
         pulumi.set(__self__, "exascale_db_storage_vaults", exascale_db_storage_vaults)
@@ -47,6 +53,14 @@ class GetExascaleDbStorageVaultsResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+
+    @property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -63,6 +77,14 @@ class GetExascaleDbStorageVaultsResult:
         The user-friendly name for the Exadata Database Storage Vault. The name does not need to be unique.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="exadataInfrastructureId")
+    def exadata_infrastructure_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+        """
+        return pulumi.get(self, "exadata_infrastructure_id")
 
     @property
     @pulumi.getter(name="exascaleDbStorageVaults")
@@ -100,16 +122,20 @@ class AwaitableGetExascaleDbStorageVaultsResult(GetExascaleDbStorageVaultsResult
         if False:
             yield self
         return GetExascaleDbStorageVaultsResult(
+            cluster_placement_group_id=self.cluster_placement_group_id,
             compartment_id=self.compartment_id,
             display_name=self.display_name,
+            exadata_infrastructure_id=self.exadata_infrastructure_id,
             exascale_db_storage_vaults=self.exascale_db_storage_vaults,
             filters=self.filters,
             id=self.id,
             state=self.state)
 
 
-def get_exascale_db_storage_vaults(compartment_id: Optional[str] = None,
+def get_exascale_db_storage_vaults(cluster_placement_group_id: Optional[str] = None,
+                                   compartment_id: Optional[str] = None,
                                    display_name: Optional[str] = None,
+                                   exadata_infrastructure_id: Optional[str] = None,
                                    filters: Optional[Sequence[Union['GetExascaleDbStorageVaultsFilterArgs', 'GetExascaleDbStorageVaultsFilterArgsDict']]] = None,
                                    state: Optional[str] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExascaleDbStorageVaultsResult:
@@ -125,32 +151,42 @@ def get_exascale_db_storage_vaults(compartment_id: Optional[str] = None,
     import pulumi_oci as oci
 
     test_exascale_db_storage_vaults = oci.Database.get_exascale_db_storage_vaults(compartment_id=compartment_id,
+        cluster_placement_group_id=test_cluster_placement_group["id"],
         display_name=exascale_db_storage_vault_display_name,
+        exadata_infrastructure_id=test_exadata_infrastructure["id"],
         state=exascale_db_storage_vault_state)
     ```
 
 
+    :param str cluster_placement_group_id: A filter to return only resources that match the given cluster placement group ID exactly.
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
+    :param str exadata_infrastructure_id: A filter to return only list of Vaults that are linked to the exadata infrastructure Id.
     :param str state: A filter to return only Exadata Database Storage Vaults that match the given lifecycle state exactly.
     """
     __args__ = dict()
+    __args__['clusterPlacementGroupId'] = cluster_placement_group_id
     __args__['compartmentId'] = compartment_id
     __args__['displayName'] = display_name
+    __args__['exadataInfrastructureId'] = exadata_infrastructure_id
     __args__['filters'] = filters
     __args__['state'] = state
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:Database/getExascaleDbStorageVaults:getExascaleDbStorageVaults', __args__, opts=opts, typ=GetExascaleDbStorageVaultsResult).value
 
     return AwaitableGetExascaleDbStorageVaultsResult(
+        cluster_placement_group_id=pulumi.get(__ret__, 'cluster_placement_group_id'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         display_name=pulumi.get(__ret__, 'display_name'),
+        exadata_infrastructure_id=pulumi.get(__ret__, 'exadata_infrastructure_id'),
         exascale_db_storage_vaults=pulumi.get(__ret__, 'exascale_db_storage_vaults'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_exascale_db_storage_vaults_output(compartment_id: Optional[pulumi.Input[str]] = None,
+def get_exascale_db_storage_vaults_output(cluster_placement_group_id: Optional[pulumi.Input[Optional[str]]] = None,
+                                          compartment_id: Optional[pulumi.Input[str]] = None,
                                           display_name: Optional[pulumi.Input[Optional[str]]] = None,
+                                          exadata_infrastructure_id: Optional[pulumi.Input[Optional[str]]] = None,
                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExascaleDbStorageVaultsFilterArgs', 'GetExascaleDbStorageVaultsFilterArgsDict']]]]] = None,
                                           state: Optional[pulumi.Input[Optional[str]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExascaleDbStorageVaultsResult]:
@@ -166,25 +202,33 @@ def get_exascale_db_storage_vaults_output(compartment_id: Optional[pulumi.Input[
     import pulumi_oci as oci
 
     test_exascale_db_storage_vaults = oci.Database.get_exascale_db_storage_vaults(compartment_id=compartment_id,
+        cluster_placement_group_id=test_cluster_placement_group["id"],
         display_name=exascale_db_storage_vault_display_name,
+        exadata_infrastructure_id=test_exadata_infrastructure["id"],
         state=exascale_db_storage_vault_state)
     ```
 
 
+    :param str cluster_placement_group_id: A filter to return only resources that match the given cluster placement group ID exactly.
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
+    :param str exadata_infrastructure_id: A filter to return only list of Vaults that are linked to the exadata infrastructure Id.
     :param str state: A filter to return only Exadata Database Storage Vaults that match the given lifecycle state exactly.
     """
     __args__ = dict()
+    __args__['clusterPlacementGroupId'] = cluster_placement_group_id
     __args__['compartmentId'] = compartment_id
     __args__['displayName'] = display_name
+    __args__['exadataInfrastructureId'] = exadata_infrastructure_id
     __args__['filters'] = filters
     __args__['state'] = state
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getExascaleDbStorageVaults:getExascaleDbStorageVaults', __args__, opts=opts, typ=GetExascaleDbStorageVaultsResult)
     return __ret__.apply(lambda __response__: GetExascaleDbStorageVaultsResult(
+        cluster_placement_group_id=pulumi.get(__response__, 'cluster_placement_group_id'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         display_name=pulumi.get(__response__, 'display_name'),
+        exadata_infrastructure_id=pulumi.get(__response__, 'exadata_infrastructure_id'),
         exascale_db_storage_vaults=pulumi.get(__response__, 'exascale_db_storage_vaults'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),

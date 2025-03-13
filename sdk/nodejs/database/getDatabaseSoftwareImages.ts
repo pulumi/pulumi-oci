@@ -19,6 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testDatabaseSoftwareImages = oci.Database.getDatabaseSoftwareImages({
  *     compartmentId: compartmentId,
+ *     dbSystemId: testDbSystem.id,
  *     displayName: databaseSoftwareImageDisplayName,
  *     imageShapeFamily: databaseSoftwareImageImageShapeFamily,
  *     imageType: databaseSoftwareImageImageType,
@@ -31,6 +32,7 @@ export function getDatabaseSoftwareImages(args: GetDatabaseSoftwareImagesArgs, o
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDatabaseSoftwareImages:getDatabaseSoftwareImages", {
         "compartmentId": args.compartmentId,
+        "dbSystemId": args.dbSystemId,
         "displayName": args.displayName,
         "filters": args.filters,
         "imageShapeFamily": args.imageShapeFamily,
@@ -48,6 +50,10 @@ export interface GetDatabaseSoftwareImagesArgs {
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     compartmentId: string;
+    /**
+     * The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
+     */
+    dbSystemId?: string;
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
@@ -83,6 +89,7 @@ export interface GetDatabaseSoftwareImagesResult {
      * The list of database_software_images.
      */
     readonly databaseSoftwareImages: outputs.Database.GetDatabaseSoftwareImagesDatabaseSoftwareImage[];
+    readonly dbSystemId?: string;
     /**
      * The user-friendly name for the database software image. The name does not have to be unique.
      */
@@ -122,6 +129,7 @@ export interface GetDatabaseSoftwareImagesResult {
  *
  * const testDatabaseSoftwareImages = oci.Database.getDatabaseSoftwareImages({
  *     compartmentId: compartmentId,
+ *     dbSystemId: testDbSystem.id,
  *     displayName: databaseSoftwareImageDisplayName,
  *     imageShapeFamily: databaseSoftwareImageImageShapeFamily,
  *     imageType: databaseSoftwareImageImageType,
@@ -134,6 +142,7 @@ export function getDatabaseSoftwareImagesOutput(args: GetDatabaseSoftwareImagesO
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getDatabaseSoftwareImages:getDatabaseSoftwareImages", {
         "compartmentId": args.compartmentId,
+        "dbSystemId": args.dbSystemId,
         "displayName": args.displayName,
         "filters": args.filters,
         "imageShapeFamily": args.imageShapeFamily,
@@ -151,6 +160,10 @@ export interface GetDatabaseSoftwareImagesOutputArgs {
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     compartmentId: pulumi.Input<string>;
+    /**
+     * The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
+     */
+    dbSystemId?: pulumi.Input<string>;
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */

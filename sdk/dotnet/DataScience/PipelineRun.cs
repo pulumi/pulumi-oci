@@ -73,6 +73,25 @@ namespace Pulumi.Oci.DataScience
     ///                     ImageDigest = pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsImageDigest,
     ///                     ImageSignatureId = testImageSignature.Id,
     ///                 },
+    ///                 StepDataflowConfigurationDetails = new Oci.DataScience.Inputs.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs
+    ///                 {
+    ///                     Configuration = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsConfiguration,
+    ///                     DriverShape = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShape,
+    ///                     DriverShapeConfigDetails = new Oci.DataScience.Inputs.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs
+    ///                     {
+    ///                         MemoryInGbs = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsMemoryInGbs,
+    ///                         Ocpus = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsOcpus,
+    ///                     },
+    ///                     ExecutorShape = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShape,
+    ///                     ExecutorShapeConfigDetails = new Oci.DataScience.Inputs.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs
+    ///                     {
+    ///                         MemoryInGbs = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsMemoryInGbs,
+    ///                         Ocpus = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOcpus,
+    ///                     },
+    ///                     LogsBucketUri = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsLogsBucketUri,
+    ///                     NumExecutors = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsNumExecutors,
+    ///                     WarehouseBucketUri = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsWarehouseBucketUri,
+    ///                 },
     ///             },
     ///         },
     ///         SystemTags = pipelineRunSystemTags,

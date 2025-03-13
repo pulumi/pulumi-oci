@@ -35,6 +35,8 @@ __all__ = [
     'GetExportsExportExportOptionResult',
     'GetExportsExportLockResult',
     'GetExportsFilterResult',
+    'GetFileSystemQuotaRulesFilterResult',
+    'GetFileSystemQuotaRulesQuotaRuleResult',
     'GetFileSystemsFileSystemResult',
     'GetFileSystemsFileSystemLockResult',
     'GetFileSystemsFileSystemSourceDetailResult',
@@ -1585,8 +1587,160 @@ class GetExportsFilterResult(dict):
 
 
 @pulumi.output_type
+class GetFileSystemQuotaRulesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetFileSystemQuotaRulesQuotaRuleResult(dict):
+    def __init__(__self__, *,
+                 are_violators_only: bool,
+                 display_name: str,
+                 file_system_id: str,
+                 id: str,
+                 is_hard_quota: bool,
+                 principal_id: int,
+                 principal_type: str,
+                 quota_limit_in_gigabytes: int,
+                 quota_rule_id: str,
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param bool are_violators_only: An option to only display the users or groups that violate their quota rules. If `areViolatorsOnly` is false, the list result will display all the quota and usage report. If `areViolatorsOnly` is true, the list result will only display the quota and usage report for the users or groups that violate their quota rules.
+        :param str display_name: A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. Example: `UserXYZ's quota`
+        :param str file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
+        :param str id: The identifier of the quota rule. It is the base64 encoded string of the tuple <principalId, principalType, isHardQuota>.
+        :param bool is_hard_quota: The flag is an identifier to tell whether the quota rule will be enforced. If `isHardQuota` is false, the quota rule will be enforced so the usage cannot exceed the hard quota limit. If `isHardQuota` is true, usage can exceed the soft quota limit. An alarm or notification will be sent to the customer, if the specific usage exceeds.
+        :param int principal_id: An identifier for the owner of this usage and quota rule. Unix-like operating systems use this integer value to identify a user or group to manage access control.
+        :param str principal_type: The type of the owner of this quota rule and usage.
+        :param int quota_limit_in_gigabytes: The value of the quota rule. The unit is Gigabyte.
+        :param str time_created: The date and time the quota rule was started, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        :param str time_updated: The date and time the quota rule was last updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "are_violators_only", are_violators_only)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "file_system_id", file_system_id)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_hard_quota", is_hard_quota)
+        pulumi.set(__self__, "principal_id", principal_id)
+        pulumi.set(__self__, "principal_type", principal_type)
+        pulumi.set(__self__, "quota_limit_in_gigabytes", quota_limit_in_gigabytes)
+        pulumi.set(__self__, "quota_rule_id", quota_rule_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="areViolatorsOnly")
+    def are_violators_only(self) -> bool:
+        """
+        An option to only display the users or groups that violate their quota rules. If `areViolatorsOnly` is false, the list result will display all the quota and usage report. If `areViolatorsOnly` is true, the list result will only display the quota and usage report for the users or groups that violate their quota rules.
+        """
+        return pulumi.get(self, "are_violators_only")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. Example: `UserXYZ's quota`
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="fileSystemId")
+    def file_system_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
+        """
+        return pulumi.get(self, "file_system_id")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The identifier of the quota rule. It is the base64 encoded string of the tuple <principalId, principalType, isHardQuota>.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isHardQuota")
+    def is_hard_quota(self) -> bool:
+        """
+        The flag is an identifier to tell whether the quota rule will be enforced. If `isHardQuota` is false, the quota rule will be enforced so the usage cannot exceed the hard quota limit. If `isHardQuota` is true, usage can exceed the soft quota limit. An alarm or notification will be sent to the customer, if the specific usage exceeds.
+        """
+        return pulumi.get(self, "is_hard_quota")
+
+    @property
+    @pulumi.getter(name="principalId")
+    def principal_id(self) -> int:
+        """
+        An identifier for the owner of this usage and quota rule. Unix-like operating systems use this integer value to identify a user or group to manage access control.
+        """
+        return pulumi.get(self, "principal_id")
+
+    @property
+    @pulumi.getter(name="principalType")
+    def principal_type(self) -> str:
+        """
+        The type of the owner of this quota rule and usage.
+        """
+        return pulumi.get(self, "principal_type")
+
+    @property
+    @pulumi.getter(name="quotaLimitInGigabytes")
+    def quota_limit_in_gigabytes(self) -> int:
+        """
+        The value of the quota rule. The unit is Gigabyte.
+        """
+        return pulumi.get(self, "quota_limit_in_gigabytes")
+
+    @property
+    @pulumi.getter(name="quotaRuleId")
+    def quota_rule_id(self) -> str:
+        return pulumi.get(self, "quota_rule_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the quota rule was started, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the quota rule was last updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
 class GetFileSystemsFileSystemResult(dict):
     def __init__(__self__, *,
+                 are_quota_rules_enabled: bool,
                  availability_domain: str,
                  clone_attach_status: str,
                  clone_count: int,
@@ -1605,6 +1759,8 @@ class GetFileSystemsFileSystemResult(dict):
                  lifecycle_details: str,
                  locks: Sequence['outputs.GetFileSystemsFileSystemLockResult'],
                  metered_bytes: str,
+                 quota_enforcement_state: str,
+                 replication_source_count: int,
                  replication_target_id: str,
                  source_details: Sequence['outputs.GetFileSystemsFileSystemSourceDetailResult'],
                  source_snapshot_id: str,
@@ -1612,6 +1768,7 @@ class GetFileSystemsFileSystemResult(dict):
                  system_tags: Mapping[str, str],
                  time_created: str):
         """
+        :param bool are_quota_rules_enabled: Specifies the enforcement of quota rules on the file system.
         :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         :param str clone_attach_status: Specifies whether the file system is attached to its parent file system.
         :param int clone_count: Specifies the total number of children of a file system.
@@ -1628,6 +1785,8 @@ class GetFileSystemsFileSystemResult(dict):
         :param str lifecycle_details: Additional information about the current 'lifecycleState'.
         :param Sequence['GetFileSystemsFileSystemLockArgs'] locks: Locks associated with this resource.
         :param str metered_bytes: The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
+        :param str quota_enforcement_state: Displays the state of enforcement of quota rules on the file system.
+        :param int replication_source_count: Specifies the total number of replications for which this file system is a source.
         :param str replication_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
         :param Sequence['GetFileSystemsFileSystemSourceDetailArgs'] source_details: Source information for the file system.
         :param str source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
@@ -1635,6 +1794,7 @@ class GetFileSystemsFileSystemResult(dict):
         :param Mapping[str, str] system_tags: System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
         :param str time_created: The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
+        pulumi.set(__self__, "are_quota_rules_enabled", are_quota_rules_enabled)
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "clone_attach_status", clone_attach_status)
         pulumi.set(__self__, "clone_count", clone_count)
@@ -1653,12 +1813,22 @@ class GetFileSystemsFileSystemResult(dict):
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "locks", locks)
         pulumi.set(__self__, "metered_bytes", metered_bytes)
+        pulumi.set(__self__, "quota_enforcement_state", quota_enforcement_state)
+        pulumi.set(__self__, "replication_source_count", replication_source_count)
         pulumi.set(__self__, "replication_target_id", replication_target_id)
         pulumi.set(__self__, "source_details", source_details)
         pulumi.set(__self__, "source_snapshot_id", source_snapshot_id)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter(name="areQuotaRulesEnabled")
+    def are_quota_rules_enabled(self) -> bool:
+        """
+        Specifies the enforcement of quota rules on the file system.
+        """
+        return pulumi.get(self, "are_quota_rules_enabled")
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -1797,6 +1967,22 @@ class GetFileSystemsFileSystemResult(dict):
         The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
         """
         return pulumi.get(self, "metered_bytes")
+
+    @property
+    @pulumi.getter(name="quotaEnforcementState")
+    def quota_enforcement_state(self) -> str:
+        """
+        Displays the state of enforcement of quota rules on the file system.
+        """
+        return pulumi.get(self, "quota_enforcement_state")
+
+    @property
+    @pulumi.getter(name="replicationSourceCount")
+    def replication_source_count(self) -> int:
+        """
+        Specifies the total number of replications for which this file system is a source.
+        """
+        return pulumi.get(self, "replication_source_count")
 
     @property
     @pulumi.getter(name="replicationTargetId")

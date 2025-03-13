@@ -9,6 +9,10 @@ import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
 import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterArgs;
+import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterPipelineArgs;
+import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterPipelinePlainArgs;
+import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterPipelinesArgs;
+import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterPipelinesPlainArgs;
 import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterPlainArgs;
 import com.pulumi.oci.Opensearch.inputs.GetOpensearchClustersArgs;
 import com.pulumi.oci.Opensearch.inputs.GetOpensearchClustersPlainArgs;
@@ -16,6 +20,8 @@ import com.pulumi.oci.Opensearch.inputs.GetOpensearchVersionArgs;
 import com.pulumi.oci.Opensearch.inputs.GetOpensearchVersionPlainArgs;
 import com.pulumi.oci.Opensearch.inputs.GetOpensearchVersionsArgs;
 import com.pulumi.oci.Opensearch.inputs.GetOpensearchVersionsPlainArgs;
+import com.pulumi.oci.Opensearch.outputs.GetOpensearchClusterPipelineResult;
+import com.pulumi.oci.Opensearch.outputs.GetOpensearchClusterPipelinesResult;
 import com.pulumi.oci.Opensearch.outputs.GetOpensearchClusterResult;
 import com.pulumi.oci.Opensearch.outputs.GetOpensearchClustersResult;
 import com.pulumi.oci.Opensearch.outputs.GetOpensearchVersionResult;
@@ -288,6 +294,466 @@ public final class OpensearchFunctions {
      */
     public static CompletableFuture<GetOpensearchClusterResult> getOpensearchClusterPlain(GetOpensearchClusterPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Opensearch/getOpensearchCluster:getOpensearchCluster", TypeShape.of(GetOpensearchClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Opensearch Cluster Pipeline resource in Oracle Cloud Infrastructure Opensearch service.
+     * 
+     * Gets a OpensearchCluster Pipeline by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opensearch.OpensearchFunctions;
+     * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterPipelineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpensearchClusterPipeline = OpensearchFunctions.getOpensearchClusterPipeline(GetOpensearchClusterPipelineArgs.builder()
+     *             .opensearchClusterPipelineId(testOpensearchClusterPipelineOciOpensearchOpensearchClusterPipeline.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOpensearchClusterPipelineResult> getOpensearchClusterPipeline(GetOpensearchClusterPipelineArgs args) {
+        return getOpensearchClusterPipeline(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Opensearch Cluster Pipeline resource in Oracle Cloud Infrastructure Opensearch service.
+     * 
+     * Gets a OpensearchCluster Pipeline by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opensearch.OpensearchFunctions;
+     * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterPipelineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpensearchClusterPipeline = OpensearchFunctions.getOpensearchClusterPipeline(GetOpensearchClusterPipelineArgs.builder()
+     *             .opensearchClusterPipelineId(testOpensearchClusterPipelineOciOpensearchOpensearchClusterPipeline.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetOpensearchClusterPipelineResult> getOpensearchClusterPipelinePlain(GetOpensearchClusterPipelinePlainArgs args) {
+        return getOpensearchClusterPipelinePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Opensearch Cluster Pipeline resource in Oracle Cloud Infrastructure Opensearch service.
+     * 
+     * Gets a OpensearchCluster Pipeline by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opensearch.OpensearchFunctions;
+     * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterPipelineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpensearchClusterPipeline = OpensearchFunctions.getOpensearchClusterPipeline(GetOpensearchClusterPipelineArgs.builder()
+     *             .opensearchClusterPipelineId(testOpensearchClusterPipelineOciOpensearchOpensearchClusterPipeline.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOpensearchClusterPipelineResult> getOpensearchClusterPipeline(GetOpensearchClusterPipelineArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Opensearch/getOpensearchClusterPipeline:getOpensearchClusterPipeline", TypeShape.of(GetOpensearchClusterPipelineResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Opensearch Cluster Pipeline resource in Oracle Cloud Infrastructure Opensearch service.
+     * 
+     * Gets a OpensearchCluster Pipeline by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opensearch.OpensearchFunctions;
+     * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterPipelineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpensearchClusterPipeline = OpensearchFunctions.getOpensearchClusterPipeline(GetOpensearchClusterPipelineArgs.builder()
+     *             .opensearchClusterPipelineId(testOpensearchClusterPipelineOciOpensearchOpensearchClusterPipeline.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOpensearchClusterPipelineResult> getOpensearchClusterPipeline(GetOpensearchClusterPipelineArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Opensearch/getOpensearchClusterPipeline:getOpensearchClusterPipeline", TypeShape.of(GetOpensearchClusterPipelineResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Opensearch Cluster Pipeline resource in Oracle Cloud Infrastructure Opensearch service.
+     * 
+     * Gets a OpensearchCluster Pipeline by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opensearch.OpensearchFunctions;
+     * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterPipelineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpensearchClusterPipeline = OpensearchFunctions.getOpensearchClusterPipeline(GetOpensearchClusterPipelineArgs.builder()
+     *             .opensearchClusterPipelineId(testOpensearchClusterPipelineOciOpensearchOpensearchClusterPipeline.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetOpensearchClusterPipelineResult> getOpensearchClusterPipelinePlain(GetOpensearchClusterPipelinePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Opensearch/getOpensearchClusterPipeline:getOpensearchClusterPipeline", TypeShape.of(GetOpensearchClusterPipelineResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Opensearch Cluster Pipelines in Oracle Cloud Infrastructure Opensearch service.
+     * 
+     * Returns a list of OpensearchClusterPipelines.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opensearch.OpensearchFunctions;
+     * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterPipelinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpensearchClusterPipelines = OpensearchFunctions.getOpensearchClusterPipelines(GetOpensearchClusterPipelinesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(opensearchClusterPipelineDisplayName)
+     *             .id(opensearchClusterPipelineId)
+     *             .pipelineComponentId(testPipelineComponent.id())
+     *             .state(opensearchClusterPipelineState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOpensearchClusterPipelinesResult> getOpensearchClusterPipelines(GetOpensearchClusterPipelinesArgs args) {
+        return getOpensearchClusterPipelines(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Opensearch Cluster Pipelines in Oracle Cloud Infrastructure Opensearch service.
+     * 
+     * Returns a list of OpensearchClusterPipelines.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opensearch.OpensearchFunctions;
+     * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterPipelinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpensearchClusterPipelines = OpensearchFunctions.getOpensearchClusterPipelines(GetOpensearchClusterPipelinesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(opensearchClusterPipelineDisplayName)
+     *             .id(opensearchClusterPipelineId)
+     *             .pipelineComponentId(testPipelineComponent.id())
+     *             .state(opensearchClusterPipelineState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetOpensearchClusterPipelinesResult> getOpensearchClusterPipelinesPlain(GetOpensearchClusterPipelinesPlainArgs args) {
+        return getOpensearchClusterPipelinesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Opensearch Cluster Pipelines in Oracle Cloud Infrastructure Opensearch service.
+     * 
+     * Returns a list of OpensearchClusterPipelines.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opensearch.OpensearchFunctions;
+     * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterPipelinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpensearchClusterPipelines = OpensearchFunctions.getOpensearchClusterPipelines(GetOpensearchClusterPipelinesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(opensearchClusterPipelineDisplayName)
+     *             .id(opensearchClusterPipelineId)
+     *             .pipelineComponentId(testPipelineComponent.id())
+     *             .state(opensearchClusterPipelineState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOpensearchClusterPipelinesResult> getOpensearchClusterPipelines(GetOpensearchClusterPipelinesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Opensearch/getOpensearchClusterPipelines:getOpensearchClusterPipelines", TypeShape.of(GetOpensearchClusterPipelinesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Opensearch Cluster Pipelines in Oracle Cloud Infrastructure Opensearch service.
+     * 
+     * Returns a list of OpensearchClusterPipelines.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opensearch.OpensearchFunctions;
+     * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterPipelinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpensearchClusterPipelines = OpensearchFunctions.getOpensearchClusterPipelines(GetOpensearchClusterPipelinesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(opensearchClusterPipelineDisplayName)
+     *             .id(opensearchClusterPipelineId)
+     *             .pipelineComponentId(testPipelineComponent.id())
+     *             .state(opensearchClusterPipelineState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOpensearchClusterPipelinesResult> getOpensearchClusterPipelines(GetOpensearchClusterPipelinesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Opensearch/getOpensearchClusterPipelines:getOpensearchClusterPipelines", TypeShape.of(GetOpensearchClusterPipelinesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Opensearch Cluster Pipelines in Oracle Cloud Infrastructure Opensearch service.
+     * 
+     * Returns a list of OpensearchClusterPipelines.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opensearch.OpensearchFunctions;
+     * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterPipelinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpensearchClusterPipelines = OpensearchFunctions.getOpensearchClusterPipelines(GetOpensearchClusterPipelinesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(opensearchClusterPipelineDisplayName)
+     *             .id(opensearchClusterPipelineId)
+     *             .pipelineComponentId(testPipelineComponent.id())
+     *             .state(opensearchClusterPipelineState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetOpensearchClusterPipelinesResult> getOpensearchClusterPipelinesPlain(GetOpensearchClusterPipelinesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Opensearch/getOpensearchClusterPipelines:getOpensearchClusterPipelines", TypeShape.of(GetOpensearchClusterPipelinesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Opensearch Clusters in Oracle Cloud Infrastructure Opensearch service.

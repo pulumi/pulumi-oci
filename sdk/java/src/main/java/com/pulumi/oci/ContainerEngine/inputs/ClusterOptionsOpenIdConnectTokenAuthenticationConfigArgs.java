@@ -50,6 +50,21 @@ public final class ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs exte
     }
 
     /**
+     * (Updatable) A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+     * 
+     */
+    @Import(name="configurationFile")
+    private @Nullable Output<String> configurationFile;
+
+    /**
+     * @return (Updatable) A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+     * 
+     */
+    public Optional<Output<String>> configurationFile() {
+        return Optional.ofNullable(this.configurationFile);
+    }
+
+    /**
      * (Updatable) JWT claim to use as the user&#39;s group. If the claim is present it must be an array of strings.
      * 
      */
@@ -174,6 +189,7 @@ public final class ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs exte
     private ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs(ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs $) {
         this.caCertificate = $.caCertificate;
         this.clientId = $.clientId;
+        this.configurationFile = $.configurationFile;
         this.groupsClaim = $.groupsClaim;
         this.groupsPrefix = $.groupsPrefix;
         this.isOpenIdConnectAuthEnabled = $.isOpenIdConnectAuthEnabled;
@@ -242,6 +258,27 @@ public final class ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs exte
          */
         public Builder clientId(String clientId) {
             return clientId(Output.of(clientId));
+        }
+
+        /**
+         * @param configurationFile (Updatable) A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder configurationFile(@Nullable Output<String> configurationFile) {
+            $.configurationFile = configurationFile;
+            return this;
+        }
+
+        /**
+         * @param configurationFile (Updatable) A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder configurationFile(String configurationFile) {
+            return configurationFile(Output.of(configurationFile));
         }
 
         /**

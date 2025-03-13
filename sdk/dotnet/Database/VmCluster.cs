@@ -58,6 +58,7 @@ namespace Pulumi.Oci.Database
     ///         DbNodeStorageSizeInGbs = vmClusterDbNodeStorageSizeInGbs,
     ///         DbServers = vmClusterDbServers,
     ///         DefinedTags = vmClusterDefinedTags,
+    ///         ExascaleDbStorageVaultId = testExascaleDbStorageVault.Id,
     ///         FileSystemConfigurationDetails = new[]
     ///         {
     ///             new Oci.Database.Inputs.VmClusterFileSystemConfigurationDetailArgs
@@ -76,6 +77,7 @@ namespace Pulumi.Oci.Database
     ///         MemorySizeInGbs = vmClusterMemorySizeInGbs,
     ///         SystemVersion = vmClusterSystemVersion,
     ///         TimeZone = vmClusterTimeZone,
+    ///         VmClusterType = vmClusterVmClusterType,
     ///     });
     /// 
     /// });
@@ -109,6 +111,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
+
+        /// <summary>
+        /// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        /// </summary>
+        [Output("computeModel")]
+        public Output<string> ComputeModel { get; private set; } = null!;
 
         [Output("cpuCoreCount")]
         public Output<int> CpuCoreCount { get; private set; } = null!;
@@ -166,6 +174,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("exadataInfrastructureId")]
         public Output<string> ExadataInfrastructureId { get; private set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+        /// </summary>
+        [Output("exascaleDbStorageVaultId")]
+        public Output<string> ExascaleDbStorageVaultId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Details of the file system configuration of the VM cluster.
@@ -246,6 +260,12 @@ namespace Pulumi.Oci.Database
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
+        /// Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
+        /// </summary>
+        [Output("storageManagementType")]
+        public Output<string> StorageManagementType { get; private set; } = null!;
+
+        /// <summary>
         /// Operating system version of the image.
         /// </summary>
         [Output("systemVersion")]
@@ -265,13 +285,19 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+        /// </summary>
+        [Output("vmClusterNetworkId")]
+        public Output<string> VmClusterNetworkId { get; private set; } = null!;
+
+        /// <summary>
+        /// The vmcluster type for the VM cluster/Cloud VM cluster.
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Output("vmClusterNetworkId")]
-        public Output<string> VmClusterNetworkId { get; private set; } = null!;
+        [Output("vmClusterType")]
+        public Output<string> VmClusterType { get; private set; } = null!;
 
 
         /// <summary>
@@ -394,6 +420,12 @@ namespace Pulumi.Oci.Database
         [Input("exadataInfrastructureId", required: true)]
         public Input<string> ExadataInfrastructureId { get; set; } = null!;
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+        /// </summary>
+        [Input("exascaleDbStorageVaultId")]
+        public Input<string>? ExascaleDbStorageVaultId { get; set; }
+
         [Input("fileSystemConfigurationDetails")]
         private InputList<Inputs.VmClusterFileSystemConfigurationDetailArgs>? _fileSystemConfigurationDetails;
 
@@ -477,13 +509,19 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+        /// </summary>
+        [Input("vmClusterNetworkId", required: true)]
+        public Input<string> VmClusterNetworkId { get; set; } = null!;
+
+        /// <summary>
+        /// The vmcluster type for the VM cluster/Cloud VM cluster.
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("vmClusterNetworkId", required: true)]
-        public Input<string> VmClusterNetworkId { get; set; } = null!;
+        [Input("vmClusterType")]
+        public Input<string>? VmClusterType { get; set; }
 
         public VmClusterArgs()
         {
@@ -510,6 +548,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
+
+        /// <summary>
+        /// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        /// </summary>
+        [Input("computeModel")]
+        public Input<string>? ComputeModel { get; set; }
 
         [Input("cpuCoreCount")]
         public Input<int>? CpuCoreCount { get; set; }
@@ -579,6 +623,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("exadataInfrastructureId")]
         public Input<string>? ExadataInfrastructureId { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+        /// </summary>
+        [Input("exascaleDbStorageVaultId")]
+        public Input<string>? ExascaleDbStorageVaultId { get; set; }
 
         [Input("fileSystemConfigurationDetails")]
         private InputList<Inputs.VmClusterFileSystemConfigurationDetailGetArgs>? _fileSystemConfigurationDetails;
@@ -677,6 +727,12 @@ namespace Pulumi.Oci.Database
         public Input<string>? State { get; set; }
 
         /// <summary>
+        /// Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
+        /// </summary>
+        [Input("storageManagementType")]
+        public Input<string>? StorageManagementType { get; set; }
+
+        /// <summary>
         /// Operating system version of the image.
         /// </summary>
         [Input("systemVersion")]
@@ -696,13 +752,19 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+        /// </summary>
+        [Input("vmClusterNetworkId")]
+        public Input<string>? VmClusterNetworkId { get; set; }
+
+        /// <summary>
+        /// The vmcluster type for the VM cluster/Cloud VM cluster.
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("vmClusterNetworkId")]
-        public Input<string>? VmClusterNetworkId { get; set; }
+        [Input("vmClusterType")]
+        public Input<string>? VmClusterType { get; set; }
 
         public VmClusterState()
         {

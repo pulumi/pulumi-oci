@@ -22,6 +22,26 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly int AvailableDbStorageInGbs;
         /// <summary>
+        /// The maximum local storage that can be enabled on the DB Server for this Flex Component.
+        /// </summary>
+        public readonly int AvailableLocalStorageInGbs;
+        /// <summary>
+        /// The maximum memory size that can be enabled on the DB Server for this Flex Component.
+        /// </summary>
+        public readonly int AvailableMemoryInGbs;
+        /// <summary>
+        /// The compute model of the DB Server for this Flex Component.
+        /// </summary>
+        public readonly string ComputeModel;
+        /// <summary>
+        /// The description summary for this Flex Component.
+        /// </summary>
+        public readonly string DescriptionSummary;
+        /// <summary>
+        /// The hardware type of the DB (Compute) or Storage (Cell) Server for this Flex Component.
+        /// </summary>
+        public readonly string HardwareType;
+        /// <summary>
         /// The minimum number of CPU cores that can be enabled on the DB Server for this Flex Component.
         /// </summary>
         public readonly int MinimumCoreCount;
@@ -29,6 +49,14 @@ namespace Pulumi.Oci.Database.Outputs
         /// A filter to return only resources that match the entire name given. The match is not case sensitive.
         /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// The runtime minimum number of CPU cores that can be enabled for this Flex Component.
+        /// </summary>
+        public readonly int RuntimeMinimumCoreCount;
+        /// <summary>
+        /// A filter to return only resources that belong to the entire shape name given. The match is not case sensitive.
+        /// </summary>
+        public readonly string Shape;
 
         [OutputConstructor]
         private GetFlexComponentsFlexComponentCollectionItemResult(
@@ -36,14 +64,35 @@ namespace Pulumi.Oci.Database.Outputs
 
             int availableDbStorageInGbs,
 
+            int availableLocalStorageInGbs,
+
+            int availableMemoryInGbs,
+
+            string computeModel,
+
+            string descriptionSummary,
+
+            string hardwareType,
+
             int minimumCoreCount,
 
-            string name)
+            string name,
+
+            int runtimeMinimumCoreCount,
+
+            string shape)
         {
             AvailableCoreCount = availableCoreCount;
             AvailableDbStorageInGbs = availableDbStorageInGbs;
+            AvailableLocalStorageInGbs = availableLocalStorageInGbs;
+            AvailableMemoryInGbs = availableMemoryInGbs;
+            ComputeModel = computeModel;
+            DescriptionSummary = descriptionSummary;
+            HardwareType = hardwareType;
             MinimumCoreCount = minimumCoreCount;
             Name = name;
+            RuntimeMinimumCoreCount = runtimeMinimumCoreCount;
+            Shape = shape;
         }
     }
 }

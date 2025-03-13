@@ -156,6 +156,21 @@ public final class MysqlDbSystemChannelArgs extends com.pulumi.resources.Resourc
     }
 
     /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    @Import(name="systemTags")
+    private @Nullable Output<Map<String,String>> systemTags;
+
+    /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Optional<Output<Map<String,String>>> systemTags() {
+        return Optional.ofNullable(this.systemTags);
+    }
+
+    /**
      * Details about the Channel target.
      * 
      */
@@ -212,6 +227,7 @@ public final class MysqlDbSystemChannelArgs extends com.pulumi.resources.Resourc
         this.lifecycleDetails = $.lifecycleDetails;
         this.sources = $.sources;
         this.state = $.state;
+        this.systemTags = $.systemTags;
         this.targets = $.targets;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
@@ -432,6 +448,27 @@ public final class MysqlDbSystemChannelArgs extends com.pulumi.resources.Resourc
          */
         public Builder state(String state) {
             return state(Output.of(state));
+        }
+
+        /**
+         * @param systemTags Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(@Nullable Output<Map<String,String>> systemTags) {
+            $.systemTags = systemTags;
+            return this;
+        }
+
+        /**
+         * @param systemTags Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(Map<String,String> systemTags) {
+            return systemTags(Output.of(systemTags));
         }
 
         /**

@@ -79,6 +79,10 @@ import javax.annotation.Nullable;
  *             .adminPassword(mysqlDbSystemAdminPassword)
  *             .adminUsername(mysqlDbSystemAdminUsername)
  *             .backupPolicy(MysqlDbSystemBackupPolicyArgs.builder()
+ *                 .copyPolicies(MysqlDbSystemBackupPolicyCopyPolicyArgs.builder()
+ *                     .copyToRegion(mysqlDbSystemBackupPolicyCopyPoliciesCopyToRegion)
+ *                     .backupCopyRetentionInDays(mysqlDbSystemBackupPolicyCopyPoliciesBackupCopyRetentionInDays)
+ *                     .build())
  *                 .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *                 .freeformTags(Map.of("bar-key", "value"))
  *                 .isEnabled(mysqlDbSystemBackupPolicyIsEnabled)
@@ -754,6 +758,20 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      */
     public Output<String> subnetId() {
         return this.subnetId;
+    }
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    @Export(name="systemTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> systemTags;
+
+    /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Output<Map<String,String>> systemTags() {
+        return this.systemTags;
     }
     /**
      * The date and time the DB System was created.

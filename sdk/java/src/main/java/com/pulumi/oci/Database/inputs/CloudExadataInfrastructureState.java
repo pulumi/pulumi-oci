@@ -129,6 +129,21 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
     }
 
     /**
+     * The compute model of the Exadata infrastructure.
+     * 
+     */
+    @Import(name="computeModel")
+    private @Nullable Output<String> computeModel;
+
+    /**
+     * @return The compute model of the Exadata infrastructure.
+     * 
+     */
+    public Optional<Output<String>> computeModel() {
+        return Optional.ofNullable(this.computeModel);
+    }
+
+    /**
      * The total number of CPU cores allocated.
      * 
      */
@@ -171,6 +186,21 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
      */
     public Optional<Output<Double>> dataStorageSizeInTbs() {
         return Optional.ofNullable(this.dataStorageSizeInTbs);
+    }
+
+    /**
+     * The database server type of the Exadata infrastructure.
+     * 
+     */
+    @Import(name="databaseServerType")
+    private @Nullable Output<String> databaseServerType;
+
+    /**
+     * @return The database server type of the Exadata infrastructure.
+     * 
+     */
+    public Optional<Output<String>> databaseServerType() {
+        return Optional.ofNullable(this.databaseServerType);
     }
 
     /**
@@ -489,6 +519,21 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
     }
 
     /**
+     * The storage server type of the Exadata infrastructure.
+     * 
+     */
+    @Import(name="storageServerType")
+    private @Nullable Output<String> storageServerType;
+
+    /**
+     * @return The storage server type of the Exadata infrastructure.
+     * 
+     */
+    public Optional<Output<String>> storageServerType() {
+        return Optional.ofNullable(this.storageServerType);
+    }
+
+    /**
      * The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
      * 
      */
@@ -579,9 +624,11 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
         this.clusterPlacementGroupId = $.clusterPlacementGroupId;
         this.compartmentId = $.compartmentId;
         this.computeCount = $.computeCount;
+        this.computeModel = $.computeModel;
         this.cpuCount = $.cpuCount;
         this.customerContacts = $.customerContacts;
         this.dataStorageSizeInTbs = $.dataStorageSizeInTbs;
+        this.databaseServerType = $.databaseServerType;
         this.dbNodeStorageSizeInGbs = $.dbNodeStorageSizeInGbs;
         this.dbServerVersion = $.dbServerVersion;
         this.definedFileSystemConfigurations = $.definedFileSystemConfigurations;
@@ -603,6 +650,7 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
         this.shape = $.shape;
         this.state = $.state;
         this.storageCount = $.storageCount;
+        this.storageServerType = $.storageServerType;
         this.storageServerVersion = $.storageServerVersion;
         this.subscriptionId = $.subscriptionId;
         this.systemTags = $.systemTags;
@@ -776,6 +824,27 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
         }
 
         /**
+         * @param computeModel The compute model of the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeModel(@Nullable Output<String> computeModel) {
+            $.computeModel = computeModel;
+            return this;
+        }
+
+        /**
+         * @param computeModel The compute model of the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeModel(String computeModel) {
+            return computeModel(Output.of(computeModel));
+        }
+
+        /**
          * @param cpuCount The total number of CPU cores allocated.
          * 
          * @return builder
@@ -846,6 +915,27 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
          */
         public Builder dataStorageSizeInTbs(Double dataStorageSizeInTbs) {
             return dataStorageSizeInTbs(Output.of(dataStorageSizeInTbs));
+        }
+
+        /**
+         * @param databaseServerType The database server type of the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseServerType(@Nullable Output<String> databaseServerType) {
+            $.databaseServerType = databaseServerType;
+            return this;
+        }
+
+        /**
+         * @param databaseServerType The database server type of the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseServerType(String databaseServerType) {
+            return databaseServerType(Output.of(databaseServerType));
         }
 
         /**
@@ -1297,6 +1387,27 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
          */
         public Builder storageCount(Integer storageCount) {
             return storageCount(Output.of(storageCount));
+        }
+
+        /**
+         * @param storageServerType The storage server type of the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder storageServerType(@Nullable Output<String> storageServerType) {
+            $.storageServerType = storageServerType;
+            return this;
+        }
+
+        /**
+         * @param storageServerType The storage server type of the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder storageServerType(String storageServerType) {
+            return storageServerType(Output.of(storageServerType));
         }
 
         /**

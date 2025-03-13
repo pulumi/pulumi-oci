@@ -42,6 +42,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly int ComputeCount;
         /// <summary>
+        /// The compute model of the Exadata infrastructure.
+        /// </summary>
+        public readonly string ComputeModel;
+        /// <summary>
         /// The total number of CPU cores allocated.
         /// </summary>
         public readonly int CpuCount;
@@ -53,6 +57,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// Size, in terabytes, of the DATA disk group.
         /// </summary>
         public readonly double DataStorageSizeInTbs;
+        /// <summary>
+        /// The database server type of the Exadata infrastructure.
+        /// </summary>
+        public readonly string DatabaseServerType;
         /// <summary>
         /// The local node storage allocated in GBs.
         /// </summary>
@@ -142,6 +150,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly int StorageCount;
         /// <summary>
+        /// The storage server type of the Exadata infrastructure.
+        /// </summary>
+        public readonly string StorageServerType;
+        /// <summary>
         /// The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
         /// </summary>
         public readonly string StorageServerVersion;
@@ -178,11 +190,15 @@ namespace Pulumi.Oci.Database.Outputs
 
             int computeCount,
 
+            string computeModel,
+
             int cpuCount,
 
             ImmutableArray<Outputs.GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactResult> customerContacts,
 
             double dataStorageSizeInTbs,
+
+            string databaseServerType,
 
             int dbNodeStorageSizeInGbs,
 
@@ -228,6 +244,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             int storageCount,
 
+            string storageServerType,
+
             string storageServerVersion,
 
             string subscriptionId,
@@ -245,9 +263,11 @@ namespace Pulumi.Oci.Database.Outputs
             ClusterPlacementGroupId = clusterPlacementGroupId;
             CompartmentId = compartmentId;
             ComputeCount = computeCount;
+            ComputeModel = computeModel;
             CpuCount = cpuCount;
             CustomerContacts = customerContacts;
             DataStorageSizeInTbs = dataStorageSizeInTbs;
+            DatabaseServerType = databaseServerType;
             DbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
             DbServerVersion = dbServerVersion;
             DefinedFileSystemConfigurations = definedFileSystemConfigurations;
@@ -270,6 +290,7 @@ namespace Pulumi.Oci.Database.Outputs
             Shape = shape;
             State = state;
             StorageCount = storageCount;
+            StorageServerType = storageServerType;
             StorageServerVersion = storageServerVersion;
             SubscriptionId = subscriptionId;
             SystemTags = systemTags;

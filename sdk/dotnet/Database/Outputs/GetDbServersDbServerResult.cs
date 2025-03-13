@@ -26,6 +26,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
+        /// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        /// </summary>
+        public readonly string ComputeModel;
+        /// <summary>
         /// The number of CPU cores enabled on the Db server.
         /// </summary>
         public readonly int CpuCoreCount;
@@ -106,6 +110,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string compartmentId,
 
+            string computeModel,
+
             int cpuCoreCount,
 
             ImmutableArray<string> dbNodeIds,
@@ -145,6 +151,7 @@ namespace Pulumi.Oci.Database.Outputs
             AutonomousVirtualMachineIds = autonomousVirtualMachineIds;
             AutonomousVmClusterIds = autonomousVmClusterIds;
             CompartmentId = compartmentId;
+            ComputeModel = computeModel;
             CpuCoreCount = cpuCoreCount;
             DbNodeIds = dbNodeIds;
             DbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;

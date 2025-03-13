@@ -62,6 +62,8 @@ type LookupExascaleDbStorageVaultResult struct {
 	AdditionalFlashCacheInPercent int `pulumi:"additionalFlashCacheInPercent"`
 	// The name of the availability domain in which the Exadata Database Storage Vault is located.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+	ClusterPlacementGroupId string `pulumi:"clusterPlacementGroupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -69,7 +71,9 @@ type LookupExascaleDbStorageVaultResult struct {
 	// Exadata Database Storage Vault description.
 	Description string `pulumi:"description"`
 	// The user-friendly name for the Exadata Database Storage Vault. The name does not need to be unique.
-	DisplayName              string `pulumi:"displayName"`
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+	ExadataInfrastructureId  string `pulumi:"exadataInfrastructureId"`
 	ExascaleDbStorageVaultId string `pulumi:"exascaleDbStorageVaultId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
@@ -81,6 +85,8 @@ type LookupExascaleDbStorageVaultResult struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The current state of the Exadata Database Storage Vault.
 	State string `pulumi:"state"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+	SubscriptionId string `pulumi:"subscriptionId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time that the Exadata Database Storage Vault was created.
@@ -137,6 +143,11 @@ func (o LookupExascaleDbStorageVaultResultOutput) AvailabilityDomain() pulumi.St
 	return o.ApplyT(func(v LookupExascaleDbStorageVaultResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+func (o LookupExascaleDbStorageVaultResultOutput) ClusterPlacementGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExascaleDbStorageVaultResult) string { return v.ClusterPlacementGroupId }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o LookupExascaleDbStorageVaultResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExascaleDbStorageVaultResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -155,6 +166,11 @@ func (o LookupExascaleDbStorageVaultResultOutput) Description() pulumi.StringOut
 // The user-friendly name for the Exadata Database Storage Vault. The name does not need to be unique.
 func (o LookupExascaleDbStorageVaultResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExascaleDbStorageVaultResult) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+func (o LookupExascaleDbStorageVaultResultOutput) ExadataInfrastructureId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExascaleDbStorageVaultResult) string { return v.ExadataInfrastructureId }).(pulumi.StringOutput)
 }
 
 func (o LookupExascaleDbStorageVaultResultOutput) ExascaleDbStorageVaultId() pulumi.StringOutput {
@@ -186,6 +202,11 @@ func (o LookupExascaleDbStorageVaultResultOutput) LifecycleDetails() pulumi.Stri
 // The current state of the Exadata Database Storage Vault.
 func (o LookupExascaleDbStorageVaultResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExascaleDbStorageVaultResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+func (o LookupExascaleDbStorageVaultResultOutput) SubscriptionId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExascaleDbStorageVaultResult) string { return v.SubscriptionId }).(pulumi.StringOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).

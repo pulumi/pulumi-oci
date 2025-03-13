@@ -22,7 +22,9 @@ __all__ = ['BackupArgs', 'Backup']
 class BackupArgs:
     def __init__(__self__, *,
                  database_id: pulumi.Input[str],
-                 display_name: pulumi.Input[str]):
+                 display_name: pulumi.Input[str],
+                 retention_period_in_days: Optional[pulumi.Input[int]] = None,
+                 retention_period_in_years: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a Backup resource.
         :param pulumi.Input[str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
@@ -34,6 +36,10 @@ class BackupArgs:
         """
         pulumi.set(__self__, "database_id", database_id)
         pulumi.set(__self__, "display_name", display_name)
+        if retention_period_in_days is not None:
+            pulumi.set(__self__, "retention_period_in_days", retention_period_in_days)
+        if retention_period_in_years is not None:
+            pulumi.set(__self__, "retention_period_in_years", retention_period_in_years)
 
     @property
     @pulumi.getter(name="databaseId")
@@ -63,25 +69,49 @@ class BackupArgs:
     def display_name(self, value: pulumi.Input[str]):
         pulumi.set(self, "display_name", value)
 
+    @property
+    @pulumi.getter(name="retentionPeriodInDays")
+    def retention_period_in_days(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "retention_period_in_days")
+
+    @retention_period_in_days.setter
+    def retention_period_in_days(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "retention_period_in_days", value)
+
+    @property
+    @pulumi.getter(name="retentionPeriodInYears")
+    def retention_period_in_years(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "retention_period_in_years")
+
+    @retention_period_in_years.setter
+    def retention_period_in_years(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "retention_period_in_years", value)
+
 
 @pulumi.input_type
 class _BackupState:
     def __init__(__self__, *,
                  availability_domain: Optional[pulumi.Input[str]] = None,
+                 backup_destination_type: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  database_edition: Optional[pulumi.Input[str]] = None,
                  database_id: Optional[pulumi.Input[str]] = None,
                  database_size_in_gbs: Optional[pulumi.Input[float]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  encryption_key_location_details: Optional[pulumi.Input[Sequence[pulumi.Input['BackupEncryptionKeyLocationDetailArgs']]]] = None,
+                 is_using_oracle_managed_keys: Optional[pulumi.Input[bool]] = None,
                  key_store_id: Optional[pulumi.Input[str]] = None,
                  key_store_wallet_name: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  kms_key_version_id: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 retention_period_in_days: Optional[pulumi.Input[int]] = None,
+                 retention_period_in_years: Optional[pulumi.Input[int]] = None,
+                 secondary_kms_key_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_ended: Optional[pulumi.Input[str]] = None,
+                 time_expiry_scheduled: Optional[pulumi.Input[str]] = None,
                  time_started: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None,
                  vault_id: Optional[pulumi.Input[str]] = None,
@@ -90,7 +120,7 @@ class _BackupState:
         Input properties used for looking up and filtering Backup resources.
         :param pulumi.Input[str] availability_domain: The name of the availability domain where the database backup is stored.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] database_edition: The Oracle Database edition of the DB system from which the database backup was taken.
+        :param pulumi.Input[str] database_edition: The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
         :param pulumi.Input[str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param pulumi.Input[float] database_size_in_gbs: The size of the database in gigabytes at the time the backup was taken.
         :param pulumi.Input[str] display_name: The user-friendly name for the backup. The name does not have to be unique.
@@ -114,6 +144,8 @@ class _BackupState:
         """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
+        if backup_destination_type is not None:
+            pulumi.set(__self__, "backup_destination_type", backup_destination_type)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if database_edition is not None:
@@ -126,6 +158,8 @@ class _BackupState:
             pulumi.set(__self__, "display_name", display_name)
         if encryption_key_location_details is not None:
             pulumi.set(__self__, "encryption_key_location_details", encryption_key_location_details)
+        if is_using_oracle_managed_keys is not None:
+            pulumi.set(__self__, "is_using_oracle_managed_keys", is_using_oracle_managed_keys)
         if key_store_id is not None:
             pulumi.set(__self__, "key_store_id", key_store_id)
         if key_store_wallet_name is not None:
@@ -136,12 +170,20 @@ class _BackupState:
             pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if retention_period_in_days is not None:
+            pulumi.set(__self__, "retention_period_in_days", retention_period_in_days)
+        if retention_period_in_years is not None:
+            pulumi.set(__self__, "retention_period_in_years", retention_period_in_years)
+        if secondary_kms_key_ids is not None:
+            pulumi.set(__self__, "secondary_kms_key_ids", secondary_kms_key_ids)
         if shape is not None:
             pulumi.set(__self__, "shape", shape)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if time_ended is not None:
             pulumi.set(__self__, "time_ended", time_ended)
+        if time_expiry_scheduled is not None:
+            pulumi.set(__self__, "time_expiry_scheduled", time_expiry_scheduled)
         if time_started is not None:
             pulumi.set(__self__, "time_started", time_started)
         if type is not None:
@@ -164,6 +206,15 @@ class _BackupState:
         pulumi.set(self, "availability_domain", value)
 
     @property
+    @pulumi.getter(name="backupDestinationType")
+    def backup_destination_type(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "backup_destination_type")
+
+    @backup_destination_type.setter
+    def backup_destination_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "backup_destination_type", value)
+
+    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -179,7 +230,7 @@ class _BackupState:
     @pulumi.getter(name="databaseEdition")
     def database_edition(self) -> Optional[pulumi.Input[str]]:
         """
-        The Oracle Database edition of the DB system from which the database backup was taken.
+        The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
         """
         return pulumi.get(self, "database_edition")
 
@@ -238,6 +289,15 @@ class _BackupState:
     @encryption_key_location_details.setter
     def encryption_key_location_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BackupEncryptionKeyLocationDetailArgs']]]]):
         pulumi.set(self, "encryption_key_location_details", value)
+
+    @property
+    @pulumi.getter(name="isUsingOracleManagedKeys")
+    def is_using_oracle_managed_keys(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "is_using_oracle_managed_keys")
+
+    @is_using_oracle_managed_keys.setter
+    def is_using_oracle_managed_keys(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_using_oracle_managed_keys", value)
 
     @property
     @pulumi.getter(name="keyStoreId")
@@ -300,6 +360,33 @@ class _BackupState:
         pulumi.set(self, "lifecycle_details", value)
 
     @property
+    @pulumi.getter(name="retentionPeriodInDays")
+    def retention_period_in_days(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "retention_period_in_days")
+
+    @retention_period_in_days.setter
+    def retention_period_in_days(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "retention_period_in_days", value)
+
+    @property
+    @pulumi.getter(name="retentionPeriodInYears")
+    def retention_period_in_years(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "retention_period_in_years")
+
+    @retention_period_in_years.setter
+    def retention_period_in_years(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "retention_period_in_years", value)
+
+    @property
+    @pulumi.getter(name="secondaryKmsKeyIds")
+    def secondary_kms_key_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "secondary_kms_key_ids")
+
+    @secondary_kms_key_ids.setter
+    def secondary_kms_key_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "secondary_kms_key_ids", value)
+
+    @property
     @pulumi.getter
     def shape(self) -> Optional[pulumi.Input[str]]:
         """
@@ -334,6 +421,15 @@ class _BackupState:
     @time_ended.setter
     def time_ended(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_ended", value)
+
+    @property
+    @pulumi.getter(name="timeExpiryScheduled")
+    def time_expiry_scheduled(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "time_expiry_scheduled")
+
+    @time_expiry_scheduled.setter
+    def time_expiry_scheduled(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_expiry_scheduled", value)
 
     @property
     @pulumi.getter(name="timeStarted")
@@ -391,6 +487,8 @@ class Backup(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  database_id: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 retention_period_in_days: Optional[pulumi.Input[int]] = None,
+                 retention_period_in_years: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
         This resource provides the Backup resource in Oracle Cloud Infrastructure Database service.
@@ -472,6 +570,8 @@ class Backup(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  database_id: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 retention_period_in_days: Optional[pulumi.Input[int]] = None,
+                 retention_period_in_years: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -487,19 +587,25 @@ class Backup(pulumi.CustomResource):
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
+            __props__.__dict__["retention_period_in_days"] = retention_period_in_days
+            __props__.__dict__["retention_period_in_years"] = retention_period_in_years
             __props__.__dict__["availability_domain"] = None
+            __props__.__dict__["backup_destination_type"] = None
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["database_edition"] = None
             __props__.__dict__["database_size_in_gbs"] = None
             __props__.__dict__["encryption_key_location_details"] = None
+            __props__.__dict__["is_using_oracle_managed_keys"] = None
             __props__.__dict__["key_store_id"] = None
             __props__.__dict__["key_store_wallet_name"] = None
             __props__.__dict__["kms_key_id"] = None
             __props__.__dict__["kms_key_version_id"] = None
             __props__.__dict__["lifecycle_details"] = None
+            __props__.__dict__["secondary_kms_key_ids"] = None
             __props__.__dict__["shape"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_ended"] = None
+            __props__.__dict__["time_expiry_scheduled"] = None
             __props__.__dict__["time_started"] = None
             __props__.__dict__["type"] = None
             __props__.__dict__["vault_id"] = None
@@ -515,20 +621,26 @@ class Backup(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             availability_domain: Optional[pulumi.Input[str]] = None,
+            backup_destination_type: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             database_edition: Optional[pulumi.Input[str]] = None,
             database_id: Optional[pulumi.Input[str]] = None,
             database_size_in_gbs: Optional[pulumi.Input[float]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             encryption_key_location_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BackupEncryptionKeyLocationDetailArgs', 'BackupEncryptionKeyLocationDetailArgsDict']]]]] = None,
+            is_using_oracle_managed_keys: Optional[pulumi.Input[bool]] = None,
             key_store_id: Optional[pulumi.Input[str]] = None,
             key_store_wallet_name: Optional[pulumi.Input[str]] = None,
             kms_key_id: Optional[pulumi.Input[str]] = None,
             kms_key_version_id: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
+            retention_period_in_days: Optional[pulumi.Input[int]] = None,
+            retention_period_in_years: Optional[pulumi.Input[int]] = None,
+            secondary_kms_key_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             shape: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_ended: Optional[pulumi.Input[str]] = None,
+            time_expiry_scheduled: Optional[pulumi.Input[str]] = None,
             time_started: Optional[pulumi.Input[str]] = None,
             type: Optional[pulumi.Input[str]] = None,
             vault_id: Optional[pulumi.Input[str]] = None,
@@ -542,7 +654,7 @@ class Backup(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] availability_domain: The name of the availability domain where the database backup is stored.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] database_edition: The Oracle Database edition of the DB system from which the database backup was taken.
+        :param pulumi.Input[str] database_edition: The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
         :param pulumi.Input[str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param pulumi.Input[float] database_size_in_gbs: The size of the database in gigabytes at the time the backup was taken.
         :param pulumi.Input[str] display_name: The user-friendly name for the backup. The name does not have to be unique.
@@ -569,20 +681,26 @@ class Backup(pulumi.CustomResource):
         __props__ = _BackupState.__new__(_BackupState)
 
         __props__.__dict__["availability_domain"] = availability_domain
+        __props__.__dict__["backup_destination_type"] = backup_destination_type
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["database_edition"] = database_edition
         __props__.__dict__["database_id"] = database_id
         __props__.__dict__["database_size_in_gbs"] = database_size_in_gbs
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["encryption_key_location_details"] = encryption_key_location_details
+        __props__.__dict__["is_using_oracle_managed_keys"] = is_using_oracle_managed_keys
         __props__.__dict__["key_store_id"] = key_store_id
         __props__.__dict__["key_store_wallet_name"] = key_store_wallet_name
         __props__.__dict__["kms_key_id"] = kms_key_id
         __props__.__dict__["kms_key_version_id"] = kms_key_version_id
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["retention_period_in_days"] = retention_period_in_days
+        __props__.__dict__["retention_period_in_years"] = retention_period_in_years
+        __props__.__dict__["secondary_kms_key_ids"] = secondary_kms_key_ids
         __props__.__dict__["shape"] = shape
         __props__.__dict__["state"] = state
         __props__.__dict__["time_ended"] = time_ended
+        __props__.__dict__["time_expiry_scheduled"] = time_expiry_scheduled
         __props__.__dict__["time_started"] = time_started
         __props__.__dict__["type"] = type
         __props__.__dict__["vault_id"] = vault_id
@@ -598,6 +716,11 @@ class Backup(pulumi.CustomResource):
         return pulumi.get(self, "availability_domain")
 
     @property
+    @pulumi.getter(name="backupDestinationType")
+    def backup_destination_type(self) -> pulumi.Output[str]:
+        return pulumi.get(self, "backup_destination_type")
+
+    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
@@ -609,7 +732,7 @@ class Backup(pulumi.CustomResource):
     @pulumi.getter(name="databaseEdition")
     def database_edition(self) -> pulumi.Output[str]:
         """
-        The Oracle Database edition of the DB system from which the database backup was taken.
+        The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
         """
         return pulumi.get(self, "database_edition")
 
@@ -648,6 +771,11 @@ class Backup(pulumi.CustomResource):
         Types of providers supported for managing database encryption keys
         """
         return pulumi.get(self, "encryption_key_location_details")
+
+    @property
+    @pulumi.getter(name="isUsingOracleManagedKeys")
+    def is_using_oracle_managed_keys(self) -> pulumi.Output[bool]:
+        return pulumi.get(self, "is_using_oracle_managed_keys")
 
     @property
     @pulumi.getter(name="keyStoreId")
@@ -690,6 +818,21 @@ class Backup(pulumi.CustomResource):
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="retentionPeriodInDays")
+    def retention_period_in_days(self) -> pulumi.Output[int]:
+        return pulumi.get(self, "retention_period_in_days")
+
+    @property
+    @pulumi.getter(name="retentionPeriodInYears")
+    def retention_period_in_years(self) -> pulumi.Output[int]:
+        return pulumi.get(self, "retention_period_in_years")
+
+    @property
+    @pulumi.getter(name="secondaryKmsKeyIds")
+    def secondary_kms_key_ids(self) -> pulumi.Output[Sequence[str]]:
+        return pulumi.get(self, "secondary_kms_key_ids")
+
+    @property
     @pulumi.getter
     def shape(self) -> pulumi.Output[str]:
         """
@@ -712,6 +855,11 @@ class Backup(pulumi.CustomResource):
         The date and time the backup was completed.
         """
         return pulumi.get(self, "time_ended")
+
+    @property
+    @pulumi.getter(name="timeExpiryScheduled")
+    def time_expiry_scheduled(self) -> pulumi.Output[str]:
+        return pulumi.get(self, "time_expiry_scheduled")
 
     @property
     @pulumi.getter(name="timeStarted")

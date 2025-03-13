@@ -1143,6 +1143,10 @@ if not MYPY:
         """
         (Updatable) A client id that all tokens must be issued for.
         """
+        configuration_file: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+        """
         groups_claim: NotRequired[pulumi.Input[str]]
         """
         (Updatable) JWT claim to use as the user's group. If the claim is present it must be an array of strings.
@@ -1180,6 +1184,7 @@ class ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs:
                  is_open_id_connect_auth_enabled: pulumi.Input[bool],
                  ca_certificate: Optional[pulumi.Input[str]] = None,
                  client_id: Optional[pulumi.Input[str]] = None,
+                 configuration_file: Optional[pulumi.Input[str]] = None,
                  groups_claim: Optional[pulumi.Input[str]] = None,
                  groups_prefix: Optional[pulumi.Input[str]] = None,
                  issuer_url: Optional[pulumi.Input[str]] = None,
@@ -1191,6 +1196,7 @@ class ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs:
         :param pulumi.Input[bool] is_open_id_connect_auth_enabled: (Updatable) Whether the cluster has OIDC Auth Config enabled. Defaults to false.
         :param pulumi.Input[str] ca_certificate: (Updatable) A Base64 encoded public RSA or ECDSA certificates used to signed your identity provider's web certificate.
         :param pulumi.Input[str] client_id: (Updatable) A client id that all tokens must be issued for.
+        :param pulumi.Input[str] configuration_file: (Updatable) A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
         :param pulumi.Input[str] groups_claim: (Updatable) JWT claim to use as the user's group. If the claim is present it must be an array of strings.
         :param pulumi.Input[str] groups_prefix: (Updatable) Prefix prepended to group claims to prevent clashes with existing names (such as system:groups).
         :param pulumi.Input[str] issuer_url: (Updatable) URL of the provider that allows the API server to discover public signing keys.  Only URLs that use the https:// scheme are accepted. This is typically the provider's discovery URL,  changed to have an empty path.
@@ -1204,6 +1210,8 @@ class ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs:
             pulumi.set(__self__, "ca_certificate", ca_certificate)
         if client_id is not None:
             pulumi.set(__self__, "client_id", client_id)
+        if configuration_file is not None:
+            pulumi.set(__self__, "configuration_file", configuration_file)
         if groups_claim is not None:
             pulumi.set(__self__, "groups_claim", groups_claim)
         if groups_prefix is not None:
@@ -1254,6 +1262,18 @@ class ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs:
     @client_id.setter
     def client_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "client_id", value)
+
+    @property
+    @pulumi.getter(name="configurationFile")
+    def configuration_file(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+        """
+        return pulumi.get(self, "configuration_file")
+
+    @configuration_file.setter
+    def configuration_file(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "configuration_file", value)
 
     @property
     @pulumi.getter(name="groupsClaim")
@@ -1556,7 +1576,7 @@ if not MYPY:
         """
         health_checks: NotRequired[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerHealthCheckArgsDict']]]]
         """
-        list of container health checks to check container status and take appropriate action if container status is failed. There are three types of health checks that we currently support HTTP, TCP, and Command.
+        list of container health checks to check container status and take appropriate action if container status is failed. There are two types of health checks that we currently support HTTP and TCP.
         """
         is_resource_principal_disabled: NotRequired[pulumi.Input[bool]]
         """
@@ -1658,7 +1678,7 @@ class ContainerInstanceContainerArgs:
                The total size of all environment variables combined, name and values, must be 64 KB or smaller.
         :param pulumi.Input[str] fault_domain: The fault domain where the container instance runs.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerHealthCheckArgs']]] health_checks: list of container health checks to check container status and take appropriate action if container status is failed. There are three types of health checks that we currently support HTTP, TCP, and Command.
+        :param pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerHealthCheckArgs']]] health_checks: list of container health checks to check container status and take appropriate action if container status is failed. There are two types of health checks that we currently support HTTP and TCP.
         :param pulumi.Input[bool] is_resource_principal_disabled: Determines if the container will have access to the container instance resource principal.
                
                This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
@@ -1890,7 +1910,7 @@ class ContainerInstanceContainerArgs:
     @pulumi.getter(name="healthChecks")
     def health_checks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerHealthCheckArgs']]]]:
         """
-        list of container health checks to check container status and take appropriate action if container status is failed. There are three types of health checks that we currently support HTTP, TCP, and Command.
+        list of container health checks to check container status and take appropriate action if container status is failed. There are two types of health checks that we currently support HTTP and TCP.
         """
         return pulumi.get(self, "health_checks")
 
@@ -2040,9 +2060,9 @@ if not MYPY:
         """
         Container health check type.
         """
-        commands: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        port: pulumi.Input[int]
         """
-        The list of strings that will be simplified to a single command for checking the status of the container.
+        Container health check HTTP port.
         """
         failure_action: NotRequired[pulumi.Input[str]]
         """
@@ -2072,10 +2092,6 @@ if not MYPY:
         """
         Container health check HTTP path.
         """
-        port: NotRequired[pulumi.Input[int]]
-        """
-        Container health check HTTP port.
-        """
         status: NotRequired[pulumi.Input[str]]
         status_details: NotRequired[pulumi.Input[str]]
         success_threshold: NotRequired[pulumi.Input[int]]
@@ -2093,7 +2109,7 @@ elif False:
 class ContainerInstanceContainerHealthCheckArgs:
     def __init__(__self__, *,
                  health_check_type: pulumi.Input[str],
-                 commands: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 port: pulumi.Input[int],
                  failure_action: Optional[pulumi.Input[str]] = None,
                  failure_threshold: Optional[pulumi.Input[int]] = None,
                  headers: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerHealthCheckHeaderArgs']]]] = None,
@@ -2101,14 +2117,13 @@ class ContainerInstanceContainerHealthCheckArgs:
                  interval_in_seconds: Optional[pulumi.Input[int]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  path: Optional[pulumi.Input[str]] = None,
-                 port: Optional[pulumi.Input[int]] = None,
                  status: Optional[pulumi.Input[str]] = None,
                  status_details: Optional[pulumi.Input[str]] = None,
                  success_threshold: Optional[pulumi.Input[int]] = None,
                  timeout_in_seconds: Optional[pulumi.Input[int]] = None):
         """
         :param pulumi.Input[str] health_check_type: Container health check type.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] commands: The list of strings that will be simplified to a single command for checking the status of the container.
+        :param pulumi.Input[int] port: Container health check HTTP port.
         :param pulumi.Input[str] failure_action: The action will be triggered when the container health check fails. There are two types of action: KILL or NONE. The default action is KILL. If failure action is KILL, the container will be subject to the container restart policy.
         :param pulumi.Input[int] failure_threshold: Number of consecutive failures at which we consider the check failed.
         :param pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerHealthCheckHeaderArgs']]] headers: Container health check HTTP headers.
@@ -2116,13 +2131,11 @@ class ContainerInstanceContainerHealthCheckArgs:
         :param pulumi.Input[int] interval_in_seconds: Number of seconds between two consecutive runs for checking container health.
         :param pulumi.Input[str] name: Health check name.
         :param pulumi.Input[str] path: Container health check HTTP path.
-        :param pulumi.Input[int] port: Container health check HTTP port.
         :param pulumi.Input[int] success_threshold: Number of consecutive successes at which we consider the check succeeded again after it was in failure state.
         :param pulumi.Input[int] timeout_in_seconds: Length of waiting time in seconds before marking health check failed.
         """
         pulumi.set(__self__, "health_check_type", health_check_type)
-        if commands is not None:
-            pulumi.set(__self__, "commands", commands)
+        pulumi.set(__self__, "port", port)
         if failure_action is not None:
             pulumi.set(__self__, "failure_action", failure_action)
         if failure_threshold is not None:
@@ -2137,8 +2150,6 @@ class ContainerInstanceContainerHealthCheckArgs:
             pulumi.set(__self__, "name", name)
         if path is not None:
             pulumi.set(__self__, "path", path)
-        if port is not None:
-            pulumi.set(__self__, "port", port)
         if status is not None:
             pulumi.set(__self__, "status", status)
         if status_details is not None:
@@ -2162,15 +2173,15 @@ class ContainerInstanceContainerHealthCheckArgs:
 
     @property
     @pulumi.getter
-    def commands(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+    def port(self) -> pulumi.Input[int]:
         """
-        The list of strings that will be simplified to a single command for checking the status of the container.
+        Container health check HTTP port.
         """
-        return pulumi.get(self, "commands")
+        return pulumi.get(self, "port")
 
-    @commands.setter
-    def commands(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
-        pulumi.set(self, "commands", value)
+    @port.setter
+    def port(self, value: pulumi.Input[int]):
+        pulumi.set(self, "port", value)
 
     @property
     @pulumi.getter(name="failureAction")
@@ -2255,18 +2266,6 @@ class ContainerInstanceContainerHealthCheckArgs:
     @path.setter
     def path(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "path", value)
-
-    @property
-    @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        Container health check HTTP port.
-        """
-        return pulumi.get(self, "port")
-
-    @port.setter
-    def port(self, value: Optional[pulumi.Input[int]]):
-        pulumi.set(self, "port", value)
 
     @property
     @pulumi.getter

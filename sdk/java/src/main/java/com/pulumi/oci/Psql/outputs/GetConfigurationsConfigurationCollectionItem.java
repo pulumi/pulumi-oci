@@ -22,7 +22,7 @@ public final class GetConfigurationsConfigurationCollectionItem {
      */
     private String compartmentId;
     /**
-     * @return The type of configuration. Either user-created or a default configuration.
+     * @return A filter to return only resources if their `configType` matches the given `configType`.
      * 
      */
     private String configType;
@@ -112,7 +112,7 @@ public final class GetConfigurationsConfigurationCollectionItem {
         return this.compartmentId;
     }
     /**
-     * @return The type of configuration. Either user-created or a default configuration.
+     * @return A filter to return only resources if their `configType` matches the given `configType`.
      * 
      */
     public String configType() {

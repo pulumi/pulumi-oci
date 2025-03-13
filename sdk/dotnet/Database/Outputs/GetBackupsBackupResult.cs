@@ -18,11 +18,15 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string AvailabilityDomain;
         /// <summary>
+        /// A filter to return only resources that match the given backup destination type.
+        /// </summary>
+        public readonly string BackupDestinationType;
+        /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// The Oracle Database edition of the DB system from which the database backup was taken.
+        /// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
         /// </summary>
         public readonly string DatabaseEdition;
         /// <summary>
@@ -46,6 +50,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// True if Oracle Managed Keys is required for restore of the backup.
+        /// </summary>
+        public readonly bool IsUsingOracleManagedKeys;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         /// </summary>
         public readonly string KeyStoreId;
@@ -66,11 +74,23 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// The retention period of the long term backup in days.
+        /// </summary>
+        public readonly int RetentionPeriodInDays;
+        /// <summary>
+        /// The retention period of the long term backup in years.
+        /// </summary>
+        public readonly int RetentionPeriodInYears;
+        /// <summary>
+        /// List of OCIDs of the key containers used as the secondary encryption key in database transparent data encryption (TDE) operations.
+        /// </summary>
+        public readonly ImmutableArray<string> SecondaryKmsKeyIds;
+        /// <summary>
         /// Shape of the backup's source database.
         /// </summary>
         public readonly string Shape;
         /// <summary>
-        /// The current state of the backup.
+        /// A filter to return only resources that match the given lifecycle state exactly.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -78,11 +98,15 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string TimeEnded;
         /// <summary>
+        /// Expiration time of the long term database backup.
+        /// </summary>
+        public readonly string TimeExpiryScheduled;
+        /// <summary>
         /// The date and time the backup started.
         /// </summary>
         public readonly string TimeStarted;
         /// <summary>
-        /// The type of backup.
+        /// A filter to return only backups that matches with the given type of Backup.
         /// </summary>
         public readonly string Type;
         /// <summary>
@@ -90,13 +114,15 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string VaultId;
         /// <summary>
-        /// Version of the backup's source database
+        /// A filter to return only resources that match the given database version.
         /// </summary>
         public readonly string Version;
 
         [OutputConstructor]
         private GetBackupsBackupResult(
             string availabilityDomain,
+
+            string backupDestinationType,
 
             string compartmentId,
 
@@ -112,6 +138,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string id,
 
+            bool isUsingOracleManagedKeys,
+
             string keyStoreId,
 
             string keyStoreWalletName,
@@ -122,11 +150,19 @@ namespace Pulumi.Oci.Database.Outputs
 
             string lifecycleDetails,
 
+            int retentionPeriodInDays,
+
+            int retentionPeriodInYears,
+
+            ImmutableArray<string> secondaryKmsKeyIds,
+
             string shape,
 
             string state,
 
             string timeEnded,
+
+            string timeExpiryScheduled,
 
             string timeStarted,
 
@@ -137,6 +173,7 @@ namespace Pulumi.Oci.Database.Outputs
             string version)
         {
             AvailabilityDomain = availabilityDomain;
+            BackupDestinationType = backupDestinationType;
             CompartmentId = compartmentId;
             DatabaseEdition = databaseEdition;
             DatabaseId = databaseId;
@@ -144,14 +181,19 @@ namespace Pulumi.Oci.Database.Outputs
             DisplayName = displayName;
             EncryptionKeyLocationDetails = encryptionKeyLocationDetails;
             Id = id;
+            IsUsingOracleManagedKeys = isUsingOracleManagedKeys;
             KeyStoreId = keyStoreId;
             KeyStoreWalletName = keyStoreWalletName;
             KmsKeyId = kmsKeyId;
             KmsKeyVersionId = kmsKeyVersionId;
             LifecycleDetails = lifecycleDetails;
+            RetentionPeriodInDays = retentionPeriodInDays;
+            RetentionPeriodInYears = retentionPeriodInYears;
+            SecondaryKmsKeyIds = secondaryKmsKeyIds;
             Shape = shape;
             State = state;
             TimeEnded = timeEnded;
+            TimeExpiryScheduled = timeExpiryScheduled;
             TimeStarted = timeStarted;
             Type = type;
             VaultId = vaultId;

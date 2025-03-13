@@ -27,7 +27,7 @@ class GetMysqlConfigurationResult:
     """
     A collection of values returned by getMysqlConfiguration.
     """
-    def __init__(__self__, compartment_id=None, configuration_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, init_variables=None, parent_configuration_id=None, shape_name=None, state=None, time_created=None, time_updated=None, type=None, variables=None):
+    def __init__(__self__, compartment_id=None, configuration_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, init_variables=None, parent_configuration_id=None, shape_name=None, state=None, system_tags=None, time_created=None, time_updated=None, type=None, variables=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -61,6 +61,9 @@ class GetMysqlConfigurationResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -160,6 +163,14 @@ class GetMysqlConfigurationResult:
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
@@ -209,6 +220,7 @@ class AwaitableGetMysqlConfigurationResult(GetMysqlConfigurationResult):
             parent_configuration_id=self.parent_configuration_id,
             shape_name=self.shape_name,
             state=self.state,
+            system_tags=self.system_tags,
             time_created=self.time_created,
             time_updated=self.time_updated,
             type=self.type,
@@ -251,6 +263,7 @@ def get_mysql_configuration(configuration_id: Optional[str] = None,
         parent_configuration_id=pulumi.get(__ret__, 'parent_configuration_id'),
         shape_name=pulumi.get(__ret__, 'shape_name'),
         state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'),
@@ -290,6 +303,7 @@ def get_mysql_configuration_output(configuration_id: Optional[pulumi.Input[str]]
         parent_configuration_id=pulumi.get(__response__, 'parent_configuration_id'),
         shape_name=pulumi.get(__response__, 'shape_name'),
         state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated'),
         type=pulumi.get(__response__, 'type'),

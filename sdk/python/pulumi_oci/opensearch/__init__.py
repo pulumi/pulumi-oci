@@ -7,8 +7,11 @@ import typing
 # Export this package's modules as members:
 from .cluster import *
 from .get_opensearch_cluster import *
+from .get_opensearch_cluster_pipeline import *
+from .get_opensearch_cluster_pipelines import *
 from .get_opensearch_clusters import *
 from .get_opensearch_version import *
 from .get_opensearch_versions import *
+from .opensearch_cluster_pipeline import *
 from ._inputs import *
 from . import outputs

@@ -56,6 +56,22 @@ import * as utilities from "../utilities";
  *             imageDigest: pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsImageDigest,
  *             imageSignatureId: testImageSignature.id,
  *         },
+ *         stepDataflowConfigurationDetails: {
+ *             configuration: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsConfiguration,
+ *             driverShape: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShape,
+ *             driverShapeConfigDetails: {
+ *                 memoryInGbs: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsMemoryInGbs,
+ *                 ocpus: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsOcpus,
+ *             },
+ *             executorShape: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShape,
+ *             executorShapeConfigDetails: {
+ *                 memoryInGbs: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsMemoryInGbs,
+ *                 ocpus: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOcpus,
+ *             },
+ *             logsBucketUri: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsLogsBucketUri,
+ *             numExecutors: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsNumExecutors,
+ *             warehouseBucketUri: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsWarehouseBucketUri,
+ *         },
  *     }],
  *     systemTags: pipelineRunSystemTags,
  * });

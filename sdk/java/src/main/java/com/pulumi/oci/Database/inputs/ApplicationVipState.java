@@ -107,18 +107,33 @@ public final class ApplicationVipState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The application virtual IP (VIP) address.
+     * The application virtual IP (VIP) IPv4 address.
      * 
      */
     @Import(name="ipAddress")
     private @Nullable Output<String> ipAddress;
 
     /**
-     * @return The application virtual IP (VIP) address.
+     * @return The application virtual IP (VIP) IPv4 address.
      * 
      */
     public Optional<Output<String>> ipAddress() {
         return Optional.ofNullable(this.ipAddress);
+    }
+
+    /**
+     * The application virtual IP (VIP) IPv6 address.
+     * 
+     */
+    @Import(name="ipv6address")
+    private @Nullable Output<String> ipv6address;
+
+    /**
+     * @return The application virtual IP (VIP) IPv6 address.
+     * 
+     */
+    public Optional<Output<String>> ipv6address() {
+        return Optional.ofNullable(this.ipv6address);
     }
 
     /**
@@ -197,6 +212,7 @@ public final class ApplicationVipState extends com.pulumi.resources.ResourceArgs
         this.freeformTags = $.freeformTags;
         this.hostnameLabel = $.hostnameLabel;
         this.ipAddress = $.ipAddress;
+        this.ipv6address = $.ipv6address;
         this.lifecycleDetails = $.lifecycleDetails;
         this.state = $.state;
         this.subnetId = $.subnetId;
@@ -348,7 +364,7 @@ public final class ApplicationVipState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param ipAddress The application virtual IP (VIP) address.
+         * @param ipAddress The application virtual IP (VIP) IPv4 address.
          * 
          * @return builder
          * 
@@ -359,13 +375,34 @@ public final class ApplicationVipState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param ipAddress The application virtual IP (VIP) address.
+         * @param ipAddress The application virtual IP (VIP) IPv4 address.
          * 
          * @return builder
          * 
          */
         public Builder ipAddress(String ipAddress) {
             return ipAddress(Output.of(ipAddress));
+        }
+
+        /**
+         * @param ipv6address The application virtual IP (VIP) IPv6 address.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6address(@Nullable Output<String> ipv6address) {
+            $.ipv6address = ipv6address;
+            return this;
+        }
+
+        /**
+         * @param ipv6address The application virtual IP (VIP) IPv6 address.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6address(String ipv6address) {
+            return ipv6address(Output.of(ipv6address));
         }
 
         /**

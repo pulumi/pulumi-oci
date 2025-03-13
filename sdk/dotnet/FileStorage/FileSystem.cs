@@ -56,6 +56,7 @@ namespace Pulumi.Oci.FileStorage
     ///     {
     ///         AvailabilityDomain = fileSystemAvailabilityDomain,
     ///         CompartmentId = compartmentId,
+    ///         AreQuotaRulesEnabled = fileSystemAreQuotaRulesEnabled,
     ///         CloneAttachStatus = fileSystemCloneAttachStatus,
     ///         DefinedTags = 
     ///         {
@@ -95,6 +96,12 @@ namespace Pulumi.Oci.FileStorage
     [OciResourceType("oci:FileStorage/fileSystem:FileSystem")]
     public partial class FileSystem : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// (Updatable) Specifies the enforcement of quota rules on the file system.
+        /// </summary>
+        [Output("areQuotaRulesEnabled")]
+        public Output<bool> AreQuotaRulesEnabled { get; private set; } = null!;
+
         /// <summary>
         /// The availability domain to create the file system in.  Example: `Uocm:PHX-AD-1`
         /// </summary>
@@ -201,6 +208,18 @@ namespace Pulumi.Oci.FileStorage
         public Output<string> MeteredBytes { get; private set; } = null!;
 
         /// <summary>
+        /// Displays the state of enforcement of quota rules on the file system.
+        /// </summary>
+        [Output("quotaEnforcementState")]
+        public Output<string> QuotaEnforcementState { get; private set; } = null!;
+
+        /// <summary>
+        /// Specifies the total number of replications for which this file system is a source.
+        /// </summary>
+        [Output("replicationSourceCount")]
+        public Output<int> ReplicationSourceCount { get; private set; } = null!;
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
         /// </summary>
         [Output("replicationTargetId")]
@@ -282,6 +301,12 @@ namespace Pulumi.Oci.FileStorage
 
     public sealed class FileSystemArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Updatable) Specifies the enforcement of quota rules on the file system.
+        /// </summary>
+        [Input("areQuotaRulesEnabled")]
+        public Input<bool>? AreQuotaRulesEnabled { get; set; }
+
         /// <summary>
         /// The availability domain to create the file system in.  Example: `Uocm:PHX-AD-1`
         /// </summary>
@@ -383,6 +408,12 @@ namespace Pulumi.Oci.FileStorage
 
     public sealed class FileSystemState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Updatable) Specifies the enforcement of quota rules on the file system.
+        /// </summary>
+        [Input("areQuotaRulesEnabled")]
+        public Input<bool>? AreQuotaRulesEnabled { get; set; }
+
         /// <summary>
         /// The availability domain to create the file system in.  Example: `Uocm:PHX-AD-1`
         /// </summary>
@@ -505,6 +536,18 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         [Input("meteredBytes")]
         public Input<string>? MeteredBytes { get; set; }
+
+        /// <summary>
+        /// Displays the state of enforcement of quota rules on the file system.
+        /// </summary>
+        [Input("quotaEnforcementState")]
+        public Input<string>? QuotaEnforcementState { get; set; }
+
+        /// <summary>
+        /// Specifies the total number of replications for which this file system is a source.
+        /// </summary>
+        [Input("replicationSourceCount")]
+        public Input<int>? ReplicationSourceCount { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.

@@ -253,10 +253,26 @@ __all__ = [
     'ExadataInfrastructureComputeMaintenanceWindowDaysOfWeekArgsDict',
     'ExadataInfrastructureComputeMaintenanceWindowMonthArgs',
     'ExadataInfrastructureComputeMaintenanceWindowMonthArgsDict',
+    'ExadataInfrastructureConfigureExascaleManagementContactArgs',
+    'ExadataInfrastructureConfigureExascaleManagementContactArgsDict',
+    'ExadataInfrastructureConfigureExascaleManagementDefinedFileSystemConfigurationArgs',
+    'ExadataInfrastructureConfigureExascaleManagementDefinedFileSystemConfigurationArgsDict',
+    'ExadataInfrastructureConfigureExascaleManagementExascaleConfigArgs',
+    'ExadataInfrastructureConfigureExascaleManagementExascaleConfigArgsDict',
+    'ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowArgs',
+    'ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowArgsDict',
+    'ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeekArgs',
+    'ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeekArgsDict',
+    'ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonthArgs',
+    'ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonthArgsDict',
+    'ExadataInfrastructureConfigureExascaleManagementNetworkBondingModeDetailArgs',
+    'ExadataInfrastructureConfigureExascaleManagementNetworkBondingModeDetailArgsDict',
     'ExadataInfrastructureContactArgs',
     'ExadataInfrastructureContactArgsDict',
     'ExadataInfrastructureDefinedFileSystemConfigurationArgs',
     'ExadataInfrastructureDefinedFileSystemConfigurationArgsDict',
+    'ExadataInfrastructureExascaleConfigArgs',
+    'ExadataInfrastructureExascaleConfigArgsDict',
     'ExadataInfrastructureMaintenanceWindowArgs',
     'ExadataInfrastructureMaintenanceWindowArgsDict',
     'ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs',
@@ -13651,6 +13667,642 @@ class ExadataInfrastructureComputeMaintenanceWindowMonthArgs:
 
 
 if not MYPY:
+    class ExadataInfrastructureConfigureExascaleManagementContactArgsDict(TypedDict):
+        email: NotRequired[pulumi.Input[str]]
+        """
+        The email for the Exadata Infrastructure contact.
+        """
+        is_contact_mos_validated: NotRequired[pulumi.Input[bool]]
+        """
+        If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
+        """
+        is_primary: NotRequired[pulumi.Input[bool]]
+        """
+        If `true`, this Exadata Infrastructure contact is a primary contact. If `false`, this Exadata Infrastructure is a secondary contact.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of the month of the year.
+        """
+        phone_number: NotRequired[pulumi.Input[str]]
+        """
+        The phone number for the Exadata Infrastructure contact.
+        """
+elif False:
+    ExadataInfrastructureConfigureExascaleManagementContactArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ExadataInfrastructureConfigureExascaleManagementContactArgs:
+    def __init__(__self__, *,
+                 email: Optional[pulumi.Input[str]] = None,
+                 is_contact_mos_validated: Optional[pulumi.Input[bool]] = None,
+                 is_primary: Optional[pulumi.Input[bool]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 phone_number: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] email: The email for the Exadata Infrastructure contact.
+        :param pulumi.Input[bool] is_contact_mos_validated: If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
+        :param pulumi.Input[bool] is_primary: If `true`, this Exadata Infrastructure contact is a primary contact. If `false`, this Exadata Infrastructure is a secondary contact.
+        :param pulumi.Input[str] name: Name of the month of the year.
+        :param pulumi.Input[str] phone_number: The phone number for the Exadata Infrastructure contact.
+        """
+        if email is not None:
+            pulumi.set(__self__, "email", email)
+        if is_contact_mos_validated is not None:
+            pulumi.set(__self__, "is_contact_mos_validated", is_contact_mos_validated)
+        if is_primary is not None:
+            pulumi.set(__self__, "is_primary", is_primary)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if phone_number is not None:
+            pulumi.set(__self__, "phone_number", phone_number)
+
+    @property
+    @pulumi.getter
+    def email(self) -> Optional[pulumi.Input[str]]:
+        """
+        The email for the Exadata Infrastructure contact.
+        """
+        return pulumi.get(self, "email")
+
+    @email.setter
+    def email(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "email", value)
+
+    @property
+    @pulumi.getter(name="isContactMosValidated")
+    def is_contact_mos_validated(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
+        """
+        return pulumi.get(self, "is_contact_mos_validated")
+
+    @is_contact_mos_validated.setter
+    def is_contact_mos_validated(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_contact_mos_validated", value)
+
+    @property
+    @pulumi.getter(name="isPrimary")
+    def is_primary(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If `true`, this Exadata Infrastructure contact is a primary contact. If `false`, this Exadata Infrastructure is a secondary contact.
+        """
+        return pulumi.get(self, "is_primary")
+
+    @is_primary.setter
+    def is_primary(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_primary", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="phoneNumber")
+    def phone_number(self) -> Optional[pulumi.Input[str]]:
+        """
+        The phone number for the Exadata Infrastructure contact.
+        """
+        return pulumi.get(self, "phone_number")
+
+    @phone_number.setter
+    def phone_number(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "phone_number", value)
+
+
+if not MYPY:
+    class ExadataInfrastructureConfigureExascaleManagementDefinedFileSystemConfigurationArgsDict(TypedDict):
+        is_backup_partition: NotRequired[pulumi.Input[bool]]
+        """
+        If true, the file system is used to create a backup prior to Exadata VM OS update.
+        """
+        is_resizable: NotRequired[pulumi.Input[bool]]
+        """
+        If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+        """
+        min_size_gb: NotRequired[pulumi.Input[int]]
+        """
+        The minimum size of file system.
+        """
+        mount_point: NotRequired[pulumi.Input[str]]
+        """
+        The mount point of file system.
+        """
+elif False:
+    ExadataInfrastructureConfigureExascaleManagementDefinedFileSystemConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ExadataInfrastructureConfigureExascaleManagementDefinedFileSystemConfigurationArgs:
+    def __init__(__self__, *,
+                 is_backup_partition: Optional[pulumi.Input[bool]] = None,
+                 is_resizable: Optional[pulumi.Input[bool]] = None,
+                 min_size_gb: Optional[pulumi.Input[int]] = None,
+                 mount_point: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] is_backup_partition: If true, the file system is used to create a backup prior to Exadata VM OS update.
+        :param pulumi.Input[bool] is_resizable: If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+        :param pulumi.Input[int] min_size_gb: The minimum size of file system.
+        :param pulumi.Input[str] mount_point: The mount point of file system.
+        """
+        if is_backup_partition is not None:
+            pulumi.set(__self__, "is_backup_partition", is_backup_partition)
+        if is_resizable is not None:
+            pulumi.set(__self__, "is_resizable", is_resizable)
+        if min_size_gb is not None:
+            pulumi.set(__self__, "min_size_gb", min_size_gb)
+        if mount_point is not None:
+            pulumi.set(__self__, "mount_point", mount_point)
+
+    @property
+    @pulumi.getter(name="isBackupPartition")
+    def is_backup_partition(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If true, the file system is used to create a backup prior to Exadata VM OS update.
+        """
+        return pulumi.get(self, "is_backup_partition")
+
+    @is_backup_partition.setter
+    def is_backup_partition(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_backup_partition", value)
+
+    @property
+    @pulumi.getter(name="isResizable")
+    def is_resizable(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+        """
+        return pulumi.get(self, "is_resizable")
+
+    @is_resizable.setter
+    def is_resizable(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_resizable", value)
+
+    @property
+    @pulumi.getter(name="minSizeGb")
+    def min_size_gb(self) -> Optional[pulumi.Input[int]]:
+        """
+        The minimum size of file system.
+        """
+        return pulumi.get(self, "min_size_gb")
+
+    @min_size_gb.setter
+    def min_size_gb(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "min_size_gb", value)
+
+    @property
+    @pulumi.getter(name="mountPoint")
+    def mount_point(self) -> Optional[pulumi.Input[str]]:
+        """
+        The mount point of file system.
+        """
+        return pulumi.get(self, "mount_point")
+
+    @mount_point.setter
+    def mount_point(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "mount_point", value)
+
+
+if not MYPY:
+    class ExadataInfrastructureConfigureExascaleManagementExascaleConfigArgsDict(TypedDict):
+        available_storage_in_gbs: NotRequired[pulumi.Input[int]]
+        """
+        Available storage size for Exascale in GBs.
+        """
+        total_storage_in_gbs: NotRequired[pulumi.Input[int]]
+        """
+        Storage size needed for Exascale in GBs.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    ExadataInfrastructureConfigureExascaleManagementExascaleConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ExadataInfrastructureConfigureExascaleManagementExascaleConfigArgs:
+    def __init__(__self__, *,
+                 available_storage_in_gbs: Optional[pulumi.Input[int]] = None,
+                 total_storage_in_gbs: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[int] available_storage_in_gbs: Available storage size for Exascale in GBs.
+        :param pulumi.Input[int] total_storage_in_gbs: Storage size needed for Exascale in GBs.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if available_storage_in_gbs is not None:
+            pulumi.set(__self__, "available_storage_in_gbs", available_storage_in_gbs)
+        if total_storage_in_gbs is not None:
+            pulumi.set(__self__, "total_storage_in_gbs", total_storage_in_gbs)
+
+    @property
+    @pulumi.getter(name="availableStorageInGbs")
+    def available_storage_in_gbs(self) -> Optional[pulumi.Input[int]]:
+        """
+        Available storage size for Exascale in GBs.
+        """
+        return pulumi.get(self, "available_storage_in_gbs")
+
+    @available_storage_in_gbs.setter
+    def available_storage_in_gbs(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "available_storage_in_gbs", value)
+
+    @property
+    @pulumi.getter(name="totalStorageInGbs")
+    def total_storage_in_gbs(self) -> Optional[pulumi.Input[int]]:
+        """
+        Storage size needed for Exascale in GBs.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "total_storage_in_gbs")
+
+    @total_storage_in_gbs.setter
+    def total_storage_in_gbs(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "total_storage_in_gbs", value)
+
+
+if not MYPY:
+    class ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowArgsDict(TypedDict):
+        custom_action_timeout_in_mins: NotRequired[pulumi.Input[int]]
+        """
+        Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+        """
+        days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeekArgsDict']]]]
+        """
+        Days during the week when maintenance should be performed.
+        """
+        hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[int]]]]
+        """
+        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        """
+        is_custom_action_timeout_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        """
+        is_monthly_patching_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        If true, enables the monthly patching option.
+        """
+        lead_time_in_weeks: NotRequired[pulumi.Input[int]]
+        """
+        Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+        """
+        months: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonthArgsDict']]]]
+        """
+        Months during the year when maintenance should be performed.
+        """
+        patching_mode: NotRequired[pulumi.Input[str]]
+        """
+        Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        """
+        preference: NotRequired[pulumi.Input[str]]
+        """
+        The maintenance window scheduling preference.
+        """
+        skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[bool]]]]
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
+        weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[int]]]]
+        """
+        Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        """
+elif False:
+    ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowArgs:
+    def __init__(__self__, *,
+                 custom_action_timeout_in_mins: Optional[pulumi.Input[int]] = None,
+                 days_of_weeks: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeekArgs']]]] = None,
+                 hours_of_days: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+                 is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_monthly_patching_enabled: Optional[pulumi.Input[bool]] = None,
+                 lead_time_in_weeks: Optional[pulumi.Input[int]] = None,
+                 months: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonthArgs']]]] = None,
+                 patching_mode: Optional[pulumi.Input[str]] = None,
+                 preference: Optional[pulumi.Input[str]] = None,
+                 skip_rus: Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]] = None,
+                 weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None):
+        """
+        :param pulumi.Input[int] custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+        :param pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeekArgs']]] days_of_weeks: Days during the week when maintenance should be performed.
+        :param pulumi.Input[Sequence[pulumi.Input[int]]] hours_of_days: The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        :param pulumi.Input[bool] is_custom_action_timeout_enabled: If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        :param pulumi.Input[bool] is_monthly_patching_enabled: If true, enables the monthly patching option.
+        :param pulumi.Input[int] lead_time_in_weeks: Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+        :param pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonthArgs']]] months: Months during the year when maintenance should be performed.
+        :param pulumi.Input[str] patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        :param pulumi.Input[str] preference: The maintenance window scheduling preference.
+        :param pulumi.Input[Sequence[pulumi.Input[bool]]] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        """
+        if custom_action_timeout_in_mins is not None:
+            pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+        if days_of_weeks is not None:
+            pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+        if hours_of_days is not None:
+            pulumi.set(__self__, "hours_of_days", hours_of_days)
+        if is_custom_action_timeout_enabled is not None:
+            pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+        if is_monthly_patching_enabled is not None:
+            pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
+        if lead_time_in_weeks is not None:
+            pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
+        if months is not None:
+            pulumi.set(__self__, "months", months)
+        if patching_mode is not None:
+            pulumi.set(__self__, "patching_mode", patching_mode)
+        if preference is not None:
+            pulumi.set(__self__, "preference", preference)
+        if skip_rus is not None:
+            pulumi.set(__self__, "skip_rus", skip_rus)
+        if weeks_of_months is not None:
+            pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+
+    @property
+    @pulumi.getter(name="customActionTimeoutInMins")
+    def custom_action_timeout_in_mins(self) -> Optional[pulumi.Input[int]]:
+        """
+        Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+        """
+        return pulumi.get(self, "custom_action_timeout_in_mins")
+
+    @custom_action_timeout_in_mins.setter
+    def custom_action_timeout_in_mins(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "custom_action_timeout_in_mins", value)
+
+    @property
+    @pulumi.getter(name="daysOfWeeks")
+    def days_of_weeks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeekArgs']]]]:
+        """
+        Days during the week when maintenance should be performed.
+        """
+        return pulumi.get(self, "days_of_weeks")
+
+    @days_of_weeks.setter
+    def days_of_weeks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeekArgs']]]]):
+        pulumi.set(self, "days_of_weeks", value)
+
+    @property
+    @pulumi.getter(name="hoursOfDays")
+    def hours_of_days(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
+        """
+        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        """
+        return pulumi.get(self, "hours_of_days")
+
+    @hours_of_days.setter
+    def hours_of_days(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]):
+        pulumi.set(self, "hours_of_days", value)
+
+    @property
+    @pulumi.getter(name="isCustomActionTimeoutEnabled")
+    def is_custom_action_timeout_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        """
+        return pulumi.get(self, "is_custom_action_timeout_enabled")
+
+    @is_custom_action_timeout_enabled.setter
+    def is_custom_action_timeout_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_custom_action_timeout_enabled", value)
+
+    @property
+    @pulumi.getter(name="isMonthlyPatchingEnabled")
+    def is_monthly_patching_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If true, enables the monthly patching option.
+        """
+        return pulumi.get(self, "is_monthly_patching_enabled")
+
+    @is_monthly_patching_enabled.setter
+    def is_monthly_patching_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_monthly_patching_enabled", value)
+
+    @property
+    @pulumi.getter(name="leadTimeInWeeks")
+    def lead_time_in_weeks(self) -> Optional[pulumi.Input[int]]:
+        """
+        Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+        """
+        return pulumi.get(self, "lead_time_in_weeks")
+
+    @lead_time_in_weeks.setter
+    def lead_time_in_weeks(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "lead_time_in_weeks", value)
+
+    @property
+    @pulumi.getter
+    def months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonthArgs']]]]:
+        """
+        Months during the year when maintenance should be performed.
+        """
+        return pulumi.get(self, "months")
+
+    @months.setter
+    def months(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonthArgs']]]]):
+        pulumi.set(self, "months", value)
+
+    @property
+    @pulumi.getter(name="patchingMode")
+    def patching_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        """
+        return pulumi.get(self, "patching_mode")
+
+    @patching_mode.setter
+    def patching_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "patching_mode", value)
+
+    @property
+    @pulumi.getter
+    def preference(self) -> Optional[pulumi.Input[str]]:
+        """
+        The maintenance window scheduling preference.
+        """
+        return pulumi.get(self, "preference")
+
+    @preference.setter
+    def preference(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "preference", value)
+
+    @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]:
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
+        return pulumi.get(self, "skip_rus")
+
+    @skip_rus.setter
+    def skip_rus(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]):
+        pulumi.set(self, "skip_rus", value)
+
+    @property
+    @pulumi.getter(name="weeksOfMonths")
+    def weeks_of_months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
+        """
+        Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        """
+        return pulumi.get(self, "weeks_of_months")
+
+    @weeks_of_months.setter
+    def weeks_of_months(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]):
+        pulumi.set(self, "weeks_of_months", value)
+
+
+if not MYPY:
+    class ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeekArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of the month of the year.
+        """
+elif False:
+    ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeekArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeekArgs:
+    def __init__(__self__, *,
+                 name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] name: Name of the month of the year.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+
+if not MYPY:
+    class ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonthArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of the month of the year.
+        """
+elif False:
+    ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonthArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonthArgs:
+    def __init__(__self__, *,
+                 name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] name: Name of the month of the year.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+
+if not MYPY:
+    class ExadataInfrastructureConfigureExascaleManagementNetworkBondingModeDetailArgsDict(TypedDict):
+        backup_network_bonding_mode: NotRequired[pulumi.Input[str]]
+        """
+        The network bonding mode for the Exadata infrastructure.
+        """
+        client_network_bonding_mode: NotRequired[pulumi.Input[str]]
+        """
+        The network bonding mode for the Exadata infrastructure.
+        """
+        dr_network_bonding_mode: NotRequired[pulumi.Input[str]]
+        """
+        The network bonding mode for the Exadata infrastructure.
+        """
+elif False:
+    ExadataInfrastructureConfigureExascaleManagementNetworkBondingModeDetailArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ExadataInfrastructureConfigureExascaleManagementNetworkBondingModeDetailArgs:
+    def __init__(__self__, *,
+                 backup_network_bonding_mode: Optional[pulumi.Input[str]] = None,
+                 client_network_bonding_mode: Optional[pulumi.Input[str]] = None,
+                 dr_network_bonding_mode: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] backup_network_bonding_mode: The network bonding mode for the Exadata infrastructure.
+        :param pulumi.Input[str] client_network_bonding_mode: The network bonding mode for the Exadata infrastructure.
+        :param pulumi.Input[str] dr_network_bonding_mode: The network bonding mode for the Exadata infrastructure.
+        """
+        if backup_network_bonding_mode is not None:
+            pulumi.set(__self__, "backup_network_bonding_mode", backup_network_bonding_mode)
+        if client_network_bonding_mode is not None:
+            pulumi.set(__self__, "client_network_bonding_mode", client_network_bonding_mode)
+        if dr_network_bonding_mode is not None:
+            pulumi.set(__self__, "dr_network_bonding_mode", dr_network_bonding_mode)
+
+    @property
+    @pulumi.getter(name="backupNetworkBondingMode")
+    def backup_network_bonding_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        The network bonding mode for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "backup_network_bonding_mode")
+
+    @backup_network_bonding_mode.setter
+    def backup_network_bonding_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "backup_network_bonding_mode", value)
+
+    @property
+    @pulumi.getter(name="clientNetworkBondingMode")
+    def client_network_bonding_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        The network bonding mode for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "client_network_bonding_mode")
+
+    @client_network_bonding_mode.setter
+    def client_network_bonding_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "client_network_bonding_mode", value)
+
+    @property
+    @pulumi.getter(name="drNetworkBondingMode")
+    def dr_network_bonding_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        The network bonding mode for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "dr_network_bonding_mode")
+
+    @dr_network_bonding_mode.setter
+    def dr_network_bonding_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "dr_network_bonding_mode", value)
+
+
+if not MYPY:
     class ExadataInfrastructureContactArgsDict(TypedDict):
         email: pulumi.Input[str]
         """
@@ -13849,6 +14501,58 @@ class ExadataInfrastructureDefinedFileSystemConfigurationArgs:
     @mount_point.setter
     def mount_point(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "mount_point", value)
+
+
+if not MYPY:
+    class ExadataInfrastructureExascaleConfigArgsDict(TypedDict):
+        available_storage_in_gbs: NotRequired[pulumi.Input[int]]
+        """
+        Available storage size for Exascale in GBs.
+        """
+        total_storage_in_gbs: NotRequired[pulumi.Input[int]]
+        """
+        Storage size needed for Exascale in GBs.
+        """
+elif False:
+    ExadataInfrastructureExascaleConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ExadataInfrastructureExascaleConfigArgs:
+    def __init__(__self__, *,
+                 available_storage_in_gbs: Optional[pulumi.Input[int]] = None,
+                 total_storage_in_gbs: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[int] available_storage_in_gbs: Available storage size for Exascale in GBs.
+        :param pulumi.Input[int] total_storage_in_gbs: Storage size needed for Exascale in GBs.
+        """
+        if available_storage_in_gbs is not None:
+            pulumi.set(__self__, "available_storage_in_gbs", available_storage_in_gbs)
+        if total_storage_in_gbs is not None:
+            pulumi.set(__self__, "total_storage_in_gbs", total_storage_in_gbs)
+
+    @property
+    @pulumi.getter(name="availableStorageInGbs")
+    def available_storage_in_gbs(self) -> Optional[pulumi.Input[int]]:
+        """
+        Available storage size for Exascale in GBs.
+        """
+        return pulumi.get(self, "available_storage_in_gbs")
+
+    @available_storage_in_gbs.setter
+    def available_storage_in_gbs(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "available_storage_in_gbs", value)
+
+    @property
+    @pulumi.getter(name="totalStorageInGbs")
+    def total_storage_in_gbs(self) -> Optional[pulumi.Input[int]]:
+        """
+        Storage size needed for Exascale in GBs.
+        """
+        return pulumi.get(self, "total_storage_in_gbs")
+
+    @total_storage_in_gbs.setter
+    def total_storage_in_gbs(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "total_storage_in_gbs", value)
 
 
 if not MYPY:

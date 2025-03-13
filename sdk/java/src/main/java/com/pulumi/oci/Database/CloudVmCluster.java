@@ -111,6 +111,7 @@ import javax.annotation.Nullable;
  *             .subscriptionId(tenantSubscriptionId)
  *             .systemVersion(cloudVmClusterSystemVersion)
  *             .timeZone(cloudVmClusterTimeZone)
+ *             .vmClusterType(cloudVmClusterVmClusterType)
  *             .build());
  * 
  *     }
@@ -227,6 +228,20 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * The compute model of the cloud VM cluster.
+     * 
+     */
+    @Export(name="computeModel", refs={String.class}, tree="[0]")
+    private Output<String> computeModel;
+
+    /**
+     * @return The compute model of the cloud VM cluster.
+     * 
+     */
+    public Output<String> computeModel() {
+        return this.computeModel;
     }
     /**
      * (Updatable) The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:
@@ -651,18 +666,32 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
         return this.scanDnsRecordId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv4 addresses associated with the cloud VM cluster. SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      * 
      */
     @Export(name="scanIpIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> scanIpIds;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv4 addresses associated with the cloud VM cluster. SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      * 
      */
     public Output<List<String>> scanIpIds() {
         return this.scanIpIds;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv6 addresses associated with the cloud VM cluster. SCAN IPv6 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+     * 
+     */
+    @Export(name="scanIpv6ids", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> scanIpv6ids;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv6 addresses associated with the cloud VM cluster. SCAN IPv6 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+     * 
+     */
+    public Output<List<String>> scanIpv6ids() {
+        return this.scanIpv6ids;
     }
     /**
      * The TCP Single Client Access Name (SCAN) port. The default port is 1521.
@@ -835,9 +864,6 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
     /**
      * The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="timeZone", refs={String.class}, tree="[0]")
     private Output<String> timeZone;
@@ -845,26 +871,57 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
     /**
      * @return The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     public Output<String> timeZone() {
         return this.timeZone;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
      * 
      */
     @Export(name="vipIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> vipIds;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
      * 
      */
     public Output<List<String>> vipIds() {
         return this.vipIds;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+     * 
+     */
+    @Export(name="vipv6ids", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> vipv6ids;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+     * 
+     */
+    public Output<List<String>> vipv6ids() {
+        return this.vipv6ids;
+    }
+    /**
+     * The vmcluster type for the VM cluster/Cloud VM cluster.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="vmClusterType", refs={String.class}, tree="[0]")
+    private Output<String> vmClusterType;
+
+    /**
+     * @return The vmcluster type for the VM cluster/Cloud VM cluster.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<String> vmClusterType() {
+        return this.vmClusterType;
     }
     /**
      * The OCID of the zone the cloud VM cluster is associated with.

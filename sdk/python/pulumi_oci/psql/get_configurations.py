@@ -28,10 +28,13 @@ class GetConfigurationsResult:
     """
     A collection of values returned by getConfigurations.
     """
-    def __init__(__self__, compartment_id=None, configuration_collections=None, configuration_id=None, db_version=None, display_name=None, filters=None, id=None, shape=None, state=None):
+    def __init__(__self__, compartment_id=None, config_type=None, configuration_collections=None, configuration_id=None, db_version=None, display_name=None, filters=None, id=None, shape=None, state=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if config_type and not isinstance(config_type, str):
+            raise TypeError("Expected argument 'config_type' to be a str")
+        pulumi.set(__self__, "config_type", config_type)
         if configuration_collections and not isinstance(configuration_collections, list):
             raise TypeError("Expected argument 'configuration_collections' to be a list")
         pulumi.set(__self__, "configuration_collections", configuration_collections)
@@ -64,6 +67,14 @@ class GetConfigurationsResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="configType")
+    def config_type(self) -> Optional[str]:
+        """
+        The type of configuration. Either user-created or a default configuration.
+        """
+        return pulumi.get(self, "config_type")
 
     @property
     @pulumi.getter(name="configurationCollections")
@@ -131,6 +142,7 @@ class AwaitableGetConfigurationsResult(GetConfigurationsResult):
             yield self
         return GetConfigurationsResult(
             compartment_id=self.compartment_id,
+            config_type=self.config_type,
             configuration_collections=self.configuration_collections,
             configuration_id=self.configuration_id,
             db_version=self.db_version,
@@ -142,6 +154,7 @@ class AwaitableGetConfigurationsResult(GetConfigurationsResult):
 
 
 def get_configurations(compartment_id: Optional[str] = None,
+                       config_type: Optional[str] = None,
                        configuration_id: Optional[str] = None,
                        db_version: Optional[str] = None,
                        display_name: Optional[str] = None,
@@ -161,6 +174,7 @@ def get_configurations(compartment_id: Optional[str] = None,
     import pulumi_oci as oci
 
     test_configurations = oci.Psql.get_configurations(compartment_id=compartment_id,
+        config_type=configuration_config_type,
         configuration_id=test_configuration["id"],
         db_version=configuration_db_version,
         display_name=configuration_display_name,
@@ -170,6 +184,7 @@ def get_configurations(compartment_id: Optional[str] = None,
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
+    :param str config_type: A filter to return only resources if their `configType` matches the given `configType`.
     :param str configuration_id: A unique identifier for the configuration.
     :param str db_version: Version of the PostgreSQL database, such as 14.9.
     :param str display_name: A filter to return only resources that match the entire display name given.
@@ -178,6 +193,7 @@ def get_configurations(compartment_id: Optional[str] = None,
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
+    __args__['configType'] = config_type
     __args__['configurationId'] = configuration_id
     __args__['dbVersion'] = db_version
     __args__['displayName'] = display_name
@@ -189,6 +205,7 @@ def get_configurations(compartment_id: Optional[str] = None,
 
     return AwaitableGetConfigurationsResult(
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        config_type=pulumi.get(__ret__, 'config_type'),
         configuration_collections=pulumi.get(__ret__, 'configuration_collections'),
         configuration_id=pulumi.get(__ret__, 'configuration_id'),
         db_version=pulumi.get(__ret__, 'db_version'),
@@ -198,6 +215,7 @@ def get_configurations(compartment_id: Optional[str] = None,
         shape=pulumi.get(__ret__, 'shape'),
         state=pulumi.get(__ret__, 'state'))
 def get_configurations_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
+                              config_type: Optional[pulumi.Input[Optional[str]]] = None,
                               configuration_id: Optional[pulumi.Input[Optional[str]]] = None,
                               db_version: Optional[pulumi.Input[Optional[str]]] = None,
                               display_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -217,6 +235,7 @@ def get_configurations_output(compartment_id: Optional[pulumi.Input[Optional[str
     import pulumi_oci as oci
 
     test_configurations = oci.Psql.get_configurations(compartment_id=compartment_id,
+        config_type=configuration_config_type,
         configuration_id=test_configuration["id"],
         db_version=configuration_db_version,
         display_name=configuration_display_name,
@@ -226,6 +245,7 @@ def get_configurations_output(compartment_id: Optional[pulumi.Input[Optional[str
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
+    :param str config_type: A filter to return only resources if their `configType` matches the given `configType`.
     :param str configuration_id: A unique identifier for the configuration.
     :param str db_version: Version of the PostgreSQL database, such as 14.9.
     :param str display_name: A filter to return only resources that match the entire display name given.
@@ -234,6 +254,7 @@ def get_configurations_output(compartment_id: Optional[pulumi.Input[Optional[str
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
+    __args__['configType'] = config_type
     __args__['configurationId'] = configuration_id
     __args__['dbVersion'] = db_version
     __args__['displayName'] = display_name
@@ -244,6 +265,7 @@ def get_configurations_output(compartment_id: Optional[pulumi.Input[Optional[str
     __ret__ = pulumi.runtime.invoke_output('oci:Psql/getConfigurations:getConfigurations', __args__, opts=opts, typ=GetConfigurationsResult)
     return __ret__.apply(lambda __response__: GetConfigurationsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),
+        config_type=pulumi.get(__response__, 'config_type'),
         configuration_collections=pulumi.get(__response__, 'configuration_collections'),
         configuration_id=pulumi.get(__response__, 'configuration_id'),
         db_version=pulumi.get(__response__, 'db_version'),

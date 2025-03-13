@@ -84,6 +84,18 @@ namespace Pulumi.Oci.Mysql.Inputs
         [Input("state")]
         public Input<string>? State { get; set; }
 
+        [Input("systemTags")]
+        private InputMap<string>? _systemTags;
+
+        /// <summary>
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public InputMap<string> SystemTags
+        {
+            get => _systemTags ?? (_systemTags = new InputMap<string>());
+            set => _systemTags = value;
+        }
+
         [Input("targets")]
         private InputList<Inputs.MysqlDbSystemChannelTargetArgs>? _targets;
 

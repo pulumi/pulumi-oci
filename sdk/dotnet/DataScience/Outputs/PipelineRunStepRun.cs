@@ -14,6 +14,10 @@ namespace Pulumi.Oci.DataScience.Outputs
     public sealed class PipelineRunStepRun
     {
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow run triggered for this step run.
+        /// </summary>
+        public readonly string? DataflowRunId;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
         /// </summary>
         public readonly string? JobRunId;
@@ -44,6 +48,8 @@ namespace Pulumi.Oci.DataScience.Outputs
 
         [OutputConstructor]
         private PipelineRunStepRun(
+            string? dataflowRunId,
+
             string? jobRunId,
 
             string? lifecycleDetails,
@@ -58,6 +64,7 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             string? timeStarted)
         {
+            DataflowRunId = dataflowRunId;
             JobRunId = jobRunId;
             LifecycleDetails = lifecycleDetails;
             State = state;

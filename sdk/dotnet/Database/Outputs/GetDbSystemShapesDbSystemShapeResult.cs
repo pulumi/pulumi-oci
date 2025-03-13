@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class GetDbSystemShapesDbSystemShapeResult
     {
         /// <summary>
+        /// If true, the shape supports configurable DB and Storage Server types.
+        /// </summary>
+        public readonly bool AreServerTypesSupported;
+        /// <summary>
         /// The maximum number of CPU cores that can be enabled on the DB system for this shape.
         /// </summary>
         public readonly int AvailableCoreCount;
@@ -46,9 +50,17 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly int AvailableMemoryPerNodeInGbs;
         /// <summary>
+        /// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        /// </summary>
+        public readonly string ComputeModel;
+        /// <summary>
         /// The discrete number by which the CPU core count for this shape can be increased or decreased.
         /// </summary>
         public readonly int CoreCountIncrement;
+        /// <summary>
+        /// The display name of the shape used for the DB system.
+        /// </summary>
+        public readonly string DisplayName;
         /// <summary>
         /// The maximum number of Exadata storage servers available for the Exadata infrastructure.
         /// </summary>
@@ -104,6 +116,8 @@ namespace Pulumi.Oci.Database.Outputs
 
         [OutputConstructor]
         private GetDbSystemShapesDbSystemShapeResult(
+            bool areServerTypesSupported,
+
             int availableCoreCount,
 
             int availableCoreCountPerNode,
@@ -120,7 +134,11 @@ namespace Pulumi.Oci.Database.Outputs
 
             int availableMemoryPerNodeInGbs,
 
+            string computeModel,
+
             int coreCountIncrement,
+
+            string displayName,
 
             int maxStorageCount,
 
@@ -148,6 +166,7 @@ namespace Pulumi.Oci.Database.Outputs
 
             string shapeType)
         {
+            AreServerTypesSupported = areServerTypesSupported;
             AvailableCoreCount = availableCoreCount;
             AvailableCoreCountPerNode = availableCoreCountPerNode;
             AvailableDataStorageInTbs = availableDataStorageInTbs;
@@ -156,7 +175,9 @@ namespace Pulumi.Oci.Database.Outputs
             AvailableDbNodeStorageInGbs = availableDbNodeStorageInGbs;
             AvailableMemoryInGbs = availableMemoryInGbs;
             AvailableMemoryPerNodeInGbs = availableMemoryPerNodeInGbs;
+            ComputeModel = computeModel;
             CoreCountIncrement = coreCountIncrement;
+            DisplayName = displayName;
             MaxStorageCount = maxStorageCount;
             MaximumNodeCount = maximumNodeCount;
             MinCoreCountPerNode = minCoreCountPerNode;

@@ -33,6 +33,13 @@ public final class GetSecurityAssessmentFindingArgs extends com.pulumi.resources
         return Optional.ofNullable(this.compartmentIdInSubtree);
     }
 
+    @Import(name="fields")
+    private @Nullable Output<List<String>> fields;
+
+    public Optional<Output<List<String>>> fields() {
+        return Optional.ofNullable(this.fields);
+    }
+
     @Import(name="filters")
     private @Nullable Output<List<GetSecurityAssessmentFindingFilterArgs>> filters;
 
@@ -59,6 +66,13 @@ public final class GetSecurityAssessmentFindingArgs extends com.pulumi.resources
 
     public Optional<Output<String>> references() {
         return Optional.ofNullable(this.references);
+    }
+
+    @Import(name="scimQuery")
+    private @Nullable Output<String> scimQuery;
+
+    public Optional<Output<String>> scimQuery() {
+        return Optional.ofNullable(this.scimQuery);
     }
 
     @Import(name="securityAssessmentId", required=true)
@@ -94,10 +108,12 @@ public final class GetSecurityAssessmentFindingArgs extends com.pulumi.resources
     private GetSecurityAssessmentFindingArgs(GetSecurityAssessmentFindingArgs $) {
         this.accessLevel = $.accessLevel;
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
+        this.fields = $.fields;
         this.filters = $.filters;
         this.findingKey = $.findingKey;
         this.isTopFinding = $.isTopFinding;
         this.references = $.references;
+        this.scimQuery = $.scimQuery;
         this.securityAssessmentId = $.securityAssessmentId;
         this.severity = $.severity;
         this.state = $.state;
@@ -140,6 +156,19 @@ public final class GetSecurityAssessmentFindingArgs extends com.pulumi.resources
             return compartmentIdInSubtree(Output.of(compartmentIdInSubtree));
         }
 
+        public Builder fields(@Nullable Output<List<String>> fields) {
+            $.fields = fields;
+            return this;
+        }
+
+        public Builder fields(List<String> fields) {
+            return fields(Output.of(fields));
+        }
+
+        public Builder fields(String... fields) {
+            return fields(List.of(fields));
+        }
+
         public Builder filters(@Nullable Output<List<GetSecurityAssessmentFindingFilterArgs>> filters) {
             $.filters = filters;
             return this;
@@ -178,6 +207,15 @@ public final class GetSecurityAssessmentFindingArgs extends com.pulumi.resources
 
         public Builder references(String references) {
             return references(Output.of(references));
+        }
+
+        public Builder scimQuery(@Nullable Output<String> scimQuery) {
+            $.scimQuery = scimQuery;
+            return this;
+        }
+
+        public Builder scimQuery(String scimQuery) {
+            return scimQuery(Output.of(scimQuery));
         }
 
         public Builder securityAssessmentId(Output<String> securityAssessmentId) {

@@ -63,12 +63,13 @@ export class Backup extends pulumi.CustomResource {
      * The name of the availability domain where the database backup is stored.
      */
     public /*out*/ readonly availabilityDomain!: pulumi.Output<string>;
+    public /*out*/ readonly backupDestinationType!: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     public /*out*/ readonly compartmentId!: pulumi.Output<string>;
     /**
-     * The Oracle Database edition of the DB system from which the database backup was taken.
+     * The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      */
     public /*out*/ readonly databaseEdition!: pulumi.Output<string>;
     /**
@@ -91,6 +92,7 @@ export class Backup extends pulumi.CustomResource {
      * Types of providers supported for managing database encryption keys
      */
     public /*out*/ readonly encryptionKeyLocationDetails!: pulumi.Output<outputs.Database.BackupEncryptionKeyLocationDetail[]>;
+    public /*out*/ readonly isUsingOracleManagedKeys!: pulumi.Output<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      */
@@ -111,6 +113,9 @@ export class Backup extends pulumi.CustomResource {
      * Additional information about the current lifecycle state.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public readonly retentionPeriodInDays!: pulumi.Output<number>;
+    public readonly retentionPeriodInYears!: pulumi.Output<number>;
+    public /*out*/ readonly secondaryKmsKeyIds!: pulumi.Output<string[]>;
     /**
      * Shape of the backup's source database.
      */
@@ -123,6 +128,7 @@ export class Backup extends pulumi.CustomResource {
      * The date and time the backup was completed.
      */
     public /*out*/ readonly timeEnded!: pulumi.Output<string>;
+    public /*out*/ readonly timeExpiryScheduled!: pulumi.Output<string>;
     /**
      * The date and time the backup started.
      */
@@ -154,20 +160,26 @@ export class Backup extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as BackupState | undefined;
             resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
+            resourceInputs["backupDestinationType"] = state ? state.backupDestinationType : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["databaseEdition"] = state ? state.databaseEdition : undefined;
             resourceInputs["databaseId"] = state ? state.databaseId : undefined;
             resourceInputs["databaseSizeInGbs"] = state ? state.databaseSizeInGbs : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["encryptionKeyLocationDetails"] = state ? state.encryptionKeyLocationDetails : undefined;
+            resourceInputs["isUsingOracleManagedKeys"] = state ? state.isUsingOracleManagedKeys : undefined;
             resourceInputs["keyStoreId"] = state ? state.keyStoreId : undefined;
             resourceInputs["keyStoreWalletName"] = state ? state.keyStoreWalletName : undefined;
             resourceInputs["kmsKeyId"] = state ? state.kmsKeyId : undefined;
             resourceInputs["kmsKeyVersionId"] = state ? state.kmsKeyVersionId : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["retentionPeriodInDays"] = state ? state.retentionPeriodInDays : undefined;
+            resourceInputs["retentionPeriodInYears"] = state ? state.retentionPeriodInYears : undefined;
+            resourceInputs["secondaryKmsKeyIds"] = state ? state.secondaryKmsKeyIds : undefined;
             resourceInputs["shape"] = state ? state.shape : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeEnded"] = state ? state.timeEnded : undefined;
+            resourceInputs["timeExpiryScheduled"] = state ? state.timeExpiryScheduled : undefined;
             resourceInputs["timeStarted"] = state ? state.timeStarted : undefined;
             resourceInputs["type"] = state ? state.type : undefined;
             resourceInputs["vaultId"] = state ? state.vaultId : undefined;
@@ -182,19 +194,25 @@ export class Backup extends pulumi.CustomResource {
             }
             resourceInputs["databaseId"] = args ? args.databaseId : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
+            resourceInputs["retentionPeriodInDays"] = args ? args.retentionPeriodInDays : undefined;
+            resourceInputs["retentionPeriodInYears"] = args ? args.retentionPeriodInYears : undefined;
             resourceInputs["availabilityDomain"] = undefined /*out*/;
+            resourceInputs["backupDestinationType"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["databaseEdition"] = undefined /*out*/;
             resourceInputs["databaseSizeInGbs"] = undefined /*out*/;
             resourceInputs["encryptionKeyLocationDetails"] = undefined /*out*/;
+            resourceInputs["isUsingOracleManagedKeys"] = undefined /*out*/;
             resourceInputs["keyStoreId"] = undefined /*out*/;
             resourceInputs["keyStoreWalletName"] = undefined /*out*/;
             resourceInputs["kmsKeyId"] = undefined /*out*/;
             resourceInputs["kmsKeyVersionId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
+            resourceInputs["secondaryKmsKeyIds"] = undefined /*out*/;
             resourceInputs["shape"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeEnded"] = undefined /*out*/;
+            resourceInputs["timeExpiryScheduled"] = undefined /*out*/;
             resourceInputs["timeStarted"] = undefined /*out*/;
             resourceInputs["type"] = undefined /*out*/;
             resourceInputs["vaultId"] = undefined /*out*/;
@@ -213,12 +231,13 @@ export interface BackupState {
      * The name of the availability domain where the database backup is stored.
      */
     availabilityDomain?: pulumi.Input<string>;
+    backupDestinationType?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * The Oracle Database edition of the DB system from which the database backup was taken.
+     * The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      */
     databaseEdition?: pulumi.Input<string>;
     /**
@@ -241,6 +260,7 @@ export interface BackupState {
      * Types of providers supported for managing database encryption keys
      */
     encryptionKeyLocationDetails?: pulumi.Input<pulumi.Input<inputs.Database.BackupEncryptionKeyLocationDetail>[]>;
+    isUsingOracleManagedKeys?: pulumi.Input<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      */
@@ -261,6 +281,9 @@ export interface BackupState {
      * Additional information about the current lifecycle state.
      */
     lifecycleDetails?: pulumi.Input<string>;
+    retentionPeriodInDays?: pulumi.Input<number>;
+    retentionPeriodInYears?: pulumi.Input<number>;
+    secondaryKmsKeyIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * Shape of the backup's source database.
      */
@@ -273,6 +296,7 @@ export interface BackupState {
      * The date and time the backup was completed.
      */
     timeEnded?: pulumi.Input<string>;
+    timeExpiryScheduled?: pulumi.Input<string>;
     /**
      * The date and time the backup started.
      */
@@ -307,4 +331,6 @@ export interface BackupArgs {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     displayName: pulumi.Input<string>;
+    retentionPeriodInDays?: pulumi.Input<number>;
+    retentionPeriodInYears?: pulumi.Input<number>;
 }

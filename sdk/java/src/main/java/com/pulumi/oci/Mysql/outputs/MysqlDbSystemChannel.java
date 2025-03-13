@@ -62,6 +62,11 @@ public final class MysqlDbSystemChannel {
      */
     private @Nullable String state;
     /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    private @Nullable Map<String,String> systemTags;
+    /**
      * @return Details about the Channel target.
      * 
      */
@@ -142,6 +147,13 @@ public final class MysqlDbSystemChannel {
         return Optional.ofNullable(this.state);
     }
     /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags == null ? Map.of() : this.systemTags;
+    }
+    /**
      * @return Details about the Channel target.
      * 
      */
@@ -181,6 +193,7 @@ public final class MysqlDbSystemChannel {
         private @Nullable String lifecycleDetails;
         private @Nullable List<MysqlDbSystemChannelSource> sources;
         private @Nullable String state;
+        private @Nullable Map<String,String> systemTags;
         private @Nullable List<MysqlDbSystemChannelTarget> targets;
         private @Nullable String timeCreated;
         private @Nullable String timeUpdated;
@@ -196,6 +209,7 @@ public final class MysqlDbSystemChannel {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.sources = defaults.sources;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
     	      this.targets = defaults.targets;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -259,6 +273,12 @@ public final class MysqlDbSystemChannel {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(@Nullable Map<String,String> systemTags) {
+
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder targets(@Nullable List<MysqlDbSystemChannelTarget> targets) {
 
             this.targets = targets;
@@ -290,6 +310,7 @@ public final class MysqlDbSystemChannel {
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.sources = sources;
             _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
             _resultValue.targets = targets;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;

@@ -54,6 +54,8 @@ type LookupExadataInfrastructureResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The number of compute servers for the Exadata infrastructure.
 	ComputeCount int `pulumi:"computeCount"`
+	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+	ComputeModel string `pulumi:"computeModel"`
 	// The list of contacts for the Exadata infrastructure.
 	Contacts []GetExadataInfrastructureContact `pulumi:"contacts"`
 	// The corporate network proxy for access to the control plane network.
@@ -65,6 +67,8 @@ type LookupExadataInfrastructureResult struct {
 	CsiNumber string `pulumi:"csiNumber"`
 	// Size, in terabytes, of the DATA disk group.
 	DataStorageSizeInTbs float64 `pulumi:"dataStorageSizeInTbs"`
+	// The database server type of the Exadata infrastructure.
+	DatabaseServerType string `pulumi:"databaseServerType"`
 	// The local node storage allocated in GBs.
 	DbNodeStorageSizeInGbs int `pulumi:"dbNodeStorageSizeInGbs"`
 	// The software version of the database servers (dom0) in the Exadata infrastructure.
@@ -78,6 +82,8 @@ type LookupExadataInfrastructureResult struct {
 	// The list of DNS server IP addresses. Maximum of 3 allowed.
 	DnsServers              []string `pulumi:"dnsServers"`
 	ExadataInfrastructureId string   `pulumi:"exadataInfrastructureId"`
+	// The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+	ExascaleConfigs []GetExadataInfrastructureExascaleConfig `pulumi:"exascaleConfigs"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The gateway for the control plane network.
@@ -126,6 +132,8 @@ type LookupExadataInfrastructureResult struct {
 	State string `pulumi:"state"`
 	// The number of Exadata storage servers for the Exadata infrastructure.
 	StorageCount int `pulumi:"storageCount"`
+	// The storage server type of the Exadata infrastructure.
+	StorageServerType string `pulumi:"storageServerType"`
 	// The software version of the storage servers (cells) in the Exadata infrastructure.
 	StorageServerVersion string `pulumi:"storageServerVersion"`
 	// The date and time the Exadata infrastructure was created.
@@ -222,6 +230,11 @@ func (o LookupExadataInfrastructureResultOutput) ComputeCount() pulumi.IntOutput
 	return o.ApplyT(func(v LookupExadataInfrastructureResult) int { return v.ComputeCount }).(pulumi.IntOutput)
 }
 
+// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+func (o LookupExadataInfrastructureResultOutput) ComputeModel() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExadataInfrastructureResult) string { return v.ComputeModel }).(pulumi.StringOutput)
+}
+
 // The list of contacts for the Exadata infrastructure.
 func (o LookupExadataInfrastructureResultOutput) Contacts() GetExadataInfrastructureContactArrayOutput {
 	return o.ApplyT(func(v LookupExadataInfrastructureResult) []GetExadataInfrastructureContact { return v.Contacts }).(GetExadataInfrastructureContactArrayOutput)
@@ -249,6 +262,11 @@ func (o LookupExadataInfrastructureResultOutput) CsiNumber() pulumi.StringOutput
 // Size, in terabytes, of the DATA disk group.
 func (o LookupExadataInfrastructureResultOutput) DataStorageSizeInTbs() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupExadataInfrastructureResult) float64 { return v.DataStorageSizeInTbs }).(pulumi.Float64Output)
+}
+
+// The database server type of the Exadata infrastructure.
+func (o LookupExadataInfrastructureResultOutput) DatabaseServerType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExadataInfrastructureResult) string { return v.DatabaseServerType }).(pulumi.StringOutput)
 }
 
 // The local node storage allocated in GBs.
@@ -285,6 +303,13 @@ func (o LookupExadataInfrastructureResultOutput) DnsServers() pulumi.StringArray
 
 func (o LookupExadataInfrastructureResultOutput) ExadataInfrastructureId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExadataInfrastructureResult) string { return v.ExadataInfrastructureId }).(pulumi.StringOutput)
+}
+
+// The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+func (o LookupExadataInfrastructureResultOutput) ExascaleConfigs() GetExadataInfrastructureExascaleConfigArrayOutput {
+	return o.ApplyT(func(v LookupExadataInfrastructureResult) []GetExadataInfrastructureExascaleConfig {
+		return v.ExascaleConfigs
+	}).(GetExadataInfrastructureExascaleConfigArrayOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -409,6 +434,11 @@ func (o LookupExadataInfrastructureResultOutput) State() pulumi.StringOutput {
 // The number of Exadata storage servers for the Exadata infrastructure.
 func (o LookupExadataInfrastructureResultOutput) StorageCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupExadataInfrastructureResult) int { return v.StorageCount }).(pulumi.IntOutput)
+}
+
+// The storage server type of the Exadata infrastructure.
+func (o LookupExadataInfrastructureResultOutput) StorageServerType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExadataInfrastructureResult) string { return v.StorageServerType }).(pulumi.StringOutput)
 }
 
 // The software version of the storage servers (cells) in the Exadata infrastructure.

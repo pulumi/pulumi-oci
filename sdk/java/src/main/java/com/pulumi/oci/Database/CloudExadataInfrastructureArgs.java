@@ -97,6 +97,21 @@ public final class CloudExadataInfrastructureArgs extends com.pulumi.resources.R
     }
 
     /**
+     * The database server type of the Exadata infrastructure.
+     * 
+     */
+    @Import(name="databaseServerType")
+    private @Nullable Output<String> databaseServerType;
+
+    /**
+     * @return The database server type of the Exadata infrastructure.
+     * 
+     */
+    public Optional<Output<String>> databaseServerType() {
+        return Optional.ofNullable(this.databaseServerType);
+    }
+
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
@@ -187,6 +202,21 @@ public final class CloudExadataInfrastructureArgs extends com.pulumi.resources.R
     }
 
     /**
+     * The storage server type of the Exadata infrastructure.
+     * 
+     */
+    @Import(name="storageServerType")
+    private @Nullable Output<String> storageServerType;
+
+    /**
+     * @return The storage server type of the Exadata infrastructure.
+     * 
+     */
+    public Optional<Output<String>> storageServerType() {
+        return Optional.ofNullable(this.storageServerType);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
      * 
      * ** IMPORTANT **
@@ -215,12 +245,14 @@ public final class CloudExadataInfrastructureArgs extends com.pulumi.resources.R
         this.compartmentId = $.compartmentId;
         this.computeCount = $.computeCount;
         this.customerContacts = $.customerContacts;
+        this.databaseServerType = $.databaseServerType;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.maintenanceWindow = $.maintenanceWindow;
         this.shape = $.shape;
         this.storageCount = $.storageCount;
+        this.storageServerType = $.storageServerType;
         this.subscriptionId = $.subscriptionId;
     }
 
@@ -358,6 +390,27 @@ public final class CloudExadataInfrastructureArgs extends com.pulumi.resources.R
         }
 
         /**
+         * @param databaseServerType The database server type of the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseServerType(@Nullable Output<String> databaseServerType) {
+            $.databaseServerType = databaseServerType;
+            return this;
+        }
+
+        /**
+         * @param databaseServerType The database server type of the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseServerType(String databaseServerType) {
+            return databaseServerType(Output.of(databaseServerType));
+        }
+
+        /**
          * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * 
          * @return builder
@@ -481,6 +534,27 @@ public final class CloudExadataInfrastructureArgs extends com.pulumi.resources.R
          */
         public Builder storageCount(Integer storageCount) {
             return storageCount(Output.of(storageCount));
+        }
+
+        /**
+         * @param storageServerType The storage server type of the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder storageServerType(@Nullable Output<String> storageServerType) {
+            $.storageServerType = storageServerType;
+            return this;
+        }
+
+        /**
+         * @param storageServerType The storage server type of the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder storageServerType(String storageServerType) {
+            return storageServerType(Output.of(storageServerType));
         }
 
         /**

@@ -111,6 +111,8 @@ import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyReferentialRelationsPlainA
 import com.pulumi.oci.DataSafe.inputs.GetMaskingReportArgs;
 import com.pulumi.oci.DataSafe.inputs.GetMaskingReportMaskedColumnsArgs;
 import com.pulumi.oci.DataSafe.inputs.GetMaskingReportMaskedColumnsPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetMaskingReportMaskingErrorsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetMaskingReportMaskingErrorsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetMaskingReportPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetMaskingReportsArgs;
 import com.pulumi.oci.DataSafe.inputs.GetMaskingReportsMaskedColumnArgs;
@@ -182,6 +184,8 @@ import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportRoleGrantPathsArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportRoleGrantPathsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportsArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportsPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSensitiveColumnAnalyticsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSensitiveColumnAnalyticsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelReferentialRelationArgs;
@@ -201,6 +205,12 @@ import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsSensitiveColumnPlain
 import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsSensitiveColumnsArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsSensitiveColumnsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeGroupArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeGroupGroupedSensitiveTypesArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeGroupGroupedSensitiveTypesPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeGroupPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeGroupsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeGroupsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypePlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesExportArgs;
@@ -324,6 +334,7 @@ import com.pulumi.oci.DataSafe.outputs.GetMaskingPolicyMaskingSchemasResult;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingPolicyReferentialRelationsResult;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingPolicyResult;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingReportMaskedColumnsResult;
+import com.pulumi.oci.DataSafe.outputs.GetMaskingReportMaskingErrorsResult;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingReportResult;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingReportsMaskedColumnResult;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingReportsResult;
@@ -360,6 +371,7 @@ import com.pulumi.oci.DataSafe.outputs.GetSecurityPolicyReportResult;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityPolicyReportRoleGrantPathsResult;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityPolicyReportsResult;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityPolicyResult;
+import com.pulumi.oci.DataSafe.outputs.GetSensitiveColumnAnalyticsResult;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelReferentialRelationResult;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelReferentialRelationsResult;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelResult;
@@ -369,6 +381,9 @@ import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelSensitiveTypesResult
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelsResult;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelsSensitiveColumnResult;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelsSensitiveColumnsResult;
+import com.pulumi.oci.DataSafe.outputs.GetSensitiveTypeGroupGroupedSensitiveTypesResult;
+import com.pulumi.oci.DataSafe.outputs.GetSensitiveTypeGroupResult;
+import com.pulumi.oci.DataSafe.outputs.GetSensitiveTypeGroupsResult;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveTypeResult;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveTypesExportResult;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveTypesExportsResult;
@@ -13735,6 +13750,231 @@ public final class DataSafeFunctions {
         return Deployment.getInstance().invokeAsync("oci:DataSafe/getMaskingReportMaskedColumns:getMaskingReportMaskedColumns", TypeShape.of(GetMaskingReportMaskedColumnsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Masking Report Masking Errors in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of masking errors in a masking run based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportMaskingErrorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingReportMaskingErrors = DataSafeFunctions.getMaskingReportMaskingErrors(GetMaskingReportMaskingErrorsArgs.builder()
+     *             .maskingReportId(testMaskingReport.id())
+     *             .stepName(maskingReportMaskingErrorStepName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMaskingReportMaskingErrorsResult> getMaskingReportMaskingErrors(GetMaskingReportMaskingErrorsArgs args) {
+        return getMaskingReportMaskingErrors(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Masking Report Masking Errors in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of masking errors in a masking run based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportMaskingErrorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingReportMaskingErrors = DataSafeFunctions.getMaskingReportMaskingErrors(GetMaskingReportMaskingErrorsArgs.builder()
+     *             .maskingReportId(testMaskingReport.id())
+     *             .stepName(maskingReportMaskingErrorStepName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetMaskingReportMaskingErrorsResult> getMaskingReportMaskingErrorsPlain(GetMaskingReportMaskingErrorsPlainArgs args) {
+        return getMaskingReportMaskingErrorsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Masking Report Masking Errors in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of masking errors in a masking run based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportMaskingErrorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingReportMaskingErrors = DataSafeFunctions.getMaskingReportMaskingErrors(GetMaskingReportMaskingErrorsArgs.builder()
+     *             .maskingReportId(testMaskingReport.id())
+     *             .stepName(maskingReportMaskingErrorStepName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMaskingReportMaskingErrorsResult> getMaskingReportMaskingErrors(GetMaskingReportMaskingErrorsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getMaskingReportMaskingErrors:getMaskingReportMaskingErrors", TypeShape.of(GetMaskingReportMaskingErrorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Masking Report Masking Errors in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of masking errors in a masking run based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportMaskingErrorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingReportMaskingErrors = DataSafeFunctions.getMaskingReportMaskingErrors(GetMaskingReportMaskingErrorsArgs.builder()
+     *             .maskingReportId(testMaskingReport.id())
+     *             .stepName(maskingReportMaskingErrorStepName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMaskingReportMaskingErrorsResult> getMaskingReportMaskingErrors(GetMaskingReportMaskingErrorsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getMaskingReportMaskingErrors:getMaskingReportMaskingErrors", TypeShape.of(GetMaskingReportMaskingErrorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Masking Report Masking Errors in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of masking errors in a masking run based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportMaskingErrorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingReportMaskingErrors = DataSafeFunctions.getMaskingReportMaskingErrors(GetMaskingReportMaskingErrorsArgs.builder()
+     *             .maskingReportId(testMaskingReport.id())
+     *             .stepName(maskingReportMaskingErrorStepName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetMaskingReportMaskingErrorsResult> getMaskingReportMaskingErrorsPlain(GetMaskingReportMaskingErrorsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getMaskingReportMaskingErrors:getMaskingReportMaskingErrors", TypeShape.of(GetMaskingReportMaskingErrorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Masking Reports in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets a list of masking reports based on the specified query parameters.
@@ -22040,6 +22280,321 @@ public final class DataSafeFunctions {
         return Deployment.getInstance().invokeAsync("oci:DataSafe/getSecurityPolicyReports:getSecurityPolicyReports", TypeShape.of(GetSecurityPolicyReportsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Sensitive Column Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets consolidated sensitive columns analytics data based on the specified query parameters.
+     * 
+     * When you perform the ListSensitiveColumnAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
+     * compartmentId, then &#34;Not Authorized&#34; is returned.
+     * 
+     * To use ListSensitiveColumnAnalytics to get a full list of all compartments and subcompartments in the tenancy from the root compartment,
+     * set the parameter compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveColumnAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveColumnAnalytics = DataSafeFunctions.getSensitiveColumnAnalytics(GetSensitiveColumnAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sensitiveColumnAnalyticAccessLevel)
+     *             .columnNames(sensitiveColumnAnalyticColumnName)
+     *             .compartmentIdInSubtree(sensitiveColumnAnalyticCompartmentIdInSubtree)
+     *             .groupBies(sensitiveColumnAnalyticGroupBy)
+     *             .objects(sensitiveColumnAnalyticObject)
+     *             .schemaNames(sensitiveColumnAnalyticSchemaName)
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
+     *             .sensitiveTypeIds(testSensitiveType.id())
+     *             .targetId(testTarget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSensitiveColumnAnalyticsResult> getSensitiveColumnAnalytics(GetSensitiveColumnAnalyticsArgs args) {
+        return getSensitiveColumnAnalytics(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Sensitive Column Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets consolidated sensitive columns analytics data based on the specified query parameters.
+     * 
+     * When you perform the ListSensitiveColumnAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
+     * compartmentId, then &#34;Not Authorized&#34; is returned.
+     * 
+     * To use ListSensitiveColumnAnalytics to get a full list of all compartments and subcompartments in the tenancy from the root compartment,
+     * set the parameter compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveColumnAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveColumnAnalytics = DataSafeFunctions.getSensitiveColumnAnalytics(GetSensitiveColumnAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sensitiveColumnAnalyticAccessLevel)
+     *             .columnNames(sensitiveColumnAnalyticColumnName)
+     *             .compartmentIdInSubtree(sensitiveColumnAnalyticCompartmentIdInSubtree)
+     *             .groupBies(sensitiveColumnAnalyticGroupBy)
+     *             .objects(sensitiveColumnAnalyticObject)
+     *             .schemaNames(sensitiveColumnAnalyticSchemaName)
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
+     *             .sensitiveTypeIds(testSensitiveType.id())
+     *             .targetId(testTarget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSensitiveColumnAnalyticsResult> getSensitiveColumnAnalyticsPlain(GetSensitiveColumnAnalyticsPlainArgs args) {
+        return getSensitiveColumnAnalyticsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Sensitive Column Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets consolidated sensitive columns analytics data based on the specified query parameters.
+     * 
+     * When you perform the ListSensitiveColumnAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
+     * compartmentId, then &#34;Not Authorized&#34; is returned.
+     * 
+     * To use ListSensitiveColumnAnalytics to get a full list of all compartments and subcompartments in the tenancy from the root compartment,
+     * set the parameter compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveColumnAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveColumnAnalytics = DataSafeFunctions.getSensitiveColumnAnalytics(GetSensitiveColumnAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sensitiveColumnAnalyticAccessLevel)
+     *             .columnNames(sensitiveColumnAnalyticColumnName)
+     *             .compartmentIdInSubtree(sensitiveColumnAnalyticCompartmentIdInSubtree)
+     *             .groupBies(sensitiveColumnAnalyticGroupBy)
+     *             .objects(sensitiveColumnAnalyticObject)
+     *             .schemaNames(sensitiveColumnAnalyticSchemaName)
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
+     *             .sensitiveTypeIds(testSensitiveType.id())
+     *             .targetId(testTarget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSensitiveColumnAnalyticsResult> getSensitiveColumnAnalytics(GetSensitiveColumnAnalyticsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSensitiveColumnAnalytics:getSensitiveColumnAnalytics", TypeShape.of(GetSensitiveColumnAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sensitive Column Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets consolidated sensitive columns analytics data based on the specified query parameters.
+     * 
+     * When you perform the ListSensitiveColumnAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
+     * compartmentId, then &#34;Not Authorized&#34; is returned.
+     * 
+     * To use ListSensitiveColumnAnalytics to get a full list of all compartments and subcompartments in the tenancy from the root compartment,
+     * set the parameter compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveColumnAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveColumnAnalytics = DataSafeFunctions.getSensitiveColumnAnalytics(GetSensitiveColumnAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sensitiveColumnAnalyticAccessLevel)
+     *             .columnNames(sensitiveColumnAnalyticColumnName)
+     *             .compartmentIdInSubtree(sensitiveColumnAnalyticCompartmentIdInSubtree)
+     *             .groupBies(sensitiveColumnAnalyticGroupBy)
+     *             .objects(sensitiveColumnAnalyticObject)
+     *             .schemaNames(sensitiveColumnAnalyticSchemaName)
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
+     *             .sensitiveTypeIds(testSensitiveType.id())
+     *             .targetId(testTarget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSensitiveColumnAnalyticsResult> getSensitiveColumnAnalytics(GetSensitiveColumnAnalyticsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSensitiveColumnAnalytics:getSensitiveColumnAnalytics", TypeShape.of(GetSensitiveColumnAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sensitive Column Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets consolidated sensitive columns analytics data based on the specified query parameters.
+     * 
+     * When you perform the ListSensitiveColumnAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
+     * compartmentId, then &#34;Not Authorized&#34; is returned.
+     * 
+     * To use ListSensitiveColumnAnalytics to get a full list of all compartments and subcompartments in the tenancy from the root compartment,
+     * set the parameter compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveColumnAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveColumnAnalytics = DataSafeFunctions.getSensitiveColumnAnalytics(GetSensitiveColumnAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sensitiveColumnAnalyticAccessLevel)
+     *             .columnNames(sensitiveColumnAnalyticColumnName)
+     *             .compartmentIdInSubtree(sensitiveColumnAnalyticCompartmentIdInSubtree)
+     *             .groupBies(sensitiveColumnAnalyticGroupBy)
+     *             .objects(sensitiveColumnAnalyticObject)
+     *             .schemaNames(sensitiveColumnAnalyticSchemaName)
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
+     *             .sensitiveTypeIds(testSensitiveType.id())
+     *             .targetId(testTarget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSensitiveColumnAnalyticsResult> getSensitiveColumnAnalyticsPlain(GetSensitiveColumnAnalyticsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSensitiveColumnAnalytics:getSensitiveColumnAnalytics", TypeShape.of(GetSensitiveColumnAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides details about a specific Sensitive Data Model resource in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets the details of the specified sensitive data model.
@@ -24418,6 +24973,706 @@ public final class DataSafeFunctions {
      */
     public static CompletableFuture<GetSensitiveTypeResult> getSensitiveTypePlain(GetSensitiveTypePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataSafe/getSensitiveType:getSensitiveType", TypeShape.of(GetSensitiveTypeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Sensitive Type Group resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified sensitive type group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveTypeGroup = DataSafeFunctions.getSensitiveTypeGroup(GetSensitiveTypeGroupArgs.builder()
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroupOciDataSafeSensitiveTypeGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSensitiveTypeGroupResult> getSensitiveTypeGroup(GetSensitiveTypeGroupArgs args) {
+        return getSensitiveTypeGroup(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Sensitive Type Group resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified sensitive type group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveTypeGroup = DataSafeFunctions.getSensitiveTypeGroup(GetSensitiveTypeGroupArgs.builder()
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroupOciDataSafeSensitiveTypeGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSensitiveTypeGroupResult> getSensitiveTypeGroupPlain(GetSensitiveTypeGroupPlainArgs args) {
+        return getSensitiveTypeGroupPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Sensitive Type Group resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified sensitive type group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveTypeGroup = DataSafeFunctions.getSensitiveTypeGroup(GetSensitiveTypeGroupArgs.builder()
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroupOciDataSafeSensitiveTypeGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSensitiveTypeGroupResult> getSensitiveTypeGroup(GetSensitiveTypeGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSensitiveTypeGroup:getSensitiveTypeGroup", TypeShape.of(GetSensitiveTypeGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Sensitive Type Group resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified sensitive type group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveTypeGroup = DataSafeFunctions.getSensitiveTypeGroup(GetSensitiveTypeGroupArgs.builder()
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroupOciDataSafeSensitiveTypeGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSensitiveTypeGroupResult> getSensitiveTypeGroup(GetSensitiveTypeGroupArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSensitiveTypeGroup:getSensitiveTypeGroup", TypeShape.of(GetSensitiveTypeGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Sensitive Type Group resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified sensitive type group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveTypeGroup = DataSafeFunctions.getSensitiveTypeGroup(GetSensitiveTypeGroupArgs.builder()
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroupOciDataSafeSensitiveTypeGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSensitiveTypeGroupResult> getSensitiveTypeGroupPlain(GetSensitiveTypeGroupPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSensitiveTypeGroup:getSensitiveTypeGroup", TypeShape.of(GetSensitiveTypeGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sensitive Type Group Grouped Sensitive Types in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the list of sensitive type Ids present in the specified sensitive type group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeGroupGroupedSensitiveTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveTypeGroupGroupedSensitiveTypes = DataSafeFunctions.getSensitiveTypeGroupGroupedSensitiveTypes(GetSensitiveTypeGroupGroupedSensitiveTypesArgs.builder()
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
+     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSensitiveTypeGroupGroupedSensitiveTypesResult> getSensitiveTypeGroupGroupedSensitiveTypes(GetSensitiveTypeGroupGroupedSensitiveTypesArgs args) {
+        return getSensitiveTypeGroupGroupedSensitiveTypes(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Sensitive Type Group Grouped Sensitive Types in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the list of sensitive type Ids present in the specified sensitive type group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeGroupGroupedSensitiveTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveTypeGroupGroupedSensitiveTypes = DataSafeFunctions.getSensitiveTypeGroupGroupedSensitiveTypes(GetSensitiveTypeGroupGroupedSensitiveTypesArgs.builder()
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
+     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSensitiveTypeGroupGroupedSensitiveTypesResult> getSensitiveTypeGroupGroupedSensitiveTypesPlain(GetSensitiveTypeGroupGroupedSensitiveTypesPlainArgs args) {
+        return getSensitiveTypeGroupGroupedSensitiveTypesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Sensitive Type Group Grouped Sensitive Types in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the list of sensitive type Ids present in the specified sensitive type group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeGroupGroupedSensitiveTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveTypeGroupGroupedSensitiveTypes = DataSafeFunctions.getSensitiveTypeGroupGroupedSensitiveTypes(GetSensitiveTypeGroupGroupedSensitiveTypesArgs.builder()
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
+     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSensitiveTypeGroupGroupedSensitiveTypesResult> getSensitiveTypeGroupGroupedSensitiveTypes(GetSensitiveTypeGroupGroupedSensitiveTypesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSensitiveTypeGroupGroupedSensitiveTypes:getSensitiveTypeGroupGroupedSensitiveTypes", TypeShape.of(GetSensitiveTypeGroupGroupedSensitiveTypesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sensitive Type Group Grouped Sensitive Types in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the list of sensitive type Ids present in the specified sensitive type group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeGroupGroupedSensitiveTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveTypeGroupGroupedSensitiveTypes = DataSafeFunctions.getSensitiveTypeGroupGroupedSensitiveTypes(GetSensitiveTypeGroupGroupedSensitiveTypesArgs.builder()
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
+     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSensitiveTypeGroupGroupedSensitiveTypesResult> getSensitiveTypeGroupGroupedSensitiveTypes(GetSensitiveTypeGroupGroupedSensitiveTypesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSensitiveTypeGroupGroupedSensitiveTypes:getSensitiveTypeGroupGroupedSensitiveTypes", TypeShape.of(GetSensitiveTypeGroupGroupedSensitiveTypesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sensitive Type Group Grouped Sensitive Types in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the list of sensitive type Ids present in the specified sensitive type group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeGroupGroupedSensitiveTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveTypeGroupGroupedSensitiveTypes = DataSafeFunctions.getSensitiveTypeGroupGroupedSensitiveTypes(GetSensitiveTypeGroupGroupedSensitiveTypesArgs.builder()
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
+     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSensitiveTypeGroupGroupedSensitiveTypesResult> getSensitiveTypeGroupGroupedSensitiveTypesPlain(GetSensitiveTypeGroupGroupedSensitiveTypesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSensitiveTypeGroupGroupedSensitiveTypes:getSensitiveTypeGroupGroupedSensitiveTypes", TypeShape.of(GetSensitiveTypeGroupGroupedSensitiveTypesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sensitive Type Groups in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of sensitive type groups based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveTypeGroups = DataSafeFunctions.getSensitiveTypeGroups(GetSensitiveTypeGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sensitiveTypeGroupAccessLevel)
+     *             .compartmentIdInSubtree(sensitiveTypeGroupCompartmentIdInSubtree)
+     *             .displayName(sensitiveTypeGroupDisplayName)
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
+     *             .state(sensitiveTypeGroupState)
+     *             .timeCreatedGreaterThanOrEqualTo(sensitiveTypeGroupTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(sensitiveTypeGroupTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSensitiveTypeGroupsResult> getSensitiveTypeGroups(GetSensitiveTypeGroupsArgs args) {
+        return getSensitiveTypeGroups(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Sensitive Type Groups in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of sensitive type groups based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveTypeGroups = DataSafeFunctions.getSensitiveTypeGroups(GetSensitiveTypeGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sensitiveTypeGroupAccessLevel)
+     *             .compartmentIdInSubtree(sensitiveTypeGroupCompartmentIdInSubtree)
+     *             .displayName(sensitiveTypeGroupDisplayName)
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
+     *             .state(sensitiveTypeGroupState)
+     *             .timeCreatedGreaterThanOrEqualTo(sensitiveTypeGroupTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(sensitiveTypeGroupTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSensitiveTypeGroupsResult> getSensitiveTypeGroupsPlain(GetSensitiveTypeGroupsPlainArgs args) {
+        return getSensitiveTypeGroupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Sensitive Type Groups in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of sensitive type groups based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveTypeGroups = DataSafeFunctions.getSensitiveTypeGroups(GetSensitiveTypeGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sensitiveTypeGroupAccessLevel)
+     *             .compartmentIdInSubtree(sensitiveTypeGroupCompartmentIdInSubtree)
+     *             .displayName(sensitiveTypeGroupDisplayName)
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
+     *             .state(sensitiveTypeGroupState)
+     *             .timeCreatedGreaterThanOrEqualTo(sensitiveTypeGroupTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(sensitiveTypeGroupTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSensitiveTypeGroupsResult> getSensitiveTypeGroups(GetSensitiveTypeGroupsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSensitiveTypeGroups:getSensitiveTypeGroups", TypeShape.of(GetSensitiveTypeGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sensitive Type Groups in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of sensitive type groups based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveTypeGroups = DataSafeFunctions.getSensitiveTypeGroups(GetSensitiveTypeGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sensitiveTypeGroupAccessLevel)
+     *             .compartmentIdInSubtree(sensitiveTypeGroupCompartmentIdInSubtree)
+     *             .displayName(sensitiveTypeGroupDisplayName)
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
+     *             .state(sensitiveTypeGroupState)
+     *             .timeCreatedGreaterThanOrEqualTo(sensitiveTypeGroupTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(sensitiveTypeGroupTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSensitiveTypeGroupsResult> getSensitiveTypeGroups(GetSensitiveTypeGroupsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSensitiveTypeGroups:getSensitiveTypeGroups", TypeShape.of(GetSensitiveTypeGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sensitive Type Groups in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of sensitive type groups based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveTypeGroups = DataSafeFunctions.getSensitiveTypeGroups(GetSensitiveTypeGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sensitiveTypeGroupAccessLevel)
+     *             .compartmentIdInSubtree(sensitiveTypeGroupCompartmentIdInSubtree)
+     *             .displayName(sensitiveTypeGroupDisplayName)
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
+     *             .state(sensitiveTypeGroupState)
+     *             .timeCreatedGreaterThanOrEqualTo(sensitiveTypeGroupTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(sensitiveTypeGroupTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSensitiveTypeGroupsResult> getSensitiveTypeGroupsPlain(GetSensitiveTypeGroupsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSensitiveTypeGroups:getSensitiveTypeGroups", TypeShape.of(GetSensitiveTypeGroupsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Sensitive Types in Oracle Cloud Infrastructure Data Safe service.

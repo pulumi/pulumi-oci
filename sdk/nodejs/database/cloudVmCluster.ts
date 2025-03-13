@@ -72,6 +72,7 @@ import * as utilities from "../utilities";
  *     subscriptionId: tenantSubscriptionId,
  *     systemVersion: cloudVmClusterSystemVersion,
  *     timeZone: cloudVmClusterTimeZone,
+ *     vmClusterType: cloudVmClusterVmClusterType,
  * });
  * ```
  *
@@ -139,6 +140,10 @@ export class CloudVmCluster extends pulumi.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     public readonly compartmentId!: pulumi.Output<string>;
+    /**
+     * The compute model of the cloud VM cluster.
+     */
+    public /*out*/ readonly computeModel!: pulumi.Output<string>;
     /**
      * (Updatable) The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:
      * * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
@@ -265,9 +270,13 @@ export class CloudVmCluster extends pulumi.CustomResource {
      */
     public /*out*/ readonly scanDnsRecordId!: pulumi.Output<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv4 addresses associated with the cloud VM cluster. SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      */
     public /*out*/ readonly scanIpIds!: pulumi.Output<string[]>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv6 addresses associated with the cloud VM cluster. SCAN IPv6 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+     */
+    public /*out*/ readonly scanIpv6ids!: pulumi.Output<string[]>;
     /**
      * The TCP Single Client Access Name (SCAN) port. The default port is 1521.
      */
@@ -317,17 +326,25 @@ export class CloudVmCluster extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
-     * The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
+     * The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+     */
+    public readonly timeZone!: pulumi.Output<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+     */
+    public /*out*/ readonly vipIds!: pulumi.Output<string[]>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+     */
+    public /*out*/ readonly vipv6ids!: pulumi.Output<string[]>;
+    /**
+     * The vmcluster type for the VM cluster/Cloud VM cluster.
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly timeZone!: pulumi.Output<string>;
-    /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
-     */
-    public /*out*/ readonly vipIds!: pulumi.Output<string[]>;
+    public readonly vmClusterType!: pulumi.Output<string>;
     /**
      * The OCID of the zone the cloud VM cluster is associated with.
      */
@@ -353,6 +370,7 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["cloudExadataInfrastructureId"] = state ? state.cloudExadataInfrastructureId : undefined;
             resourceInputs["clusterName"] = state ? state.clusterName : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
+            resourceInputs["computeModel"] = state ? state.computeModel : undefined;
             resourceInputs["cpuCoreCount"] = state ? state.cpuCoreCount : undefined;
             resourceInputs["createAsync"] = state ? state.createAsync : undefined;
             resourceInputs["dataCollectionOptions"] = state ? state.dataCollectionOptions : undefined;
@@ -383,6 +401,7 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["scanDnsName"] = state ? state.scanDnsName : undefined;
             resourceInputs["scanDnsRecordId"] = state ? state.scanDnsRecordId : undefined;
             resourceInputs["scanIpIds"] = state ? state.scanIpIds : undefined;
+            resourceInputs["scanIpv6ids"] = state ? state.scanIpv6ids : undefined;
             resourceInputs["scanListenerPortTcp"] = state ? state.scanListenerPortTcp : undefined;
             resourceInputs["scanListenerPortTcpSsl"] = state ? state.scanListenerPortTcpSsl : undefined;
             resourceInputs["securityAttributes"] = state ? state.securityAttributes : undefined;
@@ -397,6 +416,8 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeZone"] = state ? state.timeZone : undefined;
             resourceInputs["vipIds"] = state ? state.vipIds : undefined;
+            resourceInputs["vipv6ids"] = state ? state.vipv6ids : undefined;
+            resourceInputs["vmClusterType"] = state ? state.vmClusterType : undefined;
             resourceInputs["zoneId"] = state ? state.zoneId : undefined;
         } else {
             const args = argsOrState as CloudVmClusterArgs | undefined;
@@ -462,7 +483,9 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["subscriptionId"] = args ? args.subscriptionId : undefined;
             resourceInputs["systemVersion"] = args ? args.systemVersion : undefined;
             resourceInputs["timeZone"] = args ? args.timeZone : undefined;
+            resourceInputs["vmClusterType"] = args ? args.vmClusterType : undefined;
             resourceInputs["availabilityDomain"] = undefined /*out*/;
+            resourceInputs["computeModel"] = undefined /*out*/;
             resourceInputs["diskRedundancy"] = undefined /*out*/;
             resourceInputs["iormConfigCaches"] = undefined /*out*/;
             resourceInputs["lastUpdateHistoryEntryId"] = undefined /*out*/;
@@ -472,12 +495,14 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["scanDnsName"] = undefined /*out*/;
             resourceInputs["scanDnsRecordId"] = undefined /*out*/;
             resourceInputs["scanIpIds"] = undefined /*out*/;
+            resourceInputs["scanIpv6ids"] = undefined /*out*/;
             resourceInputs["shape"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["storageSizeInGbs"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["vipIds"] = undefined /*out*/;
+            resourceInputs["vipv6ids"] = undefined /*out*/;
             resourceInputs["zoneId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -517,6 +542,10 @@ export interface CloudVmClusterState {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId?: pulumi.Input<string>;
+    /**
+     * The compute model of the cloud VM cluster.
+     */
+    computeModel?: pulumi.Input<string>;
     /**
      * (Updatable) The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:
      * * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
@@ -643,9 +672,13 @@ export interface CloudVmClusterState {
      */
     scanDnsRecordId?: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv4 addresses associated with the cloud VM cluster. SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      */
     scanIpIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv6 addresses associated with the cloud VM cluster. SCAN IPv6 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+     */
+    scanIpv6ids?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The TCP Single Client Access Name (SCAN) port. The default port is 1521.
      */
@@ -695,17 +728,25 @@ export interface CloudVmClusterState {
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
+     * The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+     */
+    timeZone?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+     */
+    vipIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+     */
+    vipv6ids?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The vmcluster type for the VM cluster/Cloud VM cluster.
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timeZone?: pulumi.Input<string>;
-    /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
-     */
-    vipIds?: pulumi.Input<pulumi.Input<string>[]>;
+    vmClusterType?: pulumi.Input<string>;
     /**
      * The OCID of the zone the cloud VM cluster is associated with.
      */
@@ -862,11 +903,15 @@ export interface CloudVmClusterArgs {
      */
     systemVersion?: pulumi.Input<string>;
     /**
-     * The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
+     * The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+     */
+    timeZone?: pulumi.Input<string>;
+    /**
+     * The vmcluster type for the VM cluster/Cloud VM cluster.
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timeZone?: pulumi.Input<string>;
+    vmClusterType?: pulumi.Input<string>;
 }

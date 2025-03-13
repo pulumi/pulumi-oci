@@ -28,7 +28,10 @@ class GetModelsResult:
     """
     A collection of values returned by getModels.
     """
-    def __init__(__self__, compartment_id=None, created_by=None, display_name=None, filters=None, id=None, model_version_set_id=None, model_version_set_name=None, models=None, project_id=None, state=None, version_label=None):
+    def __init__(__self__, category=None, compartment_id=None, created_by=None, display_name=None, filters=None, id=None, model_version_set_id=None, model_version_set_name=None, models=None, project_id=None, state=None, version_label=None):
+        if category and not isinstance(category, str):
+            raise TypeError("Expected argument 'category' to be a str")
+        pulumi.set(__self__, "category", category)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -62,6 +65,14 @@ class GetModelsResult:
         if version_label and not isinstance(version_label, str):
             raise TypeError("Expected argument 'version_label' to be a str")
         pulumi.set(__self__, "version_label", version_label)
+
+    @property
+    @pulumi.getter
+    def category(self) -> Optional[str]:
+        """
+        Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
+        """
+        return pulumi.get(self, "category")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -152,6 +163,7 @@ class AwaitableGetModelsResult(GetModelsResult):
         if False:
             yield self
         return GetModelsResult(
+            category=self.category,
             compartment_id=self.compartment_id,
             created_by=self.created_by,
             display_name=self.display_name,
@@ -165,7 +177,8 @@ class AwaitableGetModelsResult(GetModelsResult):
             version_label=self.version_label)
 
 
-def get_models(compartment_id: Optional[str] = None,
+def get_models(category: Optional[str] = None,
+               compartment_id: Optional[str] = None,
                created_by: Optional[str] = None,
                display_name: Optional[str] = None,
                filters: Optional[Sequence[Union['GetModelsFilterArgs', 'GetModelsFilterArgsDict']]] = None,
@@ -188,6 +201,7 @@ def get_models(compartment_id: Optional[str] = None,
     import pulumi_oci as oci
 
     test_models = oci.DataScience.get_models(compartment_id=compartment_id,
+        category=model_category,
         created_by=model_created_by,
         display_name=model_display_name,
         id=model_id,
@@ -197,6 +211,7 @@ def get_models(compartment_id: Optional[str] = None,
     ```
 
 
+    :param str category: Specifies the type of models to list. By default, user models are listed.
     :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
     :param str display_name: <b>Filter</b> results by its user-friendly name.
@@ -207,6 +222,7 @@ def get_models(compartment_id: Optional[str] = None,
     :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
     """
     __args__ = dict()
+    __args__['category'] = category
     __args__['compartmentId'] = compartment_id
     __args__['createdBy'] = created_by
     __args__['displayName'] = display_name
@@ -221,6 +237,7 @@ def get_models(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataScience/getModels:getModels', __args__, opts=opts, typ=GetModelsResult).value
 
     return AwaitableGetModelsResult(
+        category=pulumi.get(__ret__, 'category'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         created_by=pulumi.get(__ret__, 'created_by'),
         display_name=pulumi.get(__ret__, 'display_name'),
@@ -232,7 +249,8 @@ def get_models(compartment_id: Optional[str] = None,
         project_id=pulumi.get(__ret__, 'project_id'),
         state=pulumi.get(__ret__, 'state'),
         version_label=pulumi.get(__ret__, 'version_label'))
-def get_models_output(compartment_id: Optional[pulumi.Input[str]] = None,
+def get_models_output(category: Optional[pulumi.Input[Optional[str]]] = None,
+                      compartment_id: Optional[pulumi.Input[str]] = None,
                       created_by: Optional[pulumi.Input[Optional[str]]] = None,
                       display_name: Optional[pulumi.Input[Optional[str]]] = None,
                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetModelsFilterArgs', 'GetModelsFilterArgsDict']]]]] = None,
@@ -255,6 +273,7 @@ def get_models_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi_oci as oci
 
     test_models = oci.DataScience.get_models(compartment_id=compartment_id,
+        category=model_category,
         created_by=model_created_by,
         display_name=model_display_name,
         id=model_id,
@@ -264,6 +283,7 @@ def get_models_output(compartment_id: Optional[pulumi.Input[str]] = None,
     ```
 
 
+    :param str category: Specifies the type of models to list. By default, user models are listed.
     :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
     :param str display_name: <b>Filter</b> results by its user-friendly name.
@@ -274,6 +294,7 @@ def get_models_output(compartment_id: Optional[pulumi.Input[str]] = None,
     :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
     """
     __args__ = dict()
+    __args__['category'] = category
     __args__['compartmentId'] = compartment_id
     __args__['createdBy'] = created_by
     __args__['displayName'] = display_name
@@ -287,6 +308,7 @@ def get_models_output(compartment_id: Optional[pulumi.Input[str]] = None,
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataScience/getModels:getModels', __args__, opts=opts, typ=GetModelsResult)
     return __ret__.apply(lambda __response__: GetModelsResult(
+        category=pulumi.get(__response__, 'category'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         created_by=pulumi.get(__response__, 'created_by'),
         display_name=pulumi.get(__response__, 'display_name'),

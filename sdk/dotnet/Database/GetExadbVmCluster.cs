@@ -143,6 +143,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string ClusterName;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        /// </summary>
+        public readonly string ClusterPlacementGroupId;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         public readonly string CompartmentId;
@@ -269,6 +273,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string SubnetId;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        /// </summary>
+        public readonly string SubscriptionId;
+        /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
@@ -302,6 +310,8 @@ namespace Pulumi.Oci.Database
             string backupSubnetId,
 
             string clusterName,
+
+            string clusterPlacementGroupId,
 
             string compartmentId,
 
@@ -367,6 +377,8 @@ namespace Pulumi.Oci.Database
 
             string subnetId,
 
+            string subscriptionId,
+
             ImmutableDictionary<string, string> systemTags,
 
             string systemVersion,
@@ -383,6 +395,7 @@ namespace Pulumi.Oci.Database
             BackupNetworkNsgIds = backupNetworkNsgIds;
             BackupSubnetId = backupSubnetId;
             ClusterName = clusterName;
+            ClusterPlacementGroupId = clusterPlacementGroupId;
             CompartmentId = compartmentId;
             DataCollectionOptions = dataCollectionOptions;
             DefinedTags = definedTags;
@@ -415,6 +428,7 @@ namespace Pulumi.Oci.Database
             SshPublicKeys = sshPublicKeys;
             State = state;
             SubnetId = subnetId;
+            SubscriptionId = subscriptionId;
             SystemTags = systemTags;
             SystemVersion = systemVersion;
             TimeCreated = timeCreated;

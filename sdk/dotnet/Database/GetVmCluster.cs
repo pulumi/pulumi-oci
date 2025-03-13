@@ -138,6 +138,10 @@ namespace Pulumi.Oci.Database
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         public readonly string CompartmentId;
+        /// <summary>
+        /// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        /// </summary>
+        public readonly string ComputeModel;
         public readonly int CpuCoreCount;
         /// <summary>
         /// The number of enabled CPU cores.
@@ -175,6 +179,10 @@ namespace Pulumi.Oci.Database
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         /// </summary>
         public readonly string ExadataInfrastructureId;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+        /// </summary>
+        public readonly string ExascaleDbStorageVaultId;
         /// <summary>
         /// Details of the file system configuration of the VM cluster.
         /// </summary>
@@ -230,6 +238,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string State;
         /// <summary>
+        /// Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
+        /// </summary>
+        public readonly string StorageManagementType;
+        /// <summary>
         /// Operating system version of the image.
         /// </summary>
         public readonly string SystemVersion;
@@ -246,6 +258,10 @@ namespace Pulumi.Oci.Database
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
         /// </summary>
         public readonly string VmClusterNetworkId;
+        /// <summary>
+        /// The vmcluster type for the VM cluster/Cloud VM cluster.
+        /// </summary>
+        public readonly string VmClusterType;
 
         [OutputConstructor]
         private GetVmClusterResult(
@@ -254,6 +270,8 @@ namespace Pulumi.Oci.Database
             ImmutableArray<Outputs.GetVmClusterCloudAutomationUpdateDetailResult> cloudAutomationUpdateDetails,
 
             string compartmentId,
+
+            string computeModel,
 
             int cpuCoreCount,
 
@@ -274,6 +292,8 @@ namespace Pulumi.Oci.Database
             string displayName,
 
             string exadataInfrastructureId,
+
+            string exascaleDbStorageVaultId,
 
             ImmutableArray<Outputs.GetVmClusterFileSystemConfigurationDetailResult> fileSystemConfigurationDetails,
 
@@ -305,6 +325,8 @@ namespace Pulumi.Oci.Database
 
             string state,
 
+            string storageManagementType,
+
             string systemVersion,
 
             string timeCreated,
@@ -313,11 +335,14 @@ namespace Pulumi.Oci.Database
 
             string vmClusterId,
 
-            string vmClusterNetworkId)
+            string vmClusterNetworkId,
+
+            string vmClusterType)
         {
             AvailabilityDomain = availabilityDomain;
             CloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
             CompartmentId = compartmentId;
+            ComputeModel = computeModel;
             CpuCoreCount = cpuCoreCount;
             CpusEnabled = cpusEnabled;
             DataCollectionOptions = dataCollectionOptions;
@@ -328,6 +353,7 @@ namespace Pulumi.Oci.Database
             DefinedTags = definedTags;
             DisplayName = displayName;
             ExadataInfrastructureId = exadataInfrastructureId;
+            ExascaleDbStorageVaultId = exascaleDbStorageVaultId;
             FileSystemConfigurationDetails = fileSystemConfigurationDetails;
             FreeformTags = freeformTags;
             GiVersion = giVersion;
@@ -343,11 +369,13 @@ namespace Pulumi.Oci.Database
             Shape = shape;
             SshPublicKeys = sshPublicKeys;
             State = state;
+            StorageManagementType = storageManagementType;
             SystemVersion = systemVersion;
             TimeCreated = timeCreated;
             TimeZone = timeZone;
             VmClusterId = vmClusterId;
             VmClusterNetworkId = vmClusterNetworkId;
+            VmClusterType = vmClusterType;
         }
     }
 }

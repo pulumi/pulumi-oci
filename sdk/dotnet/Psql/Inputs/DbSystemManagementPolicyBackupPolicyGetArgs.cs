@@ -18,6 +18,12 @@ namespace Pulumi.Oci.Psql.Inputs
         [Input("backupStart")]
         public Input<string>? BackupStart { get; set; }
 
+        /// <summary>
+        /// (Updatable) Backup copy details
+        /// </summary>
+        [Input("copyPolicy")]
+        public Input<Inputs.DbSystemManagementPolicyBackupPolicyCopyPolicyGetArgs>? CopyPolicy { get; set; }
+
         [Input("daysOfTheMonths")]
         private InputList<int>? _daysOfTheMonths;
 

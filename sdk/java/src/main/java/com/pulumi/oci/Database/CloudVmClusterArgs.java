@@ -553,9 +553,6 @@ public final class CloudVmClusterArgs extends com.pulumi.resources.ResourceArgs 
     /**
      * The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="timeZone")
     private @Nullable Output<String> timeZone;
@@ -563,12 +560,30 @@ public final class CloudVmClusterArgs extends com.pulumi.resources.ResourceArgs 
     /**
      * @return The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
+     */
+    public Optional<Output<String>> timeZone() {
+        return Optional.ofNullable(this.timeZone);
+    }
+
+    /**
+     * The vmcluster type for the VM cluster/Cloud VM cluster.
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Optional<Output<String>> timeZone() {
-        return Optional.ofNullable(this.timeZone);
+    @Import(name="vmClusterType")
+    private @Nullable Output<String> vmClusterType;
+
+    /**
+     * @return The vmcluster type for the VM cluster/Cloud VM cluster.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<String>> vmClusterType() {
+        return Optional.ofNullable(this.vmClusterType);
     }
 
     private CloudVmClusterArgs() {}
@@ -609,6 +624,7 @@ public final class CloudVmClusterArgs extends com.pulumi.resources.ResourceArgs 
         this.subscriptionId = $.subscriptionId;
         this.systemVersion = $.systemVersion;
         this.timeZone = $.timeZone;
+        this.vmClusterType = $.vmClusterType;
     }
 
     public static Builder builder() {
@@ -1409,9 +1425,6 @@ public final class CloudVmClusterArgs extends com.pulumi.resources.ResourceArgs 
         /**
          * @param timeZone The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -1423,14 +1436,38 @@ public final class CloudVmClusterArgs extends com.pulumi.resources.ResourceArgs 
         /**
          * @param timeZone The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
          * 
+         * @return builder
+         * 
+         */
+        public Builder timeZone(String timeZone) {
+            return timeZone(Output.of(timeZone));
+        }
+
+        /**
+         * @param vmClusterType The vmcluster type for the VM cluster/Cloud VM cluster.
+         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
          */
-        public Builder timeZone(String timeZone) {
-            return timeZone(Output.of(timeZone));
+        public Builder vmClusterType(@Nullable Output<String> vmClusterType) {
+            $.vmClusterType = vmClusterType;
+            return this;
+        }
+
+        /**
+         * @param vmClusterType The vmcluster type for the VM cluster/Cloud VM cluster.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vmClusterType(String vmClusterType) {
+            return vmClusterType(Output.of(vmClusterType));
         }
 
         public CloudVmClusterArgs build() {

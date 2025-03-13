@@ -18,6 +18,21 @@ public final class GetExadbVmClustersPlainArgs extends com.pulumi.resources.Invo
     public static final GetExadbVmClustersPlainArgs Empty = new GetExadbVmClustersPlainArgs();
 
     /**
+     * A filter to return only resources that match the given cluster placement group ID exactly.
+     * 
+     */
+    @Import(name="clusterPlacementGroupId")
+    private @Nullable String clusterPlacementGroupId;
+
+    /**
+     * @return A filter to return only resources that match the given cluster placement group ID exactly.
+     * 
+     */
+    public Optional<String> clusterPlacementGroupId() {
+        return Optional.ofNullable(this.clusterPlacementGroupId);
+    }
+
+    /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -87,6 +102,7 @@ public final class GetExadbVmClustersPlainArgs extends com.pulumi.resources.Invo
     private GetExadbVmClustersPlainArgs() {}
 
     private GetExadbVmClustersPlainArgs(GetExadbVmClustersPlainArgs $) {
+        this.clusterPlacementGroupId = $.clusterPlacementGroupId;
         this.compartmentId = $.compartmentId;
         this.displayName = $.displayName;
         this.exascaleDbStorageVaultId = $.exascaleDbStorageVaultId;
@@ -110,6 +126,17 @@ public final class GetExadbVmClustersPlainArgs extends com.pulumi.resources.Invo
 
         public Builder(GetExadbVmClustersPlainArgs defaults) {
             $ = new GetExadbVmClustersPlainArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param clusterPlacementGroupId A filter to return only resources that match the given cluster placement group ID exactly.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPlacementGroupId(@Nullable String clusterPlacementGroupId) {
+            $.clusterPlacementGroupId = clusterPlacementGroupId;
+            return this;
         }
 
         /**

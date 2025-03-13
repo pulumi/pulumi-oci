@@ -27,7 +27,7 @@ class GetMysqlDbSystemResult:
     """
     A collection of values returned by getMysqlDbSystem.
     """
-    def __init__(__self__, access_mode=None, admin_password=None, admin_username=None, availability_domain=None, backup_policies=None, channels=None, compartment_id=None, configuration_id=None, crash_recovery=None, current_placements=None, customer_contacts=None, data_storage_size_in_gb=None, data_storages=None, database_management=None, database_mode=None, db_system_id=None, defined_tags=None, deletion_policies=None, description=None, display_name=None, endpoints=None, fault_domain=None, freeform_tags=None, heat_wave_clusters=None, hostname_label=None, id=None, ip_address=None, is_heat_wave_cluster_attached=None, is_highly_available=None, lifecycle_details=None, maintenances=None, mysql_version=None, point_in_time_recovery_details=None, port=None, port_x=None, read_endpoints=None, secure_connections=None, shape_name=None, shutdown_type=None, sources=None, state=None, subnet_id=None, time_created=None, time_updated=None):
+    def __init__(__self__, access_mode=None, admin_password=None, admin_username=None, availability_domain=None, backup_policies=None, channels=None, compartment_id=None, configuration_id=None, crash_recovery=None, current_placements=None, customer_contacts=None, data_storage_size_in_gb=None, data_storages=None, database_management=None, database_mode=None, db_system_id=None, defined_tags=None, deletion_policies=None, description=None, display_name=None, endpoints=None, fault_domain=None, freeform_tags=None, heat_wave_clusters=None, hostname_label=None, id=None, ip_address=None, is_heat_wave_cluster_attached=None, is_highly_available=None, lifecycle_details=None, maintenances=None, mysql_version=None, point_in_time_recovery_details=None, port=None, port_x=None, read_endpoints=None, secure_connections=None, shape_name=None, shutdown_type=None, sources=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
         if access_mode and not isinstance(access_mode, str):
             raise TypeError("Expected argument 'access_mode' to be a str")
         pulumi.set(__self__, "access_mode", access_mode)
@@ -154,6 +154,9 @@ class GetMysqlDbSystemResult:
         if subnet_id and not isinstance(subnet_id, str):
             raise TypeError("Expected argument 'subnet_id' to be a str")
         pulumi.set(__self__, "subnet_id", subnet_id)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -493,6 +496,14 @@ class GetMysqlDbSystemResult:
         return pulumi.get(self, "subnet_id")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
@@ -557,6 +568,7 @@ class AwaitableGetMysqlDbSystemResult(GetMysqlDbSystemResult):
             sources=self.sources,
             state=self.state,
             subnet_id=self.subnet_id,
+            system_tags=self.system_tags,
             time_created=self.time_created,
             time_updated=self.time_updated)
 
@@ -628,6 +640,7 @@ def get_mysql_db_system(db_system_id: Optional[str] = None,
         sources=pulumi.get(__ret__, 'sources'),
         state=pulumi.get(__ret__, 'state'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_mysql_db_system_output(db_system_id: Optional[pulumi.Input[str]] = None,
@@ -696,5 +709,6 @@ def get_mysql_db_system_output(db_system_id: Optional[pulumi.Input[str]] = None,
         sources=pulumi.get(__response__, 'sources'),
         state=pulumi.get(__response__, 'state'),
         subnet_id=pulumi.get(__response__, 'subnet_id'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated')))

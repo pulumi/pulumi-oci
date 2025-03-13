@@ -22,6 +22,10 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly string ClientId;
         /// <summary>
+        /// A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+        /// </summary>
+        public readonly string ConfigurationFile;
+        /// <summary>
         /// JWT claim to use as the user's group. If the claim is present it must be an array of strings.
         /// </summary>
         public readonly string GroupsClaim;
@@ -60,6 +64,8 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
             string clientId,
 
+            string configurationFile,
+
             string groupsClaim,
 
             string groupsPrefix,
@@ -78,6 +84,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         {
             CaCertificate = caCertificate;
             ClientId = clientId;
+            ConfigurationFile = configurationFile;
             GroupsClaim = groupsClaim;
             GroupsPrefix = groupsPrefix;
             IsOpenIdConnectAuthEnabled = isOpenIdConnectAuthEnabled;

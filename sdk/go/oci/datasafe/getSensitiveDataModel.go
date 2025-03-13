@@ -83,6 +83,8 @@ type LookupSensitiveDataModelResult struct {
 	// The schemas to be scanned by data discovery jobs.
 	SchemasForDiscoveries []string `pulumi:"schemasForDiscoveries"`
 	SensitiveDataModelId  string   `pulumi:"sensitiveDataModelId"`
+	// The OCIDs of the sensitive type groups to be used by data discovery jobs.
+	SensitiveTypeGroupIdsForDiscoveries []string `pulumi:"sensitiveTypeGroupIdsForDiscoveries"`
 	// The OCIDs of the sensitive types to be used by data discovery jobs.
 	SensitiveTypeIdsForDiscoveries []string `pulumi:"sensitiveTypeIdsForDiscoveries"`
 	// The current state of the sensitive data model.
@@ -195,6 +197,11 @@ func (o LookupSensitiveDataModelResultOutput) SchemasForDiscoveries() pulumi.Str
 
 func (o LookupSensitiveDataModelResultOutput) SensitiveDataModelId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSensitiveDataModelResult) string { return v.SensitiveDataModelId }).(pulumi.StringOutput)
+}
+
+// The OCIDs of the sensitive type groups to be used by data discovery jobs.
+func (o LookupSensitiveDataModelResultOutput) SensitiveTypeGroupIdsForDiscoveries() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelResult) []string { return v.SensitiveTypeGroupIdsForDiscoveries }).(pulumi.StringArrayOutput)
 }
 
 // The OCIDs of the sensitive types to be used by data discovery jobs.

@@ -11,6 +11,7 @@ import com.pulumi.oci.Database.ExadataInfrastructureArgs;
 import com.pulumi.oci.Database.inputs.ExadataInfrastructureState;
 import com.pulumi.oci.Database.outputs.ExadataInfrastructureContact;
 import com.pulumi.oci.Database.outputs.ExadataInfrastructureDefinedFileSystemConfiguration;
+import com.pulumi.oci.Database.outputs.ExadataInfrastructureExascaleConfig;
 import com.pulumi.oci.Database.outputs.ExadataInfrastructureMaintenanceWindow;
 import com.pulumi.oci.Database.outputs.ExadataInfrastructureNetworkBondingModeDetails;
 import com.pulumi.oci.Utilities;
@@ -80,6 +81,7 @@ import javax.annotation.Nullable;
  *                 .phoneNumber(exadataInfrastructureContactsPhoneNumber)
  *                 .build())
  *             .corporateProxy(exadataInfrastructureCorporateProxy)
+ *             .databaseServerType(exadataInfrastructureDatabaseServerType)
  *             .definedTags(exadataInfrastructureDefinedTags)
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .isCpsOfflineReportEnabled(exadataInfrastructureIsCpsOfflineReportEnabled)
@@ -107,6 +109,7 @@ import javax.annotation.Nullable;
  *                 .drNetworkBondingMode(exadataInfrastructureNetworkBondingModeDetailsDrNetworkBondingMode)
  *                 .build())
  *             .storageCount(exadataInfrastructureStorageCount)
+ *             .storageServerType(exadataInfrastructureStorageServerType)
  *             .build());
  * 
  *     }
@@ -287,6 +290,20 @@ public class ExadataInfrastructure extends com.pulumi.resources.CustomResource {
         return this.computeCount;
     }
     /**
+     * The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     * 
+     */
+    @Export(name="computeModel", refs={String.class}, tree="[0]")
+    private Output<String> computeModel;
+
+    /**
+     * @return The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     * 
+     */
+    public Output<String> computeModel() {
+        return this.computeModel;
+    }
+    /**
      * (Updatable) The list of contacts for the Exadata infrastructure.
      * 
      */
@@ -361,6 +378,20 @@ public class ExadataInfrastructure extends com.pulumi.resources.CustomResource {
      */
     public Output<Double> dataStorageSizeInTbs() {
         return this.dataStorageSizeInTbs;
+    }
+    /**
+     * The database server type of the Exadata infrastructure.
+     * 
+     */
+    @Export(name="databaseServerType", refs={String.class}, tree="[0]")
+    private Output<String> databaseServerType;
+
+    /**
+     * @return The database server type of the Exadata infrastructure.
+     * 
+     */
+    public Output<String> databaseServerType() {
+        return this.databaseServerType;
     }
     /**
      * The local node storage allocated in GBs.
@@ -445,6 +476,20 @@ public class ExadataInfrastructure extends com.pulumi.resources.CustomResource {
      */
     public Output<List<String>> dnsServers() {
         return this.dnsServers;
+    }
+    /**
+     * The exascale config response details for the Exadata Cloud{@literal @}Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud{@literal @}Customer instances and Exadata Cloud Service instances.
+     * 
+     */
+    @Export(name="exascaleConfigs", refs={List.class,ExadataInfrastructureExascaleConfig.class}, tree="[0,1]")
+    private Output<List<ExadataInfrastructureExascaleConfig>> exascaleConfigs;
+
+    /**
+     * @return The exascale config response details for the Exadata Cloud{@literal @}Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud{@literal @}Customer instances and Exadata Cloud Service instances.
+     * 
+     */
+    public Output<List<ExadataInfrastructureExascaleConfig>> exascaleConfigs() {
+        return this.exascaleConfigs;
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
@@ -767,6 +812,20 @@ public class ExadataInfrastructure extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> storageCount() {
         return this.storageCount;
+    }
+    /**
+     * The storage server type of the Exadata infrastructure.
+     * 
+     */
+    @Export(name="storageServerType", refs={String.class}, tree="[0]")
+    private Output<String> storageServerType;
+
+    /**
+     * @return The storage server type of the Exadata infrastructure.
+     * 
+     */
+    public Output<String> storageServerType() {
+        return this.storageServerType;
     }
     /**
      * The software version of the storage servers (cells) in the Exadata infrastructure.

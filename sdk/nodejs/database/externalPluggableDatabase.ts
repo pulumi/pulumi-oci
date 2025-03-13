@@ -79,7 +79,7 @@ export class ExternalPluggableDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly databaseConfiguration!: pulumi.Output<string>;
     /**
-     * The Oracle Database edition.
+     * The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      */
     public /*out*/ readonly databaseEdition!: pulumi.Output<string>;
     /**
@@ -244,7 +244,7 @@ export interface ExternalPluggableDatabaseState {
      */
     databaseConfiguration?: pulumi.Input<string>;
     /**
-     * The Oracle Database edition.
+     * The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      */
     databaseEdition?: pulumi.Input<string>;
     /**

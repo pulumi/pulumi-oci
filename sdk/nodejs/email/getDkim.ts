@@ -75,6 +75,14 @@ export interface GetDkimResult {
      */
     readonly id: string;
     /**
+     * Indicates whether the DKIM was imported.
+     */
+    readonly isImported: boolean;
+    /**
+     * Length of the RSA key used in the DKIM.
+     */
+    readonly keyLength: number;
+    /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource.
      */
     readonly lifecycleDetails: string;
@@ -82,6 +90,7 @@ export interface GetDkimResult {
      * The DKIM selector. If the same domain is managed in more than one region, each region must use different selectors.
      */
     readonly name: string;
+    readonly privateKey: string;
     /**
      * The current state of the DKIM.
      */

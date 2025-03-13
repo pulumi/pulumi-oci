@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Psql.Outputs
         /// </summary>
         public readonly string BackupStart;
         /// <summary>
+        /// Backup copy details
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyResult> CopyPolicies;
+        /// <summary>
         /// Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
         /// </summary>
         public readonly ImmutableArray<int> DaysOfTheMonths;
@@ -38,6 +42,8 @@ namespace Pulumi.Oci.Psql.Outputs
         private GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyResult(
             string backupStart,
 
+            ImmutableArray<Outputs.GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyResult> copyPolicies,
+
             ImmutableArray<int> daysOfTheMonths,
 
             ImmutableArray<string> daysOfTheWeeks,
@@ -47,6 +53,7 @@ namespace Pulumi.Oci.Psql.Outputs
             int retentionDays)
         {
             BackupStart = backupStart;
+            CopyPolicies = copyPolicies;
             DaysOfTheMonths = daysOfTheMonths;
             DaysOfTheWeeks = daysOfTheWeeks;
             Kind = kind;

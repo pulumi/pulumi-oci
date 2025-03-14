@@ -118,14 +118,14 @@ public class ExternalPluggableDatabase extends com.pulumi.resources.CustomResour
         return this.databaseConfiguration;
     }
     /**
-     * The Oracle Database edition.
+     * The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      * 
      */
     @Export(name="databaseEdition", refs={String.class}, tree="[0]")
     private Output<String> databaseEdition;
 
     /**
-     * @return The Oracle Database edition.
+     * @return The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      * 
      */
     public Output<String> databaseEdition() {

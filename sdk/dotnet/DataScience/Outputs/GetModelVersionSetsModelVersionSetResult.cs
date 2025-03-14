@@ -14,6 +14,10 @@ namespace Pulumi.Oci.DataScience.Outputs
     public sealed class GetModelVersionSetsModelVersionSetResult
     {
         /// <summary>
+        /// Specifies the type of model version sets to list. By default, user model version sets are listed.
+        /// </summary>
+        public readonly string Category;
+        /// <summary>
         /// &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         public readonly string CompartmentId;
@@ -64,6 +68,8 @@ namespace Pulumi.Oci.DataScience.Outputs
 
         [OutputConstructor]
         private GetModelVersionSetsModelVersionSetResult(
+            string category,
+
             string compartmentId,
 
             string createdBy,
@@ -88,6 +94,7 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             string timeUpdated)
         {
+            Category = category;
             CompartmentId = compartmentId;
             CreatedBy = createdBy;
             DefinedTags = definedTags;

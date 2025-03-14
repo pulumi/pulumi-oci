@@ -146,6 +146,10 @@ export class MysqlBackup extends pulumi.CustomResource {
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    /**
      * The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
     public /*out*/ readonly timeCopyCreated!: pulumi.Output<string>;
@@ -191,6 +195,7 @@ export class MysqlBackup extends pulumi.CustomResource {
             resourceInputs["shapeName"] = state ? state.shapeName : undefined;
             resourceInputs["sourceDetails"] = state ? state.sourceDetails : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCopyCreated"] = state ? state.timeCopyCreated : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
@@ -216,6 +221,7 @@ export class MysqlBackup extends pulumi.CustomResource {
             resourceInputs["originalSourceBackupId"] = undefined /*out*/;
             resourceInputs["shapeName"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCopyCreated"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
@@ -306,6 +312,10 @@ export interface MysqlBackupState {
      * The state of the backup.
      */
     state?: pulumi.Input<string>;
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */

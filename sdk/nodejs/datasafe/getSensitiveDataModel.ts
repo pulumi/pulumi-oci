@@ -93,6 +93,10 @@ export interface GetSensitiveDataModelResult {
     readonly schemasForDiscoveries: string[];
     readonly sensitiveDataModelId: string;
     /**
+     * The OCIDs of the sensitive type groups to be used by data discovery jobs.
+     */
+    readonly sensitiveTypeGroupIdsForDiscoveries: string[];
+    /**
      * The OCIDs of the sensitive types to be used by data discovery jobs.
      */
     readonly sensitiveTypeIdsForDiscoveries: string[];

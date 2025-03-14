@@ -33,6 +33,11 @@ public final class GetVmClustersVmCluster {
      * 
      */
     private String compartmentId;
+    /**
+     * @return The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     * 
+     */
+    private String computeModel;
     private Integer cpuCoreCount;
     /**
      * @return The number of enabled CPU cores.
@@ -79,6 +84,11 @@ public final class GetVmClustersVmCluster {
      * 
      */
     private String exadataInfrastructureId;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+     * 
+     */
+    private String exascaleDbStorageVaultId;
     /**
      * @return Details of the file system configuration of the VM cluster.
      * 
@@ -147,6 +157,11 @@ public final class GetVmClustersVmCluster {
      */
     private String state;
     /**
+     * @return Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
+     * 
+     */
+    private String storageManagementType;
+    /**
      * @return Operating system version of the image.
      * 
      */
@@ -166,6 +181,11 @@ public final class GetVmClustersVmCluster {
      * 
      */
     private String vmClusterNetworkId;
+    /**
+     * @return A filter to return only vmclusters that match the given vmcluster type exactly.
+     * 
+     */
+    private String vmClusterType;
 
     private GetVmClustersVmCluster() {}
     /**
@@ -188,6 +208,13 @@ public final class GetVmClustersVmCluster {
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     * 
+     */
+    public String computeModel() {
+        return this.computeModel;
     }
     public Integer cpuCoreCount() {
         return this.cpuCoreCount;
@@ -254,6 +281,13 @@ public final class GetVmClustersVmCluster {
      */
     public String exadataInfrastructureId() {
         return this.exadataInfrastructureId;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+     * 
+     */
+    public String exascaleDbStorageVaultId() {
+        return this.exascaleDbStorageVaultId;
     }
     /**
      * @return Details of the file system configuration of the VM cluster.
@@ -353,6 +387,13 @@ public final class GetVmClustersVmCluster {
         return this.state;
     }
     /**
+     * @return Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
+     * 
+     */
+    public String storageManagementType() {
+        return this.storageManagementType;
+    }
+    /**
      * @return Operating system version of the image.
      * 
      */
@@ -380,6 +421,13 @@ public final class GetVmClustersVmCluster {
     public String vmClusterNetworkId() {
         return this.vmClusterNetworkId;
     }
+    /**
+     * @return A filter to return only vmclusters that match the given vmcluster type exactly.
+     * 
+     */
+    public String vmClusterType() {
+        return this.vmClusterType;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -393,6 +441,7 @@ public final class GetVmClustersVmCluster {
         private String availabilityDomain;
         private List<GetVmClustersVmClusterCloudAutomationUpdateDetail> cloudAutomationUpdateDetails;
         private String compartmentId;
+        private String computeModel;
         private Integer cpuCoreCount;
         private Integer cpusEnabled;
         private List<GetVmClustersVmClusterDataCollectionOption> dataCollectionOptions;
@@ -403,6 +452,7 @@ public final class GetVmClustersVmCluster {
         private Map<String,String> definedTags;
         private String displayName;
         private String exadataInfrastructureId;
+        private String exascaleDbStorageVaultId;
         private List<GetVmClustersVmClusterFileSystemConfigurationDetail> fileSystemConfigurationDetails;
         private Map<String,String> freeformTags;
         private String giVersion;
@@ -418,16 +468,19 @@ public final class GetVmClustersVmCluster {
         private String shape;
         private List<String> sshPublicKeys;
         private String state;
+        private String storageManagementType;
         private String systemVersion;
         private String timeCreated;
         private String timeZone;
         private String vmClusterNetworkId;
+        private String vmClusterType;
         public Builder() {}
         public Builder(GetVmClustersVmCluster defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.cloudAutomationUpdateDetails = defaults.cloudAutomationUpdateDetails;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.computeModel = defaults.computeModel;
     	      this.cpuCoreCount = defaults.cpuCoreCount;
     	      this.cpusEnabled = defaults.cpusEnabled;
     	      this.dataCollectionOptions = defaults.dataCollectionOptions;
@@ -438,6 +491,7 @@ public final class GetVmClustersVmCluster {
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.exadataInfrastructureId = defaults.exadataInfrastructureId;
+    	      this.exascaleDbStorageVaultId = defaults.exascaleDbStorageVaultId;
     	      this.fileSystemConfigurationDetails = defaults.fileSystemConfigurationDetails;
     	      this.freeformTags = defaults.freeformTags;
     	      this.giVersion = defaults.giVersion;
@@ -453,10 +507,12 @@ public final class GetVmClustersVmCluster {
     	      this.shape = defaults.shape;
     	      this.sshPublicKeys = defaults.sshPublicKeys;
     	      this.state = defaults.state;
+    	      this.storageManagementType = defaults.storageManagementType;
     	      this.systemVersion = defaults.systemVersion;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeZone = defaults.timeZone;
     	      this.vmClusterNetworkId = defaults.vmClusterNetworkId;
+    	      this.vmClusterType = defaults.vmClusterType;
         }
 
         @CustomType.Setter
@@ -484,6 +540,14 @@ public final class GetVmClustersVmCluster {
               throw new MissingRequiredPropertyException("GetVmClustersVmCluster", "compartmentId");
             }
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder computeModel(String computeModel) {
+            if (computeModel == null) {
+              throw new MissingRequiredPropertyException("GetVmClustersVmCluster", "computeModel");
+            }
+            this.computeModel = computeModel;
             return this;
         }
         @CustomType.Setter
@@ -570,6 +634,14 @@ public final class GetVmClustersVmCluster {
               throw new MissingRequiredPropertyException("GetVmClustersVmCluster", "exadataInfrastructureId");
             }
             this.exadataInfrastructureId = exadataInfrastructureId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder exascaleDbStorageVaultId(String exascaleDbStorageVaultId) {
+            if (exascaleDbStorageVaultId == null) {
+              throw new MissingRequiredPropertyException("GetVmClustersVmCluster", "exascaleDbStorageVaultId");
+            }
+            this.exascaleDbStorageVaultId = exascaleDbStorageVaultId;
             return this;
         }
         @CustomType.Setter
@@ -699,6 +771,14 @@ public final class GetVmClustersVmCluster {
             return this;
         }
         @CustomType.Setter
+        public Builder storageManagementType(String storageManagementType) {
+            if (storageManagementType == null) {
+              throw new MissingRequiredPropertyException("GetVmClustersVmCluster", "storageManagementType");
+            }
+            this.storageManagementType = storageManagementType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder systemVersion(String systemVersion) {
             if (systemVersion == null) {
               throw new MissingRequiredPropertyException("GetVmClustersVmCluster", "systemVersion");
@@ -730,11 +810,20 @@ public final class GetVmClustersVmCluster {
             this.vmClusterNetworkId = vmClusterNetworkId;
             return this;
         }
+        @CustomType.Setter
+        public Builder vmClusterType(String vmClusterType) {
+            if (vmClusterType == null) {
+              throw new MissingRequiredPropertyException("GetVmClustersVmCluster", "vmClusterType");
+            }
+            this.vmClusterType = vmClusterType;
+            return this;
+        }
         public GetVmClustersVmCluster build() {
             final var _resultValue = new GetVmClustersVmCluster();
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
             _resultValue.compartmentId = compartmentId;
+            _resultValue.computeModel = computeModel;
             _resultValue.cpuCoreCount = cpuCoreCount;
             _resultValue.cpusEnabled = cpusEnabled;
             _resultValue.dataCollectionOptions = dataCollectionOptions;
@@ -745,6 +834,7 @@ public final class GetVmClustersVmCluster {
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.exadataInfrastructureId = exadataInfrastructureId;
+            _resultValue.exascaleDbStorageVaultId = exascaleDbStorageVaultId;
             _resultValue.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
             _resultValue.freeformTags = freeformTags;
             _resultValue.giVersion = giVersion;
@@ -760,10 +850,12 @@ public final class GetVmClustersVmCluster {
             _resultValue.shape = shape;
             _resultValue.sshPublicKeys = sshPublicKeys;
             _resultValue.state = state;
+            _resultValue.storageManagementType = storageManagementType;
             _resultValue.systemVersion = systemVersion;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeZone = timeZone;
             _resultValue.vmClusterNetworkId = vmClusterNetworkId;
+            _resultValue.vmClusterType = vmClusterType;
             return _resultValue;
         }
     }

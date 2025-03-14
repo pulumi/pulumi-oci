@@ -27,7 +27,7 @@ class GetBackupResult:
     """
     A collection of values returned by getBackup.
     """
-    def __init__(__self__, backup_id=None, backup_size=None, compartment_id=None, db_system_details=None, db_system_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, last_accepted_request_token=None, last_completed_request_token=None, lifecycle_details=None, retention_period=None, source_type=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, backup_id=None, backup_size=None, compartment_id=None, copy_statuses=None, db_system_details=None, db_system_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, last_accepted_request_token=None, last_completed_request_token=None, lifecycle_details=None, retention_period=None, source_backup_details=None, source_type=None, state=None, system_tags=None, time_created=None, time_created_precise=None, time_updated=None):
         if backup_id and not isinstance(backup_id, str):
             raise TypeError("Expected argument 'backup_id' to be a str")
         pulumi.set(__self__, "backup_id", backup_id)
@@ -37,6 +37,9 @@ class GetBackupResult:
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if copy_statuses and not isinstance(copy_statuses, list):
+            raise TypeError("Expected argument 'copy_statuses' to be a list")
+        pulumi.set(__self__, "copy_statuses", copy_statuses)
         if db_system_details and not isinstance(db_system_details, list):
             raise TypeError("Expected argument 'db_system_details' to be a list")
         pulumi.set(__self__, "db_system_details", db_system_details)
@@ -70,6 +73,9 @@ class GetBackupResult:
         if retention_period and not isinstance(retention_period, int):
             raise TypeError("Expected argument 'retention_period' to be a int")
         pulumi.set(__self__, "retention_period", retention_period)
+        if source_backup_details and not isinstance(source_backup_details, list):
+            raise TypeError("Expected argument 'source_backup_details' to be a list")
+        pulumi.set(__self__, "source_backup_details", source_backup_details)
         if source_type and not isinstance(source_type, str):
             raise TypeError("Expected argument 'source_type' to be a str")
         pulumi.set(__self__, "source_type", source_type)
@@ -82,6 +88,9 @@ class GetBackupResult:
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
+        if time_created_precise and not isinstance(time_created_precise, str):
+            raise TypeError("Expected argument 'time_created_precise' to be a str")
+        pulumi.set(__self__, "time_created_precise", time_created_precise)
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
@@ -89,6 +98,9 @@ class GetBackupResult:
     @property
     @pulumi.getter(name="backupId")
     def backup_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup in the source region
+        """
         return pulumi.get(self, "backup_id")
 
     @property
@@ -106,6 +118,14 @@ class GetBackupResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="copyStatuses")
+    def copy_statuses(self) -> Sequence['outputs.GetBackupCopyStatusResult']:
+        """
+        List of status for Backup Copy
+        """
+        return pulumi.get(self, "copy_statuses")
 
     @property
     @pulumi.getter(name="dbSystemDetails")
@@ -196,10 +216,18 @@ class GetBackupResult:
         return pulumi.get(self, "retention_period")
 
     @property
+    @pulumi.getter(name="sourceBackupDetails")
+    def source_backup_details(self) -> Sequence['outputs.GetBackupSourceBackupDetailResult']:
+        """
+        Information about the Source Backup associated with a backup.
+        """
+        return pulumi.get(self, "source_backup_details")
+
+    @property
     @pulumi.getter(name="sourceType")
     def source_type(self) -> str:
         """
-        Specifies whether the backup was created manually, or by a management policy.
+        Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
         """
         return pulumi.get(self, "source_type")
 
@@ -228,6 +256,14 @@ class GetBackupResult:
         return pulumi.get(self, "time_created")
 
     @property
+    @pulumi.getter(name="timeCreatedPrecise")
+    def time_created_precise(self) -> str:
+        """
+        The date and time the backup was created. This is the time the actual point-in-time data snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created_precise")
+
+    @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
@@ -245,6 +281,7 @@ class AwaitableGetBackupResult(GetBackupResult):
             backup_id=self.backup_id,
             backup_size=self.backup_size,
             compartment_id=self.compartment_id,
+            copy_statuses=self.copy_statuses,
             db_system_details=self.db_system_details,
             db_system_id=self.db_system_id,
             defined_tags=self.defined_tags,
@@ -256,10 +293,12 @@ class AwaitableGetBackupResult(GetBackupResult):
             last_completed_request_token=self.last_completed_request_token,
             lifecycle_details=self.lifecycle_details,
             retention_period=self.retention_period,
+            source_backup_details=self.source_backup_details,
             source_type=self.source_type,
             state=self.state,
             system_tags=self.system_tags,
             time_created=self.time_created,
+            time_created_precise=self.time_created_precise,
             time_updated=self.time_updated)
 
 
@@ -291,6 +330,7 @@ def get_backup(backup_id: Optional[str] = None,
         backup_id=pulumi.get(__ret__, 'backup_id'),
         backup_size=pulumi.get(__ret__, 'backup_size'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        copy_statuses=pulumi.get(__ret__, 'copy_statuses'),
         db_system_details=pulumi.get(__ret__, 'db_system_details'),
         db_system_id=pulumi.get(__ret__, 'db_system_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
@@ -302,10 +342,12 @@ def get_backup(backup_id: Optional[str] = None,
         last_completed_request_token=pulumi.get(__ret__, 'last_completed_request_token'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         retention_period=pulumi.get(__ret__, 'retention_period'),
+        source_backup_details=pulumi.get(__ret__, 'source_backup_details'),
         source_type=pulumi.get(__ret__, 'source_type'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
+        time_created_precise=pulumi.get(__ret__, 'time_created_precise'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_backup_output(backup_id: Optional[pulumi.Input[str]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBackupResult]:
@@ -334,6 +376,7 @@ def get_backup_output(backup_id: Optional[pulumi.Input[str]] = None,
         backup_id=pulumi.get(__response__, 'backup_id'),
         backup_size=pulumi.get(__response__, 'backup_size'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
+        copy_statuses=pulumi.get(__response__, 'copy_statuses'),
         db_system_details=pulumi.get(__response__, 'db_system_details'),
         db_system_id=pulumi.get(__response__, 'db_system_id'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
@@ -345,8 +388,10 @@ def get_backup_output(backup_id: Optional[pulumi.Input[str]] = None,
         last_completed_request_token=pulumi.get(__response__, 'last_completed_request_token'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         retention_period=pulumi.get(__response__, 'retention_period'),
+        source_backup_details=pulumi.get(__response__, 'source_backup_details'),
         source_type=pulumi.get(__response__, 'source_type'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
+        time_created_precise=pulumi.get(__response__, 'time_created_precise'),
         time_updated=pulumi.get(__response__, 'time_updated')))

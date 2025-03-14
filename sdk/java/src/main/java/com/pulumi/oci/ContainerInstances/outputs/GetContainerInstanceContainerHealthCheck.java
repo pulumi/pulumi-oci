@@ -13,7 +13,6 @@ import java.util.Objects;
 
 @CustomType
 public final class GetContainerInstanceContainerHealthCheck {
-    private List<String> commands;
     private String failureAction;
     private Integer failureThreshold;
     private List<GetContainerInstanceContainerHealthCheckHeader> headers;
@@ -37,9 +36,6 @@ public final class GetContainerInstanceContainerHealthCheck {
     private Integer timeoutInSeconds;
 
     private GetContainerInstanceContainerHealthCheck() {}
-    public List<String> commands() {
-        return this.commands;
-    }
     public String failureAction() {
         return this.failureAction;
     }
@@ -97,7 +93,6 @@ public final class GetContainerInstanceContainerHealthCheck {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> commands;
         private String failureAction;
         private Integer failureThreshold;
         private List<GetContainerInstanceContainerHealthCheckHeader> headers;
@@ -114,7 +109,6 @@ public final class GetContainerInstanceContainerHealthCheck {
         public Builder() {}
         public Builder(GetContainerInstanceContainerHealthCheck defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.commands = defaults.commands;
     	      this.failureAction = defaults.failureAction;
     	      this.failureThreshold = defaults.failureThreshold;
     	      this.headers = defaults.headers;
@@ -130,17 +124,6 @@ public final class GetContainerInstanceContainerHealthCheck {
     	      this.timeoutInSeconds = defaults.timeoutInSeconds;
         }
 
-        @CustomType.Setter
-        public Builder commands(List<String> commands) {
-            if (commands == null) {
-              throw new MissingRequiredPropertyException("GetContainerInstanceContainerHealthCheck", "commands");
-            }
-            this.commands = commands;
-            return this;
-        }
-        public Builder commands(String... commands) {
-            return commands(List.of(commands));
-        }
         @CustomType.Setter
         public Builder failureAction(String failureAction) {
             if (failureAction == null) {
@@ -250,7 +233,6 @@ public final class GetContainerInstanceContainerHealthCheck {
         }
         public GetContainerInstanceContainerHealthCheck build() {
             final var _resultValue = new GetContainerInstanceContainerHealthCheck();
-            _resultValue.commands = commands;
             _resultValue.failureAction = failureAction;
             _resultValue.failureThreshold = failureThreshold;
             _resultValue.headers = headers;

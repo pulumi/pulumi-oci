@@ -68,6 +68,9 @@ class GetBackupsResult:
     @property
     @pulumi.getter(name="backupId")
     def backup_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup in the source region
+        """
         return pulumi.get(self, "backup_id")
 
     @property

@@ -54,10 +54,11 @@ type Backup struct {
 	pulumi.CustomResourceState
 
 	// The name of the availability domain where the database backup is stored.
-	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
+	AvailabilityDomain    pulumi.StringOutput `pulumi:"availabilityDomain"`
+	BackupDestinationType pulumi.StringOutput `pulumi:"backupDestinationType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// The Oracle Database edition of the DB system from which the database backup was taken.
+	// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
 	DatabaseEdition pulumi.StringOutput `pulumi:"databaseEdition"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
 	DatabaseId pulumi.StringOutput `pulumi:"databaseId"`
@@ -70,6 +71,7 @@ type Backup struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// Types of providers supported for managing database encryption keys
 	EncryptionKeyLocationDetails BackupEncryptionKeyLocationDetailArrayOutput `pulumi:"encryptionKeyLocationDetails"`
+	IsUsingOracleManagedKeys     pulumi.BoolOutput                            `pulumi:"isUsingOracleManagedKeys"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
 	KeyStoreId pulumi.StringOutput `pulumi:"keyStoreId"`
 	// The wallet name for Oracle Key Vault.
@@ -79,13 +81,17 @@ type Backup struct {
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
 	KmsKeyVersionId pulumi.StringOutput `pulumi:"kmsKeyVersionId"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails       pulumi.StringOutput      `pulumi:"lifecycleDetails"`
+	RetentionPeriodInDays  pulumi.IntOutput         `pulumi:"retentionPeriodInDays"`
+	RetentionPeriodInYears pulumi.IntOutput         `pulumi:"retentionPeriodInYears"`
+	SecondaryKmsKeyIds     pulumi.StringArrayOutput `pulumi:"secondaryKmsKeyIds"`
 	// Shape of the backup's source database.
 	Shape pulumi.StringOutput `pulumi:"shape"`
 	// The current state of the backup.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time the backup was completed.
-	TimeEnded pulumi.StringOutput `pulumi:"timeEnded"`
+	TimeEnded           pulumi.StringOutput `pulumi:"timeEnded"`
+	TimeExpiryScheduled pulumi.StringOutput `pulumi:"timeExpiryScheduled"`
 	// The date and time the backup started.
 	TimeStarted pulumi.StringOutput `pulumi:"timeStarted"`
 	// The type of backup.
@@ -133,10 +139,11 @@ func GetBackup(ctx *pulumi.Context,
 // Input properties used for looking up and filtering Backup resources.
 type backupState struct {
 	// The name of the availability domain where the database backup is stored.
-	AvailabilityDomain *string `pulumi:"availabilityDomain"`
+	AvailabilityDomain    *string `pulumi:"availabilityDomain"`
+	BackupDestinationType *string `pulumi:"backupDestinationType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// The Oracle Database edition of the DB system from which the database backup was taken.
+	// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
 	DatabaseEdition *string `pulumi:"databaseEdition"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
 	DatabaseId *string `pulumi:"databaseId"`
@@ -149,6 +156,7 @@ type backupState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// Types of providers supported for managing database encryption keys
 	EncryptionKeyLocationDetails []BackupEncryptionKeyLocationDetail `pulumi:"encryptionKeyLocationDetails"`
+	IsUsingOracleManagedKeys     *bool                               `pulumi:"isUsingOracleManagedKeys"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
 	KeyStoreId *string `pulumi:"keyStoreId"`
 	// The wallet name for Oracle Key Vault.
@@ -158,13 +166,17 @@ type backupState struct {
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
 	KmsKeyVersionId *string `pulumi:"kmsKeyVersionId"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	LifecycleDetails       *string  `pulumi:"lifecycleDetails"`
+	RetentionPeriodInDays  *int     `pulumi:"retentionPeriodInDays"`
+	RetentionPeriodInYears *int     `pulumi:"retentionPeriodInYears"`
+	SecondaryKmsKeyIds     []string `pulumi:"secondaryKmsKeyIds"`
 	// Shape of the backup's source database.
 	Shape *string `pulumi:"shape"`
 	// The current state of the backup.
 	State *string `pulumi:"state"`
 	// The date and time the backup was completed.
-	TimeEnded *string `pulumi:"timeEnded"`
+	TimeEnded           *string `pulumi:"timeEnded"`
+	TimeExpiryScheduled *string `pulumi:"timeExpiryScheduled"`
 	// The date and time the backup started.
 	TimeStarted *string `pulumi:"timeStarted"`
 	// The type of backup.
@@ -177,10 +189,11 @@ type backupState struct {
 
 type BackupState struct {
 	// The name of the availability domain where the database backup is stored.
-	AvailabilityDomain pulumi.StringPtrInput
+	AvailabilityDomain    pulumi.StringPtrInput
+	BackupDestinationType pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringPtrInput
-	// The Oracle Database edition of the DB system from which the database backup was taken.
+	// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
 	DatabaseEdition pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
 	DatabaseId pulumi.StringPtrInput
@@ -193,6 +206,7 @@ type BackupState struct {
 	DisplayName pulumi.StringPtrInput
 	// Types of providers supported for managing database encryption keys
 	EncryptionKeyLocationDetails BackupEncryptionKeyLocationDetailArrayInput
+	IsUsingOracleManagedKeys     pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
 	KeyStoreId pulumi.StringPtrInput
 	// The wallet name for Oracle Key Vault.
@@ -202,13 +216,17 @@ type BackupState struct {
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
 	KmsKeyVersionId pulumi.StringPtrInput
 	// Additional information about the current lifecycle state.
-	LifecycleDetails pulumi.StringPtrInput
+	LifecycleDetails       pulumi.StringPtrInput
+	RetentionPeriodInDays  pulumi.IntPtrInput
+	RetentionPeriodInYears pulumi.IntPtrInput
+	SecondaryKmsKeyIds     pulumi.StringArrayInput
 	// Shape of the backup's source database.
 	Shape pulumi.StringPtrInput
 	// The current state of the backup.
 	State pulumi.StringPtrInput
 	// The date and time the backup was completed.
-	TimeEnded pulumi.StringPtrInput
+	TimeEnded           pulumi.StringPtrInput
+	TimeExpiryScheduled pulumi.StringPtrInput
 	// The date and time the backup started.
 	TimeStarted pulumi.StringPtrInput
 	// The type of backup.
@@ -230,7 +248,9 @@ type backupArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	DisplayName string `pulumi:"displayName"`
+	DisplayName            string `pulumi:"displayName"`
+	RetentionPeriodInDays  *int   `pulumi:"retentionPeriodInDays"`
+	RetentionPeriodInYears *int   `pulumi:"retentionPeriodInYears"`
 }
 
 // The set of arguments for constructing a Backup resource.
@@ -241,7 +261,9 @@ type BackupArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	DisplayName pulumi.StringInput
+	DisplayName            pulumi.StringInput
+	RetentionPeriodInDays  pulumi.IntPtrInput
+	RetentionPeriodInYears pulumi.IntPtrInput
 }
 
 func (BackupArgs) ElementType() reflect.Type {
@@ -336,12 +358,16 @@ func (o BackupOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
+func (o BackupOutput) BackupDestinationType() pulumi.StringOutput {
+	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.BackupDestinationType }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o BackupOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The Oracle Database edition of the DB system from which the database backup was taken.
+// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
 func (o BackupOutput) DatabaseEdition() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.DatabaseEdition }).(pulumi.StringOutput)
 }
@@ -369,6 +395,10 @@ func (o BackupOutput) EncryptionKeyLocationDetails() BackupEncryptionKeyLocation
 	return o.ApplyT(func(v *Backup) BackupEncryptionKeyLocationDetailArrayOutput { return v.EncryptionKeyLocationDetails }).(BackupEncryptionKeyLocationDetailArrayOutput)
 }
 
+func (o BackupOutput) IsUsingOracleManagedKeys() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Backup) pulumi.BoolOutput { return v.IsUsingOracleManagedKeys }).(pulumi.BoolOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
 func (o BackupOutput) KeyStoreId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.KeyStoreId }).(pulumi.StringOutput)
@@ -394,6 +424,18 @@ func (o BackupOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+func (o BackupOutput) RetentionPeriodInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v *Backup) pulumi.IntOutput { return v.RetentionPeriodInDays }).(pulumi.IntOutput)
+}
+
+func (o BackupOutput) RetentionPeriodInYears() pulumi.IntOutput {
+	return o.ApplyT(func(v *Backup) pulumi.IntOutput { return v.RetentionPeriodInYears }).(pulumi.IntOutput)
+}
+
+func (o BackupOutput) SecondaryKmsKeyIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *Backup) pulumi.StringArrayOutput { return v.SecondaryKmsKeyIds }).(pulumi.StringArrayOutput)
+}
+
 // Shape of the backup's source database.
 func (o BackupOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.Shape }).(pulumi.StringOutput)
@@ -407,6 +449,10 @@ func (o BackupOutput) State() pulumi.StringOutput {
 // The date and time the backup was completed.
 func (o BackupOutput) TimeEnded() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.TimeEnded }).(pulumi.StringOutput)
+}
+
+func (o BackupOutput) TimeExpiryScheduled() pulumi.StringOutput {
+	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.TimeExpiryScheduled }).(pulumi.StringOutput)
 }
 
 // The date and time the backup started.

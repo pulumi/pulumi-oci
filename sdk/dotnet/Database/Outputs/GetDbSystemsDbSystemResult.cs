@@ -50,7 +50,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly int DataStorageSizeInGb;
         /// <summary>
-        /// The Oracle Database edition that applies to all the databases on the DB system.
+        /// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
         /// </summary>
         public readonly string DatabaseEdition;
         public readonly ImmutableArray<Outputs.GetDbSystemsDbSystemDbHomeResult> DbHomes;

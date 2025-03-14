@@ -31,6 +31,7 @@ namespace Pulumi.Oci.Database
     ///         SubnetId = testSubnet.Id,
     ///         DbNodeId = testDbNode.Id,
     ///         IpAddress = applicationVipIpAddress,
+    ///         Ipv6address = applicationVipIpv6address,
     ///     });
     /// 
     /// });
@@ -84,10 +85,16 @@ namespace Pulumi.Oci.Database
         public Output<string> HostnameLabel { get; private set; } = null!;
 
         /// <summary>
-        /// The application virtual IP (VIP) address.
+        /// The application virtual IP (VIP) IPv4 address.
         /// </summary>
         [Output("ipAddress")]
         public Output<string> IpAddress { get; private set; } = null!;
+
+        /// <summary>
+        /// The application virtual IP (VIP) IPv6 address.
+        /// </summary>
+        [Output("ipv6address")]
+        public Output<string> Ipv6address { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current lifecycle state of the application virtual IP (VIP) address.
@@ -182,10 +189,16 @@ namespace Pulumi.Oci.Database
         public Input<string> HostnameLabel { get; set; } = null!;
 
         /// <summary>
-        /// The application virtual IP (VIP) address.
+        /// The application virtual IP (VIP) IPv4 address.
         /// </summary>
         [Input("ipAddress")]
         public Input<string>? IpAddress { get; set; }
+
+        /// <summary>
+        /// The application virtual IP (VIP) IPv6 address.
+        /// </summary>
+        [Input("ipv6address")]
+        public Input<string>? Ipv6address { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
@@ -254,10 +267,16 @@ namespace Pulumi.Oci.Database
         public Input<string>? HostnameLabel { get; set; }
 
         /// <summary>
-        /// The application virtual IP (VIP) address.
+        /// The application virtual IP (VIP) IPv4 address.
         /// </summary>
         [Input("ipAddress")]
         public Input<string>? IpAddress { get; set; }
+
+        /// <summary>
+        /// The application virtual IP (VIP) IPv6 address.
+        /// </summary>
+        [Input("ipv6address")]
+        public Input<string>? Ipv6address { get; set; }
 
         /// <summary>
         /// Additional information about the current lifecycle state of the application virtual IP (VIP) address.

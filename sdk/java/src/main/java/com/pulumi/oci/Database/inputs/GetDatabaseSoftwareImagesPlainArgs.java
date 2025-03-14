@@ -34,6 +34,21 @@ public final class GetDatabaseSoftwareImagesPlainArgs extends com.pulumi.resourc
     }
 
     /**
+     * The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
+     * 
+     */
+    @Import(name="dbSystemId")
+    private @Nullable String dbSystemId;
+
+    /**
+     * @return The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
+     * 
+     */
+    public Optional<String> dbSystemId() {
+        return Optional.ofNullable(this.dbSystemId);
+    }
+
+    /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      * 
      */
@@ -119,6 +134,7 @@ public final class GetDatabaseSoftwareImagesPlainArgs extends com.pulumi.resourc
 
     private GetDatabaseSoftwareImagesPlainArgs(GetDatabaseSoftwareImagesPlainArgs $) {
         this.compartmentId = $.compartmentId;
+        this.dbSystemId = $.dbSystemId;
         this.displayName = $.displayName;
         this.filters = $.filters;
         this.imageShapeFamily = $.imageShapeFamily;
@@ -153,6 +169,17 @@ public final class GetDatabaseSoftwareImagesPlainArgs extends com.pulumi.resourc
          */
         public Builder compartmentId(String compartmentId) {
             $.compartmentId = compartmentId;
+            return this;
+        }
+
+        /**
+         * @param dbSystemId The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbSystemId(@Nullable String dbSystemId) {
+            $.dbSystemId = dbSystemId;
             return this;
         }
 

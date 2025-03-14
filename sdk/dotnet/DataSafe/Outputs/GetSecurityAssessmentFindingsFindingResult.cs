@@ -54,7 +54,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string OracleDefinedSeverity;
         /// <summary>
-        /// An optional filter to return only findings containing the specified reference.
+        /// An optional filter to return only findings that match the specified reference.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSecurityAssessmentFindingsFindingReferenceResult> References;
         /// <summary>

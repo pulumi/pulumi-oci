@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetExadataInfrastructureContact;
 import com.pulumi.oci.Database.outputs.GetExadataInfrastructureDefinedFileSystemConfiguration;
+import com.pulumi.oci.Database.outputs.GetExadataInfrastructureExascaleConfig;
 import com.pulumi.oci.Database.outputs.GetExadataInfrastructureMaintenanceWindow;
 import com.pulumi.oci.Database.outputs.GetExadataInfrastructureNetworkBondingModeDetail;
 import java.lang.Boolean;
@@ -71,6 +72,11 @@ public final class GetExadataInfrastructureResult {
      */
     private Integer computeCount;
     /**
+     * @return The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     * 
+     */
+    private String computeModel;
+    /**
      * @return The list of contacts for the Exadata infrastructure.
      * 
      */
@@ -96,6 +102,11 @@ public final class GetExadataInfrastructureResult {
      * 
      */
     private Double dataStorageSizeInTbs;
+    /**
+     * @return The database server type of the Exadata infrastructure.
+     * 
+     */
+    private String databaseServerType;
     /**
      * @return The local node storage allocated in GBs.
      * 
@@ -127,6 +138,11 @@ public final class GetExadataInfrastructureResult {
      */
     private List<String> dnsServers;
     private String exadataInfrastructureId;
+    /**
+     * @return The exascale config response details for the Exadata Cloud{@literal @}Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud{@literal @}Customer instances and Exadata Cloud Service instances.
+     * 
+     */
+    private List<GetExadataInfrastructureExascaleConfig> exascaleConfigs;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
@@ -248,6 +264,11 @@ public final class GetExadataInfrastructureResult {
      */
     private Integer storageCount;
     /**
+     * @return The storage server type of the Exadata infrastructure.
+     * 
+     */
+    private String storageServerType;
+    /**
      * @return The software version of the storage servers (cells) in the Exadata infrastructure.
      * 
      */
@@ -338,6 +359,13 @@ public final class GetExadataInfrastructureResult {
         return this.computeCount;
     }
     /**
+     * @return The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     * 
+     */
+    public String computeModel() {
+        return this.computeModel;
+    }
+    /**
      * @return The list of contacts for the Exadata infrastructure.
      * 
      */
@@ -374,6 +402,13 @@ public final class GetExadataInfrastructureResult {
      */
     public Double dataStorageSizeInTbs() {
         return this.dataStorageSizeInTbs;
+    }
+    /**
+     * @return The database server type of the Exadata infrastructure.
+     * 
+     */
+    public String databaseServerType() {
+        return this.databaseServerType;
     }
     /**
      * @return The local node storage allocated in GBs.
@@ -419,6 +454,13 @@ public final class GetExadataInfrastructureResult {
     }
     public String exadataInfrastructureId() {
         return this.exadataInfrastructureId;
+    }
+    /**
+     * @return The exascale config response details for the Exadata Cloud{@literal @}Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud{@literal @}Customer instances and Exadata Cloud Service instances.
+     * 
+     */
+    public List<GetExadataInfrastructureExascaleConfig> exascaleConfigs() {
+        return this.exascaleConfigs;
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
@@ -589,6 +631,13 @@ public final class GetExadataInfrastructureResult {
         return this.storageCount;
     }
     /**
+     * @return The storage server type of the Exadata infrastructure.
+     * 
+     */
+    public String storageServerType() {
+        return this.storageServerType;
+    }
+    /**
      * @return The software version of the storage servers (cells) in the Exadata infrastructure.
      * 
      */
@@ -630,12 +679,14 @@ public final class GetExadataInfrastructureResult {
         private String cloudControlPlaneServer2;
         private String compartmentId;
         private Integer computeCount;
+        private String computeModel;
         private List<GetExadataInfrastructureContact> contacts;
         private String corporateProxy;
         private Integer cpusEnabled;
         private Boolean createAsync;
         private String csiNumber;
         private Double dataStorageSizeInTbs;
+        private String databaseServerType;
         private Integer dbNodeStorageSizeInGbs;
         private String dbServerVersion;
         private List<GetExadataInfrastructureDefinedFileSystemConfiguration> definedFileSystemConfigurations;
@@ -643,6 +694,7 @@ public final class GetExadataInfrastructureResult {
         private String displayName;
         private List<String> dnsServers;
         private String exadataInfrastructureId;
+        private List<GetExadataInfrastructureExascaleConfig> exascaleConfigs;
         private Map<String,String> freeformTags;
         private String gateway;
         private String id;
@@ -667,6 +719,7 @@ public final class GetExadataInfrastructureResult {
         private String shape;
         private String state;
         private Integer storageCount;
+        private String storageServerType;
         private String storageServerVersion;
         private String timeCreated;
         private String timeZone;
@@ -684,12 +737,14 @@ public final class GetExadataInfrastructureResult {
     	      this.cloudControlPlaneServer2 = defaults.cloudControlPlaneServer2;
     	      this.compartmentId = defaults.compartmentId;
     	      this.computeCount = defaults.computeCount;
+    	      this.computeModel = defaults.computeModel;
     	      this.contacts = defaults.contacts;
     	      this.corporateProxy = defaults.corporateProxy;
     	      this.cpusEnabled = defaults.cpusEnabled;
     	      this.createAsync = defaults.createAsync;
     	      this.csiNumber = defaults.csiNumber;
     	      this.dataStorageSizeInTbs = defaults.dataStorageSizeInTbs;
+    	      this.databaseServerType = defaults.databaseServerType;
     	      this.dbNodeStorageSizeInGbs = defaults.dbNodeStorageSizeInGbs;
     	      this.dbServerVersion = defaults.dbServerVersion;
     	      this.definedFileSystemConfigurations = defaults.definedFileSystemConfigurations;
@@ -697,6 +752,7 @@ public final class GetExadataInfrastructureResult {
     	      this.displayName = defaults.displayName;
     	      this.dnsServers = defaults.dnsServers;
     	      this.exadataInfrastructureId = defaults.exadataInfrastructureId;
+    	      this.exascaleConfigs = defaults.exascaleConfigs;
     	      this.freeformTags = defaults.freeformTags;
     	      this.gateway = defaults.gateway;
     	      this.id = defaults.id;
@@ -721,6 +777,7 @@ public final class GetExadataInfrastructureResult {
     	      this.shape = defaults.shape;
     	      this.state = defaults.state;
     	      this.storageCount = defaults.storageCount;
+    	      this.storageServerType = defaults.storageServerType;
     	      this.storageServerVersion = defaults.storageServerVersion;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeZone = defaults.timeZone;
@@ -815,6 +872,14 @@ public final class GetExadataInfrastructureResult {
             return this;
         }
         @CustomType.Setter
+        public Builder computeModel(String computeModel) {
+            if (computeModel == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructureResult", "computeModel");
+            }
+            this.computeModel = computeModel;
+            return this;
+        }
+        @CustomType.Setter
         public Builder contacts(List<GetExadataInfrastructureContact> contacts) {
             if (contacts == null) {
               throw new MissingRequiredPropertyException("GetExadataInfrastructureResult", "contacts");
@@ -863,6 +928,14 @@ public final class GetExadataInfrastructureResult {
               throw new MissingRequiredPropertyException("GetExadataInfrastructureResult", "dataStorageSizeInTbs");
             }
             this.dataStorageSizeInTbs = dataStorageSizeInTbs;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder databaseServerType(String databaseServerType) {
+            if (databaseServerType == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructureResult", "databaseServerType");
+            }
+            this.databaseServerType = databaseServerType;
             return this;
         }
         @CustomType.Setter
@@ -926,6 +999,17 @@ public final class GetExadataInfrastructureResult {
             }
             this.exadataInfrastructureId = exadataInfrastructureId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder exascaleConfigs(List<GetExadataInfrastructureExascaleConfig> exascaleConfigs) {
+            if (exascaleConfigs == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructureResult", "exascaleConfigs");
+            }
+            this.exascaleConfigs = exascaleConfigs;
+            return this;
+        }
+        public Builder exascaleConfigs(GetExadataInfrastructureExascaleConfig... exascaleConfigs) {
+            return exascaleConfigs(List.of(exascaleConfigs));
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,String> freeformTags) {
@@ -1129,6 +1213,14 @@ public final class GetExadataInfrastructureResult {
             return this;
         }
         @CustomType.Setter
+        public Builder storageServerType(String storageServerType) {
+            if (storageServerType == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructureResult", "storageServerType");
+            }
+            this.storageServerType = storageServerType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder storageServerVersion(String storageServerVersion) {
             if (storageServerVersion == null) {
               throw new MissingRequiredPropertyException("GetExadataInfrastructureResult", "storageServerVersion");
@@ -1165,12 +1257,14 @@ public final class GetExadataInfrastructureResult {
             _resultValue.cloudControlPlaneServer2 = cloudControlPlaneServer2;
             _resultValue.compartmentId = compartmentId;
             _resultValue.computeCount = computeCount;
+            _resultValue.computeModel = computeModel;
             _resultValue.contacts = contacts;
             _resultValue.corporateProxy = corporateProxy;
             _resultValue.cpusEnabled = cpusEnabled;
             _resultValue.createAsync = createAsync;
             _resultValue.csiNumber = csiNumber;
             _resultValue.dataStorageSizeInTbs = dataStorageSizeInTbs;
+            _resultValue.databaseServerType = databaseServerType;
             _resultValue.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
             _resultValue.dbServerVersion = dbServerVersion;
             _resultValue.definedFileSystemConfigurations = definedFileSystemConfigurations;
@@ -1178,6 +1272,7 @@ public final class GetExadataInfrastructureResult {
             _resultValue.displayName = displayName;
             _resultValue.dnsServers = dnsServers;
             _resultValue.exadataInfrastructureId = exadataInfrastructureId;
+            _resultValue.exascaleConfigs = exascaleConfigs;
             _resultValue.freeformTags = freeformTags;
             _resultValue.gateway = gateway;
             _resultValue.id = id;
@@ -1202,6 +1297,7 @@ public final class GetExadataInfrastructureResult {
             _resultValue.shape = shape;
             _resultValue.state = state;
             _resultValue.storageCount = storageCount;
+            _resultValue.storageServerType = storageServerType;
             _resultValue.storageServerVersion = storageServerVersion;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeZone = timeZone;

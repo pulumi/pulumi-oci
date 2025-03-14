@@ -205,6 +205,7 @@ class _MysqlBackupState:
                  shape_name: Optional[pulumi.Input[str]] = None,
                  source_details: Optional[pulumi.Input['MysqlBackupSourceDetailsArgs']] = None,
                  state: Optional[pulumi.Input[str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_copy_created: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None):
@@ -229,6 +230,7 @@ class _MysqlBackupState:
         :param pulumi.Input[str] shape_name: The shape of the DB System instance used for backup.
         :param pulumi.Input['MysqlBackupSourceDetailsArgs'] source_details: Details of backup source in the cloud.
         :param pulumi.Input[str] state: The state of the backup.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_copy_created: The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[str] time_created: The time the backup record was created.
         :param pulumi.Input[str] time_updated: The time at which the backup was updated.
@@ -273,6 +275,8 @@ class _MysqlBackupState:
             pulumi.set(__self__, "source_details", source_details)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_copy_created is not None:
             pulumi.set(__self__, "time_copy_created", time_copy_created)
         if time_created is not None:
@@ -518,6 +522,18 @@ class _MysqlBackupState:
         pulumi.set(self, "state", value)
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "system_tags", value)
+
+    @property
     @pulumi.getter(name="timeCopyCreated")
     def time_copy_created(self) -> Optional[pulumi.Input[str]]:
         """
@@ -708,6 +724,7 @@ class MysqlBackup(pulumi.CustomResource):
             __props__.__dict__["original_source_backup_id"] = None
             __props__.__dict__["shape_name"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_copy_created"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
@@ -741,6 +758,7 @@ class MysqlBackup(pulumi.CustomResource):
             shape_name: Optional[pulumi.Input[str]] = None,
             source_details: Optional[pulumi.Input[Union['MysqlBackupSourceDetailsArgs', 'MysqlBackupSourceDetailsArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             time_copy_created: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None) -> 'MysqlBackup':
@@ -770,6 +788,7 @@ class MysqlBackup(pulumi.CustomResource):
         :param pulumi.Input[str] shape_name: The shape of the DB System instance used for backup.
         :param pulumi.Input[Union['MysqlBackupSourceDetailsArgs', 'MysqlBackupSourceDetailsArgsDict']] source_details: Details of backup source in the cloud.
         :param pulumi.Input[str] state: The state of the backup.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_copy_created: The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[str] time_created: The time the backup record was created.
         :param pulumi.Input[str] time_updated: The time at which the backup was updated.
@@ -798,6 +817,7 @@ class MysqlBackup(pulumi.CustomResource):
         __props__.__dict__["shape_name"] = shape_name
         __props__.__dict__["source_details"] = source_details
         __props__.__dict__["state"] = state
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_copy_created"] = time_copy_created
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
@@ -959,6 +979,14 @@ class MysqlBackup(pulumi.CustomResource):
         The state of the backup.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, str]]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCopyCreated")

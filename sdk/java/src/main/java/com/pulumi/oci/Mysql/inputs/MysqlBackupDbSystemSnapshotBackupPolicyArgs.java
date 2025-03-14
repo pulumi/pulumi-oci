@@ -5,6 +5,7 @@ package com.pulumi.oci.Mysql.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -19,6 +20,21 @@ import javax.annotation.Nullable;
 public final class MysqlBackupDbSystemSnapshotBackupPolicyArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final MysqlBackupDbSystemSnapshotBackupPolicyArgs Empty = new MysqlBackupDbSystemSnapshotBackupPolicyArgs();
+
+    /**
+     * List of policies of a DB system to schedule cross-region DB system backup copy.
+     * 
+     */
+    @Import(name="copyPolicies")
+    private @Nullable Output<List<MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs>> copyPolicies;
+
+    /**
+     * @return List of policies of a DB system to schedule cross-region DB system backup copy.
+     * 
+     */
+    public Optional<Output<List<MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs>>> copyPolicies() {
+        return Optional.ofNullable(this.copyPolicies);
+    }
 
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
@@ -113,6 +129,7 @@ public final class MysqlBackupDbSystemSnapshotBackupPolicyArgs extends com.pulum
     private MysqlBackupDbSystemSnapshotBackupPolicyArgs() {}
 
     private MysqlBackupDbSystemSnapshotBackupPolicyArgs(MysqlBackupDbSystemSnapshotBackupPolicyArgs $) {
+        this.copyPolicies = $.copyPolicies;
         this.definedTags = $.definedTags;
         this.freeformTags = $.freeformTags;
         this.isEnabled = $.isEnabled;
@@ -137,6 +154,37 @@ public final class MysqlBackupDbSystemSnapshotBackupPolicyArgs extends com.pulum
 
         public Builder(MysqlBackupDbSystemSnapshotBackupPolicyArgs defaults) {
             $ = new MysqlBackupDbSystemSnapshotBackupPolicyArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param copyPolicies List of policies of a DB system to schedule cross-region DB system backup copy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder copyPolicies(@Nullable Output<List<MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs>> copyPolicies) {
+            $.copyPolicies = copyPolicies;
+            return this;
+        }
+
+        /**
+         * @param copyPolicies List of policies of a DB system to schedule cross-region DB system backup copy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder copyPolicies(List<MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs> copyPolicies) {
+            return copyPolicies(Output.of(copyPolicies));
+        }
+
+        /**
+         * @param copyPolicies List of policies of a DB system to schedule cross-region DB system backup copy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder copyPolicies(MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs... copyPolicies) {
+            return copyPolicies(List.of(copyPolicies));
         }
 
         /**

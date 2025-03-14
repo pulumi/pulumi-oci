@@ -27,7 +27,7 @@ class GetCloudVmClusterResult:
     """
     A collection of values returned by getCloudVmCluster.
     """
-    def __init__(__self__, availability_domain=None, backup_network_nsg_ids=None, backup_subnet_id=None, cloud_automation_update_details=None, cloud_exadata_infrastructure_id=None, cloud_vm_cluster_id=None, cluster_name=None, compartment_id=None, cpu_core_count=None, create_async=None, data_collection_options=None, data_storage_percentage=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, disk_redundancy=None, display_name=None, domain=None, file_system_configuration_details=None, freeform_tags=None, gi_version=None, hostname=None, id=None, iorm_config_caches=None, is_local_backup_enabled=None, is_sparse_diskgroup_enabled=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, listener_port=None, memory_size_in_gbs=None, node_count=None, nsg_ids=None, ocpu_count=None, private_zone_id=None, scan_dns_name=None, scan_dns_record_id=None, scan_ip_ids=None, scan_listener_port_tcp=None, scan_listener_port_tcp_ssl=None, security_attributes=None, shape=None, ssh_public_keys=None, state=None, storage_size_in_gbs=None, subnet_id=None, subscription_id=None, system_tags=None, system_version=None, time_created=None, time_zone=None, vip_ids=None, zone_id=None):
+    def __init__(__self__, availability_domain=None, backup_network_nsg_ids=None, backup_subnet_id=None, cloud_automation_update_details=None, cloud_exadata_infrastructure_id=None, cloud_vm_cluster_id=None, cluster_name=None, compartment_id=None, compute_model=None, cpu_core_count=None, create_async=None, data_collection_options=None, data_storage_percentage=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, disk_redundancy=None, display_name=None, domain=None, file_system_configuration_details=None, freeform_tags=None, gi_version=None, hostname=None, id=None, iorm_config_caches=None, is_local_backup_enabled=None, is_sparse_diskgroup_enabled=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, listener_port=None, memory_size_in_gbs=None, node_count=None, nsg_ids=None, ocpu_count=None, private_zone_id=None, scan_dns_name=None, scan_dns_record_id=None, scan_ip_ids=None, scan_ipv6ids=None, scan_listener_port_tcp=None, scan_listener_port_tcp_ssl=None, security_attributes=None, shape=None, ssh_public_keys=None, state=None, storage_size_in_gbs=None, subnet_id=None, subscription_id=None, system_tags=None, system_version=None, time_created=None, time_zone=None, vip_ids=None, vipv6ids=None, vm_cluster_type=None, zone_id=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -52,6 +52,9 @@ class GetCloudVmClusterResult:
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if compute_model and not isinstance(compute_model, str):
+            raise TypeError("Expected argument 'compute_model' to be a str")
+        pulumi.set(__self__, "compute_model", compute_model)
         if cpu_core_count and not isinstance(cpu_core_count, int):
             raise TypeError("Expected argument 'cpu_core_count' to be a int")
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
@@ -145,6 +148,9 @@ class GetCloudVmClusterResult:
         if scan_ip_ids and not isinstance(scan_ip_ids, list):
             raise TypeError("Expected argument 'scan_ip_ids' to be a list")
         pulumi.set(__self__, "scan_ip_ids", scan_ip_ids)
+        if scan_ipv6ids and not isinstance(scan_ipv6ids, list):
+            raise TypeError("Expected argument 'scan_ipv6ids' to be a list")
+        pulumi.set(__self__, "scan_ipv6ids", scan_ipv6ids)
         if scan_listener_port_tcp and not isinstance(scan_listener_port_tcp, int):
             raise TypeError("Expected argument 'scan_listener_port_tcp' to be a int")
         pulumi.set(__self__, "scan_listener_port_tcp", scan_listener_port_tcp)
@@ -187,6 +193,12 @@ class GetCloudVmClusterResult:
         if vip_ids and not isinstance(vip_ids, list):
             raise TypeError("Expected argument 'vip_ids' to be a list")
         pulumi.set(__self__, "vip_ids", vip_ids)
+        if vipv6ids and not isinstance(vipv6ids, list):
+            raise TypeError("Expected argument 'vipv6ids' to be a list")
+        pulumi.set(__self__, "vipv6ids", vipv6ids)
+        if vm_cluster_type and not isinstance(vm_cluster_type, str):
+            raise TypeError("Expected argument 'vm_cluster_type' to be a str")
+        pulumi.set(__self__, "vm_cluster_type", vm_cluster_type)
         if zone_id and not isinstance(zone_id, str):
             raise TypeError("Expected argument 'zone_id' to be a str")
         pulumi.set(__self__, "zone_id", zone_id)
@@ -251,6 +263,14 @@ class GetCloudVmClusterResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> str:
+        """
+        The compute model of the cloud VM cluster.
+        """
+        return pulumi.get(self, "compute_model")
 
     @property
     @pulumi.getter(name="cpuCoreCount")
@@ -491,9 +511,17 @@ class GetCloudVmClusterResult:
     @pulumi.getter(name="scanIpIds")
     def scan_ip_ids(self) -> Sequence[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv4 addresses associated with the cloud VM cluster. SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
         """
         return pulumi.get(self, "scan_ip_ids")
+
+    @property
+    @pulumi.getter(name="scanIpv6ids")
+    def scan_ipv6ids(self) -> Sequence[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv6 addresses associated with the cloud VM cluster. SCAN IPv6 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+        """
+        return pulumi.get(self, "scan_ipv6ids")
 
     @property
     @pulumi.getter(name="scanListenerPortTcp")
@@ -603,9 +631,25 @@ class GetCloudVmClusterResult:
     @pulumi.getter(name="vipIds")
     def vip_ids(self) -> Sequence[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
         """
         return pulumi.get(self, "vip_ids")
+
+    @property
+    @pulumi.getter
+    def vipv6ids(self) -> Sequence[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+        """
+        return pulumi.get(self, "vipv6ids")
+
+    @property
+    @pulumi.getter(name="vmClusterType")
+    def vm_cluster_type(self) -> str:
+        """
+        The vmcluster type for the VM cluster/Cloud VM cluster.
+        """
+        return pulumi.get(self, "vm_cluster_type")
 
     @property
     @pulumi.getter(name="zoneId")
@@ -630,6 +674,7 @@ class AwaitableGetCloudVmClusterResult(GetCloudVmClusterResult):
             cloud_vm_cluster_id=self.cloud_vm_cluster_id,
             cluster_name=self.cluster_name,
             compartment_id=self.compartment_id,
+            compute_model=self.compute_model,
             cpu_core_count=self.cpu_core_count,
             create_async=self.create_async,
             data_collection_options=self.data_collection_options,
@@ -661,6 +706,7 @@ class AwaitableGetCloudVmClusterResult(GetCloudVmClusterResult):
             scan_dns_name=self.scan_dns_name,
             scan_dns_record_id=self.scan_dns_record_id,
             scan_ip_ids=self.scan_ip_ids,
+            scan_ipv6ids=self.scan_ipv6ids,
             scan_listener_port_tcp=self.scan_listener_port_tcp,
             scan_listener_port_tcp_ssl=self.scan_listener_port_tcp_ssl,
             security_attributes=self.security_attributes,
@@ -675,6 +721,8 @@ class AwaitableGetCloudVmClusterResult(GetCloudVmClusterResult):
             time_created=self.time_created,
             time_zone=self.time_zone,
             vip_ids=self.vip_ids,
+            vipv6ids=self.vipv6ids,
+            vm_cluster_type=self.vm_cluster_type,
             zone_id=self.zone_id)
 
 
@@ -711,6 +759,7 @@ def get_cloud_vm_cluster(cloud_vm_cluster_id: Optional[str] = None,
         cloud_vm_cluster_id=pulumi.get(__ret__, 'cloud_vm_cluster_id'),
         cluster_name=pulumi.get(__ret__, 'cluster_name'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compute_model=pulumi.get(__ret__, 'compute_model'),
         cpu_core_count=pulumi.get(__ret__, 'cpu_core_count'),
         create_async=pulumi.get(__ret__, 'create_async'),
         data_collection_options=pulumi.get(__ret__, 'data_collection_options'),
@@ -742,6 +791,7 @@ def get_cloud_vm_cluster(cloud_vm_cluster_id: Optional[str] = None,
         scan_dns_name=pulumi.get(__ret__, 'scan_dns_name'),
         scan_dns_record_id=pulumi.get(__ret__, 'scan_dns_record_id'),
         scan_ip_ids=pulumi.get(__ret__, 'scan_ip_ids'),
+        scan_ipv6ids=pulumi.get(__ret__, 'scan_ipv6ids'),
         scan_listener_port_tcp=pulumi.get(__ret__, 'scan_listener_port_tcp'),
         scan_listener_port_tcp_ssl=pulumi.get(__ret__, 'scan_listener_port_tcp_ssl'),
         security_attributes=pulumi.get(__ret__, 'security_attributes'),
@@ -756,6 +806,8 @@ def get_cloud_vm_cluster(cloud_vm_cluster_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_zone=pulumi.get(__ret__, 'time_zone'),
         vip_ids=pulumi.get(__ret__, 'vip_ids'),
+        vipv6ids=pulumi.get(__ret__, 'vipv6ids'),
+        vm_cluster_type=pulumi.get(__ret__, 'vm_cluster_type'),
         zone_id=pulumi.get(__ret__, 'zone_id'))
 def get_cloud_vm_cluster_output(cloud_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudVmClusterResult]:
@@ -789,6 +841,7 @@ def get_cloud_vm_cluster_output(cloud_vm_cluster_id: Optional[pulumi.Input[str]]
         cloud_vm_cluster_id=pulumi.get(__response__, 'cloud_vm_cluster_id'),
         cluster_name=pulumi.get(__response__, 'cluster_name'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compute_model=pulumi.get(__response__, 'compute_model'),
         cpu_core_count=pulumi.get(__response__, 'cpu_core_count'),
         create_async=pulumi.get(__response__, 'create_async'),
         data_collection_options=pulumi.get(__response__, 'data_collection_options'),
@@ -820,6 +873,7 @@ def get_cloud_vm_cluster_output(cloud_vm_cluster_id: Optional[pulumi.Input[str]]
         scan_dns_name=pulumi.get(__response__, 'scan_dns_name'),
         scan_dns_record_id=pulumi.get(__response__, 'scan_dns_record_id'),
         scan_ip_ids=pulumi.get(__response__, 'scan_ip_ids'),
+        scan_ipv6ids=pulumi.get(__response__, 'scan_ipv6ids'),
         scan_listener_port_tcp=pulumi.get(__response__, 'scan_listener_port_tcp'),
         scan_listener_port_tcp_ssl=pulumi.get(__response__, 'scan_listener_port_tcp_ssl'),
         security_attributes=pulumi.get(__response__, 'security_attributes'),
@@ -834,4 +888,6 @@ def get_cloud_vm_cluster_output(cloud_vm_cluster_id: Optional[pulumi.Input[str]]
         time_created=pulumi.get(__response__, 'time_created'),
         time_zone=pulumi.get(__response__, 'time_zone'),
         vip_ids=pulumi.get(__response__, 'vip_ids'),
+        vipv6ids=pulumi.get(__response__, 'vipv6ids'),
+        vm_cluster_type=pulumi.get(__response__, 'vm_cluster_type'),
         zone_id=pulumi.get(__response__, 'zone_id')))

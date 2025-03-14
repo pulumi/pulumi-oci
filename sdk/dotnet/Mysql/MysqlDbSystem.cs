@@ -35,6 +35,14 @@ namespace Pulumi.Oci.Mysql
     ///         AdminUsername = mysqlDbSystemAdminUsername,
     ///         BackupPolicy = new Oci.Mysql.Inputs.MysqlDbSystemBackupPolicyArgs
     ///         {
+    ///             CopyPolicies = new[]
+    ///             {
+    ///                 new Oci.Mysql.Inputs.MysqlDbSystemBackupPolicyCopyPolicyArgs
+    ///                 {
+    ///                     CopyToRegion = mysqlDbSystemBackupPolicyCopyPoliciesCopyToRegion,
+    ///                     BackupCopyRetentionInDays = mysqlDbSystemBackupPolicyCopyPoliciesBackupCopyRetentionInDays,
+    ///                 },
+    ///             },
     ///             DefinedTags = 
     ///             {
     ///                 { "foo-namespace.bar-key", "value" },
@@ -391,6 +399,12 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Output("subnetId")]
         public Output<string> SubnetId { get; private set; } = null!;
+
+        /// <summary>
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        [Output("systemTags")]
+        public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the DB System was created.
@@ -1041,6 +1055,18 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
+
+        [Input("systemTags")]
+        private InputMap<string>? _systemTags;
+
+        /// <summary>
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public InputMap<string> SystemTags
+        {
+            get => _systemTags ?? (_systemTags = new InputMap<string>());
+            set => _systemTags = value;
+        }
 
         /// <summary>
         /// The date and time the DB System was created.

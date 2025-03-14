@@ -82,6 +82,7 @@ import javax.annotation.Nullable;
  *         var testFileSystem = new FileSystem("testFileSystem", FileSystemArgs.builder()
  *             .availabilityDomain(fileSystemAvailabilityDomain)
  *             .compartmentId(compartmentId)
+ *             .areQuotaRulesEnabled(fileSystemAreQuotaRulesEnabled)
  *             .cloneAttachStatus(fileSystemCloneAttachStatus)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(fileSystemDisplayName)
@@ -114,6 +115,20 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:FileStorage/fileSystem:FileSystem")
 public class FileSystem extends com.pulumi.resources.CustomResource {
+    /**
+     * (Updatable) Specifies the enforcement of quota rules on the file system.
+     * 
+     */
+    @Export(name="areQuotaRulesEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> areQuotaRulesEnabled;
+
+    /**
+     * @return (Updatable) Specifies the enforcement of quota rules on the file system.
+     * 
+     */
+    public Output<Boolean> areQuotaRulesEnabled() {
+        return this.areQuotaRulesEnabled;
+    }
     /**
      * The availability domain to create the file system in.  Example: `Uocm:PHX-AD-1`
      * 
@@ -353,6 +368,34 @@ public class FileSystem extends com.pulumi.resources.CustomResource {
      */
     public Output<String> meteredBytes() {
         return this.meteredBytes;
+    }
+    /**
+     * Displays the state of enforcement of quota rules on the file system.
+     * 
+     */
+    @Export(name="quotaEnforcementState", refs={String.class}, tree="[0]")
+    private Output<String> quotaEnforcementState;
+
+    /**
+     * @return Displays the state of enforcement of quota rules on the file system.
+     * 
+     */
+    public Output<String> quotaEnforcementState() {
+        return this.quotaEnforcementState;
+    }
+    /**
+     * Specifies the total number of replications for which this file system is a source.
+     * 
+     */
+    @Export(name="replicationSourceCount", refs={Integer.class}, tree="[0]")
+    private Output<Integer> replicationSourceCount;
+
+    /**
+     * @return Specifies the total number of replications for which this file system is a source.
+     * 
+     */
+    public Output<Integer> replicationSourceCount() {
+        return this.replicationSourceCount;
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.

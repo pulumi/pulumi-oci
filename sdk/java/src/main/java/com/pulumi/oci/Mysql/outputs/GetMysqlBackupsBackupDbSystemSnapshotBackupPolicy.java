@@ -5,6 +5,7 @@ package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Mysql.outputs.GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicy;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -15,6 +16,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy {
+    /**
+     * @return List of policies of a DB system to schedule cross-region DB system backup copy.
+     * 
+     */
+    private List<GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicy> copyPolicies;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
@@ -47,6 +53,13 @@ public final class GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy {
     private String windowStartTime;
 
     private GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy() {}
+    /**
+     * @return List of policies of a DB system to schedule cross-region DB system backup copy.
+     * 
+     */
+    public List<GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicy> copyPolicies() {
+        return this.copyPolicies;
+    }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
@@ -99,6 +112,7 @@ public final class GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicy> copyPolicies;
         private Map<String,String> definedTags;
         private Map<String,String> freeformTags;
         private Boolean isEnabled;
@@ -108,6 +122,7 @@ public final class GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy {
         public Builder() {}
         public Builder(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.copyPolicies = defaults.copyPolicies;
     	      this.definedTags = defaults.definedTags;
     	      this.freeformTags = defaults.freeformTags;
     	      this.isEnabled = defaults.isEnabled;
@@ -116,6 +131,17 @@ public final class GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy {
     	      this.windowStartTime = defaults.windowStartTime;
         }
 
+        @CustomType.Setter
+        public Builder copyPolicies(List<GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicy> copyPolicies) {
+            if (copyPolicies == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy", "copyPolicies");
+            }
+            this.copyPolicies = copyPolicies;
+            return this;
+        }
+        public Builder copyPolicies(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicy... copyPolicies) {
+            return copyPolicies(List.of(copyPolicies));
+        }
         @CustomType.Setter
         public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
@@ -169,6 +195,7 @@ public final class GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy {
         }
         public GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy build() {
             final var _resultValue = new GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy();
+            _resultValue.copyPolicies = copyPolicies;
             _resultValue.definedTags = definedTags;
             _resultValue.freeformTags = freeformTags;
             _resultValue.isEnabled = isEnabled;

@@ -16,6 +16,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetExadbVmClustersResult {
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * 
+     */
+    private @Nullable String clusterPlacementGroupId;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
@@ -48,6 +53,13 @@ public final class GetExadbVmClustersResult {
     private @Nullable String state;
 
     private GetExadbVmClustersResult() {}
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * 
+     */
+    public Optional<String> clusterPlacementGroupId() {
+        return Optional.ofNullable(this.clusterPlacementGroupId);
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -103,6 +115,7 @@ public final class GetExadbVmClustersResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String clusterPlacementGroupId;
         private String compartmentId;
         private @Nullable String displayName;
         private List<GetExadbVmClustersExadbVmCluster> exadbVmClusters;
@@ -113,6 +126,7 @@ public final class GetExadbVmClustersResult {
         public Builder() {}
         public Builder(GetExadbVmClustersResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.displayName = defaults.displayName;
     	      this.exadbVmClusters = defaults.exadbVmClusters;
@@ -122,6 +136,12 @@ public final class GetExadbVmClustersResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
+        public Builder clusterPlacementGroupId(@Nullable String clusterPlacementGroupId) {
+
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            return this;
+        }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             if (compartmentId == null) {
@@ -178,6 +198,7 @@ public final class GetExadbVmClustersResult {
         }
         public GetExadbVmClustersResult build() {
             final var _resultValue = new GetExadbVmClustersResult();
+            _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.displayName = displayName;
             _resultValue.exadbVmClusters = exadbVmClusters;

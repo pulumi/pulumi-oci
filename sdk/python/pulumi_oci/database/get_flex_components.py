@@ -28,7 +28,7 @@ class GetFlexComponentsResult:
     """
     A collection of values returned by getFlexComponents.
     """
-    def __init__(__self__, compartment_id=None, filters=None, flex_component_collections=None, id=None, name=None):
+    def __init__(__self__, compartment_id=None, filters=None, flex_component_collections=None, id=None, name=None, shape=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -44,6 +44,9 @@ class GetFlexComponentsResult:
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
+        if shape and not isinstance(shape, str):
+            raise TypeError("Expected argument 'shape' to be a str")
+        pulumi.set(__self__, "shape", shape)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -79,6 +82,14 @@ class GetFlexComponentsResult:
         """
         return pulumi.get(self, "name")
 
+    @property
+    @pulumi.getter
+    def shape(self) -> Optional[str]:
+        """
+        The name of the DB system shape for this Flex Component.
+        """
+        return pulumi.get(self, "shape")
+
 
 class AwaitableGetFlexComponentsResult(GetFlexComponentsResult):
     # pylint: disable=using-constant-test
@@ -90,12 +101,14 @@ class AwaitableGetFlexComponentsResult(GetFlexComponentsResult):
             filters=self.filters,
             flex_component_collections=self.flex_component_collections,
             id=self.id,
-            name=self.name)
+            name=self.name,
+            shape=self.shape)
 
 
 def get_flex_components(compartment_id: Optional[str] = None,
                         filters: Optional[Sequence[Union['GetFlexComponentsFilterArgs', 'GetFlexComponentsFilterArgsDict']]] = None,
                         name: Optional[str] = None,
+                        shape: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFlexComponentsResult:
     """
     This data source provides the list of Flex Components in Oracle Cloud Infrastructure Database service.
@@ -109,17 +122,20 @@ def get_flex_components(compartment_id: Optional[str] = None,
     import pulumi_oci as oci
 
     test_flex_components = oci.Database.get_flex_components(compartment_id=compartment_id,
-        name=flex_component_name)
+        name=flex_component_name,
+        shape=flex_component_shape)
     ```
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str name: A filter to return only resources that match the entire name given. The match is not case sensitive.
+    :param str shape: A filter to return only resources that belong to the entire shape name given. The match is not case sensitive.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['name'] = name
+    __args__['shape'] = shape
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:Database/getFlexComponents:getFlexComponents', __args__, opts=opts, typ=GetFlexComponentsResult).value
 
@@ -128,10 +144,12 @@ def get_flex_components(compartment_id: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         flex_component_collections=pulumi.get(__ret__, 'flex_component_collections'),
         id=pulumi.get(__ret__, 'id'),
-        name=pulumi.get(__ret__, 'name'))
+        name=pulumi.get(__ret__, 'name'),
+        shape=pulumi.get(__ret__, 'shape'))
 def get_flex_components_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFlexComponentsFilterArgs', 'GetFlexComponentsFilterArgsDict']]]]] = None,
                                name: Optional[pulumi.Input[Optional[str]]] = None,
+                               shape: Optional[pulumi.Input[Optional[str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFlexComponentsResult]:
     """
     This data source provides the list of Flex Components in Oracle Cloud Infrastructure Database service.
@@ -145,17 +163,20 @@ def get_flex_components_output(compartment_id: Optional[pulumi.Input[str]] = Non
     import pulumi_oci as oci
 
     test_flex_components = oci.Database.get_flex_components(compartment_id=compartment_id,
-        name=flex_component_name)
+        name=flex_component_name,
+        shape=flex_component_shape)
     ```
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str name: A filter to return only resources that match the entire name given. The match is not case sensitive.
+    :param str shape: A filter to return only resources that belong to the entire shape name given. The match is not case sensitive.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['name'] = name
+    __args__['shape'] = shape
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getFlexComponents:getFlexComponents', __args__, opts=opts, typ=GetFlexComponentsResult)
     return __ret__.apply(lambda __response__: GetFlexComponentsResult(
@@ -163,4 +184,5 @@ def get_flex_components_output(compartment_id: Optional[pulumi.Input[str]] = Non
         filters=pulumi.get(__response__, 'filters'),
         flex_component_collections=pulumi.get(__response__, 'flex_component_collections'),
         id=pulumi.get(__response__, 'id'),
-        name=pulumi.get(__response__, 'name')))
+        name=pulumi.get(__response__, 'name'),
+        shape=pulumi.get(__response__, 'shape')))

@@ -71,6 +71,8 @@ type GetMaskingReportResult struct {
 	// The OCID of the masking policy used.
 	MaskingPolicyId string `pulumi:"maskingPolicyId"`
 	MaskingReportId string `pulumi:"maskingReportId"`
+	// The status of the masking job.
+	MaskingStatus string `pulumi:"maskingStatus"`
 	// The OCID of the masking work request that resulted in this masking report.
 	MaskingWorkRequestId string `pulumi:"maskingWorkRequestId"`
 	// Indicates if parallel execution was enabled during the masking operation.
@@ -97,6 +99,10 @@ type GetMaskingReportResult struct {
 	TotalMaskedSensitiveTypes string `pulumi:"totalMaskedSensitiveTypes"`
 	// The total number of masked values.
 	TotalMaskedValues string `pulumi:"totalMaskedValues"`
+	// The total number of errors in post-masking script.
+	TotalPostMaskingScriptErrors string `pulumi:"totalPostMaskingScriptErrors"`
+	// The total number of errors in pre-masking script.
+	TotalPreMaskingScriptErrors string `pulumi:"totalPreMaskingScriptErrors"`
 }
 
 func GetMaskingReportOutput(ctx *pulumi.Context, args GetMaskingReportOutputArgs, opts ...pulumi.InvokeOption) GetMaskingReportResultOutput {
@@ -167,6 +173,11 @@ func (o GetMaskingReportResultOutput) MaskingReportId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaskingReportResult) string { return v.MaskingReportId }).(pulumi.StringOutput)
 }
 
+// The status of the masking job.
+func (o GetMaskingReportResultOutput) MaskingStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingReportResult) string { return v.MaskingStatus }).(pulumi.StringOutput)
+}
+
 // The OCID of the masking work request that resulted in this masking report.
 func (o GetMaskingReportResultOutput) MaskingWorkRequestId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaskingReportResult) string { return v.MaskingWorkRequestId }).(pulumi.StringOutput)
@@ -230,6 +241,16 @@ func (o GetMaskingReportResultOutput) TotalMaskedSensitiveTypes() pulumi.StringO
 // The total number of masked values.
 func (o GetMaskingReportResultOutput) TotalMaskedValues() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaskingReportResult) string { return v.TotalMaskedValues }).(pulumi.StringOutput)
+}
+
+// The total number of errors in post-masking script.
+func (o GetMaskingReportResultOutput) TotalPostMaskingScriptErrors() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingReportResult) string { return v.TotalPostMaskingScriptErrors }).(pulumi.StringOutput)
+}
+
+// The total number of errors in pre-masking script.
+func (o GetMaskingReportResultOutput) TotalPreMaskingScriptErrors() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingReportResult) string { return v.TotalPreMaskingScriptErrors }).(pulumi.StringOutput)
 }
 
 func init() {

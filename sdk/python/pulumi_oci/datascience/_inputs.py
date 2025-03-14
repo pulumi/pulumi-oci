@@ -119,6 +119,12 @@ __all__ = [
     'PipelineRunStepOverrideDetailStepConfigurationDetailsArgsDict',
     'PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs',
     'PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgsDict',
+    'PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs',
+    'PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgsDict',
+    'PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs',
+    'PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgsDict',
+    'PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs',
+    'PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgsDict',
     'PipelineRunStepRunArgs',
     'PipelineRunStepRunArgsDict',
     'PipelineStepArtifactArgs',
@@ -129,10 +135,20 @@ __all__ = [
     'PipelineStepDetailStepConfigurationDetailsArgsDict',
     'PipelineStepDetailStepContainerConfigurationDetailsArgs',
     'PipelineStepDetailStepContainerConfigurationDetailsArgsDict',
+    'PipelineStepDetailStepDataflowConfigurationDetailsArgs',
+    'PipelineStepDetailStepDataflowConfigurationDetailsArgsDict',
+    'PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs',
+    'PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgsDict',
+    'PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs',
+    'PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgsDict',
     'PipelineStepDetailStepInfrastructureConfigurationDetailsArgs',
     'PipelineStepDetailStepInfrastructureConfigurationDetailsArgsDict',
     'PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs',
     'PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgsDict',
+    'PipelineStepDetailStepStorageMountConfigurationDetailsListArgs',
+    'PipelineStepDetailStepStorageMountConfigurationDetailsListArgsDict',
+    'PipelineStorageMountConfigurationDetailsListArgs',
+    'PipelineStorageMountConfigurationDetailsListArgsDict',
     'ScheduleActionArgs',
     'ScheduleActionArgsDict',
     'ScheduleActionActionDetailsArgs',
@@ -1698,6 +1714,10 @@ if not MYPY:
         """
         (Updatable) Description of model metadata
         """
+        has_artifact: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Is there any artifact present for the metadata.
+        """
         key: NotRequired[pulumi.Input[str]]
         """
         (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
@@ -1707,6 +1727,15 @@ if not MYPY:
         * estimatorClass
         * hyperParameters
         * testArtifactresults
+        * fineTuningConfiguration
+        * deploymentConfiguration
+        * readme
+        * license
+        * evaluationConfiguration
+        """
+        keywords: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) list of keywords for searching
         """
         value: NotRequired[pulumi.Input[str]]
         """
@@ -1722,11 +1751,14 @@ class ModelCustomMetadataListArgs:
     def __init__(__self__, *,
                  category: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 has_artifact: Optional[pulumi.Input[bool]] = None,
                  key: Optional[pulumi.Input[str]] = None,
+                 keywords: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  value: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] category: (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
         :param pulumi.Input[str] description: (Updatable) Description of model metadata
+        :param pulumi.Input[bool] has_artifact: (Updatable) Is there any artifact present for the metadata.
         :param pulumi.Input[str] key: (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
                * useCaseType
                * libraryName
@@ -1734,6 +1766,12 @@ class ModelCustomMetadataListArgs:
                * estimatorClass
                * hyperParameters
                * testArtifactresults
+               * fineTuningConfiguration
+               * deploymentConfiguration
+               * readme
+               * license
+               * evaluationConfiguration
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] keywords: (Updatable) list of keywords for searching
         :param pulumi.Input[str] value: (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
                
                Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
@@ -1742,8 +1780,12 @@ class ModelCustomMetadataListArgs:
             pulumi.set(__self__, "category", category)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if has_artifact is not None:
+            pulumi.set(__self__, "has_artifact", has_artifact)
         if key is not None:
             pulumi.set(__self__, "key", key)
+        if keywords is not None:
+            pulumi.set(__self__, "keywords", keywords)
         if value is not None:
             pulumi.set(__self__, "value", value)
 
@@ -1772,6 +1814,18 @@ class ModelCustomMetadataListArgs:
         pulumi.set(self, "description", value)
 
     @property
+    @pulumi.getter(name="hasArtifact")
+    def has_artifact(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Is there any artifact present for the metadata.
+        """
+        return pulumi.get(self, "has_artifact")
+
+    @has_artifact.setter
+    def has_artifact(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "has_artifact", value)
+
+    @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1782,12 +1836,29 @@ class ModelCustomMetadataListArgs:
         * estimatorClass
         * hyperParameters
         * testArtifactresults
+        * fineTuningConfiguration
+        * deploymentConfiguration
+        * readme
+        * license
+        * evaluationConfiguration
         """
         return pulumi.get(self, "key")
 
     @key.setter
     def key(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def keywords(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) list of keywords for searching
+        """
+        return pulumi.get(self, "keywords")
+
+    @keywords.setter
+    def keywords(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "keywords", value)
 
     @property
     @pulumi.getter
@@ -1814,6 +1885,10 @@ if not MYPY:
         """
         (Updatable) Description of model metadata
         """
+        has_artifact: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Is there any artifact present for the metadata.
+        """
         key: NotRequired[pulumi.Input[str]]
         """
         (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
@@ -1823,6 +1898,15 @@ if not MYPY:
         * estimatorClass
         * hyperParameters
         * testArtifactresults
+        * fineTuningConfiguration
+        * deploymentConfiguration
+        * readme
+        * license
+        * evaluationConfiguration
+        """
+        keywords: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) list of keywords for searching
         """
         value: NotRequired[pulumi.Input[str]]
         """
@@ -1838,11 +1922,14 @@ class ModelDefinedMetadataListArgs:
     def __init__(__self__, *,
                  category: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 has_artifact: Optional[pulumi.Input[bool]] = None,
                  key: Optional[pulumi.Input[str]] = None,
+                 keywords: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  value: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] category: (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
         :param pulumi.Input[str] description: (Updatable) Description of model metadata
+        :param pulumi.Input[bool] has_artifact: (Updatable) Is there any artifact present for the metadata.
         :param pulumi.Input[str] key: (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
                * useCaseType
                * libraryName
@@ -1850,6 +1937,12 @@ class ModelDefinedMetadataListArgs:
                * estimatorClass
                * hyperParameters
                * testArtifactresults
+               * fineTuningConfiguration
+               * deploymentConfiguration
+               * readme
+               * license
+               * evaluationConfiguration
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] keywords: (Updatable) list of keywords for searching
         :param pulumi.Input[str] value: (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
                
                Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
@@ -1858,8 +1951,12 @@ class ModelDefinedMetadataListArgs:
             pulumi.set(__self__, "category", category)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if has_artifact is not None:
+            pulumi.set(__self__, "has_artifact", has_artifact)
         if key is not None:
             pulumi.set(__self__, "key", key)
+        if keywords is not None:
+            pulumi.set(__self__, "keywords", keywords)
         if value is not None:
             pulumi.set(__self__, "value", value)
 
@@ -1888,6 +1985,18 @@ class ModelDefinedMetadataListArgs:
         pulumi.set(self, "description", value)
 
     @property
+    @pulumi.getter(name="hasArtifact")
+    def has_artifact(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Is there any artifact present for the metadata.
+        """
+        return pulumi.get(self, "has_artifact")
+
+    @has_artifact.setter
+    def has_artifact(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "has_artifact", value)
+
+    @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1898,12 +2007,29 @@ class ModelDefinedMetadataListArgs:
         * estimatorClass
         * hyperParameters
         * testArtifactresults
+        * fineTuningConfiguration
+        * deploymentConfiguration
+        * readme
+        * license
+        * evaluationConfiguration
         """
         return pulumi.get(self, "key")
 
     @key.setter
     def key(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def keywords(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) list of keywords for searching
+        """
+        return pulumi.get(self, "keywords")
+
+    @keywords.setter
+    def keywords(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "keywords", value)
 
     @property
     @pulumi.getter
@@ -4720,6 +4846,10 @@ if not MYPY:
         """
         Container Details for a step in pipeline.
         """
+        step_dataflow_configuration_details: NotRequired[pulumi.Input['PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgsDict']]
+        """
+        The configuration details of a Dataflow step.
+        """
 elif False:
     PipelineRunStepOverrideDetailArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -4728,16 +4858,20 @@ class PipelineRunStepOverrideDetailArgs:
     def __init__(__self__, *,
                  step_configuration_details: pulumi.Input['PipelineRunStepOverrideDetailStepConfigurationDetailsArgs'],
                  step_name: pulumi.Input[str],
-                 step_container_configuration_details: Optional[pulumi.Input['PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs']] = None):
+                 step_container_configuration_details: Optional[pulumi.Input['PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs']] = None,
+                 step_dataflow_configuration_details: Optional[pulumi.Input['PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs']] = None):
         """
         :param pulumi.Input['PipelineRunStepOverrideDetailStepConfigurationDetailsArgs'] step_configuration_details: The configuration details of a step.
         :param pulumi.Input[str] step_name: The name of the step.
         :param pulumi.Input['PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs'] step_container_configuration_details: Container Details for a step in pipeline.
+        :param pulumi.Input['PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs'] step_dataflow_configuration_details: The configuration details of a Dataflow step.
         """
         pulumi.set(__self__, "step_configuration_details", step_configuration_details)
         pulumi.set(__self__, "step_name", step_name)
         if step_container_configuration_details is not None:
             pulumi.set(__self__, "step_container_configuration_details", step_container_configuration_details)
+        if step_dataflow_configuration_details is not None:
+            pulumi.set(__self__, "step_dataflow_configuration_details", step_dataflow_configuration_details)
 
     @property
     @pulumi.getter(name="stepConfigurationDetails")
@@ -4774,6 +4908,18 @@ class PipelineRunStepOverrideDetailArgs:
     @step_container_configuration_details.setter
     def step_container_configuration_details(self, value: Optional[pulumi.Input['PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs']]):
         pulumi.set(self, "step_container_configuration_details", value)
+
+    @property
+    @pulumi.getter(name="stepDataflowConfigurationDetails")
+    def step_dataflow_configuration_details(self) -> Optional[pulumi.Input['PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs']]:
+        """
+        The configuration details of a Dataflow step.
+        """
+        return pulumi.get(self, "step_dataflow_configuration_details")
+
+    @step_dataflow_configuration_details.setter
+    def step_dataflow_configuration_details(self, value: Optional[pulumi.Input['PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs']]):
+        pulumi.set(self, "step_dataflow_configuration_details", value)
 
 
 if not MYPY:
@@ -4979,7 +5125,287 @@ class PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs:
 
 
 if not MYPY:
+    class PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgsDict(TypedDict):
+        configuration: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        The Spark configuration passed to the running process.
+        """
+        driver_shape: NotRequired[pulumi.Input[str]]
+        """
+        The VM shape for the driver.
+        """
+        driver_shape_config_details: NotRequired[pulumi.Input['PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgsDict']]
+        """
+        Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        """
+        executor_shape: NotRequired[pulumi.Input[str]]
+        """
+        The VM shape for the executors.
+        """
+        executor_shape_config_details: NotRequired[pulumi.Input['PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgsDict']]
+        """
+        Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        """
+        logs_bucket_uri: NotRequired[pulumi.Input[str]]
+        """
+        An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+        """
+        num_executors: NotRequired[pulumi.Input[int]]
+        """
+        The number of executor VMs requested.
+        """
+        warehouse_bucket_uri: NotRequired[pulumi.Input[str]]
+        """
+        An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
+        """
+elif False:
+    PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs:
+    def __init__(__self__, *,
+                 configuration: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 driver_shape: Optional[pulumi.Input[str]] = None,
+                 driver_shape_config_details: Optional[pulumi.Input['PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs']] = None,
+                 executor_shape: Optional[pulumi.Input[str]] = None,
+                 executor_shape_config_details: Optional[pulumi.Input['PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs']] = None,
+                 logs_bucket_uri: Optional[pulumi.Input[str]] = None,
+                 num_executors: Optional[pulumi.Input[int]] = None,
+                 warehouse_bucket_uri: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] configuration: The Spark configuration passed to the running process.
+        :param pulumi.Input[str] driver_shape: The VM shape for the driver.
+        :param pulumi.Input['PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs'] driver_shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        :param pulumi.Input[str] executor_shape: The VM shape for the executors.
+        :param pulumi.Input['PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs'] executor_shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        :param pulumi.Input[str] logs_bucket_uri: An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+        :param pulumi.Input[int] num_executors: The number of executor VMs requested.
+        :param pulumi.Input[str] warehouse_bucket_uri: An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
+        """
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+        if driver_shape is not None:
+            pulumi.set(__self__, "driver_shape", driver_shape)
+        if driver_shape_config_details is not None:
+            pulumi.set(__self__, "driver_shape_config_details", driver_shape_config_details)
+        if executor_shape is not None:
+            pulumi.set(__self__, "executor_shape", executor_shape)
+        if executor_shape_config_details is not None:
+            pulumi.set(__self__, "executor_shape_config_details", executor_shape_config_details)
+        if logs_bucket_uri is not None:
+            pulumi.set(__self__, "logs_bucket_uri", logs_bucket_uri)
+        if num_executors is not None:
+            pulumi.set(__self__, "num_executors", num_executors)
+        if warehouse_bucket_uri is not None:
+            pulumi.set(__self__, "warehouse_bucket_uri", warehouse_bucket_uri)
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        The Spark configuration passed to the running process.
+        """
+        return pulumi.get(self, "configuration")
+
+    @configuration.setter
+    def configuration(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "configuration", value)
+
+    @property
+    @pulumi.getter(name="driverShape")
+    def driver_shape(self) -> Optional[pulumi.Input[str]]:
+        """
+        The VM shape for the driver.
+        """
+        return pulumi.get(self, "driver_shape")
+
+    @driver_shape.setter
+    def driver_shape(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "driver_shape", value)
+
+    @property
+    @pulumi.getter(name="driverShapeConfigDetails")
+    def driver_shape_config_details(self) -> Optional[pulumi.Input['PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs']]:
+        """
+        Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        """
+        return pulumi.get(self, "driver_shape_config_details")
+
+    @driver_shape_config_details.setter
+    def driver_shape_config_details(self, value: Optional[pulumi.Input['PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs']]):
+        pulumi.set(self, "driver_shape_config_details", value)
+
+    @property
+    @pulumi.getter(name="executorShape")
+    def executor_shape(self) -> Optional[pulumi.Input[str]]:
+        """
+        The VM shape for the executors.
+        """
+        return pulumi.get(self, "executor_shape")
+
+    @executor_shape.setter
+    def executor_shape(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "executor_shape", value)
+
+    @property
+    @pulumi.getter(name="executorShapeConfigDetails")
+    def executor_shape_config_details(self) -> Optional[pulumi.Input['PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs']]:
+        """
+        Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        """
+        return pulumi.get(self, "executor_shape_config_details")
+
+    @executor_shape_config_details.setter
+    def executor_shape_config_details(self, value: Optional[pulumi.Input['PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs']]):
+        pulumi.set(self, "executor_shape_config_details", value)
+
+    @property
+    @pulumi.getter(name="logsBucketUri")
+    def logs_bucket_uri(self) -> Optional[pulumi.Input[str]]:
+        """
+        An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+        """
+        return pulumi.get(self, "logs_bucket_uri")
+
+    @logs_bucket_uri.setter
+    def logs_bucket_uri(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "logs_bucket_uri", value)
+
+    @property
+    @pulumi.getter(name="numExecutors")
+    def num_executors(self) -> Optional[pulumi.Input[int]]:
+        """
+        The number of executor VMs requested.
+        """
+        return pulumi.get(self, "num_executors")
+
+    @num_executors.setter
+    def num_executors(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "num_executors", value)
+
+    @property
+    @pulumi.getter(name="warehouseBucketUri")
+    def warehouse_bucket_uri(self) -> Optional[pulumi.Input[str]]:
+        """
+        An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
+        """
+        return pulumi.get(self, "warehouse_bucket_uri")
+
+    @warehouse_bucket_uri.setter
+    def warehouse_bucket_uri(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "warehouse_bucket_uri", value)
+
+
+if not MYPY:
+    class PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgsDict(TypedDict):
+        memory_in_gbs: NotRequired[pulumi.Input[float]]
+        """
+        A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        """
+        ocpus: NotRequired[pulumi.Input[float]]
+        """
+        A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        """
+elif False:
+    PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs:
+    def __init__(__self__, *,
+                 memory_in_gbs: Optional[pulumi.Input[float]] = None,
+                 ocpus: Optional[pulumi.Input[float]] = None):
+        """
+        :param pulumi.Input[float] memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        :param pulumi.Input[float] ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        """
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
+        """
+        A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @memory_in_gbs.setter
+    def memory_in_gbs(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "memory_in_gbs", value)
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> Optional[pulumi.Input[float]]:
+        """
+        A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @ocpus.setter
+    def ocpus(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "ocpus", value)
+
+
+if not MYPY:
+    class PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgsDict(TypedDict):
+        memory_in_gbs: NotRequired[pulumi.Input[float]]
+        """
+        A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        """
+        ocpus: NotRequired[pulumi.Input[float]]
+        """
+        A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        """
+elif False:
+    PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs:
+    def __init__(__self__, *,
+                 memory_in_gbs: Optional[pulumi.Input[float]] = None,
+                 ocpus: Optional[pulumi.Input[float]] = None):
+        """
+        :param pulumi.Input[float] memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        :param pulumi.Input[float] ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        """
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
+        """
+        A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @memory_in_gbs.setter
+    def memory_in_gbs(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "memory_in_gbs", value)
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> Optional[pulumi.Input[float]]:
+        """
+        A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @ocpus.setter
+    def ocpus(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "ocpus", value)
+
+
+if not MYPY:
     class PipelineRunStepRunArgsDict(TypedDict):
+        dataflow_run_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow run triggered for this step run.
+        """
         job_run_id: NotRequired[pulumi.Input[str]]
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
@@ -5014,6 +5440,7 @@ elif False:
 @pulumi.input_type
 class PipelineRunStepRunArgs:
     def __init__(__self__, *,
+                 dataflow_run_id: Optional[pulumi.Input[str]] = None,
                  job_run_id: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
@@ -5022,6 +5449,7 @@ class PipelineRunStepRunArgs:
                  time_finished: Optional[pulumi.Input[str]] = None,
                  time_started: Optional[pulumi.Input[str]] = None):
         """
+        :param pulumi.Input[str] dataflow_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow run triggered for this step run.
         :param pulumi.Input[str] job_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
         :param pulumi.Input[str] lifecycle_details: Details of the state of the step run.
         :param pulumi.Input[str] state: The state of the step run.
@@ -5030,6 +5458,8 @@ class PipelineRunStepRunArgs:
         :param pulumi.Input[str] time_finished: The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] time_started: The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
+        if dataflow_run_id is not None:
+            pulumi.set(__self__, "dataflow_run_id", dataflow_run_id)
         if job_run_id is not None:
             pulumi.set(__self__, "job_run_id", job_run_id)
         if lifecycle_details is not None:
@@ -5044,6 +5474,18 @@ class PipelineRunStepRunArgs:
             pulumi.set(__self__, "time_finished", time_finished)
         if time_started is not None:
             pulumi.set(__self__, "time_started", time_started)
+
+    @property
+    @pulumi.getter(name="dataflowRunId")
+    def dataflow_run_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow run triggered for this step run.
+        """
+        return pulumi.get(self, "dataflow_run_id")
+
+    @dataflow_run_id.setter
+    def dataflow_run_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "dataflow_run_id", value)
 
     @property
     @pulumi.getter(name="jobRunId")
@@ -5132,13 +5574,13 @@ class PipelineRunStepRunArgs:
 
 if not MYPY:
     class PipelineStepArtifactArgsDict(TypedDict):
-        artifact_content_length: pulumi.Input[str]
         pipeline_step_artifact: pulumi.Input[str]
         step_name: pulumi.Input[str]
         """
         The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
         """
         artifact_content_disposition: NotRequired[pulumi.Input[str]]
+        artifact_content_length: NotRequired[pulumi.Input[str]]
         artifact_content_md5: NotRequired[pulumi.Input[str]]
         artifact_last_modified: NotRequired[pulumi.Input[str]]
 elif False:
@@ -5147,33 +5589,25 @@ elif False:
 @pulumi.input_type
 class PipelineStepArtifactArgs:
     def __init__(__self__, *,
-                 artifact_content_length: pulumi.Input[str],
                  pipeline_step_artifact: pulumi.Input[str],
                  step_name: pulumi.Input[str],
                  artifact_content_disposition: Optional[pulumi.Input[str]] = None,
+                 artifact_content_length: Optional[pulumi.Input[str]] = None,
                  artifact_content_md5: Optional[pulumi.Input[str]] = None,
                  artifact_last_modified: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] step_name: The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
         """
-        pulumi.set(__self__, "artifact_content_length", artifact_content_length)
         pulumi.set(__self__, "pipeline_step_artifact", pipeline_step_artifact)
         pulumi.set(__self__, "step_name", step_name)
         if artifact_content_disposition is not None:
             pulumi.set(__self__, "artifact_content_disposition", artifact_content_disposition)
+        if artifact_content_length is not None:
+            pulumi.set(__self__, "artifact_content_length", artifact_content_length)
         if artifact_content_md5 is not None:
             pulumi.set(__self__, "artifact_content_md5", artifact_content_md5)
         if artifact_last_modified is not None:
             pulumi.set(__self__, "artifact_last_modified", artifact_last_modified)
-
-    @property
-    @pulumi.getter(name="artifactContentLength")
-    def artifact_content_length(self) -> pulumi.Input[str]:
-        return pulumi.get(self, "artifact_content_length")
-
-    @artifact_content_length.setter
-    def artifact_content_length(self, value: pulumi.Input[str]):
-        pulumi.set(self, "artifact_content_length", value)
 
     @property
     @pulumi.getter(name="pipelineStepArtifact")
@@ -5206,6 +5640,15 @@ class PipelineStepArtifactArgs:
         pulumi.set(self, "artifact_content_disposition", value)
 
     @property
+    @pulumi.getter(name="artifactContentLength")
+    def artifact_content_length(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "artifact_content_length")
+
+    @artifact_content_length.setter
+    def artifact_content_length(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "artifact_content_length", value)
+
+    @property
     @pulumi.getter(name="artifactContentMd5")
     def artifact_content_md5(self) -> Optional[pulumi.Input[str]]:
         return pulumi.get(self, "artifact_content_md5")
@@ -5233,10 +5676,10 @@ if not MYPY:
         step_type: pulumi.Input[str]
         """
         (Updatable) The type of step.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        application_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow application to be used as a step.
         """
         depends_ons: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
         """
@@ -5262,9 +5705,17 @@ if not MYPY:
         """
         Container Details for a step in pipeline.
         """
+        step_dataflow_configuration_details: NotRequired[pulumi.Input['PipelineStepDetailStepDataflowConfigurationDetailsArgsDict']]
+        """
+        (Updatable) The configuration details of a Dataflow step.
+        """
         step_infrastructure_configuration_details: NotRequired[pulumi.Input['PipelineStepDetailStepInfrastructureConfigurationDetailsArgsDict']]
         """
         (Updatable) The infrastructure configuration details of a pipeline or a step.
+        """
+        step_storage_mount_configuration_details_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['PipelineStepDetailStepStorageMountConfigurationDetailsListArgsDict']]]]
+        """
+        (Updatable) The storage mount details to mount to the instance running the pipeline step.
         """
 elif False:
     PipelineStepDetailArgsDict: TypeAlias = Mapping[str, Any]
@@ -5274,30 +5725,34 @@ class PipelineStepDetailArgs:
     def __init__(__self__, *,
                  step_name: pulumi.Input[str],
                  step_type: pulumi.Input[str],
+                 application_id: Optional[pulumi.Input[str]] = None,
                  depends_ons: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  is_artifact_uploaded: Optional[pulumi.Input[bool]] = None,
                  job_id: Optional[pulumi.Input[str]] = None,
                  step_configuration_details: Optional[pulumi.Input['PipelineStepDetailStepConfigurationDetailsArgs']] = None,
                  step_container_configuration_details: Optional[pulumi.Input['PipelineStepDetailStepContainerConfigurationDetailsArgs']] = None,
-                 step_infrastructure_configuration_details: Optional[pulumi.Input['PipelineStepDetailStepInfrastructureConfigurationDetailsArgs']] = None):
+                 step_dataflow_configuration_details: Optional[pulumi.Input['PipelineStepDetailStepDataflowConfigurationDetailsArgs']] = None,
+                 step_infrastructure_configuration_details: Optional[pulumi.Input['PipelineStepDetailStepInfrastructureConfigurationDetailsArgs']] = None,
+                 step_storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineStepDetailStepStorageMountConfigurationDetailsListArgs']]]] = None):
         """
         :param pulumi.Input[str] step_name: (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
         :param pulumi.Input[str] step_type: (Updatable) The type of step.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] application_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow application to be used as a step.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] depends_ons: The list of step names this current step depends on for execution.
         :param pulumi.Input[str] description: (Updatable) A short description of the step.
         :param pulumi.Input[bool] is_artifact_uploaded: A flag to indicate whether the artifact has been uploaded for this step or not.
         :param pulumi.Input[str] job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to be used as a step.
         :param pulumi.Input['PipelineStepDetailStepConfigurationDetailsArgs'] step_configuration_details: (Updatable) The configuration details of a step.
         :param pulumi.Input['PipelineStepDetailStepContainerConfigurationDetailsArgs'] step_container_configuration_details: Container Details for a step in pipeline.
+        :param pulumi.Input['PipelineStepDetailStepDataflowConfigurationDetailsArgs'] step_dataflow_configuration_details: (Updatable) The configuration details of a Dataflow step.
         :param pulumi.Input['PipelineStepDetailStepInfrastructureConfigurationDetailsArgs'] step_infrastructure_configuration_details: (Updatable) The infrastructure configuration details of a pipeline or a step.
+        :param pulumi.Input[Sequence[pulumi.Input['PipelineStepDetailStepStorageMountConfigurationDetailsListArgs']]] step_storage_mount_configuration_details_lists: (Updatable) The storage mount details to mount to the instance running the pipeline step.
         """
         pulumi.set(__self__, "step_name", step_name)
         pulumi.set(__self__, "step_type", step_type)
+        if application_id is not None:
+            pulumi.set(__self__, "application_id", application_id)
         if depends_ons is not None:
             pulumi.set(__self__, "depends_ons", depends_ons)
         if description is not None:
@@ -5310,8 +5765,12 @@ class PipelineStepDetailArgs:
             pulumi.set(__self__, "step_configuration_details", step_configuration_details)
         if step_container_configuration_details is not None:
             pulumi.set(__self__, "step_container_configuration_details", step_container_configuration_details)
+        if step_dataflow_configuration_details is not None:
+            pulumi.set(__self__, "step_dataflow_configuration_details", step_dataflow_configuration_details)
         if step_infrastructure_configuration_details is not None:
             pulumi.set(__self__, "step_infrastructure_configuration_details", step_infrastructure_configuration_details)
+        if step_storage_mount_configuration_details_lists is not None:
+            pulumi.set(__self__, "step_storage_mount_configuration_details_lists", step_storage_mount_configuration_details_lists)
 
     @property
     @pulumi.getter(name="stepName")
@@ -5330,16 +5789,24 @@ class PipelineStepDetailArgs:
     def step_type(self) -> pulumi.Input[str]:
         """
         (Updatable) The type of step.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "step_type")
 
     @step_type.setter
     def step_type(self, value: pulumi.Input[str]):
         pulumi.set(self, "step_type", value)
+
+    @property
+    @pulumi.getter(name="applicationId")
+    def application_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow application to be used as a step.
+        """
+        return pulumi.get(self, "application_id")
+
+    @application_id.setter
+    def application_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "application_id", value)
 
     @property
     @pulumi.getter(name="dependsOns")
@@ -5414,6 +5881,18 @@ class PipelineStepDetailArgs:
         pulumi.set(self, "step_container_configuration_details", value)
 
     @property
+    @pulumi.getter(name="stepDataflowConfigurationDetails")
+    def step_dataflow_configuration_details(self) -> Optional[pulumi.Input['PipelineStepDetailStepDataflowConfigurationDetailsArgs']]:
+        """
+        (Updatable) The configuration details of a Dataflow step.
+        """
+        return pulumi.get(self, "step_dataflow_configuration_details")
+
+    @step_dataflow_configuration_details.setter
+    def step_dataflow_configuration_details(self, value: Optional[pulumi.Input['PipelineStepDetailStepDataflowConfigurationDetailsArgs']]):
+        pulumi.set(self, "step_dataflow_configuration_details", value)
+
+    @property
     @pulumi.getter(name="stepInfrastructureConfigurationDetails")
     def step_infrastructure_configuration_details(self) -> Optional[pulumi.Input['PipelineStepDetailStepInfrastructureConfigurationDetailsArgs']]:
         """
@@ -5424,6 +5903,18 @@ class PipelineStepDetailArgs:
     @step_infrastructure_configuration_details.setter
     def step_infrastructure_configuration_details(self, value: Optional[pulumi.Input['PipelineStepDetailStepInfrastructureConfigurationDetailsArgs']]):
         pulumi.set(self, "step_infrastructure_configuration_details", value)
+
+    @property
+    @pulumi.getter(name="stepStorageMountConfigurationDetailsLists")
+    def step_storage_mount_configuration_details_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PipelineStepDetailStepStorageMountConfigurationDetailsListArgs']]]]:
+        """
+        (Updatable) The storage mount details to mount to the instance running the pipeline step.
+        """
+        return pulumi.get(self, "step_storage_mount_configuration_details_lists")
+
+    @step_storage_mount_configuration_details_lists.setter
+    def step_storage_mount_configuration_details_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineStepDetailStepStorageMountConfigurationDetailsListArgs']]]]):
+        pulumi.set(self, "step_storage_mount_configuration_details_lists", value)
 
 
 if not MYPY:
@@ -5629,6 +6120,282 @@ class PipelineStepDetailStepContainerConfigurationDetailsArgs:
 
 
 if not MYPY:
+    class PipelineStepDetailStepDataflowConfigurationDetailsArgsDict(TypedDict):
+        configuration: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) The Spark configuration passed to the running process.
+        """
+        driver_shape: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The VM shape for the driver.
+        """
+        driver_shape_config_details: NotRequired[pulumi.Input['PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgsDict']]
+        """
+        (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        """
+        executor_shape: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The VM shape for the executors.
+        """
+        executor_shape_config_details: NotRequired[pulumi.Input['PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgsDict']]
+        """
+        (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        """
+        logs_bucket_uri: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+        """
+        num_executors: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The number of executor VMs requested.
+        """
+        warehouse_bucket_uri: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
+        """
+elif False:
+    PipelineStepDetailStepDataflowConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PipelineStepDetailStepDataflowConfigurationDetailsArgs:
+    def __init__(__self__, *,
+                 configuration: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 driver_shape: Optional[pulumi.Input[str]] = None,
+                 driver_shape_config_details: Optional[pulumi.Input['PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs']] = None,
+                 executor_shape: Optional[pulumi.Input[str]] = None,
+                 executor_shape_config_details: Optional[pulumi.Input['PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs']] = None,
+                 logs_bucket_uri: Optional[pulumi.Input[str]] = None,
+                 num_executors: Optional[pulumi.Input[int]] = None,
+                 warehouse_bucket_uri: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] configuration: (Updatable) The Spark configuration passed to the running process.
+        :param pulumi.Input[str] driver_shape: (Updatable) The VM shape for the driver.
+        :param pulumi.Input['PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs'] driver_shape_config_details: (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        :param pulumi.Input[str] executor_shape: (Updatable) The VM shape for the executors.
+        :param pulumi.Input['PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs'] executor_shape_config_details: (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        :param pulumi.Input[str] logs_bucket_uri: (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+        :param pulumi.Input[int] num_executors: (Updatable) The number of executor VMs requested.
+        :param pulumi.Input[str] warehouse_bucket_uri: (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
+        """
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+        if driver_shape is not None:
+            pulumi.set(__self__, "driver_shape", driver_shape)
+        if driver_shape_config_details is not None:
+            pulumi.set(__self__, "driver_shape_config_details", driver_shape_config_details)
+        if executor_shape is not None:
+            pulumi.set(__self__, "executor_shape", executor_shape)
+        if executor_shape_config_details is not None:
+            pulumi.set(__self__, "executor_shape_config_details", executor_shape_config_details)
+        if logs_bucket_uri is not None:
+            pulumi.set(__self__, "logs_bucket_uri", logs_bucket_uri)
+        if num_executors is not None:
+            pulumi.set(__self__, "num_executors", num_executors)
+        if warehouse_bucket_uri is not None:
+            pulumi.set(__self__, "warehouse_bucket_uri", warehouse_bucket_uri)
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        (Updatable) The Spark configuration passed to the running process.
+        """
+        return pulumi.get(self, "configuration")
+
+    @configuration.setter
+    def configuration(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "configuration", value)
+
+    @property
+    @pulumi.getter(name="driverShape")
+    def driver_shape(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The VM shape for the driver.
+        """
+        return pulumi.get(self, "driver_shape")
+
+    @driver_shape.setter
+    def driver_shape(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "driver_shape", value)
+
+    @property
+    @pulumi.getter(name="driverShapeConfigDetails")
+    def driver_shape_config_details(self) -> Optional[pulumi.Input['PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs']]:
+        """
+        (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        """
+        return pulumi.get(self, "driver_shape_config_details")
+
+    @driver_shape_config_details.setter
+    def driver_shape_config_details(self, value: Optional[pulumi.Input['PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs']]):
+        pulumi.set(self, "driver_shape_config_details", value)
+
+    @property
+    @pulumi.getter(name="executorShape")
+    def executor_shape(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The VM shape for the executors.
+        """
+        return pulumi.get(self, "executor_shape")
+
+    @executor_shape.setter
+    def executor_shape(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "executor_shape", value)
+
+    @property
+    @pulumi.getter(name="executorShapeConfigDetails")
+    def executor_shape_config_details(self) -> Optional[pulumi.Input['PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs']]:
+        """
+        (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        """
+        return pulumi.get(self, "executor_shape_config_details")
+
+    @executor_shape_config_details.setter
+    def executor_shape_config_details(self, value: Optional[pulumi.Input['PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs']]):
+        pulumi.set(self, "executor_shape_config_details", value)
+
+    @property
+    @pulumi.getter(name="logsBucketUri")
+    def logs_bucket_uri(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+        """
+        return pulumi.get(self, "logs_bucket_uri")
+
+    @logs_bucket_uri.setter
+    def logs_bucket_uri(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "logs_bucket_uri", value)
+
+    @property
+    @pulumi.getter(name="numExecutors")
+    def num_executors(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The number of executor VMs requested.
+        """
+        return pulumi.get(self, "num_executors")
+
+    @num_executors.setter
+    def num_executors(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "num_executors", value)
+
+    @property
+    @pulumi.getter(name="warehouseBucketUri")
+    def warehouse_bucket_uri(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
+        """
+        return pulumi.get(self, "warehouse_bucket_uri")
+
+    @warehouse_bucket_uri.setter
+    def warehouse_bucket_uri(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "warehouse_bucket_uri", value)
+
+
+if not MYPY:
+    class PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgsDict(TypedDict):
+        memory_in_gbs: NotRequired[pulumi.Input[float]]
+        """
+        (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        """
+        ocpus: NotRequired[pulumi.Input[float]]
+        """
+        (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        """
+elif False:
+    PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs:
+    def __init__(__self__, *,
+                 memory_in_gbs: Optional[pulumi.Input[float]] = None,
+                 ocpus: Optional[pulumi.Input[float]] = None):
+        """
+        :param pulumi.Input[float] memory_in_gbs: (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        :param pulumi.Input[float] ocpus: (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        """
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
+        """
+        (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @memory_in_gbs.setter
+    def memory_in_gbs(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "memory_in_gbs", value)
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> Optional[pulumi.Input[float]]:
+        """
+        (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @ocpus.setter
+    def ocpus(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "ocpus", value)
+
+
+if not MYPY:
+    class PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgsDict(TypedDict):
+        memory_in_gbs: NotRequired[pulumi.Input[float]]
+        """
+        (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        """
+        ocpus: NotRequired[pulumi.Input[float]]
+        """
+        (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        """
+elif False:
+    PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs:
+    def __init__(__self__, *,
+                 memory_in_gbs: Optional[pulumi.Input[float]] = None,
+                 ocpus: Optional[pulumi.Input[float]] = None):
+        """
+        :param pulumi.Input[float] memory_in_gbs: (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        :param pulumi.Input[float] ocpus: (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        """
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
+        """
+        (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @memory_in_gbs.setter
+    def memory_in_gbs(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "memory_in_gbs", value)
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> Optional[pulumi.Input[float]]:
+        """
+        (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @ocpus.setter
+    def ocpus(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "ocpus", value)
+
+
+if not MYPY:
     class PipelineStepDetailStepInfrastructureConfigurationDetailsArgsDict(TypedDict):
         block_storage_size_in_gbs: pulumi.Input[int]
         """
@@ -5768,6 +6535,358 @@ class PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails
     @ocpus.setter
     def ocpus(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "ocpus", value)
+
+
+if not MYPY:
+    class PipelineStepDetailStepStorageMountConfigurationDetailsListArgsDict(TypedDict):
+        destination_directory_name: pulumi.Input[str]
+        """
+        (Updatable) The local directory name to be mounted
+        """
+        storage_type: pulumi.Input[str]
+        """
+        (Updatable) The type of storage.
+        """
+        bucket: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The object storage bucket
+        """
+        destination_path: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The local path of the mounted directory, excluding directory name.
+        """
+        export_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) OCID of the export
+        """
+        mount_target_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) OCID of the mount target
+        """
+        namespace: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The object storage namespace
+        """
+        prefix: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Prefix in the bucket to mount
+        """
+elif False:
+    PipelineStepDetailStepStorageMountConfigurationDetailsListArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PipelineStepDetailStepStorageMountConfigurationDetailsListArgs:
+    def __init__(__self__, *,
+                 destination_directory_name: pulumi.Input[str],
+                 storage_type: pulumi.Input[str],
+                 bucket: Optional[pulumi.Input[str]] = None,
+                 destination_path: Optional[pulumi.Input[str]] = None,
+                 export_id: Optional[pulumi.Input[str]] = None,
+                 mount_target_id: Optional[pulumi.Input[str]] = None,
+                 namespace: Optional[pulumi.Input[str]] = None,
+                 prefix: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] destination_directory_name: (Updatable) The local directory name to be mounted
+        :param pulumi.Input[str] storage_type: (Updatable) The type of storage.
+        :param pulumi.Input[str] bucket: (Updatable) The object storage bucket
+        :param pulumi.Input[str] destination_path: (Updatable) The local path of the mounted directory, excluding directory name.
+        :param pulumi.Input[str] export_id: (Updatable) OCID of the export
+        :param pulumi.Input[str] mount_target_id: (Updatable) OCID of the mount target
+        :param pulumi.Input[str] namespace: (Updatable) The object storage namespace
+        :param pulumi.Input[str] prefix: (Updatable) Prefix in the bucket to mount
+        """
+        pulumi.set(__self__, "destination_directory_name", destination_directory_name)
+        pulumi.set(__self__, "storage_type", storage_type)
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if destination_path is not None:
+            pulumi.set(__self__, "destination_path", destination_path)
+        if export_id is not None:
+            pulumi.set(__self__, "export_id", export_id)
+        if mount_target_id is not None:
+            pulumi.set(__self__, "mount_target_id", mount_target_id)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+
+    @property
+    @pulumi.getter(name="destinationDirectoryName")
+    def destination_directory_name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The local directory name to be mounted
+        """
+        return pulumi.get(self, "destination_directory_name")
+
+    @destination_directory_name.setter
+    def destination_directory_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "destination_directory_name", value)
+
+    @property
+    @pulumi.getter(name="storageType")
+    def storage_type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The type of storage.
+        """
+        return pulumi.get(self, "storage_type")
+
+    @storage_type.setter
+    def storage_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "storage_type", value)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The object storage bucket
+        """
+        return pulumi.get(self, "bucket")
+
+    @bucket.setter
+    def bucket(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "bucket", value)
+
+    @property
+    @pulumi.getter(name="destinationPath")
+    def destination_path(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The local path of the mounted directory, excluding directory name.
+        """
+        return pulumi.get(self, "destination_path")
+
+    @destination_path.setter
+    def destination_path(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "destination_path", value)
+
+    @property
+    @pulumi.getter(name="exportId")
+    def export_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) OCID of the export
+        """
+        return pulumi.get(self, "export_id")
+
+    @export_id.setter
+    def export_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "export_id", value)
+
+    @property
+    @pulumi.getter(name="mountTargetId")
+    def mount_target_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) OCID of the mount target
+        """
+        return pulumi.get(self, "mount_target_id")
+
+    @mount_target_id.setter
+    def mount_target_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "mount_target_id", value)
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The object storage namespace
+        """
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "namespace", value)
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Prefix in the bucket to mount
+        """
+        return pulumi.get(self, "prefix")
+
+    @prefix.setter
+    def prefix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "prefix", value)
+
+
+if not MYPY:
+    class PipelineStorageMountConfigurationDetailsListArgsDict(TypedDict):
+        destination_directory_name: pulumi.Input[str]
+        """
+        (Updatable) The local directory name to be mounted
+        """
+        storage_type: pulumi.Input[str]
+        """
+        (Updatable) The type of storage.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        bucket: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The object storage bucket
+        """
+        destination_path: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The local path of the mounted directory, excluding directory name.
+        """
+        export_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) OCID of the export
+        """
+        mount_target_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) OCID of the mount target
+        """
+        namespace: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The object storage namespace
+        """
+        prefix: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Prefix in the bucket to mount
+        """
+elif False:
+    PipelineStorageMountConfigurationDetailsListArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PipelineStorageMountConfigurationDetailsListArgs:
+    def __init__(__self__, *,
+                 destination_directory_name: pulumi.Input[str],
+                 storage_type: pulumi.Input[str],
+                 bucket: Optional[pulumi.Input[str]] = None,
+                 destination_path: Optional[pulumi.Input[str]] = None,
+                 export_id: Optional[pulumi.Input[str]] = None,
+                 mount_target_id: Optional[pulumi.Input[str]] = None,
+                 namespace: Optional[pulumi.Input[str]] = None,
+                 prefix: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] destination_directory_name: (Updatable) The local directory name to be mounted
+        :param pulumi.Input[str] storage_type: (Updatable) The type of storage.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] bucket: (Updatable) The object storage bucket
+        :param pulumi.Input[str] destination_path: (Updatable) The local path of the mounted directory, excluding directory name.
+        :param pulumi.Input[str] export_id: (Updatable) OCID of the export
+        :param pulumi.Input[str] mount_target_id: (Updatable) OCID of the mount target
+        :param pulumi.Input[str] namespace: (Updatable) The object storage namespace
+        :param pulumi.Input[str] prefix: (Updatable) Prefix in the bucket to mount
+        """
+        pulumi.set(__self__, "destination_directory_name", destination_directory_name)
+        pulumi.set(__self__, "storage_type", storage_type)
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if destination_path is not None:
+            pulumi.set(__self__, "destination_path", destination_path)
+        if export_id is not None:
+            pulumi.set(__self__, "export_id", export_id)
+        if mount_target_id is not None:
+            pulumi.set(__self__, "mount_target_id", mount_target_id)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+
+    @property
+    @pulumi.getter(name="destinationDirectoryName")
+    def destination_directory_name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The local directory name to be mounted
+        """
+        return pulumi.get(self, "destination_directory_name")
+
+    @destination_directory_name.setter
+    def destination_directory_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "destination_directory_name", value)
+
+    @property
+    @pulumi.getter(name="storageType")
+    def storage_type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The type of storage.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "storage_type")
+
+    @storage_type.setter
+    def storage_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "storage_type", value)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The object storage bucket
+        """
+        return pulumi.get(self, "bucket")
+
+    @bucket.setter
+    def bucket(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "bucket", value)
+
+    @property
+    @pulumi.getter(name="destinationPath")
+    def destination_path(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The local path of the mounted directory, excluding directory name.
+        """
+        return pulumi.get(self, "destination_path")
+
+    @destination_path.setter
+    def destination_path(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "destination_path", value)
+
+    @property
+    @pulumi.getter(name="exportId")
+    def export_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) OCID of the export
+        """
+        return pulumi.get(self, "export_id")
+
+    @export_id.setter
+    def export_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "export_id", value)
+
+    @property
+    @pulumi.getter(name="mountTargetId")
+    def mount_target_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) OCID of the mount target
+        """
+        return pulumi.get(self, "mount_target_id")
+
+    @mount_target_id.setter
+    def mount_target_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "mount_target_id", value)
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The object storage namespace
+        """
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "namespace", value)
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Prefix in the bucket to mount
+        """
+        return pulumi.get(self, "prefix")
+
+    @prefix.setter
+    def prefix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "prefix", value)
 
 
 if not MYPY:

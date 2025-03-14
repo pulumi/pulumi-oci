@@ -55,12 +55,28 @@ public final class GetFlexComponentsArgs extends com.pulumi.resources.InvokeArgs
         return Optional.ofNullable(this.name);
     }
 
+    /**
+     * A filter to return only resources that belong to the entire shape name given. The match is not case sensitive.
+     * 
+     */
+    @Import(name="shape")
+    private @Nullable Output<String> shape;
+
+    /**
+     * @return A filter to return only resources that belong to the entire shape name given. The match is not case sensitive.
+     * 
+     */
+    public Optional<Output<String>> shape() {
+        return Optional.ofNullable(this.shape);
+    }
+
     private GetFlexComponentsArgs() {}
 
     private GetFlexComponentsArgs(GetFlexComponentsArgs $) {
         this.compartmentId = $.compartmentId;
         this.filters = $.filters;
         this.name = $.name;
+        this.shape = $.shape;
     }
 
     public static Builder builder() {
@@ -134,6 +150,27 @@ public final class GetFlexComponentsArgs extends com.pulumi.resources.InvokeArgs
          */
         public Builder name(String name) {
             return name(Output.of(name));
+        }
+
+        /**
+         * @param shape A filter to return only resources that belong to the entire shape name given. The match is not case sensitive.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shape(@Nullable Output<String> shape) {
+            $.shape = shape;
+            return this;
+        }
+
+        /**
+         * @param shape A filter to return only resources that belong to the entire shape name given. The match is not case sensitive.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shape(String shape) {
+            return shape(Output.of(shape));
         }
 
         public GetFlexComponentsArgs build() {

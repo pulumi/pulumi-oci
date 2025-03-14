@@ -76,7 +76,12 @@ import (
 //				},
 //				ManagementPolicy: &psql.DbSystemManagementPolicyArgs{
 //					BackupPolicy: &psql.DbSystemManagementPolicyBackupPolicyArgs{
-//						BackupStart:     pulumi.Any(dbSystemManagementPolicyBackupPolicyBackupStart),
+//						BackupStart: pulumi.Any(dbSystemManagementPolicyBackupPolicyBackupStart),
+//						CopyPolicy: &psql.DbSystemManagementPolicyBackupPolicyCopyPolicyArgs{
+//							CompartmentId:   pulumi.Any(compartmentId),
+//							Regions:         pulumi.Any(dbSystemManagementPolicyBackupPolicyCopyPolicyRegions),
+//							RetentionPeriod: pulumi.Any(dbSystemManagementPolicyBackupPolicyCopyPolicyRetentionPeriod),
+//						},
 //						DaysOfTheMonths: pulumi.Any(dbSystemManagementPolicyBackupPolicyDaysOfTheMonth),
 //						DaysOfTheWeeks:  pulumi.Any(dbSystemManagementPolicyBackupPolicyDaysOfTheWeek),
 //						Kind:            pulumi.Any(dbSystemManagementPolicyBackupPolicyKind),

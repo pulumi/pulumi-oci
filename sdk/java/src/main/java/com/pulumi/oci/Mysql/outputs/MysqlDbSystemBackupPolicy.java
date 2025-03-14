@@ -4,10 +4,12 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Mysql.outputs.MysqlDbSystemBackupPolicyCopyPolicy;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemBackupPolicyPitrPolicy;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -15,6 +17,15 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class MysqlDbSystemBackupPolicy {
+    /**
+     * @return (Updatable) List of policies of a DB system to schedule cross-region DB system backup copy.
+     * 
+     * The policy includes the name of the destination region to which the DB system backup will be copied, and an optional parameter which specifies the retention period of the copied DB system backup in days.
+     * 
+     * **Note:** Currently, only one policy can be specified in the list.
+     * 
+     */
+    private @Nullable List<MysqlDbSystemBackupPolicyCopyPolicy> copyPolicies;
     /**
      * @return (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces.
      * 
@@ -59,6 +70,17 @@ public final class MysqlDbSystemBackupPolicy {
     private @Nullable String windowStartTime;
 
     private MysqlDbSystemBackupPolicy() {}
+    /**
+     * @return (Updatable) List of policies of a DB system to schedule cross-region DB system backup copy.
+     * 
+     * The policy includes the name of the destination region to which the DB system backup will be copied, and an optional parameter which specifies the retention period of the copied DB system backup in days.
+     * 
+     * **Note:** Currently, only one policy can be specified in the list.
+     * 
+     */
+    public List<MysqlDbSystemBackupPolicyCopyPolicy> copyPolicies() {
+        return this.copyPolicies == null ? List.of() : this.copyPolicies;
+    }
     /**
      * @return (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces.
      * 
@@ -123,6 +145,7 @@ public final class MysqlDbSystemBackupPolicy {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable List<MysqlDbSystemBackupPolicyCopyPolicy> copyPolicies;
         private @Nullable Map<String,String> definedTags;
         private @Nullable Map<String,String> freeformTags;
         private @Nullable Boolean isEnabled;
@@ -132,6 +155,7 @@ public final class MysqlDbSystemBackupPolicy {
         public Builder() {}
         public Builder(MysqlDbSystemBackupPolicy defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.copyPolicies = defaults.copyPolicies;
     	      this.definedTags = defaults.definedTags;
     	      this.freeformTags = defaults.freeformTags;
     	      this.isEnabled = defaults.isEnabled;
@@ -140,6 +164,15 @@ public final class MysqlDbSystemBackupPolicy {
     	      this.windowStartTime = defaults.windowStartTime;
         }
 
+        @CustomType.Setter
+        public Builder copyPolicies(@Nullable List<MysqlDbSystemBackupPolicyCopyPolicy> copyPolicies) {
+
+            this.copyPolicies = copyPolicies;
+            return this;
+        }
+        public Builder copyPolicies(MysqlDbSystemBackupPolicyCopyPolicy... copyPolicies) {
+            return copyPolicies(List.of(copyPolicies));
+        }
         @CustomType.Setter
         public Builder definedTags(@Nullable Map<String,String> definedTags) {
 
@@ -178,6 +211,7 @@ public final class MysqlDbSystemBackupPolicy {
         }
         public MysqlDbSystemBackupPolicy build() {
             final var _resultValue = new MysqlDbSystemBackupPolicy();
+            _resultValue.copyPolicies = copyPolicies;
             _resultValue.definedTags = definedTags;
             _resultValue.freeformTags = freeformTags;
             _resultValue.isEnabled = isEnabled;

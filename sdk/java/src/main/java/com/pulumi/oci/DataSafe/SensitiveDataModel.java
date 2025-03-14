@@ -63,6 +63,7 @@ import javax.annotation.Nullable;
  *             .isIncludeAllSensitiveTypes(sensitiveDataModelIsIncludeAllSensitiveTypes)
  *             .isSampleDataCollectionEnabled(sensitiveDataModelIsSampleDataCollectionEnabled)
  *             .schemasForDiscoveries(sensitiveDataModelSchemasForDiscovery)
+ *             .sensitiveTypeGroupIdsForDiscoveries(sensitiveDataModelSensitiveTypeGroupIdsForDiscovery)
  *             .sensitiveTypeIdsForDiscoveries(sensitiveDataModelSensitiveTypeIdsForDiscovery)
  *             .tablesForDiscoveries(SensitiveDataModelTablesForDiscoveryArgs.builder()
  *                 .schemaName(sensitiveDataModelTablesForDiscoverySchemaName)
@@ -240,6 +241,20 @@ public class SensitiveDataModel extends com.pulumi.resources.CustomResource {
      */
     public Output<List<String>> schemasForDiscoveries() {
         return this.schemasForDiscoveries;
+    }
+    /**
+     * (Updatable) The OCIDs of the sensitive type groups to be used by data discovery jobs. All the sensitive types present in sensitive type group will be used for discovery.
+     * 
+     */
+    @Export(name="sensitiveTypeGroupIdsForDiscoveries", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> sensitiveTypeGroupIdsForDiscoveries;
+
+    /**
+     * @return (Updatable) The OCIDs of the sensitive type groups to be used by data discovery jobs. All the sensitive types present in sensitive type group will be used for discovery.
+     * 
+     */
+    public Output<List<String>> sensitiveTypeGroupIdsForDiscoveries() {
+        return this.sensitiveTypeGroupIdsForDiscoveries;
     }
     /**
      * (Updatable) The OCIDs of the sensitive types to be used by data discovery jobs. If OCID of a sensitive category is provided, all its child sensitive types are used for data discovery.

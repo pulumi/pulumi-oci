@@ -102,6 +102,7 @@ import javax.annotation.Nullable;
  *                     .isOpenIdConnectAuthEnabled(clusterOptionsOpenIdConnectTokenAuthenticationConfigIsOpenIdConnectAuthEnabled)
  *                     .caCertificate(clusterOptionsOpenIdConnectTokenAuthenticationConfigCaCertificate)
  *                     .clientId(testClient.id())
+ *                     .configurationFile(clusterOptionsOpenIdConnectTokenAuthenticationConfigConfigurationFile)
  *                     .groupsClaim(clusterOptionsOpenIdConnectTokenAuthenticationConfigGroupsClaim)
  *                     .groupsPrefix(clusterOptionsOpenIdConnectTokenAuthenticationConfigGroupsPrefix)
  *                     .issuerUrl(clusterOptionsOpenIdConnectTokenAuthenticationConfigIssuerUrl)

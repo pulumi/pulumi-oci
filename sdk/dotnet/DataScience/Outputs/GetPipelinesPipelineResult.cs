@@ -72,6 +72,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPipelinesPipelineStepDetailResult> StepDetails;
         /// <summary>
+        /// The storage mount details to mount to the instance running the pipeline step.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetPipelinesPipelineStorageMountConfigurationDetailsListResult> StorageMountConfigurationDetailsLists;
+        /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
@@ -118,6 +122,8 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             ImmutableArray<Outputs.GetPipelinesPipelineStepDetailResult> stepDetails,
 
+            ImmutableArray<Outputs.GetPipelinesPipelineStorageMountConfigurationDetailsListResult> storageMountConfigurationDetailsLists,
+
             ImmutableDictionary<string, string> systemTags,
 
             string timeCreated,
@@ -140,6 +146,7 @@ namespace Pulumi.Oci.DataScience.Outputs
             State = state;
             StepArtifacts = stepArtifacts;
             StepDetails = stepDetails;
+            StorageMountConfigurationDetailsLists = storageMountConfigurationDetailsLists;
             SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;

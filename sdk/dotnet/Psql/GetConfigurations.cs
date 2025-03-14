@@ -30,6 +30,7 @@ namespace Pulumi.Oci.Psql
         ///     var testConfigurations = Oci.Psql.GetConfigurations.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         ConfigType = configurationConfigType,
         ///         ConfigurationId = testConfiguration.Id,
         ///         DbVersion = configurationDbVersion,
         ///         DisplayName = configurationDisplayName,
@@ -62,6 +63,7 @@ namespace Pulumi.Oci.Psql
         ///     var testConfigurations = Oci.Psql.GetConfigurations.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         ConfigType = configurationConfigType,
         ///         ConfigurationId = testConfiguration.Id,
         ///         DbVersion = configurationDbVersion,
         ///         DisplayName = configurationDisplayName,
@@ -94,6 +96,7 @@ namespace Pulumi.Oci.Psql
         ///     var testConfigurations = Oci.Psql.GetConfigurations.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         ConfigType = configurationConfigType,
         ///         ConfigurationId = testConfiguration.Id,
         ///         DbVersion = configurationDbVersion,
         ///         DisplayName = configurationDisplayName,
@@ -116,6 +119,12 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         [Input("compartmentId")]
         public string? CompartmentId { get; set; }
+
+        /// <summary>
+        /// A filter to return only resources if their `configType` matches the given `configType`.
+        /// </summary>
+        [Input("configType")]
+        public string? ConfigType { get; set; }
 
         /// <summary>
         /// A unique identifier for the configuration.
@@ -170,6 +179,12 @@ namespace Pulumi.Oci.Psql
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
+        /// A filter to return only resources if their `configType` matches the given `configType`.
+        /// </summary>
+        [Input("configType")]
+        public Input<string>? ConfigType { get; set; }
+
+        /// <summary>
         /// A unique identifier for the configuration.
         /// </summary>
         [Input("configurationId")]
@@ -222,6 +237,10 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>
+        /// The type of configuration. Either user-created or a default configuration.
+        /// </summary>
+        public readonly string? ConfigType;
+        /// <summary>
         /// The list of configuration_collection.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetConfigurationsConfigurationCollectionResult> ConfigurationCollections;
@@ -252,6 +271,8 @@ namespace Pulumi.Oci.Psql
         private GetConfigurationsResult(
             string? compartmentId,
 
+            string? configType,
+
             ImmutableArray<Outputs.GetConfigurationsConfigurationCollectionResult> configurationCollections,
 
             string? configurationId,
@@ -269,6 +290,7 @@ namespace Pulumi.Oci.Psql
             string? state)
         {
             CompartmentId = compartmentId;
+            ConfigType = configType;
             ConfigurationCollections = configurationCollections;
             ConfigurationId = configurationId;
             DbVersion = dbVersion;

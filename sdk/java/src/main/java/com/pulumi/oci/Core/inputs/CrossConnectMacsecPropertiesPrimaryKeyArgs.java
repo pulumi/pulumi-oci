@@ -19,16 +19,12 @@ public final class CrossConnectMacsecPropertiesPrimaryKeyArgs extends com.pulumi
     /**
      * (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
      * 
-     * NOTE: Only the latest secret version will be used.
-     * 
      */
     @Import(name="connectivityAssociationKeySecretId", required=true)
     private Output<String> connectivityAssociationKeySecretId;
 
     /**
      * @return (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
-     * 
-     * NOTE: Only the latest secret version will be used.
      * 
      */
     public Output<String> connectivityAssociationKeySecretId() {
@@ -51,18 +47,14 @@ public final class CrossConnectMacsecPropertiesPrimaryKeyArgs extends com.pulumi
     }
 
     /**
-     * (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
-     * 
-     * NOTE: Only the latest secret version will be used.
+     * Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
      * 
      */
     @Import(name="connectivityAssociationNameSecretId", required=true)
     private Output<String> connectivityAssociationNameSecretId;
 
     /**
-     * @return (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
-     * 
-     * NOTE: Only the latest secret version will be used.
+     * @return Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
      * 
      */
     public Output<String> connectivityAssociationNameSecretId() {
@@ -114,8 +106,6 @@ public final class CrossConnectMacsecPropertiesPrimaryKeyArgs extends com.pulumi
         /**
          * @param connectivityAssociationKeySecretId (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
          * 
-         * NOTE: Only the latest secret version will be used.
-         * 
          * @return builder
          * 
          */
@@ -126,8 +116,6 @@ public final class CrossConnectMacsecPropertiesPrimaryKeyArgs extends com.pulumi
 
         /**
          * @param connectivityAssociationKeySecretId (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
-         * 
-         * NOTE: Only the latest secret version will be used.
          * 
          * @return builder
          * 
@@ -158,9 +146,7 @@ public final class CrossConnectMacsecPropertiesPrimaryKeyArgs extends com.pulumi
         }
 
         /**
-         * @param connectivityAssociationNameSecretId (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
-         * 
-         * NOTE: Only the latest secret version will be used.
+         * @param connectivityAssociationNameSecretId Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
          * 
          * @return builder
          * 
@@ -171,9 +157,7 @@ public final class CrossConnectMacsecPropertiesPrimaryKeyArgs extends com.pulumi
         }
 
         /**
-         * @param connectivityAssociationNameSecretId (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
-         * 
-         * NOTE: Only the latest secret version will be used.
+         * @param connectivityAssociationNameSecretId Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
          * 
          * @return builder
          * 

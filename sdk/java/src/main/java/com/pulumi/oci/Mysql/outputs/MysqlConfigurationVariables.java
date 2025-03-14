@@ -14,6 +14,20 @@ import javax.annotation.Nullable;
 @CustomType
 public final class MysqlConfigurationVariables {
     /**
+     * @return auto_increment_increment and auto_increment_offset are intended for use with circular (source-to-source) replication, and can be used to control the operation of AUTO_INCREMENT columns. Both variables have global and session values, and each can assume an integer value between 1 and 65,535 inclusive.
+     * 
+     * autoIncrementIncrement corresponds to the MySQL Replication Source Options variable [auto_increment_increment] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-source.html#sysvar_auto_increment_increment).
+     * 
+     */
+    private @Nullable Integer autoIncrementIncrement;
+    /**
+     * @return This variable has a default value of 1. If it is left with its default value, and Group Replication is started on the server in multi-primary mode, it is changed to the server ID.
+     * 
+     * autoIncrementOffset corresponds to the MySQL Replication Source Options variable [auto_increment_offset] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-source.html#sysvar_auto_increment_offset).
+     * 
+     */
+    private @Nullable Integer autoIncrementOffset;
+    /**
      * @return (&#34;autocommit&#34;)
      * 
      */
@@ -31,6 +45,20 @@ public final class MysqlConfigurationVariables {
      */
     private @Nullable Integer binlogExpireLogsSeconds;
     /**
+     * @return Controls how many microseconds the binary log commit waits before synchronizing the binary log file to disk. There is no delay by default. Setting this variable to a microsecond delay enables more transactions to be synchronized together to disk at once, reducing the overall time to commit a group of transactions because the larger groups required fewer time units per group.
+     * 
+     * binlogGroupCommitSyncDelay corresponds to the MySQL Replication system variable [binlog_group_commit_sync_delay](https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_binlog_group_commit_sync_delay)
+     * 
+     */
+    private @Nullable Integer binlogGroupCommitSyncDelay;
+    /**
+     * @return The maximum number of transactions to wait for before aborting the current delay as specified by binlog_group_commit_sync_delay. If binlog_group_commit_sync_delay is set to 0, then this option has no effect.
+     * 
+     * binlogGroupCommitSyncNoDelayCount corresponds to the MySQL Replication system variable [binlog_group_commit_sync_no_delay_count](https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_binlog_group_commit_sync_no_delay_count)
+     * 
+     */
+    private @Nullable Integer binlogGroupCommitSyncNoDelayCount;
+    /**
      * @return Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlog_row_metadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
      * 
      */
@@ -45,6 +73,27 @@ public final class MysqlConfigurationVariables {
      * 
      */
     private @Nullable Boolean binlogTransactionCompression;
+    /**
+     * @return This variable controls the block encryption mode for block-based algorithms such as AES. It affects encryption for AES_ENCRYPT() and AES_DECRYPT(). block_encryption_mode takes a value in aes-keylen-mode format, where keylen is the key length in bits and mode is the encryption mode. The value is not case-sensitive. Permitted keylen values are 128, 192, and 256. Permitted mode values are ECB, CBC, CFB1, CFB8, CFB128, and OFB.
+     * 
+     * block_encryption_mode corresponds to the MySQL Server Administration system variable [block_encryption_mode](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_block_encryption_mode)
+     * 
+     */
+    private @Nullable String blockEncryptionMode;
+    /**
+     * @return The server&#39;s default character set. If you set this variable, you should also set collation_server to specify the collation for the character set.
+     * 
+     * characterSetServer corresponds to the MySQL server variable [character_set_server](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_character_set_server).
+     * 
+     */
+    private @Nullable String characterSetServer;
+    /**
+     * @return The server&#39;s default collation.
+     * 
+     * collationServer corresponds to the MySQL server variable [collation_server](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_collation_server).
+     * 
+     */
+    private @Nullable String collationServer;
     /**
      * @return (&#34;completion_type&#34;)
      * 
@@ -79,10 +128,28 @@ public final class MysqlConfigurationVariables {
      */
     private @Nullable String cteMaxRecursionDepth;
     /**
-     * @return (&#34;default_authentication_plugin&#34;)
+     * @return The default authentication plugin. This must be a plugin that uses internal credentials storage, so these values are permitted: mysql_native_password, sha256_password, caching_sha2_password.
+     * 
+     * As of MySQL 8.0.27, which introduces multifactor authentication, default_authentication_plugin is still used, but in conjunction with and at a lower precedence than the authentication_policy system variable. For details, see The Default Authentication Plugin. Because of this diminished role, default_authentication_plugin is deprecated as of MySQL 8.0.27 and subject to removal in a future MySQL version.
+     * 
+     * defaultAuthenticationPlugin corresponds to the MySQL system variable [default_authentication_plugin](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_default_authentication_plugin).
      * 
      */
     private @Nullable String defaultAuthenticationPlugin;
+    /**
+     * @return This variable determines the default output format used by EXPLAIN in the absence of a FORMAT option when displaying a query execution plan.
+     * 
+     * explainFormat corresponds to the MySQL system variable [explain_format](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_explain_format).
+     * 
+     */
+    private @Nullable String explainFormat;
+    /**
+     * @return This system variable determines whether the server enables certain nonstandard behaviors for default values and NULL-value handling in TIMESTAMP columns. By default, explicit_defaults_for_timestamp is enabled, which disables the nonstandard behaviors. Disabling explicit_defaults_for_timestamp results in a warning.
+     * 
+     * explicit_defaults_for_timestamp corresponds to the MySQL Server Administration system variable [explicit_defaults_for_timestamp](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_explicit_defaults_for_timestamp)
+     * 
+     */
+    private @Nullable Boolean explicitDefaultsForTimestamp;
     /**
      * @return (&#34;foreign_key_checks&#34;)
      * 
@@ -112,6 +179,13 @@ public final class MysqlConfigurationVariables {
      */
     private @Nullable Boolean globalConnectionMemoryTracking;
     /**
+     * @return Specifies the maximum permitted result length in bytes for the GROUP_CONCAT() function.
+     * 
+     * This is the MySQL variable &#34;group_concat_max_len&#34;. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_group_concat_max_len)
+     * 
+     */
+    private @Nullable String groupConcatMaxLen;
+    /**
      * @return * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
      * * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
      * * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
@@ -125,6 +199,20 @@ public final class MysqlConfigurationVariables {
      * 
      */
     private @Nullable Integer informationSchemaStatsExpiry;
+    /**
+     * @return Whether the InnoDB adaptive hash index is enabled or disabled. It may be desirable, depending on your workload, to dynamically enable or disable adaptive hash indexing to improve query performance. Because the adaptive hash index may not be useful for all workloads, conduct benchmarks with it both enabled and disabled, using realistic workloads.
+     * 
+     * innodbAdaptiveHashIndex corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_adaptive_hash_index] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_adaptive_hash_index).
+     * 
+     */
+    private @Nullable Boolean innodbAdaptiveHashIndex;
+    /**
+     * @return The lock mode to use for generating auto-increment values. Permissible values are 0, 1, or 2, for traditional, consecutive, or interleaved, respectively.
+     * 
+     * innodbAutoincLockMode corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_autoinc_lock_mode] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_autoinc_lock_mode).
+     * 
+     */
+    private @Nullable Integer innodbAutoincLockMode;
     /**
      * @return Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
      * 
@@ -150,6 +238,13 @@ public final class MysqlConfigurationVariables {
      * 
      */
     private @Nullable String innodbBufferPoolSize;
+    /**
+     * @return Whether InnoDB performs change buffering, an optimization that delays write operations to secondary indexes so that the I/O operations can be performed sequentially. Permitted values are described in the following table. Values may also be specified numerically.
+     * 
+     * innodbChangeBuffering corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_change_buffering] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_change_buffering).
+     * 
+     */
+    private @Nullable String innodbChangeBuffering;
     /**
      * @return innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
      * 
@@ -225,6 +320,43 @@ public final class MysqlConfigurationVariables {
      */
     private @Nullable Integer innodbMaxPurgeLagDelay;
     /**
+     * @return Enables the NUMA interleave memory policy for allocation of the InnoDB buffer pool. When innodb_numa_interleave is enabled, the NUMA memory policy is set to MPOL_INTERLEAVE for the mysqld process. After the InnoDB buffer pool is allocated, the NUMA memory policy is set back to MPOL_DEFAULT. For the innodb_numa_interleave option to be available, MySQL must be compiled on a NUMA-enabled Linux system.
+     * 
+     * innodbNumaInterleave corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_numa_interleave] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_numa_interleave).
+     * 
+     */
+    private @Nullable Boolean innodbNumaInterleave;
+    /**
+     * @return Specifies an upper limit in bytes on the size of the temporary log files used during online DDL operations for InnoDB tables. There is one such log file for each index being created or table being altered. This log file stores data inserted, updated, or deleted in the table during the DDL operation.
+     * 
+     * innodbOnlineAlterLogMaxSize corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_online_alter_log_max_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_online_alter_log_max_size).
+     * 
+     */
+    private @Nullable String innodbOnlineAlterLogMaxSize;
+    /**
+     * @return Defines the amount of disk space occupied by redo log files. innodb_redo_log_capacity supercedes the innodb_log_files_in_group and innodb_log_file_size variables, which are both ignored if innodb_redo_log_capacity is defined. If innodb_redo_log_capacity is not defined, and if neither innodb_log_file_size or innodb_log_files_in_group are defined, then the default innodb_redo_log_capacity value is used.
+     * 
+     * innodbRedoLogCapacity corresponds to the InnoDB Startup Options and System Variables [innodb_redo_log_capacity](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_redo_log_capacity)
+     * 
+     */
+    private @Nullable String innodbRedoLogCapacity;
+    /**
+     * @return InnoDB rolls back only the last statement on a transaction timeout by default. If --innodb-rollback-on-timeout is specified, a transaction timeout causes InnoDB to abort and roll back the entire transaction.
+     * 
+     * innodbRollbackOnTimeout corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_rollback_on_timeout] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_rollback_on_timeout).
+     * 
+     */
+    private @Nullable Boolean innodbRollbackOnTimeout;
+    /**
+     * @return This variable defines:
+     * * The sort buffer size for online DDL operations that create or rebuild secondary indexes. However, as of MySQL 8.0.27, this responsibility is subsumed by the innodb_ddl_buffer_size variable.
+     * * The amount by which the temporary log file is extended when recording concurrent DML during an online DDL operation, and the size of the temporary log file read buffer and write buffer.
+     * 
+     * innodbSortBufferSize corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_sort_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_sort_buffer_size).
+     * 
+     */
+    private @Nullable Integer innodbSortBufferSize;
+    /**
      * @return The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
      * 
      * innodbStatsPersistentSamplePages corresponds to the MySQL InnoDB system variable [innodb_stats_persistent_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_persistent_sample_pages)
@@ -245,6 +377,20 @@ public final class MysqlConfigurationVariables {
      */
     private @Nullable String innodbStatsTransientSamplePages;
     /**
+     * @return When you enable innodbStrictMode, the InnoDB storage engine returns errors instead of warnings for invalid or incompatible table options.
+     * 
+     * innodbStrictMode corresponds to the MySQL InnoDB system variable [innodb_strict_mode](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_strict_mode)
+     * 
+     */
+    private @Nullable Boolean innodbStrictMode;
+    /**
+     * @return When enabled, undo tablespaces that exceed the threshold value defined by innodb_max_undo_log_size are marked for truncation. Only undo tablespaces can be truncated. Truncating undo logs that reside in the system tablespace is not supported. For truncation to occur, there must be at least two undo tablespaces.
+     * 
+     * innodbUndoLogTruncate corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_undo_log_truncate] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_undo_log_truncate).
+     * 
+     */
+    private @Nullable Boolean innodbUndoLogTruncate;
+    /**
      * @return The number of seconds the server waits for activity on an interactive connection before closing it.
      * 
      * interactiveTimeout corresponds to the MySQL system variable. [interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_interactive_timeout)
@@ -252,10 +398,26 @@ public final class MysqlConfigurationVariables {
      */
     private @Nullable Integer interactiveTimeout;
     /**
-     * @return (&#34;local_infile&#34;)
+     * @return The minimum size of the buffer that is used for plain index scans, range index scans, and joins that do not use indexes and thus perform full table scans. In MySQL 8.0.18 and later, this variable also controls the amount of memory used for hash joins. Normally, the best way to get fast joins is to add indexes. Increase the value of join_buffer_size to get a faster full join when adding indexes is not possible. One join buffer is allocated for each full join between two tables. For a complex join between several tables for which indexes are not used, multiple join buffers might be necessary.
+     * 
+     * joinBufferSize corresponds to the MySQL Server System variable [join_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_join_buffer_size).
+     * 
+     */
+    private @Nullable String joinBufferSize;
+    /**
+     * @return This variable controls server-side LOCAL capability for LOAD DATA statements. Depending on the local_infile setting, the server refuses or permits local data loading by clients that have LOCAL enabled on the client side.
+     * 
+     * local_infile corresponds to the MySQL Server system variable [local_infile](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_local_infile)
      * 
      */
     private @Nullable Boolean localInfile;
+    /**
+     * @return If a query takes longer than this many seconds, the server increments the Slow_queries status variable. If the slow query log is enabled, the query is logged to the slow query log file. This value is measured in real time, not CPU time, so a query that is under the threshold on a lightly loaded system might be above the threshold on a heavily loaded one.
+     * 
+     * longQueryTime corresponds to the MySQL Server System variable [long_query_time] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_long_query_time).
+     * 
+     */
+    private @Nullable Integer longQueryTime;
     /**
      * @return (&#34;mandatory_roles&#34;)
      * 
@@ -302,6 +464,20 @@ public final class MysqlConfigurationVariables {
      * 
      */
     private @Nullable Integer maxPreparedStmtCount;
+    /**
+     * @return Limit the assumed maximum number of seeks when looking up rows based on a key. The MySQL optimizer assumes that no more than this number of key seeks are required when searching for matching rows in a table by scanning an index, regardless of the actual cardinality of the index (see Section 15.7.7.22, “SHOW INDEX Statement”). By setting this to a low value (say, 100), you can force MySQL to prefer indexes instead of table scans.
+     * 
+     * maxSeeksForKey corresponds to the MySQL Server System variable [max_seeks_for_key] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_seeks_for_key).
+     * 
+     */
+    private @Nullable String maxSeeksForKey;
+    /**
+     * @return The maximum number of simultaneous connections permitted to any given MySQL user account. A value of 0 (the default) means “no limit.” This variable has a global value that can be set at server startup or runtime. It also has a read-only session value that indicates the effective simultaneous-connection limit that applies to the account associated with the current session.
+     * 
+     * maxUserConnections corresponds to the MySQL Server System variable [max_user_connections] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_user_connections).
+     * 
+     */
+    private @Nullable String maxUserConnections;
     /**
      * @return (&#34;mysql_firewall_mode&#34;)
      * 
@@ -435,6 +611,15 @@ public final class MysqlConfigurationVariables {
      */
     private @Nullable Integer netWriteTimeout;
     /**
+     * @return The optimizer_switch system variable enables control over optimizer behavior. The value of this variable is a set of flags, each of which has a value of on or off to indicate whether the corresponding optimizer behavior is enabled or disabled. This variable has global and session values and can be changed at runtime. The global default can be set at server startup.
+     * 
+     * Setting hypergraph_optimizer=on for cloud builds below 9.0.0 will fail.
+     * 
+     * optimizerSwitch corresponds to the MySQL Server System variable [optimizer_switch] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_optimizer_switch).
+     * 
+     */
+    private @Nullable String optimizerSwitch;
+    /**
      * @return (&#34;parser_max_mem_size&#34;)
      * 
      */
@@ -451,17 +636,68 @@ public final class MysqlConfigurationVariables {
     /**
      * @return (&#34;query_prealloc_size&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
+     */
+    private @Nullable String queryPreallocSize;
+    /**
+     * @return The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans.
+     * 
+     * rangeOptimizerMaxMemSize corresponds to the MySQL Server System variable [range_optimizer_max_mem_size] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_range_optimizer_max_mem_size).
+     * 
      * @deprecated
      * The &#39;query_prealloc_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
     @Deprecated /* The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field. */
-    private @Nullable String queryPreallocSize;
+    private @Nullable String rangeOptimizerMaxMemSize;
     /**
      * @return regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
      * 
      */
     private @Nullable Integer regexpTimeLimit;
+    /**
+     * @return The maximum amount of space to use for all relay logs.
+     * 
+     * relayLogSpaceLimit corresponds to the MySQL Replica Server Options variable [relay_log_space_limit] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_relay_log_space_limit).
+     * 
+     */
+    private @Nullable String relayLogSpaceLimit;
+    /**
+     * @return Specifies the number of seconds to wait for more data or a heartbeat signal from the source before the replica considers the connection broken, aborts the read, and tries to reconnect. Setting this variable has no immediate effect. The state of the variable applies on all subsequent START REPLICA commands.
+     * 
+     * replicaNetTimeout corresponds to the MySQL Replica server system variable [replica_net_timeout](https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_net_timeout)
+     * 
+     */
+    private @Nullable Integer replicaNetTimeout;
+    /**
+     * @return Beginning with MySQL 8.0.26, slave_parallel_workers is deprecated, and you should use replica_parallel_workers instead. (Prior to MySQL 8.0.26, you must use slave_parallel_workers to set the number of applier threads.)
+     * 
+     * replicaParallelWorkers corresponds to the MySQL Replica Server Options variable [replica_parallel_workers] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_parallel_workers).
+     * 
+     */
+    private @Nullable Integer replicaParallelWorkers;
+    /**
+     * @return From MySQL 8.0.26, use replica_type_conversions in place of slave_type_conversions, which is deprecated from that release. In releases before MySQL 8.0.26, use slave_type_conversions.
+     * 
+     * replica_type_conversions controls the type conversion mode in effect on the replica when using row-based replication. Its value is a comma-delimited set of zero or more elements from the list: ALL_LOSSY, ALL_NON_LOSSY, ALL_SIGNED, ALL_UNSIGNED. Set this variable to an empty string to disallow type conversions between the source and the replica. Setting this variable takes effect for all replication channels immediately, including running channels.
+     * 
+     * replica_type_conversions corresponds to the MySQL Replica Server Options variable [replica_type_conversions] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_type_conversions).
+     * 
+     */
+    private @Nullable String replicaTypeConversions;
+    /**
+     * @return Whether client connections to the server are required to use some form of secure transport. When this variable is enabled, the server permits only TCP/IP connections encrypted using TLS/SSL, or connections that use a socket file or shared memory. The server rejects nonsecure connection attempts, which fail with an ER_SECURE_TRANSPORT_REQUIRED error.
+     * 
+     * require_secure_transport corresponds to the MySQL Server Administration system variable [require_secure_transport](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_require_secure_transport)
+     * 
+     */
+    private @Nullable Boolean requireSecureTransport;
+    /**
+     * @return Whether to resolve host names when checking client connections. If this variable is OFF, mysqld resolves host names when checking client connections. If it is ON, mysqld uses only IP numbers; in this case, all Host column values in the grant tables must be IP addresses. See Section 7.1.12.3, “DNS Lookups and the Host Cache”.
+     * 
+     * skipNameResolve corresponds to the MySQL Server System variable [skip_name_resolve] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_skip_name_resolve).
+     * 
+     */
+    private @Nullable Boolean skipNameResolve;
     /**
      * @return Each session that must perform a sort allocates a buffer of this size.
      * 
@@ -469,6 +705,13 @@ public final class MysqlConfigurationVariables {
      * 
      */
     private @Nullable String sortBufferSize;
+    /**
+     * @return Whether GIPK mode is in effect, in which case a MySQL replication source server adds a generated invisible primary key to any InnoDB table that is created without one.
+     * 
+     * sqlGenerateInvisiblePrimaryKey corresponds to the MySQL system variable [sql_generate_invisible_primary_key] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_sql_generate_invisible_primary_key).
+     * 
+     */
+    private @Nullable Boolean sqlGenerateInvisiblePrimaryKey;
     /**
      * @return (&#34;sql_mode&#34;)
      * 
@@ -485,6 +728,27 @@ public final class MysqlConfigurationVariables {
      */
     private @Nullable Boolean sqlWarnings;
     /**
+     * @return The number of table definitions that can be stored in the table definition cache. If you use a large number of tables, you can create a large table definition cache to speed up opening of tables. The table definition cache takes less space and does not use file descriptors, unlike the normal table cache.
+     * 
+     * table_definition_cache corresponds to the MySQL Server Administration system variable [table_definition_cache](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_table_definition_cache)
+     * 
+     */
+    private @Nullable Integer tableDefinitionCache;
+    /**
+     * @return The number of open tables for all threads. Increasing this value increases the number of file descriptors that mysqld requires.
+     * 
+     * table_open_cache corresponds to the MySQL Server Administration system variable [table_open_cache](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_table_open_cache)
+     * 
+     */
+    private @Nullable Integer tableOpenCache;
+    /**
+     * @return Defines the maximum amount of memory that can be occupied by the TempTable storage engine before it starts storing data on disk. The default value is 1073741824 bytes (1GiB). For more information, see Section 10.4.4, “Internal Temporary Table Use in MySQL”.
+     * 
+     * temptableMaxRam corresponds to the MySQL system variable [temptable_max_ram] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_temptable_max_ram).
+     * 
+     */
+    private @Nullable String temptableMaxRam;
+    /**
      * @return Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
      * 
      */
@@ -494,6 +758,27 @@ public final class MysqlConfigurationVariables {
      * 
      */
     private @Nullable Integer threadPoolMaxTransactionsLimit;
+    /**
+     * @return The maximum number of query threads permitted in a thread group. The maximum value is 4096, but if thread_pool_max_transactions_limit is set, thread_pool_query_threads_per_group must not exceed that value. The default value of 1 means there is one active query thread in each thread group, which works well for many loads. When you are using the high concurrency thread pool algorithm (thread_pool_algorithm = 1), consider increasing the value if you experience slower response times due to long-running transactions.
+     * 
+     * threadPoolQueryThreadsPerGroup corresponds to the MySQL Server system variable [thread_pool_query_threads_per_group](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_query_threads_per_group)
+     * 
+     */
+    private @Nullable Integer threadPoolQueryThreadsPerGroup;
+    /**
+     * @return The number of thread groups in the thread pool. This is the most important parameter controlling thread pool performance. It affects how many statements can execute simultaneously. If a value outside the range of permissible values is specified, the thread pool plugin does not load and the server writes a message to the error log.
+     * 
+     * threadPoolSize corresponds to the MySQL Server System variable [thread_pool_size] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_size).
+     * 
+     */
+    private @Nullable Integer threadPoolSize;
+    /**
+     * @return The delay period before executing a new transaction, in milliseconds. The maximum value is 300000 (5 minutes). A transaction delay can be used in cases where parallel transactions affect the performance of other operations due to resource contention. For example, if parallel transactions affect index creation or an online buffer pool resizing operation, you can configure a transaction delay to reduce resource contention while those operations are running.
+     * 
+     * threadPoolTransactionDelay corresponds to the MySQL Server system variable [thread_pool_transaction_delay](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_transaction_delay)
+     * 
+     */
+    private @Nullable Integer threadPoolTransactionDelay;
     /**
      * @return Initializes the time zone for each client that connects.
      * 
@@ -530,6 +815,24 @@ public final class MysqlConfigurationVariables {
 
     private MysqlConfigurationVariables() {}
     /**
+     * @return auto_increment_increment and auto_increment_offset are intended for use with circular (source-to-source) replication, and can be used to control the operation of AUTO_INCREMENT columns. Both variables have global and session values, and each can assume an integer value between 1 and 65,535 inclusive.
+     * 
+     * autoIncrementIncrement corresponds to the MySQL Replication Source Options variable [auto_increment_increment] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-source.html#sysvar_auto_increment_increment).
+     * 
+     */
+    public Optional<Integer> autoIncrementIncrement() {
+        return Optional.ofNullable(this.autoIncrementIncrement);
+    }
+    /**
+     * @return This variable has a default value of 1. If it is left with its default value, and Group Replication is started on the server in multi-primary mode, it is changed to the server ID.
+     * 
+     * autoIncrementOffset corresponds to the MySQL Replication Source Options variable [auto_increment_offset] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-source.html#sysvar_auto_increment_offset).
+     * 
+     */
+    public Optional<Integer> autoIncrementOffset() {
+        return Optional.ofNullable(this.autoIncrementOffset);
+    }
+    /**
      * @return (&#34;autocommit&#34;)
      * 
      */
@@ -553,6 +856,24 @@ public final class MysqlConfigurationVariables {
         return Optional.ofNullable(this.binlogExpireLogsSeconds);
     }
     /**
+     * @return Controls how many microseconds the binary log commit waits before synchronizing the binary log file to disk. There is no delay by default. Setting this variable to a microsecond delay enables more transactions to be synchronized together to disk at once, reducing the overall time to commit a group of transactions because the larger groups required fewer time units per group.
+     * 
+     * binlogGroupCommitSyncDelay corresponds to the MySQL Replication system variable [binlog_group_commit_sync_delay](https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_binlog_group_commit_sync_delay)
+     * 
+     */
+    public Optional<Integer> binlogGroupCommitSyncDelay() {
+        return Optional.ofNullable(this.binlogGroupCommitSyncDelay);
+    }
+    /**
+     * @return The maximum number of transactions to wait for before aborting the current delay as specified by binlog_group_commit_sync_delay. If binlog_group_commit_sync_delay is set to 0, then this option has no effect.
+     * 
+     * binlogGroupCommitSyncNoDelayCount corresponds to the MySQL Replication system variable [binlog_group_commit_sync_no_delay_count](https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_binlog_group_commit_sync_no_delay_count)
+     * 
+     */
+    public Optional<Integer> binlogGroupCommitSyncNoDelayCount() {
+        return Optional.ofNullable(this.binlogGroupCommitSyncNoDelayCount);
+    }
+    /**
      * @return Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlog_row_metadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
      * 
      */
@@ -572,6 +893,33 @@ public final class MysqlConfigurationVariables {
      */
     public Optional<Boolean> binlogTransactionCompression() {
         return Optional.ofNullable(this.binlogTransactionCompression);
+    }
+    /**
+     * @return This variable controls the block encryption mode for block-based algorithms such as AES. It affects encryption for AES_ENCRYPT() and AES_DECRYPT(). block_encryption_mode takes a value in aes-keylen-mode format, where keylen is the key length in bits and mode is the encryption mode. The value is not case-sensitive. Permitted keylen values are 128, 192, and 256. Permitted mode values are ECB, CBC, CFB1, CFB8, CFB128, and OFB.
+     * 
+     * block_encryption_mode corresponds to the MySQL Server Administration system variable [block_encryption_mode](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_block_encryption_mode)
+     * 
+     */
+    public Optional<String> blockEncryptionMode() {
+        return Optional.ofNullable(this.blockEncryptionMode);
+    }
+    /**
+     * @return The server&#39;s default character set. If you set this variable, you should also set collation_server to specify the collation for the character set.
+     * 
+     * characterSetServer corresponds to the MySQL server variable [character_set_server](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_character_set_server).
+     * 
+     */
+    public Optional<String> characterSetServer() {
+        return Optional.ofNullable(this.characterSetServer);
+    }
+    /**
+     * @return The server&#39;s default collation.
+     * 
+     * collationServer corresponds to the MySQL server variable [collation_server](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_collation_server).
+     * 
+     */
+    public Optional<String> collationServer() {
+        return Optional.ofNullable(this.collationServer);
     }
     /**
      * @return (&#34;completion_type&#34;)
@@ -617,11 +965,33 @@ public final class MysqlConfigurationVariables {
         return Optional.ofNullable(this.cteMaxRecursionDepth);
     }
     /**
-     * @return (&#34;default_authentication_plugin&#34;)
+     * @return The default authentication plugin. This must be a plugin that uses internal credentials storage, so these values are permitted: mysql_native_password, sha256_password, caching_sha2_password.
+     * 
+     * As of MySQL 8.0.27, which introduces multifactor authentication, default_authentication_plugin is still used, but in conjunction with and at a lower precedence than the authentication_policy system variable. For details, see The Default Authentication Plugin. Because of this diminished role, default_authentication_plugin is deprecated as of MySQL 8.0.27 and subject to removal in a future MySQL version.
+     * 
+     * defaultAuthenticationPlugin corresponds to the MySQL system variable [default_authentication_plugin](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_default_authentication_plugin).
      * 
      */
     public Optional<String> defaultAuthenticationPlugin() {
         return Optional.ofNullable(this.defaultAuthenticationPlugin);
+    }
+    /**
+     * @return This variable determines the default output format used by EXPLAIN in the absence of a FORMAT option when displaying a query execution plan.
+     * 
+     * explainFormat corresponds to the MySQL system variable [explain_format](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_explain_format).
+     * 
+     */
+    public Optional<String> explainFormat() {
+        return Optional.ofNullable(this.explainFormat);
+    }
+    /**
+     * @return This system variable determines whether the server enables certain nonstandard behaviors for default values and NULL-value handling in TIMESTAMP columns. By default, explicit_defaults_for_timestamp is enabled, which disables the nonstandard behaviors. Disabling explicit_defaults_for_timestamp results in a warning.
+     * 
+     * explicit_defaults_for_timestamp corresponds to the MySQL Server Administration system variable [explicit_defaults_for_timestamp](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_explicit_defaults_for_timestamp)
+     * 
+     */
+    public Optional<Boolean> explicitDefaultsForTimestamp() {
+        return Optional.ofNullable(this.explicitDefaultsForTimestamp);
     }
     /**
      * @return (&#34;foreign_key_checks&#34;)
@@ -660,6 +1030,15 @@ public final class MysqlConfigurationVariables {
         return Optional.ofNullable(this.globalConnectionMemoryTracking);
     }
     /**
+     * @return Specifies the maximum permitted result length in bytes for the GROUP_CONCAT() function.
+     * 
+     * This is the MySQL variable &#34;group_concat_max_len&#34;. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_group_concat_max_len)
+     * 
+     */
+    public Optional<String> groupConcatMaxLen() {
+        return Optional.ofNullable(this.groupConcatMaxLen);
+    }
+    /**
      * @return * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
      * * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
      * * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
@@ -676,6 +1055,24 @@ public final class MysqlConfigurationVariables {
      */
     public Optional<Integer> informationSchemaStatsExpiry() {
         return Optional.ofNullable(this.informationSchemaStatsExpiry);
+    }
+    /**
+     * @return Whether the InnoDB adaptive hash index is enabled or disabled. It may be desirable, depending on your workload, to dynamically enable or disable adaptive hash indexing to improve query performance. Because the adaptive hash index may not be useful for all workloads, conduct benchmarks with it both enabled and disabled, using realistic workloads.
+     * 
+     * innodbAdaptiveHashIndex corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_adaptive_hash_index] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_adaptive_hash_index).
+     * 
+     */
+    public Optional<Boolean> innodbAdaptiveHashIndex() {
+        return Optional.ofNullable(this.innodbAdaptiveHashIndex);
+    }
+    /**
+     * @return The lock mode to use for generating auto-increment values. Permissible values are 0, 1, or 2, for traditional, consecutive, or interleaved, respectively.
+     * 
+     * innodbAutoincLockMode corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_autoinc_lock_mode] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_autoinc_lock_mode).
+     * 
+     */
+    public Optional<Integer> innodbAutoincLockMode() {
+        return Optional.ofNullable(this.innodbAutoincLockMode);
     }
     /**
      * @return Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
@@ -707,6 +1104,15 @@ public final class MysqlConfigurationVariables {
      */
     public Optional<String> innodbBufferPoolSize() {
         return Optional.ofNullable(this.innodbBufferPoolSize);
+    }
+    /**
+     * @return Whether InnoDB performs change buffering, an optimization that delays write operations to secondary indexes so that the I/O operations can be performed sequentially. Permitted values are described in the following table. Values may also be specified numerically.
+     * 
+     * innodbChangeBuffering corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_change_buffering] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_change_buffering).
+     * 
+     */
+    public Optional<String> innodbChangeBuffering() {
+        return Optional.ofNullable(this.innodbChangeBuffering);
     }
     /**
      * @return innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
@@ -807,6 +1213,53 @@ public final class MysqlConfigurationVariables {
         return Optional.ofNullable(this.innodbMaxPurgeLagDelay);
     }
     /**
+     * @return Enables the NUMA interleave memory policy for allocation of the InnoDB buffer pool. When innodb_numa_interleave is enabled, the NUMA memory policy is set to MPOL_INTERLEAVE for the mysqld process. After the InnoDB buffer pool is allocated, the NUMA memory policy is set back to MPOL_DEFAULT. For the innodb_numa_interleave option to be available, MySQL must be compiled on a NUMA-enabled Linux system.
+     * 
+     * innodbNumaInterleave corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_numa_interleave] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_numa_interleave).
+     * 
+     */
+    public Optional<Boolean> innodbNumaInterleave() {
+        return Optional.ofNullable(this.innodbNumaInterleave);
+    }
+    /**
+     * @return Specifies an upper limit in bytes on the size of the temporary log files used during online DDL operations for InnoDB tables. There is one such log file for each index being created or table being altered. This log file stores data inserted, updated, or deleted in the table during the DDL operation.
+     * 
+     * innodbOnlineAlterLogMaxSize corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_online_alter_log_max_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_online_alter_log_max_size).
+     * 
+     */
+    public Optional<String> innodbOnlineAlterLogMaxSize() {
+        return Optional.ofNullable(this.innodbOnlineAlterLogMaxSize);
+    }
+    /**
+     * @return Defines the amount of disk space occupied by redo log files. innodb_redo_log_capacity supercedes the innodb_log_files_in_group and innodb_log_file_size variables, which are both ignored if innodb_redo_log_capacity is defined. If innodb_redo_log_capacity is not defined, and if neither innodb_log_file_size or innodb_log_files_in_group are defined, then the default innodb_redo_log_capacity value is used.
+     * 
+     * innodbRedoLogCapacity corresponds to the InnoDB Startup Options and System Variables [innodb_redo_log_capacity](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_redo_log_capacity)
+     * 
+     */
+    public Optional<String> innodbRedoLogCapacity() {
+        return Optional.ofNullable(this.innodbRedoLogCapacity);
+    }
+    /**
+     * @return InnoDB rolls back only the last statement on a transaction timeout by default. If --innodb-rollback-on-timeout is specified, a transaction timeout causes InnoDB to abort and roll back the entire transaction.
+     * 
+     * innodbRollbackOnTimeout corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_rollback_on_timeout] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_rollback_on_timeout).
+     * 
+     */
+    public Optional<Boolean> innodbRollbackOnTimeout() {
+        return Optional.ofNullable(this.innodbRollbackOnTimeout);
+    }
+    /**
+     * @return This variable defines:
+     * * The sort buffer size for online DDL operations that create or rebuild secondary indexes. However, as of MySQL 8.0.27, this responsibility is subsumed by the innodb_ddl_buffer_size variable.
+     * * The amount by which the temporary log file is extended when recording concurrent DML during an online DDL operation, and the size of the temporary log file read buffer and write buffer.
+     * 
+     * innodbSortBufferSize corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_sort_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_sort_buffer_size).
+     * 
+     */
+    public Optional<Integer> innodbSortBufferSize() {
+        return Optional.ofNullable(this.innodbSortBufferSize);
+    }
+    /**
      * @return The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
      * 
      * innodbStatsPersistentSamplePages corresponds to the MySQL InnoDB system variable [innodb_stats_persistent_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_persistent_sample_pages)
@@ -831,6 +1284,24 @@ public final class MysqlConfigurationVariables {
         return Optional.ofNullable(this.innodbStatsTransientSamplePages);
     }
     /**
+     * @return When you enable innodbStrictMode, the InnoDB storage engine returns errors instead of warnings for invalid or incompatible table options.
+     * 
+     * innodbStrictMode corresponds to the MySQL InnoDB system variable [innodb_strict_mode](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_strict_mode)
+     * 
+     */
+    public Optional<Boolean> innodbStrictMode() {
+        return Optional.ofNullable(this.innodbStrictMode);
+    }
+    /**
+     * @return When enabled, undo tablespaces that exceed the threshold value defined by innodb_max_undo_log_size are marked for truncation. Only undo tablespaces can be truncated. Truncating undo logs that reside in the system tablespace is not supported. For truncation to occur, there must be at least two undo tablespaces.
+     * 
+     * innodbUndoLogTruncate corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_undo_log_truncate] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_undo_log_truncate).
+     * 
+     */
+    public Optional<Boolean> innodbUndoLogTruncate() {
+        return Optional.ofNullable(this.innodbUndoLogTruncate);
+    }
+    /**
      * @return The number of seconds the server waits for activity on an interactive connection before closing it.
      * 
      * interactiveTimeout corresponds to the MySQL system variable. [interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_interactive_timeout)
@@ -840,11 +1311,31 @@ public final class MysqlConfigurationVariables {
         return Optional.ofNullable(this.interactiveTimeout);
     }
     /**
-     * @return (&#34;local_infile&#34;)
+     * @return The minimum size of the buffer that is used for plain index scans, range index scans, and joins that do not use indexes and thus perform full table scans. In MySQL 8.0.18 and later, this variable also controls the amount of memory used for hash joins. Normally, the best way to get fast joins is to add indexes. Increase the value of join_buffer_size to get a faster full join when adding indexes is not possible. One join buffer is allocated for each full join between two tables. For a complex join between several tables for which indexes are not used, multiple join buffers might be necessary.
+     * 
+     * joinBufferSize corresponds to the MySQL Server System variable [join_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_join_buffer_size).
+     * 
+     */
+    public Optional<String> joinBufferSize() {
+        return Optional.ofNullable(this.joinBufferSize);
+    }
+    /**
+     * @return This variable controls server-side LOCAL capability for LOAD DATA statements. Depending on the local_infile setting, the server refuses or permits local data loading by clients that have LOCAL enabled on the client side.
+     * 
+     * local_infile corresponds to the MySQL Server system variable [local_infile](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_local_infile)
      * 
      */
     public Optional<Boolean> localInfile() {
         return Optional.ofNullable(this.localInfile);
+    }
+    /**
+     * @return If a query takes longer than this many seconds, the server increments the Slow_queries status variable. If the slow query log is enabled, the query is logged to the slow query log file. This value is measured in real time, not CPU time, so a query that is under the threshold on a lightly loaded system might be above the threshold on a heavily loaded one.
+     * 
+     * longQueryTime corresponds to the MySQL Server System variable [long_query_time] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_long_query_time).
+     * 
+     */
+    public Optional<Integer> longQueryTime() {
+        return Optional.ofNullable(this.longQueryTime);
     }
     /**
      * @return (&#34;mandatory_roles&#34;)
@@ -907,6 +1398,24 @@ public final class MysqlConfigurationVariables {
      */
     public Optional<Integer> maxPreparedStmtCount() {
         return Optional.ofNullable(this.maxPreparedStmtCount);
+    }
+    /**
+     * @return Limit the assumed maximum number of seeks when looking up rows based on a key. The MySQL optimizer assumes that no more than this number of key seeks are required when searching for matching rows in a table by scanning an index, regardless of the actual cardinality of the index (see Section 15.7.7.22, “SHOW INDEX Statement”). By setting this to a low value (say, 100), you can force MySQL to prefer indexes instead of table scans.
+     * 
+     * maxSeeksForKey corresponds to the MySQL Server System variable [max_seeks_for_key] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_seeks_for_key).
+     * 
+     */
+    public Optional<String> maxSeeksForKey() {
+        return Optional.ofNullable(this.maxSeeksForKey);
+    }
+    /**
+     * @return The maximum number of simultaneous connections permitted to any given MySQL user account. A value of 0 (the default) means “no limit.” This variable has a global value that can be set at server startup or runtime. It also has a read-only session value that indicates the effective simultaneous-connection limit that applies to the account associated with the current session.
+     * 
+     * maxUserConnections corresponds to the MySQL Server System variable [max_user_connections] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_user_connections).
+     * 
+     */
+    public Optional<String> maxUserConnections() {
+        return Optional.ofNullable(this.maxUserConnections);
     }
     /**
      * @return (&#34;mysql_firewall_mode&#34;)
@@ -1081,6 +1590,17 @@ public final class MysqlConfigurationVariables {
         return Optional.ofNullable(this.netWriteTimeout);
     }
     /**
+     * @return The optimizer_switch system variable enables control over optimizer behavior. The value of this variable is a set of flags, each of which has a value of on or off to indicate whether the corresponding optimizer behavior is enabled or disabled. This variable has global and session values and can be changed at runtime. The global default can be set at server startup.
+     * 
+     * Setting hypergraph_optimizer=on for cloud builds below 9.0.0 will fail.
+     * 
+     * optimizerSwitch corresponds to the MySQL Server System variable [optimizer_switch] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_optimizer_switch).
+     * 
+     */
+    public Optional<String> optimizerSwitch() {
+        return Optional.ofNullable(this.optimizerSwitch);
+    }
+    /**
      * @return (&#34;parser_max_mem_size&#34;)
      * 
      */
@@ -1101,13 +1621,22 @@ public final class MysqlConfigurationVariables {
     /**
      * @return (&#34;query_prealloc_size&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
+     */
+    public Optional<String> queryPreallocSize() {
+        return Optional.ofNullable(this.queryPreallocSize);
+    }
+    /**
+     * @return The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans.
+     * 
+     * rangeOptimizerMaxMemSize corresponds to the MySQL Server System variable [range_optimizer_max_mem_size] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_range_optimizer_max_mem_size).
+     * 
      * @deprecated
      * The &#39;query_prealloc_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
     @Deprecated /* The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field. */
-    public Optional<String> queryPreallocSize() {
-        return Optional.ofNullable(this.queryPreallocSize);
+    public Optional<String> rangeOptimizerMaxMemSize() {
+        return Optional.ofNullable(this.rangeOptimizerMaxMemSize);
     }
     /**
      * @return regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
@@ -1117,6 +1646,62 @@ public final class MysqlConfigurationVariables {
         return Optional.ofNullable(this.regexpTimeLimit);
     }
     /**
+     * @return The maximum amount of space to use for all relay logs.
+     * 
+     * relayLogSpaceLimit corresponds to the MySQL Replica Server Options variable [relay_log_space_limit] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_relay_log_space_limit).
+     * 
+     */
+    public Optional<String> relayLogSpaceLimit() {
+        return Optional.ofNullable(this.relayLogSpaceLimit);
+    }
+    /**
+     * @return Specifies the number of seconds to wait for more data or a heartbeat signal from the source before the replica considers the connection broken, aborts the read, and tries to reconnect. Setting this variable has no immediate effect. The state of the variable applies on all subsequent START REPLICA commands.
+     * 
+     * replicaNetTimeout corresponds to the MySQL Replica server system variable [replica_net_timeout](https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_net_timeout)
+     * 
+     */
+    public Optional<Integer> replicaNetTimeout() {
+        return Optional.ofNullable(this.replicaNetTimeout);
+    }
+    /**
+     * @return Beginning with MySQL 8.0.26, slave_parallel_workers is deprecated, and you should use replica_parallel_workers instead. (Prior to MySQL 8.0.26, you must use slave_parallel_workers to set the number of applier threads.)
+     * 
+     * replicaParallelWorkers corresponds to the MySQL Replica Server Options variable [replica_parallel_workers] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_parallel_workers).
+     * 
+     */
+    public Optional<Integer> replicaParallelWorkers() {
+        return Optional.ofNullable(this.replicaParallelWorkers);
+    }
+    /**
+     * @return From MySQL 8.0.26, use replica_type_conversions in place of slave_type_conversions, which is deprecated from that release. In releases before MySQL 8.0.26, use slave_type_conversions.
+     * 
+     * replica_type_conversions controls the type conversion mode in effect on the replica when using row-based replication. Its value is a comma-delimited set of zero or more elements from the list: ALL_LOSSY, ALL_NON_LOSSY, ALL_SIGNED, ALL_UNSIGNED. Set this variable to an empty string to disallow type conversions between the source and the replica. Setting this variable takes effect for all replication channels immediately, including running channels.
+     * 
+     * replica_type_conversions corresponds to the MySQL Replica Server Options variable [replica_type_conversions] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_type_conversions).
+     * 
+     */
+    public Optional<String> replicaTypeConversions() {
+        return Optional.ofNullable(this.replicaTypeConversions);
+    }
+    /**
+     * @return Whether client connections to the server are required to use some form of secure transport. When this variable is enabled, the server permits only TCP/IP connections encrypted using TLS/SSL, or connections that use a socket file or shared memory. The server rejects nonsecure connection attempts, which fail with an ER_SECURE_TRANSPORT_REQUIRED error.
+     * 
+     * require_secure_transport corresponds to the MySQL Server Administration system variable [require_secure_transport](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_require_secure_transport)
+     * 
+     */
+    public Optional<Boolean> requireSecureTransport() {
+        return Optional.ofNullable(this.requireSecureTransport);
+    }
+    /**
+     * @return Whether to resolve host names when checking client connections. If this variable is OFF, mysqld resolves host names when checking client connections. If it is ON, mysqld uses only IP numbers; in this case, all Host column values in the grant tables must be IP addresses. See Section 7.1.12.3, “DNS Lookups and the Host Cache”.
+     * 
+     * skipNameResolve corresponds to the MySQL Server System variable [skip_name_resolve] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_skip_name_resolve).
+     * 
+     */
+    public Optional<Boolean> skipNameResolve() {
+        return Optional.ofNullable(this.skipNameResolve);
+    }
+    /**
      * @return Each session that must perform a sort allocates a buffer of this size.
      * 
      * sortBufferSize corresponds to the MySQL system variable [sort_buffer_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_sort_buffer_size)
@@ -1124,6 +1709,15 @@ public final class MysqlConfigurationVariables {
      */
     public Optional<String> sortBufferSize() {
         return Optional.ofNullable(this.sortBufferSize);
+    }
+    /**
+     * @return Whether GIPK mode is in effect, in which case a MySQL replication source server adds a generated invisible primary key to any InnoDB table that is created without one.
+     * 
+     * sqlGenerateInvisiblePrimaryKey corresponds to the MySQL system variable [sql_generate_invisible_primary_key] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_sql_generate_invisible_primary_key).
+     * 
+     */
+    public Optional<Boolean> sqlGenerateInvisiblePrimaryKey() {
+        return Optional.ofNullable(this.sqlGenerateInvisiblePrimaryKey);
     }
     /**
      * @return (&#34;sql_mode&#34;)
@@ -1147,6 +1741,33 @@ public final class MysqlConfigurationVariables {
         return Optional.ofNullable(this.sqlWarnings);
     }
     /**
+     * @return The number of table definitions that can be stored in the table definition cache. If you use a large number of tables, you can create a large table definition cache to speed up opening of tables. The table definition cache takes less space and does not use file descriptors, unlike the normal table cache.
+     * 
+     * table_definition_cache corresponds to the MySQL Server Administration system variable [table_definition_cache](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_table_definition_cache)
+     * 
+     */
+    public Optional<Integer> tableDefinitionCache() {
+        return Optional.ofNullable(this.tableDefinitionCache);
+    }
+    /**
+     * @return The number of open tables for all threads. Increasing this value increases the number of file descriptors that mysqld requires.
+     * 
+     * table_open_cache corresponds to the MySQL Server Administration system variable [table_open_cache](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_table_open_cache)
+     * 
+     */
+    public Optional<Integer> tableOpenCache() {
+        return Optional.ofNullable(this.tableOpenCache);
+    }
+    /**
+     * @return Defines the maximum amount of memory that can be occupied by the TempTable storage engine before it starts storing data on disk. The default value is 1073741824 bytes (1GiB). For more information, see Section 10.4.4, “Internal Temporary Table Use in MySQL”.
+     * 
+     * temptableMaxRam corresponds to the MySQL system variable [temptable_max_ram] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_temptable_max_ram).
+     * 
+     */
+    public Optional<String> temptableMaxRam() {
+        return Optional.ofNullable(this.temptableMaxRam);
+    }
+    /**
      * @return Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
      * 
      */
@@ -1159,6 +1780,33 @@ public final class MysqlConfigurationVariables {
      */
     public Optional<Integer> threadPoolMaxTransactionsLimit() {
         return Optional.ofNullable(this.threadPoolMaxTransactionsLimit);
+    }
+    /**
+     * @return The maximum number of query threads permitted in a thread group. The maximum value is 4096, but if thread_pool_max_transactions_limit is set, thread_pool_query_threads_per_group must not exceed that value. The default value of 1 means there is one active query thread in each thread group, which works well for many loads. When you are using the high concurrency thread pool algorithm (thread_pool_algorithm = 1), consider increasing the value if you experience slower response times due to long-running transactions.
+     * 
+     * threadPoolQueryThreadsPerGroup corresponds to the MySQL Server system variable [thread_pool_query_threads_per_group](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_query_threads_per_group)
+     * 
+     */
+    public Optional<Integer> threadPoolQueryThreadsPerGroup() {
+        return Optional.ofNullable(this.threadPoolQueryThreadsPerGroup);
+    }
+    /**
+     * @return The number of thread groups in the thread pool. This is the most important parameter controlling thread pool performance. It affects how many statements can execute simultaneously. If a value outside the range of permissible values is specified, the thread pool plugin does not load and the server writes a message to the error log.
+     * 
+     * threadPoolSize corresponds to the MySQL Server System variable [thread_pool_size] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_size).
+     * 
+     */
+    public Optional<Integer> threadPoolSize() {
+        return Optional.ofNullable(this.threadPoolSize);
+    }
+    /**
+     * @return The delay period before executing a new transaction, in milliseconds. The maximum value is 300000 (5 minutes). A transaction delay can be used in cases where parallel transactions affect the performance of other operations due to resource contention. For example, if parallel transactions affect index creation or an online buffer pool resizing operation, you can configure a transaction delay to reduce resource contention while those operations are running.
+     * 
+     * threadPoolTransactionDelay corresponds to the MySQL Server system variable [thread_pool_transaction_delay](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_transaction_delay)
+     * 
+     */
+    public Optional<Integer> threadPoolTransactionDelay() {
+        return Optional.ofNullable(this.threadPoolTransactionDelay);
     }
     /**
      * @return Initializes the time zone for each client that connects.
@@ -1211,27 +1859,40 @@ public final class MysqlConfigurationVariables {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable Integer autoIncrementIncrement;
+        private @Nullable Integer autoIncrementOffset;
         private @Nullable Boolean autocommit;
         private @Nullable Boolean bigTables;
         private @Nullable Integer binlogExpireLogsSeconds;
+        private @Nullable Integer binlogGroupCommitSyncDelay;
+        private @Nullable Integer binlogGroupCommitSyncNoDelayCount;
         private @Nullable String binlogRowMetadata;
         private @Nullable String binlogRowValueOptions;
         private @Nullable Boolean binlogTransactionCompression;
+        private @Nullable String blockEncryptionMode;
+        private @Nullable String characterSetServer;
+        private @Nullable String collationServer;
         private @Nullable String completionType;
         private @Nullable Integer connectTimeout;
         private @Nullable Integer connectionMemoryChunkSize;
         private @Nullable String connectionMemoryLimit;
         private @Nullable String cteMaxRecursionDepth;
         private @Nullable String defaultAuthenticationPlugin;
+        private @Nullable String explainFormat;
+        private @Nullable Boolean explicitDefaultsForTimestamp;
         private @Nullable Boolean foreignKeyChecks;
         private @Nullable Integer generatedRandomPasswordLength;
         private @Nullable String globalConnectionMemoryLimit;
         private @Nullable Boolean globalConnectionMemoryTracking;
+        private @Nullable String groupConcatMaxLen;
         private @Nullable String groupReplicationConsistency;
         private @Nullable Integer informationSchemaStatsExpiry;
+        private @Nullable Boolean innodbAdaptiveHashIndex;
+        private @Nullable Integer innodbAutoincLockMode;
         private @Nullable Integer innodbBufferPoolDumpPct;
         private @Nullable Integer innodbBufferPoolInstances;
         private @Nullable String innodbBufferPoolSize;
+        private @Nullable String innodbChangeBuffering;
         private @Nullable String innodbDdlBufferSize;
         private @Nullable Integer innodbDdlThreads;
         private @Nullable Boolean innodbFtEnableStopword;
@@ -1244,10 +1905,19 @@ public final class MysqlConfigurationVariables {
         private @Nullable Boolean innodbLogWriterThreads;
         private @Nullable String innodbMaxPurgeLag;
         private @Nullable Integer innodbMaxPurgeLagDelay;
+        private @Nullable Boolean innodbNumaInterleave;
+        private @Nullable String innodbOnlineAlterLogMaxSize;
+        private @Nullable String innodbRedoLogCapacity;
+        private @Nullable Boolean innodbRollbackOnTimeout;
+        private @Nullable Integer innodbSortBufferSize;
         private @Nullable String innodbStatsPersistentSamplePages;
         private @Nullable String innodbStatsTransientSamplePages;
+        private @Nullable Boolean innodbStrictMode;
+        private @Nullable Boolean innodbUndoLogTruncate;
         private @Nullable Integer interactiveTimeout;
+        private @Nullable String joinBufferSize;
         private @Nullable Boolean localInfile;
+        private @Nullable Integer longQueryTime;
         private @Nullable String mandatoryRoles;
         private @Nullable Integer maxAllowedPacket;
         private @Nullable String maxBinlogCacheSize;
@@ -1256,6 +1926,8 @@ public final class MysqlConfigurationVariables {
         private @Nullable String maxExecutionTime;
         private @Nullable String maxHeapTableSize;
         private @Nullable Integer maxPreparedStmtCount;
+        private @Nullable String maxSeeksForKey;
+        private @Nullable String maxUserConnections;
         private @Nullable Boolean mysqlFirewallMode;
         private @Nullable Integer mysqlZstdDefaultCompressionLevel;
         private @Nullable Integer mysqlxConnectTimeout;
@@ -1276,16 +1948,31 @@ public final class MysqlConfigurationVariables {
         private @Nullable Integer mysqlxZstdMaxClientCompressionLevel;
         private @Nullable Integer netReadTimeout;
         private @Nullable Integer netWriteTimeout;
+        private @Nullable String optimizerSwitch;
         private @Nullable String parserMaxMemSize;
         private @Nullable String queryAllocBlockSize;
         private @Nullable String queryPreallocSize;
+        private @Nullable String rangeOptimizerMaxMemSize;
         private @Nullable Integer regexpTimeLimit;
+        private @Nullable String relayLogSpaceLimit;
+        private @Nullable Integer replicaNetTimeout;
+        private @Nullable Integer replicaParallelWorkers;
+        private @Nullable String replicaTypeConversions;
+        private @Nullable Boolean requireSecureTransport;
+        private @Nullable Boolean skipNameResolve;
         private @Nullable String sortBufferSize;
+        private @Nullable Boolean sqlGenerateInvisiblePrimaryKey;
         private @Nullable String sqlMode;
         private @Nullable Boolean sqlRequirePrimaryKey;
         private @Nullable Boolean sqlWarnings;
+        private @Nullable Integer tableDefinitionCache;
+        private @Nullable Integer tableOpenCache;
+        private @Nullable String temptableMaxRam;
         private @Nullable Boolean threadPoolDedicatedListeners;
         private @Nullable Integer threadPoolMaxTransactionsLimit;
+        private @Nullable Integer threadPoolQueryThreadsPerGroup;
+        private @Nullable Integer threadPoolSize;
+        private @Nullable Integer threadPoolTransactionDelay;
         private @Nullable String timeZone;
         private @Nullable String tmpTableSize;
         private @Nullable String transactionIsolation;
@@ -1293,27 +1980,40 @@ public final class MysqlConfigurationVariables {
         public Builder() {}
         public Builder(MysqlConfigurationVariables defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.autoIncrementIncrement = defaults.autoIncrementIncrement;
+    	      this.autoIncrementOffset = defaults.autoIncrementOffset;
     	      this.autocommit = defaults.autocommit;
     	      this.bigTables = defaults.bigTables;
     	      this.binlogExpireLogsSeconds = defaults.binlogExpireLogsSeconds;
+    	      this.binlogGroupCommitSyncDelay = defaults.binlogGroupCommitSyncDelay;
+    	      this.binlogGroupCommitSyncNoDelayCount = defaults.binlogGroupCommitSyncNoDelayCount;
     	      this.binlogRowMetadata = defaults.binlogRowMetadata;
     	      this.binlogRowValueOptions = defaults.binlogRowValueOptions;
     	      this.binlogTransactionCompression = defaults.binlogTransactionCompression;
+    	      this.blockEncryptionMode = defaults.blockEncryptionMode;
+    	      this.characterSetServer = defaults.characterSetServer;
+    	      this.collationServer = defaults.collationServer;
     	      this.completionType = defaults.completionType;
     	      this.connectTimeout = defaults.connectTimeout;
     	      this.connectionMemoryChunkSize = defaults.connectionMemoryChunkSize;
     	      this.connectionMemoryLimit = defaults.connectionMemoryLimit;
     	      this.cteMaxRecursionDepth = defaults.cteMaxRecursionDepth;
     	      this.defaultAuthenticationPlugin = defaults.defaultAuthenticationPlugin;
+    	      this.explainFormat = defaults.explainFormat;
+    	      this.explicitDefaultsForTimestamp = defaults.explicitDefaultsForTimestamp;
     	      this.foreignKeyChecks = defaults.foreignKeyChecks;
     	      this.generatedRandomPasswordLength = defaults.generatedRandomPasswordLength;
     	      this.globalConnectionMemoryLimit = defaults.globalConnectionMemoryLimit;
     	      this.globalConnectionMemoryTracking = defaults.globalConnectionMemoryTracking;
+    	      this.groupConcatMaxLen = defaults.groupConcatMaxLen;
     	      this.groupReplicationConsistency = defaults.groupReplicationConsistency;
     	      this.informationSchemaStatsExpiry = defaults.informationSchemaStatsExpiry;
+    	      this.innodbAdaptiveHashIndex = defaults.innodbAdaptiveHashIndex;
+    	      this.innodbAutoincLockMode = defaults.innodbAutoincLockMode;
     	      this.innodbBufferPoolDumpPct = defaults.innodbBufferPoolDumpPct;
     	      this.innodbBufferPoolInstances = defaults.innodbBufferPoolInstances;
     	      this.innodbBufferPoolSize = defaults.innodbBufferPoolSize;
+    	      this.innodbChangeBuffering = defaults.innodbChangeBuffering;
     	      this.innodbDdlBufferSize = defaults.innodbDdlBufferSize;
     	      this.innodbDdlThreads = defaults.innodbDdlThreads;
     	      this.innodbFtEnableStopword = defaults.innodbFtEnableStopword;
@@ -1326,10 +2026,19 @@ public final class MysqlConfigurationVariables {
     	      this.innodbLogWriterThreads = defaults.innodbLogWriterThreads;
     	      this.innodbMaxPurgeLag = defaults.innodbMaxPurgeLag;
     	      this.innodbMaxPurgeLagDelay = defaults.innodbMaxPurgeLagDelay;
+    	      this.innodbNumaInterleave = defaults.innodbNumaInterleave;
+    	      this.innodbOnlineAlterLogMaxSize = defaults.innodbOnlineAlterLogMaxSize;
+    	      this.innodbRedoLogCapacity = defaults.innodbRedoLogCapacity;
+    	      this.innodbRollbackOnTimeout = defaults.innodbRollbackOnTimeout;
+    	      this.innodbSortBufferSize = defaults.innodbSortBufferSize;
     	      this.innodbStatsPersistentSamplePages = defaults.innodbStatsPersistentSamplePages;
     	      this.innodbStatsTransientSamplePages = defaults.innodbStatsTransientSamplePages;
+    	      this.innodbStrictMode = defaults.innodbStrictMode;
+    	      this.innodbUndoLogTruncate = defaults.innodbUndoLogTruncate;
     	      this.interactiveTimeout = defaults.interactiveTimeout;
+    	      this.joinBufferSize = defaults.joinBufferSize;
     	      this.localInfile = defaults.localInfile;
+    	      this.longQueryTime = defaults.longQueryTime;
     	      this.mandatoryRoles = defaults.mandatoryRoles;
     	      this.maxAllowedPacket = defaults.maxAllowedPacket;
     	      this.maxBinlogCacheSize = defaults.maxBinlogCacheSize;
@@ -1338,6 +2047,8 @@ public final class MysqlConfigurationVariables {
     	      this.maxExecutionTime = defaults.maxExecutionTime;
     	      this.maxHeapTableSize = defaults.maxHeapTableSize;
     	      this.maxPreparedStmtCount = defaults.maxPreparedStmtCount;
+    	      this.maxSeeksForKey = defaults.maxSeeksForKey;
+    	      this.maxUserConnections = defaults.maxUserConnections;
     	      this.mysqlFirewallMode = defaults.mysqlFirewallMode;
     	      this.mysqlZstdDefaultCompressionLevel = defaults.mysqlZstdDefaultCompressionLevel;
     	      this.mysqlxConnectTimeout = defaults.mysqlxConnectTimeout;
@@ -1358,22 +2069,49 @@ public final class MysqlConfigurationVariables {
     	      this.mysqlxZstdMaxClientCompressionLevel = defaults.mysqlxZstdMaxClientCompressionLevel;
     	      this.netReadTimeout = defaults.netReadTimeout;
     	      this.netWriteTimeout = defaults.netWriteTimeout;
+    	      this.optimizerSwitch = defaults.optimizerSwitch;
     	      this.parserMaxMemSize = defaults.parserMaxMemSize;
     	      this.queryAllocBlockSize = defaults.queryAllocBlockSize;
     	      this.queryPreallocSize = defaults.queryPreallocSize;
+    	      this.rangeOptimizerMaxMemSize = defaults.rangeOptimizerMaxMemSize;
     	      this.regexpTimeLimit = defaults.regexpTimeLimit;
+    	      this.relayLogSpaceLimit = defaults.relayLogSpaceLimit;
+    	      this.replicaNetTimeout = defaults.replicaNetTimeout;
+    	      this.replicaParallelWorkers = defaults.replicaParallelWorkers;
+    	      this.replicaTypeConversions = defaults.replicaTypeConversions;
+    	      this.requireSecureTransport = defaults.requireSecureTransport;
+    	      this.skipNameResolve = defaults.skipNameResolve;
     	      this.sortBufferSize = defaults.sortBufferSize;
+    	      this.sqlGenerateInvisiblePrimaryKey = defaults.sqlGenerateInvisiblePrimaryKey;
     	      this.sqlMode = defaults.sqlMode;
     	      this.sqlRequirePrimaryKey = defaults.sqlRequirePrimaryKey;
     	      this.sqlWarnings = defaults.sqlWarnings;
+    	      this.tableDefinitionCache = defaults.tableDefinitionCache;
+    	      this.tableOpenCache = defaults.tableOpenCache;
+    	      this.temptableMaxRam = defaults.temptableMaxRam;
     	      this.threadPoolDedicatedListeners = defaults.threadPoolDedicatedListeners;
     	      this.threadPoolMaxTransactionsLimit = defaults.threadPoolMaxTransactionsLimit;
+    	      this.threadPoolQueryThreadsPerGroup = defaults.threadPoolQueryThreadsPerGroup;
+    	      this.threadPoolSize = defaults.threadPoolSize;
+    	      this.threadPoolTransactionDelay = defaults.threadPoolTransactionDelay;
     	      this.timeZone = defaults.timeZone;
     	      this.tmpTableSize = defaults.tmpTableSize;
     	      this.transactionIsolation = defaults.transactionIsolation;
     	      this.waitTimeout = defaults.waitTimeout;
         }
 
+        @CustomType.Setter
+        public Builder autoIncrementIncrement(@Nullable Integer autoIncrementIncrement) {
+
+            this.autoIncrementIncrement = autoIncrementIncrement;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder autoIncrementOffset(@Nullable Integer autoIncrementOffset) {
+
+            this.autoIncrementOffset = autoIncrementOffset;
+            return this;
+        }
         @CustomType.Setter
         public Builder autocommit(@Nullable Boolean autocommit) {
 
@@ -1393,6 +2131,18 @@ public final class MysqlConfigurationVariables {
             return this;
         }
         @CustomType.Setter
+        public Builder binlogGroupCommitSyncDelay(@Nullable Integer binlogGroupCommitSyncDelay) {
+
+            this.binlogGroupCommitSyncDelay = binlogGroupCommitSyncDelay;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder binlogGroupCommitSyncNoDelayCount(@Nullable Integer binlogGroupCommitSyncNoDelayCount) {
+
+            this.binlogGroupCommitSyncNoDelayCount = binlogGroupCommitSyncNoDelayCount;
+            return this;
+        }
+        @CustomType.Setter
         public Builder binlogRowMetadata(@Nullable String binlogRowMetadata) {
 
             this.binlogRowMetadata = binlogRowMetadata;
@@ -1408,6 +2158,24 @@ public final class MysqlConfigurationVariables {
         public Builder binlogTransactionCompression(@Nullable Boolean binlogTransactionCompression) {
 
             this.binlogTransactionCompression = binlogTransactionCompression;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder blockEncryptionMode(@Nullable String blockEncryptionMode) {
+
+            this.blockEncryptionMode = blockEncryptionMode;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder characterSetServer(@Nullable String characterSetServer) {
+
+            this.characterSetServer = characterSetServer;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder collationServer(@Nullable String collationServer) {
+
+            this.collationServer = collationServer;
             return this;
         }
         @CustomType.Setter
@@ -1447,6 +2215,18 @@ public final class MysqlConfigurationVariables {
             return this;
         }
         @CustomType.Setter
+        public Builder explainFormat(@Nullable String explainFormat) {
+
+            this.explainFormat = explainFormat;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder explicitDefaultsForTimestamp(@Nullable Boolean explicitDefaultsForTimestamp) {
+
+            this.explicitDefaultsForTimestamp = explicitDefaultsForTimestamp;
+            return this;
+        }
+        @CustomType.Setter
         public Builder foreignKeyChecks(@Nullable Boolean foreignKeyChecks) {
 
             this.foreignKeyChecks = foreignKeyChecks;
@@ -1471,6 +2251,12 @@ public final class MysqlConfigurationVariables {
             return this;
         }
         @CustomType.Setter
+        public Builder groupConcatMaxLen(@Nullable String groupConcatMaxLen) {
+
+            this.groupConcatMaxLen = groupConcatMaxLen;
+            return this;
+        }
+        @CustomType.Setter
         public Builder groupReplicationConsistency(@Nullable String groupReplicationConsistency) {
 
             this.groupReplicationConsistency = groupReplicationConsistency;
@@ -1480,6 +2266,18 @@ public final class MysqlConfigurationVariables {
         public Builder informationSchemaStatsExpiry(@Nullable Integer informationSchemaStatsExpiry) {
 
             this.informationSchemaStatsExpiry = informationSchemaStatsExpiry;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder innodbAdaptiveHashIndex(@Nullable Boolean innodbAdaptiveHashIndex) {
+
+            this.innodbAdaptiveHashIndex = innodbAdaptiveHashIndex;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder innodbAutoincLockMode(@Nullable Integer innodbAutoincLockMode) {
+
+            this.innodbAutoincLockMode = innodbAutoincLockMode;
             return this;
         }
         @CustomType.Setter
@@ -1498,6 +2296,12 @@ public final class MysqlConfigurationVariables {
         public Builder innodbBufferPoolSize(@Nullable String innodbBufferPoolSize) {
 
             this.innodbBufferPoolSize = innodbBufferPoolSize;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder innodbChangeBuffering(@Nullable String innodbChangeBuffering) {
+
+            this.innodbChangeBuffering = innodbChangeBuffering;
             return this;
         }
         @CustomType.Setter
@@ -1573,6 +2377,36 @@ public final class MysqlConfigurationVariables {
             return this;
         }
         @CustomType.Setter
+        public Builder innodbNumaInterleave(@Nullable Boolean innodbNumaInterleave) {
+
+            this.innodbNumaInterleave = innodbNumaInterleave;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder innodbOnlineAlterLogMaxSize(@Nullable String innodbOnlineAlterLogMaxSize) {
+
+            this.innodbOnlineAlterLogMaxSize = innodbOnlineAlterLogMaxSize;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder innodbRedoLogCapacity(@Nullable String innodbRedoLogCapacity) {
+
+            this.innodbRedoLogCapacity = innodbRedoLogCapacity;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder innodbRollbackOnTimeout(@Nullable Boolean innodbRollbackOnTimeout) {
+
+            this.innodbRollbackOnTimeout = innodbRollbackOnTimeout;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder innodbSortBufferSize(@Nullable Integer innodbSortBufferSize) {
+
+            this.innodbSortBufferSize = innodbSortBufferSize;
+            return this;
+        }
+        @CustomType.Setter
         public Builder innodbStatsPersistentSamplePages(@Nullable String innodbStatsPersistentSamplePages) {
 
             this.innodbStatsPersistentSamplePages = innodbStatsPersistentSamplePages;
@@ -1585,15 +2419,39 @@ public final class MysqlConfigurationVariables {
             return this;
         }
         @CustomType.Setter
+        public Builder innodbStrictMode(@Nullable Boolean innodbStrictMode) {
+
+            this.innodbStrictMode = innodbStrictMode;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder innodbUndoLogTruncate(@Nullable Boolean innodbUndoLogTruncate) {
+
+            this.innodbUndoLogTruncate = innodbUndoLogTruncate;
+            return this;
+        }
+        @CustomType.Setter
         public Builder interactiveTimeout(@Nullable Integer interactiveTimeout) {
 
             this.interactiveTimeout = interactiveTimeout;
             return this;
         }
         @CustomType.Setter
+        public Builder joinBufferSize(@Nullable String joinBufferSize) {
+
+            this.joinBufferSize = joinBufferSize;
+            return this;
+        }
+        @CustomType.Setter
         public Builder localInfile(@Nullable Boolean localInfile) {
 
             this.localInfile = localInfile;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder longQueryTime(@Nullable Integer longQueryTime) {
+
+            this.longQueryTime = longQueryTime;
             return this;
         }
         @CustomType.Setter
@@ -1642,6 +2500,18 @@ public final class MysqlConfigurationVariables {
         public Builder maxPreparedStmtCount(@Nullable Integer maxPreparedStmtCount) {
 
             this.maxPreparedStmtCount = maxPreparedStmtCount;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder maxSeeksForKey(@Nullable String maxSeeksForKey) {
+
+            this.maxSeeksForKey = maxSeeksForKey;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder maxUserConnections(@Nullable String maxUserConnections) {
+
+            this.maxUserConnections = maxUserConnections;
             return this;
         }
         @CustomType.Setter
@@ -1765,6 +2635,12 @@ public final class MysqlConfigurationVariables {
             return this;
         }
         @CustomType.Setter
+        public Builder optimizerSwitch(@Nullable String optimizerSwitch) {
+
+            this.optimizerSwitch = optimizerSwitch;
+            return this;
+        }
+        @CustomType.Setter
         public Builder parserMaxMemSize(@Nullable String parserMaxMemSize) {
 
             this.parserMaxMemSize = parserMaxMemSize;
@@ -1783,15 +2659,63 @@ public final class MysqlConfigurationVariables {
             return this;
         }
         @CustomType.Setter
+        public Builder rangeOptimizerMaxMemSize(@Nullable String rangeOptimizerMaxMemSize) {
+
+            this.rangeOptimizerMaxMemSize = rangeOptimizerMaxMemSize;
+            return this;
+        }
+        @CustomType.Setter
         public Builder regexpTimeLimit(@Nullable Integer regexpTimeLimit) {
 
             this.regexpTimeLimit = regexpTimeLimit;
             return this;
         }
         @CustomType.Setter
+        public Builder relayLogSpaceLimit(@Nullable String relayLogSpaceLimit) {
+
+            this.relayLogSpaceLimit = relayLogSpaceLimit;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder replicaNetTimeout(@Nullable Integer replicaNetTimeout) {
+
+            this.replicaNetTimeout = replicaNetTimeout;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder replicaParallelWorkers(@Nullable Integer replicaParallelWorkers) {
+
+            this.replicaParallelWorkers = replicaParallelWorkers;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder replicaTypeConversions(@Nullable String replicaTypeConversions) {
+
+            this.replicaTypeConversions = replicaTypeConversions;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder requireSecureTransport(@Nullable Boolean requireSecureTransport) {
+
+            this.requireSecureTransport = requireSecureTransport;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder skipNameResolve(@Nullable Boolean skipNameResolve) {
+
+            this.skipNameResolve = skipNameResolve;
+            return this;
+        }
+        @CustomType.Setter
         public Builder sortBufferSize(@Nullable String sortBufferSize) {
 
             this.sortBufferSize = sortBufferSize;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder sqlGenerateInvisiblePrimaryKey(@Nullable Boolean sqlGenerateInvisiblePrimaryKey) {
+
+            this.sqlGenerateInvisiblePrimaryKey = sqlGenerateInvisiblePrimaryKey;
             return this;
         }
         @CustomType.Setter
@@ -1813,6 +2737,24 @@ public final class MysqlConfigurationVariables {
             return this;
         }
         @CustomType.Setter
+        public Builder tableDefinitionCache(@Nullable Integer tableDefinitionCache) {
+
+            this.tableDefinitionCache = tableDefinitionCache;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder tableOpenCache(@Nullable Integer tableOpenCache) {
+
+            this.tableOpenCache = tableOpenCache;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder temptableMaxRam(@Nullable String temptableMaxRam) {
+
+            this.temptableMaxRam = temptableMaxRam;
+            return this;
+        }
+        @CustomType.Setter
         public Builder threadPoolDedicatedListeners(@Nullable Boolean threadPoolDedicatedListeners) {
 
             this.threadPoolDedicatedListeners = threadPoolDedicatedListeners;
@@ -1822,6 +2764,24 @@ public final class MysqlConfigurationVariables {
         public Builder threadPoolMaxTransactionsLimit(@Nullable Integer threadPoolMaxTransactionsLimit) {
 
             this.threadPoolMaxTransactionsLimit = threadPoolMaxTransactionsLimit;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder threadPoolQueryThreadsPerGroup(@Nullable Integer threadPoolQueryThreadsPerGroup) {
+
+            this.threadPoolQueryThreadsPerGroup = threadPoolQueryThreadsPerGroup;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder threadPoolSize(@Nullable Integer threadPoolSize) {
+
+            this.threadPoolSize = threadPoolSize;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder threadPoolTransactionDelay(@Nullable Integer threadPoolTransactionDelay) {
+
+            this.threadPoolTransactionDelay = threadPoolTransactionDelay;
             return this;
         }
         @CustomType.Setter
@@ -1850,27 +2810,40 @@ public final class MysqlConfigurationVariables {
         }
         public MysqlConfigurationVariables build() {
             final var _resultValue = new MysqlConfigurationVariables();
+            _resultValue.autoIncrementIncrement = autoIncrementIncrement;
+            _resultValue.autoIncrementOffset = autoIncrementOffset;
             _resultValue.autocommit = autocommit;
             _resultValue.bigTables = bigTables;
             _resultValue.binlogExpireLogsSeconds = binlogExpireLogsSeconds;
+            _resultValue.binlogGroupCommitSyncDelay = binlogGroupCommitSyncDelay;
+            _resultValue.binlogGroupCommitSyncNoDelayCount = binlogGroupCommitSyncNoDelayCount;
             _resultValue.binlogRowMetadata = binlogRowMetadata;
             _resultValue.binlogRowValueOptions = binlogRowValueOptions;
             _resultValue.binlogTransactionCompression = binlogTransactionCompression;
+            _resultValue.blockEncryptionMode = blockEncryptionMode;
+            _resultValue.characterSetServer = characterSetServer;
+            _resultValue.collationServer = collationServer;
             _resultValue.completionType = completionType;
             _resultValue.connectTimeout = connectTimeout;
             _resultValue.connectionMemoryChunkSize = connectionMemoryChunkSize;
             _resultValue.connectionMemoryLimit = connectionMemoryLimit;
             _resultValue.cteMaxRecursionDepth = cteMaxRecursionDepth;
             _resultValue.defaultAuthenticationPlugin = defaultAuthenticationPlugin;
+            _resultValue.explainFormat = explainFormat;
+            _resultValue.explicitDefaultsForTimestamp = explicitDefaultsForTimestamp;
             _resultValue.foreignKeyChecks = foreignKeyChecks;
             _resultValue.generatedRandomPasswordLength = generatedRandomPasswordLength;
             _resultValue.globalConnectionMemoryLimit = globalConnectionMemoryLimit;
             _resultValue.globalConnectionMemoryTracking = globalConnectionMemoryTracking;
+            _resultValue.groupConcatMaxLen = groupConcatMaxLen;
             _resultValue.groupReplicationConsistency = groupReplicationConsistency;
             _resultValue.informationSchemaStatsExpiry = informationSchemaStatsExpiry;
+            _resultValue.innodbAdaptiveHashIndex = innodbAdaptiveHashIndex;
+            _resultValue.innodbAutoincLockMode = innodbAutoincLockMode;
             _resultValue.innodbBufferPoolDumpPct = innodbBufferPoolDumpPct;
             _resultValue.innodbBufferPoolInstances = innodbBufferPoolInstances;
             _resultValue.innodbBufferPoolSize = innodbBufferPoolSize;
+            _resultValue.innodbChangeBuffering = innodbChangeBuffering;
             _resultValue.innodbDdlBufferSize = innodbDdlBufferSize;
             _resultValue.innodbDdlThreads = innodbDdlThreads;
             _resultValue.innodbFtEnableStopword = innodbFtEnableStopword;
@@ -1883,10 +2856,19 @@ public final class MysqlConfigurationVariables {
             _resultValue.innodbLogWriterThreads = innodbLogWriterThreads;
             _resultValue.innodbMaxPurgeLag = innodbMaxPurgeLag;
             _resultValue.innodbMaxPurgeLagDelay = innodbMaxPurgeLagDelay;
+            _resultValue.innodbNumaInterleave = innodbNumaInterleave;
+            _resultValue.innodbOnlineAlterLogMaxSize = innodbOnlineAlterLogMaxSize;
+            _resultValue.innodbRedoLogCapacity = innodbRedoLogCapacity;
+            _resultValue.innodbRollbackOnTimeout = innodbRollbackOnTimeout;
+            _resultValue.innodbSortBufferSize = innodbSortBufferSize;
             _resultValue.innodbStatsPersistentSamplePages = innodbStatsPersistentSamplePages;
             _resultValue.innodbStatsTransientSamplePages = innodbStatsTransientSamplePages;
+            _resultValue.innodbStrictMode = innodbStrictMode;
+            _resultValue.innodbUndoLogTruncate = innodbUndoLogTruncate;
             _resultValue.interactiveTimeout = interactiveTimeout;
+            _resultValue.joinBufferSize = joinBufferSize;
             _resultValue.localInfile = localInfile;
+            _resultValue.longQueryTime = longQueryTime;
             _resultValue.mandatoryRoles = mandatoryRoles;
             _resultValue.maxAllowedPacket = maxAllowedPacket;
             _resultValue.maxBinlogCacheSize = maxBinlogCacheSize;
@@ -1895,6 +2877,8 @@ public final class MysqlConfigurationVariables {
             _resultValue.maxExecutionTime = maxExecutionTime;
             _resultValue.maxHeapTableSize = maxHeapTableSize;
             _resultValue.maxPreparedStmtCount = maxPreparedStmtCount;
+            _resultValue.maxSeeksForKey = maxSeeksForKey;
+            _resultValue.maxUserConnections = maxUserConnections;
             _resultValue.mysqlFirewallMode = mysqlFirewallMode;
             _resultValue.mysqlZstdDefaultCompressionLevel = mysqlZstdDefaultCompressionLevel;
             _resultValue.mysqlxConnectTimeout = mysqlxConnectTimeout;
@@ -1915,16 +2899,31 @@ public final class MysqlConfigurationVariables {
             _resultValue.mysqlxZstdMaxClientCompressionLevel = mysqlxZstdMaxClientCompressionLevel;
             _resultValue.netReadTimeout = netReadTimeout;
             _resultValue.netWriteTimeout = netWriteTimeout;
+            _resultValue.optimizerSwitch = optimizerSwitch;
             _resultValue.parserMaxMemSize = parserMaxMemSize;
             _resultValue.queryAllocBlockSize = queryAllocBlockSize;
             _resultValue.queryPreallocSize = queryPreallocSize;
+            _resultValue.rangeOptimizerMaxMemSize = rangeOptimizerMaxMemSize;
             _resultValue.regexpTimeLimit = regexpTimeLimit;
+            _resultValue.relayLogSpaceLimit = relayLogSpaceLimit;
+            _resultValue.replicaNetTimeout = replicaNetTimeout;
+            _resultValue.replicaParallelWorkers = replicaParallelWorkers;
+            _resultValue.replicaTypeConversions = replicaTypeConversions;
+            _resultValue.requireSecureTransport = requireSecureTransport;
+            _resultValue.skipNameResolve = skipNameResolve;
             _resultValue.sortBufferSize = sortBufferSize;
+            _resultValue.sqlGenerateInvisiblePrimaryKey = sqlGenerateInvisiblePrimaryKey;
             _resultValue.sqlMode = sqlMode;
             _resultValue.sqlRequirePrimaryKey = sqlRequirePrimaryKey;
             _resultValue.sqlWarnings = sqlWarnings;
+            _resultValue.tableDefinitionCache = tableDefinitionCache;
+            _resultValue.tableOpenCache = tableOpenCache;
+            _resultValue.temptableMaxRam = temptableMaxRam;
             _resultValue.threadPoolDedicatedListeners = threadPoolDedicatedListeners;
             _resultValue.threadPoolMaxTransactionsLimit = threadPoolMaxTransactionsLimit;
+            _resultValue.threadPoolQueryThreadsPerGroup = threadPoolQueryThreadsPerGroup;
+            _resultValue.threadPoolSize = threadPoolSize;
+            _resultValue.threadPoolTransactionDelay = threadPoolTransactionDelay;
             _resultValue.timeZone = timeZone;
             _resultValue.tmpTableSize = tmpTableSize;
             _resultValue.transactionIsolation = transactionIsolation;

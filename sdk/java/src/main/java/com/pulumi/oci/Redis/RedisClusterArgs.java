@@ -156,14 +156,14 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+     * (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
      * 
      */
     @Import(name="softwareVersion", required=true)
     private Output<String> softwareVersion;
 
     /**
-     * @return The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+     * @return (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
      * 
      */
     public Output<String> softwareVersion() {
@@ -425,7 +425,7 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param softwareVersion The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+         * @param softwareVersion (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
          * 
          * @return builder
          * 
@@ -436,7 +436,7 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param softwareVersion The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+         * @param softwareVersion (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
          * 
          * @return builder
          * 

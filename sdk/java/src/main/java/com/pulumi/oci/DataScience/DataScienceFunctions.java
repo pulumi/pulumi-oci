@@ -23,6 +23,10 @@ import com.pulumi.oci.DataScience.inputs.GetJobShapesPlainArgs;
 import com.pulumi.oci.DataScience.inputs.GetJobsArgs;
 import com.pulumi.oci.DataScience.inputs.GetJobsPlainArgs;
 import com.pulumi.oci.DataScience.inputs.GetModelArgs;
+import com.pulumi.oci.DataScience.inputs.GetModelCustomMetadataArtifactContentArgs;
+import com.pulumi.oci.DataScience.inputs.GetModelCustomMetadataArtifactContentPlainArgs;
+import com.pulumi.oci.DataScience.inputs.GetModelDefinedMetadataArtifactContentArgs;
+import com.pulumi.oci.DataScience.inputs.GetModelDefinedMetadataArtifactContentPlainArgs;
 import com.pulumi.oci.DataScience.inputs.GetModelDeploymentArgs;
 import com.pulumi.oci.DataScience.inputs.GetModelDeploymentPlainArgs;
 import com.pulumi.oci.DataScience.inputs.GetModelDeploymentShapesArgs;
@@ -71,6 +75,8 @@ import com.pulumi.oci.DataScience.outputs.GetJobRunResult;
 import com.pulumi.oci.DataScience.outputs.GetJobRunsResult;
 import com.pulumi.oci.DataScience.outputs.GetJobShapesResult;
 import com.pulumi.oci.DataScience.outputs.GetJobsResult;
+import com.pulumi.oci.DataScience.outputs.GetModelCustomMetadataArtifactContentResult;
+import com.pulumi.oci.DataScience.outputs.GetModelDefinedMetadataArtifactContentResult;
 import com.pulumi.oci.DataScience.outputs.GetModelDeploymentResult;
 import com.pulumi.oci.DataScience.outputs.GetModelDeploymentShapesResult;
 import com.pulumi.oci.DataScience.outputs.GetModelDeploymentsResult;
@@ -2037,6 +2043,466 @@ public final class DataScienceFunctions {
         return Deployment.getInstance().invokeAsync("oci:DataScience/getModel:getModel", TypeShape.of(GetModelResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Model Custom Metadata Artifact Content resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Downloads model custom metadata artifact content for specified model metadata key.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelCustomMetadataArtifactContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelCustomMetadataArtifactContent = DataScienceFunctions.getModelCustomMetadataArtifactContent(GetModelCustomMetadataArtifactContentArgs.builder()
+     *             .metadatumKeyName(testKey.name())
+     *             .modelId(testModel.id())
+     *             .range(modelCustomMetadataArtifactContentRange)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelCustomMetadataArtifactContentResult> getModelCustomMetadataArtifactContent(GetModelCustomMetadataArtifactContentArgs args) {
+        return getModelCustomMetadataArtifactContent(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Model Custom Metadata Artifact Content resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Downloads model custom metadata artifact content for specified model metadata key.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelCustomMetadataArtifactContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelCustomMetadataArtifactContent = DataScienceFunctions.getModelCustomMetadataArtifactContent(GetModelCustomMetadataArtifactContentArgs.builder()
+     *             .metadatumKeyName(testKey.name())
+     *             .modelId(testModel.id())
+     *             .range(modelCustomMetadataArtifactContentRange)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetModelCustomMetadataArtifactContentResult> getModelCustomMetadataArtifactContentPlain(GetModelCustomMetadataArtifactContentPlainArgs args) {
+        return getModelCustomMetadataArtifactContentPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Model Custom Metadata Artifact Content resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Downloads model custom metadata artifact content for specified model metadata key.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelCustomMetadataArtifactContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelCustomMetadataArtifactContent = DataScienceFunctions.getModelCustomMetadataArtifactContent(GetModelCustomMetadataArtifactContentArgs.builder()
+     *             .metadatumKeyName(testKey.name())
+     *             .modelId(testModel.id())
+     *             .range(modelCustomMetadataArtifactContentRange)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelCustomMetadataArtifactContentResult> getModelCustomMetadataArtifactContent(GetModelCustomMetadataArtifactContentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getModelCustomMetadataArtifactContent:getModelCustomMetadataArtifactContent", TypeShape.of(GetModelCustomMetadataArtifactContentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Model Custom Metadata Artifact Content resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Downloads model custom metadata artifact content for specified model metadata key.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelCustomMetadataArtifactContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelCustomMetadataArtifactContent = DataScienceFunctions.getModelCustomMetadataArtifactContent(GetModelCustomMetadataArtifactContentArgs.builder()
+     *             .metadatumKeyName(testKey.name())
+     *             .modelId(testModel.id())
+     *             .range(modelCustomMetadataArtifactContentRange)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelCustomMetadataArtifactContentResult> getModelCustomMetadataArtifactContent(GetModelCustomMetadataArtifactContentArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getModelCustomMetadataArtifactContent:getModelCustomMetadataArtifactContent", TypeShape.of(GetModelCustomMetadataArtifactContentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Model Custom Metadata Artifact Content resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Downloads model custom metadata artifact content for specified model metadata key.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelCustomMetadataArtifactContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelCustomMetadataArtifactContent = DataScienceFunctions.getModelCustomMetadataArtifactContent(GetModelCustomMetadataArtifactContentArgs.builder()
+     *             .metadatumKeyName(testKey.name())
+     *             .modelId(testModel.id())
+     *             .range(modelCustomMetadataArtifactContentRange)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetModelCustomMetadataArtifactContentResult> getModelCustomMetadataArtifactContentPlain(GetModelCustomMetadataArtifactContentPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataScience/getModelCustomMetadataArtifactContent:getModelCustomMetadataArtifactContent", TypeShape.of(GetModelCustomMetadataArtifactContentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Model Defined Metadata Artifact Content resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Downloads model defined metadata artifact content for specified model metadata key.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelDefinedMetadataArtifactContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelDefinedMetadataArtifactContent = DataScienceFunctions.getModelDefinedMetadataArtifactContent(GetModelDefinedMetadataArtifactContentArgs.builder()
+     *             .metadatumKeyName(testKey.name())
+     *             .modelId(testModel.id())
+     *             .range(modelDefinedMetadataArtifactContentRange)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelDefinedMetadataArtifactContentResult> getModelDefinedMetadataArtifactContent(GetModelDefinedMetadataArtifactContentArgs args) {
+        return getModelDefinedMetadataArtifactContent(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Model Defined Metadata Artifact Content resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Downloads model defined metadata artifact content for specified model metadata key.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelDefinedMetadataArtifactContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelDefinedMetadataArtifactContent = DataScienceFunctions.getModelDefinedMetadataArtifactContent(GetModelDefinedMetadataArtifactContentArgs.builder()
+     *             .metadatumKeyName(testKey.name())
+     *             .modelId(testModel.id())
+     *             .range(modelDefinedMetadataArtifactContentRange)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetModelDefinedMetadataArtifactContentResult> getModelDefinedMetadataArtifactContentPlain(GetModelDefinedMetadataArtifactContentPlainArgs args) {
+        return getModelDefinedMetadataArtifactContentPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Model Defined Metadata Artifact Content resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Downloads model defined metadata artifact content for specified model metadata key.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelDefinedMetadataArtifactContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelDefinedMetadataArtifactContent = DataScienceFunctions.getModelDefinedMetadataArtifactContent(GetModelDefinedMetadataArtifactContentArgs.builder()
+     *             .metadatumKeyName(testKey.name())
+     *             .modelId(testModel.id())
+     *             .range(modelDefinedMetadataArtifactContentRange)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelDefinedMetadataArtifactContentResult> getModelDefinedMetadataArtifactContent(GetModelDefinedMetadataArtifactContentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getModelDefinedMetadataArtifactContent:getModelDefinedMetadataArtifactContent", TypeShape.of(GetModelDefinedMetadataArtifactContentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Model Defined Metadata Artifact Content resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Downloads model defined metadata artifact content for specified model metadata key.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelDefinedMetadataArtifactContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelDefinedMetadataArtifactContent = DataScienceFunctions.getModelDefinedMetadataArtifactContent(GetModelDefinedMetadataArtifactContentArgs.builder()
+     *             .metadatumKeyName(testKey.name())
+     *             .modelId(testModel.id())
+     *             .range(modelDefinedMetadataArtifactContentRange)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelDefinedMetadataArtifactContentResult> getModelDefinedMetadataArtifactContent(GetModelDefinedMetadataArtifactContentArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getModelDefinedMetadataArtifactContent:getModelDefinedMetadataArtifactContent", TypeShape.of(GetModelDefinedMetadataArtifactContentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Model Defined Metadata Artifact Content resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Downloads model defined metadata artifact content for specified model metadata key.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelDefinedMetadataArtifactContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelDefinedMetadataArtifactContent = DataScienceFunctions.getModelDefinedMetadataArtifactContent(GetModelDefinedMetadataArtifactContentArgs.builder()
+     *             .metadatumKeyName(testKey.name())
+     *             .modelId(testModel.id())
+     *             .range(modelDefinedMetadataArtifactContentRange)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetModelDefinedMetadataArtifactContentResult> getModelDefinedMetadataArtifactContentPlain(GetModelDefinedMetadataArtifactContentPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataScience/getModelDefinedMetadataArtifactContent:getModelDefinedMetadataArtifactContent", TypeShape.of(GetModelDefinedMetadataArtifactContentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides details about a specific Model Deployment resource in Oracle Cloud Infrastructure Datascience service.
      * 
      * Retrieves the model deployment for the specified `modelDeploymentId`.
@@ -3193,6 +3659,7 @@ public final class DataScienceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testModelVersionSets = DataScienceFunctions.getModelVersionSets(GetModelVersionSetsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .category(modelVersionSetCategory)
      *             .createdBy(modelVersionSetCreatedBy)
      *             .id(modelVersionSetId)
      *             .name(modelVersionSetName)
@@ -3242,6 +3709,7 @@ public final class DataScienceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testModelVersionSets = DataScienceFunctions.getModelVersionSets(GetModelVersionSetsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .category(modelVersionSetCategory)
      *             .createdBy(modelVersionSetCreatedBy)
      *             .id(modelVersionSetId)
      *             .name(modelVersionSetName)
@@ -3291,6 +3759,7 @@ public final class DataScienceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testModelVersionSets = DataScienceFunctions.getModelVersionSets(GetModelVersionSetsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .category(modelVersionSetCategory)
      *             .createdBy(modelVersionSetCreatedBy)
      *             .id(modelVersionSetId)
      *             .name(modelVersionSetName)
@@ -3340,6 +3809,7 @@ public final class DataScienceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testModelVersionSets = DataScienceFunctions.getModelVersionSets(GetModelVersionSetsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .category(modelVersionSetCategory)
      *             .createdBy(modelVersionSetCreatedBy)
      *             .id(modelVersionSetId)
      *             .name(modelVersionSetName)
@@ -3389,6 +3859,7 @@ public final class DataScienceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testModelVersionSets = DataScienceFunctions.getModelVersionSets(GetModelVersionSetsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .category(modelVersionSetCategory)
      *             .createdBy(modelVersionSetCreatedBy)
      *             .id(modelVersionSetId)
      *             .name(modelVersionSetName)
@@ -3438,6 +3909,7 @@ public final class DataScienceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testModels = DataScienceFunctions.getModels(GetModelsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .category(modelCategory)
      *             .createdBy(modelCreatedBy)
      *             .displayName(modelDisplayName)
      *             .id(modelId)
@@ -3488,6 +3960,7 @@ public final class DataScienceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testModels = DataScienceFunctions.getModels(GetModelsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .category(modelCategory)
      *             .createdBy(modelCreatedBy)
      *             .displayName(modelDisplayName)
      *             .id(modelId)
@@ -3538,6 +4011,7 @@ public final class DataScienceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testModels = DataScienceFunctions.getModels(GetModelsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .category(modelCategory)
      *             .createdBy(modelCreatedBy)
      *             .displayName(modelDisplayName)
      *             .id(modelId)
@@ -3588,6 +4062,7 @@ public final class DataScienceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testModels = DataScienceFunctions.getModels(GetModelsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .category(modelCategory)
      *             .createdBy(modelCreatedBy)
      *             .displayName(modelDisplayName)
      *             .id(modelId)
@@ -3638,6 +4113,7 @@ public final class DataScienceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testModels = DataScienceFunctions.getModels(GetModelsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .category(modelCategory)
      *             .createdBy(modelCreatedBy)
      *             .displayName(modelDisplayName)
      *             .id(modelId)

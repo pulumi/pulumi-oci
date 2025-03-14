@@ -25,6 +25,12 @@ namespace Pulumi.Oci.DataScience.Inputs
         public Input<Inputs.PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs>? StepContainerConfigurationDetails { get; set; }
 
         /// <summary>
+        /// The configuration details of a Dataflow step.
+        /// </summary>
+        [Input("stepDataflowConfigurationDetails")]
+        public Input<Inputs.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs>? StepDataflowConfigurationDetails { get; set; }
+
+        /// <summary>
         /// The name of the step.
         /// </summary>
         [Input("stepName", required: true)]

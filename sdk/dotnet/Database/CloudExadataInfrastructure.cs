@@ -39,6 +39,7 @@ namespace Pulumi.Oci.Database
     ///                 Email = cloudExadataInfrastructureCustomerContactsEmail,
     ///             },
     ///         },
+    ///         DatabaseServerType = cloudExadataInfrastructureDatabaseServerType,
     ///         DefinedTags = cloudExadataInfrastructureDefinedTags,
     ///         FreeformTags = 
     ///         {
@@ -70,6 +71,7 @@ namespace Pulumi.Oci.Database
     ///             WeeksOfMonths = cloudExadataInfrastructureMaintenanceWindowWeeksOfMonth,
     ///         },
     ///         StorageCount = cloudExadataInfrastructureStorageCount,
+    ///         StorageServerType = cloudExadataInfrastructureStorageServerType,
     ///         SubscriptionId = tenantSubscriptionId,
     ///     });
     /// 
@@ -130,6 +132,12 @@ namespace Pulumi.Oci.Database
         public Output<int> ComputeCount { get; private set; } = null!;
 
         /// <summary>
+        /// The compute model of the Exadata infrastructure.
+        /// </summary>
+        [Output("computeModel")]
+        public Output<string> ComputeModel { get; private set; } = null!;
+
+        /// <summary>
         /// The total number of CPU cores allocated.
         /// </summary>
         [Output("cpuCount")]
@@ -146,6 +154,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("dataStorageSizeInTbs")]
         public Output<double> DataStorageSizeInTbs { get; private set; } = null!;
+
+        /// <summary>
+        /// The database server type of the Exadata infrastructure.
+        /// </summary>
+        [Output("databaseServerType")]
+        public Output<string> DatabaseServerType { get; private set; } = null!;
 
         /// <summary>
         /// The local node storage allocated in GBs.
@@ -274,6 +288,12 @@ namespace Pulumi.Oci.Database
         public Output<int> StorageCount { get; private set; } = null!;
 
         /// <summary>
+        /// The storage server type of the Exadata infrastructure.
+        /// </summary>
+        [Output("storageServerType")]
+        public Output<string> StorageServerType { get; private set; } = null!;
+
+        /// <summary>
         /// The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
         /// </summary>
         [Output("storageServerVersion")]
@@ -389,6 +409,12 @@ namespace Pulumi.Oci.Database
             set => _customerContacts = value;
         }
 
+        /// <summary>
+        /// The database server type of the Exadata infrastructure.
+        /// </summary>
+        [Input("databaseServerType")]
+        public Input<string>? DatabaseServerType { get; set; }
+
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
 
@@ -436,6 +462,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("storageCount")]
         public Input<int>? StorageCount { get; set; }
+
+        /// <summary>
+        /// The storage server type of the Exadata infrastructure.
+        /// </summary>
+        [Input("storageServerType")]
+        public Input<string>? StorageServerType { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
@@ -498,6 +530,12 @@ namespace Pulumi.Oci.Database
         public Input<int>? ComputeCount { get; set; }
 
         /// <summary>
+        /// The compute model of the Exadata infrastructure.
+        /// </summary>
+        [Input("computeModel")]
+        public Input<string>? ComputeModel { get; set; }
+
+        /// <summary>
         /// The total number of CPU cores allocated.
         /// </summary>
         [Input("cpuCount")]
@@ -520,6 +558,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("dataStorageSizeInTbs")]
         public Input<double>? DataStorageSizeInTbs { get; set; }
+
+        /// <summary>
+        /// The database server type of the Exadata infrastructure.
+        /// </summary>
+        [Input("databaseServerType")]
+        public Input<string>? DatabaseServerType { get; set; }
 
         /// <summary>
         /// The local node storage allocated in GBs.
@@ -664,6 +708,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("storageCount")]
         public Input<int>? StorageCount { get; set; }
+
+        /// <summary>
+        /// The storage server type of the Exadata infrastructure.
+        /// </summary>
+        [Input("storageServerType")]
+        public Input<string>? StorageServerType { get; set; }
 
         /// <summary>
         /// The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15

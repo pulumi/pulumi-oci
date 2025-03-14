@@ -31,6 +31,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := datascience.GetModelVersionSets(ctx, &datascience.GetModelVersionSetsArgs{
 //				CompartmentId: compartmentId,
+//				Category:      pulumi.StringRef(modelVersionSetCategory),
 //				CreatedBy:     pulumi.StringRef(modelVersionSetCreatedBy),
 //				Id:            pulumi.StringRef(modelVersionSetId),
 //				Name:          pulumi.StringRef(modelVersionSetName),
@@ -57,6 +58,8 @@ func GetModelVersionSets(ctx *pulumi.Context, args *GetModelVersionSetsArgs, opt
 
 // A collection of arguments for invoking getModelVersionSets.
 type GetModelVersionSetsArgs struct {
+	// Specifies the type of model version sets to list. By default, user model version sets are listed.
+	Category *string `pulumi:"category"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
@@ -74,6 +77,8 @@ type GetModelVersionSetsArgs struct {
 
 // A collection of values returned by getModelVersionSets.
 type GetModelVersionSetsResult struct {
+	// The category of the model version set.
+	Category *string `pulumi:"category"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model version set compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model version set.
@@ -102,6 +107,8 @@ func GetModelVersionSetsOutput(ctx *pulumi.Context, args GetModelVersionSetsOutp
 
 // A collection of arguments for invoking getModelVersionSets.
 type GetModelVersionSetsOutputArgs struct {
+	// Specifies the type of model version sets to list. By default, user model version sets are listed.
+	Category pulumi.StringPtrInput `pulumi:"category"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
@@ -134,6 +141,11 @@ func (o GetModelVersionSetsResultOutput) ToGetModelVersionSetsResultOutput() Get
 
 func (o GetModelVersionSetsResultOutput) ToGetModelVersionSetsResultOutputWithContext(ctx context.Context) GetModelVersionSetsResultOutput {
 	return o
+}
+
+// The category of the model version set.
+func (o GetModelVersionSetsResultOutput) Category() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelVersionSetsResult) *string { return v.Category }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model version set compartment.

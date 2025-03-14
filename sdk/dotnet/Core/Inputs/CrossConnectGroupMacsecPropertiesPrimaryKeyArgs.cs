@@ -14,28 +14,28 @@ namespace Pulumi.Oci.Core.Inputs
     {
         /// <summary>
         /// (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
-        /// 
-        /// NOTE: Only the latest secret version will be used.
         /// </summary>
         [Input("connectivityAssociationKeySecretId", required: true)]
         public Input<string> ConnectivityAssociationKeySecretId { get; set; } = null!;
 
         /// <summary>
-        /// The secret version of the `connectivityAssociationKey` secret in Vault.
+        /// (Updatable) The secret version of the `connectivity_association_key_secret_id` secret in Vault.
+        /// 
+        /// NOTE: Only the latest secret version will be used.
         /// </summary>
         [Input("connectivityAssociationKeySecretVersion")]
         public Input<string>? ConnectivityAssociationKeySecretVersion { get; set; }
 
         /// <summary>
         /// (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
-        /// 
-        /// NOTE: Only the latest secret version will be used.
         /// </summary>
         [Input("connectivityAssociationNameSecretId", required: true)]
         public Input<string> ConnectivityAssociationNameSecretId { get; set; } = null!;
 
         /// <summary>
-        /// The secret version of the connectivity association name secret in Vault.
+        /// (Updatable) The secret version of the `connectivity_association_name_secret_id` secret in Vault.
+        /// 
+        /// NOTE: Only the latest secret version will be used.
         /// </summary>
         [Input("connectivityAssociationNameSecretVersion")]
         public Input<string>? ConnectivityAssociationNameSecretVersion { get; set; }

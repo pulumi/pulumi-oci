@@ -12,6 +12,11 @@ import java.util.Objects;
 @CustomType
 public final class GetModelVersionSetResult {
     /**
+     * @return The category of the model version set.
+     * 
+     */
+    private String category;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model version set compartment.
      * 
      */
@@ -74,6 +79,13 @@ public final class GetModelVersionSetResult {
     private String timeUpdated;
 
     private GetModelVersionSetResult() {}
+    /**
+     * @return The category of the model version set.
+     * 
+     */
+    public String category() {
+        return this.category;
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model version set compartment.
      * 
@@ -171,6 +183,7 @@ public final class GetModelVersionSetResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String category;
         private String compartmentId;
         private String createdBy;
         private Map<String,String> definedTags;
@@ -187,6 +200,7 @@ public final class GetModelVersionSetResult {
         public Builder() {}
         public Builder(GetModelVersionSetResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.category = defaults.category;
     	      this.compartmentId = defaults.compartmentId;
     	      this.createdBy = defaults.createdBy;
     	      this.definedTags = defaults.definedTags;
@@ -202,6 +216,14 @@ public final class GetModelVersionSetResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
+        public Builder category(String category) {
+            if (category == null) {
+              throw new MissingRequiredPropertyException("GetModelVersionSetResult", "category");
+            }
+            this.category = category;
+            return this;
+        }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             if (compartmentId == null) {
@@ -308,6 +330,7 @@ public final class GetModelVersionSetResult {
         }
         public GetModelVersionSetResult build() {
             final var _resultValue = new GetModelVersionSetResult();
+            _resultValue.category = category;
             _resultValue.compartmentId = compartmentId;
             _resultValue.createdBy = createdBy;
             _resultValue.definedTags = definedTags;

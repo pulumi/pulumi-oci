@@ -46,6 +46,11 @@ public final class GetCloudVmClustersResult {
      * 
      */
     private @Nullable String state;
+    /**
+     * @return The vmcluster type for the VM cluster/Cloud VM cluster.
+     * 
+     */
+    private @Nullable String vmClusterType;
 
     private GetCloudVmClustersResult() {}
     /**
@@ -93,6 +98,13 @@ public final class GetCloudVmClustersResult {
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
+    /**
+     * @return The vmcluster type for the VM cluster/Cloud VM cluster.
+     * 
+     */
+    public Optional<String> vmClusterType() {
+        return Optional.ofNullable(this.vmClusterType);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -110,6 +122,7 @@ public final class GetCloudVmClustersResult {
         private @Nullable List<GetCloudVmClustersFilter> filters;
         private String id;
         private @Nullable String state;
+        private @Nullable String vmClusterType;
         public Builder() {}
         public Builder(GetCloudVmClustersResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -120,6 +133,7 @@ public final class GetCloudVmClustersResult {
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.state = defaults.state;
+    	      this.vmClusterType = defaults.vmClusterType;
         }
 
         @CustomType.Setter
@@ -176,6 +190,12 @@ public final class GetCloudVmClustersResult {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
+        public Builder vmClusterType(@Nullable String vmClusterType) {
+
+            this.vmClusterType = vmClusterType;
+            return this;
+        }
         public GetCloudVmClustersResult build() {
             final var _resultValue = new GetCloudVmClustersResult();
             _resultValue.cloudExadataInfrastructureId = cloudExadataInfrastructureId;
@@ -185,6 +205,7 @@ public final class GetCloudVmClustersResult {
             _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.state = state;
+            _resultValue.vmClusterType = vmClusterType;
             return _resultValue;
         }
     }

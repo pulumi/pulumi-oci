@@ -13,6 +13,12 @@ namespace Pulumi.Oci.DataScience.Inputs
     public sealed class PipelineRunStepRunGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow run triggered for this step run.
+        /// </summary>
+        [Input("dataflowRunId")]
+        public Input<string>? DataflowRunId { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
         /// </summary>
         [Input("jobRunId")]

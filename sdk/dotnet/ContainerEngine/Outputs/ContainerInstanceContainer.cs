@@ -62,7 +62,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string>? FreeformTags;
         /// <summary>
-        /// list of container health checks to check container status and take appropriate action if container status is failed. There are three types of health checks that we currently support HTTP, TCP, and Command.
+        /// list of container health checks to check container status and take appropriate action if container status is failed. There are two types of health checks that we currently support HTTP and TCP.
         /// </summary>
         public readonly ImmutableArray<Outputs.ContainerInstanceContainerHealthCheck> HealthChecks;
         /// <summary>

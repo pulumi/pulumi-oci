@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  *     subnetId: testSubnet.id,
  *     dbNodeId: testDbNode.id,
  *     ipAddress: applicationVipIpAddress,
+ *     ipv6address: applicationVipIpv6address,
  * });
  * ```
  *
@@ -85,9 +86,13 @@ export class ApplicationVip extends pulumi.CustomResource {
      */
     public readonly hostnameLabel!: pulumi.Output<string>;
     /**
-     * The application virtual IP (VIP) address.
+     * The application virtual IP (VIP) IPv4 address.
      */
     public readonly ipAddress!: pulumi.Output<string>;
+    /**
+     * The application virtual IP (VIP) IPv6 address.
+     */
+    public readonly ipv6address!: pulumi.Output<string>;
     /**
      * Additional information about the current lifecycle state of the application virtual IP (VIP) address.
      */
@@ -129,6 +134,7 @@ export class ApplicationVip extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["hostnameLabel"] = state ? state.hostnameLabel : undefined;
             resourceInputs["ipAddress"] = state ? state.ipAddress : undefined;
+            resourceInputs["ipv6address"] = state ? state.ipv6address : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["subnetId"] = state ? state.subnetId : undefined;
@@ -148,6 +154,7 @@ export class ApplicationVip extends pulumi.CustomResource {
             resourceInputs["dbNodeId"] = args ? args.dbNodeId : undefined;
             resourceInputs["hostnameLabel"] = args ? args.hostnameLabel : undefined;
             resourceInputs["ipAddress"] = args ? args.ipAddress : undefined;
+            resourceInputs["ipv6address"] = args ? args.ipv6address : undefined;
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["definedTags"] = undefined /*out*/;
@@ -190,9 +197,13 @@ export interface ApplicationVipState {
      */
     hostnameLabel?: pulumi.Input<string>;
     /**
-     * The application virtual IP (VIP) address.
+     * The application virtual IP (VIP) IPv4 address.
      */
     ipAddress?: pulumi.Input<string>;
+    /**
+     * The application virtual IP (VIP) IPv6 address.
+     */
+    ipv6address?: pulumi.Input<string>;
     /**
      * Additional information about the current lifecycle state of the application virtual IP (VIP) address.
      */
@@ -232,9 +243,13 @@ export interface ApplicationVipArgs {
      */
     hostnameLabel: pulumi.Input<string>;
     /**
-     * The application virtual IP (VIP) address.
+     * The application virtual IP (VIP) IPv4 address.
      */
     ipAddress?: pulumi.Input<string>;
+    /**
+     * The application virtual IP (VIP) IPv6 address.
+     */
+    ipv6address?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
      *

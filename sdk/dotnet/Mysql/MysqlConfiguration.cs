@@ -45,27 +45,40 @@ namespace Pulumi.Oci.Mysql
     ///         ParentConfigurationId = testConfiguration.Id,
     ///         Variables = new Oci.Mysql.Inputs.MysqlConfigurationVariablesArgs
     ///         {
+    ///             AutoIncrementIncrement = mysqlConfigurationVariablesAutoIncrementIncrement,
+    ///             AutoIncrementOffset = mysqlConfigurationVariablesAutoIncrementOffset,
     ///             Autocommit = mysqlConfigurationVariablesAutocommit,
     ///             BigTables = mysqlConfigurationVariablesBigTables,
     ///             BinlogExpireLogsSeconds = mysqlConfigurationVariablesBinlogExpireLogsSeconds,
+    ///             BinlogGroupCommitSyncDelay = mysqlConfigurationVariablesBinlogGroupCommitSyncDelay,
+    ///             BinlogGroupCommitSyncNoDelayCount = mysqlConfigurationVariablesBinlogGroupCommitSyncNoDelayCount,
     ///             BinlogRowMetadata = mysqlConfigurationVariablesBinlogRowMetadata,
     ///             BinlogRowValueOptions = mysqlConfigurationVariablesBinlogRowValueOptions,
     ///             BinlogTransactionCompression = mysqlConfigurationVariablesBinlogTransactionCompression,
+    ///             BlockEncryptionMode = mysqlConfigurationVariablesBlockEncryptionMode,
+    ///             CharacterSetServer = mysqlConfigurationVariablesCharacterSetServer,
+    ///             CollationServer = mysqlConfigurationVariablesCollationServer,
     ///             CompletionType = mysqlConfigurationVariablesCompletionType,
     ///             ConnectTimeout = mysqlConfigurationVariablesConnectTimeout,
     ///             ConnectionMemoryChunkSize = mysqlConfigurationVariablesConnectionMemoryChunkSize,
     ///             ConnectionMemoryLimit = mysqlConfigurationVariablesConnectionMemoryLimit,
     ///             CteMaxRecursionDepth = mysqlConfigurationVariablesCteMaxRecursionDepth,
     ///             DefaultAuthenticationPlugin = mysqlConfigurationVariablesDefaultAuthenticationPlugin,
+    ///             ExplainFormat = mysqlConfigurationVariablesExplainFormat,
+    ///             ExplicitDefaultsForTimestamp = mysqlConfigurationVariablesExplicitDefaultsForTimestamp,
     ///             ForeignKeyChecks = mysqlConfigurationVariablesForeignKeyChecks,
     ///             GeneratedRandomPasswordLength = mysqlConfigurationVariablesGeneratedRandomPasswordLength,
     ///             GlobalConnectionMemoryLimit = mysqlConfigurationVariablesGlobalConnectionMemoryLimit,
     ///             GlobalConnectionMemoryTracking = mysqlConfigurationVariablesGlobalConnectionMemoryTracking,
+    ///             GroupConcatMaxLen = mysqlConfigurationVariablesGroupConcatMaxLen,
     ///             GroupReplicationConsistency = mysqlConfigurationVariablesGroupReplicationConsistency,
     ///             InformationSchemaStatsExpiry = mysqlConfigurationVariablesInformationSchemaStatsExpiry,
+    ///             InnodbAdaptiveHashIndex = mysqlConfigurationVariablesInnodbAdaptiveHashIndex,
+    ///             InnodbAutoincLockMode = mysqlConfigurationVariablesInnodbAutoincLockMode,
     ///             InnodbBufferPoolDumpPct = mysqlConfigurationVariablesInnodbBufferPoolDumpPct,
     ///             InnodbBufferPoolInstances = mysqlConfigurationVariablesInnodbBufferPoolInstances,
     ///             InnodbBufferPoolSize = mysqlConfigurationVariablesInnodbBufferPoolSize,
+    ///             InnodbChangeBuffering = mysqlConfigurationVariablesInnodbChangeBuffering,
     ///             InnodbDdlBufferSize = mysqlConfigurationVariablesInnodbDdlBufferSize,
     ///             InnodbDdlThreads = mysqlConfigurationVariablesInnodbDdlThreads,
     ///             InnodbFtEnableStopword = mysqlConfigurationVariablesInnodbFtEnableStopword,
@@ -78,10 +91,19 @@ namespace Pulumi.Oci.Mysql
     ///             InnodbLogWriterThreads = mysqlConfigurationVariablesInnodbLogWriterThreads,
     ///             InnodbMaxPurgeLag = mysqlConfigurationVariablesInnodbMaxPurgeLag,
     ///             InnodbMaxPurgeLagDelay = mysqlConfigurationVariablesInnodbMaxPurgeLagDelay,
+    ///             InnodbNumaInterleave = mysqlConfigurationVariablesInnodbNumaInterleave,
+    ///             InnodbOnlineAlterLogMaxSize = mysqlConfigurationVariablesInnodbOnlineAlterLogMaxSize,
+    ///             InnodbRedoLogCapacity = mysqlConfigurationVariablesInnodbRedoLogCapacity,
+    ///             InnodbRollbackOnTimeout = mysqlConfigurationVariablesInnodbRollbackOnTimeout,
+    ///             InnodbSortBufferSize = mysqlConfigurationVariablesInnodbSortBufferSize,
     ///             InnodbStatsPersistentSamplePages = mysqlConfigurationVariablesInnodbStatsPersistentSamplePages,
     ///             InnodbStatsTransientSamplePages = mysqlConfigurationVariablesInnodbStatsTransientSamplePages,
+    ///             InnodbStrictMode = mysqlConfigurationVariablesInnodbStrictMode,
+    ///             InnodbUndoLogTruncate = mysqlConfigurationVariablesInnodbUndoLogTruncate,
     ///             InteractiveTimeout = mysqlConfigurationVariablesInteractiveTimeout,
+    ///             JoinBufferSize = mysqlConfigurationVariablesJoinBufferSize,
     ///             LocalInfile = mysqlConfigurationVariablesLocalInfile,
+    ///             LongQueryTime = mysqlConfigurationVariablesLongQueryTime,
     ///             MandatoryRoles = mysqlConfigurationVariablesMandatoryRoles,
     ///             MaxAllowedPacket = mysqlConfigurationVariablesMaxAllowedPacket,
     ///             MaxBinlogCacheSize = mysqlConfigurationVariablesMaxBinlogCacheSize,
@@ -90,6 +112,8 @@ namespace Pulumi.Oci.Mysql
     ///             MaxExecutionTime = mysqlConfigurationVariablesMaxExecutionTime,
     ///             MaxHeapTableSize = mysqlConfigurationVariablesMaxHeapTableSize,
     ///             MaxPreparedStmtCount = mysqlConfigurationVariablesMaxPreparedStmtCount,
+    ///             MaxSeeksForKey = mysqlConfigurationVariablesMaxSeeksForKey,
+    ///             MaxUserConnections = mysqlConfigurationVariablesMaxUserConnections,
     ///             MysqlFirewallMode = mysqlConfigurationVariablesMysqlFirewallMode,
     ///             MysqlZstdDefaultCompressionLevel = mysqlConfigurationVariablesMysqlZstdDefaultCompressionLevel,
     ///             MysqlxConnectTimeout = mysqlConfigurationVariablesMysqlxConnectTimeout,
@@ -110,16 +134,31 @@ namespace Pulumi.Oci.Mysql
     ///             MysqlxZstdMaxClientCompressionLevel = mysqlConfigurationVariablesMysqlxZstdMaxClientCompressionLevel,
     ///             NetReadTimeout = mysqlConfigurationVariablesNetReadTimeout,
     ///             NetWriteTimeout = mysqlConfigurationVariablesNetWriteTimeout,
+    ///             OptimizerSwitch = mysqlConfigurationVariablesOptimizerSwitch,
     ///             ParserMaxMemSize = mysqlConfigurationVariablesParserMaxMemSize,
     ///             QueryAllocBlockSize = mysqlConfigurationVariablesQueryAllocBlockSize,
     ///             QueryPreallocSize = mysqlConfigurationVariablesQueryPreallocSize,
+    ///             RangeOptimizerMaxMemSize = mysqlConfigurationVariablesRangeOptimizerMaxMemSize,
     ///             RegexpTimeLimit = mysqlConfigurationVariablesRegexpTimeLimit,
+    ///             RelayLogSpaceLimit = mysqlConfigurationVariablesRelayLogSpaceLimit,
+    ///             ReplicaNetTimeout = mysqlConfigurationVariablesReplicaNetTimeout,
+    ///             ReplicaParallelWorkers = mysqlConfigurationVariablesReplicaParallelWorkers,
+    ///             ReplicaTypeConversions = mysqlConfigurationVariablesReplicaTypeConversions,
+    ///             RequireSecureTransport = mysqlConfigurationVariablesRequireSecureTransport,
+    ///             SkipNameResolve = mysqlConfigurationVariablesSkipNameResolve,
     ///             SortBufferSize = mysqlConfigurationVariablesSortBufferSize,
+    ///             SqlGenerateInvisiblePrimaryKey = mysqlConfigurationVariablesSqlGenerateInvisiblePrimaryKey,
     ///             SqlMode = mysqlConfigurationVariablesSqlMode,
     ///             SqlRequirePrimaryKey = mysqlConfigurationVariablesSqlRequirePrimaryKey,
     ///             SqlWarnings = mysqlConfigurationVariablesSqlWarnings,
+    ///             TableDefinitionCache = mysqlConfigurationVariablesTableDefinitionCache,
+    ///             TableOpenCache = mysqlConfigurationVariablesTableOpenCache,
+    ///             TemptableMaxRam = mysqlConfigurationVariablesTemptableMaxRam,
     ///             ThreadPoolDedicatedListeners = mysqlConfigurationVariablesThreadPoolDedicatedListeners,
     ///             ThreadPoolMaxTransactionsLimit = mysqlConfigurationVariablesThreadPoolMaxTransactionsLimit,
+    ///             ThreadPoolQueryThreadsPerGroup = mysqlConfigurationVariablesThreadPoolQueryThreadsPerGroup,
+    ///             ThreadPoolSize = mysqlConfigurationVariablesThreadPoolSize,
+    ///             ThreadPoolTransactionDelay = mysqlConfigurationVariablesThreadPoolTransactionDelay,
     ///             TimeZone = mysqlConfigurationVariablesTimeZone,
     ///             TmpTableSize = mysqlConfigurationVariablesTmpTableSize,
     ///             TransactionIsolation = mysqlConfigurationVariablesTransactionIsolation,
@@ -194,6 +233,12 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
+
+        /// <summary>
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        [Output("systemTags")]
+        public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -404,6 +449,18 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        [Input("systemTags")]
+        private InputMap<string>? _systemTags;
+
+        /// <summary>
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public InputMap<string> SystemTags
+        {
+            get => _systemTags ?? (_systemTags = new InputMap<string>());
+            set => _systemTags = value;
+        }
 
         /// <summary>
         /// The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).

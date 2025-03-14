@@ -55,6 +55,12 @@ namespace Pulumi.Oci.DataScience
     public partial class ModelVersionSet : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// The category of the model version set.
+        /// </summary>
+        [Output("category")]
+        public Output<string> Category { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model version set in.
         /// </summary>
         [Output("compartmentId")]
@@ -230,6 +236,12 @@ namespace Pulumi.Oci.DataScience
 
     public sealed class ModelVersionSetState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The category of the model version set.
+        /// </summary>
+        [Input("category")]
+        public Input<string>? Category { get; set; }
+
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model version set in.
         /// </summary>

@@ -17,6 +17,21 @@ public final class GetBackupsPlainArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetBackupsPlainArgs Empty = new GetBackupsPlainArgs();
 
     /**
+     * A filter to return only resources that match the given backup destination type.
+     * 
+     */
+    @Import(name="backupDestinationType")
+    private @Nullable String backupDestinationType;
+
+    /**
+     * @return A filter to return only resources that match the given backup destination type.
+     * 
+     */
+    public Optional<String> backupDestinationType() {
+        return Optional.ofNullable(this.backupDestinationType);
+    }
+
+    /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -68,13 +83,94 @@ public final class GetBackupsPlainArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.shapeFamily);
     }
 
+    /**
+     * A filter to return only resources that match the given lifecycle state exactly.
+     * 
+     */
+    @Import(name="state")
+    private @Nullable String state;
+
+    /**
+     * @return A filter to return only resources that match the given lifecycle state exactly.
+     * 
+     */
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
+    }
+
+    /**
+     * The start of date-time range of expiration for the long term backups to be fetched.
+     * 
+     */
+    @Import(name="timeExpiryScheduledGreaterThanOrEqualTo")
+    private @Nullable String timeExpiryScheduledGreaterThanOrEqualTo;
+
+    /**
+     * @return The start of date-time range of expiration for the long term backups to be fetched.
+     * 
+     */
+    public Optional<String> timeExpiryScheduledGreaterThanOrEqualTo() {
+        return Optional.ofNullable(this.timeExpiryScheduledGreaterThanOrEqualTo);
+    }
+
+    /**
+     * The end of date-time range of expiration for the long term backups to be fetched.
+     * 
+     */
+    @Import(name="timeExpiryScheduledLessThan")
+    private @Nullable String timeExpiryScheduledLessThan;
+
+    /**
+     * @return The end of date-time range of expiration for the long term backups to be fetched.
+     * 
+     */
+    public Optional<String> timeExpiryScheduledLessThan() {
+        return Optional.ofNullable(this.timeExpiryScheduledLessThan);
+    }
+
+    /**
+     * A filter to return only backups that matches with the given type of Backup.
+     * 
+     */
+    @Import(name="type")
+    private @Nullable String type;
+
+    /**
+     * @return A filter to return only backups that matches with the given type of Backup.
+     * 
+     */
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
+    }
+
+    /**
+     * A filter to return only resources that match the given database version.
+     * 
+     */
+    @Import(name="version")
+    private @Nullable String version;
+
+    /**
+     * @return A filter to return only resources that match the given database version.
+     * 
+     */
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
+    }
+
     private GetBackupsPlainArgs() {}
 
     private GetBackupsPlainArgs(GetBackupsPlainArgs $) {
+        this.backupDestinationType = $.backupDestinationType;
         this.compartmentId = $.compartmentId;
         this.databaseId = $.databaseId;
         this.filters = $.filters;
         this.shapeFamily = $.shapeFamily;
+        this.state = $.state;
+        this.timeExpiryScheduledGreaterThanOrEqualTo = $.timeExpiryScheduledGreaterThanOrEqualTo;
+        this.timeExpiryScheduledLessThan = $.timeExpiryScheduledLessThan;
+        this.type = $.type;
+        this.version = $.version;
     }
 
     public static Builder builder() {
@@ -93,6 +189,17 @@ public final class GetBackupsPlainArgs extends com.pulumi.resources.InvokeArgs {
 
         public Builder(GetBackupsPlainArgs defaults) {
             $ = new GetBackupsPlainArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param backupDestinationType A filter to return only resources that match the given backup destination type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupDestinationType(@Nullable String backupDestinationType) {
+            $.backupDestinationType = backupDestinationType;
+            return this;
         }
 
         /**
@@ -134,6 +241,61 @@ public final class GetBackupsPlainArgs extends com.pulumi.resources.InvokeArgs {
          */
         public Builder shapeFamily(@Nullable String shapeFamily) {
             $.shapeFamily = shapeFamily;
+            return this;
+        }
+
+        /**
+         * @param state A filter to return only resources that match the given lifecycle state exactly.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder state(@Nullable String state) {
+            $.state = state;
+            return this;
+        }
+
+        /**
+         * @param timeExpiryScheduledGreaterThanOrEqualTo The start of date-time range of expiration for the long term backups to be fetched.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeExpiryScheduledGreaterThanOrEqualTo(@Nullable String timeExpiryScheduledGreaterThanOrEqualTo) {
+            $.timeExpiryScheduledGreaterThanOrEqualTo = timeExpiryScheduledGreaterThanOrEqualTo;
+            return this;
+        }
+
+        /**
+         * @param timeExpiryScheduledLessThan The end of date-time range of expiration for the long term backups to be fetched.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeExpiryScheduledLessThan(@Nullable String timeExpiryScheduledLessThan) {
+            $.timeExpiryScheduledLessThan = timeExpiryScheduledLessThan;
+            return this;
+        }
+
+        /**
+         * @param type A filter to return only backups that matches with the given type of Backup.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder type(@Nullable String type) {
+            $.type = type;
+            return this;
+        }
+
+        /**
+         * @param version A filter to return only resources that match the given database version.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder version(@Nullable String version) {
+            $.version = version;
             return this;
         }
 

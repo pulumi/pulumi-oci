@@ -173,6 +173,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly string SubnetId;
         /// <summary>
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SystemTags;
+        /// <summary>
         /// The date and time the DB System was created.
         /// </summary>
         public readonly string TimeCreated;
@@ -265,6 +269,8 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             string subnetId,
 
+            ImmutableDictionary<string, string> systemTags,
+
             string timeCreated,
 
             string timeUpdated)
@@ -310,6 +316,7 @@ namespace Pulumi.Oci.Mysql.Outputs
             Sources = sources;
             State = state;
             SubnetId = subnetId;
+            SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
         }

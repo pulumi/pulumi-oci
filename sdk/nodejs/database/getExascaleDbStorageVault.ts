@@ -52,6 +52,10 @@ export interface GetExascaleDbStorageVaultResult {
      */
     readonly availabilityDomain: string;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     */
+    readonly clusterPlacementGroupId: string;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     readonly compartmentId: string;
@@ -67,6 +71,10 @@ export interface GetExascaleDbStorageVaultResult {
      * The user-friendly name for the Exadata Database Storage Vault. The name does not need to be unique.
      */
     readonly displayName: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+     */
+    readonly exadataInfrastructureId: string;
     readonly exascaleDbStorageVaultId: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -88,6 +96,10 @@ export interface GetExascaleDbStorageVaultResult {
      * The current state of the Exadata Database Storage Vault.
      */
     readonly state: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     */
+    readonly subscriptionId: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */

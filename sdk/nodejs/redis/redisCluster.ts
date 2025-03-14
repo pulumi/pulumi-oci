@@ -133,7 +133,7 @@ export class RedisCluster extends pulumi.CustomResource {
      */
     public readonly shardCount!: pulumi.Output<number>;
     /**
-     * The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+     * (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
      */
     public readonly softwareVersion!: pulumi.Output<string>;
     /**
@@ -307,7 +307,7 @@ export interface RedisClusterState {
      */
     shardCount?: pulumi.Input<number>;
     /**
-     * The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+     * (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
      */
     softwareVersion?: pulumi.Input<string>;
     /**
@@ -377,7 +377,7 @@ export interface RedisClusterArgs {
      */
     shardCount?: pulumi.Input<number>;
     /**
-     * The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+     * (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
      */
     softwareVersion: pulumi.Input<string>;
     /**

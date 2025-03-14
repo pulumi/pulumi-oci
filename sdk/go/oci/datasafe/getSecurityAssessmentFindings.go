@@ -29,14 +29,21 @@ type GetSecurityAssessmentFindingsArgs struct {
 	// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
 	AccessLevel *string `pulumi:"accessLevel"`
 	// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-	CompartmentIdInSubtree *bool                                 `pulumi:"compartmentIdInSubtree"`
-	Filters                []GetSecurityAssessmentFindingsFilter `pulumi:"filters"`
+	CompartmentIdInSubtree *bool `pulumi:"compartmentIdInSubtree"`
+	// Specifies a subset of fields to be returned in the response.
+	Fields  []string                              `pulumi:"fields"`
+	Filters []GetSecurityAssessmentFindingsFilter `pulumi:"filters"`
 	// Each finding in security assessment has an associated key (think of key as a finding's name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
 	FindingKey *string `pulumi:"findingKey"`
 	// A filter to return only the findings that are marked as top findings.
 	IsTopFinding *bool `pulumi:"isTopFinding"`
-	// An optional filter to return only findings containing the specified reference.
+	// An optional filter to return only findings that match the specified reference.
 	References *string `pulumi:"references"`
+	// The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
+	//
+	// **Example:** | scimQuery=(severity eq 'high') and (targetId eq 'target_1') scimQuery=(category eq "Users") and (targetId eq "target1") scimQuery=(reference eq 'CIS') and (targetId eq 'target_1')
+	// Supported fields: severity findingKey reference targetId isTopFinding title category remarks details summary isRiskModified
+	ScimQuery *string `pulumi:"scimQuery"`
 	// The OCID of the security assessment.
 	SecurityAssessmentId string `pulumi:"securityAssessmentId"`
 	// A filter to return only findings of a particular risk level.
@@ -51,6 +58,7 @@ type GetSecurityAssessmentFindingsArgs struct {
 type GetSecurityAssessmentFindingsResult struct {
 	AccessLevel            *string                               `pulumi:"accessLevel"`
 	CompartmentIdInSubtree *bool                                 `pulumi:"compartmentIdInSubtree"`
+	Fields                 []string                              `pulumi:"fields"`
 	Filters                []GetSecurityAssessmentFindingsFilter `pulumi:"filters"`
 	FindingKey             *string                               `pulumi:"findingKey"`
 	// The list of findings.
@@ -61,6 +69,7 @@ type GetSecurityAssessmentFindingsResult struct {
 	IsTopFinding *bool `pulumi:"isTopFinding"`
 	// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
 	References           *string `pulumi:"references"`
+	ScimQuery            *string `pulumi:"scimQuery"`
 	SecurityAssessmentId string  `pulumi:"securityAssessmentId"`
 	// The severity of the finding as determined by security assessment and is same as oracleDefinedSeverity, unless modified by user.
 	Severity *string `pulumi:"severity"`
@@ -84,14 +93,21 @@ type GetSecurityAssessmentFindingsOutputArgs struct {
 	// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
 	AccessLevel pulumi.StringPtrInput `pulumi:"accessLevel"`
 	// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-	CompartmentIdInSubtree pulumi.BoolPtrInput                           `pulumi:"compartmentIdInSubtree"`
-	Filters                GetSecurityAssessmentFindingsFilterArrayInput `pulumi:"filters"`
+	CompartmentIdInSubtree pulumi.BoolPtrInput `pulumi:"compartmentIdInSubtree"`
+	// Specifies a subset of fields to be returned in the response.
+	Fields  pulumi.StringArrayInput                       `pulumi:"fields"`
+	Filters GetSecurityAssessmentFindingsFilterArrayInput `pulumi:"filters"`
 	// Each finding in security assessment has an associated key (think of key as a finding's name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
 	FindingKey pulumi.StringPtrInput `pulumi:"findingKey"`
 	// A filter to return only the findings that are marked as top findings.
 	IsTopFinding pulumi.BoolPtrInput `pulumi:"isTopFinding"`
-	// An optional filter to return only findings containing the specified reference.
+	// An optional filter to return only findings that match the specified reference.
 	References pulumi.StringPtrInput `pulumi:"references"`
+	// The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
+	//
+	// **Example:** | scimQuery=(severity eq 'high') and (targetId eq 'target_1') scimQuery=(category eq "Users") and (targetId eq "target1") scimQuery=(reference eq 'CIS') and (targetId eq 'target_1')
+	// Supported fields: severity findingKey reference targetId isTopFinding title category remarks details summary isRiskModified
+	ScimQuery pulumi.StringPtrInput `pulumi:"scimQuery"`
 	// The OCID of the security assessment.
 	SecurityAssessmentId pulumi.StringInput `pulumi:"securityAssessmentId"`
 	// A filter to return only findings of a particular risk level.
@@ -129,6 +145,10 @@ func (o GetSecurityAssessmentFindingsResultOutput) CompartmentIdInSubtree() pulu
 	return o.ApplyT(func(v GetSecurityAssessmentFindingsResult) *bool { return v.CompartmentIdInSubtree }).(pulumi.BoolPtrOutput)
 }
 
+func (o GetSecurityAssessmentFindingsResultOutput) Fields() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsResult) []string { return v.Fields }).(pulumi.StringArrayOutput)
+}
+
 func (o GetSecurityAssessmentFindingsResultOutput) Filters() GetSecurityAssessmentFindingsFilterArrayOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingsResult) []GetSecurityAssessmentFindingsFilter { return v.Filters }).(GetSecurityAssessmentFindingsFilterArrayOutput)
 }
@@ -155,6 +175,10 @@ func (o GetSecurityAssessmentFindingsResultOutput) IsTopFinding() pulumi.BoolPtr
 // Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
 func (o GetSecurityAssessmentFindingsResultOutput) References() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingsResult) *string { return v.References }).(pulumi.StringPtrOutput)
+}
+
+func (o GetSecurityAssessmentFindingsResultOutput) ScimQuery() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsResult) *string { return v.ScimQuery }).(pulumi.StringPtrOutput)
 }
 
 func (o GetSecurityAssessmentFindingsResultOutput) SecurityAssessmentId() pulumi.StringOutput {

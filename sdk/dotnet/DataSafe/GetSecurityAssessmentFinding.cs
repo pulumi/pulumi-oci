@@ -30,6 +30,14 @@ namespace Pulumi.Oci.DataSafe
         [Input("compartmentIdInSubtree")]
         public bool? CompartmentIdInSubtree { get; set; }
 
+        [Input("fields")]
+        private List<string>? _fields;
+        public List<string> Fields
+        {
+            get => _fields ?? (_fields = new List<string>());
+            set => _fields = value;
+        }
+
         [Input("filters")]
         private List<Inputs.GetSecurityAssessmentFindingFilterArgs>? _filters;
         public List<Inputs.GetSecurityAssessmentFindingFilterArgs> Filters
@@ -46,6 +54,9 @@ namespace Pulumi.Oci.DataSafe
 
         [Input("references")]
         public string? References { get; set; }
+
+        [Input("scimQuery")]
+        public string? ScimQuery { get; set; }
 
         [Input("securityAssessmentId", required: true)]
         public string SecurityAssessmentId { get; set; } = null!;
@@ -73,6 +84,14 @@ namespace Pulumi.Oci.DataSafe
         [Input("compartmentIdInSubtree")]
         public Input<bool>? CompartmentIdInSubtree { get; set; }
 
+        [Input("fields")]
+        private InputList<string>? _fields;
+        public InputList<string> Fields
+        {
+            get => _fields ?? (_fields = new InputList<string>());
+            set => _fields = value;
+        }
+
         [Input("filters")]
         private InputList<Inputs.GetSecurityAssessmentFindingFilterInputArgs>? _filters;
         public InputList<Inputs.GetSecurityAssessmentFindingFilterInputArgs> Filters
@@ -89,6 +108,9 @@ namespace Pulumi.Oci.DataSafe
 
         [Input("references")]
         public Input<string>? References { get; set; }
+
+        [Input("scimQuery")]
+        public Input<string>? ScimQuery { get; set; }
 
         [Input("securityAssessmentId", required: true)]
         public Input<string> SecurityAssessmentId { get; set; } = null!;
@@ -114,6 +136,7 @@ namespace Pulumi.Oci.DataSafe
     {
         public readonly string? AccessLevel;
         public readonly bool? CompartmentIdInSubtree;
+        public readonly ImmutableArray<string> Fields;
         public readonly ImmutableArray<Outputs.GetSecurityAssessmentFindingFilterResult> Filters;
         public readonly string? FindingKey;
         public readonly ImmutableArray<Outputs.GetSecurityAssessmentFindingFindingResult> Findings;
@@ -123,6 +146,7 @@ namespace Pulumi.Oci.DataSafe
         public readonly string Id;
         public readonly bool? IsTopFinding;
         public readonly string? References;
+        public readonly string? ScimQuery;
         public readonly string SecurityAssessmentId;
         public readonly string? Severity;
         public readonly string? State;
@@ -133,6 +157,8 @@ namespace Pulumi.Oci.DataSafe
             string? accessLevel,
 
             bool? compartmentIdInSubtree,
+
+            ImmutableArray<string> fields,
 
             ImmutableArray<Outputs.GetSecurityAssessmentFindingFilterResult> filters,
 
@@ -146,6 +172,8 @@ namespace Pulumi.Oci.DataSafe
 
             string? references,
 
+            string? scimQuery,
+
             string securityAssessmentId,
 
             string? severity,
@@ -156,12 +184,14 @@ namespace Pulumi.Oci.DataSafe
         {
             AccessLevel = accessLevel;
             CompartmentIdInSubtree = compartmentIdInSubtree;
+            Fields = fields;
             Filters = filters;
             FindingKey = findingKey;
             Findings = findings;
             Id = id;
             IsTopFinding = isTopFinding;
             References = references;
+            ScimQuery = scimQuery;
             SecurityAssessmentId = securityAssessmentId;
             Severity = severity;
             State = state;

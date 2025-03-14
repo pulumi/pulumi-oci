@@ -38,7 +38,15 @@ public final class GetClusterOption {
      * 
      */
     private List<GetClusterOptionKubernetesNetworkConfig> kubernetesNetworkConfigs;
+    /**
+     * @return The property that define the status of the OIDC Discovery feature for a cluster.
+     * 
+     */
     private List<GetClusterOptionOpenIdConnectDiscovery> openIdConnectDiscoveries;
+    /**
+     * @return The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
+     * 
+     */
     private List<GetClusterOptionOpenIdConnectTokenAuthenticationConfig> openIdConnectTokenAuthenticationConfigs;
     /**
      * @return Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
@@ -85,9 +93,17 @@ public final class GetClusterOption {
     public List<GetClusterOptionKubernetesNetworkConfig> kubernetesNetworkConfigs() {
         return this.kubernetesNetworkConfigs;
     }
+    /**
+     * @return The property that define the status of the OIDC Discovery feature for a cluster.
+     * 
+     */
     public List<GetClusterOptionOpenIdConnectDiscovery> openIdConnectDiscoveries() {
         return this.openIdConnectDiscoveries;
     }
+    /**
+     * @return The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
+     * 
+     */
     public List<GetClusterOptionOpenIdConnectTokenAuthenticationConfig> openIdConnectTokenAuthenticationConfigs() {
         return this.openIdConnectTokenAuthenticationConfigs;
     }

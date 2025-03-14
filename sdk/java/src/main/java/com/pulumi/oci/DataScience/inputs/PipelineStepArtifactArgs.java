@@ -23,11 +23,11 @@ public final class PipelineStepArtifactArgs extends com.pulumi.resources.Resourc
         return Optional.ofNullable(this.artifactContentDisposition);
     }
 
-    @Import(name="artifactContentLength", required=true)
-    private Output<String> artifactContentLength;
+    @Import(name="artifactContentLength")
+    private @Nullable Output<String> artifactContentLength;
 
-    public Output<String> artifactContentLength() {
-        return this.artifactContentLength;
+    public Optional<Output<String>> artifactContentLength() {
+        return Optional.ofNullable(this.artifactContentLength);
     }
 
     @Import(name="artifactContentMd5")
@@ -104,7 +104,7 @@ public final class PipelineStepArtifactArgs extends com.pulumi.resources.Resourc
             return artifactContentDisposition(Output.of(artifactContentDisposition));
         }
 
-        public Builder artifactContentLength(Output<String> artifactContentLength) {
+        public Builder artifactContentLength(@Nullable Output<String> artifactContentLength) {
             $.artifactContentLength = artifactContentLength;
             return this;
         }
@@ -162,9 +162,6 @@ public final class PipelineStepArtifactArgs extends com.pulumi.resources.Resourc
         }
 
         public PipelineStepArtifactArgs build() {
-            if ($.artifactContentLength == null) {
-                throw new MissingRequiredPropertyException("PipelineStepArtifactArgs", "artifactContentLength");
-            }
             if ($.pipelineStepArtifact == null) {
                 throw new MissingRequiredPropertyException("PipelineStepArtifactArgs", "pipelineStepArtifact");
             }

@@ -56,6 +56,11 @@ public final class GetCloudVmClusterResult {
      */
     private String compartmentId;
     /**
+     * @return The compute model of the cloud VM cluster.
+     * 
+     */
+    private String computeModel;
+    /**
      * @return The number of CPU cores enabled on the cloud VM cluster.
      * 
      */
@@ -199,10 +204,15 @@ public final class GetCloudVmClusterResult {
      */
     private String scanDnsRecordId;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv4 addresses associated with the cloud VM cluster. SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      * 
      */
     private List<String> scanIpIds;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv6 addresses associated with the cloud VM cluster. SCAN IPv6 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+     * 
+     */
+    private List<String> scanIpv6ids;
     /**
      * @return The TCP Single Client Access Name (SCAN) port. The default port is 1521.
      * 
@@ -269,10 +279,20 @@ public final class GetCloudVmClusterResult {
      */
     private String timeZone;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
      * 
      */
     private List<String> vipIds;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+     * 
+     */
+    private List<String> vipv6ids;
+    /**
+     * @return The vmcluster type for the VM cluster/Cloud VM cluster.
+     * 
+     */
+    private String vmClusterType;
     /**
      * @return The OCID of the zone the cloud VM cluster is associated with.
      * 
@@ -331,6 +351,13 @@ public final class GetCloudVmClusterResult {
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return The compute model of the cloud VM cluster.
+     * 
+     */
+    public String computeModel() {
+        return this.computeModel;
     }
     /**
      * @return The number of CPU cores enabled on the cloud VM cluster.
@@ -536,11 +563,18 @@ public final class GetCloudVmClusterResult {
         return this.scanDnsRecordId;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv4 addresses associated with the cloud VM cluster. SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      * 
      */
     public List<String> scanIpIds() {
         return this.scanIpIds;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv6 addresses associated with the cloud VM cluster. SCAN IPv6 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+     * 
+     */
+    public List<String> scanIpv6ids() {
+        return this.scanIpv6ids;
     }
     /**
      * @return The TCP Single Client Access Name (SCAN) port. The default port is 1521.
@@ -634,11 +668,25 @@ public final class GetCloudVmClusterResult {
         return this.timeZone;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
      * 
      */
     public List<String> vipIds() {
         return this.vipIds;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+     * 
+     */
+    public List<String> vipv6ids() {
+        return this.vipv6ids;
+    }
+    /**
+     * @return The vmcluster type for the VM cluster/Cloud VM cluster.
+     * 
+     */
+    public String vmClusterType() {
+        return this.vmClusterType;
     }
     /**
      * @return The OCID of the zone the cloud VM cluster is associated with.
@@ -665,6 +713,7 @@ public final class GetCloudVmClusterResult {
         private String cloudVmClusterId;
         private String clusterName;
         private String compartmentId;
+        private String computeModel;
         private Integer cpuCoreCount;
         private Boolean createAsync;
         private List<GetCloudVmClusterDataCollectionOption> dataCollectionOptions;
@@ -696,6 +745,7 @@ public final class GetCloudVmClusterResult {
         private String scanDnsName;
         private String scanDnsRecordId;
         private List<String> scanIpIds;
+        private List<String> scanIpv6ids;
         private Integer scanListenerPortTcp;
         private Integer scanListenerPortTcpSsl;
         private Map<String,String> securityAttributes;
@@ -710,6 +760,8 @@ public final class GetCloudVmClusterResult {
         private String timeCreated;
         private String timeZone;
         private List<String> vipIds;
+        private List<String> vipv6ids;
+        private String vmClusterType;
         private String zoneId;
         public Builder() {}
         public Builder(GetCloudVmClusterResult defaults) {
@@ -722,6 +774,7 @@ public final class GetCloudVmClusterResult {
     	      this.cloudVmClusterId = defaults.cloudVmClusterId;
     	      this.clusterName = defaults.clusterName;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.computeModel = defaults.computeModel;
     	      this.cpuCoreCount = defaults.cpuCoreCount;
     	      this.createAsync = defaults.createAsync;
     	      this.dataCollectionOptions = defaults.dataCollectionOptions;
@@ -753,6 +806,7 @@ public final class GetCloudVmClusterResult {
     	      this.scanDnsName = defaults.scanDnsName;
     	      this.scanDnsRecordId = defaults.scanDnsRecordId;
     	      this.scanIpIds = defaults.scanIpIds;
+    	      this.scanIpv6ids = defaults.scanIpv6ids;
     	      this.scanListenerPortTcp = defaults.scanListenerPortTcp;
     	      this.scanListenerPortTcpSsl = defaults.scanListenerPortTcpSsl;
     	      this.securityAttributes = defaults.securityAttributes;
@@ -767,6 +821,8 @@ public final class GetCloudVmClusterResult {
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeZone = defaults.timeZone;
     	      this.vipIds = defaults.vipIds;
+    	      this.vipv6ids = defaults.vipv6ids;
+    	      this.vmClusterType = defaults.vmClusterType;
     	      this.zoneId = defaults.zoneId;
         }
 
@@ -838,6 +894,14 @@ public final class GetCloudVmClusterResult {
               throw new MissingRequiredPropertyException("GetCloudVmClusterResult", "compartmentId");
             }
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder computeModel(String computeModel) {
+            if (computeModel == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClusterResult", "computeModel");
+            }
+            this.computeModel = computeModel;
             return this;
         }
         @CustomType.Setter
@@ -1107,6 +1171,17 @@ public final class GetCloudVmClusterResult {
             return scanIpIds(List.of(scanIpIds));
         }
         @CustomType.Setter
+        public Builder scanIpv6ids(List<String> scanIpv6ids) {
+            if (scanIpv6ids == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClusterResult", "scanIpv6ids");
+            }
+            this.scanIpv6ids = scanIpv6ids;
+            return this;
+        }
+        public Builder scanIpv6ids(String... scanIpv6ids) {
+            return scanIpv6ids(List.of(scanIpv6ids));
+        }
+        @CustomType.Setter
         public Builder scanListenerPortTcp(Integer scanListenerPortTcp) {
             if (scanListenerPortTcp == null) {
               throw new MissingRequiredPropertyException("GetCloudVmClusterResult", "scanListenerPortTcp");
@@ -1225,6 +1300,25 @@ public final class GetCloudVmClusterResult {
             return vipIds(List.of(vipIds));
         }
         @CustomType.Setter
+        public Builder vipv6ids(List<String> vipv6ids) {
+            if (vipv6ids == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClusterResult", "vipv6ids");
+            }
+            this.vipv6ids = vipv6ids;
+            return this;
+        }
+        public Builder vipv6ids(String... vipv6ids) {
+            return vipv6ids(List.of(vipv6ids));
+        }
+        @CustomType.Setter
+        public Builder vmClusterType(String vmClusterType) {
+            if (vmClusterType == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClusterResult", "vmClusterType");
+            }
+            this.vmClusterType = vmClusterType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder zoneId(String zoneId) {
             if (zoneId == null) {
               throw new MissingRequiredPropertyException("GetCloudVmClusterResult", "zoneId");
@@ -1242,6 +1336,7 @@ public final class GetCloudVmClusterResult {
             _resultValue.cloudVmClusterId = cloudVmClusterId;
             _resultValue.clusterName = clusterName;
             _resultValue.compartmentId = compartmentId;
+            _resultValue.computeModel = computeModel;
             _resultValue.cpuCoreCount = cpuCoreCount;
             _resultValue.createAsync = createAsync;
             _resultValue.dataCollectionOptions = dataCollectionOptions;
@@ -1273,6 +1368,7 @@ public final class GetCloudVmClusterResult {
             _resultValue.scanDnsName = scanDnsName;
             _resultValue.scanDnsRecordId = scanDnsRecordId;
             _resultValue.scanIpIds = scanIpIds;
+            _resultValue.scanIpv6ids = scanIpv6ids;
             _resultValue.scanListenerPortTcp = scanListenerPortTcp;
             _resultValue.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
             _resultValue.securityAttributes = securityAttributes;
@@ -1287,6 +1383,8 @@ public final class GetCloudVmClusterResult {
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeZone = timeZone;
             _resultValue.vipIds = vipIds;
+            _resultValue.vipv6ids = vipv6ids;
+            _resultValue.vmClusterType = vmClusterType;
             _resultValue.zoneId = zoneId;
             return _resultValue;
         }

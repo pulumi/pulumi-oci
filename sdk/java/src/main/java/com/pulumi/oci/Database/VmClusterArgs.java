@@ -182,6 +182,21 @@ public final class VmClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+     * 
+     */
+    @Import(name="exascaleDbStorageVaultId")
+    private @Nullable Output<String> exascaleDbStorageVaultId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+     * 
+     */
+    public Optional<Output<String>> exascaleDbStorageVaultId() {
+        return Optional.ofNullable(this.exascaleDbStorageVaultId);
+    }
+
+    /**
      * (Updatable) Details of the file system configuration of the VM cluster.
      * 
      */
@@ -341,9 +356,6 @@ public final class VmClusterArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="vmClusterNetworkId", required=true)
     private Output<String> vmClusterNetworkId;
@@ -351,12 +363,30 @@ public final class VmClusterArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
      * 
+     */
+    public Output<String> vmClusterNetworkId() {
+        return this.vmClusterNetworkId;
+    }
+
+    /**
+     * The vmcluster type for the VM cluster/Cloud VM cluster.
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> vmClusterNetworkId() {
-        return this.vmClusterNetworkId;
+    @Import(name="vmClusterType")
+    private @Nullable Output<String> vmClusterType;
+
+    /**
+     * @return The vmcluster type for the VM cluster/Cloud VM cluster.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<String>> vmClusterType() {
+        return Optional.ofNullable(this.vmClusterType);
     }
 
     private VmClusterArgs() {}
@@ -373,6 +403,7 @@ public final class VmClusterArgs extends com.pulumi.resources.ResourceArgs {
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.exadataInfrastructureId = $.exadataInfrastructureId;
+        this.exascaleDbStorageVaultId = $.exascaleDbStorageVaultId;
         this.fileSystemConfigurationDetails = $.fileSystemConfigurationDetails;
         this.freeformTags = $.freeformTags;
         this.giVersion = $.giVersion;
@@ -385,6 +416,7 @@ public final class VmClusterArgs extends com.pulumi.resources.ResourceArgs {
         this.systemVersion = $.systemVersion;
         this.timeZone = $.timeZone;
         this.vmClusterNetworkId = $.vmClusterNetworkId;
+        this.vmClusterType = $.vmClusterType;
     }
 
     public static Builder builder() {
@@ -635,6 +667,27 @@ public final class VmClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param exascaleDbStorageVaultId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder exascaleDbStorageVaultId(@Nullable Output<String> exascaleDbStorageVaultId) {
+            $.exascaleDbStorageVaultId = exascaleDbStorageVaultId;
+            return this;
+        }
+
+        /**
+         * @param exascaleDbStorageVaultId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder exascaleDbStorageVaultId(String exascaleDbStorageVaultId) {
+            return exascaleDbStorageVaultId(Output.of(exascaleDbStorageVaultId));
+        }
+
+        /**
          * @param fileSystemConfigurationDetails (Updatable) Details of the file system configuration of the VM cluster.
          * 
          * @return builder
@@ -876,9 +929,6 @@ public final class VmClusterArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param vmClusterNetworkId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -890,14 +940,38 @@ public final class VmClusterArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param vmClusterNetworkId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
          * 
+         * @return builder
+         * 
+         */
+        public Builder vmClusterNetworkId(String vmClusterNetworkId) {
+            return vmClusterNetworkId(Output.of(vmClusterNetworkId));
+        }
+
+        /**
+         * @param vmClusterType The vmcluster type for the VM cluster/Cloud VM cluster.
+         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
          */
-        public Builder vmClusterNetworkId(String vmClusterNetworkId) {
-            return vmClusterNetworkId(Output.of(vmClusterNetworkId));
+        public Builder vmClusterType(@Nullable Output<String> vmClusterType) {
+            $.vmClusterType = vmClusterType;
+            return this;
+        }
+
+        /**
+         * @param vmClusterType The vmcluster type for the VM cluster/Cloud VM cluster.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vmClusterType(String vmClusterType) {
+            return vmClusterType(Output.of(vmClusterType));
         }
 
         public VmClusterArgs build() {

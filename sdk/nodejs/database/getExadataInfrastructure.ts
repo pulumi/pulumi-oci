@@ -75,6 +75,10 @@ export interface GetExadataInfrastructureResult {
      */
     readonly computeCount: number;
     /**
+     * The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     */
+    readonly computeModel: string;
+    /**
      * The list of contacts for the Exadata infrastructure.
      */
     readonly contacts: outputs.Database.GetExadataInfrastructureContact[];
@@ -95,6 +99,10 @@ export interface GetExadataInfrastructureResult {
      * Size, in terabytes, of the DATA disk group.
      */
     readonly dataStorageSizeInTbs: number;
+    /**
+     * The database server type of the Exadata infrastructure.
+     */
+    readonly databaseServerType: string;
     /**
      * The local node storage allocated in GBs.
      */
@@ -120,6 +128,10 @@ export interface GetExadataInfrastructureResult {
      */
     readonly dnsServers: string[];
     readonly exadataInfrastructureId: string;
+    /**
+     * The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+     */
+    readonly exascaleConfigs: outputs.Database.GetExadataInfrastructureExascaleConfig[];
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
@@ -216,6 +228,10 @@ export interface GetExadataInfrastructureResult {
      * The number of Exadata storage servers for the Exadata infrastructure.
      */
     readonly storageCount: number;
+    /**
+     * The storage server type of the Exadata infrastructure.
+     */
+    readonly storageServerType: string;
     /**
      * The software version of the storage servers (cells) in the Exadata infrastructure.
      */

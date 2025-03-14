@@ -51,6 +51,18 @@ namespace Pulumi.Oci.DataSafe
         [Input("compartmentIdInSubtree")]
         public bool? CompartmentIdInSubtree { get; set; }
 
+        [Input("fields")]
+        private List<string>? _fields;
+
+        /// <summary>
+        /// Specifies a subset of fields to be returned in the response.
+        /// </summary>
+        public List<string> Fields
+        {
+            get => _fields ?? (_fields = new List<string>());
+            set => _fields = value;
+        }
+
         [Input("filters")]
         private List<Inputs.GetSecurityAssessmentFindingsFilterArgs>? _filters;
         public List<Inputs.GetSecurityAssessmentFindingsFilterArgs> Filters
@@ -72,10 +84,19 @@ namespace Pulumi.Oci.DataSafe
         public bool? IsTopFinding { get; set; }
 
         /// <summary>
-        /// An optional filter to return only findings containing the specified reference.
+        /// An optional filter to return only findings that match the specified reference.
         /// </summary>
         [Input("references")]
         public string? References { get; set; }
+
+        /// <summary>
+        /// The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
+        /// 
+        /// **Example:** | scimQuery=(severity eq 'high') and (targetId eq 'target_1') scimQuery=(category eq "Users") and (targetId eq "target_1") scimQuery=(reference eq 'CIS') and (targetId eq 'target_1')
+        /// Supported fields: severity findingKey reference targetId isTopFinding title category remarks details summary isRiskModified
+        /// </summary>
+        [Input("scimQuery")]
+        public string? ScimQuery { get; set; }
 
         /// <summary>
         /// The OCID of the security assessment.
@@ -121,6 +142,18 @@ namespace Pulumi.Oci.DataSafe
         [Input("compartmentIdInSubtree")]
         public Input<bool>? CompartmentIdInSubtree { get; set; }
 
+        [Input("fields")]
+        private InputList<string>? _fields;
+
+        /// <summary>
+        /// Specifies a subset of fields to be returned in the response.
+        /// </summary>
+        public InputList<string> Fields
+        {
+            get => _fields ?? (_fields = new InputList<string>());
+            set => _fields = value;
+        }
+
         [Input("filters")]
         private InputList<Inputs.GetSecurityAssessmentFindingsFilterInputArgs>? _filters;
         public InputList<Inputs.GetSecurityAssessmentFindingsFilterInputArgs> Filters
@@ -142,10 +175,19 @@ namespace Pulumi.Oci.DataSafe
         public Input<bool>? IsTopFinding { get; set; }
 
         /// <summary>
-        /// An optional filter to return only findings containing the specified reference.
+        /// An optional filter to return only findings that match the specified reference.
         /// </summary>
         [Input("references")]
         public Input<string>? References { get; set; }
+
+        /// <summary>
+        /// The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
+        /// 
+        /// **Example:** | scimQuery=(severity eq 'high') and (targetId eq 'target_1') scimQuery=(category eq "Users") and (targetId eq "target_1") scimQuery=(reference eq 'CIS') and (targetId eq 'target_1')
+        /// Supported fields: severity findingKey reference targetId isTopFinding title category remarks details summary isRiskModified
+        /// </summary>
+        [Input("scimQuery")]
+        public Input<string>? ScimQuery { get; set; }
 
         /// <summary>
         /// The OCID of the security assessment.
@@ -183,6 +225,7 @@ namespace Pulumi.Oci.DataSafe
     {
         public readonly string? AccessLevel;
         public readonly bool? CompartmentIdInSubtree;
+        public readonly ImmutableArray<string> Fields;
         public readonly ImmutableArray<Outputs.GetSecurityAssessmentFindingsFilterResult> Filters;
         public readonly string? FindingKey;
         /// <summary>
@@ -201,6 +244,7 @@ namespace Pulumi.Oci.DataSafe
         /// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
         /// </summary>
         public readonly string? References;
+        public readonly string? ScimQuery;
         public readonly string SecurityAssessmentId;
         /// <summary>
         /// The severity of the finding as determined by security assessment and is same as oracleDefinedSeverity, unless modified by user.
@@ -221,6 +265,8 @@ namespace Pulumi.Oci.DataSafe
 
             bool? compartmentIdInSubtree,
 
+            ImmutableArray<string> fields,
+
             ImmutableArray<Outputs.GetSecurityAssessmentFindingsFilterResult> filters,
 
             string? findingKey,
@@ -233,6 +279,8 @@ namespace Pulumi.Oci.DataSafe
 
             string? references,
 
+            string? scimQuery,
+
             string securityAssessmentId,
 
             string? severity,
@@ -243,12 +291,14 @@ namespace Pulumi.Oci.DataSafe
         {
             AccessLevel = accessLevel;
             CompartmentIdInSubtree = compartmentIdInSubtree;
+            Fields = fields;
             Filters = filters;
             FindingKey = findingKey;
             Findings = findings;
             Id = id;
             IsTopFinding = isTopFinding;
             References = references;
+            ScimQuery = scimQuery;
             SecurityAssessmentId = securityAssessmentId;
             Severity = severity;
             State = state;

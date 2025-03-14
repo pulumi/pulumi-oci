@@ -26,7 +26,7 @@ class GetMaskingReportResult:
     """
     A collection of values returned by getMaskingReport.
     """
-    def __init__(__self__, compartment_id=None, id=None, is_drop_temp_tables_enabled=None, is_redo_logging_enabled=None, is_refresh_stats_enabled=None, masking_policy_id=None, masking_report_id=None, masking_work_request_id=None, parallel_degree=None, recompile=None, state=None, target_id=None, time_created=None, time_masking_finished=None, time_masking_started=None, total_masked_columns=None, total_masked_objects=None, total_masked_schemas=None, total_masked_sensitive_types=None, total_masked_values=None):
+    def __init__(__self__, compartment_id=None, id=None, is_drop_temp_tables_enabled=None, is_redo_logging_enabled=None, is_refresh_stats_enabled=None, masking_policy_id=None, masking_report_id=None, masking_status=None, masking_work_request_id=None, parallel_degree=None, recompile=None, state=None, target_id=None, time_created=None, time_masking_finished=None, time_masking_started=None, total_masked_columns=None, total_masked_objects=None, total_masked_schemas=None, total_masked_sensitive_types=None, total_masked_values=None, total_post_masking_script_errors=None, total_pre_masking_script_errors=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -48,6 +48,9 @@ class GetMaskingReportResult:
         if masking_report_id and not isinstance(masking_report_id, str):
             raise TypeError("Expected argument 'masking_report_id' to be a str")
         pulumi.set(__self__, "masking_report_id", masking_report_id)
+        if masking_status and not isinstance(masking_status, str):
+            raise TypeError("Expected argument 'masking_status' to be a str")
+        pulumi.set(__self__, "masking_status", masking_status)
         if masking_work_request_id and not isinstance(masking_work_request_id, str):
             raise TypeError("Expected argument 'masking_work_request_id' to be a str")
         pulumi.set(__self__, "masking_work_request_id", masking_work_request_id)
@@ -87,6 +90,12 @@ class GetMaskingReportResult:
         if total_masked_values and not isinstance(total_masked_values, str):
             raise TypeError("Expected argument 'total_masked_values' to be a str")
         pulumi.set(__self__, "total_masked_values", total_masked_values)
+        if total_post_masking_script_errors and not isinstance(total_post_masking_script_errors, str):
+            raise TypeError("Expected argument 'total_post_masking_script_errors' to be a str")
+        pulumi.set(__self__, "total_post_masking_script_errors", total_post_masking_script_errors)
+        if total_pre_masking_script_errors and not isinstance(total_pre_masking_script_errors, str):
+            raise TypeError("Expected argument 'total_pre_masking_script_errors' to be a str")
+        pulumi.set(__self__, "total_pre_masking_script_errors", total_pre_masking_script_errors)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -140,6 +149,14 @@ class GetMaskingReportResult:
     @pulumi.getter(name="maskingReportId")
     def masking_report_id(self) -> str:
         return pulumi.get(self, "masking_report_id")
+
+    @property
+    @pulumi.getter(name="maskingStatus")
+    def masking_status(self) -> str:
+        """
+        The status of the masking job.
+        """
+        return pulumi.get(self, "masking_status")
 
     @property
     @pulumi.getter(name="maskingWorkRequestId")
@@ -245,6 +262,22 @@ class GetMaskingReportResult:
         """
         return pulumi.get(self, "total_masked_values")
 
+    @property
+    @pulumi.getter(name="totalPostMaskingScriptErrors")
+    def total_post_masking_script_errors(self) -> str:
+        """
+        The total number of errors in post-masking script.
+        """
+        return pulumi.get(self, "total_post_masking_script_errors")
+
+    @property
+    @pulumi.getter(name="totalPreMaskingScriptErrors")
+    def total_pre_masking_script_errors(self) -> str:
+        """
+        The total number of errors in pre-masking script.
+        """
+        return pulumi.get(self, "total_pre_masking_script_errors")
+
 
 class AwaitableGetMaskingReportResult(GetMaskingReportResult):
     # pylint: disable=using-constant-test
@@ -259,6 +292,7 @@ class AwaitableGetMaskingReportResult(GetMaskingReportResult):
             is_refresh_stats_enabled=self.is_refresh_stats_enabled,
             masking_policy_id=self.masking_policy_id,
             masking_report_id=self.masking_report_id,
+            masking_status=self.masking_status,
             masking_work_request_id=self.masking_work_request_id,
             parallel_degree=self.parallel_degree,
             recompile=self.recompile,
@@ -271,7 +305,9 @@ class AwaitableGetMaskingReportResult(GetMaskingReportResult):
             total_masked_objects=self.total_masked_objects,
             total_masked_schemas=self.total_masked_schemas,
             total_masked_sensitive_types=self.total_masked_sensitive_types,
-            total_masked_values=self.total_masked_values)
+            total_masked_values=self.total_masked_values,
+            total_post_masking_script_errors=self.total_post_masking_script_errors,
+            total_pre_masking_script_errors=self.total_pre_masking_script_errors)
 
 
 def get_masking_report(masking_report_id: Optional[str] = None,
@@ -306,6 +342,7 @@ def get_masking_report(masking_report_id: Optional[str] = None,
         is_refresh_stats_enabled=pulumi.get(__ret__, 'is_refresh_stats_enabled'),
         masking_policy_id=pulumi.get(__ret__, 'masking_policy_id'),
         masking_report_id=pulumi.get(__ret__, 'masking_report_id'),
+        masking_status=pulumi.get(__ret__, 'masking_status'),
         masking_work_request_id=pulumi.get(__ret__, 'masking_work_request_id'),
         parallel_degree=pulumi.get(__ret__, 'parallel_degree'),
         recompile=pulumi.get(__ret__, 'recompile'),
@@ -318,7 +355,9 @@ def get_masking_report(masking_report_id: Optional[str] = None,
         total_masked_objects=pulumi.get(__ret__, 'total_masked_objects'),
         total_masked_schemas=pulumi.get(__ret__, 'total_masked_schemas'),
         total_masked_sensitive_types=pulumi.get(__ret__, 'total_masked_sensitive_types'),
-        total_masked_values=pulumi.get(__ret__, 'total_masked_values'))
+        total_masked_values=pulumi.get(__ret__, 'total_masked_values'),
+        total_post_masking_script_errors=pulumi.get(__ret__, 'total_post_masking_script_errors'),
+        total_pre_masking_script_errors=pulumi.get(__ret__, 'total_pre_masking_script_errors'))
 def get_masking_report_output(masking_report_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaskingReportResult]:
     """
@@ -350,6 +389,7 @@ def get_masking_report_output(masking_report_id: Optional[pulumi.Input[str]] = N
         is_refresh_stats_enabled=pulumi.get(__response__, 'is_refresh_stats_enabled'),
         masking_policy_id=pulumi.get(__response__, 'masking_policy_id'),
         masking_report_id=pulumi.get(__response__, 'masking_report_id'),
+        masking_status=pulumi.get(__response__, 'masking_status'),
         masking_work_request_id=pulumi.get(__response__, 'masking_work_request_id'),
         parallel_degree=pulumi.get(__response__, 'parallel_degree'),
         recompile=pulumi.get(__response__, 'recompile'),
@@ -362,4 +402,6 @@ def get_masking_report_output(masking_report_id: Optional[pulumi.Input[str]] = N
         total_masked_objects=pulumi.get(__response__, 'total_masked_objects'),
         total_masked_schemas=pulumi.get(__response__, 'total_masked_schemas'),
         total_masked_sensitive_types=pulumi.get(__response__, 'total_masked_sensitive_types'),
-        total_masked_values=pulumi.get(__response__, 'total_masked_values')))
+        total_masked_values=pulumi.get(__response__, 'total_masked_values'),
+        total_post_masking_script_errors=pulumi.get(__response__, 'total_post_masking_script_errors'),
+        total_pre_masking_script_errors=pulumi.get(__response__, 'total_pre_masking_script_errors')))

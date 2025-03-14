@@ -71,6 +71,20 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:DataScience/modelVersionSet:ModelVersionSet")
 public class ModelVersionSet extends com.pulumi.resources.CustomResource {
     /**
+     * The category of the model version set.
+     * 
+     */
+    @Export(name="category", refs={String.class}, tree="[0]")
+    private Output<String> category;
+
+    /**
+     * @return The category of the model version set.
+     * 
+     */
+    public Output<String> category() {
+        return this.category;
+    }
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model version set in.
      * 
      */

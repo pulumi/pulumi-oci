@@ -43,6 +43,11 @@ public final class GetMaskingReportResult {
     private String maskingPolicyId;
     private String maskingReportId;
     /**
+     * @return The status of the masking job.
+     * 
+     */
+    private String maskingStatus;
+    /**
      * @return The OCID of the masking work request that resulted in this masking report.
      * 
      */
@@ -107,6 +112,16 @@ public final class GetMaskingReportResult {
      * 
      */
     private String totalMaskedValues;
+    /**
+     * @return The total number of errors in post-masking script.
+     * 
+     */
+    private String totalPostMaskingScriptErrors;
+    /**
+     * @return The total number of errors in pre-masking script.
+     * 
+     */
+    private String totalPreMaskingScriptErrors;
 
     private GetMaskingReportResult() {}
     /**
@@ -153,6 +168,13 @@ public final class GetMaskingReportResult {
     }
     public String maskingReportId() {
         return this.maskingReportId;
+    }
+    /**
+     * @return The status of the masking job.
+     * 
+     */
+    public String maskingStatus() {
+        return this.maskingStatus;
     }
     /**
      * @return The OCID of the masking work request that resulted in this masking report.
@@ -245,6 +267,20 @@ public final class GetMaskingReportResult {
     public String totalMaskedValues() {
         return this.totalMaskedValues;
     }
+    /**
+     * @return The total number of errors in post-masking script.
+     * 
+     */
+    public String totalPostMaskingScriptErrors() {
+        return this.totalPostMaskingScriptErrors;
+    }
+    /**
+     * @return The total number of errors in pre-masking script.
+     * 
+     */
+    public String totalPreMaskingScriptErrors() {
+        return this.totalPreMaskingScriptErrors;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -262,6 +298,7 @@ public final class GetMaskingReportResult {
         private Boolean isRefreshStatsEnabled;
         private String maskingPolicyId;
         private String maskingReportId;
+        private String maskingStatus;
         private String maskingWorkRequestId;
         private String parallelDegree;
         private String recompile;
@@ -275,6 +312,8 @@ public final class GetMaskingReportResult {
         private String totalMaskedSchemas;
         private String totalMaskedSensitiveTypes;
         private String totalMaskedValues;
+        private String totalPostMaskingScriptErrors;
+        private String totalPreMaskingScriptErrors;
         public Builder() {}
         public Builder(GetMaskingReportResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -285,6 +324,7 @@ public final class GetMaskingReportResult {
     	      this.isRefreshStatsEnabled = defaults.isRefreshStatsEnabled;
     	      this.maskingPolicyId = defaults.maskingPolicyId;
     	      this.maskingReportId = defaults.maskingReportId;
+    	      this.maskingStatus = defaults.maskingStatus;
     	      this.maskingWorkRequestId = defaults.maskingWorkRequestId;
     	      this.parallelDegree = defaults.parallelDegree;
     	      this.recompile = defaults.recompile;
@@ -298,6 +338,8 @@ public final class GetMaskingReportResult {
     	      this.totalMaskedSchemas = defaults.totalMaskedSchemas;
     	      this.totalMaskedSensitiveTypes = defaults.totalMaskedSensitiveTypes;
     	      this.totalMaskedValues = defaults.totalMaskedValues;
+    	      this.totalPostMaskingScriptErrors = defaults.totalPostMaskingScriptErrors;
+    	      this.totalPreMaskingScriptErrors = defaults.totalPreMaskingScriptErrors;
         }
 
         @CustomType.Setter
@@ -354,6 +396,14 @@ public final class GetMaskingReportResult {
               throw new MissingRequiredPropertyException("GetMaskingReportResult", "maskingReportId");
             }
             this.maskingReportId = maskingReportId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder maskingStatus(String maskingStatus) {
+            if (maskingStatus == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportResult", "maskingStatus");
+            }
+            this.maskingStatus = maskingStatus;
             return this;
         }
         @CustomType.Setter
@@ -460,6 +510,22 @@ public final class GetMaskingReportResult {
             this.totalMaskedValues = totalMaskedValues;
             return this;
         }
+        @CustomType.Setter
+        public Builder totalPostMaskingScriptErrors(String totalPostMaskingScriptErrors) {
+            if (totalPostMaskingScriptErrors == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportResult", "totalPostMaskingScriptErrors");
+            }
+            this.totalPostMaskingScriptErrors = totalPostMaskingScriptErrors;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder totalPreMaskingScriptErrors(String totalPreMaskingScriptErrors) {
+            if (totalPreMaskingScriptErrors == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportResult", "totalPreMaskingScriptErrors");
+            }
+            this.totalPreMaskingScriptErrors = totalPreMaskingScriptErrors;
+            return this;
+        }
         public GetMaskingReportResult build() {
             final var _resultValue = new GetMaskingReportResult();
             _resultValue.compartmentId = compartmentId;
@@ -469,6 +535,7 @@ public final class GetMaskingReportResult {
             _resultValue.isRefreshStatsEnabled = isRefreshStatsEnabled;
             _resultValue.maskingPolicyId = maskingPolicyId;
             _resultValue.maskingReportId = maskingReportId;
+            _resultValue.maskingStatus = maskingStatus;
             _resultValue.maskingWorkRequestId = maskingWorkRequestId;
             _resultValue.parallelDegree = parallelDegree;
             _resultValue.recompile = recompile;
@@ -482,6 +549,8 @@ public final class GetMaskingReportResult {
             _resultValue.totalMaskedSchemas = totalMaskedSchemas;
             _resultValue.totalMaskedSensitiveTypes = totalMaskedSensitiveTypes;
             _resultValue.totalMaskedValues = totalMaskedValues;
+            _resultValue.totalPostMaskingScriptErrors = totalPostMaskingScriptErrors;
+            _resultValue.totalPreMaskingScriptErrors = totalPreMaskingScriptErrors;
             return _resultValue;
         }
     }

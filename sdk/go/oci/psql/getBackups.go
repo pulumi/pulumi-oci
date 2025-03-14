@@ -79,7 +79,8 @@ type GetBackupsArgs struct {
 type GetBackupsResult struct {
 	// The list of backup_collection.
 	BackupCollections []GetBackupsBackupCollection `pulumi:"backupCollections"`
-	BackupId          *string                      `pulumi:"backupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup in the source region
+	BackupId *string `pulumi:"backupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// A user-friendly display name for the backup. Avoid entering confidential information.
@@ -145,6 +146,7 @@ func (o GetBackupsResultOutput) BackupCollections() GetBackupsBackupCollectionAr
 	return o.ApplyT(func(v GetBackupsResult) []GetBackupsBackupCollection { return v.BackupCollections }).(GetBackupsBackupCollectionArrayOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup in the source region
 func (o GetBackupsResultOutput) BackupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetBackupsResult) *string { return v.BackupId }).(pulumi.StringPtrOutput)
 }

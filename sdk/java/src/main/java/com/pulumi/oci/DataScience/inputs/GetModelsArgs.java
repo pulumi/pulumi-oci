@@ -19,6 +19,21 @@ public final class GetModelsArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetModelsArgs Empty = new GetModelsArgs();
 
     /**
+     * Specifies the type of models to list. By default, user models are listed.
+     * 
+     */
+    @Import(name="category")
+    private @Nullable Output<String> category;
+
+    /**
+     * @return Specifies the type of models to list. By default, user models are listed.
+     * 
+     */
+    public Optional<Output<String>> category() {
+        return Optional.ofNullable(this.category);
+    }
+
+    /**
      * &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
@@ -155,6 +170,7 @@ public final class GetModelsArgs extends com.pulumi.resources.InvokeArgs {
     private GetModelsArgs() {}
 
     private GetModelsArgs(GetModelsArgs $) {
+        this.category = $.category;
         this.compartmentId = $.compartmentId;
         this.createdBy = $.createdBy;
         this.displayName = $.displayName;
@@ -183,6 +199,27 @@ public final class GetModelsArgs extends com.pulumi.resources.InvokeArgs {
 
         public Builder(GetModelsArgs defaults) {
             $ = new GetModelsArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param category Specifies the type of models to list. By default, user models are listed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder category(@Nullable Output<String> category) {
+            $.category = category;
+            return this;
+        }
+
+        /**
+         * @param category Specifies the type of models to list. By default, user models are listed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder category(String category) {
+            return category(Output.of(category));
         }
 
         /**

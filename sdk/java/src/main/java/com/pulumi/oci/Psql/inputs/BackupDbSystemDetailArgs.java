@@ -16,6 +16,21 @@ public final class BackupDbSystemDetailArgs extends com.pulumi.resources.Resourc
     public static final BackupDbSystemDetailArgs Empty = new BackupDbSystemDetailArgs();
 
     /**
+     * OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
+     * 
+     */
+    @Import(name="configId")
+    private @Nullable Output<String> configId;
+
+    /**
+     * @return OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
+     * 
+     */
+    public Optional<Output<String>> configId() {
+        return Optional.ofNullable(this.configId);
+    }
+
+    /**
      * The major and minor versions of the database system software.
      * 
      */
@@ -48,6 +63,7 @@ public final class BackupDbSystemDetailArgs extends com.pulumi.resources.Resourc
     private BackupDbSystemDetailArgs() {}
 
     private BackupDbSystemDetailArgs(BackupDbSystemDetailArgs $) {
+        this.configId = $.configId;
         this.dbVersion = $.dbVersion;
         this.systemType = $.systemType;
     }
@@ -68,6 +84,27 @@ public final class BackupDbSystemDetailArgs extends com.pulumi.resources.Resourc
 
         public Builder(BackupDbSystemDetailArgs defaults) {
             $ = new BackupDbSystemDetailArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param configId OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder configId(@Nullable Output<String> configId) {
+            $.configId = configId;
+            return this;
+        }
+
+        /**
+         * @param configId OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder configId(String configId) {
+            return configId(Output.of(configId));
         }
 
         /**

@@ -12,6 +12,11 @@ import java.util.Objects;
 @CustomType
 public final class GetModelVersionSetsModelVersionSet {
     /**
+     * @return Specifies the type of model version sets to list. By default, user model version sets are listed.
+     * 
+     */
+    private String category;
+    /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
@@ -73,6 +78,13 @@ public final class GetModelVersionSetsModelVersionSet {
     private String timeUpdated;
 
     private GetModelVersionSetsModelVersionSet() {}
+    /**
+     * @return Specifies the type of model version sets to list. By default, user model version sets are listed.
+     * 
+     */
+    public String category() {
+        return this.category;
+    }
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -167,6 +179,7 @@ public final class GetModelVersionSetsModelVersionSet {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String category;
         private String compartmentId;
         private String createdBy;
         private Map<String,String> definedTags;
@@ -182,6 +195,7 @@ public final class GetModelVersionSetsModelVersionSet {
         public Builder() {}
         public Builder(GetModelVersionSetsModelVersionSet defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.category = defaults.category;
     	      this.compartmentId = defaults.compartmentId;
     	      this.createdBy = defaults.createdBy;
     	      this.definedTags = defaults.definedTags;
@@ -196,6 +210,14 @@ public final class GetModelVersionSetsModelVersionSet {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
+        public Builder category(String category) {
+            if (category == null) {
+              throw new MissingRequiredPropertyException("GetModelVersionSetsModelVersionSet", "category");
+            }
+            this.category = category;
+            return this;
+        }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             if (compartmentId == null) {
@@ -294,6 +316,7 @@ public final class GetModelVersionSetsModelVersionSet {
         }
         public GetModelVersionSetsModelVersionSet build() {
             final var _resultValue = new GetModelVersionSetsModelVersionSet();
+            _resultValue.category = category;
             _resultValue.compartmentId = compartmentId;
             _resultValue.createdBy = createdBy;
             _resultValue.definedTags = definedTags;

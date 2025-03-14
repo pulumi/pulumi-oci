@@ -23,6 +23,7 @@ import * as utilities from "../utilities";
  *     displayName: vmClusterDisplayName,
  *     exadataInfrastructureId: testExadataInfrastructure.id,
  *     state: vmClusterState,
+ *     vmClusterType: vmClusterVmClusterType,
  * });
  * ```
  */
@@ -34,6 +35,7 @@ export function getVmClusters(args: GetVmClustersArgs, opts?: pulumi.InvokeOptio
         "exadataInfrastructureId": args.exadataInfrastructureId,
         "filters": args.filters,
         "state": args.state,
+        "vmClusterType": args.vmClusterType,
     }, opts);
 }
 
@@ -58,6 +60,10 @@ export interface GetVmClustersArgs {
      * A filter to return only resources that match the given lifecycle state exactly.
      */
     state?: string;
+    /**
+     * A filter to return only vmclusters that match the given vmcluster type exactly.
+     */
+    vmClusterType?: string;
 }
 
 /**
@@ -86,6 +92,10 @@ export interface GetVmClustersResult {
      */
     readonly state?: string;
     /**
+     * The vmcluster type for the VM cluster/Cloud VM cluster.
+     */
+    readonly vmClusterType?: string;
+    /**
      * The list of vm_clusters.
      */
     readonly vmClusters: outputs.Database.GetVmClustersVmCluster[];
@@ -107,6 +117,7 @@ export interface GetVmClustersResult {
  *     displayName: vmClusterDisplayName,
  *     exadataInfrastructureId: testExadataInfrastructure.id,
  *     state: vmClusterState,
+ *     vmClusterType: vmClusterVmClusterType,
  * });
  * ```
  */
@@ -118,6 +129,7 @@ export function getVmClustersOutput(args: GetVmClustersOutputArgs, opts?: pulumi
         "exadataInfrastructureId": args.exadataInfrastructureId,
         "filters": args.filters,
         "state": args.state,
+        "vmClusterType": args.vmClusterType,
     }, opts);
 }
 
@@ -142,4 +154,8 @@ export interface GetVmClustersOutputArgs {
      * A filter to return only resources that match the given lifecycle state exactly.
      */
     state?: pulumi.Input<string>;
+    /**
+     * A filter to return only vmclusters that match the given vmcluster type exactly.
+     */
+    vmClusterType?: pulumi.Input<string>;
 }

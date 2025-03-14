@@ -96,7 +96,7 @@ type RedisCluster struct {
 	ReplicasFqdn pulumi.StringOutput `pulumi:"replicasFqdn"`
 	// (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
 	ShardCount pulumi.IntOutput `pulumi:"shardCount"`
-	// The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+	// (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
 	SoftwareVersion pulumi.StringOutput `pulumi:"softwareVersion"`
 	// The current state of the cluster.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -191,7 +191,7 @@ type redisClusterState struct {
 	ReplicasFqdn *string `pulumi:"replicasFqdn"`
 	// (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
 	ShardCount *int `pulumi:"shardCount"`
-	// The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+	// (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
 	SoftwareVersion *string `pulumi:"softwareVersion"`
 	// The current state of the cluster.
 	State *string `pulumi:"state"`
@@ -239,7 +239,7 @@ type RedisClusterState struct {
 	ReplicasFqdn pulumi.StringPtrInput
 	// (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
 	ShardCount pulumi.IntPtrInput
-	// The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+	// (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
 	SoftwareVersion pulumi.StringPtrInput
 	// The current state of the cluster.
 	State pulumi.StringPtrInput
@@ -279,7 +279,7 @@ type redisClusterArgs struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
 	ShardCount *int `pulumi:"shardCount"`
-	// The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+	// (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
 	SoftwareVersion string `pulumi:"softwareVersion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
 	//
@@ -308,7 +308,7 @@ type RedisClusterArgs struct {
 	NsgIds pulumi.StringArrayInput
 	// (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
 	ShardCount pulumi.IntPtrInput
-	// The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+	// (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
 	SoftwareVersion pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
 	//
@@ -479,7 +479,7 @@ func (o RedisClusterOutput) ShardCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *RedisCluster) pulumi.IntOutput { return v.ShardCount }).(pulumi.IntOutput)
 }
 
-// The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+// (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
 func (o RedisClusterOutput) SoftwareVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *RedisCluster) pulumi.StringOutput { return v.SoftwareVersion }).(pulumi.StringOutput)
 }

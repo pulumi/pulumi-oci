@@ -54,6 +54,7 @@ import * as dataintegration from "./dataintegration";
 import * as datalabellingservice from "./datalabellingservice";
 import * as datasafe from "./datasafe";
 import * as datascience from "./datascience";
+import * as dblm from "./dblm";
 import * as delegateaccesscontrol from "./delegateaccesscontrol";
 import * as demandsignal from "./demandsignal";
 import * as desktops from "./desktops";
@@ -180,6 +181,7 @@ export {
     datalabellingservice,
     datasafe,
     datascience,
+    dblm,
     delegateaccesscontrol,
     demandsignal,
     desktops,

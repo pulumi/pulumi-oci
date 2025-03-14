@@ -100,6 +100,8 @@ type MysqlBackup struct {
 	SourceDetails MysqlBackupSourceDetailsPtrOutput `pulumi:"sourceDetails"`
 	// The state of the backup.
 	State pulumi.StringOutput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCopyCreated pulumi.StringOutput `pulumi:"timeCopyCreated"`
 	// The time the backup record was created.
@@ -177,6 +179,8 @@ type mysqlBackupState struct {
 	SourceDetails *MysqlBackupSourceDetails `pulumi:"sourceDetails"`
 	// The state of the backup.
 	State *string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCopyCreated *string `pulumi:"timeCopyCreated"`
 	// The time the backup record was created.
@@ -225,6 +229,8 @@ type MysqlBackupState struct {
 	SourceDetails MysqlBackupSourceDetailsPtrInput
 	// The state of the backup.
 	State pulumi.StringPtrInput
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput
 	// The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCopyCreated pulumi.StringPtrInput
 	// The time the backup record was created.
@@ -466,6 +472,11 @@ func (o MysqlBackupOutput) SourceDetails() MysqlBackupSourceDetailsPtrOutput {
 // The state of the backup.
 func (o MysqlBackupOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *MysqlBackup) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o MysqlBackupOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MysqlBackup) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).

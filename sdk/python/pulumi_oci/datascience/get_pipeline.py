@@ -27,7 +27,7 @@ class GetPipelineResult:
     """
     A collection of values returned by getPipeline.
     """
-    def __init__(__self__, compartment_id=None, configuration_details=None, created_by=None, defined_tags=None, delete_related_pipeline_runs=None, description=None, display_name=None, freeform_tags=None, id=None, infrastructure_configuration_details=None, lifecycle_details=None, log_configuration_details=None, pipeline_id=None, project_id=None, state=None, step_artifacts=None, step_details=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, configuration_details=None, created_by=None, defined_tags=None, delete_related_pipeline_runs=None, description=None, display_name=None, freeform_tags=None, id=None, infrastructure_configuration_details=None, lifecycle_details=None, log_configuration_details=None, pipeline_id=None, project_id=None, state=None, step_artifacts=None, step_details=None, storage_mount_configuration_details_lists=None, system_tags=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -79,6 +79,9 @@ class GetPipelineResult:
         if step_details and not isinstance(step_details, list):
             raise TypeError("Expected argument 'step_details' to be a list")
         pulumi.set(__self__, "step_details", step_details)
+        if storage_mount_configuration_details_lists and not isinstance(storage_mount_configuration_details_lists, list):
+            raise TypeError("Expected argument 'storage_mount_configuration_details_lists' to be a list")
+        pulumi.set(__self__, "storage_mount_configuration_details_lists", storage_mount_configuration_details_lists)
         if system_tags and not isinstance(system_tags, dict):
             raise TypeError("Expected argument 'system_tags' to be a dict")
         pulumi.set(__self__, "system_tags", system_tags)
@@ -220,6 +223,14 @@ class GetPipelineResult:
         return pulumi.get(self, "step_details")
 
     @property
+    @pulumi.getter(name="storageMountConfigurationDetailsLists")
+    def storage_mount_configuration_details_lists(self) -> Sequence['outputs.GetPipelineStorageMountConfigurationDetailsListResult']:
+        """
+        The storage mount details to mount to the instance running the pipeline step.
+        """
+        return pulumi.get(self, "storage_mount_configuration_details_lists")
+
+    @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, str]:
         """
@@ -267,6 +278,7 @@ class AwaitableGetPipelineResult(GetPipelineResult):
             state=self.state,
             step_artifacts=self.step_artifacts,
             step_details=self.step_details,
+            storage_mount_configuration_details_lists=self.storage_mount_configuration_details_lists,
             system_tags=self.system_tags,
             time_created=self.time_created,
             time_updated=self.time_updated)
@@ -314,6 +326,7 @@ def get_pipeline(pipeline_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         step_artifacts=pulumi.get(__ret__, 'step_artifacts'),
         step_details=pulumi.get(__ret__, 'step_details'),
+        storage_mount_configuration_details_lists=pulumi.get(__ret__, 'storage_mount_configuration_details_lists'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
@@ -358,6 +371,7 @@ def get_pipeline_output(pipeline_id: Optional[pulumi.Input[str]] = None,
         state=pulumi.get(__response__, 'state'),
         step_artifacts=pulumi.get(__response__, 'step_artifacts'),
         step_details=pulumi.get(__response__, 'step_details'),
+        storage_mount_configuration_details_lists=pulumi.get(__response__, 'storage_mount_configuration_details_lists'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated')))

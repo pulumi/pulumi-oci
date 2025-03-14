@@ -27,7 +27,7 @@ class GetDiscoveryJobResult:
     """
     A collection of values returned by getDiscoveryJob.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, discovery_job_id=None, discovery_type=None, display_name=None, freeform_tags=None, id=None, is_app_defined_relation_discovery_enabled=None, is_include_all_schemas=None, is_include_all_sensitive_types=None, is_sample_data_collection_enabled=None, schemas_for_discoveries=None, sensitive_data_model_id=None, sensitive_type_ids_for_discoveries=None, state=None, system_tags=None, tables_for_discoveries=None, target_id=None, time_finished=None, time_started=None, total_columns_scanned=None, total_deleted_sensitive_columns=None, total_modified_sensitive_columns=None, total_new_sensitive_columns=None, total_objects_scanned=None, total_schemas_scanned=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, discovery_job_id=None, discovery_type=None, display_name=None, freeform_tags=None, id=None, is_app_defined_relation_discovery_enabled=None, is_include_all_schemas=None, is_include_all_sensitive_types=None, is_sample_data_collection_enabled=None, schemas_for_discoveries=None, sensitive_data_model_id=None, sensitive_type_group_ids_for_discoveries=None, sensitive_type_ids_for_discoveries=None, state=None, system_tags=None, tables_for_discoveries=None, target_id=None, time_finished=None, time_started=None, total_columns_scanned=None, total_deleted_sensitive_columns=None, total_modified_sensitive_columns=None, total_new_sensitive_columns=None, total_objects_scanned=None, total_schemas_scanned=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -67,6 +67,9 @@ class GetDiscoveryJobResult:
         if sensitive_data_model_id and not isinstance(sensitive_data_model_id, str):
             raise TypeError("Expected argument 'sensitive_data_model_id' to be a str")
         pulumi.set(__self__, "sensitive_data_model_id", sensitive_data_model_id)
+        if sensitive_type_group_ids_for_discoveries and not isinstance(sensitive_type_group_ids_for_discoveries, list):
+            raise TypeError("Expected argument 'sensitive_type_group_ids_for_discoveries' to be a list")
+        pulumi.set(__self__, "sensitive_type_group_ids_for_discoveries", sensitive_type_group_ids_for_discoveries)
         if sensitive_type_ids_for_discoveries and not isinstance(sensitive_type_ids_for_discoveries, list):
             raise TypeError("Expected argument 'sensitive_type_ids_for_discoveries' to be a list")
         pulumi.set(__self__, "sensitive_type_ids_for_discoveries", sensitive_type_ids_for_discoveries)
@@ -209,6 +212,14 @@ class GetDiscoveryJobResult:
         return pulumi.get(self, "sensitive_data_model_id")
 
     @property
+    @pulumi.getter(name="sensitiveTypeGroupIdsForDiscoveries")
+    def sensitive_type_group_ids_for_discoveries(self) -> Sequence[str]:
+        """
+        The OCIDs of the sensitive type groups to be used by data discovery jobs.
+        """
+        return pulumi.get(self, "sensitive_type_group_ids_for_discoveries")
+
+    @property
     @pulumi.getter(name="sensitiveTypeIdsForDiscoveries")
     def sensitive_type_ids_for_discoveries(self) -> Sequence[str]:
         """
@@ -332,6 +343,7 @@ class AwaitableGetDiscoveryJobResult(GetDiscoveryJobResult):
             is_sample_data_collection_enabled=self.is_sample_data_collection_enabled,
             schemas_for_discoveries=self.schemas_for_discoveries,
             sensitive_data_model_id=self.sensitive_data_model_id,
+            sensitive_type_group_ids_for_discoveries=self.sensitive_type_group_ids_for_discoveries,
             sensitive_type_ids_for_discoveries=self.sensitive_type_ids_for_discoveries,
             state=self.state,
             system_tags=self.system_tags,
@@ -385,6 +397,7 @@ def get_discovery_job(discovery_job_id: Optional[str] = None,
         is_sample_data_collection_enabled=pulumi.get(__ret__, 'is_sample_data_collection_enabled'),
         schemas_for_discoveries=pulumi.get(__ret__, 'schemas_for_discoveries'),
         sensitive_data_model_id=pulumi.get(__ret__, 'sensitive_data_model_id'),
+        sensitive_type_group_ids_for_discoveries=pulumi.get(__ret__, 'sensitive_type_group_ids_for_discoveries'),
         sensitive_type_ids_for_discoveries=pulumi.get(__ret__, 'sensitive_type_ids_for_discoveries'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
@@ -435,6 +448,7 @@ def get_discovery_job_output(discovery_job_id: Optional[pulumi.Input[str]] = Non
         is_sample_data_collection_enabled=pulumi.get(__response__, 'is_sample_data_collection_enabled'),
         schemas_for_discoveries=pulumi.get(__response__, 'schemas_for_discoveries'),
         sensitive_data_model_id=pulumi.get(__response__, 'sensitive_data_model_id'),
+        sensitive_type_group_ids_for_discoveries=pulumi.get(__response__, 'sensitive_type_group_ids_for_discoveries'),
         sensitive_type_ids_for_discoveries=pulumi.get(__response__, 'sensitive_type_ids_for_discoveries'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),

@@ -4,7 +4,9 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -22,6 +24,11 @@ public final class ModelCustomMetadataList {
      */
     private @Nullable String description;
     /**
+     * @return (Updatable) Is there any artifact present for the metadata.
+     * 
+     */
+    private @Nullable Boolean hasArtifact;
+    /**
      * @return (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
      * * useCaseType
      * * libraryName
@@ -29,9 +36,19 @@ public final class ModelCustomMetadataList {
      * * estimatorClass
      * * hyperParameters
      * * testArtifactresults
+     * * fineTuningConfiguration
+     * * deploymentConfiguration
+     * * readme
+     * * license
+     * * evaluationConfiguration
      * 
      */
     private @Nullable String key;
+    /**
+     * @return (Updatable) list of keywords for searching
+     * 
+     */
+    private @Nullable List<String> keywords;
     /**
      * @return (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
      * 
@@ -56,6 +73,13 @@ public final class ModelCustomMetadataList {
         return Optional.ofNullable(this.description);
     }
     /**
+     * @return (Updatable) Is there any artifact present for the metadata.
+     * 
+     */
+    public Optional<Boolean> hasArtifact() {
+        return Optional.ofNullable(this.hasArtifact);
+    }
+    /**
      * @return (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
      * * useCaseType
      * * libraryName
@@ -63,10 +87,22 @@ public final class ModelCustomMetadataList {
      * * estimatorClass
      * * hyperParameters
      * * testArtifactresults
+     * * fineTuningConfiguration
+     * * deploymentConfiguration
+     * * readme
+     * * license
+     * * evaluationConfiguration
      * 
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
+    }
+    /**
+     * @return (Updatable) list of keywords for searching
+     * 
+     */
+    public List<String> keywords() {
+        return this.keywords == null ? List.of() : this.keywords;
     }
     /**
      * @return (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
@@ -89,14 +125,18 @@ public final class ModelCustomMetadataList {
     public static final class Builder {
         private @Nullable String category;
         private @Nullable String description;
+        private @Nullable Boolean hasArtifact;
         private @Nullable String key;
+        private @Nullable List<String> keywords;
         private @Nullable String value;
         public Builder() {}
         public Builder(ModelCustomMetadataList defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.category = defaults.category;
     	      this.description = defaults.description;
+    	      this.hasArtifact = defaults.hasArtifact;
     	      this.key = defaults.key;
+    	      this.keywords = defaults.keywords;
     	      this.value = defaults.value;
         }
 
@@ -113,10 +153,25 @@ public final class ModelCustomMetadataList {
             return this;
         }
         @CustomType.Setter
+        public Builder hasArtifact(@Nullable Boolean hasArtifact) {
+
+            this.hasArtifact = hasArtifact;
+            return this;
+        }
+        @CustomType.Setter
         public Builder key(@Nullable String key) {
 
             this.key = key;
             return this;
+        }
+        @CustomType.Setter
+        public Builder keywords(@Nullable List<String> keywords) {
+
+            this.keywords = keywords;
+            return this;
+        }
+        public Builder keywords(String... keywords) {
+            return keywords(List.of(keywords));
         }
         @CustomType.Setter
         public Builder value(@Nullable String value) {
@@ -128,7 +183,9 @@ public final class ModelCustomMetadataList {
             final var _resultValue = new ModelCustomMetadataList();
             _resultValue.category = category;
             _resultValue.description = description;
+            _resultValue.hasArtifact = hasArtifact;
             _resultValue.key = key;
+            _resultValue.keywords = keywords;
             _resultValue.value = value;
             return _resultValue;
         }

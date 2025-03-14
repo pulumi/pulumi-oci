@@ -10,6 +10,7 @@ import com.pulumi.oci.DataScience.outputs.GetPipelinesPipelineInfrastructureConf
 import com.pulumi.oci.DataScience.outputs.GetPipelinesPipelineLogConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetPipelinesPipelineStepArtifact;
 import com.pulumi.oci.DataScience.outputs.GetPipelinesPipelineStepDetail;
+import com.pulumi.oci.DataScience.outputs.GetPipelinesPipelineStorageMountConfigurationDetailsList;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -90,6 +91,11 @@ public final class GetPipelinesPipeline {
      * 
      */
     private List<GetPipelinesPipelineStepDetail> stepDetails;
+    /**
+     * @return The storage mount details to mount to the instance running the pipeline step.
+     * 
+     */
+    private List<GetPipelinesPipelineStorageMountConfigurationDetailsList> storageMountConfigurationDetailsLists;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
@@ -212,6 +218,13 @@ public final class GetPipelinesPipeline {
         return this.stepDetails;
     }
     /**
+     * @return The storage mount details to mount to the instance running the pipeline step.
+     * 
+     */
+    public List<GetPipelinesPipelineStorageMountConfigurationDetailsList> storageMountConfigurationDetailsLists() {
+        return this.storageMountConfigurationDetailsLists;
+    }
+    /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
@@ -258,6 +271,7 @@ public final class GetPipelinesPipeline {
         private String state;
         private List<GetPipelinesPipelineStepArtifact> stepArtifacts;
         private List<GetPipelinesPipelineStepDetail> stepDetails;
+        private List<GetPipelinesPipelineStorageMountConfigurationDetailsList> storageMountConfigurationDetailsLists;
         private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
@@ -280,6 +294,7 @@ public final class GetPipelinesPipeline {
     	      this.state = defaults.state;
     	      this.stepArtifacts = defaults.stepArtifacts;
     	      this.stepDetails = defaults.stepDetails;
+    	      this.storageMountConfigurationDetailsLists = defaults.storageMountConfigurationDetailsLists;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -429,6 +444,17 @@ public final class GetPipelinesPipeline {
             return stepDetails(List.of(stepDetails));
         }
         @CustomType.Setter
+        public Builder storageMountConfigurationDetailsLists(List<GetPipelinesPipelineStorageMountConfigurationDetailsList> storageMountConfigurationDetailsLists) {
+            if (storageMountConfigurationDetailsLists == null) {
+              throw new MissingRequiredPropertyException("GetPipelinesPipeline", "storageMountConfigurationDetailsLists");
+            }
+            this.storageMountConfigurationDetailsLists = storageMountConfigurationDetailsLists;
+            return this;
+        }
+        public Builder storageMountConfigurationDetailsLists(GetPipelinesPipelineStorageMountConfigurationDetailsList... storageMountConfigurationDetailsLists) {
+            return storageMountConfigurationDetailsLists(List.of(storageMountConfigurationDetailsLists));
+        }
+        @CustomType.Setter
         public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetPipelinesPipeline", "systemTags");
@@ -470,6 +496,7 @@ public final class GetPipelinesPipeline {
             _resultValue.state = state;
             _resultValue.stepArtifacts = stepArtifacts;
             _resultValue.stepDetails = stepDetails;
+            _resultValue.storageMountConfigurationDetailsLists = storageMountConfigurationDetailsLists;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;

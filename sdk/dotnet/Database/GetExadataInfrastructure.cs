@@ -114,6 +114,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly int ComputeCount;
         /// <summary>
+        /// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        /// </summary>
+        public readonly string ComputeModel;
+        /// <summary>
         /// The list of contacts for the Exadata infrastructure.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetExadataInfrastructureContactResult> Contacts;
@@ -134,6 +138,10 @@ namespace Pulumi.Oci.Database
         /// Size, in terabytes, of the DATA disk group.
         /// </summary>
         public readonly double DataStorageSizeInTbs;
+        /// <summary>
+        /// The database server type of the Exadata infrastructure.
+        /// </summary>
+        public readonly string DatabaseServerType;
         /// <summary>
         /// The local node storage allocated in GBs.
         /// </summary>
@@ -159,6 +167,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly ImmutableArray<string> DnsServers;
         public readonly string ExadataInfrastructureId;
+        /// <summary>
+        /// The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetExadataInfrastructureExascaleConfigResult> ExascaleConfigs;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
@@ -256,6 +268,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly int StorageCount;
         /// <summary>
+        /// The storage server type of the Exadata infrastructure.
+        /// </summary>
+        public readonly string StorageServerType;
+        /// <summary>
         /// The software version of the storage servers (cells) in the Exadata infrastructure.
         /// </summary>
         public readonly string StorageServerVersion;
@@ -292,6 +308,8 @@ namespace Pulumi.Oci.Database
 
             int computeCount,
 
+            string computeModel,
+
             ImmutableArray<Outputs.GetExadataInfrastructureContactResult> contacts,
 
             string corporateProxy,
@@ -303,6 +321,8 @@ namespace Pulumi.Oci.Database
             string csiNumber,
 
             double dataStorageSizeInTbs,
+
+            string databaseServerType,
 
             int dbNodeStorageSizeInGbs,
 
@@ -317,6 +337,8 @@ namespace Pulumi.Oci.Database
             ImmutableArray<string> dnsServers,
 
             string exadataInfrastructureId,
+
+            ImmutableArray<Outputs.GetExadataInfrastructureExascaleConfigResult> exascaleConfigs,
 
             ImmutableDictionary<string, string> freeformTags,
 
@@ -366,6 +388,8 @@ namespace Pulumi.Oci.Database
 
             int storageCount,
 
+            string storageServerType,
+
             string storageServerVersion,
 
             string timeCreated,
@@ -383,12 +407,14 @@ namespace Pulumi.Oci.Database
             CloudControlPlaneServer2 = cloudControlPlaneServer2;
             CompartmentId = compartmentId;
             ComputeCount = computeCount;
+            ComputeModel = computeModel;
             Contacts = contacts;
             CorporateProxy = corporateProxy;
             CpusEnabled = cpusEnabled;
             CreateAsync = createAsync;
             CsiNumber = csiNumber;
             DataStorageSizeInTbs = dataStorageSizeInTbs;
+            DatabaseServerType = databaseServerType;
             DbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
             DbServerVersion = dbServerVersion;
             DefinedFileSystemConfigurations = definedFileSystemConfigurations;
@@ -396,6 +422,7 @@ namespace Pulumi.Oci.Database
             DisplayName = displayName;
             DnsServers = dnsServers;
             ExadataInfrastructureId = exadataInfrastructureId;
+            ExascaleConfigs = exascaleConfigs;
             FreeformTags = freeformTags;
             Gateway = gateway;
             Id = id;
@@ -420,6 +447,7 @@ namespace Pulumi.Oci.Database
             Shape = shape;
             State = state;
             StorageCount = storageCount;
+            StorageServerType = storageServerType;
             StorageServerVersion = storageServerVersion;
             TimeCreated = timeCreated;
             TimeZone = timeZone;

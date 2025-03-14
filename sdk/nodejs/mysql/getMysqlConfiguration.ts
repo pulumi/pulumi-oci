@@ -85,6 +85,10 @@ export interface GetMysqlConfigurationResult {
      */
     readonly state: string;
     /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    readonly systemTags: {[key: string]: string};
+    /**
      * The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
     readonly timeCreated: string;

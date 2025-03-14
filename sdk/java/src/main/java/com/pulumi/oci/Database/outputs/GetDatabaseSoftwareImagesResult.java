@@ -26,6 +26,7 @@ public final class GetDatabaseSoftwareImagesResult {
      * 
      */
     private List<GetDatabaseSoftwareImagesDatabaseSoftwareImage> databaseSoftwareImages;
+    private @Nullable String dbSystemId;
     /**
      * @return The user-friendly name for the database software image. The name does not have to be unique.
      * 
@@ -72,6 +73,9 @@ public final class GetDatabaseSoftwareImagesResult {
      */
     public List<GetDatabaseSoftwareImagesDatabaseSoftwareImage> databaseSoftwareImages() {
         return this.databaseSoftwareImages;
+    }
+    public Optional<String> dbSystemId() {
+        return Optional.ofNullable(this.dbSystemId);
     }
     /**
      * @return The user-friendly name for the database software image. The name does not have to be unique.
@@ -130,6 +134,7 @@ public final class GetDatabaseSoftwareImagesResult {
     public static final class Builder {
         private String compartmentId;
         private List<GetDatabaseSoftwareImagesDatabaseSoftwareImage> databaseSoftwareImages;
+        private @Nullable String dbSystemId;
         private @Nullable String displayName;
         private @Nullable List<GetDatabaseSoftwareImagesFilter> filters;
         private String id;
@@ -142,6 +147,7 @@ public final class GetDatabaseSoftwareImagesResult {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
     	      this.databaseSoftwareImages = defaults.databaseSoftwareImages;
+    	      this.dbSystemId = defaults.dbSystemId;
     	      this.displayName = defaults.displayName;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
@@ -169,6 +175,12 @@ public final class GetDatabaseSoftwareImagesResult {
         }
         public Builder databaseSoftwareImages(GetDatabaseSoftwareImagesDatabaseSoftwareImage... databaseSoftwareImages) {
             return databaseSoftwareImages(List.of(databaseSoftwareImages));
+        }
+        @CustomType.Setter
+        public Builder dbSystemId(@Nullable String dbSystemId) {
+
+            this.dbSystemId = dbSystemId;
+            return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
@@ -221,6 +233,7 @@ public final class GetDatabaseSoftwareImagesResult {
             final var _resultValue = new GetDatabaseSoftwareImagesResult();
             _resultValue.compartmentId = compartmentId;
             _resultValue.databaseSoftwareImages = databaseSoftwareImages;
+            _resultValue.dbSystemId = dbSystemId;
             _resultValue.displayName = displayName;
             _resultValue.filters = filters;
             _resultValue.id = id;

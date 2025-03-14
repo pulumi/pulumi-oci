@@ -73,6 +73,7 @@ namespace Pulumi.Oci.Database
     ///         ScanListenerPortTcp = exadbVmClusterScanListenerPortTcp,
     ///         ScanListenerPortTcpSsl = exadbVmClusterScanListenerPortTcpSsl,
     ///         SecurityAttributes = exadbVmClusterSecurityAttributes,
+    ///         SubscriptionId = tenantSubscriptionId,
     ///         SystemVersion = exadbVmClusterSystemVersion,
     ///         TimeZone = exadbVmClusterTimeZone,
     ///     });
@@ -114,6 +115,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("clusterName")]
         public Output<string> ClusterName { get; private set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        /// </summary>
+        [Output("clusterPlacementGroupId")]
+        public Output<string> ClusterPlacementGroupId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -166,7 +173,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// (Updatable) Grid Setup will be done using this grid image id.
         /// 
-        /// The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=&lt;compartmentId&gt;&amp;shape=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt; 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=&lt;compartmentId&gt;&amp;shapeFamily=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt;
+        /// The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=&lt;compartmentId&gt;&amp;shapeFamily=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt;. The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=&lt;compartmentId&gt;&amp;shape=ExaDbXS&amp;availabilityDomain=&lt;AD name&gt;
         /// </summary>
         [Output("gridImageId")]
         public Output<string> GridImageId { get; private set; } = null!;
@@ -301,6 +308,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("subnetId")]
         public Output<string> SubnetId { get; private set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        /// </summary>
+        [Output("subscriptionId")]
+        public Output<string> SubscriptionId { get; private set; } = null!;
 
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -475,7 +488,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// (Updatable) Grid Setup will be done using this grid image id.
         /// 
-        /// The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=&lt;compartmentId&gt;&amp;shape=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt; 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=&lt;compartmentId&gt;&amp;shapeFamily=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt;
+        /// The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=&lt;compartmentId&gt;&amp;shapeFamily=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt;. The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=&lt;compartmentId&gt;&amp;shape=ExaDbXS&amp;availabilityDomain=&lt;AD name&gt;
         /// </summary>
         [Input("gridImageId", required: true)]
         public Input<string> GridImageId { get; set; } = null!;
@@ -582,6 +595,12 @@ namespace Pulumi.Oci.Database
         public Input<string> SubnetId { get; set; } = null!;
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        /// </summary>
+        [Input("subscriptionId")]
+        public Input<string>? SubscriptionId { get; set; }
+
+        /// <summary>
         /// (Updatable) Operating system version of the image.
         /// </summary>
         [Input("systemVersion")]
@@ -634,6 +653,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("clusterName")]
         public Input<string>? ClusterName { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        /// </summary>
+        [Input("clusterPlacementGroupId")]
+        public Input<string>? ClusterPlacementGroupId { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -698,7 +723,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// (Updatable) Grid Setup will be done using this grid image id.
         /// 
-        /// The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=&lt;compartmentId&gt;&amp;shape=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt; 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=&lt;compartmentId&gt;&amp;shapeFamily=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt;
+        /// The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=&lt;compartmentId&gt;&amp;shapeFamily=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt;. The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=&lt;compartmentId&gt;&amp;shape=ExaDbXS&amp;availabilityDomain=&lt;AD name&gt;
         /// </summary>
         [Input("gridImageId")]
         public Input<string>? GridImageId { get; set; }
@@ -869,6 +894,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        /// </summary>
+        [Input("subscriptionId")]
+        public Input<string>? SubscriptionId { get; set; }
 
         [Input("systemTags")]
         private InputMap<string>? _systemTags;

@@ -20,6 +20,11 @@ export type FileSystem = import("./fileSystem").FileSystem;
 export const FileSystem: typeof import("./fileSystem").FileSystem = null as any;
 utilities.lazyLoad(exports, ["FileSystem"], () => require("./fileSystem"));
 
+export { FileSystemQuotaRuleArgs, FileSystemQuotaRuleState } from "./fileSystemQuotaRule";
+export type FileSystemQuotaRule = import("./fileSystemQuotaRule").FileSystemQuotaRule;
+export const FileSystemQuotaRule: typeof import("./fileSystemQuotaRule").FileSystemQuotaRule = null as any;
+utilities.lazyLoad(exports, ["FileSystemQuotaRule"], () => require("./fileSystemQuotaRule"));
+
 export { FilesystemSnapshotPolicyArgs, FilesystemSnapshotPolicyState } from "./filesystemSnapshotPolicy";
 export type FilesystemSnapshotPolicy = import("./filesystemSnapshotPolicy").FilesystemSnapshotPolicy;
 export const FilesystemSnapshotPolicy: typeof import("./filesystemSnapshotPolicy").FilesystemSnapshotPolicy = null as any;
@@ -34,6 +39,16 @@ export { GetExportsArgs, GetExportsResult, GetExportsOutputArgs } from "./getExp
 export const getExports: typeof import("./getExports").getExports = null as any;
 export const getExportsOutput: typeof import("./getExports").getExportsOutput = null as any;
 utilities.lazyLoad(exports, ["getExports","getExportsOutput"], () => require("./getExports"));
+
+export { GetFileSystemQuotaRuleArgs, GetFileSystemQuotaRuleResult, GetFileSystemQuotaRuleOutputArgs } from "./getFileSystemQuotaRule";
+export const getFileSystemQuotaRule: typeof import("./getFileSystemQuotaRule").getFileSystemQuotaRule = null as any;
+export const getFileSystemQuotaRuleOutput: typeof import("./getFileSystemQuotaRule").getFileSystemQuotaRuleOutput = null as any;
+utilities.lazyLoad(exports, ["getFileSystemQuotaRule","getFileSystemQuotaRuleOutput"], () => require("./getFileSystemQuotaRule"));
+
+export { GetFileSystemQuotaRulesArgs, GetFileSystemQuotaRulesResult, GetFileSystemQuotaRulesOutputArgs } from "./getFileSystemQuotaRules";
+export const getFileSystemQuotaRules: typeof import("./getFileSystemQuotaRules").getFileSystemQuotaRules = null as any;
+export const getFileSystemQuotaRulesOutput: typeof import("./getFileSystemQuotaRules").getFileSystemQuotaRulesOutput = null as any;
+utilities.lazyLoad(exports, ["getFileSystemQuotaRules","getFileSystemQuotaRulesOutput"], () => require("./getFileSystemQuotaRules"));
 
 export { GetFileSystemsArgs, GetFileSystemsResult, GetFileSystemsOutputArgs } from "./getFileSystems";
 export const getFileSystems: typeof import("./getFileSystems").getFileSystems = null as any;
@@ -126,6 +141,8 @@ const _module = {
                 return new ExportSet(name, <any>undefined, { urn })
             case "oci:FileStorage/fileSystem:FileSystem":
                 return new FileSystem(name, <any>undefined, { urn })
+            case "oci:FileStorage/fileSystemQuotaRule:FileSystemQuotaRule":
+                return new FileSystemQuotaRule(name, <any>undefined, { urn })
             case "oci:FileStorage/filesystemSnapshotPolicy:FilesystemSnapshotPolicy":
                 return new FilesystemSnapshotPolicy(name, <any>undefined, { urn })
             case "oci:FileStorage/mountTarget:MountTarget":
@@ -144,6 +161,7 @@ const _module = {
 pulumi.runtime.registerResourceModule("oci", "FileStorage/export", _module)
 pulumi.runtime.registerResourceModule("oci", "FileStorage/exportSet", _module)
 pulumi.runtime.registerResourceModule("oci", "FileStorage/fileSystem", _module)
+pulumi.runtime.registerResourceModule("oci", "FileStorage/fileSystemQuotaRule", _module)
 pulumi.runtime.registerResourceModule("oci", "FileStorage/filesystemSnapshotPolicy", _module)
 pulumi.runtime.registerResourceModule("oci", "FileStorage/mountTarget", _module)
 pulumi.runtime.registerResourceModule("oci", "FileStorage/outboundConnector", _module)

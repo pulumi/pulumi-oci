@@ -42,7 +42,9 @@ import (
 //					&datascience.ModelCustomMetadataListArgs{
 //						Category:    pulumi.Any(modelCustomMetadataListCategory),
 //						Description: pulumi.Any(modelCustomMetadataListDescription),
+//						HasArtifact: pulumi.Any(modelCustomMetadataListHasArtifact),
 //						Key:         pulumi.Any(modelCustomMetadataListKey),
+//						Keywords:    pulumi.Any(modelCustomMetadataListKeywords),
 //						Value:       pulumi.Any(modelCustomMetadataListValue),
 //					},
 //				},
@@ -50,7 +52,9 @@ import (
 //					&datascience.ModelDefinedMetadataListArgs{
 //						Category:    pulumi.Any(modelDefinedMetadataListCategory),
 //						Description: pulumi.Any(modelDefinedMetadataListDescription),
+//						HasArtifact: pulumi.Any(modelDefinedMetadataListHasArtifact),
 //						Key:         pulumi.Any(modelDefinedMetadataListKey),
+//						Keywords:    pulumi.Any(modelDefinedMetadataListKeywords),
 //						Value:       pulumi.Any(modelDefinedMetadataListValue),
 //					},
 //				},
@@ -103,6 +107,8 @@ type Model struct {
 	BackupOperationDetails ModelBackupOperationDetailArrayOutput `pulumi:"backupOperationDetails"`
 	// (Updatable) Back up setting details of the model.
 	BackupSetting ModelBackupSettingOutput `pulumi:"backupSetting"`
+	// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
+	Category pulumi.StringOutput `pulumi:"category"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
@@ -122,6 +128,8 @@ type Model struct {
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Input schema file content in String format
 	InputSchema pulumi.StringOutput `pulumi:"inputSchema"`
+	// Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+	IsModelByReference pulumi.BoolOutput `pulumi:"isModelByReference"`
 	// Details about the lifecycle state of the model.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
@@ -201,6 +209,8 @@ type modelState struct {
 	BackupOperationDetails []ModelBackupOperationDetail `pulumi:"backupOperationDetails"`
 	// (Updatable) Back up setting details of the model.
 	BackupSetting *ModelBackupSetting `pulumi:"backupSetting"`
+	// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
+	Category *string `pulumi:"category"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
@@ -220,6 +230,8 @@ type modelState struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Input schema file content in String format
 	InputSchema *string `pulumi:"inputSchema"`
+	// Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+	IsModelByReference *bool `pulumi:"isModelByReference"`
 	// Details about the lifecycle state of the model.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
@@ -258,6 +270,8 @@ type ModelState struct {
 	BackupOperationDetails ModelBackupOperationDetailArrayInput
 	// (Updatable) Back up setting details of the model.
 	BackupSetting ModelBackupSettingPtrInput
+	// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
+	Category pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
 	CompartmentId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
@@ -277,6 +291,8 @@ type ModelState struct {
 	FreeformTags pulumi.StringMapInput
 	// Input schema file content in String format
 	InputSchema pulumi.StringPtrInput
+	// Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+	IsModelByReference pulumi.BoolPtrInput
 	// Details about the lifecycle state of the model.
 	LifecycleDetails pulumi.StringPtrInput
 	// The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
@@ -512,6 +528,11 @@ func (o ModelOutput) BackupSetting() ModelBackupSettingOutput {
 	return o.ApplyT(func(v *Model) ModelBackupSettingOutput { return v.BackupSetting }).(ModelBackupSettingOutput)
 }
 
+// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
+func (o ModelOutput) Category() pulumi.StringOutput {
+	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.Category }).(pulumi.StringOutput)
+}
+
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
 func (o ModelOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -559,6 +580,11 @@ func (o ModelOutput) FreeformTags() pulumi.StringMapOutput {
 // Input schema file content in String format
 func (o ModelOutput) InputSchema() pulumi.StringOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.InputSchema }).(pulumi.StringOutput)
+}
+
+// Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+func (o ModelOutput) IsModelByReference() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Model) pulumi.BoolOutput { return v.IsModelByReference }).(pulumi.BoolOutput)
 }
 
 // Details about the lifecycle state of the model.

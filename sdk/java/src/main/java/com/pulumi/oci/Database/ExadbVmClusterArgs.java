@@ -190,7 +190,7 @@ public final class ExadbVmClusterArgs extends com.pulumi.resources.ResourceArgs 
     /**
      * (Updatable) Grid Setup will be done using this grid image id.
      * 
-     * The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=&lt;compartmentId&gt;&amp;shape=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt; 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=&lt;compartmentId&gt;&amp;shapeFamily=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt;
+     * The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=&lt;compartmentId&gt;&amp;shapeFamily=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt;. The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=&lt;compartmentId&gt;&amp;shape=ExaDbXS&amp;availabilityDomain=&lt;AD name&gt;
      * 
      */
     @Import(name="gridImageId", required=true)
@@ -199,7 +199,7 @@ public final class ExadbVmClusterArgs extends com.pulumi.resources.ResourceArgs 
     /**
      * @return (Updatable) Grid Setup will be done using this grid image id.
      * 
-     * The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=&lt;compartmentId&gt;&amp;shape=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt; 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=&lt;compartmentId&gt;&amp;shapeFamily=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt;
+     * The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=&lt;compartmentId&gt;&amp;shapeFamily=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt;. The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=&lt;compartmentId&gt;&amp;shape=ExaDbXS&amp;availabilityDomain=&lt;AD name&gt;
      * 
      */
     public Output<String> gridImageId() {
@@ -397,6 +397,21 @@ public final class ExadbVmClusterArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    @Import(name="subscriptionId")
+    private @Nullable Output<String> subscriptionId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    public Optional<Output<String>> subscriptionId() {
+        return Optional.ofNullable(this.subscriptionId);
+    }
+
+    /**
      * (Updatable) Operating system version of the image.
      * 
      */
@@ -459,6 +474,7 @@ public final class ExadbVmClusterArgs extends com.pulumi.resources.ResourceArgs 
         this.shape = $.shape;
         this.sshPublicKeys = $.sshPublicKeys;
         this.subnetId = $.subnetId;
+        this.subscriptionId = $.subscriptionId;
         this.systemVersion = $.systemVersion;
         this.timeZone = $.timeZone;
     }
@@ -725,7 +741,7 @@ public final class ExadbVmClusterArgs extends com.pulumi.resources.ResourceArgs 
         /**
          * @param gridImageId (Updatable) Grid Setup will be done using this grid image id.
          * 
-         * The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=&lt;compartmentId&gt;&amp;shape=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt; 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=&lt;compartmentId&gt;&amp;shapeFamily=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt;
+         * The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=&lt;compartmentId&gt;&amp;shapeFamily=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt;. The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=&lt;compartmentId&gt;&amp;shape=ExaDbXS&amp;availabilityDomain=&lt;AD name&gt;
          * 
          * @return builder
          * 
@@ -738,7 +754,7 @@ public final class ExadbVmClusterArgs extends com.pulumi.resources.ResourceArgs 
         /**
          * @param gridImageId (Updatable) Grid Setup will be done using this grid image id.
          * 
-         * The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=&lt;compartmentId&gt;&amp;shape=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt; 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=&lt;compartmentId&gt;&amp;shapeFamily=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt;
+         * The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=&lt;compartmentId&gt;&amp;shapeFamily=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt;. The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=&lt;compartmentId&gt;&amp;shape=ExaDbXS&amp;availabilityDomain=&lt;AD name&gt;
          * 
          * @return builder
          * 
@@ -1038,6 +1054,27 @@ public final class ExadbVmClusterArgs extends com.pulumi.resources.ResourceArgs 
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
+        }
+
+        /**
+         * @param subscriptionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subscriptionId(@Nullable Output<String> subscriptionId) {
+            $.subscriptionId = subscriptionId;
+            return this;
+        }
+
+        /**
+         * @param subscriptionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            return subscriptionId(Output.of(subscriptionId));
         }
 
         /**

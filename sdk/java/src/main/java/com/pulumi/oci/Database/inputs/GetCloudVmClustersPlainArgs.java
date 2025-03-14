@@ -84,6 +84,21 @@ public final class GetCloudVmClustersPlainArgs extends com.pulumi.resources.Invo
         return Optional.ofNullable(this.state);
     }
 
+    /**
+     * A filter to return only cloud vmclusters that match the given cloud vmcluster type exactly.
+     * 
+     */
+    @Import(name="vmClusterType")
+    private @Nullable String vmClusterType;
+
+    /**
+     * @return A filter to return only cloud vmclusters that match the given cloud vmcluster type exactly.
+     * 
+     */
+    public Optional<String> vmClusterType() {
+        return Optional.ofNullable(this.vmClusterType);
+    }
+
     private GetCloudVmClustersPlainArgs() {}
 
     private GetCloudVmClustersPlainArgs(GetCloudVmClustersPlainArgs $) {
@@ -92,6 +107,7 @@ public final class GetCloudVmClustersPlainArgs extends com.pulumi.resources.Invo
         this.displayName = $.displayName;
         this.filters = $.filters;
         this.state = $.state;
+        this.vmClusterType = $.vmClusterType;
     }
 
     public static Builder builder() {
@@ -162,6 +178,17 @@ public final class GetCloudVmClustersPlainArgs extends com.pulumi.resources.Invo
          */
         public Builder state(@Nullable String state) {
             $.state = state;
+            return this;
+        }
+
+        /**
+         * @param vmClusterType A filter to return only cloud vmclusters that match the given cloud vmcluster type exactly.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vmClusterType(@Nullable String vmClusterType) {
+            $.vmClusterType = vmClusterType;
             return this;
         }
 

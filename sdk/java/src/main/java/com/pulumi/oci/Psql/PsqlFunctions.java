@@ -867,6 +867,7 @@ public final class PsqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testConfigurations = PsqlFunctions.getConfigurations(GetConfigurationsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .configType(configurationConfigType)
      *             .configurationId(testConfiguration.id())
      *             .dbVersion(configurationDbVersion)
      *             .displayName(configurationDisplayName)
@@ -916,6 +917,7 @@ public final class PsqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testConfigurations = PsqlFunctions.getConfigurations(GetConfigurationsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .configType(configurationConfigType)
      *             .configurationId(testConfiguration.id())
      *             .dbVersion(configurationDbVersion)
      *             .displayName(configurationDisplayName)
@@ -965,6 +967,7 @@ public final class PsqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testConfigurations = PsqlFunctions.getConfigurations(GetConfigurationsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .configType(configurationConfigType)
      *             .configurationId(testConfiguration.id())
      *             .dbVersion(configurationDbVersion)
      *             .displayName(configurationDisplayName)
@@ -1014,6 +1017,7 @@ public final class PsqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testConfigurations = PsqlFunctions.getConfigurations(GetConfigurationsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .configType(configurationConfigType)
      *             .configurationId(testConfiguration.id())
      *             .dbVersion(configurationDbVersion)
      *             .displayName(configurationDisplayName)
@@ -1063,6 +1067,7 @@ public final class PsqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testConfigurations = PsqlFunctions.getConfigurations(GetConfigurationsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .configType(configurationConfigType)
      *             .configurationId(testConfiguration.id())
      *             .dbVersion(configurationDbVersion)
      *             .displayName(configurationDisplayName)
@@ -1112,6 +1117,7 @@ public final class PsqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testConfigurations = PsqlFunctions.getConfigurations(GetConfigurationsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .configType(configurationConfigType)
      *             .configurationId(testConfiguration.id())
      *             .dbVersion(configurationDbVersion)
      *             .displayName(configurationDisplayName)
@@ -1161,6 +1167,7 @@ public final class PsqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testConfigurations = PsqlFunctions.getConfigurations(GetConfigurationsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .configType(configurationConfigType)
      *             .configurationId(testConfiguration.id())
      *             .dbVersion(configurationDbVersion)
      *             .displayName(configurationDisplayName)

@@ -64,6 +64,7 @@ import javax.annotation.Nullable;
  *             .customerContacts(CloudExadataInfrastructureCustomerContactArgs.builder()
  *                 .email(cloudExadataInfrastructureCustomerContactsEmail)
  *                 .build())
+ *             .databaseServerType(cloudExadataInfrastructureDatabaseServerType)
  *             .definedTags(cloudExadataInfrastructureDefinedTags)
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .maintenanceWindow(CloudExadataInfrastructureMaintenanceWindowArgs.builder()
@@ -83,6 +84,7 @@ import javax.annotation.Nullable;
  *                 .weeksOfMonths(cloudExadataInfrastructureMaintenanceWindowWeeksOfMonth)
  *                 .build())
  *             .storageCount(cloudExadataInfrastructureStorageCount)
+ *             .storageServerType(cloudExadataInfrastructureStorageServerType)
  *             .subscriptionId(tenantSubscriptionId)
  *             .build());
  * 
@@ -202,6 +204,20 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
         return this.computeCount;
     }
     /**
+     * The compute model of the Exadata infrastructure.
+     * 
+     */
+    @Export(name="computeModel", refs={String.class}, tree="[0]")
+    private Output<String> computeModel;
+
+    /**
+     * @return The compute model of the Exadata infrastructure.
+     * 
+     */
+    public Output<String> computeModel() {
+        return this.computeModel;
+    }
+    /**
      * The total number of CPU cores allocated.
      * 
      */
@@ -242,6 +258,20 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      */
     public Output<Double> dataStorageSizeInTbs() {
         return this.dataStorageSizeInTbs;
+    }
+    /**
+     * The database server type of the Exadata infrastructure.
+     * 
+     */
+    @Export(name="databaseServerType", refs={String.class}, tree="[0]")
+    private Output<String> databaseServerType;
+
+    /**
+     * @return The database server type of the Exadata infrastructure.
+     * 
+     */
+    public Output<String> databaseServerType() {
+        return this.databaseServerType;
     }
     /**
      * The local node storage allocated in GBs.
@@ -536,6 +566,20 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      */
     public Output<Integer> storageCount() {
         return this.storageCount;
+    }
+    /**
+     * The storage server type of the Exadata infrastructure.
+     * 
+     */
+    @Export(name="storageServerType", refs={String.class}, tree="[0]")
+    private Output<String> storageServerType;
+
+    /**
+     * @return The storage server type of the Exadata infrastructure.
+     * 
+     */
+    public Output<String> storageServerType() {
+        return this.storageServerType;
     }
     /**
      * The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15

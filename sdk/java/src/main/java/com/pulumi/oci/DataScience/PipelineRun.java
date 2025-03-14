@@ -45,6 +45,9 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailArgs;
  * import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepConfigurationDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -92,6 +95,22 @@ import javax.annotation.Nullable;
  *                     .entrypoints(pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsEntrypoint)
  *                     .imageDigest(pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsImageDigest)
  *                     .imageSignatureId(testImageSignature.id())
+ *                     .build())
+ *                 .stepDataflowConfigurationDetails(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs.builder()
+ *                     .configuration(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsConfiguration)
+ *                     .driverShape(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShape)
+ *                     .driverShapeConfigDetails(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs.builder()
+ *                         .memoryInGbs(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsMemoryInGbs)
+ *                         .ocpus(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsOcpus)
+ *                         .build())
+ *                     .executorShape(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShape)
+ *                     .executorShapeConfigDetails(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs.builder()
+ *                         .memoryInGbs(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsMemoryInGbs)
+ *                         .ocpus(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOcpus)
+ *                         .build())
+ *                     .logsBucketUri(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsLogsBucketUri)
+ *                     .numExecutors(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsNumExecutors)
+ *                     .warehouseBucketUri(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsWarehouseBucketUri)
  *                     .build())
  *                 .build())
  *             .systemTags(pipelineRunSystemTags)

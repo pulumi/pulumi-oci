@@ -68,6 +68,12 @@ namespace Pulumi.Oci.Psql
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
+        /// List of status for Backup Copy
+        /// </summary>
+        [Output("copyStatuses")]
+        public Output<ImmutableArray<Outputs.BackupCopyStatus>> CopyStatuses { get; private set; } = null!;
+
+        /// <summary>
         /// Information about the database system associated with a backup.
         /// </summary>
         [Output("dbSystemDetails")]
@@ -132,7 +138,13 @@ namespace Pulumi.Oci.Psql
         public Output<int> RetentionPeriod { get; private set; } = null!;
 
         /// <summary>
-        /// Specifies whether the backup was created manually, or by a management policy.
+        /// Information about the Source Backup associated with a backup.
+        /// </summary>
+        [Output("sourceBackupDetails")]
+        public Output<Outputs.BackupSourceBackupDetails?> SourceBackupDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
         /// </summary>
         [Output("sourceType")]
         public Output<string> SourceType { get; private set; } = null!;
@@ -154,6 +166,12 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
+
+        /// <summary>
+        /// The date and time the backup was created. This is the time the actual point-in-time data snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        /// </summary>
+        [Output("timeCreatedPrecise")]
+        public Output<string> TimeCreatedPrecise { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
@@ -216,8 +234,8 @@ namespace Pulumi.Oci.Psql
         /// <summary>
         /// The ID of the database system.
         /// </summary>
-        [Input("dbSystemId", required: true)]
-        public Input<string> DbSystemId { get; set; } = null!;
+        [Input("dbSystemId")]
+        public Input<string>? DbSystemId { get; set; }
 
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
@@ -240,8 +258,8 @@ namespace Pulumi.Oci.Psql
         /// <summary>
         /// (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
         /// </summary>
-        [Input("displayName", required: true)]
-        public Input<string> DisplayName { get; set; } = null!;
+        [Input("displayName")]
+        public Input<string>? DisplayName { get; set; }
 
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;
@@ -265,6 +283,12 @@ namespace Pulumi.Oci.Psql
         [Input("retentionPeriod")]
         public Input<int>? RetentionPeriod { get; set; }
 
+        /// <summary>
+        /// Information about the Source Backup associated with a backup.
+        /// </summary>
+        [Input("sourceBackupDetails")]
+        public Input<Inputs.BackupSourceBackupDetailsArgs>? SourceBackupDetails { get; set; }
+
         public BackupArgs()
         {
         }
@@ -284,6 +308,18 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
+
+        [Input("copyStatuses")]
+        private InputList<Inputs.BackupCopyStatusGetArgs>? _copyStatuses;
+
+        /// <summary>
+        /// List of status for Backup Copy
+        /// </summary>
+        public InputList<Inputs.BackupCopyStatusGetArgs> CopyStatuses
+        {
+            get => _copyStatuses ?? (_copyStatuses = new InputList<Inputs.BackupCopyStatusGetArgs>());
+            set => _copyStatuses = value;
+        }
 
         [Input("dbSystemDetails")]
         private InputList<Inputs.BackupDbSystemDetailGetArgs>? _dbSystemDetails;
@@ -368,7 +404,13 @@ namespace Pulumi.Oci.Psql
         public Input<int>? RetentionPeriod { get; set; }
 
         /// <summary>
-        /// Specifies whether the backup was created manually, or by a management policy.
+        /// Information about the Source Backup associated with a backup.
+        /// </summary>
+        [Input("sourceBackupDetails")]
+        public Input<Inputs.BackupSourceBackupDetailsGetArgs>? SourceBackupDetails { get; set; }
+
+        /// <summary>
+        /// Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
         /// </summary>
         [Input("sourceType")]
         public Input<string>? SourceType { get; set; }
@@ -396,6 +438,12 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
+
+        /// <summary>
+        /// The date and time the backup was created. This is the time the actual point-in-time data snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        /// </summary>
+        [Input("timeCreatedPrecise")]
+        public Input<string>? TimeCreatedPrecise { get; set; }
 
         /// <summary>
         /// The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`

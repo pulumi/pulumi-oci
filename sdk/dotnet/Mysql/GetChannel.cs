@@ -171,6 +171,10 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         public readonly string State;
         /// <summary>
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SystemTags;
+        /// <summary>
         /// Details about the Channel target.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetChannelTargetResult> Targets;
@@ -207,6 +211,8 @@ namespace Pulumi.Oci.Mysql
 
             string state,
 
+            ImmutableDictionary<string, string> systemTags,
+
             ImmutableArray<Outputs.GetChannelTargetResult> targets,
 
             string timeCreated,
@@ -224,6 +230,7 @@ namespace Pulumi.Oci.Mysql
             LifecycleDetails = lifecycleDetails;
             Sources = sources;
             State = state;
+            SystemTags = systemTags;
             Targets = targets;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;

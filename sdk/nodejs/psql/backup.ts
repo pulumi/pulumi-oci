@@ -77,6 +77,10 @@ export class Backup extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
+     * List of status for Backup Copy
+     */
+    public /*out*/ readonly copyStatuses!: pulumi.Output<outputs.Psql.BackupCopyStatus[]>;
+    /**
      * Information about the database system associated with a backup.
      */
     public /*out*/ readonly dbSystemDetails!: pulumi.Output<outputs.Psql.BackupDbSystemDetail[]>;
@@ -121,7 +125,11 @@ export class Backup extends pulumi.CustomResource {
      */
     public readonly retentionPeriod!: pulumi.Output<number>;
     /**
-     * Specifies whether the backup was created manually, or by a management policy.
+     * Information about the Source Backup associated with a backup.
+     */
+    public readonly sourceBackupDetails!: pulumi.Output<outputs.Psql.BackupSourceBackupDetails | undefined>;
+    /**
+     * Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
      */
     public /*out*/ readonly sourceType!: pulumi.Output<string>;
     /**
@@ -136,6 +144,10 @@ export class Backup extends pulumi.CustomResource {
      * The date and time the backup request was received, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    /**
+     * The date and time the backup was created. This is the time the actual point-in-time data snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+     */
+    public /*out*/ readonly timeCreatedPrecise!: pulumi.Output<string>;
     /**
      * The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
@@ -156,6 +168,7 @@ export class Backup extends pulumi.CustomResource {
             const state = argsOrState as BackupState | undefined;
             resourceInputs["backupSize"] = state ? state.backupSize : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
+            resourceInputs["copyStatuses"] = state ? state.copyStatuses : undefined;
             resourceInputs["dbSystemDetails"] = state ? state.dbSystemDetails : undefined;
             resourceInputs["dbSystemId"] = state ? state.dbSystemId : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
@@ -166,21 +179,17 @@ export class Backup extends pulumi.CustomResource {
             resourceInputs["lastCompletedRequestToken"] = state ? state.lastCompletedRequestToken : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["retentionPeriod"] = state ? state.retentionPeriod : undefined;
+            resourceInputs["sourceBackupDetails"] = state ? state.sourceBackupDetails : undefined;
             resourceInputs["sourceType"] = state ? state.sourceType : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["timeCreatedPrecise"] = state ? state.timeCreatedPrecise : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
         } else {
             const args = argsOrState as BackupArgs | undefined;
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
-            }
-            if ((!args || args.dbSystemId === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'dbSystemId'");
-            }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'displayName'");
             }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["dbSystemId"] = args ? args.dbSystemId : undefined;
@@ -189,7 +198,9 @@ export class Backup extends pulumi.CustomResource {
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["retentionPeriod"] = args ? args.retentionPeriod : undefined;
+            resourceInputs["sourceBackupDetails"] = args ? args.sourceBackupDetails : undefined;
             resourceInputs["backupSize"] = undefined /*out*/;
+            resourceInputs["copyStatuses"] = undefined /*out*/;
             resourceInputs["dbSystemDetails"] = undefined /*out*/;
             resourceInputs["lastAcceptedRequestToken"] = undefined /*out*/;
             resourceInputs["lastCompletedRequestToken"] = undefined /*out*/;
@@ -198,6 +209,7 @@ export class Backup extends pulumi.CustomResource {
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
+            resourceInputs["timeCreatedPrecise"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -217,6 +229,10 @@ export interface BackupState {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
      */
     compartmentId?: pulumi.Input<string>;
+    /**
+     * List of status for Backup Copy
+     */
+    copyStatuses?: pulumi.Input<pulumi.Input<inputs.Psql.BackupCopyStatus>[]>;
     /**
      * Information about the database system associated with a backup.
      */
@@ -262,7 +278,11 @@ export interface BackupState {
      */
     retentionPeriod?: pulumi.Input<number>;
     /**
-     * Specifies whether the backup was created manually, or by a management policy.
+     * Information about the Source Backup associated with a backup.
+     */
+    sourceBackupDetails?: pulumi.Input<inputs.Psql.BackupSourceBackupDetails>;
+    /**
+     * Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
      */
     sourceType?: pulumi.Input<string>;
     /**
@@ -277,6 +297,10 @@ export interface BackupState {
      * The date and time the backup request was received, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
     timeCreated?: pulumi.Input<string>;
+    /**
+     * The date and time the backup was created. This is the time the actual point-in-time data snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+     */
+    timeCreatedPrecise?: pulumi.Input<string>;
     /**
      * The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
@@ -294,7 +318,7 @@ export interface BackupArgs {
     /**
      * The ID of the database system.
      */
-    dbSystemId: pulumi.Input<string>;
+    dbSystemId?: pulumi.Input<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
@@ -306,7 +330,7 @@ export interface BackupArgs {
     /**
      * (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
      */
-    displayName: pulumi.Input<string>;
+    displayName?: pulumi.Input<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
@@ -319,4 +343,8 @@ export interface BackupArgs {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     retentionPeriod?: pulumi.Input<number>;
+    /**
+     * Information about the Source Backup associated with a backup.
+     */
+    sourceBackupDetails?: pulumi.Input<inputs.Psql.BackupSourceBackupDetails>;
 }

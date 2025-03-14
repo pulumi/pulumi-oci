@@ -18,6 +18,7 @@ import javax.annotation.Nullable;
 public final class GetSecurityAssessmentFindingResult {
     private @Nullable String accessLevel;
     private @Nullable Boolean compartmentIdInSubtree;
+    private @Nullable List<String> fields;
     private @Nullable List<GetSecurityAssessmentFindingFilter> filters;
     private @Nullable String findingKey;
     private List<GetSecurityAssessmentFindingFinding> findings;
@@ -28,6 +29,7 @@ public final class GetSecurityAssessmentFindingResult {
     private String id;
     private @Nullable Boolean isTopFinding;
     private @Nullable String references;
+    private @Nullable String scimQuery;
     private String securityAssessmentId;
     private @Nullable String severity;
     private @Nullable String state;
@@ -39,6 +41,9 @@ public final class GetSecurityAssessmentFindingResult {
     }
     public Optional<Boolean> compartmentIdInSubtree() {
         return Optional.ofNullable(this.compartmentIdInSubtree);
+    }
+    public List<String> fields() {
+        return this.fields == null ? List.of() : this.fields;
     }
     public List<GetSecurityAssessmentFindingFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -61,6 +66,9 @@ public final class GetSecurityAssessmentFindingResult {
     }
     public Optional<String> references() {
         return Optional.ofNullable(this.references);
+    }
+    public Optional<String> scimQuery() {
+        return Optional.ofNullable(this.scimQuery);
     }
     public String securityAssessmentId() {
         return this.securityAssessmentId;
@@ -86,12 +94,14 @@ public final class GetSecurityAssessmentFindingResult {
     public static final class Builder {
         private @Nullable String accessLevel;
         private @Nullable Boolean compartmentIdInSubtree;
+        private @Nullable List<String> fields;
         private @Nullable List<GetSecurityAssessmentFindingFilter> filters;
         private @Nullable String findingKey;
         private List<GetSecurityAssessmentFindingFinding> findings;
         private String id;
         private @Nullable Boolean isTopFinding;
         private @Nullable String references;
+        private @Nullable String scimQuery;
         private String securityAssessmentId;
         private @Nullable String severity;
         private @Nullable String state;
@@ -101,12 +111,14 @@ public final class GetSecurityAssessmentFindingResult {
     	      Objects.requireNonNull(defaults);
     	      this.accessLevel = defaults.accessLevel;
     	      this.compartmentIdInSubtree = defaults.compartmentIdInSubtree;
+    	      this.fields = defaults.fields;
     	      this.filters = defaults.filters;
     	      this.findingKey = defaults.findingKey;
     	      this.findings = defaults.findings;
     	      this.id = defaults.id;
     	      this.isTopFinding = defaults.isTopFinding;
     	      this.references = defaults.references;
+    	      this.scimQuery = defaults.scimQuery;
     	      this.securityAssessmentId = defaults.securityAssessmentId;
     	      this.severity = defaults.severity;
     	      this.state = defaults.state;
@@ -124,6 +136,15 @@ public final class GetSecurityAssessmentFindingResult {
 
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
+        }
+        @CustomType.Setter
+        public Builder fields(@Nullable List<String> fields) {
+
+            this.fields = fields;
+            return this;
+        }
+        public Builder fields(String... fields) {
+            return fields(List.of(fields));
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSecurityAssessmentFindingFilter> filters) {
@@ -172,6 +193,12 @@ public final class GetSecurityAssessmentFindingResult {
             return this;
         }
         @CustomType.Setter
+        public Builder scimQuery(@Nullable String scimQuery) {
+
+            this.scimQuery = scimQuery;
+            return this;
+        }
+        @CustomType.Setter
         public Builder securityAssessmentId(String securityAssessmentId) {
             if (securityAssessmentId == null) {
               throw new MissingRequiredPropertyException("GetSecurityAssessmentFindingResult", "securityAssessmentId");
@@ -201,12 +228,14 @@ public final class GetSecurityAssessmentFindingResult {
             final var _resultValue = new GetSecurityAssessmentFindingResult();
             _resultValue.accessLevel = accessLevel;
             _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.fields = fields;
             _resultValue.filters = filters;
             _resultValue.findingKey = findingKey;
             _resultValue.findings = findings;
             _resultValue.id = id;
             _resultValue.isTopFinding = isTopFinding;
             _resultValue.references = references;
+            _resultValue.scimQuery = scimQuery;
             _resultValue.securityAssessmentId = securityAssessmentId;
             _resultValue.severity = severity;
             _resultValue.state = state;

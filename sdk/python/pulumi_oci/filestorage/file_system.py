@@ -23,6 +23,7 @@ class FileSystemArgs:
     def __init__(__self__, *,
                  availability_domain: pulumi.Input[str],
                  compartment_id: pulumi.Input[str],
+                 are_quota_rules_enabled: Optional[pulumi.Input[bool]] = None,
                  clone_attach_status: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  detach_clone_trigger: Optional[pulumi.Input[int]] = None,
@@ -37,6 +38,7 @@ class FileSystemArgs:
         The set of arguments for constructing a FileSystem resource.
         :param pulumi.Input[str] availability_domain: The availability domain to create the file system in.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the file system in.
+        :param pulumi.Input[bool] are_quota_rules_enabled: (Updatable) Specifies the enforcement of quota rules on the file system.
         :param pulumi.Input[str] clone_attach_status: Specifies whether the clone file system is attached to its parent file system. If the value is set to 'DETACH', then the file system will be created, which is deep copied from the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[int] detach_clone_trigger: (Updatable) An optional property when incremented triggers Detach Clone. Could be set to any integer value.
@@ -55,6 +57,8 @@ class FileSystemArgs:
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if are_quota_rules_enabled is not None:
+            pulumi.set(__self__, "are_quota_rules_enabled", are_quota_rules_enabled)
         if clone_attach_status is not None:
             pulumi.set(__self__, "clone_attach_status", clone_attach_status)
         if defined_tags is not None:
@@ -99,6 +103,18 @@ class FileSystemArgs:
     @compartment_id.setter
     def compartment_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="areQuotaRulesEnabled")
+    def are_quota_rules_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Specifies the enforcement of quota rules on the file system.
+        """
+        return pulumi.get(self, "are_quota_rules_enabled")
+
+    @are_quota_rules_enabled.setter
+    def are_quota_rules_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "are_quota_rules_enabled", value)
 
     @property
     @pulumi.getter(name="cloneAttachStatus")
@@ -227,6 +243,7 @@ class FileSystemArgs:
 @pulumi.input_type
 class _FileSystemState:
     def __init__(__self__, *,
+                 are_quota_rules_enabled: Optional[pulumi.Input[bool]] = None,
                  availability_domain: Optional[pulumi.Input[str]] = None,
                  clone_attach_status: Optional[pulumi.Input[str]] = None,
                  clone_count: Optional[pulumi.Input[int]] = None,
@@ -244,6 +261,8 @@ class _FileSystemState:
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input['FileSystemLockArgs']]]] = None,
                  metered_bytes: Optional[pulumi.Input[str]] = None,
+                 quota_enforcement_state: Optional[pulumi.Input[str]] = None,
+                 replication_source_count: Optional[pulumi.Input[int]] = None,
                  replication_target_id: Optional[pulumi.Input[str]] = None,
                  source_details: Optional[pulumi.Input[Sequence[pulumi.Input['FileSystemSourceDetailArgs']]]] = None,
                  source_snapshot_id: Optional[pulumi.Input[str]] = None,
@@ -252,6 +271,7 @@ class _FileSystemState:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering FileSystem resources.
+        :param pulumi.Input[bool] are_quota_rules_enabled: (Updatable) Specifies the enforcement of quota rules on the file system.
         :param pulumi.Input[str] availability_domain: The availability domain to create the file system in.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] clone_attach_status: Specifies whether the clone file system is attached to its parent file system. If the value is set to 'DETACH', then the file system will be created, which is deep copied from the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
         :param pulumi.Input[int] clone_count: Specifies the total number of children of a file system.
@@ -274,6 +294,8 @@ class _FileSystemState:
         :param pulumi.Input[str] lifecycle_details: Additional information about the current 'lifecycleState'.
         :param pulumi.Input[Sequence[pulumi.Input['FileSystemLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[str] metered_bytes: The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
+        :param pulumi.Input[str] quota_enforcement_state: Displays the state of enforcement of quota rules on the file system.
+        :param pulumi.Input[int] replication_source_count: Specifies the total number of replications for which this file system is a source.
         :param pulumi.Input[str] replication_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
         :param pulumi.Input[Sequence[pulumi.Input['FileSystemSourceDetailArgs']]] source_details: Source information for the file system.
         :param pulumi.Input[str] source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
@@ -281,6 +303,8 @@ class _FileSystemState:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
         :param pulumi.Input[str] time_created: The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
+        if are_quota_rules_enabled is not None:
+            pulumi.set(__self__, "are_quota_rules_enabled", are_quota_rules_enabled)
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
         if clone_attach_status is not None:
@@ -315,6 +339,10 @@ class _FileSystemState:
             pulumi.set(__self__, "locks", locks)
         if metered_bytes is not None:
             pulumi.set(__self__, "metered_bytes", metered_bytes)
+        if quota_enforcement_state is not None:
+            pulumi.set(__self__, "quota_enforcement_state", quota_enforcement_state)
+        if replication_source_count is not None:
+            pulumi.set(__self__, "replication_source_count", replication_source_count)
         if replication_target_id is not None:
             pulumi.set(__self__, "replication_target_id", replication_target_id)
         if source_details is not None:
@@ -327,6 +355,18 @@ class _FileSystemState:
             pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter(name="areQuotaRulesEnabled")
+    def are_quota_rules_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Specifies the enforcement of quota rules on the file system.
+        """
+        return pulumi.get(self, "are_quota_rules_enabled")
+
+    @are_quota_rules_enabled.setter
+    def are_quota_rules_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "are_quota_rules_enabled", value)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -536,6 +576,30 @@ class _FileSystemState:
         pulumi.set(self, "metered_bytes", value)
 
     @property
+    @pulumi.getter(name="quotaEnforcementState")
+    def quota_enforcement_state(self) -> Optional[pulumi.Input[str]]:
+        """
+        Displays the state of enforcement of quota rules on the file system.
+        """
+        return pulumi.get(self, "quota_enforcement_state")
+
+    @quota_enforcement_state.setter
+    def quota_enforcement_state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "quota_enforcement_state", value)
+
+    @property
+    @pulumi.getter(name="replicationSourceCount")
+    def replication_source_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        Specifies the total number of replications for which this file system is a source.
+        """
+        return pulumi.get(self, "replication_source_count")
+
+    @replication_source_count.setter
+    def replication_source_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "replication_source_count", value)
+
+    @property
     @pulumi.getter(name="replicationTargetId")
     def replication_target_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -613,6 +677,7 @@ class FileSystem(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 are_quota_rules_enabled: Optional[pulumi.Input[bool]] = None,
                  availability_domain: Optional[pulumi.Input[str]] = None,
                  clone_attach_status: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
@@ -668,6 +733,7 @@ class FileSystem(pulumi.CustomResource):
         test_file_system = oci.file_storage.FileSystem("test_file_system",
             availability_domain=file_system_availability_domain,
             compartment_id=compartment_id,
+            are_quota_rules_enabled=file_system_are_quota_rules_enabled,
             clone_attach_status=file_system_clone_attach_status,
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -697,6 +763,7 @@ class FileSystem(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[bool] are_quota_rules_enabled: (Updatable) Specifies the enforcement of quota rules on the file system.
         :param pulumi.Input[str] availability_domain: The availability domain to create the file system in.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] clone_attach_status: Specifies whether the clone file system is attached to its parent file system. If the value is set to 'DETACH', then the file system will be created, which is deep copied from the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the file system in.
@@ -763,6 +830,7 @@ class FileSystem(pulumi.CustomResource):
         test_file_system = oci.file_storage.FileSystem("test_file_system",
             availability_domain=file_system_availability_domain,
             compartment_id=compartment_id,
+            are_quota_rules_enabled=file_system_are_quota_rules_enabled,
             clone_attach_status=file_system_clone_attach_status,
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -805,6 +873,7 @@ class FileSystem(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 are_quota_rules_enabled: Optional[pulumi.Input[bool]] = None,
                  availability_domain: Optional[pulumi.Input[str]] = None,
                  clone_attach_status: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
@@ -826,6 +895,7 @@ class FileSystem(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = FileSystemArgs.__new__(FileSystemArgs)
 
+            __props__.__dict__["are_quota_rules_enabled"] = are_quota_rules_enabled
             if availability_domain is None and not opts.urn:
                 raise TypeError("Missing required property 'availability_domain'")
             __props__.__dict__["availability_domain"] = availability_domain
@@ -848,6 +918,8 @@ class FileSystem(pulumi.CustomResource):
             __props__.__dict__["is_targetable"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["metered_bytes"] = None
+            __props__.__dict__["quota_enforcement_state"] = None
+            __props__.__dict__["replication_source_count"] = None
             __props__.__dict__["replication_target_id"] = None
             __props__.__dict__["source_details"] = None
             __props__.__dict__["state"] = None
@@ -863,6 +935,7 @@ class FileSystem(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            are_quota_rules_enabled: Optional[pulumi.Input[bool]] = None,
             availability_domain: Optional[pulumi.Input[str]] = None,
             clone_attach_status: Optional[pulumi.Input[str]] = None,
             clone_count: Optional[pulumi.Input[int]] = None,
@@ -880,6 +953,8 @@ class FileSystem(pulumi.CustomResource):
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FileSystemLockArgs', 'FileSystemLockArgsDict']]]]] = None,
             metered_bytes: Optional[pulumi.Input[str]] = None,
+            quota_enforcement_state: Optional[pulumi.Input[str]] = None,
+            replication_source_count: Optional[pulumi.Input[int]] = None,
             replication_target_id: Optional[pulumi.Input[str]] = None,
             source_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FileSystemSourceDetailArgs', 'FileSystemSourceDetailArgsDict']]]]] = None,
             source_snapshot_id: Optional[pulumi.Input[str]] = None,
@@ -893,6 +968,7 @@ class FileSystem(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[bool] are_quota_rules_enabled: (Updatable) Specifies the enforcement of quota rules on the file system.
         :param pulumi.Input[str] availability_domain: The availability domain to create the file system in.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] clone_attach_status: Specifies whether the clone file system is attached to its parent file system. If the value is set to 'DETACH', then the file system will be created, which is deep copied from the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
         :param pulumi.Input[int] clone_count: Specifies the total number of children of a file system.
@@ -915,6 +991,8 @@ class FileSystem(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: Additional information about the current 'lifecycleState'.
         :param pulumi.Input[Sequence[pulumi.Input[Union['FileSystemLockArgs', 'FileSystemLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[str] metered_bytes: The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
+        :param pulumi.Input[str] quota_enforcement_state: Displays the state of enforcement of quota rules on the file system.
+        :param pulumi.Input[int] replication_source_count: Specifies the total number of replications for which this file system is a source.
         :param pulumi.Input[str] replication_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
         :param pulumi.Input[Sequence[pulumi.Input[Union['FileSystemSourceDetailArgs', 'FileSystemSourceDetailArgsDict']]]] source_details: Source information for the file system.
         :param pulumi.Input[str] source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
@@ -926,6 +1004,7 @@ class FileSystem(pulumi.CustomResource):
 
         __props__ = _FileSystemState.__new__(_FileSystemState)
 
+        __props__.__dict__["are_quota_rules_enabled"] = are_quota_rules_enabled
         __props__.__dict__["availability_domain"] = availability_domain
         __props__.__dict__["clone_attach_status"] = clone_attach_status
         __props__.__dict__["clone_count"] = clone_count
@@ -943,6 +1022,8 @@ class FileSystem(pulumi.CustomResource):
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["locks"] = locks
         __props__.__dict__["metered_bytes"] = metered_bytes
+        __props__.__dict__["quota_enforcement_state"] = quota_enforcement_state
+        __props__.__dict__["replication_source_count"] = replication_source_count
         __props__.__dict__["replication_target_id"] = replication_target_id
         __props__.__dict__["source_details"] = source_details
         __props__.__dict__["source_snapshot_id"] = source_snapshot_id
@@ -950,6 +1031,14 @@ class FileSystem(pulumi.CustomResource):
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         return FileSystem(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter(name="areQuotaRulesEnabled")
+    def are_quota_rules_enabled(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) Specifies the enforcement of quota rules on the file system.
+        """
+        return pulumi.get(self, "are_quota_rules_enabled")
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -1089,6 +1178,22 @@ class FileSystem(pulumi.CustomResource):
         The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
         """
         return pulumi.get(self, "metered_bytes")
+
+    @property
+    @pulumi.getter(name="quotaEnforcementState")
+    def quota_enforcement_state(self) -> pulumi.Output[str]:
+        """
+        Displays the state of enforcement of quota rules on the file system.
+        """
+        return pulumi.get(self, "quota_enforcement_state")
+
+    @property
+    @pulumi.getter(name="replicationSourceCount")
+    def replication_source_count(self) -> pulumi.Output[int]:
+        """
+        Specifies the total number of replications for which this file system is a source.
+        """
+        return pulumi.get(self, "replication_source_count")
 
     @property
     @pulumi.getter(name="replicationTargetId")

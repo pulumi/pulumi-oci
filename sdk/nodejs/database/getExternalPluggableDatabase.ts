@@ -57,7 +57,7 @@ export interface GetExternalPluggableDatabaseResult {
      */
     readonly databaseConfiguration: string;
     /**
-     * The Oracle Database edition.
+     * The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      */
     readonly databaseEdition: string;
     /**

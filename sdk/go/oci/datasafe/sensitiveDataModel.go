@@ -49,6 +49,7 @@ import (
 //				IsIncludeAllSensitiveTypes:           pulumi.Any(sensitiveDataModelIsIncludeAllSensitiveTypes),
 //				IsSampleDataCollectionEnabled:        pulumi.Any(sensitiveDataModelIsSampleDataCollectionEnabled),
 //				SchemasForDiscoveries:                pulumi.Any(sensitiveDataModelSchemasForDiscovery),
+//				SensitiveTypeGroupIdsForDiscoveries:  pulumi.Any(sensitiveDataModelSensitiveTypeGroupIdsForDiscovery),
 //				SensitiveTypeIdsForDiscoveries:       pulumi.Any(sensitiveDataModelSensitiveTypeIdsForDiscovery),
 //				TablesForDiscoveries: datasafe.SensitiveDataModelTablesForDiscoveryArray{
 //					&datasafe.SensitiveDataModelTablesForDiscoveryArgs{
@@ -98,6 +99,8 @@ type SensitiveDataModel struct {
 	IsSampleDataCollectionEnabled pulumi.BoolOutput `pulumi:"isSampleDataCollectionEnabled"`
 	// (Updatable) The schemas to be scanned by data discovery jobs.
 	SchemasForDiscoveries pulumi.StringArrayOutput `pulumi:"schemasForDiscoveries"`
+	// (Updatable) The OCIDs of the sensitive type groups to be used by data discovery jobs. All the sensitive types present in sensitive type group will be used for discovery.
+	SensitiveTypeGroupIdsForDiscoveries pulumi.StringArrayOutput `pulumi:"sensitiveTypeGroupIdsForDiscoveries"`
 	// (Updatable) The OCIDs of the sensitive types to be used by data discovery jobs. If OCID of a sensitive category is provided, all its child sensitive types are used for data discovery.
 	SensitiveTypeIdsForDiscoveries pulumi.StringArrayOutput `pulumi:"sensitiveTypeIdsForDiscoveries"`
 	// The current state of the sensitive data model.
@@ -175,6 +178,8 @@ type sensitiveDataModelState struct {
 	IsSampleDataCollectionEnabled *bool `pulumi:"isSampleDataCollectionEnabled"`
 	// (Updatable) The schemas to be scanned by data discovery jobs.
 	SchemasForDiscoveries []string `pulumi:"schemasForDiscoveries"`
+	// (Updatable) The OCIDs of the sensitive type groups to be used by data discovery jobs. All the sensitive types present in sensitive type group will be used for discovery.
+	SensitiveTypeGroupIdsForDiscoveries []string `pulumi:"sensitiveTypeGroupIdsForDiscoveries"`
 	// (Updatable) The OCIDs of the sensitive types to be used by data discovery jobs. If OCID of a sensitive category is provided, all its child sensitive types are used for data discovery.
 	SensitiveTypeIdsForDiscoveries []string `pulumi:"sensitiveTypeIdsForDiscoveries"`
 	// The current state of the sensitive data model.
@@ -217,6 +222,8 @@ type SensitiveDataModelState struct {
 	IsSampleDataCollectionEnabled pulumi.BoolPtrInput
 	// (Updatable) The schemas to be scanned by data discovery jobs.
 	SchemasForDiscoveries pulumi.StringArrayInput
+	// (Updatable) The OCIDs of the sensitive type groups to be used by data discovery jobs. All the sensitive types present in sensitive type group will be used for discovery.
+	SensitiveTypeGroupIdsForDiscoveries pulumi.StringArrayInput
 	// (Updatable) The OCIDs of the sensitive types to be used by data discovery jobs. If OCID of a sensitive category is provided, all its child sensitive types are used for data discovery.
 	SensitiveTypeIdsForDiscoveries pulumi.StringArrayInput
 	// The current state of the sensitive data model.
@@ -263,6 +270,8 @@ type sensitiveDataModelArgs struct {
 	IsSampleDataCollectionEnabled *bool `pulumi:"isSampleDataCollectionEnabled"`
 	// (Updatable) The schemas to be scanned by data discovery jobs.
 	SchemasForDiscoveries []string `pulumi:"schemasForDiscoveries"`
+	// (Updatable) The OCIDs of the sensitive type groups to be used by data discovery jobs. All the sensitive types present in sensitive type group will be used for discovery.
+	SensitiveTypeGroupIdsForDiscoveries []string `pulumi:"sensitiveTypeGroupIdsForDiscoveries"`
 	// (Updatable) The OCIDs of the sensitive types to be used by data discovery jobs. If OCID of a sensitive category is provided, all its child sensitive types are used for data discovery.
 	SensitiveTypeIdsForDiscoveries []string `pulumi:"sensitiveTypeIdsForDiscoveries"`
 	// (Updatable) The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: "HR", tableName: ["T1", "T2"]}, {schemaName:  "OE", tableName : ["T3", "T4"]}].
@@ -298,6 +307,8 @@ type SensitiveDataModelArgs struct {
 	IsSampleDataCollectionEnabled pulumi.BoolPtrInput
 	// (Updatable) The schemas to be scanned by data discovery jobs.
 	SchemasForDiscoveries pulumi.StringArrayInput
+	// (Updatable) The OCIDs of the sensitive type groups to be used by data discovery jobs. All the sensitive types present in sensitive type group will be used for discovery.
+	SensitiveTypeGroupIdsForDiscoveries pulumi.StringArrayInput
 	// (Updatable) The OCIDs of the sensitive types to be used by data discovery jobs. If OCID of a sensitive category is provided, all its child sensitive types are used for data discovery.
 	SensitiveTypeIdsForDiscoveries pulumi.StringArrayInput
 	// (Updatable) The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: "HR", tableName: ["T1", "T2"]}, {schemaName:  "OE", tableName : ["T3", "T4"]}].
@@ -449,6 +460,11 @@ func (o SensitiveDataModelOutput) IsSampleDataCollectionEnabled() pulumi.BoolOut
 // (Updatable) The schemas to be scanned by data discovery jobs.
 func (o SensitiveDataModelOutput) SchemasForDiscoveries() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *SensitiveDataModel) pulumi.StringArrayOutput { return v.SchemasForDiscoveries }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The OCIDs of the sensitive type groups to be used by data discovery jobs. All the sensitive types present in sensitive type group will be used for discovery.
+func (o SensitiveDataModelOutput) SensitiveTypeGroupIdsForDiscoveries() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *SensitiveDataModel) pulumi.StringArrayOutput { return v.SensitiveTypeGroupIdsForDiscoveries }).(pulumi.StringArrayOutput)
 }
 
 // (Updatable) The OCIDs of the sensitive types to be used by data discovery jobs. If OCID of a sensitive category is provided, all its child sensitive types are used for data discovery.

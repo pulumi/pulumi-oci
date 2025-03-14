@@ -67,6 +67,10 @@ export interface GetMaskingReportResult {
     readonly maskingPolicyId: string;
     readonly maskingReportId: string;
     /**
+     * The status of the masking job.
+     */
+    readonly maskingStatus: string;
+    /**
      * The OCID of the masking work request that resulted in this masking report.
      */
     readonly maskingWorkRequestId: string;
@@ -118,6 +122,14 @@ export interface GetMaskingReportResult {
      * The total number of masked values.
      */
     readonly totalMaskedValues: string;
+    /**
+     * The total number of errors in post-masking script.
+     */
+    readonly totalPostMaskingScriptErrors: string;
+    /**
+     * The total number of errors in pre-masking script.
+     */
+    readonly totalPreMaskingScriptErrors: string;
 }
 /**
  * This data source provides details about a specific Masking Report resource in Oracle Cloud Infrastructure Data Safe service.

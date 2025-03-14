@@ -135,6 +135,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string AvailabilityDomain;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        /// </summary>
+        public readonly string ClusterPlacementGroupId;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         public readonly string CompartmentId;
@@ -150,6 +154,10 @@ namespace Pulumi.Oci.Database
         /// The user-friendly name for the Exadata Database Storage Vault. The name does not need to be unique.
         /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+        /// </summary>
+        public readonly string ExadataInfrastructureId;
         public readonly string ExascaleDbStorageVaultId;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -171,6 +179,10 @@ namespace Pulumi.Oci.Database
         /// The current state of the Exadata Database Storage Vault.
         /// </summary>
         public readonly string State;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        /// </summary>
+        public readonly string SubscriptionId;
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
@@ -198,6 +210,8 @@ namespace Pulumi.Oci.Database
 
             string availabilityDomain,
 
+            string clusterPlacementGroupId,
+
             string compartmentId,
 
             ImmutableDictionary<string, string> definedTags,
@@ -205,6 +219,8 @@ namespace Pulumi.Oci.Database
             string description,
 
             string displayName,
+
+            string exadataInfrastructureId,
 
             string exascaleDbStorageVaultId,
 
@@ -218,6 +234,8 @@ namespace Pulumi.Oci.Database
 
             string state,
 
+            string subscriptionId,
+
             ImmutableDictionary<string, string> systemTags,
 
             string timeCreated,
@@ -230,16 +248,19 @@ namespace Pulumi.Oci.Database
         {
             AdditionalFlashCacheInPercent = additionalFlashCacheInPercent;
             AvailabilityDomain = availabilityDomain;
+            ClusterPlacementGroupId = clusterPlacementGroupId;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             Description = description;
             DisplayName = displayName;
+            ExadataInfrastructureId = exadataInfrastructureId;
             ExascaleDbStorageVaultId = exascaleDbStorageVaultId;
             FreeformTags = freeformTags;
             HighCapacityDatabaseStorages = highCapacityDatabaseStorages;
             Id = id;
             LifecycleDetails = lifecycleDetails;
             State = state;
+            SubscriptionId = subscriptionId;
             SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeZone = timeZone;

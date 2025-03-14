@@ -27,7 +27,7 @@ class GetOpensearchClusterResult:
     """
     A collection of values returned by getOpensearchCluster.
     """
-    def __init__(__self__, availability_domains=None, compartment_id=None, configure_outbound_cluster_trigger=None, data_node_count=None, data_node_host_bare_metal_shape=None, data_node_host_memory_gb=None, data_node_host_ocpu_count=None, data_node_host_type=None, data_node_storage_gb=None, defined_tags=None, display_name=None, fqdn=None, freeform_tags=None, id=None, inbound_cluster_ids=None, lifecycle_details=None, maintenance_details=None, master_node_count=None, master_node_host_bare_metal_shape=None, master_node_host_memory_gb=None, master_node_host_ocpu_count=None, master_node_host_type=None, opendashboard_fqdn=None, opendashboard_node_count=None, opendashboard_node_host_memory_gb=None, opendashboard_node_host_ocpu_count=None, opendashboard_private_ip=None, opensearch_cluster_id=None, opensearch_fqdn=None, opensearch_private_ip=None, outbound_cluster_configs=None, reverse_connection_endpoint_customer_ips=None, reverse_connection_endpoints=None, security_master_user_name=None, security_master_user_password_hash=None, security_mode=None, software_version=None, state=None, subnet_compartment_id=None, subnet_id=None, system_tags=None, time_created=None, time_deleted=None, time_updated=None, total_storage_gb=None, vcn_compartment_id=None, vcn_id=None):
+    def __init__(__self__, availability_domains=None, compartment_id=None, configure_outbound_cluster_trigger=None, data_node_count=None, data_node_host_bare_metal_shape=None, data_node_host_memory_gb=None, data_node_host_ocpu_count=None, data_node_host_type=None, data_node_storage_gb=None, defined_tags=None, display_name=None, fqdn=None, freeform_tags=None, id=None, inbound_cluster_ids=None, lifecycle_details=None, maintenance_details=None, master_node_count=None, master_node_host_bare_metal_shape=None, master_node_host_memory_gb=None, master_node_host_ocpu_count=None, master_node_host_type=None, opendashboard_fqdn=None, opendashboard_node_count=None, opendashboard_node_host_memory_gb=None, opendashboard_node_host_ocpu_count=None, opendashboard_private_ip=None, opensearch_cluster_id=None, opensearch_fqdn=None, opensearch_private_ip=None, outbound_cluster_configs=None, reverse_connection_endpoint_customer_ips=None, reverse_connection_endpoints=None, security_master_user_name=None, security_master_user_password_hash=None, security_mode=None, software_version=None, state=None, subnet_compartment_id=None, subnet_id=None, system_tags=None, time_created=None, time_deleted=None, time_updated=None, total_storage_gb=None, upgrade_major_version_trigger=None, vcn_compartment_id=None, vcn_id=None):
         if availability_domains and not isinstance(availability_domains, list):
             raise TypeError("Expected argument 'availability_domains' to be a list")
         pulumi.set(__self__, "availability_domains", availability_domains)
@@ -163,6 +163,9 @@ class GetOpensearchClusterResult:
         if total_storage_gb and not isinstance(total_storage_gb, int):
             raise TypeError("Expected argument 'total_storage_gb' to be a int")
         pulumi.set(__self__, "total_storage_gb", total_storage_gb)
+        if upgrade_major_version_trigger and not isinstance(upgrade_major_version_trigger, int):
+            raise TypeError("Expected argument 'upgrade_major_version_trigger' to be a int")
+        pulumi.set(__self__, "upgrade_major_version_trigger", upgrade_major_version_trigger)
         if vcn_compartment_id and not isinstance(vcn_compartment_id, str):
             raise TypeError("Expected argument 'vcn_compartment_id' to be a str")
         pulumi.set(__self__, "vcn_compartment_id", vcn_compartment_id)
@@ -525,6 +528,11 @@ class GetOpensearchClusterResult:
         return pulumi.get(self, "total_storage_gb")
 
     @property
+    @pulumi.getter(name="upgradeMajorVersionTrigger")
+    def upgrade_major_version_trigger(self) -> int:
+        return pulumi.get(self, "upgrade_major_version_trigger")
+
+    @property
     @pulumi.getter(name="vcnCompartmentId")
     def vcn_compartment_id(self) -> str:
         """
@@ -592,6 +600,7 @@ class AwaitableGetOpensearchClusterResult(GetOpensearchClusterResult):
             time_deleted=self.time_deleted,
             time_updated=self.time_updated,
             total_storage_gb=self.total_storage_gb,
+            upgrade_major_version_trigger=self.upgrade_major_version_trigger,
             vcn_compartment_id=self.vcn_compartment_id,
             vcn_id=self.vcn_id)
 
@@ -675,6 +684,7 @@ def get_opensearch_cluster(opensearch_cluster_id: Optional[str] = None,
         time_deleted=pulumi.get(__ret__, 'time_deleted'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         total_storage_gb=pulumi.get(__ret__, 'total_storage_gb'),
+        upgrade_major_version_trigger=pulumi.get(__ret__, 'upgrade_major_version_trigger'),
         vcn_compartment_id=pulumi.get(__ret__, 'vcn_compartment_id'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
 def get_opensearch_cluster_output(opensearch_cluster_id: Optional[pulumi.Input[str]] = None,
@@ -755,5 +765,6 @@ def get_opensearch_cluster_output(opensearch_cluster_id: Optional[pulumi.Input[s
         time_deleted=pulumi.get(__response__, 'time_deleted'),
         time_updated=pulumi.get(__response__, 'time_updated'),
         total_storage_gb=pulumi.get(__response__, 'total_storage_gb'),
+        upgrade_major_version_trigger=pulumi.get(__response__, 'upgrade_major_version_trigger'),
         vcn_compartment_id=pulumi.get(__response__, 'vcn_compartment_id'),
         vcn_id=pulumi.get(__response__, 'vcn_id')))

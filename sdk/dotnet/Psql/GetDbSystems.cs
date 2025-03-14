@@ -188,7 +188,7 @@ namespace Pulumi.Oci.Psql
     public sealed class GetDbSystemsResult
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
+        /// target compartment to place a new backup
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>

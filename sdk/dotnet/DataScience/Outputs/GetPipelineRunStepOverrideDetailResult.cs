@@ -22,6 +22,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailResult> StepContainerConfigurationDetails;
         /// <summary>
+        /// The configuration details of a Dataflow step.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailResult> StepDataflowConfigurationDetails;
+        /// <summary>
         /// The name of the step.
         /// </summary>
         public readonly string StepName;
@@ -32,10 +36,13 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             ImmutableArray<Outputs.GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailResult> stepContainerConfigurationDetails,
 
+            ImmutableArray<Outputs.GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailResult> stepDataflowConfigurationDetails,
+
             string stepName)
         {
             StepConfigurationDetails = stepConfigurationDetails;
             StepContainerConfigurationDetails = stepContainerConfigurationDetails;
+            StepDataflowConfigurationDetails = stepDataflowConfigurationDetails;
             StepName = stepName;
         }
     }

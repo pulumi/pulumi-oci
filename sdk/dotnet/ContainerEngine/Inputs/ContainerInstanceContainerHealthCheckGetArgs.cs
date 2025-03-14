@@ -12,18 +12,6 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
 
     public sealed class ContainerInstanceContainerHealthCheckGetArgs : global::Pulumi.ResourceArgs
     {
-        [Input("commands")]
-        private InputList<string>? _commands;
-
-        /// <summary>
-        /// The list of strings that will be simplified to a single command for checking the status of the container.
-        /// </summary>
-        public InputList<string> Commands
-        {
-            get => _commands ?? (_commands = new InputList<string>());
-            set => _commands = value;
-        }
-
         /// <summary>
         /// The action will be triggered when the container health check fails. There are two types of action: KILL or NONE. The default action is KILL. If failure action is KILL, the container will be subject to the container restart policy.
         /// </summary>
@@ -81,8 +69,8 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         /// <summary>
         /// Container health check HTTP port.
         /// </summary>
-        [Input("port")]
-        public Input<int>? Port { get; set; }
+        [Input("port", required: true)]
+        public Input<int> Port { get; set; } = null!;
 
         [Input("status")]
         public Input<string>? Status { get; set; }

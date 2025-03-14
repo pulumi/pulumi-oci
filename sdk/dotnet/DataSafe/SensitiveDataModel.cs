@@ -46,6 +46,7 @@ namespace Pulumi.Oci.DataSafe
     ///         IsIncludeAllSensitiveTypes = sensitiveDataModelIsIncludeAllSensitiveTypes,
     ///         IsSampleDataCollectionEnabled = sensitiveDataModelIsSampleDataCollectionEnabled,
     ///         SchemasForDiscoveries = sensitiveDataModelSchemasForDiscovery,
+    ///         SensitiveTypeGroupIdsForDiscoveries = sensitiveDataModelSensitiveTypeGroupIdsForDiscovery,
     ///         SensitiveTypeIdsForDiscoveries = sensitiveDataModelSensitiveTypeIdsForDiscovery,
     ///         TablesForDiscoveries = new[]
     ///         {
@@ -136,6 +137,12 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Output("schemasForDiscoveries")]
         public Output<ImmutableArray<string>> SchemasForDiscoveries { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The OCIDs of the sensitive type groups to be used by data discovery jobs. All the sensitive types present in sensitive type group will be used for discovery.
+        /// </summary>
+        [Output("sensitiveTypeGroupIdsForDiscoveries")]
+        public Output<ImmutableArray<string>> SensitiveTypeGroupIdsForDiscoveries { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCIDs of the sensitive types to be used by data discovery jobs. If OCID of a sensitive category is provided, all its child sensitive types are used for data discovery.
@@ -313,6 +320,18 @@ namespace Pulumi.Oci.DataSafe
             set => _schemasForDiscoveries = value;
         }
 
+        [Input("sensitiveTypeGroupIdsForDiscoveries")]
+        private InputList<string>? _sensitiveTypeGroupIdsForDiscoveries;
+
+        /// <summary>
+        /// (Updatable) The OCIDs of the sensitive type groups to be used by data discovery jobs. All the sensitive types present in sensitive type group will be used for discovery.
+        /// </summary>
+        public InputList<string> SensitiveTypeGroupIdsForDiscoveries
+        {
+            get => _sensitiveTypeGroupIdsForDiscoveries ?? (_sensitiveTypeGroupIdsForDiscoveries = new InputList<string>());
+            set => _sensitiveTypeGroupIdsForDiscoveries = value;
+        }
+
         [Input("sensitiveTypeIdsForDiscoveries")]
         private InputList<string>? _sensitiveTypeIdsForDiscoveries;
 
@@ -437,6 +456,18 @@ namespace Pulumi.Oci.DataSafe
         {
             get => _schemasForDiscoveries ?? (_schemasForDiscoveries = new InputList<string>());
             set => _schemasForDiscoveries = value;
+        }
+
+        [Input("sensitiveTypeGroupIdsForDiscoveries")]
+        private InputList<string>? _sensitiveTypeGroupIdsForDiscoveries;
+
+        /// <summary>
+        /// (Updatable) The OCIDs of the sensitive type groups to be used by data discovery jobs. All the sensitive types present in sensitive type group will be used for discovery.
+        /// </summary>
+        public InputList<string> SensitiveTypeGroupIdsForDiscoveries
+        {
+            get => _sensitiveTypeGroupIdsForDiscoveries ?? (_sensitiveTypeGroupIdsForDiscoveries = new InputList<string>());
+            set => _sensitiveTypeGroupIdsForDiscoveries = value;
         }
 
         [Input("sensitiveTypeIdsForDiscoveries")]

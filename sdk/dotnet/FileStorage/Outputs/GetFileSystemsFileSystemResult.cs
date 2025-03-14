@@ -14,6 +14,10 @@ namespace Pulumi.Oci.FileStorage.Outputs
     public sealed class GetFileSystemsFileSystemResult
     {
         /// <summary>
+        /// Specifies the enforcement of quota rules on the file system.
+        /// </summary>
+        public readonly bool AreQuotaRulesEnabled;
+        /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         /// </summary>
         public readonly string AvailabilityDomain;
@@ -80,6 +84,14 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// </summary>
         public readonly string MeteredBytes;
         /// <summary>
+        /// Displays the state of enforcement of quota rules on the file system.
+        /// </summary>
+        public readonly string QuotaEnforcementState;
+        /// <summary>
+        /// Specifies the total number of replications for which this file system is a source.
+        /// </summary>
+        public readonly int ReplicationSourceCount;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
         /// </summary>
         public readonly string ReplicationTargetId;
@@ -106,6 +118,8 @@ namespace Pulumi.Oci.FileStorage.Outputs
 
         [OutputConstructor]
         private GetFileSystemsFileSystemResult(
+            bool areQuotaRulesEnabled,
+
             string availabilityDomain,
 
             string cloneAttachStatus,
@@ -142,6 +156,10 @@ namespace Pulumi.Oci.FileStorage.Outputs
 
             string meteredBytes,
 
+            string quotaEnforcementState,
+
+            int replicationSourceCount,
+
             string replicationTargetId,
 
             ImmutableArray<Outputs.GetFileSystemsFileSystemSourceDetailResult> sourceDetails,
@@ -154,6 +172,7 @@ namespace Pulumi.Oci.FileStorage.Outputs
 
             string timeCreated)
         {
+            AreQuotaRulesEnabled = areQuotaRulesEnabled;
             AvailabilityDomain = availabilityDomain;
             CloneAttachStatus = cloneAttachStatus;
             CloneCount = cloneCount;
@@ -172,6 +191,8 @@ namespace Pulumi.Oci.FileStorage.Outputs
             LifecycleDetails = lifecycleDetails;
             Locks = locks;
             MeteredBytes = meteredBytes;
+            QuotaEnforcementState = quotaEnforcementState;
+            ReplicationSourceCount = replicationSourceCount;
             ReplicationTargetId = replicationTargetId;
             SourceDetails = sourceDetails;
             SourceSnapshotId = sourceSnapshotId;

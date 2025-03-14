@@ -42,6 +42,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
+        /// The compute model of the cloud VM cluster.
+        /// </summary>
+        public readonly string ComputeModel;
+        /// <summary>
         /// The number of CPU cores enabled on the cloud VM cluster.
         /// </summary>
         public readonly int CpuCoreCount;
@@ -154,9 +158,13 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string ScanDnsRecordId;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv4 addresses associated with the cloud VM cluster. SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
         /// </summary>
         public readonly ImmutableArray<string> ScanIpIds;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv6 addresses associated with the cloud VM cluster. SCAN IPv6 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+        /// </summary>
+        public readonly ImmutableArray<string> ScanIpv6ids;
         /// <summary>
         /// The TCP Single Client Access Name (SCAN) port. The default port is 1521.
         /// </summary>
@@ -210,9 +218,17 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string TimeZone;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
         /// </summary>
         public readonly ImmutableArray<string> VipIds;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+        /// </summary>
+        public readonly ImmutableArray<string> Vipv6ids;
+        /// <summary>
+        /// A filter to return only cloud vmclusters that match the given cloud vmcluster type exactly.
+        /// </summary>
+        public readonly string VmClusterType;
         /// <summary>
         /// The OCID of the zone the cloud VM cluster is associated with.
         /// </summary>
@@ -233,6 +249,8 @@ namespace Pulumi.Oci.Database.Outputs
             string clusterName,
 
             string compartmentId,
+
+            string computeModel,
 
             int cpuCoreCount,
 
@@ -296,6 +314,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             ImmutableArray<string> scanIpIds,
 
+            ImmutableArray<string> scanIpv6ids,
+
             int scanListenerPortTcp,
 
             int scanListenerPortTcpSsl,
@@ -324,6 +344,10 @@ namespace Pulumi.Oci.Database.Outputs
 
             ImmutableArray<string> vipIds,
 
+            ImmutableArray<string> vipv6ids,
+
+            string vmClusterType,
+
             string zoneId)
         {
             AvailabilityDomain = availabilityDomain;
@@ -333,6 +357,7 @@ namespace Pulumi.Oci.Database.Outputs
             CloudExadataInfrastructureId = cloudExadataInfrastructureId;
             ClusterName = clusterName;
             CompartmentId = compartmentId;
+            ComputeModel = computeModel;
             CpuCoreCount = cpuCoreCount;
             CreateAsync = createAsync;
             DataCollectionOptions = dataCollectionOptions;
@@ -364,6 +389,7 @@ namespace Pulumi.Oci.Database.Outputs
             ScanDnsName = scanDnsName;
             ScanDnsRecordId = scanDnsRecordId;
             ScanIpIds = scanIpIds;
+            ScanIpv6ids = scanIpv6ids;
             ScanListenerPortTcp = scanListenerPortTcp;
             ScanListenerPortTcpSsl = scanListenerPortTcpSsl;
             SecurityAttributes = securityAttributes;
@@ -378,6 +404,8 @@ namespace Pulumi.Oci.Database.Outputs
             TimeCreated = timeCreated;
             TimeZone = timeZone;
             VipIds = vipIds;
+            Vipv6ids = vipv6ids;
+            VmClusterType = vmClusterType;
             ZoneId = zoneId;
         }
     }

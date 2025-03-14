@@ -164,6 +164,7 @@ class _ChannelState:
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  source: Optional[pulumi.Input['ChannelSourceArgs']] = None,
                  state: Optional[pulumi.Input[str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  target: Optional[pulumi.Input['ChannelTargetArgs']] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None):
@@ -178,6 +179,7 @@ class _ChannelState:
         :param pulumi.Input[str] lifecycle_details: A message describing the state of the Channel.
         :param pulumi.Input['ChannelSourceArgs'] source: (Updatable) Parameters detailing how to provision the source for the given Channel.
         :param pulumi.Input[str] state: The state of the Channel.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input['ChannelTargetArgs'] target: (Updatable) Parameters detailing how to provision the target for the given Channel.
         :param pulumi.Input[str] time_created: The date and time the Channel was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[str] time_updated: The time the Channel was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -200,6 +202,8 @@ class _ChannelState:
             pulumi.set(__self__, "source", source)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if target is not None:
             pulumi.set(__self__, "target", target)
         if time_created is not None:
@@ -314,6 +318,18 @@ class _ChannelState:
     @state.setter
     def state(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "state", value)
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "system_tags", value)
 
     @property
     @pulumi.getter
@@ -455,6 +471,7 @@ class Channel(pulumi.CustomResource):
             __props__.__dict__["target"] = target
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
         super(Channel, __self__).__init__(
@@ -476,6 +493,7 @@ class Channel(pulumi.CustomResource):
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             source: Optional[pulumi.Input[Union['ChannelSourceArgs', 'ChannelSourceArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             target: Optional[pulumi.Input[Union['ChannelTargetArgs', 'ChannelTargetArgsDict']]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None) -> 'Channel':
@@ -495,6 +513,7 @@ class Channel(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: A message describing the state of the Channel.
         :param pulumi.Input[Union['ChannelSourceArgs', 'ChannelSourceArgsDict']] source: (Updatable) Parameters detailing how to provision the source for the given Channel.
         :param pulumi.Input[str] state: The state of the Channel.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[Union['ChannelTargetArgs', 'ChannelTargetArgsDict']] target: (Updatable) Parameters detailing how to provision the target for the given Channel.
         :param pulumi.Input[str] time_created: The date and time the Channel was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[str] time_updated: The time the Channel was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -512,6 +531,7 @@ class Channel(pulumi.CustomResource):
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["source"] = source
         __props__.__dict__["state"] = state
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["target"] = target
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
@@ -588,6 +608,14 @@ class Channel(pulumi.CustomResource):
         The state of the Channel.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, str]]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter

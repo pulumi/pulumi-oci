@@ -73,6 +73,10 @@ export interface GetCloudExadataInfrastructureResult {
      */
     readonly computeCount: number;
     /**
+     * The compute model of the Exadata infrastructure.
+     */
+    readonly computeModel: string;
+    /**
      * The total number of CPU cores allocated.
      */
     readonly cpuCount: number;
@@ -84,6 +88,10 @@ export interface GetCloudExadataInfrastructureResult {
      * Size, in terabytes, of the DATA disk group.
      */
     readonly dataStorageSizeInTbs: number;
+    /**
+     * The database server type of the Exadata infrastructure.
+     */
+    readonly databaseServerType: string;
     /**
      * The local node storage allocated in GBs.
      */
@@ -172,6 +180,10 @@ export interface GetCloudExadataInfrastructureResult {
      * The number of storage servers for the cloud Exadata infrastructure.
      */
     readonly storageCount: number;
+    /**
+     * The storage server type of the Exadata infrastructure.
+     */
+    readonly storageServerType: string;
     /**
      * The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
      */

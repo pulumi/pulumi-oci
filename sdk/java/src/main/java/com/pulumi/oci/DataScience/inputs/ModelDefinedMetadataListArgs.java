@@ -5,7 +5,9 @@ package com.pulumi.oci.DataScience.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -46,6 +48,21 @@ public final class ModelDefinedMetadataListArgs extends com.pulumi.resources.Res
     }
 
     /**
+     * (Updatable) Is there any artifact present for the metadata.
+     * 
+     */
+    @Import(name="hasArtifact")
+    private @Nullable Output<Boolean> hasArtifact;
+
+    /**
+     * @return (Updatable) Is there any artifact present for the metadata.
+     * 
+     */
+    public Optional<Output<Boolean>> hasArtifact() {
+        return Optional.ofNullable(this.hasArtifact);
+    }
+
+    /**
      * (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
      * * useCaseType
      * * libraryName
@@ -53,6 +70,11 @@ public final class ModelDefinedMetadataListArgs extends com.pulumi.resources.Res
      * * estimatorClass
      * * hyperParameters
      * * testArtifactresults
+     * * fineTuningConfiguration
+     * * deploymentConfiguration
+     * * readme
+     * * license
+     * * evaluationConfiguration
      * 
      */
     @Import(name="key")
@@ -66,10 +88,30 @@ public final class ModelDefinedMetadataListArgs extends com.pulumi.resources.Res
      * * estimatorClass
      * * hyperParameters
      * * testArtifactresults
+     * * fineTuningConfiguration
+     * * deploymentConfiguration
+     * * readme
+     * * license
+     * * evaluationConfiguration
      * 
      */
     public Optional<Output<String>> key() {
         return Optional.ofNullable(this.key);
+    }
+
+    /**
+     * (Updatable) list of keywords for searching
+     * 
+     */
+    @Import(name="keywords")
+    private @Nullable Output<List<String>> keywords;
+
+    /**
+     * @return (Updatable) list of keywords for searching
+     * 
+     */
+    public Optional<Output<List<String>>> keywords() {
+        return Optional.ofNullable(this.keywords);
     }
 
     /**
@@ -96,7 +138,9 @@ public final class ModelDefinedMetadataListArgs extends com.pulumi.resources.Res
     private ModelDefinedMetadataListArgs(ModelDefinedMetadataListArgs $) {
         this.category = $.category;
         this.description = $.description;
+        this.hasArtifact = $.hasArtifact;
         this.key = $.key;
+        this.keywords = $.keywords;
         this.value = $.value;
     }
 
@@ -161,6 +205,27 @@ public final class ModelDefinedMetadataListArgs extends com.pulumi.resources.Res
         }
 
         /**
+         * @param hasArtifact (Updatable) Is there any artifact present for the metadata.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder hasArtifact(@Nullable Output<Boolean> hasArtifact) {
+            $.hasArtifact = hasArtifact;
+            return this;
+        }
+
+        /**
+         * @param hasArtifact (Updatable) Is there any artifact present for the metadata.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder hasArtifact(Boolean hasArtifact) {
+            return hasArtifact(Output.of(hasArtifact));
+        }
+
+        /**
          * @param key (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
          * * useCaseType
          * * libraryName
@@ -168,6 +233,11 @@ public final class ModelDefinedMetadataListArgs extends com.pulumi.resources.Res
          * * estimatorClass
          * * hyperParameters
          * * testArtifactresults
+         * * fineTuningConfiguration
+         * * deploymentConfiguration
+         * * readme
+         * * license
+         * * evaluationConfiguration
          * 
          * @return builder
          * 
@@ -185,12 +255,48 @@ public final class ModelDefinedMetadataListArgs extends com.pulumi.resources.Res
          * * estimatorClass
          * * hyperParameters
          * * testArtifactresults
+         * * fineTuningConfiguration
+         * * deploymentConfiguration
+         * * readme
+         * * license
+         * * evaluationConfiguration
          * 
          * @return builder
          * 
          */
         public Builder key(String key) {
             return key(Output.of(key));
+        }
+
+        /**
+         * @param keywords (Updatable) list of keywords for searching
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keywords(@Nullable Output<List<String>> keywords) {
+            $.keywords = keywords;
+            return this;
+        }
+
+        /**
+         * @param keywords (Updatable) list of keywords for searching
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keywords(List<String> keywords) {
+            return keywords(Output.of(keywords));
+        }
+
+        /**
+         * @param keywords (Updatable) list of keywords for searching
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keywords(String... keywords) {
+            return keywords(List.of(keywords));
         }
 
         /**

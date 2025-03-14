@@ -13,6 +13,22 @@ namespace Pulumi.Oci.Mysql.Inputs
     public sealed class MysqlConfigurationVariablesArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// auto_increment_increment and auto_increment_offset are intended for use with circular (source-to-source) replication, and can be used to control the operation of AUTO_INCREMENT columns. Both variables have global and session values, and each can assume an integer value between 1 and 65,535 inclusive.
+        /// 
+        /// autoIncrementIncrement corresponds to the MySQL Replication Source Options variable [auto_increment_increment] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-source.html#sysvar_auto_increment_increment).
+        /// </summary>
+        [Input("autoIncrementIncrement")]
+        public Input<int>? AutoIncrementIncrement { get; set; }
+
+        /// <summary>
+        /// This variable has a default value of 1. If it is left with its default value, and Group Replication is started on the server in multi-primary mode, it is changed to the server ID.
+        /// 
+        /// autoIncrementOffset corresponds to the MySQL Replication Source Options variable [auto_increment_offset] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-source.html#sysvar_auto_increment_offset).
+        /// </summary>
+        [Input("autoIncrementOffset")]
+        public Input<int>? AutoIncrementOffset { get; set; }
+
+        /// <summary>
         /// ("autocommit")
         /// </summary>
         [Input("autocommit")]
@@ -33,6 +49,22 @@ namespace Pulumi.Oci.Mysql.Inputs
         public Input<int>? BinlogExpireLogsSeconds { get; set; }
 
         /// <summary>
+        /// Controls how many microseconds the binary log commit waits before synchronizing the binary log file to disk. There is no delay by default. Setting this variable to a microsecond delay enables more transactions to be synchronized together to disk at once, reducing the overall time to commit a group of transactions because the larger groups required fewer time units per group.
+        /// 
+        /// binlogGroupCommitSyncDelay corresponds to the MySQL Replication system variable [binlog_group_commit_sync_delay](https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_binlog_group_commit_sync_delay)
+        /// </summary>
+        [Input("binlogGroupCommitSyncDelay")]
+        public Input<int>? BinlogGroupCommitSyncDelay { get; set; }
+
+        /// <summary>
+        /// The maximum number of transactions to wait for before aborting the current delay as specified by binlog_group_commit_sync_delay. If binlog_group_commit_sync_delay is set to 0, then this option has no effect.
+        /// 
+        /// binlogGroupCommitSyncNoDelayCount corresponds to the MySQL Replication system variable [binlog_group_commit_sync_no_delay_count](https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_binlog_group_commit_sync_no_delay_count)
+        /// </summary>
+        [Input("binlogGroupCommitSyncNoDelayCount")]
+        public Input<int>? BinlogGroupCommitSyncNoDelayCount { get; set; }
+
+        /// <summary>
         /// Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlog_row_metadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
         /// </summary>
         [Input("binlogRowMetadata")]
@@ -49,6 +81,30 @@ namespace Pulumi.Oci.Mysql.Inputs
         /// </summary>
         [Input("binlogTransactionCompression")]
         public Input<bool>? BinlogTransactionCompression { get; set; }
+
+        /// <summary>
+        /// This variable controls the block encryption mode for block-based algorithms such as AES. It affects encryption for AES_ENCRYPT() and AES_DECRYPT(). block_encryption_mode takes a value in aes-keylen-mode format, where keylen is the key length in bits and mode is the encryption mode. The value is not case-sensitive. Permitted keylen values are 128, 192, and 256. Permitted mode values are ECB, CBC, CFB1, CFB8, CFB128, and OFB.
+        /// 
+        /// block_encryption_mode corresponds to the MySQL Server Administration system variable [block_encryption_mode](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_block_encryption_mode)
+        /// </summary>
+        [Input("blockEncryptionMode")]
+        public Input<string>? BlockEncryptionMode { get; set; }
+
+        /// <summary>
+        /// The server's default character set. If you set this variable, you should also set collation_server to specify the collation for the character set.
+        /// 
+        /// characterSetServer corresponds to the MySQL server variable [character_set_server](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_character_set_server).
+        /// </summary>
+        [Input("characterSetServer")]
+        public Input<string>? CharacterSetServer { get; set; }
+
+        /// <summary>
+        /// The server's default collation.
+        /// 
+        /// collationServer corresponds to the MySQL server variable [collation_server](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_collation_server).
+        /// </summary>
+        [Input("collationServer")]
+        public Input<string>? CollationServer { get; set; }
 
         /// <summary>
         /// ("completion_type")
@@ -89,10 +145,30 @@ namespace Pulumi.Oci.Mysql.Inputs
         public Input<string>? CteMaxRecursionDepth { get; set; }
 
         /// <summary>
-        /// ("default_authentication_plugin")
+        /// The default authentication plugin. This must be a plugin that uses internal credentials storage, so these values are permitted: mysql_native_password, sha256_password, caching_sha2_password.
+        /// 
+        /// As of MySQL 8.0.27, which introduces multifactor authentication, default_authentication_plugin is still used, but in conjunction with and at a lower precedence than the authentication_policy system variable. For details, see The Default Authentication Plugin. Because of this diminished role, default_authentication_plugin is deprecated as of MySQL 8.0.27 and subject to removal in a future MySQL version.
+        /// 
+        /// defaultAuthenticationPlugin corresponds to the MySQL system variable [default_authentication_plugin](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_default_authentication_plugin).
         /// </summary>
         [Input("defaultAuthenticationPlugin")]
         public Input<string>? DefaultAuthenticationPlugin { get; set; }
+
+        /// <summary>
+        /// This variable determines the default output format used by EXPLAIN in the absence of a FORMAT option when displaying a query execution plan.
+        /// 
+        /// explainFormat corresponds to the MySQL system variable [explain_format](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_explain_format).
+        /// </summary>
+        [Input("explainFormat")]
+        public Input<string>? ExplainFormat { get; set; }
+
+        /// <summary>
+        /// This system variable determines whether the server enables certain nonstandard behaviors for default values and NULL-value handling in TIMESTAMP columns. By default, explicit_defaults_for_timestamp is enabled, which disables the nonstandard behaviors. Disabling explicit_defaults_for_timestamp results in a warning.
+        /// 
+        /// explicit_defaults_for_timestamp corresponds to the MySQL Server Administration system variable [explicit_defaults_for_timestamp](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_explicit_defaults_for_timestamp)
+        /// </summary>
+        [Input("explicitDefaultsForTimestamp")]
+        public Input<bool>? ExplicitDefaultsForTimestamp { get; set; }
 
         /// <summary>
         /// ("foreign_key_checks")
@@ -123,6 +199,14 @@ namespace Pulumi.Oci.Mysql.Inputs
         public Input<bool>? GlobalConnectionMemoryTracking { get; set; }
 
         /// <summary>
+        /// Specifies the maximum permitted result length in bytes for the GROUP_CONCAT() function.
+        /// 
+        /// This is the MySQL variable "group_concat_max_len". For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_group_concat_max_len)
+        /// </summary>
+        [Input("groupConcatMaxLen")]
+        public Input<string>? GroupConcatMaxLen { get; set; }
+
+        /// <summary>
         /// * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
         /// * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
         /// * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
@@ -137,6 +221,22 @@ namespace Pulumi.Oci.Mysql.Inputs
         /// </summary>
         [Input("informationSchemaStatsExpiry")]
         public Input<int>? InformationSchemaStatsExpiry { get; set; }
+
+        /// <summary>
+        /// Whether the InnoDB adaptive hash index is enabled or disabled. It may be desirable, depending on your workload, to dynamically enable or disable adaptive hash indexing to improve query performance. Because the adaptive hash index may not be useful for all workloads, conduct benchmarks with it both enabled and disabled, using realistic workloads.
+        /// 
+        /// innodbAdaptiveHashIndex corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_adaptive_hash_index] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_adaptive_hash_index).
+        /// </summary>
+        [Input("innodbAdaptiveHashIndex")]
+        public Input<bool>? InnodbAdaptiveHashIndex { get; set; }
+
+        /// <summary>
+        /// The lock mode to use for generating auto-increment values. Permissible values are 0, 1, or 2, for traditional, consecutive, or interleaved, respectively.
+        /// 
+        /// innodbAutoincLockMode corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_autoinc_lock_mode] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_autoinc_lock_mode).
+        /// </summary>
+        [Input("innodbAutoincLockMode")]
+        public Input<int>? InnodbAutoincLockMode { get; set; }
 
         /// <summary>
         /// Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
@@ -165,6 +265,14 @@ namespace Pulumi.Oci.Mysql.Inputs
         /// </summary>
         [Input("innodbBufferPoolSize")]
         public Input<string>? InnodbBufferPoolSize { get; set; }
+
+        /// <summary>
+        /// Whether InnoDB performs change buffering, an optimization that delays write operations to secondary indexes so that the I/O operations can be performed sequentially. Permitted values are described in the following table. Values may also be specified numerically.
+        /// 
+        /// innodbChangeBuffering corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_change_buffering] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_change_buffering).
+        /// </summary>
+        [Input("innodbChangeBuffering")]
+        public Input<string>? InnodbChangeBuffering { get; set; }
 
         /// <summary>
         /// innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
@@ -253,6 +361,48 @@ namespace Pulumi.Oci.Mysql.Inputs
         public Input<int>? InnodbMaxPurgeLagDelay { get; set; }
 
         /// <summary>
+        /// Enables the NUMA interleave memory policy for allocation of the InnoDB buffer pool. When innodb_numa_interleave is enabled, the NUMA memory policy is set to MPOL_INTERLEAVE for the mysqld process. After the InnoDB buffer pool is allocated, the NUMA memory policy is set back to MPOL_DEFAULT. For the innodb_numa_interleave option to be available, MySQL must be compiled on a NUMA-enabled Linux system.
+        /// 
+        /// innodbNumaInterleave corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_numa_interleave] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_numa_interleave).
+        /// </summary>
+        [Input("innodbNumaInterleave")]
+        public Input<bool>? InnodbNumaInterleave { get; set; }
+
+        /// <summary>
+        /// Specifies an upper limit in bytes on the size of the temporary log files used during online DDL operations for InnoDB tables. There is one such log file for each index being created or table being altered. This log file stores data inserted, updated, or deleted in the table during the DDL operation.
+        /// 
+        /// innodbOnlineAlterLogMaxSize corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_online_alter_log_max_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_online_alter_log_max_size).
+        /// </summary>
+        [Input("innodbOnlineAlterLogMaxSize")]
+        public Input<string>? InnodbOnlineAlterLogMaxSize { get; set; }
+
+        /// <summary>
+        /// Defines the amount of disk space occupied by redo log files. innodb_redo_log_capacity supercedes the innodb_log_files_in_group and innodb_log_file_size variables, which are both ignored if innodb_redo_log_capacity is defined. If innodb_redo_log_capacity is not defined, and if neither innodb_log_file_size or innodb_log_files_in_group are defined, then the default innodb_redo_log_capacity value is used.
+        /// 
+        /// innodbRedoLogCapacity corresponds to the InnoDB Startup Options and System Variables [innodb_redo_log_capacity](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_redo_log_capacity)
+        /// </summary>
+        [Input("innodbRedoLogCapacity")]
+        public Input<string>? InnodbRedoLogCapacity { get; set; }
+
+        /// <summary>
+        /// InnoDB rolls back only the last statement on a transaction timeout by default. If --innodb-rollback-on-timeout is specified, a transaction timeout causes InnoDB to abort and roll back the entire transaction.
+        /// 
+        /// innodbRollbackOnTimeout corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_rollback_on_timeout] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_rollback_on_timeout).
+        /// </summary>
+        [Input("innodbRollbackOnTimeout")]
+        public Input<bool>? InnodbRollbackOnTimeout { get; set; }
+
+        /// <summary>
+        /// This variable defines:
+        /// * The sort buffer size for online DDL operations that create or rebuild secondary indexes. However, as of MySQL 8.0.27, this responsibility is subsumed by the innodb_ddl_buffer_size variable.
+        /// * The amount by which the temporary log file is extended when recording concurrent DML during an online DDL operation, and the size of the temporary log file read buffer and write buffer.
+        /// 
+        /// innodbSortBufferSize corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_sort_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_sort_buffer_size).
+        /// </summary>
+        [Input("innodbSortBufferSize")]
+        public Input<int>? InnodbSortBufferSize { get; set; }
+
+        /// <summary>
         /// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
         /// 
         /// innodbStatsPersistentSamplePages corresponds to the MySQL InnoDB system variable [innodb_stats_persistent_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_persistent_sample_pages)
@@ -275,6 +425,22 @@ namespace Pulumi.Oci.Mysql.Inputs
         public Input<string>? InnodbStatsTransientSamplePages { get; set; }
 
         /// <summary>
+        /// When you enable innodbStrictMode, the InnoDB storage engine returns errors instead of warnings for invalid or incompatible table options.
+        /// 
+        /// innodbStrictMode corresponds to the MySQL InnoDB system variable [innodb_strict_mode](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_strict_mode)
+        /// </summary>
+        [Input("innodbStrictMode")]
+        public Input<bool>? InnodbStrictMode { get; set; }
+
+        /// <summary>
+        /// When enabled, undo tablespaces that exceed the threshold value defined by innodb_max_undo_log_size are marked for truncation. Only undo tablespaces can be truncated. Truncating undo logs that reside in the system tablespace is not supported. For truncation to occur, there must be at least two undo tablespaces.
+        /// 
+        /// innodbUndoLogTruncate corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_undo_log_truncate] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_undo_log_truncate).
+        /// </summary>
+        [Input("innodbUndoLogTruncate")]
+        public Input<bool>? InnodbUndoLogTruncate { get; set; }
+
+        /// <summary>
         /// The number of seconds the server waits for activity on an interactive connection before closing it.
         /// 
         /// interactiveTimeout corresponds to the MySQL system variable. [interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_interactive_timeout)
@@ -283,10 +449,28 @@ namespace Pulumi.Oci.Mysql.Inputs
         public Input<int>? InteractiveTimeout { get; set; }
 
         /// <summary>
-        /// ("local_infile")
+        /// The minimum size of the buffer that is used for plain index scans, range index scans, and joins that do not use indexes and thus perform full table scans. In MySQL 8.0.18 and later, this variable also controls the amount of memory used for hash joins. Normally, the best way to get fast joins is to add indexes. Increase the value of join_buffer_size to get a faster full join when adding indexes is not possible. One join buffer is allocated for each full join between two tables. For a complex join between several tables for which indexes are not used, multiple join buffers might be necessary.
+        /// 
+        /// joinBufferSize corresponds to the MySQL Server System variable [join_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_join_buffer_size).
+        /// </summary>
+        [Input("joinBufferSize")]
+        public Input<string>? JoinBufferSize { get; set; }
+
+        /// <summary>
+        /// This variable controls server-side LOCAL capability for LOAD DATA statements. Depending on the local_infile setting, the server refuses or permits local data loading by clients that have LOCAL enabled on the client side. 
+        /// 
+        /// local_infile corresponds to the MySQL Server system variable [local_infile](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_local_infile)
         /// </summary>
         [Input("localInfile")]
         public Input<bool>? LocalInfile { get; set; }
+
+        /// <summary>
+        /// If a query takes longer than this many seconds, the server increments the Slow_queries status variable. If the slow query log is enabled, the query is logged to the slow query log file. This value is measured in real time, not CPU time, so a query that is under the threshold on a lightly loaded system might be above the threshold on a heavily loaded one.
+        /// 
+        /// longQueryTime corresponds to the MySQL Server System variable [long_query_time] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_long_query_time).
+        /// </summary>
+        [Input("longQueryTime")]
+        public Input<int>? LongQueryTime { get; set; }
 
         /// <summary>
         /// ("mandatory_roles")
@@ -341,6 +525,22 @@ namespace Pulumi.Oci.Mysql.Inputs
         /// </summary>
         [Input("maxPreparedStmtCount")]
         public Input<int>? MaxPreparedStmtCount { get; set; }
+
+        /// <summary>
+        /// Limit the assumed maximum number of seeks when looking up rows based on a key. The MySQL optimizer assumes that no more than this number of key seeks are required when searching for matching rows in a table by scanning an index, regardless of the actual cardinality of the index (see Section 15.7.7.22, “SHOW INDEX Statement”). By setting this to a low value (say, 100), you can force MySQL to prefer indexes instead of table scans.
+        /// 
+        /// maxSeeksForKey corresponds to the MySQL Server System variable [max_seeks_for_key] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_seeks_for_key).
+        /// </summary>
+        [Input("maxSeeksForKey")]
+        public Input<string>? MaxSeeksForKey { get; set; }
+
+        /// <summary>
+        /// The maximum number of simultaneous connections permitted to any given MySQL user account. A value of 0 (the default) means “no limit.” This variable has a global value that can be set at server startup or runtime. It also has a read-only session value that indicates the effective simultaneous-connection limit that applies to the account associated with the current session.
+        /// 
+        /// maxUserConnections corresponds to the MySQL Server System variable [max_user_connections] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_user_connections).
+        /// </summary>
+        [Input("maxUserConnections")]
+        public Input<string>? MaxUserConnections { get; set; }
 
         /// <summary>
         /// ("mysql_firewall_mode")
@@ -479,6 +679,16 @@ namespace Pulumi.Oci.Mysql.Inputs
         public Input<int>? NetWriteTimeout { get; set; }
 
         /// <summary>
+        /// The optimizer_switch system variable enables control over optimizer behavior. The value of this variable is a set of flags, each of which has a value of on or off to indicate whether the corresponding optimizer behavior is enabled or disabled. This variable has global and session values and can be changed at runtime. The global default can be set at server startup.
+        /// 
+        /// Setting hypergraph_optimizer=on for cloud builds below 9.0.0 will fail.
+        /// 
+        /// optimizerSwitch corresponds to the MySQL Server System variable [optimizer_switch] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_optimizer_switch).
+        /// </summary>
+        [Input("optimizerSwitch")]
+        public Input<string>? OptimizerSwitch { get; set; }
+
+        /// <summary>
         /// ("parser_max_mem_size")
         /// </summary>
         [Input("parserMaxMemSize")]
@@ -497,10 +707,68 @@ namespace Pulumi.Oci.Mysql.Inputs
         public Input<string>? QueryPreallocSize { get; set; }
 
         /// <summary>
+        /// The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans. 
+        /// 
+        /// rangeOptimizerMaxMemSize corresponds to the MySQL Server System variable [range_optimizer_max_mem_size] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_range_optimizer_max_mem_size).
+        /// </summary>
+        [Input("rangeOptimizerMaxMemSize")]
+        public Input<string>? RangeOptimizerMaxMemSize { get; set; }
+
+        /// <summary>
         /// regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
         /// </summary>
         [Input("regexpTimeLimit")]
         public Input<int>? RegexpTimeLimit { get; set; }
+
+        /// <summary>
+        /// The maximum amount of space to use for all relay logs.
+        /// 
+        /// relayLogSpaceLimit corresponds to the MySQL Replica Server Options variable [relay_log_space_limit] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_relay_log_space_limit).
+        /// </summary>
+        [Input("relayLogSpaceLimit")]
+        public Input<string>? RelayLogSpaceLimit { get; set; }
+
+        /// <summary>
+        /// Specifies the number of seconds to wait for more data or a heartbeat signal from the source before the replica considers the connection broken, aborts the read, and tries to reconnect. Setting this variable has no immediate effect. The state of the variable applies on all subsequent START REPLICA commands.
+        /// 
+        /// replicaNetTimeout corresponds to the MySQL Replica server system variable [replica_net_timeout](https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_net_timeout)
+        /// </summary>
+        [Input("replicaNetTimeout")]
+        public Input<int>? ReplicaNetTimeout { get; set; }
+
+        /// <summary>
+        /// Beginning with MySQL 8.0.26, slave_parallel_workers is deprecated, and you should use replica_parallel_workers instead. (Prior to MySQL 8.0.26, you must use slave_parallel_workers to set the number of applier threads.)
+        /// 
+        /// replicaParallelWorkers corresponds to the MySQL Replica Server Options variable [replica_parallel_workers] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_parallel_workers).
+        /// </summary>
+        [Input("replicaParallelWorkers")]
+        public Input<int>? ReplicaParallelWorkers { get; set; }
+
+        /// <summary>
+        /// From MySQL 8.0.26, use replica_type_conversions in place of slave_type_conversions, which is deprecated from that release. In releases before MySQL 8.0.26, use slave_type_conversions.
+        /// 
+        /// replica_type_conversions controls the type conversion mode in effect on the replica when using row-based replication. Its value is a comma-delimited set of zero or more elements from the list: ALL_LOSSY, ALL_NON_LOSSY, ALL_SIGNED, ALL_UNSIGNED. Set this variable to an empty string to disallow type conversions between the source and the replica. Setting this variable takes effect for all replication channels immediately, including running channels.
+        /// 
+        /// replica_type_conversions corresponds to the MySQL Replica Server Options variable [replica_type_conversions] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_type_conversions).
+        /// </summary>
+        [Input("replicaTypeConversions")]
+        public Input<string>? ReplicaTypeConversions { get; set; }
+
+        /// <summary>
+        /// Whether client connections to the server are required to use some form of secure transport. When this variable is enabled, the server permits only TCP/IP connections encrypted using TLS/SSL, or connections that use a socket file or shared memory. The server rejects nonsecure connection attempts, which fail with an ER_SECURE_TRANSPORT_REQUIRED error.
+        /// 
+        /// require_secure_transport corresponds to the MySQL Server Administration system variable [require_secure_transport](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_require_secure_transport)
+        /// </summary>
+        [Input("requireSecureTransport")]
+        public Input<bool>? RequireSecureTransport { get; set; }
+
+        /// <summary>
+        /// Whether to resolve host names when checking client connections. If this variable is OFF, mysqld resolves host names when checking client connections. If it is ON, mysqld uses only IP numbers; in this case, all Host column values in the grant tables must be IP addresses. See Section 7.1.12.3, “DNS Lookups and the Host Cache”.
+        /// 
+        /// skipNameResolve corresponds to the MySQL Server System variable [skip_name_resolve] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_skip_name_resolve).
+        /// </summary>
+        [Input("skipNameResolve")]
+        public Input<bool>? SkipNameResolve { get; set; }
 
         /// <summary>
         /// Each session that must perform a sort allocates a buffer of this size.
@@ -509,6 +777,14 @@ namespace Pulumi.Oci.Mysql.Inputs
         /// </summary>
         [Input("sortBufferSize")]
         public Input<string>? SortBufferSize { get; set; }
+
+        /// <summary>
+        /// Whether GIPK mode is in effect, in which case a MySQL replication source server adds a generated invisible primary key to any InnoDB table that is created without one.
+        /// 
+        /// sqlGenerateInvisiblePrimaryKey corresponds to the MySQL system variable [sql_generate_invisible_primary_key] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_sql_generate_invisible_primary_key).
+        /// </summary>
+        [Input("sqlGenerateInvisiblePrimaryKey")]
+        public Input<bool>? SqlGenerateInvisiblePrimaryKey { get; set; }
 
         /// <summary>
         /// ("sql_mode")
@@ -529,6 +805,30 @@ namespace Pulumi.Oci.Mysql.Inputs
         public Input<bool>? SqlWarnings { get; set; }
 
         /// <summary>
+        /// The number of table definitions that can be stored in the table definition cache. If you use a large number of tables, you can create a large table definition cache to speed up opening of tables. The table definition cache takes less space and does not use file descriptors, unlike the normal table cache.
+        /// 
+        /// table_definition_cache corresponds to the MySQL Server Administration system variable [table_definition_cache](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_table_definition_cache)
+        /// </summary>
+        [Input("tableDefinitionCache")]
+        public Input<int>? TableDefinitionCache { get; set; }
+
+        /// <summary>
+        /// The number of open tables for all threads. Increasing this value increases the number of file descriptors that mysqld requires.
+        /// 
+        /// table_open_cache corresponds to the MySQL Server Administration system variable [table_open_cache](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_table_open_cache)
+        /// </summary>
+        [Input("tableOpenCache")]
+        public Input<int>? TableOpenCache { get; set; }
+
+        /// <summary>
+        /// Defines the maximum amount of memory that can be occupied by the TempTable storage engine before it starts storing data on disk. The default value is 1073741824 bytes (1GiB). For more information, see Section 10.4.4, “Internal Temporary Table Use in MySQL”.
+        /// 
+        /// temptableMaxRam corresponds to the MySQL system variable [temptable_max_ram] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_temptable_max_ram).
+        /// </summary>
+        [Input("temptableMaxRam")]
+        public Input<string>? TemptableMaxRam { get; set; }
+
+        /// <summary>
         /// Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
         /// </summary>
         [Input("threadPoolDedicatedListeners")]
@@ -539,6 +839,30 @@ namespace Pulumi.Oci.Mysql.Inputs
         /// </summary>
         [Input("threadPoolMaxTransactionsLimit")]
         public Input<int>? ThreadPoolMaxTransactionsLimit { get; set; }
+
+        /// <summary>
+        /// The maximum number of query threads permitted in a thread group. The maximum value is 4096, but if thread_pool_max_transactions_limit is set, thread_pool_query_threads_per_group must not exceed that value. The default value of 1 means there is one active query thread in each thread group, which works well for many loads. When you are using the high concurrency thread pool algorithm (thread_pool_algorithm = 1), consider increasing the value if you experience slower response times due to long-running transactions. 
+        /// 
+        /// threadPoolQueryThreadsPerGroup corresponds to the MySQL Server system variable [thread_pool_query_threads_per_group](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_query_threads_per_group)
+        /// </summary>
+        [Input("threadPoolQueryThreadsPerGroup")]
+        public Input<int>? ThreadPoolQueryThreadsPerGroup { get; set; }
+
+        /// <summary>
+        /// The number of thread groups in the thread pool. This is the most important parameter controlling thread pool performance. It affects how many statements can execute simultaneously. If a value outside the range of permissible values is specified, the thread pool plugin does not load and the server writes a message to the error log.
+        /// 
+        /// threadPoolSize corresponds to the MySQL Server System variable [thread_pool_size] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_size).
+        /// </summary>
+        [Input("threadPoolSize")]
+        public Input<int>? ThreadPoolSize { get; set; }
+
+        /// <summary>
+        /// The delay period before executing a new transaction, in milliseconds. The maximum value is 300000 (5 minutes). A transaction delay can be used in cases where parallel transactions affect the performance of other operations due to resource contention. For example, if parallel transactions affect index creation or an online buffer pool resizing operation, you can configure a transaction delay to reduce resource contention while those operations are running. 
+        /// 
+        /// threadPoolTransactionDelay corresponds to the MySQL Server system variable [thread_pool_transaction_delay](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_transaction_delay)
+        /// </summary>
+        [Input("threadPoolTransactionDelay")]
+        public Input<int>? ThreadPoolTransactionDelay { get; set; }
 
         /// <summary>
         /// Initializes the time zone for each client that connects.

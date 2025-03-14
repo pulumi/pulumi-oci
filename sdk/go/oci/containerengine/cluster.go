@@ -77,6 +77,7 @@ import (
 //						IsOpenIdConnectAuthEnabled: pulumi.Any(clusterOptionsOpenIdConnectTokenAuthenticationConfigIsOpenIdConnectAuthEnabled),
 //						CaCertificate:              pulumi.Any(clusterOptionsOpenIdConnectTokenAuthenticationConfigCaCertificate),
 //						ClientId:                   pulumi.Any(testClient.Id),
+//						ConfigurationFile:          pulumi.Any(clusterOptionsOpenIdConnectTokenAuthenticationConfigConfigurationFile),
 //						GroupsClaim:                pulumi.Any(clusterOptionsOpenIdConnectTokenAuthenticationConfigGroupsClaim),
 //						GroupsPrefix:               pulumi.Any(clusterOptionsOpenIdConnectTokenAuthenticationConfigGroupsPrefix),
 //						IssuerUrl:                  pulumi.Any(clusterOptionsOpenIdConnectTokenAuthenticationConfigIssuerUrl),

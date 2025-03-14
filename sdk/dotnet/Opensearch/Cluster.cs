@@ -48,10 +48,6 @@ namespace Pulumi.Oci.Opensearch
 
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("configureOutboundClusterTrigger")]
         public Output<int?> ConfigureOutboundClusterTrigger { get; private set; } = null!;
@@ -297,6 +293,16 @@ namespace Pulumi.Oci.Opensearch
         public Output<int> TotalStorageGb { get; private set; } = null!;
 
         /// <summary>
+        /// An optional property to upgrade the major version of the cluster. This workflow upgrades the cluster without creating a clone. If you want to create a clone and upgrade the clone for testing please use SDK or CLI.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("upgradeMajorVersionTrigger")]
+        public Output<int> UpgradeMajorVersionTrigger { get; private set; } = null!;
+
+        /// <summary>
         /// The OCID for the compartment where the cluster's VCN is located.
         /// </summary>
         [Output("vcnCompartmentId")]
@@ -366,10 +372,6 @@ namespace Pulumi.Oci.Opensearch
 
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("configureOutboundClusterTrigger")]
         public Input<int>? ConfigureOutboundClusterTrigger { get; set; }
@@ -583,6 +585,16 @@ namespace Pulumi.Oci.Opensearch
         }
 
         /// <summary>
+        /// An optional property to upgrade the major version of the cluster. This workflow upgrades the cluster without creating a clone. If you want to create a clone and upgrade the clone for testing please use SDK or CLI.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("upgradeMajorVersionTrigger")]
+        public Input<int>? UpgradeMajorVersionTrigger { get; set; }
+
+        /// <summary>
         /// The OCID for the compartment where the cluster's VCN is located.
         /// </summary>
         [Input("vcnCompartmentId", required: true)]
@@ -622,10 +634,6 @@ namespace Pulumi.Oci.Opensearch
 
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("configureOutboundClusterTrigger")]
         public Input<int>? ConfigureOutboundClusterTrigger { get; set; }
@@ -915,6 +923,16 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         [Input("totalStorageGb")]
         public Input<int>? TotalStorageGb { get; set; }
+
+        /// <summary>
+        /// An optional property to upgrade the major version of the cluster. This workflow upgrades the cluster without creating a clone. If you want to create a clone and upgrade the clone for testing please use SDK or CLI.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("upgradeMajorVersionTrigger")]
+        public Input<int>? UpgradeMajorVersionTrigger { get; set; }
 
         /// <summary>
         /// The OCID for the compartment where the cluster's VCN is located.

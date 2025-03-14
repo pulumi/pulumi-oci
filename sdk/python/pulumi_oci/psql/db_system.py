@@ -878,6 +878,11 @@ class DbSystem(pulumi.CustomResource):
             management_policy={
                 "backup_policy": {
                     "backup_start": db_system_management_policy_backup_policy_backup_start,
+                    "copy_policy": {
+                        "compartment_id": compartment_id,
+                        "regions": db_system_management_policy_backup_policy_copy_policy_regions,
+                        "retention_period": db_system_management_policy_backup_policy_copy_policy_retention_period,
+                    },
                     "days_of_the_months": db_system_management_policy_backup_policy_days_of_the_month,
                     "days_of_the_weeks": db_system_management_policy_backup_policy_days_of_the_week,
                     "kind": db_system_management_policy_backup_policy_kind,
@@ -995,6 +1000,11 @@ class DbSystem(pulumi.CustomResource):
             management_policy={
                 "backup_policy": {
                     "backup_start": db_system_management_policy_backup_policy_backup_start,
+                    "copy_policy": {
+                        "compartment_id": compartment_id,
+                        "regions": db_system_management_policy_backup_policy_copy_policy_regions,
+                        "retention_period": db_system_management_policy_backup_policy_copy_policy_retention_period,
+                    },
                     "days_of_the_months": db_system_management_policy_backup_policy_days_of_the_month,
                     "days_of_the_weeks": db_system_management_policy_backup_policy_days_of_the_week,
                     "kind": db_system_management_policy_backup_policy_kind,

@@ -118,7 +118,7 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         private InputList<Inputs.ContainerInstanceContainerHealthCheckArgs>? _healthChecks;
 
         /// <summary>
-        /// list of container health checks to check container status and take appropriate action if container status is failed. There are three types of health checks that we currently support HTTP, TCP, and Command.
+        /// list of container health checks to check container status and take appropriate action if container status is failed. There are two types of health checks that we currently support HTTP and TCP.
         /// </summary>
         public InputList<Inputs.ContainerInstanceContainerHealthCheckArgs> HealthChecks
         {

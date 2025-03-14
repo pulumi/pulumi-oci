@@ -26,13 +26,16 @@ class GetDbNodeResult:
     """
     A collection of values returned by getDbNode.
     """
-    def __init__(__self__, additional_details=None, backup_ip_id=None, backup_vnic2id=None, backup_vnic_id=None, cpu_core_count=None, db_node_id=None, db_node_storage_size_in_gbs=None, db_server_id=None, db_system_id=None, defined_tags=None, fault_domain=None, freeform_tags=None, host_ip_id=None, hostname=None, id=None, lifecycle_details=None, maintenance_type=None, memory_size_in_gbs=None, software_storage_size_in_gb=None, state=None, time_created=None, time_maintenance_window_end=None, time_maintenance_window_start=None, total_cpu_core_count=None, vnic2id=None, vnic_id=None):
+    def __init__(__self__, additional_details=None, backup_ip_id=None, backup_ipv6id=None, backup_vnic2id=None, backup_vnic_id=None, cpu_core_count=None, db_node_id=None, db_node_storage_size_in_gbs=None, db_server_id=None, db_system_id=None, defined_tags=None, fault_domain=None, freeform_tags=None, host_ip_id=None, host_ipv6id=None, hostname=None, id=None, lifecycle_details=None, maintenance_type=None, memory_size_in_gbs=None, software_storage_size_in_gb=None, state=None, time_created=None, time_maintenance_window_end=None, time_maintenance_window_start=None, total_cpu_core_count=None, vnic2id=None, vnic_id=None):
         if additional_details and not isinstance(additional_details, str):
             raise TypeError("Expected argument 'additional_details' to be a str")
         pulumi.set(__self__, "additional_details", additional_details)
         if backup_ip_id and not isinstance(backup_ip_id, str):
             raise TypeError("Expected argument 'backup_ip_id' to be a str")
         pulumi.set(__self__, "backup_ip_id", backup_ip_id)
+        if backup_ipv6id and not isinstance(backup_ipv6id, str):
+            raise TypeError("Expected argument 'backup_ipv6id' to be a str")
+        pulumi.set(__self__, "backup_ipv6id", backup_ipv6id)
         if backup_vnic2id and not isinstance(backup_vnic2id, str):
             raise TypeError("Expected argument 'backup_vnic2id' to be a str")
         pulumi.set(__self__, "backup_vnic2id", backup_vnic2id)
@@ -66,6 +69,9 @@ class GetDbNodeResult:
         if host_ip_id and not isinstance(host_ip_id, str):
             raise TypeError("Expected argument 'host_ip_id' to be a str")
         pulumi.set(__self__, "host_ip_id", host_ip_id)
+        if host_ipv6id and not isinstance(host_ipv6id, str):
+            raise TypeError("Expected argument 'host_ipv6id' to be a str")
+        pulumi.set(__self__, "host_ipv6id", host_ipv6id)
         if hostname and not isinstance(hostname, str):
             raise TypeError("Expected argument 'hostname' to be a str")
         pulumi.set(__self__, "hostname", hostname)
@@ -118,9 +124,17 @@ class GetDbNodeResult:
     @pulumi.getter(name="backupIpId")
     def backup_ip_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address needed to make a database connection.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IPv4 address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IPv4 address needed to make a database connection.
         """
         return pulumi.get(self, "backup_ip_id")
+
+    @property
+    @pulumi.getter(name="backupIpv6id")
+    def backup_ipv6id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IPv6 address associated with the database node. Use this OCID with the [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6) API to get the IPv6 address needed to make a database connection.
+        """
+        return pulumi.get(self, "backup_ipv6id")
 
     @property
     @pulumi.getter(name="backupVnic2id")
@@ -203,10 +217,17 @@ class GetDbNodeResult:
     @pulumi.getter(name="hostIpId")
     def host_ip_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
-        **Note:** Applies only to Exadata Cloud Service.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IPv4 address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IPv4 address needed to make a database connection.
         """
         return pulumi.get(self, "host_ip_id")
+
+    @property
+    @pulumi.getter(name="hostIpv6id")
+    def host_ipv6id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IPv6 address associated with the database node. Use this OCID with the [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6) API to get the IPv6 address needed to make a database connection.
+        """
+        return pulumi.get(self, "host_ipv6id")
 
     @property
     @pulumi.getter
@@ -321,6 +342,7 @@ class AwaitableGetDbNodeResult(GetDbNodeResult):
         return GetDbNodeResult(
             additional_details=self.additional_details,
             backup_ip_id=self.backup_ip_id,
+            backup_ipv6id=self.backup_ipv6id,
             backup_vnic2id=self.backup_vnic2id,
             backup_vnic_id=self.backup_vnic_id,
             cpu_core_count=self.cpu_core_count,
@@ -332,6 +354,7 @@ class AwaitableGetDbNodeResult(GetDbNodeResult):
             fault_domain=self.fault_domain,
             freeform_tags=self.freeform_tags,
             host_ip_id=self.host_ip_id,
+            host_ipv6id=self.host_ipv6id,
             hostname=self.hostname,
             id=self.id,
             lifecycle_details=self.lifecycle_details,
@@ -374,6 +397,7 @@ def get_db_node(db_node_id: Optional[str] = None,
     return AwaitableGetDbNodeResult(
         additional_details=pulumi.get(__ret__, 'additional_details'),
         backup_ip_id=pulumi.get(__ret__, 'backup_ip_id'),
+        backup_ipv6id=pulumi.get(__ret__, 'backup_ipv6id'),
         backup_vnic2id=pulumi.get(__ret__, 'backup_vnic2id'),
         backup_vnic_id=pulumi.get(__ret__, 'backup_vnic_id'),
         cpu_core_count=pulumi.get(__ret__, 'cpu_core_count'),
@@ -385,6 +409,7 @@ def get_db_node(db_node_id: Optional[str] = None,
         fault_domain=pulumi.get(__ret__, 'fault_domain'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         host_ip_id=pulumi.get(__ret__, 'host_ip_id'),
+        host_ipv6id=pulumi.get(__ret__, 'host_ipv6id'),
         hostname=pulumi.get(__ret__, 'hostname'),
         id=pulumi.get(__ret__, 'id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
@@ -424,6 +449,7 @@ def get_db_node_output(db_node_id: Optional[pulumi.Input[str]] = None,
     return __ret__.apply(lambda __response__: GetDbNodeResult(
         additional_details=pulumi.get(__response__, 'additional_details'),
         backup_ip_id=pulumi.get(__response__, 'backup_ip_id'),
+        backup_ipv6id=pulumi.get(__response__, 'backup_ipv6id'),
         backup_vnic2id=pulumi.get(__response__, 'backup_vnic2id'),
         backup_vnic_id=pulumi.get(__response__, 'backup_vnic_id'),
         cpu_core_count=pulumi.get(__response__, 'cpu_core_count'),
@@ -435,6 +461,7 @@ def get_db_node_output(db_node_id: Optional[pulumi.Input[str]] = None,
         fault_domain=pulumi.get(__response__, 'fault_domain'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         host_ip_id=pulumi.get(__response__, 'host_ip_id'),
+        host_ipv6id=pulumi.get(__response__, 'host_ipv6id'),
         hostname=pulumi.get(__response__, 'hostname'),
         id=pulumi.get(__response__, 'id'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),

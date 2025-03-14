@@ -66,14 +66,14 @@ public final class ExternalNonContainerDatabaseState extends com.pulumi.resource
     }
 
     /**
-     * The Oracle Database edition.
+     * The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      * 
      */
     @Import(name="databaseEdition")
     private @Nullable Output<String> databaseEdition;
 
     /**
-     * @return The Oracle Database edition.
+     * @return The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      * 
      */
     public Optional<Output<String>> databaseEdition() {
@@ -417,7 +417,7 @@ public final class ExternalNonContainerDatabaseState extends com.pulumi.resource
         }
 
         /**
-         * @param databaseEdition The Oracle Database edition.
+         * @param databaseEdition The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
          * 
          * @return builder
          * 
@@ -428,7 +428,7 @@ public final class ExternalNonContainerDatabaseState extends com.pulumi.resource
         }
 
         /**
-         * @param databaseEdition The Oracle Database edition.
+         * @param databaseEdition The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
          * 
          * @return builder
          * 

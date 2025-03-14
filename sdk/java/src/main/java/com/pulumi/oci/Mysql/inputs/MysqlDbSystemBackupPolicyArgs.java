@@ -5,10 +5,12 @@ package com.pulumi.oci.Mysql.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Mysql.inputs.MysqlDbSystemBackupPolicyCopyPolicyArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemBackupPolicyPitrPolicyArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -18,6 +20,29 @@ import javax.annotation.Nullable;
 public final class MysqlDbSystemBackupPolicyArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final MysqlDbSystemBackupPolicyArgs Empty = new MysqlDbSystemBackupPolicyArgs();
+
+    /**
+     * (Updatable) List of policies of a DB system to schedule cross-region DB system backup copy.
+     * 
+     * The policy includes the name of the destination region to which the DB system backup will be copied, and an optional parameter which specifies the retention period of the copied DB system backup in days.
+     * 
+     * **Note:** Currently, only one policy can be specified in the list.
+     * 
+     */
+    @Import(name="copyPolicies")
+    private @Nullable Output<List<MysqlDbSystemBackupPolicyCopyPolicyArgs>> copyPolicies;
+
+    /**
+     * @return (Updatable) List of policies of a DB system to schedule cross-region DB system backup copy.
+     * 
+     * The policy includes the name of the destination region to which the DB system backup will be copied, and an optional parameter which specifies the retention period of the copied DB system backup in days.
+     * 
+     * **Note:** Currently, only one policy can be specified in the list.
+     * 
+     */
+    public Optional<Output<List<MysqlDbSystemBackupPolicyCopyPolicyArgs>>> copyPolicies() {
+        return Optional.ofNullable(this.copyPolicies);
+    }
 
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces.
@@ -136,6 +161,7 @@ public final class MysqlDbSystemBackupPolicyArgs extends com.pulumi.resources.Re
     private MysqlDbSystemBackupPolicyArgs() {}
 
     private MysqlDbSystemBackupPolicyArgs(MysqlDbSystemBackupPolicyArgs $) {
+        this.copyPolicies = $.copyPolicies;
         this.definedTags = $.definedTags;
         this.freeformTags = $.freeformTags;
         this.isEnabled = $.isEnabled;
@@ -160,6 +186,49 @@ public final class MysqlDbSystemBackupPolicyArgs extends com.pulumi.resources.Re
 
         public Builder(MysqlDbSystemBackupPolicyArgs defaults) {
             $ = new MysqlDbSystemBackupPolicyArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param copyPolicies (Updatable) List of policies of a DB system to schedule cross-region DB system backup copy.
+         * 
+         * The policy includes the name of the destination region to which the DB system backup will be copied, and an optional parameter which specifies the retention period of the copied DB system backup in days.
+         * 
+         * **Note:** Currently, only one policy can be specified in the list.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder copyPolicies(@Nullable Output<List<MysqlDbSystemBackupPolicyCopyPolicyArgs>> copyPolicies) {
+            $.copyPolicies = copyPolicies;
+            return this;
+        }
+
+        /**
+         * @param copyPolicies (Updatable) List of policies of a DB system to schedule cross-region DB system backup copy.
+         * 
+         * The policy includes the name of the destination region to which the DB system backup will be copied, and an optional parameter which specifies the retention period of the copied DB system backup in days.
+         * 
+         * **Note:** Currently, only one policy can be specified in the list.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder copyPolicies(List<MysqlDbSystemBackupPolicyCopyPolicyArgs> copyPolicies) {
+            return copyPolicies(Output.of(copyPolicies));
+        }
+
+        /**
+         * @param copyPolicies (Updatable) List of policies of a DB system to schedule cross-region DB system backup copy.
+         * 
+         * The policy includes the name of the destination region to which the DB system backup will be copied, and an optional parameter which specifies the retention period of the copied DB system backup in days.
+         * 
+         * **Note:** Currently, only one policy can be specified in the list.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder copyPolicies(MysqlDbSystemBackupPolicyCopyPolicyArgs... copyPolicies) {
+            return copyPolicies(List.of(copyPolicies));
         }
 
         /**

@@ -19,6 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testExadbVmClusters = oci.Database.getExadbVmClusters({
  *     compartmentId: compartmentId,
+ *     clusterPlacementGroupId: testClusterPlacementGroup.id,
  *     displayName: exadbVmClusterDisplayName,
  *     exascaleDbStorageVaultId: testExascaleDbStorageVault.id,
  *     state: exadbVmClusterState,
@@ -28,6 +29,7 @@ import * as utilities from "../utilities";
 export function getExadbVmClusters(args: GetExadbVmClustersArgs, opts?: pulumi.InvokeOptions): Promise<GetExadbVmClustersResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getExadbVmClusters:getExadbVmClusters", {
+        "clusterPlacementGroupId": args.clusterPlacementGroupId,
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
         "exascaleDbStorageVaultId": args.exascaleDbStorageVaultId,
@@ -40,6 +42,10 @@ export function getExadbVmClusters(args: GetExadbVmClustersArgs, opts?: pulumi.I
  * A collection of arguments for invoking getExadbVmClusters.
  */
 export interface GetExadbVmClustersArgs {
+    /**
+     * A filter to return only resources that match the given cluster placement group ID exactly.
+     */
+    clusterPlacementGroupId?: string;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -63,6 +69,10 @@ export interface GetExadbVmClustersArgs {
  * A collection of values returned by getExadbVmClusters.
  */
 export interface GetExadbVmClustersResult {
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     */
+    readonly clusterPlacementGroupId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -102,6 +112,7 @@ export interface GetExadbVmClustersResult {
  *
  * const testExadbVmClusters = oci.Database.getExadbVmClusters({
  *     compartmentId: compartmentId,
+ *     clusterPlacementGroupId: testClusterPlacementGroup.id,
  *     displayName: exadbVmClusterDisplayName,
  *     exascaleDbStorageVaultId: testExascaleDbStorageVault.id,
  *     state: exadbVmClusterState,
@@ -111,6 +122,7 @@ export interface GetExadbVmClustersResult {
 export function getExadbVmClustersOutput(args: GetExadbVmClustersOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExadbVmClustersResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getExadbVmClusters:getExadbVmClusters", {
+        "clusterPlacementGroupId": args.clusterPlacementGroupId,
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
         "exascaleDbStorageVaultId": args.exascaleDbStorageVaultId,
@@ -123,6 +135,10 @@ export function getExadbVmClustersOutput(args: GetExadbVmClustersOutputArgs, opt
  * A collection of arguments for invoking getExadbVmClusters.
  */
 export interface GetExadbVmClustersOutputArgs {
+    /**
+     * A filter to return only resources that match the given cluster placement group ID exactly.
+     */
+    clusterPlacementGroupId?: pulumi.Input<string>;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */

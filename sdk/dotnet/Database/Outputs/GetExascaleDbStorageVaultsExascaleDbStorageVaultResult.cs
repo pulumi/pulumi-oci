@@ -22,6 +22,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string AvailabilityDomain;
         /// <summary>
+        /// A filter to return only resources that match the given cluster placement group ID exactly.
+        /// </summary>
+        public readonly string ClusterPlacementGroupId;
+        /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string CompartmentId;
@@ -37,6 +41,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// A filter to return only resources that match the entire display name given. The match is not case sensitive.
         /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// A filter to return only list of Vaults that are linked to the exadata infrastructure Id.
+        /// </summary>
+        public readonly string ExadataInfrastructureId;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
@@ -57,6 +65,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// A filter to return only Exadata Database Storage Vaults that match the given lifecycle state exactly.
         /// </summary>
         public readonly string State;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        /// </summary>
+        public readonly string SubscriptionId;
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
@@ -84,6 +96,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string availabilityDomain,
 
+            string clusterPlacementGroupId,
+
             string compartmentId,
 
             ImmutableDictionary<string, string> definedTags,
@@ -91,6 +105,8 @@ namespace Pulumi.Oci.Database.Outputs
             string description,
 
             string displayName,
+
+            string exadataInfrastructureId,
 
             ImmutableDictionary<string, string> freeformTags,
 
@@ -101,6 +117,8 @@ namespace Pulumi.Oci.Database.Outputs
             string lifecycleDetails,
 
             string state,
+
+            string subscriptionId,
 
             ImmutableDictionary<string, string> systemTags,
 
@@ -114,15 +132,18 @@ namespace Pulumi.Oci.Database.Outputs
         {
             AdditionalFlashCacheInPercent = additionalFlashCacheInPercent;
             AvailabilityDomain = availabilityDomain;
+            ClusterPlacementGroupId = clusterPlacementGroupId;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             Description = description;
             DisplayName = displayName;
+            ExadataInfrastructureId = exadataInfrastructureId;
             FreeformTags = freeformTags;
             HighCapacityDatabaseStorages = highCapacityDatabaseStorages;
             Id = id;
             LifecycleDetails = lifecycleDetails;
             State = state;
+            SubscriptionId = subscriptionId;
             SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeZone = timeZone;

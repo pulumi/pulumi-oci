@@ -80,6 +80,7 @@ from .get_masking_policy_masking_schemas import *
 from .get_masking_policy_referential_relations import *
 from .get_masking_report import *
 from .get_masking_report_masked_columns import *
+from .get_masking_report_masking_errors import *
 from .get_masking_reports import *
 from .get_masking_reports_masked_column import *
 from .get_onprem_connector import *
@@ -115,6 +116,7 @@ from .get_security_policy_report_database_view_access_entries import *
 from .get_security_policy_report_database_view_access_entry import *
 from .get_security_policy_report_role_grant_paths import *
 from .get_security_policy_reports import *
+from .get_sensitive_column_analytics import *
 from .get_sensitive_data_model import *
 from .get_sensitive_data_model_referential_relation import *
 from .get_sensitive_data_model_referential_relations import *
@@ -125,6 +127,9 @@ from .get_sensitive_data_models import *
 from .get_sensitive_data_models_sensitive_column import *
 from .get_sensitive_data_models_sensitive_columns import *
 from .get_sensitive_type import *
+from .get_sensitive_type_group import *
+from .get_sensitive_type_group_grouped_sensitive_types import *
+from .get_sensitive_type_groups import *
 from .get_sensitive_types import *
 from .get_sensitive_types_export import *
 from .get_sensitive_types_exports import *
@@ -181,6 +186,8 @@ from .sensitive_data_model_referential_relation import *
 from .sensitive_data_models_apply_discovery_job_results import *
 from .sensitive_data_models_sensitive_column import *
 from .sensitive_type import *
+from .sensitive_type_group import *
+from .sensitive_type_group_grouped_sensitive_type import *
 from .sensitive_types_export import *
 from .set_security_assessment_baseline import *
 from .set_security_assessment_baseline_management import *

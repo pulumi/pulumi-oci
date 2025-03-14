@@ -25,6 +25,11 @@ public final class GetExascaleDbStorageVaultResult {
      */
     private String availabilityDomain;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * 
+     */
+    private String clusterPlacementGroupId;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
@@ -44,6 +49,11 @@ public final class GetExascaleDbStorageVaultResult {
      * 
      */
     private String displayName;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+     * 
+     */
+    private String exadataInfrastructureId;
     private String exascaleDbStorageVaultId;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
@@ -70,6 +80,11 @@ public final class GetExascaleDbStorageVaultResult {
      * 
      */
     private String state;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    private String subscriptionId;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
@@ -112,6 +127,13 @@ public final class GetExascaleDbStorageVaultResult {
         return this.availabilityDomain;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * 
+     */
+    public String clusterPlacementGroupId() {
+        return this.clusterPlacementGroupId;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
@@ -138,6 +160,13 @@ public final class GetExascaleDbStorageVaultResult {
      */
     public String displayName() {
         return this.displayName;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+     * 
+     */
+    public String exadataInfrastructureId() {
+        return this.exadataInfrastructureId;
     }
     public String exascaleDbStorageVaultId() {
         return this.exascaleDbStorageVaultId;
@@ -176,6 +205,13 @@ public final class GetExascaleDbStorageVaultResult {
      */
     public String state() {
         return this.state;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    public String subscriptionId() {
+        return this.subscriptionId;
     }
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -224,16 +260,19 @@ public final class GetExascaleDbStorageVaultResult {
     public static final class Builder {
         private Integer additionalFlashCacheInPercent;
         private String availabilityDomain;
+        private String clusterPlacementGroupId;
         private String compartmentId;
         private Map<String,String> definedTags;
         private String description;
         private String displayName;
+        private String exadataInfrastructureId;
         private String exascaleDbStorageVaultId;
         private Map<String,String> freeformTags;
         private List<GetExascaleDbStorageVaultHighCapacityDatabaseStorage> highCapacityDatabaseStorages;
         private String id;
         private String lifecycleDetails;
         private String state;
+        private String subscriptionId;
         private Map<String,String> systemTags;
         private String timeCreated;
         private String timeZone;
@@ -244,16 +283,19 @@ public final class GetExascaleDbStorageVaultResult {
     	      Objects.requireNonNull(defaults);
     	      this.additionalFlashCacheInPercent = defaults.additionalFlashCacheInPercent;
     	      this.availabilityDomain = defaults.availabilityDomain;
+    	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
+    	      this.exadataInfrastructureId = defaults.exadataInfrastructureId;
     	      this.exascaleDbStorageVaultId = defaults.exascaleDbStorageVaultId;
     	      this.freeformTags = defaults.freeformTags;
     	      this.highCapacityDatabaseStorages = defaults.highCapacityDatabaseStorages;
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.state = defaults.state;
+    	      this.subscriptionId = defaults.subscriptionId;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeZone = defaults.timeZone;
@@ -275,6 +317,14 @@ public final class GetExascaleDbStorageVaultResult {
               throw new MissingRequiredPropertyException("GetExascaleDbStorageVaultResult", "availabilityDomain");
             }
             this.availabilityDomain = availabilityDomain;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            if (clusterPlacementGroupId == null) {
+              throw new MissingRequiredPropertyException("GetExascaleDbStorageVaultResult", "clusterPlacementGroupId");
+            }
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
             return this;
         }
         @CustomType.Setter
@@ -307,6 +357,14 @@ public final class GetExascaleDbStorageVaultResult {
               throw new MissingRequiredPropertyException("GetExascaleDbStorageVaultResult", "displayName");
             }
             this.displayName = displayName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder exadataInfrastructureId(String exadataInfrastructureId) {
+            if (exadataInfrastructureId == null) {
+              throw new MissingRequiredPropertyException("GetExascaleDbStorageVaultResult", "exadataInfrastructureId");
+            }
+            this.exadataInfrastructureId = exadataInfrastructureId;
             return this;
         }
         @CustomType.Setter
@@ -361,6 +419,14 @@ public final class GetExascaleDbStorageVaultResult {
             return this;
         }
         @CustomType.Setter
+        public Builder subscriptionId(String subscriptionId) {
+            if (subscriptionId == null) {
+              throw new MissingRequiredPropertyException("GetExascaleDbStorageVaultResult", "subscriptionId");
+            }
+            this.subscriptionId = subscriptionId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetExascaleDbStorageVaultResult", "systemTags");
@@ -407,16 +473,19 @@ public final class GetExascaleDbStorageVaultResult {
             final var _resultValue = new GetExascaleDbStorageVaultResult();
             _resultValue.additionalFlashCacheInPercent = additionalFlashCacheInPercent;
             _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;
             _resultValue.displayName = displayName;
+            _resultValue.exadataInfrastructureId = exadataInfrastructureId;
             _resultValue.exascaleDbStorageVaultId = exascaleDbStorageVaultId;
             _resultValue.freeformTags = freeformTags;
             _resultValue.highCapacityDatabaseStorages = highCapacityDatabaseStorages;
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.state = state;
+            _resultValue.subscriptionId = subscriptionId;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeZone = timeZone;

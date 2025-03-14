@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly Outputs.CrossConnectMacsecPropertiesPrimaryKey? PrimaryKey;
         /// <summary>
-        /// (Updatable) Indicates whether or not MACsec is enabled.
+        /// The cross-connect's current state.
         /// </summary>
         public readonly string State;
 

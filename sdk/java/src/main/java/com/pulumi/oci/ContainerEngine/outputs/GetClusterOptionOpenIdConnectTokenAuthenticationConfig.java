@@ -13,45 +13,137 @@ import java.util.Objects;
 
 @CustomType
 public final class GetClusterOptionOpenIdConnectTokenAuthenticationConfig {
+    /**
+     * @return A Base64 encoded public RSA or ECDSA certificates used to signed your identity provider&#39;s web certificate.
+     * 
+     */
     private String caCertificate;
+    /**
+     * @return A client id that all tokens must be issued for.
+     * 
+     */
     private String clientId;
+    /**
+     * @return A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+     * 
+     */
+    private String configurationFile;
+    /**
+     * @return JWT claim to use as the user&#39;s group. If the claim is present it must be an array of strings.
+     * 
+     */
     private String groupsClaim;
+    /**
+     * @return Prefix prepended to group claims to prevent clashes with existing names (such as system:groups).
+     * 
+     */
     private String groupsPrefix;
+    /**
+     * @return Whether the cluster has OIDC Auth Config enabled. Defaults to false.
+     * 
+     */
     private Boolean isOpenIdConnectAuthEnabled;
+    /**
+     * @return URL of the provider that allows the API server to discover public signing keys.  Only URLs that use the https:// scheme are accepted. This is typically the provider&#39;s discovery URL,  changed to have an empty path.
+     * 
+     */
     private String issuerUrl;
+    /**
+     * @return A key=value pair that describes a required claim in the ID Token. If set, the claim is verified to be present  in the ID Token with a matching value. Repeat this flag to specify multiple claims.
+     * 
+     */
     private List<GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaim> requiredClaims;
+    /**
+     * @return The signing algorithms accepted. Default is [&#34;RS256&#34;].
+     * 
+     */
     private List<String> signingAlgorithms;
+    /**
+     * @return JWT claim to use as the user name. By default sub, which is expected to be a unique identifier of the end  user. Admins can choose other claims, such as email or name, depending on their provider. However, claims  other than email will be prefixed with the issuer URL to prevent naming clashes with other plugins.
+     * 
+     */
     private String usernameClaim;
+    /**
+     * @return Prefix prepended to username claims to prevent clashes with existing names (such as system:users).  For example, the value oidc: will create usernames like oidc:jane.doe. If this flag isn&#39;t provided and  --oidc-username-claim is a value other than email the prefix defaults to ( Issuer URL )# where  ( Issuer URL ) is the value of --oidc-issuer-url. The value - can be used to disable all prefixing.
+     * 
+     */
     private String usernamePrefix;
 
     private GetClusterOptionOpenIdConnectTokenAuthenticationConfig() {}
+    /**
+     * @return A Base64 encoded public RSA or ECDSA certificates used to signed your identity provider&#39;s web certificate.
+     * 
+     */
     public String caCertificate() {
         return this.caCertificate;
     }
+    /**
+     * @return A client id that all tokens must be issued for.
+     * 
+     */
     public String clientId() {
         return this.clientId;
     }
+    /**
+     * @return A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+     * 
+     */
+    public String configurationFile() {
+        return this.configurationFile;
+    }
+    /**
+     * @return JWT claim to use as the user&#39;s group. If the claim is present it must be an array of strings.
+     * 
+     */
     public String groupsClaim() {
         return this.groupsClaim;
     }
+    /**
+     * @return Prefix prepended to group claims to prevent clashes with existing names (such as system:groups).
+     * 
+     */
     public String groupsPrefix() {
         return this.groupsPrefix;
     }
+    /**
+     * @return Whether the cluster has OIDC Auth Config enabled. Defaults to false.
+     * 
+     */
     public Boolean isOpenIdConnectAuthEnabled() {
         return this.isOpenIdConnectAuthEnabled;
     }
+    /**
+     * @return URL of the provider that allows the API server to discover public signing keys.  Only URLs that use the https:// scheme are accepted. This is typically the provider&#39;s discovery URL,  changed to have an empty path.
+     * 
+     */
     public String issuerUrl() {
         return this.issuerUrl;
     }
+    /**
+     * @return A key=value pair that describes a required claim in the ID Token. If set, the claim is verified to be present  in the ID Token with a matching value. Repeat this flag to specify multiple claims.
+     * 
+     */
     public List<GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaim> requiredClaims() {
         return this.requiredClaims;
     }
+    /**
+     * @return The signing algorithms accepted. Default is [&#34;RS256&#34;].
+     * 
+     */
     public List<String> signingAlgorithms() {
         return this.signingAlgorithms;
     }
+    /**
+     * @return JWT claim to use as the user name. By default sub, which is expected to be a unique identifier of the end  user. Admins can choose other claims, such as email or name, depending on their provider. However, claims  other than email will be prefixed with the issuer URL to prevent naming clashes with other plugins.
+     * 
+     */
     public String usernameClaim() {
         return this.usernameClaim;
     }
+    /**
+     * @return Prefix prepended to username claims to prevent clashes with existing names (such as system:users).  For example, the value oidc: will create usernames like oidc:jane.doe. If this flag isn&#39;t provided and  --oidc-username-claim is a value other than email the prefix defaults to ( Issuer URL )# where  ( Issuer URL ) is the value of --oidc-issuer-url. The value - can be used to disable all prefixing.
+     * 
+     */
     public String usernamePrefix() {
         return this.usernamePrefix;
     }
@@ -67,6 +159,7 @@ public final class GetClusterOptionOpenIdConnectTokenAuthenticationConfig {
     public static final class Builder {
         private String caCertificate;
         private String clientId;
+        private String configurationFile;
         private String groupsClaim;
         private String groupsPrefix;
         private Boolean isOpenIdConnectAuthEnabled;
@@ -80,6 +173,7 @@ public final class GetClusterOptionOpenIdConnectTokenAuthenticationConfig {
     	      Objects.requireNonNull(defaults);
     	      this.caCertificate = defaults.caCertificate;
     	      this.clientId = defaults.clientId;
+    	      this.configurationFile = defaults.configurationFile;
     	      this.groupsClaim = defaults.groupsClaim;
     	      this.groupsPrefix = defaults.groupsPrefix;
     	      this.isOpenIdConnectAuthEnabled = defaults.isOpenIdConnectAuthEnabled;
@@ -104,6 +198,14 @@ public final class GetClusterOptionOpenIdConnectTokenAuthenticationConfig {
               throw new MissingRequiredPropertyException("GetClusterOptionOpenIdConnectTokenAuthenticationConfig", "clientId");
             }
             this.clientId = clientId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder configurationFile(String configurationFile) {
+            if (configurationFile == null) {
+              throw new MissingRequiredPropertyException("GetClusterOptionOpenIdConnectTokenAuthenticationConfig", "configurationFile");
+            }
+            this.configurationFile = configurationFile;
             return this;
         }
         @CustomType.Setter
@@ -180,6 +282,7 @@ public final class GetClusterOptionOpenIdConnectTokenAuthenticationConfig {
             final var _resultValue = new GetClusterOptionOpenIdConnectTokenAuthenticationConfig();
             _resultValue.caCertificate = caCertificate;
             _resultValue.clientId = clientId;
+            _resultValue.configurationFile = configurationFile;
             _resultValue.groupsClaim = groupsClaim;
             _resultValue.groupsPrefix = groupsPrefix;
             _resultValue.isOpenIdConnectAuthEnabled = isOpenIdConnectAuthEnabled;

@@ -72,8 +72,10 @@ type LookupApplicationVipResult struct {
 	HostnameLabel string `pulumi:"hostnameLabel"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application virtual IP (VIP) address.
 	Id string `pulumi:"id"`
-	// The application virtual IP (VIP) address.
+	// The application virtual IP (VIP) IPv4 address.
 	IpAddress string `pulumi:"ipAddress"`
+	// The application virtual IP (VIP) IPv6 address.
+	Ipv6address string `pulumi:"ipv6address"`
 	// Additional information about the current lifecycle state of the application virtual IP (VIP) address.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The current lifecycle state of the application virtual IP (VIP) address.
@@ -156,9 +158,14 @@ func (o LookupApplicationVipResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupApplicationVipResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The application virtual IP (VIP) address.
+// The application virtual IP (VIP) IPv4 address.
 func (o LookupApplicationVipResultOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupApplicationVipResult) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+// The application virtual IP (VIP) IPv6 address.
+func (o LookupApplicationVipResultOutput) Ipv6address() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupApplicationVipResult) string { return v.Ipv6address }).(pulumi.StringOutput)
 }
 
 // Additional information about the current lifecycle state of the application virtual IP (VIP) address.

@@ -68,7 +68,7 @@ type GetDbSystemsArgs struct {
 
 // A collection of values returned by getDbSystems.
 type GetDbSystemsResult struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
+	// target compartment to place a new backup
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The list of db_system_collection.
 	DbSystemCollections []GetDbSystemsDbSystemCollection `pulumi:"dbSystemCollections"`
@@ -122,7 +122,7 @@ func (o GetDbSystemsResultOutput) ToGetDbSystemsResultOutputWithContext(ctx cont
 	return o
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
+// target compartment to place a new backup
 func (o GetDbSystemsResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDbSystemsResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }

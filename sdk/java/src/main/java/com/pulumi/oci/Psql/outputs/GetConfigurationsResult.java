@@ -21,6 +21,11 @@ public final class GetConfigurationsResult {
      */
     private @Nullable String compartmentId;
     /**
+     * @return The type of configuration. Either user-created or a default configuration.
+     * 
+     */
+    private @Nullable String configType;
+    /**
      * @return The list of configuration_collection.
      * 
      */
@@ -60,6 +65,13 @@ public final class GetConfigurationsResult {
      */
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
+    }
+    /**
+     * @return The type of configuration. Either user-created or a default configuration.
+     * 
+     */
+    public Optional<String> configType() {
+        return Optional.ofNullable(this.configType);
     }
     /**
      * @return The list of configuration_collection.
@@ -120,6 +132,7 @@ public final class GetConfigurationsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
+        private @Nullable String configType;
         private List<GetConfigurationsConfigurationCollection> configurationCollections;
         private @Nullable String configurationId;
         private @Nullable String dbVersion;
@@ -132,6 +145,7 @@ public final class GetConfigurationsResult {
         public Builder(GetConfigurationsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.configType = defaults.configType;
     	      this.configurationCollections = defaults.configurationCollections;
     	      this.configurationId = defaults.configurationId;
     	      this.dbVersion = defaults.dbVersion;
@@ -146,6 +160,12 @@ public final class GetConfigurationsResult {
         public Builder compartmentId(@Nullable String compartmentId) {
 
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder configType(@Nullable String configType) {
+
+            this.configType = configType;
             return this;
         }
         @CustomType.Setter
@@ -209,6 +229,7 @@ public final class GetConfigurationsResult {
         public GetConfigurationsResult build() {
             final var _resultValue = new GetConfigurationsResult();
             _resultValue.compartmentId = compartmentId;
+            _resultValue.configType = configType;
             _resultValue.configurationCollections = configurationCollections;
             _resultValue.configurationId = configurationId;
             _resultValue.dbVersion = dbVersion;

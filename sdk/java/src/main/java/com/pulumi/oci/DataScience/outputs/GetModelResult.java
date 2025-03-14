@@ -34,6 +34,11 @@ public final class GetModelResult {
      */
     private List<GetModelBackupSetting> backupSettings;
     /**
+     * @return Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values &#34;Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other&#34;.
+     * 
+     */
+    private String category;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model&#39;s compartment.
      * 
      */
@@ -84,6 +89,11 @@ public final class GetModelResult {
      * 
      */
     private String inputSchema;
+    /**
+     * @return Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+     * 
+     */
+    private Boolean isModelByReference;
     /**
      * @return Details about the lifecycle state of the model.
      * 
@@ -161,6 +171,13 @@ public final class GetModelResult {
         return this.backupSettings;
     }
     /**
+     * @return Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values &#34;Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other&#34;.
+     * 
+     */
+    public String category() {
+        return this.category;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model&#39;s compartment.
      * 
      */
@@ -232,6 +249,13 @@ public final class GetModelResult {
      */
     public String inputSchema() {
         return this.inputSchema;
+    }
+    /**
+     * @return Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+     * 
+     */
+    public Boolean isModelByReference() {
+        return this.isModelByReference;
     }
     /**
      * @return Details about the lifecycle state of the model.
@@ -321,6 +345,7 @@ public final class GetModelResult {
         private String artifactLastModified;
         private List<GetModelBackupOperationDetail> backupOperationDetails;
         private List<GetModelBackupSetting> backupSettings;
+        private String category;
         private String compartmentId;
         private String createdBy;
         private List<GetModelCustomMetadataList> customMetadataLists;
@@ -332,6 +357,7 @@ public final class GetModelResult {
         private Map<String,String> freeformTags;
         private String id;
         private String inputSchema;
+        private Boolean isModelByReference;
         private String lifecycleDetails;
         private String modelArtifact;
         private String modelId;
@@ -353,6 +379,7 @@ public final class GetModelResult {
     	      this.artifactLastModified = defaults.artifactLastModified;
     	      this.backupOperationDetails = defaults.backupOperationDetails;
     	      this.backupSettings = defaults.backupSettings;
+    	      this.category = defaults.category;
     	      this.compartmentId = defaults.compartmentId;
     	      this.createdBy = defaults.createdBy;
     	      this.customMetadataLists = defaults.customMetadataLists;
@@ -364,6 +391,7 @@ public final class GetModelResult {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.inputSchema = defaults.inputSchema;
+    	      this.isModelByReference = defaults.isModelByReference;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.modelArtifact = defaults.modelArtifact;
     	      this.modelId = defaults.modelId;
@@ -431,6 +459,14 @@ public final class GetModelResult {
         }
         public Builder backupSettings(GetModelBackupSetting... backupSettings) {
             return backupSettings(List.of(backupSettings));
+        }
+        @CustomType.Setter
+        public Builder category(String category) {
+            if (category == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "category");
+            }
+            this.category = category;
+            return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
@@ -524,6 +560,14 @@ public final class GetModelResult {
               throw new MissingRequiredPropertyException("GetModelResult", "inputSchema");
             }
             this.inputSchema = inputSchema;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isModelByReference(Boolean isModelByReference) {
+            if (isModelByReference == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "isModelByReference");
+            }
+            this.isModelByReference = isModelByReference;
             return this;
         }
         @CustomType.Setter
@@ -636,6 +680,7 @@ public final class GetModelResult {
             _resultValue.artifactLastModified = artifactLastModified;
             _resultValue.backupOperationDetails = backupOperationDetails;
             _resultValue.backupSettings = backupSettings;
+            _resultValue.category = category;
             _resultValue.compartmentId = compartmentId;
             _resultValue.createdBy = createdBy;
             _resultValue.customMetadataLists = customMetadataLists;
@@ -647,6 +692,7 @@ public final class GetModelResult {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.inputSchema = inputSchema;
+            _resultValue.isModelByReference = isModelByReference;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.modelArtifact = modelArtifact;
             _resultValue.modelId = modelId;

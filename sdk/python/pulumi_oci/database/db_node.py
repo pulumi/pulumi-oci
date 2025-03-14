@@ -84,6 +84,7 @@ class _DbNodeState:
     def __init__(__self__, *,
                  additional_details: Optional[pulumi.Input[str]] = None,
                  backup_ip_id: Optional[pulumi.Input[str]] = None,
+                 backup_ipv6id: Optional[pulumi.Input[str]] = None,
                  backup_vnic2id: Optional[pulumi.Input[str]] = None,
                  backup_vnic_id: Optional[pulumi.Input[str]] = None,
                  cpu_core_count: Optional[pulumi.Input[int]] = None,
@@ -95,6 +96,7 @@ class _DbNodeState:
                  fault_domain: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  host_ip_id: Optional[pulumi.Input[str]] = None,
+                 host_ipv6id: Optional[pulumi.Input[str]] = None,
                  hostname: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  maintenance_type: Optional[pulumi.Input[str]] = None,
@@ -110,7 +112,8 @@ class _DbNodeState:
         """
         Input properties used for looking up and filtering DbNode resources.
         :param pulumi.Input[str] additional_details: Additional information about the planned maintenance.
-        :param pulumi.Input[str] backup_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
+        :param pulumi.Input[str] backup_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IPv4 address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IPv4 address needed to make a database connection.
+        :param pulumi.Input[str] backup_ipv6id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IPv6 address associated with the database node. Use this OCID with the [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6) API to get the IPv6 address needed to make a database connection.
         :param pulumi.Input[str] backup_vnic2id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
         :param pulumi.Input[str] backup_vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup VNIC.
         :param pulumi.Input[int] cpu_core_count: The number of CPU cores enabled on the Db node.
@@ -125,7 +128,8 @@ class _DbNodeState:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] host_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
+        :param pulumi.Input[str] host_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IPv4 address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IPv4 address needed to make a database connection.
+        :param pulumi.Input[str] host_ipv6id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IPv6 address associated with the database node. Use this OCID with the [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6) API to get the IPv6 address needed to make a database connection.
         :param pulumi.Input[str] hostname: The host name for the database node.
         :param pulumi.Input[str] lifecycle_details: Information about the current lifecycle state.
         :param pulumi.Input[str] maintenance_type: The type of database node maintenance.
@@ -143,6 +147,8 @@ class _DbNodeState:
             pulumi.set(__self__, "additional_details", additional_details)
         if backup_ip_id is not None:
             pulumi.set(__self__, "backup_ip_id", backup_ip_id)
+        if backup_ipv6id is not None:
+            pulumi.set(__self__, "backup_ipv6id", backup_ipv6id)
         if backup_vnic2id is not None:
             pulumi.set(__self__, "backup_vnic2id", backup_vnic2id)
         if backup_vnic_id is not None:
@@ -165,6 +171,8 @@ class _DbNodeState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if host_ip_id is not None:
             pulumi.set(__self__, "host_ip_id", host_ip_id)
+        if host_ipv6id is not None:
+            pulumi.set(__self__, "host_ipv6id", host_ipv6id)
         if hostname is not None:
             pulumi.set(__self__, "hostname", hostname)
         if lifecycle_details is not None:
@@ -206,13 +214,25 @@ class _DbNodeState:
     @pulumi.getter(name="backupIpId")
     def backup_ip_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IPv4 address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IPv4 address needed to make a database connection.
         """
         return pulumi.get(self, "backup_ip_id")
 
     @backup_ip_id.setter
     def backup_ip_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "backup_ip_id", value)
+
+    @property
+    @pulumi.getter(name="backupIpv6id")
+    def backup_ipv6id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IPv6 address associated with the database node. Use this OCID with the [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6) API to get the IPv6 address needed to make a database connection.
+        """
+        return pulumi.get(self, "backup_ipv6id")
+
+    @backup_ipv6id.setter
+    def backup_ipv6id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "backup_ipv6id", value)
 
     @property
     @pulumi.getter(name="backupVnic2id")
@@ -342,13 +362,25 @@ class _DbNodeState:
     @pulumi.getter(name="hostIpId")
     def host_ip_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IPv4 address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IPv4 address needed to make a database connection.
         """
         return pulumi.get(self, "host_ip_id")
 
     @host_ip_id.setter
     def host_ip_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "host_ip_id", value)
+
+    @property
+    @pulumi.getter(name="hostIpv6id")
+    def host_ipv6id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IPv6 address associated with the database node. Use this OCID with the [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6) API to get the IPv6 address needed to make a database connection.
+        """
+        return pulumi.get(self, "host_ipv6id")
+
+    @host_ipv6id.setter
+    def host_ipv6id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "host_ipv6id", value)
 
     @property
     @pulumi.getter
@@ -580,6 +612,7 @@ class DbNode(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["additional_details"] = None
             __props__.__dict__["backup_ip_id"] = None
+            __props__.__dict__["backup_ipv6id"] = None
             __props__.__dict__["backup_vnic2id"] = None
             __props__.__dict__["backup_vnic_id"] = None
             __props__.__dict__["cpu_core_count"] = None
@@ -588,6 +621,7 @@ class DbNode(pulumi.CustomResource):
             __props__.__dict__["db_system_id"] = None
             __props__.__dict__["fault_domain"] = None
             __props__.__dict__["host_ip_id"] = None
+            __props__.__dict__["host_ipv6id"] = None
             __props__.__dict__["hostname"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["maintenance_type"] = None
@@ -612,6 +646,7 @@ class DbNode(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             additional_details: Optional[pulumi.Input[str]] = None,
             backup_ip_id: Optional[pulumi.Input[str]] = None,
+            backup_ipv6id: Optional[pulumi.Input[str]] = None,
             backup_vnic2id: Optional[pulumi.Input[str]] = None,
             backup_vnic_id: Optional[pulumi.Input[str]] = None,
             cpu_core_count: Optional[pulumi.Input[int]] = None,
@@ -623,6 +658,7 @@ class DbNode(pulumi.CustomResource):
             fault_domain: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             host_ip_id: Optional[pulumi.Input[str]] = None,
+            host_ipv6id: Optional[pulumi.Input[str]] = None,
             hostname: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             maintenance_type: Optional[pulumi.Input[str]] = None,
@@ -643,7 +679,8 @@ class DbNode(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] additional_details: Additional information about the planned maintenance.
-        :param pulumi.Input[str] backup_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
+        :param pulumi.Input[str] backup_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IPv4 address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IPv4 address needed to make a database connection.
+        :param pulumi.Input[str] backup_ipv6id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IPv6 address associated with the database node. Use this OCID with the [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6) API to get the IPv6 address needed to make a database connection.
         :param pulumi.Input[str] backup_vnic2id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
         :param pulumi.Input[str] backup_vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup VNIC.
         :param pulumi.Input[int] cpu_core_count: The number of CPU cores enabled on the Db node.
@@ -658,7 +695,8 @@ class DbNode(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] host_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
+        :param pulumi.Input[str] host_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IPv4 address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IPv4 address needed to make a database connection.
+        :param pulumi.Input[str] host_ipv6id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IPv6 address associated with the database node. Use this OCID with the [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6) API to get the IPv6 address needed to make a database connection.
         :param pulumi.Input[str] hostname: The host name for the database node.
         :param pulumi.Input[str] lifecycle_details: Information about the current lifecycle state.
         :param pulumi.Input[str] maintenance_type: The type of database node maintenance.
@@ -678,6 +716,7 @@ class DbNode(pulumi.CustomResource):
 
         __props__.__dict__["additional_details"] = additional_details
         __props__.__dict__["backup_ip_id"] = backup_ip_id
+        __props__.__dict__["backup_ipv6id"] = backup_ipv6id
         __props__.__dict__["backup_vnic2id"] = backup_vnic2id
         __props__.__dict__["backup_vnic_id"] = backup_vnic_id
         __props__.__dict__["cpu_core_count"] = cpu_core_count
@@ -689,6 +728,7 @@ class DbNode(pulumi.CustomResource):
         __props__.__dict__["fault_domain"] = fault_domain
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["host_ip_id"] = host_ip_id
+        __props__.__dict__["host_ipv6id"] = host_ipv6id
         __props__.__dict__["hostname"] = hostname
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["maintenance_type"] = maintenance_type
@@ -715,9 +755,17 @@ class DbNode(pulumi.CustomResource):
     @pulumi.getter(name="backupIpId")
     def backup_ip_id(self) -> pulumi.Output[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IPv4 address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IPv4 address needed to make a database connection.
         """
         return pulumi.get(self, "backup_ip_id")
+
+    @property
+    @pulumi.getter(name="backupIpv6id")
+    def backup_ipv6id(self) -> pulumi.Output[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IPv6 address associated with the database node. Use this OCID with the [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6) API to get the IPv6 address needed to make a database connection.
+        """
+        return pulumi.get(self, "backup_ipv6id")
 
     @property
     @pulumi.getter(name="backupVnic2id")
@@ -807,9 +855,17 @@ class DbNode(pulumi.CustomResource):
     @pulumi.getter(name="hostIpId")
     def host_ip_id(self) -> pulumi.Output[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IPv4 address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IPv4 address needed to make a database connection.
         """
         return pulumi.get(self, "host_ip_id")
+
+    @property
+    @pulumi.getter(name="hostIpv6id")
+    def host_ipv6id(self) -> pulumi.Output[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IPv6 address associated with the database node. Use this OCID with the [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6) API to get the IPv6 address needed to make a database connection.
+        """
+        return pulumi.get(self, "host_ipv6id")
 
     @property
     @pulumi.getter

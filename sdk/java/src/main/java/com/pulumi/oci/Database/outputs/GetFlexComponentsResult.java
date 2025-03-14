@@ -32,6 +32,11 @@ public final class GetFlexComponentsResult {
      * 
      */
     private @Nullable String name;
+    /**
+     * @return The name of the DB system shape for this Flex Component.
+     * 
+     */
+    private @Nullable String shape;
 
     private GetFlexComponentsResult() {}
     public String compartmentId() {
@@ -61,6 +66,13 @@ public final class GetFlexComponentsResult {
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
+    /**
+     * @return The name of the DB system shape for this Flex Component.
+     * 
+     */
+    public Optional<String> shape() {
+        return Optional.ofNullable(this.shape);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -76,6 +88,7 @@ public final class GetFlexComponentsResult {
         private List<GetFlexComponentsFlexComponentCollection> flexComponentCollections;
         private String id;
         private @Nullable String name;
+        private @Nullable String shape;
         public Builder() {}
         public Builder(GetFlexComponentsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,6 +97,7 @@ public final class GetFlexComponentsResult {
     	      this.flexComponentCollections = defaults.flexComponentCollections;
     	      this.id = defaults.id;
     	      this.name = defaults.name;
+    	      this.shape = defaults.shape;
         }
 
         @CustomType.Setter
@@ -128,6 +142,12 @@ public final class GetFlexComponentsResult {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
+        public Builder shape(@Nullable String shape) {
+
+            this.shape = shape;
+            return this;
+        }
         public GetFlexComponentsResult build() {
             final var _resultValue = new GetFlexComponentsResult();
             _resultValue.compartmentId = compartmentId;
@@ -135,6 +155,7 @@ public final class GetFlexComponentsResult {
             _resultValue.flexComponentCollections = flexComponentCollections;
             _resultValue.id = id;
             _resultValue.name = name;
+            _resultValue.shape = shape;
             return _resultValue;
         }
     }

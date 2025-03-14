@@ -28,7 +28,10 @@ class GetModelVersionSetsResult:
     """
     A collection of values returned by getModelVersionSets.
     """
-    def __init__(__self__, compartment_id=None, created_by=None, filters=None, id=None, model_version_sets=None, name=None, project_id=None, state=None):
+    def __init__(__self__, category=None, compartment_id=None, created_by=None, filters=None, id=None, model_version_sets=None, name=None, project_id=None, state=None):
+        if category and not isinstance(category, str):
+            raise TypeError("Expected argument 'category' to be a str")
+        pulumi.set(__self__, "category", category)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -53,6 +56,14 @@ class GetModelVersionSetsResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+
+    @property
+    @pulumi.getter
+    def category(self) -> Optional[str]:
+        """
+        The category of the model version set.
+        """
+        return pulumi.get(self, "category")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -122,6 +133,7 @@ class AwaitableGetModelVersionSetsResult(GetModelVersionSetsResult):
         if False:
             yield self
         return GetModelVersionSetsResult(
+            category=self.category,
             compartment_id=self.compartment_id,
             created_by=self.created_by,
             filters=self.filters,
@@ -132,7 +144,8 @@ class AwaitableGetModelVersionSetsResult(GetModelVersionSetsResult):
             state=self.state)
 
 
-def get_model_version_sets(compartment_id: Optional[str] = None,
+def get_model_version_sets(category: Optional[str] = None,
+                           compartment_id: Optional[str] = None,
                            created_by: Optional[str] = None,
                            filters: Optional[Sequence[Union['GetModelVersionSetsFilterArgs', 'GetModelVersionSetsFilterArgsDict']]] = None,
                            id: Optional[str] = None,
@@ -152,6 +165,7 @@ def get_model_version_sets(compartment_id: Optional[str] = None,
     import pulumi_oci as oci
 
     test_model_version_sets = oci.DataScience.get_model_version_sets(compartment_id=compartment_id,
+        category=model_version_set_category,
         created_by=model_version_set_created_by,
         id=model_version_set_id,
         name=model_version_set_name,
@@ -160,6 +174,7 @@ def get_model_version_sets(compartment_id: Optional[str] = None,
     ```
 
 
+    :param str category: Specifies the type of model version sets to list. By default, user model version sets are listed.
     :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
     :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
@@ -168,6 +183,7 @@ def get_model_version_sets(compartment_id: Optional[str] = None,
     :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
     """
     __args__ = dict()
+    __args__['category'] = category
     __args__['compartmentId'] = compartment_id
     __args__['createdBy'] = created_by
     __args__['filters'] = filters
@@ -179,6 +195,7 @@ def get_model_version_sets(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataScience/getModelVersionSets:getModelVersionSets', __args__, opts=opts, typ=GetModelVersionSetsResult).value
 
     return AwaitableGetModelVersionSetsResult(
+        category=pulumi.get(__ret__, 'category'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         created_by=pulumi.get(__ret__, 'created_by'),
         filters=pulumi.get(__ret__, 'filters'),
@@ -187,7 +204,8 @@ def get_model_version_sets(compartment_id: Optional[str] = None,
         name=pulumi.get(__ret__, 'name'),
         project_id=pulumi.get(__ret__, 'project_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_model_version_sets_output(compartment_id: Optional[pulumi.Input[str]] = None,
+def get_model_version_sets_output(category: Optional[pulumi.Input[Optional[str]]] = None,
+                                  compartment_id: Optional[pulumi.Input[str]] = None,
                                   created_by: Optional[pulumi.Input[Optional[str]]] = None,
                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetModelVersionSetsFilterArgs', 'GetModelVersionSetsFilterArgsDict']]]]] = None,
                                   id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -207,6 +225,7 @@ def get_model_version_sets_output(compartment_id: Optional[pulumi.Input[str]] = 
     import pulumi_oci as oci
 
     test_model_version_sets = oci.DataScience.get_model_version_sets(compartment_id=compartment_id,
+        category=model_version_set_category,
         created_by=model_version_set_created_by,
         id=model_version_set_id,
         name=model_version_set_name,
@@ -215,6 +234,7 @@ def get_model_version_sets_output(compartment_id: Optional[pulumi.Input[str]] = 
     ```
 
 
+    :param str category: Specifies the type of model version sets to list. By default, user model version sets are listed.
     :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
     :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
@@ -223,6 +243,7 @@ def get_model_version_sets_output(compartment_id: Optional[pulumi.Input[str]] = 
     :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
     """
     __args__ = dict()
+    __args__['category'] = category
     __args__['compartmentId'] = compartment_id
     __args__['createdBy'] = created_by
     __args__['filters'] = filters
@@ -233,6 +254,7 @@ def get_model_version_sets_output(compartment_id: Optional[pulumi.Input[str]] = 
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataScience/getModelVersionSets:getModelVersionSets', __args__, opts=opts, typ=GetModelVersionSetsResult)
     return __ret__.apply(lambda __response__: GetModelVersionSetsResult(
+        category=pulumi.get(__response__, 'category'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         created_by=pulumi.get(__response__, 'created_by'),
         filters=pulumi.get(__response__, 'filters'),

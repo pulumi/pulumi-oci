@@ -23,6 +23,10 @@ __all__ = [
     'ClusterOutboundClusterConfigOutboundClusterArgsDict',
     'ClusterReverseConnectionEndpointArgs',
     'ClusterReverseConnectionEndpointArgsDict',
+    'OpensearchClusterPipelineReverseConnectionEndpointArgs',
+    'OpensearchClusterPipelineReverseConnectionEndpointArgsDict',
+    'GetOpensearchClusterPipelinesFilterArgs',
+    'GetOpensearchClusterPipelinesFilterArgsDict',
     'GetOpensearchClustersFilterArgs',
     'GetOpensearchClustersFilterArgsDict',
     'GetOpensearchVersionsFilterArgs',
@@ -333,6 +337,103 @@ class ClusterReverseConnectionEndpointArgs:
     @nat_ip.setter
     def nat_ip(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "nat_ip", value)
+
+
+if not MYPY:
+    class OpensearchClusterPipelineReverseConnectionEndpointArgsDict(TypedDict):
+        customer_fqdn: pulumi.Input[str]
+        """
+        (Updatable) The fully qualified domain name of the customerIp in the customer VCN
+        """
+        customer_ip: pulumi.Input[str]
+        """
+        (Updatable) The IPv4 address in the customer VCN
+        """
+elif False:
+    OpensearchClusterPipelineReverseConnectionEndpointArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class OpensearchClusterPipelineReverseConnectionEndpointArgs:
+    def __init__(__self__, *,
+                 customer_fqdn: pulumi.Input[str],
+                 customer_ip: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] customer_fqdn: (Updatable) The fully qualified domain name of the customerIp in the customer VCN
+        :param pulumi.Input[str] customer_ip: (Updatable) The IPv4 address in the customer VCN
+        """
+        pulumi.set(__self__, "customer_fqdn", customer_fqdn)
+        pulumi.set(__self__, "customer_ip", customer_ip)
+
+    @property
+    @pulumi.getter(name="customerFqdn")
+    def customer_fqdn(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The fully qualified domain name of the customerIp in the customer VCN
+        """
+        return pulumi.get(self, "customer_fqdn")
+
+    @customer_fqdn.setter
+    def customer_fqdn(self, value: pulumi.Input[str]):
+        pulumi.set(self, "customer_fqdn", value)
+
+    @property
+    @pulumi.getter(name="customerIp")
+    def customer_ip(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The IPv4 address in the customer VCN
+        """
+        return pulumi.get(self, "customer_ip")
+
+    @customer_ip.setter
+    def customer_ip(self, value: pulumi.Input[str]):
+        pulumi.set(self, "customer_ip", value)
+
+
+if not MYPY:
+    class GetOpensearchClusterPipelinesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetOpensearchClusterPipelinesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetOpensearchClusterPipelinesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
 
 
 if not MYPY:

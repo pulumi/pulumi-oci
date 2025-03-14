@@ -38,6 +38,11 @@ public final class GetExadbVmClustersExadbVmCluster {
      */
     private String clusterName;
     /**
+     * @return A filter to return only resources that match the given cluster placement group ID exactly.
+     * 
+     */
+    private String clusterPlacementGroupId;
+    /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -194,6 +199,11 @@ public final class GetExadbVmClustersExadbVmCluster {
      */
     private String subnetId;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    private String subscriptionId;
+    /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
@@ -252,6 +262,13 @@ public final class GetExadbVmClustersExadbVmCluster {
      */
     public String clusterName() {
         return this.clusterName;
+    }
+    /**
+     * @return A filter to return only resources that match the given cluster placement group ID exactly.
+     * 
+     */
+    public String clusterPlacementGroupId() {
+        return this.clusterPlacementGroupId;
     }
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -472,6 +489,13 @@ public final class GetExadbVmClustersExadbVmCluster {
         return this.subnetId;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    public String subscriptionId() {
+        return this.subscriptionId;
+    }
+    /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
@@ -527,6 +551,7 @@ public final class GetExadbVmClustersExadbVmCluster {
         private List<String> backupNetworkNsgIds;
         private String backupSubnetId;
         private String clusterName;
+        private String clusterPlacementGroupId;
         private String compartmentId;
         private List<GetExadbVmClustersExadbVmClusterDataCollectionOption> dataCollectionOptions;
         private Map<String,String> definedTags;
@@ -558,6 +583,7 @@ public final class GetExadbVmClustersExadbVmCluster {
         private List<String> sshPublicKeys;
         private String state;
         private String subnetId;
+        private String subscriptionId;
         private Map<String,String> systemTags;
         private String systemVersion;
         private String timeCreated;
@@ -571,6 +597,7 @@ public final class GetExadbVmClustersExadbVmCluster {
     	      this.backupNetworkNsgIds = defaults.backupNetworkNsgIds;
     	      this.backupSubnetId = defaults.backupSubnetId;
     	      this.clusterName = defaults.clusterName;
+    	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.dataCollectionOptions = defaults.dataCollectionOptions;
     	      this.definedTags = defaults.definedTags;
@@ -602,6 +629,7 @@ public final class GetExadbVmClustersExadbVmCluster {
     	      this.sshPublicKeys = defaults.sshPublicKeys;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
+    	      this.subscriptionId = defaults.subscriptionId;
     	      this.systemTags = defaults.systemTags;
     	      this.systemVersion = defaults.systemVersion;
     	      this.timeCreated = defaults.timeCreated;
@@ -643,6 +671,14 @@ public final class GetExadbVmClustersExadbVmCluster {
               throw new MissingRequiredPropertyException("GetExadbVmClustersExadbVmCluster", "clusterName");
             }
             this.clusterName = clusterName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            if (clusterPlacementGroupId == null) {
+              throw new MissingRequiredPropertyException("GetExadbVmClustersExadbVmCluster", "clusterPlacementGroupId");
+            }
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
             return this;
         }
         @CustomType.Setter
@@ -915,6 +951,14 @@ public final class GetExadbVmClustersExadbVmCluster {
             return this;
         }
         @CustomType.Setter
+        public Builder subscriptionId(String subscriptionId) {
+            if (subscriptionId == null) {
+              throw new MissingRequiredPropertyException("GetExadbVmClustersExadbVmCluster", "subscriptionId");
+            }
+            this.subscriptionId = subscriptionId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetExadbVmClustersExadbVmCluster", "systemTags");
@@ -971,6 +1015,7 @@ public final class GetExadbVmClustersExadbVmCluster {
             _resultValue.backupNetworkNsgIds = backupNetworkNsgIds;
             _resultValue.backupSubnetId = backupSubnetId;
             _resultValue.clusterName = clusterName;
+            _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.dataCollectionOptions = dataCollectionOptions;
             _resultValue.definedTags = definedTags;
@@ -1002,6 +1047,7 @@ public final class GetExadbVmClustersExadbVmCluster {
             _resultValue.sshPublicKeys = sshPublicKeys;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
+            _resultValue.subscriptionId = subscriptionId;
             _resultValue.systemTags = systemTags;
             _resultValue.systemVersion = systemVersion;
             _resultValue.timeCreated = timeCreated;

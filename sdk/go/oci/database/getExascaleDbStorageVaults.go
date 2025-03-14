@@ -30,9 +30,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := database.GetExascaleDbStorageVaults(ctx, &database.GetExascaleDbStorageVaultsArgs{
-//				CompartmentId: compartmentId,
-//				DisplayName:   pulumi.StringRef(exascaleDbStorageVaultDisplayName),
-//				State:         pulumi.StringRef(exascaleDbStorageVaultState),
+//				CompartmentId:           compartmentId,
+//				ClusterPlacementGroupId: pulumi.StringRef(testClusterPlacementGroup.Id),
+//				DisplayName:             pulumi.StringRef(exascaleDbStorageVaultDisplayName),
+//				ExadataInfrastructureId: pulumi.StringRef(testExadataInfrastructure.Id),
+//				State:                   pulumi.StringRef(exascaleDbStorageVaultState),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -54,21 +56,29 @@ func GetExascaleDbStorageVaults(ctx *pulumi.Context, args *GetExascaleDbStorageV
 
 // A collection of arguments for invoking getExascaleDbStorageVaults.
 type GetExascaleDbStorageVaultsArgs struct {
+	// A filter to return only resources that match the given cluster placement group ID exactly.
+	ClusterPlacementGroupId *string `pulumi:"clusterPlacementGroupId"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
-	DisplayName *string                            `pulumi:"displayName"`
-	Filters     []GetExascaleDbStorageVaultsFilter `pulumi:"filters"`
+	DisplayName *string `pulumi:"displayName"`
+	// A filter to return only list of Vaults that are linked to the exadata infrastructure Id.
+	ExadataInfrastructureId *string                            `pulumi:"exadataInfrastructureId"`
+	Filters                 []GetExascaleDbStorageVaultsFilter `pulumi:"filters"`
 	// A filter to return only Exadata Database Storage Vaults that match the given lifecycle state exactly.
 	State *string `pulumi:"state"`
 }
 
 // A collection of values returned by getExascaleDbStorageVaults.
 type GetExascaleDbStorageVaultsResult struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+	ClusterPlacementGroupId *string `pulumi:"clusterPlacementGroupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The user-friendly name for the Exadata Database Storage Vault. The name does not need to be unique.
 	DisplayName *string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+	ExadataInfrastructureId *string `pulumi:"exadataInfrastructureId"`
 	// The list of exascale_db_storage_vaults.
 	ExascaleDbStorageVaults []GetExascaleDbStorageVaultsExascaleDbStorageVault `pulumi:"exascaleDbStorageVaults"`
 	Filters                 []GetExascaleDbStorageVaultsFilter                 `pulumi:"filters"`
@@ -89,11 +99,15 @@ func GetExascaleDbStorageVaultsOutput(ctx *pulumi.Context, args GetExascaleDbSto
 
 // A collection of arguments for invoking getExascaleDbStorageVaults.
 type GetExascaleDbStorageVaultsOutputArgs struct {
+	// A filter to return only resources that match the given cluster placement group ID exactly.
+	ClusterPlacementGroupId pulumi.StringPtrInput `pulumi:"clusterPlacementGroupId"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
-	DisplayName pulumi.StringPtrInput                      `pulumi:"displayName"`
-	Filters     GetExascaleDbStorageVaultsFilterArrayInput `pulumi:"filters"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// A filter to return only list of Vaults that are linked to the exadata infrastructure Id.
+	ExadataInfrastructureId pulumi.StringPtrInput                      `pulumi:"exadataInfrastructureId"`
+	Filters                 GetExascaleDbStorageVaultsFilterArrayInput `pulumi:"filters"`
 	// A filter to return only Exadata Database Storage Vaults that match the given lifecycle state exactly.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
@@ -117,6 +131,11 @@ func (o GetExascaleDbStorageVaultsResultOutput) ToGetExascaleDbStorageVaultsResu
 	return o
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+func (o GetExascaleDbStorageVaultsResultOutput) ClusterPlacementGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExascaleDbStorageVaultsResult) *string { return v.ClusterPlacementGroupId }).(pulumi.StringPtrOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o GetExascaleDbStorageVaultsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExascaleDbStorageVaultsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -125,6 +144,11 @@ func (o GetExascaleDbStorageVaultsResultOutput) CompartmentId() pulumi.StringOut
 // The user-friendly name for the Exadata Database Storage Vault. The name does not need to be unique.
 func (o GetExascaleDbStorageVaultsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetExascaleDbStorageVaultsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+func (o GetExascaleDbStorageVaultsResultOutput) ExadataInfrastructureId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExascaleDbStorageVaultsResult) *string { return v.ExadataInfrastructureId }).(pulumi.StringPtrOutput)
 }
 
 // The list of exascale_db_storage_vaults.

@@ -62,6 +62,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly ImmutableArray<string> SchemasForDiscoveries;
         /// <summary>
+        /// The OCIDs of the sensitive type groups to be used by data discovery jobs.
+        /// </summary>
+        public readonly ImmutableArray<string> SensitiveTypeGroupIdsForDiscoveries;
+        /// <summary>
         /// The OCIDs of the sensitive types to be used by data discovery jobs.
         /// </summary>
         public readonly ImmutableArray<string> SensitiveTypeIdsForDiscoveries;
@@ -116,6 +120,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             ImmutableArray<string> schemasForDiscoveries,
 
+            ImmutableArray<string> sensitiveTypeGroupIdsForDiscoveries,
+
             ImmutableArray<string> sensitiveTypeIdsForDiscoveries,
 
             string state,
@@ -142,6 +148,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
             IsIncludeAllSensitiveTypes = isIncludeAllSensitiveTypes;
             IsSampleDataCollectionEnabled = isSampleDataCollectionEnabled;
             SchemasForDiscoveries = schemasForDiscoveries;
+            SensitiveTypeGroupIdsForDiscoveries = sensitiveTypeGroupIdsForDiscoveries;
             SensitiveTypeIdsForDiscoveries = sensitiveTypeIdsForDiscoveries;
             State = state;
             SystemTags = systemTags;

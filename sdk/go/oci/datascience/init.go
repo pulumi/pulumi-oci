@@ -31,6 +31,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ModelArtifactExport{}
 	case "oci:DataScience/modelArtifactImport:ModelArtifactImport":
 		r = &ModelArtifactImport{}
+	case "oci:DataScience/modelCustomMetadataArtifact:ModelCustomMetadataArtifact":
+		r = &ModelCustomMetadataArtifact{}
+	case "oci:DataScience/modelDefinedMetadataArtifact:ModelDefinedMetadataArtifact":
+		r = &ModelDefinedMetadataArtifact{}
 	case "oci:DataScience/modelDeployment:ModelDeployment":
 		r = &ModelDeployment{}
 	case "oci:DataScience/modelProvenance:ModelProvenance":
@@ -85,6 +89,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DataScience/modelArtifactImport",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataScience/modelCustomMetadataArtifact",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataScience/modelDefinedMetadataArtifact",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

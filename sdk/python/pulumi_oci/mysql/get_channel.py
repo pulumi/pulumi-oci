@@ -27,7 +27,7 @@ class GetChannelResult:
     """
     A collection of values returned by getChannel.
     """
-    def __init__(__self__, channel_id=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_enabled=None, lifecycle_details=None, sources=None, state=None, targets=None, time_created=None, time_updated=None):
+    def __init__(__self__, channel_id=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_enabled=None, lifecycle_details=None, sources=None, state=None, system_tags=None, targets=None, time_created=None, time_updated=None):
         if channel_id and not isinstance(channel_id, str):
             raise TypeError("Expected argument 'channel_id' to be a str")
         pulumi.set(__self__, "channel_id", channel_id)
@@ -61,6 +61,9 @@ class GetChannelResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if targets and not isinstance(targets, list):
             raise TypeError("Expected argument 'targets' to be a list")
         pulumi.set(__self__, "targets", targets)
@@ -154,6 +157,14 @@ class GetChannelResult:
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter
     def targets(self) -> Sequence['outputs.GetChannelTargetResult']:
         """
@@ -195,6 +206,7 @@ class AwaitableGetChannelResult(GetChannelResult):
             lifecycle_details=self.lifecycle_details,
             sources=self.sources,
             state=self.state,
+            system_tags=self.system_tags,
             targets=self.targets,
             time_created=self.time_created,
             time_updated=self.time_updated)
@@ -238,6 +250,7 @@ def get_channel(channel_id: Optional[str] = None,
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         sources=pulumi.get(__ret__, 'sources'),
         state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         targets=pulumi.get(__ret__, 'targets'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
@@ -278,6 +291,7 @@ def get_channel_output(channel_id: Optional[pulumi.Input[str]] = None,
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         sources=pulumi.get(__response__, 'sources'),
         state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
         targets=pulumi.get(__response__, 'targets'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated')))

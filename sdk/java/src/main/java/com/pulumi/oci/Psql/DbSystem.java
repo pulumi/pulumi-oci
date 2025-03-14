@@ -49,6 +49,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Psql.inputs.DbSystemInstancesDetailArgs;
  * import com.pulumi.oci.Psql.inputs.DbSystemManagementPolicyArgs;
  * import com.pulumi.oci.Psql.inputs.DbSystemManagementPolicyBackupPolicyArgs;
+ * import com.pulumi.oci.Psql.inputs.DbSystemManagementPolicyBackupPolicyCopyPolicyArgs;
  * import com.pulumi.oci.Psql.inputs.DbSystemSourceArgs;
  * import com.pulumi.oci.Psql.inputs.DbSystemPatchOperationArgs;
  * import java.util.List;
@@ -105,6 +106,11 @@ import javax.annotation.Nullable;
  *             .managementPolicy(DbSystemManagementPolicyArgs.builder()
  *                 .backupPolicy(DbSystemManagementPolicyBackupPolicyArgs.builder()
  *                     .backupStart(dbSystemManagementPolicyBackupPolicyBackupStart)
+ *                     .copyPolicy(DbSystemManagementPolicyBackupPolicyCopyPolicyArgs.builder()
+ *                         .compartmentId(compartmentId)
+ *                         .regions(dbSystemManagementPolicyBackupPolicyCopyPolicyRegions)
+ *                         .retentionPeriod(dbSystemManagementPolicyBackupPolicyCopyPolicyRetentionPeriod)
+ *                         .build())
  *                     .daysOfTheMonths(dbSystemManagementPolicyBackupPolicyDaysOfTheMonth)
  *                     .daysOfTheWeeks(dbSystemManagementPolicyBackupPolicyDaysOfTheWeek)
  *                     .kind(dbSystemManagementPolicyBackupPolicyKind)

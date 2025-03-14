@@ -66,10 +66,6 @@ export class Cluster extends pulumi.CustomResource {
     public readonly compartmentId!: pulumi.Output<string>;
     /**
      * (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly configureOutboundClusterTrigger!: pulumi.Output<number | undefined>;
     /**
@@ -233,6 +229,14 @@ export class Cluster extends pulumi.CustomResource {
      */
     public /*out*/ readonly totalStorageGb!: pulumi.Output<number>;
     /**
+     * An optional property to upgrade the major version of the cluster. This workflow upgrades the cluster without creating a clone. If you want to create a clone and upgrade the clone for testing please use SDK or CLI.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    public readonly upgradeMajorVersionTrigger!: pulumi.Output<number>;
+    /**
      * The OCID for the compartment where the cluster's VCN is located.
      */
     public readonly vcnCompartmentId!: pulumi.Output<string>;
@@ -297,6 +301,7 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["timeDeleted"] = state ? state.timeDeleted : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
             resourceInputs["totalStorageGb"] = state ? state.totalStorageGb : undefined;
+            resourceInputs["upgradeMajorVersionTrigger"] = state ? state.upgradeMajorVersionTrigger : undefined;
             resourceInputs["vcnCompartmentId"] = state ? state.vcnCompartmentId : undefined;
             resourceInputs["vcnId"] = state ? state.vcnId : undefined;
         } else {
@@ -388,6 +393,7 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["subnetCompartmentId"] = args ? args.subnetCompartmentId : undefined;
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
             resourceInputs["systemTags"] = args ? args.systemTags : undefined;
+            resourceInputs["upgradeMajorVersionTrigger"] = args ? args.upgradeMajorVersionTrigger : undefined;
             resourceInputs["vcnCompartmentId"] = args ? args.vcnCompartmentId : undefined;
             resourceInputs["vcnId"] = args ? args.vcnId : undefined;
             resourceInputs["availabilityDomains"] = undefined /*out*/;
@@ -425,10 +431,6 @@ export interface ClusterState {
     compartmentId?: pulumi.Input<string>;
     /**
      * (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     configureOutboundClusterTrigger?: pulumi.Input<number>;
     /**
@@ -592,6 +594,14 @@ export interface ClusterState {
      */
     totalStorageGb?: pulumi.Input<number>;
     /**
+     * An optional property to upgrade the major version of the cluster. This workflow upgrades the cluster without creating a clone. If you want to create a clone and upgrade the clone for testing please use SDK or CLI.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    upgradeMajorVersionTrigger?: pulumi.Input<number>;
+    /**
      * The OCID for the compartment where the cluster's VCN is located.
      */
     vcnCompartmentId?: pulumi.Input<string>;
@@ -611,10 +621,6 @@ export interface ClusterArgs {
     compartmentId: pulumi.Input<string>;
     /**
      * (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     configureOutboundClusterTrigger?: pulumi.Input<number>;
     /**
@@ -729,6 +735,14 @@ export interface ClusterArgs {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * An optional property to upgrade the major version of the cluster. This workflow upgrades the cluster without creating a clone. If you want to create a clone and upgrade the clone for testing please use SDK or CLI.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    upgradeMajorVersionTrigger?: pulumi.Input<number>;
     /**
      * The OCID for the compartment where the cluster's VCN is located.
      */

@@ -41,6 +41,7 @@ import * as utilities from "../utilities";
  *         phoneNumber: exadataInfrastructureContactsPhoneNumber,
  *     }],
  *     corporateProxy: exadataInfrastructureCorporateProxy,
+ *     databaseServerType: exadataInfrastructureDatabaseServerType,
  *     definedTags: exadataInfrastructureDefinedTags,
  *     freeformTags: {
  *         Department: "Finance",
@@ -70,6 +71,7 @@ import * as utilities from "../utilities";
  *         drNetworkBondingMode: exadataInfrastructureNetworkBondingModeDetailsDrNetworkBondingMode,
  *     },
  *     storageCount: exadataInfrastructureStorageCount,
+ *     storageServerType: exadataInfrastructureStorageServerType,
  * });
  * ```
  *
@@ -157,6 +159,10 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
      */
     public readonly computeCount!: pulumi.Output<number>;
     /**
+     * The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     */
+    public /*out*/ readonly computeModel!: pulumi.Output<string>;
+    /**
      * (Updatable) The list of contacts for the Exadata infrastructure.
      */
     public readonly contacts!: pulumi.Output<outputs.Database.ExadataInfrastructureContact[] | undefined>;
@@ -177,6 +183,10 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
      * Size, in terabytes, of the DATA disk group.
      */
     public /*out*/ readonly dataStorageSizeInTbs!: pulumi.Output<number>;
+    /**
+     * The database server type of the Exadata infrastructure.
+     */
+    public readonly databaseServerType!: pulumi.Output<string>;
     /**
      * The local node storage allocated in GBs.
      */
@@ -201,6 +211,10 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
      * (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
      */
     public readonly dnsServers!: pulumi.Output<string[]>;
+    /**
+     * The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+     */
+    public /*out*/ readonly exascaleConfigs!: pulumi.Output<outputs.Database.ExadataInfrastructureExascaleConfig[]>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
@@ -294,6 +308,10 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
      */
     public readonly storageCount!: pulumi.Output<number>;
     /**
+     * The storage server type of the Exadata infrastructure.
+     */
+    public readonly storageServerType!: pulumi.Output<string>;
+    /**
      * The software version of the storage servers (cells) in the Exadata infrastructure.
      */
     public /*out*/ readonly storageServerVersion!: pulumi.Output<string>;
@@ -330,18 +348,21 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["cloudControlPlaneServer2"] = state ? state.cloudControlPlaneServer2 : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["computeCount"] = state ? state.computeCount : undefined;
+            resourceInputs["computeModel"] = state ? state.computeModel : undefined;
             resourceInputs["contacts"] = state ? state.contacts : undefined;
             resourceInputs["corporateProxy"] = state ? state.corporateProxy : undefined;
             resourceInputs["cpusEnabled"] = state ? state.cpusEnabled : undefined;
             resourceInputs["createAsync"] = state ? state.createAsync : undefined;
             resourceInputs["csiNumber"] = state ? state.csiNumber : undefined;
             resourceInputs["dataStorageSizeInTbs"] = state ? state.dataStorageSizeInTbs : undefined;
+            resourceInputs["databaseServerType"] = state ? state.databaseServerType : undefined;
             resourceInputs["dbNodeStorageSizeInGbs"] = state ? state.dbNodeStorageSizeInGbs : undefined;
             resourceInputs["dbServerVersion"] = state ? state.dbServerVersion : undefined;
             resourceInputs["definedFileSystemConfigurations"] = state ? state.definedFileSystemConfigurations : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["dnsServers"] = state ? state.dnsServers : undefined;
+            resourceInputs["exascaleConfigs"] = state ? state.exascaleConfigs : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["gateway"] = state ? state.gateway : undefined;
             resourceInputs["infiniBandNetworkCidr"] = state ? state.infiniBandNetworkCidr : undefined;
@@ -365,6 +386,7 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["shape"] = state ? state.shape : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["storageCount"] = state ? state.storageCount : undefined;
+            resourceInputs["storageServerType"] = state ? state.storageServerType : undefined;
             resourceInputs["storageServerVersion"] = state ? state.storageServerVersion : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeZone"] = state ? state.timeZone : undefined;
@@ -416,6 +438,7 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["contacts"] = args ? args.contacts : undefined;
             resourceInputs["corporateProxy"] = args ? args.corporateProxy : undefined;
             resourceInputs["createAsync"] = args ? args.createAsync : undefined;
+            resourceInputs["databaseServerType"] = args ? args.databaseServerType : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["dnsServers"] = args ? args.dnsServers : undefined;
@@ -431,17 +454,20 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["ntpServers"] = args ? args.ntpServers : undefined;
             resourceInputs["shape"] = args ? args.shape : undefined;
             resourceInputs["storageCount"] = args ? args.storageCount : undefined;
+            resourceInputs["storageServerType"] = args ? args.storageServerType : undefined;
             resourceInputs["timeZone"] = args ? args.timeZone : undefined;
             resourceInputs["activatedStorageCount"] = undefined /*out*/;
             resourceInputs["additionalComputeCount"] = undefined /*out*/;
             resourceInputs["additionalComputeSystemModel"] = undefined /*out*/;
             resourceInputs["availabilityDomain"] = undefined /*out*/;
+            resourceInputs["computeModel"] = undefined /*out*/;
             resourceInputs["cpusEnabled"] = undefined /*out*/;
             resourceInputs["csiNumber"] = undefined /*out*/;
             resourceInputs["dataStorageSizeInTbs"] = undefined /*out*/;
             resourceInputs["dbNodeStorageSizeInGbs"] = undefined /*out*/;
             resourceInputs["dbServerVersion"] = undefined /*out*/;
             resourceInputs["definedFileSystemConfigurations"] = undefined /*out*/;
+            resourceInputs["exascaleConfigs"] = undefined /*out*/;
             resourceInputs["isSchedulingPolicyAssociated"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["maintenanceSloStatus"] = undefined /*out*/;
@@ -513,6 +539,10 @@ export interface ExadataInfrastructureState {
      */
     computeCount?: pulumi.Input<number>;
     /**
+     * The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     */
+    computeModel?: pulumi.Input<string>;
+    /**
      * (Updatable) The list of contacts for the Exadata infrastructure.
      */
     contacts?: pulumi.Input<pulumi.Input<inputs.Database.ExadataInfrastructureContact>[]>;
@@ -533,6 +563,10 @@ export interface ExadataInfrastructureState {
      * Size, in terabytes, of the DATA disk group.
      */
     dataStorageSizeInTbs?: pulumi.Input<number>;
+    /**
+     * The database server type of the Exadata infrastructure.
+     */
+    databaseServerType?: pulumi.Input<string>;
     /**
      * The local node storage allocated in GBs.
      */
@@ -557,6 +591,10 @@ export interface ExadataInfrastructureState {
      * (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
      */
     dnsServers?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+     */
+    exascaleConfigs?: pulumi.Input<pulumi.Input<inputs.Database.ExadataInfrastructureExascaleConfig>[]>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
@@ -650,6 +688,10 @@ export interface ExadataInfrastructureState {
      */
     storageCount?: pulumi.Input<number>;
     /**
+     * The storage server type of the Exadata infrastructure.
+     */
+    storageServerType?: pulumi.Input<string>;
+    /**
      * The software version of the storage servers (cells) in the Exadata infrastructure.
      */
     storageServerVersion?: pulumi.Input<string>;
@@ -707,6 +749,10 @@ export interface ExadataInfrastructureArgs {
      */
     corporateProxy?: pulumi.Input<string>;
     createAsync?: pulumi.Input<boolean>;
+    /**
+     * The database server type of the Exadata infrastructure.
+     */
+    databaseServerType?: pulumi.Input<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
@@ -767,6 +813,10 @@ export interface ExadataInfrastructureArgs {
      * The number of storage servers for the Exadata infrastructure.
      */
     storageCount?: pulumi.Input<number>;
+    /**
+     * The storage server type of the Exadata infrastructure.
+     */
+    storageServerType?: pulumi.Input<string>;
     /**
      * (Updatable) The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */

@@ -150,7 +150,7 @@ namespace Pulumi.Oci.Redis
         public Output<int> ShardCount { get; private set; } = null!;
 
         /// <summary>
-        /// The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+        /// (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
         /// </summary>
         [Output("softwareVersion")]
         public Output<string> SoftwareVersion { get; private set; } = null!;
@@ -308,7 +308,7 @@ namespace Pulumi.Oci.Redis
         public Input<int>? ShardCount { get; set; }
 
         /// <summary>
-        /// The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+        /// (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
         /// </summary>
         [Input("softwareVersion", required: true)]
         public Input<string> SoftwareVersion { get; set; } = null!;
@@ -446,7 +446,7 @@ namespace Pulumi.Oci.Redis
         public Input<int>? ShardCount { get; set; }
 
         /// <summary>
-        /// The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+        /// (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
         /// </summary>
         [Input("softwareVersion")]
         public Input<string>? SoftwareVersion { get; set; }

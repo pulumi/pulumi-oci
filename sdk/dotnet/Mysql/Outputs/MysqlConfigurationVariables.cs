@@ -14,6 +14,18 @@ namespace Pulumi.Oci.Mysql.Outputs
     public sealed class MysqlConfigurationVariables
     {
         /// <summary>
+        /// auto_increment_increment and auto_increment_offset are intended for use with circular (source-to-source) replication, and can be used to control the operation of AUTO_INCREMENT columns. Both variables have global and session values, and each can assume an integer value between 1 and 65,535 inclusive.
+        /// 
+        /// autoIncrementIncrement corresponds to the MySQL Replication Source Options variable [auto_increment_increment] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-source.html#sysvar_auto_increment_increment).
+        /// </summary>
+        public readonly int? AutoIncrementIncrement;
+        /// <summary>
+        /// This variable has a default value of 1. If it is left with its default value, and Group Replication is started on the server in multi-primary mode, it is changed to the server ID.
+        /// 
+        /// autoIncrementOffset corresponds to the MySQL Replication Source Options variable [auto_increment_offset] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-source.html#sysvar_auto_increment_offset).
+        /// </summary>
+        public readonly int? AutoIncrementOffset;
+        /// <summary>
         /// ("autocommit")
         /// </summary>
         public readonly bool? Autocommit;
@@ -28,6 +40,18 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly int? BinlogExpireLogsSeconds;
         /// <summary>
+        /// Controls how many microseconds the binary log commit waits before synchronizing the binary log file to disk. There is no delay by default. Setting this variable to a microsecond delay enables more transactions to be synchronized together to disk at once, reducing the overall time to commit a group of transactions because the larger groups required fewer time units per group.
+        /// 
+        /// binlogGroupCommitSyncDelay corresponds to the MySQL Replication system variable [binlog_group_commit_sync_delay](https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_binlog_group_commit_sync_delay)
+        /// </summary>
+        public readonly int? BinlogGroupCommitSyncDelay;
+        /// <summary>
+        /// The maximum number of transactions to wait for before aborting the current delay as specified by binlog_group_commit_sync_delay. If binlog_group_commit_sync_delay is set to 0, then this option has no effect.
+        /// 
+        /// binlogGroupCommitSyncNoDelayCount corresponds to the MySQL Replication system variable [binlog_group_commit_sync_no_delay_count](https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_binlog_group_commit_sync_no_delay_count)
+        /// </summary>
+        public readonly int? BinlogGroupCommitSyncNoDelayCount;
+        /// <summary>
         /// Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlog_row_metadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
         /// </summary>
         public readonly string? BinlogRowMetadata;
@@ -39,6 +63,24 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlog_transaction_compression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
         /// </summary>
         public readonly bool? BinlogTransactionCompression;
+        /// <summary>
+        /// This variable controls the block encryption mode for block-based algorithms such as AES. It affects encryption for AES_ENCRYPT() and AES_DECRYPT(). block_encryption_mode takes a value in aes-keylen-mode format, where keylen is the key length in bits and mode is the encryption mode. The value is not case-sensitive. Permitted keylen values are 128, 192, and 256. Permitted mode values are ECB, CBC, CFB1, CFB8, CFB128, and OFB.
+        /// 
+        /// block_encryption_mode corresponds to the MySQL Server Administration system variable [block_encryption_mode](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_block_encryption_mode)
+        /// </summary>
+        public readonly string? BlockEncryptionMode;
+        /// <summary>
+        /// The server's default character set. If you set this variable, you should also set collation_server to specify the collation for the character set.
+        /// 
+        /// characterSetServer corresponds to the MySQL server variable [character_set_server](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_character_set_server).
+        /// </summary>
+        public readonly string? CharacterSetServer;
+        /// <summary>
+        /// The server's default collation.
+        /// 
+        /// collationServer corresponds to the MySQL server variable [collation_server](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_collation_server).
+        /// </summary>
+        public readonly string? CollationServer;
         /// <summary>
         /// ("completion_type")
         /// </summary>
@@ -68,9 +110,25 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly string? CteMaxRecursionDepth;
         /// <summary>
-        /// ("default_authentication_plugin")
+        /// The default authentication plugin. This must be a plugin that uses internal credentials storage, so these values are permitted: mysql_native_password, sha256_password, caching_sha2_password.
+        /// 
+        /// As of MySQL 8.0.27, which introduces multifactor authentication, default_authentication_plugin is still used, but in conjunction with and at a lower precedence than the authentication_policy system variable. For details, see The Default Authentication Plugin. Because of this diminished role, default_authentication_plugin is deprecated as of MySQL 8.0.27 and subject to removal in a future MySQL version.
+        /// 
+        /// defaultAuthenticationPlugin corresponds to the MySQL system variable [default_authentication_plugin](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_default_authentication_plugin).
         /// </summary>
         public readonly string? DefaultAuthenticationPlugin;
+        /// <summary>
+        /// This variable determines the default output format used by EXPLAIN in the absence of a FORMAT option when displaying a query execution plan.
+        /// 
+        /// explainFormat corresponds to the MySQL system variable [explain_format](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_explain_format).
+        /// </summary>
+        public readonly string? ExplainFormat;
+        /// <summary>
+        /// This system variable determines whether the server enables certain nonstandard behaviors for default values and NULL-value handling in TIMESTAMP columns. By default, explicit_defaults_for_timestamp is enabled, which disables the nonstandard behaviors. Disabling explicit_defaults_for_timestamp results in a warning.
+        /// 
+        /// explicit_defaults_for_timestamp corresponds to the MySQL Server Administration system variable [explicit_defaults_for_timestamp](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_explicit_defaults_for_timestamp)
+        /// </summary>
+        public readonly bool? ExplicitDefaultsForTimestamp;
         /// <summary>
         /// ("foreign_key_checks")
         /// </summary>
@@ -92,6 +150,12 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly bool? GlobalConnectionMemoryTracking;
         /// <summary>
+        /// Specifies the maximum permitted result length in bytes for the GROUP_CONCAT() function.
+        /// 
+        /// This is the MySQL variable "group_concat_max_len". For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_group_concat_max_len)
+        /// </summary>
+        public readonly string? GroupConcatMaxLen;
+        /// <summary>
         /// * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
         /// * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
         /// * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
@@ -103,6 +167,18 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// ("information_schema_stats_expiry")
         /// </summary>
         public readonly int? InformationSchemaStatsExpiry;
+        /// <summary>
+        /// Whether the InnoDB adaptive hash index is enabled or disabled. It may be desirable, depending on your workload, to dynamically enable or disable adaptive hash indexing to improve query performance. Because the adaptive hash index may not be useful for all workloads, conduct benchmarks with it both enabled and disabled, using realistic workloads.
+        /// 
+        /// innodbAdaptiveHashIndex corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_adaptive_hash_index] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_adaptive_hash_index).
+        /// </summary>
+        public readonly bool? InnodbAdaptiveHashIndex;
+        /// <summary>
+        /// The lock mode to use for generating auto-increment values. Permissible values are 0, 1, or 2, for traditional, consecutive, or interleaved, respectively.
+        /// 
+        /// innodbAutoincLockMode corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_autoinc_lock_mode] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_autoinc_lock_mode).
+        /// </summary>
+        public readonly int? InnodbAutoincLockMode;
         /// <summary>
         /// Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
         /// 
@@ -125,6 +201,12 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// The default and maximum values depend on the amount of RAM provisioned by the shape. See [Default User Variables](https://www.terraform.io/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
         /// </summary>
         public readonly string? InnodbBufferPoolSize;
+        /// <summary>
+        /// Whether InnoDB performs change buffering, an optimization that delays write operations to secondary indexes so that the I/O operations can be performed sequentially. Permitted values are described in the following table. Values may also be specified numerically.
+        /// 
+        /// innodbChangeBuffering corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_change_buffering] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_change_buffering).
+        /// </summary>
+        public readonly string? InnodbChangeBuffering;
         /// <summary>
         /// innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
         /// </summary>
@@ -188,6 +270,38 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly int? InnodbMaxPurgeLagDelay;
         /// <summary>
+        /// Enables the NUMA interleave memory policy for allocation of the InnoDB buffer pool. When innodb_numa_interleave is enabled, the NUMA memory policy is set to MPOL_INTERLEAVE for the mysqld process. After the InnoDB buffer pool is allocated, the NUMA memory policy is set back to MPOL_DEFAULT. For the innodb_numa_interleave option to be available, MySQL must be compiled on a NUMA-enabled Linux system.
+        /// 
+        /// innodbNumaInterleave corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_numa_interleave] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_numa_interleave).
+        /// </summary>
+        public readonly bool? InnodbNumaInterleave;
+        /// <summary>
+        /// Specifies an upper limit in bytes on the size of the temporary log files used during online DDL operations for InnoDB tables. There is one such log file for each index being created or table being altered. This log file stores data inserted, updated, or deleted in the table during the DDL operation.
+        /// 
+        /// innodbOnlineAlterLogMaxSize corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_online_alter_log_max_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_online_alter_log_max_size).
+        /// </summary>
+        public readonly string? InnodbOnlineAlterLogMaxSize;
+        /// <summary>
+        /// Defines the amount of disk space occupied by redo log files. innodb_redo_log_capacity supercedes the innodb_log_files_in_group and innodb_log_file_size variables, which are both ignored if innodb_redo_log_capacity is defined. If innodb_redo_log_capacity is not defined, and if neither innodb_log_file_size or innodb_log_files_in_group are defined, then the default innodb_redo_log_capacity value is used.
+        /// 
+        /// innodbRedoLogCapacity corresponds to the InnoDB Startup Options and System Variables [innodb_redo_log_capacity](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_redo_log_capacity)
+        /// </summary>
+        public readonly string? InnodbRedoLogCapacity;
+        /// <summary>
+        /// InnoDB rolls back only the last statement on a transaction timeout by default. If --innodb-rollback-on-timeout is specified, a transaction timeout causes InnoDB to abort and roll back the entire transaction.
+        /// 
+        /// innodbRollbackOnTimeout corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_rollback_on_timeout] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_rollback_on_timeout).
+        /// </summary>
+        public readonly bool? InnodbRollbackOnTimeout;
+        /// <summary>
+        /// This variable defines:
+        /// * The sort buffer size for online DDL operations that create or rebuild secondary indexes. However, as of MySQL 8.0.27, this responsibility is subsumed by the innodb_ddl_buffer_size variable.
+        /// * The amount by which the temporary log file is extended when recording concurrent DML during an online DDL operation, and the size of the temporary log file read buffer and write buffer.
+        /// 
+        /// innodbSortBufferSize corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_sort_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_sort_buffer_size).
+        /// </summary>
+        public readonly int? InnodbSortBufferSize;
+        /// <summary>
         /// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
         /// 
         /// innodbStatsPersistentSamplePages corresponds to the MySQL InnoDB system variable [innodb_stats_persistent_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_persistent_sample_pages)
@@ -206,15 +320,41 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly string? InnodbStatsTransientSamplePages;
         /// <summary>
+        /// When you enable innodbStrictMode, the InnoDB storage engine returns errors instead of warnings for invalid or incompatible table options.
+        /// 
+        /// innodbStrictMode corresponds to the MySQL InnoDB system variable [innodb_strict_mode](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_strict_mode)
+        /// </summary>
+        public readonly bool? InnodbStrictMode;
+        /// <summary>
+        /// When enabled, undo tablespaces that exceed the threshold value defined by innodb_max_undo_log_size are marked for truncation. Only undo tablespaces can be truncated. Truncating undo logs that reside in the system tablespace is not supported. For truncation to occur, there must be at least two undo tablespaces.
+        /// 
+        /// innodbUndoLogTruncate corresponds to the MySQL InnoDB Startup Options and System Variables [innodb_undo_log_truncate] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_undo_log_truncate).
+        /// </summary>
+        public readonly bool? InnodbUndoLogTruncate;
+        /// <summary>
         /// The number of seconds the server waits for activity on an interactive connection before closing it.
         /// 
         /// interactiveTimeout corresponds to the MySQL system variable. [interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_interactive_timeout)
         /// </summary>
         public readonly int? InteractiveTimeout;
         /// <summary>
-        /// ("local_infile")
+        /// The minimum size of the buffer that is used for plain index scans, range index scans, and joins that do not use indexes and thus perform full table scans. In MySQL 8.0.18 and later, this variable also controls the amount of memory used for hash joins. Normally, the best way to get fast joins is to add indexes. Increase the value of join_buffer_size to get a faster full join when adding indexes is not possible. One join buffer is allocated for each full join between two tables. For a complex join between several tables for which indexes are not used, multiple join buffers might be necessary.
+        /// 
+        /// joinBufferSize corresponds to the MySQL Server System variable [join_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_join_buffer_size).
+        /// </summary>
+        public readonly string? JoinBufferSize;
+        /// <summary>
+        /// This variable controls server-side LOCAL capability for LOAD DATA statements. Depending on the local_infile setting, the server refuses or permits local data loading by clients that have LOCAL enabled on the client side. 
+        /// 
+        /// local_infile corresponds to the MySQL Server system variable [local_infile](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_local_infile)
         /// </summary>
         public readonly bool? LocalInfile;
+        /// <summary>
+        /// If a query takes longer than this many seconds, the server increments the Slow_queries status variable. If the slow query log is enabled, the query is logged to the slow query log file. This value is measured in real time, not CPU time, so a query that is under the threshold on a lightly loaded system might be above the threshold on a heavily loaded one.
+        /// 
+        /// longQueryTime corresponds to the MySQL Server System variable [long_query_time] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_long_query_time).
+        /// </summary>
+        public readonly int? LongQueryTime;
         /// <summary>
         /// ("mandatory_roles")
         /// </summary>
@@ -253,6 +393,18 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// ("max_prepared_stmt_count")
         /// </summary>
         public readonly int? MaxPreparedStmtCount;
+        /// <summary>
+        /// Limit the assumed maximum number of seeks when looking up rows based on a key. The MySQL optimizer assumes that no more than this number of key seeks are required when searching for matching rows in a table by scanning an index, regardless of the actual cardinality of the index (see Section 15.7.7.22, “SHOW INDEX Statement”). By setting this to a low value (say, 100), you can force MySQL to prefer indexes instead of table scans.
+        /// 
+        /// maxSeeksForKey corresponds to the MySQL Server System variable [max_seeks_for_key] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_seeks_for_key).
+        /// </summary>
+        public readonly string? MaxSeeksForKey;
+        /// <summary>
+        /// The maximum number of simultaneous connections permitted to any given MySQL user account. A value of 0 (the default) means “no limit.” This variable has a global value that can be set at server startup or runtime. It also has a read-only session value that indicates the effective simultaneous-connection limit that applies to the account associated with the current session.
+        /// 
+        /// maxUserConnections corresponds to the MySQL Server System variable [max_user_connections] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_user_connections).
+        /// </summary>
+        public readonly string? MaxUserConnections;
         /// <summary>
         /// ("mysql_firewall_mode")
         /// </summary>
@@ -350,6 +502,14 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly int? NetWriteTimeout;
         /// <summary>
+        /// The optimizer_switch system variable enables control over optimizer behavior. The value of this variable is a set of flags, each of which has a value of on or off to indicate whether the corresponding optimizer behavior is enabled or disabled. This variable has global and session values and can be changed at runtime. The global default can be set at server startup.
+        /// 
+        /// Setting hypergraph_optimizer=on for cloud builds below 9.0.0 will fail.
+        /// 
+        /// optimizerSwitch corresponds to the MySQL Server System variable [optimizer_switch] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_optimizer_switch).
+        /// </summary>
+        public readonly string? OptimizerSwitch;
+        /// <summary>
         /// ("parser_max_mem_size")
         /// </summary>
         public readonly string? ParserMaxMemSize;
@@ -362,15 +522,65 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly string? QueryPreallocSize;
         /// <summary>
+        /// The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans. 
+        /// 
+        /// rangeOptimizerMaxMemSize corresponds to the MySQL Server System variable [range_optimizer_max_mem_size] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_range_optimizer_max_mem_size).
+        /// </summary>
+        public readonly string? RangeOptimizerMaxMemSize;
+        /// <summary>
         /// regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
         /// </summary>
         public readonly int? RegexpTimeLimit;
+        /// <summary>
+        /// The maximum amount of space to use for all relay logs.
+        /// 
+        /// relayLogSpaceLimit corresponds to the MySQL Replica Server Options variable [relay_log_space_limit] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_relay_log_space_limit).
+        /// </summary>
+        public readonly string? RelayLogSpaceLimit;
+        /// <summary>
+        /// Specifies the number of seconds to wait for more data or a heartbeat signal from the source before the replica considers the connection broken, aborts the read, and tries to reconnect. Setting this variable has no immediate effect. The state of the variable applies on all subsequent START REPLICA commands.
+        /// 
+        /// replicaNetTimeout corresponds to the MySQL Replica server system variable [replica_net_timeout](https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_net_timeout)
+        /// </summary>
+        public readonly int? ReplicaNetTimeout;
+        /// <summary>
+        /// Beginning with MySQL 8.0.26, slave_parallel_workers is deprecated, and you should use replica_parallel_workers instead. (Prior to MySQL 8.0.26, you must use slave_parallel_workers to set the number of applier threads.)
+        /// 
+        /// replicaParallelWorkers corresponds to the MySQL Replica Server Options variable [replica_parallel_workers] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_parallel_workers).
+        /// </summary>
+        public readonly int? ReplicaParallelWorkers;
+        /// <summary>
+        /// From MySQL 8.0.26, use replica_type_conversions in place of slave_type_conversions, which is deprecated from that release. In releases before MySQL 8.0.26, use slave_type_conversions.
+        /// 
+        /// replica_type_conversions controls the type conversion mode in effect on the replica when using row-based replication. Its value is a comma-delimited set of zero or more elements from the list: ALL_LOSSY, ALL_NON_LOSSY, ALL_SIGNED, ALL_UNSIGNED. Set this variable to an empty string to disallow type conversions between the source and the replica. Setting this variable takes effect for all replication channels immediately, including running channels.
+        /// 
+        /// replica_type_conversions corresponds to the MySQL Replica Server Options variable [replica_type_conversions] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_type_conversions).
+        /// </summary>
+        public readonly string? ReplicaTypeConversions;
+        /// <summary>
+        /// Whether client connections to the server are required to use some form of secure transport. When this variable is enabled, the server permits only TCP/IP connections encrypted using TLS/SSL, or connections that use a socket file or shared memory. The server rejects nonsecure connection attempts, which fail with an ER_SECURE_TRANSPORT_REQUIRED error.
+        /// 
+        /// require_secure_transport corresponds to the MySQL Server Administration system variable [require_secure_transport](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_require_secure_transport)
+        /// </summary>
+        public readonly bool? RequireSecureTransport;
+        /// <summary>
+        /// Whether to resolve host names when checking client connections. If this variable is OFF, mysqld resolves host names when checking client connections. If it is ON, mysqld uses only IP numbers; in this case, all Host column values in the grant tables must be IP addresses. See Section 7.1.12.3, “DNS Lookups and the Host Cache”.
+        /// 
+        /// skipNameResolve corresponds to the MySQL Server System variable [skip_name_resolve] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_skip_name_resolve).
+        /// </summary>
+        public readonly bool? SkipNameResolve;
         /// <summary>
         /// Each session that must perform a sort allocates a buffer of this size.
         /// 
         /// sortBufferSize corresponds to the MySQL system variable [sort_buffer_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_sort_buffer_size)
         /// </summary>
         public readonly string? SortBufferSize;
+        /// <summary>
+        /// Whether GIPK mode is in effect, in which case a MySQL replication source server adds a generated invisible primary key to any InnoDB table that is created without one.
+        /// 
+        /// sqlGenerateInvisiblePrimaryKey corresponds to the MySQL system variable [sql_generate_invisible_primary_key] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_sql_generate_invisible_primary_key).
+        /// </summary>
+        public readonly bool? SqlGenerateInvisiblePrimaryKey;
         /// <summary>
         /// ("sql_mode")
         /// </summary>
@@ -384,6 +594,24 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly bool? SqlWarnings;
         /// <summary>
+        /// The number of table definitions that can be stored in the table definition cache. If you use a large number of tables, you can create a large table definition cache to speed up opening of tables. The table definition cache takes less space and does not use file descriptors, unlike the normal table cache.
+        /// 
+        /// table_definition_cache corresponds to the MySQL Server Administration system variable [table_definition_cache](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_table_definition_cache)
+        /// </summary>
+        public readonly int? TableDefinitionCache;
+        /// <summary>
+        /// The number of open tables for all threads. Increasing this value increases the number of file descriptors that mysqld requires.
+        /// 
+        /// table_open_cache corresponds to the MySQL Server Administration system variable [table_open_cache](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_table_open_cache)
+        /// </summary>
+        public readonly int? TableOpenCache;
+        /// <summary>
+        /// Defines the maximum amount of memory that can be occupied by the TempTable storage engine before it starts storing data on disk. The default value is 1073741824 bytes (1GiB). For more information, see Section 10.4.4, “Internal Temporary Table Use in MySQL”.
+        /// 
+        /// temptableMaxRam corresponds to the MySQL system variable [temptable_max_ram] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_temptable_max_ram).
+        /// </summary>
+        public readonly string? TemptableMaxRam;
+        /// <summary>
         /// Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
         /// </summary>
         public readonly bool? ThreadPoolDedicatedListeners;
@@ -391,6 +619,24 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
         /// </summary>
         public readonly int? ThreadPoolMaxTransactionsLimit;
+        /// <summary>
+        /// The maximum number of query threads permitted in a thread group. The maximum value is 4096, but if thread_pool_max_transactions_limit is set, thread_pool_query_threads_per_group must not exceed that value. The default value of 1 means there is one active query thread in each thread group, which works well for many loads. When you are using the high concurrency thread pool algorithm (thread_pool_algorithm = 1), consider increasing the value if you experience slower response times due to long-running transactions. 
+        /// 
+        /// threadPoolQueryThreadsPerGroup corresponds to the MySQL Server system variable [thread_pool_query_threads_per_group](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_query_threads_per_group)
+        /// </summary>
+        public readonly int? ThreadPoolQueryThreadsPerGroup;
+        /// <summary>
+        /// The number of thread groups in the thread pool. This is the most important parameter controlling thread pool performance. It affects how many statements can execute simultaneously. If a value outside the range of permissible values is specified, the thread pool plugin does not load and the server writes a message to the error log.
+        /// 
+        /// threadPoolSize corresponds to the MySQL Server System variable [thread_pool_size] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_size).
+        /// </summary>
+        public readonly int? ThreadPoolSize;
+        /// <summary>
+        /// The delay period before executing a new transaction, in milliseconds. The maximum value is 300000 (5 minutes). A transaction delay can be used in cases where parallel transactions affect the performance of other operations due to resource contention. For example, if parallel transactions affect index creation or an online buffer pool resizing operation, you can configure a transaction delay to reduce resource contention while those operations are running. 
+        /// 
+        /// threadPoolTransactionDelay corresponds to the MySQL Server system variable [thread_pool_transaction_delay](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_transaction_delay)
+        /// </summary>
+        public readonly int? ThreadPoolTransactionDelay;
         /// <summary>
         /// Initializes the time zone for each client that connects.
         /// 
@@ -424,17 +670,31 @@ namespace Pulumi.Oci.Mysql.Outputs
 
         [OutputConstructor]
         private MysqlConfigurationVariables(
+            int? autoIncrementIncrement,
+
+            int? autoIncrementOffset,
+
             bool? autocommit,
 
             bool? bigTables,
 
             int? binlogExpireLogsSeconds,
 
+            int? binlogGroupCommitSyncDelay,
+
+            int? binlogGroupCommitSyncNoDelayCount,
+
             string? binlogRowMetadata,
 
             string? binlogRowValueOptions,
 
             bool? binlogTransactionCompression,
+
+            string? blockEncryptionMode,
+
+            string? characterSetServer,
+
+            string? collationServer,
 
             string? completionType,
 
@@ -448,6 +708,10 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             string? defaultAuthenticationPlugin,
 
+            string? explainFormat,
+
+            bool? explicitDefaultsForTimestamp,
+
             bool? foreignKeyChecks,
 
             int? generatedRandomPasswordLength,
@@ -456,15 +720,23 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             bool? globalConnectionMemoryTracking,
 
+            string? groupConcatMaxLen,
+
             string? groupReplicationConsistency,
 
             int? informationSchemaStatsExpiry,
+
+            bool? innodbAdaptiveHashIndex,
+
+            int? innodbAutoincLockMode,
 
             int? innodbBufferPoolDumpPct,
 
             int? innodbBufferPoolInstances,
 
             string? innodbBufferPoolSize,
+
+            string? innodbChangeBuffering,
 
             string? innodbDdlBufferSize,
 
@@ -490,13 +762,31 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             int? innodbMaxPurgeLagDelay,
 
+            bool? innodbNumaInterleave,
+
+            string? innodbOnlineAlterLogMaxSize,
+
+            string? innodbRedoLogCapacity,
+
+            bool? innodbRollbackOnTimeout,
+
+            int? innodbSortBufferSize,
+
             string? innodbStatsPersistentSamplePages,
 
             string? innodbStatsTransientSamplePages,
 
+            bool? innodbStrictMode,
+
+            bool? innodbUndoLogTruncate,
+
             int? interactiveTimeout,
 
+            string? joinBufferSize,
+
             bool? localInfile,
+
+            int? longQueryTime,
 
             string? mandatoryRoles,
 
@@ -513,6 +803,10 @@ namespace Pulumi.Oci.Mysql.Outputs
             string? maxHeapTableSize,
 
             int? maxPreparedStmtCount,
+
+            string? maxSeeksForKey,
+
+            string? maxUserConnections,
 
             bool? mysqlFirewallMode,
 
@@ -554,15 +848,33 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             int? netWriteTimeout,
 
+            string? optimizerSwitch,
+
             string? parserMaxMemSize,
 
             string? queryAllocBlockSize,
 
             string? queryPreallocSize,
 
+            string? rangeOptimizerMaxMemSize,
+
             int? regexpTimeLimit,
 
+            string? relayLogSpaceLimit,
+
+            int? replicaNetTimeout,
+
+            int? replicaParallelWorkers,
+
+            string? replicaTypeConversions,
+
+            bool? requireSecureTransport,
+
+            bool? skipNameResolve,
+
             string? sortBufferSize,
+
+            bool? sqlGenerateInvisiblePrimaryKey,
 
             string? sqlMode,
 
@@ -570,9 +882,21 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             bool? sqlWarnings,
 
+            int? tableDefinitionCache,
+
+            int? tableOpenCache,
+
+            string? temptableMaxRam,
+
             bool? threadPoolDedicatedListeners,
 
             int? threadPoolMaxTransactionsLimit,
+
+            int? threadPoolQueryThreadsPerGroup,
+
+            int? threadPoolSize,
+
+            int? threadPoolTransactionDelay,
 
             string? timeZone,
 
@@ -582,27 +906,40 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             int? waitTimeout)
         {
+            AutoIncrementIncrement = autoIncrementIncrement;
+            AutoIncrementOffset = autoIncrementOffset;
             Autocommit = autocommit;
             BigTables = bigTables;
             BinlogExpireLogsSeconds = binlogExpireLogsSeconds;
+            BinlogGroupCommitSyncDelay = binlogGroupCommitSyncDelay;
+            BinlogGroupCommitSyncNoDelayCount = binlogGroupCommitSyncNoDelayCount;
             BinlogRowMetadata = binlogRowMetadata;
             BinlogRowValueOptions = binlogRowValueOptions;
             BinlogTransactionCompression = binlogTransactionCompression;
+            BlockEncryptionMode = blockEncryptionMode;
+            CharacterSetServer = characterSetServer;
+            CollationServer = collationServer;
             CompletionType = completionType;
             ConnectTimeout = connectTimeout;
             ConnectionMemoryChunkSize = connectionMemoryChunkSize;
             ConnectionMemoryLimit = connectionMemoryLimit;
             CteMaxRecursionDepth = cteMaxRecursionDepth;
             DefaultAuthenticationPlugin = defaultAuthenticationPlugin;
+            ExplainFormat = explainFormat;
+            ExplicitDefaultsForTimestamp = explicitDefaultsForTimestamp;
             ForeignKeyChecks = foreignKeyChecks;
             GeneratedRandomPasswordLength = generatedRandomPasswordLength;
             GlobalConnectionMemoryLimit = globalConnectionMemoryLimit;
             GlobalConnectionMemoryTracking = globalConnectionMemoryTracking;
+            GroupConcatMaxLen = groupConcatMaxLen;
             GroupReplicationConsistency = groupReplicationConsistency;
             InformationSchemaStatsExpiry = informationSchemaStatsExpiry;
+            InnodbAdaptiveHashIndex = innodbAdaptiveHashIndex;
+            InnodbAutoincLockMode = innodbAutoincLockMode;
             InnodbBufferPoolDumpPct = innodbBufferPoolDumpPct;
             InnodbBufferPoolInstances = innodbBufferPoolInstances;
             InnodbBufferPoolSize = innodbBufferPoolSize;
+            InnodbChangeBuffering = innodbChangeBuffering;
             InnodbDdlBufferSize = innodbDdlBufferSize;
             InnodbDdlThreads = innodbDdlThreads;
             InnodbFtEnableStopword = innodbFtEnableStopword;
@@ -615,10 +952,19 @@ namespace Pulumi.Oci.Mysql.Outputs
             InnodbLogWriterThreads = innodbLogWriterThreads;
             InnodbMaxPurgeLag = innodbMaxPurgeLag;
             InnodbMaxPurgeLagDelay = innodbMaxPurgeLagDelay;
+            InnodbNumaInterleave = innodbNumaInterleave;
+            InnodbOnlineAlterLogMaxSize = innodbOnlineAlterLogMaxSize;
+            InnodbRedoLogCapacity = innodbRedoLogCapacity;
+            InnodbRollbackOnTimeout = innodbRollbackOnTimeout;
+            InnodbSortBufferSize = innodbSortBufferSize;
             InnodbStatsPersistentSamplePages = innodbStatsPersistentSamplePages;
             InnodbStatsTransientSamplePages = innodbStatsTransientSamplePages;
+            InnodbStrictMode = innodbStrictMode;
+            InnodbUndoLogTruncate = innodbUndoLogTruncate;
             InteractiveTimeout = interactiveTimeout;
+            JoinBufferSize = joinBufferSize;
             LocalInfile = localInfile;
+            LongQueryTime = longQueryTime;
             MandatoryRoles = mandatoryRoles;
             MaxAllowedPacket = maxAllowedPacket;
             MaxBinlogCacheSize = maxBinlogCacheSize;
@@ -627,6 +973,8 @@ namespace Pulumi.Oci.Mysql.Outputs
             MaxExecutionTime = maxExecutionTime;
             MaxHeapTableSize = maxHeapTableSize;
             MaxPreparedStmtCount = maxPreparedStmtCount;
+            MaxSeeksForKey = maxSeeksForKey;
+            MaxUserConnections = maxUserConnections;
             MysqlFirewallMode = mysqlFirewallMode;
             MysqlZstdDefaultCompressionLevel = mysqlZstdDefaultCompressionLevel;
             MysqlxConnectTimeout = mysqlxConnectTimeout;
@@ -647,16 +995,31 @@ namespace Pulumi.Oci.Mysql.Outputs
             MysqlxZstdMaxClientCompressionLevel = mysqlxZstdMaxClientCompressionLevel;
             NetReadTimeout = netReadTimeout;
             NetWriteTimeout = netWriteTimeout;
+            OptimizerSwitch = optimizerSwitch;
             ParserMaxMemSize = parserMaxMemSize;
             QueryAllocBlockSize = queryAllocBlockSize;
             QueryPreallocSize = queryPreallocSize;
+            RangeOptimizerMaxMemSize = rangeOptimizerMaxMemSize;
             RegexpTimeLimit = regexpTimeLimit;
+            RelayLogSpaceLimit = relayLogSpaceLimit;
+            ReplicaNetTimeout = replicaNetTimeout;
+            ReplicaParallelWorkers = replicaParallelWorkers;
+            ReplicaTypeConversions = replicaTypeConversions;
+            RequireSecureTransport = requireSecureTransport;
+            SkipNameResolve = skipNameResolve;
             SortBufferSize = sortBufferSize;
+            SqlGenerateInvisiblePrimaryKey = sqlGenerateInvisiblePrimaryKey;
             SqlMode = sqlMode;
             SqlRequirePrimaryKey = sqlRequirePrimaryKey;
             SqlWarnings = sqlWarnings;
+            TableDefinitionCache = tableDefinitionCache;
+            TableOpenCache = tableOpenCache;
+            TemptableMaxRam = temptableMaxRam;
             ThreadPoolDedicatedListeners = threadPoolDedicatedListeners;
             ThreadPoolMaxTransactionsLimit = threadPoolMaxTransactionsLimit;
+            ThreadPoolQueryThreadsPerGroup = threadPoolQueryThreadsPerGroup;
+            ThreadPoolSize = threadPoolSize;
+            ThreadPoolTransactionDelay = threadPoolTransactionDelay;
             TimeZone = timeZone;
             TmpTableSize = tmpTableSize;
             TransactionIsolation = transactionIsolation;

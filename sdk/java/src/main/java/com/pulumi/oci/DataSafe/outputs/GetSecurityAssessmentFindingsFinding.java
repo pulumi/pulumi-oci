@@ -64,7 +64,7 @@ public final class GetSecurityAssessmentFindingsFinding {
      */
     private String oracleDefinedSeverity;
     /**
-     * @return An optional filter to return only findings containing the specified reference.
+     * @return An optional filter to return only findings that match the specified reference.
      * 
      */
     private List<GetSecurityAssessmentFindingsFindingReference> references;
@@ -181,7 +181,7 @@ public final class GetSecurityAssessmentFindingsFinding {
         return this.oracleDefinedSeverity;
     }
     /**
-     * @return An optional filter to return only findings containing the specified reference.
+     * @return An optional filter to return only findings that match the specified reference.
      * 
      */
     public List<GetSecurityAssessmentFindingsFindingReference> references() {

@@ -16,6 +16,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetModelsResult {
     /**
+     * @return Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values &#34;Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other&#34;.
+     * 
+     */
+    private @Nullable String category;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model&#39;s compartment.
      * 
      */
@@ -64,6 +69,13 @@ public final class GetModelsResult {
     private @Nullable String versionLabel;
 
     private GetModelsResult() {}
+    /**
+     * @return Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values &#34;Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other&#34;.
+     * 
+     */
+    public Optional<String> category() {
+        return Optional.ofNullable(this.category);
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model&#39;s compartment.
      * 
@@ -143,6 +155,7 @@ public final class GetModelsResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String category;
         private String compartmentId;
         private @Nullable String createdBy;
         private @Nullable String displayName;
@@ -157,6 +170,7 @@ public final class GetModelsResult {
         public Builder() {}
         public Builder(GetModelsResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.category = defaults.category;
     	      this.compartmentId = defaults.compartmentId;
     	      this.createdBy = defaults.createdBy;
     	      this.displayName = defaults.displayName;
@@ -170,6 +184,12 @@ public final class GetModelsResult {
     	      this.versionLabel = defaults.versionLabel;
         }
 
+        @CustomType.Setter
+        public Builder category(@Nullable String category) {
+
+            this.category = category;
+            return this;
+        }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             if (compartmentId == null) {
@@ -248,6 +268,7 @@ public final class GetModelsResult {
         }
         public GetModelsResult build() {
             final var _resultValue = new GetModelsResult();
+            _resultValue.category = category;
             _resultValue.compartmentId = compartmentId;
             _resultValue.createdBy = createdBy;
             _resultValue.displayName = displayName;

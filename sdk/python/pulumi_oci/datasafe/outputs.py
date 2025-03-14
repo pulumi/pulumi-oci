@@ -50,6 +50,8 @@ __all__ = [
     'SensitiveDataModelReferentialRelationChild',
     'SensitiveDataModelReferentialRelationParent',
     'SensitiveDataModelTablesForDiscovery',
+    'SensitiveTypeGroupGroupedSensitiveTypeItem',
+    'SensitiveTypeGroupGroupedSensitiveTypePatchOperation',
     'TargetDatabaseConnectionOption',
     'TargetDatabaseCredentials',
     'TargetDatabaseDatabaseDetails',
@@ -184,6 +186,9 @@ __all__ = [
     'GetMaskingReportMaskedColumnsFilterResult',
     'GetMaskingReportMaskedColumnsMaskedColumnCollectionResult',
     'GetMaskingReportMaskedColumnsMaskedColumnCollectionItemResult',
+    'GetMaskingReportMaskingErrorsFilterResult',
+    'GetMaskingReportMaskingErrorsMaskingErrorCollectionResult',
+    'GetMaskingReportMaskingErrorsMaskingErrorCollectionItemResult',
     'GetMaskingReportsFilterResult',
     'GetMaskingReportsMaskedColumnItemResult',
     'GetMaskingReportsMaskingReportCollectionResult',
@@ -307,6 +312,10 @@ __all__ = [
     'GetSecurityPolicyReportsFilterResult',
     'GetSecurityPolicyReportsSecurityPolicyReportCollectionResult',
     'GetSecurityPolicyReportsSecurityPolicyReportCollectionItemResult',
+    'GetSensitiveColumnAnalyticsFilterResult',
+    'GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionResult',
+    'GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemResult',
+    'GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionResult',
     'GetSensitiveDataModelReferentialRelationChildResult',
     'GetSensitiveDataModelReferentialRelationParentResult',
     'GetSensitiveDataModelReferentialRelationsFilterResult',
@@ -331,6 +340,14 @@ __all__ = [
     'GetSensitiveDataModelsSensitiveDataModelCollectionResult',
     'GetSensitiveDataModelsSensitiveDataModelCollectionItemResult',
     'GetSensitiveDataModelsSensitiveDataModelCollectionItemTablesForDiscoveryResult',
+    'GetSensitiveTypeGroupGroupedSensitiveTypesFilterResult',
+    'GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionResult',
+    'GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemResult',
+    'GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemResult',
+    'GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationResult',
+    'GetSensitiveTypeGroupsFilterResult',
+    'GetSensitiveTypeGroupsSensitiveTypeGroupCollectionResult',
+    'GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemResult',
     'GetSensitiveTypesExportsFilterResult',
     'GetSensitiveTypesExportsSensitiveTypesExportCollectionResult',
     'GetSensitiveTypesExportsSensitiveTypesExportCollectionItemResult',
@@ -4469,6 +4486,82 @@ class SensitiveDataModelTablesForDiscovery(dict):
         (Updatable) This contains an optional list of the table names.
         """
         return pulumi.get(self, "table_names")
+
+
+@pulumi.output_type
+class SensitiveTypeGroupGroupedSensitiveTypeItem(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "sensitiveTypeId":
+            suggest = "sensitive_type_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SensitiveTypeGroupGroupedSensitiveTypeItem. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SensitiveTypeGroupGroupedSensitiveTypeItem.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SensitiveTypeGroupGroupedSensitiveTypeItem.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 sensitive_type_id: Optional[str] = None):
+        """
+        :param str sensitive_type_id: The OCID of the sensitive type.
+        """
+        if sensitive_type_id is not None:
+            pulumi.set(__self__, "sensitive_type_id", sensitive_type_id)
+
+    @property
+    @pulumi.getter(name="sensitiveTypeId")
+    def sensitive_type_id(self) -> Optional[str]:
+        """
+        The OCID of the sensitive type.
+        """
+        return pulumi.get(self, "sensitive_type_id")
+
+
+@pulumi.output_type
+class SensitiveTypeGroupGroupedSensitiveTypePatchOperation(dict):
+    def __init__(__self__, *,
+                 operation: str,
+                 selection: str,
+                 value: Mapping[str, str]):
+        """
+        :param str operation: (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
+        :param str selection: (Updatable)
+        :param Mapping[str, str] value: (Updatable)
+        """
+        pulumi.set(__self__, "operation", operation)
+        pulumi.set(__self__, "selection", selection)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def operation(self) -> str:
+        """
+        (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
+        """
+        return pulumi.get(self, "operation")
+
+    @property
+    @pulumi.getter
+    def selection(self) -> str:
+        """
+        (Updatable)
+        """
+        return pulumi.get(self, "selection")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Mapping[str, str]:
+        """
+        (Updatable)
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -14447,6 +14540,102 @@ class GetMaskingReportMaskedColumnsMaskedColumnCollectionItemResult(dict):
 
 
 @pulumi.output_type
+class GetMaskingReportMaskingErrorsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetMaskingReportMaskingErrorsMaskingErrorCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetMaskingReportMaskingErrorsMaskingErrorCollectionItemResult']):
+        """
+        :param Sequence['GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArgs'] items: An array of masking error objects.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetMaskingReportMaskingErrorsMaskingErrorCollectionItemResult']:
+        """
+        An array of masking error objects.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetMaskingReportMaskingErrorsMaskingErrorCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 error: str,
+                 failed_statement: str,
+                 step_name: str,
+                 time_created: str):
+        """
+        :param str error: The text of the masking error.
+        :param str failed_statement: The statement resulting into the error.
+        :param str step_name: A filter to return only masking errors that match the specified step name.
+        :param str time_created: The date and time the error entry was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        pulumi.set(__self__, "error", error)
+        pulumi.set(__self__, "failed_statement", failed_statement)
+        pulumi.set(__self__, "step_name", step_name)
+        pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter
+    def error(self) -> str:
+        """
+        The text of the masking error.
+        """
+        return pulumi.get(self, "error")
+
+    @property
+    @pulumi.getter(name="failedStatement")
+    def failed_statement(self) -> str:
+        """
+        The statement resulting into the error.
+        """
+        return pulumi.get(self, "failed_statement")
+
+    @property
+    @pulumi.getter(name="stepName")
+    def step_name(self) -> str:
+        """
+        A filter to return only masking errors that match the specified step name.
+        """
+        return pulumi.get(self, "step_name")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the error entry was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
 class GetMaskingReportsFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
@@ -14611,6 +14800,7 @@ class GetMaskingReportsMaskingReportCollectionItemResult(dict):
                  is_redo_logging_enabled: bool,
                  is_refresh_stats_enabled: bool,
                  masking_policy_id: str,
+                 masking_status: str,
                  masking_work_request_id: str,
                  parallel_degree: str,
                  recompile: str,
@@ -14623,7 +14813,9 @@ class GetMaskingReportsMaskingReportCollectionItemResult(dict):
                  total_masked_objects: str,
                  total_masked_schemas: str,
                  total_masked_sensitive_types: str,
-                 total_masked_values: str):
+                 total_masked_values: str,
+                 total_post_masking_script_errors: str,
+                 total_pre_masking_script_errors: str):
         """
         :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
         :param str id: The OCID of the masking report.
@@ -14631,6 +14823,7 @@ class GetMaskingReportsMaskingReportCollectionItemResult(dict):
         :param bool is_redo_logging_enabled: Indicates if redo logging was enabled during the masking operation.
         :param bool is_refresh_stats_enabled: Indicates if statistics gathering was enabled during the masking operation.
         :param str masking_policy_id: A filter to return only the resources that match the specified masking policy OCID.
+        :param str masking_status: The status of the masking job.
         :param str masking_work_request_id: The OCID of the masking work request that resulted in this masking report.
         :param str parallel_degree: Indicates if parallel execution was enabled during the masking operation.
         :param str recompile: Indicates how invalid objects were recompiled post the masking operation.
@@ -14644,6 +14837,8 @@ class GetMaskingReportsMaskingReportCollectionItemResult(dict):
         :param str total_masked_schemas: The total number of unique schemas that contain the masked columns.
         :param str total_masked_sensitive_types: The total number of unique sensitive types associated with the masked columns.
         :param str total_masked_values: The total number of masked values.
+        :param str total_post_masking_script_errors: The total number of errors in post-masking script.
+        :param str total_pre_masking_script_errors: The total number of errors in pre-masking script.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "id", id)
@@ -14651,6 +14846,7 @@ class GetMaskingReportsMaskingReportCollectionItemResult(dict):
         pulumi.set(__self__, "is_redo_logging_enabled", is_redo_logging_enabled)
         pulumi.set(__self__, "is_refresh_stats_enabled", is_refresh_stats_enabled)
         pulumi.set(__self__, "masking_policy_id", masking_policy_id)
+        pulumi.set(__self__, "masking_status", masking_status)
         pulumi.set(__self__, "masking_work_request_id", masking_work_request_id)
         pulumi.set(__self__, "parallel_degree", parallel_degree)
         pulumi.set(__self__, "recompile", recompile)
@@ -14664,6 +14860,8 @@ class GetMaskingReportsMaskingReportCollectionItemResult(dict):
         pulumi.set(__self__, "total_masked_schemas", total_masked_schemas)
         pulumi.set(__self__, "total_masked_sensitive_types", total_masked_sensitive_types)
         pulumi.set(__self__, "total_masked_values", total_masked_values)
+        pulumi.set(__self__, "total_post_masking_script_errors", total_post_masking_script_errors)
+        pulumi.set(__self__, "total_pre_masking_script_errors", total_pre_masking_script_errors)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -14712,6 +14910,14 @@ class GetMaskingReportsMaskingReportCollectionItemResult(dict):
         A filter to return only the resources that match the specified masking policy OCID.
         """
         return pulumi.get(self, "masking_policy_id")
+
+    @property
+    @pulumi.getter(name="maskingStatus")
+    def masking_status(self) -> str:
+        """
+        The status of the masking job.
+        """
+        return pulumi.get(self, "masking_status")
 
     @property
     @pulumi.getter(name="maskingWorkRequestId")
@@ -14816,6 +15022,22 @@ class GetMaskingReportsMaskingReportCollectionItemResult(dict):
         The total number of masked values.
         """
         return pulumi.get(self, "total_masked_values")
+
+    @property
+    @pulumi.getter(name="totalPostMaskingScriptErrors")
+    def total_post_masking_script_errors(self) -> str:
+        """
+        The total number of errors in post-masking script.
+        """
+        return pulumi.get(self, "total_post_masking_script_errors")
+
+    @property
+    @pulumi.getter(name="totalPreMaskingScriptErrors")
+    def total_pre_masking_script_errors(self) -> str:
+        """
+        The total number of errors in pre-masking script.
+        """
+        return pulumi.get(self, "total_pre_masking_script_errors")
 
 
 @pulumi.output_type
@@ -21017,7 +21239,7 @@ class GetSecurityAssessmentFindingsFindingResult(dict):
         :param str lifecycle_details: Details about the current state of the finding.
         :param str oneline: Provides a recommended approach to take to remediate the finding reported.
         :param str oracle_defined_severity: The severity of the finding as determined by security assessment. This cannot be modified by user.
-        :param Sequence['GetSecurityAssessmentFindingsFindingReferenceArgs'] references: An optional filter to return only findings containing the specified reference.
+        :param Sequence['GetSecurityAssessmentFindingsFindingReferenceArgs'] references: An optional filter to return only findings that match the specified reference.
         :param str remarks: The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
         :param str severity: A filter to return only findings of a particular risk level.
         :param str state: A filter to return only the findings that match the specified lifecycle states.
@@ -21131,7 +21353,7 @@ class GetSecurityAssessmentFindingsFindingResult(dict):
     @pulumi.getter
     def references(self) -> Sequence['outputs.GetSecurityAssessmentFindingsFindingReferenceResult']:
         """
-        An optional filter to return only findings containing the specified reference.
+        An optional filter to return only findings that match the specified reference.
         """
         return pulumi.get(self, "references")
 
@@ -24825,6 +25047,153 @@ class GetSecurityPolicyReportsSecurityPolicyReportCollectionItemResult(dict):
 
 
 @pulumi.output_type
+class GetSensitiveColumnAnalyticsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemResult']):
+        """
+        :param Sequence['GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArgs'] items: An array of sensitive column analytics summary objects.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemResult']:
+        """
+        An array of sensitive column analytics summary objects.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 dimensions: Sequence['outputs.GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionResult'],
+                 sensitive_column_analytic_count: str):
+        """
+        :param Sequence['GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArgs'] dimensions: The dimensions available for sensitive column analytics.
+        :param str sensitive_column_analytic_count: The total count for the aggregation metric.
+        """
+        pulumi.set(__self__, "dimensions", dimensions)
+        pulumi.set(__self__, "sensitive_column_analytic_count", sensitive_column_analytic_count)
+
+    @property
+    @pulumi.getter
+    def dimensions(self) -> Sequence['outputs.GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionResult']:
+        """
+        The dimensions available for sensitive column analytics.
+        """
+        return pulumi.get(self, "dimensions")
+
+    @property
+    @pulumi.getter(name="sensitiveColumnAnalyticCount")
+    def sensitive_column_analytic_count(self) -> str:
+        """
+        The total count for the aggregation metric.
+        """
+        return pulumi.get(self, "sensitive_column_analytic_count")
+
+
+@pulumi.output_type
+class GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionResult(dict):
+    def __init__(__self__, *,
+                 column_name: str,
+                 object: str,
+                 schema_name: str,
+                 sensitive_data_model_id: str,
+                 sensitive_type_id: str,
+                 target_id: str):
+        """
+        :param str column_name: A filter to return only a specific column based on column name.
+        :param str object: A filter to return only items related to a specific object name.
+        :param str schema_name: A filter to return only items related to specific schema name.
+        :param str sensitive_data_model_id: A filter to return only the resources that match the specified sensitive data model OCID.
+        :param str sensitive_type_id: A filter to return only the sensitive columns that are associated with one of the sensitive types identified by the specified OCIDs.
+        :param str target_id: A filter to return only items related to a specific target OCID.
+        """
+        pulumi.set(__self__, "column_name", column_name)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "schema_name", schema_name)
+        pulumi.set(__self__, "sensitive_data_model_id", sensitive_data_model_id)
+        pulumi.set(__self__, "sensitive_type_id", sensitive_type_id)
+        pulumi.set(__self__, "target_id", target_id)
+
+    @property
+    @pulumi.getter(name="columnName")
+    def column_name(self) -> str:
+        """
+        A filter to return only a specific column based on column name.
+        """
+        return pulumi.get(self, "column_name")
+
+    @property
+    @pulumi.getter
+    def object(self) -> str:
+        """
+        A filter to return only items related to a specific object name.
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter(name="schemaName")
+    def schema_name(self) -> str:
+        """
+        A filter to return only items related to specific schema name.
+        """
+        return pulumi.get(self, "schema_name")
+
+    @property
+    @pulumi.getter(name="sensitiveDataModelId")
+    def sensitive_data_model_id(self) -> str:
+        """
+        A filter to return only the resources that match the specified sensitive data model OCID.
+        """
+        return pulumi.get(self, "sensitive_data_model_id")
+
+    @property
+    @pulumi.getter(name="sensitiveTypeId")
+    def sensitive_type_id(self) -> str:
+        """
+        A filter to return only the sensitive columns that are associated with one of the sensitive types identified by the specified OCIDs.
+        """
+        return pulumi.get(self, "sensitive_type_id")
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> str:
+        """
+        A filter to return only items related to a specific target OCID.
+        """
+        return pulumi.get(self, "target_id")
+
+
+@pulumi.output_type
 class GetSensitiveDataModelReferentialRelationChildResult(dict):
     def __init__(__self__, *,
                  app_name: str,
@@ -25832,6 +26201,7 @@ class GetSensitiveDataModelsSensitiveDataModelCollectionItemResult(dict):
                  is_include_all_sensitive_types: bool,
                  is_sample_data_collection_enabled: bool,
                  schemas_for_discoveries: Sequence[str],
+                 sensitive_type_group_ids_for_discoveries: Sequence[str],
                  sensitive_type_ids_for_discoveries: Sequence[str],
                  state: str,
                  system_tags: Mapping[str, str],
@@ -25852,6 +26222,7 @@ class GetSensitiveDataModelsSensitiveDataModelCollectionItemResult(dict):
         :param bool is_include_all_sensitive_types: Indicates if all the existing sensitive types should be used by data discovery jobs.If it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery.
         :param bool is_sample_data_collection_enabled: Indicates if data discovery jobs should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it's disabled by default and should be used only if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
         :param Sequence[str] schemas_for_discoveries: The schemas to be scanned by data discovery jobs.
+        :param Sequence[str] sensitive_type_group_ids_for_discoveries: The OCIDs of the sensitive type groups to be used by data discovery jobs.
         :param Sequence[str] sensitive_type_ids_for_discoveries: The OCIDs of the sensitive types to be used by data discovery jobs.
         :param str state: A filter to return only the resources that match the specified lifecycle state.
         :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -25872,6 +26243,7 @@ class GetSensitiveDataModelsSensitiveDataModelCollectionItemResult(dict):
         pulumi.set(__self__, "is_include_all_sensitive_types", is_include_all_sensitive_types)
         pulumi.set(__self__, "is_sample_data_collection_enabled", is_sample_data_collection_enabled)
         pulumi.set(__self__, "schemas_for_discoveries", schemas_for_discoveries)
+        pulumi.set(__self__, "sensitive_type_group_ids_for_discoveries", sensitive_type_group_ids_for_discoveries)
         pulumi.set(__self__, "sensitive_type_ids_for_discoveries", sensitive_type_ids_for_discoveries)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -25977,6 +26349,14 @@ class GetSensitiveDataModelsSensitiveDataModelCollectionItemResult(dict):
         return pulumi.get(self, "schemas_for_discoveries")
 
     @property
+    @pulumi.getter(name="sensitiveTypeGroupIdsForDiscoveries")
+    def sensitive_type_group_ids_for_discoveries(self) -> Sequence[str]:
+        """
+        The OCIDs of the sensitive type groups to be used by data discovery jobs.
+        """
+        return pulumi.get(self, "sensitive_type_group_ids_for_discoveries")
+
+    @property
     @pulumi.getter(name="sensitiveTypeIdsForDiscoveries")
     def sensitive_type_ids_for_discoveries(self) -> Sequence[str]:
         """
@@ -26060,6 +26440,299 @@ class GetSensitiveDataModelsSensitiveDataModelCollectionItemTablesForDiscoveryRe
         This contains an optional list of the table names.
         """
         return pulumi.get(self, "table_names")
+
+
+@pulumi.output_type
+class GetSensitiveTypeGroupGroupedSensitiveTypesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemResult']):
+        """
+        :param Sequence['GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArgs'] items: List of sensitive type id summary objects present in the sensitive type group.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemResult']:
+        """
+        List of sensitive type id summary objects present in the sensitive type group.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemResult'],
+                 sensitive_type_group_id: str,
+                 patch_operations: Optional[Sequence['outputs.GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationResult']] = None):
+        """
+        :param Sequence['GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArgs'] items: List of sensitive type id summary objects present in the sensitive type group.
+        :param str sensitive_type_group_id: The OCID of the sensitive type group.
+        """
+        pulumi.set(__self__, "items", items)
+        pulumi.set(__self__, "sensitive_type_group_id", sensitive_type_group_id)
+        if patch_operations is not None:
+            pulumi.set(__self__, "patch_operations", patch_operations)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemResult']:
+        """
+        List of sensitive type id summary objects present in the sensitive type group.
+        """
+        return pulumi.get(self, "items")
+
+    @property
+    @pulumi.getter(name="sensitiveTypeGroupId")
+    def sensitive_type_group_id(self) -> str:
+        """
+        The OCID of the sensitive type group.
+        """
+        return pulumi.get(self, "sensitive_type_group_id")
+
+    @property
+    @pulumi.getter(name="patchOperations")
+    def patch_operations(self) -> Optional[Sequence['outputs.GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationResult']]:
+        return pulumi.get(self, "patch_operations")
+
+
+@pulumi.output_type
+class GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemResult(dict):
+    def __init__(__self__, *,
+                 sensitive_type_id: str):
+        """
+        :param str sensitive_type_id: A filter to return only items related to a specific sensitive type OCID.
+        """
+        pulumi.set(__self__, "sensitive_type_id", sensitive_type_id)
+
+    @property
+    @pulumi.getter(name="sensitiveTypeId")
+    def sensitive_type_id(self) -> str:
+        """
+        A filter to return only items related to a specific sensitive type OCID.
+        """
+        return pulumi.get(self, "sensitive_type_id")
+
+
+@pulumi.output_type
+class GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationResult(dict):
+    def __init__(__self__, *,
+                 operation: str,
+                 selection: str,
+                 value: Mapping[str, str]):
+        pulumi.set(__self__, "operation", operation)
+        pulumi.set(__self__, "selection", selection)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def operation(self) -> str:
+        return pulumi.get(self, "operation")
+
+    @property
+    @pulumi.getter
+    def selection(self) -> str:
+        return pulumi.get(self, "selection")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Mapping[str, str]:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetSensitiveTypeGroupsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSensitiveTypeGroupsSensitiveTypeGroupCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, str],
+                 description: str,
+                 display_name: str,
+                 freeform_tags: Mapping[str, str],
+                 id: str,
+                 sensitive_type_count: int,
+                 state: str,
+                 system_tags: Mapping[str, str],
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+        :param str description: The description of the sensitive type group.
+        :param str display_name: A filter to return only resources that match the specified display name.
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param str id: The OCID of the sensitive type group.
+        :param int sensitive_type_count: The number of sensitive types in the specified sensitive type group.
+        :param str state: A filter to return only the resources that match the specified lifecycle state.
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The date and time the sensitive type group was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_updated: The date and time the sensitive type group was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "sensitive_type_count", sensitive_type_count)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        A filter to return only resources that match the specified compartment OCID.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the sensitive type group.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the specified display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of the sensitive type group.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="sensitiveTypeCount")
+    def sensitive_type_count(self) -> int:
+        """
+        The number of sensitive types in the specified sensitive type group.
+        """
+        return pulumi.get(self, "sensitive_type_count")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only the resources that match the specified lifecycle state.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the sensitive type group was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the sensitive type group was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type

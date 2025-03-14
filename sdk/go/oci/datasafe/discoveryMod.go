@@ -50,6 +50,7 @@ import (
 //				IsIncludeAllSensitiveTypes:           pulumi.Any(discoveryJobIsIncludeAllSensitiveTypes),
 //				IsSampleDataCollectionEnabled:        pulumi.Any(discoveryJobIsSampleDataCollectionEnabled),
 //				SchemasForDiscoveries:                pulumi.Any(discoveryJobSchemasForDiscovery),
+//				SensitiveTypeGroupIdsForDiscoveries:  pulumi.Any(discoveryJobSensitiveTypeGroupIdsForDiscovery),
 //				SensitiveTypeIdsForDiscoveries:       pulumi.Any(discoveryJobSensitiveTypeIdsForDiscovery),
 //				TablesForDiscoveries: datasafe.DiscoveryModTablesForDiscoveryArray{
 //					&datasafe.DiscoveryModTablesForDiscoveryArgs{
@@ -99,6 +100,8 @@ type DiscoveryMod struct {
 	SchemasForDiscoveries pulumi.StringArrayOutput `pulumi:"schemasForDiscoveries"`
 	// The OCID of the sensitive data model.
 	SensitiveDataModelId pulumi.StringOutput `pulumi:"sensitiveDataModelId"`
+	// The OCIDs of the sensitive type groups to be used by the discovery job. All the sensitive types present in sensitive type group will be used for discovery.
+	SensitiveTypeGroupIdsForDiscoveries pulumi.StringArrayOutput `pulumi:"sensitiveTypeGroupIdsForDiscoveries"`
 	// The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
 	SensitiveTypeIdsForDiscoveries pulumi.StringArrayOutput `pulumi:"sensitiveTypeIdsForDiscoveries"`
 	// The current state of the discovery job.
@@ -185,6 +188,8 @@ type discoveryModState struct {
 	SchemasForDiscoveries []string `pulumi:"schemasForDiscoveries"`
 	// The OCID of the sensitive data model.
 	SensitiveDataModelId *string `pulumi:"sensitiveDataModelId"`
+	// The OCIDs of the sensitive type groups to be used by the discovery job. All the sensitive types present in sensitive type group will be used for discovery.
+	SensitiveTypeGroupIdsForDiscoveries []string `pulumi:"sensitiveTypeGroupIdsForDiscoveries"`
 	// The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
 	SensitiveTypeIdsForDiscoveries []string `pulumi:"sensitiveTypeIdsForDiscoveries"`
 	// The current state of the discovery job.
@@ -236,6 +241,8 @@ type DiscoveryModState struct {
 	SchemasForDiscoveries pulumi.StringArrayInput
 	// The OCID of the sensitive data model.
 	SensitiveDataModelId pulumi.StringPtrInput
+	// The OCIDs of the sensitive type groups to be used by the discovery job. All the sensitive types present in sensitive type group will be used for discovery.
+	SensitiveTypeGroupIdsForDiscoveries pulumi.StringArrayInput
 	// The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
 	SensitiveTypeIdsForDiscoveries pulumi.StringArrayInput
 	// The current state of the discovery job.
@@ -291,6 +298,8 @@ type discoveryModArgs struct {
 	SchemasForDiscoveries []string `pulumi:"schemasForDiscoveries"`
 	// The OCID of the sensitive data model.
 	SensitiveDataModelId string `pulumi:"sensitiveDataModelId"`
+	// The OCIDs of the sensitive type groups to be used by the discovery job. All the sensitive types present in sensitive type group will be used for discovery.
+	SensitiveTypeGroupIdsForDiscoveries []string `pulumi:"sensitiveTypeGroupIdsForDiscoveries"`
 	// The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
 	SensitiveTypeIdsForDiscoveries []string `pulumi:"sensitiveTypeIdsForDiscoveries"`
 	// The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence  of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
@@ -321,6 +330,8 @@ type DiscoveryModArgs struct {
 	SchemasForDiscoveries pulumi.StringArrayInput
 	// The OCID of the sensitive data model.
 	SensitiveDataModelId pulumi.StringInput
+	// The OCIDs of the sensitive type groups to be used by the discovery job. All the sensitive types present in sensitive type group will be used for discovery.
+	SensitiveTypeGroupIdsForDiscoveries pulumi.StringArrayInput
 	// The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
 	SensitiveTypeIdsForDiscoveries pulumi.StringArrayInput
 	// The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence  of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
@@ -467,6 +478,11 @@ func (o DiscoveryModOutput) SchemasForDiscoveries() pulumi.StringArrayOutput {
 // The OCID of the sensitive data model.
 func (o DiscoveryModOutput) SensitiveDataModelId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DiscoveryMod) pulumi.StringOutput { return v.SensitiveDataModelId }).(pulumi.StringOutput)
+}
+
+// The OCIDs of the sensitive type groups to be used by the discovery job. All the sensitive types present in sensitive type group will be used for discovery.
+func (o DiscoveryModOutput) SensitiveTypeGroupIdsForDiscoveries() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *DiscoveryMod) pulumi.StringArrayOutput { return v.SensitiveTypeGroupIdsForDiscoveries }).(pulumi.StringArrayOutput)
 }
 
 // The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.

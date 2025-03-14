@@ -26,7 +26,7 @@ class GetDkimResult:
     """
     A collection of values returned by getDkim.
     """
-    def __init__(__self__, cname_record_value=None, compartment_id=None, defined_tags=None, description=None, dkim_id=None, dns_subdomain_name=None, email_domain_id=None, freeform_tags=None, id=None, lifecycle_details=None, name=None, state=None, system_tags=None, time_created=None, time_updated=None, txt_record_value=None):
+    def __init__(__self__, cname_record_value=None, compartment_id=None, defined_tags=None, description=None, dkim_id=None, dns_subdomain_name=None, email_domain_id=None, freeform_tags=None, id=None, is_imported=None, key_length=None, lifecycle_details=None, name=None, private_key=None, state=None, system_tags=None, time_created=None, time_updated=None, txt_record_value=None):
         if cname_record_value and not isinstance(cname_record_value, str):
             raise TypeError("Expected argument 'cname_record_value' to be a str")
         pulumi.set(__self__, "cname_record_value", cname_record_value)
@@ -54,12 +54,21 @@ class GetDkimResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_imported and not isinstance(is_imported, bool):
+            raise TypeError("Expected argument 'is_imported' to be a bool")
+        pulumi.set(__self__, "is_imported", is_imported)
+        if key_length and not isinstance(key_length, int):
+            raise TypeError("Expected argument 'key_length' to be a int")
+        pulumi.set(__self__, "key_length", key_length)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
+        if private_key and not isinstance(private_key, str):
+            raise TypeError("Expected argument 'private_key' to be a str")
+        pulumi.set(__self__, "private_key", private_key)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -146,6 +155,22 @@ class GetDkimResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isImported")
+    def is_imported(self) -> bool:
+        """
+        Indicates whether the DKIM was imported.
+        """
+        return pulumi.get(self, "is_imported")
+
+    @property
+    @pulumi.getter(name="keyLength")
+    def key_length(self) -> int:
+        """
+        Length of the RSA key used in the DKIM.
+        """
+        return pulumi.get(self, "key_length")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
@@ -160,6 +185,11 @@ class GetDkimResult:
         The DKIM selector. If the same domain is managed in more than one region, each region must use different selectors.
         """
         return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="privateKey")
+    def private_key(self) -> str:
+        return pulumi.get(self, "private_key")
 
     @property
     @pulumi.getter
@@ -217,8 +247,11 @@ class AwaitableGetDkimResult(GetDkimResult):
             email_domain_id=self.email_domain_id,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            is_imported=self.is_imported,
+            key_length=self.key_length,
             lifecycle_details=self.lifecycle_details,
             name=self.name,
+            private_key=self.private_key,
             state=self.state,
             system_tags=self.system_tags,
             time_created=self.time_created,
@@ -260,8 +293,11 @@ def get_dkim(dkim_id: Optional[str] = None,
         email_domain_id=pulumi.get(__ret__, 'email_domain_id'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        is_imported=pulumi.get(__ret__, 'is_imported'),
+        key_length=pulumi.get(__ret__, 'key_length'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         name=pulumi.get(__ret__, 'name'),
+        private_key=pulumi.get(__ret__, 'private_key'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
@@ -300,8 +336,11 @@ def get_dkim_output(dkim_id: Optional[pulumi.Input[str]] = None,
         email_domain_id=pulumi.get(__response__, 'email_domain_id'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
+        is_imported=pulumi.get(__response__, 'is_imported'),
+        key_length=pulumi.get(__response__, 'key_length'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         name=pulumi.get(__response__, 'name'),
+        private_key=pulumi.get(__response__, 'private_key'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),

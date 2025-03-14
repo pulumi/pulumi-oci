@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataScience.Outputs
     public sealed class PipelineStepArtifact
     {
         public readonly string? ArtifactContentDisposition;
-        public readonly string ArtifactContentLength;
+        public readonly string? ArtifactContentLength;
         public readonly string? ArtifactContentMd5;
         public readonly string? ArtifactLastModified;
         public readonly string StepArtifact;
@@ -27,7 +27,7 @@ namespace Pulumi.Oci.DataScience.Outputs
         private PipelineStepArtifact(
             string? artifactContentDisposition,
 
-            string artifactContentLength,
+            string? artifactContentLength,
 
             string? artifactContentMd5,
 

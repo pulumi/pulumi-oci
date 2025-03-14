@@ -30,7 +30,9 @@ namespace Pulumi.Oci.Database
         ///     var testExascaleDbStorageVaults = Oci.Database.GetExascaleDbStorageVaults.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         ClusterPlacementGroupId = testClusterPlacementGroup.Id,
         ///         DisplayName = exascaleDbStorageVaultDisplayName,
+        ///         ExadataInfrastructureId = testExadataInfrastructure.Id,
         ///         State = exascaleDbStorageVaultState,
         ///     });
         /// 
@@ -59,7 +61,9 @@ namespace Pulumi.Oci.Database
         ///     var testExascaleDbStorageVaults = Oci.Database.GetExascaleDbStorageVaults.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         ClusterPlacementGroupId = testClusterPlacementGroup.Id,
         ///         DisplayName = exascaleDbStorageVaultDisplayName,
+        ///         ExadataInfrastructureId = testExadataInfrastructure.Id,
         ///         State = exascaleDbStorageVaultState,
         ///     });
         /// 
@@ -88,7 +92,9 @@ namespace Pulumi.Oci.Database
         ///     var testExascaleDbStorageVaults = Oci.Database.GetExascaleDbStorageVaults.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         ClusterPlacementGroupId = testClusterPlacementGroup.Id,
         ///         DisplayName = exascaleDbStorageVaultDisplayName,
+        ///         ExadataInfrastructureId = testExadataInfrastructure.Id,
         ///         State = exascaleDbStorageVaultState,
         ///     });
         /// 
@@ -103,6 +109,12 @@ namespace Pulumi.Oci.Database
     public sealed class GetExascaleDbStorageVaultsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
+        /// A filter to return only resources that match the given cluster placement group ID exactly.
+        /// </summary>
+        [Input("clusterPlacementGroupId")]
+        public string? ClusterPlacementGroupId { get; set; }
+
+        /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("compartmentId", required: true)]
@@ -113,6 +125,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("displayName")]
         public string? DisplayName { get; set; }
+
+        /// <summary>
+        /// A filter to return only list of Vaults that are linked to the exadata infrastructure Id.
+        /// </summary>
+        [Input("exadataInfrastructureId")]
+        public string? ExadataInfrastructureId { get; set; }
 
         [Input("filters")]
         private List<Inputs.GetExascaleDbStorageVaultsFilterArgs>? _filters;
@@ -137,6 +155,12 @@ namespace Pulumi.Oci.Database
     public sealed class GetExascaleDbStorageVaultsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
+        /// A filter to return only resources that match the given cluster placement group ID exactly.
+        /// </summary>
+        [Input("clusterPlacementGroupId")]
+        public Input<string>? ClusterPlacementGroupId { get; set; }
+
+        /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("compartmentId", required: true)]
@@ -147,6 +171,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
+
+        /// <summary>
+        /// A filter to return only list of Vaults that are linked to the exadata infrastructure Id.
+        /// </summary>
+        [Input("exadataInfrastructureId")]
+        public Input<string>? ExadataInfrastructureId { get; set; }
 
         [Input("filters")]
         private InputList<Inputs.GetExascaleDbStorageVaultsFilterInputArgs>? _filters;
@@ -173,6 +203,10 @@ namespace Pulumi.Oci.Database
     public sealed class GetExascaleDbStorageVaultsResult
     {
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        /// </summary>
+        public readonly string? ClusterPlacementGroupId;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         public readonly string CompartmentId;
@@ -180,6 +214,10 @@ namespace Pulumi.Oci.Database
         /// The user-friendly name for the Exadata Database Storage Vault. The name does not need to be unique.
         /// </summary>
         public readonly string? DisplayName;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+        /// </summary>
+        public readonly string? ExadataInfrastructureId;
         /// <summary>
         /// The list of exascale_db_storage_vaults.
         /// </summary>
@@ -196,9 +234,13 @@ namespace Pulumi.Oci.Database
 
         [OutputConstructor]
         private GetExascaleDbStorageVaultsResult(
+            string? clusterPlacementGroupId,
+
             string compartmentId,
 
             string? displayName,
+
+            string? exadataInfrastructureId,
 
             ImmutableArray<Outputs.GetExascaleDbStorageVaultsExascaleDbStorageVaultResult> exascaleDbStorageVaults,
 
@@ -208,8 +250,10 @@ namespace Pulumi.Oci.Database
 
             string? state)
         {
+            ClusterPlacementGroupId = clusterPlacementGroupId;
             CompartmentId = compartmentId;
             DisplayName = displayName;
+            ExadataInfrastructureId = exadataInfrastructureId;
             ExascaleDbStorageVaults = exascaleDbStorageVaults;
             Filters = filters;
             Id = id;

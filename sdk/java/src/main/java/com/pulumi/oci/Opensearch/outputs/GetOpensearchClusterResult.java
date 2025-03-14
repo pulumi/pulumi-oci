@@ -233,6 +233,7 @@ public final class GetOpensearchClusterResult {
      * 
      */
     private Integer totalStorageGb;
+    private Integer upgradeMajorVersionTrigger;
     /**
      * @return The OCID for the compartment where the cluster&#39;s VCN is located.
      * 
@@ -552,6 +553,9 @@ public final class GetOpensearchClusterResult {
     public Integer totalStorageGb() {
         return this.totalStorageGb;
     }
+    public Integer upgradeMajorVersionTrigger() {
+        return this.upgradeMajorVersionTrigger;
+    }
     /**
      * @return The OCID for the compartment where the cluster&#39;s VCN is located.
      * 
@@ -621,6 +625,7 @@ public final class GetOpensearchClusterResult {
         private String timeDeleted;
         private String timeUpdated;
         private Integer totalStorageGb;
+        private Integer upgradeMajorVersionTrigger;
         private String vcnCompartmentId;
         private String vcnId;
         public Builder() {}
@@ -671,6 +676,7 @@ public final class GetOpensearchClusterResult {
     	      this.timeDeleted = defaults.timeDeleted;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.totalStorageGb = defaults.totalStorageGb;
+    	      this.upgradeMajorVersionTrigger = defaults.upgradeMajorVersionTrigger;
     	      this.vcnCompartmentId = defaults.vcnCompartmentId;
     	      this.vcnId = defaults.vcnId;
         }
@@ -1054,6 +1060,14 @@ public final class GetOpensearchClusterResult {
             return this;
         }
         @CustomType.Setter
+        public Builder upgradeMajorVersionTrigger(Integer upgradeMajorVersionTrigger) {
+            if (upgradeMajorVersionTrigger == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClusterResult", "upgradeMajorVersionTrigger");
+            }
+            this.upgradeMajorVersionTrigger = upgradeMajorVersionTrigger;
+            return this;
+        }
+        @CustomType.Setter
         public Builder vcnCompartmentId(String vcnCompartmentId) {
             if (vcnCompartmentId == null) {
               throw new MissingRequiredPropertyException("GetOpensearchClusterResult", "vcnCompartmentId");
@@ -1116,6 +1130,7 @@ public final class GetOpensearchClusterResult {
             _resultValue.timeDeleted = timeDeleted;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.totalStorageGb = totalStorageGb;
+            _resultValue.upgradeMajorVersionTrigger = upgradeMajorVersionTrigger;
             _resultValue.vcnCompartmentId = vcnCompartmentId;
             _resultValue.vcnId = vcnId;
             return _resultValue;

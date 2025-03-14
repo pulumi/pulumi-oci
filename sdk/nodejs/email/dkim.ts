@@ -29,6 +29,7 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     name: dkimName,
+ *     privateKey: dkimPrivateKey,
  * });
  * ```
  *
@@ -85,7 +86,7 @@ export class Dkim extends pulumi.CustomResource {
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
+     * The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
      */
     public /*out*/ readonly dnsSubdomainName!: pulumi.Output<string>;
     /**
@@ -97,6 +98,14 @@ export class Dkim extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
+     * Indicates whether the DKIM was imported.
+     */
+    public /*out*/ readonly isImported!: pulumi.Output<boolean>;
+    /**
+     * Length of the RSA key used in the DKIM.
+     */
+    public /*out*/ readonly keyLength!: pulumi.Output<number>;
+    /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
@@ -106,12 +115,15 @@ export class Dkim extends pulumi.CustomResource {
      * Avoid entering confidential information.
      *
      * Example: `mydomain-phx-20210228`
-     *
+     */
+    public readonly name!: pulumi.Output<string>;
+    /**
+     * The DKIM RSA Private Key in Privacy-Enhanced Mail (PEM) format. It is a text-based representation of the private key used for signing email messages.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly name!: pulumi.Output<string>;
+    public readonly privateKey!: pulumi.Output<string>;
     /**
      * The current state of the DKIM.
      */
@@ -153,8 +165,11 @@ export class Dkim extends pulumi.CustomResource {
             resourceInputs["dnsSubdomainName"] = state ? state.dnsSubdomainName : undefined;
             resourceInputs["emailDomainId"] = state ? state.emailDomainId : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["isImported"] = state ? state.isImported : undefined;
+            resourceInputs["keyLength"] = state ? state.keyLength : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["privateKey"] = state ? state.privateKey : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
@@ -170,9 +185,12 @@ export class Dkim extends pulumi.CustomResource {
             resourceInputs["emailDomainId"] = args ? args.emailDomainId : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["privateKey"] = args?.privateKey ? pulumi.secret(args.privateKey) : undefined;
             resourceInputs["cnameRecordValue"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["dnsSubdomainName"] = undefined /*out*/;
+            resourceInputs["isImported"] = undefined /*out*/;
+            resourceInputs["keyLength"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
@@ -181,6 +199,8 @@ export class Dkim extends pulumi.CustomResource {
             resourceInputs["txtRecordValue"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["privateKey"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(Dkim.__pulumiType, name, resourceInputs, opts);
     }
 }
@@ -206,7 +226,7 @@ export interface DkimState {
      */
     description?: pulumi.Input<string>;
     /**
-     * The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
+     * The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
      */
     dnsSubdomainName?: pulumi.Input<string>;
     /**
@@ -218,6 +238,14 @@ export interface DkimState {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
+     * Indicates whether the DKIM was imported.
+     */
+    isImported?: pulumi.Input<boolean>;
+    /**
+     * Length of the RSA key used in the DKIM.
+     */
+    keyLength?: pulumi.Input<number>;
+    /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource.
      */
     lifecycleDetails?: pulumi.Input<string>;
@@ -227,12 +255,15 @@ export interface DkimState {
      * Avoid entering confidential information.
      *
      * Example: `mydomain-phx-20210228`
-     *
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * The DKIM RSA Private Key in Privacy-Enhanced Mail (PEM) format. It is a text-based representation of the private key used for signing email messages.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    name?: pulumi.Input<string>;
+    privateKey?: pulumi.Input<string>;
     /**
      * The current state of the DKIM.
      */
@@ -281,10 +312,13 @@ export interface DkimArgs {
      * Avoid entering confidential information.
      *
      * Example: `mydomain-phx-20210228`
-     *
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * The DKIM RSA Private Key in Privacy-Enhanced Mail (PEM) format. It is a text-based representation of the private key used for signing email messages.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    name?: pulumi.Input<string>;
+    privateKey?: pulumi.Input<string>;
 }

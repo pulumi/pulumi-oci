@@ -43,10 +43,15 @@ public final class GetApplicationVipsApplicationVip {
      */
     private String id;
     /**
-     * @return The application virtual IP (VIP) address.
+     * @return The application virtual IP (VIP) IPv4 address.
      * 
      */
     private String ipAddress;
+    /**
+     * @return The application virtual IP (VIP) IPv6 address.
+     * 
+     */
+    private String ipv6address;
     /**
      * @return Additional information about the current lifecycle state of the application virtual IP (VIP) address.
      * 
@@ -115,11 +120,18 @@ public final class GetApplicationVipsApplicationVip {
         return this.id;
     }
     /**
-     * @return The application virtual IP (VIP) address.
+     * @return The application virtual IP (VIP) IPv4 address.
      * 
      */
     public String ipAddress() {
         return this.ipAddress;
+    }
+    /**
+     * @return The application virtual IP (VIP) IPv6 address.
+     * 
+     */
+    public String ipv6address() {
+        return this.ipv6address;
     }
     /**
      * @return Additional information about the current lifecycle state of the application virtual IP (VIP) address.
@@ -167,6 +179,7 @@ public final class GetApplicationVipsApplicationVip {
         private String hostnameLabel;
         private String id;
         private String ipAddress;
+        private String ipv6address;
         private String lifecycleDetails;
         private String state;
         private String subnetId;
@@ -182,6 +195,7 @@ public final class GetApplicationVipsApplicationVip {
     	      this.hostnameLabel = defaults.hostnameLabel;
     	      this.id = defaults.id;
     	      this.ipAddress = defaults.ipAddress;
+    	      this.ipv6address = defaults.ipv6address;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
@@ -253,6 +267,14 @@ public final class GetApplicationVipsApplicationVip {
             return this;
         }
         @CustomType.Setter
+        public Builder ipv6address(String ipv6address) {
+            if (ipv6address == null) {
+              throw new MissingRequiredPropertyException("GetApplicationVipsApplicationVip", "ipv6address");
+            }
+            this.ipv6address = ipv6address;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetApplicationVipsApplicationVip", "lifecycleDetails");
@@ -294,6 +316,7 @@ public final class GetApplicationVipsApplicationVip {
             _resultValue.hostnameLabel = hostnameLabel;
             _resultValue.id = id;
             _resultValue.ipAddress = ipAddress;
+            _resultValue.ipv6address = ipv6address;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;

@@ -28,7 +28,7 @@ class GetCloudVmClustersResult:
     """
     A collection of values returned by getCloudVmClusters.
     """
-    def __init__(__self__, cloud_exadata_infrastructure_id=None, cloud_vm_clusters=None, compartment_id=None, display_name=None, filters=None, id=None, state=None):
+    def __init__(__self__, cloud_exadata_infrastructure_id=None, cloud_vm_clusters=None, compartment_id=None, display_name=None, filters=None, id=None, state=None, vm_cluster_type=None):
         if cloud_exadata_infrastructure_id and not isinstance(cloud_exadata_infrastructure_id, str):
             raise TypeError("Expected argument 'cloud_exadata_infrastructure_id' to be a str")
         pulumi.set(__self__, "cloud_exadata_infrastructure_id", cloud_exadata_infrastructure_id)
@@ -50,6 +50,9 @@ class GetCloudVmClustersResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if vm_cluster_type and not isinstance(vm_cluster_type, str):
+            raise TypeError("Expected argument 'vm_cluster_type' to be a str")
+        pulumi.set(__self__, "vm_cluster_type", vm_cluster_type)
 
     @property
     @pulumi.getter(name="cloudExadataInfrastructureId")
@@ -104,6 +107,14 @@ class GetCloudVmClustersResult:
         """
         return pulumi.get(self, "state")
 
+    @property
+    @pulumi.getter(name="vmClusterType")
+    def vm_cluster_type(self) -> Optional[str]:
+        """
+        The vmcluster type for the VM cluster/Cloud VM cluster.
+        """
+        return pulumi.get(self, "vm_cluster_type")
+
 
 class AwaitableGetCloudVmClustersResult(GetCloudVmClustersResult):
     # pylint: disable=using-constant-test
@@ -117,7 +128,8 @@ class AwaitableGetCloudVmClustersResult(GetCloudVmClustersResult):
             display_name=self.display_name,
             filters=self.filters,
             id=self.id,
-            state=self.state)
+            state=self.state,
+            vm_cluster_type=self.vm_cluster_type)
 
 
 def get_cloud_vm_clusters(cloud_exadata_infrastructure_id: Optional[str] = None,
@@ -125,6 +137,7 @@ def get_cloud_vm_clusters(cloud_exadata_infrastructure_id: Optional[str] = None,
                           display_name: Optional[str] = None,
                           filters: Optional[Sequence[Union['GetCloudVmClustersFilterArgs', 'GetCloudVmClustersFilterArgsDict']]] = None,
                           state: Optional[str] = None,
+                          vm_cluster_type: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudVmClustersResult:
     """
     This data source provides the list of Cloud Vm Clusters in Oracle Cloud Infrastructure Database service.
@@ -140,7 +153,8 @@ def get_cloud_vm_clusters(cloud_exadata_infrastructure_id: Optional[str] = None,
     test_cloud_vm_clusters = oci.Database.get_cloud_vm_clusters(compartment_id=compartment_id,
         cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure["id"],
         display_name=cloud_vm_cluster_display_name,
-        state=cloud_vm_cluster_state)
+        state=cloud_vm_cluster_state,
+        vm_cluster_type=cloud_vm_cluster_vm_cluster_type)
     ```
 
 
@@ -148,6 +162,7 @@ def get_cloud_vm_clusters(cloud_exadata_infrastructure_id: Optional[str] = None,
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
     :param str state: A filter to return only cloud VM clusters that match the given lifecycle state exactly.
+    :param str vm_cluster_type: A filter to return only cloud vmclusters that match the given cloud vmcluster type exactly.
     """
     __args__ = dict()
     __args__['cloudExadataInfrastructureId'] = cloud_exadata_infrastructure_id
@@ -155,6 +170,7 @@ def get_cloud_vm_clusters(cloud_exadata_infrastructure_id: Optional[str] = None,
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['state'] = state
+    __args__['vmClusterType'] = vm_cluster_type
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:Database/getCloudVmClusters:getCloudVmClusters', __args__, opts=opts, typ=GetCloudVmClustersResult).value
 
@@ -165,12 +181,14 @@ def get_cloud_vm_clusters(cloud_exadata_infrastructure_id: Optional[str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
-        state=pulumi.get(__ret__, 'state'))
+        state=pulumi.get(__ret__, 'state'),
+        vm_cluster_type=pulumi.get(__ret__, 'vm_cluster_type'))
 def get_cloud_vm_clusters_output(cloud_exadata_infrastructure_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  compartment_id: Optional[pulumi.Input[str]] = None,
                                  display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudVmClustersFilterArgs', 'GetCloudVmClustersFilterArgsDict']]]]] = None,
                                  state: Optional[pulumi.Input[Optional[str]]] = None,
+                                 vm_cluster_type: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudVmClustersResult]:
     """
     This data source provides the list of Cloud Vm Clusters in Oracle Cloud Infrastructure Database service.
@@ -186,7 +204,8 @@ def get_cloud_vm_clusters_output(cloud_exadata_infrastructure_id: Optional[pulum
     test_cloud_vm_clusters = oci.Database.get_cloud_vm_clusters(compartment_id=compartment_id,
         cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure["id"],
         display_name=cloud_vm_cluster_display_name,
-        state=cloud_vm_cluster_state)
+        state=cloud_vm_cluster_state,
+        vm_cluster_type=cloud_vm_cluster_vm_cluster_type)
     ```
 
 
@@ -194,6 +213,7 @@ def get_cloud_vm_clusters_output(cloud_exadata_infrastructure_id: Optional[pulum
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
     :param str state: A filter to return only cloud VM clusters that match the given lifecycle state exactly.
+    :param str vm_cluster_type: A filter to return only cloud vmclusters that match the given cloud vmcluster type exactly.
     """
     __args__ = dict()
     __args__['cloudExadataInfrastructureId'] = cloud_exadata_infrastructure_id
@@ -201,6 +221,7 @@ def get_cloud_vm_clusters_output(cloud_exadata_infrastructure_id: Optional[pulum
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['state'] = state
+    __args__['vmClusterType'] = vm_cluster_type
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getCloudVmClusters:getCloudVmClusters', __args__, opts=opts, typ=GetCloudVmClustersResult)
     return __ret__.apply(lambda __response__: GetCloudVmClustersResult(
@@ -210,4 +231,5 @@ def get_cloud_vm_clusters_output(cloud_exadata_infrastructure_id: Optional[pulum
         display_name=pulumi.get(__response__, 'display_name'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
-        state=pulumi.get(__response__, 'state')))
+        state=pulumi.get(__response__, 'state'),
+        vm_cluster_type=pulumi.get(__response__, 'vm_cluster_type')))

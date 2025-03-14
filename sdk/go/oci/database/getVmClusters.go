@@ -35,6 +35,7 @@ import (
 //				DisplayName:             pulumi.StringRef(vmClusterDisplayName),
 //				ExadataInfrastructureId: pulumi.StringRef(testExadataInfrastructure.Id),
 //				State:                   pulumi.StringRef(vmClusterState),
+//				VmClusterType:           pulumi.StringRef(vmClusterVmClusterType),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -65,6 +66,8 @@ type GetVmClustersArgs struct {
 	Filters                 []GetVmClustersFilter `pulumi:"filters"`
 	// A filter to return only resources that match the given lifecycle state exactly.
 	State *string `pulumi:"state"`
+	// A filter to return only vmclusters that match the given vmcluster type exactly.
+	VmClusterType *string `pulumi:"vmClusterType"`
 }
 
 // A collection of values returned by getVmClusters.
@@ -80,6 +83,8 @@ type GetVmClustersResult struct {
 	Id string `pulumi:"id"`
 	// The current state of the VM cluster.
 	State *string `pulumi:"state"`
+	// The vmcluster type for the VM cluster/Cloud VM cluster.
+	VmClusterType *string `pulumi:"vmClusterType"`
 	// The list of vm_clusters.
 	VmClusters []GetVmClustersVmCluster `pulumi:"vmClusters"`
 }
@@ -104,6 +109,8 @@ type GetVmClustersOutputArgs struct {
 	Filters                 GetVmClustersFilterArrayInput `pulumi:"filters"`
 	// A filter to return only resources that match the given lifecycle state exactly.
 	State pulumi.StringPtrInput `pulumi:"state"`
+	// A filter to return only vmclusters that match the given vmcluster type exactly.
+	VmClusterType pulumi.StringPtrInput `pulumi:"vmClusterType"`
 }
 
 func (GetVmClustersOutputArgs) ElementType() reflect.Type {
@@ -152,6 +159,11 @@ func (o GetVmClustersResultOutput) Id() pulumi.StringOutput {
 // The current state of the VM cluster.
 func (o GetVmClustersResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetVmClustersResult) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+// The vmcluster type for the VM cluster/Cloud VM cluster.
+func (o GetVmClustersResultOutput) VmClusterType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClustersResult) *string { return v.VmClusterType }).(pulumi.StringPtrOutput)
 }
 
 // The list of vm_clusters.

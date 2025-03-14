@@ -84,6 +84,10 @@ export interface GetChannelResult {
      */
     readonly state: string;
     /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    readonly systemTags: {[key: string]: string};
+    /**
      * Details about the Channel target.
      */
     readonly targets: outputs.Mysql.GetChannelTarget[];

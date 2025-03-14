@@ -5524,6 +5524,218 @@ func (o SensitiveDataModelTablesForDiscoveryArrayOutput) Index(i pulumi.IntInput
 	}).(SensitiveDataModelTablesForDiscoveryOutput)
 }
 
+type SensitiveTypeGroupGroupedSensitiveTypeItem struct {
+	// The OCID of the sensitive type.
+	SensitiveTypeId *string `pulumi:"sensitiveTypeId"`
+}
+
+// SensitiveTypeGroupGroupedSensitiveTypeItemInput is an input type that accepts SensitiveTypeGroupGroupedSensitiveTypeItemArgs and SensitiveTypeGroupGroupedSensitiveTypeItemOutput values.
+// You can construct a concrete instance of `SensitiveTypeGroupGroupedSensitiveTypeItemInput` via:
+//
+//	SensitiveTypeGroupGroupedSensitiveTypeItemArgs{...}
+type SensitiveTypeGroupGroupedSensitiveTypeItemInput interface {
+	pulumi.Input
+
+	ToSensitiveTypeGroupGroupedSensitiveTypeItemOutput() SensitiveTypeGroupGroupedSensitiveTypeItemOutput
+	ToSensitiveTypeGroupGroupedSensitiveTypeItemOutputWithContext(context.Context) SensitiveTypeGroupGroupedSensitiveTypeItemOutput
+}
+
+type SensitiveTypeGroupGroupedSensitiveTypeItemArgs struct {
+	// The OCID of the sensitive type.
+	SensitiveTypeId pulumi.StringPtrInput `pulumi:"sensitiveTypeId"`
+}
+
+func (SensitiveTypeGroupGroupedSensitiveTypeItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SensitiveTypeGroupGroupedSensitiveTypeItem)(nil)).Elem()
+}
+
+func (i SensitiveTypeGroupGroupedSensitiveTypeItemArgs) ToSensitiveTypeGroupGroupedSensitiveTypeItemOutput() SensitiveTypeGroupGroupedSensitiveTypeItemOutput {
+	return i.ToSensitiveTypeGroupGroupedSensitiveTypeItemOutputWithContext(context.Background())
+}
+
+func (i SensitiveTypeGroupGroupedSensitiveTypeItemArgs) ToSensitiveTypeGroupGroupedSensitiveTypeItemOutputWithContext(ctx context.Context) SensitiveTypeGroupGroupedSensitiveTypeItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SensitiveTypeGroupGroupedSensitiveTypeItemOutput)
+}
+
+// SensitiveTypeGroupGroupedSensitiveTypeItemArrayInput is an input type that accepts SensitiveTypeGroupGroupedSensitiveTypeItemArray and SensitiveTypeGroupGroupedSensitiveTypeItemArrayOutput values.
+// You can construct a concrete instance of `SensitiveTypeGroupGroupedSensitiveTypeItemArrayInput` via:
+//
+//	SensitiveTypeGroupGroupedSensitiveTypeItemArray{ SensitiveTypeGroupGroupedSensitiveTypeItemArgs{...} }
+type SensitiveTypeGroupGroupedSensitiveTypeItemArrayInput interface {
+	pulumi.Input
+
+	ToSensitiveTypeGroupGroupedSensitiveTypeItemArrayOutput() SensitiveTypeGroupGroupedSensitiveTypeItemArrayOutput
+	ToSensitiveTypeGroupGroupedSensitiveTypeItemArrayOutputWithContext(context.Context) SensitiveTypeGroupGroupedSensitiveTypeItemArrayOutput
+}
+
+type SensitiveTypeGroupGroupedSensitiveTypeItemArray []SensitiveTypeGroupGroupedSensitiveTypeItemInput
+
+func (SensitiveTypeGroupGroupedSensitiveTypeItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SensitiveTypeGroupGroupedSensitiveTypeItem)(nil)).Elem()
+}
+
+func (i SensitiveTypeGroupGroupedSensitiveTypeItemArray) ToSensitiveTypeGroupGroupedSensitiveTypeItemArrayOutput() SensitiveTypeGroupGroupedSensitiveTypeItemArrayOutput {
+	return i.ToSensitiveTypeGroupGroupedSensitiveTypeItemArrayOutputWithContext(context.Background())
+}
+
+func (i SensitiveTypeGroupGroupedSensitiveTypeItemArray) ToSensitiveTypeGroupGroupedSensitiveTypeItemArrayOutputWithContext(ctx context.Context) SensitiveTypeGroupGroupedSensitiveTypeItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SensitiveTypeGroupGroupedSensitiveTypeItemArrayOutput)
+}
+
+type SensitiveTypeGroupGroupedSensitiveTypeItemOutput struct{ *pulumi.OutputState }
+
+func (SensitiveTypeGroupGroupedSensitiveTypeItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SensitiveTypeGroupGroupedSensitiveTypeItem)(nil)).Elem()
+}
+
+func (o SensitiveTypeGroupGroupedSensitiveTypeItemOutput) ToSensitiveTypeGroupGroupedSensitiveTypeItemOutput() SensitiveTypeGroupGroupedSensitiveTypeItemOutput {
+	return o
+}
+
+func (o SensitiveTypeGroupGroupedSensitiveTypeItemOutput) ToSensitiveTypeGroupGroupedSensitiveTypeItemOutputWithContext(ctx context.Context) SensitiveTypeGroupGroupedSensitiveTypeItemOutput {
+	return o
+}
+
+// The OCID of the sensitive type.
+func (o SensitiveTypeGroupGroupedSensitiveTypeItemOutput) SensitiveTypeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SensitiveTypeGroupGroupedSensitiveTypeItem) *string { return v.SensitiveTypeId }).(pulumi.StringPtrOutput)
+}
+
+type SensitiveTypeGroupGroupedSensitiveTypeItemArrayOutput struct{ *pulumi.OutputState }
+
+func (SensitiveTypeGroupGroupedSensitiveTypeItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SensitiveTypeGroupGroupedSensitiveTypeItem)(nil)).Elem()
+}
+
+func (o SensitiveTypeGroupGroupedSensitiveTypeItemArrayOutput) ToSensitiveTypeGroupGroupedSensitiveTypeItemArrayOutput() SensitiveTypeGroupGroupedSensitiveTypeItemArrayOutput {
+	return o
+}
+
+func (o SensitiveTypeGroupGroupedSensitiveTypeItemArrayOutput) ToSensitiveTypeGroupGroupedSensitiveTypeItemArrayOutputWithContext(ctx context.Context) SensitiveTypeGroupGroupedSensitiveTypeItemArrayOutput {
+	return o
+}
+
+func (o SensitiveTypeGroupGroupedSensitiveTypeItemArrayOutput) Index(i pulumi.IntInput) SensitiveTypeGroupGroupedSensitiveTypeItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SensitiveTypeGroupGroupedSensitiveTypeItem {
+		return vs[0].([]SensitiveTypeGroupGroupedSensitiveTypeItem)[vs[1].(int)]
+	}).(SensitiveTypeGroupGroupedSensitiveTypeItemOutput)
+}
+
+type SensitiveTypeGroupGroupedSensitiveTypePatchOperation struct {
+	// (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
+	Operation string `pulumi:"operation"`
+	// (Updatable)
+	Selection string `pulumi:"selection"`
+	// (Updatable)
+	Value map[string]string `pulumi:"value"`
+}
+
+// SensitiveTypeGroupGroupedSensitiveTypePatchOperationInput is an input type that accepts SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs and SensitiveTypeGroupGroupedSensitiveTypePatchOperationOutput values.
+// You can construct a concrete instance of `SensitiveTypeGroupGroupedSensitiveTypePatchOperationInput` via:
+//
+//	SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs{...}
+type SensitiveTypeGroupGroupedSensitiveTypePatchOperationInput interface {
+	pulumi.Input
+
+	ToSensitiveTypeGroupGroupedSensitiveTypePatchOperationOutput() SensitiveTypeGroupGroupedSensitiveTypePatchOperationOutput
+	ToSensitiveTypeGroupGroupedSensitiveTypePatchOperationOutputWithContext(context.Context) SensitiveTypeGroupGroupedSensitiveTypePatchOperationOutput
+}
+
+type SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs struct {
+	// (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
+	Operation pulumi.StringInput `pulumi:"operation"`
+	// (Updatable)
+	Selection pulumi.StringInput `pulumi:"selection"`
+	// (Updatable)
+	Value pulumi.StringMapInput `pulumi:"value"`
+}
+
+func (SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SensitiveTypeGroupGroupedSensitiveTypePatchOperation)(nil)).Elem()
+}
+
+func (i SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs) ToSensitiveTypeGroupGroupedSensitiveTypePatchOperationOutput() SensitiveTypeGroupGroupedSensitiveTypePatchOperationOutput {
+	return i.ToSensitiveTypeGroupGroupedSensitiveTypePatchOperationOutputWithContext(context.Background())
+}
+
+func (i SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs) ToSensitiveTypeGroupGroupedSensitiveTypePatchOperationOutputWithContext(ctx context.Context) SensitiveTypeGroupGroupedSensitiveTypePatchOperationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SensitiveTypeGroupGroupedSensitiveTypePatchOperationOutput)
+}
+
+// SensitiveTypeGroupGroupedSensitiveTypePatchOperationArrayInput is an input type that accepts SensitiveTypeGroupGroupedSensitiveTypePatchOperationArray and SensitiveTypeGroupGroupedSensitiveTypePatchOperationArrayOutput values.
+// You can construct a concrete instance of `SensitiveTypeGroupGroupedSensitiveTypePatchOperationArrayInput` via:
+//
+//	SensitiveTypeGroupGroupedSensitiveTypePatchOperationArray{ SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs{...} }
+type SensitiveTypeGroupGroupedSensitiveTypePatchOperationArrayInput interface {
+	pulumi.Input
+
+	ToSensitiveTypeGroupGroupedSensitiveTypePatchOperationArrayOutput() SensitiveTypeGroupGroupedSensitiveTypePatchOperationArrayOutput
+	ToSensitiveTypeGroupGroupedSensitiveTypePatchOperationArrayOutputWithContext(context.Context) SensitiveTypeGroupGroupedSensitiveTypePatchOperationArrayOutput
+}
+
+type SensitiveTypeGroupGroupedSensitiveTypePatchOperationArray []SensitiveTypeGroupGroupedSensitiveTypePatchOperationInput
+
+func (SensitiveTypeGroupGroupedSensitiveTypePatchOperationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SensitiveTypeGroupGroupedSensitiveTypePatchOperation)(nil)).Elem()
+}
+
+func (i SensitiveTypeGroupGroupedSensitiveTypePatchOperationArray) ToSensitiveTypeGroupGroupedSensitiveTypePatchOperationArrayOutput() SensitiveTypeGroupGroupedSensitiveTypePatchOperationArrayOutput {
+	return i.ToSensitiveTypeGroupGroupedSensitiveTypePatchOperationArrayOutputWithContext(context.Background())
+}
+
+func (i SensitiveTypeGroupGroupedSensitiveTypePatchOperationArray) ToSensitiveTypeGroupGroupedSensitiveTypePatchOperationArrayOutputWithContext(ctx context.Context) SensitiveTypeGroupGroupedSensitiveTypePatchOperationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SensitiveTypeGroupGroupedSensitiveTypePatchOperationArrayOutput)
+}
+
+type SensitiveTypeGroupGroupedSensitiveTypePatchOperationOutput struct{ *pulumi.OutputState }
+
+func (SensitiveTypeGroupGroupedSensitiveTypePatchOperationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SensitiveTypeGroupGroupedSensitiveTypePatchOperation)(nil)).Elem()
+}
+
+func (o SensitiveTypeGroupGroupedSensitiveTypePatchOperationOutput) ToSensitiveTypeGroupGroupedSensitiveTypePatchOperationOutput() SensitiveTypeGroupGroupedSensitiveTypePatchOperationOutput {
+	return o
+}
+
+func (o SensitiveTypeGroupGroupedSensitiveTypePatchOperationOutput) ToSensitiveTypeGroupGroupedSensitiveTypePatchOperationOutputWithContext(ctx context.Context) SensitiveTypeGroupGroupedSensitiveTypePatchOperationOutput {
+	return o
+}
+
+// (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
+func (o SensitiveTypeGroupGroupedSensitiveTypePatchOperationOutput) Operation() pulumi.StringOutput {
+	return o.ApplyT(func(v SensitiveTypeGroupGroupedSensitiveTypePatchOperation) string { return v.Operation }).(pulumi.StringOutput)
+}
+
+// (Updatable)
+func (o SensitiveTypeGroupGroupedSensitiveTypePatchOperationOutput) Selection() pulumi.StringOutput {
+	return o.ApplyT(func(v SensitiveTypeGroupGroupedSensitiveTypePatchOperation) string { return v.Selection }).(pulumi.StringOutput)
+}
+
+// (Updatable)
+func (o SensitiveTypeGroupGroupedSensitiveTypePatchOperationOutput) Value() pulumi.StringMapOutput {
+	return o.ApplyT(func(v SensitiveTypeGroupGroupedSensitiveTypePatchOperation) map[string]string { return v.Value }).(pulumi.StringMapOutput)
+}
+
+type SensitiveTypeGroupGroupedSensitiveTypePatchOperationArrayOutput struct{ *pulumi.OutputState }
+
+func (SensitiveTypeGroupGroupedSensitiveTypePatchOperationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SensitiveTypeGroupGroupedSensitiveTypePatchOperation)(nil)).Elem()
+}
+
+func (o SensitiveTypeGroupGroupedSensitiveTypePatchOperationArrayOutput) ToSensitiveTypeGroupGroupedSensitiveTypePatchOperationArrayOutput() SensitiveTypeGroupGroupedSensitiveTypePatchOperationArrayOutput {
+	return o
+}
+
+func (o SensitiveTypeGroupGroupedSensitiveTypePatchOperationArrayOutput) ToSensitiveTypeGroupGroupedSensitiveTypePatchOperationArrayOutputWithContext(ctx context.Context) SensitiveTypeGroupGroupedSensitiveTypePatchOperationArrayOutput {
+	return o
+}
+
+func (o SensitiveTypeGroupGroupedSensitiveTypePatchOperationArrayOutput) Index(i pulumi.IntInput) SensitiveTypeGroupGroupedSensitiveTypePatchOperationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SensitiveTypeGroupGroupedSensitiveTypePatchOperation {
+		return vs[0].([]SensitiveTypeGroupGroupedSensitiveTypePatchOperation)[vs[1].(int)]
+	}).(SensitiveTypeGroupGroupedSensitiveTypePatchOperationOutput)
+}
+
 type TargetDatabaseConnectionOption struct {
 	// (Updatable) The connection type used to connect to the database. Allowed values:
 	// * PRIVATE_ENDPOINT - Represents connection through private endpoint in Data Safe.
@@ -25433,6 +25645,335 @@ func (o GetMaskingReportMaskedColumnsMaskedColumnCollectionItemArrayOutput) Inde
 	}).(GetMaskingReportMaskedColumnsMaskedColumnCollectionItemOutput)
 }
 
+type GetMaskingReportMaskingErrorsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetMaskingReportMaskingErrorsFilterInput is an input type that accepts GetMaskingReportMaskingErrorsFilterArgs and GetMaskingReportMaskingErrorsFilterOutput values.
+// You can construct a concrete instance of `GetMaskingReportMaskingErrorsFilterInput` via:
+//
+//	GetMaskingReportMaskingErrorsFilterArgs{...}
+type GetMaskingReportMaskingErrorsFilterInput interface {
+	pulumi.Input
+
+	ToGetMaskingReportMaskingErrorsFilterOutput() GetMaskingReportMaskingErrorsFilterOutput
+	ToGetMaskingReportMaskingErrorsFilterOutputWithContext(context.Context) GetMaskingReportMaskingErrorsFilterOutput
+}
+
+type GetMaskingReportMaskingErrorsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetMaskingReportMaskingErrorsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingReportMaskingErrorsFilter)(nil)).Elem()
+}
+
+func (i GetMaskingReportMaskingErrorsFilterArgs) ToGetMaskingReportMaskingErrorsFilterOutput() GetMaskingReportMaskingErrorsFilterOutput {
+	return i.ToGetMaskingReportMaskingErrorsFilterOutputWithContext(context.Background())
+}
+
+func (i GetMaskingReportMaskingErrorsFilterArgs) ToGetMaskingReportMaskingErrorsFilterOutputWithContext(ctx context.Context) GetMaskingReportMaskingErrorsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingReportMaskingErrorsFilterOutput)
+}
+
+// GetMaskingReportMaskingErrorsFilterArrayInput is an input type that accepts GetMaskingReportMaskingErrorsFilterArray and GetMaskingReportMaskingErrorsFilterArrayOutput values.
+// You can construct a concrete instance of `GetMaskingReportMaskingErrorsFilterArrayInput` via:
+//
+//	GetMaskingReportMaskingErrorsFilterArray{ GetMaskingReportMaskingErrorsFilterArgs{...} }
+type GetMaskingReportMaskingErrorsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMaskingReportMaskingErrorsFilterArrayOutput() GetMaskingReportMaskingErrorsFilterArrayOutput
+	ToGetMaskingReportMaskingErrorsFilterArrayOutputWithContext(context.Context) GetMaskingReportMaskingErrorsFilterArrayOutput
+}
+
+type GetMaskingReportMaskingErrorsFilterArray []GetMaskingReportMaskingErrorsFilterInput
+
+func (GetMaskingReportMaskingErrorsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingReportMaskingErrorsFilter)(nil)).Elem()
+}
+
+func (i GetMaskingReportMaskingErrorsFilterArray) ToGetMaskingReportMaskingErrorsFilterArrayOutput() GetMaskingReportMaskingErrorsFilterArrayOutput {
+	return i.ToGetMaskingReportMaskingErrorsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMaskingReportMaskingErrorsFilterArray) ToGetMaskingReportMaskingErrorsFilterArrayOutputWithContext(ctx context.Context) GetMaskingReportMaskingErrorsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingReportMaskingErrorsFilterArrayOutput)
+}
+
+type GetMaskingReportMaskingErrorsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingReportMaskingErrorsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingReportMaskingErrorsFilter)(nil)).Elem()
+}
+
+func (o GetMaskingReportMaskingErrorsFilterOutput) ToGetMaskingReportMaskingErrorsFilterOutput() GetMaskingReportMaskingErrorsFilterOutput {
+	return o
+}
+
+func (o GetMaskingReportMaskingErrorsFilterOutput) ToGetMaskingReportMaskingErrorsFilterOutputWithContext(ctx context.Context) GetMaskingReportMaskingErrorsFilterOutput {
+	return o
+}
+
+func (o GetMaskingReportMaskingErrorsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingReportMaskingErrorsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMaskingReportMaskingErrorsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMaskingReportMaskingErrorsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMaskingReportMaskingErrorsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMaskingReportMaskingErrorsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetMaskingReportMaskingErrorsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingReportMaskingErrorsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingReportMaskingErrorsFilter)(nil)).Elem()
+}
+
+func (o GetMaskingReportMaskingErrorsFilterArrayOutput) ToGetMaskingReportMaskingErrorsFilterArrayOutput() GetMaskingReportMaskingErrorsFilterArrayOutput {
+	return o
+}
+
+func (o GetMaskingReportMaskingErrorsFilterArrayOutput) ToGetMaskingReportMaskingErrorsFilterArrayOutputWithContext(ctx context.Context) GetMaskingReportMaskingErrorsFilterArrayOutput {
+	return o
+}
+
+func (o GetMaskingReportMaskingErrorsFilterArrayOutput) Index(i pulumi.IntInput) GetMaskingReportMaskingErrorsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaskingReportMaskingErrorsFilter {
+		return vs[0].([]GetMaskingReportMaskingErrorsFilter)[vs[1].(int)]
+	}).(GetMaskingReportMaskingErrorsFilterOutput)
+}
+
+type GetMaskingReportMaskingErrorsMaskingErrorCollection struct {
+	// An array of masking error objects.
+	Items []GetMaskingReportMaskingErrorsMaskingErrorCollectionItem `pulumi:"items"`
+}
+
+// GetMaskingReportMaskingErrorsMaskingErrorCollectionInput is an input type that accepts GetMaskingReportMaskingErrorsMaskingErrorCollectionArgs and GetMaskingReportMaskingErrorsMaskingErrorCollectionOutput values.
+// You can construct a concrete instance of `GetMaskingReportMaskingErrorsMaskingErrorCollectionInput` via:
+//
+//	GetMaskingReportMaskingErrorsMaskingErrorCollectionArgs{...}
+type GetMaskingReportMaskingErrorsMaskingErrorCollectionInput interface {
+	pulumi.Input
+
+	ToGetMaskingReportMaskingErrorsMaskingErrorCollectionOutput() GetMaskingReportMaskingErrorsMaskingErrorCollectionOutput
+	ToGetMaskingReportMaskingErrorsMaskingErrorCollectionOutputWithContext(context.Context) GetMaskingReportMaskingErrorsMaskingErrorCollectionOutput
+}
+
+type GetMaskingReportMaskingErrorsMaskingErrorCollectionArgs struct {
+	// An array of masking error objects.
+	Items GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetMaskingReportMaskingErrorsMaskingErrorCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingReportMaskingErrorsMaskingErrorCollection)(nil)).Elem()
+}
+
+func (i GetMaskingReportMaskingErrorsMaskingErrorCollectionArgs) ToGetMaskingReportMaskingErrorsMaskingErrorCollectionOutput() GetMaskingReportMaskingErrorsMaskingErrorCollectionOutput {
+	return i.ToGetMaskingReportMaskingErrorsMaskingErrorCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMaskingReportMaskingErrorsMaskingErrorCollectionArgs) ToGetMaskingReportMaskingErrorsMaskingErrorCollectionOutputWithContext(ctx context.Context) GetMaskingReportMaskingErrorsMaskingErrorCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingReportMaskingErrorsMaskingErrorCollectionOutput)
+}
+
+// GetMaskingReportMaskingErrorsMaskingErrorCollectionArrayInput is an input type that accepts GetMaskingReportMaskingErrorsMaskingErrorCollectionArray and GetMaskingReportMaskingErrorsMaskingErrorCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMaskingReportMaskingErrorsMaskingErrorCollectionArrayInput` via:
+//
+//	GetMaskingReportMaskingErrorsMaskingErrorCollectionArray{ GetMaskingReportMaskingErrorsMaskingErrorCollectionArgs{...} }
+type GetMaskingReportMaskingErrorsMaskingErrorCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMaskingReportMaskingErrorsMaskingErrorCollectionArrayOutput() GetMaskingReportMaskingErrorsMaskingErrorCollectionArrayOutput
+	ToGetMaskingReportMaskingErrorsMaskingErrorCollectionArrayOutputWithContext(context.Context) GetMaskingReportMaskingErrorsMaskingErrorCollectionArrayOutput
+}
+
+type GetMaskingReportMaskingErrorsMaskingErrorCollectionArray []GetMaskingReportMaskingErrorsMaskingErrorCollectionInput
+
+func (GetMaskingReportMaskingErrorsMaskingErrorCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingReportMaskingErrorsMaskingErrorCollection)(nil)).Elem()
+}
+
+func (i GetMaskingReportMaskingErrorsMaskingErrorCollectionArray) ToGetMaskingReportMaskingErrorsMaskingErrorCollectionArrayOutput() GetMaskingReportMaskingErrorsMaskingErrorCollectionArrayOutput {
+	return i.ToGetMaskingReportMaskingErrorsMaskingErrorCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMaskingReportMaskingErrorsMaskingErrorCollectionArray) ToGetMaskingReportMaskingErrorsMaskingErrorCollectionArrayOutputWithContext(ctx context.Context) GetMaskingReportMaskingErrorsMaskingErrorCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingReportMaskingErrorsMaskingErrorCollectionArrayOutput)
+}
+
+type GetMaskingReportMaskingErrorsMaskingErrorCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingReportMaskingErrorsMaskingErrorCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingReportMaskingErrorsMaskingErrorCollection)(nil)).Elem()
+}
+
+func (o GetMaskingReportMaskingErrorsMaskingErrorCollectionOutput) ToGetMaskingReportMaskingErrorsMaskingErrorCollectionOutput() GetMaskingReportMaskingErrorsMaskingErrorCollectionOutput {
+	return o
+}
+
+func (o GetMaskingReportMaskingErrorsMaskingErrorCollectionOutput) ToGetMaskingReportMaskingErrorsMaskingErrorCollectionOutputWithContext(ctx context.Context) GetMaskingReportMaskingErrorsMaskingErrorCollectionOutput {
+	return o
+}
+
+// An array of masking error objects.
+func (o GetMaskingReportMaskingErrorsMaskingErrorCollectionOutput) Items() GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMaskingReportMaskingErrorsMaskingErrorCollection) []GetMaskingReportMaskingErrorsMaskingErrorCollectionItem {
+		return v.Items
+	}).(GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArrayOutput)
+}
+
+type GetMaskingReportMaskingErrorsMaskingErrorCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingReportMaskingErrorsMaskingErrorCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingReportMaskingErrorsMaskingErrorCollection)(nil)).Elem()
+}
+
+func (o GetMaskingReportMaskingErrorsMaskingErrorCollectionArrayOutput) ToGetMaskingReportMaskingErrorsMaskingErrorCollectionArrayOutput() GetMaskingReportMaskingErrorsMaskingErrorCollectionArrayOutput {
+	return o
+}
+
+func (o GetMaskingReportMaskingErrorsMaskingErrorCollectionArrayOutput) ToGetMaskingReportMaskingErrorsMaskingErrorCollectionArrayOutputWithContext(ctx context.Context) GetMaskingReportMaskingErrorsMaskingErrorCollectionArrayOutput {
+	return o
+}
+
+func (o GetMaskingReportMaskingErrorsMaskingErrorCollectionArrayOutput) Index(i pulumi.IntInput) GetMaskingReportMaskingErrorsMaskingErrorCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaskingReportMaskingErrorsMaskingErrorCollection {
+		return vs[0].([]GetMaskingReportMaskingErrorsMaskingErrorCollection)[vs[1].(int)]
+	}).(GetMaskingReportMaskingErrorsMaskingErrorCollectionOutput)
+}
+
+type GetMaskingReportMaskingErrorsMaskingErrorCollectionItem struct {
+	// The text of the masking error.
+	Error string `pulumi:"error"`
+	// The statement resulting into the error.
+	FailedStatement string `pulumi:"failedStatement"`
+	// A filter to return only masking errors that match the specified step name.
+	StepName string `pulumi:"stepName"`
+	// The date and time the error entry was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetMaskingReportMaskingErrorsMaskingErrorCollectionItemInput is an input type that accepts GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArgs and GetMaskingReportMaskingErrorsMaskingErrorCollectionItemOutput values.
+// You can construct a concrete instance of `GetMaskingReportMaskingErrorsMaskingErrorCollectionItemInput` via:
+//
+//	GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArgs{...}
+type GetMaskingReportMaskingErrorsMaskingErrorCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMaskingReportMaskingErrorsMaskingErrorCollectionItemOutput() GetMaskingReportMaskingErrorsMaskingErrorCollectionItemOutput
+	ToGetMaskingReportMaskingErrorsMaskingErrorCollectionItemOutputWithContext(context.Context) GetMaskingReportMaskingErrorsMaskingErrorCollectionItemOutput
+}
+
+type GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArgs struct {
+	// The text of the masking error.
+	Error pulumi.StringInput `pulumi:"error"`
+	// The statement resulting into the error.
+	FailedStatement pulumi.StringInput `pulumi:"failedStatement"`
+	// A filter to return only masking errors that match the specified step name.
+	StepName pulumi.StringInput `pulumi:"stepName"`
+	// The date and time the error entry was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingReportMaskingErrorsMaskingErrorCollectionItem)(nil)).Elem()
+}
+
+func (i GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArgs) ToGetMaskingReportMaskingErrorsMaskingErrorCollectionItemOutput() GetMaskingReportMaskingErrorsMaskingErrorCollectionItemOutput {
+	return i.ToGetMaskingReportMaskingErrorsMaskingErrorCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArgs) ToGetMaskingReportMaskingErrorsMaskingErrorCollectionItemOutputWithContext(ctx context.Context) GetMaskingReportMaskingErrorsMaskingErrorCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingReportMaskingErrorsMaskingErrorCollectionItemOutput)
+}
+
+// GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArrayInput is an input type that accepts GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArray and GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArrayInput` via:
+//
+//	GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArray{ GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArgs{...} }
+type GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMaskingReportMaskingErrorsMaskingErrorCollectionItemArrayOutput() GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArrayOutput
+	ToGetMaskingReportMaskingErrorsMaskingErrorCollectionItemArrayOutputWithContext(context.Context) GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArrayOutput
+}
+
+type GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArray []GetMaskingReportMaskingErrorsMaskingErrorCollectionItemInput
+
+func (GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingReportMaskingErrorsMaskingErrorCollectionItem)(nil)).Elem()
+}
+
+func (i GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArray) ToGetMaskingReportMaskingErrorsMaskingErrorCollectionItemArrayOutput() GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArrayOutput {
+	return i.ToGetMaskingReportMaskingErrorsMaskingErrorCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArray) ToGetMaskingReportMaskingErrorsMaskingErrorCollectionItemArrayOutputWithContext(ctx context.Context) GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArrayOutput)
+}
+
+type GetMaskingReportMaskingErrorsMaskingErrorCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingReportMaskingErrorsMaskingErrorCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingReportMaskingErrorsMaskingErrorCollectionItem)(nil)).Elem()
+}
+
+func (o GetMaskingReportMaskingErrorsMaskingErrorCollectionItemOutput) ToGetMaskingReportMaskingErrorsMaskingErrorCollectionItemOutput() GetMaskingReportMaskingErrorsMaskingErrorCollectionItemOutput {
+	return o
+}
+
+func (o GetMaskingReportMaskingErrorsMaskingErrorCollectionItemOutput) ToGetMaskingReportMaskingErrorsMaskingErrorCollectionItemOutputWithContext(ctx context.Context) GetMaskingReportMaskingErrorsMaskingErrorCollectionItemOutput {
+	return o
+}
+
+// The text of the masking error.
+func (o GetMaskingReportMaskingErrorsMaskingErrorCollectionItemOutput) Error() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingReportMaskingErrorsMaskingErrorCollectionItem) string { return v.Error }).(pulumi.StringOutput)
+}
+
+// The statement resulting into the error.
+func (o GetMaskingReportMaskingErrorsMaskingErrorCollectionItemOutput) FailedStatement() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingReportMaskingErrorsMaskingErrorCollectionItem) string { return v.FailedStatement }).(pulumi.StringOutput)
+}
+
+// A filter to return only masking errors that match the specified step name.
+func (o GetMaskingReportMaskingErrorsMaskingErrorCollectionItemOutput) StepName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingReportMaskingErrorsMaskingErrorCollectionItem) string { return v.StepName }).(pulumi.StringOutput)
+}
+
+// The date and time the error entry was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetMaskingReportMaskingErrorsMaskingErrorCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingReportMaskingErrorsMaskingErrorCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingReportMaskingErrorsMaskingErrorCollectionItem)(nil)).Elem()
+}
+
+func (o GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArrayOutput) ToGetMaskingReportMaskingErrorsMaskingErrorCollectionItemArrayOutput() GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArrayOutput) ToGetMaskingReportMaskingErrorsMaskingErrorCollectionItemArrayOutputWithContext(ctx context.Context) GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMaskingReportMaskingErrorsMaskingErrorCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaskingReportMaskingErrorsMaskingErrorCollectionItem {
+		return vs[0].([]GetMaskingReportMaskingErrorsMaskingErrorCollectionItem)[vs[1].(int)]
+	}).(GetMaskingReportMaskingErrorsMaskingErrorCollectionItemOutput)
+}
+
 type GetMaskingReportsFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -25826,6 +26367,8 @@ type GetMaskingReportsMaskingReportCollectionItem struct {
 	IsRefreshStatsEnabled bool `pulumi:"isRefreshStatsEnabled"`
 	// A filter to return only the resources that match the specified masking policy OCID.
 	MaskingPolicyId string `pulumi:"maskingPolicyId"`
+	// The status of the masking job.
+	MaskingStatus string `pulumi:"maskingStatus"`
 	// The OCID of the masking work request that resulted in this masking report.
 	MaskingWorkRequestId string `pulumi:"maskingWorkRequestId"`
 	// Indicates if parallel execution was enabled during the masking operation.
@@ -25852,6 +26395,10 @@ type GetMaskingReportsMaskingReportCollectionItem struct {
 	TotalMaskedSensitiveTypes string `pulumi:"totalMaskedSensitiveTypes"`
 	// The total number of masked values.
 	TotalMaskedValues string `pulumi:"totalMaskedValues"`
+	// The total number of errors in post-masking script.
+	TotalPostMaskingScriptErrors string `pulumi:"totalPostMaskingScriptErrors"`
+	// The total number of errors in pre-masking script.
+	TotalPreMaskingScriptErrors string `pulumi:"totalPreMaskingScriptErrors"`
 }
 
 // GetMaskingReportsMaskingReportCollectionItemInput is an input type that accepts GetMaskingReportsMaskingReportCollectionItemArgs and GetMaskingReportsMaskingReportCollectionItemOutput values.
@@ -25878,6 +26425,8 @@ type GetMaskingReportsMaskingReportCollectionItemArgs struct {
 	IsRefreshStatsEnabled pulumi.BoolInput `pulumi:"isRefreshStatsEnabled"`
 	// A filter to return only the resources that match the specified masking policy OCID.
 	MaskingPolicyId pulumi.StringInput `pulumi:"maskingPolicyId"`
+	// The status of the masking job.
+	MaskingStatus pulumi.StringInput `pulumi:"maskingStatus"`
 	// The OCID of the masking work request that resulted in this masking report.
 	MaskingWorkRequestId pulumi.StringInput `pulumi:"maskingWorkRequestId"`
 	// Indicates if parallel execution was enabled during the masking operation.
@@ -25904,6 +26453,10 @@ type GetMaskingReportsMaskingReportCollectionItemArgs struct {
 	TotalMaskedSensitiveTypes pulumi.StringInput `pulumi:"totalMaskedSensitiveTypes"`
 	// The total number of masked values.
 	TotalMaskedValues pulumi.StringInput `pulumi:"totalMaskedValues"`
+	// The total number of errors in post-masking script.
+	TotalPostMaskingScriptErrors pulumi.StringInput `pulumi:"totalPostMaskingScriptErrors"`
+	// The total number of errors in pre-masking script.
+	TotalPreMaskingScriptErrors pulumi.StringInput `pulumi:"totalPreMaskingScriptErrors"`
 }
 
 func (GetMaskingReportsMaskingReportCollectionItemArgs) ElementType() reflect.Type {
@@ -25987,6 +26540,11 @@ func (o GetMaskingReportsMaskingReportCollectionItemOutput) MaskingPolicyId() pu
 	return o.ApplyT(func(v GetMaskingReportsMaskingReportCollectionItem) string { return v.MaskingPolicyId }).(pulumi.StringOutput)
 }
 
+// The status of the masking job.
+func (o GetMaskingReportsMaskingReportCollectionItemOutput) MaskingStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingReportsMaskingReportCollectionItem) string { return v.MaskingStatus }).(pulumi.StringOutput)
+}
+
 // The OCID of the masking work request that resulted in this masking report.
 func (o GetMaskingReportsMaskingReportCollectionItemOutput) MaskingWorkRequestId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaskingReportsMaskingReportCollectionItem) string { return v.MaskingWorkRequestId }).(pulumi.StringOutput)
@@ -26050,6 +26608,16 @@ func (o GetMaskingReportsMaskingReportCollectionItemOutput) TotalMaskedSensitive
 // The total number of masked values.
 func (o GetMaskingReportsMaskingReportCollectionItemOutput) TotalMaskedValues() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaskingReportsMaskingReportCollectionItem) string { return v.TotalMaskedValues }).(pulumi.StringOutput)
+}
+
+// The total number of errors in post-masking script.
+func (o GetMaskingReportsMaskingReportCollectionItemOutput) TotalPostMaskingScriptErrors() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingReportsMaskingReportCollectionItem) string { return v.TotalPostMaskingScriptErrors }).(pulumi.StringOutput)
+}
+
+// The total number of errors in pre-masking script.
+func (o GetMaskingReportsMaskingReportCollectionItemOutput) TotalPreMaskingScriptErrors() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingReportsMaskingReportCollectionItem) string { return v.TotalPreMaskingScriptErrors }).(pulumi.StringOutput)
 }
 
 type GetMaskingReportsMaskingReportCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -37153,7 +37721,7 @@ type GetSecurityAssessmentFindingsFinding struct {
 	Oneline string `pulumi:"oneline"`
 	// The severity of the finding as determined by security assessment. This cannot be modified by user.
 	OracleDefinedSeverity string `pulumi:"oracleDefinedSeverity"`
-	// An optional filter to return only findings containing the specified reference.
+	// An optional filter to return only findings that match the specified reference.
 	References []GetSecurityAssessmentFindingsFindingReference `pulumi:"references"`
 	// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
 	Remarks string `pulumi:"remarks"`
@@ -37205,7 +37773,7 @@ type GetSecurityAssessmentFindingsFindingArgs struct {
 	Oneline pulumi.StringInput `pulumi:"oneline"`
 	// The severity of the finding as determined by security assessment. This cannot be modified by user.
 	OracleDefinedSeverity pulumi.StringInput `pulumi:"oracleDefinedSeverity"`
-	// An optional filter to return only findings containing the specified reference.
+	// An optional filter to return only findings that match the specified reference.
 	References GetSecurityAssessmentFindingsFindingReferenceArrayInput `pulumi:"references"`
 	// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
 	Remarks pulumi.StringInput `pulumi:"remarks"`
@@ -37326,7 +37894,7 @@ func (o GetSecurityAssessmentFindingsFindingOutput) OracleDefinedSeverity() pulu
 	return o.ApplyT(func(v GetSecurityAssessmentFindingsFinding) string { return v.OracleDefinedSeverity }).(pulumi.StringOutput)
 }
 
-// An optional filter to return only findings containing the specified reference.
+// An optional filter to return only findings that match the specified reference.
 func (o GetSecurityAssessmentFindingsFindingOutput) References() GetSecurityAssessmentFindingsFindingReferenceArrayOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingsFinding) []GetSecurityAssessmentFindingsFindingReference {
 		return v.References
@@ -44708,6 +45276,475 @@ func (o GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArrayOutput) I
 	}).(GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput)
 }
 
+type GetSensitiveColumnAnalyticsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSensitiveColumnAnalyticsFilterInput is an input type that accepts GetSensitiveColumnAnalyticsFilterArgs and GetSensitiveColumnAnalyticsFilterOutput values.
+// You can construct a concrete instance of `GetSensitiveColumnAnalyticsFilterInput` via:
+//
+//	GetSensitiveColumnAnalyticsFilterArgs{...}
+type GetSensitiveColumnAnalyticsFilterInput interface {
+	pulumi.Input
+
+	ToGetSensitiveColumnAnalyticsFilterOutput() GetSensitiveColumnAnalyticsFilterOutput
+	ToGetSensitiveColumnAnalyticsFilterOutputWithContext(context.Context) GetSensitiveColumnAnalyticsFilterOutput
+}
+
+type GetSensitiveColumnAnalyticsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSensitiveColumnAnalyticsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveColumnAnalyticsFilter)(nil)).Elem()
+}
+
+func (i GetSensitiveColumnAnalyticsFilterArgs) ToGetSensitiveColumnAnalyticsFilterOutput() GetSensitiveColumnAnalyticsFilterOutput {
+	return i.ToGetSensitiveColumnAnalyticsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveColumnAnalyticsFilterArgs) ToGetSensitiveColumnAnalyticsFilterOutputWithContext(ctx context.Context) GetSensitiveColumnAnalyticsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveColumnAnalyticsFilterOutput)
+}
+
+// GetSensitiveColumnAnalyticsFilterArrayInput is an input type that accepts GetSensitiveColumnAnalyticsFilterArray and GetSensitiveColumnAnalyticsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSensitiveColumnAnalyticsFilterArrayInput` via:
+//
+//	GetSensitiveColumnAnalyticsFilterArray{ GetSensitiveColumnAnalyticsFilterArgs{...} }
+type GetSensitiveColumnAnalyticsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSensitiveColumnAnalyticsFilterArrayOutput() GetSensitiveColumnAnalyticsFilterArrayOutput
+	ToGetSensitiveColumnAnalyticsFilterArrayOutputWithContext(context.Context) GetSensitiveColumnAnalyticsFilterArrayOutput
+}
+
+type GetSensitiveColumnAnalyticsFilterArray []GetSensitiveColumnAnalyticsFilterInput
+
+func (GetSensitiveColumnAnalyticsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveColumnAnalyticsFilter)(nil)).Elem()
+}
+
+func (i GetSensitiveColumnAnalyticsFilterArray) ToGetSensitiveColumnAnalyticsFilterArrayOutput() GetSensitiveColumnAnalyticsFilterArrayOutput {
+	return i.ToGetSensitiveColumnAnalyticsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveColumnAnalyticsFilterArray) ToGetSensitiveColumnAnalyticsFilterArrayOutputWithContext(ctx context.Context) GetSensitiveColumnAnalyticsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveColumnAnalyticsFilterArrayOutput)
+}
+
+type GetSensitiveColumnAnalyticsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveColumnAnalyticsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveColumnAnalyticsFilter)(nil)).Elem()
+}
+
+func (o GetSensitiveColumnAnalyticsFilterOutput) ToGetSensitiveColumnAnalyticsFilterOutput() GetSensitiveColumnAnalyticsFilterOutput {
+	return o
+}
+
+func (o GetSensitiveColumnAnalyticsFilterOutput) ToGetSensitiveColumnAnalyticsFilterOutputWithContext(ctx context.Context) GetSensitiveColumnAnalyticsFilterOutput {
+	return o
+}
+
+func (o GetSensitiveColumnAnalyticsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveColumnAnalyticsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSensitiveColumnAnalyticsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSensitiveColumnAnalyticsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSensitiveColumnAnalyticsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSensitiveColumnAnalyticsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSensitiveColumnAnalyticsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveColumnAnalyticsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveColumnAnalyticsFilter)(nil)).Elem()
+}
+
+func (o GetSensitiveColumnAnalyticsFilterArrayOutput) ToGetSensitiveColumnAnalyticsFilterArrayOutput() GetSensitiveColumnAnalyticsFilterArrayOutput {
+	return o
+}
+
+func (o GetSensitiveColumnAnalyticsFilterArrayOutput) ToGetSensitiveColumnAnalyticsFilterArrayOutputWithContext(ctx context.Context) GetSensitiveColumnAnalyticsFilterArrayOutput {
+	return o
+}
+
+func (o GetSensitiveColumnAnalyticsFilterArrayOutput) Index(i pulumi.IntInput) GetSensitiveColumnAnalyticsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSensitiveColumnAnalyticsFilter {
+		return vs[0].([]GetSensitiveColumnAnalyticsFilter)[vs[1].(int)]
+	}).(GetSensitiveColumnAnalyticsFilterOutput)
+}
+
+type GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollection struct {
+	// An array of sensitive column analytics summary objects.
+	Items []GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItem `pulumi:"items"`
+}
+
+// GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionInput is an input type that accepts GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArgs and GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionOutput values.
+// You can construct a concrete instance of `GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionInput` via:
+//
+//	GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArgs{...}
+type GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionInput interface {
+	pulumi.Input
+
+	ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionOutput() GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionOutput
+	ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionOutputWithContext(context.Context) GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionOutput
+}
+
+type GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArgs struct {
+	// An array of sensitive column analytics summary objects.
+	Items GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollection)(nil)).Elem()
+}
+
+func (i GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArgs) ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionOutput() GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionOutput {
+	return i.ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArgs) ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionOutputWithContext(ctx context.Context) GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionOutput)
+}
+
+// GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArrayInput is an input type that accepts GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArray and GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArrayInput` via:
+//
+//	GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArray{ GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArgs{...} }
+type GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArrayOutput() GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArrayOutput
+	ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArrayOutputWithContext(context.Context) GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArrayOutput
+}
+
+type GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArray []GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionInput
+
+func (GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollection)(nil)).Elem()
+}
+
+func (i GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArray) ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArrayOutput() GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArrayOutput {
+	return i.ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArray) ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArrayOutputWithContext(ctx context.Context) GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArrayOutput)
+}
+
+type GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollection)(nil)).Elem()
+}
+
+func (o GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionOutput) ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionOutput() GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionOutput {
+	return o
+}
+
+func (o GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionOutput) ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionOutputWithContext(ctx context.Context) GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionOutput {
+	return o
+}
+
+// An array of sensitive column analytics summary objects.
+func (o GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionOutput) Items() GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollection) []GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItem {
+		return v.Items
+	}).(GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArrayOutput)
+}
+
+type GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollection)(nil)).Elem()
+}
+
+func (o GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArrayOutput) ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArrayOutput() GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArrayOutput {
+	return o
+}
+
+func (o GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArrayOutput) ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArrayOutputWithContext(ctx context.Context) GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArrayOutput {
+	return o
+}
+
+func (o GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArrayOutput) Index(i pulumi.IntInput) GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollection {
+		return vs[0].([]GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollection)[vs[1].(int)]
+	}).(GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionOutput)
+}
+
+type GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItem struct {
+	// The dimensions available for sensitive column analytics.
+	Dimensions []GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimension `pulumi:"dimensions"`
+	// The total count for the aggregation metric.
+	SensitiveColumnAnalyticCount string `pulumi:"sensitiveColumnAnalyticCount"`
+}
+
+// GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemInput is an input type that accepts GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArgs and GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemOutput values.
+// You can construct a concrete instance of `GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemInput` via:
+//
+//	GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArgs{...}
+type GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemOutput() GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemOutput
+	ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemOutputWithContext(context.Context) GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemOutput
+}
+
+type GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArgs struct {
+	// The dimensions available for sensitive column analytics.
+	Dimensions GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArrayInput `pulumi:"dimensions"`
+	// The total count for the aggregation metric.
+	SensitiveColumnAnalyticCount pulumi.StringInput `pulumi:"sensitiveColumnAnalyticCount"`
+}
+
+func (GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (i GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArgs) ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemOutput() GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemOutput {
+	return i.ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArgs) ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemOutputWithContext(ctx context.Context) GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemOutput)
+}
+
+// GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArrayInput is an input type that accepts GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArray and GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArrayInput` via:
+//
+//	GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArray{ GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArgs{...} }
+type GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArrayOutput() GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArrayOutput
+	ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArrayOutputWithContext(context.Context) GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArrayOutput
+}
+
+type GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArray []GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemInput
+
+func (GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (i GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArray) ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArrayOutput() GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArrayOutput {
+	return i.ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArray) ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArrayOutputWithContext(ctx context.Context) GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArrayOutput)
+}
+
+type GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (o GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemOutput) ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemOutput() GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemOutput {
+	return o
+}
+
+func (o GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemOutput) ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemOutputWithContext(ctx context.Context) GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemOutput {
+	return o
+}
+
+// The dimensions available for sensitive column analytics.
+func (o GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemOutput) Dimensions() GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArrayOutput {
+	return o.ApplyT(func(v GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItem) []GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimension {
+		return v.Dimensions
+	}).(GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArrayOutput)
+}
+
+// The total count for the aggregation metric.
+func (o GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemOutput) SensitiveColumnAnalyticCount() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItem) string {
+		return v.SensitiveColumnAnalyticCount
+	}).(pulumi.StringOutput)
+}
+
+type GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (o GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArrayOutput) ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArrayOutput() GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArrayOutput) ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArrayOutputWithContext(ctx context.Context) GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItem {
+		return vs[0].([]GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItem)[vs[1].(int)]
+	}).(GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemOutput)
+}
+
+type GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimension struct {
+	// A filter to return only a specific column based on column name.
+	ColumnName string `pulumi:"columnName"`
+	// A filter to return only items related to a specific object name.
+	Object string `pulumi:"object"`
+	// A filter to return only items related to specific schema name.
+	SchemaName string `pulumi:"schemaName"`
+	// A filter to return only the resources that match the specified sensitive data model OCID.
+	SensitiveDataModelId string `pulumi:"sensitiveDataModelId"`
+	// A filter to return only the sensitive columns that are associated with one of the sensitive types identified by the specified OCIDs.
+	SensitiveTypeId string `pulumi:"sensitiveTypeId"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId string `pulumi:"targetId"`
+}
+
+// GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionInput is an input type that accepts GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArgs and GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionOutput values.
+// You can construct a concrete instance of `GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionInput` via:
+//
+//	GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArgs{...}
+type GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionInput interface {
+	pulumi.Input
+
+	ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionOutput() GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionOutput
+	ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionOutputWithContext(context.Context) GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionOutput
+}
+
+type GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArgs struct {
+	// A filter to return only a specific column based on column name.
+	ColumnName pulumi.StringInput `pulumi:"columnName"`
+	// A filter to return only items related to a specific object name.
+	Object pulumi.StringInput `pulumi:"object"`
+	// A filter to return only items related to specific schema name.
+	SchemaName pulumi.StringInput `pulumi:"schemaName"`
+	// A filter to return only the resources that match the specified sensitive data model OCID.
+	SensitiveDataModelId pulumi.StringInput `pulumi:"sensitiveDataModelId"`
+	// A filter to return only the sensitive columns that are associated with one of the sensitive types identified by the specified OCIDs.
+	SensitiveTypeId pulumi.StringInput `pulumi:"sensitiveTypeId"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+}
+
+func (GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (i GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArgs) ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionOutput() GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionOutput {
+	return i.ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArgs) ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionOutputWithContext(ctx context.Context) GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionOutput)
+}
+
+// GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArrayInput is an input type that accepts GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArray and GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArrayOutput values.
+// You can construct a concrete instance of `GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArrayInput` via:
+//
+//	GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArray{ GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArgs{...} }
+type GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArrayInput interface {
+	pulumi.Input
+
+	ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArrayOutput() GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArrayOutput
+	ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArrayOutputWithContext(context.Context) GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArrayOutput
+}
+
+type GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArray []GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionInput
+
+func (GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (i GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArray) ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArrayOutput() GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArrayOutput {
+	return i.ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArray) ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArrayOutputWithContext(ctx context.Context) GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArrayOutput)
+}
+
+type GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (o GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionOutput) ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionOutput() GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionOutput {
+	return o
+}
+
+func (o GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionOutput) ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionOutputWithContext(ctx context.Context) GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionOutput {
+	return o
+}
+
+// A filter to return only a specific column based on column name.
+func (o GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionOutput) ColumnName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimension) string {
+		return v.ColumnName
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only items related to a specific object name.
+func (o GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimension) string {
+		return v.Object
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only items related to specific schema name.
+func (o GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionOutput) SchemaName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimension) string {
+		return v.SchemaName
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only the resources that match the specified sensitive data model OCID.
+func (o GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionOutput) SensitiveDataModelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimension) string {
+		return v.SensitiveDataModelId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only the sensitive columns that are associated with one of the sensitive types identified by the specified OCIDs.
+func (o GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionOutput) SensitiveTypeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimension) string {
+		return v.SensitiveTypeId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only items related to a specific target OCID.
+func (o GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimension) string {
+		return v.TargetId
+	}).(pulumi.StringOutput)
+}
+
+type GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (o GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArrayOutput) ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArrayOutput() GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArrayOutput {
+	return o
+}
+
+func (o GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArrayOutput) ToGetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArrayOutputWithContext(ctx context.Context) GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArrayOutput {
+	return o
+}
+
+func (o GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArrayOutput) Index(i pulumi.IntInput) GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimension {
+		return vs[0].([]GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimension)[vs[1].(int)]
+	}).(GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionOutput)
+}
+
 type GetSensitiveDataModelReferentialRelationChild struct {
 	// The application name.
 	AppName string `pulumi:"appName"`
@@ -47365,6 +48402,8 @@ type GetSensitiveDataModelsSensitiveDataModelCollectionItem struct {
 	IsSampleDataCollectionEnabled bool `pulumi:"isSampleDataCollectionEnabled"`
 	// The schemas to be scanned by data discovery jobs.
 	SchemasForDiscoveries []string `pulumi:"schemasForDiscoveries"`
+	// The OCIDs of the sensitive type groups to be used by data discovery jobs.
+	SensitiveTypeGroupIdsForDiscoveries []string `pulumi:"sensitiveTypeGroupIdsForDiscoveries"`
 	// The OCIDs of the sensitive types to be used by data discovery jobs.
 	SensitiveTypeIdsForDiscoveries []string `pulumi:"sensitiveTypeIdsForDiscoveries"`
 	// A filter to return only the resources that match the specified lifecycle state.
@@ -47417,6 +48456,8 @@ type GetSensitiveDataModelsSensitiveDataModelCollectionItemArgs struct {
 	IsSampleDataCollectionEnabled pulumi.BoolInput `pulumi:"isSampleDataCollectionEnabled"`
 	// The schemas to be scanned by data discovery jobs.
 	SchemasForDiscoveries pulumi.StringArrayInput `pulumi:"schemasForDiscoveries"`
+	// The OCIDs of the sensitive type groups to be used by data discovery jobs.
+	SensitiveTypeGroupIdsForDiscoveries pulumi.StringArrayInput `pulumi:"sensitiveTypeGroupIdsForDiscoveries"`
 	// The OCIDs of the sensitive types to be used by data discovery jobs.
 	SensitiveTypeIdsForDiscoveries pulumi.StringArrayInput `pulumi:"sensitiveTypeIdsForDiscoveries"`
 	// A filter to return only the resources that match the specified lifecycle state.
@@ -47551,6 +48592,13 @@ func (o GetSensitiveDataModelsSensitiveDataModelCollectionItemOutput) IsSampleDa
 func (o GetSensitiveDataModelsSensitiveDataModelCollectionItemOutput) SchemasForDiscoveries() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetSensitiveDataModelsSensitiveDataModelCollectionItem) []string {
 		return v.SchemasForDiscoveries
+	}).(pulumi.StringArrayOutput)
+}
+
+// The OCIDs of the sensitive type groups to be used by data discovery jobs.
+func (o GetSensitiveDataModelsSensitiveDataModelCollectionItemOutput) SensitiveTypeGroupIdsForDiscoveries() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelsSensitiveDataModelCollectionItem) []string {
+		return v.SensitiveTypeGroupIdsForDiscoveries
 	}).(pulumi.StringArrayOutput)
 }
 
@@ -47721,6 +48769,931 @@ func (o GetSensitiveDataModelsSensitiveDataModelCollectionItemTablesForDiscovery
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSensitiveDataModelsSensitiveDataModelCollectionItemTablesForDiscovery {
 		return vs[0].([]GetSensitiveDataModelsSensitiveDataModelCollectionItemTablesForDiscovery)[vs[1].(int)]
 	}).(GetSensitiveDataModelsSensitiveDataModelCollectionItemTablesForDiscoveryOutput)
+}
+
+type GetSensitiveTypeGroupGroupedSensitiveTypesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSensitiveTypeGroupGroupedSensitiveTypesFilterInput is an input type that accepts GetSensitiveTypeGroupGroupedSensitiveTypesFilterArgs and GetSensitiveTypeGroupGroupedSensitiveTypesFilterOutput values.
+// You can construct a concrete instance of `GetSensitiveTypeGroupGroupedSensitiveTypesFilterInput` via:
+//
+//	GetSensitiveTypeGroupGroupedSensitiveTypesFilterArgs{...}
+type GetSensitiveTypeGroupGroupedSensitiveTypesFilterInput interface {
+	pulumi.Input
+
+	ToGetSensitiveTypeGroupGroupedSensitiveTypesFilterOutput() GetSensitiveTypeGroupGroupedSensitiveTypesFilterOutput
+	ToGetSensitiveTypeGroupGroupedSensitiveTypesFilterOutputWithContext(context.Context) GetSensitiveTypeGroupGroupedSensitiveTypesFilterOutput
+}
+
+type GetSensitiveTypeGroupGroupedSensitiveTypesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSensitiveTypeGroupGroupedSensitiveTypesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveTypeGroupGroupedSensitiveTypesFilter)(nil)).Elem()
+}
+
+func (i GetSensitiveTypeGroupGroupedSensitiveTypesFilterArgs) ToGetSensitiveTypeGroupGroupedSensitiveTypesFilterOutput() GetSensitiveTypeGroupGroupedSensitiveTypesFilterOutput {
+	return i.ToGetSensitiveTypeGroupGroupedSensitiveTypesFilterOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveTypeGroupGroupedSensitiveTypesFilterArgs) ToGetSensitiveTypeGroupGroupedSensitiveTypesFilterOutputWithContext(ctx context.Context) GetSensitiveTypeGroupGroupedSensitiveTypesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveTypeGroupGroupedSensitiveTypesFilterOutput)
+}
+
+// GetSensitiveTypeGroupGroupedSensitiveTypesFilterArrayInput is an input type that accepts GetSensitiveTypeGroupGroupedSensitiveTypesFilterArray and GetSensitiveTypeGroupGroupedSensitiveTypesFilterArrayOutput values.
+// You can construct a concrete instance of `GetSensitiveTypeGroupGroupedSensitiveTypesFilterArrayInput` via:
+//
+//	GetSensitiveTypeGroupGroupedSensitiveTypesFilterArray{ GetSensitiveTypeGroupGroupedSensitiveTypesFilterArgs{...} }
+type GetSensitiveTypeGroupGroupedSensitiveTypesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSensitiveTypeGroupGroupedSensitiveTypesFilterArrayOutput() GetSensitiveTypeGroupGroupedSensitiveTypesFilterArrayOutput
+	ToGetSensitiveTypeGroupGroupedSensitiveTypesFilterArrayOutputWithContext(context.Context) GetSensitiveTypeGroupGroupedSensitiveTypesFilterArrayOutput
+}
+
+type GetSensitiveTypeGroupGroupedSensitiveTypesFilterArray []GetSensitiveTypeGroupGroupedSensitiveTypesFilterInput
+
+func (GetSensitiveTypeGroupGroupedSensitiveTypesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveTypeGroupGroupedSensitiveTypesFilter)(nil)).Elem()
+}
+
+func (i GetSensitiveTypeGroupGroupedSensitiveTypesFilterArray) ToGetSensitiveTypeGroupGroupedSensitiveTypesFilterArrayOutput() GetSensitiveTypeGroupGroupedSensitiveTypesFilterArrayOutput {
+	return i.ToGetSensitiveTypeGroupGroupedSensitiveTypesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveTypeGroupGroupedSensitiveTypesFilterArray) ToGetSensitiveTypeGroupGroupedSensitiveTypesFilterArrayOutputWithContext(ctx context.Context) GetSensitiveTypeGroupGroupedSensitiveTypesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveTypeGroupGroupedSensitiveTypesFilterArrayOutput)
+}
+
+type GetSensitiveTypeGroupGroupedSensitiveTypesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveTypeGroupGroupedSensitiveTypesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveTypeGroupGroupedSensitiveTypesFilter)(nil)).Elem()
+}
+
+func (o GetSensitiveTypeGroupGroupedSensitiveTypesFilterOutput) ToGetSensitiveTypeGroupGroupedSensitiveTypesFilterOutput() GetSensitiveTypeGroupGroupedSensitiveTypesFilterOutput {
+	return o
+}
+
+func (o GetSensitiveTypeGroupGroupedSensitiveTypesFilterOutput) ToGetSensitiveTypeGroupGroupedSensitiveTypesFilterOutputWithContext(ctx context.Context) GetSensitiveTypeGroupGroupedSensitiveTypesFilterOutput {
+	return o
+}
+
+func (o GetSensitiveTypeGroupGroupedSensitiveTypesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveTypeGroupGroupedSensitiveTypesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSensitiveTypeGroupGroupedSensitiveTypesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSensitiveTypeGroupGroupedSensitiveTypesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSensitiveTypeGroupGroupedSensitiveTypesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSensitiveTypeGroupGroupedSensitiveTypesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSensitiveTypeGroupGroupedSensitiveTypesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveTypeGroupGroupedSensitiveTypesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveTypeGroupGroupedSensitiveTypesFilter)(nil)).Elem()
+}
+
+func (o GetSensitiveTypeGroupGroupedSensitiveTypesFilterArrayOutput) ToGetSensitiveTypeGroupGroupedSensitiveTypesFilterArrayOutput() GetSensitiveTypeGroupGroupedSensitiveTypesFilterArrayOutput {
+	return o
+}
+
+func (o GetSensitiveTypeGroupGroupedSensitiveTypesFilterArrayOutput) ToGetSensitiveTypeGroupGroupedSensitiveTypesFilterArrayOutputWithContext(ctx context.Context) GetSensitiveTypeGroupGroupedSensitiveTypesFilterArrayOutput {
+	return o
+}
+
+func (o GetSensitiveTypeGroupGroupedSensitiveTypesFilterArrayOutput) Index(i pulumi.IntInput) GetSensitiveTypeGroupGroupedSensitiveTypesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSensitiveTypeGroupGroupedSensitiveTypesFilter {
+		return vs[0].([]GetSensitiveTypeGroupGroupedSensitiveTypesFilter)[vs[1].(int)]
+	}).(GetSensitiveTypeGroupGroupedSensitiveTypesFilterOutput)
+}
+
+type GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollection struct {
+	// List of sensitive type id summary objects present in the sensitive type group.
+	Items []GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItem `pulumi:"items"`
+}
+
+// GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionInput is an input type that accepts GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArgs and GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionOutput values.
+// You can construct a concrete instance of `GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionInput` via:
+//
+//	GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArgs{...}
+type GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionInput interface {
+	pulumi.Input
+
+	ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionOutput() GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionOutput
+	ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionOutputWithContext(context.Context) GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionOutput
+}
+
+type GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArgs struct {
+	// List of sensitive type id summary objects present in the sensitive type group.
+	Items GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollection)(nil)).Elem()
+}
+
+func (i GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArgs) ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionOutput() GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionOutput {
+	return i.ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArgs) ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionOutputWithContext(ctx context.Context) GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionOutput)
+}
+
+// GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArrayInput is an input type that accepts GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArray and GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArrayInput` via:
+//
+//	GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArray{ GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArgs{...} }
+type GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArrayOutput() GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArrayOutput
+	ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArrayOutputWithContext(context.Context) GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArrayOutput
+}
+
+type GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArray []GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionInput
+
+func (GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollection)(nil)).Elem()
+}
+
+func (i GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArray) ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArrayOutput() GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArrayOutput {
+	return i.ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArray) ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArrayOutputWithContext(ctx context.Context) GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArrayOutput)
+}
+
+type GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollection)(nil)).Elem()
+}
+
+func (o GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionOutput) ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionOutput() GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionOutput {
+	return o
+}
+
+func (o GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionOutput) ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionOutputWithContext(ctx context.Context) GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionOutput {
+	return o
+}
+
+// List of sensitive type id summary objects present in the sensitive type group.
+func (o GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionOutput) Items() GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollection) []GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItem {
+		return v.Items
+	}).(GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArrayOutput)
+}
+
+type GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollection)(nil)).Elem()
+}
+
+func (o GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArrayOutput) ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArrayOutput() GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArrayOutput {
+	return o
+}
+
+func (o GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArrayOutput) ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArrayOutputWithContext(ctx context.Context) GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArrayOutput {
+	return o
+}
+
+func (o GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArrayOutput) Index(i pulumi.IntInput) GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollection {
+		return vs[0].([]GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollection)[vs[1].(int)]
+	}).(GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionOutput)
+}
+
+type GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItem struct {
+	// List of sensitive type id summary objects present in the sensitive type group.
+	Items           []GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItem           `pulumi:"items"`
+	PatchOperations []GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperation `pulumi:"patchOperations"`
+	// The OCID of the sensitive type group.
+	SensitiveTypeGroupId string `pulumi:"sensitiveTypeGroupId"`
+}
+
+// GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemInput is an input type that accepts GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArgs and GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemOutput values.
+// You can construct a concrete instance of `GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemInput` via:
+//
+//	GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArgs{...}
+type GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemOutput() GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemOutput
+	ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemOutputWithContext(context.Context) GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemOutput
+}
+
+type GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArgs struct {
+	// List of sensitive type id summary objects present in the sensitive type group.
+	Items           GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArrayInput           `pulumi:"items"`
+	PatchOperations GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArrayInput `pulumi:"patchOperations"`
+	// The OCID of the sensitive type group.
+	SensitiveTypeGroupId pulumi.StringInput `pulumi:"sensitiveTypeGroupId"`
+}
+
+func (GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItem)(nil)).Elem()
+}
+
+func (i GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArgs) ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemOutput() GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemOutput {
+	return i.ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArgs) ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemOutputWithContext(ctx context.Context) GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemOutput)
+}
+
+// GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArrayInput is an input type that accepts GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArray and GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArrayInput` via:
+//
+//	GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArray{ GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArgs{...} }
+type GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArrayOutput() GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArrayOutput
+	ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArrayOutputWithContext(context.Context) GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArrayOutput
+}
+
+type GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArray []GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemInput
+
+func (GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItem)(nil)).Elem()
+}
+
+func (i GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArray) ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArrayOutput() GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArrayOutput {
+	return i.ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArray) ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArrayOutputWithContext(ctx context.Context) GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArrayOutput)
+}
+
+type GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItem)(nil)).Elem()
+}
+
+func (o GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemOutput) ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemOutput() GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemOutput {
+	return o
+}
+
+func (o GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemOutput) ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemOutputWithContext(ctx context.Context) GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemOutput {
+	return o
+}
+
+// List of sensitive type id summary objects present in the sensitive type group.
+func (o GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemOutput) Items() GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArrayOutput {
+	return o.ApplyT(func(v GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItem) []GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItem {
+		return v.Items
+	}).(GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArrayOutput)
+}
+
+func (o GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemOutput) PatchOperations() GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArrayOutput {
+	return o.ApplyT(func(v GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItem) []GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperation {
+		return v.PatchOperations
+	}).(GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArrayOutput)
+}
+
+// The OCID of the sensitive type group.
+func (o GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemOutput) SensitiveTypeGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItem) string {
+		return v.SensitiveTypeGroupId
+	}).(pulumi.StringOutput)
+}
+
+type GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItem)(nil)).Elem()
+}
+
+func (o GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArrayOutput) ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArrayOutput() GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArrayOutput) ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArrayOutputWithContext(ctx context.Context) GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItem {
+		return vs[0].([]GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItem)[vs[1].(int)]
+	}).(GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemOutput)
+}
+
+type GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItem struct {
+	// A filter to return only items related to a specific sensitive type OCID.
+	SensitiveTypeId string `pulumi:"sensitiveTypeId"`
+}
+
+// GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemInput is an input type that accepts GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArgs and GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemOutput values.
+// You can construct a concrete instance of `GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemInput` via:
+//
+//	GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArgs{...}
+type GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemInput interface {
+	pulumi.Input
+
+	ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemOutput() GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemOutput
+	ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemOutputWithContext(context.Context) GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemOutput
+}
+
+type GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArgs struct {
+	// A filter to return only items related to a specific sensitive type OCID.
+	SensitiveTypeId pulumi.StringInput `pulumi:"sensitiveTypeId"`
+}
+
+func (GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItem)(nil)).Elem()
+}
+
+func (i GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArgs) ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemOutput() GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemOutput {
+	return i.ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArgs) ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemOutputWithContext(ctx context.Context) GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemOutput)
+}
+
+// GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArrayInput is an input type that accepts GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArray and GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArrayOutput values.
+// You can construct a concrete instance of `GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArrayInput` via:
+//
+//	GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArray{ GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArgs{...} }
+type GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArrayOutput() GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArrayOutput
+	ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArrayOutputWithContext(context.Context) GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArrayOutput
+}
+
+type GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArray []GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemInput
+
+func (GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItem)(nil)).Elem()
+}
+
+func (i GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArray) ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArrayOutput() GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArrayOutput {
+	return i.ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArray) ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArrayOutputWithContext(ctx context.Context) GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArrayOutput)
+}
+
+type GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItem)(nil)).Elem()
+}
+
+func (o GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemOutput) ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemOutput() GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemOutput {
+	return o
+}
+
+func (o GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemOutput) ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemOutputWithContext(ctx context.Context) GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemOutput {
+	return o
+}
+
+// A filter to return only items related to a specific sensitive type OCID.
+func (o GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemOutput) SensitiveTypeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItem) string {
+		return v.SensitiveTypeId
+	}).(pulumi.StringOutput)
+}
+
+type GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItem)(nil)).Elem()
+}
+
+func (o GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArrayOutput) ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArrayOutput() GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArrayOutput {
+	return o
+}
+
+func (o GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArrayOutput) ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArrayOutputWithContext(ctx context.Context) GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArrayOutput {
+	return o
+}
+
+func (o GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArrayOutput) Index(i pulumi.IntInput) GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItem {
+		return vs[0].([]GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItem)[vs[1].(int)]
+	}).(GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemOutput)
+}
+
+type GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperation struct {
+	Operation string            `pulumi:"operation"`
+	Selection string            `pulumi:"selection"`
+	Value     map[string]string `pulumi:"value"`
+}
+
+// GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationInput is an input type that accepts GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArgs and GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationOutput values.
+// You can construct a concrete instance of `GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationInput` via:
+//
+//	GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArgs{...}
+type GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationInput interface {
+	pulumi.Input
+
+	ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationOutput() GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationOutput
+	ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationOutputWithContext(context.Context) GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationOutput
+}
+
+type GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArgs struct {
+	Operation pulumi.StringInput    `pulumi:"operation"`
+	Selection pulumi.StringInput    `pulumi:"selection"`
+	Value     pulumi.StringMapInput `pulumi:"value"`
+}
+
+func (GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperation)(nil)).Elem()
+}
+
+func (i GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArgs) ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationOutput() GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationOutput {
+	return i.ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArgs) ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationOutputWithContext(ctx context.Context) GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationOutput)
+}
+
+// GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArrayInput is an input type that accepts GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArray and GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArrayOutput values.
+// You can construct a concrete instance of `GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArrayInput` via:
+//
+//	GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArray{ GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArgs{...} }
+type GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArrayInput interface {
+	pulumi.Input
+
+	ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArrayOutput() GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArrayOutput
+	ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArrayOutputWithContext(context.Context) GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArrayOutput
+}
+
+type GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArray []GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationInput
+
+func (GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperation)(nil)).Elem()
+}
+
+func (i GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArray) ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArrayOutput() GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArrayOutput {
+	return i.ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArrayOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArray) ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArrayOutputWithContext(ctx context.Context) GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArrayOutput)
+}
+
+type GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperation)(nil)).Elem()
+}
+
+func (o GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationOutput) ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationOutput() GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationOutput {
+	return o
+}
+
+func (o GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationOutput) ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationOutputWithContext(ctx context.Context) GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationOutput {
+	return o
+}
+
+func (o GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationOutput) Operation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperation) string {
+		return v.Operation
+	}).(pulumi.StringOutput)
+}
+
+func (o GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationOutput) Selection() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperation) string {
+		return v.Selection
+	}).(pulumi.StringOutput)
+}
+
+func (o GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationOutput) Value() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperation) map[string]string {
+		return v.Value
+	}).(pulumi.StringMapOutput)
+}
+
+type GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperation)(nil)).Elem()
+}
+
+func (o GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArrayOutput) ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArrayOutput() GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArrayOutput {
+	return o
+}
+
+func (o GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArrayOutput) ToGetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArrayOutputWithContext(ctx context.Context) GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArrayOutput {
+	return o
+}
+
+func (o GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArrayOutput) Index(i pulumi.IntInput) GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperation {
+		return vs[0].([]GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperation)[vs[1].(int)]
+	}).(GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationOutput)
+}
+
+type GetSensitiveTypeGroupsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSensitiveTypeGroupsFilterInput is an input type that accepts GetSensitiveTypeGroupsFilterArgs and GetSensitiveTypeGroupsFilterOutput values.
+// You can construct a concrete instance of `GetSensitiveTypeGroupsFilterInput` via:
+//
+//	GetSensitiveTypeGroupsFilterArgs{...}
+type GetSensitiveTypeGroupsFilterInput interface {
+	pulumi.Input
+
+	ToGetSensitiveTypeGroupsFilterOutput() GetSensitiveTypeGroupsFilterOutput
+	ToGetSensitiveTypeGroupsFilterOutputWithContext(context.Context) GetSensitiveTypeGroupsFilterOutput
+}
+
+type GetSensitiveTypeGroupsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSensitiveTypeGroupsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveTypeGroupsFilter)(nil)).Elem()
+}
+
+func (i GetSensitiveTypeGroupsFilterArgs) ToGetSensitiveTypeGroupsFilterOutput() GetSensitiveTypeGroupsFilterOutput {
+	return i.ToGetSensitiveTypeGroupsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveTypeGroupsFilterArgs) ToGetSensitiveTypeGroupsFilterOutputWithContext(ctx context.Context) GetSensitiveTypeGroupsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveTypeGroupsFilterOutput)
+}
+
+// GetSensitiveTypeGroupsFilterArrayInput is an input type that accepts GetSensitiveTypeGroupsFilterArray and GetSensitiveTypeGroupsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSensitiveTypeGroupsFilterArrayInput` via:
+//
+//	GetSensitiveTypeGroupsFilterArray{ GetSensitiveTypeGroupsFilterArgs{...} }
+type GetSensitiveTypeGroupsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSensitiveTypeGroupsFilterArrayOutput() GetSensitiveTypeGroupsFilterArrayOutput
+	ToGetSensitiveTypeGroupsFilterArrayOutputWithContext(context.Context) GetSensitiveTypeGroupsFilterArrayOutput
+}
+
+type GetSensitiveTypeGroupsFilterArray []GetSensitiveTypeGroupsFilterInput
+
+func (GetSensitiveTypeGroupsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveTypeGroupsFilter)(nil)).Elem()
+}
+
+func (i GetSensitiveTypeGroupsFilterArray) ToGetSensitiveTypeGroupsFilterArrayOutput() GetSensitiveTypeGroupsFilterArrayOutput {
+	return i.ToGetSensitiveTypeGroupsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveTypeGroupsFilterArray) ToGetSensitiveTypeGroupsFilterArrayOutputWithContext(ctx context.Context) GetSensitiveTypeGroupsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveTypeGroupsFilterArrayOutput)
+}
+
+type GetSensitiveTypeGroupsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveTypeGroupsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveTypeGroupsFilter)(nil)).Elem()
+}
+
+func (o GetSensitiveTypeGroupsFilterOutput) ToGetSensitiveTypeGroupsFilterOutput() GetSensitiveTypeGroupsFilterOutput {
+	return o
+}
+
+func (o GetSensitiveTypeGroupsFilterOutput) ToGetSensitiveTypeGroupsFilterOutputWithContext(ctx context.Context) GetSensitiveTypeGroupsFilterOutput {
+	return o
+}
+
+func (o GetSensitiveTypeGroupsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveTypeGroupsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSensitiveTypeGroupsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSensitiveTypeGroupsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSensitiveTypeGroupsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSensitiveTypeGroupsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSensitiveTypeGroupsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveTypeGroupsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveTypeGroupsFilter)(nil)).Elem()
+}
+
+func (o GetSensitiveTypeGroupsFilterArrayOutput) ToGetSensitiveTypeGroupsFilterArrayOutput() GetSensitiveTypeGroupsFilterArrayOutput {
+	return o
+}
+
+func (o GetSensitiveTypeGroupsFilterArrayOutput) ToGetSensitiveTypeGroupsFilterArrayOutputWithContext(ctx context.Context) GetSensitiveTypeGroupsFilterArrayOutput {
+	return o
+}
+
+func (o GetSensitiveTypeGroupsFilterArrayOutput) Index(i pulumi.IntInput) GetSensitiveTypeGroupsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSensitiveTypeGroupsFilter {
+		return vs[0].([]GetSensitiveTypeGroupsFilter)[vs[1].(int)]
+	}).(GetSensitiveTypeGroupsFilterOutput)
+}
+
+type GetSensitiveTypeGroupsSensitiveTypeGroupCollection struct {
+	Items []GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItem `pulumi:"items"`
+}
+
+// GetSensitiveTypeGroupsSensitiveTypeGroupCollectionInput is an input type that accepts GetSensitiveTypeGroupsSensitiveTypeGroupCollectionArgs and GetSensitiveTypeGroupsSensitiveTypeGroupCollectionOutput values.
+// You can construct a concrete instance of `GetSensitiveTypeGroupsSensitiveTypeGroupCollectionInput` via:
+//
+//	GetSensitiveTypeGroupsSensitiveTypeGroupCollectionArgs{...}
+type GetSensitiveTypeGroupsSensitiveTypeGroupCollectionInput interface {
+	pulumi.Input
+
+	ToGetSensitiveTypeGroupsSensitiveTypeGroupCollectionOutput() GetSensitiveTypeGroupsSensitiveTypeGroupCollectionOutput
+	ToGetSensitiveTypeGroupsSensitiveTypeGroupCollectionOutputWithContext(context.Context) GetSensitiveTypeGroupsSensitiveTypeGroupCollectionOutput
+}
+
+type GetSensitiveTypeGroupsSensitiveTypeGroupCollectionArgs struct {
+	Items GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSensitiveTypeGroupsSensitiveTypeGroupCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveTypeGroupsSensitiveTypeGroupCollection)(nil)).Elem()
+}
+
+func (i GetSensitiveTypeGroupsSensitiveTypeGroupCollectionArgs) ToGetSensitiveTypeGroupsSensitiveTypeGroupCollectionOutput() GetSensitiveTypeGroupsSensitiveTypeGroupCollectionOutput {
+	return i.ToGetSensitiveTypeGroupsSensitiveTypeGroupCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveTypeGroupsSensitiveTypeGroupCollectionArgs) ToGetSensitiveTypeGroupsSensitiveTypeGroupCollectionOutputWithContext(ctx context.Context) GetSensitiveTypeGroupsSensitiveTypeGroupCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveTypeGroupsSensitiveTypeGroupCollectionOutput)
+}
+
+// GetSensitiveTypeGroupsSensitiveTypeGroupCollectionArrayInput is an input type that accepts GetSensitiveTypeGroupsSensitiveTypeGroupCollectionArray and GetSensitiveTypeGroupsSensitiveTypeGroupCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSensitiveTypeGroupsSensitiveTypeGroupCollectionArrayInput` via:
+//
+//	GetSensitiveTypeGroupsSensitiveTypeGroupCollectionArray{ GetSensitiveTypeGroupsSensitiveTypeGroupCollectionArgs{...} }
+type GetSensitiveTypeGroupsSensitiveTypeGroupCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSensitiveTypeGroupsSensitiveTypeGroupCollectionArrayOutput() GetSensitiveTypeGroupsSensitiveTypeGroupCollectionArrayOutput
+	ToGetSensitiveTypeGroupsSensitiveTypeGroupCollectionArrayOutputWithContext(context.Context) GetSensitiveTypeGroupsSensitiveTypeGroupCollectionArrayOutput
+}
+
+type GetSensitiveTypeGroupsSensitiveTypeGroupCollectionArray []GetSensitiveTypeGroupsSensitiveTypeGroupCollectionInput
+
+func (GetSensitiveTypeGroupsSensitiveTypeGroupCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveTypeGroupsSensitiveTypeGroupCollection)(nil)).Elem()
+}
+
+func (i GetSensitiveTypeGroupsSensitiveTypeGroupCollectionArray) ToGetSensitiveTypeGroupsSensitiveTypeGroupCollectionArrayOutput() GetSensitiveTypeGroupsSensitiveTypeGroupCollectionArrayOutput {
+	return i.ToGetSensitiveTypeGroupsSensitiveTypeGroupCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveTypeGroupsSensitiveTypeGroupCollectionArray) ToGetSensitiveTypeGroupsSensitiveTypeGroupCollectionArrayOutputWithContext(ctx context.Context) GetSensitiveTypeGroupsSensitiveTypeGroupCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveTypeGroupsSensitiveTypeGroupCollectionArrayOutput)
+}
+
+type GetSensitiveTypeGroupsSensitiveTypeGroupCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveTypeGroupsSensitiveTypeGroupCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveTypeGroupsSensitiveTypeGroupCollection)(nil)).Elem()
+}
+
+func (o GetSensitiveTypeGroupsSensitiveTypeGroupCollectionOutput) ToGetSensitiveTypeGroupsSensitiveTypeGroupCollectionOutput() GetSensitiveTypeGroupsSensitiveTypeGroupCollectionOutput {
+	return o
+}
+
+func (o GetSensitiveTypeGroupsSensitiveTypeGroupCollectionOutput) ToGetSensitiveTypeGroupsSensitiveTypeGroupCollectionOutputWithContext(ctx context.Context) GetSensitiveTypeGroupsSensitiveTypeGroupCollectionOutput {
+	return o
+}
+
+func (o GetSensitiveTypeGroupsSensitiveTypeGroupCollectionOutput) Items() GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSensitiveTypeGroupsSensitiveTypeGroupCollection) []GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItem {
+		return v.Items
+	}).(GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArrayOutput)
+}
+
+type GetSensitiveTypeGroupsSensitiveTypeGroupCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveTypeGroupsSensitiveTypeGroupCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveTypeGroupsSensitiveTypeGroupCollection)(nil)).Elem()
+}
+
+func (o GetSensitiveTypeGroupsSensitiveTypeGroupCollectionArrayOutput) ToGetSensitiveTypeGroupsSensitiveTypeGroupCollectionArrayOutput() GetSensitiveTypeGroupsSensitiveTypeGroupCollectionArrayOutput {
+	return o
+}
+
+func (o GetSensitiveTypeGroupsSensitiveTypeGroupCollectionArrayOutput) ToGetSensitiveTypeGroupsSensitiveTypeGroupCollectionArrayOutputWithContext(ctx context.Context) GetSensitiveTypeGroupsSensitiveTypeGroupCollectionArrayOutput {
+	return o
+}
+
+func (o GetSensitiveTypeGroupsSensitiveTypeGroupCollectionArrayOutput) Index(i pulumi.IntInput) GetSensitiveTypeGroupsSensitiveTypeGroupCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSensitiveTypeGroupsSensitiveTypeGroupCollection {
+		return vs[0].([]GetSensitiveTypeGroupsSensitiveTypeGroupCollection)[vs[1].(int)]
+	}).(GetSensitiveTypeGroupsSensitiveTypeGroupCollectionOutput)
+}
+
+type GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItem struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The description of the sensitive type group.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the sensitive type group.
+	Id string `pulumi:"id"`
+	// The number of sensitive types in the specified sensitive type group.
+	SensitiveTypeCount int `pulumi:"sensitiveTypeCount"`
+	// A filter to return only the resources that match the specified lifecycle state.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the sensitive type group was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the sensitive type group was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemInput is an input type that accepts GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArgs and GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemOutput values.
+// You can construct a concrete instance of `GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemInput` via:
+//
+//	GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArgs{...}
+type GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemOutput() GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemOutput
+	ToGetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemOutputWithContext(context.Context) GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemOutput
+}
+
+type GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArgs struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// The description of the sensitive type group.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the sensitive type group.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The number of sensitive types in the specified sensitive type group.
+	SensitiveTypeCount pulumi.IntInput `pulumi:"sensitiveTypeCount"`
+	// A filter to return only the resources that match the specified lifecycle state.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the sensitive type group was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the sensitive type group was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItem)(nil)).Elem()
+}
+
+func (i GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArgs) ToGetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemOutput() GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemOutput {
+	return i.ToGetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArgs) ToGetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemOutputWithContext(ctx context.Context) GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemOutput)
+}
+
+// GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArrayInput is an input type that accepts GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArray and GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArrayInput` via:
+//
+//	GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArray{ GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArgs{...} }
+type GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArrayOutput() GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArrayOutput
+	ToGetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArrayOutputWithContext(context.Context) GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArrayOutput
+}
+
+type GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArray []GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemInput
+
+func (GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItem)(nil)).Elem()
+}
+
+func (i GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArray) ToGetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArrayOutput() GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArrayOutput {
+	return i.ToGetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArray) ToGetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArrayOutputWithContext(ctx context.Context) GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArrayOutput)
+}
+
+type GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItem)(nil)).Elem()
+}
+
+func (o GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemOutput) ToGetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemOutput() GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemOutput {
+	return o
+}
+
+func (o GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemOutput) ToGetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemOutputWithContext(ctx context.Context) GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemOutput {
+	return o
+}
+
+// A filter to return only resources that match the specified compartment OCID.
+func (o GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+func (o GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// The description of the sensitive type group.
+func (o GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the specified display name.
+func (o GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+func (o GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The OCID of the sensitive type group.
+func (o GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The number of sensitive types in the specified sensitive type group.
+func (o GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemOutput) SensitiveTypeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItem) int { return v.SensitiveTypeCount }).(pulumi.IntOutput)
+}
+
+// A filter to return only the resources that match the specified lifecycle state.
+func (o GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time the sensitive type group was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the sensitive type group was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItem)(nil)).Elem()
+}
+
+func (o GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArrayOutput) ToGetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArrayOutput() GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArrayOutput) ToGetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArrayOutputWithContext(ctx context.Context) GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItem {
+		return vs[0].([]GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItem)[vs[1].(int)]
+	}).(GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemOutput)
 }
 
 type GetSensitiveTypesExportsFilter struct {
@@ -61446,6 +63419,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*SensitiveDataModelReferentialRelationParentPtrInput)(nil)).Elem(), SensitiveDataModelReferentialRelationParentArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SensitiveDataModelTablesForDiscoveryInput)(nil)).Elem(), SensitiveDataModelTablesForDiscoveryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SensitiveDataModelTablesForDiscoveryArrayInput)(nil)).Elem(), SensitiveDataModelTablesForDiscoveryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SensitiveTypeGroupGroupedSensitiveTypeItemInput)(nil)).Elem(), SensitiveTypeGroupGroupedSensitiveTypeItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SensitiveTypeGroupGroupedSensitiveTypeItemArrayInput)(nil)).Elem(), SensitiveTypeGroupGroupedSensitiveTypeItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SensitiveTypeGroupGroupedSensitiveTypePatchOperationInput)(nil)).Elem(), SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SensitiveTypeGroupGroupedSensitiveTypePatchOperationArrayInput)(nil)).Elem(), SensitiveTypeGroupGroupedSensitiveTypePatchOperationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetDatabaseConnectionOptionInput)(nil)).Elem(), TargetDatabaseConnectionOptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetDatabaseConnectionOptionPtrInput)(nil)).Elem(), TargetDatabaseConnectionOptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetDatabaseCredentialsInput)(nil)).Elem(), TargetDatabaseCredentialsArgs{})
@@ -61714,6 +63691,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingReportMaskedColumnsMaskedColumnCollectionArrayInput)(nil)).Elem(), GetMaskingReportMaskedColumnsMaskedColumnCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingReportMaskedColumnsMaskedColumnCollectionItemInput)(nil)).Elem(), GetMaskingReportMaskedColumnsMaskedColumnCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingReportMaskedColumnsMaskedColumnCollectionItemArrayInput)(nil)).Elem(), GetMaskingReportMaskedColumnsMaskedColumnCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingReportMaskingErrorsFilterInput)(nil)).Elem(), GetMaskingReportMaskingErrorsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingReportMaskingErrorsFilterArrayInput)(nil)).Elem(), GetMaskingReportMaskingErrorsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingReportMaskingErrorsMaskingErrorCollectionInput)(nil)).Elem(), GetMaskingReportMaskingErrorsMaskingErrorCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingReportMaskingErrorsMaskingErrorCollectionArrayInput)(nil)).Elem(), GetMaskingReportMaskingErrorsMaskingErrorCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingReportMaskingErrorsMaskingErrorCollectionItemInput)(nil)).Elem(), GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArrayInput)(nil)).Elem(), GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingReportsFilterInput)(nil)).Elem(), GetMaskingReportsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingReportsFilterArrayInput)(nil)).Elem(), GetMaskingReportsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingReportsMaskedColumnItemInput)(nil)).Elem(), GetMaskingReportsMaskedColumnItemArgs{})
@@ -61960,6 +63943,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyReportsSecurityPolicyReportCollectionArrayInput)(nil)).Elem(), GetSecurityPolicyReportsSecurityPolicyReportCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyReportsSecurityPolicyReportCollectionItemInput)(nil)).Elem(), GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArrayInput)(nil)).Elem(), GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveColumnAnalyticsFilterInput)(nil)).Elem(), GetSensitiveColumnAnalyticsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveColumnAnalyticsFilterArrayInput)(nil)).Elem(), GetSensitiveColumnAnalyticsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionInput)(nil)).Elem(), GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArrayInput)(nil)).Elem(), GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemInput)(nil)).Elem(), GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArrayInput)(nil)).Elem(), GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionInput)(nil)).Elem(), GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArrayInput)(nil)).Elem(), GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelReferentialRelationChildInput)(nil)).Elem(), GetSensitiveDataModelReferentialRelationChildArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelReferentialRelationChildArrayInput)(nil)).Elem(), GetSensitiveDataModelReferentialRelationChildArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelReferentialRelationParentInput)(nil)).Elem(), GetSensitiveDataModelReferentialRelationParentArgs{})
@@ -62006,6 +63997,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelsSensitiveDataModelCollectionItemArrayInput)(nil)).Elem(), GetSensitiveDataModelsSensitiveDataModelCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelsSensitiveDataModelCollectionItemTablesForDiscoveryInput)(nil)).Elem(), GetSensitiveDataModelsSensitiveDataModelCollectionItemTablesForDiscoveryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelsSensitiveDataModelCollectionItemTablesForDiscoveryArrayInput)(nil)).Elem(), GetSensitiveDataModelsSensitiveDataModelCollectionItemTablesForDiscoveryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveTypeGroupGroupedSensitiveTypesFilterInput)(nil)).Elem(), GetSensitiveTypeGroupGroupedSensitiveTypesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveTypeGroupGroupedSensitiveTypesFilterArrayInput)(nil)).Elem(), GetSensitiveTypeGroupGroupedSensitiveTypesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionInput)(nil)).Elem(), GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArrayInput)(nil)).Elem(), GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemInput)(nil)).Elem(), GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArrayInput)(nil)).Elem(), GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemInput)(nil)).Elem(), GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArrayInput)(nil)).Elem(), GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationInput)(nil)).Elem(), GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArrayInput)(nil)).Elem(), GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveTypeGroupsFilterInput)(nil)).Elem(), GetSensitiveTypeGroupsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveTypeGroupsFilterArrayInput)(nil)).Elem(), GetSensitiveTypeGroupsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveTypeGroupsSensitiveTypeGroupCollectionInput)(nil)).Elem(), GetSensitiveTypeGroupsSensitiveTypeGroupCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveTypeGroupsSensitiveTypeGroupCollectionArrayInput)(nil)).Elem(), GetSensitiveTypeGroupsSensitiveTypeGroupCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemInput)(nil)).Elem(), GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArrayInput)(nil)).Elem(), GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveTypesExportsFilterInput)(nil)).Elem(), GetSensitiveTypesExportsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveTypesExportsFilterArrayInput)(nil)).Elem(), GetSensitiveTypesExportsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveTypesExportsSensitiveTypesExportCollectionInput)(nil)).Elem(), GetSensitiveTypesExportsSensitiveTypesExportCollectionArgs{})
@@ -62274,6 +64281,10 @@ func init() {
 	pulumi.RegisterOutputType(SensitiveDataModelReferentialRelationParentPtrOutput{})
 	pulumi.RegisterOutputType(SensitiveDataModelTablesForDiscoveryOutput{})
 	pulumi.RegisterOutputType(SensitiveDataModelTablesForDiscoveryArrayOutput{})
+	pulumi.RegisterOutputType(SensitiveTypeGroupGroupedSensitiveTypeItemOutput{})
+	pulumi.RegisterOutputType(SensitiveTypeGroupGroupedSensitiveTypeItemArrayOutput{})
+	pulumi.RegisterOutputType(SensitiveTypeGroupGroupedSensitiveTypePatchOperationOutput{})
+	pulumi.RegisterOutputType(SensitiveTypeGroupGroupedSensitiveTypePatchOperationArrayOutput{})
 	pulumi.RegisterOutputType(TargetDatabaseConnectionOptionOutput{})
 	pulumi.RegisterOutputType(TargetDatabaseConnectionOptionPtrOutput{})
 	pulumi.RegisterOutputType(TargetDatabaseCredentialsOutput{})
@@ -62542,6 +64553,12 @@ func init() {
 	pulumi.RegisterOutputType(GetMaskingReportMaskedColumnsMaskedColumnCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMaskingReportMaskedColumnsMaskedColumnCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetMaskingReportMaskedColumnsMaskedColumnCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMaskingReportMaskingErrorsFilterOutput{})
+	pulumi.RegisterOutputType(GetMaskingReportMaskingErrorsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMaskingReportMaskingErrorsMaskingErrorCollectionOutput{})
+	pulumi.RegisterOutputType(GetMaskingReportMaskingErrorsMaskingErrorCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMaskingReportMaskingErrorsMaskingErrorCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMaskingReportMaskingErrorsMaskingErrorCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetMaskingReportsFilterOutput{})
 	pulumi.RegisterOutputType(GetMaskingReportsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetMaskingReportsMaskedColumnItemOutput{})
@@ -62788,6 +64805,14 @@ func init() {
 	pulumi.RegisterOutputType(GetSecurityPolicyReportsSecurityPolicyReportCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSensitiveColumnAnalyticsFilterOutput{})
+	pulumi.RegisterOutputType(GetSensitiveColumnAnalyticsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionOutput{})
+	pulumi.RegisterOutputType(GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionOutput{})
+	pulumi.RegisterOutputType(GetSensitiveColumnAnalyticsSensitiveColumnAnalyticsCollectionItemDimensionArrayOutput{})
 	pulumi.RegisterOutputType(GetSensitiveDataModelReferentialRelationChildOutput{})
 	pulumi.RegisterOutputType(GetSensitiveDataModelReferentialRelationChildArrayOutput{})
 	pulumi.RegisterOutputType(GetSensitiveDataModelReferentialRelationParentOutput{})
@@ -62834,6 +64859,22 @@ func init() {
 	pulumi.RegisterOutputType(GetSensitiveDataModelsSensitiveDataModelCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetSensitiveDataModelsSensitiveDataModelCollectionItemTablesForDiscoveryOutput{})
 	pulumi.RegisterOutputType(GetSensitiveDataModelsSensitiveDataModelCollectionItemTablesForDiscoveryArrayOutput{})
+	pulumi.RegisterOutputType(GetSensitiveTypeGroupGroupedSensitiveTypesFilterOutput{})
+	pulumi.RegisterOutputType(GetSensitiveTypeGroupGroupedSensitiveTypesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionOutput{})
+	pulumi.RegisterOutputType(GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemOutput{})
+	pulumi.RegisterOutputType(GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationOutput{})
+	pulumi.RegisterOutputType(GetSensitiveTypeGroupGroupedSensitiveTypesGroupedSensitiveTypeCollectionItemPatchOperationArrayOutput{})
+	pulumi.RegisterOutputType(GetSensitiveTypeGroupsFilterOutput{})
+	pulumi.RegisterOutputType(GetSensitiveTypeGroupsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSensitiveTypeGroupsSensitiveTypeGroupCollectionOutput{})
+	pulumi.RegisterOutputType(GetSensitiveTypeGroupsSensitiveTypeGroupCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSensitiveTypeGroupsSensitiveTypeGroupCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetSensitiveTypesExportsFilterOutput{})
 	pulumi.RegisterOutputType(GetSensitiveTypesExportsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetSensitiveTypesExportsSensitiveTypesExportCollectionOutput{})

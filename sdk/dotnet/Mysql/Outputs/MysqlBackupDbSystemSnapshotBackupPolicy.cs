@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Mysql.Outputs
     public sealed class MysqlBackupDbSystemSnapshotBackupPolicy
     {
         /// <summary>
+        /// List of policies of a DB system to schedule cross-region DB system backup copy.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicy> CopyPolicies;
+        /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string>? DefinedTags;
@@ -40,6 +44,8 @@ namespace Pulumi.Oci.Mysql.Outputs
 
         [OutputConstructor]
         private MysqlBackupDbSystemSnapshotBackupPolicy(
+            ImmutableArray<Outputs.MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicy> copyPolicies,
+
             ImmutableDictionary<string, string>? definedTags,
 
             ImmutableDictionary<string, string>? freeformTags,
@@ -52,6 +58,7 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             string? windowStartTime)
         {
+            CopyPolicies = copyPolicies;
             DefinedTags = definedTags;
             FreeformTags = freeformTags;
             IsEnabled = isEnabled;

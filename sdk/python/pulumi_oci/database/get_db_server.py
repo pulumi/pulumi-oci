@@ -27,7 +27,7 @@ class GetDbServerResult:
     """
     A collection of values returned by getDbServer.
     """
-    def __init__(__self__, autonomous_virtual_machine_ids=None, autonomous_vm_cluster_ids=None, compartment_id=None, cpu_core_count=None, db_node_ids=None, db_node_storage_size_in_gbs=None, db_server_id=None, db_server_patching_details=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, freeform_tags=None, id=None, lifecycle_details=None, max_cpu_count=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, shape=None, state=None, time_created=None, vm_cluster_ids=None):
+    def __init__(__self__, autonomous_virtual_machine_ids=None, autonomous_vm_cluster_ids=None, compartment_id=None, compute_model=None, cpu_core_count=None, db_node_ids=None, db_node_storage_size_in_gbs=None, db_server_id=None, db_server_patching_details=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, freeform_tags=None, id=None, lifecycle_details=None, max_cpu_count=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, shape=None, state=None, time_created=None, vm_cluster_ids=None):
         if autonomous_virtual_machine_ids and not isinstance(autonomous_virtual_machine_ids, list):
             raise TypeError("Expected argument 'autonomous_virtual_machine_ids' to be a list")
         pulumi.set(__self__, "autonomous_virtual_machine_ids", autonomous_virtual_machine_ids)
@@ -37,6 +37,9 @@ class GetDbServerResult:
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if compute_model and not isinstance(compute_model, str):
+            raise TypeError("Expected argument 'compute_model' to be a str")
+        pulumi.set(__self__, "compute_model", compute_model)
         if cpu_core_count and not isinstance(cpu_core_count, int):
             raise TypeError("Expected argument 'cpu_core_count' to be a int")
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
@@ -118,6 +121,14 @@ class GetDbServerResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> str:
+        """
+        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        """
+        return pulumi.get(self, "compute_model")
 
     @property
     @pulumi.getter(name="cpuCoreCount")
@@ -278,6 +289,7 @@ class AwaitableGetDbServerResult(GetDbServerResult):
             autonomous_virtual_machine_ids=self.autonomous_virtual_machine_ids,
             autonomous_vm_cluster_ids=self.autonomous_vm_cluster_ids,
             compartment_id=self.compartment_id,
+            compute_model=self.compute_model,
             cpu_core_count=self.cpu_core_count,
             db_node_ids=self.db_node_ids,
             db_node_storage_size_in_gbs=self.db_node_storage_size_in_gbs,
@@ -331,6 +343,7 @@ def get_db_server(db_server_id: Optional[str] = None,
         autonomous_virtual_machine_ids=pulumi.get(__ret__, 'autonomous_virtual_machine_ids'),
         autonomous_vm_cluster_ids=pulumi.get(__ret__, 'autonomous_vm_cluster_ids'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compute_model=pulumi.get(__ret__, 'compute_model'),
         cpu_core_count=pulumi.get(__ret__, 'cpu_core_count'),
         db_node_ids=pulumi.get(__ret__, 'db_node_ids'),
         db_node_storage_size_in_gbs=pulumi.get(__ret__, 'db_node_storage_size_in_gbs'),
@@ -381,6 +394,7 @@ def get_db_server_output(db_server_id: Optional[pulumi.Input[str]] = None,
         autonomous_virtual_machine_ids=pulumi.get(__response__, 'autonomous_virtual_machine_ids'),
         autonomous_vm_cluster_ids=pulumi.get(__response__, 'autonomous_vm_cluster_ids'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compute_model=pulumi.get(__response__, 'compute_model'),
         cpu_core_count=pulumi.get(__response__, 'cpu_core_count'),
         db_node_ids=pulumi.get(__response__, 'db_node_ids'),
         db_node_storage_size_in_gbs=pulumi.get(__response__, 'db_node_storage_size_in_gbs'),

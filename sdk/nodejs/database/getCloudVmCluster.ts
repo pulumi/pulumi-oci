@@ -73,6 +73,10 @@ export interface GetCloudVmClusterResult {
      */
     readonly compartmentId: string;
     /**
+     * The compute model of the cloud VM cluster.
+     */
+    readonly computeModel: string;
+    /**
      * The number of CPU cores enabled on the cloud VM cluster.
      */
     readonly cpuCoreCount: number;
@@ -188,9 +192,13 @@ export interface GetCloudVmClusterResult {
      */
     readonly scanDnsRecordId: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv4 addresses associated with the cloud VM cluster. SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      */
     readonly scanIpIds: string[];
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv6 addresses associated with the cloud VM cluster. SCAN IPv6 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+     */
+    readonly scanIpv6ids: string[];
     /**
      * The TCP Single Client Access Name (SCAN) port. The default port is 1521.
      */
@@ -244,9 +252,17 @@ export interface GetCloudVmClusterResult {
      */
     readonly timeZone: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
      */
     readonly vipIds: string[];
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+     */
+    readonly vipv6ids: string[];
+    /**
+     * The vmcluster type for the VM cluster/Cloud VM cluster.
+     */
+    readonly vmClusterType: string;
     /**
      * The OCID of the zone the cloud VM cluster is associated with.
      */

@@ -2586,6 +2586,8 @@ type ModelCustomMetadataList struct {
 	Category *string `pulumi:"category"`
 	// (Updatable) Description of model metadata
 	Description *string `pulumi:"description"`
+	// (Updatable) Is there any artifact present for the metadata.
+	HasArtifact *bool `pulumi:"hasArtifact"`
 	// (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
 	// * useCaseType
 	// * libraryName
@@ -2593,7 +2595,14 @@ type ModelCustomMetadataList struct {
 	// * estimatorClass
 	// * hyperParameters
 	// * testArtifactresults
+	// * fineTuningConfiguration
+	// * deploymentConfiguration
+	// * readme
+	// * license
+	// * evaluationConfiguration
 	Key *string `pulumi:"key"`
+	// (Updatable) list of keywords for searching
+	Keywords []string `pulumi:"keywords"`
 	// (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
 	//
 	// Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
@@ -2616,6 +2625,8 @@ type ModelCustomMetadataListArgs struct {
 	Category pulumi.StringPtrInput `pulumi:"category"`
 	// (Updatable) Description of model metadata
 	Description pulumi.StringPtrInput `pulumi:"description"`
+	// (Updatable) Is there any artifact present for the metadata.
+	HasArtifact pulumi.BoolPtrInput `pulumi:"hasArtifact"`
 	// (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
 	// * useCaseType
 	// * libraryName
@@ -2623,7 +2634,14 @@ type ModelCustomMetadataListArgs struct {
 	// * estimatorClass
 	// * hyperParameters
 	// * testArtifactresults
+	// * fineTuningConfiguration
+	// * deploymentConfiguration
+	// * readme
+	// * license
+	// * evaluationConfiguration
 	Key pulumi.StringPtrInput `pulumi:"key"`
+	// (Updatable) list of keywords for searching
+	Keywords pulumi.StringArrayInput `pulumi:"keywords"`
 	// (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
 	//
 	// Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
@@ -2691,6 +2709,11 @@ func (o ModelCustomMetadataListOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelCustomMetadataList) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Is there any artifact present for the metadata.
+func (o ModelCustomMetadataListOutput) HasArtifact() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ModelCustomMetadataList) *bool { return v.HasArtifact }).(pulumi.BoolPtrOutput)
+}
+
 // (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
 // * useCaseType
 // * libraryName
@@ -2698,8 +2721,18 @@ func (o ModelCustomMetadataListOutput) Description() pulumi.StringPtrOutput {
 // * estimatorClass
 // * hyperParameters
 // * testArtifactresults
+// * fineTuningConfiguration
+// * deploymentConfiguration
+// * readme
+// * license
+// * evaluationConfiguration
 func (o ModelCustomMetadataListOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelCustomMetadataList) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) list of keywords for searching
+func (o ModelCustomMetadataListOutput) Keywords() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ModelCustomMetadataList) []string { return v.Keywords }).(pulumi.StringArrayOutput)
 }
 
 // (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
@@ -2734,6 +2767,8 @@ type ModelDefinedMetadataList struct {
 	Category *string `pulumi:"category"`
 	// (Updatable) Description of model metadata
 	Description *string `pulumi:"description"`
+	// (Updatable) Is there any artifact present for the metadata.
+	HasArtifact *bool `pulumi:"hasArtifact"`
 	// (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
 	// * useCaseType
 	// * libraryName
@@ -2741,7 +2776,14 @@ type ModelDefinedMetadataList struct {
 	// * estimatorClass
 	// * hyperParameters
 	// * testArtifactresults
+	// * fineTuningConfiguration
+	// * deploymentConfiguration
+	// * readme
+	// * license
+	// * evaluationConfiguration
 	Key *string `pulumi:"key"`
+	// (Updatable) list of keywords for searching
+	Keywords []string `pulumi:"keywords"`
 	// (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
 	//
 	// Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
@@ -2764,6 +2806,8 @@ type ModelDefinedMetadataListArgs struct {
 	Category pulumi.StringPtrInput `pulumi:"category"`
 	// (Updatable) Description of model metadata
 	Description pulumi.StringPtrInput `pulumi:"description"`
+	// (Updatable) Is there any artifact present for the metadata.
+	HasArtifact pulumi.BoolPtrInput `pulumi:"hasArtifact"`
 	// (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
 	// * useCaseType
 	// * libraryName
@@ -2771,7 +2815,14 @@ type ModelDefinedMetadataListArgs struct {
 	// * estimatorClass
 	// * hyperParameters
 	// * testArtifactresults
+	// * fineTuningConfiguration
+	// * deploymentConfiguration
+	// * readme
+	// * license
+	// * evaluationConfiguration
 	Key pulumi.StringPtrInput `pulumi:"key"`
+	// (Updatable) list of keywords for searching
+	Keywords pulumi.StringArrayInput `pulumi:"keywords"`
 	// (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
 	//
 	// Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
@@ -2839,6 +2890,11 @@ func (o ModelDefinedMetadataListOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelDefinedMetadataList) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Is there any artifact present for the metadata.
+func (o ModelDefinedMetadataListOutput) HasArtifact() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ModelDefinedMetadataList) *bool { return v.HasArtifact }).(pulumi.BoolPtrOutput)
+}
+
 // (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
 // * useCaseType
 // * libraryName
@@ -2846,8 +2902,18 @@ func (o ModelDefinedMetadataListOutput) Description() pulumi.StringPtrOutput {
 // * estimatorClass
 // * hyperParameters
 // * testArtifactresults
+// * fineTuningConfiguration
+// * deploymentConfiguration
+// * readme
+// * license
+// * evaluationConfiguration
 func (o ModelDefinedMetadataListOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelDefinedMetadataList) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) list of keywords for searching
+func (o ModelDefinedMetadataListOutput) Keywords() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ModelDefinedMetadataList) []string { return v.Keywords }).(pulumi.StringArrayOutput)
 }
 
 // (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
@@ -8284,6 +8350,8 @@ type PipelineRunStepOverrideDetail struct {
 	StepConfigurationDetails PipelineRunStepOverrideDetailStepConfigurationDetails `pulumi:"stepConfigurationDetails"`
 	// Container Details for a step in pipeline.
 	StepContainerConfigurationDetails *PipelineRunStepOverrideDetailStepContainerConfigurationDetails `pulumi:"stepContainerConfigurationDetails"`
+	// The configuration details of a Dataflow step.
+	StepDataflowConfigurationDetails *PipelineRunStepOverrideDetailStepDataflowConfigurationDetails `pulumi:"stepDataflowConfigurationDetails"`
 	// The name of the step.
 	StepName string `pulumi:"stepName"`
 }
@@ -8304,6 +8372,8 @@ type PipelineRunStepOverrideDetailArgs struct {
 	StepConfigurationDetails PipelineRunStepOverrideDetailStepConfigurationDetailsInput `pulumi:"stepConfigurationDetails"`
 	// Container Details for a step in pipeline.
 	StepContainerConfigurationDetails PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrInput `pulumi:"stepContainerConfigurationDetails"`
+	// The configuration details of a Dataflow step.
+	StepDataflowConfigurationDetails PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrInput `pulumi:"stepDataflowConfigurationDetails"`
 	// The name of the step.
 	StepName pulumi.StringInput `pulumi:"stepName"`
 }
@@ -8371,6 +8441,13 @@ func (o PipelineRunStepOverrideDetailOutput) StepContainerConfigurationDetails()
 	return o.ApplyT(func(v PipelineRunStepOverrideDetail) *PipelineRunStepOverrideDetailStepContainerConfigurationDetails {
 		return v.StepContainerConfigurationDetails
 	}).(PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutput)
+}
+
+// The configuration details of a Dataflow step.
+func (o PipelineRunStepOverrideDetailOutput) StepDataflowConfigurationDetails() PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutput {
+	return o.ApplyT(func(v PipelineRunStepOverrideDetail) *PipelineRunStepOverrideDetailStepDataflowConfigurationDetails {
+		return v.StepDataflowConfigurationDetails
+	}).(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutput)
 }
 
 // The name of the step.
@@ -8706,7 +8783,607 @@ func (o PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutput)
 	}).(pulumi.StringPtrOutput)
 }
 
+type PipelineRunStepOverrideDetailStepDataflowConfigurationDetails struct {
+	// The Spark configuration passed to the running process.
+	Configuration map[string]string `pulumi:"configuration"`
+	// The VM shape for the driver.
+	DriverShape *string `pulumi:"driverShape"`
+	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	DriverShapeConfigDetails *PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails `pulumi:"driverShapeConfigDetails"`
+	// The VM shape for the executors.
+	ExecutorShape *string `pulumi:"executorShape"`
+	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	ExecutorShapeConfigDetails *PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails `pulumi:"executorShapeConfigDetails"`
+	// An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+	LogsBucketUri *string `pulumi:"logsBucketUri"`
+	// The number of executor VMs requested.
+	NumExecutors *int `pulumi:"numExecutors"`
+	// An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
+	WarehouseBucketUri *string `pulumi:"warehouseBucketUri"`
+}
+
+// PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsInput is an input type that accepts PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs and PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsOutput values.
+// You can construct a concrete instance of `PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsInput` via:
+//
+//	PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs{...}
+type PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsInput interface {
+	pulumi.Input
+
+	ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsOutput() PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsOutput
+	ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsOutputWithContext(context.Context) PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsOutput
+}
+
+type PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs struct {
+	// The Spark configuration passed to the running process.
+	Configuration pulumi.StringMapInput `pulumi:"configuration"`
+	// The VM shape for the driver.
+	DriverShape pulumi.StringPtrInput `pulumi:"driverShape"`
+	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	DriverShapeConfigDetails PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrInput `pulumi:"driverShapeConfigDetails"`
+	// The VM shape for the executors.
+	ExecutorShape pulumi.StringPtrInput `pulumi:"executorShape"`
+	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	ExecutorShapeConfigDetails PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrInput `pulumi:"executorShapeConfigDetails"`
+	// An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+	LogsBucketUri pulumi.StringPtrInput `pulumi:"logsBucketUri"`
+	// The number of executor VMs requested.
+	NumExecutors pulumi.IntPtrInput `pulumi:"numExecutors"`
+	// An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
+	WarehouseBucketUri pulumi.StringPtrInput `pulumi:"warehouseBucketUri"`
+}
+
+func (PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelineRunStepOverrideDetailStepDataflowConfigurationDetails)(nil)).Elem()
+}
+
+func (i PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs) ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsOutput() PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsOutput {
+	return i.ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsOutputWithContext(context.Background())
+}
+
+func (i PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs) ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsOutputWithContext(ctx context.Context) PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsOutput)
+}
+
+func (i PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs) ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutput() PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutput {
+	return i.ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs) ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutputWithContext(ctx context.Context) PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsOutput).ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutputWithContext(ctx)
+}
+
+// PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrInput is an input type that accepts PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs, PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtr and PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutput values.
+// You can construct a concrete instance of `PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrInput` via:
+//
+//	        PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrInput interface {
+	pulumi.Input
+
+	ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutput() PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutput
+	ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutputWithContext(context.Context) PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutput
+}
+
+type pipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrType PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs
+
+func PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtr(v *PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs) PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrInput {
+	return (*pipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrType)(v)
+}
+
+func (*pipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PipelineRunStepOverrideDetailStepDataflowConfigurationDetails)(nil)).Elem()
+}
+
+func (i *pipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrType) ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutput() PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutput {
+	return i.ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *pipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrType) ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutputWithContext(ctx context.Context) PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutput)
+}
+
+type PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsOutput struct{ *pulumi.OutputState }
+
+func (PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelineRunStepOverrideDetailStepDataflowConfigurationDetails)(nil)).Elem()
+}
+
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsOutput) ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsOutput() PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsOutput {
+	return o
+}
+
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsOutput) ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsOutputWithContext(ctx context.Context) PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsOutput {
+	return o
+}
+
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsOutput) ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutput() PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutput {
+	return o.ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsOutput) ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutputWithContext(ctx context.Context) PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PipelineRunStepOverrideDetailStepDataflowConfigurationDetails) *PipelineRunStepOverrideDetailStepDataflowConfigurationDetails {
+		return &v
+	}).(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutput)
+}
+
+// The Spark configuration passed to the running process.
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsOutput) Configuration() pulumi.StringMapOutput {
+	return o.ApplyT(func(v PipelineRunStepOverrideDetailStepDataflowConfigurationDetails) map[string]string {
+		return v.Configuration
+	}).(pulumi.StringMapOutput)
+}
+
+// The VM shape for the driver.
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsOutput) DriverShape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineRunStepOverrideDetailStepDataflowConfigurationDetails) *string { return v.DriverShape }).(pulumi.StringPtrOutput)
+}
+
+// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsOutput) DriverShapeConfigDetails() PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput {
+	return o.ApplyT(func(v PipelineRunStepOverrideDetailStepDataflowConfigurationDetails) *PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails {
+		return v.DriverShapeConfigDetails
+	}).(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput)
+}
+
+// The VM shape for the executors.
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsOutput) ExecutorShape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineRunStepOverrideDetailStepDataflowConfigurationDetails) *string { return v.ExecutorShape }).(pulumi.StringPtrOutput)
+}
+
+// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsOutput) ExecutorShapeConfigDetails() PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput {
+	return o.ApplyT(func(v PipelineRunStepOverrideDetailStepDataflowConfigurationDetails) *PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails {
+		return v.ExecutorShapeConfigDetails
+	}).(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput)
+}
+
+// An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsOutput) LogsBucketUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineRunStepOverrideDetailStepDataflowConfigurationDetails) *string { return v.LogsBucketUri }).(pulumi.StringPtrOutput)
+}
+
+// The number of executor VMs requested.
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsOutput) NumExecutors() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PipelineRunStepOverrideDetailStepDataflowConfigurationDetails) *int { return v.NumExecutors }).(pulumi.IntPtrOutput)
+}
+
+// An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsOutput) WarehouseBucketUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineRunStepOverrideDetailStepDataflowConfigurationDetails) *string {
+		return v.WarehouseBucketUri
+	}).(pulumi.StringPtrOutput)
+}
+
+type PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PipelineRunStepOverrideDetailStepDataflowConfigurationDetails)(nil)).Elem()
+}
+
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutput) ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutput() PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutput {
+	return o
+}
+
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutput) ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutputWithContext(ctx context.Context) PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutput {
+	return o
+}
+
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutput) Elem() PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsOutput {
+	return o.ApplyT(func(v *PipelineRunStepOverrideDetailStepDataflowConfigurationDetails) PipelineRunStepOverrideDetailStepDataflowConfigurationDetails {
+		if v != nil {
+			return *v
+		}
+		var ret PipelineRunStepOverrideDetailStepDataflowConfigurationDetails
+		return ret
+	}).(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsOutput)
+}
+
+// The Spark configuration passed to the running process.
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutput) Configuration() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *PipelineRunStepOverrideDetailStepDataflowConfigurationDetails) map[string]string {
+		if v == nil {
+			return nil
+		}
+		return v.Configuration
+	}).(pulumi.StringMapOutput)
+}
+
+// The VM shape for the driver.
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutput) DriverShape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineRunStepOverrideDetailStepDataflowConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DriverShape
+	}).(pulumi.StringPtrOutput)
+}
+
+// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutput) DriverShapeConfigDetails() PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput {
+	return o.ApplyT(func(v *PipelineRunStepOverrideDetailStepDataflowConfigurationDetails) *PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails {
+		if v == nil {
+			return nil
+		}
+		return v.DriverShapeConfigDetails
+	}).(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput)
+}
+
+// The VM shape for the executors.
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutput) ExecutorShape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineRunStepOverrideDetailStepDataflowConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ExecutorShape
+	}).(pulumi.StringPtrOutput)
+}
+
+// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutput) ExecutorShapeConfigDetails() PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput {
+	return o.ApplyT(func(v *PipelineRunStepOverrideDetailStepDataflowConfigurationDetails) *PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails {
+		if v == nil {
+			return nil
+		}
+		return v.ExecutorShapeConfigDetails
+	}).(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput)
+}
+
+// An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutput) LogsBucketUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineRunStepOverrideDetailStepDataflowConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LogsBucketUri
+	}).(pulumi.StringPtrOutput)
+}
+
+// The number of executor VMs requested.
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutput) NumExecutors() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *PipelineRunStepOverrideDetailStepDataflowConfigurationDetails) *int {
+		if v == nil {
+			return nil
+		}
+		return v.NumExecutors
+	}).(pulumi.IntPtrOutput)
+}
+
+// An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutput) WarehouseBucketUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineRunStepOverrideDetailStepDataflowConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.WarehouseBucketUri
+	}).(pulumi.StringPtrOutput)
+}
+
+type PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails struct {
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	Ocpus *float64 `pulumi:"ocpus"`
+}
+
+// PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsInput is an input type that accepts PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs and PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput values.
+// You can construct a concrete instance of `PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsInput` via:
+//
+//	PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs{...}
+type PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsInput interface {
+	pulumi.Input
+
+	ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput() PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput
+	ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutputWithContext(context.Context) PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput
+}
+
+type PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs struct {
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
+}
+
+func (PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails)(nil)).Elem()
+}
+
+func (i PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs) ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput() PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput {
+	return i.ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutputWithContext(context.Background())
+}
+
+func (i PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs) ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutputWithContext(ctx context.Context) PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput)
+}
+
+func (i PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs) ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput() PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput {
+	return i.ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs) ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutputWithContext(ctx context.Context) PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput).ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutputWithContext(ctx)
+}
+
+// PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrInput is an input type that accepts PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs, PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtr and PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput values.
+// You can construct a concrete instance of `PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrInput` via:
+//
+//	        PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrInput interface {
+	pulumi.Input
+
+	ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput() PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput
+	ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutputWithContext(context.Context) PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput
+}
+
+type pipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrType PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs
+
+func PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtr(v *PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs) PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrInput {
+	return (*pipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrType)(v)
+}
+
+func (*pipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails)(nil)).Elem()
+}
+
+func (i *pipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrType) ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput() PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput {
+	return i.ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *pipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrType) ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutputWithContext(ctx context.Context) PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput)
+}
+
+type PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput struct{ *pulumi.OutputState }
+
+func (PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails)(nil)).Elem()
+}
+
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput) ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput() PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput {
+	return o
+}
+
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput) ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutputWithContext(ctx context.Context) PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput {
+	return o
+}
+
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput) ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput() PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput {
+	return o.ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput) ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutputWithContext(ctx context.Context) PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails) *PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails {
+		return &v
+	}).(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput)
+}
+
+// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails) *float64 {
+		return v.MemoryInGbs
+	}).(pulumi.Float64PtrOutput)
+}
+
+// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails) *float64 {
+		return v.Ocpus
+	}).(pulumi.Float64PtrOutput)
+}
+
+type PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails)(nil)).Elem()
+}
+
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput) ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput() PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput {
+	return o
+}
+
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput) ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutputWithContext(ctx context.Context) PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput {
+	return o
+}
+
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput) Elem() PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput {
+	return o.ApplyT(func(v *PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails) PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails {
+		if v != nil {
+			return *v
+		}
+		var ret PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails
+		return ret
+	}).(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput)
+}
+
+// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.MemoryInGbs
+	}).(pulumi.Float64PtrOutput)
+}
+
+// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.Ocpus
+	}).(pulumi.Float64PtrOutput)
+}
+
+type PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails struct {
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	Ocpus *float64 `pulumi:"ocpus"`
+}
+
+// PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsInput is an input type that accepts PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs and PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput values.
+// You can construct a concrete instance of `PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsInput` via:
+//
+//	PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs{...}
+type PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsInput interface {
+	pulumi.Input
+
+	ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput() PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput
+	ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutputWithContext(context.Context) PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput
+}
+
+type PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs struct {
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
+}
+
+func (PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails)(nil)).Elem()
+}
+
+func (i PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs) ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput() PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput {
+	return i.ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutputWithContext(context.Background())
+}
+
+func (i PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs) ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutputWithContext(ctx context.Context) PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput)
+}
+
+func (i PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs) ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput() PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput {
+	return i.ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs) ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutputWithContext(ctx context.Context) PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput).ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutputWithContext(ctx)
+}
+
+// PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrInput is an input type that accepts PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs, PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtr and PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput values.
+// You can construct a concrete instance of `PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrInput` via:
+//
+//	        PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrInput interface {
+	pulumi.Input
+
+	ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput() PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput
+	ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutputWithContext(context.Context) PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput
+}
+
+type pipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrType PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs
+
+func PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtr(v *PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs) PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrInput {
+	return (*pipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrType)(v)
+}
+
+func (*pipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails)(nil)).Elem()
+}
+
+func (i *pipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrType) ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput() PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput {
+	return i.ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *pipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrType) ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutputWithContext(ctx context.Context) PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput)
+}
+
+type PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput struct{ *pulumi.OutputState }
+
+func (PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails)(nil)).Elem()
+}
+
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput) ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput() PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput {
+	return o
+}
+
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput) ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutputWithContext(ctx context.Context) PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput {
+	return o
+}
+
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput) ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput() PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput {
+	return o.ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput) ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutputWithContext(ctx context.Context) PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails) *PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails {
+		return &v
+	}).(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput)
+}
+
+// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails) *float64 {
+		return v.MemoryInGbs
+	}).(pulumi.Float64PtrOutput)
+}
+
+// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails) *float64 {
+		return v.Ocpus
+	}).(pulumi.Float64PtrOutput)
+}
+
+type PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails)(nil)).Elem()
+}
+
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput) ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput() PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput {
+	return o
+}
+
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput) ToPipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutputWithContext(ctx context.Context) PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput {
+	return o
+}
+
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput) Elem() PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput {
+	return o.ApplyT(func(v *PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails) PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails {
+		if v != nil {
+			return *v
+		}
+		var ret PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails
+		return ret
+	}).(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput)
+}
+
+// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.MemoryInGbs
+	}).(pulumi.Float64PtrOutput)
+}
+
+// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+func (o PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.Ocpus
+	}).(pulumi.Float64PtrOutput)
+}
+
 type PipelineRunStepRun struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow run triggered for this step run.
+	DataflowRunId *string `pulumi:"dataflowRunId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
 	JobRunId *string `pulumi:"jobRunId"`
 	// Details of the state of the step run.
@@ -8735,6 +9412,8 @@ type PipelineRunStepRunInput interface {
 }
 
 type PipelineRunStepRunArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow run triggered for this step run.
+	DataflowRunId pulumi.StringPtrInput `pulumi:"dataflowRunId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
 	JobRunId pulumi.StringPtrInput `pulumi:"jobRunId"`
 	// Details of the state of the step run.
@@ -8802,6 +9481,11 @@ func (o PipelineRunStepRunOutput) ToPipelineRunStepRunOutputWithContext(ctx cont
 	return o
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow run triggered for this step run.
+func (o PipelineRunStepRunOutput) DataflowRunId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineRunStepRun) *string { return v.DataflowRunId }).(pulumi.StringPtrOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
 func (o PipelineRunStepRunOutput) JobRunId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PipelineRunStepRun) *string { return v.JobRunId }).(pulumi.StringPtrOutput)
@@ -8859,7 +9543,7 @@ func (o PipelineRunStepRunArrayOutput) Index(i pulumi.IntInput) PipelineRunStepR
 
 type PipelineStepArtifact struct {
 	ArtifactContentDisposition *string `pulumi:"artifactContentDisposition"`
-	ArtifactContentLength      string  `pulumi:"artifactContentLength"`
+	ArtifactContentLength      *string `pulumi:"artifactContentLength"`
 	ArtifactContentMd5         *string `pulumi:"artifactContentMd5"`
 	ArtifactLastModified       *string `pulumi:"artifactLastModified"`
 	PipelineStepArtifact       string  `pulumi:"pipelineStepArtifact"`
@@ -8880,7 +9564,7 @@ type PipelineStepArtifactInput interface {
 
 type PipelineStepArtifactArgs struct {
 	ArtifactContentDisposition pulumi.StringPtrInput `pulumi:"artifactContentDisposition"`
-	ArtifactContentLength      pulumi.StringInput    `pulumi:"artifactContentLength"`
+	ArtifactContentLength      pulumi.StringPtrInput `pulumi:"artifactContentLength"`
 	ArtifactContentMd5         pulumi.StringPtrInput `pulumi:"artifactContentMd5"`
 	ArtifactLastModified       pulumi.StringPtrInput `pulumi:"artifactLastModified"`
 	PipelineStepArtifact       pulumi.StringInput    `pulumi:"pipelineStepArtifact"`
@@ -8943,8 +9627,8 @@ func (o PipelineStepArtifactOutput) ArtifactContentDisposition() pulumi.StringPt
 	return o.ApplyT(func(v PipelineStepArtifact) *string { return v.ArtifactContentDisposition }).(pulumi.StringPtrOutput)
 }
 
-func (o PipelineStepArtifactOutput) ArtifactContentLength() pulumi.StringOutput {
-	return o.ApplyT(func(v PipelineStepArtifact) string { return v.ArtifactContentLength }).(pulumi.StringOutput)
+func (o PipelineStepArtifactOutput) ArtifactContentLength() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineStepArtifact) *string { return v.ArtifactContentLength }).(pulumi.StringPtrOutput)
 }
 
 func (o PipelineStepArtifactOutput) ArtifactContentMd5() pulumi.StringPtrOutput {
@@ -8985,6 +9669,8 @@ func (o PipelineStepArtifactArrayOutput) Index(i pulumi.IntInput) PipelineStepAr
 }
 
 type PipelineStepDetail struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow application to be used as a step.
+	ApplicationId *string `pulumi:"applicationId"`
 	// The list of step names this current step depends on for execution.
 	DependsOns []string `pulumi:"dependsOns"`
 	// (Updatable) A short description of the step.
@@ -8997,14 +9683,15 @@ type PipelineStepDetail struct {
 	StepConfigurationDetails *PipelineStepDetailStepConfigurationDetails `pulumi:"stepConfigurationDetails"`
 	// Container Details for a step in pipeline.
 	StepContainerConfigurationDetails *PipelineStepDetailStepContainerConfigurationDetails `pulumi:"stepContainerConfigurationDetails"`
+	// (Updatable) The configuration details of a Dataflow step.
+	StepDataflowConfigurationDetails *PipelineStepDetailStepDataflowConfigurationDetails `pulumi:"stepDataflowConfigurationDetails"`
 	// (Updatable) The infrastructure configuration details of a pipeline or a step.
 	StepInfrastructureConfigurationDetails *PipelineStepDetailStepInfrastructureConfigurationDetails `pulumi:"stepInfrastructureConfigurationDetails"`
 	// (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
 	StepName string `pulumi:"stepName"`
+	// (Updatable) The storage mount details to mount to the instance running the pipeline step.
+	StepStorageMountConfigurationDetailsLists []PipelineStepDetailStepStorageMountConfigurationDetailsList `pulumi:"stepStorageMountConfigurationDetailsLists"`
 	// (Updatable) The type of step.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StepType string `pulumi:"stepType"`
 }
 
@@ -9020,6 +9707,8 @@ type PipelineStepDetailInput interface {
 }
 
 type PipelineStepDetailArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow application to be used as a step.
+	ApplicationId pulumi.StringPtrInput `pulumi:"applicationId"`
 	// The list of step names this current step depends on for execution.
 	DependsOns pulumi.StringArrayInput `pulumi:"dependsOns"`
 	// (Updatable) A short description of the step.
@@ -9032,14 +9721,15 @@ type PipelineStepDetailArgs struct {
 	StepConfigurationDetails PipelineStepDetailStepConfigurationDetailsPtrInput `pulumi:"stepConfigurationDetails"`
 	// Container Details for a step in pipeline.
 	StepContainerConfigurationDetails PipelineStepDetailStepContainerConfigurationDetailsPtrInput `pulumi:"stepContainerConfigurationDetails"`
+	// (Updatable) The configuration details of a Dataflow step.
+	StepDataflowConfigurationDetails PipelineStepDetailStepDataflowConfigurationDetailsPtrInput `pulumi:"stepDataflowConfigurationDetails"`
 	// (Updatable) The infrastructure configuration details of a pipeline or a step.
 	StepInfrastructureConfigurationDetails PipelineStepDetailStepInfrastructureConfigurationDetailsPtrInput `pulumi:"stepInfrastructureConfigurationDetails"`
 	// (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
 	StepName pulumi.StringInput `pulumi:"stepName"`
+	// (Updatable) The storage mount details to mount to the instance running the pipeline step.
+	StepStorageMountConfigurationDetailsLists PipelineStepDetailStepStorageMountConfigurationDetailsListArrayInput `pulumi:"stepStorageMountConfigurationDetailsLists"`
 	// (Updatable) The type of step.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StepType pulumi.StringInput `pulumi:"stepType"`
 }
 
@@ -9094,6 +9784,11 @@ func (o PipelineStepDetailOutput) ToPipelineStepDetailOutputWithContext(ctx cont
 	return o
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow application to be used as a step.
+func (o PipelineStepDetailOutput) ApplicationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineStepDetail) *string { return v.ApplicationId }).(pulumi.StringPtrOutput)
+}
+
 // The list of step names this current step depends on for execution.
 func (o PipelineStepDetailOutput) DependsOns() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v PipelineStepDetail) []string { return v.DependsOns }).(pulumi.StringArrayOutput)
@@ -9128,6 +9823,13 @@ func (o PipelineStepDetailOutput) StepContainerConfigurationDetails() PipelineSt
 	}).(PipelineStepDetailStepContainerConfigurationDetailsPtrOutput)
 }
 
+// (Updatable) The configuration details of a Dataflow step.
+func (o PipelineStepDetailOutput) StepDataflowConfigurationDetails() PipelineStepDetailStepDataflowConfigurationDetailsPtrOutput {
+	return o.ApplyT(func(v PipelineStepDetail) *PipelineStepDetailStepDataflowConfigurationDetails {
+		return v.StepDataflowConfigurationDetails
+	}).(PipelineStepDetailStepDataflowConfigurationDetailsPtrOutput)
+}
+
 // (Updatable) The infrastructure configuration details of a pipeline or a step.
 func (o PipelineStepDetailOutput) StepInfrastructureConfigurationDetails() PipelineStepDetailStepInfrastructureConfigurationDetailsPtrOutput {
 	return o.ApplyT(func(v PipelineStepDetail) *PipelineStepDetailStepInfrastructureConfigurationDetails {
@@ -9140,10 +9842,14 @@ func (o PipelineStepDetailOutput) StepName() pulumi.StringOutput {
 	return o.ApplyT(func(v PipelineStepDetail) string { return v.StepName }).(pulumi.StringOutput)
 }
 
+// (Updatable) The storage mount details to mount to the instance running the pipeline step.
+func (o PipelineStepDetailOutput) StepStorageMountConfigurationDetailsLists() PipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput {
+	return o.ApplyT(func(v PipelineStepDetail) []PipelineStepDetailStepStorageMountConfigurationDetailsList {
+		return v.StepStorageMountConfigurationDetailsLists
+	}).(PipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput)
+}
+
 // (Updatable) The type of step.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o PipelineStepDetailOutput) StepType() pulumi.StringOutput {
 	return o.ApplyT(func(v PipelineStepDetail) string { return v.StepType }).(pulumi.StringOutput)
 }
@@ -9575,6 +10281,600 @@ func (o PipelineStepDetailStepContainerConfigurationDetailsPtrOutput) ImageSigna
 	}).(pulumi.StringPtrOutput)
 }
 
+type PipelineStepDetailStepDataflowConfigurationDetails struct {
+	// (Updatable) The Spark configuration passed to the running process.
+	Configuration map[string]string `pulumi:"configuration"`
+	// (Updatable) The VM shape for the driver.
+	DriverShape *string `pulumi:"driverShape"`
+	// (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	DriverShapeConfigDetails *PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails `pulumi:"driverShapeConfigDetails"`
+	// (Updatable) The VM shape for the executors.
+	ExecutorShape *string `pulumi:"executorShape"`
+	// (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	ExecutorShapeConfigDetails *PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails `pulumi:"executorShapeConfigDetails"`
+	// (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+	LogsBucketUri *string `pulumi:"logsBucketUri"`
+	// (Updatable) The number of executor VMs requested.
+	NumExecutors *int `pulumi:"numExecutors"`
+	// (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
+	WarehouseBucketUri *string `pulumi:"warehouseBucketUri"`
+}
+
+// PipelineStepDetailStepDataflowConfigurationDetailsInput is an input type that accepts PipelineStepDetailStepDataflowConfigurationDetailsArgs and PipelineStepDetailStepDataflowConfigurationDetailsOutput values.
+// You can construct a concrete instance of `PipelineStepDetailStepDataflowConfigurationDetailsInput` via:
+//
+//	PipelineStepDetailStepDataflowConfigurationDetailsArgs{...}
+type PipelineStepDetailStepDataflowConfigurationDetailsInput interface {
+	pulumi.Input
+
+	ToPipelineStepDetailStepDataflowConfigurationDetailsOutput() PipelineStepDetailStepDataflowConfigurationDetailsOutput
+	ToPipelineStepDetailStepDataflowConfigurationDetailsOutputWithContext(context.Context) PipelineStepDetailStepDataflowConfigurationDetailsOutput
+}
+
+type PipelineStepDetailStepDataflowConfigurationDetailsArgs struct {
+	// (Updatable) The Spark configuration passed to the running process.
+	Configuration pulumi.StringMapInput `pulumi:"configuration"`
+	// (Updatable) The VM shape for the driver.
+	DriverShape pulumi.StringPtrInput `pulumi:"driverShape"`
+	// (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	DriverShapeConfigDetails PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrInput `pulumi:"driverShapeConfigDetails"`
+	// (Updatable) The VM shape for the executors.
+	ExecutorShape pulumi.StringPtrInput `pulumi:"executorShape"`
+	// (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	ExecutorShapeConfigDetails PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrInput `pulumi:"executorShapeConfigDetails"`
+	// (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+	LogsBucketUri pulumi.StringPtrInput `pulumi:"logsBucketUri"`
+	// (Updatable) The number of executor VMs requested.
+	NumExecutors pulumi.IntPtrInput `pulumi:"numExecutors"`
+	// (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
+	WarehouseBucketUri pulumi.StringPtrInput `pulumi:"warehouseBucketUri"`
+}
+
+func (PipelineStepDetailStepDataflowConfigurationDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelineStepDetailStepDataflowConfigurationDetails)(nil)).Elem()
+}
+
+func (i PipelineStepDetailStepDataflowConfigurationDetailsArgs) ToPipelineStepDetailStepDataflowConfigurationDetailsOutput() PipelineStepDetailStepDataflowConfigurationDetailsOutput {
+	return i.ToPipelineStepDetailStepDataflowConfigurationDetailsOutputWithContext(context.Background())
+}
+
+func (i PipelineStepDetailStepDataflowConfigurationDetailsArgs) ToPipelineStepDetailStepDataflowConfigurationDetailsOutputWithContext(ctx context.Context) PipelineStepDetailStepDataflowConfigurationDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineStepDetailStepDataflowConfigurationDetailsOutput)
+}
+
+func (i PipelineStepDetailStepDataflowConfigurationDetailsArgs) ToPipelineStepDetailStepDataflowConfigurationDetailsPtrOutput() PipelineStepDetailStepDataflowConfigurationDetailsPtrOutput {
+	return i.ToPipelineStepDetailStepDataflowConfigurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i PipelineStepDetailStepDataflowConfigurationDetailsArgs) ToPipelineStepDetailStepDataflowConfigurationDetailsPtrOutputWithContext(ctx context.Context) PipelineStepDetailStepDataflowConfigurationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineStepDetailStepDataflowConfigurationDetailsOutput).ToPipelineStepDetailStepDataflowConfigurationDetailsPtrOutputWithContext(ctx)
+}
+
+// PipelineStepDetailStepDataflowConfigurationDetailsPtrInput is an input type that accepts PipelineStepDetailStepDataflowConfigurationDetailsArgs, PipelineStepDetailStepDataflowConfigurationDetailsPtr and PipelineStepDetailStepDataflowConfigurationDetailsPtrOutput values.
+// You can construct a concrete instance of `PipelineStepDetailStepDataflowConfigurationDetailsPtrInput` via:
+//
+//	        PipelineStepDetailStepDataflowConfigurationDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type PipelineStepDetailStepDataflowConfigurationDetailsPtrInput interface {
+	pulumi.Input
+
+	ToPipelineStepDetailStepDataflowConfigurationDetailsPtrOutput() PipelineStepDetailStepDataflowConfigurationDetailsPtrOutput
+	ToPipelineStepDetailStepDataflowConfigurationDetailsPtrOutputWithContext(context.Context) PipelineStepDetailStepDataflowConfigurationDetailsPtrOutput
+}
+
+type pipelineStepDetailStepDataflowConfigurationDetailsPtrType PipelineStepDetailStepDataflowConfigurationDetailsArgs
+
+func PipelineStepDetailStepDataflowConfigurationDetailsPtr(v *PipelineStepDetailStepDataflowConfigurationDetailsArgs) PipelineStepDetailStepDataflowConfigurationDetailsPtrInput {
+	return (*pipelineStepDetailStepDataflowConfigurationDetailsPtrType)(v)
+}
+
+func (*pipelineStepDetailStepDataflowConfigurationDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PipelineStepDetailStepDataflowConfigurationDetails)(nil)).Elem()
+}
+
+func (i *pipelineStepDetailStepDataflowConfigurationDetailsPtrType) ToPipelineStepDetailStepDataflowConfigurationDetailsPtrOutput() PipelineStepDetailStepDataflowConfigurationDetailsPtrOutput {
+	return i.ToPipelineStepDetailStepDataflowConfigurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *pipelineStepDetailStepDataflowConfigurationDetailsPtrType) ToPipelineStepDetailStepDataflowConfigurationDetailsPtrOutputWithContext(ctx context.Context) PipelineStepDetailStepDataflowConfigurationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineStepDetailStepDataflowConfigurationDetailsPtrOutput)
+}
+
+type PipelineStepDetailStepDataflowConfigurationDetailsOutput struct{ *pulumi.OutputState }
+
+func (PipelineStepDetailStepDataflowConfigurationDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelineStepDetailStepDataflowConfigurationDetails)(nil)).Elem()
+}
+
+func (o PipelineStepDetailStepDataflowConfigurationDetailsOutput) ToPipelineStepDetailStepDataflowConfigurationDetailsOutput() PipelineStepDetailStepDataflowConfigurationDetailsOutput {
+	return o
+}
+
+func (o PipelineStepDetailStepDataflowConfigurationDetailsOutput) ToPipelineStepDetailStepDataflowConfigurationDetailsOutputWithContext(ctx context.Context) PipelineStepDetailStepDataflowConfigurationDetailsOutput {
+	return o
+}
+
+func (o PipelineStepDetailStepDataflowConfigurationDetailsOutput) ToPipelineStepDetailStepDataflowConfigurationDetailsPtrOutput() PipelineStepDetailStepDataflowConfigurationDetailsPtrOutput {
+	return o.ToPipelineStepDetailStepDataflowConfigurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o PipelineStepDetailStepDataflowConfigurationDetailsOutput) ToPipelineStepDetailStepDataflowConfigurationDetailsPtrOutputWithContext(ctx context.Context) PipelineStepDetailStepDataflowConfigurationDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PipelineStepDetailStepDataflowConfigurationDetails) *PipelineStepDetailStepDataflowConfigurationDetails {
+		return &v
+	}).(PipelineStepDetailStepDataflowConfigurationDetailsPtrOutput)
+}
+
+// (Updatable) The Spark configuration passed to the running process.
+func (o PipelineStepDetailStepDataflowConfigurationDetailsOutput) Configuration() pulumi.StringMapOutput {
+	return o.ApplyT(func(v PipelineStepDetailStepDataflowConfigurationDetails) map[string]string { return v.Configuration }).(pulumi.StringMapOutput)
+}
+
+// (Updatable) The VM shape for the driver.
+func (o PipelineStepDetailStepDataflowConfigurationDetailsOutput) DriverShape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineStepDetailStepDataflowConfigurationDetails) *string { return v.DriverShape }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+func (o PipelineStepDetailStepDataflowConfigurationDetailsOutput) DriverShapeConfigDetails() PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput {
+	return o.ApplyT(func(v PipelineStepDetailStepDataflowConfigurationDetails) *PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails {
+		return v.DriverShapeConfigDetails
+	}).(PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput)
+}
+
+// (Updatable) The VM shape for the executors.
+func (o PipelineStepDetailStepDataflowConfigurationDetailsOutput) ExecutorShape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineStepDetailStepDataflowConfigurationDetails) *string { return v.ExecutorShape }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+func (o PipelineStepDetailStepDataflowConfigurationDetailsOutput) ExecutorShapeConfigDetails() PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput {
+	return o.ApplyT(func(v PipelineStepDetailStepDataflowConfigurationDetails) *PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails {
+		return v.ExecutorShapeConfigDetails
+	}).(PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput)
+}
+
+// (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+func (o PipelineStepDetailStepDataflowConfigurationDetailsOutput) LogsBucketUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineStepDetailStepDataflowConfigurationDetails) *string { return v.LogsBucketUri }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The number of executor VMs requested.
+func (o PipelineStepDetailStepDataflowConfigurationDetailsOutput) NumExecutors() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PipelineStepDetailStepDataflowConfigurationDetails) *int { return v.NumExecutors }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
+func (o PipelineStepDetailStepDataflowConfigurationDetailsOutput) WarehouseBucketUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineStepDetailStepDataflowConfigurationDetails) *string { return v.WarehouseBucketUri }).(pulumi.StringPtrOutput)
+}
+
+type PipelineStepDetailStepDataflowConfigurationDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (PipelineStepDetailStepDataflowConfigurationDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PipelineStepDetailStepDataflowConfigurationDetails)(nil)).Elem()
+}
+
+func (o PipelineStepDetailStepDataflowConfigurationDetailsPtrOutput) ToPipelineStepDetailStepDataflowConfigurationDetailsPtrOutput() PipelineStepDetailStepDataflowConfigurationDetailsPtrOutput {
+	return o
+}
+
+func (o PipelineStepDetailStepDataflowConfigurationDetailsPtrOutput) ToPipelineStepDetailStepDataflowConfigurationDetailsPtrOutputWithContext(ctx context.Context) PipelineStepDetailStepDataflowConfigurationDetailsPtrOutput {
+	return o
+}
+
+func (o PipelineStepDetailStepDataflowConfigurationDetailsPtrOutput) Elem() PipelineStepDetailStepDataflowConfigurationDetailsOutput {
+	return o.ApplyT(func(v *PipelineStepDetailStepDataflowConfigurationDetails) PipelineStepDetailStepDataflowConfigurationDetails {
+		if v != nil {
+			return *v
+		}
+		var ret PipelineStepDetailStepDataflowConfigurationDetails
+		return ret
+	}).(PipelineStepDetailStepDataflowConfigurationDetailsOutput)
+}
+
+// (Updatable) The Spark configuration passed to the running process.
+func (o PipelineStepDetailStepDataflowConfigurationDetailsPtrOutput) Configuration() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *PipelineStepDetailStepDataflowConfigurationDetails) map[string]string {
+		if v == nil {
+			return nil
+		}
+		return v.Configuration
+	}).(pulumi.StringMapOutput)
+}
+
+// (Updatable) The VM shape for the driver.
+func (o PipelineStepDetailStepDataflowConfigurationDetailsPtrOutput) DriverShape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineStepDetailStepDataflowConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DriverShape
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+func (o PipelineStepDetailStepDataflowConfigurationDetailsPtrOutput) DriverShapeConfigDetails() PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput {
+	return o.ApplyT(func(v *PipelineStepDetailStepDataflowConfigurationDetails) *PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails {
+		if v == nil {
+			return nil
+		}
+		return v.DriverShapeConfigDetails
+	}).(PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput)
+}
+
+// (Updatable) The VM shape for the executors.
+func (o PipelineStepDetailStepDataflowConfigurationDetailsPtrOutput) ExecutorShape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineStepDetailStepDataflowConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ExecutorShape
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+func (o PipelineStepDetailStepDataflowConfigurationDetailsPtrOutput) ExecutorShapeConfigDetails() PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput {
+	return o.ApplyT(func(v *PipelineStepDetailStepDataflowConfigurationDetails) *PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails {
+		if v == nil {
+			return nil
+		}
+		return v.ExecutorShapeConfigDetails
+	}).(PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput)
+}
+
+// (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+func (o PipelineStepDetailStepDataflowConfigurationDetailsPtrOutput) LogsBucketUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineStepDetailStepDataflowConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LogsBucketUri
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The number of executor VMs requested.
+func (o PipelineStepDetailStepDataflowConfigurationDetailsPtrOutput) NumExecutors() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *PipelineStepDetailStepDataflowConfigurationDetails) *int {
+		if v == nil {
+			return nil
+		}
+		return v.NumExecutors
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
+func (o PipelineStepDetailStepDataflowConfigurationDetailsPtrOutput) WarehouseBucketUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineStepDetailStepDataflowConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.WarehouseBucketUri
+	}).(pulumi.StringPtrOutput)
+}
+
+type PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails struct {
+	// (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
+	// (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	Ocpus *float64 `pulumi:"ocpus"`
+}
+
+// PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsInput is an input type that accepts PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs and PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput values.
+// You can construct a concrete instance of `PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsInput` via:
+//
+//	PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs{...}
+type PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsInput interface {
+	pulumi.Input
+
+	ToPipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput() PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput
+	ToPipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutputWithContext(context.Context) PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput
+}
+
+type PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs struct {
+	// (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
+	// (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
+}
+
+func (PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails)(nil)).Elem()
+}
+
+func (i PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs) ToPipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput() PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput {
+	return i.ToPipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutputWithContext(context.Background())
+}
+
+func (i PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs) ToPipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutputWithContext(ctx context.Context) PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput)
+}
+
+func (i PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs) ToPipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput() PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput {
+	return i.ToPipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs) ToPipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutputWithContext(ctx context.Context) PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput).ToPipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutputWithContext(ctx)
+}
+
+// PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrInput is an input type that accepts PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs, PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtr and PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput values.
+// You can construct a concrete instance of `PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrInput` via:
+//
+//	        PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrInput interface {
+	pulumi.Input
+
+	ToPipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput() PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput
+	ToPipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutputWithContext(context.Context) PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput
+}
+
+type pipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrType PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs
+
+func PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtr(v *PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs) PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrInput {
+	return (*pipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrType)(v)
+}
+
+func (*pipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails)(nil)).Elem()
+}
+
+func (i *pipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrType) ToPipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput() PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput {
+	return i.ToPipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *pipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrType) ToPipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutputWithContext(ctx context.Context) PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput)
+}
+
+type PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput struct{ *pulumi.OutputState }
+
+func (PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails)(nil)).Elem()
+}
+
+func (o PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput) ToPipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput() PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput {
+	return o
+}
+
+func (o PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput) ToPipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutputWithContext(ctx context.Context) PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput {
+	return o
+}
+
+func (o PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput) ToPipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput() PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput {
+	return o.ToPipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput) ToPipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutputWithContext(ctx context.Context) PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails) *PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails {
+		return &v
+	}).(PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput)
+}
+
+// (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+func (o PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails) *float64 {
+		return v.MemoryInGbs
+	}).(pulumi.Float64PtrOutput)
+}
+
+// (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+func (o PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails) *float64 {
+		return v.Ocpus
+	}).(pulumi.Float64PtrOutput)
+}
+
+type PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails)(nil)).Elem()
+}
+
+func (o PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput) ToPipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput() PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput {
+	return o
+}
+
+func (o PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput) ToPipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutputWithContext(ctx context.Context) PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput {
+	return o
+}
+
+func (o PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput) Elem() PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput {
+	return o.ApplyT(func(v *PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails) PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails {
+		if v != nil {
+			return *v
+		}
+		var ret PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails
+		return ret
+	}).(PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput)
+}
+
+// (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+func (o PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.MemoryInGbs
+	}).(pulumi.Float64PtrOutput)
+}
+
+// (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+func (o PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.Ocpus
+	}).(pulumi.Float64PtrOutput)
+}
+
+type PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails struct {
+	// (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
+	// (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	Ocpus *float64 `pulumi:"ocpus"`
+}
+
+// PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsInput is an input type that accepts PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs and PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput values.
+// You can construct a concrete instance of `PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsInput` via:
+//
+//	PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs{...}
+type PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsInput interface {
+	pulumi.Input
+
+	ToPipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput() PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput
+	ToPipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutputWithContext(context.Context) PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput
+}
+
+type PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs struct {
+	// (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
+	// (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
+}
+
+func (PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails)(nil)).Elem()
+}
+
+func (i PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs) ToPipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput() PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput {
+	return i.ToPipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutputWithContext(context.Background())
+}
+
+func (i PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs) ToPipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutputWithContext(ctx context.Context) PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput)
+}
+
+func (i PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs) ToPipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput() PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput {
+	return i.ToPipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs) ToPipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutputWithContext(ctx context.Context) PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput).ToPipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutputWithContext(ctx)
+}
+
+// PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrInput is an input type that accepts PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs, PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtr and PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput values.
+// You can construct a concrete instance of `PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrInput` via:
+//
+//	        PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrInput interface {
+	pulumi.Input
+
+	ToPipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput() PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput
+	ToPipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutputWithContext(context.Context) PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput
+}
+
+type pipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrType PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs
+
+func PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtr(v *PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs) PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrInput {
+	return (*pipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrType)(v)
+}
+
+func (*pipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails)(nil)).Elem()
+}
+
+func (i *pipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrType) ToPipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput() PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput {
+	return i.ToPipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *pipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrType) ToPipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutputWithContext(ctx context.Context) PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput)
+}
+
+type PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput struct{ *pulumi.OutputState }
+
+func (PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails)(nil)).Elem()
+}
+
+func (o PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput) ToPipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput() PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput {
+	return o
+}
+
+func (o PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput) ToPipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutputWithContext(ctx context.Context) PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput {
+	return o
+}
+
+func (o PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput) ToPipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput() PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput {
+	return o.ToPipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput) ToPipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutputWithContext(ctx context.Context) PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails) *PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails {
+		return &v
+	}).(PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput)
+}
+
+// (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+func (o PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails) *float64 {
+		return v.MemoryInGbs
+	}).(pulumi.Float64PtrOutput)
+}
+
+// (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+func (o PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails) *float64 {
+		return v.Ocpus
+	}).(pulumi.Float64PtrOutput)
+}
+
+type PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails)(nil)).Elem()
+}
+
+func (o PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput) ToPipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput() PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput {
+	return o
+}
+
+func (o PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput) ToPipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutputWithContext(ctx context.Context) PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput {
+	return o
+}
+
+func (o PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput) Elem() PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput {
+	return o.ApplyT(func(v *PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails) PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails {
+		if v != nil {
+			return *v
+		}
+		var ret PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails
+		return ret
+	}).(PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput)
+}
+
+// (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+func (o PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.MemoryInGbs
+	}).(pulumi.Float64PtrOutput)
+}
+
+// (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+func (o PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.Ocpus
+	}).(pulumi.Float64PtrOutput)
+}
+
 type PipelineStepDetailStepInfrastructureConfigurationDetails struct {
 	// (Updatable) The size of the block storage volume to attach to the instance.
 	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
@@ -9929,6 +11229,337 @@ func (o PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetai
 		}
 		return v.Ocpus
 	}).(pulumi.Float64PtrOutput)
+}
+
+type PipelineStepDetailStepStorageMountConfigurationDetailsList struct {
+	// (Updatable) The object storage bucket
+	Bucket *string `pulumi:"bucket"`
+	// (Updatable) The local directory name to be mounted
+	DestinationDirectoryName string `pulumi:"destinationDirectoryName"`
+	// (Updatable) The local path of the mounted directory, excluding directory name.
+	DestinationPath *string `pulumi:"destinationPath"`
+	// (Updatable) OCID of the export
+	ExportId *string `pulumi:"exportId"`
+	// (Updatable) OCID of the mount target
+	MountTargetId *string `pulumi:"mountTargetId"`
+	// (Updatable) The object storage namespace
+	Namespace *string `pulumi:"namespace"`
+	// (Updatable) Prefix in the bucket to mount
+	Prefix *string `pulumi:"prefix"`
+	// (Updatable) The type of storage.
+	StorageType string `pulumi:"storageType"`
+}
+
+// PipelineStepDetailStepStorageMountConfigurationDetailsListInput is an input type that accepts PipelineStepDetailStepStorageMountConfigurationDetailsListArgs and PipelineStepDetailStepStorageMountConfigurationDetailsListOutput values.
+// You can construct a concrete instance of `PipelineStepDetailStepStorageMountConfigurationDetailsListInput` via:
+//
+//	PipelineStepDetailStepStorageMountConfigurationDetailsListArgs{...}
+type PipelineStepDetailStepStorageMountConfigurationDetailsListInput interface {
+	pulumi.Input
+
+	ToPipelineStepDetailStepStorageMountConfigurationDetailsListOutput() PipelineStepDetailStepStorageMountConfigurationDetailsListOutput
+	ToPipelineStepDetailStepStorageMountConfigurationDetailsListOutputWithContext(context.Context) PipelineStepDetailStepStorageMountConfigurationDetailsListOutput
+}
+
+type PipelineStepDetailStepStorageMountConfigurationDetailsListArgs struct {
+	// (Updatable) The object storage bucket
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
+	// (Updatable) The local directory name to be mounted
+	DestinationDirectoryName pulumi.StringInput `pulumi:"destinationDirectoryName"`
+	// (Updatable) The local path of the mounted directory, excluding directory name.
+	DestinationPath pulumi.StringPtrInput `pulumi:"destinationPath"`
+	// (Updatable) OCID of the export
+	ExportId pulumi.StringPtrInput `pulumi:"exportId"`
+	// (Updatable) OCID of the mount target
+	MountTargetId pulumi.StringPtrInput `pulumi:"mountTargetId"`
+	// (Updatable) The object storage namespace
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+	// (Updatable) Prefix in the bucket to mount
+	Prefix pulumi.StringPtrInput `pulumi:"prefix"`
+	// (Updatable) The type of storage.
+	StorageType pulumi.StringInput `pulumi:"storageType"`
+}
+
+func (PipelineStepDetailStepStorageMountConfigurationDetailsListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelineStepDetailStepStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (i PipelineStepDetailStepStorageMountConfigurationDetailsListArgs) ToPipelineStepDetailStepStorageMountConfigurationDetailsListOutput() PipelineStepDetailStepStorageMountConfigurationDetailsListOutput {
+	return i.ToPipelineStepDetailStepStorageMountConfigurationDetailsListOutputWithContext(context.Background())
+}
+
+func (i PipelineStepDetailStepStorageMountConfigurationDetailsListArgs) ToPipelineStepDetailStepStorageMountConfigurationDetailsListOutputWithContext(ctx context.Context) PipelineStepDetailStepStorageMountConfigurationDetailsListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineStepDetailStepStorageMountConfigurationDetailsListOutput)
+}
+
+// PipelineStepDetailStepStorageMountConfigurationDetailsListArrayInput is an input type that accepts PipelineStepDetailStepStorageMountConfigurationDetailsListArray and PipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput values.
+// You can construct a concrete instance of `PipelineStepDetailStepStorageMountConfigurationDetailsListArrayInput` via:
+//
+//	PipelineStepDetailStepStorageMountConfigurationDetailsListArray{ PipelineStepDetailStepStorageMountConfigurationDetailsListArgs{...} }
+type PipelineStepDetailStepStorageMountConfigurationDetailsListArrayInput interface {
+	pulumi.Input
+
+	ToPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput() PipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput
+	ToPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutputWithContext(context.Context) PipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput
+}
+
+type PipelineStepDetailStepStorageMountConfigurationDetailsListArray []PipelineStepDetailStepStorageMountConfigurationDetailsListInput
+
+func (PipelineStepDetailStepStorageMountConfigurationDetailsListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PipelineStepDetailStepStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (i PipelineStepDetailStepStorageMountConfigurationDetailsListArray) ToPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput() PipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput {
+	return i.ToPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutputWithContext(context.Background())
+}
+
+func (i PipelineStepDetailStepStorageMountConfigurationDetailsListArray) ToPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutputWithContext(ctx context.Context) PipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput)
+}
+
+type PipelineStepDetailStepStorageMountConfigurationDetailsListOutput struct{ *pulumi.OutputState }
+
+func (PipelineStepDetailStepStorageMountConfigurationDetailsListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelineStepDetailStepStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (o PipelineStepDetailStepStorageMountConfigurationDetailsListOutput) ToPipelineStepDetailStepStorageMountConfigurationDetailsListOutput() PipelineStepDetailStepStorageMountConfigurationDetailsListOutput {
+	return o
+}
+
+func (o PipelineStepDetailStepStorageMountConfigurationDetailsListOutput) ToPipelineStepDetailStepStorageMountConfigurationDetailsListOutputWithContext(ctx context.Context) PipelineStepDetailStepStorageMountConfigurationDetailsListOutput {
+	return o
+}
+
+// (Updatable) The object storage bucket
+func (o PipelineStepDetailStepStorageMountConfigurationDetailsListOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineStepDetailStepStorageMountConfigurationDetailsList) *string { return v.Bucket }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The local directory name to be mounted
+func (o PipelineStepDetailStepStorageMountConfigurationDetailsListOutput) DestinationDirectoryName() pulumi.StringOutput {
+	return o.ApplyT(func(v PipelineStepDetailStepStorageMountConfigurationDetailsList) string {
+		return v.DestinationDirectoryName
+	}).(pulumi.StringOutput)
+}
+
+// (Updatable) The local path of the mounted directory, excluding directory name.
+func (o PipelineStepDetailStepStorageMountConfigurationDetailsListOutput) DestinationPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineStepDetailStepStorageMountConfigurationDetailsList) *string { return v.DestinationPath }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) OCID of the export
+func (o PipelineStepDetailStepStorageMountConfigurationDetailsListOutput) ExportId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineStepDetailStepStorageMountConfigurationDetailsList) *string { return v.ExportId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) OCID of the mount target
+func (o PipelineStepDetailStepStorageMountConfigurationDetailsListOutput) MountTargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineStepDetailStepStorageMountConfigurationDetailsList) *string { return v.MountTargetId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The object storage namespace
+func (o PipelineStepDetailStepStorageMountConfigurationDetailsListOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineStepDetailStepStorageMountConfigurationDetailsList) *string { return v.Namespace }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Prefix in the bucket to mount
+func (o PipelineStepDetailStepStorageMountConfigurationDetailsListOutput) Prefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineStepDetailStepStorageMountConfigurationDetailsList) *string { return v.Prefix }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type of storage.
+func (o PipelineStepDetailStepStorageMountConfigurationDetailsListOutput) StorageType() pulumi.StringOutput {
+	return o.ApplyT(func(v PipelineStepDetailStepStorageMountConfigurationDetailsList) string { return v.StorageType }).(pulumi.StringOutput)
+}
+
+type PipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput struct{ *pulumi.OutputState }
+
+func (PipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PipelineStepDetailStepStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (o PipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput) ToPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput() PipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput {
+	return o
+}
+
+func (o PipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput) ToPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutputWithContext(ctx context.Context) PipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput {
+	return o
+}
+
+func (o PipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput) Index(i pulumi.IntInput) PipelineStepDetailStepStorageMountConfigurationDetailsListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PipelineStepDetailStepStorageMountConfigurationDetailsList {
+		return vs[0].([]PipelineStepDetailStepStorageMountConfigurationDetailsList)[vs[1].(int)]
+	}).(PipelineStepDetailStepStorageMountConfigurationDetailsListOutput)
+}
+
+type PipelineStorageMountConfigurationDetailsList struct {
+	// (Updatable) The object storage bucket
+	Bucket *string `pulumi:"bucket"`
+	// (Updatable) The local directory name to be mounted
+	DestinationDirectoryName string `pulumi:"destinationDirectoryName"`
+	// (Updatable) The local path of the mounted directory, excluding directory name.
+	DestinationPath *string `pulumi:"destinationPath"`
+	// (Updatable) OCID of the export
+	ExportId *string `pulumi:"exportId"`
+	// (Updatable) OCID of the mount target
+	MountTargetId *string `pulumi:"mountTargetId"`
+	// (Updatable) The object storage namespace
+	Namespace *string `pulumi:"namespace"`
+	// (Updatable) Prefix in the bucket to mount
+	Prefix *string `pulumi:"prefix"`
+	// (Updatable) The type of storage.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	StorageType string `pulumi:"storageType"`
+}
+
+// PipelineStorageMountConfigurationDetailsListInput is an input type that accepts PipelineStorageMountConfigurationDetailsListArgs and PipelineStorageMountConfigurationDetailsListOutput values.
+// You can construct a concrete instance of `PipelineStorageMountConfigurationDetailsListInput` via:
+//
+//	PipelineStorageMountConfigurationDetailsListArgs{...}
+type PipelineStorageMountConfigurationDetailsListInput interface {
+	pulumi.Input
+
+	ToPipelineStorageMountConfigurationDetailsListOutput() PipelineStorageMountConfigurationDetailsListOutput
+	ToPipelineStorageMountConfigurationDetailsListOutputWithContext(context.Context) PipelineStorageMountConfigurationDetailsListOutput
+}
+
+type PipelineStorageMountConfigurationDetailsListArgs struct {
+	// (Updatable) The object storage bucket
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
+	// (Updatable) The local directory name to be mounted
+	DestinationDirectoryName pulumi.StringInput `pulumi:"destinationDirectoryName"`
+	// (Updatable) The local path of the mounted directory, excluding directory name.
+	DestinationPath pulumi.StringPtrInput `pulumi:"destinationPath"`
+	// (Updatable) OCID of the export
+	ExportId pulumi.StringPtrInput `pulumi:"exportId"`
+	// (Updatable) OCID of the mount target
+	MountTargetId pulumi.StringPtrInput `pulumi:"mountTargetId"`
+	// (Updatable) The object storage namespace
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+	// (Updatable) Prefix in the bucket to mount
+	Prefix pulumi.StringPtrInput `pulumi:"prefix"`
+	// (Updatable) The type of storage.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	StorageType pulumi.StringInput `pulumi:"storageType"`
+}
+
+func (PipelineStorageMountConfigurationDetailsListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelineStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (i PipelineStorageMountConfigurationDetailsListArgs) ToPipelineStorageMountConfigurationDetailsListOutput() PipelineStorageMountConfigurationDetailsListOutput {
+	return i.ToPipelineStorageMountConfigurationDetailsListOutputWithContext(context.Background())
+}
+
+func (i PipelineStorageMountConfigurationDetailsListArgs) ToPipelineStorageMountConfigurationDetailsListOutputWithContext(ctx context.Context) PipelineStorageMountConfigurationDetailsListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineStorageMountConfigurationDetailsListOutput)
+}
+
+// PipelineStorageMountConfigurationDetailsListArrayInput is an input type that accepts PipelineStorageMountConfigurationDetailsListArray and PipelineStorageMountConfigurationDetailsListArrayOutput values.
+// You can construct a concrete instance of `PipelineStorageMountConfigurationDetailsListArrayInput` via:
+//
+//	PipelineStorageMountConfigurationDetailsListArray{ PipelineStorageMountConfigurationDetailsListArgs{...} }
+type PipelineStorageMountConfigurationDetailsListArrayInput interface {
+	pulumi.Input
+
+	ToPipelineStorageMountConfigurationDetailsListArrayOutput() PipelineStorageMountConfigurationDetailsListArrayOutput
+	ToPipelineStorageMountConfigurationDetailsListArrayOutputWithContext(context.Context) PipelineStorageMountConfigurationDetailsListArrayOutput
+}
+
+type PipelineStorageMountConfigurationDetailsListArray []PipelineStorageMountConfigurationDetailsListInput
+
+func (PipelineStorageMountConfigurationDetailsListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PipelineStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (i PipelineStorageMountConfigurationDetailsListArray) ToPipelineStorageMountConfigurationDetailsListArrayOutput() PipelineStorageMountConfigurationDetailsListArrayOutput {
+	return i.ToPipelineStorageMountConfigurationDetailsListArrayOutputWithContext(context.Background())
+}
+
+func (i PipelineStorageMountConfigurationDetailsListArray) ToPipelineStorageMountConfigurationDetailsListArrayOutputWithContext(ctx context.Context) PipelineStorageMountConfigurationDetailsListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineStorageMountConfigurationDetailsListArrayOutput)
+}
+
+type PipelineStorageMountConfigurationDetailsListOutput struct{ *pulumi.OutputState }
+
+func (PipelineStorageMountConfigurationDetailsListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelineStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (o PipelineStorageMountConfigurationDetailsListOutput) ToPipelineStorageMountConfigurationDetailsListOutput() PipelineStorageMountConfigurationDetailsListOutput {
+	return o
+}
+
+func (o PipelineStorageMountConfigurationDetailsListOutput) ToPipelineStorageMountConfigurationDetailsListOutputWithContext(ctx context.Context) PipelineStorageMountConfigurationDetailsListOutput {
+	return o
+}
+
+// (Updatable) The object storage bucket
+func (o PipelineStorageMountConfigurationDetailsListOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineStorageMountConfigurationDetailsList) *string { return v.Bucket }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The local directory name to be mounted
+func (o PipelineStorageMountConfigurationDetailsListOutput) DestinationDirectoryName() pulumi.StringOutput {
+	return o.ApplyT(func(v PipelineStorageMountConfigurationDetailsList) string { return v.DestinationDirectoryName }).(pulumi.StringOutput)
+}
+
+// (Updatable) The local path of the mounted directory, excluding directory name.
+func (o PipelineStorageMountConfigurationDetailsListOutput) DestinationPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineStorageMountConfigurationDetailsList) *string { return v.DestinationPath }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) OCID of the export
+func (o PipelineStorageMountConfigurationDetailsListOutput) ExportId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineStorageMountConfigurationDetailsList) *string { return v.ExportId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) OCID of the mount target
+func (o PipelineStorageMountConfigurationDetailsListOutput) MountTargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineStorageMountConfigurationDetailsList) *string { return v.MountTargetId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The object storage namespace
+func (o PipelineStorageMountConfigurationDetailsListOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineStorageMountConfigurationDetailsList) *string { return v.Namespace }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Prefix in the bucket to mount
+func (o PipelineStorageMountConfigurationDetailsListOutput) Prefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineStorageMountConfigurationDetailsList) *string { return v.Prefix }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type of storage.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o PipelineStorageMountConfigurationDetailsListOutput) StorageType() pulumi.StringOutput {
+	return o.ApplyT(func(v PipelineStorageMountConfigurationDetailsList) string { return v.StorageType }).(pulumi.StringOutput)
+}
+
+type PipelineStorageMountConfigurationDetailsListArrayOutput struct{ *pulumi.OutputState }
+
+func (PipelineStorageMountConfigurationDetailsListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PipelineStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (o PipelineStorageMountConfigurationDetailsListArrayOutput) ToPipelineStorageMountConfigurationDetailsListArrayOutput() PipelineStorageMountConfigurationDetailsListArrayOutput {
+	return o
+}
+
+func (o PipelineStorageMountConfigurationDetailsListArrayOutput) ToPipelineStorageMountConfigurationDetailsListArrayOutputWithContext(ctx context.Context) PipelineStorageMountConfigurationDetailsListArrayOutput {
+	return o
+}
+
+func (o PipelineStorageMountConfigurationDetailsListArrayOutput) Index(i pulumi.IntInput) PipelineStorageMountConfigurationDetailsListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PipelineStorageMountConfigurationDetailsList {
+		return vs[0].([]PipelineStorageMountConfigurationDetailsList)[vs[1].(int)]
+	}).(PipelineStorageMountConfigurationDetailsListOutput)
 }
 
 type ScheduleAction struct {
@@ -18778,6 +20409,8 @@ type GetModelCustomMetadataList struct {
 	Category string `pulumi:"category"`
 	// A short description of the model.
 	Description string `pulumi:"description"`
+	// Is there any artifact present for the metadata.
+	HasArtifact bool `pulumi:"hasArtifact"`
 	// Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
 	// * useCaseType
 	// * libraryName
@@ -18785,7 +20418,14 @@ type GetModelCustomMetadataList struct {
 	// * estimatorClass
 	// * hyperParameters
 	// * testArtifactresults
+	// * fineTuningConfiguration
+	// * deploymentConfiguration
+	// * readme
+	// * license
+	// * evaluationConfiguration
 	Key string `pulumi:"key"`
+	// list of keywords for searching
+	Keywords []string `pulumi:"keywords"`
 	// Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
 	Value string `pulumi:"value"`
 }
@@ -18806,6 +20446,8 @@ type GetModelCustomMetadataListArgs struct {
 	Category pulumi.StringInput `pulumi:"category"`
 	// A short description of the model.
 	Description pulumi.StringInput `pulumi:"description"`
+	// Is there any artifact present for the metadata.
+	HasArtifact pulumi.BoolInput `pulumi:"hasArtifact"`
 	// Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
 	// * useCaseType
 	// * libraryName
@@ -18813,7 +20455,14 @@ type GetModelCustomMetadataListArgs struct {
 	// * estimatorClass
 	// * hyperParameters
 	// * testArtifactresults
+	// * fineTuningConfiguration
+	// * deploymentConfiguration
+	// * readme
+	// * license
+	// * evaluationConfiguration
 	Key pulumi.StringInput `pulumi:"key"`
+	// list of keywords for searching
+	Keywords pulumi.StringArrayInput `pulumi:"keywords"`
 	// Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
 	Value pulumi.StringInput `pulumi:"value"`
 }
@@ -18879,6 +20528,11 @@ func (o GetModelCustomMetadataListOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelCustomMetadataList) string { return v.Description }).(pulumi.StringOutput)
 }
 
+// Is there any artifact present for the metadata.
+func (o GetModelCustomMetadataListOutput) HasArtifact() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetModelCustomMetadataList) bool { return v.HasArtifact }).(pulumi.BoolOutput)
+}
+
 // Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
 // * useCaseType
 // * libraryName
@@ -18886,8 +20540,18 @@ func (o GetModelCustomMetadataListOutput) Description() pulumi.StringOutput {
 // * estimatorClass
 // * hyperParameters
 // * testArtifactresults
+// * fineTuningConfiguration
+// * deploymentConfiguration
+// * readme
+// * license
+// * evaluationConfiguration
 func (o GetModelCustomMetadataListOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelCustomMetadataList) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// list of keywords for searching
+func (o GetModelCustomMetadataListOutput) Keywords() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetModelCustomMetadataList) []string { return v.Keywords }).(pulumi.StringArrayOutput)
 }
 
 // Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
@@ -18920,6 +20584,8 @@ type GetModelDefinedMetadataList struct {
 	Category string `pulumi:"category"`
 	// A short description of the model.
 	Description string `pulumi:"description"`
+	// Is there any artifact present for the metadata.
+	HasArtifact bool `pulumi:"hasArtifact"`
 	// Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
 	// * useCaseType
 	// * libraryName
@@ -18927,7 +20593,14 @@ type GetModelDefinedMetadataList struct {
 	// * estimatorClass
 	// * hyperParameters
 	// * testArtifactresults
+	// * fineTuningConfiguration
+	// * deploymentConfiguration
+	// * readme
+	// * license
+	// * evaluationConfiguration
 	Key string `pulumi:"key"`
+	// list of keywords for searching
+	Keywords []string `pulumi:"keywords"`
 	// Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
 	Value string `pulumi:"value"`
 }
@@ -18948,6 +20621,8 @@ type GetModelDefinedMetadataListArgs struct {
 	Category pulumi.StringInput `pulumi:"category"`
 	// A short description of the model.
 	Description pulumi.StringInput `pulumi:"description"`
+	// Is there any artifact present for the metadata.
+	HasArtifact pulumi.BoolInput `pulumi:"hasArtifact"`
 	// Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
 	// * useCaseType
 	// * libraryName
@@ -18955,7 +20630,14 @@ type GetModelDefinedMetadataListArgs struct {
 	// * estimatorClass
 	// * hyperParameters
 	// * testArtifactresults
+	// * fineTuningConfiguration
+	// * deploymentConfiguration
+	// * readme
+	// * license
+	// * evaluationConfiguration
 	Key pulumi.StringInput `pulumi:"key"`
+	// list of keywords for searching
+	Keywords pulumi.StringArrayInput `pulumi:"keywords"`
 	// Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
 	Value pulumi.StringInput `pulumi:"value"`
 }
@@ -19021,6 +20703,11 @@ func (o GetModelDefinedMetadataListOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelDefinedMetadataList) string { return v.Description }).(pulumi.StringOutput)
 }
 
+// Is there any artifact present for the metadata.
+func (o GetModelDefinedMetadataListOutput) HasArtifact() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetModelDefinedMetadataList) bool { return v.HasArtifact }).(pulumi.BoolOutput)
+}
+
 // Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
 // * useCaseType
 // * libraryName
@@ -19028,8 +20715,18 @@ func (o GetModelDefinedMetadataListOutput) Description() pulumi.StringOutput {
 // * estimatorClass
 // * hyperParameters
 // * testArtifactresults
+// * fineTuningConfiguration
+// * deploymentConfiguration
+// * readme
+// * license
+// * evaluationConfiguration
 func (o GetModelDefinedMetadataListOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelDefinedMetadataList) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// list of keywords for searching
+func (o GetModelDefinedMetadataListOutput) Keywords() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetModelDefinedMetadataList) []string { return v.Keywords }).(pulumi.StringArrayOutput)
 }
 
 // Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
@@ -23646,6 +25343,8 @@ func (o GetModelVersionSetsFilterArrayOutput) Index(i pulumi.IntInput) GetModelV
 }
 
 type GetModelVersionSetsModelVersionSet struct {
+	// Specifies the type of model version sets to list. By default, user model version sets are listed.
+	Category string `pulumi:"category"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
@@ -23684,6 +25383,8 @@ type GetModelVersionSetsModelVersionSetInput interface {
 }
 
 type GetModelVersionSetsModelVersionSetArgs struct {
+	// Specifies the type of model version sets to list. By default, user model version sets are listed.
+	Category pulumi.StringInput `pulumi:"category"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
@@ -23759,6 +25460,11 @@ func (o GetModelVersionSetsModelVersionSetOutput) ToGetModelVersionSetsModelVers
 
 func (o GetModelVersionSetsModelVersionSetOutput) ToGetModelVersionSetsModelVersionSetOutputWithContext(ctx context.Context) GetModelVersionSetsModelVersionSetOutput {
 	return o
+}
+
+// Specifies the type of model version sets to list. By default, user model version sets are listed.
+func (o GetModelVersionSetsModelVersionSetOutput) Category() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelVersionSetsModelVersionSet) string { return v.Category }).(pulumi.StringOutput)
 }
 
 // <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -23956,6 +25662,8 @@ type GetModelsModel struct {
 	BackupOperationDetails []GetModelsModelBackupOperationDetail `pulumi:"backupOperationDetails"`
 	// Back up setting details of the model.
 	BackupSettings []GetModelsModelBackupSetting `pulumi:"backupSettings"`
+	// Specifies the type of models to list. By default, user models are listed.
+	Category string `pulumi:"category"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
@@ -23977,6 +25685,8 @@ type GetModelsModel struct {
 	Id string `pulumi:"id"`
 	// Input schema file content in String format
 	InputSchema string `pulumi:"inputSchema"`
+	// Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+	IsModelByReference bool `pulumi:"isModelByReference"`
 	// Details about the lifecycle state of the model.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	ModelArtifact    string `pulumi:"modelArtifact"`
@@ -24019,6 +25729,8 @@ type GetModelsModelArgs struct {
 	BackupOperationDetails GetModelsModelBackupOperationDetailArrayInput `pulumi:"backupOperationDetails"`
 	// Back up setting details of the model.
 	BackupSettings GetModelsModelBackupSettingArrayInput `pulumi:"backupSettings"`
+	// Specifies the type of models to list. By default, user models are listed.
+	Category pulumi.StringInput `pulumi:"category"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
@@ -24040,6 +25752,8 @@ type GetModelsModelArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// Input schema file content in String format
 	InputSchema pulumi.StringInput `pulumi:"inputSchema"`
+	// Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+	IsModelByReference pulumi.BoolInput `pulumi:"isModelByReference"`
 	// Details about the lifecycle state of the model.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	ModelArtifact    pulumi.StringInput `pulumi:"modelArtifact"`
@@ -24139,6 +25853,11 @@ func (o GetModelsModelOutput) BackupSettings() GetModelsModelBackupSettingArrayO
 	return o.ApplyT(func(v GetModelsModel) []GetModelsModelBackupSetting { return v.BackupSettings }).(GetModelsModelBackupSettingArrayOutput)
 }
 
+// Specifies the type of models to list. By default, user models are listed.
+func (o GetModelsModelOutput) Category() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelsModel) string { return v.Category }).(pulumi.StringOutput)
+}
+
 // <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o GetModelsModelOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModel) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -24191,6 +25910,11 @@ func (o GetModelsModelOutput) Id() pulumi.StringOutput {
 // Input schema file content in String format
 func (o GetModelsModelOutput) InputSchema() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModel) string { return v.InputSchema }).(pulumi.StringOutput)
+}
+
+// Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+func (o GetModelsModelOutput) IsModelByReference() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetModelsModel) bool { return v.IsModelByReference }).(pulumi.BoolOutput)
 }
 
 // Details about the lifecycle state of the model.
@@ -24497,10 +26221,12 @@ func (o GetModelsModelBackupSettingArrayOutput) Index(i pulumi.IntInput) GetMode
 }
 
 type GetModelsModelCustomMetadataList struct {
-	// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
+	// Specifies the type of models to list. By default, user models are listed.
 	Category string `pulumi:"category"`
 	// A short description of the model.
 	Description string `pulumi:"description"`
+	// Is there any artifact present for the metadata.
+	HasArtifact bool `pulumi:"hasArtifact"`
 	// Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
 	// * useCaseType
 	// * libraryName
@@ -24508,7 +26234,14 @@ type GetModelsModelCustomMetadataList struct {
 	// * estimatorClass
 	// * hyperParameters
 	// * testArtifactresults
+	// * fineTuningConfiguration
+	// * deploymentConfiguration
+	// * readme
+	// * license
+	// * evaluationConfiguration
 	Key string `pulumi:"key"`
+	// list of keywords for searching
+	Keywords []string `pulumi:"keywords"`
 	// Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
 	Value string `pulumi:"value"`
 }
@@ -24525,10 +26258,12 @@ type GetModelsModelCustomMetadataListInput interface {
 }
 
 type GetModelsModelCustomMetadataListArgs struct {
-	// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
+	// Specifies the type of models to list. By default, user models are listed.
 	Category pulumi.StringInput `pulumi:"category"`
 	// A short description of the model.
 	Description pulumi.StringInput `pulumi:"description"`
+	// Is there any artifact present for the metadata.
+	HasArtifact pulumi.BoolInput `pulumi:"hasArtifact"`
 	// Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
 	// * useCaseType
 	// * libraryName
@@ -24536,7 +26271,14 @@ type GetModelsModelCustomMetadataListArgs struct {
 	// * estimatorClass
 	// * hyperParameters
 	// * testArtifactresults
+	// * fineTuningConfiguration
+	// * deploymentConfiguration
+	// * readme
+	// * license
+	// * evaluationConfiguration
 	Key pulumi.StringInput `pulumi:"key"`
+	// list of keywords for searching
+	Keywords pulumi.StringArrayInput `pulumi:"keywords"`
 	// Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
 	Value pulumi.StringInput `pulumi:"value"`
 }
@@ -24592,7 +26334,7 @@ func (o GetModelsModelCustomMetadataListOutput) ToGetModelsModelCustomMetadataLi
 	return o
 }
 
-// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
+// Specifies the type of models to list. By default, user models are listed.
 func (o GetModelsModelCustomMetadataListOutput) Category() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCustomMetadataList) string { return v.Category }).(pulumi.StringOutput)
 }
@@ -24602,6 +26344,11 @@ func (o GetModelsModelCustomMetadataListOutput) Description() pulumi.StringOutpu
 	return o.ApplyT(func(v GetModelsModelCustomMetadataList) string { return v.Description }).(pulumi.StringOutput)
 }
 
+// Is there any artifact present for the metadata.
+func (o GetModelsModelCustomMetadataListOutput) HasArtifact() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetModelsModelCustomMetadataList) bool { return v.HasArtifact }).(pulumi.BoolOutput)
+}
+
 // Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
 // * useCaseType
 // * libraryName
@@ -24609,8 +26356,18 @@ func (o GetModelsModelCustomMetadataListOutput) Description() pulumi.StringOutpu
 // * estimatorClass
 // * hyperParameters
 // * testArtifactresults
+// * fineTuningConfiguration
+// * deploymentConfiguration
+// * readme
+// * license
+// * evaluationConfiguration
 func (o GetModelsModelCustomMetadataListOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCustomMetadataList) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// list of keywords for searching
+func (o GetModelsModelCustomMetadataListOutput) Keywords() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetModelsModelCustomMetadataList) []string { return v.Keywords }).(pulumi.StringArrayOutput)
 }
 
 // Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
@@ -24639,10 +26396,12 @@ func (o GetModelsModelCustomMetadataListArrayOutput) Index(i pulumi.IntInput) Ge
 }
 
 type GetModelsModelDefinedMetadataList struct {
-	// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
+	// Specifies the type of models to list. By default, user models are listed.
 	Category string `pulumi:"category"`
 	// A short description of the model.
 	Description string `pulumi:"description"`
+	// Is there any artifact present for the metadata.
+	HasArtifact bool `pulumi:"hasArtifact"`
 	// Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
 	// * useCaseType
 	// * libraryName
@@ -24650,7 +26409,14 @@ type GetModelsModelDefinedMetadataList struct {
 	// * estimatorClass
 	// * hyperParameters
 	// * testArtifactresults
+	// * fineTuningConfiguration
+	// * deploymentConfiguration
+	// * readme
+	// * license
+	// * evaluationConfiguration
 	Key string `pulumi:"key"`
+	// list of keywords for searching
+	Keywords []string `pulumi:"keywords"`
 	// Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
 	Value string `pulumi:"value"`
 }
@@ -24667,10 +26433,12 @@ type GetModelsModelDefinedMetadataListInput interface {
 }
 
 type GetModelsModelDefinedMetadataListArgs struct {
-	// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
+	// Specifies the type of models to list. By default, user models are listed.
 	Category pulumi.StringInput `pulumi:"category"`
 	// A short description of the model.
 	Description pulumi.StringInput `pulumi:"description"`
+	// Is there any artifact present for the metadata.
+	HasArtifact pulumi.BoolInput `pulumi:"hasArtifact"`
 	// Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
 	// * useCaseType
 	// * libraryName
@@ -24678,7 +26446,14 @@ type GetModelsModelDefinedMetadataListArgs struct {
 	// * estimatorClass
 	// * hyperParameters
 	// * testArtifactresults
+	// * fineTuningConfiguration
+	// * deploymentConfiguration
+	// * readme
+	// * license
+	// * evaluationConfiguration
 	Key pulumi.StringInput `pulumi:"key"`
+	// list of keywords for searching
+	Keywords pulumi.StringArrayInput `pulumi:"keywords"`
 	// Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
 	Value pulumi.StringInput `pulumi:"value"`
 }
@@ -24734,7 +26509,7 @@ func (o GetModelsModelDefinedMetadataListOutput) ToGetModelsModelDefinedMetadata
 	return o
 }
 
-// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
+// Specifies the type of models to list. By default, user models are listed.
 func (o GetModelsModelDefinedMetadataListOutput) Category() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelDefinedMetadataList) string { return v.Category }).(pulumi.StringOutput)
 }
@@ -24744,6 +26519,11 @@ func (o GetModelsModelDefinedMetadataListOutput) Description() pulumi.StringOutp
 	return o.ApplyT(func(v GetModelsModelDefinedMetadataList) string { return v.Description }).(pulumi.StringOutput)
 }
 
+// Is there any artifact present for the metadata.
+func (o GetModelsModelDefinedMetadataListOutput) HasArtifact() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetModelsModelDefinedMetadataList) bool { return v.HasArtifact }).(pulumi.BoolOutput)
+}
+
 // Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
 // * useCaseType
 // * libraryName
@@ -24751,8 +26531,18 @@ func (o GetModelsModelDefinedMetadataListOutput) Description() pulumi.StringOutp
 // * estimatorClass
 // * hyperParameters
 // * testArtifactresults
+// * fineTuningConfiguration
+// * deploymentConfiguration
+// * readme
+// * license
+// * evaluationConfiguration
 func (o GetModelsModelDefinedMetadataListOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelDefinedMetadataList) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// list of keywords for searching
+func (o GetModelsModelDefinedMetadataListOutput) Keywords() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetModelsModelDefinedMetadataList) []string { return v.Keywords }).(pulumi.StringArrayOutput)
 }
 
 // Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
@@ -28522,6 +30312,8 @@ type GetPipelineRunStepOverrideDetail struct {
 	StepConfigurationDetails []GetPipelineRunStepOverrideDetailStepConfigurationDetail `pulumi:"stepConfigurationDetails"`
 	// Container Details for a step in pipeline.
 	StepContainerConfigurationDetails []GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail `pulumi:"stepContainerConfigurationDetails"`
+	// The configuration details of a Dataflow step.
+	StepDataflowConfigurationDetails []GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail `pulumi:"stepDataflowConfigurationDetails"`
 	// The name of the step.
 	StepName string `pulumi:"stepName"`
 }
@@ -28542,6 +30334,8 @@ type GetPipelineRunStepOverrideDetailArgs struct {
 	StepConfigurationDetails GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayInput `pulumi:"stepConfigurationDetails"`
 	// Container Details for a step in pipeline.
 	StepContainerConfigurationDetails GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayInput `pulumi:"stepContainerConfigurationDetails"`
+	// The configuration details of a Dataflow step.
+	StepDataflowConfigurationDetails GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayInput `pulumi:"stepDataflowConfigurationDetails"`
 	// The name of the step.
 	StepName pulumi.StringInput `pulumi:"stepName"`
 }
@@ -28609,6 +30403,13 @@ func (o GetPipelineRunStepOverrideDetailOutput) StepContainerConfigurationDetail
 	return o.ApplyT(func(v GetPipelineRunStepOverrideDetail) []GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail {
 		return v.StepContainerConfigurationDetails
 	}).(GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput)
+}
+
+// The configuration details of a Dataflow step.
+func (o GetPipelineRunStepOverrideDetailOutput) StepDataflowConfigurationDetails() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetail) []GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail {
+		return v.StepDataflowConfigurationDetails
+	}).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput)
 }
 
 // The name of the step.
@@ -28903,7 +30704,397 @@ func (o GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOut
 	}).(GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput)
 }
 
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail struct {
+	// The Spark configuration passed to the running process.
+	Configuration map[string]string `pulumi:"configuration"`
+	// The VM shape for the driver.
+	DriverShape string `pulumi:"driverShape"`
+	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	DriverShapeConfigDetails []GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail `pulumi:"driverShapeConfigDetails"`
+	// The VM shape for the executors.
+	ExecutorShape string `pulumi:"executorShape"`
+	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	ExecutorShapeConfigDetails []GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail `pulumi:"executorShapeConfigDetails"`
+	// An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+	LogsBucketUri string `pulumi:"logsBucketUri"`
+	// The number of executor VMs requested.
+	NumExecutors int `pulumi:"numExecutors"`
+	// An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
+	WarehouseBucketUri string `pulumi:"warehouseBucketUri"`
+}
+
+// GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailInput is an input type that accepts GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArgs and GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailInput` via:
+//
+//	GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArgs{...}
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput
+	ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput
+}
+
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArgs struct {
+	// The Spark configuration passed to the running process.
+	Configuration pulumi.StringMapInput `pulumi:"configuration"`
+	// The VM shape for the driver.
+	DriverShape pulumi.StringInput `pulumi:"driverShape"`
+	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	DriverShapeConfigDetails GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayInput `pulumi:"driverShapeConfigDetails"`
+	// The VM shape for the executors.
+	ExecutorShape pulumi.StringInput `pulumi:"executorShape"`
+	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	ExecutorShapeConfigDetails GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayInput `pulumi:"executorShapeConfigDetails"`
+	// An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+	LogsBucketUri pulumi.StringInput `pulumi:"logsBucketUri"`
+	// The number of executor VMs requested.
+	NumExecutors pulumi.IntInput `pulumi:"numExecutors"`
+	// An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
+	WarehouseBucketUri pulumi.StringInput `pulumi:"warehouseBucketUri"`
+}
+
+func (GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArgs) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput {
+	return i.ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArgs) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput)
+}
+
+// GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayInput is an input type that accepts GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArray and GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayInput` via:
+//
+//	GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArray{ GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArgs{...} }
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput
+	ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput
+}
+
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArray []GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailInput
+
+func (GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArray) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput {
+	return i.ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArray) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput)
+}
+
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput {
+	return o
+}
+
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput {
+	return o
+}
+
+// The Spark configuration passed to the running process.
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) Configuration() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail) map[string]string {
+		return v.Configuration
+	}).(pulumi.StringMapOutput)
+}
+
+// The VM shape for the driver.
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) DriverShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail) string { return v.DriverShape }).(pulumi.StringOutput)
+}
+
+// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) DriverShapeConfigDetails() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail) []GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail {
+		return v.DriverShapeConfigDetails
+	}).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput)
+}
+
+// The VM shape for the executors.
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) ExecutorShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail) string { return v.ExecutorShape }).(pulumi.StringOutput)
+}
+
+// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) ExecutorShapeConfigDetails() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail) []GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail {
+		return v.ExecutorShapeConfigDetails
+	}).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput)
+}
+
+// An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) LogsBucketUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail) string { return v.LogsBucketUri }).(pulumi.StringOutput)
+}
+
+// The number of executor VMs requested.
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) NumExecutors() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail) int { return v.NumExecutors }).(pulumi.IntOutput)
+}
+
+// An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) WarehouseBucketUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail) string {
+		return v.WarehouseBucketUri
+	}).(pulumi.StringOutput)
+}
+
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail {
+		return vs[0].([]GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail)[vs[1].(int)]
+	}).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput)
+}
+
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail struct {
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	Ocpus float64 `pulumi:"ocpus"`
+}
+
+// GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailInput is an input type that accepts GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs and GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput values.
+// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailInput` via:
+//
+//	GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs{...}
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput
+	ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput
+}
+
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs struct {
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+}
+
+func (GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput {
+	return i.ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput)
+}
+
+// GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayInput is an input type that accepts GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray and GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayInput` via:
+//
+//	GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray{ GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs{...} }
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput
+	ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput
+}
+
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray []GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailInput
+
+func (GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput {
+	return i.ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput)
+}
+
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput {
+	return o
+}
+
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput {
+	return o
+}
+
+// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail) float64 {
+		return v.MemoryInGbs
+	}).(pulumi.Float64Output)
+}
+
+// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail) float64 {
+		return v.Ocpus
+	}).(pulumi.Float64Output)
+}
+
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail {
+		return vs[0].([]GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail)[vs[1].(int)]
+	}).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput)
+}
+
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail struct {
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	Ocpus float64 `pulumi:"ocpus"`
+}
+
+// GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailInput is an input type that accepts GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs and GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput values.
+// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailInput` via:
+//
+//	GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs{...}
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput
+	ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput
+}
+
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs struct {
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+}
+
+func (GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput {
+	return i.ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput)
+}
+
+// GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayInput is an input type that accepts GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray and GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayInput` via:
+//
+//	GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray{ GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs{...} }
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput
+	ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput
+}
+
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray []GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailInput
+
+func (GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput {
+	return i.ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput)
+}
+
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput {
+	return o
+}
+
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput {
+	return o
+}
+
+// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail) float64 {
+		return v.MemoryInGbs
+	}).(pulumi.Float64Output)
+}
+
+// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail) float64 {
+		return v.Ocpus
+	}).(pulumi.Float64Output)
+}
+
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail {
+		return vs[0].([]GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail)[vs[1].(int)]
+	}).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput)
+}
+
 type GetPipelineRunStepRun struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow run triggered for this step run.
+	DataflowRunId string `pulumi:"dataflowRunId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
 	JobRunId string `pulumi:"jobRunId"`
 	// Details of the state of the step run.
@@ -28932,6 +31123,8 @@ type GetPipelineRunStepRunInput interface {
 }
 
 type GetPipelineRunStepRunArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow run triggered for this step run.
+	DataflowRunId pulumi.StringInput `pulumi:"dataflowRunId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
 	JobRunId pulumi.StringInput `pulumi:"jobRunId"`
 	// Details of the state of the step run.
@@ -28997,6 +31190,11 @@ func (o GetPipelineRunStepRunOutput) ToGetPipelineRunStepRunOutput() GetPipeline
 
 func (o GetPipelineRunStepRunOutput) ToGetPipelineRunStepRunOutputWithContext(ctx context.Context) GetPipelineRunStepRunOutput {
 	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow run triggered for this step run.
+func (o GetPipelineRunStepRunOutput) DataflowRunId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunStepRun) string { return v.DataflowRunId }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
@@ -29942,6 +32140,8 @@ type GetPipelineRunsPipelineRunStepOverrideDetail struct {
 	StepConfigurationDetails []GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetail `pulumi:"stepConfigurationDetails"`
 	// Container Details for a step in pipeline.
 	StepContainerConfigurationDetails []GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetail `pulumi:"stepContainerConfigurationDetails"`
+	// The configuration details of a Dataflow step.
+	StepDataflowConfigurationDetails []GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetail `pulumi:"stepDataflowConfigurationDetails"`
 	// The name of the step.
 	StepName string `pulumi:"stepName"`
 }
@@ -29962,6 +32162,8 @@ type GetPipelineRunsPipelineRunStepOverrideDetailArgs struct {
 	StepConfigurationDetails GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailArrayInput `pulumi:"stepConfigurationDetails"`
 	// Container Details for a step in pipeline.
 	StepContainerConfigurationDetails GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayInput `pulumi:"stepContainerConfigurationDetails"`
+	// The configuration details of a Dataflow step.
+	StepDataflowConfigurationDetails GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayInput `pulumi:"stepDataflowConfigurationDetails"`
 	// The name of the step.
 	StepName pulumi.StringInput `pulumi:"stepName"`
 }
@@ -30029,6 +32231,13 @@ func (o GetPipelineRunsPipelineRunStepOverrideDetailOutput) StepContainerConfigu
 	return o.ApplyT(func(v GetPipelineRunsPipelineRunStepOverrideDetail) []GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetail {
 		return v.StepContainerConfigurationDetails
 	}).(GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput)
+}
+
+// The configuration details of a Dataflow step.
+func (o GetPipelineRunsPipelineRunStepOverrideDetailOutput) StepDataflowConfigurationDetails() GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput {
+	return o.ApplyT(func(v GetPipelineRunsPipelineRunStepOverrideDetail) []GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetail {
+		return v.StepDataflowConfigurationDetails
+	}).(GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput)
 }
 
 // The name of the step.
@@ -30331,7 +32540,405 @@ func (o GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDe
 	}).(GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput)
 }
 
+type GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetail struct {
+	// The Spark configuration passed to the running process.
+	Configuration map[string]string `pulumi:"configuration"`
+	// The VM shape for the driver.
+	DriverShape string `pulumi:"driverShape"`
+	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	DriverShapeConfigDetails []GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail `pulumi:"driverShapeConfigDetails"`
+	// The VM shape for the executors.
+	ExecutorShape string `pulumi:"executorShape"`
+	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	ExecutorShapeConfigDetails []GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail `pulumi:"executorShapeConfigDetails"`
+	// An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+	LogsBucketUri string `pulumi:"logsBucketUri"`
+	// The number of executor VMs requested.
+	NumExecutors int `pulumi:"numExecutors"`
+	// An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
+	WarehouseBucketUri string `pulumi:"warehouseBucketUri"`
+}
+
+// GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailInput is an input type that accepts GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArgs and GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailInput` via:
+//
+//	GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArgs{...}
+type GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput() GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput
+	ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutputWithContext(context.Context) GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput
+}
+
+type GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArgs struct {
+	// The Spark configuration passed to the running process.
+	Configuration pulumi.StringMapInput `pulumi:"configuration"`
+	// The VM shape for the driver.
+	DriverShape pulumi.StringInput `pulumi:"driverShape"`
+	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	DriverShapeConfigDetails GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayInput `pulumi:"driverShapeConfigDetails"`
+	// The VM shape for the executors.
+	ExecutorShape pulumi.StringInput `pulumi:"executorShape"`
+	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	ExecutorShapeConfigDetails GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayInput `pulumi:"executorShapeConfigDetails"`
+	// An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+	LogsBucketUri pulumi.StringInput `pulumi:"logsBucketUri"`
+	// The number of executor VMs requested.
+	NumExecutors pulumi.IntInput `pulumi:"numExecutors"`
+	// An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
+	WarehouseBucketUri pulumi.StringInput `pulumi:"warehouseBucketUri"`
+}
+
+func (GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArgs) ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput() GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput {
+	return i.ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArgs) ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput)
+}
+
+// GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayInput is an input type that accepts GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArray and GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayInput` via:
+//
+//	GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArray{ GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArgs{...} }
+type GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput() GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput
+	ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutputWithContext(context.Context) GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput
+}
+
+type GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArray []GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailInput
+
+func (GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArray) ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput() GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput {
+	return i.ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArray) ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput)
+}
+
+type GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput() GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput {
+	return o
+}
+
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput {
+	return o
+}
+
+// The Spark configuration passed to the running process.
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) Configuration() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetail) map[string]string {
+		return v.Configuration
+	}).(pulumi.StringMapOutput)
+}
+
+// The VM shape for the driver.
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) DriverShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetail) string {
+		return v.DriverShape
+	}).(pulumi.StringOutput)
+}
+
+// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) DriverShapeConfigDetails() GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput {
+	return o.ApplyT(func(v GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetail) []GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail {
+		return v.DriverShapeConfigDetails
+	}).(GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput)
+}
+
+// The VM shape for the executors.
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) ExecutorShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetail) string {
+		return v.ExecutorShape
+	}).(pulumi.StringOutput)
+}
+
+// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) ExecutorShapeConfigDetails() GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput {
+	return o.ApplyT(func(v GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetail) []GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail {
+		return v.ExecutorShapeConfigDetails
+	}).(GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput)
+}
+
+// An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) LogsBucketUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetail) string {
+		return v.LogsBucketUri
+	}).(pulumi.StringOutput)
+}
+
+// The number of executor VMs requested.
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) NumExecutors() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetail) int {
+		return v.NumExecutors
+	}).(pulumi.IntOutput)
+}
+
+// An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) WarehouseBucketUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetail) string {
+		return v.WarehouseBucketUri
+	}).(pulumi.StringOutput)
+}
+
+type GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput) ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput() GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput) ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetail {
+		return vs[0].([]GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetail)[vs[1].(int)]
+	}).(GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput)
+}
+
+type GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail struct {
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	Ocpus float64 `pulumi:"ocpus"`
+}
+
+// GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailInput is an input type that accepts GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs and GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput values.
+// You can construct a concrete instance of `GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailInput` via:
+//
+//	GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs{...}
+type GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput() GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput
+	ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutputWithContext(context.Context) GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput
+}
+
+type GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs struct {
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+}
+
+func (GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs) ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput() GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput {
+	return i.ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs) ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutputWithContext(ctx context.Context) GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput)
+}
+
+// GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayInput is an input type that accepts GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray and GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayInput` via:
+//
+//	GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray{ GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs{...} }
+type GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput() GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput
+	ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutputWithContext(context.Context) GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput
+}
+
+type GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray []GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailInput
+
+func (GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray) ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput() GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput {
+	return i.ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray) ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput)
+}
+
+type GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput) ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput() GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput {
+	return o
+}
+
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput) ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutputWithContext(ctx context.Context) GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput {
+	return o
+}
+
+// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail) float64 {
+		return v.MemoryInGbs
+	}).(pulumi.Float64Output)
+}
+
+// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail) float64 {
+		return v.Ocpus
+	}).(pulumi.Float64Output)
+}
+
+type GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput) ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput() GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput) ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail {
+		return vs[0].([]GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail)[vs[1].(int)]
+	}).(GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput)
+}
+
+type GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail struct {
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	Ocpus float64 `pulumi:"ocpus"`
+}
+
+// GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailInput is an input type that accepts GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs and GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput values.
+// You can construct a concrete instance of `GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailInput` via:
+//
+//	GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs{...}
+type GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput() GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput
+	ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutputWithContext(context.Context) GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput
+}
+
+type GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs struct {
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+}
+
+func (GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs) ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput() GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput {
+	return i.ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs) ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutputWithContext(ctx context.Context) GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput)
+}
+
+// GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayInput is an input type that accepts GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray and GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayInput` via:
+//
+//	GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray{ GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs{...} }
+type GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput() GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput
+	ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutputWithContext(context.Context) GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput
+}
+
+type GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray []GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailInput
+
+func (GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray) ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput() GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput {
+	return i.ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray) ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput)
+}
+
+type GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput) ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput() GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput {
+	return o
+}
+
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput) ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutputWithContext(ctx context.Context) GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput {
+	return o
+}
+
+// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail) float64 {
+		return v.MemoryInGbs
+	}).(pulumi.Float64Output)
+}
+
+// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail) float64 {
+		return v.Ocpus
+	}).(pulumi.Float64Output)
+}
+
+type GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput) ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput() GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput) ToGetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail {
+		return vs[0].([]GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail)[vs[1].(int)]
+	}).(GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput)
+}
+
 type GetPipelineRunsPipelineRunStepRun struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow run triggered for this step run.
+	DataflowRunId string `pulumi:"dataflowRunId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
 	JobRunId string `pulumi:"jobRunId"`
 	// Details of the state of the step run.
@@ -30360,6 +32967,8 @@ type GetPipelineRunsPipelineRunStepRunInput interface {
 }
 
 type GetPipelineRunsPipelineRunStepRunArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow run triggered for this step run.
+	DataflowRunId pulumi.StringInput `pulumi:"dataflowRunId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
 	JobRunId pulumi.StringInput `pulumi:"jobRunId"`
 	// Details of the state of the step run.
@@ -30425,6 +33034,11 @@ func (o GetPipelineRunsPipelineRunStepRunOutput) ToGetPipelineRunsPipelineRunSte
 
 func (o GetPipelineRunsPipelineRunStepRunOutput) ToGetPipelineRunsPipelineRunStepRunOutputWithContext(ctx context.Context) GetPipelineRunsPipelineRunStepRunOutput {
 	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow run triggered for this step run.
+func (o GetPipelineRunsPipelineRunStepRunOutput) DataflowRunId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunsPipelineRunStepRun) string { return v.DataflowRunId }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
@@ -30610,6 +33224,8 @@ func (o GetPipelineStepArtifactArrayOutput) Index(i pulumi.IntInput) GetPipeline
 }
 
 type GetPipelineStepDetail struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow application to be used as a step.
+	ApplicationId string `pulumi:"applicationId"`
 	// The list of step names this current step depends on for execution.
 	DependsOns []string `pulumi:"dependsOns"`
 	// A short description of the step.
@@ -30622,10 +33238,14 @@ type GetPipelineStepDetail struct {
 	StepConfigurationDetails []GetPipelineStepDetailStepConfigurationDetail `pulumi:"stepConfigurationDetails"`
 	// Container Details for a step in pipeline.
 	StepContainerConfigurationDetails []GetPipelineStepDetailStepContainerConfigurationDetail `pulumi:"stepContainerConfigurationDetails"`
+	// The configuration details of a Dataflow step.
+	StepDataflowConfigurationDetails []GetPipelineStepDetailStepDataflowConfigurationDetail `pulumi:"stepDataflowConfigurationDetails"`
 	// The infrastructure configuration details of a pipeline or a step.
 	StepInfrastructureConfigurationDetails []GetPipelineStepDetailStepInfrastructureConfigurationDetail `pulumi:"stepInfrastructureConfigurationDetails"`
 	// The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
 	StepName string `pulumi:"stepName"`
+	// The storage mount details to mount to the instance running the pipeline step.
+	StepStorageMountConfigurationDetailsLists []GetPipelineStepDetailStepStorageMountConfigurationDetailsList `pulumi:"stepStorageMountConfigurationDetailsLists"`
 	// The type of step.
 	StepType string `pulumi:"stepType"`
 }
@@ -30642,6 +33262,8 @@ type GetPipelineStepDetailInput interface {
 }
 
 type GetPipelineStepDetailArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow application to be used as a step.
+	ApplicationId pulumi.StringInput `pulumi:"applicationId"`
 	// The list of step names this current step depends on for execution.
 	DependsOns pulumi.StringArrayInput `pulumi:"dependsOns"`
 	// A short description of the step.
@@ -30654,10 +33276,14 @@ type GetPipelineStepDetailArgs struct {
 	StepConfigurationDetails GetPipelineStepDetailStepConfigurationDetailArrayInput `pulumi:"stepConfigurationDetails"`
 	// Container Details for a step in pipeline.
 	StepContainerConfigurationDetails GetPipelineStepDetailStepContainerConfigurationDetailArrayInput `pulumi:"stepContainerConfigurationDetails"`
+	// The configuration details of a Dataflow step.
+	StepDataflowConfigurationDetails GetPipelineStepDetailStepDataflowConfigurationDetailArrayInput `pulumi:"stepDataflowConfigurationDetails"`
 	// The infrastructure configuration details of a pipeline or a step.
 	StepInfrastructureConfigurationDetails GetPipelineStepDetailStepInfrastructureConfigurationDetailArrayInput `pulumi:"stepInfrastructureConfigurationDetails"`
 	// The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
 	StepName pulumi.StringInput `pulumi:"stepName"`
+	// The storage mount details to mount to the instance running the pipeline step.
+	StepStorageMountConfigurationDetailsLists GetPipelineStepDetailStepStorageMountConfigurationDetailsListArrayInput `pulumi:"stepStorageMountConfigurationDetailsLists"`
 	// The type of step.
 	StepType pulumi.StringInput `pulumi:"stepType"`
 }
@@ -30713,6 +33339,11 @@ func (o GetPipelineStepDetailOutput) ToGetPipelineStepDetailOutputWithContext(ct
 	return o
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow application to be used as a step.
+func (o GetPipelineStepDetailOutput) ApplicationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineStepDetail) string { return v.ApplicationId }).(pulumi.StringOutput)
+}
+
 // The list of step names this current step depends on for execution.
 func (o GetPipelineStepDetailOutput) DependsOns() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetPipelineStepDetail) []string { return v.DependsOns }).(pulumi.StringArrayOutput)
@@ -30747,6 +33378,13 @@ func (o GetPipelineStepDetailOutput) StepContainerConfigurationDetails() GetPipe
 	}).(GetPipelineStepDetailStepContainerConfigurationDetailArrayOutput)
 }
 
+// The configuration details of a Dataflow step.
+func (o GetPipelineStepDetailOutput) StepDataflowConfigurationDetails() GetPipelineStepDetailStepDataflowConfigurationDetailArrayOutput {
+	return o.ApplyT(func(v GetPipelineStepDetail) []GetPipelineStepDetailStepDataflowConfigurationDetail {
+		return v.StepDataflowConfigurationDetails
+	}).(GetPipelineStepDetailStepDataflowConfigurationDetailArrayOutput)
+}
+
 // The infrastructure configuration details of a pipeline or a step.
 func (o GetPipelineStepDetailOutput) StepInfrastructureConfigurationDetails() GetPipelineStepDetailStepInfrastructureConfigurationDetailArrayOutput {
 	return o.ApplyT(func(v GetPipelineStepDetail) []GetPipelineStepDetailStepInfrastructureConfigurationDetail {
@@ -30757,6 +33395,13 @@ func (o GetPipelineStepDetailOutput) StepInfrastructureConfigurationDetails() Ge
 // The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
 func (o GetPipelineStepDetailOutput) StepName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPipelineStepDetail) string { return v.StepName }).(pulumi.StringOutput)
+}
+
+// The storage mount details to mount to the instance running the pipeline step.
+func (o GetPipelineStepDetailOutput) StepStorageMountConfigurationDetailsLists() GetPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput {
+	return o.ApplyT(func(v GetPipelineStepDetail) []GetPipelineStepDetailStepStorageMountConfigurationDetailsList {
+		return v.StepStorageMountConfigurationDetailsLists
+	}).(GetPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput)
 }
 
 // The type of step.
@@ -31041,6 +33686,390 @@ func (o GetPipelineStepDetailStepContainerConfigurationDetailArrayOutput) Index(
 	}).(GetPipelineStepDetailStepContainerConfigurationDetailOutput)
 }
 
+type GetPipelineStepDetailStepDataflowConfigurationDetail struct {
+	// The Spark configuration passed to the running process.
+	Configuration map[string]string `pulumi:"configuration"`
+	// The VM shape for the driver.
+	DriverShape string `pulumi:"driverShape"`
+	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	DriverShapeConfigDetails []GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetail `pulumi:"driverShapeConfigDetails"`
+	// The VM shape for the executors.
+	ExecutorShape string `pulumi:"executorShape"`
+	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	ExecutorShapeConfigDetails []GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail `pulumi:"executorShapeConfigDetails"`
+	// An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+	LogsBucketUri string `pulumi:"logsBucketUri"`
+	// The number of executor VMs requested.
+	NumExecutors int `pulumi:"numExecutors"`
+	// An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
+	WarehouseBucketUri string `pulumi:"warehouseBucketUri"`
+}
+
+// GetPipelineStepDetailStepDataflowConfigurationDetailInput is an input type that accepts GetPipelineStepDetailStepDataflowConfigurationDetailArgs and GetPipelineStepDetailStepDataflowConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetPipelineStepDetailStepDataflowConfigurationDetailInput` via:
+//
+//	GetPipelineStepDetailStepDataflowConfigurationDetailArgs{...}
+type GetPipelineStepDetailStepDataflowConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelineStepDetailStepDataflowConfigurationDetailOutput() GetPipelineStepDetailStepDataflowConfigurationDetailOutput
+	ToGetPipelineStepDetailStepDataflowConfigurationDetailOutputWithContext(context.Context) GetPipelineStepDetailStepDataflowConfigurationDetailOutput
+}
+
+type GetPipelineStepDetailStepDataflowConfigurationDetailArgs struct {
+	// The Spark configuration passed to the running process.
+	Configuration pulumi.StringMapInput `pulumi:"configuration"`
+	// The VM shape for the driver.
+	DriverShape pulumi.StringInput `pulumi:"driverShape"`
+	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	DriverShapeConfigDetails GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayInput `pulumi:"driverShapeConfigDetails"`
+	// The VM shape for the executors.
+	ExecutorShape pulumi.StringInput `pulumi:"executorShape"`
+	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	ExecutorShapeConfigDetails GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayInput `pulumi:"executorShapeConfigDetails"`
+	// An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+	LogsBucketUri pulumi.StringInput `pulumi:"logsBucketUri"`
+	// The number of executor VMs requested.
+	NumExecutors pulumi.IntInput `pulumi:"numExecutors"`
+	// An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
+	WarehouseBucketUri pulumi.StringInput `pulumi:"warehouseBucketUri"`
+}
+
+func (GetPipelineStepDetailStepDataflowConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineStepDetailStepDataflowConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetPipelineStepDetailStepDataflowConfigurationDetailArgs) ToGetPipelineStepDetailStepDataflowConfigurationDetailOutput() GetPipelineStepDetailStepDataflowConfigurationDetailOutput {
+	return i.ToGetPipelineStepDetailStepDataflowConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelineStepDetailStepDataflowConfigurationDetailArgs) ToGetPipelineStepDetailStepDataflowConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineStepDetailStepDataflowConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineStepDetailStepDataflowConfigurationDetailOutput)
+}
+
+// GetPipelineStepDetailStepDataflowConfigurationDetailArrayInput is an input type that accepts GetPipelineStepDetailStepDataflowConfigurationDetailArray and GetPipelineStepDetailStepDataflowConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelineStepDetailStepDataflowConfigurationDetailArrayInput` via:
+//
+//	GetPipelineStepDetailStepDataflowConfigurationDetailArray{ GetPipelineStepDetailStepDataflowConfigurationDetailArgs{...} }
+type GetPipelineStepDetailStepDataflowConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineStepDetailStepDataflowConfigurationDetailArrayOutput() GetPipelineStepDetailStepDataflowConfigurationDetailArrayOutput
+	ToGetPipelineStepDetailStepDataflowConfigurationDetailArrayOutputWithContext(context.Context) GetPipelineStepDetailStepDataflowConfigurationDetailArrayOutput
+}
+
+type GetPipelineStepDetailStepDataflowConfigurationDetailArray []GetPipelineStepDetailStepDataflowConfigurationDetailInput
+
+func (GetPipelineStepDetailStepDataflowConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineStepDetailStepDataflowConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetPipelineStepDetailStepDataflowConfigurationDetailArray) ToGetPipelineStepDetailStepDataflowConfigurationDetailArrayOutput() GetPipelineStepDetailStepDataflowConfigurationDetailArrayOutput {
+	return i.ToGetPipelineStepDetailStepDataflowConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineStepDetailStepDataflowConfigurationDetailArray) ToGetPipelineStepDetailStepDataflowConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineStepDetailStepDataflowConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineStepDetailStepDataflowConfigurationDetailArrayOutput)
+}
+
+type GetPipelineStepDetailStepDataflowConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineStepDetailStepDataflowConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineStepDetailStepDataflowConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetPipelineStepDetailStepDataflowConfigurationDetailOutput) ToGetPipelineStepDetailStepDataflowConfigurationDetailOutput() GetPipelineStepDetailStepDataflowConfigurationDetailOutput {
+	return o
+}
+
+func (o GetPipelineStepDetailStepDataflowConfigurationDetailOutput) ToGetPipelineStepDetailStepDataflowConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineStepDetailStepDataflowConfigurationDetailOutput {
+	return o
+}
+
+// The Spark configuration passed to the running process.
+func (o GetPipelineStepDetailStepDataflowConfigurationDetailOutput) Configuration() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPipelineStepDetailStepDataflowConfigurationDetail) map[string]string { return v.Configuration }).(pulumi.StringMapOutput)
+}
+
+// The VM shape for the driver.
+func (o GetPipelineStepDetailStepDataflowConfigurationDetailOutput) DriverShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineStepDetailStepDataflowConfigurationDetail) string { return v.DriverShape }).(pulumi.StringOutput)
+}
+
+// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+func (o GetPipelineStepDetailStepDataflowConfigurationDetailOutput) DriverShapeConfigDetails() GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput {
+	return o.ApplyT(func(v GetPipelineStepDetailStepDataflowConfigurationDetail) []GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetail {
+		return v.DriverShapeConfigDetails
+	}).(GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput)
+}
+
+// The VM shape for the executors.
+func (o GetPipelineStepDetailStepDataflowConfigurationDetailOutput) ExecutorShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineStepDetailStepDataflowConfigurationDetail) string { return v.ExecutorShape }).(pulumi.StringOutput)
+}
+
+// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+func (o GetPipelineStepDetailStepDataflowConfigurationDetailOutput) ExecutorShapeConfigDetails() GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput {
+	return o.ApplyT(func(v GetPipelineStepDetailStepDataflowConfigurationDetail) []GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail {
+		return v.ExecutorShapeConfigDetails
+	}).(GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput)
+}
+
+// An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+func (o GetPipelineStepDetailStepDataflowConfigurationDetailOutput) LogsBucketUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineStepDetailStepDataflowConfigurationDetail) string { return v.LogsBucketUri }).(pulumi.StringOutput)
+}
+
+// The number of executor VMs requested.
+func (o GetPipelineStepDetailStepDataflowConfigurationDetailOutput) NumExecutors() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPipelineStepDetailStepDataflowConfigurationDetail) int { return v.NumExecutors }).(pulumi.IntOutput)
+}
+
+// An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
+func (o GetPipelineStepDetailStepDataflowConfigurationDetailOutput) WarehouseBucketUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineStepDetailStepDataflowConfigurationDetail) string { return v.WarehouseBucketUri }).(pulumi.StringOutput)
+}
+
+type GetPipelineStepDetailStepDataflowConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineStepDetailStepDataflowConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineStepDetailStepDataflowConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetPipelineStepDetailStepDataflowConfigurationDetailArrayOutput) ToGetPipelineStepDetailStepDataflowConfigurationDetailArrayOutput() GetPipelineStepDetailStepDataflowConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineStepDetailStepDataflowConfigurationDetailArrayOutput) ToGetPipelineStepDetailStepDataflowConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineStepDetailStepDataflowConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineStepDetailStepDataflowConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineStepDetailStepDataflowConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineStepDetailStepDataflowConfigurationDetail {
+		return vs[0].([]GetPipelineStepDetailStepDataflowConfigurationDetail)[vs[1].(int)]
+	}).(GetPipelineStepDetailStepDataflowConfigurationDetailOutput)
+}
+
+type GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetail struct {
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	Ocpus float64 `pulumi:"ocpus"`
+}
+
+// GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailInput is an input type that accepts GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs and GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput values.
+// You can construct a concrete instance of `GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailInput` via:
+//
+//	GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs{...}
+type GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput() GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput
+	ToGetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutputWithContext(context.Context) GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput
+}
+
+type GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs struct {
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+}
+
+func (GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetail)(nil)).Elem()
+}
+
+func (i GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs) ToGetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput() GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput {
+	return i.ToGetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs) ToGetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutputWithContext(ctx context.Context) GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput)
+}
+
+// GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayInput is an input type that accepts GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray and GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayInput` via:
+//
+//	GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray{ GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs{...} }
+type GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput() GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput
+	ToGetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutputWithContext(context.Context) GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput
+}
+
+type GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray []GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailInput
+
+func (GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetail)(nil)).Elem()
+}
+
+func (i GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray) ToGetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput() GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput {
+	return i.ToGetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray) ToGetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput)
+}
+
+type GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetail)(nil)).Elem()
+}
+
+func (o GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput) ToGetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput() GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput {
+	return o
+}
+
+func (o GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput) ToGetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutputWithContext(ctx context.Context) GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput {
+	return o
+}
+
+// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+func (o GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetail) float64 {
+		return v.MemoryInGbs
+	}).(pulumi.Float64Output)
+}
+
+// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+func (o GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetail) float64 {
+		return v.Ocpus
+	}).(pulumi.Float64Output)
+}
+
+type GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetail)(nil)).Elem()
+}
+
+func (o GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput) ToGetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput() GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput) ToGetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetail {
+		return vs[0].([]GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetail)[vs[1].(int)]
+	}).(GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput)
+}
+
+type GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail struct {
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	Ocpus float64 `pulumi:"ocpus"`
+}
+
+// GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailInput is an input type that accepts GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs and GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput values.
+// You can construct a concrete instance of `GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailInput` via:
+//
+//	GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs{...}
+type GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput() GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput
+	ToGetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutputWithContext(context.Context) GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput
+}
+
+type GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs struct {
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+}
+
+func (GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail)(nil)).Elem()
+}
+
+func (i GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs) ToGetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput() GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput {
+	return i.ToGetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs) ToGetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutputWithContext(ctx context.Context) GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput)
+}
+
+// GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayInput is an input type that accepts GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray and GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayInput` via:
+//
+//	GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray{ GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs{...} }
+type GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput() GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput
+	ToGetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutputWithContext(context.Context) GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput
+}
+
+type GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray []GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailInput
+
+func (GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail)(nil)).Elem()
+}
+
+func (i GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray) ToGetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput() GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput {
+	return i.ToGetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray) ToGetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput)
+}
+
+type GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail)(nil)).Elem()
+}
+
+func (o GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput) ToGetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput() GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput {
+	return o
+}
+
+func (o GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput) ToGetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutputWithContext(ctx context.Context) GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput {
+	return o
+}
+
+// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+func (o GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail) float64 {
+		return v.MemoryInGbs
+	}).(pulumi.Float64Output)
+}
+
+// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+func (o GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail) float64 {
+		return v.Ocpus
+	}).(pulumi.Float64Output)
+}
+
+type GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail)(nil)).Elem()
+}
+
+func (o GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput) ToGetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput() GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput) ToGetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail {
+		return vs[0].([]GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail)[vs[1].(int)]
+	}).(GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput)
+}
+
 type GetPipelineStepDetailStepInfrastructureConfigurationDetail struct {
 	// The size of the block storage volume to attach to the instance.
 	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
@@ -31277,6 +34306,328 @@ func (o GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDet
 	}).(GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput)
 }
 
+type GetPipelineStepDetailStepStorageMountConfigurationDetailsList struct {
+	// The object storage bucket
+	Bucket string `pulumi:"bucket"`
+	// The local directory name to be mounted
+	DestinationDirectoryName string `pulumi:"destinationDirectoryName"`
+	// The local path of the mounted directory, excluding directory name.
+	DestinationPath string `pulumi:"destinationPath"`
+	// OCID of the export
+	ExportId string `pulumi:"exportId"`
+	// OCID of the mount target
+	MountTargetId string `pulumi:"mountTargetId"`
+	// The object storage namespace
+	Namespace string `pulumi:"namespace"`
+	// Prefix in the bucket to mount
+	Prefix string `pulumi:"prefix"`
+	// The type of storage.
+	StorageType string `pulumi:"storageType"`
+}
+
+// GetPipelineStepDetailStepStorageMountConfigurationDetailsListInput is an input type that accepts GetPipelineStepDetailStepStorageMountConfigurationDetailsListArgs and GetPipelineStepDetailStepStorageMountConfigurationDetailsListOutput values.
+// You can construct a concrete instance of `GetPipelineStepDetailStepStorageMountConfigurationDetailsListInput` via:
+//
+//	GetPipelineStepDetailStepStorageMountConfigurationDetailsListArgs{...}
+type GetPipelineStepDetailStepStorageMountConfigurationDetailsListInput interface {
+	pulumi.Input
+
+	ToGetPipelineStepDetailStepStorageMountConfigurationDetailsListOutput() GetPipelineStepDetailStepStorageMountConfigurationDetailsListOutput
+	ToGetPipelineStepDetailStepStorageMountConfigurationDetailsListOutputWithContext(context.Context) GetPipelineStepDetailStepStorageMountConfigurationDetailsListOutput
+}
+
+type GetPipelineStepDetailStepStorageMountConfigurationDetailsListArgs struct {
+	// The object storage bucket
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The local directory name to be mounted
+	DestinationDirectoryName pulumi.StringInput `pulumi:"destinationDirectoryName"`
+	// The local path of the mounted directory, excluding directory name.
+	DestinationPath pulumi.StringInput `pulumi:"destinationPath"`
+	// OCID of the export
+	ExportId pulumi.StringInput `pulumi:"exportId"`
+	// OCID of the mount target
+	MountTargetId pulumi.StringInput `pulumi:"mountTargetId"`
+	// The object storage namespace
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Prefix in the bucket to mount
+	Prefix pulumi.StringInput `pulumi:"prefix"`
+	// The type of storage.
+	StorageType pulumi.StringInput `pulumi:"storageType"`
+}
+
+func (GetPipelineStepDetailStepStorageMountConfigurationDetailsListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineStepDetailStepStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (i GetPipelineStepDetailStepStorageMountConfigurationDetailsListArgs) ToGetPipelineStepDetailStepStorageMountConfigurationDetailsListOutput() GetPipelineStepDetailStepStorageMountConfigurationDetailsListOutput {
+	return i.ToGetPipelineStepDetailStepStorageMountConfigurationDetailsListOutputWithContext(context.Background())
+}
+
+func (i GetPipelineStepDetailStepStorageMountConfigurationDetailsListArgs) ToGetPipelineStepDetailStepStorageMountConfigurationDetailsListOutputWithContext(ctx context.Context) GetPipelineStepDetailStepStorageMountConfigurationDetailsListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineStepDetailStepStorageMountConfigurationDetailsListOutput)
+}
+
+// GetPipelineStepDetailStepStorageMountConfigurationDetailsListArrayInput is an input type that accepts GetPipelineStepDetailStepStorageMountConfigurationDetailsListArray and GetPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput values.
+// You can construct a concrete instance of `GetPipelineStepDetailStepStorageMountConfigurationDetailsListArrayInput` via:
+//
+//	GetPipelineStepDetailStepStorageMountConfigurationDetailsListArray{ GetPipelineStepDetailStepStorageMountConfigurationDetailsListArgs{...} }
+type GetPipelineStepDetailStepStorageMountConfigurationDetailsListArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput() GetPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput
+	ToGetPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutputWithContext(context.Context) GetPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput
+}
+
+type GetPipelineStepDetailStepStorageMountConfigurationDetailsListArray []GetPipelineStepDetailStepStorageMountConfigurationDetailsListInput
+
+func (GetPipelineStepDetailStepStorageMountConfigurationDetailsListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineStepDetailStepStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (i GetPipelineStepDetailStepStorageMountConfigurationDetailsListArray) ToGetPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput() GetPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput {
+	return i.ToGetPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineStepDetailStepStorageMountConfigurationDetailsListArray) ToGetPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutputWithContext(ctx context.Context) GetPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput)
+}
+
+type GetPipelineStepDetailStepStorageMountConfigurationDetailsListOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineStepDetailStepStorageMountConfigurationDetailsListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineStepDetailStepStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (o GetPipelineStepDetailStepStorageMountConfigurationDetailsListOutput) ToGetPipelineStepDetailStepStorageMountConfigurationDetailsListOutput() GetPipelineStepDetailStepStorageMountConfigurationDetailsListOutput {
+	return o
+}
+
+func (o GetPipelineStepDetailStepStorageMountConfigurationDetailsListOutput) ToGetPipelineStepDetailStepStorageMountConfigurationDetailsListOutputWithContext(ctx context.Context) GetPipelineStepDetailStepStorageMountConfigurationDetailsListOutput {
+	return o
+}
+
+// The object storage bucket
+func (o GetPipelineStepDetailStepStorageMountConfigurationDetailsListOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineStepDetailStepStorageMountConfigurationDetailsList) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// The local directory name to be mounted
+func (o GetPipelineStepDetailStepStorageMountConfigurationDetailsListOutput) DestinationDirectoryName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineStepDetailStepStorageMountConfigurationDetailsList) string {
+		return v.DestinationDirectoryName
+	}).(pulumi.StringOutput)
+}
+
+// The local path of the mounted directory, excluding directory name.
+func (o GetPipelineStepDetailStepStorageMountConfigurationDetailsListOutput) DestinationPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineStepDetailStepStorageMountConfigurationDetailsList) string { return v.DestinationPath }).(pulumi.StringOutput)
+}
+
+// OCID of the export
+func (o GetPipelineStepDetailStepStorageMountConfigurationDetailsListOutput) ExportId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineStepDetailStepStorageMountConfigurationDetailsList) string { return v.ExportId }).(pulumi.StringOutput)
+}
+
+// OCID of the mount target
+func (o GetPipelineStepDetailStepStorageMountConfigurationDetailsListOutput) MountTargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineStepDetailStepStorageMountConfigurationDetailsList) string { return v.MountTargetId }).(pulumi.StringOutput)
+}
+
+// The object storage namespace
+func (o GetPipelineStepDetailStepStorageMountConfigurationDetailsListOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineStepDetailStepStorageMountConfigurationDetailsList) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// Prefix in the bucket to mount
+func (o GetPipelineStepDetailStepStorageMountConfigurationDetailsListOutput) Prefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineStepDetailStepStorageMountConfigurationDetailsList) string { return v.Prefix }).(pulumi.StringOutput)
+}
+
+// The type of storage.
+func (o GetPipelineStepDetailStepStorageMountConfigurationDetailsListOutput) StorageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineStepDetailStepStorageMountConfigurationDetailsList) string { return v.StorageType }).(pulumi.StringOutput)
+}
+
+type GetPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineStepDetailStepStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (o GetPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput) ToGetPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput() GetPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput {
+	return o
+}
+
+func (o GetPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput) ToGetPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutputWithContext(ctx context.Context) GetPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput {
+	return o
+}
+
+func (o GetPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput) Index(i pulumi.IntInput) GetPipelineStepDetailStepStorageMountConfigurationDetailsListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineStepDetailStepStorageMountConfigurationDetailsList {
+		return vs[0].([]GetPipelineStepDetailStepStorageMountConfigurationDetailsList)[vs[1].(int)]
+	}).(GetPipelineStepDetailStepStorageMountConfigurationDetailsListOutput)
+}
+
+type GetPipelineStorageMountConfigurationDetailsList struct {
+	// The object storage bucket
+	Bucket string `pulumi:"bucket"`
+	// The local directory name to be mounted
+	DestinationDirectoryName string `pulumi:"destinationDirectoryName"`
+	// The local path of the mounted directory, excluding directory name.
+	DestinationPath string `pulumi:"destinationPath"`
+	// OCID of the export
+	ExportId string `pulumi:"exportId"`
+	// OCID of the mount target
+	MountTargetId string `pulumi:"mountTargetId"`
+	// The object storage namespace
+	Namespace string `pulumi:"namespace"`
+	// Prefix in the bucket to mount
+	Prefix string `pulumi:"prefix"`
+	// The type of storage.
+	StorageType string `pulumi:"storageType"`
+}
+
+// GetPipelineStorageMountConfigurationDetailsListInput is an input type that accepts GetPipelineStorageMountConfigurationDetailsListArgs and GetPipelineStorageMountConfigurationDetailsListOutput values.
+// You can construct a concrete instance of `GetPipelineStorageMountConfigurationDetailsListInput` via:
+//
+//	GetPipelineStorageMountConfigurationDetailsListArgs{...}
+type GetPipelineStorageMountConfigurationDetailsListInput interface {
+	pulumi.Input
+
+	ToGetPipelineStorageMountConfigurationDetailsListOutput() GetPipelineStorageMountConfigurationDetailsListOutput
+	ToGetPipelineStorageMountConfigurationDetailsListOutputWithContext(context.Context) GetPipelineStorageMountConfigurationDetailsListOutput
+}
+
+type GetPipelineStorageMountConfigurationDetailsListArgs struct {
+	// The object storage bucket
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The local directory name to be mounted
+	DestinationDirectoryName pulumi.StringInput `pulumi:"destinationDirectoryName"`
+	// The local path of the mounted directory, excluding directory name.
+	DestinationPath pulumi.StringInput `pulumi:"destinationPath"`
+	// OCID of the export
+	ExportId pulumi.StringInput `pulumi:"exportId"`
+	// OCID of the mount target
+	MountTargetId pulumi.StringInput `pulumi:"mountTargetId"`
+	// The object storage namespace
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Prefix in the bucket to mount
+	Prefix pulumi.StringInput `pulumi:"prefix"`
+	// The type of storage.
+	StorageType pulumi.StringInput `pulumi:"storageType"`
+}
+
+func (GetPipelineStorageMountConfigurationDetailsListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (i GetPipelineStorageMountConfigurationDetailsListArgs) ToGetPipelineStorageMountConfigurationDetailsListOutput() GetPipelineStorageMountConfigurationDetailsListOutput {
+	return i.ToGetPipelineStorageMountConfigurationDetailsListOutputWithContext(context.Background())
+}
+
+func (i GetPipelineStorageMountConfigurationDetailsListArgs) ToGetPipelineStorageMountConfigurationDetailsListOutputWithContext(ctx context.Context) GetPipelineStorageMountConfigurationDetailsListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineStorageMountConfigurationDetailsListOutput)
+}
+
+// GetPipelineStorageMountConfigurationDetailsListArrayInput is an input type that accepts GetPipelineStorageMountConfigurationDetailsListArray and GetPipelineStorageMountConfigurationDetailsListArrayOutput values.
+// You can construct a concrete instance of `GetPipelineStorageMountConfigurationDetailsListArrayInput` via:
+//
+//	GetPipelineStorageMountConfigurationDetailsListArray{ GetPipelineStorageMountConfigurationDetailsListArgs{...} }
+type GetPipelineStorageMountConfigurationDetailsListArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineStorageMountConfigurationDetailsListArrayOutput() GetPipelineStorageMountConfigurationDetailsListArrayOutput
+	ToGetPipelineStorageMountConfigurationDetailsListArrayOutputWithContext(context.Context) GetPipelineStorageMountConfigurationDetailsListArrayOutput
+}
+
+type GetPipelineStorageMountConfigurationDetailsListArray []GetPipelineStorageMountConfigurationDetailsListInput
+
+func (GetPipelineStorageMountConfigurationDetailsListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (i GetPipelineStorageMountConfigurationDetailsListArray) ToGetPipelineStorageMountConfigurationDetailsListArrayOutput() GetPipelineStorageMountConfigurationDetailsListArrayOutput {
+	return i.ToGetPipelineStorageMountConfigurationDetailsListArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineStorageMountConfigurationDetailsListArray) ToGetPipelineStorageMountConfigurationDetailsListArrayOutputWithContext(ctx context.Context) GetPipelineStorageMountConfigurationDetailsListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineStorageMountConfigurationDetailsListArrayOutput)
+}
+
+type GetPipelineStorageMountConfigurationDetailsListOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineStorageMountConfigurationDetailsListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (o GetPipelineStorageMountConfigurationDetailsListOutput) ToGetPipelineStorageMountConfigurationDetailsListOutput() GetPipelineStorageMountConfigurationDetailsListOutput {
+	return o
+}
+
+func (o GetPipelineStorageMountConfigurationDetailsListOutput) ToGetPipelineStorageMountConfigurationDetailsListOutputWithContext(ctx context.Context) GetPipelineStorageMountConfigurationDetailsListOutput {
+	return o
+}
+
+// The object storage bucket
+func (o GetPipelineStorageMountConfigurationDetailsListOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineStorageMountConfigurationDetailsList) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// The local directory name to be mounted
+func (o GetPipelineStorageMountConfigurationDetailsListOutput) DestinationDirectoryName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineStorageMountConfigurationDetailsList) string { return v.DestinationDirectoryName }).(pulumi.StringOutput)
+}
+
+// The local path of the mounted directory, excluding directory name.
+func (o GetPipelineStorageMountConfigurationDetailsListOutput) DestinationPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineStorageMountConfigurationDetailsList) string { return v.DestinationPath }).(pulumi.StringOutput)
+}
+
+// OCID of the export
+func (o GetPipelineStorageMountConfigurationDetailsListOutput) ExportId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineStorageMountConfigurationDetailsList) string { return v.ExportId }).(pulumi.StringOutput)
+}
+
+// OCID of the mount target
+func (o GetPipelineStorageMountConfigurationDetailsListOutput) MountTargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineStorageMountConfigurationDetailsList) string { return v.MountTargetId }).(pulumi.StringOutput)
+}
+
+// The object storage namespace
+func (o GetPipelineStorageMountConfigurationDetailsListOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineStorageMountConfigurationDetailsList) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// Prefix in the bucket to mount
+func (o GetPipelineStorageMountConfigurationDetailsListOutput) Prefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineStorageMountConfigurationDetailsList) string { return v.Prefix }).(pulumi.StringOutput)
+}
+
+// The type of storage.
+func (o GetPipelineStorageMountConfigurationDetailsListOutput) StorageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineStorageMountConfigurationDetailsList) string { return v.StorageType }).(pulumi.StringOutput)
+}
+
+type GetPipelineStorageMountConfigurationDetailsListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineStorageMountConfigurationDetailsListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (o GetPipelineStorageMountConfigurationDetailsListArrayOutput) ToGetPipelineStorageMountConfigurationDetailsListArrayOutput() GetPipelineStorageMountConfigurationDetailsListArrayOutput {
+	return o
+}
+
+func (o GetPipelineStorageMountConfigurationDetailsListArrayOutput) ToGetPipelineStorageMountConfigurationDetailsListArrayOutputWithContext(ctx context.Context) GetPipelineStorageMountConfigurationDetailsListArrayOutput {
+	return o
+}
+
+func (o GetPipelineStorageMountConfigurationDetailsListArrayOutput) Index(i pulumi.IntInput) GetPipelineStorageMountConfigurationDetailsListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineStorageMountConfigurationDetailsList {
+		return vs[0].([]GetPipelineStorageMountConfigurationDetailsList)[vs[1].(int)]
+	}).(GetPipelineStorageMountConfigurationDetailsListOutput)
+}
+
 type GetPipelinesFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -31414,6 +34765,8 @@ type GetPipelinesPipeline struct {
 	StepArtifacts []GetPipelinesPipelineStepArtifact `pulumi:"stepArtifacts"`
 	// Array of step details for each step.
 	StepDetails []GetPipelinesPipelineStepDetail `pulumi:"stepDetails"`
+	// The storage mount details to mount to the instance running the pipeline step.
+	StorageMountConfigurationDetailsLists []GetPipelinesPipelineStorageMountConfigurationDetailsList `pulumi:"storageMountConfigurationDetailsLists"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
@@ -31464,6 +34817,8 @@ type GetPipelinesPipelineArgs struct {
 	StepArtifacts GetPipelinesPipelineStepArtifactArrayInput `pulumi:"stepArtifacts"`
 	// Array of step details for each step.
 	StepDetails GetPipelinesPipelineStepDetailArrayInput `pulumi:"stepDetails"`
+	// The storage mount details to mount to the instance running the pipeline step.
+	StorageMountConfigurationDetailsLists GetPipelinesPipelineStorageMountConfigurationDetailsListArrayInput `pulumi:"storageMountConfigurationDetailsLists"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
@@ -31603,6 +34958,13 @@ func (o GetPipelinesPipelineOutput) StepArtifacts() GetPipelinesPipelineStepArti
 // Array of step details for each step.
 func (o GetPipelinesPipelineOutput) StepDetails() GetPipelinesPipelineStepDetailArrayOutput {
 	return o.ApplyT(func(v GetPipelinesPipeline) []GetPipelinesPipelineStepDetail { return v.StepDetails }).(GetPipelinesPipelineStepDetailArrayOutput)
+}
+
+// The storage mount details to mount to the instance running the pipeline step.
+func (o GetPipelinesPipelineOutput) StorageMountConfigurationDetailsLists() GetPipelinesPipelineStorageMountConfigurationDetailsListArrayOutput {
+	return o.ApplyT(func(v GetPipelinesPipeline) []GetPipelinesPipelineStorageMountConfigurationDetailsList {
+		return v.StorageMountConfigurationDetailsLists
+	}).(GetPipelinesPipelineStorageMountConfigurationDetailsListArrayOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -32250,6 +35612,8 @@ func (o GetPipelinesPipelineStepArtifactArrayOutput) Index(i pulumi.IntInput) Ge
 }
 
 type GetPipelinesPipelineStepDetail struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow application to be used as a step.
+	ApplicationId string `pulumi:"applicationId"`
 	// The list of step names this current step depends on for execution.
 	DependsOns []string `pulumi:"dependsOns"`
 	// A short description of the step.
@@ -32262,10 +35626,14 @@ type GetPipelinesPipelineStepDetail struct {
 	StepConfigurationDetails []GetPipelinesPipelineStepDetailStepConfigurationDetail `pulumi:"stepConfigurationDetails"`
 	// Container Details for a step in pipeline.
 	StepContainerConfigurationDetails []GetPipelinesPipelineStepDetailStepContainerConfigurationDetail `pulumi:"stepContainerConfigurationDetails"`
+	// The configuration details of a Dataflow step.
+	StepDataflowConfigurationDetails []GetPipelinesPipelineStepDetailStepDataflowConfigurationDetail `pulumi:"stepDataflowConfigurationDetails"`
 	// The infrastructure configuration details of a pipeline or a step.
 	StepInfrastructureConfigurationDetails []GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetail `pulumi:"stepInfrastructureConfigurationDetails"`
 	// The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
 	StepName string `pulumi:"stepName"`
+	// The storage mount details to mount to the instance running the pipeline step.
+	StepStorageMountConfigurationDetailsLists []GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsList `pulumi:"stepStorageMountConfigurationDetailsLists"`
 	// The type of step.
 	StepType string `pulumi:"stepType"`
 }
@@ -32282,6 +35650,8 @@ type GetPipelinesPipelineStepDetailInput interface {
 }
 
 type GetPipelinesPipelineStepDetailArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow application to be used as a step.
+	ApplicationId pulumi.StringInput `pulumi:"applicationId"`
 	// The list of step names this current step depends on for execution.
 	DependsOns pulumi.StringArrayInput `pulumi:"dependsOns"`
 	// A short description of the step.
@@ -32294,10 +35664,14 @@ type GetPipelinesPipelineStepDetailArgs struct {
 	StepConfigurationDetails GetPipelinesPipelineStepDetailStepConfigurationDetailArrayInput `pulumi:"stepConfigurationDetails"`
 	// Container Details for a step in pipeline.
 	StepContainerConfigurationDetails GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArrayInput `pulumi:"stepContainerConfigurationDetails"`
+	// The configuration details of a Dataflow step.
+	StepDataflowConfigurationDetails GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArrayInput `pulumi:"stepDataflowConfigurationDetails"`
 	// The infrastructure configuration details of a pipeline or a step.
 	StepInfrastructureConfigurationDetails GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailArrayInput `pulumi:"stepInfrastructureConfigurationDetails"`
 	// The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
 	StepName pulumi.StringInput `pulumi:"stepName"`
+	// The storage mount details to mount to the instance running the pipeline step.
+	StepStorageMountConfigurationDetailsLists GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArrayInput `pulumi:"stepStorageMountConfigurationDetailsLists"`
 	// The type of step.
 	StepType pulumi.StringInput `pulumi:"stepType"`
 }
@@ -32353,6 +35727,11 @@ func (o GetPipelinesPipelineStepDetailOutput) ToGetPipelinesPipelineStepDetailOu
 	return o
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow application to be used as a step.
+func (o GetPipelinesPipelineStepDetailOutput) ApplicationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineStepDetail) string { return v.ApplicationId }).(pulumi.StringOutput)
+}
+
 // The list of step names this current step depends on for execution.
 func (o GetPipelinesPipelineStepDetailOutput) DependsOns() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetPipelinesPipelineStepDetail) []string { return v.DependsOns }).(pulumi.StringArrayOutput)
@@ -32387,6 +35766,13 @@ func (o GetPipelinesPipelineStepDetailOutput) StepContainerConfigurationDetails(
 	}).(GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArrayOutput)
 }
 
+// The configuration details of a Dataflow step.
+func (o GetPipelinesPipelineStepDetailOutput) StepDataflowConfigurationDetails() GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArrayOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineStepDetail) []GetPipelinesPipelineStepDetailStepDataflowConfigurationDetail {
+		return v.StepDataflowConfigurationDetails
+	}).(GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArrayOutput)
+}
+
 // The infrastructure configuration details of a pipeline or a step.
 func (o GetPipelinesPipelineStepDetailOutput) StepInfrastructureConfigurationDetails() GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailArrayOutput {
 	return o.ApplyT(func(v GetPipelinesPipelineStepDetail) []GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetail {
@@ -32397,6 +35783,13 @@ func (o GetPipelinesPipelineStepDetailOutput) StepInfrastructureConfigurationDet
 // The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
 func (o GetPipelinesPipelineStepDetailOutput) StepName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPipelinesPipelineStepDetail) string { return v.StepName }).(pulumi.StringOutput)
+}
+
+// The storage mount details to mount to the instance running the pipeline step.
+func (o GetPipelinesPipelineStepDetailOutput) StepStorageMountConfigurationDetailsLists() GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineStepDetail) []GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsList {
+		return v.StepStorageMountConfigurationDetailsLists
+	}).(GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput)
 }
 
 // The type of step.
@@ -32685,6 +36078,394 @@ func (o GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArrayOutpu
 	}).(GetPipelinesPipelineStepDetailStepContainerConfigurationDetailOutput)
 }
 
+type GetPipelinesPipelineStepDetailStepDataflowConfigurationDetail struct {
+	// The Spark configuration passed to the running process.
+	Configuration map[string]string `pulumi:"configuration"`
+	// The VM shape for the driver.
+	DriverShape string `pulumi:"driverShape"`
+	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	DriverShapeConfigDetails []GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetail `pulumi:"driverShapeConfigDetails"`
+	// The VM shape for the executors.
+	ExecutorShape string `pulumi:"executorShape"`
+	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	ExecutorShapeConfigDetails []GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail `pulumi:"executorShapeConfigDetails"`
+	// An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+	LogsBucketUri string `pulumi:"logsBucketUri"`
+	// The number of executor VMs requested.
+	NumExecutors int `pulumi:"numExecutors"`
+	// An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
+	WarehouseBucketUri string `pulumi:"warehouseBucketUri"`
+}
+
+// GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailInput is an input type that accepts GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArgs and GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailInput` via:
+//
+//	GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArgs{...}
+type GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailOutput() GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailOutput
+	ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailOutputWithContext(context.Context) GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailOutput
+}
+
+type GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArgs struct {
+	// The Spark configuration passed to the running process.
+	Configuration pulumi.StringMapInput `pulumi:"configuration"`
+	// The VM shape for the driver.
+	DriverShape pulumi.StringInput `pulumi:"driverShape"`
+	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	DriverShapeConfigDetails GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayInput `pulumi:"driverShapeConfigDetails"`
+	// The VM shape for the executors.
+	ExecutorShape pulumi.StringInput `pulumi:"executorShape"`
+	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	ExecutorShapeConfigDetails GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayInput `pulumi:"executorShapeConfigDetails"`
+	// An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+	LogsBucketUri pulumi.StringInput `pulumi:"logsBucketUri"`
+	// The number of executor VMs requested.
+	NumExecutors pulumi.IntInput `pulumi:"numExecutors"`
+	// An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
+	WarehouseBucketUri pulumi.StringInput `pulumi:"warehouseBucketUri"`
+}
+
+func (GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinesPipelineStepDetailStepDataflowConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArgs) ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailOutput() GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailOutput {
+	return i.ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArgs) ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailOutputWithContext(ctx context.Context) GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailOutput)
+}
+
+// GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArrayInput is an input type that accepts GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArray and GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArrayInput` via:
+//
+//	GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArray{ GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArgs{...} }
+type GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArrayOutput() GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArrayOutput
+	ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArrayOutputWithContext(context.Context) GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArrayOutput
+}
+
+type GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArray []GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailInput
+
+func (GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinesPipelineStepDetailStepDataflowConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArray) ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArrayOutput() GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArrayOutput {
+	return i.ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArray) ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArrayOutput)
+}
+
+type GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinesPipelineStepDetailStepDataflowConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailOutput) ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailOutput() GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailOutput) ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailOutputWithContext(ctx context.Context) GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailOutput {
+	return o
+}
+
+// The Spark configuration passed to the running process.
+func (o GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailOutput) Configuration() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineStepDetailStepDataflowConfigurationDetail) map[string]string {
+		return v.Configuration
+	}).(pulumi.StringMapOutput)
+}
+
+// The VM shape for the driver.
+func (o GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailOutput) DriverShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineStepDetailStepDataflowConfigurationDetail) string { return v.DriverShape }).(pulumi.StringOutput)
+}
+
+// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+func (o GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailOutput) DriverShapeConfigDetails() GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineStepDetailStepDataflowConfigurationDetail) []GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetail {
+		return v.DriverShapeConfigDetails
+	}).(GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput)
+}
+
+// The VM shape for the executors.
+func (o GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailOutput) ExecutorShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineStepDetailStepDataflowConfigurationDetail) string { return v.ExecutorShape }).(pulumi.StringOutput)
+}
+
+// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+func (o GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailOutput) ExecutorShapeConfigDetails() GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineStepDetailStepDataflowConfigurationDetail) []GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail {
+		return v.ExecutorShapeConfigDetails
+	}).(GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput)
+}
+
+// An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+func (o GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailOutput) LogsBucketUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineStepDetailStepDataflowConfigurationDetail) string { return v.LogsBucketUri }).(pulumi.StringOutput)
+}
+
+// The number of executor VMs requested.
+func (o GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailOutput) NumExecutors() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineStepDetailStepDataflowConfigurationDetail) int { return v.NumExecutors }).(pulumi.IntOutput)
+}
+
+// An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
+func (o GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailOutput) WarehouseBucketUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineStepDetailStepDataflowConfigurationDetail) string {
+		return v.WarehouseBucketUri
+	}).(pulumi.StringOutput)
+}
+
+type GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinesPipelineStepDetailStepDataflowConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArrayOutput) ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArrayOutput() GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArrayOutput) ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelinesPipelineStepDetailStepDataflowConfigurationDetail {
+		return vs[0].([]GetPipelinesPipelineStepDetailStepDataflowConfigurationDetail)[vs[1].(int)]
+	}).(GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailOutput)
+}
+
+type GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetail struct {
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	Ocpus float64 `pulumi:"ocpus"`
+}
+
+// GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailInput is an input type that accepts GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs and GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput values.
+// You can construct a concrete instance of `GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailInput` via:
+//
+//	GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs{...}
+type GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput() GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput
+	ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutputWithContext(context.Context) GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput
+}
+
+type GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs struct {
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+}
+
+func (GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetail)(nil)).Elem()
+}
+
+func (i GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs) ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput() GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput {
+	return i.ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs) ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutputWithContext(ctx context.Context) GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput)
+}
+
+// GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayInput is an input type that accepts GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray and GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayInput` via:
+//
+//	GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray{ GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs{...} }
+type GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput() GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput
+	ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutputWithContext(context.Context) GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput
+}
+
+type GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray []GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailInput
+
+func (GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetail)(nil)).Elem()
+}
+
+func (i GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray) ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput() GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput {
+	return i.ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray) ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput)
+}
+
+type GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetail)(nil)).Elem()
+}
+
+func (o GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput) ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput() GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput) ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutputWithContext(ctx context.Context) GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput {
+	return o
+}
+
+// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+func (o GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetail) float64 {
+		return v.MemoryInGbs
+	}).(pulumi.Float64Output)
+}
+
+// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+func (o GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetail) float64 {
+		return v.Ocpus
+	}).(pulumi.Float64Output)
+}
+
+type GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetail)(nil)).Elem()
+}
+
+func (o GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput) ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput() GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput) ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput) Index(i pulumi.IntInput) GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetail {
+		return vs[0].([]GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetail)[vs[1].(int)]
+	}).(GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput)
+}
+
+type GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail struct {
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	Ocpus float64 `pulumi:"ocpus"`
+}
+
+// GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailInput is an input type that accepts GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs and GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput values.
+// You can construct a concrete instance of `GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailInput` via:
+//
+//	GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs{...}
+type GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput() GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput
+	ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutputWithContext(context.Context) GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput
+}
+
+type GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs struct {
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+}
+
+func (GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail)(nil)).Elem()
+}
+
+func (i GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs) ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput() GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput {
+	return i.ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs) ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutputWithContext(ctx context.Context) GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput)
+}
+
+// GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayInput is an input type that accepts GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray and GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayInput` via:
+//
+//	GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray{ GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs{...} }
+type GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput() GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput
+	ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutputWithContext(context.Context) GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput
+}
+
+type GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray []GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailInput
+
+func (GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail)(nil)).Elem()
+}
+
+func (i GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray) ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput() GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput {
+	return i.ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray) ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput)
+}
+
+type GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail)(nil)).Elem()
+}
+
+func (o GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput) ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput() GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput) ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutputWithContext(ctx context.Context) GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput {
+	return o
+}
+
+// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+func (o GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail) float64 {
+		return v.MemoryInGbs
+	}).(pulumi.Float64Output)
+}
+
+// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+func (o GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail) float64 {
+		return v.Ocpus
+	}).(pulumi.Float64Output)
+}
+
+type GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail)(nil)).Elem()
+}
+
+func (o GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput) ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput() GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput) ToGetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput) Index(i pulumi.IntInput) GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail {
+		return vs[0].([]GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail)[vs[1].(int)]
+	}).(GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput)
+}
+
 type GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetail struct {
 	// The size of the block storage volume to attach to the instance.
 	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
@@ -32921,6 +36702,340 @@ func (o GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShape
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetail {
 		return vs[0].([]GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetail)[vs[1].(int)]
 	}).(GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput)
+}
+
+type GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsList struct {
+	// The object storage bucket
+	Bucket string `pulumi:"bucket"`
+	// The local directory name to be mounted
+	DestinationDirectoryName string `pulumi:"destinationDirectoryName"`
+	// The local path of the mounted directory, excluding directory name.
+	DestinationPath string `pulumi:"destinationPath"`
+	// OCID of the export
+	ExportId string `pulumi:"exportId"`
+	// OCID of the mount target
+	MountTargetId string `pulumi:"mountTargetId"`
+	// The object storage namespace
+	Namespace string `pulumi:"namespace"`
+	// Prefix in the bucket to mount
+	Prefix string `pulumi:"prefix"`
+	// The type of storage.
+	StorageType string `pulumi:"storageType"`
+}
+
+// GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListInput is an input type that accepts GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArgs and GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListOutput values.
+// You can construct a concrete instance of `GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListInput` via:
+//
+//	GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArgs{...}
+type GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListInput interface {
+	pulumi.Input
+
+	ToGetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListOutput() GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListOutput
+	ToGetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListOutputWithContext(context.Context) GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListOutput
+}
+
+type GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArgs struct {
+	// The object storage bucket
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The local directory name to be mounted
+	DestinationDirectoryName pulumi.StringInput `pulumi:"destinationDirectoryName"`
+	// The local path of the mounted directory, excluding directory name.
+	DestinationPath pulumi.StringInput `pulumi:"destinationPath"`
+	// OCID of the export
+	ExportId pulumi.StringInput `pulumi:"exportId"`
+	// OCID of the mount target
+	MountTargetId pulumi.StringInput `pulumi:"mountTargetId"`
+	// The object storage namespace
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Prefix in the bucket to mount
+	Prefix pulumi.StringInput `pulumi:"prefix"`
+	// The type of storage.
+	StorageType pulumi.StringInput `pulumi:"storageType"`
+}
+
+func (GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (i GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArgs) ToGetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListOutput() GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListOutput {
+	return i.ToGetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListOutputWithContext(context.Background())
+}
+
+func (i GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArgs) ToGetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListOutputWithContext(ctx context.Context) GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListOutput)
+}
+
+// GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArrayInput is an input type that accepts GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArray and GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput values.
+// You can construct a concrete instance of `GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArrayInput` via:
+//
+//	GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArray{ GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArgs{...} }
+type GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput() GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput
+	ToGetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutputWithContext(context.Context) GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput
+}
+
+type GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArray []GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListInput
+
+func (GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (i GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArray) ToGetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput() GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput {
+	return i.ToGetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArray) ToGetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutputWithContext(ctx context.Context) GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput)
+}
+
+type GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (o GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListOutput) ToGetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListOutput() GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListOutput) ToGetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListOutputWithContext(ctx context.Context) GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListOutput {
+	return o
+}
+
+// The object storage bucket
+func (o GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsList) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// The local directory name to be mounted
+func (o GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListOutput) DestinationDirectoryName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsList) string {
+		return v.DestinationDirectoryName
+	}).(pulumi.StringOutput)
+}
+
+// The local path of the mounted directory, excluding directory name.
+func (o GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListOutput) DestinationPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsList) string {
+		return v.DestinationPath
+	}).(pulumi.StringOutput)
+}
+
+// OCID of the export
+func (o GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListOutput) ExportId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsList) string {
+		return v.ExportId
+	}).(pulumi.StringOutput)
+}
+
+// OCID of the mount target
+func (o GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListOutput) MountTargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsList) string {
+		return v.MountTargetId
+	}).(pulumi.StringOutput)
+}
+
+// The object storage namespace
+func (o GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsList) string {
+		return v.Namespace
+	}).(pulumi.StringOutput)
+}
+
+// Prefix in the bucket to mount
+func (o GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListOutput) Prefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsList) string { return v.Prefix }).(pulumi.StringOutput)
+}
+
+// The type of storage.
+func (o GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListOutput) StorageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsList) string {
+		return v.StorageType
+	}).(pulumi.StringOutput)
+}
+
+type GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (o GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput) ToGetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput() GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput) ToGetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutputWithContext(ctx context.Context) GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput) Index(i pulumi.IntInput) GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsList {
+		return vs[0].([]GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsList)[vs[1].(int)]
+	}).(GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListOutput)
+}
+
+type GetPipelinesPipelineStorageMountConfigurationDetailsList struct {
+	// The object storage bucket
+	Bucket string `pulumi:"bucket"`
+	// The local directory name to be mounted
+	DestinationDirectoryName string `pulumi:"destinationDirectoryName"`
+	// The local path of the mounted directory, excluding directory name.
+	DestinationPath string `pulumi:"destinationPath"`
+	// OCID of the export
+	ExportId string `pulumi:"exportId"`
+	// OCID of the mount target
+	MountTargetId string `pulumi:"mountTargetId"`
+	// The object storage namespace
+	Namespace string `pulumi:"namespace"`
+	// Prefix in the bucket to mount
+	Prefix string `pulumi:"prefix"`
+	// The type of storage.
+	StorageType string `pulumi:"storageType"`
+}
+
+// GetPipelinesPipelineStorageMountConfigurationDetailsListInput is an input type that accepts GetPipelinesPipelineStorageMountConfigurationDetailsListArgs and GetPipelinesPipelineStorageMountConfigurationDetailsListOutput values.
+// You can construct a concrete instance of `GetPipelinesPipelineStorageMountConfigurationDetailsListInput` via:
+//
+//	GetPipelinesPipelineStorageMountConfigurationDetailsListArgs{...}
+type GetPipelinesPipelineStorageMountConfigurationDetailsListInput interface {
+	pulumi.Input
+
+	ToGetPipelinesPipelineStorageMountConfigurationDetailsListOutput() GetPipelinesPipelineStorageMountConfigurationDetailsListOutput
+	ToGetPipelinesPipelineStorageMountConfigurationDetailsListOutputWithContext(context.Context) GetPipelinesPipelineStorageMountConfigurationDetailsListOutput
+}
+
+type GetPipelinesPipelineStorageMountConfigurationDetailsListArgs struct {
+	// The object storage bucket
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The local directory name to be mounted
+	DestinationDirectoryName pulumi.StringInput `pulumi:"destinationDirectoryName"`
+	// The local path of the mounted directory, excluding directory name.
+	DestinationPath pulumi.StringInput `pulumi:"destinationPath"`
+	// OCID of the export
+	ExportId pulumi.StringInput `pulumi:"exportId"`
+	// OCID of the mount target
+	MountTargetId pulumi.StringInput `pulumi:"mountTargetId"`
+	// The object storage namespace
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Prefix in the bucket to mount
+	Prefix pulumi.StringInput `pulumi:"prefix"`
+	// The type of storage.
+	StorageType pulumi.StringInput `pulumi:"storageType"`
+}
+
+func (GetPipelinesPipelineStorageMountConfigurationDetailsListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinesPipelineStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (i GetPipelinesPipelineStorageMountConfigurationDetailsListArgs) ToGetPipelinesPipelineStorageMountConfigurationDetailsListOutput() GetPipelinesPipelineStorageMountConfigurationDetailsListOutput {
+	return i.ToGetPipelinesPipelineStorageMountConfigurationDetailsListOutputWithContext(context.Background())
+}
+
+func (i GetPipelinesPipelineStorageMountConfigurationDetailsListArgs) ToGetPipelinesPipelineStorageMountConfigurationDetailsListOutputWithContext(ctx context.Context) GetPipelinesPipelineStorageMountConfigurationDetailsListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinesPipelineStorageMountConfigurationDetailsListOutput)
+}
+
+// GetPipelinesPipelineStorageMountConfigurationDetailsListArrayInput is an input type that accepts GetPipelinesPipelineStorageMountConfigurationDetailsListArray and GetPipelinesPipelineStorageMountConfigurationDetailsListArrayOutput values.
+// You can construct a concrete instance of `GetPipelinesPipelineStorageMountConfigurationDetailsListArrayInput` via:
+//
+//	GetPipelinesPipelineStorageMountConfigurationDetailsListArray{ GetPipelinesPipelineStorageMountConfigurationDetailsListArgs{...} }
+type GetPipelinesPipelineStorageMountConfigurationDetailsListArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelinesPipelineStorageMountConfigurationDetailsListArrayOutput() GetPipelinesPipelineStorageMountConfigurationDetailsListArrayOutput
+	ToGetPipelinesPipelineStorageMountConfigurationDetailsListArrayOutputWithContext(context.Context) GetPipelinesPipelineStorageMountConfigurationDetailsListArrayOutput
+}
+
+type GetPipelinesPipelineStorageMountConfigurationDetailsListArray []GetPipelinesPipelineStorageMountConfigurationDetailsListInput
+
+func (GetPipelinesPipelineStorageMountConfigurationDetailsListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinesPipelineStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (i GetPipelinesPipelineStorageMountConfigurationDetailsListArray) ToGetPipelinesPipelineStorageMountConfigurationDetailsListArrayOutput() GetPipelinesPipelineStorageMountConfigurationDetailsListArrayOutput {
+	return i.ToGetPipelinesPipelineStorageMountConfigurationDetailsListArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelinesPipelineStorageMountConfigurationDetailsListArray) ToGetPipelinesPipelineStorageMountConfigurationDetailsListArrayOutputWithContext(ctx context.Context) GetPipelinesPipelineStorageMountConfigurationDetailsListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinesPipelineStorageMountConfigurationDetailsListArrayOutput)
+}
+
+type GetPipelinesPipelineStorageMountConfigurationDetailsListOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinesPipelineStorageMountConfigurationDetailsListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinesPipelineStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (o GetPipelinesPipelineStorageMountConfigurationDetailsListOutput) ToGetPipelinesPipelineStorageMountConfigurationDetailsListOutput() GetPipelinesPipelineStorageMountConfigurationDetailsListOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineStorageMountConfigurationDetailsListOutput) ToGetPipelinesPipelineStorageMountConfigurationDetailsListOutputWithContext(ctx context.Context) GetPipelinesPipelineStorageMountConfigurationDetailsListOutput {
+	return o
+}
+
+// The object storage bucket
+func (o GetPipelinesPipelineStorageMountConfigurationDetailsListOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineStorageMountConfigurationDetailsList) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// The local directory name to be mounted
+func (o GetPipelinesPipelineStorageMountConfigurationDetailsListOutput) DestinationDirectoryName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineStorageMountConfigurationDetailsList) string {
+		return v.DestinationDirectoryName
+	}).(pulumi.StringOutput)
+}
+
+// The local path of the mounted directory, excluding directory name.
+func (o GetPipelinesPipelineStorageMountConfigurationDetailsListOutput) DestinationPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineStorageMountConfigurationDetailsList) string { return v.DestinationPath }).(pulumi.StringOutput)
+}
+
+// OCID of the export
+func (o GetPipelinesPipelineStorageMountConfigurationDetailsListOutput) ExportId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineStorageMountConfigurationDetailsList) string { return v.ExportId }).(pulumi.StringOutput)
+}
+
+// OCID of the mount target
+func (o GetPipelinesPipelineStorageMountConfigurationDetailsListOutput) MountTargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineStorageMountConfigurationDetailsList) string { return v.MountTargetId }).(pulumi.StringOutput)
+}
+
+// The object storage namespace
+func (o GetPipelinesPipelineStorageMountConfigurationDetailsListOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineStorageMountConfigurationDetailsList) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// Prefix in the bucket to mount
+func (o GetPipelinesPipelineStorageMountConfigurationDetailsListOutput) Prefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineStorageMountConfigurationDetailsList) string { return v.Prefix }).(pulumi.StringOutput)
+}
+
+// The type of storage.
+func (o GetPipelinesPipelineStorageMountConfigurationDetailsListOutput) StorageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineStorageMountConfigurationDetailsList) string { return v.StorageType }).(pulumi.StringOutput)
+}
+
+type GetPipelinesPipelineStorageMountConfigurationDetailsListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinesPipelineStorageMountConfigurationDetailsListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinesPipelineStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (o GetPipelinesPipelineStorageMountConfigurationDetailsListArrayOutput) ToGetPipelinesPipelineStorageMountConfigurationDetailsListArrayOutput() GetPipelinesPipelineStorageMountConfigurationDetailsListArrayOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineStorageMountConfigurationDetailsListArrayOutput) ToGetPipelinesPipelineStorageMountConfigurationDetailsListArrayOutputWithContext(ctx context.Context) GetPipelinesPipelineStorageMountConfigurationDetailsListArrayOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineStorageMountConfigurationDetailsListArrayOutput) Index(i pulumi.IntInput) GetPipelinesPipelineStorageMountConfigurationDetailsListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelinesPipelineStorageMountConfigurationDetailsList {
+		return vs[0].([]GetPipelinesPipelineStorageMountConfigurationDetailsList)[vs[1].(int)]
+	}).(GetPipelinesPipelineStorageMountConfigurationDetailsListOutput)
 }
 
 type GetPrivateEndpointsDataSciencePrivateEndpoint struct {
@@ -38367,6 +42482,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineRunStepOverrideDetailStepConfigurationDetailsInput)(nil)).Elem(), PipelineRunStepOverrideDetailStepConfigurationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineRunStepOverrideDetailStepContainerConfigurationDetailsInput)(nil)).Elem(), PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrInput)(nil)).Elem(), PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsInput)(nil)).Elem(), PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrInput)(nil)).Elem(), PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsInput)(nil)).Elem(), PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrInput)(nil)).Elem(), PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsInput)(nil)).Elem(), PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrInput)(nil)).Elem(), PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineRunStepRunInput)(nil)).Elem(), PipelineRunStepRunArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineRunStepRunArrayInput)(nil)).Elem(), PipelineRunStepRunArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineStepArtifactInput)(nil)).Elem(), PipelineStepArtifactArgs{})
@@ -38377,10 +42498,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineStepDetailStepConfigurationDetailsPtrInput)(nil)).Elem(), PipelineStepDetailStepConfigurationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineStepDetailStepContainerConfigurationDetailsInput)(nil)).Elem(), PipelineStepDetailStepContainerConfigurationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineStepDetailStepContainerConfigurationDetailsPtrInput)(nil)).Elem(), PipelineStepDetailStepContainerConfigurationDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineStepDetailStepDataflowConfigurationDetailsInput)(nil)).Elem(), PipelineStepDetailStepDataflowConfigurationDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineStepDetailStepDataflowConfigurationDetailsPtrInput)(nil)).Elem(), PipelineStepDetailStepDataflowConfigurationDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsInput)(nil)).Elem(), PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrInput)(nil)).Elem(), PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsInput)(nil)).Elem(), PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrInput)(nil)).Elem(), PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineStepDetailStepInfrastructureConfigurationDetailsInput)(nil)).Elem(), PipelineStepDetailStepInfrastructureConfigurationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineStepDetailStepInfrastructureConfigurationDetailsPtrInput)(nil)).Elem(), PipelineStepDetailStepInfrastructureConfigurationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsInput)(nil)).Elem(), PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsPtrInput)(nil)).Elem(), PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineStepDetailStepStorageMountConfigurationDetailsListInput)(nil)).Elem(), PipelineStepDetailStepStorageMountConfigurationDetailsListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineStepDetailStepStorageMountConfigurationDetailsListArrayInput)(nil)).Elem(), PipelineStepDetailStepStorageMountConfigurationDetailsListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineStorageMountConfigurationDetailsListInput)(nil)).Elem(), PipelineStorageMountConfigurationDetailsListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineStorageMountConfigurationDetailsListArrayInput)(nil)).Elem(), PipelineStorageMountConfigurationDetailsListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleActionInput)(nil)).Elem(), ScheduleActionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleActionPtrInput)(nil)).Elem(), ScheduleActionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleActionActionDetailsInput)(nil)).Elem(), ScheduleActionActionDetailsArgs{})
@@ -38649,6 +42780,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepRunInput)(nil)).Elem(), GetPipelineRunStepRunArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepRunArrayInput)(nil)).Elem(), GetPipelineRunStepRunArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunsFilterInput)(nil)).Elem(), GetPipelineRunsFilterArgs{})
@@ -38669,6 +42806,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailArrayInput)(nil)).Elem(), GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailInput)(nil)).Elem(), GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayInput)(nil)).Elem(), GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailInput)(nil)).Elem(), GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayInput)(nil)).Elem(), GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailInput)(nil)).Elem(), GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayInput)(nil)).Elem(), GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailInput)(nil)).Elem(), GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayInput)(nil)).Elem(), GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunsPipelineRunStepRunInput)(nil)).Elem(), GetPipelineRunsPipelineRunStepRunArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunsPipelineRunStepRunArrayInput)(nil)).Elem(), GetPipelineRunsPipelineRunStepRunArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineStepArtifactInput)(nil)).Elem(), GetPipelineStepArtifactArgs{})
@@ -38679,10 +42822,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineStepDetailStepConfigurationDetailArrayInput)(nil)).Elem(), GetPipelineStepDetailStepConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineStepDetailStepContainerConfigurationDetailInput)(nil)).Elem(), GetPipelineStepDetailStepContainerConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineStepDetailStepContainerConfigurationDetailArrayInput)(nil)).Elem(), GetPipelineStepDetailStepContainerConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineStepDetailStepDataflowConfigurationDetailInput)(nil)).Elem(), GetPipelineStepDetailStepDataflowConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineStepDetailStepDataflowConfigurationDetailArrayInput)(nil)).Elem(), GetPipelineStepDetailStepDataflowConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailInput)(nil)).Elem(), GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayInput)(nil)).Elem(), GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailInput)(nil)).Elem(), GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayInput)(nil)).Elem(), GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineStepDetailStepInfrastructureConfigurationDetailInput)(nil)).Elem(), GetPipelineStepDetailStepInfrastructureConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineStepDetailStepInfrastructureConfigurationDetailArrayInput)(nil)).Elem(), GetPipelineStepDetailStepInfrastructureConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailInput)(nil)).Elem(), GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayInput)(nil)).Elem(), GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineStepDetailStepStorageMountConfigurationDetailsListInput)(nil)).Elem(), GetPipelineStepDetailStepStorageMountConfigurationDetailsListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineStepDetailStepStorageMountConfigurationDetailsListArrayInput)(nil)).Elem(), GetPipelineStepDetailStepStorageMountConfigurationDetailsListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineStorageMountConfigurationDetailsListInput)(nil)).Elem(), GetPipelineStorageMountConfigurationDetailsListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineStorageMountConfigurationDetailsListArrayInput)(nil)).Elem(), GetPipelineStorageMountConfigurationDetailsListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesFilterInput)(nil)).Elem(), GetPipelinesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesFilterArrayInput)(nil)).Elem(), GetPipelinesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineInput)(nil)).Elem(), GetPipelinesPipelineArgs{})
@@ -38703,10 +42856,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineStepDetailStepConfigurationDetailArrayInput)(nil)).Elem(), GetPipelinesPipelineStepDetailStepConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineStepDetailStepContainerConfigurationDetailInput)(nil)).Elem(), GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArrayInput)(nil)).Elem(), GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailInput)(nil)).Elem(), GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArrayInput)(nil)).Elem(), GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailInput)(nil)).Elem(), GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayInput)(nil)).Elem(), GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailInput)(nil)).Elem(), GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayInput)(nil)).Elem(), GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailInput)(nil)).Elem(), GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailArrayInput)(nil)).Elem(), GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailInput)(nil)).Elem(), GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayInput)(nil)).Elem(), GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListInput)(nil)).Elem(), GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArrayInput)(nil)).Elem(), GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineStorageMountConfigurationDetailsListInput)(nil)).Elem(), GetPipelinesPipelineStorageMountConfigurationDetailsListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineStorageMountConfigurationDetailsListArrayInput)(nil)).Elem(), GetPipelinesPipelineStorageMountConfigurationDetailsListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateEndpointsDataSciencePrivateEndpointInput)(nil)).Elem(), GetPrivateEndpointsDataSciencePrivateEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateEndpointsDataSciencePrivateEndpointArrayInput)(nil)).Elem(), GetPrivateEndpointsDataSciencePrivateEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateEndpointsFilterInput)(nil)).Elem(), GetPrivateEndpointsFilterArgs{})
@@ -38884,6 +43047,12 @@ func init() {
 	pulumi.RegisterOutputType(PipelineRunStepOverrideDetailStepConfigurationDetailsOutput{})
 	pulumi.RegisterOutputType(PipelineRunStepOverrideDetailStepContainerConfigurationDetailsOutput{})
 	pulumi.RegisterOutputType(PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutput{})
+	pulumi.RegisterOutputType(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsOutput{})
+	pulumi.RegisterOutputType(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsPtrOutput{})
+	pulumi.RegisterOutputType(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput{})
+	pulumi.RegisterOutputType(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput{})
+	pulumi.RegisterOutputType(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput{})
+	pulumi.RegisterOutputType(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput{})
 	pulumi.RegisterOutputType(PipelineRunStepRunOutput{})
 	pulumi.RegisterOutputType(PipelineRunStepRunArrayOutput{})
 	pulumi.RegisterOutputType(PipelineStepArtifactOutput{})
@@ -38894,10 +43063,20 @@ func init() {
 	pulumi.RegisterOutputType(PipelineStepDetailStepConfigurationDetailsPtrOutput{})
 	pulumi.RegisterOutputType(PipelineStepDetailStepContainerConfigurationDetailsOutput{})
 	pulumi.RegisterOutputType(PipelineStepDetailStepContainerConfigurationDetailsPtrOutput{})
+	pulumi.RegisterOutputType(PipelineStepDetailStepDataflowConfigurationDetailsOutput{})
+	pulumi.RegisterOutputType(PipelineStepDetailStepDataflowConfigurationDetailsPtrOutput{})
+	pulumi.RegisterOutputType(PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsOutput{})
+	pulumi.RegisterOutputType(PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsPtrOutput{})
+	pulumi.RegisterOutputType(PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOutput{})
+	pulumi.RegisterOutputType(PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsPtrOutput{})
 	pulumi.RegisterOutputType(PipelineStepDetailStepInfrastructureConfigurationDetailsOutput{})
 	pulumi.RegisterOutputType(PipelineStepDetailStepInfrastructureConfigurationDetailsPtrOutput{})
 	pulumi.RegisterOutputType(PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsOutput{})
 	pulumi.RegisterOutputType(PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsPtrOutput{})
+	pulumi.RegisterOutputType(PipelineStepDetailStepStorageMountConfigurationDetailsListOutput{})
+	pulumi.RegisterOutputType(PipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput{})
+	pulumi.RegisterOutputType(PipelineStorageMountConfigurationDetailsListOutput{})
+	pulumi.RegisterOutputType(PipelineStorageMountConfigurationDetailsListArrayOutput{})
 	pulumi.RegisterOutputType(ScheduleActionOutput{})
 	pulumi.RegisterOutputType(ScheduleActionPtrOutput{})
 	pulumi.RegisterOutputType(ScheduleActionActionDetailsOutput{})
@@ -39166,6 +43345,12 @@ func init() {
 	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput{})
 	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelineRunStepRunOutput{})
 	pulumi.RegisterOutputType(GetPipelineRunStepRunArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelineRunsFilterOutput{})
@@ -39186,6 +43371,12 @@ func init() {
 	pulumi.RegisterOutputType(GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput{})
 	pulumi.RegisterOutputType(GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelineRunsPipelineRunStepRunOutput{})
 	pulumi.RegisterOutputType(GetPipelineRunsPipelineRunStepRunArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelineStepArtifactOutput{})
@@ -39196,10 +43387,20 @@ func init() {
 	pulumi.RegisterOutputType(GetPipelineStepDetailStepConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelineStepDetailStepContainerConfigurationDetailOutput{})
 	pulumi.RegisterOutputType(GetPipelineStepDetailStepContainerConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineStepDetailStepDataflowConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelineStepDetailStepDataflowConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelineStepDetailStepInfrastructureConfigurationDetailOutput{})
 	pulumi.RegisterOutputType(GetPipelineStepDetailStepInfrastructureConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput{})
 	pulumi.RegisterOutputType(GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineStepDetailStepStorageMountConfigurationDetailsListOutput{})
+	pulumi.RegisterOutputType(GetPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineStorageMountConfigurationDetailsListOutput{})
+	pulumi.RegisterOutputType(GetPipelineStorageMountConfigurationDetailsListArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelinesFilterOutput{})
 	pulumi.RegisterOutputType(GetPipelinesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelinesPipelineOutput{})
@@ -39220,10 +43421,20 @@ func init() {
 	pulumi.RegisterOutputType(GetPipelinesPipelineStepDetailStepConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelinesPipelineStepDetailStepContainerConfigurationDetailOutput{})
 	pulumi.RegisterOutputType(GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailOutput{})
 	pulumi.RegisterOutputType(GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput{})
 	pulumi.RegisterOutputType(GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListOutput{})
+	pulumi.RegisterOutputType(GetPipelinesPipelineStepDetailStepStorageMountConfigurationDetailsListArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelinesPipelineStorageMountConfigurationDetailsListOutput{})
+	pulumi.RegisterOutputType(GetPipelinesPipelineStorageMountConfigurationDetailsListArrayOutput{})
 	pulumi.RegisterOutputType(GetPrivateEndpointsDataSciencePrivateEndpointOutput{})
 	pulumi.RegisterOutputType(GetPrivateEndpointsDataSciencePrivateEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetPrivateEndpointsFilterOutput{})

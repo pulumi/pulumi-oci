@@ -3470,13 +3470,13 @@ class CrossConnectGroupMacsecPropertiesPrimaryKey(dict):
                  connectivity_association_name_secret_version: Optional[str] = None):
         """
         :param str connectivity_association_key_secret_id: (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
-               
-               NOTE: Only the latest secret version will be used.
         :param str connectivity_association_name_secret_id: (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
+        :param str connectivity_association_key_secret_version: (Updatable) The secret version of the `connectivity_association_key_secret_id` secret in Vault.
                
                NOTE: Only the latest secret version will be used.
-        :param str connectivity_association_key_secret_version: The secret version of the `connectivityAssociationKey` secret in Vault.
-        :param str connectivity_association_name_secret_version: The secret version of the connectivity association name secret in Vault.
+        :param str connectivity_association_name_secret_version: (Updatable) The secret version of the `connectivity_association_name_secret_id` secret in Vault.
+               
+               NOTE: Only the latest secret version will be used.
         """
         pulumi.set(__self__, "connectivity_association_key_secret_id", connectivity_association_key_secret_id)
         pulumi.set(__self__, "connectivity_association_name_secret_id", connectivity_association_name_secret_id)
@@ -3490,8 +3490,6 @@ class CrossConnectGroupMacsecPropertiesPrimaryKey(dict):
     def connectivity_association_key_secret_id(self) -> str:
         """
         (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
-
-        NOTE: Only the latest secret version will be used.
         """
         return pulumi.get(self, "connectivity_association_key_secret_id")
 
@@ -3500,8 +3498,6 @@ class CrossConnectGroupMacsecPropertiesPrimaryKey(dict):
     def connectivity_association_name_secret_id(self) -> str:
         """
         (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
-
-        NOTE: Only the latest secret version will be used.
         """
         return pulumi.get(self, "connectivity_association_name_secret_id")
 
@@ -3509,7 +3505,9 @@ class CrossConnectGroupMacsecPropertiesPrimaryKey(dict):
     @pulumi.getter(name="connectivityAssociationKeySecretVersion")
     def connectivity_association_key_secret_version(self) -> Optional[str]:
         """
-        The secret version of the `connectivityAssociationKey` secret in Vault.
+        (Updatable) The secret version of the `connectivity_association_key_secret_id` secret in Vault.
+
+        NOTE: Only the latest secret version will be used.
         """
         return pulumi.get(self, "connectivity_association_key_secret_version")
 
@@ -3517,7 +3515,9 @@ class CrossConnectGroupMacsecPropertiesPrimaryKey(dict):
     @pulumi.getter(name="connectivityAssociationNameSecretVersion")
     def connectivity_association_name_secret_version(self) -> Optional[str]:
         """
-        The secret version of the connectivity association name secret in Vault.
+        (Updatable) The secret version of the `connectivity_association_name_secret_id` secret in Vault.
+
+        NOTE: Only the latest secret version will be used.
         """
         return pulumi.get(self, "connectivity_association_name_secret_version")
 
@@ -3551,7 +3551,7 @@ class CrossConnectMacsecProperties(dict):
                  is_unprotected_traffic_allowed: Optional[bool] = None,
                  primary_key: Optional['outputs.CrossConnectMacsecPropertiesPrimaryKey'] = None):
         """
-        :param str state: (Updatable) Indicates whether or not MACsec is enabled.
+        :param str state: The cross-connect's current state.
         :param str encryption_cipher: (Updatable) Type of encryption cipher suite to use for the MACsec connection.
         :param bool is_unprotected_traffic_allowed: (Updatable) Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
         :param 'CrossConnectMacsecPropertiesPrimaryKeyArgs' primary_key: (Updatable) Defines the secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s held in Vault that represent the MACsec key.
@@ -3568,7 +3568,7 @@ class CrossConnectMacsecProperties(dict):
     @pulumi.getter
     def state(self) -> str:
         """
-        (Updatable) Indicates whether or not MACsec is enabled.
+        The cross-connect's current state.
         """
         return pulumi.get(self, "state")
 
@@ -3629,11 +3629,7 @@ class CrossConnectMacsecPropertiesPrimaryKey(dict):
                  connectivity_association_name_secret_version: Optional[str] = None):
         """
         :param str connectivity_association_key_secret_id: (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
-               
-               NOTE: Only the latest secret version will be used.
-        :param str connectivity_association_name_secret_id: (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
-               
-               NOTE: Only the latest secret version will be used.
+        :param str connectivity_association_name_secret_id: Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
         :param str connectivity_association_key_secret_version: The secret version of the `connectivityAssociationKey` secret in Vault.
         :param str connectivity_association_name_secret_version: The secret version of the connectivity association name secret in Vault.
         """
@@ -3649,8 +3645,6 @@ class CrossConnectMacsecPropertiesPrimaryKey(dict):
     def connectivity_association_key_secret_id(self) -> str:
         """
         (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
-
-        NOTE: Only the latest secret version will be used.
         """
         return pulumi.get(self, "connectivity_association_key_secret_id")
 
@@ -3658,9 +3652,7 @@ class CrossConnectMacsecPropertiesPrimaryKey(dict):
     @pulumi.getter(name="connectivityAssociationNameSecretId")
     def connectivity_association_name_secret_id(self) -> str:
         """
-        (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
-
-        NOTE: Only the latest secret version will be used.
+        Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
         """
         return pulumi.get(self, "connectivity_association_name_secret_id")
 

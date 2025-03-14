@@ -28,10 +28,12 @@ class CloudExadataInfrastructureArgs:
                  cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
                  compute_count: Optional[pulumi.Input[int]] = None,
                  customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureCustomerContactArgs']]]] = None,
+                 database_server_type: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  maintenance_window: Optional[pulumi.Input['CloudExadataInfrastructureMaintenanceWindowArgs']] = None,
                  storage_count: Optional[pulumi.Input[int]] = None,
+                 storage_server_type: Optional[pulumi.Input[str]] = None,
                  subscription_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a CloudExadataInfrastructure resource.
@@ -42,10 +44,12 @@ class CloudExadataInfrastructureArgs:
         :param pulumi.Input[str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
         :param pulumi.Input[int] compute_count: (Updatable) The number of compute servers for the cloud Exadata infrastructure.
         :param pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureCustomerContactArgs']]] customer_contacts: (Updatable) Customer contacts.
+        :param pulumi.Input[str] database_server_type: The database server type of the Exadata infrastructure.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input['CloudExadataInfrastructureMaintenanceWindowArgs'] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[int] storage_count: (Updatable) The number of storage servers for the cloud Exadata infrastructure.
+        :param pulumi.Input[str] storage_server_type: The storage server type of the Exadata infrastructure.
         :param pulumi.Input[str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
                
                
@@ -62,6 +66,8 @@ class CloudExadataInfrastructureArgs:
             pulumi.set(__self__, "compute_count", compute_count)
         if customer_contacts is not None:
             pulumi.set(__self__, "customer_contacts", customer_contacts)
+        if database_server_type is not None:
+            pulumi.set(__self__, "database_server_type", database_server_type)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
@@ -70,6 +76,8 @@ class CloudExadataInfrastructureArgs:
             pulumi.set(__self__, "maintenance_window", maintenance_window)
         if storage_count is not None:
             pulumi.set(__self__, "storage_count", storage_count)
+        if storage_server_type is not None:
+            pulumi.set(__self__, "storage_server_type", storage_server_type)
         if subscription_id is not None:
             pulumi.set(__self__, "subscription_id", subscription_id)
 
@@ -158,6 +166,18 @@ class CloudExadataInfrastructureArgs:
         pulumi.set(self, "customer_contacts", value)
 
     @property
+    @pulumi.getter(name="databaseServerType")
+    def database_server_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The database server type of the Exadata infrastructure.
+        """
+        return pulumi.get(self, "database_server_type")
+
+    @database_server_type.setter
+    def database_server_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "database_server_type", value)
+
+    @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
@@ -206,6 +226,18 @@ class CloudExadataInfrastructureArgs:
         pulumi.set(self, "storage_count", value)
 
     @property
+    @pulumi.getter(name="storageServerType")
+    def storage_server_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The storage server type of the Exadata infrastructure.
+        """
+        return pulumi.get(self, "storage_server_type")
+
+    @storage_server_type.setter
+    def storage_server_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "storage_server_type", value)
+
+    @property
     @pulumi.getter(name="subscriptionId")
     def subscription_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -232,9 +264,11 @@ class _CloudExadataInfrastructureState:
                  cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  compute_count: Optional[pulumi.Input[int]] = None,
+                 compute_model: Optional[pulumi.Input[str]] = None,
                  cpu_count: Optional[pulumi.Input[int]] = None,
                  customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureCustomerContactArgs']]]] = None,
                  data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
+                 database_server_type: Optional[pulumi.Input[str]] = None,
                  db_node_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  db_server_version: Optional[pulumi.Input[str]] = None,
                  defined_file_system_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureDefinedFileSystemConfigurationArgs']]]] = None,
@@ -256,6 +290,7 @@ class _CloudExadataInfrastructureState:
                  shape: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  storage_count: Optional[pulumi.Input[int]] = None,
+                 storage_server_type: Optional[pulumi.Input[str]] = None,
                  storage_server_version: Optional[pulumi.Input[str]] = None,
                  subscription_id: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -270,9 +305,11 @@ class _CloudExadataInfrastructureState:
         :param pulumi.Input[str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[int] compute_count: (Updatable) The number of compute servers for the cloud Exadata infrastructure.
+        :param pulumi.Input[str] compute_model: The compute model of the Exadata infrastructure.
         :param pulumi.Input[int] cpu_count: The total number of CPU cores allocated.
         :param pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureCustomerContactArgs']]] customer_contacts: (Updatable) Customer contacts.
         :param pulumi.Input[float] data_storage_size_in_tbs: Size, in terabytes, of the DATA disk group.
+        :param pulumi.Input[str] database_server_type: The database server type of the Exadata infrastructure.
         :param pulumi.Input[int] db_node_storage_size_in_gbs: The local node storage allocated in GBs.
         :param pulumi.Input[str] db_server_version: The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
         :param pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureDefinedFileSystemConfigurationArgs']]] defined_file_system_configurations: Details of the file system configuration of the Exadata infrastructure.
@@ -294,6 +331,7 @@ class _CloudExadataInfrastructureState:
         :param pulumi.Input[str] shape: The shape of the cloud Exadata infrastructure resource.
         :param pulumi.Input[str] state: The current lifecycle state of the cloud Exadata infrastructure resource.
         :param pulumi.Input[int] storage_count: (Updatable) The number of storage servers for the cloud Exadata infrastructure.
+        :param pulumi.Input[str] storage_server_type: The storage server type of the Exadata infrastructure.
         :param pulumi.Input[str] storage_server_version: The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
         :param pulumi.Input[str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
                
@@ -318,12 +356,16 @@ class _CloudExadataInfrastructureState:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if compute_count is not None:
             pulumi.set(__self__, "compute_count", compute_count)
+        if compute_model is not None:
+            pulumi.set(__self__, "compute_model", compute_model)
         if cpu_count is not None:
             pulumi.set(__self__, "cpu_count", cpu_count)
         if customer_contacts is not None:
             pulumi.set(__self__, "customer_contacts", customer_contacts)
         if data_storage_size_in_tbs is not None:
             pulumi.set(__self__, "data_storage_size_in_tbs", data_storage_size_in_tbs)
+        if database_server_type is not None:
+            pulumi.set(__self__, "database_server_type", database_server_type)
         if db_node_storage_size_in_gbs is not None:
             pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
         if db_server_version is not None:
@@ -366,6 +408,8 @@ class _CloudExadataInfrastructureState:
             pulumi.set(__self__, "state", state)
         if storage_count is not None:
             pulumi.set(__self__, "storage_count", storage_count)
+        if storage_server_type is not None:
+            pulumi.set(__self__, "storage_server_type", storage_server_type)
         if storage_server_version is not None:
             pulumi.set(__self__, "storage_server_version", storage_server_version)
         if subscription_id is not None:
@@ -462,6 +506,18 @@ class _CloudExadataInfrastructureState:
         pulumi.set(self, "compute_count", value)
 
     @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> Optional[pulumi.Input[str]]:
+        """
+        The compute model of the Exadata infrastructure.
+        """
+        return pulumi.get(self, "compute_model")
+
+    @compute_model.setter
+    def compute_model(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "compute_model", value)
+
+    @property
     @pulumi.getter(name="cpuCount")
     def cpu_count(self) -> Optional[pulumi.Input[int]]:
         """
@@ -496,6 +552,18 @@ class _CloudExadataInfrastructureState:
     @data_storage_size_in_tbs.setter
     def data_storage_size_in_tbs(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "data_storage_size_in_tbs", value)
+
+    @property
+    @pulumi.getter(name="databaseServerType")
+    def database_server_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The database server type of the Exadata infrastructure.
+        """
+        return pulumi.get(self, "database_server_type")
+
+    @database_server_type.setter
+    def database_server_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "database_server_type", value)
 
     @property
     @pulumi.getter(name="dbNodeStorageSizeInGbs")
@@ -750,6 +818,18 @@ class _CloudExadataInfrastructureState:
         pulumi.set(self, "storage_count", value)
 
     @property
+    @pulumi.getter(name="storageServerType")
+    def storage_server_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The storage server type of the Exadata infrastructure.
+        """
+        return pulumi.get(self, "storage_server_type")
+
+    @storage_server_type.setter
+    def storage_server_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "storage_server_type", value)
+
+    @property
     @pulumi.getter(name="storageServerVersion")
     def storage_server_version(self) -> Optional[pulumi.Input[str]]:
         """
@@ -824,12 +904,14 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  compute_count: Optional[pulumi.Input[int]] = None,
                  customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureCustomerContactArgs', 'CloudExadataInfrastructureCustomerContactArgsDict']]]]] = None,
+                 database_server_type: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  maintenance_window: Optional[pulumi.Input[Union['CloudExadataInfrastructureMaintenanceWindowArgs', 'CloudExadataInfrastructureMaintenanceWindowArgsDict']]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  storage_count: Optional[pulumi.Input[int]] = None,
+                 storage_server_type: Optional[pulumi.Input[str]] = None,
                  subscription_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -853,6 +935,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             customer_contacts=[{
                 "email": cloud_exadata_infrastructure_customer_contacts_email,
             }],
+            database_server_type=cloud_exadata_infrastructure_database_server_type,
             defined_tags=cloud_exadata_infrastructure_defined_tags,
             freeform_tags={
                 "Department": "Finance",
@@ -874,6 +957,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
                 "weeks_of_months": cloud_exadata_infrastructure_maintenance_window_weeks_of_month,
             },
             storage_count=cloud_exadata_infrastructure_storage_count,
+            storage_server_type=cloud_exadata_infrastructure_storage_server_type,
             subscription_id=tenant_subscription_id)
         ```
 
@@ -892,12 +976,14 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[int] compute_count: (Updatable) The number of compute servers for the cloud Exadata infrastructure.
         :param pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureCustomerContactArgs', 'CloudExadataInfrastructureCustomerContactArgsDict']]]] customer_contacts: (Updatable) Customer contacts.
+        :param pulumi.Input[str] database_server_type: The database server type of the Exadata infrastructure.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Union['CloudExadataInfrastructureMaintenanceWindowArgs', 'CloudExadataInfrastructureMaintenanceWindowArgsDict']] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[str] shape: The shape of the cloud Exadata infrastructure resource.
         :param pulumi.Input[int] storage_count: (Updatable) The number of storage servers for the cloud Exadata infrastructure.
+        :param pulumi.Input[str] storage_server_type: The storage server type of the Exadata infrastructure.
         :param pulumi.Input[str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
                
                
@@ -931,6 +1017,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             customer_contacts=[{
                 "email": cloud_exadata_infrastructure_customer_contacts_email,
             }],
+            database_server_type=cloud_exadata_infrastructure_database_server_type,
             defined_tags=cloud_exadata_infrastructure_defined_tags,
             freeform_tags={
                 "Department": "Finance",
@@ -952,6 +1039,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
                 "weeks_of_months": cloud_exadata_infrastructure_maintenance_window_weeks_of_month,
             },
             storage_count=cloud_exadata_infrastructure_storage_count,
+            storage_server_type=cloud_exadata_infrastructure_storage_server_type,
             subscription_id=tenant_subscription_id)
         ```
 
@@ -983,12 +1071,14 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  compute_count: Optional[pulumi.Input[int]] = None,
                  customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureCustomerContactArgs', 'CloudExadataInfrastructureCustomerContactArgsDict']]]]] = None,
+                 database_server_type: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  maintenance_window: Optional[pulumi.Input[Union['CloudExadataInfrastructureMaintenanceWindowArgs', 'CloudExadataInfrastructureMaintenanceWindowArgsDict']]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  storage_count: Optional[pulumi.Input[int]] = None,
+                 storage_server_type: Optional[pulumi.Input[str]] = None,
                  subscription_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -1008,6 +1098,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["compute_count"] = compute_count
             __props__.__dict__["customer_contacts"] = customer_contacts
+            __props__.__dict__["database_server_type"] = database_server_type
             __props__.__dict__["defined_tags"] = defined_tags
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
@@ -1018,10 +1109,12 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
                 raise TypeError("Missing required property 'shape'")
             __props__.__dict__["shape"] = shape
             __props__.__dict__["storage_count"] = storage_count
+            __props__.__dict__["storage_server_type"] = storage_server_type
             __props__.__dict__["subscription_id"] = subscription_id
             __props__.__dict__["activated_storage_count"] = None
             __props__.__dict__["additional_storage_count"] = None
             __props__.__dict__["available_storage_size_in_gbs"] = None
+            __props__.__dict__["compute_model"] = None
             __props__.__dict__["cpu_count"] = None
             __props__.__dict__["data_storage_size_in_tbs"] = None
             __props__.__dict__["db_node_storage_size_in_gbs"] = None
@@ -1060,9 +1153,11 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             compute_count: Optional[pulumi.Input[int]] = None,
+            compute_model: Optional[pulumi.Input[str]] = None,
             cpu_count: Optional[pulumi.Input[int]] = None,
             customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureCustomerContactArgs', 'CloudExadataInfrastructureCustomerContactArgsDict']]]]] = None,
             data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
+            database_server_type: Optional[pulumi.Input[str]] = None,
             db_node_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
             db_server_version: Optional[pulumi.Input[str]] = None,
             defined_file_system_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureDefinedFileSystemConfigurationArgs', 'CloudExadataInfrastructureDefinedFileSystemConfigurationArgsDict']]]]] = None,
@@ -1084,6 +1179,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             shape: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             storage_count: Optional[pulumi.Input[int]] = None,
+            storage_server_type: Optional[pulumi.Input[str]] = None,
             storage_server_version: Optional[pulumi.Input[str]] = None,
             subscription_id: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -1103,9 +1199,11 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[int] compute_count: (Updatable) The number of compute servers for the cloud Exadata infrastructure.
+        :param pulumi.Input[str] compute_model: The compute model of the Exadata infrastructure.
         :param pulumi.Input[int] cpu_count: The total number of CPU cores allocated.
         :param pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureCustomerContactArgs', 'CloudExadataInfrastructureCustomerContactArgsDict']]]] customer_contacts: (Updatable) Customer contacts.
         :param pulumi.Input[float] data_storage_size_in_tbs: Size, in terabytes, of the DATA disk group.
+        :param pulumi.Input[str] database_server_type: The database server type of the Exadata infrastructure.
         :param pulumi.Input[int] db_node_storage_size_in_gbs: The local node storage allocated in GBs.
         :param pulumi.Input[str] db_server_version: The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
         :param pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureDefinedFileSystemConfigurationArgs', 'CloudExadataInfrastructureDefinedFileSystemConfigurationArgsDict']]]] defined_file_system_configurations: Details of the file system configuration of the Exadata infrastructure.
@@ -1127,6 +1225,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[str] shape: The shape of the cloud Exadata infrastructure resource.
         :param pulumi.Input[str] state: The current lifecycle state of the cloud Exadata infrastructure resource.
         :param pulumi.Input[int] storage_count: (Updatable) The number of storage servers for the cloud Exadata infrastructure.
+        :param pulumi.Input[str] storage_server_type: The storage server type of the Exadata infrastructure.
         :param pulumi.Input[str] storage_server_version: The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
         :param pulumi.Input[str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
                
@@ -1148,9 +1247,11 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         __props__.__dict__["cluster_placement_group_id"] = cluster_placement_group_id
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["compute_count"] = compute_count
+        __props__.__dict__["compute_model"] = compute_model
         __props__.__dict__["cpu_count"] = cpu_count
         __props__.__dict__["customer_contacts"] = customer_contacts
         __props__.__dict__["data_storage_size_in_tbs"] = data_storage_size_in_tbs
+        __props__.__dict__["database_server_type"] = database_server_type
         __props__.__dict__["db_node_storage_size_in_gbs"] = db_node_storage_size_in_gbs
         __props__.__dict__["db_server_version"] = db_server_version
         __props__.__dict__["defined_file_system_configurations"] = defined_file_system_configurations
@@ -1172,6 +1273,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         __props__.__dict__["shape"] = shape
         __props__.__dict__["state"] = state
         __props__.__dict__["storage_count"] = storage_count
+        __props__.__dict__["storage_server_type"] = storage_server_type
         __props__.__dict__["storage_server_version"] = storage_server_version
         __props__.__dict__["subscription_id"] = subscription_id
         __props__.__dict__["system_tags"] = system_tags
@@ -1236,6 +1338,14 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         return pulumi.get(self, "compute_count")
 
     @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> pulumi.Output[str]:
+        """
+        The compute model of the Exadata infrastructure.
+        """
+        return pulumi.get(self, "compute_model")
+
+    @property
     @pulumi.getter(name="cpuCount")
     def cpu_count(self) -> pulumi.Output[int]:
         """
@@ -1258,6 +1368,14 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         Size, in terabytes, of the DATA disk group.
         """
         return pulumi.get(self, "data_storage_size_in_tbs")
+
+    @property
+    @pulumi.getter(name="databaseServerType")
+    def database_server_type(self) -> pulumi.Output[str]:
+        """
+        The database server type of the Exadata infrastructure.
+        """
+        return pulumi.get(self, "database_server_type")
 
     @property
     @pulumi.getter(name="dbNodeStorageSizeInGbs")
@@ -1426,6 +1544,14 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         (Updatable) The number of storage servers for the cloud Exadata infrastructure.
         """
         return pulumi.get(self, "storage_count")
+
+    @property
+    @pulumi.getter(name="storageServerType")
+    def storage_server_type(self) -> pulumi.Output[str]:
+        """
+        The storage server type of the Exadata infrastructure.
+        """
+        return pulumi.get(self, "storage_server_type")
 
     @property
     @pulumi.getter(name="storageServerVersion")

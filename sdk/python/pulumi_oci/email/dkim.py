@@ -23,7 +23,8 @@ class DkimArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
-                 name: Optional[pulumi.Input[str]] = None):
+                 name: Optional[pulumi.Input[str]] = None,
+                 private_key: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Dkim resource.
         :param pulumi.Input[str] email_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this DKIM.
@@ -35,7 +36,7 @@ class DkimArgs:
                Avoid entering confidential information.
                
                Example: `mydomain-phx-20210228`
-               
+        :param pulumi.Input[str] private_key: The DKIM RSA Private Key in Privacy-Enhanced Mail (PEM) format. It is a text-based representation of the private key used for signing email messages.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -49,6 +50,8 @@ class DkimArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if private_key is not None:
+            pulumi.set(__self__, "private_key", private_key)
 
     @property
     @pulumi.getter(name="emailDomainId")
@@ -107,16 +110,27 @@ class DkimArgs:
         Avoid entering confidential information.
 
         Example: `mydomain-phx-20210228`
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "name")
 
     @name.setter
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="privateKey")
+    def private_key(self) -> Optional[pulumi.Input[str]]:
+        """
+        The DKIM RSA Private Key in Privacy-Enhanced Mail (PEM) format. It is a text-based representation of the private key used for signing email messages.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "private_key")
+
+    @private_key.setter
+    def private_key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "private_key", value)
 
 
 @pulumi.input_type
@@ -129,8 +143,11 @@ class _DkimState:
                  dns_subdomain_name: Optional[pulumi.Input[str]] = None,
                  email_domain_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 is_imported: Optional[pulumi.Input[bool]] = None,
+                 key_length: Optional[pulumi.Input[int]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
+                 private_key: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
@@ -142,16 +159,18 @@ class _DkimState:
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this DKIM.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) A string that describes the details about the DKIM. It does not have to be unique, and you can change it. Avoid entering confidential information.
-        :param pulumi.Input[str] dns_subdomain_name: The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
+        :param pulumi.Input[str] dns_subdomain_name: The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
         :param pulumi.Input[str] email_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this DKIM.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[bool] is_imported: Indicates whether the DKIM was imported.
+        :param pulumi.Input[int] key_length: Length of the RSA key used in the DKIM.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource.
         :param pulumi.Input[str] name: The DKIM selector. This selector is required to be globally unique for this email domain. If you do not provide the selector, we will generate one for you. If you do provide the selector, we suggest adding a short region indicator to differentiate from your signing of emails in other regions you might be subscribed to. Selectors limited to ASCII characters can use alphanumeric, dash ("-"), and dot (".") characters. Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
                
                Avoid entering confidential information.
                
                Example: `mydomain-phx-20210228`
-               
+        :param pulumi.Input[str] private_key: The DKIM RSA Private Key in Privacy-Enhanced Mail (PEM) format. It is a text-based representation of the private key used for signing email messages.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -175,10 +194,16 @@ class _DkimState:
             pulumi.set(__self__, "email_domain_id", email_domain_id)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_imported is not None:
+            pulumi.set(__self__, "is_imported", is_imported)
+        if key_length is not None:
+            pulumi.set(__self__, "key_length", key_length)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if private_key is not None:
+            pulumi.set(__self__, "private_key", private_key)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if system_tags is not None:
@@ -242,7 +267,7 @@ class _DkimState:
     @pulumi.getter(name="dnsSubdomainName")
     def dns_subdomain_name(self) -> Optional[pulumi.Input[str]]:
         """
-        The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
+        The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
         """
         return pulumi.get(self, "dns_subdomain_name")
 
@@ -275,6 +300,30 @@ class _DkimState:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="isImported")
+    def is_imported(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether the DKIM was imported.
+        """
+        return pulumi.get(self, "is_imported")
+
+    @is_imported.setter
+    def is_imported(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_imported", value)
+
+    @property
+    @pulumi.getter(name="keyLength")
+    def key_length(self) -> Optional[pulumi.Input[int]]:
+        """
+        Length of the RSA key used in the DKIM.
+        """
+        return pulumi.get(self, "key_length")
+
+    @key_length.setter
+    def key_length(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "key_length", value)
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
         """
@@ -295,16 +344,27 @@ class _DkimState:
         Avoid entering confidential information.
 
         Example: `mydomain-phx-20210228`
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "name")
 
     @name.setter
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="privateKey")
+    def private_key(self) -> Optional[pulumi.Input[str]]:
+        """
+        The DKIM RSA Private Key in Privacy-Enhanced Mail (PEM) format. It is a text-based representation of the private key used for signing email messages.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "private_key")
+
+    @private_key.setter
+    def private_key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "private_key", value)
 
     @property
     @pulumi.getter
@@ -377,6 +437,7 @@ class Dkim(pulumi.CustomResource):
                  email_domain_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
+                 private_key: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         This resource provides the Dkim resource in Oracle Cloud Infrastructure Email service.
@@ -402,7 +463,8 @@ class Dkim(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            name=dkim_name)
+            name=dkim_name,
+            private_key=dkim_private_key)
         ```
 
         ## Import
@@ -424,7 +486,7 @@ class Dkim(pulumi.CustomResource):
                Avoid entering confidential information.
                
                Example: `mydomain-phx-20210228`
-               
+        :param pulumi.Input[str] private_key: The DKIM RSA Private Key in Privacy-Enhanced Mail (PEM) format. It is a text-based representation of the private key used for signing email messages.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -459,7 +521,8 @@ class Dkim(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            name=dkim_name)
+            name=dkim_name,
+            private_key=dkim_private_key)
         ```
 
         ## Import
@@ -490,6 +553,7 @@ class Dkim(pulumi.CustomResource):
                  email_domain_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
+                 private_key: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -506,15 +570,20 @@ class Dkim(pulumi.CustomResource):
             __props__.__dict__["email_domain_id"] = email_domain_id
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["name"] = name
+            __props__.__dict__["private_key"] = None if private_key is None else pulumi.Output.secret(private_key)
             __props__.__dict__["cname_record_value"] = None
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["dns_subdomain_name"] = None
+            __props__.__dict__["is_imported"] = None
+            __props__.__dict__["key_length"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
             __props__.__dict__["txt_record_value"] = None
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["privateKey"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(Dkim, __self__).__init__(
             'oci:Email/dkim:Dkim',
             resource_name,
@@ -532,8 +601,11 @@ class Dkim(pulumi.CustomResource):
             dns_subdomain_name: Optional[pulumi.Input[str]] = None,
             email_domain_id: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+            is_imported: Optional[pulumi.Input[bool]] = None,
+            key_length: Optional[pulumi.Input[int]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
+            private_key: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -550,16 +622,18 @@ class Dkim(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this DKIM.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) A string that describes the details about the DKIM. It does not have to be unique, and you can change it. Avoid entering confidential information.
-        :param pulumi.Input[str] dns_subdomain_name: The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
+        :param pulumi.Input[str] dns_subdomain_name: The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
         :param pulumi.Input[str] email_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this DKIM.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[bool] is_imported: Indicates whether the DKIM was imported.
+        :param pulumi.Input[int] key_length: Length of the RSA key used in the DKIM.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource.
         :param pulumi.Input[str] name: The DKIM selector. This selector is required to be globally unique for this email domain. If you do not provide the selector, we will generate one for you. If you do provide the selector, we suggest adding a short region indicator to differentiate from your signing of emails in other regions you might be subscribed to. Selectors limited to ASCII characters can use alphanumeric, dash ("-"), and dot (".") characters. Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
                
                Avoid entering confidential information.
                
                Example: `mydomain-phx-20210228`
-               
+        :param pulumi.Input[str] private_key: The DKIM RSA Private Key in Privacy-Enhanced Mail (PEM) format. It is a text-based representation of the private key used for signing email messages.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -580,8 +654,11 @@ class Dkim(pulumi.CustomResource):
         __props__.__dict__["dns_subdomain_name"] = dns_subdomain_name
         __props__.__dict__["email_domain_id"] = email_domain_id
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["is_imported"] = is_imported
+        __props__.__dict__["key_length"] = key_length
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["name"] = name
+        __props__.__dict__["private_key"] = private_key
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
@@ -625,7 +702,7 @@ class Dkim(pulumi.CustomResource):
     @pulumi.getter(name="dnsSubdomainName")
     def dns_subdomain_name(self) -> pulumi.Output[str]:
         """
-        The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
+        The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
         """
         return pulumi.get(self, "dns_subdomain_name")
 
@@ -646,6 +723,22 @@ class Dkim(pulumi.CustomResource):
         return pulumi.get(self, "freeform_tags")
 
     @property
+    @pulumi.getter(name="isImported")
+    def is_imported(self) -> pulumi.Output[bool]:
+        """
+        Indicates whether the DKIM was imported.
+        """
+        return pulumi.get(self, "is_imported")
+
+    @property
+    @pulumi.getter(name="keyLength")
+    def key_length(self) -> pulumi.Output[int]:
+        """
+        Length of the RSA key used in the DKIM.
+        """
+        return pulumi.get(self, "key_length")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> pulumi.Output[str]:
         """
@@ -662,12 +755,19 @@ class Dkim(pulumi.CustomResource):
         Avoid entering confidential information.
 
         Example: `mydomain-phx-20210228`
+        """
+        return pulumi.get(self, "name")
 
+    @property
+    @pulumi.getter(name="privateKey")
+    def private_key(self) -> pulumi.Output[str]:
+        """
+        The DKIM RSA Private Key in Privacy-Enhanced Mail (PEM) format. It is a text-based representation of the private key used for signing email messages.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        return pulumi.get(self, "name")
+        return pulumi.get(self, "private_key")
 
     @property
     @pulumi.getter

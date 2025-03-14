@@ -79,14 +79,15 @@ const (
 	databaseMigrationMod            = "DatabaseMigration"      // Database Migration
 	databaseMod                     = "Database"               // Database
 	databaseToolsMod                = "DatabaseTools"          // Database Tools
-	demandSignalMod                 = "DemandSignal"           // Demand Signal
-	devopsMod                       = "DevOps"                 // DevOps
-	disasterRecoveryMod             = "DisasterRecovery"       // Disaster Recovery
-	dnsMod                          = "Dns"                    // DNS
-	emWarehouseMod                  = "EmWarehouse"            // EM Warehouse
-	emailMod                        = "Email"                  // Email
-	eventsMod                       = "Events"                 // Events
-	fileStorageMod                  = "FileStorage"            // File Storage
+	dblmMod                         = "Dblm"
+	demandSignalMod                 = "DemandSignal"     // Demand Signal
+	devopsMod                       = "DevOps"           // DevOps
+	disasterRecoveryMod             = "DisasterRecovery" // Disaster Recovery
+	dnsMod                          = "Dns"              // DNS
+	emWarehouseMod                  = "EmWarehouse"      // EM Warehouse
+	emailMod                        = "Email"            // Email
+	eventsMod                       = "Events"           // Events
+	fileStorageMod                  = "FileStorage"      // File Storage
 	fleetAppsManagementMod          = "FleetAppsManagement"
 	fleetSoftwareUpdateMod          = "FleetSoftwareUpdate"          // Fleet Software Update
 	functionsMod                    = "Functions"                    // Functions
@@ -202,6 +203,7 @@ var mappedMods = map[string]string{
 	"dataflow":                       dataFlowMod,
 	"dataintegration":                dataIntegrationMod,
 	"datascience":                    dataScienceMod,
+	"dblm":                           dblmMod,
 	"delegate_access_control":        "DelegateAccessControl",
 	"demand_signal":                  demandSignalMod,
 	"desktops":                       "Desktops",

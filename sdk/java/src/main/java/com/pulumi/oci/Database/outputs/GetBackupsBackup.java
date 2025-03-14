@@ -6,7 +6,9 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetBackupsBackupEncryptionKeyLocationDetail;
+import java.lang.Boolean;
 import java.lang.Double;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -19,12 +21,17 @@ public final class GetBackupsBackup {
      */
     private String availabilityDomain;
     /**
+     * @return A filter to return only resources that match the given backup destination type.
+     * 
+     */
+    private String backupDestinationType;
+    /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     private String compartmentId;
     /**
-     * @return The Oracle Database edition of the DB system from which the database backup was taken.
+     * @return The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      * 
      */
     private String databaseEdition;
@@ -54,6 +61,11 @@ public final class GetBackupsBackup {
      */
     private String id;
     /**
+     * @return True if Oracle Managed Keys is required for restore of the backup.
+     * 
+     */
+    private Boolean isUsingOracleManagedKeys;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      * 
      */
@@ -79,12 +91,27 @@ public final class GetBackupsBackup {
      */
     private String lifecycleDetails;
     /**
+     * @return The retention period of the long term backup in days.
+     * 
+     */
+    private Integer retentionPeriodInDays;
+    /**
+     * @return The retention period of the long term backup in years.
+     * 
+     */
+    private Integer retentionPeriodInYears;
+    /**
+     * @return List of OCIDs of the key containers used as the secondary encryption key in database transparent data encryption (TDE) operations.
+     * 
+     */
+    private List<String> secondaryKmsKeyIds;
+    /**
      * @return Shape of the backup&#39;s source database.
      * 
      */
     private String shape;
     /**
-     * @return The current state of the backup.
+     * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
     private String state;
@@ -94,12 +121,17 @@ public final class GetBackupsBackup {
      */
     private String timeEnded;
     /**
+     * @return Expiration time of the long term database backup.
+     * 
+     */
+    private String timeExpiryScheduled;
+    /**
      * @return The date and time the backup started.
      * 
      */
     private String timeStarted;
     /**
-     * @return The type of backup.
+     * @return A filter to return only backups that matches with the given type of Backup.
      * 
      */
     private String type;
@@ -109,7 +141,7 @@ public final class GetBackupsBackup {
      */
     private String vaultId;
     /**
-     * @return Version of the backup&#39;s source database
+     * @return A filter to return only resources that match the given database version.
      * 
      */
     private String version;
@@ -123,6 +155,13 @@ public final class GetBackupsBackup {
         return this.availabilityDomain;
     }
     /**
+     * @return A filter to return only resources that match the given backup destination type.
+     * 
+     */
+    public String backupDestinationType() {
+        return this.backupDestinationType;
+    }
+    /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -130,7 +169,7 @@ public final class GetBackupsBackup {
         return this.compartmentId;
     }
     /**
-     * @return The Oracle Database edition of the DB system from which the database backup was taken.
+     * @return The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      * 
      */
     public String databaseEdition() {
@@ -172,6 +211,13 @@ public final class GetBackupsBackup {
         return this.id;
     }
     /**
+     * @return True if Oracle Managed Keys is required for restore of the backup.
+     * 
+     */
+    public Boolean isUsingOracleManagedKeys() {
+        return this.isUsingOracleManagedKeys;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      * 
      */
@@ -207,6 +253,27 @@ public final class GetBackupsBackup {
         return this.lifecycleDetails;
     }
     /**
+     * @return The retention period of the long term backup in days.
+     * 
+     */
+    public Integer retentionPeriodInDays() {
+        return this.retentionPeriodInDays;
+    }
+    /**
+     * @return The retention period of the long term backup in years.
+     * 
+     */
+    public Integer retentionPeriodInYears() {
+        return this.retentionPeriodInYears;
+    }
+    /**
+     * @return List of OCIDs of the key containers used as the secondary encryption key in database transparent data encryption (TDE) operations.
+     * 
+     */
+    public List<String> secondaryKmsKeyIds() {
+        return this.secondaryKmsKeyIds;
+    }
+    /**
      * @return Shape of the backup&#39;s source database.
      * 
      */
@@ -214,7 +281,7 @@ public final class GetBackupsBackup {
         return this.shape;
     }
     /**
-     * @return The current state of the backup.
+     * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
     public String state() {
@@ -228,6 +295,13 @@ public final class GetBackupsBackup {
         return this.timeEnded;
     }
     /**
+     * @return Expiration time of the long term database backup.
+     * 
+     */
+    public String timeExpiryScheduled() {
+        return this.timeExpiryScheduled;
+    }
+    /**
      * @return The date and time the backup started.
      * 
      */
@@ -235,7 +309,7 @@ public final class GetBackupsBackup {
         return this.timeStarted;
     }
     /**
-     * @return The type of backup.
+     * @return A filter to return only backups that matches with the given type of Backup.
      * 
      */
     public String type() {
@@ -249,7 +323,7 @@ public final class GetBackupsBackup {
         return this.vaultId;
     }
     /**
-     * @return Version of the backup&#39;s source database
+     * @return A filter to return only resources that match the given database version.
      * 
      */
     public String version() {
@@ -266,6 +340,7 @@ public final class GetBackupsBackup {
     @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
+        private String backupDestinationType;
         private String compartmentId;
         private String databaseEdition;
         private String databaseId;
@@ -273,14 +348,19 @@ public final class GetBackupsBackup {
         private String displayName;
         private List<GetBackupsBackupEncryptionKeyLocationDetail> encryptionKeyLocationDetails;
         private String id;
+        private Boolean isUsingOracleManagedKeys;
         private String keyStoreId;
         private String keyStoreWalletName;
         private String kmsKeyId;
         private String kmsKeyVersionId;
         private String lifecycleDetails;
+        private Integer retentionPeriodInDays;
+        private Integer retentionPeriodInYears;
+        private List<String> secondaryKmsKeyIds;
         private String shape;
         private String state;
         private String timeEnded;
+        private String timeExpiryScheduled;
         private String timeStarted;
         private String type;
         private String vaultId;
@@ -289,6 +369,7 @@ public final class GetBackupsBackup {
         public Builder(GetBackupsBackup defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
+    	      this.backupDestinationType = defaults.backupDestinationType;
     	      this.compartmentId = defaults.compartmentId;
     	      this.databaseEdition = defaults.databaseEdition;
     	      this.databaseId = defaults.databaseId;
@@ -296,14 +377,19 @@ public final class GetBackupsBackup {
     	      this.displayName = defaults.displayName;
     	      this.encryptionKeyLocationDetails = defaults.encryptionKeyLocationDetails;
     	      this.id = defaults.id;
+    	      this.isUsingOracleManagedKeys = defaults.isUsingOracleManagedKeys;
     	      this.keyStoreId = defaults.keyStoreId;
     	      this.keyStoreWalletName = defaults.keyStoreWalletName;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.retentionPeriodInDays = defaults.retentionPeriodInDays;
+    	      this.retentionPeriodInYears = defaults.retentionPeriodInYears;
+    	      this.secondaryKmsKeyIds = defaults.secondaryKmsKeyIds;
     	      this.shape = defaults.shape;
     	      this.state = defaults.state;
     	      this.timeEnded = defaults.timeEnded;
+    	      this.timeExpiryScheduled = defaults.timeExpiryScheduled;
     	      this.timeStarted = defaults.timeStarted;
     	      this.type = defaults.type;
     	      this.vaultId = defaults.vaultId;
@@ -316,6 +402,14 @@ public final class GetBackupsBackup {
               throw new MissingRequiredPropertyException("GetBackupsBackup", "availabilityDomain");
             }
             this.availabilityDomain = availabilityDomain;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder backupDestinationType(String backupDestinationType) {
+            if (backupDestinationType == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackup", "backupDestinationType");
+            }
+            this.backupDestinationType = backupDestinationType;
             return this;
         }
         @CustomType.Setter
@@ -378,6 +472,14 @@ public final class GetBackupsBackup {
             return this;
         }
         @CustomType.Setter
+        public Builder isUsingOracleManagedKeys(Boolean isUsingOracleManagedKeys) {
+            if (isUsingOracleManagedKeys == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackup", "isUsingOracleManagedKeys");
+            }
+            this.isUsingOracleManagedKeys = isUsingOracleManagedKeys;
+            return this;
+        }
+        @CustomType.Setter
         public Builder keyStoreId(String keyStoreId) {
             if (keyStoreId == null) {
               throw new MissingRequiredPropertyException("GetBackupsBackup", "keyStoreId");
@@ -418,6 +520,33 @@ public final class GetBackupsBackup {
             return this;
         }
         @CustomType.Setter
+        public Builder retentionPeriodInDays(Integer retentionPeriodInDays) {
+            if (retentionPeriodInDays == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackup", "retentionPeriodInDays");
+            }
+            this.retentionPeriodInDays = retentionPeriodInDays;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder retentionPeriodInYears(Integer retentionPeriodInYears) {
+            if (retentionPeriodInYears == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackup", "retentionPeriodInYears");
+            }
+            this.retentionPeriodInYears = retentionPeriodInYears;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder secondaryKmsKeyIds(List<String> secondaryKmsKeyIds) {
+            if (secondaryKmsKeyIds == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackup", "secondaryKmsKeyIds");
+            }
+            this.secondaryKmsKeyIds = secondaryKmsKeyIds;
+            return this;
+        }
+        public Builder secondaryKmsKeyIds(String... secondaryKmsKeyIds) {
+            return secondaryKmsKeyIds(List.of(secondaryKmsKeyIds));
+        }
+        @CustomType.Setter
         public Builder shape(String shape) {
             if (shape == null) {
               throw new MissingRequiredPropertyException("GetBackupsBackup", "shape");
@@ -439,6 +568,14 @@ public final class GetBackupsBackup {
               throw new MissingRequiredPropertyException("GetBackupsBackup", "timeEnded");
             }
             this.timeEnded = timeEnded;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeExpiryScheduled(String timeExpiryScheduled) {
+            if (timeExpiryScheduled == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackup", "timeExpiryScheduled");
+            }
+            this.timeExpiryScheduled = timeExpiryScheduled;
             return this;
         }
         @CustomType.Setter
@@ -476,6 +613,7 @@ public final class GetBackupsBackup {
         public GetBackupsBackup build() {
             final var _resultValue = new GetBackupsBackup();
             _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.backupDestinationType = backupDestinationType;
             _resultValue.compartmentId = compartmentId;
             _resultValue.databaseEdition = databaseEdition;
             _resultValue.databaseId = databaseId;
@@ -483,14 +621,19 @@ public final class GetBackupsBackup {
             _resultValue.displayName = displayName;
             _resultValue.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
             _resultValue.id = id;
+            _resultValue.isUsingOracleManagedKeys = isUsingOracleManagedKeys;
             _resultValue.keyStoreId = keyStoreId;
             _resultValue.keyStoreWalletName = keyStoreWalletName;
             _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.kmsKeyVersionId = kmsKeyVersionId;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.retentionPeriodInDays = retentionPeriodInDays;
+            _resultValue.retentionPeriodInYears = retentionPeriodInYears;
+            _resultValue.secondaryKmsKeyIds = secondaryKmsKeyIds;
             _resultValue.shape = shape;
             _resultValue.state = state;
             _resultValue.timeEnded = timeEnded;
+            _resultValue.timeExpiryScheduled = timeExpiryScheduled;
             _resultValue.timeStarted = timeStarted;
             _resultValue.type = type;
             _resultValue.vaultId = vaultId;

@@ -35,6 +35,7 @@ class VmClusterArgs:
                  db_node_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  db_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 exascale_db_storage_vault_id: Optional[pulumi.Input[str]] = None,
                  file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterFileSystemConfigurationDetailArgs']]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_local_backup_enabled: Optional[pulumi.Input[bool]] = None,
@@ -43,7 +44,8 @@ class VmClusterArgs:
                  memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  ocpu_count: Optional[pulumi.Input[float]] = None,
                  system_version: Optional[pulumi.Input[str]] = None,
-                 time_zone: Optional[pulumi.Input[str]] = None):
+                 time_zone: Optional[pulumi.Input[str]] = None,
+                 vm_cluster_type: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a VmCluster resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -52,10 +54,6 @@ class VmClusterArgs:
         :param pulumi.Input[str] gi_version: The Oracle Grid Infrastructure software version for the VM cluster.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ssh_public_keys: (Updatable) The public key portion of one or more key pairs used for SSH access to the VM cluster.
         :param pulumi.Input[str] vm_cluster_network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input['VmClusterCloudAutomationUpdateDetailsArgs'] cloud_automation_update_details: (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
         :param pulumi.Input['VmClusterDataCollectionOptionsArgs'] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[float] data_storage_size_in_gb: (Updatable) The data disk group size to be allocated in GBs.
@@ -63,6 +61,7 @@ class VmClusterArgs:
         :param pulumi.Input[int] db_node_storage_size_in_gbs: (Updatable) The local node storage to be allocated in GBs.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] db_servers: The list of Db server.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[str] exascale_db_storage_vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
         :param pulumi.Input[Sequence[pulumi.Input['VmClusterFileSystemConfigurationDetailArgs']]] file_system_configuration_details: (Updatable) Details of the file system configuration of the VM cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_local_backup_enabled: If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
@@ -71,6 +70,11 @@ class VmClusterArgs:
         :param pulumi.Input[int] memory_size_in_gbs: (Updatable) The memory to be allocated in GBs.
         :param pulumi.Input[str] system_version: Operating system version of the image.
         :param pulumi.Input[str] time_zone: The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        :param pulumi.Input[str] vm_cluster_type: The vmcluster type for the VM cluster/Cloud VM cluster.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
@@ -93,6 +97,8 @@ class VmClusterArgs:
             pulumi.set(__self__, "db_servers", db_servers)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if exascale_db_storage_vault_id is not None:
+            pulumi.set(__self__, "exascale_db_storage_vault_id", exascale_db_storage_vault_id)
         if file_system_configuration_details is not None:
             pulumi.set(__self__, "file_system_configuration_details", file_system_configuration_details)
         if freeform_tags is not None:
@@ -111,6 +117,8 @@ class VmClusterArgs:
             pulumi.set(__self__, "system_version", system_version)
         if time_zone is not None:
             pulumi.set(__self__, "time_zone", time_zone)
+        if vm_cluster_type is not None:
+            pulumi.set(__self__, "vm_cluster_type", vm_cluster_type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -186,10 +194,6 @@ class VmClusterArgs:
     def vm_cluster_network_id(self) -> pulumi.Input[str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vm_cluster_network_id")
 
@@ -280,6 +284,18 @@ class VmClusterArgs:
     @defined_tags.setter
     def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
+
+    @property
+    @pulumi.getter(name="exascaleDbStorageVaultId")
+    def exascale_db_storage_vault_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+        """
+        return pulumi.get(self, "exascale_db_storage_vault_id")
+
+    @exascale_db_storage_vault_id.setter
+    def exascale_db_storage_vault_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "exascale_db_storage_vault_id", value)
 
     @property
     @pulumi.getter(name="fileSystemConfigurationDetails")
@@ -386,6 +402,22 @@ class VmClusterArgs:
     def time_zone(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_zone", value)
 
+    @property
+    @pulumi.getter(name="vmClusterType")
+    def vm_cluster_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The vmcluster type for the VM cluster/Cloud VM cluster.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "vm_cluster_type")
+
+    @vm_cluster_type.setter
+    def vm_cluster_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "vm_cluster_type", value)
+
 
 @pulumi.input_type
 class _VmClusterState:
@@ -393,6 +425,7 @@ class _VmClusterState:
                  availability_domain: Optional[pulumi.Input[str]] = None,
                  cloud_automation_update_details: Optional[pulumi.Input['VmClusterCloudAutomationUpdateDetailsArgs']] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 compute_model: Optional[pulumi.Input[str]] = None,
                  cpu_core_count: Optional[pulumi.Input[int]] = None,
                  cpus_enabled: Optional[pulumi.Input[int]] = None,
                  data_collection_options: Optional[pulumi.Input['VmClusterDataCollectionOptionsArgs']] = None,
@@ -403,6 +436,7 @@ class _VmClusterState:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
+                 exascale_db_storage_vault_id: Optional[pulumi.Input[str]] = None,
                  file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterFileSystemConfigurationDetailArgs']]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  gi_version: Optional[pulumi.Input[str]] = None,
@@ -417,15 +451,18 @@ class _VmClusterState:
                  shape: Optional[pulumi.Input[str]] = None,
                  ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
+                 storage_management_type: Optional[pulumi.Input[str]] = None,
                  system_version: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None,
-                 vm_cluster_network_id: Optional[pulumi.Input[str]] = None):
+                 vm_cluster_network_id: Optional[pulumi.Input[str]] = None,
+                 vm_cluster_type: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering VmCluster resources.
         :param pulumi.Input[str] availability_domain: The name of the availability domain that the VM cluster is located in.
         :param pulumi.Input['VmClusterCloudAutomationUpdateDetailsArgs'] cloud_automation_update_details: (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param pulumi.Input[str] compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         :param pulumi.Input[int] cpus_enabled: The number of enabled CPU cores.
         :param pulumi.Input['VmClusterDataCollectionOptionsArgs'] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[float] data_storage_size_in_gb: (Updatable) The data disk group size to be allocated in GBs.
@@ -435,6 +472,7 @@ class _VmClusterState:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: The user-friendly name for the VM cluster. The name does not need to be unique.
         :param pulumi.Input[str] exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+        :param pulumi.Input[str] exascale_db_storage_vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
         :param pulumi.Input[Sequence[pulumi.Input['VmClusterFileSystemConfigurationDetailArgs']]] file_system_configuration_details: (Updatable) Details of the file system configuration of the VM cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] gi_version: The Oracle Grid Infrastructure software version for the VM cluster.
@@ -447,10 +485,12 @@ class _VmClusterState:
         :param pulumi.Input[str] shape: The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ssh_public_keys: (Updatable) The public key portion of one or more key pairs used for SSH access to the VM cluster.
         :param pulumi.Input[str] state: The current state of the VM cluster.
+        :param pulumi.Input[str] storage_management_type: Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
         :param pulumi.Input[str] system_version: Operating system version of the image.
         :param pulumi.Input[str] time_created: The date and time that the VM cluster was created.
         :param pulumi.Input[str] time_zone: The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param pulumi.Input[str] vm_cluster_network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+        :param pulumi.Input[str] vm_cluster_type: The vmcluster type for the VM cluster/Cloud VM cluster.
                
                
                ** IMPORTANT **
@@ -462,6 +502,8 @@ class _VmClusterState:
             pulumi.set(__self__, "cloud_automation_update_details", cloud_automation_update_details)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if compute_model is not None:
+            pulumi.set(__self__, "compute_model", compute_model)
         if cpu_core_count is not None:
             pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         if cpus_enabled is not None:
@@ -482,6 +524,8 @@ class _VmClusterState:
             pulumi.set(__self__, "display_name", display_name)
         if exadata_infrastructure_id is not None:
             pulumi.set(__self__, "exadata_infrastructure_id", exadata_infrastructure_id)
+        if exascale_db_storage_vault_id is not None:
+            pulumi.set(__self__, "exascale_db_storage_vault_id", exascale_db_storage_vault_id)
         if file_system_configuration_details is not None:
             pulumi.set(__self__, "file_system_configuration_details", file_system_configuration_details)
         if freeform_tags is not None:
@@ -510,6 +554,8 @@ class _VmClusterState:
             pulumi.set(__self__, "ssh_public_keys", ssh_public_keys)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if storage_management_type is not None:
+            pulumi.set(__self__, "storage_management_type", storage_management_type)
         if system_version is not None:
             pulumi.set(__self__, "system_version", system_version)
         if time_created is not None:
@@ -518,6 +564,8 @@ class _VmClusterState:
             pulumi.set(__self__, "time_zone", time_zone)
         if vm_cluster_network_id is not None:
             pulumi.set(__self__, "vm_cluster_network_id", vm_cluster_network_id)
+        if vm_cluster_type is not None:
+            pulumi.set(__self__, "vm_cluster_type", vm_cluster_type)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -554,6 +602,18 @@ class _VmClusterState:
     @compartment_id.setter
     def compartment_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> Optional[pulumi.Input[str]]:
+        """
+        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        """
+        return pulumi.get(self, "compute_model")
+
+    @compute_model.setter
+    def compute_model(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "compute_model", value)
 
     @property
     @pulumi.getter(name="cpuCoreCount")
@@ -671,6 +731,18 @@ class _VmClusterState:
     @exadata_infrastructure_id.setter
     def exadata_infrastructure_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "exadata_infrastructure_id", value)
+
+    @property
+    @pulumi.getter(name="exascaleDbStorageVaultId")
+    def exascale_db_storage_vault_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+        """
+        return pulumi.get(self, "exascale_db_storage_vault_id")
+
+    @exascale_db_storage_vault_id.setter
+    def exascale_db_storage_vault_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "exascale_db_storage_vault_id", value)
 
     @property
     @pulumi.getter(name="fileSystemConfigurationDetails")
@@ -835,6 +907,18 @@ class _VmClusterState:
         pulumi.set(self, "state", value)
 
     @property
+    @pulumi.getter(name="storageManagementType")
+    def storage_management_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
+        """
+        return pulumi.get(self, "storage_management_type")
+
+    @storage_management_type.setter
+    def storage_management_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "storage_management_type", value)
+
+    @property
     @pulumi.getter(name="systemVersion")
     def system_version(self) -> Optional[pulumi.Input[str]]:
         """
@@ -875,16 +959,28 @@ class _VmClusterState:
     def vm_cluster_network_id(self) -> Optional[pulumi.Input[str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vm_cluster_network_id")
 
     @vm_cluster_network_id.setter
     def vm_cluster_network_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "vm_cluster_network_id", value)
+
+    @property
+    @pulumi.getter(name="vmClusterType")
+    def vm_cluster_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The vmcluster type for the VM cluster/Cloud VM cluster.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "vm_cluster_type")
+
+    @vm_cluster_type.setter
+    def vm_cluster_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "vm_cluster_type", value)
 
 
 class VmCluster(pulumi.CustomResource):
@@ -903,6 +999,7 @@ class VmCluster(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
+                 exascale_db_storage_vault_id: Optional[pulumi.Input[str]] = None,
                  file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmClusterFileSystemConfigurationDetailArgs', 'VmClusterFileSystemConfigurationDetailArgsDict']]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  gi_version: Optional[pulumi.Input[str]] = None,
@@ -915,6 +1012,7 @@ class VmCluster(pulumi.CustomResource):
                  system_version: Optional[pulumi.Input[str]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None,
                  vm_cluster_network_id: Optional[pulumi.Input[str]] = None,
+                 vm_cluster_type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         This resource provides the Vm Cluster resource in Oracle Cloud Infrastructure Database service.
@@ -956,6 +1054,7 @@ class VmCluster(pulumi.CustomResource):
             db_node_storage_size_in_gbs=vm_cluster_db_node_storage_size_in_gbs,
             db_servers=vm_cluster_db_servers,
             defined_tags=vm_cluster_defined_tags,
+            exascale_db_storage_vault_id=test_exascale_db_storage_vault["id"],
             file_system_configuration_details=[{
                 "file_system_size_gb": vm_cluster_file_system_configuration_details_file_system_size_gb,
                 "mount_point": vm_cluster_file_system_configuration_details_mount_point,
@@ -968,7 +1067,8 @@ class VmCluster(pulumi.CustomResource):
             license_model=vm_cluster_license_model,
             memory_size_in_gbs=vm_cluster_memory_size_in_gbs,
             system_version=vm_cluster_system_version,
-            time_zone=vm_cluster_time_zone)
+            time_zone=vm_cluster_time_zone,
+            vm_cluster_type=vm_cluster_vm_cluster_type)
         ```
 
         ## Import
@@ -991,6 +1091,7 @@ class VmCluster(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: The user-friendly name for the VM cluster. The name does not need to be unique.
         :param pulumi.Input[str] exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+        :param pulumi.Input[str] exascale_db_storage_vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterFileSystemConfigurationDetailArgs', 'VmClusterFileSystemConfigurationDetailArgsDict']]]] file_system_configuration_details: (Updatable) Details of the file system configuration of the VM cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] gi_version: The Oracle Grid Infrastructure software version for the VM cluster.
@@ -1002,6 +1103,7 @@ class VmCluster(pulumi.CustomResource):
         :param pulumi.Input[str] system_version: Operating system version of the image.
         :param pulumi.Input[str] time_zone: The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param pulumi.Input[str] vm_cluster_network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+        :param pulumi.Input[str] vm_cluster_type: The vmcluster type for the VM cluster/Cloud VM cluster.
                
                
                ** IMPORTANT **
@@ -1053,6 +1155,7 @@ class VmCluster(pulumi.CustomResource):
             db_node_storage_size_in_gbs=vm_cluster_db_node_storage_size_in_gbs,
             db_servers=vm_cluster_db_servers,
             defined_tags=vm_cluster_defined_tags,
+            exascale_db_storage_vault_id=test_exascale_db_storage_vault["id"],
             file_system_configuration_details=[{
                 "file_system_size_gb": vm_cluster_file_system_configuration_details_file_system_size_gb,
                 "mount_point": vm_cluster_file_system_configuration_details_mount_point,
@@ -1065,7 +1168,8 @@ class VmCluster(pulumi.CustomResource):
             license_model=vm_cluster_license_model,
             memory_size_in_gbs=vm_cluster_memory_size_in_gbs,
             system_version=vm_cluster_system_version,
-            time_zone=vm_cluster_time_zone)
+            time_zone=vm_cluster_time_zone,
+            vm_cluster_type=vm_cluster_vm_cluster_type)
         ```
 
         ## Import
@@ -1102,6 +1206,7 @@ class VmCluster(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
+                 exascale_db_storage_vault_id: Optional[pulumi.Input[str]] = None,
                  file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmClusterFileSystemConfigurationDetailArgs', 'VmClusterFileSystemConfigurationDetailArgsDict']]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  gi_version: Optional[pulumi.Input[str]] = None,
@@ -1114,6 +1219,7 @@ class VmCluster(pulumi.CustomResource):
                  system_version: Optional[pulumi.Input[str]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None,
                  vm_cluster_network_id: Optional[pulumi.Input[str]] = None,
+                 vm_cluster_type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1142,6 +1248,7 @@ class VmCluster(pulumi.CustomResource):
             if exadata_infrastructure_id is None and not opts.urn:
                 raise TypeError("Missing required property 'exadata_infrastructure_id'")
             __props__.__dict__["exadata_infrastructure_id"] = exadata_infrastructure_id
+            __props__.__dict__["exascale_db_storage_vault_id"] = exascale_db_storage_vault_id
             __props__.__dict__["file_system_configuration_details"] = file_system_configuration_details
             __props__.__dict__["freeform_tags"] = freeform_tags
             if gi_version is None and not opts.urn:
@@ -1160,13 +1267,16 @@ class VmCluster(pulumi.CustomResource):
             if vm_cluster_network_id is None and not opts.urn:
                 raise TypeError("Missing required property 'vm_cluster_network_id'")
             __props__.__dict__["vm_cluster_network_id"] = vm_cluster_network_id
+            __props__.__dict__["vm_cluster_type"] = vm_cluster_type
             __props__.__dict__["availability_domain"] = None
+            __props__.__dict__["compute_model"] = None
             __props__.__dict__["cpus_enabled"] = None
             __props__.__dict__["last_patch_history_entry_id"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["ocpus_enabled"] = None
             __props__.__dict__["shape"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["storage_management_type"] = None
             __props__.__dict__["time_created"] = None
         super(VmCluster, __self__).__init__(
             'oci:Database/vmCluster:VmCluster',
@@ -1181,6 +1291,7 @@ class VmCluster(pulumi.CustomResource):
             availability_domain: Optional[pulumi.Input[str]] = None,
             cloud_automation_update_details: Optional[pulumi.Input[Union['VmClusterCloudAutomationUpdateDetailsArgs', 'VmClusterCloudAutomationUpdateDetailsArgsDict']]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
+            compute_model: Optional[pulumi.Input[str]] = None,
             cpu_core_count: Optional[pulumi.Input[int]] = None,
             cpus_enabled: Optional[pulumi.Input[int]] = None,
             data_collection_options: Optional[pulumi.Input[Union['VmClusterDataCollectionOptionsArgs', 'VmClusterDataCollectionOptionsArgsDict']]] = None,
@@ -1191,6 +1302,7 @@ class VmCluster(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
+            exascale_db_storage_vault_id: Optional[pulumi.Input[str]] = None,
             file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmClusterFileSystemConfigurationDetailArgs', 'VmClusterFileSystemConfigurationDetailArgsDict']]]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             gi_version: Optional[pulumi.Input[str]] = None,
@@ -1205,10 +1317,12 @@ class VmCluster(pulumi.CustomResource):
             shape: Optional[pulumi.Input[str]] = None,
             ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
+            storage_management_type: Optional[pulumi.Input[str]] = None,
             system_version: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_zone: Optional[pulumi.Input[str]] = None,
-            vm_cluster_network_id: Optional[pulumi.Input[str]] = None) -> 'VmCluster':
+            vm_cluster_network_id: Optional[pulumi.Input[str]] = None,
+            vm_cluster_type: Optional[pulumi.Input[str]] = None) -> 'VmCluster':
         """
         Get an existing VmCluster resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1219,6 +1333,7 @@ class VmCluster(pulumi.CustomResource):
         :param pulumi.Input[str] availability_domain: The name of the availability domain that the VM cluster is located in.
         :param pulumi.Input[Union['VmClusterCloudAutomationUpdateDetailsArgs', 'VmClusterCloudAutomationUpdateDetailsArgsDict']] cloud_automation_update_details: (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param pulumi.Input[str] compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         :param pulumi.Input[int] cpus_enabled: The number of enabled CPU cores.
         :param pulumi.Input[Union['VmClusterDataCollectionOptionsArgs', 'VmClusterDataCollectionOptionsArgsDict']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[float] data_storage_size_in_gb: (Updatable) The data disk group size to be allocated in GBs.
@@ -1228,6 +1343,7 @@ class VmCluster(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: The user-friendly name for the VM cluster. The name does not need to be unique.
         :param pulumi.Input[str] exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+        :param pulumi.Input[str] exascale_db_storage_vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterFileSystemConfigurationDetailArgs', 'VmClusterFileSystemConfigurationDetailArgsDict']]]] file_system_configuration_details: (Updatable) Details of the file system configuration of the VM cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] gi_version: The Oracle Grid Infrastructure software version for the VM cluster.
@@ -1240,10 +1356,12 @@ class VmCluster(pulumi.CustomResource):
         :param pulumi.Input[str] shape: The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ssh_public_keys: (Updatable) The public key portion of one or more key pairs used for SSH access to the VM cluster.
         :param pulumi.Input[str] state: The current state of the VM cluster.
+        :param pulumi.Input[str] storage_management_type: Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
         :param pulumi.Input[str] system_version: Operating system version of the image.
         :param pulumi.Input[str] time_created: The date and time that the VM cluster was created.
         :param pulumi.Input[str] time_zone: The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param pulumi.Input[str] vm_cluster_network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+        :param pulumi.Input[str] vm_cluster_type: The vmcluster type for the VM cluster/Cloud VM cluster.
                
                
                ** IMPORTANT **
@@ -1256,6 +1374,7 @@ class VmCluster(pulumi.CustomResource):
         __props__.__dict__["availability_domain"] = availability_domain
         __props__.__dict__["cloud_automation_update_details"] = cloud_automation_update_details
         __props__.__dict__["compartment_id"] = compartment_id
+        __props__.__dict__["compute_model"] = compute_model
         __props__.__dict__["cpu_core_count"] = cpu_core_count
         __props__.__dict__["cpus_enabled"] = cpus_enabled
         __props__.__dict__["data_collection_options"] = data_collection_options
@@ -1266,6 +1385,7 @@ class VmCluster(pulumi.CustomResource):
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["exadata_infrastructure_id"] = exadata_infrastructure_id
+        __props__.__dict__["exascale_db_storage_vault_id"] = exascale_db_storage_vault_id
         __props__.__dict__["file_system_configuration_details"] = file_system_configuration_details
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["gi_version"] = gi_version
@@ -1280,10 +1400,12 @@ class VmCluster(pulumi.CustomResource):
         __props__.__dict__["shape"] = shape
         __props__.__dict__["ssh_public_keys"] = ssh_public_keys
         __props__.__dict__["state"] = state
+        __props__.__dict__["storage_management_type"] = storage_management_type
         __props__.__dict__["system_version"] = system_version
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_zone"] = time_zone
         __props__.__dict__["vm_cluster_network_id"] = vm_cluster_network_id
+        __props__.__dict__["vm_cluster_type"] = vm_cluster_type
         return VmCluster(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -1309,6 +1431,14 @@ class VmCluster(pulumi.CustomResource):
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> pulumi.Output[str]:
+        """
+        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        """
+        return pulumi.get(self, "compute_model")
 
     @property
     @pulumi.getter(name="cpuCoreCount")
@@ -1386,6 +1516,14 @@ class VmCluster(pulumi.CustomResource):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         """
         return pulumi.get(self, "exadata_infrastructure_id")
+
+    @property
+    @pulumi.getter(name="exascaleDbStorageVaultId")
+    def exascale_db_storage_vault_id(self) -> pulumi.Output[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+        """
+        return pulumi.get(self, "exascale_db_storage_vault_id")
 
     @property
     @pulumi.getter(name="fileSystemConfigurationDetails")
@@ -1494,6 +1632,14 @@ class VmCluster(pulumi.CustomResource):
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="storageManagementType")
+    def storage_management_type(self) -> pulumi.Output[str]:
+        """
+        Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
+        """
+        return pulumi.get(self, "storage_management_type")
+
+    @property
     @pulumi.getter(name="systemVersion")
     def system_version(self) -> pulumi.Output[str]:
         """
@@ -1522,10 +1668,18 @@ class VmCluster(pulumi.CustomResource):
     def vm_cluster_network_id(self) -> pulumi.Output[str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+        """
+        return pulumi.get(self, "vm_cluster_network_id")
+
+    @property
+    @pulumi.getter(name="vmClusterType")
+    def vm_cluster_type(self) -> pulumi.Output[str]:
+        """
+        The vmcluster type for the VM cluster/Cloud VM cluster.
 
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        return pulumi.get(self, "vm_cluster_network_id")
+        return pulumi.get(self, "vm_cluster_type")
 

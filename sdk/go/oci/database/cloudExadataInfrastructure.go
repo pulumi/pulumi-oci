@@ -42,7 +42,8 @@ import (
 //						Email: pulumi.Any(cloudExadataInfrastructureCustomerContactsEmail),
 //					},
 //				},
-//				DefinedTags: pulumi.Any(cloudExadataInfrastructureDefinedTags),
+//				DatabaseServerType: pulumi.Any(cloudExadataInfrastructureDatabaseServerType),
+//				DefinedTags:        pulumi.Any(cloudExadataInfrastructureDefinedTags),
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
@@ -66,8 +67,9 @@ import (
 //					Preference:    pulumi.Any(cloudExadataInfrastructureMaintenanceWindowPreference),
 //					WeeksOfMonths: pulumi.Any(cloudExadataInfrastructureMaintenanceWindowWeeksOfMonth),
 //				},
-//				StorageCount:   pulumi.Any(cloudExadataInfrastructureStorageCount),
-//				SubscriptionId: pulumi.Any(tenantSubscriptionId),
+//				StorageCount:      pulumi.Any(cloudExadataInfrastructureStorageCount),
+//				StorageServerType: pulumi.Any(cloudExadataInfrastructureStorageServerType),
+//				SubscriptionId:    pulumi.Any(tenantSubscriptionId),
 //			})
 //			if err != nil {
 //				return err
@@ -102,12 +104,16 @@ type CloudExadataInfrastructure struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) The number of compute servers for the cloud Exadata infrastructure.
 	ComputeCount pulumi.IntOutput `pulumi:"computeCount"`
+	// The compute model of the Exadata infrastructure.
+	ComputeModel pulumi.StringOutput `pulumi:"computeModel"`
 	// The total number of CPU cores allocated.
 	CpuCount pulumi.IntOutput `pulumi:"cpuCount"`
 	// (Updatable) Customer contacts.
 	CustomerContacts CloudExadataInfrastructureCustomerContactArrayOutput `pulumi:"customerContacts"`
 	// Size, in terabytes, of the DATA disk group.
 	DataStorageSizeInTbs pulumi.Float64Output `pulumi:"dataStorageSizeInTbs"`
+	// The database server type of the Exadata infrastructure.
+	DatabaseServerType pulumi.StringOutput `pulumi:"databaseServerType"`
 	// The local node storage allocated in GBs.
 	DbNodeStorageSizeInGbs pulumi.IntOutput `pulumi:"dbNodeStorageSizeInGbs"`
 	// The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
@@ -150,6 +156,8 @@ type CloudExadataInfrastructure struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// (Updatable) The number of storage servers for the cloud Exadata infrastructure.
 	StorageCount pulumi.IntOutput `pulumi:"storageCount"`
+	// The storage server type of the Exadata infrastructure.
+	StorageServerType pulumi.StringOutput `pulumi:"storageServerType"`
 	// The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
 	StorageServerVersion pulumi.StringOutput `pulumi:"storageServerVersion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
@@ -221,12 +229,16 @@ type cloudExadataInfrastructureState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) The number of compute servers for the cloud Exadata infrastructure.
 	ComputeCount *int `pulumi:"computeCount"`
+	// The compute model of the Exadata infrastructure.
+	ComputeModel *string `pulumi:"computeModel"`
 	// The total number of CPU cores allocated.
 	CpuCount *int `pulumi:"cpuCount"`
 	// (Updatable) Customer contacts.
 	CustomerContacts []CloudExadataInfrastructureCustomerContact `pulumi:"customerContacts"`
 	// Size, in terabytes, of the DATA disk group.
 	DataStorageSizeInTbs *float64 `pulumi:"dataStorageSizeInTbs"`
+	// The database server type of the Exadata infrastructure.
+	DatabaseServerType *string `pulumi:"databaseServerType"`
 	// The local node storage allocated in GBs.
 	DbNodeStorageSizeInGbs *int `pulumi:"dbNodeStorageSizeInGbs"`
 	// The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
@@ -269,6 +281,8 @@ type cloudExadataInfrastructureState struct {
 	State *string `pulumi:"state"`
 	// (Updatable) The number of storage servers for the cloud Exadata infrastructure.
 	StorageCount *int `pulumi:"storageCount"`
+	// The storage server type of the Exadata infrastructure.
+	StorageServerType *string `pulumi:"storageServerType"`
 	// The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
 	StorageServerVersion *string `pulumi:"storageServerVersion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
@@ -299,12 +313,16 @@ type CloudExadataInfrastructureState struct {
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) The number of compute servers for the cloud Exadata infrastructure.
 	ComputeCount pulumi.IntPtrInput
+	// The compute model of the Exadata infrastructure.
+	ComputeModel pulumi.StringPtrInput
 	// The total number of CPU cores allocated.
 	CpuCount pulumi.IntPtrInput
 	// (Updatable) Customer contacts.
 	CustomerContacts CloudExadataInfrastructureCustomerContactArrayInput
 	// Size, in terabytes, of the DATA disk group.
 	DataStorageSizeInTbs pulumi.Float64PtrInput
+	// The database server type of the Exadata infrastructure.
+	DatabaseServerType pulumi.StringPtrInput
 	// The local node storage allocated in GBs.
 	DbNodeStorageSizeInGbs pulumi.IntPtrInput
 	// The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
@@ -347,6 +365,8 @@ type CloudExadataInfrastructureState struct {
 	State pulumi.StringPtrInput
 	// (Updatable) The number of storage servers for the cloud Exadata infrastructure.
 	StorageCount pulumi.IntPtrInput
+	// The storage server type of the Exadata infrastructure.
+	StorageServerType pulumi.StringPtrInput
 	// The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
 	StorageServerVersion pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
@@ -377,6 +397,8 @@ type cloudExadataInfrastructureArgs struct {
 	ComputeCount *int `pulumi:"computeCount"`
 	// (Updatable) Customer contacts.
 	CustomerContacts []CloudExadataInfrastructureCustomerContact `pulumi:"customerContacts"`
+	// The database server type of the Exadata infrastructure.
+	DatabaseServerType *string `pulumi:"databaseServerType"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
@@ -389,6 +411,8 @@ type cloudExadataInfrastructureArgs struct {
 	Shape string `pulumi:"shape"`
 	// (Updatable) The number of storage servers for the cloud Exadata infrastructure.
 	StorageCount *int `pulumi:"storageCount"`
+	// The storage server type of the Exadata infrastructure.
+	StorageServerType *string `pulumi:"storageServerType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
 	//
 	// ** IMPORTANT **
@@ -408,6 +432,8 @@ type CloudExadataInfrastructureArgs struct {
 	ComputeCount pulumi.IntPtrInput
 	// (Updatable) Customer contacts.
 	CustomerContacts CloudExadataInfrastructureCustomerContactArrayInput
+	// The database server type of the Exadata infrastructure.
+	DatabaseServerType pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
@@ -420,6 +446,8 @@ type CloudExadataInfrastructureArgs struct {
 	Shape pulumi.StringInput
 	// (Updatable) The number of storage servers for the cloud Exadata infrastructure.
 	StorageCount pulumi.IntPtrInput
+	// The storage server type of the Exadata infrastructure.
+	StorageServerType pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
 	//
 	// ** IMPORTANT **
@@ -549,6 +577,11 @@ func (o CloudExadataInfrastructureOutput) ComputeCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *CloudExadataInfrastructure) pulumi.IntOutput { return v.ComputeCount }).(pulumi.IntOutput)
 }
 
+// The compute model of the Exadata infrastructure.
+func (o CloudExadataInfrastructureOutput) ComputeModel() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudExadataInfrastructure) pulumi.StringOutput { return v.ComputeModel }).(pulumi.StringOutput)
+}
+
 // The total number of CPU cores allocated.
 func (o CloudExadataInfrastructureOutput) CpuCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *CloudExadataInfrastructure) pulumi.IntOutput { return v.CpuCount }).(pulumi.IntOutput)
@@ -564,6 +597,11 @@ func (o CloudExadataInfrastructureOutput) CustomerContacts() CloudExadataInfrast
 // Size, in terabytes, of the DATA disk group.
 func (o CloudExadataInfrastructureOutput) DataStorageSizeInTbs() pulumi.Float64Output {
 	return o.ApplyT(func(v *CloudExadataInfrastructure) pulumi.Float64Output { return v.DataStorageSizeInTbs }).(pulumi.Float64Output)
+}
+
+// The database server type of the Exadata infrastructure.
+func (o CloudExadataInfrastructureOutput) DatabaseServerType() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudExadataInfrastructure) pulumi.StringOutput { return v.DatabaseServerType }).(pulumi.StringOutput)
 }
 
 // The local node storage allocated in GBs.
@@ -673,6 +711,11 @@ func (o CloudExadataInfrastructureOutput) State() pulumi.StringOutput {
 // (Updatable) The number of storage servers for the cloud Exadata infrastructure.
 func (o CloudExadataInfrastructureOutput) StorageCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *CloudExadataInfrastructure) pulumi.IntOutput { return v.StorageCount }).(pulumi.IntOutput)
+}
+
+// The storage server type of the Exadata infrastructure.
+func (o CloudExadataInfrastructureOutput) StorageServerType() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudExadataInfrastructure) pulumi.StringOutput { return v.StorageServerType }).(pulumi.StringOutput)
 }
 
 // The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15

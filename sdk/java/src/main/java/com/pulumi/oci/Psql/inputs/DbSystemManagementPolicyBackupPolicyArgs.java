@@ -5,6 +5,7 @@ package com.pulumi.oci.Psql.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Psql.inputs.DbSystemManagementPolicyBackupPolicyCopyPolicyArgs;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -30,6 +31,21 @@ public final class DbSystemManagementPolicyBackupPolicyArgs extends com.pulumi.r
      */
     public Optional<Output<String>> backupStart() {
         return Optional.ofNullable(this.backupStart);
+    }
+
+    /**
+     * (Updatable) Backup copy details
+     * 
+     */
+    @Import(name="copyPolicy")
+    private @Nullable Output<DbSystemManagementPolicyBackupPolicyCopyPolicyArgs> copyPolicy;
+
+    /**
+     * @return (Updatable) Backup copy details
+     * 
+     */
+    public Optional<Output<DbSystemManagementPolicyBackupPolicyCopyPolicyArgs>> copyPolicy() {
+        return Optional.ofNullable(this.copyPolicy);
     }
 
     /**
@@ -96,6 +112,7 @@ public final class DbSystemManagementPolicyBackupPolicyArgs extends com.pulumi.r
 
     private DbSystemManagementPolicyBackupPolicyArgs(DbSystemManagementPolicyBackupPolicyArgs $) {
         this.backupStart = $.backupStart;
+        this.copyPolicy = $.copyPolicy;
         this.daysOfTheMonths = $.daysOfTheMonths;
         this.daysOfTheWeeks = $.daysOfTheWeeks;
         this.kind = $.kind;
@@ -139,6 +156,27 @@ public final class DbSystemManagementPolicyBackupPolicyArgs extends com.pulumi.r
          */
         public Builder backupStart(String backupStart) {
             return backupStart(Output.of(backupStart));
+        }
+
+        /**
+         * @param copyPolicy (Updatable) Backup copy details
+         * 
+         * @return builder
+         * 
+         */
+        public Builder copyPolicy(@Nullable Output<DbSystemManagementPolicyBackupPolicyCopyPolicyArgs> copyPolicy) {
+            $.copyPolicy = copyPolicy;
+            return this;
+        }
+
+        /**
+         * @param copyPolicy (Updatable) Backup copy details
+         * 
+         * @return builder
+         * 
+         */
+        public Builder copyPolicy(DbSystemManagementPolicyBackupPolicyCopyPolicyArgs copyPolicy) {
+            return copyPolicy(Output.of(copyPolicy));
         }
 
         /**

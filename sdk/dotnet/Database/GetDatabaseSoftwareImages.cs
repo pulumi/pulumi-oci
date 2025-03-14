@@ -30,6 +30,7 @@ namespace Pulumi.Oci.Database
         ///     var testDatabaseSoftwareImages = Oci.Database.GetDatabaseSoftwareImages.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         DbSystemId = testDbSystem.Id,
         ///         DisplayName = databaseSoftwareImageDisplayName,
         ///         ImageShapeFamily = databaseSoftwareImageImageShapeFamily,
         ///         ImageType = databaseSoftwareImageImageType,
@@ -62,6 +63,7 @@ namespace Pulumi.Oci.Database
         ///     var testDatabaseSoftwareImages = Oci.Database.GetDatabaseSoftwareImages.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         DbSystemId = testDbSystem.Id,
         ///         DisplayName = databaseSoftwareImageDisplayName,
         ///         ImageShapeFamily = databaseSoftwareImageImageShapeFamily,
         ///         ImageType = databaseSoftwareImageImageType,
@@ -94,6 +96,7 @@ namespace Pulumi.Oci.Database
         ///     var testDatabaseSoftwareImages = Oci.Database.GetDatabaseSoftwareImages.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         DbSystemId = testDbSystem.Id,
         ///         DisplayName = databaseSoftwareImageDisplayName,
         ///         ImageShapeFamily = databaseSoftwareImageImageShapeFamily,
         ///         ImageType = databaseSoftwareImageImageType,
@@ -116,6 +119,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("compartmentId", required: true)]
         public string CompartmentId { get; set; } = null!;
+
+        /// <summary>
+        /// The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
+        /// </summary>
+        [Input("dbSystemId")]
+        public string? DbSystemId { get; set; }
 
         /// <summary>
         /// A filter to return only resources that match the entire display name given. The match is not case sensitive.
@@ -168,6 +177,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
+
+        /// <summary>
+        /// The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
+        /// </summary>
+        [Input("dbSystemId")]
+        public Input<string>? DbSystemId { get; set; }
 
         /// <summary>
         /// A filter to return only resources that match the entire display name given. The match is not case sensitive.
@@ -225,6 +240,7 @@ namespace Pulumi.Oci.Database
         /// The list of database_software_images.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDatabaseSoftwareImagesDatabaseSoftwareImageResult> DatabaseSoftwareImages;
+        public readonly string? DbSystemId;
         /// <summary>
         /// The user-friendly name for the database software image. The name does not have to be unique.
         /// </summary>
@@ -257,6 +273,8 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetDatabaseSoftwareImagesDatabaseSoftwareImageResult> databaseSoftwareImages,
 
+            string? dbSystemId,
+
             string? displayName,
 
             ImmutableArray<Outputs.GetDatabaseSoftwareImagesFilterResult> filters,
@@ -273,6 +291,7 @@ namespace Pulumi.Oci.Database
         {
             CompartmentId = compartmentId;
             DatabaseSoftwareImages = databaseSoftwareImages;
+            DbSystemId = dbSystemId;
             DisplayName = displayName;
             Filters = filters;
             Id = id;

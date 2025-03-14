@@ -53,6 +53,7 @@ namespace Pulumi.Oci.Database
     ///             },
     ///         },
     ///         CorporateProxy = exadataInfrastructureCorporateProxy,
+    ///         DatabaseServerType = exadataInfrastructureDatabaseServerType,
     ///         DefinedTags = exadataInfrastructureDefinedTags,
     ///         FreeformTags = 
     ///         {
@@ -93,6 +94,7 @@ namespace Pulumi.Oci.Database
     ///             DrNetworkBondingMode = exadataInfrastructureNetworkBondingModeDetailsDrNetworkBondingMode,
     ///         },
     ///         StorageCount = exadataInfrastructureStorageCount,
+    ///         StorageServerType = exadataInfrastructureStorageServerType,
     ///     });
     /// 
     /// });
@@ -179,6 +181,12 @@ namespace Pulumi.Oci.Database
         public Output<int> ComputeCount { get; private set; } = null!;
 
         /// <summary>
+        /// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        /// </summary>
+        [Output("computeModel")]
+        public Output<string> ComputeModel { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The list of contacts for the Exadata infrastructure.
         /// </summary>
         [Output("contacts")]
@@ -210,6 +218,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("dataStorageSizeInTbs")]
         public Output<double> DataStorageSizeInTbs { get; private set; } = null!;
+
+        /// <summary>
+        /// The database server type of the Exadata infrastructure.
+        /// </summary>
+        [Output("databaseServerType")]
+        public Output<string> DatabaseServerType { get; private set; } = null!;
 
         /// <summary>
         /// The local node storage allocated in GBs.
@@ -246,6 +260,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("dnsServers")]
         public Output<ImmutableArray<string>> DnsServers { get; private set; } = null!;
+
+        /// <summary>
+        /// The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+        /// </summary>
+        [Output("exascaleConfigs")]
+        public Output<ImmutableArray<Outputs.ExadataInfrastructureExascaleConfig>> ExascaleConfigs { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -386,6 +406,12 @@ namespace Pulumi.Oci.Database
         public Output<int> StorageCount { get; private set; } = null!;
 
         /// <summary>
+        /// The storage server type of the Exadata infrastructure.
+        /// </summary>
+        [Output("storageServerType")]
+        public Output<string> StorageServerType { get; private set; } = null!;
+
+        /// <summary>
         /// The software version of the storage servers (cells) in the Exadata infrastructure.
         /// </summary>
         [Output("storageServerVersion")]
@@ -515,6 +541,12 @@ namespace Pulumi.Oci.Database
         [Input("createAsync")]
         public Input<bool>? CreateAsync { get; set; }
 
+        /// <summary>
+        /// The database server type of the Exadata infrastructure.
+        /// </summary>
+        [Input("databaseServerType")]
+        public Input<string>? DatabaseServerType { get; set; }
+
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
 
@@ -630,6 +662,12 @@ namespace Pulumi.Oci.Database
         public Input<int>? StorageCount { get; set; }
 
         /// <summary>
+        /// The storage server type of the Exadata infrastructure.
+        /// </summary>
+        [Input("storageServerType")]
+        public Input<string>? StorageServerType { get; set; }
+
+        /// <summary>
         /// (Updatable) The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         /// </summary>
         [Input("timeZone", required: true)]
@@ -712,6 +750,12 @@ namespace Pulumi.Oci.Database
         [Input("computeCount")]
         public Input<int>? ComputeCount { get; set; }
 
+        /// <summary>
+        /// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        /// </summary>
+        [Input("computeModel")]
+        public Input<string>? ComputeModel { get; set; }
+
         [Input("contacts")]
         private InputList<Inputs.ExadataInfrastructureContactGetArgs>? _contacts;
 
@@ -750,6 +794,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("dataStorageSizeInTbs")]
         public Input<double>? DataStorageSizeInTbs { get; set; }
+
+        /// <summary>
+        /// The database server type of the Exadata infrastructure.
+        /// </summary>
+        [Input("databaseServerType")]
+        public Input<string>? DatabaseServerType { get; set; }
 
         /// <summary>
         /// The local node storage allocated in GBs.
@@ -803,6 +853,18 @@ namespace Pulumi.Oci.Database
         {
             get => _dnsServers ?? (_dnsServers = new InputList<string>());
             set => _dnsServers = value;
+        }
+
+        [Input("exascaleConfigs")]
+        private InputList<Inputs.ExadataInfrastructureExascaleConfigGetArgs>? _exascaleConfigs;
+
+        /// <summary>
+        /// The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+        /// </summary>
+        public InputList<Inputs.ExadataInfrastructureExascaleConfigGetArgs> ExascaleConfigs
+        {
+            get => _exascaleConfigs ?? (_exascaleConfigs = new InputList<Inputs.ExadataInfrastructureExascaleConfigGetArgs>());
+            set => _exascaleConfigs = value;
         }
 
         [Input("freeformTags")]
@@ -954,6 +1016,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("storageCount")]
         public Input<int>? StorageCount { get; set; }
+
+        /// <summary>
+        /// The storage server type of the Exadata infrastructure.
+        /// </summary>
+        [Input("storageServerType")]
+        public Input<string>? StorageServerType { get; set; }
 
         /// <summary>
         /// The software version of the storage servers (cells) in the Exadata infrastructure.

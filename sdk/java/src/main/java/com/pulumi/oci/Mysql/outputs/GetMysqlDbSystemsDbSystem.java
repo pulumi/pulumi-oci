@@ -225,6 +225,11 @@ public final class GetMysqlDbSystemsDbSystem {
      */
     private String subnetId;
     /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    private Map<String,String> systemTags;
+    /**
      * @return The date and time the DB System was created.
      * 
      */
@@ -516,6 +521,13 @@ public final class GetMysqlDbSystemsDbSystem {
         return this.subnetId;
     }
     /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return The date and time the DB System was created.
      * 
      */
@@ -580,6 +592,7 @@ public final class GetMysqlDbSystemsDbSystem {
         private List<GetMysqlDbSystemsDbSystemSource> sources;
         private String state;
         private String subnetId;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
         public Builder() {}
@@ -626,6 +639,7 @@ public final class GetMysqlDbSystemsDbSystem {
     	      this.sources = defaults.sources;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
         }
@@ -998,6 +1012,14 @@ public final class GetMysqlDbSystemsDbSystem {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemsDbSystem", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetMysqlDbSystemsDbSystem", "timeCreated");
@@ -1056,6 +1078,7 @@ public final class GetMysqlDbSystemsDbSystem {
             _resultValue.sources = sources;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             return _resultValue;

@@ -59,6 +59,7 @@ import * as utilities from "../utilities";
  *     scanListenerPortTcp: exadbVmClusterScanListenerPortTcp,
  *     scanListenerPortTcpSsl: exadbVmClusterScanListenerPortTcpSsl,
  *     securityAttributes: exadbVmClusterSecurityAttributes,
+ *     subscriptionId: tenantSubscriptionId,
  *     systemVersion: exadbVmClusterSystemVersion,
  *     timeZone: exadbVmClusterTimeZone,
  * });
@@ -117,6 +118,10 @@ export class ExadbVmCluster extends pulumi.CustomResource {
      */
     public readonly clusterName!: pulumi.Output<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     */
+    public /*out*/ readonly clusterPlacementGroupId!: pulumi.Output<string>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     public readonly compartmentId!: pulumi.Output<string>;
@@ -151,7 +156,7 @@ export class ExadbVmCluster extends pulumi.CustomResource {
     /**
      * (Updatable) Grid Setup will be done using this grid image id.
      *
-     * The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name> 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
+     * The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>. The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD name>
      */
     public readonly gridImageId!: pulumi.Output<string>;
     /**
@@ -244,6 +249,10 @@ export class ExadbVmCluster extends pulumi.CustomResource {
      */
     public readonly subnetId!: pulumi.Output<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     */
+    public readonly subscriptionId!: pulumi.Output<string>;
+    /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
@@ -289,6 +298,7 @@ export class ExadbVmCluster extends pulumi.CustomResource {
             resourceInputs["backupNetworkNsgIds"] = state ? state.backupNetworkNsgIds : undefined;
             resourceInputs["backupSubnetId"] = state ? state.backupSubnetId : undefined;
             resourceInputs["clusterName"] = state ? state.clusterName : undefined;
+            resourceInputs["clusterPlacementGroupId"] = state ? state.clusterPlacementGroupId : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["dataCollectionOptions"] = state ? state.dataCollectionOptions : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
@@ -319,6 +329,7 @@ export class ExadbVmCluster extends pulumi.CustomResource {
             resourceInputs["sshPublicKeys"] = state ? state.sshPublicKeys : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["subnetId"] = state ? state.subnetId : undefined;
+            resourceInputs["subscriptionId"] = state ? state.subscriptionId : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["systemVersion"] = state ? state.systemVersion : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
@@ -384,8 +395,10 @@ export class ExadbVmCluster extends pulumi.CustomResource {
             resourceInputs["shape"] = args ? args.shape : undefined;
             resourceInputs["sshPublicKeys"] = args ? args.sshPublicKeys : undefined;
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
+            resourceInputs["subscriptionId"] = args ? args.subscriptionId : undefined;
             resourceInputs["systemVersion"] = args ? args.systemVersion : undefined;
             resourceInputs["timeZone"] = args ? args.timeZone : undefined;
+            resourceInputs["clusterPlacementGroupId"] = undefined /*out*/;
             resourceInputs["giVersion"] = undefined /*out*/;
             resourceInputs["gridImageType"] = undefined /*out*/;
             resourceInputs["iormConfigCaches"] = undefined /*out*/;
@@ -427,6 +440,10 @@ export interface ExadbVmClusterState {
      */
     clusterName?: pulumi.Input<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     */
+    clusterPlacementGroupId?: pulumi.Input<string>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId?: pulumi.Input<string>;
@@ -461,7 +478,7 @@ export interface ExadbVmClusterState {
     /**
      * (Updatable) Grid Setup will be done using this grid image id.
      *
-     * The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name> 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
+     * The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>. The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD name>
      */
     gridImageId?: pulumi.Input<string>;
     /**
@@ -554,6 +571,10 @@ export interface ExadbVmClusterState {
      */
     subnetId?: pulumi.Input<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     */
+    subscriptionId?: pulumi.Input<string>;
+    /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
@@ -634,7 +655,7 @@ export interface ExadbVmClusterArgs {
     /**
      * (Updatable) Grid Setup will be done using this grid image id.
      *
-     * The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name> 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
+     * The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>. The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD name>
      */
     gridImageId: pulumi.Input<string>;
     /**
@@ -690,6 +711,10 @@ export interface ExadbVmClusterArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
      */
     subnetId: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     */
+    subscriptionId?: pulumi.Input<string>;
     /**
      * (Updatable) Operating system version of the image.
      */

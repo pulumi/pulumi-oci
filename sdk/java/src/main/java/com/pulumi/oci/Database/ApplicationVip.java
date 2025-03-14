@@ -50,6 +50,7 @@ import javax.annotation.Nullable;
  *             .subnetId(testSubnet.id())
  *             .dbNodeId(testDbNode.id())
  *             .ipAddress(applicationVipIpAddress)
+ *             .ipv6address(applicationVipIpv6address)
  *             .build());
  * 
  *     }
@@ -154,18 +155,32 @@ public class ApplicationVip extends com.pulumi.resources.CustomResource {
         return this.hostnameLabel;
     }
     /**
-     * The application virtual IP (VIP) address.
+     * The application virtual IP (VIP) IPv4 address.
      * 
      */
     @Export(name="ipAddress", refs={String.class}, tree="[0]")
     private Output<String> ipAddress;
 
     /**
-     * @return The application virtual IP (VIP) address.
+     * @return The application virtual IP (VIP) IPv4 address.
      * 
      */
     public Output<String> ipAddress() {
         return this.ipAddress;
+    }
+    /**
+     * The application virtual IP (VIP) IPv6 address.
+     * 
+     */
+    @Export(name="ipv6address", refs={String.class}, tree="[0]")
+    private Output<String> ipv6address;
+
+    /**
+     * @return The application virtual IP (VIP) IPv6 address.
+     * 
+     */
+    public Output<String> ipv6address() {
+        return this.ipv6address;
     }
     /**
      * Additional information about the current lifecycle state of the application virtual IP (VIP) address.

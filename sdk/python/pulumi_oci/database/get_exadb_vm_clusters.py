@@ -28,7 +28,10 @@ class GetExadbVmClustersResult:
     """
     A collection of values returned by getExadbVmClusters.
     """
-    def __init__(__self__, compartment_id=None, display_name=None, exadb_vm_clusters=None, exascale_db_storage_vault_id=None, filters=None, id=None, state=None):
+    def __init__(__self__, cluster_placement_group_id=None, compartment_id=None, display_name=None, exadb_vm_clusters=None, exascale_db_storage_vault_id=None, filters=None, id=None, state=None):
+        if cluster_placement_group_id and not isinstance(cluster_placement_group_id, str):
+            raise TypeError("Expected argument 'cluster_placement_group_id' to be a str")
+        pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -50,6 +53,14 @@ class GetExadbVmClustersResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+
+    @property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -111,6 +122,7 @@ class AwaitableGetExadbVmClustersResult(GetExadbVmClustersResult):
         if False:
             yield self
         return GetExadbVmClustersResult(
+            cluster_placement_group_id=self.cluster_placement_group_id,
             compartment_id=self.compartment_id,
             display_name=self.display_name,
             exadb_vm_clusters=self.exadb_vm_clusters,
@@ -120,7 +132,8 @@ class AwaitableGetExadbVmClustersResult(GetExadbVmClustersResult):
             state=self.state)
 
 
-def get_exadb_vm_clusters(compartment_id: Optional[str] = None,
+def get_exadb_vm_clusters(cluster_placement_group_id: Optional[str] = None,
+                          compartment_id: Optional[str] = None,
                           display_name: Optional[str] = None,
                           exascale_db_storage_vault_id: Optional[str] = None,
                           filters: Optional[Sequence[Union['GetExadbVmClustersFilterArgs', 'GetExadbVmClustersFilterArgsDict']]] = None,
@@ -138,18 +151,21 @@ def get_exadb_vm_clusters(compartment_id: Optional[str] = None,
     import pulumi_oci as oci
 
     test_exadb_vm_clusters = oci.Database.get_exadb_vm_clusters(compartment_id=compartment_id,
+        cluster_placement_group_id=test_cluster_placement_group["id"],
         display_name=exadb_vm_cluster_display_name,
         exascale_db_storage_vault_id=test_exascale_db_storage_vault["id"],
         state=exadb_vm_cluster_state)
     ```
 
 
+    :param str cluster_placement_group_id: A filter to return only resources that match the given cluster placement group ID exactly.
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
     :param str exascale_db_storage_vault_id: A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given Exascale Database Storage Vault ID.
     :param str state: A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given lifecycle state exactly.
     """
     __args__ = dict()
+    __args__['clusterPlacementGroupId'] = cluster_placement_group_id
     __args__['compartmentId'] = compartment_id
     __args__['displayName'] = display_name
     __args__['exascaleDbStorageVaultId'] = exascale_db_storage_vault_id
@@ -159,6 +175,7 @@ def get_exadb_vm_clusters(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getExadbVmClusters:getExadbVmClusters', __args__, opts=opts, typ=GetExadbVmClustersResult).value
 
     return AwaitableGetExadbVmClustersResult(
+        cluster_placement_group_id=pulumi.get(__ret__, 'cluster_placement_group_id'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         display_name=pulumi.get(__ret__, 'display_name'),
         exadb_vm_clusters=pulumi.get(__ret__, 'exadb_vm_clusters'),
@@ -166,7 +183,8 @@ def get_exadb_vm_clusters(compartment_id: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_exadb_vm_clusters_output(compartment_id: Optional[pulumi.Input[str]] = None,
+def get_exadb_vm_clusters_output(cluster_placement_group_id: Optional[pulumi.Input[Optional[str]]] = None,
+                                 compartment_id: Optional[pulumi.Input[str]] = None,
                                  display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                  exascale_db_storage_vault_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExadbVmClustersFilterArgs', 'GetExadbVmClustersFilterArgsDict']]]]] = None,
@@ -184,18 +202,21 @@ def get_exadb_vm_clusters_output(compartment_id: Optional[pulumi.Input[str]] = N
     import pulumi_oci as oci
 
     test_exadb_vm_clusters = oci.Database.get_exadb_vm_clusters(compartment_id=compartment_id,
+        cluster_placement_group_id=test_cluster_placement_group["id"],
         display_name=exadb_vm_cluster_display_name,
         exascale_db_storage_vault_id=test_exascale_db_storage_vault["id"],
         state=exadb_vm_cluster_state)
     ```
 
 
+    :param str cluster_placement_group_id: A filter to return only resources that match the given cluster placement group ID exactly.
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
     :param str exascale_db_storage_vault_id: A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given Exascale Database Storage Vault ID.
     :param str state: A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given lifecycle state exactly.
     """
     __args__ = dict()
+    __args__['clusterPlacementGroupId'] = cluster_placement_group_id
     __args__['compartmentId'] = compartment_id
     __args__['displayName'] = display_name
     __args__['exascaleDbStorageVaultId'] = exascale_db_storage_vault_id
@@ -204,6 +225,7 @@ def get_exadb_vm_clusters_output(compartment_id: Optional[pulumi.Input[str]] = N
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getExadbVmClusters:getExadbVmClusters', __args__, opts=opts, typ=GetExadbVmClustersResult)
     return __ret__.apply(lambda __response__: GetExadbVmClustersResult(
+        cluster_placement_group_id=pulumi.get(__response__, 'cluster_placement_group_id'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         display_name=pulumi.get(__response__, 'display_name'),
         exadb_vm_clusters=pulumi.get(__response__, 'exadb_vm_clusters'),

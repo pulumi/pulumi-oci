@@ -226,6 +226,7 @@ export interface GetOpensearchClusterResult {
      * The size in GB of the cluster's total storage.
      */
     readonly totalStorageGb: number;
+    readonly upgradeMajorVersionTrigger: number;
     /**
      * The OCID for the compartment where the cluster's VCN is located.
      */

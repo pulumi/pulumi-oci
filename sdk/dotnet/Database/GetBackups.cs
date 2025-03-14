@@ -29,9 +29,15 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testBackups = Oci.Database.GetBackups.Invoke(new()
         ///     {
+        ///         BackupDestinationType = backupBackupDestinationType,
         ///         CompartmentId = compartmentId,
         ///         DatabaseId = testDatabase.Id,
         ///         ShapeFamily = backupShapeFamily,
+        ///         State = backupState,
+        ///         TimeExpiryScheduledGreaterThanOrEqualTo = backupTimeExpiryScheduledGreaterThanOrEqualTo,
+        ///         TimeExpiryScheduledLessThan = backupTimeExpiryScheduledLessThan,
+        ///         Type = backupType,
+        ///         Version = backupVersion,
         ///     });
         /// 
         /// });
@@ -58,9 +64,15 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testBackups = Oci.Database.GetBackups.Invoke(new()
         ///     {
+        ///         BackupDestinationType = backupBackupDestinationType,
         ///         CompartmentId = compartmentId,
         ///         DatabaseId = testDatabase.Id,
         ///         ShapeFamily = backupShapeFamily,
+        ///         State = backupState,
+        ///         TimeExpiryScheduledGreaterThanOrEqualTo = backupTimeExpiryScheduledGreaterThanOrEqualTo,
+        ///         TimeExpiryScheduledLessThan = backupTimeExpiryScheduledLessThan,
+        ///         Type = backupType,
+        ///         Version = backupVersion,
         ///     });
         /// 
         /// });
@@ -87,9 +99,15 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testBackups = Oci.Database.GetBackups.Invoke(new()
         ///     {
+        ///         BackupDestinationType = backupBackupDestinationType,
         ///         CompartmentId = compartmentId,
         ///         DatabaseId = testDatabase.Id,
         ///         ShapeFamily = backupShapeFamily,
+        ///         State = backupState,
+        ///         TimeExpiryScheduledGreaterThanOrEqualTo = backupTimeExpiryScheduledGreaterThanOrEqualTo,
+        ///         TimeExpiryScheduledLessThan = backupTimeExpiryScheduledLessThan,
+        ///         Type = backupType,
+        ///         Version = backupVersion,
         ///     });
         /// 
         /// });
@@ -102,6 +120,12 @@ namespace Pulumi.Oci.Database
 
     public sealed class GetBackupsArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// A filter to return only resources that match the given backup destination type.
+        /// </summary>
+        [Input("backupDestinationType")]
+        public string? BackupDestinationType { get; set; }
+
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
@@ -128,6 +152,36 @@ namespace Pulumi.Oci.Database
         [Input("shapeFamily")]
         public string? ShapeFamily { get; set; }
 
+        /// <summary>
+        /// A filter to return only resources that match the given lifecycle state exactly.
+        /// </summary>
+        [Input("state")]
+        public string? State { get; set; }
+
+        /// <summary>
+        /// The start of date-time range of expiration for the long term backups to be fetched.
+        /// </summary>
+        [Input("timeExpiryScheduledGreaterThanOrEqualTo")]
+        public string? TimeExpiryScheduledGreaterThanOrEqualTo { get; set; }
+
+        /// <summary>
+        /// The end of date-time range of expiration for the long term backups to be fetched.
+        /// </summary>
+        [Input("timeExpiryScheduledLessThan")]
+        public string? TimeExpiryScheduledLessThan { get; set; }
+
+        /// <summary>
+        /// A filter to return only backups that matches with the given type of Backup.
+        /// </summary>
+        [Input("type")]
+        public string? Type { get; set; }
+
+        /// <summary>
+        /// A filter to return only resources that match the given database version.
+        /// </summary>
+        [Input("version")]
+        public string? Version { get; set; }
+
         public GetBackupsArgs()
         {
         }
@@ -136,6 +190,12 @@ namespace Pulumi.Oci.Database
 
     public sealed class GetBackupsInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// A filter to return only resources that match the given backup destination type.
+        /// </summary>
+        [Input("backupDestinationType")]
+        public Input<string>? BackupDestinationType { get; set; }
+
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
@@ -162,6 +222,36 @@ namespace Pulumi.Oci.Database
         [Input("shapeFamily")]
         public Input<string>? ShapeFamily { get; set; }
 
+        /// <summary>
+        /// A filter to return only resources that match the given lifecycle state exactly.
+        /// </summary>
+        [Input("state")]
+        public Input<string>? State { get; set; }
+
+        /// <summary>
+        /// The start of date-time range of expiration for the long term backups to be fetched.
+        /// </summary>
+        [Input("timeExpiryScheduledGreaterThanOrEqualTo")]
+        public Input<string>? TimeExpiryScheduledGreaterThanOrEqualTo { get; set; }
+
+        /// <summary>
+        /// The end of date-time range of expiration for the long term backups to be fetched.
+        /// </summary>
+        [Input("timeExpiryScheduledLessThan")]
+        public Input<string>? TimeExpiryScheduledLessThan { get; set; }
+
+        /// <summary>
+        /// A filter to return only backups that matches with the given type of Backup.
+        /// </summary>
+        [Input("type")]
+        public Input<string>? Type { get; set; }
+
+        /// <summary>
+        /// A filter to return only resources that match the given database version.
+        /// </summary>
+        [Input("version")]
+        public Input<string>? Version { get; set; }
+
         public GetBackupsInvokeArgs()
         {
         }
@@ -172,6 +262,10 @@ namespace Pulumi.Oci.Database
     [OutputType]
     public sealed class GetBackupsResult
     {
+        /// <summary>
+        /// Type of the backup destination.
+        /// </summary>
+        public readonly string? BackupDestinationType;
         /// <summary>
         /// The list of backups.
         /// </summary>
@@ -190,9 +284,25 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string Id;
         public readonly string? ShapeFamily;
+        /// <summary>
+        /// The current state of the backup.
+        /// </summary>
+        public readonly string? State;
+        public readonly string? TimeExpiryScheduledGreaterThanOrEqualTo;
+        public readonly string? TimeExpiryScheduledLessThan;
+        /// <summary>
+        /// The type of backup.
+        /// </summary>
+        public readonly string? Type;
+        /// <summary>
+        /// Version of the backup's source database
+        /// </summary>
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetBackupsResult(
+            string? backupDestinationType,
+
             ImmutableArray<Outputs.GetBackupsBackupResult> backups,
 
             string? compartmentId,
@@ -203,14 +313,30 @@ namespace Pulumi.Oci.Database
 
             string id,
 
-            string? shapeFamily)
+            string? shapeFamily,
+
+            string? state,
+
+            string? timeExpiryScheduledGreaterThanOrEqualTo,
+
+            string? timeExpiryScheduledLessThan,
+
+            string? type,
+
+            string? version)
         {
+            BackupDestinationType = backupDestinationType;
             Backups = backups;
             CompartmentId = compartmentId;
             DatabaseId = databaseId;
             Filters = filters;
             Id = id;
             ShapeFamily = shapeFamily;
+            State = state;
+            TimeExpiryScheduledGreaterThanOrEqualTo = timeExpiryScheduledGreaterThanOrEqualTo;
+            TimeExpiryScheduledLessThan = timeExpiryScheduledLessThan;
+            Type = type;
+            Version = version;
         }
     }
 }

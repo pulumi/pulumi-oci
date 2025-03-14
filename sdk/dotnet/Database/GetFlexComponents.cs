@@ -30,6 +30,7 @@ namespace Pulumi.Oci.Database
         ///     {
         ///         CompartmentId = compartmentId,
         ///         Name = flexComponentName,
+        ///         Shape = flexComponentShape,
         ///     });
         /// 
         /// });
@@ -57,6 +58,7 @@ namespace Pulumi.Oci.Database
         ///     {
         ///         CompartmentId = compartmentId,
         ///         Name = flexComponentName,
+        ///         Shape = flexComponentShape,
         ///     });
         /// 
         /// });
@@ -84,6 +86,7 @@ namespace Pulumi.Oci.Database
         ///     {
         ///         CompartmentId = compartmentId,
         ///         Name = flexComponentName,
+        ///         Shape = flexComponentShape,
         ///     });
         /// 
         /// });
@@ -116,6 +119,12 @@ namespace Pulumi.Oci.Database
         [Input("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// A filter to return only resources that belong to the entire shape name given. The match is not case sensitive.
+        /// </summary>
+        [Input("shape")]
+        public string? Shape { get; set; }
+
         public GetFlexComponentsArgs()
         {
         }
@@ -144,6 +153,12 @@ namespace Pulumi.Oci.Database
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// A filter to return only resources that belong to the entire shape name given. The match is not case sensitive.
+        /// </summary>
+        [Input("shape")]
+        public Input<string>? Shape { get; set; }
+
         public GetFlexComponentsInvokeArgs()
         {
         }
@@ -168,6 +183,10 @@ namespace Pulumi.Oci.Database
         /// The name of the Flex Component used for the DB system.
         /// </summary>
         public readonly string? Name;
+        /// <summary>
+        /// The name of the DB system shape for this Flex Component.
+        /// </summary>
+        public readonly string? Shape;
 
         [OutputConstructor]
         private GetFlexComponentsResult(
@@ -179,13 +198,16 @@ namespace Pulumi.Oci.Database
 
             string id,
 
-            string? name)
+            string? name,
+
+            string? shape)
         {
             CompartmentId = compartmentId;
             Filters = filters;
             FlexComponentCollections = flexComponentCollections;
             Id = id;
             Name = name;
+            Shape = shape;
         }
     }
 }

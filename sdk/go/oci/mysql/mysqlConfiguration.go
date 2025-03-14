@@ -46,27 +46,40 @@ import (
 //				},
 //				ParentConfigurationId: pulumi.Any(testConfiguration.Id),
 //				Variables: &mysql.MysqlConfigurationVariablesArgs{
+//					AutoIncrementIncrement:                 pulumi.Any(mysqlConfigurationVariablesAutoIncrementIncrement),
+//					AutoIncrementOffset:                    pulumi.Any(mysqlConfigurationVariablesAutoIncrementOffset),
 //					Autocommit:                             pulumi.Any(mysqlConfigurationVariablesAutocommit),
 //					BigTables:                              pulumi.Any(mysqlConfigurationVariablesBigTables),
 //					BinlogExpireLogsSeconds:                pulumi.Any(mysqlConfigurationVariablesBinlogExpireLogsSeconds),
+//					BinlogGroupCommitSyncDelay:             pulumi.Any(mysqlConfigurationVariablesBinlogGroupCommitSyncDelay),
+//					BinlogGroupCommitSyncNoDelayCount:      pulumi.Any(mysqlConfigurationVariablesBinlogGroupCommitSyncNoDelayCount),
 //					BinlogRowMetadata:                      pulumi.Any(mysqlConfigurationVariablesBinlogRowMetadata),
 //					BinlogRowValueOptions:                  pulumi.Any(mysqlConfigurationVariablesBinlogRowValueOptions),
 //					BinlogTransactionCompression:           pulumi.Any(mysqlConfigurationVariablesBinlogTransactionCompression),
+//					BlockEncryptionMode:                    pulumi.Any(mysqlConfigurationVariablesBlockEncryptionMode),
+//					CharacterSetServer:                     pulumi.Any(mysqlConfigurationVariablesCharacterSetServer),
+//					CollationServer:                        pulumi.Any(mysqlConfigurationVariablesCollationServer),
 //					CompletionType:                         pulumi.Any(mysqlConfigurationVariablesCompletionType),
 //					ConnectTimeout:                         pulumi.Any(mysqlConfigurationVariablesConnectTimeout),
 //					ConnectionMemoryChunkSize:              pulumi.Any(mysqlConfigurationVariablesConnectionMemoryChunkSize),
 //					ConnectionMemoryLimit:                  pulumi.Any(mysqlConfigurationVariablesConnectionMemoryLimit),
 //					CteMaxRecursionDepth:                   pulumi.Any(mysqlConfigurationVariablesCteMaxRecursionDepth),
 //					DefaultAuthenticationPlugin:            pulumi.Any(mysqlConfigurationVariablesDefaultAuthenticationPlugin),
+//					ExplainFormat:                          pulumi.Any(mysqlConfigurationVariablesExplainFormat),
+//					ExplicitDefaultsForTimestamp:           pulumi.Any(mysqlConfigurationVariablesExplicitDefaultsForTimestamp),
 //					ForeignKeyChecks:                       pulumi.Any(mysqlConfigurationVariablesForeignKeyChecks),
 //					GeneratedRandomPasswordLength:          pulumi.Any(mysqlConfigurationVariablesGeneratedRandomPasswordLength),
 //					GlobalConnectionMemoryLimit:            pulumi.Any(mysqlConfigurationVariablesGlobalConnectionMemoryLimit),
 //					GlobalConnectionMemoryTracking:         pulumi.Any(mysqlConfigurationVariablesGlobalConnectionMemoryTracking),
+//					GroupConcatMaxLen:                      pulumi.Any(mysqlConfigurationVariablesGroupConcatMaxLen),
 //					GroupReplicationConsistency:            pulumi.Any(mysqlConfigurationVariablesGroupReplicationConsistency),
 //					InformationSchemaStatsExpiry:           pulumi.Any(mysqlConfigurationVariablesInformationSchemaStatsExpiry),
+//					InnodbAdaptiveHashIndex:                pulumi.Any(mysqlConfigurationVariablesInnodbAdaptiveHashIndex),
+//					InnodbAutoincLockMode:                  pulumi.Any(mysqlConfigurationVariablesInnodbAutoincLockMode),
 //					InnodbBufferPoolDumpPct:                pulumi.Any(mysqlConfigurationVariablesInnodbBufferPoolDumpPct),
 //					InnodbBufferPoolInstances:              pulumi.Any(mysqlConfigurationVariablesInnodbBufferPoolInstances),
 //					InnodbBufferPoolSize:                   pulumi.Any(mysqlConfigurationVariablesInnodbBufferPoolSize),
+//					InnodbChangeBuffering:                  pulumi.Any(mysqlConfigurationVariablesInnodbChangeBuffering),
 //					InnodbDdlBufferSize:                    pulumi.Any(mysqlConfigurationVariablesInnodbDdlBufferSize),
 //					InnodbDdlThreads:                       pulumi.Any(mysqlConfigurationVariablesInnodbDdlThreads),
 //					InnodbFtEnableStopword:                 pulumi.Any(mysqlConfigurationVariablesInnodbFtEnableStopword),
@@ -79,10 +92,19 @@ import (
 //					InnodbLogWriterThreads:                 pulumi.Any(mysqlConfigurationVariablesInnodbLogWriterThreads),
 //					InnodbMaxPurgeLag:                      pulumi.Any(mysqlConfigurationVariablesInnodbMaxPurgeLag),
 //					InnodbMaxPurgeLagDelay:                 pulumi.Any(mysqlConfigurationVariablesInnodbMaxPurgeLagDelay),
+//					InnodbNumaInterleave:                   pulumi.Any(mysqlConfigurationVariablesInnodbNumaInterleave),
+//					InnodbOnlineAlterLogMaxSize:            pulumi.Any(mysqlConfigurationVariablesInnodbOnlineAlterLogMaxSize),
+//					InnodbRedoLogCapacity:                  pulumi.Any(mysqlConfigurationVariablesInnodbRedoLogCapacity),
+//					InnodbRollbackOnTimeout:                pulumi.Any(mysqlConfigurationVariablesInnodbRollbackOnTimeout),
+//					InnodbSortBufferSize:                   pulumi.Any(mysqlConfigurationVariablesInnodbSortBufferSize),
 //					InnodbStatsPersistentSamplePages:       pulumi.Any(mysqlConfigurationVariablesInnodbStatsPersistentSamplePages),
 //					InnodbStatsTransientSamplePages:        pulumi.Any(mysqlConfigurationVariablesInnodbStatsTransientSamplePages),
+//					InnodbStrictMode:                       pulumi.Any(mysqlConfigurationVariablesInnodbStrictMode),
+//					InnodbUndoLogTruncate:                  pulumi.Any(mysqlConfigurationVariablesInnodbUndoLogTruncate),
 //					InteractiveTimeout:                     pulumi.Any(mysqlConfigurationVariablesInteractiveTimeout),
+//					JoinBufferSize:                         pulumi.Any(mysqlConfigurationVariablesJoinBufferSize),
 //					LocalInfile:                            pulumi.Any(mysqlConfigurationVariablesLocalInfile),
+//					LongQueryTime:                          pulumi.Any(mysqlConfigurationVariablesLongQueryTime),
 //					MandatoryRoles:                         pulumi.Any(mysqlConfigurationVariablesMandatoryRoles),
 //					MaxAllowedPacket:                       pulumi.Any(mysqlConfigurationVariablesMaxAllowedPacket),
 //					MaxBinlogCacheSize:                     pulumi.Any(mysqlConfigurationVariablesMaxBinlogCacheSize),
@@ -91,6 +113,8 @@ import (
 //					MaxExecutionTime:                       pulumi.Any(mysqlConfigurationVariablesMaxExecutionTime),
 //					MaxHeapTableSize:                       pulumi.Any(mysqlConfigurationVariablesMaxHeapTableSize),
 //					MaxPreparedStmtCount:                   pulumi.Any(mysqlConfigurationVariablesMaxPreparedStmtCount),
+//					MaxSeeksForKey:                         pulumi.Any(mysqlConfigurationVariablesMaxSeeksForKey),
+//					MaxUserConnections:                     pulumi.Any(mysqlConfigurationVariablesMaxUserConnections),
 //					MysqlFirewallMode:                      pulumi.Any(mysqlConfigurationVariablesMysqlFirewallMode),
 //					MysqlZstdDefaultCompressionLevel:       pulumi.Any(mysqlConfigurationVariablesMysqlZstdDefaultCompressionLevel),
 //					MysqlxConnectTimeout:                   pulumi.Any(mysqlConfigurationVariablesMysqlxConnectTimeout),
@@ -111,16 +135,31 @@ import (
 //					MysqlxZstdMaxClientCompressionLevel:    pulumi.Any(mysqlConfigurationVariablesMysqlxZstdMaxClientCompressionLevel),
 //					NetReadTimeout:                         pulumi.Any(mysqlConfigurationVariablesNetReadTimeout),
 //					NetWriteTimeout:                        pulumi.Any(mysqlConfigurationVariablesNetWriteTimeout),
+//					OptimizerSwitch:                        pulumi.Any(mysqlConfigurationVariablesOptimizerSwitch),
 //					ParserMaxMemSize:                       pulumi.Any(mysqlConfigurationVariablesParserMaxMemSize),
 //					QueryAllocBlockSize:                    pulumi.Any(mysqlConfigurationVariablesQueryAllocBlockSize),
 //					QueryPreallocSize:                      pulumi.Any(mysqlConfigurationVariablesQueryPreallocSize),
+//					RangeOptimizerMaxMemSize:               pulumi.Any(mysqlConfigurationVariablesRangeOptimizerMaxMemSize),
 //					RegexpTimeLimit:                        pulumi.Any(mysqlConfigurationVariablesRegexpTimeLimit),
+//					RelayLogSpaceLimit:                     pulumi.Any(mysqlConfigurationVariablesRelayLogSpaceLimit),
+//					ReplicaNetTimeout:                      pulumi.Any(mysqlConfigurationVariablesReplicaNetTimeout),
+//					ReplicaParallelWorkers:                 pulumi.Any(mysqlConfigurationVariablesReplicaParallelWorkers),
+//					ReplicaTypeConversions:                 pulumi.Any(mysqlConfigurationVariablesReplicaTypeConversions),
+//					RequireSecureTransport:                 pulumi.Any(mysqlConfigurationVariablesRequireSecureTransport),
+//					SkipNameResolve:                        pulumi.Any(mysqlConfigurationVariablesSkipNameResolve),
 //					SortBufferSize:                         pulumi.Any(mysqlConfigurationVariablesSortBufferSize),
+//					SqlGenerateInvisiblePrimaryKey:         pulumi.Any(mysqlConfigurationVariablesSqlGenerateInvisiblePrimaryKey),
 //					SqlMode:                                pulumi.Any(mysqlConfigurationVariablesSqlMode),
 //					SqlRequirePrimaryKey:                   pulumi.Any(mysqlConfigurationVariablesSqlRequirePrimaryKey),
 //					SqlWarnings:                            pulumi.Any(mysqlConfigurationVariablesSqlWarnings),
+//					TableDefinitionCache:                   pulumi.Any(mysqlConfigurationVariablesTableDefinitionCache),
+//					TableOpenCache:                         pulumi.Any(mysqlConfigurationVariablesTableOpenCache),
+//					TemptableMaxRam:                        pulumi.Any(mysqlConfigurationVariablesTemptableMaxRam),
 //					ThreadPoolDedicatedListeners:           pulumi.Any(mysqlConfigurationVariablesThreadPoolDedicatedListeners),
 //					ThreadPoolMaxTransactionsLimit:         pulumi.Any(mysqlConfigurationVariablesThreadPoolMaxTransactionsLimit),
+//					ThreadPoolQueryThreadsPerGroup:         pulumi.Any(mysqlConfigurationVariablesThreadPoolQueryThreadsPerGroup),
+//					ThreadPoolSize:                         pulumi.Any(mysqlConfigurationVariablesThreadPoolSize),
+//					ThreadPoolTransactionDelay:             pulumi.Any(mysqlConfigurationVariablesThreadPoolTransactionDelay),
 //					TimeZone:                               pulumi.Any(mysqlConfigurationVariablesTimeZone),
 //					TmpTableSize:                           pulumi.Any(mysqlConfigurationVariablesTmpTableSize),
 //					TransactionIsolation:                   pulumi.Any(mysqlConfigurationVariablesTransactionIsolation),
@@ -164,6 +203,8 @@ type MysqlConfiguration struct {
 	ShapeName pulumi.StringOutput `pulumi:"shapeName"`
 	// The current state of the Configuration.
 	State pulumi.StringOutput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time the Configuration was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -228,6 +269,8 @@ type mysqlConfigurationState struct {
 	ShapeName *string `pulumi:"shapeName"`
 	// The current state of the Configuration.
 	State *string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the Configuration was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -257,6 +300,8 @@ type MysqlConfigurationState struct {
 	ShapeName pulumi.StringPtrInput
 	// The current state of the Configuration.
 	State pulumi.StringPtrInput
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput
 	// The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated pulumi.StringPtrInput
 	// The date and time the Configuration was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -444,6 +489,11 @@ func (o MysqlConfigurationOutput) ShapeName() pulumi.StringOutput {
 // The current state of the Configuration.
 func (o MysqlConfigurationOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *MysqlConfiguration) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o MysqlConfigurationOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MysqlConfiguration) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).

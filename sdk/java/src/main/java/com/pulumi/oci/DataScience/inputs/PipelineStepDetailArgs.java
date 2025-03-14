@@ -8,7 +8,9 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.inputs.PipelineStepDetailStepConfigurationDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.PipelineStepDetailStepContainerConfigurationDetailsArgs;
+import com.pulumi.oci.DataScience.inputs.PipelineStepDetailStepDataflowConfigurationDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.PipelineStepDetailStepInfrastructureConfigurationDetailsArgs;
+import com.pulumi.oci.DataScience.inputs.PipelineStepDetailStepStorageMountConfigurationDetailsListArgs;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -20,6 +22,21 @@ import javax.annotation.Nullable;
 public final class PipelineStepDetailArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final PipelineStepDetailArgs Empty = new PipelineStepDetailArgs();
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow application to be used as a step.
+     * 
+     */
+    @Import(name="applicationId")
+    private @Nullable Output<String> applicationId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow application to be used as a step.
+     * 
+     */
+    public Optional<Output<String>> applicationId() {
+        return Optional.ofNullable(this.applicationId);
+    }
 
     /**
      * The list of step names this current step depends on for execution.
@@ -112,6 +129,21 @@ public final class PipelineStepDetailArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * (Updatable) The configuration details of a Dataflow step.
+     * 
+     */
+    @Import(name="stepDataflowConfigurationDetails")
+    private @Nullable Output<PipelineStepDetailStepDataflowConfigurationDetailsArgs> stepDataflowConfigurationDetails;
+
+    /**
+     * @return (Updatable) The configuration details of a Dataflow step.
+     * 
+     */
+    public Optional<Output<PipelineStepDetailStepDataflowConfigurationDetailsArgs>> stepDataflowConfigurationDetails() {
+        return Optional.ofNullable(this.stepDataflowConfigurationDetails);
+    }
+
+    /**
      * (Updatable) The infrastructure configuration details of a pipeline or a step.
      * 
      */
@@ -142,10 +174,22 @@ public final class PipelineStepDetailArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) The type of step.
+     * (Updatable) The storage mount details to mount to the instance running the pipeline step.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    @Import(name="stepStorageMountConfigurationDetailsLists")
+    private @Nullable Output<List<PipelineStepDetailStepStorageMountConfigurationDetailsListArgs>> stepStorageMountConfigurationDetailsLists;
+
+    /**
+     * @return (Updatable) The storage mount details to mount to the instance running the pipeline step.
+     * 
+     */
+    public Optional<Output<List<PipelineStepDetailStepStorageMountConfigurationDetailsListArgs>>> stepStorageMountConfigurationDetailsLists() {
+        return Optional.ofNullable(this.stepStorageMountConfigurationDetailsLists);
+    }
+
+    /**
+     * (Updatable) The type of step.
      * 
      */
     @Import(name="stepType", required=true)
@@ -153,9 +197,6 @@ public final class PipelineStepDetailArgs extends com.pulumi.resources.ResourceA
 
     /**
      * @return (Updatable) The type of step.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> stepType() {
@@ -165,14 +206,17 @@ public final class PipelineStepDetailArgs extends com.pulumi.resources.ResourceA
     private PipelineStepDetailArgs() {}
 
     private PipelineStepDetailArgs(PipelineStepDetailArgs $) {
+        this.applicationId = $.applicationId;
         this.dependsOns = $.dependsOns;
         this.description = $.description;
         this.isArtifactUploaded = $.isArtifactUploaded;
         this.jobId = $.jobId;
         this.stepConfigurationDetails = $.stepConfigurationDetails;
         this.stepContainerConfigurationDetails = $.stepContainerConfigurationDetails;
+        this.stepDataflowConfigurationDetails = $.stepDataflowConfigurationDetails;
         this.stepInfrastructureConfigurationDetails = $.stepInfrastructureConfigurationDetails;
         this.stepName = $.stepName;
+        this.stepStorageMountConfigurationDetailsLists = $.stepStorageMountConfigurationDetailsLists;
         this.stepType = $.stepType;
     }
 
@@ -192,6 +236,27 @@ public final class PipelineStepDetailArgs extends com.pulumi.resources.ResourceA
 
         public Builder(PipelineStepDetailArgs defaults) {
             $ = new PipelineStepDetailArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param applicationId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow application to be used as a step.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder applicationId(@Nullable Output<String> applicationId) {
+            $.applicationId = applicationId;
+            return this;
+        }
+
+        /**
+         * @param applicationId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow application to be used as a step.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder applicationId(String applicationId) {
+            return applicationId(Output.of(applicationId));
         }
 
         /**
@@ -331,6 +396,27 @@ public final class PipelineStepDetailArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
+         * @param stepDataflowConfigurationDetails (Updatable) The configuration details of a Dataflow step.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder stepDataflowConfigurationDetails(@Nullable Output<PipelineStepDetailStepDataflowConfigurationDetailsArgs> stepDataflowConfigurationDetails) {
+            $.stepDataflowConfigurationDetails = stepDataflowConfigurationDetails;
+            return this;
+        }
+
+        /**
+         * @param stepDataflowConfigurationDetails (Updatable) The configuration details of a Dataflow step.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder stepDataflowConfigurationDetails(PipelineStepDetailStepDataflowConfigurationDetailsArgs stepDataflowConfigurationDetails) {
+            return stepDataflowConfigurationDetails(Output.of(stepDataflowConfigurationDetails));
+        }
+
+        /**
          * @param stepInfrastructureConfigurationDetails (Updatable) The infrastructure configuration details of a pipeline or a step.
          * 
          * @return builder
@@ -373,10 +459,38 @@ public final class PipelineStepDetailArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param stepType (Updatable) The type of step.
+         * @param stepStorageMountConfigurationDetailsLists (Updatable) The storage mount details to mount to the instance running the pipeline step.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @return builder
+         * 
+         */
+        public Builder stepStorageMountConfigurationDetailsLists(@Nullable Output<List<PipelineStepDetailStepStorageMountConfigurationDetailsListArgs>> stepStorageMountConfigurationDetailsLists) {
+            $.stepStorageMountConfigurationDetailsLists = stepStorageMountConfigurationDetailsLists;
+            return this;
+        }
+
+        /**
+         * @param stepStorageMountConfigurationDetailsLists (Updatable) The storage mount details to mount to the instance running the pipeline step.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder stepStorageMountConfigurationDetailsLists(List<PipelineStepDetailStepStorageMountConfigurationDetailsListArgs> stepStorageMountConfigurationDetailsLists) {
+            return stepStorageMountConfigurationDetailsLists(Output.of(stepStorageMountConfigurationDetailsLists));
+        }
+
+        /**
+         * @param stepStorageMountConfigurationDetailsLists (Updatable) The storage mount details to mount to the instance running the pipeline step.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder stepStorageMountConfigurationDetailsLists(PipelineStepDetailStepStorageMountConfigurationDetailsListArgs... stepStorageMountConfigurationDetailsLists) {
+            return stepStorageMountConfigurationDetailsLists(List.of(stepStorageMountConfigurationDetailsLists));
+        }
+
+        /**
+         * @param stepType (Updatable) The type of step.
          * 
          * @return builder
          * 
@@ -388,9 +502,6 @@ public final class PipelineStepDetailArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param stepType (Updatable) The type of step.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -27,7 +27,7 @@ class GetExadbVmClusterResult:
     """
     A collection of values returned by getExadbVmCluster.
     """
-    def __init__(__self__, availability_domain=None, backup_network_nsg_ids=None, backup_subnet_id=None, cluster_name=None, compartment_id=None, data_collection_options=None, defined_tags=None, display_name=None, domain=None, exadb_vm_cluster_id=None, exascale_db_storage_vault_id=None, freeform_tags=None, gi_version=None, grid_image_id=None, grid_image_type=None, hostname=None, id=None, iorm_config_caches=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, listener_port=None, node_configs=None, node_resources=None, nsg_ids=None, private_zone_id=None, scan_dns_name=None, scan_dns_record_id=None, scan_ip_ids=None, scan_listener_port_tcp=None, scan_listener_port_tcp_ssl=None, security_attributes=None, shape=None, ssh_public_keys=None, state=None, subnet_id=None, system_tags=None, system_version=None, time_created=None, time_zone=None, vip_ids=None, zone_id=None):
+    def __init__(__self__, availability_domain=None, backup_network_nsg_ids=None, backup_subnet_id=None, cluster_name=None, cluster_placement_group_id=None, compartment_id=None, data_collection_options=None, defined_tags=None, display_name=None, domain=None, exadb_vm_cluster_id=None, exascale_db_storage_vault_id=None, freeform_tags=None, gi_version=None, grid_image_id=None, grid_image_type=None, hostname=None, id=None, iorm_config_caches=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, listener_port=None, node_configs=None, node_resources=None, nsg_ids=None, private_zone_id=None, scan_dns_name=None, scan_dns_record_id=None, scan_ip_ids=None, scan_listener_port_tcp=None, scan_listener_port_tcp_ssl=None, security_attributes=None, shape=None, ssh_public_keys=None, state=None, subnet_id=None, subscription_id=None, system_tags=None, system_version=None, time_created=None, time_zone=None, vip_ids=None, zone_id=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -40,6 +40,9 @@ class GetExadbVmClusterResult:
         if cluster_name and not isinstance(cluster_name, str):
             raise TypeError("Expected argument 'cluster_name' to be a str")
         pulumi.set(__self__, "cluster_name", cluster_name)
+        if cluster_placement_group_id and not isinstance(cluster_placement_group_id, str):
+            raise TypeError("Expected argument 'cluster_placement_group_id' to be a str")
+        pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -136,6 +139,9 @@ class GetExadbVmClusterResult:
         if subnet_id and not isinstance(subnet_id, str):
             raise TypeError("Expected argument 'subnet_id' to be a str")
         pulumi.set(__self__, "subnet_id", subnet_id)
+        if subscription_id and not isinstance(subscription_id, str):
+            raise TypeError("Expected argument 'subscription_id' to be a str")
+        pulumi.set(__self__, "subscription_id", subscription_id)
         if system_tags and not isinstance(system_tags, dict):
             raise TypeError("Expected argument 'system_tags' to be a dict")
         pulumi.set(__self__, "system_tags", system_tags)
@@ -186,6 +192,14 @@ class GetExadbVmClusterResult:
         The cluster name for Exadata VM cluster on Exascale Infrastructure. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
         """
         return pulumi.get(self, "cluster_name")
+
+    @property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -442,6 +456,14 @@ class GetExadbVmClusterResult:
         return pulumi.get(self, "subnet_id")
 
     @property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        """
+        return pulumi.get(self, "subscription_id")
+
+    @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, str]:
         """
@@ -500,6 +522,7 @@ class AwaitableGetExadbVmClusterResult(GetExadbVmClusterResult):
             backup_network_nsg_ids=self.backup_network_nsg_ids,
             backup_subnet_id=self.backup_subnet_id,
             cluster_name=self.cluster_name,
+            cluster_placement_group_id=self.cluster_placement_group_id,
             compartment_id=self.compartment_id,
             data_collection_options=self.data_collection_options,
             defined_tags=self.defined_tags,
@@ -532,6 +555,7 @@ class AwaitableGetExadbVmClusterResult(GetExadbVmClusterResult):
             ssh_public_keys=self.ssh_public_keys,
             state=self.state,
             subnet_id=self.subnet_id,
+            subscription_id=self.subscription_id,
             system_tags=self.system_tags,
             system_version=self.system_version,
             time_created=self.time_created,
@@ -569,6 +593,7 @@ def get_exadb_vm_cluster(exadb_vm_cluster_id: Optional[str] = None,
         backup_network_nsg_ids=pulumi.get(__ret__, 'backup_network_nsg_ids'),
         backup_subnet_id=pulumi.get(__ret__, 'backup_subnet_id'),
         cluster_name=pulumi.get(__ret__, 'cluster_name'),
+        cluster_placement_group_id=pulumi.get(__ret__, 'cluster_placement_group_id'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         data_collection_options=pulumi.get(__ret__, 'data_collection_options'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
@@ -601,6 +626,7 @@ def get_exadb_vm_cluster(exadb_vm_cluster_id: Optional[str] = None,
         ssh_public_keys=pulumi.get(__ret__, 'ssh_public_keys'),
         state=pulumi.get(__ret__, 'state'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
+        subscription_id=pulumi.get(__ret__, 'subscription_id'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         system_version=pulumi.get(__ret__, 'system_version'),
         time_created=pulumi.get(__ret__, 'time_created'),
@@ -635,6 +661,7 @@ def get_exadb_vm_cluster_output(exadb_vm_cluster_id: Optional[pulumi.Input[str]]
         backup_network_nsg_ids=pulumi.get(__response__, 'backup_network_nsg_ids'),
         backup_subnet_id=pulumi.get(__response__, 'backup_subnet_id'),
         cluster_name=pulumi.get(__response__, 'cluster_name'),
+        cluster_placement_group_id=pulumi.get(__response__, 'cluster_placement_group_id'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         data_collection_options=pulumi.get(__response__, 'data_collection_options'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
@@ -667,6 +694,7 @@ def get_exadb_vm_cluster_output(exadb_vm_cluster_id: Optional[pulumi.Input[str]]
         ssh_public_keys=pulumi.get(__response__, 'ssh_public_keys'),
         state=pulumi.get(__response__, 'state'),
         subnet_id=pulumi.get(__response__, 'subnet_id'),
+        subscription_id=pulumi.get(__response__, 'subscription_id'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         system_version=pulumi.get(__response__, 'system_version'),
         time_created=pulumi.get(__response__, 'time_created'),

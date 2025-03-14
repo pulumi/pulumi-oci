@@ -201,14 +201,14 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
     }
 
     /**
-     * list of container health checks to check container status and take appropriate action if container status is failed. There are three types of health checks that we currently support HTTP, TCP, and Command.
+     * list of container health checks to check container status and take appropriate action if container status is failed. There are two types of health checks that we currently support HTTP and TCP.
      * 
      */
     @Import(name="healthChecks")
     private @Nullable Output<List<ContainerInstanceContainerHealthCheckArgs>> healthChecks;
 
     /**
-     * @return list of container health checks to check container status and take appropriate action if container status is failed. There are three types of health checks that we currently support HTTP, TCP, and Command.
+     * @return list of container health checks to check container status and take appropriate action if container status is failed. There are two types of health checks that we currently support HTTP and TCP.
      * 
      */
     public Optional<Output<List<ContainerInstanceContainerHealthCheckArgs>>> healthChecks() {
@@ -718,7 +718,7 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param healthChecks list of container health checks to check container status and take appropriate action if container status is failed. There are three types of health checks that we currently support HTTP, TCP, and Command.
+         * @param healthChecks list of container health checks to check container status and take appropriate action if container status is failed. There are two types of health checks that we currently support HTTP and TCP.
          * 
          * @return builder
          * 
@@ -729,7 +729,7 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param healthChecks list of container health checks to check container status and take appropriate action if container status is failed. There are three types of health checks that we currently support HTTP, TCP, and Command.
+         * @param healthChecks list of container health checks to check container status and take appropriate action if container status is failed. There are two types of health checks that we currently support HTTP and TCP.
          * 
          * @return builder
          * 
@@ -739,7 +739,7 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param healthChecks list of container health checks to check container status and take appropriate action if container status is failed. There are three types of health checks that we currently support HTTP, TCP, and Command.
+         * @param healthChecks list of container health checks to check container status and take appropriate action if container status is failed. There are two types of health checks that we currently support HTTP and TCP.
          * 
          * @return builder
          * 

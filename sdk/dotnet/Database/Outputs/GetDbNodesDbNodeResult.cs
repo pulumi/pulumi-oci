@@ -18,9 +18,13 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string AdditionalDetails;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address needed to make a database connection.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IPv4 address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IPv4 address needed to make a database connection.
         /// </summary>
         public readonly string BackupIpId;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IPv6 address associated with the database node. Use this OCID with the [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6) API to get the IPv6 address needed to make a database connection.
+        /// </summary>
+        public readonly string BackupIpv6id;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
         /// </summary>
@@ -59,10 +63,13 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
-        /// **Note:** Applies only to Exadata Cloud Service.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IPv4 address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IPv4 address needed to make a database connection.
         /// </summary>
         public readonly string HostIpId;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IPv6 address associated with the database node. Use this OCID with the [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6) API to get the IPv6 address needed to make a database connection.
+        /// </summary>
+        public readonly string HostIpv6id;
         /// <summary>
         /// The host name for the database node.
         /// </summary>
@@ -122,6 +129,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string backupIpId,
 
+            string backupIpv6id,
+
             string backupVnic2id,
 
             string backupVnicId,
@@ -143,6 +152,8 @@ namespace Pulumi.Oci.Database.Outputs
             ImmutableDictionary<string, string> freeformTags,
 
             string hostIpId,
+
+            string hostIpv6id,
 
             string hostname,
 
@@ -172,6 +183,7 @@ namespace Pulumi.Oci.Database.Outputs
         {
             AdditionalDetails = additionalDetails;
             BackupIpId = backupIpId;
+            BackupIpv6id = backupIpv6id;
             BackupVnic2id = backupVnic2id;
             BackupVnicId = backupVnicId;
             CpuCoreCount = cpuCoreCount;
@@ -183,6 +195,7 @@ namespace Pulumi.Oci.Database.Outputs
             FaultDomain = faultDomain;
             FreeformTags = freeformTags;
             HostIpId = hostIpId;
+            HostIpv6id = hostIpv6id;
             Hostname = hostname;
             Id = id;
             LifecycleDetails = lifecycleDetails;

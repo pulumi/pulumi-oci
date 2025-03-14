@@ -22,6 +22,7 @@ import * as utilities from "../utilities";
  *     cloudExadataInfrastructureId: testCloudExadataInfrastructure.id,
  *     displayName: cloudVmClusterDisplayName,
  *     state: cloudVmClusterState,
+ *     vmClusterType: cloudVmClusterVmClusterType,
  * });
  * ```
  */
@@ -33,6 +34,7 @@ export function getCloudVmClusters(args: GetCloudVmClustersArgs, opts?: pulumi.I
         "displayName": args.displayName,
         "filters": args.filters,
         "state": args.state,
+        "vmClusterType": args.vmClusterType,
     }, opts);
 }
 
@@ -57,6 +59,10 @@ export interface GetCloudVmClustersArgs {
      * A filter to return only cloud VM clusters that match the given lifecycle state exactly.
      */
     state?: string;
+    /**
+     * A filter to return only cloud vmclusters that match the given cloud vmcluster type exactly.
+     */
+    vmClusterType?: string;
 }
 
 /**
@@ -88,6 +94,10 @@ export interface GetCloudVmClustersResult {
      * The current state of the cloud VM cluster.
      */
     readonly state?: string;
+    /**
+     * The vmcluster type for the VM cluster/Cloud VM cluster.
+     */
+    readonly vmClusterType?: string;
 }
 /**
  * This data source provides the list of Cloud Vm Clusters in Oracle Cloud Infrastructure Database service.
@@ -105,6 +115,7 @@ export interface GetCloudVmClustersResult {
  *     cloudExadataInfrastructureId: testCloudExadataInfrastructure.id,
  *     displayName: cloudVmClusterDisplayName,
  *     state: cloudVmClusterState,
+ *     vmClusterType: cloudVmClusterVmClusterType,
  * });
  * ```
  */
@@ -116,6 +127,7 @@ export function getCloudVmClustersOutput(args: GetCloudVmClustersOutputArgs, opt
         "displayName": args.displayName,
         "filters": args.filters,
         "state": args.state,
+        "vmClusterType": args.vmClusterType,
     }, opts);
 }
 
@@ -140,4 +152,8 @@ export interface GetCloudVmClustersOutputArgs {
      * A filter to return only cloud VM clusters that match the given lifecycle state exactly.
      */
     state?: pulumi.Input<string>;
+    /**
+     * A filter to return only cloud vmclusters that match the given cloud vmcluster type exactly.
+     */
+    vmClusterType?: pulumi.Input<string>;
 }

@@ -60,27 +60,40 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .parentConfigurationId(testConfiguration.id())
  *             .variables(MysqlConfigurationVariablesArgs.builder()
+ *                 .autoIncrementIncrement(mysqlConfigurationVariablesAutoIncrementIncrement)
+ *                 .autoIncrementOffset(mysqlConfigurationVariablesAutoIncrementOffset)
  *                 .autocommit(mysqlConfigurationVariablesAutocommit)
  *                 .bigTables(mysqlConfigurationVariablesBigTables)
  *                 .binlogExpireLogsSeconds(mysqlConfigurationVariablesBinlogExpireLogsSeconds)
+ *                 .binlogGroupCommitSyncDelay(mysqlConfigurationVariablesBinlogGroupCommitSyncDelay)
+ *                 .binlogGroupCommitSyncNoDelayCount(mysqlConfigurationVariablesBinlogGroupCommitSyncNoDelayCount)
  *                 .binlogRowMetadata(mysqlConfigurationVariablesBinlogRowMetadata)
  *                 .binlogRowValueOptions(mysqlConfigurationVariablesBinlogRowValueOptions)
  *                 .binlogTransactionCompression(mysqlConfigurationVariablesBinlogTransactionCompression)
+ *                 .blockEncryptionMode(mysqlConfigurationVariablesBlockEncryptionMode)
+ *                 .characterSetServer(mysqlConfigurationVariablesCharacterSetServer)
+ *                 .collationServer(mysqlConfigurationVariablesCollationServer)
  *                 .completionType(mysqlConfigurationVariablesCompletionType)
  *                 .connectTimeout(mysqlConfigurationVariablesConnectTimeout)
  *                 .connectionMemoryChunkSize(mysqlConfigurationVariablesConnectionMemoryChunkSize)
  *                 .connectionMemoryLimit(mysqlConfigurationVariablesConnectionMemoryLimit)
  *                 .cteMaxRecursionDepth(mysqlConfigurationVariablesCteMaxRecursionDepth)
  *                 .defaultAuthenticationPlugin(mysqlConfigurationVariablesDefaultAuthenticationPlugin)
+ *                 .explainFormat(mysqlConfigurationVariablesExplainFormat)
+ *                 .explicitDefaultsForTimestamp(mysqlConfigurationVariablesExplicitDefaultsForTimestamp)
  *                 .foreignKeyChecks(mysqlConfigurationVariablesForeignKeyChecks)
  *                 .generatedRandomPasswordLength(mysqlConfigurationVariablesGeneratedRandomPasswordLength)
  *                 .globalConnectionMemoryLimit(mysqlConfigurationVariablesGlobalConnectionMemoryLimit)
  *                 .globalConnectionMemoryTracking(mysqlConfigurationVariablesGlobalConnectionMemoryTracking)
+ *                 .groupConcatMaxLen(mysqlConfigurationVariablesGroupConcatMaxLen)
  *                 .groupReplicationConsistency(mysqlConfigurationVariablesGroupReplicationConsistency)
  *                 .informationSchemaStatsExpiry(mysqlConfigurationVariablesInformationSchemaStatsExpiry)
+ *                 .innodbAdaptiveHashIndex(mysqlConfigurationVariablesInnodbAdaptiveHashIndex)
+ *                 .innodbAutoincLockMode(mysqlConfigurationVariablesInnodbAutoincLockMode)
  *                 .innodbBufferPoolDumpPct(mysqlConfigurationVariablesInnodbBufferPoolDumpPct)
  *                 .innodbBufferPoolInstances(mysqlConfigurationVariablesInnodbBufferPoolInstances)
  *                 .innodbBufferPoolSize(mysqlConfigurationVariablesInnodbBufferPoolSize)
+ *                 .innodbChangeBuffering(mysqlConfigurationVariablesInnodbChangeBuffering)
  *                 .innodbDdlBufferSize(mysqlConfigurationVariablesInnodbDdlBufferSize)
  *                 .innodbDdlThreads(mysqlConfigurationVariablesInnodbDdlThreads)
  *                 .innodbFtEnableStopword(mysqlConfigurationVariablesInnodbFtEnableStopword)
@@ -93,10 +106,19 @@ import javax.annotation.Nullable;
  *                 .innodbLogWriterThreads(mysqlConfigurationVariablesInnodbLogWriterThreads)
  *                 .innodbMaxPurgeLag(mysqlConfigurationVariablesInnodbMaxPurgeLag)
  *                 .innodbMaxPurgeLagDelay(mysqlConfigurationVariablesInnodbMaxPurgeLagDelay)
+ *                 .innodbNumaInterleave(mysqlConfigurationVariablesInnodbNumaInterleave)
+ *                 .innodbOnlineAlterLogMaxSize(mysqlConfigurationVariablesInnodbOnlineAlterLogMaxSize)
+ *                 .innodbRedoLogCapacity(mysqlConfigurationVariablesInnodbRedoLogCapacity)
+ *                 .innodbRollbackOnTimeout(mysqlConfigurationVariablesInnodbRollbackOnTimeout)
+ *                 .innodbSortBufferSize(mysqlConfigurationVariablesInnodbSortBufferSize)
  *                 .innodbStatsPersistentSamplePages(mysqlConfigurationVariablesInnodbStatsPersistentSamplePages)
  *                 .innodbStatsTransientSamplePages(mysqlConfigurationVariablesInnodbStatsTransientSamplePages)
+ *                 .innodbStrictMode(mysqlConfigurationVariablesInnodbStrictMode)
+ *                 .innodbUndoLogTruncate(mysqlConfigurationVariablesInnodbUndoLogTruncate)
  *                 .interactiveTimeout(mysqlConfigurationVariablesInteractiveTimeout)
+ *                 .joinBufferSize(mysqlConfigurationVariablesJoinBufferSize)
  *                 .localInfile(mysqlConfigurationVariablesLocalInfile)
+ *                 .longQueryTime(mysqlConfigurationVariablesLongQueryTime)
  *                 .mandatoryRoles(mysqlConfigurationVariablesMandatoryRoles)
  *                 .maxAllowedPacket(mysqlConfigurationVariablesMaxAllowedPacket)
  *                 .maxBinlogCacheSize(mysqlConfigurationVariablesMaxBinlogCacheSize)
@@ -105,6 +127,8 @@ import javax.annotation.Nullable;
  *                 .maxExecutionTime(mysqlConfigurationVariablesMaxExecutionTime)
  *                 .maxHeapTableSize(mysqlConfigurationVariablesMaxHeapTableSize)
  *                 .maxPreparedStmtCount(mysqlConfigurationVariablesMaxPreparedStmtCount)
+ *                 .maxSeeksForKey(mysqlConfigurationVariablesMaxSeeksForKey)
+ *                 .maxUserConnections(mysqlConfigurationVariablesMaxUserConnections)
  *                 .mysqlFirewallMode(mysqlConfigurationVariablesMysqlFirewallMode)
  *                 .mysqlZstdDefaultCompressionLevel(mysqlConfigurationVariablesMysqlZstdDefaultCompressionLevel)
  *                 .mysqlxConnectTimeout(mysqlConfigurationVariablesMysqlxConnectTimeout)
@@ -125,16 +149,31 @@ import javax.annotation.Nullable;
  *                 .mysqlxZstdMaxClientCompressionLevel(mysqlConfigurationVariablesMysqlxZstdMaxClientCompressionLevel)
  *                 .netReadTimeout(mysqlConfigurationVariablesNetReadTimeout)
  *                 .netWriteTimeout(mysqlConfigurationVariablesNetWriteTimeout)
+ *                 .optimizerSwitch(mysqlConfigurationVariablesOptimizerSwitch)
  *                 .parserMaxMemSize(mysqlConfigurationVariablesParserMaxMemSize)
  *                 .queryAllocBlockSize(mysqlConfigurationVariablesQueryAllocBlockSize)
  *                 .queryPreallocSize(mysqlConfigurationVariablesQueryPreallocSize)
+ *                 .rangeOptimizerMaxMemSize(mysqlConfigurationVariablesRangeOptimizerMaxMemSize)
  *                 .regexpTimeLimit(mysqlConfigurationVariablesRegexpTimeLimit)
+ *                 .relayLogSpaceLimit(mysqlConfigurationVariablesRelayLogSpaceLimit)
+ *                 .replicaNetTimeout(mysqlConfigurationVariablesReplicaNetTimeout)
+ *                 .replicaParallelWorkers(mysqlConfigurationVariablesReplicaParallelWorkers)
+ *                 .replicaTypeConversions(mysqlConfigurationVariablesReplicaTypeConversions)
+ *                 .requireSecureTransport(mysqlConfigurationVariablesRequireSecureTransport)
+ *                 .skipNameResolve(mysqlConfigurationVariablesSkipNameResolve)
  *                 .sortBufferSize(mysqlConfigurationVariablesSortBufferSize)
+ *                 .sqlGenerateInvisiblePrimaryKey(mysqlConfigurationVariablesSqlGenerateInvisiblePrimaryKey)
  *                 .sqlMode(mysqlConfigurationVariablesSqlMode)
  *                 .sqlRequirePrimaryKey(mysqlConfigurationVariablesSqlRequirePrimaryKey)
  *                 .sqlWarnings(mysqlConfigurationVariablesSqlWarnings)
+ *                 .tableDefinitionCache(mysqlConfigurationVariablesTableDefinitionCache)
+ *                 .tableOpenCache(mysqlConfigurationVariablesTableOpenCache)
+ *                 .temptableMaxRam(mysqlConfigurationVariablesTemptableMaxRam)
  *                 .threadPoolDedicatedListeners(mysqlConfigurationVariablesThreadPoolDedicatedListeners)
  *                 .threadPoolMaxTransactionsLimit(mysqlConfigurationVariablesThreadPoolMaxTransactionsLimit)
+ *                 .threadPoolQueryThreadsPerGroup(mysqlConfigurationVariablesThreadPoolQueryThreadsPerGroup)
+ *                 .threadPoolSize(mysqlConfigurationVariablesThreadPoolSize)
+ *                 .threadPoolTransactionDelay(mysqlConfigurationVariablesThreadPoolTransactionDelay)
  *                 .timeZone(mysqlConfigurationVariablesTimeZone)
  *                 .tmpTableSize(mysqlConfigurationVariablesTmpTableSize)
  *                 .transactionIsolation(mysqlConfigurationVariablesTransactionIsolation)
@@ -284,6 +323,20 @@ public class MysqlConfiguration extends com.pulumi.resources.CustomResource {
      */
     public Output<String> state() {
         return this.state;
+    }
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    @Export(name="systemTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> systemTags;
+
+    /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Output<Map<String,String>> systemTags() {
+        return this.systemTags;
     }
     /**
      * The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).

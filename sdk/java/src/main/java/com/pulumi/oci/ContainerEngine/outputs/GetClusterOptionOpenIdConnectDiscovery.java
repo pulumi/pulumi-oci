@@ -10,9 +10,17 @@ import java.util.Objects;
 
 @CustomType
 public final class GetClusterOptionOpenIdConnectDiscovery {
+    /**
+     * @return Whether the cluster has OIDC Discovery enabled. Defaults to false. If set to true, the cluster will be assigned a public OIDC Discovery endpoint.
+     * 
+     */
     private Boolean isOpenIdConnectDiscoveryEnabled;
 
     private GetClusterOptionOpenIdConnectDiscovery() {}
+    /**
+     * @return Whether the cluster has OIDC Discovery enabled. Defaults to false. If set to true, the cluster will be assigned a public OIDC Discovery endpoint.
+     * 
+     */
     public Boolean isOpenIdConnectDiscoveryEnabled() {
         return this.isOpenIdConnectDiscoveryEnabled;
     }

@@ -14,6 +14,7 @@ import com.pulumi.oci.DataScience.outputs.PipelineInfrastructureConfigurationDet
 import com.pulumi.oci.DataScience.outputs.PipelineLogConfigurationDetails;
 import com.pulumi.oci.DataScience.outputs.PipelineStepArtifact;
 import com.pulumi.oci.DataScience.outputs.PipelineStepDetail;
+import com.pulumi.oci.DataScience.outputs.PipelineStorageMountConfigurationDetailsList;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
@@ -26,106 +27,6 @@ import javax.annotation.Nullable;
  * This resource provides the Pipeline resource in Oracle Cloud Infrastructure Data Science service.
  * 
  * Creates a new Pipeline.
- * 
- * ## Example Usage
- * 
- * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.DataScience.Pipeline;
- * import com.pulumi.oci.DataScience.PipelineArgs;
- * import com.pulumi.oci.DataScience.inputs.PipelineStepDetailArgs;
- * import com.pulumi.oci.DataScience.inputs.PipelineStepDetailStepConfigurationDetailsArgs;
- * import com.pulumi.oci.DataScience.inputs.PipelineStepDetailStepContainerConfigurationDetailsArgs;
- * import com.pulumi.oci.DataScience.inputs.PipelineStepDetailStepInfrastructureConfigurationDetailsArgs;
- * import com.pulumi.oci.DataScience.inputs.PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs;
- * import com.pulumi.oci.DataScience.inputs.PipelineConfigurationDetailsArgs;
- * import com.pulumi.oci.DataScience.inputs.PipelineInfrastructureConfigurationDetailsArgs;
- * import com.pulumi.oci.DataScience.inputs.PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgs;
- * import com.pulumi.oci.DataScience.inputs.PipelineLogConfigurationDetailsArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testPipeline = new Pipeline("testPipeline", PipelineArgs.builder()
- *             .compartmentId(compartmentId)
- *             .projectId(testProject.id())
- *             .stepDetails(PipelineStepDetailArgs.builder()
- *                 .stepName(pipelineStepDetailsStepName)
- *                 .stepType(pipelineStepDetailsStepType)
- *                 .dependsOns(pipelineStepDetailsDependsOn)
- *                 .description(pipelineStepDetailsDescription)
- *                 .isArtifactUploaded(pipelineStepDetailsIsArtifactUploaded)
- *                 .jobId(testJob.id())
- *                 .stepConfigurationDetails(PipelineStepDetailStepConfigurationDetailsArgs.builder()
- *                     .commandLineArguments(pipelineStepDetailsStepConfigurationDetailsCommandLineArguments)
- *                     .environmentVariables(pipelineStepDetailsStepConfigurationDetailsEnvironmentVariables)
- *                     .maximumRuntimeInMinutes(pipelineStepDetailsStepConfigurationDetailsMaximumRuntimeInMinutes)
- *                     .build())
- *                 .stepContainerConfigurationDetails(PipelineStepDetailStepContainerConfigurationDetailsArgs.builder()
- *                     .containerType(pipelineStepDetailsStepContainerConfigurationDetailsContainerType)
- *                     .image(pipelineStepDetailsStepContainerConfigurationDetailsImage)
- *                     .cmds(pipelineStepDetailsStepContainerConfigurationDetailsCmd)
- *                     .entrypoints(pipelineStepDetailsStepContainerConfigurationDetailsEntrypoint)
- *                     .imageDigest(pipelineStepDetailsStepContainerConfigurationDetailsImageDigest)
- *                     .imageSignatureId(testImageSignature.id())
- *                     .build())
- *                 .stepInfrastructureConfigurationDetails(PipelineStepDetailStepInfrastructureConfigurationDetailsArgs.builder()
- *                     .blockStorageSizeInGbs(pipelineStepDetailsStepInfrastructureConfigurationDetailsBlockStorageSizeInGbs)
- *                     .shapeConfigDetails(PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs.builder()
- *                         .memoryInGbs(pipelineStepDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsMemoryInGbs)
- *                         .ocpus(pipelineStepDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsOcpus)
- *                         .build())
- *                     .shapeName(testShape.name())
- *                     .subnetId(testSubnet.id())
- *                     .build())
- *                 .build())
- *             .configurationDetails(PipelineConfigurationDetailsArgs.builder()
- *                 .type(pipelineConfigurationDetailsType)
- *                 .commandLineArguments(pipelineConfigurationDetailsCommandLineArguments)
- *                 .environmentVariables(pipelineConfigurationDetailsEnvironmentVariables)
- *                 .maximumRuntimeInMinutes(pipelineConfigurationDetailsMaximumRuntimeInMinutes)
- *                 .build())
- *             .definedTags(Map.of("Operations.CostCenter", "42"))
- *             .description(pipelineDescription)
- *             .displayName(pipelineDisplayName)
- *             .freeformTags(Map.of("Department", "Finance"))
- *             .infrastructureConfigurationDetails(PipelineInfrastructureConfigurationDetailsArgs.builder()
- *                 .blockStorageSizeInGbs(pipelineInfrastructureConfigurationDetailsBlockStorageSizeInGbs)
- *                 .shapeName(testShape.name())
- *                 .shapeConfigDetails(PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgs.builder()
- *                     .memoryInGbs(pipelineInfrastructureConfigurationDetailsShapeConfigDetailsMemoryInGbs)
- *                     .ocpus(pipelineInfrastructureConfigurationDetailsShapeConfigDetailsOcpus)
- *                     .build())
- *                 .subnetId(testSubnet.id())
- *                 .build())
- *             .logConfigurationDetails(PipelineLogConfigurationDetailsArgs.builder()
- *                 .enableAutoLogCreation(pipelineLogConfigurationDetailsEnableAutoLogCreation)
- *                 .enableLogging(pipelineLogConfigurationDetailsEnableLogging)
- *                 .logGroupId(testLogGroup.id())
- *                 .logId(testLog.id())
- *                 .build())
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
- * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
@@ -331,6 +232,20 @@ public class Pipeline extends com.pulumi.resources.CustomResource {
      */
     public Output<List<PipelineStepDetail>> stepDetails() {
         return this.stepDetails;
+    }
+    /**
+     * (Updatable) The storage mount details to mount to the instance running the pipeline step.
+     * 
+     */
+    @Export(name="storageMountConfigurationDetailsLists", refs={List.class,PipelineStorageMountConfigurationDetailsList.class}, tree="[0,1]")
+    private Output<List<PipelineStorageMountConfigurationDetailsList>> storageMountConfigurationDetailsLists;
+
+    /**
+     * @return (Updatable) The storage mount details to mount to the instance running the pipeline step.
+     * 
+     */
+    public Output<List<PipelineStorageMountConfigurationDetailsList>> storageMountConfigurationDetailsLists() {
+        return this.storageMountConfigurationDetailsLists;
     }
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`

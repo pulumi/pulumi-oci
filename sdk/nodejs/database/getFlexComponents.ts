@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  * const testFlexComponents = oci.Database.getFlexComponents({
  *     compartmentId: compartmentId,
  *     name: flexComponentName,
+ *     shape: flexComponentShape,
  * });
  * ```
  */
@@ -29,6 +30,7 @@ export function getFlexComponents(args: GetFlexComponentsArgs, opts?: pulumi.Inv
         "compartmentId": args.compartmentId,
         "filters": args.filters,
         "name": args.name,
+        "shape": args.shape,
     }, opts);
 }
 
@@ -45,6 +47,10 @@ export interface GetFlexComponentsArgs {
      * A filter to return only resources that match the entire name given. The match is not case sensitive.
      */
     name?: string;
+    /**
+     * A filter to return only resources that belong to the entire shape name given. The match is not case sensitive.
+     */
+    shape?: string;
 }
 
 /**
@@ -65,6 +71,10 @@ export interface GetFlexComponentsResult {
      * The name of the Flex Component used for the DB system.
      */
     readonly name?: string;
+    /**
+     * The name of the DB system shape for this Flex Component.
+     */
+    readonly shape?: string;
 }
 /**
  * This data source provides the list of Flex Components in Oracle Cloud Infrastructure Database service.
@@ -80,6 +90,7 @@ export interface GetFlexComponentsResult {
  * const testFlexComponents = oci.Database.getFlexComponents({
  *     compartmentId: compartmentId,
  *     name: flexComponentName,
+ *     shape: flexComponentShape,
  * });
  * ```
  */
@@ -89,6 +100,7 @@ export function getFlexComponentsOutput(args: GetFlexComponentsOutputArgs, opts?
         "compartmentId": args.compartmentId,
         "filters": args.filters,
         "name": args.name,
+        "shape": args.shape,
     }, opts);
 }
 
@@ -105,4 +117,8 @@ export interface GetFlexComponentsOutputArgs {
      * A filter to return only resources that match the entire name given. The match is not case sensitive.
      */
     name?: pulumi.Input<string>;
+    /**
+     * A filter to return only resources that belong to the entire shape name given. The match is not case sensitive.
+     */
+    shape?: pulumi.Input<string>;
 }

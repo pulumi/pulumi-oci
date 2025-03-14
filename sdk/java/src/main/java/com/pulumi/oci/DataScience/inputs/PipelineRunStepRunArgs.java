@@ -16,6 +16,21 @@ public final class PipelineRunStepRunArgs extends com.pulumi.resources.ResourceA
     public static final PipelineRunStepRunArgs Empty = new PipelineRunStepRunArgs();
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow run triggered for this step run.
+     * 
+     */
+    @Import(name="dataflowRunId")
+    private @Nullable Output<String> dataflowRunId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow run triggered for this step run.
+     * 
+     */
+    public Optional<Output<String>> dataflowRunId() {
+        return Optional.ofNullable(this.dataflowRunId);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
      * 
      */
@@ -123,6 +138,7 @@ public final class PipelineRunStepRunArgs extends com.pulumi.resources.ResourceA
     private PipelineRunStepRunArgs() {}
 
     private PipelineRunStepRunArgs(PipelineRunStepRunArgs $) {
+        this.dataflowRunId = $.dataflowRunId;
         this.jobRunId = $.jobRunId;
         this.lifecycleDetails = $.lifecycleDetails;
         this.state = $.state;
@@ -148,6 +164,27 @@ public final class PipelineRunStepRunArgs extends com.pulumi.resources.ResourceA
 
         public Builder(PipelineRunStepRunArgs defaults) {
             $ = new PipelineRunStepRunArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param dataflowRunId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow run triggered for this step run.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataflowRunId(@Nullable Output<String> dataflowRunId) {
+            $.dataflowRunId = dataflowRunId;
+            return this;
+        }
+
+        /**
+         * @param dataflowRunId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow run triggered for this step run.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataflowRunId(String dataflowRunId) {
+            return dataflowRunId(Output.of(dataflowRunId));
         }
 
         /**

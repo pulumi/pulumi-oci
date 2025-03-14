@@ -180,6 +180,7 @@ class _MysqlConfigurationState:
                  parent_configuration_id: Optional[pulumi.Input[str]] = None,
                  shape_name: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None,
@@ -195,6 +196,7 @@ class _MysqlConfigurationState:
         :param pulumi.Input[str] parent_configuration_id: The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
         :param pulumi.Input[str] shape_name: The name of the associated Shape.
         :param pulumi.Input[str] state: The current state of the Configuration.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[str] time_updated: The date and time the Configuration was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[str] type: The Configuration type, DEFAULT or CUSTOM.
@@ -218,6 +220,8 @@ class _MysqlConfigurationState:
             pulumi.set(__self__, "shape_name", shape_name)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
@@ -336,6 +340,18 @@ class _MysqlConfigurationState:
         pulumi.set(self, "state", value)
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "system_tags", value)
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
@@ -426,27 +442,40 @@ class MysqlConfiguration(pulumi.CustomResource):
             },
             parent_configuration_id=test_configuration["id"],
             variables={
+                "auto_increment_increment": mysql_configuration_variables_auto_increment_increment,
+                "auto_increment_offset": mysql_configuration_variables_auto_increment_offset,
                 "autocommit": mysql_configuration_variables_autocommit,
                 "big_tables": mysql_configuration_variables_big_tables,
                 "binlog_expire_logs_seconds": mysql_configuration_variables_binlog_expire_logs_seconds,
+                "binlog_group_commit_sync_delay": mysql_configuration_variables_binlog_group_commit_sync_delay,
+                "binlog_group_commit_sync_no_delay_count": mysql_configuration_variables_binlog_group_commit_sync_no_delay_count,
                 "binlog_row_metadata": mysql_configuration_variables_binlog_row_metadata,
                 "binlog_row_value_options": mysql_configuration_variables_binlog_row_value_options,
                 "binlog_transaction_compression": mysql_configuration_variables_binlog_transaction_compression,
+                "block_encryption_mode": mysql_configuration_variables_block_encryption_mode,
+                "character_set_server": mysql_configuration_variables_character_set_server,
+                "collation_server": mysql_configuration_variables_collation_server,
                 "completion_type": mysql_configuration_variables_completion_type,
                 "connect_timeout": mysql_configuration_variables_connect_timeout,
                 "connection_memory_chunk_size": mysql_configuration_variables_connection_memory_chunk_size,
                 "connection_memory_limit": mysql_configuration_variables_connection_memory_limit,
                 "cte_max_recursion_depth": mysql_configuration_variables_cte_max_recursion_depth,
                 "default_authentication_plugin": mysql_configuration_variables_default_authentication_plugin,
+                "explain_format": mysql_configuration_variables_explain_format,
+                "explicit_defaults_for_timestamp": mysql_configuration_variables_explicit_defaults_for_timestamp,
                 "foreign_key_checks": mysql_configuration_variables_foreign_key_checks,
                 "generated_random_password_length": mysql_configuration_variables_generated_random_password_length,
                 "global_connection_memory_limit": mysql_configuration_variables_global_connection_memory_limit,
                 "global_connection_memory_tracking": mysql_configuration_variables_global_connection_memory_tracking,
+                "group_concat_max_len": mysql_configuration_variables_group_concat_max_len,
                 "group_replication_consistency": mysql_configuration_variables_group_replication_consistency,
                 "information_schema_stats_expiry": mysql_configuration_variables_information_schema_stats_expiry,
+                "innodb_adaptive_hash_index": mysql_configuration_variables_innodb_adaptive_hash_index,
+                "innodb_autoinc_lock_mode": mysql_configuration_variables_innodb_autoinc_lock_mode,
                 "innodb_buffer_pool_dump_pct": mysql_configuration_variables_innodb_buffer_pool_dump_pct,
                 "innodb_buffer_pool_instances": mysql_configuration_variables_innodb_buffer_pool_instances,
                 "innodb_buffer_pool_size": mysql_configuration_variables_innodb_buffer_pool_size,
+                "innodb_change_buffering": mysql_configuration_variables_innodb_change_buffering,
                 "innodb_ddl_buffer_size": mysql_configuration_variables_innodb_ddl_buffer_size,
                 "innodb_ddl_threads": mysql_configuration_variables_innodb_ddl_threads,
                 "innodb_ft_enable_stopword": mysql_configuration_variables_innodb_ft_enable_stopword,
@@ -459,10 +488,19 @@ class MysqlConfiguration(pulumi.CustomResource):
                 "innodb_log_writer_threads": mysql_configuration_variables_innodb_log_writer_threads,
                 "innodb_max_purge_lag": mysql_configuration_variables_innodb_max_purge_lag,
                 "innodb_max_purge_lag_delay": mysql_configuration_variables_innodb_max_purge_lag_delay,
+                "innodb_numa_interleave": mysql_configuration_variables_innodb_numa_interleave,
+                "innodb_online_alter_log_max_size": mysql_configuration_variables_innodb_online_alter_log_max_size,
+                "innodb_redo_log_capacity": mysql_configuration_variables_innodb_redo_log_capacity,
+                "innodb_rollback_on_timeout": mysql_configuration_variables_innodb_rollback_on_timeout,
+                "innodb_sort_buffer_size": mysql_configuration_variables_innodb_sort_buffer_size,
                 "innodb_stats_persistent_sample_pages": mysql_configuration_variables_innodb_stats_persistent_sample_pages,
                 "innodb_stats_transient_sample_pages": mysql_configuration_variables_innodb_stats_transient_sample_pages,
+                "innodb_strict_mode": mysql_configuration_variables_innodb_strict_mode,
+                "innodb_undo_log_truncate": mysql_configuration_variables_innodb_undo_log_truncate,
                 "interactive_timeout": mysql_configuration_variables_interactive_timeout,
+                "join_buffer_size": mysql_configuration_variables_join_buffer_size,
                 "local_infile": mysql_configuration_variables_local_infile,
+                "long_query_time": mysql_configuration_variables_long_query_time,
                 "mandatory_roles": mysql_configuration_variables_mandatory_roles,
                 "max_allowed_packet": mysql_configuration_variables_max_allowed_packet,
                 "max_binlog_cache_size": mysql_configuration_variables_max_binlog_cache_size,
@@ -471,6 +509,8 @@ class MysqlConfiguration(pulumi.CustomResource):
                 "max_execution_time": mysql_configuration_variables_max_execution_time,
                 "max_heap_table_size": mysql_configuration_variables_max_heap_table_size,
                 "max_prepared_stmt_count": mysql_configuration_variables_max_prepared_stmt_count,
+                "max_seeks_for_key": mysql_configuration_variables_max_seeks_for_key,
+                "max_user_connections": mysql_configuration_variables_max_user_connections,
                 "mysql_firewall_mode": mysql_configuration_variables_mysql_firewall_mode,
                 "mysql_zstd_default_compression_level": mysql_configuration_variables_mysql_zstd_default_compression_level,
                 "mysqlx_connect_timeout": mysql_configuration_variables_mysqlx_connect_timeout,
@@ -491,16 +531,31 @@ class MysqlConfiguration(pulumi.CustomResource):
                 "mysqlx_zstd_max_client_compression_level": mysql_configuration_variables_mysqlx_zstd_max_client_compression_level,
                 "net_read_timeout": mysql_configuration_variables_net_read_timeout,
                 "net_write_timeout": mysql_configuration_variables_net_write_timeout,
+                "optimizer_switch": mysql_configuration_variables_optimizer_switch,
                 "parser_max_mem_size": mysql_configuration_variables_parser_max_mem_size,
                 "query_alloc_block_size": mysql_configuration_variables_query_alloc_block_size,
                 "query_prealloc_size": mysql_configuration_variables_query_prealloc_size,
+                "range_optimizer_max_mem_size": mysql_configuration_variables_range_optimizer_max_mem_size,
                 "regexp_time_limit": mysql_configuration_variables_regexp_time_limit,
+                "relay_log_space_limit": mysql_configuration_variables_relay_log_space_limit,
+                "replica_net_timeout": mysql_configuration_variables_replica_net_timeout,
+                "replica_parallel_workers": mysql_configuration_variables_replica_parallel_workers,
+                "replica_type_conversions": mysql_configuration_variables_replica_type_conversions,
+                "require_secure_transport": mysql_configuration_variables_require_secure_transport,
+                "skip_name_resolve": mysql_configuration_variables_skip_name_resolve,
                 "sort_buffer_size": mysql_configuration_variables_sort_buffer_size,
+                "sql_generate_invisible_primary_key": mysql_configuration_variables_sql_generate_invisible_primary_key,
                 "sql_mode": mysql_configuration_variables_sql_mode,
                 "sql_require_primary_key": mysql_configuration_variables_sql_require_primary_key,
                 "sql_warnings": mysql_configuration_variables_sql_warnings,
+                "table_definition_cache": mysql_configuration_variables_table_definition_cache,
+                "table_open_cache": mysql_configuration_variables_table_open_cache,
+                "temptable_max_ram": mysql_configuration_variables_temptable_max_ram,
                 "thread_pool_dedicated_listeners": mysql_configuration_variables_thread_pool_dedicated_listeners,
                 "thread_pool_max_transactions_limit": mysql_configuration_variables_thread_pool_max_transactions_limit,
+                "thread_pool_query_threads_per_group": mysql_configuration_variables_thread_pool_query_threads_per_group,
+                "thread_pool_size": mysql_configuration_variables_thread_pool_size,
+                "thread_pool_transaction_delay": mysql_configuration_variables_thread_pool_transaction_delay,
                 "time_zone": mysql_configuration_variables_time_zone,
                 "tmp_table_size": mysql_configuration_variables_tmp_table_size,
                 "transaction_isolation": mysql_configuration_variables_transaction_isolation,
@@ -561,27 +616,40 @@ class MysqlConfiguration(pulumi.CustomResource):
             },
             parent_configuration_id=test_configuration["id"],
             variables={
+                "auto_increment_increment": mysql_configuration_variables_auto_increment_increment,
+                "auto_increment_offset": mysql_configuration_variables_auto_increment_offset,
                 "autocommit": mysql_configuration_variables_autocommit,
                 "big_tables": mysql_configuration_variables_big_tables,
                 "binlog_expire_logs_seconds": mysql_configuration_variables_binlog_expire_logs_seconds,
+                "binlog_group_commit_sync_delay": mysql_configuration_variables_binlog_group_commit_sync_delay,
+                "binlog_group_commit_sync_no_delay_count": mysql_configuration_variables_binlog_group_commit_sync_no_delay_count,
                 "binlog_row_metadata": mysql_configuration_variables_binlog_row_metadata,
                 "binlog_row_value_options": mysql_configuration_variables_binlog_row_value_options,
                 "binlog_transaction_compression": mysql_configuration_variables_binlog_transaction_compression,
+                "block_encryption_mode": mysql_configuration_variables_block_encryption_mode,
+                "character_set_server": mysql_configuration_variables_character_set_server,
+                "collation_server": mysql_configuration_variables_collation_server,
                 "completion_type": mysql_configuration_variables_completion_type,
                 "connect_timeout": mysql_configuration_variables_connect_timeout,
                 "connection_memory_chunk_size": mysql_configuration_variables_connection_memory_chunk_size,
                 "connection_memory_limit": mysql_configuration_variables_connection_memory_limit,
                 "cte_max_recursion_depth": mysql_configuration_variables_cte_max_recursion_depth,
                 "default_authentication_plugin": mysql_configuration_variables_default_authentication_plugin,
+                "explain_format": mysql_configuration_variables_explain_format,
+                "explicit_defaults_for_timestamp": mysql_configuration_variables_explicit_defaults_for_timestamp,
                 "foreign_key_checks": mysql_configuration_variables_foreign_key_checks,
                 "generated_random_password_length": mysql_configuration_variables_generated_random_password_length,
                 "global_connection_memory_limit": mysql_configuration_variables_global_connection_memory_limit,
                 "global_connection_memory_tracking": mysql_configuration_variables_global_connection_memory_tracking,
+                "group_concat_max_len": mysql_configuration_variables_group_concat_max_len,
                 "group_replication_consistency": mysql_configuration_variables_group_replication_consistency,
                 "information_schema_stats_expiry": mysql_configuration_variables_information_schema_stats_expiry,
+                "innodb_adaptive_hash_index": mysql_configuration_variables_innodb_adaptive_hash_index,
+                "innodb_autoinc_lock_mode": mysql_configuration_variables_innodb_autoinc_lock_mode,
                 "innodb_buffer_pool_dump_pct": mysql_configuration_variables_innodb_buffer_pool_dump_pct,
                 "innodb_buffer_pool_instances": mysql_configuration_variables_innodb_buffer_pool_instances,
                 "innodb_buffer_pool_size": mysql_configuration_variables_innodb_buffer_pool_size,
+                "innodb_change_buffering": mysql_configuration_variables_innodb_change_buffering,
                 "innodb_ddl_buffer_size": mysql_configuration_variables_innodb_ddl_buffer_size,
                 "innodb_ddl_threads": mysql_configuration_variables_innodb_ddl_threads,
                 "innodb_ft_enable_stopword": mysql_configuration_variables_innodb_ft_enable_stopword,
@@ -594,10 +662,19 @@ class MysqlConfiguration(pulumi.CustomResource):
                 "innodb_log_writer_threads": mysql_configuration_variables_innodb_log_writer_threads,
                 "innodb_max_purge_lag": mysql_configuration_variables_innodb_max_purge_lag,
                 "innodb_max_purge_lag_delay": mysql_configuration_variables_innodb_max_purge_lag_delay,
+                "innodb_numa_interleave": mysql_configuration_variables_innodb_numa_interleave,
+                "innodb_online_alter_log_max_size": mysql_configuration_variables_innodb_online_alter_log_max_size,
+                "innodb_redo_log_capacity": mysql_configuration_variables_innodb_redo_log_capacity,
+                "innodb_rollback_on_timeout": mysql_configuration_variables_innodb_rollback_on_timeout,
+                "innodb_sort_buffer_size": mysql_configuration_variables_innodb_sort_buffer_size,
                 "innodb_stats_persistent_sample_pages": mysql_configuration_variables_innodb_stats_persistent_sample_pages,
                 "innodb_stats_transient_sample_pages": mysql_configuration_variables_innodb_stats_transient_sample_pages,
+                "innodb_strict_mode": mysql_configuration_variables_innodb_strict_mode,
+                "innodb_undo_log_truncate": mysql_configuration_variables_innodb_undo_log_truncate,
                 "interactive_timeout": mysql_configuration_variables_interactive_timeout,
+                "join_buffer_size": mysql_configuration_variables_join_buffer_size,
                 "local_infile": mysql_configuration_variables_local_infile,
+                "long_query_time": mysql_configuration_variables_long_query_time,
                 "mandatory_roles": mysql_configuration_variables_mandatory_roles,
                 "max_allowed_packet": mysql_configuration_variables_max_allowed_packet,
                 "max_binlog_cache_size": mysql_configuration_variables_max_binlog_cache_size,
@@ -606,6 +683,8 @@ class MysqlConfiguration(pulumi.CustomResource):
                 "max_execution_time": mysql_configuration_variables_max_execution_time,
                 "max_heap_table_size": mysql_configuration_variables_max_heap_table_size,
                 "max_prepared_stmt_count": mysql_configuration_variables_max_prepared_stmt_count,
+                "max_seeks_for_key": mysql_configuration_variables_max_seeks_for_key,
+                "max_user_connections": mysql_configuration_variables_max_user_connections,
                 "mysql_firewall_mode": mysql_configuration_variables_mysql_firewall_mode,
                 "mysql_zstd_default_compression_level": mysql_configuration_variables_mysql_zstd_default_compression_level,
                 "mysqlx_connect_timeout": mysql_configuration_variables_mysqlx_connect_timeout,
@@ -626,16 +705,31 @@ class MysqlConfiguration(pulumi.CustomResource):
                 "mysqlx_zstd_max_client_compression_level": mysql_configuration_variables_mysqlx_zstd_max_client_compression_level,
                 "net_read_timeout": mysql_configuration_variables_net_read_timeout,
                 "net_write_timeout": mysql_configuration_variables_net_write_timeout,
+                "optimizer_switch": mysql_configuration_variables_optimizer_switch,
                 "parser_max_mem_size": mysql_configuration_variables_parser_max_mem_size,
                 "query_alloc_block_size": mysql_configuration_variables_query_alloc_block_size,
                 "query_prealloc_size": mysql_configuration_variables_query_prealloc_size,
+                "range_optimizer_max_mem_size": mysql_configuration_variables_range_optimizer_max_mem_size,
                 "regexp_time_limit": mysql_configuration_variables_regexp_time_limit,
+                "relay_log_space_limit": mysql_configuration_variables_relay_log_space_limit,
+                "replica_net_timeout": mysql_configuration_variables_replica_net_timeout,
+                "replica_parallel_workers": mysql_configuration_variables_replica_parallel_workers,
+                "replica_type_conversions": mysql_configuration_variables_replica_type_conversions,
+                "require_secure_transport": mysql_configuration_variables_require_secure_transport,
+                "skip_name_resolve": mysql_configuration_variables_skip_name_resolve,
                 "sort_buffer_size": mysql_configuration_variables_sort_buffer_size,
+                "sql_generate_invisible_primary_key": mysql_configuration_variables_sql_generate_invisible_primary_key,
                 "sql_mode": mysql_configuration_variables_sql_mode,
                 "sql_require_primary_key": mysql_configuration_variables_sql_require_primary_key,
                 "sql_warnings": mysql_configuration_variables_sql_warnings,
+                "table_definition_cache": mysql_configuration_variables_table_definition_cache,
+                "table_open_cache": mysql_configuration_variables_table_open_cache,
+                "temptable_max_ram": mysql_configuration_variables_temptable_max_ram,
                 "thread_pool_dedicated_listeners": mysql_configuration_variables_thread_pool_dedicated_listeners,
                 "thread_pool_max_transactions_limit": mysql_configuration_variables_thread_pool_max_transactions_limit,
+                "thread_pool_query_threads_per_group": mysql_configuration_variables_thread_pool_query_threads_per_group,
+                "thread_pool_size": mysql_configuration_variables_thread_pool_size,
+                "thread_pool_transaction_delay": mysql_configuration_variables_thread_pool_transaction_delay,
                 "time_zone": mysql_configuration_variables_time_zone,
                 "tmp_table_size": mysql_configuration_variables_tmp_table_size,
                 "transaction_isolation": mysql_configuration_variables_transaction_isolation,
@@ -698,6 +792,7 @@ class MysqlConfiguration(pulumi.CustomResource):
             __props__.__dict__["shape_name"] = shape_name
             __props__.__dict__["variables"] = variables
             __props__.__dict__["state"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
             __props__.__dict__["type"] = None
@@ -720,6 +815,7 @@ class MysqlConfiguration(pulumi.CustomResource):
             parent_configuration_id: Optional[pulumi.Input[str]] = None,
             shape_name: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
             type: Optional[pulumi.Input[str]] = None,
@@ -740,6 +836,7 @@ class MysqlConfiguration(pulumi.CustomResource):
         :param pulumi.Input[str] parent_configuration_id: The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
         :param pulumi.Input[str] shape_name: The name of the associated Shape.
         :param pulumi.Input[str] state: The current state of the Configuration.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[str] time_updated: The date and time the Configuration was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[str] type: The Configuration type, DEFAULT or CUSTOM.
@@ -758,6 +855,7 @@ class MysqlConfiguration(pulumi.CustomResource):
         __props__.__dict__["parent_configuration_id"] = parent_configuration_id
         __props__.__dict__["shape_name"] = shape_name
         __props__.__dict__["state"] = state
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         __props__.__dict__["type"] = type
@@ -835,6 +933,14 @@ class MysqlConfiguration(pulumi.CustomResource):
         The current state of the Configuration.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, str]]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")

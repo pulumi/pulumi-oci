@@ -236,6 +236,9 @@ namespace Pulumi.Oci.Psql
         /// The list of backup_collection.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetBackupsBackupCollectionResult> BackupCollections;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup in the source region
+        /// </summary>
         public readonly string? BackupId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.

@@ -70,6 +70,21 @@ public final class VmClusterAddVirtualNetworkState extends com.pulumi.resources.
     }
 
     /**
+     * The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     * 
+     */
+    @Import(name="computeModel")
+    private @Nullable Output<String> computeModel;
+
+    /**
+     * @return The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     * 
+     */
+    public Optional<Output<String>> computeModel() {
+        return Optional.ofNullable(this.computeModel);
+    }
+
+    /**
      * The number of enabled CPU cores.
      * 
      */
@@ -202,6 +217,21 @@ public final class VmClusterAddVirtualNetworkState extends com.pulumi.resources.
      */
     public Optional<Output<String>> exadataInfrastructureId() {
         return Optional.ofNullable(this.exadataInfrastructureId);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+     * 
+     */
+    @Import(name="exascaleDbStorageVaultId")
+    private @Nullable Output<String> exascaleDbStorageVaultId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+     * 
+     */
+    public Optional<Output<String>> exascaleDbStorageVaultId() {
+        return Optional.ofNullable(this.exascaleDbStorageVaultId);
     }
 
     /**
@@ -392,6 +422,21 @@ public final class VmClusterAddVirtualNetworkState extends com.pulumi.resources.
     }
 
     /**
+     * Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
+     * 
+     */
+    @Import(name="storageManagementType")
+    private @Nullable Output<String> storageManagementType;
+
+    /**
+     * @return Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
+     * 
+     */
+    public Optional<Output<String>> storageManagementType() {
+        return Optional.ofNullable(this.storageManagementType);
+    }
+
+    /**
      * Operating system version of the image.
      * 
      */
@@ -472,12 +517,28 @@ public final class VmClusterAddVirtualNetworkState extends com.pulumi.resources.
         return Optional.ofNullable(this.vmClusterNetworkId);
     }
 
+    /**
+     * The vmcluster type for the VM cluster/Cloud VM cluster.
+     * 
+     */
+    @Import(name="vmClusterType")
+    private @Nullable Output<String> vmClusterType;
+
+    /**
+     * @return The vmcluster type for the VM cluster/Cloud VM cluster.
+     * 
+     */
+    public Optional<Output<String>> vmClusterType() {
+        return Optional.ofNullable(this.vmClusterType);
+    }
+
     private VmClusterAddVirtualNetworkState() {}
 
     private VmClusterAddVirtualNetworkState(VmClusterAddVirtualNetworkState $) {
         this.availabilityDomain = $.availabilityDomain;
         this.cloudAutomationUpdateDetails = $.cloudAutomationUpdateDetails;
         this.compartmentId = $.compartmentId;
+        this.computeModel = $.computeModel;
         this.cpusEnabled = $.cpusEnabled;
         this.dataCollectionOptions = $.dataCollectionOptions;
         this.dataStorageSizeInGb = $.dataStorageSizeInGb;
@@ -487,6 +548,7 @@ public final class VmClusterAddVirtualNetworkState extends com.pulumi.resources.
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.exadataInfrastructureId = $.exadataInfrastructureId;
+        this.exascaleDbStorageVaultId = $.exascaleDbStorageVaultId;
         this.fileSystemConfigurationDetails = $.fileSystemConfigurationDetails;
         this.freeformTags = $.freeformTags;
         this.giVersion = $.giVersion;
@@ -500,11 +562,13 @@ public final class VmClusterAddVirtualNetworkState extends com.pulumi.resources.
         this.shape = $.shape;
         this.sshPublicKeys = $.sshPublicKeys;
         this.state = $.state;
+        this.storageManagementType = $.storageManagementType;
         this.systemVersion = $.systemVersion;
         this.timeCreated = $.timeCreated;
         this.timeZone = $.timeZone;
         this.vmClusterId = $.vmClusterId;
         this.vmClusterNetworkId = $.vmClusterNetworkId;
+        this.vmClusterType = $.vmClusterType;
     }
 
     public static Builder builder() {
@@ -596,6 +660,27 @@ public final class VmClusterAddVirtualNetworkState extends com.pulumi.resources.
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param computeModel The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeModel(@Nullable Output<String> computeModel) {
+            $.computeModel = computeModel;
+            return this;
+        }
+
+        /**
+         * @param computeModel The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeModel(String computeModel) {
+            return computeModel(Output.of(computeModel));
         }
 
         /**
@@ -805,6 +890,27 @@ public final class VmClusterAddVirtualNetworkState extends com.pulumi.resources.
          */
         public Builder exadataInfrastructureId(String exadataInfrastructureId) {
             return exadataInfrastructureId(Output.of(exadataInfrastructureId));
+        }
+
+        /**
+         * @param exascaleDbStorageVaultId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder exascaleDbStorageVaultId(@Nullable Output<String> exascaleDbStorageVaultId) {
+            $.exascaleDbStorageVaultId = exascaleDbStorageVaultId;
+            return this;
+        }
+
+        /**
+         * @param exascaleDbStorageVaultId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder exascaleDbStorageVaultId(String exascaleDbStorageVaultId) {
+            return exascaleDbStorageVaultId(Output.of(exascaleDbStorageVaultId));
         }
 
         /**
@@ -1089,6 +1195,27 @@ public final class VmClusterAddVirtualNetworkState extends com.pulumi.resources.
         }
 
         /**
+         * @param storageManagementType Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder storageManagementType(@Nullable Output<String> storageManagementType) {
+            $.storageManagementType = storageManagementType;
+            return this;
+        }
+
+        /**
+         * @param storageManagementType Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder storageManagementType(String storageManagementType) {
+            return storageManagementType(Output.of(storageManagementType));
+        }
+
+        /**
          * @param systemVersion Operating system version of the image.
          * 
          * @return builder
@@ -1197,6 +1324,27 @@ public final class VmClusterAddVirtualNetworkState extends com.pulumi.resources.
          */
         public Builder vmClusterNetworkId(String vmClusterNetworkId) {
             return vmClusterNetworkId(Output.of(vmClusterNetworkId));
+        }
+
+        /**
+         * @param vmClusterType The vmcluster type for the VM cluster/Cloud VM cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vmClusterType(@Nullable Output<String> vmClusterType) {
+            $.vmClusterType = vmClusterType;
+            return this;
+        }
+
+        /**
+         * @param vmClusterType The vmcluster type for the VM cluster/Cloud VM cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vmClusterType(String vmClusterType) {
+            return vmClusterType(Output.of(vmClusterType));
         }
 
         public VmClusterAddVirtualNetworkState build() {

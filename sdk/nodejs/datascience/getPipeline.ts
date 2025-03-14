@@ -106,6 +106,10 @@ export interface GetPipelineResult {
      */
     readonly stepDetails: outputs.DataScience.GetPipelineStepDetail[];
     /**
+     * The storage mount details to mount to the instance running the pipeline step.
+     */
+    readonly storageMountConfigurationDetailsLists: outputs.DataScience.GetPipelineStorageMountConfigurationDetailsList[];
+    /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
     readonly systemTags: {[key: string]: string};

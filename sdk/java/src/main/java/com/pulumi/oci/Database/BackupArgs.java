@@ -6,8 +6,11 @@ package com.pulumi.oci.Database;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
@@ -50,11 +53,27 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
         return this.displayName;
     }
 
+    @Import(name="retentionPeriodInDays")
+    private @Nullable Output<Integer> retentionPeriodInDays;
+
+    public Optional<Output<Integer>> retentionPeriodInDays() {
+        return Optional.ofNullable(this.retentionPeriodInDays);
+    }
+
+    @Import(name="retentionPeriodInYears")
+    private @Nullable Output<Integer> retentionPeriodInYears;
+
+    public Optional<Output<Integer>> retentionPeriodInYears() {
+        return Optional.ofNullable(this.retentionPeriodInYears);
+    }
+
     private BackupArgs() {}
 
     private BackupArgs(BackupArgs $) {
         this.databaseId = $.databaseId;
         this.displayName = $.displayName;
+        this.retentionPeriodInDays = $.retentionPeriodInDays;
+        this.retentionPeriodInYears = $.retentionPeriodInYears;
     }
 
     public static Builder builder() {
@@ -121,6 +140,24 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        public Builder retentionPeriodInDays(@Nullable Output<Integer> retentionPeriodInDays) {
+            $.retentionPeriodInDays = retentionPeriodInDays;
+            return this;
+        }
+
+        public Builder retentionPeriodInDays(Integer retentionPeriodInDays) {
+            return retentionPeriodInDays(Output.of(retentionPeriodInDays));
+        }
+
+        public Builder retentionPeriodInYears(@Nullable Output<Integer> retentionPeriodInYears) {
+            $.retentionPeriodInYears = retentionPeriodInYears;
+            return this;
+        }
+
+        public Builder retentionPeriodInYears(Integer retentionPeriodInYears) {
+            return retentionPeriodInYears(Output.of(retentionPeriodInYears));
         }
 
         public BackupArgs build() {

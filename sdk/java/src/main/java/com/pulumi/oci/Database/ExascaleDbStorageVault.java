@@ -56,9 +56,12 @@ import javax.annotation.Nullable;
  *                 .totalSizeInGbs(exascaleDbStorageVaultHighCapacityDatabaseStorageTotalSizeInGbs)
  *                 .build())
  *             .additionalFlashCacheInPercent(exascaleDbStorageVaultAdditionalFlashCacheInPercent)
+ *             .clusterPlacementGroupId(testClusterPlacementGroup.id())
  *             .definedTags(exascaleDbStorageVaultDefinedTags)
  *             .description(exascaleDbStorageVaultDescription)
+ *             .exadataInfrastructureId(testExadataInfrastructure.id())
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .subscriptionId(tenantSubscriptionId)
  *             .timeZone(exascaleDbStorageVaultTimeZone)
  *             .build());
  * 
@@ -106,6 +109,20 @@ public class ExascaleDbStorageVault extends com.pulumi.resources.CustomResource 
      */
     public Output<String> availabilityDomain() {
         return this.availabilityDomain;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * 
+     */
+    @Export(name="clusterPlacementGroupId", refs={String.class}, tree="[0]")
+    private Output<String> clusterPlacementGroupId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * 
+     */
+    public Output<String> clusterPlacementGroupId() {
+        return this.clusterPlacementGroupId;
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -164,6 +181,20 @@ public class ExascaleDbStorageVault extends com.pulumi.resources.CustomResource 
         return this.displayName;
     }
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+     * 
+     */
+    @Export(name="exadataInfrastructureId", refs={String.class}, tree="[0]")
+    private Output<String> exadataInfrastructureId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+     * 
+     */
+    public Output<String> exadataInfrastructureId() {
+        return this.exadataInfrastructureId;
+    }
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -218,6 +249,20 @@ public class ExascaleDbStorageVault extends com.pulumi.resources.CustomResource 
      */
     public Output<String> state() {
         return this.state;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    @Export(name="subscriptionId", refs={String.class}, tree="[0]")
+    private Output<String> subscriptionId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    public Output<String> subscriptionId() {
+        return this.subscriptionId;
     }
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).

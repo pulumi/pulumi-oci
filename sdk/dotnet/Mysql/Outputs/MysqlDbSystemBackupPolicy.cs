@@ -14,6 +14,14 @@ namespace Pulumi.Oci.Mysql.Outputs
     public sealed class MysqlDbSystemBackupPolicy
     {
         /// <summary>
+        /// (Updatable) List of policies of a DB system to schedule cross-region DB system backup copy.
+        /// 
+        /// The policy includes the name of the destination region to which the DB system backup will be copied, and an optional parameter which specifies the retention period of the copied DB system backup in days.
+        /// 
+        /// **Note:** Currently, only one policy can be specified in the list.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.MysqlDbSystemBackupPolicyCopyPolicy> CopyPolicies;
+        /// <summary>
         /// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces.
         /// 
         /// Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
@@ -52,6 +60,8 @@ namespace Pulumi.Oci.Mysql.Outputs
 
         [OutputConstructor]
         private MysqlDbSystemBackupPolicy(
+            ImmutableArray<Outputs.MysqlDbSystemBackupPolicyCopyPolicy> copyPolicies,
+
             ImmutableDictionary<string, string>? definedTags,
 
             ImmutableDictionary<string, string>? freeformTags,
@@ -64,6 +74,7 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             string? windowStartTime)
         {
+            CopyPolicies = copyPolicies;
             DefinedTags = definedTags;
             FreeformTags = freeformTags;
             IsEnabled = isEnabled;

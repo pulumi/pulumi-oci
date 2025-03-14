@@ -27,7 +27,7 @@ class GetMysqlBackupResult:
     """
     A collection of values returned by getMysqlBackup.
     """
-    def __init__(__self__, backup_id=None, backup_size_in_gbs=None, backup_type=None, compartment_id=None, creation_type=None, data_storage_size_in_gb=None, db_system_id=None, db_system_snapshot_summaries=None, db_system_snapshots=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, immediate_source_backup_id=None, lifecycle_details=None, mysql_version=None, original_source_backup_id=None, retention_in_days=None, shape_name=None, source_details=None, state=None, time_copy_created=None, time_created=None, time_updated=None):
+    def __init__(__self__, backup_id=None, backup_size_in_gbs=None, backup_type=None, compartment_id=None, creation_type=None, data_storage_size_in_gb=None, db_system_id=None, db_system_snapshot_summaries=None, db_system_snapshots=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, immediate_source_backup_id=None, lifecycle_details=None, mysql_version=None, original_source_backup_id=None, retention_in_days=None, shape_name=None, source_details=None, state=None, system_tags=None, time_copy_created=None, time_created=None, time_updated=None):
         if backup_id and not isinstance(backup_id, str):
             raise TypeError("Expected argument 'backup_id' to be a str")
         pulumi.set(__self__, "backup_id", backup_id)
@@ -94,6 +94,9 @@ class GetMysqlBackupResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_copy_created and not isinstance(time_copy_created, str):
             raise TypeError("Expected argument 'time_copy_created' to be a str")
         pulumi.set(__self__, "time_copy_created", time_copy_created)
@@ -272,6 +275,14 @@ class GetMysqlBackupResult:
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="timeCopyCreated")
     def time_copy_created(self) -> str:
         """
@@ -324,6 +335,7 @@ class AwaitableGetMysqlBackupResult(GetMysqlBackupResult):
             shape_name=self.shape_name,
             source_details=self.source_details,
             state=self.state,
+            system_tags=self.system_tags,
             time_copy_created=self.time_copy_created,
             time_created=self.time_created,
             time_updated=self.time_updated)
@@ -376,6 +388,7 @@ def get_mysql_backup(backup_id: Optional[str] = None,
         shape_name=pulumi.get(__ret__, 'shape_name'),
         source_details=pulumi.get(__ret__, 'source_details'),
         state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_copy_created=pulumi.get(__ret__, 'time_copy_created'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
@@ -425,6 +438,7 @@ def get_mysql_backup_output(backup_id: Optional[pulumi.Input[str]] = None,
         shape_name=pulumi.get(__response__, 'shape_name'),
         source_details=pulumi.get(__response__, 'source_details'),
         state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
         time_copy_created=pulumi.get(__response__, 'time_copy_created'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated')))

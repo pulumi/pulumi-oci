@@ -5,7 +5,9 @@ package com.pulumi.oci.Psql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Psql.outputs.GetBackupCopyStatus;
 import com.pulumi.oci.Psql.outputs.GetBackupDbSystemDetail;
+import com.pulumi.oci.Psql.outputs.GetBackupSourceBackupDetail;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -14,6 +16,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetBackupResult {
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup in the source region
+     * 
+     */
     private String backupId;
     /**
      * @return The size of the backup, in gigabytes.
@@ -25,6 +31,11 @@ public final class GetBackupResult {
      * 
      */
     private String compartmentId;
+    /**
+     * @return List of status for Backup Copy
+     * 
+     */
+    private List<GetBackupCopyStatus> copyStatuses;
     /**
      * @return Information about the database system associated with a backup.
      * 
@@ -81,7 +92,12 @@ public final class GetBackupResult {
      */
     private Integer retentionPeriod;
     /**
-     * @return Specifies whether the backup was created manually, or by a management policy.
+     * @return Information about the Source Backup associated with a backup.
+     * 
+     */
+    private List<GetBackupSourceBackupDetail> sourceBackupDetails;
+    /**
+     * @return Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
      * 
      */
     private String sourceType;
@@ -101,12 +117,21 @@ public final class GetBackupResult {
      */
     private String timeCreated;
     /**
+     * @return The date and time the backup was created. This is the time the actual point-in-time data snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+     * 
+     */
+    private String timeCreatedPrecise;
+    /**
      * @return The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     private String timeUpdated;
 
     private GetBackupResult() {}
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup in the source region
+     * 
+     */
     public String backupId() {
         return this.backupId;
     }
@@ -123,6 +148,13 @@ public final class GetBackupResult {
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return List of status for Backup Copy
+     * 
+     */
+    public List<GetBackupCopyStatus> copyStatuses() {
+        return this.copyStatuses;
     }
     /**
      * @return Information about the database system associated with a backup.
@@ -202,7 +234,14 @@ public final class GetBackupResult {
         return this.retentionPeriod;
     }
     /**
-     * @return Specifies whether the backup was created manually, or by a management policy.
+     * @return Information about the Source Backup associated with a backup.
+     * 
+     */
+    public List<GetBackupSourceBackupDetail> sourceBackupDetails() {
+        return this.sourceBackupDetails;
+    }
+    /**
+     * @return Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
      * 
      */
     public String sourceType() {
@@ -230,6 +269,13 @@ public final class GetBackupResult {
         return this.timeCreated;
     }
     /**
+     * @return The date and time the backup was created. This is the time the actual point-in-time data snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+     * 
+     */
+    public String timeCreatedPrecise() {
+        return this.timeCreatedPrecise;
+    }
+    /**
      * @return The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
@@ -249,6 +295,7 @@ public final class GetBackupResult {
         private String backupId;
         private Integer backupSize;
         private String compartmentId;
+        private List<GetBackupCopyStatus> copyStatuses;
         private List<GetBackupDbSystemDetail> dbSystemDetails;
         private String dbSystemId;
         private Map<String,String> definedTags;
@@ -260,10 +307,12 @@ public final class GetBackupResult {
         private String lastCompletedRequestToken;
         private String lifecycleDetails;
         private Integer retentionPeriod;
+        private List<GetBackupSourceBackupDetail> sourceBackupDetails;
         private String sourceType;
         private String state;
         private Map<String,String> systemTags;
         private String timeCreated;
+        private String timeCreatedPrecise;
         private String timeUpdated;
         public Builder() {}
         public Builder(GetBackupResult defaults) {
@@ -271,6 +320,7 @@ public final class GetBackupResult {
     	      this.backupId = defaults.backupId;
     	      this.backupSize = defaults.backupSize;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.copyStatuses = defaults.copyStatuses;
     	      this.dbSystemDetails = defaults.dbSystemDetails;
     	      this.dbSystemId = defaults.dbSystemId;
     	      this.definedTags = defaults.definedTags;
@@ -282,10 +332,12 @@ public final class GetBackupResult {
     	      this.lastCompletedRequestToken = defaults.lastCompletedRequestToken;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.retentionPeriod = defaults.retentionPeriod;
+    	      this.sourceBackupDetails = defaults.sourceBackupDetails;
     	      this.sourceType = defaults.sourceType;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.timeCreatedPrecise = defaults.timeCreatedPrecise;
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
@@ -312,6 +364,17 @@ public final class GetBackupResult {
             }
             this.compartmentId = compartmentId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder copyStatuses(List<GetBackupCopyStatus> copyStatuses) {
+            if (copyStatuses == null) {
+              throw new MissingRequiredPropertyException("GetBackupResult", "copyStatuses");
+            }
+            this.copyStatuses = copyStatuses;
+            return this;
+        }
+        public Builder copyStatuses(GetBackupCopyStatus... copyStatuses) {
+            return copyStatuses(List.of(copyStatuses));
         }
         @CustomType.Setter
         public Builder dbSystemDetails(List<GetBackupDbSystemDetail> dbSystemDetails) {
@@ -405,6 +468,17 @@ public final class GetBackupResult {
             return this;
         }
         @CustomType.Setter
+        public Builder sourceBackupDetails(List<GetBackupSourceBackupDetail> sourceBackupDetails) {
+            if (sourceBackupDetails == null) {
+              throw new MissingRequiredPropertyException("GetBackupResult", "sourceBackupDetails");
+            }
+            this.sourceBackupDetails = sourceBackupDetails;
+            return this;
+        }
+        public Builder sourceBackupDetails(GetBackupSourceBackupDetail... sourceBackupDetails) {
+            return sourceBackupDetails(List.of(sourceBackupDetails));
+        }
+        @CustomType.Setter
         public Builder sourceType(String sourceType) {
             if (sourceType == null) {
               throw new MissingRequiredPropertyException("GetBackupResult", "sourceType");
@@ -437,6 +511,14 @@ public final class GetBackupResult {
             return this;
         }
         @CustomType.Setter
+        public Builder timeCreatedPrecise(String timeCreatedPrecise) {
+            if (timeCreatedPrecise == null) {
+              throw new MissingRequiredPropertyException("GetBackupResult", "timeCreatedPrecise");
+            }
+            this.timeCreatedPrecise = timeCreatedPrecise;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             if (timeUpdated == null) {
               throw new MissingRequiredPropertyException("GetBackupResult", "timeUpdated");
@@ -449,6 +531,7 @@ public final class GetBackupResult {
             _resultValue.backupId = backupId;
             _resultValue.backupSize = backupSize;
             _resultValue.compartmentId = compartmentId;
+            _resultValue.copyStatuses = copyStatuses;
             _resultValue.dbSystemDetails = dbSystemDetails;
             _resultValue.dbSystemId = dbSystemId;
             _resultValue.definedTags = definedTags;
@@ -460,10 +543,12 @@ public final class GetBackupResult {
             _resultValue.lastCompletedRequestToken = lastCompletedRequestToken;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.retentionPeriod = retentionPeriod;
+            _resultValue.sourceBackupDetails = sourceBackupDetails;
             _resultValue.sourceType = sourceType;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
+            _resultValue.timeCreatedPrecise = timeCreatedPrecise;
             _resultValue.timeUpdated = timeUpdated;
             return _resultValue;
         }

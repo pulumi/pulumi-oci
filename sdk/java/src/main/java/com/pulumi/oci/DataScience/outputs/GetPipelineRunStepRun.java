@@ -11,6 +11,11 @@ import java.util.Objects;
 @CustomType
 public final class GetPipelineRunStepRun {
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow run triggered for this step run.
+     * 
+     */
+    private String dataflowRunId;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
      * 
      */
@@ -47,6 +52,13 @@ public final class GetPipelineRunStepRun {
     private String timeStarted;
 
     private GetPipelineRunStepRun() {}
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow run triggered for this step run.
+     * 
+     */
+    public String dataflowRunId() {
+        return this.dataflowRunId;
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
      * 
@@ -106,6 +118,7 @@ public final class GetPipelineRunStepRun {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String dataflowRunId;
         private String jobRunId;
         private String lifecycleDetails;
         private String state;
@@ -116,6 +129,7 @@ public final class GetPipelineRunStepRun {
         public Builder() {}
         public Builder(GetPipelineRunStepRun defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.dataflowRunId = defaults.dataflowRunId;
     	      this.jobRunId = defaults.jobRunId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.state = defaults.state;
@@ -125,6 +139,14 @@ public final class GetPipelineRunStepRun {
     	      this.timeStarted = defaults.timeStarted;
         }
 
+        @CustomType.Setter
+        public Builder dataflowRunId(String dataflowRunId) {
+            if (dataflowRunId == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunStepRun", "dataflowRunId");
+            }
+            this.dataflowRunId = dataflowRunId;
+            return this;
+        }
         @CustomType.Setter
         public Builder jobRunId(String jobRunId) {
             if (jobRunId == null) {
@@ -183,6 +205,7 @@ public final class GetPipelineRunStepRun {
         }
         public GetPipelineRunStepRun build() {
             final var _resultValue = new GetPipelineRunStepRun();
+            _resultValue.dataflowRunId = dataflowRunId;
             _resultValue.jobRunId = jobRunId;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.state = state;

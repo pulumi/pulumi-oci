@@ -19,6 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testModels = oci.DataScience.getModels({
  *     compartmentId: compartmentId,
+ *     category: modelCategory,
  *     createdBy: modelCreatedBy,
  *     displayName: modelDisplayName,
  *     id: modelId,
@@ -31,6 +32,7 @@ import * as utilities from "../utilities";
 export function getModels(args: GetModelsArgs, opts?: pulumi.InvokeOptions): Promise<GetModelsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataScience/getModels:getModels", {
+        "category": args.category,
         "compartmentId": args.compartmentId,
         "createdBy": args.createdBy,
         "displayName": args.displayName,
@@ -48,6 +50,10 @@ export function getModels(args: GetModelsArgs, opts?: pulumi.InvokeOptions): Pro
  * A collection of arguments for invoking getModels.
  */
 export interface GetModelsArgs {
+    /**
+     * Specifies the type of models to list. By default, user models are listed.
+     */
+    category?: string;
     /**
      * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -88,6 +94,10 @@ export interface GetModelsArgs {
  * A collection of values returned by getModels.
  */
 export interface GetModelsResult {
+    /**
+     * Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
+     */
+    readonly category?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model's compartment.
      */
@@ -140,6 +150,7 @@ export interface GetModelsResult {
  *
  * const testModels = oci.DataScience.getModels({
  *     compartmentId: compartmentId,
+ *     category: modelCategory,
  *     createdBy: modelCreatedBy,
  *     displayName: modelDisplayName,
  *     id: modelId,
@@ -152,6 +163,7 @@ export interface GetModelsResult {
 export function getModelsOutput(args: GetModelsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetModelsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataScience/getModels:getModels", {
+        "category": args.category,
         "compartmentId": args.compartmentId,
         "createdBy": args.createdBy,
         "displayName": args.displayName,
@@ -169,6 +181,10 @@ export function getModelsOutput(args: GetModelsOutputArgs, opts?: pulumi.InvokeO
  * A collection of arguments for invoking getModels.
  */
 export interface GetModelsOutputArgs {
+    /**
+     * Specifies the type of models to list. By default, user models are listed.
+     */
+    category?: pulumi.Input<string>;
     /**
      * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */

@@ -59,9 +59,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := filestorage.NewFileSystem(ctx, "test_file_system", &filestorage.FileSystemArgs{
-//				AvailabilityDomain: pulumi.Any(fileSystemAvailabilityDomain),
-//				CompartmentId:      pulumi.Any(compartmentId),
-//				CloneAttachStatus:  pulumi.Any(fileSystemCloneAttachStatus),
+//				AvailabilityDomain:   pulumi.Any(fileSystemAvailabilityDomain),
+//				CompartmentId:        pulumi.Any(compartmentId),
+//				AreQuotaRulesEnabled: pulumi.Any(fileSystemAreQuotaRulesEnabled),
+//				CloneAttachStatus:    pulumi.Any(fileSystemCloneAttachStatus),
 //				DefinedTags: pulumi.StringMap{
 //					"Operations.CostCenter": pulumi.String("42"),
 //				},
@@ -100,6 +101,8 @@ import (
 type FileSystem struct {
 	pulumi.CustomResourceState
 
+	// (Updatable) Specifies the enforcement of quota rules on the file system.
+	AreQuotaRulesEnabled pulumi.BoolOutput `pulumi:"areQuotaRulesEnabled"`
 	// The availability domain to create the file system in.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
 	// Specifies whether the clone file system is attached to its parent file system. If the value is set to 'DETACH', then the file system will be created, which is deep copied from the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
@@ -138,6 +141,10 @@ type FileSystem struct {
 	Locks FileSystemLockArrayOutput `pulumi:"locks"`
 	// The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
 	MeteredBytes pulumi.StringOutput `pulumi:"meteredBytes"`
+	// Displays the state of enforcement of quota rules on the file system.
+	QuotaEnforcementState pulumi.StringOutput `pulumi:"quotaEnforcementState"`
+	// Specifies the total number of replications for which this file system is a source.
+	ReplicationSourceCount pulumi.IntOutput `pulumi:"replicationSourceCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
 	ReplicationTargetId pulumi.StringOutput `pulumi:"replicationTargetId"`
 	// Source information for the file system.
@@ -188,6 +195,8 @@ func GetFileSystem(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering FileSystem resources.
 type fileSystemState struct {
+	// (Updatable) Specifies the enforcement of quota rules on the file system.
+	AreQuotaRulesEnabled *bool `pulumi:"areQuotaRulesEnabled"`
 	// The availability domain to create the file system in.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// Specifies whether the clone file system is attached to its parent file system. If the value is set to 'DETACH', then the file system will be created, which is deep copied from the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
@@ -226,6 +235,10 @@ type fileSystemState struct {
 	Locks []FileSystemLock `pulumi:"locks"`
 	// The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
 	MeteredBytes *string `pulumi:"meteredBytes"`
+	// Displays the state of enforcement of quota rules on the file system.
+	QuotaEnforcementState *string `pulumi:"quotaEnforcementState"`
+	// Specifies the total number of replications for which this file system is a source.
+	ReplicationSourceCount *int `pulumi:"replicationSourceCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
 	ReplicationTargetId *string `pulumi:"replicationTargetId"`
 	// Source information for the file system.
@@ -241,6 +254,8 @@ type fileSystemState struct {
 }
 
 type FileSystemState struct {
+	// (Updatable) Specifies the enforcement of quota rules on the file system.
+	AreQuotaRulesEnabled pulumi.BoolPtrInput
 	// The availability domain to create the file system in.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringPtrInput
 	// Specifies whether the clone file system is attached to its parent file system. If the value is set to 'DETACH', then the file system will be created, which is deep copied from the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
@@ -279,6 +294,10 @@ type FileSystemState struct {
 	Locks FileSystemLockArrayInput
 	// The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
 	MeteredBytes pulumi.StringPtrInput
+	// Displays the state of enforcement of quota rules on the file system.
+	QuotaEnforcementState pulumi.StringPtrInput
+	// Specifies the total number of replications for which this file system is a source.
+	ReplicationSourceCount pulumi.IntPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
 	ReplicationTargetId pulumi.StringPtrInput
 	// Source information for the file system.
@@ -298,6 +317,8 @@ func (FileSystemState) ElementType() reflect.Type {
 }
 
 type fileSystemArgs struct {
+	// (Updatable) Specifies the enforcement of quota rules on the file system.
+	AreQuotaRulesEnabled *bool `pulumi:"areQuotaRulesEnabled"`
 	// The availability domain to create the file system in.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// Specifies whether the clone file system is attached to its parent file system. If the value is set to 'DETACH', then the file system will be created, which is deep copied from the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
@@ -330,6 +351,8 @@ type fileSystemArgs struct {
 
 // The set of arguments for constructing a FileSystem resource.
 type FileSystemArgs struct {
+	// (Updatable) Specifies the enforcement of quota rules on the file system.
+	AreQuotaRulesEnabled pulumi.BoolPtrInput
 	// The availability domain to create the file system in.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringInput
 	// Specifies whether the clone file system is attached to its parent file system. If the value is set to 'DETACH', then the file system will be created, which is deep copied from the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
@@ -447,6 +470,11 @@ func (o FileSystemOutput) ToFileSystemOutputWithContext(ctx context.Context) Fil
 	return o
 }
 
+// (Updatable) Specifies the enforcement of quota rules on the file system.
+func (o FileSystemOutput) AreQuotaRulesEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *FileSystem) pulumi.BoolOutput { return v.AreQuotaRulesEnabled }).(pulumi.BoolOutput)
+}
+
 // The availability domain to create the file system in.  Example: `Uocm:PHX-AD-1`
 func (o FileSystemOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v *FileSystem) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
@@ -534,6 +562,16 @@ func (o FileSystemOutput) Locks() FileSystemLockArrayOutput {
 // The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
 func (o FileSystemOutput) MeteredBytes() pulumi.StringOutput {
 	return o.ApplyT(func(v *FileSystem) pulumi.StringOutput { return v.MeteredBytes }).(pulumi.StringOutput)
+}
+
+// Displays the state of enforcement of quota rules on the file system.
+func (o FileSystemOutput) QuotaEnforcementState() pulumi.StringOutput {
+	return o.ApplyT(func(v *FileSystem) pulumi.StringOutput { return v.QuotaEnforcementState }).(pulumi.StringOutput)
+}
+
+// Specifies the total number of replications for which this file system is a source.
+func (o FileSystemOutput) ReplicationSourceCount() pulumi.IntOutput {
+	return o.ApplyT(func(v *FileSystem) pulumi.IntOutput { return v.ReplicationSourceCount }).(pulumi.IntOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.

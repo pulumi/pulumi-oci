@@ -58,6 +58,8 @@ type LookupModelVersionSetArgs struct {
 
 // A collection of values returned by getModelVersionSet.
 type LookupModelVersionSetResult struct {
+	// The category of the model version set.
+	Category string `pulumi:"category"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model version set compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model version set.
@@ -117,6 +119,11 @@ func (o LookupModelVersionSetResultOutput) ToLookupModelVersionSetResultOutput()
 
 func (o LookupModelVersionSetResultOutput) ToLookupModelVersionSetResultOutputWithContext(ctx context.Context) LookupModelVersionSetResultOutput {
 	return o
+}
+
+// The category of the model version set.
+func (o LookupModelVersionSetResultOutput) Category() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupModelVersionSetResult) string { return v.Category }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model version set compartment.

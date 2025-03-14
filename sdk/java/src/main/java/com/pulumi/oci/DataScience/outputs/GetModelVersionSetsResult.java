@@ -16,6 +16,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetModelVersionSetsResult {
     /**
+     * @return The category of the model version set.
+     * 
+     */
+    private @Nullable String category;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model version set compartment.
      * 
      */
@@ -53,6 +58,13 @@ public final class GetModelVersionSetsResult {
     private @Nullable String state;
 
     private GetModelVersionSetsResult() {}
+    /**
+     * @return The category of the model version set.
+     * 
+     */
+    public Optional<String> category() {
+        return Optional.ofNullable(this.category);
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model version set compartment.
      * 
@@ -115,6 +127,7 @@ public final class GetModelVersionSetsResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String category;
         private String compartmentId;
         private @Nullable String createdBy;
         private @Nullable List<GetModelVersionSetsFilter> filters;
@@ -126,6 +139,7 @@ public final class GetModelVersionSetsResult {
         public Builder() {}
         public Builder(GetModelVersionSetsResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.category = defaults.category;
     	      this.compartmentId = defaults.compartmentId;
     	      this.createdBy = defaults.createdBy;
     	      this.filters = defaults.filters;
@@ -136,6 +150,12 @@ public final class GetModelVersionSetsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
+        public Builder category(@Nullable String category) {
+
+            this.category = category;
+            return this;
+        }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             if (compartmentId == null) {
@@ -196,6 +216,7 @@ public final class GetModelVersionSetsResult {
         }
         public GetModelVersionSetsResult build() {
             final var _resultValue = new GetModelVersionSetsResult();
+            _resultValue.category = category;
             _resultValue.compartmentId = compartmentId;
             _resultValue.createdBy = createdBy;
             _resultValue.filters = filters;

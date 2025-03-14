@@ -34,6 +34,7 @@ import (
 //				CloudExadataInfrastructureId: pulumi.StringRef(testCloudExadataInfrastructure.Id),
 //				DisplayName:                  pulumi.StringRef(cloudVmClusterDisplayName),
 //				State:                        pulumi.StringRef(cloudVmClusterState),
+//				VmClusterType:                pulumi.StringRef(cloudVmClusterVmClusterType),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -64,6 +65,8 @@ type GetCloudVmClustersArgs struct {
 	Filters     []GetCloudVmClustersFilter `pulumi:"filters"`
 	// A filter to return only cloud VM clusters that match the given lifecycle state exactly.
 	State *string `pulumi:"state"`
+	// A filter to return only cloud vmclusters that match the given cloud vmcluster type exactly.
+	VmClusterType *string `pulumi:"vmClusterType"`
 }
 
 // A collection of values returned by getCloudVmClusters.
@@ -81,6 +84,8 @@ type GetCloudVmClustersResult struct {
 	Id string `pulumi:"id"`
 	// The current state of the cloud VM cluster.
 	State *string `pulumi:"state"`
+	// The vmcluster type for the VM cluster/Cloud VM cluster.
+	VmClusterType *string `pulumi:"vmClusterType"`
 }
 
 func GetCloudVmClustersOutput(ctx *pulumi.Context, args GetCloudVmClustersOutputArgs, opts ...pulumi.InvokeOption) GetCloudVmClustersResultOutput {
@@ -103,6 +108,8 @@ type GetCloudVmClustersOutputArgs struct {
 	Filters     GetCloudVmClustersFilterArrayInput `pulumi:"filters"`
 	// A filter to return only cloud VM clusters that match the given lifecycle state exactly.
 	State pulumi.StringPtrInput `pulumi:"state"`
+	// A filter to return only cloud vmclusters that match the given cloud vmcluster type exactly.
+	VmClusterType pulumi.StringPtrInput `pulumi:"vmClusterType"`
 }
 
 func (GetCloudVmClustersOutputArgs) ElementType() reflect.Type {
@@ -156,6 +163,11 @@ func (o GetCloudVmClustersResultOutput) Id() pulumi.StringOutput {
 // The current state of the cloud VM cluster.
 func (o GetCloudVmClustersResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetCloudVmClustersResult) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+// The vmcluster type for the VM cluster/Cloud VM cluster.
+func (o GetCloudVmClustersResultOutput) VmClusterType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCloudVmClustersResult) *string { return v.VmClusterType }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -651,6 +651,22 @@ class PipelineRun(pulumi.CustomResource):
                     "image_digest": pipeline_run_step_override_details_step_container_configuration_details_image_digest,
                     "image_signature_id": test_image_signature["id"],
                 },
+                "step_dataflow_configuration_details": {
+                    "configuration": pipeline_run_step_override_details_step_dataflow_configuration_details_configuration,
+                    "driver_shape": pipeline_run_step_override_details_step_dataflow_configuration_details_driver_shape,
+                    "driver_shape_config_details": {
+                        "memory_in_gbs": pipeline_run_step_override_details_step_dataflow_configuration_details_driver_shape_config_details_memory_in_gbs,
+                        "ocpus": pipeline_run_step_override_details_step_dataflow_configuration_details_driver_shape_config_details_ocpus,
+                    },
+                    "executor_shape": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape,
+                    "executor_shape_config_details": {
+                        "memory_in_gbs": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape_config_details_memory_in_gbs,
+                        "ocpus": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape_config_details_ocpus,
+                    },
+                    "logs_bucket_uri": pipeline_run_step_override_details_step_dataflow_configuration_details_logs_bucket_uri,
+                    "num_executors": pipeline_run_step_override_details_step_dataflow_configuration_details_num_executors,
+                    "warehouse_bucket_uri": pipeline_run_step_override_details_step_dataflow_configuration_details_warehouse_bucket_uri,
+                },
             }],
             system_tags=pipeline_run_system_tags)
         ```
@@ -736,6 +752,22 @@ class PipelineRun(pulumi.CustomResource):
                     "entrypoints": pipeline_run_step_override_details_step_container_configuration_details_entrypoint,
                     "image_digest": pipeline_run_step_override_details_step_container_configuration_details_image_digest,
                     "image_signature_id": test_image_signature["id"],
+                },
+                "step_dataflow_configuration_details": {
+                    "configuration": pipeline_run_step_override_details_step_dataflow_configuration_details_configuration,
+                    "driver_shape": pipeline_run_step_override_details_step_dataflow_configuration_details_driver_shape,
+                    "driver_shape_config_details": {
+                        "memory_in_gbs": pipeline_run_step_override_details_step_dataflow_configuration_details_driver_shape_config_details_memory_in_gbs,
+                        "ocpus": pipeline_run_step_override_details_step_dataflow_configuration_details_driver_shape_config_details_ocpus,
+                    },
+                    "executor_shape": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape,
+                    "executor_shape_config_details": {
+                        "memory_in_gbs": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape_config_details_memory_in_gbs,
+                        "ocpus": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape_config_details_ocpus,
+                    },
+                    "logs_bucket_uri": pipeline_run_step_override_details_step_dataflow_configuration_details_logs_bucket_uri,
+                    "num_executors": pipeline_run_step_override_details_step_dataflow_configuration_details_num_executors,
+                    "warehouse_bucket_uri": pipeline_run_step_override_details_step_dataflow_configuration_details_warehouse_bucket_uri,
                 },
             }],
             system_tags=pipeline_run_system_tags)

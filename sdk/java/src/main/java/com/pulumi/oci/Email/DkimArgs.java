@@ -84,9 +84,6 @@ public final class DkimArgs extends com.pulumi.resources.ResourceArgs {
      * 
      * Example: `mydomain-phx-20210228`
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
@@ -98,12 +95,30 @@ public final class DkimArgs extends com.pulumi.resources.ResourceArgs {
      * 
      * Example: `mydomain-phx-20210228`
      * 
+     */
+    public Optional<Output<String>> name() {
+        return Optional.ofNullable(this.name);
+    }
+
+    /**
+     * The DKIM RSA Private Key in Privacy-Enhanced Mail (PEM) format. It is a text-based representation of the private key used for signing email messages.
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Optional<Output<String>> name() {
-        return Optional.ofNullable(this.name);
+    @Import(name="privateKey")
+    private @Nullable Output<String> privateKey;
+
+    /**
+     * @return The DKIM RSA Private Key in Privacy-Enhanced Mail (PEM) format. It is a text-based representation of the private key used for signing email messages.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<String>> privateKey() {
+        return Optional.ofNullable(this.privateKey);
     }
 
     private DkimArgs() {}
@@ -114,6 +129,7 @@ public final class DkimArgs extends com.pulumi.resources.ResourceArgs {
         this.emailDomainId = $.emailDomainId;
         this.freeformTags = $.freeformTags;
         this.name = $.name;
+        this.privateKey = $.privateKey;
     }
 
     public static Builder builder() {
@@ -225,9 +241,6 @@ public final class DkimArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * Example: `mydomain-phx-20210228`
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -243,14 +256,38 @@ public final class DkimArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * Example: `mydomain-phx-20210228`
          * 
+         * @return builder
+         * 
+         */
+        public Builder name(String name) {
+            return name(Output.of(name));
+        }
+
+        /**
+         * @param privateKey The DKIM RSA Private Key in Privacy-Enhanced Mail (PEM) format. It is a text-based representation of the private key used for signing email messages.
+         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
          */
-        public Builder name(String name) {
-            return name(Output.of(name));
+        public Builder privateKey(@Nullable Output<String> privateKey) {
+            $.privateKey = privateKey;
+            return this;
+        }
+
+        /**
+         * @param privateKey The DKIM RSA Private Key in Privacy-Enhanced Mail (PEM) format. It is a text-based representation of the private key used for signing email messages.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateKey(String privateKey) {
+            return privateKey(Output.of(privateKey));
         }
 
         public DkimArgs build() {

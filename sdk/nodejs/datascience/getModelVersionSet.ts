@@ -42,6 +42,10 @@ export interface GetModelVersionSetArgs {
  */
 export interface GetModelVersionSetResult {
     /**
+     * The category of the model version set.
+     */
+    readonly category: string;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model version set compartment.
      */
     readonly compartmentId: string;

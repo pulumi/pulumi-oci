@@ -290,14 +290,14 @@ public class RedisCluster extends com.pulumi.resources.CustomResource {
         return this.shardCount;
     }
     /**
-     * The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+     * (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
      * 
      */
     @Export(name="softwareVersion", refs={String.class}, tree="[0]")
     private Output<String> softwareVersion;
 
     /**
-     * @return The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+     * @return (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
      * 
      */
     public Output<String> softwareVersion() {

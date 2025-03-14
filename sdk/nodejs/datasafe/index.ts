@@ -380,6 +380,11 @@ export const getMaskingReportMaskedColumns: typeof import("./getMaskingReportMas
 export const getMaskingReportMaskedColumnsOutput: typeof import("./getMaskingReportMaskedColumns").getMaskingReportMaskedColumnsOutput = null as any;
 utilities.lazyLoad(exports, ["getMaskingReportMaskedColumns","getMaskingReportMaskedColumnsOutput"], () => require("./getMaskingReportMaskedColumns"));
 
+export { GetMaskingReportMaskingErrorsArgs, GetMaskingReportMaskingErrorsResult, GetMaskingReportMaskingErrorsOutputArgs } from "./getMaskingReportMaskingErrors";
+export const getMaskingReportMaskingErrors: typeof import("./getMaskingReportMaskingErrors").getMaskingReportMaskingErrors = null as any;
+export const getMaskingReportMaskingErrorsOutput: typeof import("./getMaskingReportMaskingErrors").getMaskingReportMaskingErrorsOutput = null as any;
+utilities.lazyLoad(exports, ["getMaskingReportMaskingErrors","getMaskingReportMaskingErrorsOutput"], () => require("./getMaskingReportMaskingErrors"));
+
 export { GetMaskingReportsArgs, GetMaskingReportsResult, GetMaskingReportsOutputArgs } from "./getMaskingReports";
 export const getMaskingReports: typeof import("./getMaskingReports").getMaskingReports = null as any;
 export const getMaskingReportsOutput: typeof import("./getMaskingReports").getMaskingReportsOutput = null as any;
@@ -555,6 +560,11 @@ export const getSecurityPolicyReports: typeof import("./getSecurityPolicyReports
 export const getSecurityPolicyReportsOutput: typeof import("./getSecurityPolicyReports").getSecurityPolicyReportsOutput = null as any;
 utilities.lazyLoad(exports, ["getSecurityPolicyReports","getSecurityPolicyReportsOutput"], () => require("./getSecurityPolicyReports"));
 
+export { GetSensitiveColumnAnalyticsArgs, GetSensitiveColumnAnalyticsResult, GetSensitiveColumnAnalyticsOutputArgs } from "./getSensitiveColumnAnalytics";
+export const getSensitiveColumnAnalytics: typeof import("./getSensitiveColumnAnalytics").getSensitiveColumnAnalytics = null as any;
+export const getSensitiveColumnAnalyticsOutput: typeof import("./getSensitiveColumnAnalytics").getSensitiveColumnAnalyticsOutput = null as any;
+utilities.lazyLoad(exports, ["getSensitiveColumnAnalytics","getSensitiveColumnAnalyticsOutput"], () => require("./getSensitiveColumnAnalytics"));
+
 export { GetSensitiveDataModelArgs, GetSensitiveDataModelResult, GetSensitiveDataModelOutputArgs } from "./getSensitiveDataModel";
 export const getSensitiveDataModel: typeof import("./getSensitiveDataModel").getSensitiveDataModel = null as any;
 export const getSensitiveDataModelOutput: typeof import("./getSensitiveDataModel").getSensitiveDataModelOutput = null as any;
@@ -604,6 +614,21 @@ export { GetSensitiveTypeArgs, GetSensitiveTypeResult, GetSensitiveTypeOutputArg
 export const getSensitiveType: typeof import("./getSensitiveType").getSensitiveType = null as any;
 export const getSensitiveTypeOutput: typeof import("./getSensitiveType").getSensitiveTypeOutput = null as any;
 utilities.lazyLoad(exports, ["getSensitiveType","getSensitiveTypeOutput"], () => require("./getSensitiveType"));
+
+export { GetSensitiveTypeGroupArgs, GetSensitiveTypeGroupResult, GetSensitiveTypeGroupOutputArgs } from "./getSensitiveTypeGroup";
+export const getSensitiveTypeGroup: typeof import("./getSensitiveTypeGroup").getSensitiveTypeGroup = null as any;
+export const getSensitiveTypeGroupOutput: typeof import("./getSensitiveTypeGroup").getSensitiveTypeGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getSensitiveTypeGroup","getSensitiveTypeGroupOutput"], () => require("./getSensitiveTypeGroup"));
+
+export { GetSensitiveTypeGroupGroupedSensitiveTypesArgs, GetSensitiveTypeGroupGroupedSensitiveTypesResult, GetSensitiveTypeGroupGroupedSensitiveTypesOutputArgs } from "./getSensitiveTypeGroupGroupedSensitiveTypes";
+export const getSensitiveTypeGroupGroupedSensitiveTypes: typeof import("./getSensitiveTypeGroupGroupedSensitiveTypes").getSensitiveTypeGroupGroupedSensitiveTypes = null as any;
+export const getSensitiveTypeGroupGroupedSensitiveTypesOutput: typeof import("./getSensitiveTypeGroupGroupedSensitiveTypes").getSensitiveTypeGroupGroupedSensitiveTypesOutput = null as any;
+utilities.lazyLoad(exports, ["getSensitiveTypeGroupGroupedSensitiveTypes","getSensitiveTypeGroupGroupedSensitiveTypesOutput"], () => require("./getSensitiveTypeGroupGroupedSensitiveTypes"));
+
+export { GetSensitiveTypeGroupsArgs, GetSensitiveTypeGroupsResult, GetSensitiveTypeGroupsOutputArgs } from "./getSensitiveTypeGroups";
+export const getSensitiveTypeGroups: typeof import("./getSensitiveTypeGroups").getSensitiveTypeGroups = null as any;
+export const getSensitiveTypeGroupsOutput: typeof import("./getSensitiveTypeGroups").getSensitiveTypeGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getSensitiveTypeGroups","getSensitiveTypeGroupsOutput"], () => require("./getSensitiveTypeGroups"));
 
 export { GetSensitiveTypesArgs, GetSensitiveTypesResult, GetSensitiveTypesOutputArgs } from "./getSensitiveTypes";
 export const getSensitiveTypes: typeof import("./getSensitiveTypes").getSensitiveTypes = null as any;
@@ -885,6 +910,16 @@ export type SensitiveType = import("./sensitiveType").SensitiveType;
 export const SensitiveType: typeof import("./sensitiveType").SensitiveType = null as any;
 utilities.lazyLoad(exports, ["SensitiveType"], () => require("./sensitiveType"));
 
+export { SensitiveTypeGroupArgs, SensitiveTypeGroupState } from "./sensitiveTypeGroup";
+export type SensitiveTypeGroup = import("./sensitiveTypeGroup").SensitiveTypeGroup;
+export const SensitiveTypeGroup: typeof import("./sensitiveTypeGroup").SensitiveTypeGroup = null as any;
+utilities.lazyLoad(exports, ["SensitiveTypeGroup"], () => require("./sensitiveTypeGroup"));
+
+export { SensitiveTypeGroupGroupedSensitiveTypeArgs, SensitiveTypeGroupGroupedSensitiveTypeState } from "./sensitiveTypeGroupGroupedSensitiveType";
+export type SensitiveTypeGroupGroupedSensitiveType = import("./sensitiveTypeGroupGroupedSensitiveType").SensitiveTypeGroupGroupedSensitiveType;
+export const SensitiveTypeGroupGroupedSensitiveType: typeof import("./sensitiveTypeGroupGroupedSensitiveType").SensitiveTypeGroupGroupedSensitiveType = null as any;
+utilities.lazyLoad(exports, ["SensitiveTypeGroupGroupedSensitiveType"], () => require("./sensitiveTypeGroupGroupedSensitiveType"));
+
 export { SensitiveTypesExportArgs, SensitiveTypesExportState } from "./sensitiveTypesExport";
 export type SensitiveTypesExport = import("./sensitiveTypesExport").SensitiveTypesExport;
 export const SensitiveTypesExport: typeof import("./sensitiveTypesExport").SensitiveTypesExport = null as any;
@@ -1056,6 +1091,10 @@ const _module = {
                 return new SensitiveDataModelsSensitiveColumn(name, <any>undefined, { urn })
             case "oci:DataSafe/sensitiveType:SensitiveType":
                 return new SensitiveType(name, <any>undefined, { urn })
+            case "oci:DataSafe/sensitiveTypeGroup:SensitiveTypeGroup":
+                return new SensitiveTypeGroup(name, <any>undefined, { urn })
+            case "oci:DataSafe/sensitiveTypeGroupGroupedSensitiveType:SensitiveTypeGroupGroupedSensitiveType":
+                return new SensitiveTypeGroupGroupedSensitiveType(name, <any>undefined, { urn })
             case "oci:DataSafe/sensitiveTypesExport:SensitiveTypesExport":
                 return new SensitiveTypesExport(name, <any>undefined, { urn })
             case "oci:DataSafe/setSecurityAssessmentBaseline:SetSecurityAssessmentBaseline":
@@ -1136,6 +1175,8 @@ pulumi.runtime.registerResourceModule("oci", "DataSafe/sensitiveDataModelReferen
 pulumi.runtime.registerResourceModule("oci", "DataSafe/sensitiveDataModelsApplyDiscoveryJobResults", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/sensitiveDataModelsSensitiveColumn", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/sensitiveType", _module)
+pulumi.runtime.registerResourceModule("oci", "DataSafe/sensitiveTypeGroup", _module)
+pulumi.runtime.registerResourceModule("oci", "DataSafe/sensitiveTypeGroupGroupedSensitiveType", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/sensitiveTypesExport", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/setSecurityAssessmentBaseline", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/setSecurityAssessmentBaselineManagement", _module)

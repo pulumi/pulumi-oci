@@ -13,7 +13,13 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
     [OutputType]
     public sealed class GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimResult
     {
+        /// <summary>
+        /// The key of the pair.
+        /// </summary>
         public readonly string Key;
+        /// <summary>
+        /// The value of the pair.
+        /// </summary>
         public readonly string Value;
 
         [OutputConstructor]

@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Psql.Outputs
     public sealed class BackupDbSystemDetail
     {
         /// <summary>
+        /// OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
+        /// </summary>
+        public readonly string? ConfigId;
+        /// <summary>
         /// The major and minor versions of the database system software.
         /// </summary>
         public readonly string? DbVersion;
@@ -24,10 +28,13 @@ namespace Pulumi.Oci.Psql.Outputs
 
         [OutputConstructor]
         private BackupDbSystemDetail(
+            string? configId,
+
             string? dbVersion,
 
             string? systemType)
         {
+            ConfigId = configId;
             DbVersion = dbVersion;
             SystemType = systemType;
         }

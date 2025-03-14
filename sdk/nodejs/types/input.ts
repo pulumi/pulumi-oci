@@ -10985,6 +10985,10 @@ export namespace ContainerEngine {
          */
         clientId?: pulumi.Input<string>;
         /**
+         * (Updatable) A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+         */
+        configurationFile?: pulumi.Input<string>;
+        /**
          * (Updatable) JWT claim to use as the user's group. If the claim is present it must be an array of strings.
          */
         groupsClaim?: pulumi.Input<string>;
@@ -11101,7 +11105,7 @@ export namespace ContainerEngine {
          */
         freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
-         * list of container health checks to check container status and take appropriate action if container status is failed. There are three types of health checks that we currently support HTTP, TCP, and Command.
+         * list of container health checks to check container status and take appropriate action if container status is failed. There are two types of health checks that we currently support HTTP and TCP.
          */
         healthChecks?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ContainerInstanceContainerHealthCheck>[]>;
         /**
@@ -11163,10 +11167,6 @@ export namespace ContainerEngine {
 
     export interface ContainerInstanceContainerHealthCheck {
         /**
-         * The list of strings that will be simplified to a single command for checking the status of the container.
-         */
-        commands?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
          * The action will be triggered when the container health check fails. There are two types of action: KILL or NONE. The default action is KILL. If failure action is KILL, the container will be subject to the container restart policy.
          */
         failureAction?: pulumi.Input<string>;
@@ -11201,7 +11201,7 @@ export namespace ContainerEngine {
         /**
          * Container health check HTTP port.
          */
-        port?: pulumi.Input<number>;
+        port: pulumi.Input<number>;
         status?: pulumi.Input<string>;
         statusDetails?: pulumi.Input<string>;
         /**
@@ -12668,22 +12668,22 @@ export namespace Core {
     export interface CrossConnectGroupMacsecPropertiesPrimaryKey {
         /**
          * (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
-         *
-         * NOTE: Only the latest secret version will be used.
          */
         connectivityAssociationKeySecretId: pulumi.Input<string>;
         /**
-         * The secret version of the `connectivityAssociationKey` secret in Vault.
+         * (Updatable) The secret version of the `connectivityAssociationKeySecretId` secret in Vault.
+         *
+         * NOTE: Only the latest secret version will be used.
          */
         connectivityAssociationKeySecretVersion?: pulumi.Input<string>;
         /**
          * (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
-         *
-         * NOTE: Only the latest secret version will be used.
          */
         connectivityAssociationNameSecretId: pulumi.Input<string>;
         /**
-         * The secret version of the connectivity association name secret in Vault.
+         * (Updatable) The secret version of the `connectivityAssociationNameSecretId` secret in Vault.
+         *
+         * NOTE: Only the latest secret version will be used.
          */
         connectivityAssociationNameSecretVersion?: pulumi.Input<string>;
     }
@@ -12702,7 +12702,7 @@ export namespace Core {
          */
         primaryKey?: pulumi.Input<inputs.Core.CrossConnectMacsecPropertiesPrimaryKey>;
         /**
-         * (Updatable) Indicates whether or not MACsec is enabled.
+         * The cross-connect's current state.
          */
         state: pulumi.Input<string>;
     }
@@ -12710,8 +12710,6 @@ export namespace Core {
     export interface CrossConnectMacsecPropertiesPrimaryKey {
         /**
          * (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
-         *
-         * NOTE: Only the latest secret version will be used.
          */
         connectivityAssociationKeySecretId: pulumi.Input<string>;
         /**
@@ -12719,9 +12717,7 @@ export namespace Core {
          */
         connectivityAssociationKeySecretVersion?: pulumi.Input<string>;
         /**
-         * (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
-         *
-         * NOTE: Only the latest secret version will be used.
+         * Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
          */
         connectivityAssociationNameSecretId: pulumi.Input<string>;
         /**
@@ -21309,6 +21305,18 @@ export namespace DataSafe {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetMaskingReportMaskingErrorsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetMaskingReportMaskingErrorsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetMaskingReportsFilter {
         name: string;
         regex?: boolean;
@@ -21555,6 +21563,18 @@ export namespace DataSafe {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetSensitiveColumnAnalyticsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSensitiveColumnAnalyticsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetSensitiveDataModelReferentialRelationsFilter {
         name: string;
         regex?: boolean;
@@ -21622,6 +21642,30 @@ export namespace DataSafe {
     }
 
     export interface GetSensitiveDataModelsSensitiveColumnsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSensitiveTypeGroupGroupedSensitiveTypesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSensitiveTypeGroupGroupedSensitiveTypesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSensitiveTypeGroupsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSensitiveTypeGroupsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -22612,6 +22656,28 @@ export namespace DataSafe {
         tableNames?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface SensitiveTypeGroupGroupedSensitiveTypeItem {
+        /**
+         * The OCID of the sensitive type.
+         */
+        sensitiveTypeId?: pulumi.Input<string>;
+    }
+
+    export interface SensitiveTypeGroupGroupedSensitiveTypePatchOperation {
+        /**
+         * (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
+         */
+        operation: pulumi.Input<string>;
+        /**
+         * (Updatable)
+         */
+        selection: pulumi.Input<string>;
+        /**
+         * (Updatable)
+         */
+        value: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    }
+
     export interface TargetDatabaseConnectionOption {
         /**
          * (Updatable) The connection type used to connect to the database. Allowed values:
@@ -23505,6 +23571,10 @@ export namespace DataScience {
          */
         description?: pulumi.Input<string>;
         /**
+         * (Updatable) Is there any artifact present for the metadata.
+         */
+        hasArtifact?: pulumi.Input<boolean>;
+        /**
          * (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
          * * useCaseType
          * * libraryName
@@ -23512,8 +23582,17 @@ export namespace DataScience {
          * * estimatorClass
          * * hyperParameters
          * * testArtifactresults
+         * * fineTuningConfiguration
+         * * deploymentConfiguration
+         * * readme
+         * * license
+         * * evaluationConfiguration
          */
         key?: pulumi.Input<string>;
+        /**
+         * (Updatable) list of keywords for searching
+         */
+        keywords?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
          *
@@ -23532,6 +23611,10 @@ export namespace DataScience {
          */
         description?: pulumi.Input<string>;
         /**
+         * (Updatable) Is there any artifact present for the metadata.
+         */
+        hasArtifact?: pulumi.Input<boolean>;
+        /**
          * (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
          * * useCaseType
          * * libraryName
@@ -23539,8 +23622,17 @@ export namespace DataScience {
          * * estimatorClass
          * * hyperParameters
          * * testArtifactresults
+         * * fineTuningConfiguration
+         * * deploymentConfiguration
+         * * readme
+         * * license
+         * * evaluationConfiguration
          */
         key?: pulumi.Input<string>;
+        /**
+         * (Updatable) list of keywords for searching
+         */
+        keywords?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
          *
@@ -24151,6 +24243,10 @@ export namespace DataScience {
          */
         stepContainerConfigurationDetails?: pulumi.Input<inputs.DataScience.PipelineRunStepOverrideDetailStepContainerConfigurationDetails>;
         /**
+         * The configuration details of a Dataflow step.
+         */
+        stepDataflowConfigurationDetails?: pulumi.Input<inputs.DataScience.PipelineRunStepOverrideDetailStepDataflowConfigurationDetails>;
+        /**
          * The name of the step.
          */
         stepName: pulumi.Input<string>;
@@ -24198,7 +24294,68 @@ export namespace DataScience {
         imageSignatureId?: pulumi.Input<string>;
     }
 
+    export interface PipelineRunStepOverrideDetailStepDataflowConfigurationDetails {
+        /**
+         * The Spark configuration passed to the running process.
+         */
+        configuration?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * The VM shape for the driver.
+         */
+        driverShape?: pulumi.Input<string>;
+        /**
+         * Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+         */
+        driverShapeConfigDetails?: pulumi.Input<inputs.DataScience.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails>;
+        /**
+         * The VM shape for the executors.
+         */
+        executorShape?: pulumi.Input<string>;
+        /**
+         * Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+         */
+        executorShapeConfigDetails?: pulumi.Input<inputs.DataScience.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails>;
+        /**
+         * An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+         */
+        logsBucketUri?: pulumi.Input<string>;
+        /**
+         * The number of executor VMs requested.
+         */
+        numExecutors?: pulumi.Input<number>;
+        /**
+         * An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
+         */
+        warehouseBucketUri?: pulumi.Input<string>;
+    }
+
+    export interface PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails {
+        /**
+         * A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+         */
+        memoryInGbs?: pulumi.Input<number>;
+        /**
+         * A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+         */
+        ocpus?: pulumi.Input<number>;
+    }
+
+    export interface PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails {
+        /**
+         * A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+         */
+        memoryInGbs?: pulumi.Input<number>;
+        /**
+         * A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+         */
+        ocpus?: pulumi.Input<number>;
+    }
+
     export interface PipelineRunStepRun {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow run triggered for this step run.
+         */
+        dataflowRunId?: pulumi.Input<string>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
          */
@@ -24231,7 +24388,7 @@ export namespace DataScience {
 
     export interface PipelineStepArtifact {
         artifactContentDisposition?: pulumi.Input<string>;
-        artifactContentLength: pulumi.Input<string>;
+        artifactContentLength?: pulumi.Input<string>;
         artifactContentMd5?: pulumi.Input<string>;
         artifactLastModified?: pulumi.Input<string>;
         pipelineStepArtifact: pulumi.Input<string>;
@@ -24242,6 +24399,10 @@ export namespace DataScience {
     }
 
     export interface PipelineStepDetail {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow application to be used as a step.
+         */
+        applicationId?: pulumi.Input<string>;
         /**
          * The list of step names this current step depends on for execution.
          */
@@ -24267,6 +24428,10 @@ export namespace DataScience {
          */
         stepContainerConfigurationDetails?: pulumi.Input<inputs.DataScience.PipelineStepDetailStepContainerConfigurationDetails>;
         /**
+         * (Updatable) The configuration details of a Dataflow step.
+         */
+        stepDataflowConfigurationDetails?: pulumi.Input<inputs.DataScience.PipelineStepDetailStepDataflowConfigurationDetails>;
+        /**
          * (Updatable) The infrastructure configuration details of a pipeline or a step.
          */
         stepInfrastructureConfigurationDetails?: pulumi.Input<inputs.DataScience.PipelineStepDetailStepInfrastructureConfigurationDetails>;
@@ -24275,11 +24440,11 @@ export namespace DataScience {
          */
         stepName: pulumi.Input<string>;
         /**
+         * (Updatable) The storage mount details to mount to the instance running the pipeline step.
+         */
+        stepStorageMountConfigurationDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineStepDetailStepStorageMountConfigurationDetailsList>[]>;
+        /**
          * (Updatable) The type of step.
-         *
-         *
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         stepType: pulumi.Input<string>;
     }
@@ -24326,6 +24491,63 @@ export namespace DataScience {
         imageSignatureId?: pulumi.Input<string>;
     }
 
+    export interface PipelineStepDetailStepDataflowConfigurationDetails {
+        /**
+         * (Updatable) The Spark configuration passed to the running process.
+         */
+        configuration?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * (Updatable) The VM shape for the driver.
+         */
+        driverShape?: pulumi.Input<string>;
+        /**
+         * (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+         */
+        driverShapeConfigDetails?: pulumi.Input<inputs.DataScience.PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails>;
+        /**
+         * (Updatable) The VM shape for the executors.
+         */
+        executorShape?: pulumi.Input<string>;
+        /**
+         * (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+         */
+        executorShapeConfigDetails?: pulumi.Input<inputs.DataScience.PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails>;
+        /**
+         * (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+         */
+        logsBucketUri?: pulumi.Input<string>;
+        /**
+         * (Updatable) The number of executor VMs requested.
+         */
+        numExecutors?: pulumi.Input<number>;
+        /**
+         * (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
+         */
+        warehouseBucketUri?: pulumi.Input<string>;
+    }
+
+    export interface PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails {
+        /**
+         * (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+         */
+        memoryInGbs?: pulumi.Input<number>;
+        /**
+         * (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+         */
+        ocpus?: pulumi.Input<number>;
+    }
+
+    export interface PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails {
+        /**
+         * (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+         */
+        memoryInGbs?: pulumi.Input<number>;
+        /**
+         * (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+         */
+        ocpus?: pulumi.Input<number>;
+    }
+
     export interface PipelineStepDetailStepInfrastructureConfigurationDetails {
         /**
          * (Updatable) The size of the block storage volume to attach to the instance.
@@ -24354,6 +24576,80 @@ export namespace DataScience {
          * (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
          */
         ocpus?: pulumi.Input<number>;
+    }
+
+    export interface PipelineStepDetailStepStorageMountConfigurationDetailsList {
+        /**
+         * (Updatable) The object storage bucket
+         */
+        bucket?: pulumi.Input<string>;
+        /**
+         * (Updatable) The local directory name to be mounted
+         */
+        destinationDirectoryName: pulumi.Input<string>;
+        /**
+         * (Updatable) The local path of the mounted directory, excluding directory name.
+         */
+        destinationPath?: pulumi.Input<string>;
+        /**
+         * (Updatable) OCID of the export
+         */
+        exportId?: pulumi.Input<string>;
+        /**
+         * (Updatable) OCID of the mount target
+         */
+        mountTargetId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The object storage namespace
+         */
+        namespace?: pulumi.Input<string>;
+        /**
+         * (Updatable) Prefix in the bucket to mount
+         */
+        prefix?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of storage.
+         */
+        storageType: pulumi.Input<string>;
+    }
+
+    export interface PipelineStorageMountConfigurationDetailsList {
+        /**
+         * (Updatable) The object storage bucket
+         */
+        bucket?: pulumi.Input<string>;
+        /**
+         * (Updatable) The local directory name to be mounted
+         */
+        destinationDirectoryName: pulumi.Input<string>;
+        /**
+         * (Updatable) The local path of the mounted directory, excluding directory name.
+         */
+        destinationPath?: pulumi.Input<string>;
+        /**
+         * (Updatable) OCID of the export
+         */
+        exportId?: pulumi.Input<string>;
+        /**
+         * (Updatable) OCID of the mount target
+         */
+        mountTargetId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The object storage namespace
+         */
+        namespace?: pulumi.Input<string>;
+        /**
+         * (Updatable) Prefix in the bucket to mount
+         */
+        prefix?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of storage.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        storageType: pulumi.Input<string>;
     }
 
     export interface ScheduleAction {
@@ -27385,6 +27681,139 @@ export namespace Database {
         name?: pulumi.Input<string>;
     }
 
+    export interface ExadataInfrastructureConfigureExascaleManagementContact {
+        /**
+         * The email for the Exadata Infrastructure contact.
+         */
+        email?: pulumi.Input<string>;
+        /**
+         * If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
+         */
+        isContactMosValidated?: pulumi.Input<boolean>;
+        /**
+         * If `true`, this Exadata Infrastructure contact is a primary contact. If `false`, this Exadata Infrastructure is a secondary contact.
+         */
+        isPrimary?: pulumi.Input<boolean>;
+        /**
+         * Name of the month of the year.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * The phone number for the Exadata Infrastructure contact.
+         */
+        phoneNumber?: pulumi.Input<string>;
+    }
+
+    export interface ExadataInfrastructureConfigureExascaleManagementDefinedFileSystemConfiguration {
+        /**
+         * If true, the file system is used to create a backup prior to Exadata VM OS update.
+         */
+        isBackupPartition?: pulumi.Input<boolean>;
+        /**
+         * If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+         */
+        isResizable?: pulumi.Input<boolean>;
+        /**
+         * The minimum size of file system.
+         */
+        minSizeGb?: pulumi.Input<number>;
+        /**
+         * The mount point of file system.
+         */
+        mountPoint?: pulumi.Input<string>;
+    }
+
+    export interface ExadataInfrastructureConfigureExascaleManagementExascaleConfig {
+        /**
+         * Available storage size for Exascale in GBs.
+         */
+        availableStorageInGbs?: pulumi.Input<number>;
+        /**
+         * Storage size needed for Exascale in GBs.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        totalStorageInGbs?: pulumi.Input<number>;
+    }
+
+    export interface ExadataInfrastructureConfigureExascaleManagementMaintenanceWindow {
+        /**
+         * Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+         */
+        customActionTimeoutInMins?: pulumi.Input<number>;
+        /**
+         * Days during the week when maintenance should be performed.
+         */
+        daysOfWeeks?: pulumi.Input<pulumi.Input<inputs.Database.ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeek>[]>;
+        /**
+         * The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+         */
+        hoursOfDays?: pulumi.Input<pulumi.Input<number>[]>;
+        /**
+         * If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+         */
+        isCustomActionTimeoutEnabled?: pulumi.Input<boolean>;
+        /**
+         * If true, enables the monthly patching option.
+         */
+        isMonthlyPatchingEnabled?: pulumi.Input<boolean>;
+        /**
+         * Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+         */
+        leadTimeInWeeks?: pulumi.Input<number>;
+        /**
+         * Months during the year when maintenance should be performed.
+         */
+        months?: pulumi.Input<pulumi.Input<inputs.Database.ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonth>[]>;
+        /**
+         * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+         */
+        patchingMode?: pulumi.Input<string>;
+        /**
+         * The maintenance window scheduling preference.
+         */
+        preference?: pulumi.Input<string>;
+        /**
+         * If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+         */
+        skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
+        /**
+         * Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+         */
+        weeksOfMonths?: pulumi.Input<pulumi.Input<number>[]>;
+    }
+
+    export interface ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeek {
+        /**
+         * Name of the month of the year.
+         */
+        name?: pulumi.Input<string>;
+    }
+
+    export interface ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonth {
+        /**
+         * Name of the month of the year.
+         */
+        name?: pulumi.Input<string>;
+    }
+
+    export interface ExadataInfrastructureConfigureExascaleManagementNetworkBondingModeDetail {
+        /**
+         * The network bonding mode for the Exadata infrastructure.
+         */
+        backupNetworkBondingMode?: pulumi.Input<string>;
+        /**
+         * The network bonding mode for the Exadata infrastructure.
+         */
+        clientNetworkBondingMode?: pulumi.Input<string>;
+        /**
+         * The network bonding mode for the Exadata infrastructure.
+         */
+        drNetworkBondingMode?: pulumi.Input<string>;
+    }
+
     export interface ExadataInfrastructureContact {
         /**
          * (Updatable) The email for the Exadata Infrastructure contact.
@@ -27425,6 +27854,17 @@ export namespace Database {
          * The mount point of file system.
          */
         mountPoint?: pulumi.Input<string>;
+    }
+
+    export interface ExadataInfrastructureExascaleConfig {
+        /**
+         * Available storage size for Exascale in GBs.
+         */
+        availableStorageInGbs?: pulumi.Input<number>;
+        /**
+         * Storage size needed for Exascale in GBs.
+         */
+        totalStorageInGbs?: pulumi.Input<number>;
     }
 
     export interface ExadataInfrastructureMaintenanceWindow {
@@ -33338,6 +33778,75 @@ export namespace DatabaseTools {
     }
 }
 
+export namespace Dblm {
+    export interface GetVulnerabilityAggregatedVulnerabilityDataFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetVulnerabilityAggregatedVulnerabilityDataFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetVulnerabilityNotificationsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetVulnerabilityNotificationsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetVulnerabilityResourcesFilter {
+        /**
+         * The name of the resource.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetVulnerabilityResourcesFilterArgs {
+        /**
+         * The name of the resource.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetVulnerabilityScansFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetVulnerabilityScansFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetVulnerabilityVulnerabilitiesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetVulnerabilityVulnerabilitiesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+}
+
 export namespace DelegateAccessControl {
     export interface GetDelegatedResourceAccessRequestHistoriesFilter {
         name: string;
@@ -36956,6 +37465,18 @@ export namespace FileStorage {
     }
 
     export interface GetExportsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetFileSystemQuotaRulesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFileSystemQuotaRulesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -74076,6 +74597,10 @@ export namespace Mysql {
 
     export interface MysqlBackupDbSystemSnapshotBackupPolicy {
         /**
+         * List of policies of a DB system to schedule cross-region DB system backup copy.
+         */
+        copyPolicies?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicy>[]>;
+        /**
          * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
          */
         definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
@@ -74099,6 +74624,17 @@ export namespace Mysql {
          * The start time of the maintenance window.
          */
         windowStartTime?: pulumi.Input<string>;
+    }
+
+    export interface MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicy {
+        /**
+         * Number of days to retain the copied DB system backup.
+         */
+        backupCopyRetentionInDays?: pulumi.Input<number>;
+        /**
+         * The destination region name to which the DB system backup will be copied.
+         */
+        copyToRegion?: pulumi.Input<string>;
     }
 
     export interface MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy {
@@ -74267,6 +74803,18 @@ export namespace Mysql {
 
     export interface MysqlConfigurationVariables {
         /**
+         * auto_increment_increment and autoIncrementOffset are intended for use with circular (source-to-source) replication, and can be used to control the operation of AUTO_INCREMENT columns. Both variables have global and session values, and each can assume an integer value between 1 and 65,535 inclusive.
+         *
+         * autoIncrementIncrement corresponds to the MySQL Replication Source Options variable [autoIncrementIncrement] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-source.html#sysvar_auto_increment_increment).
+         */
+        autoIncrementIncrement?: pulumi.Input<number>;
+        /**
+         * This variable has a default value of 1. If it is left with its default value, and Group Replication is started on the server in multi-primary mode, it is changed to the server ID.
+         *
+         * autoIncrementOffset corresponds to the MySQL Replication Source Options variable [autoIncrementOffset] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-source.html#sysvar_auto_increment_offset).
+         */
+        autoIncrementOffset?: pulumi.Input<number>;
+        /**
          * ("autocommit")
          */
         autocommit?: pulumi.Input<boolean>;
@@ -74281,6 +74829,18 @@ export namespace Mysql {
          */
         binlogExpireLogsSeconds?: pulumi.Input<number>;
         /**
+         * Controls how many microseconds the binary log commit waits before synchronizing the binary log file to disk. There is no delay by default. Setting this variable to a microsecond delay enables more transactions to be synchronized together to disk at once, reducing the overall time to commit a group of transactions because the larger groups required fewer time units per group.
+         *
+         * binlogGroupCommitSyncDelay corresponds to the MySQL Replication system variable [binlogGroupCommitSyncDelay](https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_binlog_group_commit_sync_delay)
+         */
+        binlogGroupCommitSyncDelay?: pulumi.Input<number>;
+        /**
+         * The maximum number of transactions to wait for before aborting the current delay as specified by binlog_group_commit_sync_delay. If binlogGroupCommitSyncDelay is set to 0, then this option has no effect.
+         *
+         * binlogGroupCommitSyncNoDelayCount corresponds to the MySQL Replication system variable [binlogGroupCommitSyncNoDelayCount](https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_binlog_group_commit_sync_no_delay_count)
+         */
+        binlogGroupCommitSyncNoDelayCount?: pulumi.Input<number>;
+        /**
          * Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlogRowMetadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
          */
         binlogRowMetadata?: pulumi.Input<string>;
@@ -74292,6 +74852,24 @@ export namespace Mysql {
          * Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlogTransactionCompression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
          */
         binlogTransactionCompression?: pulumi.Input<boolean>;
+        /**
+         * This variable controls the block encryption mode for block-based algorithms such as AES. It affects encryption for AES_ENCRYPT() and AES_DECRYPT(). blockEncryptionMode takes a value in aes-keylen-mode format, where keylen is the key length in bits and mode is the encryption mode. The value is not case-sensitive. Permitted keylen values are 128, 192, and 256. Permitted mode values are ECB, CBC, CFB1, CFB8, CFB128, and OFB.
+         *
+         * blockEncryptionMode corresponds to the MySQL Server Administration system variable [blockEncryptionMode](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_block_encryption_mode)
+         */
+        blockEncryptionMode?: pulumi.Input<string>;
+        /**
+         * The server's default character set. If you set this variable, you should also set collationServer to specify the collation for the character set.
+         *
+         * characterSetServer corresponds to the MySQL server variable [characterSetServer](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_character_set_server).
+         */
+        characterSetServer?: pulumi.Input<string>;
+        /**
+         * The server's default collation.
+         *
+         * collationServer corresponds to the MySQL server variable [collationServer](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_collation_server).
+         */
+        collationServer?: pulumi.Input<string>;
         /**
          * ("completionType")
          */
@@ -74321,9 +74899,25 @@ export namespace Mysql {
          */
         cteMaxRecursionDepth?: pulumi.Input<string>;
         /**
-         * ("defaultAuthenticationPlugin")
+         * The default authentication plugin. This must be a plugin that uses internal credentials storage, so these values are permitted: mysql_native_password, sha256_password, caching_sha2_password.
+         *
+         * As of MySQL 8.0.27, which introduces multifactor authentication, defaultAuthenticationPlugin is still used, but in conjunction with and at a lower precedence than the authenticationPolicy system variable. For details, see The Default Authentication Plugin. Because of this diminished role, defaultAuthenticationPlugin is deprecated as of MySQL 8.0.27 and subject to removal in a future MySQL version.
+         *
+         * defaultAuthenticationPlugin corresponds to the MySQL system variable [defaultAuthenticationPlugin](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_default_authentication_plugin).
          */
         defaultAuthenticationPlugin?: pulumi.Input<string>;
+        /**
+         * This variable determines the default output format used by EXPLAIN in the absence of a FORMAT option when displaying a query execution plan.
+         *
+         * explainFormat corresponds to the MySQL system variable [explainFormat](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_explain_format).
+         */
+        explainFormat?: pulumi.Input<string>;
+        /**
+         * This system variable determines whether the server enables certain nonstandard behaviors for default values and NULL-value handling in TIMESTAMP columns. By default, explicitDefaultsForTimestamp is enabled, which disables the nonstandard behaviors. Disabling explicitDefaultsForTimestamp results in a warning.
+         *
+         * explicitDefaultsForTimestamp corresponds to the MySQL Server Administration system variable [explicitDefaultsForTimestamp](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_explicit_defaults_for_timestamp)
+         */
+        explicitDefaultsForTimestamp?: pulumi.Input<boolean>;
         /**
          * ("foreignKeyChecks")
          */
@@ -74347,6 +74941,12 @@ export namespace Mysql {
          */
         globalConnectionMemoryTracking?: pulumi.Input<boolean>;
         /**
+         * Specifies the maximum permitted result length in bytes for the GROUP_CONCAT() function.
+         *
+         * This is the MySQL variable "groupConcatMaxLen". For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_group_concat_max_len)
+         */
+        groupConcatMaxLen?: pulumi.Input<string>;
+        /**
          * * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
          * * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
          * * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
@@ -74358,6 +74958,18 @@ export namespace Mysql {
          * ("informationSchemaStatsExpiry")
          */
         informationSchemaStatsExpiry?: pulumi.Input<number>;
+        /**
+         * Whether the InnoDB adaptive hash index is enabled or disabled. It may be desirable, depending on your workload, to dynamically enable or disable adaptive hash indexing to improve query performance. Because the adaptive hash index may not be useful for all workloads, conduct benchmarks with it both enabled and disabled, using realistic workloads.
+         *
+         * innodbAdaptiveHashIndex corresponds to the MySQL InnoDB Startup Options and System Variables [innodbAdaptiveHashIndex] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_adaptive_hash_index).
+         */
+        innodbAdaptiveHashIndex?: pulumi.Input<boolean>;
+        /**
+         * The lock mode to use for generating auto-increment values. Permissible values are 0, 1, or 2, for traditional, consecutive, or interleaved, respectively.
+         *
+         * innodbAutoincLockMode corresponds to the MySQL InnoDB Startup Options and System Variables [innodbAutoincLockMode] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_autoinc_lock_mode).
+         */
+        innodbAutoincLockMode?: pulumi.Input<number>;
         /**
          * Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
          *
@@ -74380,6 +74992,12 @@ export namespace Mysql {
          * The default and maximum values depend on the amount of RAM provisioned by the shape. See [Default User Variables](https://www.terraform.io/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
          */
         innodbBufferPoolSize?: pulumi.Input<string>;
+        /**
+         * Whether InnoDB performs change buffering, an optimization that delays write operations to secondary indexes so that the I/O operations can be performed sequentially. Permitted values are described in the following table. Values may also be specified numerically.
+         *
+         * innodbChangeBuffering corresponds to the MySQL InnoDB Startup Options and System Variables [innodbChangeBuffering] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_change_buffering).
+         */
+        innodbChangeBuffering?: pulumi.Input<string>;
         /**
          * innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
          */
@@ -74443,6 +75061,38 @@ export namespace Mysql {
          */
         innodbMaxPurgeLagDelay?: pulumi.Input<number>;
         /**
+         * Enables the NUMA interleave memory policy for allocation of the InnoDB buffer pool. When innodbNumaInterleave is enabled, the NUMA memory policy is set to MPOL_INTERLEAVE for the mysqld process. After the InnoDB buffer pool is allocated, the NUMA memory policy is set back to MPOL_DEFAULT. For the innodbNumaInterleave option to be available, MySQL must be compiled on a NUMA-enabled Linux system.
+         *
+         * innodbNumaInterleave corresponds to the MySQL InnoDB Startup Options and System Variables [innodbNumaInterleave] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_numa_interleave).
+         */
+        innodbNumaInterleave?: pulumi.Input<boolean>;
+        /**
+         * Specifies an upper limit in bytes on the size of the temporary log files used during online DDL operations for InnoDB tables. There is one such log file for each index being created or table being altered. This log file stores data inserted, updated, or deleted in the table during the DDL operation.
+         *
+         * innodbOnlineAlterLogMaxSize corresponds to the MySQL InnoDB Startup Options and System Variables [innodbOnlineAlterLogMaxSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_online_alter_log_max_size).
+         */
+        innodbOnlineAlterLogMaxSize?: pulumi.Input<string>;
+        /**
+         * Defines the amount of disk space occupied by redo log files. innodbRedoLogCapacity supercedes the innodbLogFilesInGroup and innodbLogFileSize variables, which are both ignored if innodbRedoLogCapacity is defined. If innodbRedoLogCapacity is not defined, and if neither innodbLogFileSize or innodbLogFilesInGroup are defined, then the default innodbRedoLogCapacity value is used.
+         *
+         * innodbRedoLogCapacity corresponds to the InnoDB Startup Options and System Variables [innodbRedoLogCapacity](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_redo_log_capacity)
+         */
+        innodbRedoLogCapacity?: pulumi.Input<string>;
+        /**
+         * InnoDB rolls back only the last statement on a transaction timeout by default. If --innodb-rollback-on-timeout is specified, a transaction timeout causes InnoDB to abort and roll back the entire transaction.
+         *
+         * innodbRollbackOnTimeout corresponds to the MySQL InnoDB Startup Options and System Variables [innodbRollbackOnTimeout] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_rollback_on_timeout).
+         */
+        innodbRollbackOnTimeout?: pulumi.Input<boolean>;
+        /**
+         * This variable defines:
+         * * The sort buffer size for online DDL operations that create or rebuild secondary indexes. However, as of MySQL 8.0.27, this responsibility is subsumed by the innodbDdlBufferSize variable.
+         * * The amount by which the temporary log file is extended when recording concurrent DML during an online DDL operation, and the size of the temporary log file read buffer and write buffer.
+         *
+         * innodbSortBufferSize corresponds to the MySQL InnoDB Startup Options and System Variables [innodbSortBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_sort_buffer_size).
+         */
+        innodbSortBufferSize?: pulumi.Input<number>;
+        /**
          * The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
          *
          * innodbStatsPersistentSamplePages corresponds to the MySQL InnoDB system variable [innodbStatsPersistentSamplePages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_persistent_sample_pages)
@@ -74461,15 +75111,41 @@ export namespace Mysql {
          */
         innodbStatsTransientSamplePages?: pulumi.Input<string>;
         /**
+         * When you enable innodbStrictMode, the InnoDB storage engine returns errors instead of warnings for invalid or incompatible table options.
+         *
+         * innodbStrictMode corresponds to the MySQL InnoDB system variable [innodbStrictMode](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_strict_mode)
+         */
+        innodbStrictMode?: pulumi.Input<boolean>;
+        /**
+         * When enabled, undo tablespaces that exceed the threshold value defined by innodbMaxUndoLogSize are marked for truncation. Only undo tablespaces can be truncated. Truncating undo logs that reside in the system tablespace is not supported. For truncation to occur, there must be at least two undo tablespaces.
+         *
+         * innodbUndoLogTruncate corresponds to the MySQL InnoDB Startup Options and System Variables [innodbUndoLogTruncate] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_undo_log_truncate).
+         */
+        innodbUndoLogTruncate?: pulumi.Input<boolean>;
+        /**
          * The number of seconds the server waits for activity on an interactive connection before closing it.
          *
          * interactiveTimeout corresponds to the MySQL system variable. [interactiveTimeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_interactive_timeout)
          */
         interactiveTimeout?: pulumi.Input<number>;
         /**
-         * ("localInfile")
+         * The minimum size of the buffer that is used for plain index scans, range index scans, and joins that do not use indexes and thus perform full table scans. In MySQL 8.0.18 and later, this variable also controls the amount of memory used for hash joins. Normally, the best way to get fast joins is to add indexes. Increase the value of joinBufferSize to get a faster full join when adding indexes is not possible. One join buffer is allocated for each full join between two tables. For a complex join between several tables for which indexes are not used, multiple join buffers might be necessary.
+         *
+         * joinBufferSize corresponds to the MySQL Server System variable [joinBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_join_buffer_size).
+         */
+        joinBufferSize?: pulumi.Input<string>;
+        /**
+         * This variable controls server-side LOCAL capability for LOAD DATA statements. Depending on the localInfile setting, the server refuses or permits local data loading by clients that have LOCAL enabled on the client side. 
+         *
+         * localInfile corresponds to the MySQL Server system variable [localInfile](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_local_infile)
          */
         localInfile?: pulumi.Input<boolean>;
+        /**
+         * If a query takes longer than this many seconds, the server increments the Slow_queries status variable. If the slow query log is enabled, the query is logged to the slow query log file. This value is measured in real time, not CPU time, so a query that is under the threshold on a lightly loaded system might be above the threshold on a heavily loaded one.
+         *
+         * longQueryTime corresponds to the MySQL Server System variable [longQueryTime] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_long_query_time).
+         */
+        longQueryTime?: pulumi.Input<number>;
         /**
          * ("mandatoryRoles")
          */
@@ -74508,6 +75184,18 @@ export namespace Mysql {
          * ("maxPreparedStmtCount")
          */
         maxPreparedStmtCount?: pulumi.Input<number>;
+        /**
+         * Limit the assumed maximum number of seeks when looking up rows based on a key. The MySQL optimizer assumes that no more than this number of key seeks are required when searching for matching rows in a table by scanning an index, regardless of the actual cardinality of the index (see Section 15.7.7.22, “SHOW INDEX Statement”). By setting this to a low value (say, 100), you can force MySQL to prefer indexes instead of table scans.
+         *
+         * maxSeeksForKey corresponds to the MySQL Server System variable [maxSeeksForKey] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_seeks_for_key).
+         */
+        maxSeeksForKey?: pulumi.Input<string>;
+        /**
+         * The maximum number of simultaneous connections permitted to any given MySQL user account. A value of 0 (the default) means “no limit.” This variable has a global value that can be set at server startup or runtime. It also has a read-only session value that indicates the effective simultaneous-connection limit that applies to the account associated with the current session.
+         *
+         * maxUserConnections corresponds to the MySQL Server System variable [maxUserConnections] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_user_connections).
+         */
+        maxUserConnections?: pulumi.Input<string>;
         /**
          * ("mysqlFirewallMode")
          */
@@ -74613,6 +75301,14 @@ export namespace Mysql {
          */
         netWriteTimeout?: pulumi.Input<number>;
         /**
+         * The optimizerSwitch system variable enables control over optimizer behavior. The value of this variable is a set of flags, each of which has a value of on or off to indicate whether the corresponding optimizer behavior is enabled or disabled. This variable has global and session values and can be changed at runtime. The global default can be set at server startup.
+         *
+         * Setting hypergraph_optimizer=on for cloud builds below 9.0.0 will fail.
+         *
+         * optimizerSwitch corresponds to the MySQL Server System variable [optimizerSwitch] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_optimizer_switch).
+         */
+        optimizerSwitch?: pulumi.Input<string>;
+        /**
          * ("parserMaxMemSize")
          */
         parserMaxMemSize?: pulumi.Input<string>;
@@ -74624,20 +75320,70 @@ export namespace Mysql {
         queryAllocBlockSize?: pulumi.Input<string>;
         /**
          * ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
+         */
+        queryPreallocSize?: pulumi.Input<string>;
+        /**
+         * The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans. 
+         *
+         * rangeOptimizerMaxMemSize corresponds to the MySQL Server System variable [rangeOptimizerMaxMemSize] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_range_optimizer_max_mem_size).
          *
          * @deprecated The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
          */
-        queryPreallocSize?: pulumi.Input<string>;
+        rangeOptimizerMaxMemSize?: pulumi.Input<string>;
         /**
          * regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
          */
         regexpTimeLimit?: pulumi.Input<number>;
+        /**
+         * The maximum amount of space to use for all relay logs.
+         *
+         * relayLogSpaceLimit corresponds to the MySQL Replica Server Options variable [relayLogSpaceLimit] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_relay_log_space_limit).
+         */
+        relayLogSpaceLimit?: pulumi.Input<string>;
+        /**
+         * Specifies the number of seconds to wait for more data or a heartbeat signal from the source before the replica considers the connection broken, aborts the read, and tries to reconnect. Setting this variable has no immediate effect. The state of the variable applies on all subsequent START REPLICA commands.
+         *
+         * replicaNetTimeout corresponds to the MySQL Replica server system variable [replicaNetTimeout](https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_net_timeout)
+         */
+        replicaNetTimeout?: pulumi.Input<number>;
+        /**
+         * Beginning with MySQL 8.0.26, slaveParallelWorkers is deprecated, and you should use replicaParallelWorkers instead. (Prior to MySQL 8.0.26, you must use slaveParallelWorkers to set the number of applier threads.)
+         *
+         * replicaParallelWorkers corresponds to the MySQL Replica Server Options variable [replicaParallelWorkers] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_parallel_workers).
+         */
+        replicaParallelWorkers?: pulumi.Input<number>;
+        /**
+         * From MySQL 8.0.26, use replicaTypeConversions in place of slave_type_conversions, which is deprecated from that release. In releases before MySQL 8.0.26, use slave_type_conversions.
+         *
+         * replicaTypeConversions controls the type conversion mode in effect on the replica when using row-based replication. Its value is a comma-delimited set of zero or more elements from the list: ALL_LOSSY, ALL_NON_LOSSY, ALL_SIGNED, ALL_UNSIGNED. Set this variable to an empty string to disallow type conversions between the source and the replica. Setting this variable takes effect for all replication channels immediately, including running channels.
+         *
+         * replicaTypeConversions corresponds to the MySQL Replica Server Options variable [replicaTypeConversions] (https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_type_conversions).
+         */
+        replicaTypeConversions?: pulumi.Input<string>;
+        /**
+         * Whether client connections to the server are required to use some form of secure transport. When this variable is enabled, the server permits only TCP/IP connections encrypted using TLS/SSL, or connections that use a socket file or shared memory. The server rejects nonsecure connection attempts, which fail with an ER_SECURE_TRANSPORT_REQUIRED error.
+         *
+         * requireSecureTransport corresponds to the MySQL Server Administration system variable [requireSecureTransport](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_require_secure_transport)
+         */
+        requireSecureTransport?: pulumi.Input<boolean>;
+        /**
+         * Whether to resolve host names when checking client connections. If this variable is OFF, mysqld resolves host names when checking client connections. If it is ON, mysqld uses only IP numbers; in this case, all Host column values in the grant tables must be IP addresses. See Section 7.1.12.3, “DNS Lookups and the Host Cache”.
+         *
+         * skipNameResolve corresponds to the MySQL Server System variable [skipNameResolve] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_skip_name_resolve).
+         */
+        skipNameResolve?: pulumi.Input<boolean>;
         /**
          * Each session that must perform a sort allocates a buffer of this size.
          *
          * sortBufferSize corresponds to the MySQL system variable [sortBufferSize](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_sort_buffer_size)
          */
         sortBufferSize?: pulumi.Input<string>;
+        /**
+         * Whether GIPK mode is in effect, in which case a MySQL replication source server adds a generated invisible primary key to any InnoDB table that is created without one.
+         *
+         * sqlGenerateInvisiblePrimaryKey corresponds to the MySQL system variable [sqlGenerateInvisiblePrimaryKey] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_sql_generate_invisible_primary_key).
+         */
+        sqlGenerateInvisiblePrimaryKey?: pulumi.Input<boolean>;
         /**
          * ("sqlMode")
          */
@@ -74651,6 +75397,24 @@ export namespace Mysql {
          */
         sqlWarnings?: pulumi.Input<boolean>;
         /**
+         * The number of table definitions that can be stored in the table definition cache. If you use a large number of tables, you can create a large table definition cache to speed up opening of tables. The table definition cache takes less space and does not use file descriptors, unlike the normal table cache.
+         *
+         * tableDefinitionCache corresponds to the MySQL Server Administration system variable [tableDefinitionCache](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_table_definition_cache)
+         */
+        tableDefinitionCache?: pulumi.Input<number>;
+        /**
+         * The number of open tables for all threads. Increasing this value increases the number of file descriptors that mysqld requires.
+         *
+         * tableOpenCache corresponds to the MySQL Server Administration system variable [tableOpenCache](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_table_open_cache)
+         */
+        tableOpenCache?: pulumi.Input<number>;
+        /**
+         * Defines the maximum amount of memory that can be occupied by the TempTable storage engine before it starts storing data on disk. The default value is 1073741824 bytes (1GiB). For more information, see Section 10.4.4, “Internal Temporary Table Use in MySQL”.
+         *
+         * temptableMaxRam corresponds to the MySQL system variable [temptableMaxRam] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_temptable_max_ram).
+         */
+        temptableMaxRam?: pulumi.Input<string>;
+        /**
          * Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
          */
         threadPoolDedicatedListeners?: pulumi.Input<boolean>;
@@ -74658,6 +75422,24 @@ export namespace Mysql {
          * Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
          */
         threadPoolMaxTransactionsLimit?: pulumi.Input<number>;
+        /**
+         * The maximum number of query threads permitted in a thread group. The maximum value is 4096, but if threadPoolMaxTransactionsLimit is set, threadPoolQueryThreadsPerGroup must not exceed that value. The default value of 1 means there is one active query thread in each thread group, which works well for many loads. When you are using the high concurrency thread pool algorithm (thread_pool_algorithm = 1), consider increasing the value if you experience slower response times due to long-running transactions. 
+         *
+         * threadPoolQueryThreadsPerGroup corresponds to the MySQL Server system variable [threadPoolQueryThreadsPerGroup](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_query_threads_per_group)
+         */
+        threadPoolQueryThreadsPerGroup?: pulumi.Input<number>;
+        /**
+         * The number of thread groups in the thread pool. This is the most important parameter controlling thread pool performance. It affects how many statements can execute simultaneously. If a value outside the range of permissible values is specified, the thread pool plugin does not load and the server writes a message to the error log.
+         *
+         * threadPoolSize corresponds to the MySQL Server System variable [threadPoolSize] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_size).
+         */
+        threadPoolSize?: pulumi.Input<number>;
+        /**
+         * The delay period before executing a new transaction, in milliseconds. The maximum value is 300000 (5 minutes). A transaction delay can be used in cases where parallel transactions affect the performance of other operations due to resource contention. For example, if parallel transactions affect index creation or an online buffer pool resizing operation, you can configure a transaction delay to reduce resource contention while those operations are running. 
+         *
+         * threadPoolTransactionDelay corresponds to the MySQL Server system variable [threadPoolTransactionDelay](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_transaction_delay)
+         */
+        threadPoolTransactionDelay?: pulumi.Input<number>;
         /**
          * Initializes the time zone for each client that connects.
          *
@@ -74691,6 +75473,14 @@ export namespace Mysql {
     }
 
     export interface MysqlDbSystemBackupPolicy {
+        /**
+         * (Updatable) List of policies of a DB system to schedule cross-region DB system backup copy.
+         *
+         * The policy includes the name of the destination region to which the DB system backup will be copied, and an optional parameter which specifies the retention period of the copied DB system backup in days.
+         *
+         * **Note:** Currently, only one policy can be specified in the list.
+         */
+        copyPolicies?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlDbSystemBackupPolicyCopyPolicy>[]>;
         /**
          * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces.
          *
@@ -74727,6 +75517,17 @@ export namespace Mysql {
          * At some point in the window, the system may incur a brief service disruption as the backup is performed.
          */
         windowStartTime?: pulumi.Input<string>;
+    }
+
+    export interface MysqlDbSystemBackupPolicyCopyPolicy {
+        /**
+         * (Updatable) Number of days to retain the copied DB system backup.
+         */
+        backupCopyRetentionInDays?: pulumi.Input<number>;
+        /**
+         * (Updatable) The destination region name to which the DB system backup will be copied.
+         */
+        copyToRegion: pulumi.Input<string>;
     }
 
     export interface MysqlDbSystemBackupPolicyPitrPolicy {
@@ -74773,6 +75574,10 @@ export namespace Mysql {
          * (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
          */
         state?: pulumi.Input<string>;
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * Details about the Channel target.
          */
@@ -77085,6 +77890,18 @@ export namespace Opensearch {
         natIp?: pulumi.Input<string>;
     }
 
+    export interface GetOpensearchClusterPipelinesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetOpensearchClusterPipelinesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetOpensearchClustersFilter {
         name: string;
         regex?: boolean;
@@ -77109,6 +77926,16 @@ export namespace Opensearch {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface OpensearchClusterPipelineReverseConnectionEndpoint {
+        /**
+         * (Updatable) The fully qualified domain name of the customerIp in the customer VCN
+         */
+        customerFqdn: pulumi.Input<string>;
+        /**
+         * (Updatable) The IPv4 address in the customer VCN
+         */
+        customerIp: pulumi.Input<string>;
+    }
 }
 
 export namespace OperatorAccessControl {
@@ -80395,7 +81222,30 @@ export namespace OsubUsage {
 }
 
 export namespace Psql {
+    export interface BackupCopyStatus {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup in the source region
+         */
+        backupId?: pulumi.Input<string>;
+        /**
+         * Region name of the remote region
+         */
+        region?: pulumi.Input<string>;
+        /**
+         * The current state of the backup.
+         */
+        state?: pulumi.Input<string>;
+        /**
+         * A message describing the current state of copy in more detail
+         */
+        stateDetails?: pulumi.Input<string>;
+    }
+
     export interface BackupDbSystemDetail {
+        /**
+         * OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
+         */
+        configId?: pulumi.Input<string>;
         /**
          * The major and minor versions of the database system software.
          */
@@ -80404,6 +81254,17 @@ export namespace Psql {
          * Type of the database system.
          */
         systemType?: pulumi.Input<string>;
+    }
+
+    export interface BackupSourceBackupDetails {
+        /**
+         * Backup ID of the COPY source type.
+         */
+        sourceBackupId: pulumi.Input<string>;
+        /**
+         * Backup Region of the COPY source type.
+         */
+        sourceRegion: pulumi.Input<string>;
     }
 
     export interface ConfigurationConfigurationDetail {
@@ -80565,6 +81426,10 @@ export namespace Psql {
          */
         backupStart?: pulumi.Input<string>;
         /**
+         * (Updatable) Backup copy details
+         */
+        copyPolicy?: pulumi.Input<inputs.Psql.DbSystemManagementPolicyBackupPolicyCopyPolicy>;
+        /**
          * (Updatable) Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
          */
         daysOfTheMonths?: pulumi.Input<pulumi.Input<number>[]>;
@@ -80580,6 +81445,21 @@ export namespace Psql {
          * (Updatable) How many days the data should be stored after the database system deletion.
          */
         retentionDays?: pulumi.Input<number>;
+    }
+
+    export interface DbSystemManagementPolicyBackupPolicyCopyPolicy {
+        /**
+         * (Updatable) target compartment to place a new backup
+         */
+        compartmentId: pulumi.Input<string>;
+        /**
+         * (Updatable) List of region names of the remote region
+         */
+        regions: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Retention period in days of the backup copy.
+         */
+        retentionPeriod?: pulumi.Input<number>;
     }
 
     export interface DbSystemNetworkDetails {

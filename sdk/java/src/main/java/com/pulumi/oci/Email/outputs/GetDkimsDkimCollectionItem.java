@@ -5,6 +5,8 @@ package com.pulumi.oci.Email.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -52,6 +54,16 @@ public final class GetDkimsDkimCollectionItem {
      */
     private String id;
     /**
+     * @return Indicates whether the DKIM was imported.
+     * 
+     */
+    private Boolean isImported;
+    /**
+     * @return Length of the RSA key used in the DKIM.
+     * 
+     */
+    private Integer keyLength;
+    /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource.
      * 
      */
@@ -61,6 +73,7 @@ public final class GetDkimsDkimCollectionItem {
      * 
      */
     private String name;
+    private String privateKey;
     /**
      * @return Filter returned list by specified lifecycle state. This parameter is case-insensitive.
      * 
@@ -145,6 +158,20 @@ public final class GetDkimsDkimCollectionItem {
         return this.id;
     }
     /**
+     * @return Indicates whether the DKIM was imported.
+     * 
+     */
+    public Boolean isImported() {
+        return this.isImported;
+    }
+    /**
+     * @return Length of the RSA key used in the DKIM.
+     * 
+     */
+    public Integer keyLength() {
+        return this.keyLength;
+    }
+    /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource.
      * 
      */
@@ -157,6 +184,9 @@ public final class GetDkimsDkimCollectionItem {
      */
     public String name() {
         return this.name;
+    }
+    public String privateKey() {
+        return this.privateKey;
     }
     /**
      * @return Filter returned list by specified lifecycle state. This parameter is case-insensitive.
@@ -211,8 +241,11 @@ public final class GetDkimsDkimCollectionItem {
         private String emailDomainId;
         private Map<String,String> freeformTags;
         private String id;
+        private Boolean isImported;
+        private Integer keyLength;
         private String lifecycleDetails;
         private String name;
+        private String privateKey;
         private String state;
         private Map<String,String> systemTags;
         private String timeCreated;
@@ -229,8 +262,11 @@ public final class GetDkimsDkimCollectionItem {
     	      this.emailDomainId = defaults.emailDomainId;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isImported = defaults.isImported;
+    	      this.keyLength = defaults.keyLength;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.name = defaults.name;
+    	      this.privateKey = defaults.privateKey;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
@@ -303,6 +339,22 @@ public final class GetDkimsDkimCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder isImported(Boolean isImported) {
+            if (isImported == null) {
+              throw new MissingRequiredPropertyException("GetDkimsDkimCollectionItem", "isImported");
+            }
+            this.isImported = isImported;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder keyLength(Integer keyLength) {
+            if (keyLength == null) {
+              throw new MissingRequiredPropertyException("GetDkimsDkimCollectionItem", "keyLength");
+            }
+            this.keyLength = keyLength;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetDkimsDkimCollectionItem", "lifecycleDetails");
@@ -316,6 +368,14 @@ public final class GetDkimsDkimCollectionItem {
               throw new MissingRequiredPropertyException("GetDkimsDkimCollectionItem", "name");
             }
             this.name = name;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder privateKey(String privateKey) {
+            if (privateKey == null) {
+              throw new MissingRequiredPropertyException("GetDkimsDkimCollectionItem", "privateKey");
+            }
+            this.privateKey = privateKey;
             return this;
         }
         @CustomType.Setter
@@ -368,8 +428,11 @@ public final class GetDkimsDkimCollectionItem {
             _resultValue.emailDomainId = emailDomainId;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isImported = isImported;
+            _resultValue.keyLength = keyLength;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.name = name;
+            _resultValue.privateKey = privateKey;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;

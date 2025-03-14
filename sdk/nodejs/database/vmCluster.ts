@@ -46,6 +46,7 @@ import * as utilities from "../utilities";
  *     dbNodeStorageSizeInGbs: vmClusterDbNodeStorageSizeInGbs,
  *     dbServers: vmClusterDbServers,
  *     definedTags: vmClusterDefinedTags,
+ *     exascaleDbStorageVaultId: testExascaleDbStorageVault.id,
  *     fileSystemConfigurationDetails: [{
  *         fileSystemSizeGb: vmClusterFileSystemConfigurationDetailsFileSystemSizeGb,
  *         mountPoint: vmClusterFileSystemConfigurationDetailsMountPoint,
@@ -59,6 +60,7 @@ import * as utilities from "../utilities";
  *     memorySizeInGbs: vmClusterMemorySizeInGbs,
  *     systemVersion: vmClusterSystemVersion,
  *     timeZone: vmClusterTimeZone,
+ *     vmClusterType: vmClusterVmClusterType,
  * });
  * ```
  *
@@ -110,6 +112,10 @@ export class VmCluster extends pulumi.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     public readonly compartmentId!: pulumi.Output<string>;
+    /**
+     * The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     */
+    public /*out*/ readonly computeModel!: pulumi.Output<string>;
     public readonly cpuCoreCount!: pulumi.Output<number>;
     /**
      * The number of enabled CPU cores.
@@ -147,6 +153,10 @@ export class VmCluster extends pulumi.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
     public readonly exadataInfrastructureId!: pulumi.Output<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+     */
+    public readonly exascaleDbStorageVaultId!: pulumi.Output<string>;
     /**
      * (Updatable) Details of the file system configuration of the VM cluster.
      */
@@ -198,6 +208,10 @@ export class VmCluster extends pulumi.CustomResource {
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
+     * Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
+     */
+    public /*out*/ readonly storageManagementType!: pulumi.Output<string>;
+    /**
      * Operating system version of the image.
      */
     public readonly systemVersion!: pulumi.Output<string>;
@@ -211,12 +225,16 @@ export class VmCluster extends pulumi.CustomResource {
     public readonly timeZone!: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+     */
+    public readonly vmClusterNetworkId!: pulumi.Output<string>;
+    /**
+     * The vmcluster type for the VM cluster/Cloud VM cluster.
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly vmClusterNetworkId!: pulumi.Output<string>;
+    public readonly vmClusterType!: pulumi.Output<string>;
 
     /**
      * Create a VmCluster resource with the given unique name, arguments, and options.
@@ -234,6 +252,7 @@ export class VmCluster extends pulumi.CustomResource {
             resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
             resourceInputs["cloudAutomationUpdateDetails"] = state ? state.cloudAutomationUpdateDetails : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
+            resourceInputs["computeModel"] = state ? state.computeModel : undefined;
             resourceInputs["cpuCoreCount"] = state ? state.cpuCoreCount : undefined;
             resourceInputs["cpusEnabled"] = state ? state.cpusEnabled : undefined;
             resourceInputs["dataCollectionOptions"] = state ? state.dataCollectionOptions : undefined;
@@ -244,6 +263,7 @@ export class VmCluster extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["exadataInfrastructureId"] = state ? state.exadataInfrastructureId : undefined;
+            resourceInputs["exascaleDbStorageVaultId"] = state ? state.exascaleDbStorageVaultId : undefined;
             resourceInputs["fileSystemConfigurationDetails"] = state ? state.fileSystemConfigurationDetails : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["giVersion"] = state ? state.giVersion : undefined;
@@ -258,10 +278,12 @@ export class VmCluster extends pulumi.CustomResource {
             resourceInputs["shape"] = state ? state.shape : undefined;
             resourceInputs["sshPublicKeys"] = state ? state.sshPublicKeys : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["storageManagementType"] = state ? state.storageManagementType : undefined;
             resourceInputs["systemVersion"] = state ? state.systemVersion : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeZone"] = state ? state.timeZone : undefined;
             resourceInputs["vmClusterNetworkId"] = state ? state.vmClusterNetworkId : undefined;
+            resourceInputs["vmClusterType"] = state ? state.vmClusterType : undefined;
         } else {
             const args = argsOrState as VmClusterArgs | undefined;
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
@@ -296,6 +318,7 @@ export class VmCluster extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["exadataInfrastructureId"] = args ? args.exadataInfrastructureId : undefined;
+            resourceInputs["exascaleDbStorageVaultId"] = args ? args.exascaleDbStorageVaultId : undefined;
             resourceInputs["fileSystemConfigurationDetails"] = args ? args.fileSystemConfigurationDetails : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["giVersion"] = args ? args.giVersion : undefined;
@@ -308,13 +331,16 @@ export class VmCluster extends pulumi.CustomResource {
             resourceInputs["systemVersion"] = args ? args.systemVersion : undefined;
             resourceInputs["timeZone"] = args ? args.timeZone : undefined;
             resourceInputs["vmClusterNetworkId"] = args ? args.vmClusterNetworkId : undefined;
+            resourceInputs["vmClusterType"] = args ? args.vmClusterType : undefined;
             resourceInputs["availabilityDomain"] = undefined /*out*/;
+            resourceInputs["computeModel"] = undefined /*out*/;
             resourceInputs["cpusEnabled"] = undefined /*out*/;
             resourceInputs["lastPatchHistoryEntryId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["ocpusEnabled"] = undefined /*out*/;
             resourceInputs["shape"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["storageManagementType"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -338,6 +364,10 @@ export interface VmClusterState {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId?: pulumi.Input<string>;
+    /**
+     * The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     */
+    computeModel?: pulumi.Input<string>;
     cpuCoreCount?: pulumi.Input<number>;
     /**
      * The number of enabled CPU cores.
@@ -375,6 +405,10 @@ export interface VmClusterState {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
     exadataInfrastructureId?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+     */
+    exascaleDbStorageVaultId?: pulumi.Input<string>;
     /**
      * (Updatable) Details of the file system configuration of the VM cluster.
      */
@@ -426,6 +460,10 @@ export interface VmClusterState {
      */
     state?: pulumi.Input<string>;
     /**
+     * Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
+     */
+    storageManagementType?: pulumi.Input<string>;
+    /**
      * Operating system version of the image.
      */
     systemVersion?: pulumi.Input<string>;
@@ -439,12 +477,16 @@ export interface VmClusterState {
     timeZone?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+     */
+    vmClusterNetworkId?: pulumi.Input<string>;
+    /**
+     * The vmcluster type for the VM cluster/Cloud VM cluster.
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vmClusterNetworkId?: pulumi.Input<string>;
+    vmClusterType?: pulumi.Input<string>;
 }
 
 /**
@@ -493,6 +535,10 @@ export interface VmClusterArgs {
      */
     exadataInfrastructureId: pulumi.Input<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+     */
+    exascaleDbStorageVaultId?: pulumi.Input<string>;
+    /**
      * (Updatable) Details of the file system configuration of the VM cluster.
      */
     fileSystemConfigurationDetails?: pulumi.Input<pulumi.Input<inputs.Database.VmClusterFileSystemConfigurationDetail>[]>;
@@ -535,10 +581,14 @@ export interface VmClusterArgs {
     timeZone?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+     */
+    vmClusterNetworkId: pulumi.Input<string>;
+    /**
+     * The vmcluster type for the VM cluster/Cloud VM cluster.
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vmClusterNetworkId: pulumi.Input<string>;
+    vmClusterType?: pulumi.Input<string>;
 }

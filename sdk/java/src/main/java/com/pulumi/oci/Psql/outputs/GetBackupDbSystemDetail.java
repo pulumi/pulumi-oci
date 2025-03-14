@@ -11,6 +11,11 @@ import java.util.Objects;
 @CustomType
 public final class GetBackupDbSystemDetail {
     /**
+     * @return OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
+     * 
+     */
+    private String configId;
+    /**
      * @return The major and minor versions of the database system software.
      * 
      */
@@ -22,6 +27,13 @@ public final class GetBackupDbSystemDetail {
     private String systemType;
 
     private GetBackupDbSystemDetail() {}
+    /**
+     * @return OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
+     * 
+     */
+    public String configId() {
+        return this.configId;
+    }
     /**
      * @return The major and minor versions of the database system software.
      * 
@@ -46,15 +58,25 @@ public final class GetBackupDbSystemDetail {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String configId;
         private String dbVersion;
         private String systemType;
         public Builder() {}
         public Builder(GetBackupDbSystemDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.configId = defaults.configId;
     	      this.dbVersion = defaults.dbVersion;
     	      this.systemType = defaults.systemType;
         }
 
+        @CustomType.Setter
+        public Builder configId(String configId) {
+            if (configId == null) {
+              throw new MissingRequiredPropertyException("GetBackupDbSystemDetail", "configId");
+            }
+            this.configId = configId;
+            return this;
+        }
         @CustomType.Setter
         public Builder dbVersion(String dbVersion) {
             if (dbVersion == null) {
@@ -73,6 +95,7 @@ public final class GetBackupDbSystemDetail {
         }
         public GetBackupDbSystemDetail build() {
             final var _resultValue = new GetBackupDbSystemDetail();
+            _resultValue.configId = configId;
             _resultValue.dbVersion = dbVersion;
             _resultValue.systemType = systemType;
             return _resultValue;

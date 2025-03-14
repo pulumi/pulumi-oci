@@ -6,6 +6,7 @@ package com.pulumi.oci.Psql;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Psql.inputs.BackupSourceBackupDetailsArgs;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Map;
@@ -37,15 +38,15 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
      * The ID of the database system.
      * 
      */
-    @Import(name="dbSystemId", required=true)
-    private Output<String> dbSystemId;
+    @Import(name="dbSystemId")
+    private @Nullable Output<String> dbSystemId;
 
     /**
      * @return The ID of the database system.
      * 
      */
-    public Output<String> dbSystemId() {
-        return this.dbSystemId;
+    public Optional<Output<String>> dbSystemId() {
+        return Optional.ofNullable(this.dbSystemId);
     }
 
     /**
@@ -82,15 +83,15 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
      * (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
      * 
      */
-    @Import(name="displayName", required=true)
-    private Output<String> displayName;
+    @Import(name="displayName")
+    private @Nullable Output<String> displayName;
 
     /**
      * @return (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Optional<Output<String>> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
 
     /**
@@ -129,6 +130,21 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.retentionPeriod);
     }
 
+    /**
+     * Information about the Source Backup associated with a backup.
+     * 
+     */
+    @Import(name="sourceBackupDetails")
+    private @Nullable Output<BackupSourceBackupDetailsArgs> sourceBackupDetails;
+
+    /**
+     * @return Information about the Source Backup associated with a backup.
+     * 
+     */
+    public Optional<Output<BackupSourceBackupDetailsArgs>> sourceBackupDetails() {
+        return Optional.ofNullable(this.sourceBackupDetails);
+    }
+
     private BackupArgs() {}
 
     private BackupArgs(BackupArgs $) {
@@ -139,6 +155,7 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.retentionPeriod = $.retentionPeriod;
+        this.sourceBackupDetails = $.sourceBackupDetails;
     }
 
     public static Builder builder() {
@@ -186,7 +203,7 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder dbSystemId(Output<String> dbSystemId) {
+        public Builder dbSystemId(@Nullable Output<String> dbSystemId) {
             $.dbSystemId = dbSystemId;
             return this;
         }
@@ -249,7 +266,7 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder displayName(Output<String> displayName) {
+        public Builder displayName(@Nullable Output<String> displayName) {
             $.displayName = displayName;
             return this;
         }
@@ -312,15 +329,30 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
             return retentionPeriod(Output.of(retentionPeriod));
         }
 
+        /**
+         * @param sourceBackupDetails Information about the Source Backup associated with a backup.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceBackupDetails(@Nullable Output<BackupSourceBackupDetailsArgs> sourceBackupDetails) {
+            $.sourceBackupDetails = sourceBackupDetails;
+            return this;
+        }
+
+        /**
+         * @param sourceBackupDetails Information about the Source Backup associated with a backup.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceBackupDetails(BackupSourceBackupDetailsArgs sourceBackupDetails) {
+            return sourceBackupDetails(Output.of(sourceBackupDetails));
+        }
+
         public BackupArgs build() {
             if ($.compartmentId == null) {
                 throw new MissingRequiredPropertyException("BackupArgs", "compartmentId");
-            }
-            if ($.dbSystemId == null) {
-                throw new MissingRequiredPropertyException("BackupArgs", "dbSystemId");
-            }
-            if ($.displayName == null) {
-                throw new MissingRequiredPropertyException("BackupArgs", "displayName");
             }
             return $;
         }

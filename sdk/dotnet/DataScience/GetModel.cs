@@ -136,6 +136,10 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         public readonly ImmutableArray<Outputs.GetModelBackupSettingResult> BackupSettings;
         /// <summary>
+        /// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
+        /// </summary>
+        public readonly string Category;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model's compartment.
         /// </summary>
         public readonly string CompartmentId;
@@ -176,6 +180,10 @@ namespace Pulumi.Oci.DataScience
         /// Input schema file content in String format
         /// </summary>
         public readonly string InputSchema;
+        /// <summary>
+        /// Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+        /// </summary>
+        public readonly bool IsModelByReference;
         /// <summary>
         /// Details about the lifecycle state of the model.
         /// </summary>
@@ -230,6 +238,8 @@ namespace Pulumi.Oci.DataScience
 
             ImmutableArray<Outputs.GetModelBackupSettingResult> backupSettings,
 
+            string category,
+
             string compartmentId,
 
             string createdBy,
@@ -251,6 +261,8 @@ namespace Pulumi.Oci.DataScience
             string id,
 
             string inputSchema,
+
+            bool isModelByReference,
 
             string lifecycleDetails,
 
@@ -282,6 +294,7 @@ namespace Pulumi.Oci.DataScience
             ArtifactLastModified = artifactLastModified;
             BackupOperationDetails = backupOperationDetails;
             BackupSettings = backupSettings;
+            Category = category;
             CompartmentId = compartmentId;
             CreatedBy = createdBy;
             CustomMetadataLists = customMetadataLists;
@@ -293,6 +306,7 @@ namespace Pulumi.Oci.DataScience
             FreeformTags = freeformTags;
             Id = id;
             InputSchema = inputSchema;
+            IsModelByReference = isModelByReference;
             LifecycleDetails = lifecycleDetails;
             ModelArtifact = modelArtifact;
             ModelId = modelId;

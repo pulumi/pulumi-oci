@@ -294,7 +294,6 @@ class GetContainerInstanceContainerResult(dict):
 @pulumi.output_type
 class GetContainerInstanceContainerHealthCheckResult(dict):
     def __init__(__self__, *,
-                 commands: Sequence[str],
                  failure_action: str,
                  failure_threshold: int,
                  headers: Sequence['outputs.GetContainerInstanceContainerHealthCheckHeaderResult'],
@@ -312,7 +311,6 @@ class GetContainerInstanceContainerHealthCheckResult(dict):
         :param str name: The name of the volume. This must be unique within a single container instance.
         :param str path: (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
         """
-        pulumi.set(__self__, "commands", commands)
         pulumi.set(__self__, "failure_action", failure_action)
         pulumi.set(__self__, "failure_threshold", failure_threshold)
         pulumi.set(__self__, "headers", headers)
@@ -326,11 +324,6 @@ class GetContainerInstanceContainerHealthCheckResult(dict):
         pulumi.set(__self__, "status_details", status_details)
         pulumi.set(__self__, "success_threshold", success_threshold)
         pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
-
-    @property
-    @pulumi.getter
-    def commands(self) -> Sequence[str]:
-        return pulumi.get(self, "commands")
 
     @property
     @pulumi.getter(name="failureAction")
@@ -1825,7 +1818,6 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerResult(dict):
 @pulumi.output_type
 class GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckResult(dict):
     def __init__(__self__, *,
-                 commands: Sequence[str],
                  failure_action: str,
                  failure_threshold: int,
                  headers: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderResult'],
@@ -1843,7 +1835,6 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckRe
         :param str name: The name of the volume. This must be unique within a single container instance.
         :param str path: (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
         """
-        pulumi.set(__self__, "commands", commands)
         pulumi.set(__self__, "failure_action", failure_action)
         pulumi.set(__self__, "failure_threshold", failure_threshold)
         pulumi.set(__self__, "headers", headers)
@@ -1857,11 +1848,6 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckRe
         pulumi.set(__self__, "status_details", status_details)
         pulumi.set(__self__, "success_threshold", success_threshold)
         pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
-
-    @property
-    @pulumi.getter
-    def commands(self) -> Sequence[str]:
-        return pulumi.get(self, "commands")
 
     @property
     @pulumi.getter(name="failureAction")

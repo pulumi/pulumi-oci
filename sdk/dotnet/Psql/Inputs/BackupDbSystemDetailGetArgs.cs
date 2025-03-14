@@ -13,6 +13,12 @@ namespace Pulumi.Oci.Psql.Inputs
     public sealed class BackupDbSystemDetailGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
+        /// </summary>
+        [Input("configId")]
+        public Input<string>? ConfigId { get; set; }
+
+        /// <summary>
         /// The major and minor versions of the database system software.
         /// </summary>
         [Input("dbVersion")]

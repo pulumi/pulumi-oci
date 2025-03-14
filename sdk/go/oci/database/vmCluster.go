@@ -55,10 +55,11 @@ import (
 //					IsHealthMonitoringEnabled:  pulumi.Any(vmClusterDataCollectionOptionsIsHealthMonitoringEnabled),
 //					IsIncidentLogsEnabled:      pulumi.Any(vmClusterDataCollectionOptionsIsIncidentLogsEnabled),
 //				},
-//				DataStorageSizeInTbs:   pulumi.Any(vmClusterDataStorageSizeInTbs),
-//				DbNodeStorageSizeInGbs: pulumi.Any(vmClusterDbNodeStorageSizeInGbs),
-//				DbServers:              pulumi.Any(vmClusterDbServers),
-//				DefinedTags:            pulumi.Any(vmClusterDefinedTags),
+//				DataStorageSizeInTbs:     pulumi.Any(vmClusterDataStorageSizeInTbs),
+//				DbNodeStorageSizeInGbs:   pulumi.Any(vmClusterDbNodeStorageSizeInGbs),
+//				DbServers:                pulumi.Any(vmClusterDbServers),
+//				DefinedTags:              pulumi.Any(vmClusterDefinedTags),
+//				ExascaleDbStorageVaultId: pulumi.Any(testExascaleDbStorageVault.Id),
 //				FileSystemConfigurationDetails: database.VmClusterFileSystemConfigurationDetailArray{
 //					&database.VmClusterFileSystemConfigurationDetailArgs{
 //						FileSystemSizeGb: pulumi.Any(vmClusterFileSystemConfigurationDetailsFileSystemSizeGb),
@@ -74,6 +75,7 @@ import (
 //				MemorySizeInGbs:          pulumi.Any(vmClusterMemorySizeInGbs),
 //				SystemVersion:            pulumi.Any(vmClusterSystemVersion),
 //				TimeZone:                 pulumi.Any(vmClusterTimeZone),
+//				VmClusterType:            pulumi.Any(vmClusterVmClusterType),
 //			})
 //			if err != nil {
 //				return err
@@ -100,7 +102,9 @@ type VmCluster struct {
 	CloudAutomationUpdateDetails VmClusterCloudAutomationUpdateDetailsOutput `pulumi:"cloudAutomationUpdateDetails"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	CpuCoreCount  pulumi.IntOutput    `pulumi:"cpuCoreCount"`
+	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+	ComputeModel pulumi.StringOutput `pulumi:"computeModel"`
+	CpuCoreCount pulumi.IntOutput    `pulumi:"cpuCoreCount"`
 	// The number of enabled CPU cores.
 	CpusEnabled pulumi.IntOutput `pulumi:"cpusEnabled"`
 	// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
@@ -119,6 +123,8 @@ type VmCluster struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
 	ExadataInfrastructureId pulumi.StringOutput `pulumi:"exadataInfrastructureId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+	ExascaleDbStorageVaultId pulumi.StringOutput `pulumi:"exascaleDbStorageVaultId"`
 	// (Updatable) Details of the file system configuration of the VM cluster.
 	FileSystemConfigurationDetails VmClusterFileSystemConfigurationDetailArrayOutput `pulumi:"fileSystemConfigurationDetails"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -145,6 +151,8 @@ type VmCluster struct {
 	SshPublicKeys pulumi.StringArrayOutput `pulumi:"sshPublicKeys"`
 	// The current state of the VM cluster.
 	State pulumi.StringOutput `pulumi:"state"`
+	// Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
+	StorageManagementType pulumi.StringOutput `pulumi:"storageManagementType"`
 	// Operating system version of the image.
 	SystemVersion pulumi.StringOutput `pulumi:"systemVersion"`
 	// The date and time that the VM cluster was created.
@@ -152,10 +160,12 @@ type VmCluster struct {
 	// The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone pulumi.StringOutput `pulumi:"timeZone"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+	VmClusterNetworkId pulumi.StringOutput `pulumi:"vmClusterNetworkId"`
+	// The vmcluster type for the VM cluster/Cloud VM cluster.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	VmClusterNetworkId pulumi.StringOutput `pulumi:"vmClusterNetworkId"`
+	VmClusterType pulumi.StringOutput `pulumi:"vmClusterType"`
 }
 
 // NewVmCluster registers a new resource with the given unique name, arguments, and options.
@@ -215,7 +225,9 @@ type vmClusterState struct {
 	CloudAutomationUpdateDetails *VmClusterCloudAutomationUpdateDetails `pulumi:"cloudAutomationUpdateDetails"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
-	CpuCoreCount  *int    `pulumi:"cpuCoreCount"`
+	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+	ComputeModel *string `pulumi:"computeModel"`
+	CpuCoreCount *int    `pulumi:"cpuCoreCount"`
 	// The number of enabled CPU cores.
 	CpusEnabled *int `pulumi:"cpusEnabled"`
 	// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
@@ -234,6 +246,8 @@ type vmClusterState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
 	ExadataInfrastructureId *string `pulumi:"exadataInfrastructureId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+	ExascaleDbStorageVaultId *string `pulumi:"exascaleDbStorageVaultId"`
 	// (Updatable) Details of the file system configuration of the VM cluster.
 	FileSystemConfigurationDetails []VmClusterFileSystemConfigurationDetail `pulumi:"fileSystemConfigurationDetails"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -260,6 +274,8 @@ type vmClusterState struct {
 	SshPublicKeys []string `pulumi:"sshPublicKeys"`
 	// The current state of the VM cluster.
 	State *string `pulumi:"state"`
+	// Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
+	StorageManagementType *string `pulumi:"storageManagementType"`
 	// Operating system version of the image.
 	SystemVersion *string `pulumi:"systemVersion"`
 	// The date and time that the VM cluster was created.
@@ -267,10 +283,12 @@ type vmClusterState struct {
 	// The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone *string `pulumi:"timeZone"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+	VmClusterNetworkId *string `pulumi:"vmClusterNetworkId"`
+	// The vmcluster type for the VM cluster/Cloud VM cluster.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	VmClusterNetworkId *string `pulumi:"vmClusterNetworkId"`
+	VmClusterType *string `pulumi:"vmClusterType"`
 }
 
 type VmClusterState struct {
@@ -280,7 +298,9 @@ type VmClusterState struct {
 	CloudAutomationUpdateDetails VmClusterCloudAutomationUpdateDetailsPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringPtrInput
-	CpuCoreCount  pulumi.IntPtrInput
+	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+	ComputeModel pulumi.StringPtrInput
+	CpuCoreCount pulumi.IntPtrInput
 	// The number of enabled CPU cores.
 	CpusEnabled pulumi.IntPtrInput
 	// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
@@ -299,6 +319,8 @@ type VmClusterState struct {
 	DisplayName pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
 	ExadataInfrastructureId pulumi.StringPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+	ExascaleDbStorageVaultId pulumi.StringPtrInput
 	// (Updatable) Details of the file system configuration of the VM cluster.
 	FileSystemConfigurationDetails VmClusterFileSystemConfigurationDetailArrayInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -325,6 +347,8 @@ type VmClusterState struct {
 	SshPublicKeys pulumi.StringArrayInput
 	// The current state of the VM cluster.
 	State pulumi.StringPtrInput
+	// Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
+	StorageManagementType pulumi.StringPtrInput
 	// Operating system version of the image.
 	SystemVersion pulumi.StringPtrInput
 	// The date and time that the VM cluster was created.
@@ -332,10 +356,12 @@ type VmClusterState struct {
 	// The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+	VmClusterNetworkId pulumi.StringPtrInput
+	// The vmcluster type for the VM cluster/Cloud VM cluster.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	VmClusterNetworkId pulumi.StringPtrInput
+	VmClusterType pulumi.StringPtrInput
 }
 
 func (VmClusterState) ElementType() reflect.Type {
@@ -364,6 +390,8 @@ type vmClusterArgs struct {
 	DisplayName string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
 	ExadataInfrastructureId string `pulumi:"exadataInfrastructureId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+	ExascaleDbStorageVaultId *string `pulumi:"exascaleDbStorageVaultId"`
 	// (Updatable) Details of the file system configuration of the VM cluster.
 	FileSystemConfigurationDetails []VmClusterFileSystemConfigurationDetail `pulumi:"fileSystemConfigurationDetails"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -386,10 +414,12 @@ type vmClusterArgs struct {
 	// The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone *string `pulumi:"timeZone"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+	VmClusterNetworkId string `pulumi:"vmClusterNetworkId"`
+	// The vmcluster type for the VM cluster/Cloud VM cluster.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	VmClusterNetworkId string `pulumi:"vmClusterNetworkId"`
+	VmClusterType *string `pulumi:"vmClusterType"`
 }
 
 // The set of arguments for constructing a VmCluster resource.
@@ -415,6 +445,8 @@ type VmClusterArgs struct {
 	DisplayName pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
 	ExadataInfrastructureId pulumi.StringInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+	ExascaleDbStorageVaultId pulumi.StringPtrInput
 	// (Updatable) Details of the file system configuration of the VM cluster.
 	FileSystemConfigurationDetails VmClusterFileSystemConfigurationDetailArrayInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -437,10 +469,12 @@ type VmClusterArgs struct {
 	// The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+	VmClusterNetworkId pulumi.StringInput
+	// The vmcluster type for the VM cluster/Cloud VM cluster.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	VmClusterNetworkId pulumi.StringInput
+	VmClusterType pulumi.StringPtrInput
 }
 
 func (VmClusterArgs) ElementType() reflect.Type {
@@ -545,6 +579,11 @@ func (o VmClusterOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VmCluster) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+func (o VmClusterOutput) ComputeModel() pulumi.StringOutput {
+	return o.ApplyT(func(v *VmCluster) pulumi.StringOutput { return v.ComputeModel }).(pulumi.StringOutput)
+}
+
 func (o VmClusterOutput) CpuCoreCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *VmCluster) pulumi.IntOutput { return v.CpuCoreCount }).(pulumi.IntOutput)
 }
@@ -592,6 +631,11 @@ func (o VmClusterOutput) DisplayName() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
 func (o VmClusterOutput) ExadataInfrastructureId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VmCluster) pulumi.StringOutput { return v.ExadataInfrastructureId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+func (o VmClusterOutput) ExascaleDbStorageVaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v *VmCluster) pulumi.StringOutput { return v.ExascaleDbStorageVaultId }).(pulumi.StringOutput)
 }
 
 // (Updatable) Details of the file system configuration of the VM cluster.
@@ -664,6 +708,11 @@ func (o VmClusterOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *VmCluster) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
 
+// Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
+func (o VmClusterOutput) StorageManagementType() pulumi.StringOutput {
+	return o.ApplyT(func(v *VmCluster) pulumi.StringOutput { return v.StorageManagementType }).(pulumi.StringOutput)
+}
+
 // Operating system version of the image.
 func (o VmClusterOutput) SystemVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *VmCluster) pulumi.StringOutput { return v.SystemVersion }).(pulumi.StringOutput)
@@ -680,11 +729,16 @@ func (o VmClusterOutput) TimeZone() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+func (o VmClusterOutput) VmClusterNetworkId() pulumi.StringOutput {
+	return o.ApplyT(func(v *VmCluster) pulumi.StringOutput { return v.VmClusterNetworkId }).(pulumi.StringOutput)
+}
+
+// The vmcluster type for the VM cluster/Cloud VM cluster.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o VmClusterOutput) VmClusterNetworkId() pulumi.StringOutput {
-	return o.ApplyT(func(v *VmCluster) pulumi.StringOutput { return v.VmClusterNetworkId }).(pulumi.StringOutput)
+func (o VmClusterOutput) VmClusterType() pulumi.StringOutput {
+	return o.ApplyT(func(v *VmCluster) pulumi.StringOutput { return v.VmClusterType }).(pulumi.StringOutput)
 }
 
 type VmClusterArrayOutput struct{ *pulumi.OutputState }

@@ -19,6 +19,21 @@ public final class GetExascaleDbStorageVaultsArgs extends com.pulumi.resources.I
     public static final GetExascaleDbStorageVaultsArgs Empty = new GetExascaleDbStorageVaultsArgs();
 
     /**
+     * A filter to return only resources that match the given cluster placement group ID exactly.
+     * 
+     */
+    @Import(name="clusterPlacementGroupId")
+    private @Nullable Output<String> clusterPlacementGroupId;
+
+    /**
+     * @return A filter to return only resources that match the given cluster placement group ID exactly.
+     * 
+     */
+    public Optional<Output<String>> clusterPlacementGroupId() {
+        return Optional.ofNullable(this.clusterPlacementGroupId);
+    }
+
+    /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -48,6 +63,21 @@ public final class GetExascaleDbStorageVaultsArgs extends com.pulumi.resources.I
         return Optional.ofNullable(this.displayName);
     }
 
+    /**
+     * A filter to return only list of Vaults that are linked to the exadata infrastructure Id.
+     * 
+     */
+    @Import(name="exadataInfrastructureId")
+    private @Nullable Output<String> exadataInfrastructureId;
+
+    /**
+     * @return A filter to return only list of Vaults that are linked to the exadata infrastructure Id.
+     * 
+     */
+    public Optional<Output<String>> exadataInfrastructureId() {
+        return Optional.ofNullable(this.exadataInfrastructureId);
+    }
+
     @Import(name="filters")
     private @Nullable Output<List<GetExascaleDbStorageVaultsFilterArgs>> filters;
 
@@ -73,8 +103,10 @@ public final class GetExascaleDbStorageVaultsArgs extends com.pulumi.resources.I
     private GetExascaleDbStorageVaultsArgs() {}
 
     private GetExascaleDbStorageVaultsArgs(GetExascaleDbStorageVaultsArgs $) {
+        this.clusterPlacementGroupId = $.clusterPlacementGroupId;
         this.compartmentId = $.compartmentId;
         this.displayName = $.displayName;
+        this.exadataInfrastructureId = $.exadataInfrastructureId;
         this.filters = $.filters;
         this.state = $.state;
     }
@@ -95,6 +127,27 @@ public final class GetExascaleDbStorageVaultsArgs extends com.pulumi.resources.I
 
         public Builder(GetExascaleDbStorageVaultsArgs defaults) {
             $ = new GetExascaleDbStorageVaultsArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param clusterPlacementGroupId A filter to return only resources that match the given cluster placement group ID exactly.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPlacementGroupId(@Nullable Output<String> clusterPlacementGroupId) {
+            $.clusterPlacementGroupId = clusterPlacementGroupId;
+            return this;
+        }
+
+        /**
+         * @param clusterPlacementGroupId A filter to return only resources that match the given cluster placement group ID exactly.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            return clusterPlacementGroupId(Output.of(clusterPlacementGroupId));
         }
 
         /**
@@ -137,6 +190,27 @@ public final class GetExascaleDbStorageVaultsArgs extends com.pulumi.resources.I
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        /**
+         * @param exadataInfrastructureId A filter to return only list of Vaults that are linked to the exadata infrastructure Id.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder exadataInfrastructureId(@Nullable Output<String> exadataInfrastructureId) {
+            $.exadataInfrastructureId = exadataInfrastructureId;
+            return this;
+        }
+
+        /**
+         * @param exadataInfrastructureId A filter to return only list of Vaults that are linked to the exadata infrastructure Id.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder exadataInfrastructureId(String exadataInfrastructureId) {
+            return exadataInfrastructureId(Output.of(exadataInfrastructureId));
         }
 
         public Builder filters(@Nullable Output<List<GetExascaleDbStorageVaultsFilterArgs>> filters) {

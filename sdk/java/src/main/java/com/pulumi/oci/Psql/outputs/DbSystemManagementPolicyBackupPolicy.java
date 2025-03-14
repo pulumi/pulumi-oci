@@ -4,6 +4,7 @@
 package com.pulumi.oci.Psql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Psql.outputs.DbSystemManagementPolicyBackupPolicyCopyPolicy;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -18,6 +19,11 @@ public final class DbSystemManagementPolicyBackupPolicy {
      * 
      */
     private @Nullable String backupStart;
+    /**
+     * @return (Updatable) Backup copy details
+     * 
+     */
+    private @Nullable DbSystemManagementPolicyBackupPolicyCopyPolicy copyPolicy;
     /**
      * @return (Updatable) Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
      * 
@@ -46,6 +52,13 @@ public final class DbSystemManagementPolicyBackupPolicy {
      */
     public Optional<String> backupStart() {
         return Optional.ofNullable(this.backupStart);
+    }
+    /**
+     * @return (Updatable) Backup copy details
+     * 
+     */
+    public Optional<DbSystemManagementPolicyBackupPolicyCopyPolicy> copyPolicy() {
+        return Optional.ofNullable(this.copyPolicy);
     }
     /**
      * @return (Updatable) Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
@@ -86,6 +99,7 @@ public final class DbSystemManagementPolicyBackupPolicy {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String backupStart;
+        private @Nullable DbSystemManagementPolicyBackupPolicyCopyPolicy copyPolicy;
         private @Nullable List<Integer> daysOfTheMonths;
         private @Nullable List<String> daysOfTheWeeks;
         private @Nullable String kind;
@@ -94,6 +108,7 @@ public final class DbSystemManagementPolicyBackupPolicy {
         public Builder(DbSystemManagementPolicyBackupPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backupStart = defaults.backupStart;
+    	      this.copyPolicy = defaults.copyPolicy;
     	      this.daysOfTheMonths = defaults.daysOfTheMonths;
     	      this.daysOfTheWeeks = defaults.daysOfTheWeeks;
     	      this.kind = defaults.kind;
@@ -104,6 +119,12 @@ public final class DbSystemManagementPolicyBackupPolicy {
         public Builder backupStart(@Nullable String backupStart) {
 
             this.backupStart = backupStart;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder copyPolicy(@Nullable DbSystemManagementPolicyBackupPolicyCopyPolicy copyPolicy) {
+
+            this.copyPolicy = copyPolicy;
             return this;
         }
         @CustomType.Setter
@@ -139,6 +160,7 @@ public final class DbSystemManagementPolicyBackupPolicy {
         public DbSystemManagementPolicyBackupPolicy build() {
             final var _resultValue = new DbSystemManagementPolicyBackupPolicy();
             _resultValue.backupStart = backupStart;
+            _resultValue.copyPolicy = copyPolicy;
             _resultValue.daysOfTheMonths = daysOfTheMonths;
             _resultValue.daysOfTheWeeks = daysOfTheWeeks;
             _resultValue.kind = kind;

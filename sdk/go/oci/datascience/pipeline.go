@@ -16,94 +16,6 @@ import (
 //
 // Creates a new Pipeline.
 //
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/datascience"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := datascience.NewPipeline(ctx, "test_pipeline", &datascience.PipelineArgs{
-//				CompartmentId: pulumi.Any(compartmentId),
-//				ProjectId:     pulumi.Any(testProject.Id),
-//				StepDetails: datascience.PipelineStepDetailArray{
-//					&datascience.PipelineStepDetailArgs{
-//						StepName:           pulumi.Any(pipelineStepDetailsStepName),
-//						StepType:           pulumi.Any(pipelineStepDetailsStepType),
-//						DependsOns:         pulumi.Any(pipelineStepDetailsDependsOn),
-//						Description:        pulumi.Any(pipelineStepDetailsDescription),
-//						IsArtifactUploaded: pulumi.Any(pipelineStepDetailsIsArtifactUploaded),
-//						JobId:              pulumi.Any(testJob.Id),
-//						StepConfigurationDetails: &datascience.PipelineStepDetailStepConfigurationDetailsArgs{
-//							CommandLineArguments:    pulumi.Any(pipelineStepDetailsStepConfigurationDetailsCommandLineArguments),
-//							EnvironmentVariables:    pulumi.Any(pipelineStepDetailsStepConfigurationDetailsEnvironmentVariables),
-//							MaximumRuntimeInMinutes: pulumi.Any(pipelineStepDetailsStepConfigurationDetailsMaximumRuntimeInMinutes),
-//						},
-//						StepContainerConfigurationDetails: &datascience.PipelineStepDetailStepContainerConfigurationDetailsArgs{
-//							ContainerType:    pulumi.Any(pipelineStepDetailsStepContainerConfigurationDetailsContainerType),
-//							Image:            pulumi.Any(pipelineStepDetailsStepContainerConfigurationDetailsImage),
-//							Cmds:             pulumi.Any(pipelineStepDetailsStepContainerConfigurationDetailsCmd),
-//							Entrypoints:      pulumi.Any(pipelineStepDetailsStepContainerConfigurationDetailsEntrypoint),
-//							ImageDigest:      pulumi.Any(pipelineStepDetailsStepContainerConfigurationDetailsImageDigest),
-//							ImageSignatureId: pulumi.Any(testImageSignature.Id),
-//						},
-//						StepInfrastructureConfigurationDetails: &datascience.PipelineStepDetailStepInfrastructureConfigurationDetailsArgs{
-//							BlockStorageSizeInGbs: pulumi.Any(pipelineStepDetailsStepInfrastructureConfigurationDetailsBlockStorageSizeInGbs),
-//							ShapeConfigDetails: &datascience.PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs{
-//								MemoryInGbs: pulumi.Any(pipelineStepDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsMemoryInGbs),
-//								Ocpus:       pulumi.Any(pipelineStepDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsOcpus),
-//							},
-//							ShapeName: pulumi.Any(testShape.Name),
-//							SubnetId:  pulumi.Any(testSubnet.Id),
-//						},
-//					},
-//				},
-//				ConfigurationDetails: &datascience.PipelineConfigurationDetailsArgs{
-//					Type:                    pulumi.Any(pipelineConfigurationDetailsType),
-//					CommandLineArguments:    pulumi.Any(pipelineConfigurationDetailsCommandLineArguments),
-//					EnvironmentVariables:    pulumi.Any(pipelineConfigurationDetailsEnvironmentVariables),
-//					MaximumRuntimeInMinutes: pulumi.Any(pipelineConfigurationDetailsMaximumRuntimeInMinutes),
-//				},
-//				DefinedTags: pulumi.StringMap{
-//					"Operations.CostCenter": pulumi.String("42"),
-//				},
-//				Description: pulumi.Any(pipelineDescription),
-//				DisplayName: pulumi.Any(pipelineDisplayName),
-//				FreeformTags: pulumi.StringMap{
-//					"Department": pulumi.String("Finance"),
-//				},
-//				InfrastructureConfigurationDetails: &datascience.PipelineInfrastructureConfigurationDetailsArgs{
-//					BlockStorageSizeInGbs: pulumi.Any(pipelineInfrastructureConfigurationDetailsBlockStorageSizeInGbs),
-//					ShapeName:             pulumi.Any(testShape.Name),
-//					ShapeConfigDetails: &datascience.PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgs{
-//						MemoryInGbs: pulumi.Any(pipelineInfrastructureConfigurationDetailsShapeConfigDetailsMemoryInGbs),
-//						Ocpus:       pulumi.Any(pipelineInfrastructureConfigurationDetailsShapeConfigDetailsOcpus),
-//					},
-//					SubnetId: pulumi.Any(testSubnet.Id),
-//				},
-//				LogConfigurationDetails: &datascience.PipelineLogConfigurationDetailsArgs{
-//					EnableAutoLogCreation: pulumi.Any(pipelineLogConfigurationDetailsEnableAutoLogCreation),
-//					EnableLogging:         pulumi.Any(pipelineLogConfigurationDetailsEnableLogging),
-//					LogGroupId:            pulumi.Any(testLogGroup.Id),
-//					LogId:                 pulumi.Any(testLog.Id),
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // ## Import
 //
 // Pipelines can be imported using the `id`, e.g.
@@ -142,6 +54,8 @@ type Pipeline struct {
 	StepArtifacts PipelineStepArtifactArrayOutput `pulumi:"stepArtifacts"`
 	// (Updatable) Array of step details for each step.
 	StepDetails PipelineStepDetailArrayOutput `pulumi:"stepDetails"`
+	// (Updatable) The storage mount details to mount to the instance running the pipeline step.
+	StorageMountConfigurationDetailsLists PipelineStorageMountConfigurationDetailsListArrayOutput `pulumi:"storageMountConfigurationDetailsLists"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
@@ -217,6 +131,8 @@ type pipelineState struct {
 	StepArtifacts []PipelineStepArtifact `pulumi:"stepArtifacts"`
 	// (Updatable) Array of step details for each step.
 	StepDetails []PipelineStepDetail `pulumi:"stepDetails"`
+	// (Updatable) The storage mount details to mount to the instance running the pipeline step.
+	StorageMountConfigurationDetailsLists []PipelineStorageMountConfigurationDetailsList `pulumi:"storageMountConfigurationDetailsLists"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
@@ -254,6 +170,8 @@ type PipelineState struct {
 	StepArtifacts PipelineStepArtifactArrayInput
 	// (Updatable) Array of step details for each step.
 	StepDetails PipelineStepDetailArrayInput
+	// (Updatable) The storage mount details to mount to the instance running the pipeline step.
+	StorageMountConfigurationDetailsLists PipelineStorageMountConfigurationDetailsListArrayInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
@@ -289,6 +207,8 @@ type pipelineArgs struct {
 	StepArtifacts []PipelineStepArtifact `pulumi:"stepArtifacts"`
 	// (Updatable) Array of step details for each step.
 	StepDetails []PipelineStepDetail `pulumi:"stepDetails"`
+	// (Updatable) The storage mount details to mount to the instance running the pipeline step.
+	StorageMountConfigurationDetailsLists []PipelineStorageMountConfigurationDetailsList `pulumi:"storageMountConfigurationDetailsLists"`
 }
 
 // The set of arguments for constructing a Pipeline resource.
@@ -315,6 +235,8 @@ type PipelineArgs struct {
 	StepArtifacts PipelineStepArtifactArrayInput
 	// (Updatable) Array of step details for each step.
 	StepDetails PipelineStepDetailArrayInput
+	// (Updatable) The storage mount details to mount to the instance running the pipeline step.
+	StorageMountConfigurationDetailsLists PipelineStorageMountConfigurationDetailsListArrayInput
 }
 
 func (PipelineArgs) ElementType() reflect.Type {
@@ -477,6 +399,13 @@ func (o PipelineOutput) StepArtifacts() PipelineStepArtifactArrayOutput {
 // (Updatable) Array of step details for each step.
 func (o PipelineOutput) StepDetails() PipelineStepDetailArrayOutput {
 	return o.ApplyT(func(v *Pipeline) PipelineStepDetailArrayOutput { return v.StepDetails }).(PipelineStepDetailArrayOutput)
+}
+
+// (Updatable) The storage mount details to mount to the instance running the pipeline step.
+func (o PipelineOutput) StorageMountConfigurationDetailsLists() PipelineStorageMountConfigurationDetailsListArrayOutput {
+	return o.ApplyT(func(v *Pipeline) PipelineStorageMountConfigurationDetailsListArrayOutput {
+		return v.StorageMountConfigurationDetailsLists
+	}).(PipelineStorageMountConfigurationDetailsListArrayOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`

@@ -17,6 +17,21 @@ public final class ModelVersionSetState extends com.pulumi.resources.ResourceArg
     public static final ModelVersionSetState Empty = new ModelVersionSetState();
 
     /**
+     * The category of the model version set.
+     * 
+     */
+    @Import(name="category")
+    private @Nullable Output<String> category;
+
+    /**
+     * @return The category of the model version set.
+     * 
+     */
+    public Optional<Output<String>> category() {
+        return Optional.ofNullable(this.category);
+    }
+
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model version set in.
      * 
      */
@@ -190,6 +205,7 @@ public final class ModelVersionSetState extends com.pulumi.resources.ResourceArg
     private ModelVersionSetState() {}
 
     private ModelVersionSetState(ModelVersionSetState $) {
+        this.category = $.category;
         this.compartmentId = $.compartmentId;
         this.createdBy = $.createdBy;
         this.definedTags = $.definedTags;
@@ -219,6 +235,27 @@ public final class ModelVersionSetState extends com.pulumi.resources.ResourceArg
 
         public Builder(ModelVersionSetState defaults) {
             $ = new ModelVersionSetState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param category The category of the model version set.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder category(@Nullable Output<String> category) {
+            $.category = category;
+            return this;
+        }
+
+        /**
+         * @param category The category of the model version set.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder category(String category) {
+            return category(Output.of(category));
         }
 
         /**

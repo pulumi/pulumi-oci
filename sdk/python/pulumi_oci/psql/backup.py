@@ -22,37 +22,43 @@ __all__ = ['BackupArgs', 'Backup']
 class BackupArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
-                 db_system_id: pulumi.Input[str],
-                 display_name: pulumi.Input[str],
+                 db_system_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
-                 retention_period: Optional[pulumi.Input[int]] = None):
+                 retention_period: Optional[pulumi.Input[int]] = None,
+                 source_backup_details: Optional[pulumi.Input['BackupSourceBackupDetailsArgs']] = None):
         """
         The set of arguments for constructing a Backup resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
         :param pulumi.Input[str] db_system_id: The ID of the database system.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A description for the backup.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[int] retention_period: (Updatable) Backup retention period in days.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input['BackupSourceBackupDetailsArgs'] source_backup_details: Information about the Source Backup associated with a backup.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "db_system_id", db_system_id)
-        pulumi.set(__self__, "display_name", display_name)
+        if db_system_id is not None:
+            pulumi.set(__self__, "db_system_id", db_system_id)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if retention_period is not None:
             pulumi.set(__self__, "retention_period", retention_period)
+        if source_backup_details is not None:
+            pulumi.set(__self__, "source_backup_details", source_backup_details)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -68,27 +74,15 @@ class BackupArgs:
 
     @property
     @pulumi.getter(name="dbSystemId")
-    def db_system_id(self) -> pulumi.Input[str]:
+    def db_system_id(self) -> Optional[pulumi.Input[str]]:
         """
         The ID of the database system.
         """
         return pulumi.get(self, "db_system_id")
 
     @db_system_id.setter
-    def db_system_id(self, value: pulumi.Input[str]):
+    def db_system_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "db_system_id", value)
-
-    @property
-    @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
-        """
-        return pulumi.get(self, "display_name")
-
-    @display_name.setter
-    def display_name(self, value: pulumi.Input[str]):
-        pulumi.set(self, "display_name", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -113,6 +107,18 @@ class BackupArgs:
     @description.setter
     def description(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -142,12 +148,25 @@ class BackupArgs:
     def retention_period(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "retention_period", value)
 
+    @property
+    @pulumi.getter(name="sourceBackupDetails")
+    def source_backup_details(self) -> Optional[pulumi.Input['BackupSourceBackupDetailsArgs']]:
+        """
+        Information about the Source Backup associated with a backup.
+        """
+        return pulumi.get(self, "source_backup_details")
+
+    @source_backup_details.setter
+    def source_backup_details(self, value: Optional[pulumi.Input['BackupSourceBackupDetailsArgs']]):
+        pulumi.set(self, "source_backup_details", value)
+
 
 @pulumi.input_type
 class _BackupState:
     def __init__(__self__, *,
                  backup_size: Optional[pulumi.Input[int]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 copy_statuses: Optional[pulumi.Input[Sequence[pulumi.Input['BackupCopyStatusArgs']]]] = None,
                  db_system_details: Optional[pulumi.Input[Sequence[pulumi.Input['BackupDbSystemDetailArgs']]]] = None,
                  db_system_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -158,15 +177,18 @@ class _BackupState:
                  last_completed_request_token: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  retention_period: Optional[pulumi.Input[int]] = None,
+                 source_backup_details: Optional[pulumi.Input['BackupSourceBackupDetailsArgs']] = None,
                  source_type: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
+                 time_created_precise: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Backup resources.
         :param pulumi.Input[int] backup_size: The size of the backup, in gigabytes.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
+        :param pulumi.Input[Sequence[pulumi.Input['BackupCopyStatusArgs']]] copy_statuses: List of status for Backup Copy
         :param pulumi.Input[Sequence[pulumi.Input['BackupDbSystemDetailArgs']]] db_system_details: Information about the database system associated with a backup.
         :param pulumi.Input[str] db_system_id: The ID of the database system.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -181,16 +203,20 @@ class _BackupState:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] source_type: Specifies whether the backup was created manually, or by a management policy.
+        :param pulumi.Input['BackupSourceBackupDetailsArgs'] source_backup_details: Information about the Source Backup associated with a backup.
+        :param pulumi.Input[str] source_type: Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
         :param pulumi.Input[str] state: The current state of the backup.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the backup request was received, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[str] time_created_precise: The date and time the backup was created. This is the time the actual point-in-time data snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         if backup_size is not None:
             pulumi.set(__self__, "backup_size", backup_size)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if copy_statuses is not None:
+            pulumi.set(__self__, "copy_statuses", copy_statuses)
         if db_system_details is not None:
             pulumi.set(__self__, "db_system_details", db_system_details)
         if db_system_id is not None:
@@ -211,6 +237,8 @@ class _BackupState:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if retention_period is not None:
             pulumi.set(__self__, "retention_period", retention_period)
+        if source_backup_details is not None:
+            pulumi.set(__self__, "source_backup_details", source_backup_details)
         if source_type is not None:
             pulumi.set(__self__, "source_type", source_type)
         if state is not None:
@@ -219,6 +247,8 @@ class _BackupState:
             pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
+        if time_created_precise is not None:
+            pulumi.set(__self__, "time_created_precise", time_created_precise)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
 
@@ -245,6 +275,18 @@ class _BackupState:
     @compartment_id.setter
     def compartment_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="copyStatuses")
+    def copy_statuses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BackupCopyStatusArgs']]]]:
+        """
+        List of status for Backup Copy
+        """
+        return pulumi.get(self, "copy_statuses")
+
+    @copy_statuses.setter
+    def copy_statuses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BackupCopyStatusArgs']]]]):
+        pulumi.set(self, "copy_statuses", value)
 
     @property
     @pulumi.getter(name="dbSystemDetails")
@@ -371,10 +413,22 @@ class _BackupState:
         pulumi.set(self, "retention_period", value)
 
     @property
+    @pulumi.getter(name="sourceBackupDetails")
+    def source_backup_details(self) -> Optional[pulumi.Input['BackupSourceBackupDetailsArgs']]:
+        """
+        Information about the Source Backup associated with a backup.
+        """
+        return pulumi.get(self, "source_backup_details")
+
+    @source_backup_details.setter
+    def source_backup_details(self, value: Optional[pulumi.Input['BackupSourceBackupDetailsArgs']]):
+        pulumi.set(self, "source_backup_details", value)
+
+    @property
     @pulumi.getter(name="sourceType")
     def source_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Specifies whether the backup was created manually, or by a management policy.
+        Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
         """
         return pulumi.get(self, "source_type")
 
@@ -419,6 +473,18 @@ class _BackupState:
         pulumi.set(self, "time_created", value)
 
     @property
+    @pulumi.getter(name="timeCreatedPrecise")
+    def time_created_precise(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time the backup was created. This is the time the actual point-in-time data snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created_precise")
+
+    @time_created_precise.setter
+    def time_created_precise(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_created_precise", value)
+
+    @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
         """
@@ -443,6 +509,7 @@ class Backup(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  retention_period: Optional[pulumi.Input[int]] = None,
+                 source_backup_details: Optional[pulumi.Input[Union['BackupSourceBackupDetailsArgs', 'BackupSourceBackupDetailsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Backup resource in Oracle Cloud Infrastructure Psql service.
@@ -490,6 +557,7 @@ class Backup(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Union['BackupSourceBackupDetailsArgs', 'BackupSourceBackupDetailsArgsDict']] source_backup_details: Information about the Source Backup associated with a backup.
         """
         ...
     @overload
@@ -552,6 +620,7 @@ class Backup(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  retention_period: Optional[pulumi.Input[int]] = None,
+                 source_backup_details: Optional[pulumi.Input[Union['BackupSourceBackupDetailsArgs', 'BackupSourceBackupDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -564,17 +633,15 @@ class Backup(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
-            if db_system_id is None and not opts.urn:
-                raise TypeError("Missing required property 'db_system_id'")
             __props__.__dict__["db_system_id"] = db_system_id
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["description"] = description
-            if display_name is None and not opts.urn:
-                raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["retention_period"] = retention_period
+            __props__.__dict__["source_backup_details"] = source_backup_details
             __props__.__dict__["backup_size"] = None
+            __props__.__dict__["copy_statuses"] = None
             __props__.__dict__["db_system_details"] = None
             __props__.__dict__["last_accepted_request_token"] = None
             __props__.__dict__["last_completed_request_token"] = None
@@ -583,6 +650,7 @@ class Backup(pulumi.CustomResource):
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
+            __props__.__dict__["time_created_precise"] = None
             __props__.__dict__["time_updated"] = None
         super(Backup, __self__).__init__(
             'oci:Psql/backup:Backup',
@@ -596,6 +664,7 @@ class Backup(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             backup_size: Optional[pulumi.Input[int]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
+            copy_statuses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BackupCopyStatusArgs', 'BackupCopyStatusArgsDict']]]]] = None,
             db_system_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BackupDbSystemDetailArgs', 'BackupDbSystemDetailArgsDict']]]]] = None,
             db_system_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -606,10 +675,12 @@ class Backup(pulumi.CustomResource):
             last_completed_request_token: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             retention_period: Optional[pulumi.Input[int]] = None,
+            source_backup_details: Optional[pulumi.Input[Union['BackupSourceBackupDetailsArgs', 'BackupSourceBackupDetailsArgsDict']]] = None,
             source_type: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
+            time_created_precise: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None) -> 'Backup':
         """
         Get an existing Backup resource's state with the given name, id, and optional extra
@@ -620,6 +691,7 @@ class Backup(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] backup_size: The size of the backup, in gigabytes.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BackupCopyStatusArgs', 'BackupCopyStatusArgsDict']]]] copy_statuses: List of status for Backup Copy
         :param pulumi.Input[Sequence[pulumi.Input[Union['BackupDbSystemDetailArgs', 'BackupDbSystemDetailArgsDict']]]] db_system_details: Information about the database system associated with a backup.
         :param pulumi.Input[str] db_system_id: The ID of the database system.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -634,10 +706,12 @@ class Backup(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] source_type: Specifies whether the backup was created manually, or by a management policy.
+        :param pulumi.Input[Union['BackupSourceBackupDetailsArgs', 'BackupSourceBackupDetailsArgsDict']] source_backup_details: Information about the Source Backup associated with a backup.
+        :param pulumi.Input[str] source_type: Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
         :param pulumi.Input[str] state: The current state of the backup.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the backup request was received, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[str] time_created_precise: The date and time the backup was created. This is the time the actual point-in-time data snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -646,6 +720,7 @@ class Backup(pulumi.CustomResource):
 
         __props__.__dict__["backup_size"] = backup_size
         __props__.__dict__["compartment_id"] = compartment_id
+        __props__.__dict__["copy_statuses"] = copy_statuses
         __props__.__dict__["db_system_details"] = db_system_details
         __props__.__dict__["db_system_id"] = db_system_id
         __props__.__dict__["defined_tags"] = defined_tags
@@ -656,10 +731,12 @@ class Backup(pulumi.CustomResource):
         __props__.__dict__["last_completed_request_token"] = last_completed_request_token
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["retention_period"] = retention_period
+        __props__.__dict__["source_backup_details"] = source_backup_details
         __props__.__dict__["source_type"] = source_type
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
+        __props__.__dict__["time_created_precise"] = time_created_precise
         __props__.__dict__["time_updated"] = time_updated
         return Backup(resource_name, opts=opts, __props__=__props__)
 
@@ -678,6 +755,14 @@ class Backup(pulumi.CustomResource):
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="copyStatuses")
+    def copy_statuses(self) -> pulumi.Output[Sequence['outputs.BackupCopyStatus']]:
+        """
+        List of status for Backup Copy
+        """
+        return pulumi.get(self, "copy_statuses")
 
     @property
     @pulumi.getter(name="dbSystemDetails")
@@ -764,10 +849,18 @@ class Backup(pulumi.CustomResource):
         return pulumi.get(self, "retention_period")
 
     @property
+    @pulumi.getter(name="sourceBackupDetails")
+    def source_backup_details(self) -> pulumi.Output[Optional['outputs.BackupSourceBackupDetails']]:
+        """
+        Information about the Source Backup associated with a backup.
+        """
+        return pulumi.get(self, "source_backup_details")
+
+    @property
     @pulumi.getter(name="sourceType")
     def source_type(self) -> pulumi.Output[str]:
         """
-        Specifies whether the backup was created manually, or by a management policy.
+        Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
         """
         return pulumi.get(self, "source_type")
 
@@ -794,6 +887,14 @@ class Backup(pulumi.CustomResource):
         The date and time the backup request was received, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeCreatedPrecise")
+    def time_created_precise(self) -> pulumi.Output[str]:
+        """
+        The date and time the backup was created. This is the time the actual point-in-time data snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created_precise")
 
     @property
     @pulumi.getter(name="timeUpdated")

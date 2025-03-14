@@ -2757,7 +2757,299 @@ func (o GetExportsFilterArrayOutput) Index(i pulumi.IntInput) GetExportsFilterOu
 	}).(GetExportsFilterOutput)
 }
 
+type GetFileSystemQuotaRulesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetFileSystemQuotaRulesFilterInput is an input type that accepts GetFileSystemQuotaRulesFilterArgs and GetFileSystemQuotaRulesFilterOutput values.
+// You can construct a concrete instance of `GetFileSystemQuotaRulesFilterInput` via:
+//
+//	GetFileSystemQuotaRulesFilterArgs{...}
+type GetFileSystemQuotaRulesFilterInput interface {
+	pulumi.Input
+
+	ToGetFileSystemQuotaRulesFilterOutput() GetFileSystemQuotaRulesFilterOutput
+	ToGetFileSystemQuotaRulesFilterOutputWithContext(context.Context) GetFileSystemQuotaRulesFilterOutput
+}
+
+type GetFileSystemQuotaRulesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetFileSystemQuotaRulesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileSystemQuotaRulesFilter)(nil)).Elem()
+}
+
+func (i GetFileSystemQuotaRulesFilterArgs) ToGetFileSystemQuotaRulesFilterOutput() GetFileSystemQuotaRulesFilterOutput {
+	return i.ToGetFileSystemQuotaRulesFilterOutputWithContext(context.Background())
+}
+
+func (i GetFileSystemQuotaRulesFilterArgs) ToGetFileSystemQuotaRulesFilterOutputWithContext(ctx context.Context) GetFileSystemQuotaRulesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileSystemQuotaRulesFilterOutput)
+}
+
+// GetFileSystemQuotaRulesFilterArrayInput is an input type that accepts GetFileSystemQuotaRulesFilterArray and GetFileSystemQuotaRulesFilterArrayOutput values.
+// You can construct a concrete instance of `GetFileSystemQuotaRulesFilterArrayInput` via:
+//
+//	GetFileSystemQuotaRulesFilterArray{ GetFileSystemQuotaRulesFilterArgs{...} }
+type GetFileSystemQuotaRulesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetFileSystemQuotaRulesFilterArrayOutput() GetFileSystemQuotaRulesFilterArrayOutput
+	ToGetFileSystemQuotaRulesFilterArrayOutputWithContext(context.Context) GetFileSystemQuotaRulesFilterArrayOutput
+}
+
+type GetFileSystemQuotaRulesFilterArray []GetFileSystemQuotaRulesFilterInput
+
+func (GetFileSystemQuotaRulesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileSystemQuotaRulesFilter)(nil)).Elem()
+}
+
+func (i GetFileSystemQuotaRulesFilterArray) ToGetFileSystemQuotaRulesFilterArrayOutput() GetFileSystemQuotaRulesFilterArrayOutput {
+	return i.ToGetFileSystemQuotaRulesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetFileSystemQuotaRulesFilterArray) ToGetFileSystemQuotaRulesFilterArrayOutputWithContext(ctx context.Context) GetFileSystemQuotaRulesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileSystemQuotaRulesFilterArrayOutput)
+}
+
+type GetFileSystemQuotaRulesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetFileSystemQuotaRulesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileSystemQuotaRulesFilter)(nil)).Elem()
+}
+
+func (o GetFileSystemQuotaRulesFilterOutput) ToGetFileSystemQuotaRulesFilterOutput() GetFileSystemQuotaRulesFilterOutput {
+	return o
+}
+
+func (o GetFileSystemQuotaRulesFilterOutput) ToGetFileSystemQuotaRulesFilterOutputWithContext(ctx context.Context) GetFileSystemQuotaRulesFilterOutput {
+	return o
+}
+
+func (o GetFileSystemQuotaRulesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileSystemQuotaRulesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetFileSystemQuotaRulesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFileSystemQuotaRulesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetFileSystemQuotaRulesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFileSystemQuotaRulesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetFileSystemQuotaRulesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFileSystemQuotaRulesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileSystemQuotaRulesFilter)(nil)).Elem()
+}
+
+func (o GetFileSystemQuotaRulesFilterArrayOutput) ToGetFileSystemQuotaRulesFilterArrayOutput() GetFileSystemQuotaRulesFilterArrayOutput {
+	return o
+}
+
+func (o GetFileSystemQuotaRulesFilterArrayOutput) ToGetFileSystemQuotaRulesFilterArrayOutputWithContext(ctx context.Context) GetFileSystemQuotaRulesFilterArrayOutput {
+	return o
+}
+
+func (o GetFileSystemQuotaRulesFilterArrayOutput) Index(i pulumi.IntInput) GetFileSystemQuotaRulesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFileSystemQuotaRulesFilter {
+		return vs[0].([]GetFileSystemQuotaRulesFilter)[vs[1].(int)]
+	}).(GetFileSystemQuotaRulesFilterOutput)
+}
+
+type GetFileSystemQuotaRulesQuotaRule struct {
+	// An option to only display the users or groups that violate their quota rules. If `areViolatorsOnly` is false, the list result will display all the quota and usage report. If `areViolatorsOnly` is true, the list result will only display the quota and usage report for the users or groups that violate their quota rules.
+	AreViolatorsOnly bool `pulumi:"areViolatorsOnly"`
+	// A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. Example: `UserXYZ's quota`
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
+	FileSystemId string `pulumi:"fileSystemId"`
+	// The identifier of the quota rule. It is the base64 encoded string of the tuple <principalId, principalType, isHardQuota>.
+	Id string `pulumi:"id"`
+	// The flag is an identifier to tell whether the quota rule will be enforced. If `isHardQuota` is false, the quota rule will be enforced so the usage cannot exceed the hard quota limit. If `isHardQuota` is true, usage can exceed the soft quota limit. An alarm or notification will be sent to the customer, if the specific usage exceeds.
+	IsHardQuota bool `pulumi:"isHardQuota"`
+	// An identifier for the owner of this usage and quota rule. Unix-like operating systems use this integer value to identify a user or group to manage access control.
+	PrincipalId int `pulumi:"principalId"`
+	// The type of the owner of this quota rule and usage.
+	PrincipalType string `pulumi:"principalType"`
+	// The value of the quota rule. The unit is Gigabyte.
+	QuotaLimitInGigabytes int    `pulumi:"quotaLimitInGigabytes"`
+	QuotaRuleId           string `pulumi:"quotaRuleId"`
+	// The date and time the quota rule was started, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the quota rule was last updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetFileSystemQuotaRulesQuotaRuleInput is an input type that accepts GetFileSystemQuotaRulesQuotaRuleArgs and GetFileSystemQuotaRulesQuotaRuleOutput values.
+// You can construct a concrete instance of `GetFileSystemQuotaRulesQuotaRuleInput` via:
+//
+//	GetFileSystemQuotaRulesQuotaRuleArgs{...}
+type GetFileSystemQuotaRulesQuotaRuleInput interface {
+	pulumi.Input
+
+	ToGetFileSystemQuotaRulesQuotaRuleOutput() GetFileSystemQuotaRulesQuotaRuleOutput
+	ToGetFileSystemQuotaRulesQuotaRuleOutputWithContext(context.Context) GetFileSystemQuotaRulesQuotaRuleOutput
+}
+
+type GetFileSystemQuotaRulesQuotaRuleArgs struct {
+	// An option to only display the users or groups that violate their quota rules. If `areViolatorsOnly` is false, the list result will display all the quota and usage report. If `areViolatorsOnly` is true, the list result will only display the quota and usage report for the users or groups that violate their quota rules.
+	AreViolatorsOnly pulumi.BoolInput `pulumi:"areViolatorsOnly"`
+	// A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. Example: `UserXYZ's quota`
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
+	FileSystemId pulumi.StringInput `pulumi:"fileSystemId"`
+	// The identifier of the quota rule. It is the base64 encoded string of the tuple <principalId, principalType, isHardQuota>.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The flag is an identifier to tell whether the quota rule will be enforced. If `isHardQuota` is false, the quota rule will be enforced so the usage cannot exceed the hard quota limit. If `isHardQuota` is true, usage can exceed the soft quota limit. An alarm or notification will be sent to the customer, if the specific usage exceeds.
+	IsHardQuota pulumi.BoolInput `pulumi:"isHardQuota"`
+	// An identifier for the owner of this usage and quota rule. Unix-like operating systems use this integer value to identify a user or group to manage access control.
+	PrincipalId pulumi.IntInput `pulumi:"principalId"`
+	// The type of the owner of this quota rule and usage.
+	PrincipalType pulumi.StringInput `pulumi:"principalType"`
+	// The value of the quota rule. The unit is Gigabyte.
+	QuotaLimitInGigabytes pulumi.IntInput    `pulumi:"quotaLimitInGigabytes"`
+	QuotaRuleId           pulumi.StringInput `pulumi:"quotaRuleId"`
+	// The date and time the quota rule was started, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the quota rule was last updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetFileSystemQuotaRulesQuotaRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileSystemQuotaRulesQuotaRule)(nil)).Elem()
+}
+
+func (i GetFileSystemQuotaRulesQuotaRuleArgs) ToGetFileSystemQuotaRulesQuotaRuleOutput() GetFileSystemQuotaRulesQuotaRuleOutput {
+	return i.ToGetFileSystemQuotaRulesQuotaRuleOutputWithContext(context.Background())
+}
+
+func (i GetFileSystemQuotaRulesQuotaRuleArgs) ToGetFileSystemQuotaRulesQuotaRuleOutputWithContext(ctx context.Context) GetFileSystemQuotaRulesQuotaRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileSystemQuotaRulesQuotaRuleOutput)
+}
+
+// GetFileSystemQuotaRulesQuotaRuleArrayInput is an input type that accepts GetFileSystemQuotaRulesQuotaRuleArray and GetFileSystemQuotaRulesQuotaRuleArrayOutput values.
+// You can construct a concrete instance of `GetFileSystemQuotaRulesQuotaRuleArrayInput` via:
+//
+//	GetFileSystemQuotaRulesQuotaRuleArray{ GetFileSystemQuotaRulesQuotaRuleArgs{...} }
+type GetFileSystemQuotaRulesQuotaRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetFileSystemQuotaRulesQuotaRuleArrayOutput() GetFileSystemQuotaRulesQuotaRuleArrayOutput
+	ToGetFileSystemQuotaRulesQuotaRuleArrayOutputWithContext(context.Context) GetFileSystemQuotaRulesQuotaRuleArrayOutput
+}
+
+type GetFileSystemQuotaRulesQuotaRuleArray []GetFileSystemQuotaRulesQuotaRuleInput
+
+func (GetFileSystemQuotaRulesQuotaRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileSystemQuotaRulesQuotaRule)(nil)).Elem()
+}
+
+func (i GetFileSystemQuotaRulesQuotaRuleArray) ToGetFileSystemQuotaRulesQuotaRuleArrayOutput() GetFileSystemQuotaRulesQuotaRuleArrayOutput {
+	return i.ToGetFileSystemQuotaRulesQuotaRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetFileSystemQuotaRulesQuotaRuleArray) ToGetFileSystemQuotaRulesQuotaRuleArrayOutputWithContext(ctx context.Context) GetFileSystemQuotaRulesQuotaRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileSystemQuotaRulesQuotaRuleArrayOutput)
+}
+
+type GetFileSystemQuotaRulesQuotaRuleOutput struct{ *pulumi.OutputState }
+
+func (GetFileSystemQuotaRulesQuotaRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileSystemQuotaRulesQuotaRule)(nil)).Elem()
+}
+
+func (o GetFileSystemQuotaRulesQuotaRuleOutput) ToGetFileSystemQuotaRulesQuotaRuleOutput() GetFileSystemQuotaRulesQuotaRuleOutput {
+	return o
+}
+
+func (o GetFileSystemQuotaRulesQuotaRuleOutput) ToGetFileSystemQuotaRulesQuotaRuleOutputWithContext(ctx context.Context) GetFileSystemQuotaRulesQuotaRuleOutput {
+	return o
+}
+
+// An option to only display the users or groups that violate their quota rules. If `areViolatorsOnly` is false, the list result will display all the quota and usage report. If `areViolatorsOnly` is true, the list result will only display the quota and usage report for the users or groups that violate their quota rules.
+func (o GetFileSystemQuotaRulesQuotaRuleOutput) AreViolatorsOnly() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFileSystemQuotaRulesQuotaRule) bool { return v.AreViolatorsOnly }).(pulumi.BoolOutput)
+}
+
+// A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. Example: `UserXYZ's quota`
+func (o GetFileSystemQuotaRulesQuotaRuleOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileSystemQuotaRulesQuotaRule) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
+func (o GetFileSystemQuotaRulesQuotaRuleOutput) FileSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileSystemQuotaRulesQuotaRule) string { return v.FileSystemId }).(pulumi.StringOutput)
+}
+
+// The identifier of the quota rule. It is the base64 encoded string of the tuple <principalId, principalType, isHardQuota>.
+func (o GetFileSystemQuotaRulesQuotaRuleOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileSystemQuotaRulesQuotaRule) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The flag is an identifier to tell whether the quota rule will be enforced. If `isHardQuota` is false, the quota rule will be enforced so the usage cannot exceed the hard quota limit. If `isHardQuota` is true, usage can exceed the soft quota limit. An alarm or notification will be sent to the customer, if the specific usage exceeds.
+func (o GetFileSystemQuotaRulesQuotaRuleOutput) IsHardQuota() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFileSystemQuotaRulesQuotaRule) bool { return v.IsHardQuota }).(pulumi.BoolOutput)
+}
+
+// An identifier for the owner of this usage and quota rule. Unix-like operating systems use this integer value to identify a user or group to manage access control.
+func (o GetFileSystemQuotaRulesQuotaRuleOutput) PrincipalId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFileSystemQuotaRulesQuotaRule) int { return v.PrincipalId }).(pulumi.IntOutput)
+}
+
+// The type of the owner of this quota rule and usage.
+func (o GetFileSystemQuotaRulesQuotaRuleOutput) PrincipalType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileSystemQuotaRulesQuotaRule) string { return v.PrincipalType }).(pulumi.StringOutput)
+}
+
+// The value of the quota rule. The unit is Gigabyte.
+func (o GetFileSystemQuotaRulesQuotaRuleOutput) QuotaLimitInGigabytes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFileSystemQuotaRulesQuotaRule) int { return v.QuotaLimitInGigabytes }).(pulumi.IntOutput)
+}
+
+func (o GetFileSystemQuotaRulesQuotaRuleOutput) QuotaRuleId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileSystemQuotaRulesQuotaRule) string { return v.QuotaRuleId }).(pulumi.StringOutput)
+}
+
+// The date and time the quota rule was started, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+func (o GetFileSystemQuotaRulesQuotaRuleOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileSystemQuotaRulesQuotaRule) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the quota rule was last updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+func (o GetFileSystemQuotaRulesQuotaRuleOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileSystemQuotaRulesQuotaRule) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetFileSystemQuotaRulesQuotaRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFileSystemQuotaRulesQuotaRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileSystemQuotaRulesQuotaRule)(nil)).Elem()
+}
+
+func (o GetFileSystemQuotaRulesQuotaRuleArrayOutput) ToGetFileSystemQuotaRulesQuotaRuleArrayOutput() GetFileSystemQuotaRulesQuotaRuleArrayOutput {
+	return o
+}
+
+func (o GetFileSystemQuotaRulesQuotaRuleArrayOutput) ToGetFileSystemQuotaRulesQuotaRuleArrayOutputWithContext(ctx context.Context) GetFileSystemQuotaRulesQuotaRuleArrayOutput {
+	return o
+}
+
+func (o GetFileSystemQuotaRulesQuotaRuleArrayOutput) Index(i pulumi.IntInput) GetFileSystemQuotaRulesQuotaRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFileSystemQuotaRulesQuotaRule {
+		return vs[0].([]GetFileSystemQuotaRulesQuotaRule)[vs[1].(int)]
+	}).(GetFileSystemQuotaRulesQuotaRuleOutput)
+}
+
 type GetFileSystemsFileSystem struct {
+	// Specifies the enforcement of quota rules on the file system.
+	AreQuotaRulesEnabled bool `pulumi:"areQuotaRulesEnabled"`
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// Specifies whether the file system is attached to its parent file system.
@@ -2792,6 +3084,10 @@ type GetFileSystemsFileSystem struct {
 	Locks []GetFileSystemsFileSystemLock `pulumi:"locks"`
 	// The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
 	MeteredBytes string `pulumi:"meteredBytes"`
+	// Displays the state of enforcement of quota rules on the file system.
+	QuotaEnforcementState string `pulumi:"quotaEnforcementState"`
+	// Specifies the total number of replications for which this file system is a source.
+	ReplicationSourceCount int `pulumi:"replicationSourceCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
 	ReplicationTargetId string `pulumi:"replicationTargetId"`
 	// Source information for the file system.
@@ -2818,6 +3114,8 @@ type GetFileSystemsFileSystemInput interface {
 }
 
 type GetFileSystemsFileSystemArgs struct {
+	// Specifies the enforcement of quota rules on the file system.
+	AreQuotaRulesEnabled pulumi.BoolInput `pulumi:"areQuotaRulesEnabled"`
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
 	// Specifies whether the file system is attached to its parent file system.
@@ -2852,6 +3150,10 @@ type GetFileSystemsFileSystemArgs struct {
 	Locks GetFileSystemsFileSystemLockArrayInput `pulumi:"locks"`
 	// The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
 	MeteredBytes pulumi.StringInput `pulumi:"meteredBytes"`
+	// Displays the state of enforcement of quota rules on the file system.
+	QuotaEnforcementState pulumi.StringInput `pulumi:"quotaEnforcementState"`
+	// Specifies the total number of replications for which this file system is a source.
+	ReplicationSourceCount pulumi.IntInput `pulumi:"replicationSourceCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
 	ReplicationTargetId pulumi.StringInput `pulumi:"replicationTargetId"`
 	// Source information for the file system.
@@ -2915,6 +3217,11 @@ func (o GetFileSystemsFileSystemOutput) ToGetFileSystemsFileSystemOutput() GetFi
 
 func (o GetFileSystemsFileSystemOutput) ToGetFileSystemsFileSystemOutputWithContext(ctx context.Context) GetFileSystemsFileSystemOutput {
 	return o
+}
+
+// Specifies the enforcement of quota rules on the file system.
+func (o GetFileSystemsFileSystemOutput) AreQuotaRulesEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFileSystemsFileSystem) bool { return v.AreQuotaRulesEnabled }).(pulumi.BoolOutput)
 }
 
 // The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -3003,6 +3310,16 @@ func (o GetFileSystemsFileSystemOutput) Locks() GetFileSystemsFileSystemLockArra
 // The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
 func (o GetFileSystemsFileSystemOutput) MeteredBytes() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFileSystemsFileSystem) string { return v.MeteredBytes }).(pulumi.StringOutput)
+}
+
+// Displays the state of enforcement of quota rules on the file system.
+func (o GetFileSystemsFileSystemOutput) QuotaEnforcementState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileSystemsFileSystem) string { return v.QuotaEnforcementState }).(pulumi.StringOutput)
+}
+
+// Specifies the total number of replications for which this file system is a source.
+func (o GetFileSystemsFileSystemOutput) ReplicationSourceCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFileSystemsFileSystem) int { return v.ReplicationSourceCount }).(pulumi.IntOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
@@ -7528,6 +7845,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExportsExportLockArrayInput)(nil)).Elem(), GetExportsExportLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExportsFilterInput)(nil)).Elem(), GetExportsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExportsFilterArrayInput)(nil)).Elem(), GetExportsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileSystemQuotaRulesFilterInput)(nil)).Elem(), GetFileSystemQuotaRulesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileSystemQuotaRulesFilterArrayInput)(nil)).Elem(), GetFileSystemQuotaRulesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileSystemQuotaRulesQuotaRuleInput)(nil)).Elem(), GetFileSystemQuotaRulesQuotaRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileSystemQuotaRulesQuotaRuleArrayInput)(nil)).Elem(), GetFileSystemQuotaRulesQuotaRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileSystemsFileSystemInput)(nil)).Elem(), GetFileSystemsFileSystemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileSystemsFileSystemArrayInput)(nil)).Elem(), GetFileSystemsFileSystemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileSystemsFileSystemLockInput)(nil)).Elem(), GetFileSystemsFileSystemLockArgs{})
@@ -7628,6 +7949,10 @@ func init() {
 	pulumi.RegisterOutputType(GetExportsExportLockArrayOutput{})
 	pulumi.RegisterOutputType(GetExportsFilterOutput{})
 	pulumi.RegisterOutputType(GetExportsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFileSystemQuotaRulesFilterOutput{})
+	pulumi.RegisterOutputType(GetFileSystemQuotaRulesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFileSystemQuotaRulesQuotaRuleOutput{})
+	pulumi.RegisterOutputType(GetFileSystemQuotaRulesQuotaRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetFileSystemsFileSystemOutput{})
 	pulumi.RegisterOutputType(GetFileSystemsFileSystemArrayOutput{})
 	pulumi.RegisterOutputType(GetFileSystemsFileSystemLockOutput{})

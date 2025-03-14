@@ -54,6 +54,11 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
      */
     private Integer computeCount;
     /**
+     * @return The compute model of the Exadata infrastructure.
+     * 
+     */
+    private String computeModel;
+    /**
      * @return The total number of CPU cores allocated.
      * 
      */
@@ -68,6 +73,11 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
      * 
      */
     private Double dataStorageSizeInTbs;
+    /**
+     * @return The database server type of the Exadata infrastructure.
+     * 
+     */
+    private String databaseServerType;
     /**
      * @return The local node storage allocated in GBs.
      * 
@@ -179,6 +189,11 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
      */
     private Integer storageCount;
     /**
+     * @return The storage server type of the Exadata infrastructure.
+     * 
+     */
+    private String storageServerType;
+    /**
      * @return The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
      * 
      */
@@ -255,6 +270,13 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
         return this.computeCount;
     }
     /**
+     * @return The compute model of the Exadata infrastructure.
+     * 
+     */
+    public String computeModel() {
+        return this.computeModel;
+    }
+    /**
      * @return The total number of CPU cores allocated.
      * 
      */
@@ -274,6 +296,13 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
      */
     public Double dataStorageSizeInTbs() {
         return this.dataStorageSizeInTbs;
+    }
+    /**
+     * @return The database server type of the Exadata infrastructure.
+     * 
+     */
+    public String databaseServerType() {
+        return this.databaseServerType;
     }
     /**
      * @return The local node storage allocated in GBs.
@@ -430,6 +459,13 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
         return this.storageCount;
     }
     /**
+     * @return The storage server type of the Exadata infrastructure.
+     * 
+     */
+    public String storageServerType() {
+        return this.storageServerType;
+    }
+    /**
      * @return The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
      * 
      */
@@ -481,9 +517,11 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
         private String clusterPlacementGroupId;
         private String compartmentId;
         private Integer computeCount;
+        private String computeModel;
         private Integer cpuCount;
         private List<GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContact> customerContacts;
         private Double dataStorageSizeInTbs;
+        private String databaseServerType;
         private Integer dbNodeStorageSizeInGbs;
         private String dbServerVersion;
         private List<GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfiguration> definedFileSystemConfigurations;
@@ -506,6 +544,7 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
         private String shape;
         private String state;
         private Integer storageCount;
+        private String storageServerType;
         private String storageServerVersion;
         private String subscriptionId;
         private Map<String,String> systemTags;
@@ -521,9 +560,11 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
     	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.computeCount = defaults.computeCount;
+    	      this.computeModel = defaults.computeModel;
     	      this.cpuCount = defaults.cpuCount;
     	      this.customerContacts = defaults.customerContacts;
     	      this.dataStorageSizeInTbs = defaults.dataStorageSizeInTbs;
+    	      this.databaseServerType = defaults.databaseServerType;
     	      this.dbNodeStorageSizeInGbs = defaults.dbNodeStorageSizeInGbs;
     	      this.dbServerVersion = defaults.dbServerVersion;
     	      this.definedFileSystemConfigurations = defaults.definedFileSystemConfigurations;
@@ -546,6 +587,7 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
     	      this.shape = defaults.shape;
     	      this.state = defaults.state;
     	      this.storageCount = defaults.storageCount;
+    	      this.storageServerType = defaults.storageServerType;
     	      this.storageServerVersion = defaults.storageServerVersion;
     	      this.subscriptionId = defaults.subscriptionId;
     	      this.systemTags = defaults.systemTags;
@@ -610,6 +652,14 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
             return this;
         }
         @CustomType.Setter
+        public Builder computeModel(String computeModel) {
+            if (computeModel == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructuresCloudExadataInfrastructure", "computeModel");
+            }
+            this.computeModel = computeModel;
+            return this;
+        }
+        @CustomType.Setter
         public Builder cpuCount(Integer cpuCount) {
             if (cpuCount == null) {
               throw new MissingRequiredPropertyException("GetCloudExadataInfrastructuresCloudExadataInfrastructure", "cpuCount");
@@ -634,6 +684,14 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
               throw new MissingRequiredPropertyException("GetCloudExadataInfrastructuresCloudExadataInfrastructure", "dataStorageSizeInTbs");
             }
             this.dataStorageSizeInTbs = dataStorageSizeInTbs;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder databaseServerType(String databaseServerType) {
+            if (databaseServerType == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructuresCloudExadataInfrastructure", "databaseServerType");
+            }
+            this.databaseServerType = databaseServerType;
             return this;
         }
         @CustomType.Setter
@@ -819,6 +877,14 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
             return this;
         }
         @CustomType.Setter
+        public Builder storageServerType(String storageServerType) {
+            if (storageServerType == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructuresCloudExadataInfrastructure", "storageServerType");
+            }
+            this.storageServerType = storageServerType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder storageServerVersion(String storageServerVersion) {
             if (storageServerVersion == null) {
               throw new MissingRequiredPropertyException("GetCloudExadataInfrastructuresCloudExadataInfrastructure", "storageServerVersion");
@@ -867,9 +933,11 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
             _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.computeCount = computeCount;
+            _resultValue.computeModel = computeModel;
             _resultValue.cpuCount = cpuCount;
             _resultValue.customerContacts = customerContacts;
             _resultValue.dataStorageSizeInTbs = dataStorageSizeInTbs;
+            _resultValue.databaseServerType = databaseServerType;
             _resultValue.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
             _resultValue.dbServerVersion = dbServerVersion;
             _resultValue.definedFileSystemConfigurations = definedFileSystemConfigurations;
@@ -892,6 +960,7 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
             _resultValue.shape = shape;
             _resultValue.state = state;
             _resultValue.storageCount = storageCount;
+            _resultValue.storageServerType = storageServerType;
             _resultValue.storageServerVersion = storageServerVersion;
             _resultValue.subscriptionId = subscriptionId;
             _resultValue.systemTags = systemTags;

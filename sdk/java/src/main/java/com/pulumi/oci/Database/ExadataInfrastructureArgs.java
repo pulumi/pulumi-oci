@@ -172,6 +172,21 @@ public final class ExadataInfrastructureArgs extends com.pulumi.resources.Resour
     }
 
     /**
+     * The database server type of the Exadata infrastructure.
+     * 
+     */
+    @Import(name="databaseServerType")
+    private @Nullable Output<String> databaseServerType;
+
+    /**
+     * @return The database server type of the Exadata infrastructure.
+     * 
+     */
+    public Optional<Output<String>> databaseServerType() {
+        return Optional.ofNullable(this.databaseServerType);
+    }
+
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
@@ -397,6 +412,21 @@ public final class ExadataInfrastructureArgs extends com.pulumi.resources.Resour
     }
 
     /**
+     * The storage server type of the Exadata infrastructure.
+     * 
+     */
+    @Import(name="storageServerType")
+    private @Nullable Output<String> storageServerType;
+
+    /**
+     * @return The storage server type of the Exadata infrastructure.
+     * 
+     */
+    public Optional<Output<String>> storageServerType() {
+        return Optional.ofNullable(this.storageServerType);
+    }
+
+    /**
      * (Updatable) The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
      */
@@ -424,6 +454,7 @@ public final class ExadataInfrastructureArgs extends com.pulumi.resources.Resour
         this.contacts = $.contacts;
         this.corporateProxy = $.corporateProxy;
         this.createAsync = $.createAsync;
+        this.databaseServerType = $.databaseServerType;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.dnsServers = $.dnsServers;
@@ -439,6 +470,7 @@ public final class ExadataInfrastructureArgs extends com.pulumi.resources.Resour
         this.ntpServers = $.ntpServers;
         this.shape = $.shape;
         this.storageCount = $.storageCount;
+        this.storageServerType = $.storageServerType;
         this.timeZone = $.timeZone;
     }
 
@@ -672,6 +704,27 @@ public final class ExadataInfrastructureArgs extends com.pulumi.resources.Resour
 
         public Builder createAsync(Boolean createAsync) {
             return createAsync(Output.of(createAsync));
+        }
+
+        /**
+         * @param databaseServerType The database server type of the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseServerType(@Nullable Output<String> databaseServerType) {
+            $.databaseServerType = databaseServerType;
+            return this;
+        }
+
+        /**
+         * @param databaseServerType The database server type of the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseServerType(String databaseServerType) {
+            return databaseServerType(Output.of(databaseServerType));
         }
 
         /**
@@ -1007,6 +1060,27 @@ public final class ExadataInfrastructureArgs extends com.pulumi.resources.Resour
          */
         public Builder storageCount(Integer storageCount) {
             return storageCount(Output.of(storageCount));
+        }
+
+        /**
+         * @param storageServerType The storage server type of the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder storageServerType(@Nullable Output<String> storageServerType) {
+            $.storageServerType = storageServerType;
+            return this;
+        }
+
+        /**
+         * @param storageServerType The storage server type of the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder storageServerType(String storageServerType) {
+            return storageServerType(Output.of(storageServerType));
         }
 
         /**

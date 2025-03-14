@@ -85,6 +85,7 @@ namespace Pulumi.Oci.ContainerEngine
     ///                 IsOpenIdConnectAuthEnabled = clusterOptionsOpenIdConnectTokenAuthenticationConfigIsOpenIdConnectAuthEnabled,
     ///                 CaCertificate = clusterOptionsOpenIdConnectTokenAuthenticationConfigCaCertificate,
     ///                 ClientId = testClient.Id,
+    ///                 ConfigurationFile = clusterOptionsOpenIdConnectTokenAuthenticationConfigConfigurationFile,
     ///                 GroupsClaim = clusterOptionsOpenIdConnectTokenAuthenticationConfigGroupsClaim,
     ///                 GroupsPrefix = clusterOptionsOpenIdConnectTokenAuthenticationConfigGroupsPrefix,
     ///                 IssuerUrl = clusterOptionsOpenIdConnectTokenAuthenticationConfigIssuerUrl,

@@ -52,7 +52,8 @@ class ClusterArgs:
                  security_master_user_name: Optional[pulumi.Input[str]] = None,
                  security_master_user_password_hash: Optional[pulumi.Input[str]] = None,
                  security_mode: Optional[pulumi.Input[str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 upgrade_major_version_trigger: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a Cluster resource.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment to create the cluster in.
@@ -75,10 +76,6 @@ class ClusterArgs:
         :param pulumi.Input[str] vcn_compartment_id: The OCID for the compartment where the cluster's VCN is located.
         :param pulumi.Input[str] vcn_id: The OCID of the cluster's VCN.
         :param pulumi.Input[int] configure_outbound_cluster_trigger: (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] data_node_host_bare_metal_shape: The bare metal shape for the cluster's data nodes.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -91,6 +88,11 @@ class ClusterArgs:
         :param pulumi.Input[str] security_master_user_password_hash: (Updatable) The password hash of the master user that are used to manage security config
         :param pulumi.Input[str] security_mode: (Updatable) The security mode of the cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[int] upgrade_major_version_trigger: An optional property to upgrade the major version of the cluster. This workflow upgrades the cluster without creating a clone. If you want to create a clone and upgrade the clone for testing please use SDK or CLI.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "data_node_count", data_node_count)
@@ -137,6 +139,8 @@ class ClusterArgs:
             pulumi.set(__self__, "security_mode", security_mode)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
+        if upgrade_major_version_trigger is not None:
+            pulumi.set(__self__, "upgrade_major_version_trigger", upgrade_major_version_trigger)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -371,10 +375,6 @@ class ClusterArgs:
     def configure_outbound_cluster_trigger(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "configure_outbound_cluster_trigger")
 
@@ -526,6 +526,22 @@ class ClusterArgs:
     def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "system_tags", value)
 
+    @property
+    @pulumi.getter(name="upgradeMajorVersionTrigger")
+    def upgrade_major_version_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        An optional property to upgrade the major version of the cluster. This workflow upgrades the cluster without creating a clone. If you want to create a clone and upgrade the clone for testing please use SDK or CLI.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "upgrade_major_version_trigger")
+
+    @upgrade_major_version_trigger.setter
+    def upgrade_major_version_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "upgrade_major_version_trigger", value)
+
 
 @pulumi.input_type
 class _ClusterState:
@@ -573,6 +589,7 @@ class _ClusterState:
                  time_deleted: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
                  total_storage_gb: Optional[pulumi.Input[int]] = None,
+                 upgrade_major_version_trigger: Optional[pulumi.Input[int]] = None,
                  vcn_compartment_id: Optional[pulumi.Input[str]] = None,
                  vcn_id: Optional[pulumi.Input[str]] = None):
         """
@@ -580,10 +597,6 @@ class _ClusterState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] availability_domains: The availability domains to distribute the cluser nodes across.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment to create the cluster in.
         :param pulumi.Input[int] configure_outbound_cluster_trigger: (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[int] data_node_count: (Updatable) The number of data nodes to configure for the cluster.
         :param pulumi.Input[str] data_node_host_bare_metal_shape: The bare metal shape for the cluster's data nodes.
         :param pulumi.Input[int] data_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
@@ -624,6 +637,11 @@ class _ClusterState:
         :param pulumi.Input[str] time_deleted: The amount of time in milliseconds since the cluster was updated.
         :param pulumi.Input[str] time_updated: The amount of time in milliseconds since the cluster was updated.
         :param pulumi.Input[int] total_storage_gb: The size in GB of the cluster's total storage.
+        :param pulumi.Input[int] upgrade_major_version_trigger: An optional property to upgrade the major version of the cluster. This workflow upgrades the cluster without creating a clone. If you want to create a clone and upgrade the clone for testing please use SDK or CLI.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] vcn_compartment_id: The OCID for the compartment where the cluster's VCN is located.
         :param pulumi.Input[str] vcn_id: The OCID of the cluster's VCN.
         """
@@ -713,6 +731,8 @@ class _ClusterState:
             pulumi.set(__self__, "time_updated", time_updated)
         if total_storage_gb is not None:
             pulumi.set(__self__, "total_storage_gb", total_storage_gb)
+        if upgrade_major_version_trigger is not None:
+            pulumi.set(__self__, "upgrade_major_version_trigger", upgrade_major_version_trigger)
         if vcn_compartment_id is not None:
             pulumi.set(__self__, "vcn_compartment_id", vcn_compartment_id)
         if vcn_id is not None:
@@ -747,10 +767,6 @@ class _ClusterState:
     def configure_outbound_cluster_trigger(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "configure_outbound_cluster_trigger")
 
@@ -1239,6 +1255,22 @@ class _ClusterState:
         pulumi.set(self, "total_storage_gb", value)
 
     @property
+    @pulumi.getter(name="upgradeMajorVersionTrigger")
+    def upgrade_major_version_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        An optional property to upgrade the major version of the cluster. This workflow upgrades the cluster without creating a clone. If you want to create a clone and upgrade the clone for testing please use SDK or CLI.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "upgrade_major_version_trigger")
+
+    @upgrade_major_version_trigger.setter
+    def upgrade_major_version_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "upgrade_major_version_trigger", value)
+
+    @property
     @pulumi.getter(name="vcnCompartmentId")
     def vcn_compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1298,6 +1330,7 @@ class Cluster(pulumi.CustomResource):
                  subnet_compartment_id: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 upgrade_major_version_trigger: Optional[pulumi.Input[int]] = None,
                  vcn_compartment_id: Optional[pulumi.Input[str]] = None,
                  vcn_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -1327,10 +1360,6 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment to create the cluster in.
         :param pulumi.Input[int] configure_outbound_cluster_trigger: (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[int] data_node_count: (Updatable) The number of data nodes to configure for the cluster.
         :param pulumi.Input[str] data_node_host_bare_metal_shape: The bare metal shape for the cluster's data nodes.
         :param pulumi.Input[int] data_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
@@ -1359,6 +1388,11 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[str] subnet_compartment_id: The OCID for the compartment where the cluster's subnet is located.
         :param pulumi.Input[str] subnet_id: The OCID of the cluster's subnet.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[int] upgrade_major_version_trigger: An optional property to upgrade the major version of the cluster. This workflow upgrades the cluster without creating a clone. If you want to create a clone and upgrade the clone for testing please use SDK or CLI.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] vcn_compartment_id: The OCID for the compartment where the cluster's VCN is located.
         :param pulumi.Input[str] vcn_id: The OCID of the cluster's VCN.
         """
@@ -1435,6 +1469,7 @@ class Cluster(pulumi.CustomResource):
                  subnet_compartment_id: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 upgrade_major_version_trigger: Optional[pulumi.Input[int]] = None,
                  vcn_compartment_id: Optional[pulumi.Input[str]] = None,
                  vcn_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -1510,6 +1545,7 @@ class Cluster(pulumi.CustomResource):
                 raise TypeError("Missing required property 'subnet_id'")
             __props__.__dict__["subnet_id"] = subnet_id
             __props__.__dict__["system_tags"] = system_tags
+            __props__.__dict__["upgrade_major_version_trigger"] = upgrade_major_version_trigger
             if vcn_compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'vcn_compartment_id'")
             __props__.__dict__["vcn_compartment_id"] = vcn_compartment_id
@@ -1584,6 +1620,7 @@ class Cluster(pulumi.CustomResource):
             time_deleted: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
             total_storage_gb: Optional[pulumi.Input[int]] = None,
+            upgrade_major_version_trigger: Optional[pulumi.Input[int]] = None,
             vcn_compartment_id: Optional[pulumi.Input[str]] = None,
             vcn_id: Optional[pulumi.Input[str]] = None) -> 'Cluster':
         """
@@ -1596,10 +1633,6 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] availability_domains: The availability domains to distribute the cluser nodes across.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment to create the cluster in.
         :param pulumi.Input[int] configure_outbound_cluster_trigger: (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[int] data_node_count: (Updatable) The number of data nodes to configure for the cluster.
         :param pulumi.Input[str] data_node_host_bare_metal_shape: The bare metal shape for the cluster's data nodes.
         :param pulumi.Input[int] data_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
@@ -1640,6 +1673,11 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[str] time_deleted: The amount of time in milliseconds since the cluster was updated.
         :param pulumi.Input[str] time_updated: The amount of time in milliseconds since the cluster was updated.
         :param pulumi.Input[int] total_storage_gb: The size in GB of the cluster's total storage.
+        :param pulumi.Input[int] upgrade_major_version_trigger: An optional property to upgrade the major version of the cluster. This workflow upgrades the cluster without creating a clone. If you want to create a clone and upgrade the clone for testing please use SDK or CLI.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] vcn_compartment_id: The OCID for the compartment where the cluster's VCN is located.
         :param pulumi.Input[str] vcn_id: The OCID of the cluster's VCN.
         """
@@ -1690,6 +1728,7 @@ class Cluster(pulumi.CustomResource):
         __props__.__dict__["time_deleted"] = time_deleted
         __props__.__dict__["time_updated"] = time_updated
         __props__.__dict__["total_storage_gb"] = total_storage_gb
+        __props__.__dict__["upgrade_major_version_trigger"] = upgrade_major_version_trigger
         __props__.__dict__["vcn_compartment_id"] = vcn_compartment_id
         __props__.__dict__["vcn_id"] = vcn_id
         return Cluster(resource_name, opts=opts, __props__=__props__)
@@ -1715,10 +1754,6 @@ class Cluster(pulumi.CustomResource):
     def configure_outbound_cluster_trigger(self) -> pulumi.Output[Optional[int]]:
         """
         (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "configure_outbound_cluster_trigger")
 
@@ -2041,6 +2076,18 @@ class Cluster(pulumi.CustomResource):
         The size in GB of the cluster's total storage.
         """
         return pulumi.get(self, "total_storage_gb")
+
+    @property
+    @pulumi.getter(name="upgradeMajorVersionTrigger")
+    def upgrade_major_version_trigger(self) -> pulumi.Output[int]:
+        """
+        An optional property to upgrade the major version of the cluster. This workflow upgrades the cluster without creating a clone. If you want to create a clone and upgrade the clone for testing please use SDK or CLI.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "upgrade_major_version_trigger")
 
     @property
     @pulumi.getter(name="vcnCompartmentId")

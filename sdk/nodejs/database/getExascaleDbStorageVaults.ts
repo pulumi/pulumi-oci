@@ -19,7 +19,9 @@ import * as utilities from "../utilities";
  *
  * const testExascaleDbStorageVaults = oci.Database.getExascaleDbStorageVaults({
  *     compartmentId: compartmentId,
+ *     clusterPlacementGroupId: testClusterPlacementGroup.id,
  *     displayName: exascaleDbStorageVaultDisplayName,
+ *     exadataInfrastructureId: testExadataInfrastructure.id,
  *     state: exascaleDbStorageVaultState,
  * });
  * ```
@@ -27,8 +29,10 @@ import * as utilities from "../utilities";
 export function getExascaleDbStorageVaults(args: GetExascaleDbStorageVaultsArgs, opts?: pulumi.InvokeOptions): Promise<GetExascaleDbStorageVaultsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getExascaleDbStorageVaults:getExascaleDbStorageVaults", {
+        "clusterPlacementGroupId": args.clusterPlacementGroupId,
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
+        "exadataInfrastructureId": args.exadataInfrastructureId,
         "filters": args.filters,
         "state": args.state,
     }, opts);
@@ -39,6 +43,10 @@ export function getExascaleDbStorageVaults(args: GetExascaleDbStorageVaultsArgs,
  */
 export interface GetExascaleDbStorageVaultsArgs {
     /**
+     * A filter to return only resources that match the given cluster placement group ID exactly.
+     */
+    clusterPlacementGroupId?: string;
+    /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     compartmentId: string;
@@ -46,6 +54,10 @@ export interface GetExascaleDbStorageVaultsArgs {
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
     displayName?: string;
+    /**
+     * A filter to return only list of Vaults that are linked to the exadata infrastructure Id.
+     */
+    exadataInfrastructureId?: string;
     filters?: inputs.Database.GetExascaleDbStorageVaultsFilter[];
     /**
      * A filter to return only Exadata Database Storage Vaults that match the given lifecycle state exactly.
@@ -58,6 +70,10 @@ export interface GetExascaleDbStorageVaultsArgs {
  */
 export interface GetExascaleDbStorageVaultsResult {
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     */
+    readonly clusterPlacementGroupId?: string;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     readonly compartmentId: string;
@@ -65,6 +81,10 @@ export interface GetExascaleDbStorageVaultsResult {
      * The user-friendly name for the Exadata Database Storage Vault. The name does not need to be unique.
      */
     readonly displayName?: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+     */
+    readonly exadataInfrastructureId?: string;
     /**
      * The list of exascale_db_storage_vaults.
      */
@@ -92,7 +112,9 @@ export interface GetExascaleDbStorageVaultsResult {
  *
  * const testExascaleDbStorageVaults = oci.Database.getExascaleDbStorageVaults({
  *     compartmentId: compartmentId,
+ *     clusterPlacementGroupId: testClusterPlacementGroup.id,
  *     displayName: exascaleDbStorageVaultDisplayName,
+ *     exadataInfrastructureId: testExadataInfrastructure.id,
  *     state: exascaleDbStorageVaultState,
  * });
  * ```
@@ -100,8 +122,10 @@ export interface GetExascaleDbStorageVaultsResult {
 export function getExascaleDbStorageVaultsOutput(args: GetExascaleDbStorageVaultsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExascaleDbStorageVaultsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getExascaleDbStorageVaults:getExascaleDbStorageVaults", {
+        "clusterPlacementGroupId": args.clusterPlacementGroupId,
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
+        "exadataInfrastructureId": args.exadataInfrastructureId,
         "filters": args.filters,
         "state": args.state,
     }, opts);
@@ -112,6 +136,10 @@ export function getExascaleDbStorageVaultsOutput(args: GetExascaleDbStorageVault
  */
 export interface GetExascaleDbStorageVaultsOutputArgs {
     /**
+     * A filter to return only resources that match the given cluster placement group ID exactly.
+     */
+    clusterPlacementGroupId?: pulumi.Input<string>;
+    /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     compartmentId: pulumi.Input<string>;
@@ -119,6 +147,10 @@ export interface GetExascaleDbStorageVaultsOutputArgs {
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * A filter to return only list of Vaults that are linked to the exadata infrastructure Id.
+     */
+    exadataInfrastructureId?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Database.GetExascaleDbStorageVaultsFilterArgs>[]>;
     /**
      * A filter to return only Exadata Database Storage Vaults that match the given lifecycle state exactly.

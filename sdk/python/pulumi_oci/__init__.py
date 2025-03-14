@@ -93,6 +93,8 @@ if typing.TYPE_CHECKING:
     datasafe = __datasafe
     import pulumi_oci.datascience as __datascience
     datascience = __datascience
+    import pulumi_oci.dblm as __dblm
+    dblm = __dblm
     import pulumi_oci.delegateaccesscontrol as __delegateaccesscontrol
     delegateaccesscontrol = __delegateaccesscontrol
     import pulumi_oci.demandsignal as __demandsignal
@@ -298,6 +300,7 @@ else:
     datalabellingservice = _utilities.lazy_import('pulumi_oci.datalabellingservice')
     datasafe = _utilities.lazy_import('pulumi_oci.datasafe')
     datascience = _utilities.lazy_import('pulumi_oci.datascience')
+    dblm = _utilities.lazy_import('pulumi_oci.dblm')
     delegateaccesscontrol = _utilities.lazy_import('pulumi_oci.delegateaccesscontrol')
     demandsignal = _utilities.lazy_import('pulumi_oci.demandsignal')
     desktops = _utilities.lazy_import('pulumi_oci.desktops')
@@ -2281,6 +2284,22 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DataSafe/sensitiveTypeGroup",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/sensitiveTypeGroup:SensitiveTypeGroup": "SensitiveTypeGroup"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataSafe/sensitiveTypeGroupGroupedSensitiveType",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/sensitiveTypeGroupGroupedSensitiveType:SensitiveTypeGroupGroupedSensitiveType": "SensitiveTypeGroupGroupedSensitiveType"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DataSafe/sensitiveTypesExport",
   "fqn": "pulumi_oci.datasafe",
   "classes": {
@@ -2445,6 +2464,22 @@ _utilities.register(
   "fqn": "pulumi_oci.datascience",
   "classes": {
    "oci:DataScience/modelArtifactImport:ModelArtifactImport": "ModelArtifactImport"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataScience/modelCustomMetadataArtifact",
+  "fqn": "pulumi_oci.datascience",
+  "classes": {
+   "oci:DataScience/modelCustomMetadataArtifact:ModelCustomMetadataArtifact": "ModelCustomMetadataArtifact"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataScience/modelDefinedMetadataArtifact",
+  "fqn": "pulumi_oci.datascience",
+  "classes": {
+   "oci:DataScience/modelDefinedMetadataArtifact:ModelDefinedMetadataArtifact": "ModelDefinedMetadataArtifact"
   }
  },
  {
@@ -2805,6 +2840,14 @@ _utilities.register(
   "fqn": "pulumi_oci.database",
   "classes": {
    "oci:Database/exadataInfrastructureCompute:ExadataInfrastructureCompute": "ExadataInfrastructureCompute"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Database/exadataInfrastructureConfigureExascaleManagement",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/exadataInfrastructureConfigureExascaleManagement:ExadataInfrastructureConfigureExascaleManagement": "ExadataInfrastructureConfigureExascaleManagement"
   }
  },
  {
@@ -3369,6 +3412,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Dblm/vulnerabilityScan",
+  "fqn": "pulumi_oci.dblm",
+  "classes": {
+   "oci:Dblm/vulnerabilityScan:VulnerabilityScan": "VulnerabilityScan"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DelegateAccessControl/delegationControl",
   "fqn": "pulumi_oci.delegateaccesscontrol",
   "classes": {
@@ -3725,6 +3776,14 @@ _utilities.register(
   "fqn": "pulumi_oci.filestorage",
   "classes": {
    "oci:FileStorage/fileSystem:FileSystem": "FileSystem"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "FileStorage/fileSystemQuotaRule",
+  "fqn": "pulumi_oci.filestorage",
+  "classes": {
+   "oci:FileStorage/fileSystemQuotaRule:FileSystemQuotaRule": "FileSystemQuotaRule"
   }
  },
  {
@@ -5613,6 +5672,14 @@ _utilities.register(
   "fqn": "pulumi_oci.opensearch",
   "classes": {
    "oci:Opensearch/cluster:Cluster": "Cluster"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Opensearch/opensearchClusterPipeline",
+  "fqn": "pulumi_oci.opensearch",
+  "classes": {
+   "oci:Opensearch/opensearchClusterPipeline:OpensearchClusterPipeline": "OpensearchClusterPipeline"
   }
  },
  {

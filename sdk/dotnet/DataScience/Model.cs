@@ -40,7 +40,9 @@ namespace Pulumi.Oci.DataScience
     ///             {
     ///                 Category = modelCustomMetadataListCategory,
     ///                 Description = modelCustomMetadataListDescription,
+    ///                 HasArtifact = modelCustomMetadataListHasArtifact,
     ///                 Key = modelCustomMetadataListKey,
+    ///                 Keywords = modelCustomMetadataListKeywords,
     ///                 Value = modelCustomMetadataListValue,
     ///             },
     ///         },
@@ -50,7 +52,9 @@ namespace Pulumi.Oci.DataScience
     ///             {
     ///                 Category = modelDefinedMetadataListCategory,
     ///                 Description = modelDefinedMetadataListDescription,
+    ///                 HasArtifact = modelDefinedMetadataListHasArtifact,
     ///                 Key = modelDefinedMetadataListKey,
+    ///                 Keywords = modelDefinedMetadataListKeywords,
     ///                 Value = modelDefinedMetadataListValue,
     ///             },
     ///         },
@@ -123,6 +127,12 @@ namespace Pulumi.Oci.DataScience
         public Output<Outputs.ModelBackupSetting> BackupSetting { get; private set; } = null!;
 
         /// <summary>
+        /// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
+        /// </summary>
+        [Output("category")]
+        public Output<string> Category { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
         /// </summary>
         [Output("compartmentId")]
@@ -178,6 +188,12 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Output("inputSchema")]
         public Output<string> InputSchema { get; private set; } = null!;
+
+        /// <summary>
+        /// Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+        /// </summary>
+        [Output("isModelByReference")]
+        public Output<bool> IsModelByReference { get; private set; } = null!;
 
         /// <summary>
         /// Details about the lifecycle state of the model.
@@ -480,6 +496,12 @@ namespace Pulumi.Oci.DataScience
         public Input<Inputs.ModelBackupSettingGetArgs>? BackupSetting { get; set; }
 
         /// <summary>
+        /// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
+        /// </summary>
+        [Input("category")]
+        public Input<string>? Category { get; set; }
+
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
         /// </summary>
         [Input("compartmentId")]
@@ -559,6 +581,12 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Input("inputSchema")]
         public Input<string>? InputSchema { get; set; }
+
+        /// <summary>
+        /// Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+        /// </summary>
+        [Input("isModelByReference")]
+        public Input<bool>? IsModelByReference { get; set; }
 
         /// <summary>
         /// Details about the lifecycle state of the model.

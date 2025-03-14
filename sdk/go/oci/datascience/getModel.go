@@ -66,6 +66,8 @@ type LookupModelResult struct {
 	BackupOperationDetails []GetModelBackupOperationDetail `pulumi:"backupOperationDetails"`
 	// Back up setting details of the model.
 	BackupSettings []GetModelBackupSetting `pulumi:"backupSettings"`
+	// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
+	Category string `pulumi:"category"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model's compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
@@ -87,6 +89,8 @@ type LookupModelResult struct {
 	Id string `pulumi:"id"`
 	// Input schema file content in String format
 	InputSchema string `pulumi:"inputSchema"`
+	// Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+	IsModelByReference bool `pulumi:"isModelByReference"`
 	// Details about the lifecycle state of the model.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	ModelArtifact    string `pulumi:"modelArtifact"`
@@ -170,6 +174,11 @@ func (o LookupModelResultOutput) BackupSettings() GetModelBackupSettingArrayOutp
 	return o.ApplyT(func(v LookupModelResult) []GetModelBackupSetting { return v.BackupSettings }).(GetModelBackupSettingArrayOutput)
 }
 
+// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
+func (o LookupModelResultOutput) Category() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupModelResult) string { return v.Category }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model's compartment.
 func (o LookupModelResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -222,6 +231,11 @@ func (o LookupModelResultOutput) Id() pulumi.StringOutput {
 // Input schema file content in String format
 func (o LookupModelResultOutput) InputSchema() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.InputSchema }).(pulumi.StringOutput)
+}
+
+// Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+func (o LookupModelResultOutput) IsModelByReference() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupModelResult) bool { return v.IsModelByReference }).(pulumi.BoolOutput)
 }
 
 // Details about the lifecycle state of the model.

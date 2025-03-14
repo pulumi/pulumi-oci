@@ -124,10 +124,15 @@ type GetDkimsDkimCollectionItem struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A filter to only return resources that match the given id exactly.
 	Id string `pulumi:"id"`
+	// Indicates whether the DKIM was imported.
+	IsImported bool `pulumi:"isImported"`
+	// Length of the RSA key used in the DKIM.
+	KeyLength int `pulumi:"keyLength"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// A filter to only return resources that match the given name exactly.
-	Name string `pulumi:"name"`
+	Name       string `pulumi:"name"`
+	PrivateKey string `pulumi:"privateKey"`
 	// Filter returned list by specified lifecycle state. This parameter is case-insensitive.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -168,10 +173,15 @@ type GetDkimsDkimCollectionItemArgs struct {
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// A filter to only return resources that match the given id exactly.
 	Id pulumi.StringInput `pulumi:"id"`
+	// Indicates whether the DKIM was imported.
+	IsImported pulumi.BoolInput `pulumi:"isImported"`
+	// Length of the RSA key used in the DKIM.
+	KeyLength pulumi.IntInput `pulumi:"keyLength"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// A filter to only return resources that match the given name exactly.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name       pulumi.StringInput `pulumi:"name"`
+	PrivateKey pulumi.StringInput `pulumi:"privateKey"`
 	// Filter returned list by specified lifecycle state. This parameter is case-insensitive.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -275,6 +285,16 @@ func (o GetDkimsDkimCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDkimsDkimCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// Indicates whether the DKIM was imported.
+func (o GetDkimsDkimCollectionItemOutput) IsImported() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDkimsDkimCollectionItem) bool { return v.IsImported }).(pulumi.BoolOutput)
+}
+
+// Length of the RSA key used in the DKIM.
+func (o GetDkimsDkimCollectionItemOutput) KeyLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDkimsDkimCollectionItem) int { return v.KeyLength }).(pulumi.IntOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource.
 func (o GetDkimsDkimCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDkimsDkimCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
@@ -283,6 +303,10 @@ func (o GetDkimsDkimCollectionItemOutput) LifecycleDetails() pulumi.StringOutput
 // A filter to only return resources that match the given name exactly.
 func (o GetDkimsDkimCollectionItemOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDkimsDkimCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDkimsDkimCollectionItemOutput) PrivateKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDkimsDkimCollectionItem) string { return v.PrivateKey }).(pulumi.StringOutput)
 }
 
 // Filter returned list by specified lifecycle state. This parameter is case-insensitive.

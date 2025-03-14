@@ -5,6 +5,7 @@ package com.pulumi.oci.Psql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Psql.outputs.GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicy;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -17,6 +18,11 @@ public final class GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolic
      * 
      */
     private String backupStart;
+    /**
+     * @return Backup copy details
+     * 
+     */
+    private List<GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicy> copyPolicies;
     /**
      * @return Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
      * 
@@ -45,6 +51,13 @@ public final class GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolic
      */
     public String backupStart() {
         return this.backupStart;
+    }
+    /**
+     * @return Backup copy details
+     * 
+     */
+    public List<GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicy> copyPolicies() {
+        return this.copyPolicies;
     }
     /**
      * @return Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
@@ -85,6 +98,7 @@ public final class GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolic
     @CustomType.Builder
     public static final class Builder {
         private String backupStart;
+        private List<GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicy> copyPolicies;
         private List<Integer> daysOfTheMonths;
         private List<String> daysOfTheWeeks;
         private String kind;
@@ -93,6 +107,7 @@ public final class GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolic
         public Builder(GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backupStart = defaults.backupStart;
+    	      this.copyPolicies = defaults.copyPolicies;
     	      this.daysOfTheMonths = defaults.daysOfTheMonths;
     	      this.daysOfTheWeeks = defaults.daysOfTheWeeks;
     	      this.kind = defaults.kind;
@@ -106,6 +121,17 @@ public final class GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolic
             }
             this.backupStart = backupStart;
             return this;
+        }
+        @CustomType.Setter
+        public Builder copyPolicies(List<GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicy> copyPolicies) {
+            if (copyPolicies == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicy", "copyPolicies");
+            }
+            this.copyPolicies = copyPolicies;
+            return this;
+        }
+        public Builder copyPolicies(GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicy... copyPolicies) {
+            return copyPolicies(List.of(copyPolicies));
         }
         @CustomType.Setter
         public Builder daysOfTheMonths(List<Integer> daysOfTheMonths) {
@@ -148,6 +174,7 @@ public final class GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolic
         public GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicy build() {
             final var _resultValue = new GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicy();
             _resultValue.backupStart = backupStart;
+            _resultValue.copyPolicies = copyPolicies;
             _resultValue.daysOfTheMonths = daysOfTheMonths;
             _resultValue.daysOfTheWeeks = daysOfTheWeeks;
             _resultValue.kind = kind;

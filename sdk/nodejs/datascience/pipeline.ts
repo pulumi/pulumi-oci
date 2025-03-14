@@ -11,77 +11,6 @@ import * as utilities from "../utilities";
  *
  * Creates a new Pipeline.
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testPipeline = new oci.datascience.Pipeline("test_pipeline", {
- *     compartmentId: compartmentId,
- *     projectId: testProject.id,
- *     stepDetails: [{
- *         stepName: pipelineStepDetailsStepName,
- *         stepType: pipelineStepDetailsStepType,
- *         dependsOns: pipelineStepDetailsDependsOn,
- *         description: pipelineStepDetailsDescription,
- *         isArtifactUploaded: pipelineStepDetailsIsArtifactUploaded,
- *         jobId: testJob.id,
- *         stepConfigurationDetails: {
- *             commandLineArguments: pipelineStepDetailsStepConfigurationDetailsCommandLineArguments,
- *             environmentVariables: pipelineStepDetailsStepConfigurationDetailsEnvironmentVariables,
- *             maximumRuntimeInMinutes: pipelineStepDetailsStepConfigurationDetailsMaximumRuntimeInMinutes,
- *         },
- *         stepContainerConfigurationDetails: {
- *             containerType: pipelineStepDetailsStepContainerConfigurationDetailsContainerType,
- *             image: pipelineStepDetailsStepContainerConfigurationDetailsImage,
- *             cmds: pipelineStepDetailsStepContainerConfigurationDetailsCmd,
- *             entrypoints: pipelineStepDetailsStepContainerConfigurationDetailsEntrypoint,
- *             imageDigest: pipelineStepDetailsStepContainerConfigurationDetailsImageDigest,
- *             imageSignatureId: testImageSignature.id,
- *         },
- *         stepInfrastructureConfigurationDetails: {
- *             blockStorageSizeInGbs: pipelineStepDetailsStepInfrastructureConfigurationDetailsBlockStorageSizeInGbs,
- *             shapeConfigDetails: {
- *                 memoryInGbs: pipelineStepDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsMemoryInGbs,
- *                 ocpus: pipelineStepDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsOcpus,
- *             },
- *             shapeName: testShape.name,
- *             subnetId: testSubnet.id,
- *         },
- *     }],
- *     configurationDetails: {
- *         type: pipelineConfigurationDetailsType,
- *         commandLineArguments: pipelineConfigurationDetailsCommandLineArguments,
- *         environmentVariables: pipelineConfigurationDetailsEnvironmentVariables,
- *         maximumRuntimeInMinutes: pipelineConfigurationDetailsMaximumRuntimeInMinutes,
- *     },
- *     definedTags: {
- *         "Operations.CostCenter": "42",
- *     },
- *     description: pipelineDescription,
- *     displayName: pipelineDisplayName,
- *     freeformTags: {
- *         Department: "Finance",
- *     },
- *     infrastructureConfigurationDetails: {
- *         blockStorageSizeInGbs: pipelineInfrastructureConfigurationDetailsBlockStorageSizeInGbs,
- *         shapeName: testShape.name,
- *         shapeConfigDetails: {
- *             memoryInGbs: pipelineInfrastructureConfigurationDetailsShapeConfigDetailsMemoryInGbs,
- *             ocpus: pipelineInfrastructureConfigurationDetailsShapeConfigDetailsOcpus,
- *         },
- *         subnetId: testSubnet.id,
- *     },
- *     logConfigurationDetails: {
- *         enableAutoLogCreation: pipelineLogConfigurationDetailsEnableAutoLogCreation,
- *         enableLogging: pipelineLogConfigurationDetailsEnableLogging,
- *         logGroupId: testLogGroup.id,
- *         logId: testLog.id,
- *     },
- * });
- * ```
- *
  * ## Import
  *
  * Pipelines can be imported using the `id`, e.g.
@@ -173,6 +102,10 @@ export class Pipeline extends pulumi.CustomResource {
      */
     public readonly stepDetails!: pulumi.Output<outputs.DataScience.PipelineStepDetail[]>;
     /**
+     * (Updatable) The storage mount details to mount to the instance running the pipeline step.
+     */
+    public readonly storageMountConfigurationDetailsLists!: pulumi.Output<outputs.DataScience.PipelineStorageMountConfigurationDetailsList[]>;
+    /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
@@ -213,6 +146,7 @@ export class Pipeline extends pulumi.CustomResource {
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["stepArtifacts"] = state ? state.stepArtifacts : undefined;
             resourceInputs["stepDetails"] = state ? state.stepDetails : undefined;
+            resourceInputs["storageMountConfigurationDetailsLists"] = state ? state.storageMountConfigurationDetailsLists : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
@@ -239,6 +173,7 @@ export class Pipeline extends pulumi.CustomResource {
             resourceInputs["projectId"] = args ? args.projectId : undefined;
             resourceInputs["stepArtifacts"] = args ? args.stepArtifacts : undefined;
             resourceInputs["stepDetails"] = args ? args.stepDetails : undefined;
+            resourceInputs["storageMountConfigurationDetailsLists"] = args ? args.storageMountConfigurationDetailsLists : undefined;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -310,6 +245,10 @@ export interface PipelineState {
      */
     stepDetails?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineStepDetail>[]>;
     /**
+     * (Updatable) The storage mount details to mount to the instance running the pipeline step.
+     */
+    storageMountConfigurationDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineStorageMountConfigurationDetailsList>[]>;
+    /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
@@ -369,4 +308,8 @@ export interface PipelineArgs {
      * (Updatable) Array of step details for each step.
      */
     stepDetails: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineStepDetail>[]>;
+    /**
+     * (Updatable) The storage mount details to mount to the instance running the pipeline step.
+     */
+    storageMountConfigurationDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineStorageMountConfigurationDetailsList>[]>;
 }

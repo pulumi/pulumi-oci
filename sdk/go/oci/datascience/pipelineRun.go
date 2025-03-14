@@ -70,6 +70,22 @@ import (
 //							ImageDigest:      pulumi.Any(pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsImageDigest),
 //							ImageSignatureId: pulumi.Any(testImageSignature.Id),
 //						},
+//						StepDataflowConfigurationDetails: &datascience.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs{
+//							Configuration: pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsConfiguration),
+//							DriverShape:   pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShape),
+//							DriverShapeConfigDetails: &datascience.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs{
+//								MemoryInGbs: pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsMemoryInGbs),
+//								Ocpus:       pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsOcpus),
+//							},
+//							ExecutorShape: pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShape),
+//							ExecutorShapeConfigDetails: &datascience.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs{
+//								MemoryInGbs: pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsMemoryInGbs),
+//								Ocpus:       pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOcpus),
+//							},
+//							LogsBucketUri:      pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsLogsBucketUri),
+//							NumExecutors:       pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsNumExecutors),
+//							WarehouseBucketUri: pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsWarehouseBucketUri),
+//						},
 //					},
 //				},
 //				SystemTags: pulumi.Any(pipelineRunSystemTags),

@@ -1952,6 +1952,8 @@ type ClusterOptionsOpenIdConnectTokenAuthenticationConfig struct {
 	CaCertificate *string `pulumi:"caCertificate"`
 	// (Updatable) A client id that all tokens must be issued for.
 	ClientId *string `pulumi:"clientId"`
+	// (Updatable) A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+	ConfigurationFile *string `pulumi:"configurationFile"`
 	// (Updatable) JWT claim to use as the user's group. If the claim is present it must be an array of strings.
 	GroupsClaim *string `pulumi:"groupsClaim"`
 	// (Updatable) Prefix prepended to group claims to prevent clashes with existing names (such as system:groups).
@@ -1986,6 +1988,8 @@ type ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs struct {
 	CaCertificate pulumi.StringPtrInput `pulumi:"caCertificate"`
 	// (Updatable) A client id that all tokens must be issued for.
 	ClientId pulumi.StringPtrInput `pulumi:"clientId"`
+	// (Updatable) A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+	ConfigurationFile pulumi.StringPtrInput `pulumi:"configurationFile"`
 	// (Updatable) JWT claim to use as the user's group. If the claim is present it must be an array of strings.
 	GroupsClaim pulumi.StringPtrInput `pulumi:"groupsClaim"`
 	// (Updatable) Prefix prepended to group claims to prevent clashes with existing names (such as system:groups).
@@ -2091,6 +2095,11 @@ func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigOutput) ClientId() p
 	return o.ApplyT(func(v ClusterOptionsOpenIdConnectTokenAuthenticationConfig) *string { return v.ClientId }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigOutput) ConfigurationFile() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterOptionsOpenIdConnectTokenAuthenticationConfig) *string { return v.ConfigurationFile }).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) JWT claim to use as the user's group. If the claim is present it must be an array of strings.
 func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigOutput) GroupsClaim() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterOptionsOpenIdConnectTokenAuthenticationConfig) *string { return v.GroupsClaim }).(pulumi.StringPtrOutput)
@@ -2174,6 +2183,16 @@ func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput) ClientId(
 			return nil
 		}
 		return v.ClientId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput) ConfigurationFile() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterOptionsOpenIdConnectTokenAuthenticationConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ConfigurationFile
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -2704,7 +2723,7 @@ type ContainerInstanceContainer struct {
 	FaultDomain *string `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// list of container health checks to check container status and take appropriate action if container status is failed. There are three types of health checks that we currently support HTTP, TCP, and Command.
+	// list of container health checks to check container status and take appropriate action if container status is failed. There are two types of health checks that we currently support HTTP and TCP.
 	HealthChecks []ContainerInstanceContainerHealthCheck `pulumi:"healthChecks"`
 	// A URL identifying the image that the container runs in, such as docker.io/library/busybox:latest. If you do not provide a tag, the tag will default to latest.
 	//
@@ -2780,7 +2799,7 @@ type ContainerInstanceContainerArgs struct {
 	FaultDomain pulumi.StringPtrInput `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
-	// list of container health checks to check container status and take appropriate action if container status is failed. There are three types of health checks that we currently support HTTP, TCP, and Command.
+	// list of container health checks to check container status and take appropriate action if container status is failed. There are two types of health checks that we currently support HTTP and TCP.
 	HealthChecks ContainerInstanceContainerHealthCheckArrayInput `pulumi:"healthChecks"`
 	// A URL identifying the image that the container runs in, such as docker.io/library/busybox:latest. If you do not provide a tag, the tag will default to latest.
 	//
@@ -2931,7 +2950,7 @@ func (o ContainerInstanceContainerOutput) FreeformTags() pulumi.StringMapOutput 
 	return o.ApplyT(func(v ContainerInstanceContainer) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// list of container health checks to check container status and take appropriate action if container status is failed. There are three types of health checks that we currently support HTTP, TCP, and Command.
+// list of container health checks to check container status and take appropriate action if container status is failed. There are two types of health checks that we currently support HTTP and TCP.
 func (o ContainerInstanceContainerOutput) HealthChecks() ContainerInstanceContainerHealthCheckArrayOutput {
 	return o.ApplyT(func(v ContainerInstanceContainer) []ContainerInstanceContainerHealthCheck { return v.HealthChecks }).(ContainerInstanceContainerHealthCheckArrayOutput)
 }
@@ -3027,8 +3046,6 @@ func (o ContainerInstanceContainerArrayOutput) Index(i pulumi.IntInput) Containe
 }
 
 type ContainerInstanceContainerHealthCheck struct {
-	// The list of strings that will be simplified to a single command for checking the status of the container.
-	Commands []string `pulumi:"commands"`
 	// The action will be triggered when the container health check fails. There are two types of action: KILL or NONE. The default action is KILL. If failure action is KILL, the container will be subject to the container restart policy.
 	FailureAction *string `pulumi:"failureAction"`
 	// Number of consecutive failures at which we consider the check failed.
@@ -3046,7 +3063,7 @@ type ContainerInstanceContainerHealthCheck struct {
 	// Container health check HTTP path.
 	Path *string `pulumi:"path"`
 	// Container health check HTTP port.
-	Port          *int    `pulumi:"port"`
+	Port          int     `pulumi:"port"`
 	Status        *string `pulumi:"status"`
 	StatusDetails *string `pulumi:"statusDetails"`
 	// Number of consecutive successes at which we consider the check succeeded again after it was in failure state.
@@ -3067,8 +3084,6 @@ type ContainerInstanceContainerHealthCheckInput interface {
 }
 
 type ContainerInstanceContainerHealthCheckArgs struct {
-	// The list of strings that will be simplified to a single command for checking the status of the container.
-	Commands pulumi.StringArrayInput `pulumi:"commands"`
 	// The action will be triggered when the container health check fails. There are two types of action: KILL or NONE. The default action is KILL. If failure action is KILL, the container will be subject to the container restart policy.
 	FailureAction pulumi.StringPtrInput `pulumi:"failureAction"`
 	// Number of consecutive failures at which we consider the check failed.
@@ -3086,7 +3101,7 @@ type ContainerInstanceContainerHealthCheckArgs struct {
 	// Container health check HTTP path.
 	Path pulumi.StringPtrInput `pulumi:"path"`
 	// Container health check HTTP port.
-	Port          pulumi.IntPtrInput    `pulumi:"port"`
+	Port          pulumi.IntInput       `pulumi:"port"`
 	Status        pulumi.StringPtrInput `pulumi:"status"`
 	StatusDetails pulumi.StringPtrInput `pulumi:"statusDetails"`
 	// Number of consecutive successes at which we consider the check succeeded again after it was in failure state.
@@ -3146,11 +3161,6 @@ func (o ContainerInstanceContainerHealthCheckOutput) ToContainerInstanceContaine
 	return o
 }
 
-// The list of strings that will be simplified to a single command for checking the status of the container.
-func (o ContainerInstanceContainerHealthCheckOutput) Commands() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v ContainerInstanceContainerHealthCheck) []string { return v.Commands }).(pulumi.StringArrayOutput)
-}
-
 // The action will be triggered when the container health check fails. There are two types of action: KILL or NONE. The default action is KILL. If failure action is KILL, the container will be subject to the container restart policy.
 func (o ContainerInstanceContainerHealthCheckOutput) FailureAction() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ContainerInstanceContainerHealthCheck) *string { return v.FailureAction }).(pulumi.StringPtrOutput)
@@ -3194,8 +3204,8 @@ func (o ContainerInstanceContainerHealthCheckOutput) Path() pulumi.StringPtrOutp
 }
 
 // Container health check HTTP port.
-func (o ContainerInstanceContainerHealthCheckOutput) Port() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v ContainerInstanceContainerHealthCheck) *int { return v.Port }).(pulumi.IntPtrOutput)
+func (o ContainerInstanceContainerHealthCheckOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v ContainerInstanceContainerHealthCheck) int { return v.Port }).(pulumi.IntOutput)
 }
 
 func (o ContainerInstanceContainerHealthCheckOutput) Status() pulumi.StringPtrOutput {
@@ -9910,8 +9920,10 @@ type GetClusterOption struct {
 	// IP family to use for single stack or define the order of IP families for dual-stack
 	IpFamilies []string `pulumi:"ipFamilies"`
 	// Network configuration for Kubernetes.
-	KubernetesNetworkConfigs                []GetClusterOptionKubernetesNetworkConfig                `pulumi:"kubernetesNetworkConfigs"`
-	OpenIdConnectDiscoveries                []GetClusterOptionOpenIdConnectDiscovery                 `pulumi:"openIdConnectDiscoveries"`
+	KubernetesNetworkConfigs []GetClusterOptionKubernetesNetworkConfig `pulumi:"kubernetesNetworkConfigs"`
+	// The property that define the status of the OIDC Discovery feature for a cluster.
+	OpenIdConnectDiscoveries []GetClusterOptionOpenIdConnectDiscovery `pulumi:"openIdConnectDiscoveries"`
+	// The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
 	OpenIdConnectTokenAuthenticationConfigs []GetClusterOptionOpenIdConnectTokenAuthenticationConfig `pulumi:"openIdConnectTokenAuthenticationConfigs"`
 	// Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
 	PersistentVolumeConfigs []GetClusterOptionPersistentVolumeConfig `pulumi:"persistentVolumeConfigs"`
@@ -9940,8 +9952,10 @@ type GetClusterOptionArgs struct {
 	// IP family to use for single stack or define the order of IP families for dual-stack
 	IpFamilies pulumi.StringArrayInput `pulumi:"ipFamilies"`
 	// Network configuration for Kubernetes.
-	KubernetesNetworkConfigs                GetClusterOptionKubernetesNetworkConfigArrayInput                `pulumi:"kubernetesNetworkConfigs"`
-	OpenIdConnectDiscoveries                GetClusterOptionOpenIdConnectDiscoveryArrayInput                 `pulumi:"openIdConnectDiscoveries"`
+	KubernetesNetworkConfigs GetClusterOptionKubernetesNetworkConfigArrayInput `pulumi:"kubernetesNetworkConfigs"`
+	// The property that define the status of the OIDC Discovery feature for a cluster.
+	OpenIdConnectDiscoveries GetClusterOptionOpenIdConnectDiscoveryArrayInput `pulumi:"openIdConnectDiscoveries"`
+	// The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
 	OpenIdConnectTokenAuthenticationConfigs GetClusterOptionOpenIdConnectTokenAuthenticationConfigArrayInput `pulumi:"openIdConnectTokenAuthenticationConfigs"`
 	// Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
 	PersistentVolumeConfigs GetClusterOptionPersistentVolumeConfigArrayInput `pulumi:"persistentVolumeConfigs"`
@@ -10024,10 +10038,12 @@ func (o GetClusterOptionOutput) KubernetesNetworkConfigs() GetClusterOptionKuber
 	return o.ApplyT(func(v GetClusterOption) []GetClusterOptionKubernetesNetworkConfig { return v.KubernetesNetworkConfigs }).(GetClusterOptionKubernetesNetworkConfigArrayOutput)
 }
 
+// The property that define the status of the OIDC Discovery feature for a cluster.
 func (o GetClusterOptionOutput) OpenIdConnectDiscoveries() GetClusterOptionOpenIdConnectDiscoveryArrayOutput {
 	return o.ApplyT(func(v GetClusterOption) []GetClusterOptionOpenIdConnectDiscovery { return v.OpenIdConnectDiscoveries }).(GetClusterOptionOpenIdConnectDiscoveryArrayOutput)
 }
 
+// The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
 func (o GetClusterOptionOutput) OpenIdConnectTokenAuthenticationConfigs() GetClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput {
 	return o.ApplyT(func(v GetClusterOption) []GetClusterOptionOpenIdConnectTokenAuthenticationConfig {
 		return v.OpenIdConnectTokenAuthenticationConfigs
@@ -10476,6 +10492,7 @@ func (o GetClusterOptionKubernetesNetworkConfigArrayOutput) Index(i pulumi.IntIn
 }
 
 type GetClusterOptionOpenIdConnectDiscovery struct {
+	// Whether the cluster has OIDC Discovery enabled. Defaults to false. If set to true, the cluster will be assigned a public OIDC Discovery endpoint.
 	IsOpenIdConnectDiscoveryEnabled bool `pulumi:"isOpenIdConnectDiscoveryEnabled"`
 }
 
@@ -10491,6 +10508,7 @@ type GetClusterOptionOpenIdConnectDiscoveryInput interface {
 }
 
 type GetClusterOptionOpenIdConnectDiscoveryArgs struct {
+	// Whether the cluster has OIDC Discovery enabled. Defaults to false. If set to true, the cluster will be assigned a public OIDC Discovery endpoint.
 	IsOpenIdConnectDiscoveryEnabled pulumi.BoolInput `pulumi:"isOpenIdConnectDiscoveryEnabled"`
 }
 
@@ -10545,6 +10563,7 @@ func (o GetClusterOptionOpenIdConnectDiscoveryOutput) ToGetClusterOptionOpenIdCo
 	return o
 }
 
+// Whether the cluster has OIDC Discovery enabled. Defaults to false. If set to true, the cluster will be assigned a public OIDC Discovery endpoint.
 func (o GetClusterOptionOpenIdConnectDiscoveryOutput) IsOpenIdConnectDiscoveryEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetClusterOptionOpenIdConnectDiscovery) bool { return v.IsOpenIdConnectDiscoveryEnabled }).(pulumi.BoolOutput)
 }
@@ -10570,16 +10589,28 @@ func (o GetClusterOptionOpenIdConnectDiscoveryArrayOutput) Index(i pulumi.IntInp
 }
 
 type GetClusterOptionOpenIdConnectTokenAuthenticationConfig struct {
-	CaCertificate              string                                                                `pulumi:"caCertificate"`
-	ClientId                   string                                                                `pulumi:"clientId"`
-	GroupsClaim                string                                                                `pulumi:"groupsClaim"`
-	GroupsPrefix               string                                                                `pulumi:"groupsPrefix"`
-	IsOpenIdConnectAuthEnabled bool                                                                  `pulumi:"isOpenIdConnectAuthEnabled"`
-	IssuerUrl                  string                                                                `pulumi:"issuerUrl"`
-	RequiredClaims             []GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaim `pulumi:"requiredClaims"`
-	SigningAlgorithms          []string                                                              `pulumi:"signingAlgorithms"`
-	UsernameClaim              string                                                                `pulumi:"usernameClaim"`
-	UsernamePrefix             string                                                                `pulumi:"usernamePrefix"`
+	// A Base64 encoded public RSA or ECDSA certificates used to signed your identity provider's web certificate.
+	CaCertificate string `pulumi:"caCertificate"`
+	// A client id that all tokens must be issued for.
+	ClientId string `pulumi:"clientId"`
+	// A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+	ConfigurationFile string `pulumi:"configurationFile"`
+	// JWT claim to use as the user's group. If the claim is present it must be an array of strings.
+	GroupsClaim string `pulumi:"groupsClaim"`
+	// Prefix prepended to group claims to prevent clashes with existing names (such as system:groups).
+	GroupsPrefix string `pulumi:"groupsPrefix"`
+	// Whether the cluster has OIDC Auth Config enabled. Defaults to false.
+	IsOpenIdConnectAuthEnabled bool `pulumi:"isOpenIdConnectAuthEnabled"`
+	// URL of the provider that allows the API server to discover public signing keys.  Only URLs that use the https:// scheme are accepted. This is typically the provider's discovery URL,  changed to have an empty path.
+	IssuerUrl string `pulumi:"issuerUrl"`
+	// A key=value pair that describes a required claim in the ID Token. If set, the claim is verified to be present  in the ID Token with a matching value. Repeat this flag to specify multiple claims.
+	RequiredClaims []GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaim `pulumi:"requiredClaims"`
+	// The signing algorithms accepted. Default is ["RS256"].
+	SigningAlgorithms []string `pulumi:"signingAlgorithms"`
+	// JWT claim to use as the user name. By default sub, which is expected to be a unique identifier of the end  user. Admins can choose other claims, such as email or name, depending on their provider. However, claims  other than email will be prefixed with the issuer URL to prevent naming clashes with other plugins.
+	UsernameClaim string `pulumi:"usernameClaim"`
+	// Prefix prepended to username claims to prevent clashes with existing names (such as system:users).  For example, the value oidc: will create usernames like oidc:jane.doe. If this flag isn't provided and  --oidc-username-claim is a value other than email the prefix defaults to ( Issuer URL )# where  ( Issuer URL ) is the value of --oidc-issuer-url. The value - can be used to disable all prefixing.
+	UsernamePrefix string `pulumi:"usernamePrefix"`
 }
 
 // GetClusterOptionOpenIdConnectTokenAuthenticationConfigInput is an input type that accepts GetClusterOptionOpenIdConnectTokenAuthenticationConfigArgs and GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput values.
@@ -10594,16 +10625,28 @@ type GetClusterOptionOpenIdConnectTokenAuthenticationConfigInput interface {
 }
 
 type GetClusterOptionOpenIdConnectTokenAuthenticationConfigArgs struct {
-	CaCertificate              pulumi.StringInput                                                            `pulumi:"caCertificate"`
-	ClientId                   pulumi.StringInput                                                            `pulumi:"clientId"`
-	GroupsClaim                pulumi.StringInput                                                            `pulumi:"groupsClaim"`
-	GroupsPrefix               pulumi.StringInput                                                            `pulumi:"groupsPrefix"`
-	IsOpenIdConnectAuthEnabled pulumi.BoolInput                                                              `pulumi:"isOpenIdConnectAuthEnabled"`
-	IssuerUrl                  pulumi.StringInput                                                            `pulumi:"issuerUrl"`
-	RequiredClaims             GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayInput `pulumi:"requiredClaims"`
-	SigningAlgorithms          pulumi.StringArrayInput                                                       `pulumi:"signingAlgorithms"`
-	UsernameClaim              pulumi.StringInput                                                            `pulumi:"usernameClaim"`
-	UsernamePrefix             pulumi.StringInput                                                            `pulumi:"usernamePrefix"`
+	// A Base64 encoded public RSA or ECDSA certificates used to signed your identity provider's web certificate.
+	CaCertificate pulumi.StringInput `pulumi:"caCertificate"`
+	// A client id that all tokens must be issued for.
+	ClientId pulumi.StringInput `pulumi:"clientId"`
+	// A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+	ConfigurationFile pulumi.StringInput `pulumi:"configurationFile"`
+	// JWT claim to use as the user's group. If the claim is present it must be an array of strings.
+	GroupsClaim pulumi.StringInput `pulumi:"groupsClaim"`
+	// Prefix prepended to group claims to prevent clashes with existing names (such as system:groups).
+	GroupsPrefix pulumi.StringInput `pulumi:"groupsPrefix"`
+	// Whether the cluster has OIDC Auth Config enabled. Defaults to false.
+	IsOpenIdConnectAuthEnabled pulumi.BoolInput `pulumi:"isOpenIdConnectAuthEnabled"`
+	// URL of the provider that allows the API server to discover public signing keys.  Only URLs that use the https:// scheme are accepted. This is typically the provider's discovery URL,  changed to have an empty path.
+	IssuerUrl pulumi.StringInput `pulumi:"issuerUrl"`
+	// A key=value pair that describes a required claim in the ID Token. If set, the claim is verified to be present  in the ID Token with a matching value. Repeat this flag to specify multiple claims.
+	RequiredClaims GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayInput `pulumi:"requiredClaims"`
+	// The signing algorithms accepted. Default is ["RS256"].
+	SigningAlgorithms pulumi.StringArrayInput `pulumi:"signingAlgorithms"`
+	// JWT claim to use as the user name. By default sub, which is expected to be a unique identifier of the end  user. Admins can choose other claims, such as email or name, depending on their provider. However, claims  other than email will be prefixed with the issuer URL to prevent naming clashes with other plugins.
+	UsernameClaim pulumi.StringInput `pulumi:"usernameClaim"`
+	// Prefix prepended to username claims to prevent clashes with existing names (such as system:users).  For example, the value oidc: will create usernames like oidc:jane.doe. If this flag isn't provided and  --oidc-username-claim is a value other than email the prefix defaults to ( Issuer URL )# where  ( Issuer URL ) is the value of --oidc-issuer-url. The value - can be used to disable all prefixing.
+	UsernamePrefix pulumi.StringInput `pulumi:"usernamePrefix"`
 }
 
 func (GetClusterOptionOpenIdConnectTokenAuthenticationConfigArgs) ElementType() reflect.Type {
@@ -10657,46 +10700,61 @@ func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) ToGetClust
 	return o
 }
 
+// A Base64 encoded public RSA or ECDSA certificates used to signed your identity provider's web certificate.
 func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) CaCertificate() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterOptionOpenIdConnectTokenAuthenticationConfig) string { return v.CaCertificate }).(pulumi.StringOutput)
 }
 
+// A client id that all tokens must be issued for.
 func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) ClientId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterOptionOpenIdConnectTokenAuthenticationConfig) string { return v.ClientId }).(pulumi.StringOutput)
 }
 
+// A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) ConfigurationFile() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterOptionOpenIdConnectTokenAuthenticationConfig) string { return v.ConfigurationFile }).(pulumi.StringOutput)
+}
+
+// JWT claim to use as the user's group. If the claim is present it must be an array of strings.
 func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) GroupsClaim() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterOptionOpenIdConnectTokenAuthenticationConfig) string { return v.GroupsClaim }).(pulumi.StringOutput)
 }
 
+// Prefix prepended to group claims to prevent clashes with existing names (such as system:groups).
 func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) GroupsPrefix() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterOptionOpenIdConnectTokenAuthenticationConfig) string { return v.GroupsPrefix }).(pulumi.StringOutput)
 }
 
+// Whether the cluster has OIDC Auth Config enabled. Defaults to false.
 func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) IsOpenIdConnectAuthEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetClusterOptionOpenIdConnectTokenAuthenticationConfig) bool {
 		return v.IsOpenIdConnectAuthEnabled
 	}).(pulumi.BoolOutput)
 }
 
+// URL of the provider that allows the API server to discover public signing keys.  Only URLs that use the https:// scheme are accepted. This is typically the provider's discovery URL,  changed to have an empty path.
 func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) IssuerUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterOptionOpenIdConnectTokenAuthenticationConfig) string { return v.IssuerUrl }).(pulumi.StringOutput)
 }
 
+// A key=value pair that describes a required claim in the ID Token. If set, the claim is verified to be present  in the ID Token with a matching value. Repeat this flag to specify multiple claims.
 func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) RequiredClaims() GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput {
 	return o.ApplyT(func(v GetClusterOptionOpenIdConnectTokenAuthenticationConfig) []GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaim {
 		return v.RequiredClaims
 	}).(GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput)
 }
 
+// The signing algorithms accepted. Default is ["RS256"].
 func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) SigningAlgorithms() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterOptionOpenIdConnectTokenAuthenticationConfig) []string { return v.SigningAlgorithms }).(pulumi.StringArrayOutput)
 }
 
+// JWT claim to use as the user name. By default sub, which is expected to be a unique identifier of the end  user. Admins can choose other claims, such as email or name, depending on their provider. However, claims  other than email will be prefixed with the issuer URL to prevent naming clashes with other plugins.
 func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) UsernameClaim() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterOptionOpenIdConnectTokenAuthenticationConfig) string { return v.UsernameClaim }).(pulumi.StringOutput)
 }
 
+// Prefix prepended to username claims to prevent clashes with existing names (such as system:users).  For example, the value oidc: will create usernames like oidc:jane.doe. If this flag isn't provided and  --oidc-username-claim is a value other than email the prefix defaults to ( Issuer URL )# where  ( Issuer URL ) is the value of --oidc-issuer-url. The value - can be used to disable all prefixing.
 func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) UsernamePrefix() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterOptionOpenIdConnectTokenAuthenticationConfig) string { return v.UsernamePrefix }).(pulumi.StringOutput)
 }
@@ -10722,7 +10780,9 @@ func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput) Index
 }
 
 type GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaim struct {
-	Key   string `pulumi:"key"`
+	// The key of the pair.
+	Key string `pulumi:"key"`
+	// The value of the pair.
 	Value string `pulumi:"value"`
 }
 
@@ -10738,7 +10798,9 @@ type GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimInput in
 }
 
 type GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs struct {
-	Key   pulumi.StringInput `pulumi:"key"`
+	// The key of the pair.
+	Key pulumi.StringInput `pulumi:"key"`
+	// The value of the pair.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -10793,10 +10855,12 @@ func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutpu
 	return o
 }
 
+// The key of the pair.
 func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaim) string { return v.Key }).(pulumi.StringOutput)
 }
 
+// The value of the pair.
 func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaim) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -12887,6 +12951,8 @@ type GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfig struct {
 	CaCertificate string `pulumi:"caCertificate"`
 	// A client id that all tokens must be issued for.
 	ClientId string `pulumi:"clientId"`
+	// A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+	ConfigurationFile string `pulumi:"configurationFile"`
 	// JWT claim to use as the user's group. If the claim is present it must be an array of strings.
 	GroupsClaim string `pulumi:"groupsClaim"`
 	// Prefix prepended to group claims to prevent clashes with existing names (such as system:groups).
@@ -12921,6 +12987,8 @@ type GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArgs struct {
 	CaCertificate pulumi.StringInput `pulumi:"caCertificate"`
 	// A client id that all tokens must be issued for.
 	ClientId pulumi.StringInput `pulumi:"clientId"`
+	// A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+	ConfigurationFile pulumi.StringInput `pulumi:"configurationFile"`
 	// JWT claim to use as the user's group. If the claim is present it must be an array of strings.
 	GroupsClaim pulumi.StringInput `pulumi:"groupsClaim"`
 	// Prefix prepended to group claims to prevent clashes with existing names (such as system:groups).
@@ -12998,6 +13066,13 @@ func (o GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) Ca
 // A client id that all tokens must be issued for.
 func (o GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) ClientId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfig) string { return v.ClientId }).(pulumi.StringOutput)
+}
+
+// A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+func (o GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) ConfigurationFile() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfig) string {
+		return v.ConfigurationFile
+	}).(pulumi.StringOutput)
 }
 
 // JWT claim to use as the user's group. If the claim is present it must be an array of strings.

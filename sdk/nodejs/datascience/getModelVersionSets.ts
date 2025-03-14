@@ -19,6 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testModelVersionSets = oci.DataScience.getModelVersionSets({
  *     compartmentId: compartmentId,
+ *     category: modelVersionSetCategory,
  *     createdBy: modelVersionSetCreatedBy,
  *     id: modelVersionSetId,
  *     name: modelVersionSetName,
@@ -30,6 +31,7 @@ import * as utilities from "../utilities";
 export function getModelVersionSets(args: GetModelVersionSetsArgs, opts?: pulumi.InvokeOptions): Promise<GetModelVersionSetsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataScience/getModelVersionSets:getModelVersionSets", {
+        "category": args.category,
         "compartmentId": args.compartmentId,
         "createdBy": args.createdBy,
         "filters": args.filters,
@@ -44,6 +46,10 @@ export function getModelVersionSets(args: GetModelVersionSetsArgs, opts?: pulumi
  * A collection of arguments for invoking getModelVersionSets.
  */
 export interface GetModelVersionSetsArgs {
+    /**
+     * Specifies the type of model version sets to list. By default, user model version sets are listed.
+     */
+    category?: string;
     /**
      * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -75,6 +81,10 @@ export interface GetModelVersionSetsArgs {
  * A collection of values returned by getModelVersionSets.
  */
 export interface GetModelVersionSetsResult {
+    /**
+     * The category of the model version set.
+     */
+    readonly category?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model version set compartment.
      */
@@ -118,6 +128,7 @@ export interface GetModelVersionSetsResult {
  *
  * const testModelVersionSets = oci.DataScience.getModelVersionSets({
  *     compartmentId: compartmentId,
+ *     category: modelVersionSetCategory,
  *     createdBy: modelVersionSetCreatedBy,
  *     id: modelVersionSetId,
  *     name: modelVersionSetName,
@@ -129,6 +140,7 @@ export interface GetModelVersionSetsResult {
 export function getModelVersionSetsOutput(args: GetModelVersionSetsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetModelVersionSetsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataScience/getModelVersionSets:getModelVersionSets", {
+        "category": args.category,
         "compartmentId": args.compartmentId,
         "createdBy": args.createdBy,
         "filters": args.filters,
@@ -143,6 +155,10 @@ export function getModelVersionSetsOutput(args: GetModelVersionSetsOutputArgs, o
  * A collection of arguments for invoking getModelVersionSets.
  */
 export interface GetModelVersionSetsOutputArgs {
+    /**
+     * Specifies the type of model version sets to list. By default, user model version sets are listed.
+     */
+    category?: pulumi.Input<string>;
     /**
      * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */

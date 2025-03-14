@@ -64,7 +64,7 @@ type LookupDbSystemResult struct {
 	// The database system administrator username.
 	AdminUsername string `pulumi:"adminUsername"`
 	ApplyConfig   string `pulumi:"applyConfig"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
+	// target compartment to place a new backup
 	CompartmentId string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
 	ConfigId    string                  `pulumi:"configId"`
@@ -162,7 +162,7 @@ func (o LookupDbSystemResultOutput) ApplyConfig() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) string { return v.ApplyConfig }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
+// target compartment to place a new backup
 func (o LookupDbSystemResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }

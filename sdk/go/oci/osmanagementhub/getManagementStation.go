@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Management Station resource in Oracle Cloud Infrastructure Os Management Hub service.
 //
-// Gets information about the specified management station.
+// Returns information about the specified management station.
 //
 // ## Example Usage
 //
@@ -64,7 +64,7 @@ type LookupManagementStationResult struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Explanation of the health status.
 	Description string `pulumi:"description"`
-	// A user-friendly name for the management station.
+	// User-friendly name for the management station.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
@@ -74,19 +74,35 @@ type LookupManagementStationResult struct {
 	Hostname string `pulumi:"hostname"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
 	Id string `pulumi:"id"`
+	// When enabled, the station setup script automatically runs to configure the firewall and SELinux settings on the station.
+	IsAutoConfigEnabled bool `pulumi:"isAutoConfigEnabled"`
+	// The location of the instance that is acting as the management station.
+	Location string `pulumi:"location"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
 	ManagedInstanceId   string `pulumi:"managedInstanceId"`
 	ManagementStationId string `pulumi:"managementStationId"`
 	// A decimal number representing the amount of mirror capacity used by the sync.
 	MirrorCapacity int `pulumi:"mirrorCapacity"`
+	// The total number of all packages within the mirrored software sources.
+	MirrorPackageCount int `pulumi:"mirrorPackageCount"`
+	// The total size of all software source mirrors in bytes.
+	MirrorSize string `pulumi:"mirrorSize"`
+	// Amount of available mirror storage in bytes.
+	MirrorStorageAvailableSize string `pulumi:"mirrorStorageAvailableSize"`
+	// Total mirror storage size in bytes.
+	MirrorStorageSize string `pulumi:"mirrorStorageSize"`
 	// Status summary of the mirror sync.
 	MirrorSyncStatuses []GetManagementStationMirrorSyncStatus `pulumi:"mirrorSyncStatuses"`
+	// The total number of unique packages within the mirrored software sources on the station. Each package is counted only once, regardless of how many versions it has.
+	MirrorUniquePackageCount int `pulumi:"mirrorUniquePackageCount"`
 	// Mirror information used for the management station configuration.
 	Mirrors []GetManagementStationMirror `pulumi:"mirrors"`
 	// A decimal number representing the progress of the current mirror sync.
 	OverallPercentage int `pulumi:"overallPercentage"`
 	// Current state of the mirror sync for the management station.
 	OverallState string `pulumi:"overallState"`
+	// A list of other management stations that are behind the same load balancer within a high availability configuration. Stations are identified as peers if they have the same hostname and compartment.
+	PeerManagementStations []GetManagementStationPeerManagementStation `pulumi:"peerManagementStations"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
 	ProfileId string `pulumi:"profileId"`
 	// Proxy information used for the management station configuration.
@@ -151,7 +167,7 @@ func (o LookupManagementStationResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagementStationResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// A user-friendly name for the management station.
+// User-friendly name for the management station.
 func (o LookupManagementStationResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagementStationResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -176,6 +192,16 @@ func (o LookupManagementStationResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagementStationResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// When enabled, the station setup script automatically runs to configure the firewall and SELinux settings on the station.
+func (o LookupManagementStationResultOutput) IsAutoConfigEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupManagementStationResult) bool { return v.IsAutoConfigEnabled }).(pulumi.BoolOutput)
+}
+
+// The location of the instance that is acting as the management station.
+func (o LookupManagementStationResultOutput) Location() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupManagementStationResult) string { return v.Location }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
 func (o LookupManagementStationResultOutput) ManagedInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagementStationResult) string { return v.ManagedInstanceId }).(pulumi.StringOutput)
@@ -190,11 +216,36 @@ func (o LookupManagementStationResultOutput) MirrorCapacity() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupManagementStationResult) int { return v.MirrorCapacity }).(pulumi.IntOutput)
 }
 
+// The total number of all packages within the mirrored software sources.
+func (o LookupManagementStationResultOutput) MirrorPackageCount() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupManagementStationResult) int { return v.MirrorPackageCount }).(pulumi.IntOutput)
+}
+
+// The total size of all software source mirrors in bytes.
+func (o LookupManagementStationResultOutput) MirrorSize() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupManagementStationResult) string { return v.MirrorSize }).(pulumi.StringOutput)
+}
+
+// Amount of available mirror storage in bytes.
+func (o LookupManagementStationResultOutput) MirrorStorageAvailableSize() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupManagementStationResult) string { return v.MirrorStorageAvailableSize }).(pulumi.StringOutput)
+}
+
+// Total mirror storage size in bytes.
+func (o LookupManagementStationResultOutput) MirrorStorageSize() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupManagementStationResult) string { return v.MirrorStorageSize }).(pulumi.StringOutput)
+}
+
 // Status summary of the mirror sync.
 func (o LookupManagementStationResultOutput) MirrorSyncStatuses() GetManagementStationMirrorSyncStatusArrayOutput {
 	return o.ApplyT(func(v LookupManagementStationResult) []GetManagementStationMirrorSyncStatus {
 		return v.MirrorSyncStatuses
 	}).(GetManagementStationMirrorSyncStatusArrayOutput)
+}
+
+// The total number of unique packages within the mirrored software sources on the station. Each package is counted only once, regardless of how many versions it has.
+func (o LookupManagementStationResultOutput) MirrorUniquePackageCount() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupManagementStationResult) int { return v.MirrorUniquePackageCount }).(pulumi.IntOutput)
 }
 
 // Mirror information used for the management station configuration.
@@ -210,6 +261,13 @@ func (o LookupManagementStationResultOutput) OverallPercentage() pulumi.IntOutpu
 // Current state of the mirror sync for the management station.
 func (o LookupManagementStationResultOutput) OverallState() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagementStationResult) string { return v.OverallState }).(pulumi.StringOutput)
+}
+
+// A list of other management stations that are behind the same load balancer within a high availability configuration. Stations are identified as peers if they have the same hostname and compartment.
+func (o LookupManagementStationResultOutput) PeerManagementStations() GetManagementStationPeerManagementStationArrayOutput {
+	return o.ApplyT(func(v LookupManagementStationResult) []GetManagementStationPeerManagementStation {
+		return v.PeerManagementStations
+	}).(GetManagementStationPeerManagementStationArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.

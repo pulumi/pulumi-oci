@@ -64,7 +64,7 @@ export interface GetManagementStationMirrorsArgs {
  */
 export interface GetManagementStationMirrorsResult {
     /**
-     * Display name of the mirror
+     * Display name of the mirror.
      */
     readonly displayName?: string;
     readonly displayNameContains?: string;

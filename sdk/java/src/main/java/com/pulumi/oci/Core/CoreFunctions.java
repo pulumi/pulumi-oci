@@ -88,6 +88,16 @@ import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasVersionA
 import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasVersionPlainArgs;
 import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasVersionsArgs;
 import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasVersionsPlainArgs;
+import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryClusterArgs;
+import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryClusterInstancesArgs;
+import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryClusterInstancesPlainArgs;
+import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryClusterPlainArgs;
+import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryClustersArgs;
+import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryClustersPlainArgs;
+import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryFabricArgs;
+import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryFabricPlainArgs;
+import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryFabricsArgs;
+import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryFabricsPlainArgs;
 import com.pulumi.oci.Core.inputs.GetComputeImageCapabilitySchemaArgs;
 import com.pulumi.oci.Core.inputs.GetComputeImageCapabilitySchemaPlainArgs;
 import com.pulumi.oci.Core.inputs.GetComputeImageCapabilitySchemasArgs;
@@ -356,6 +366,11 @@ import com.pulumi.oci.Core.outputs.GetComputeGlobalImageCapabilitySchemaResult;
 import com.pulumi.oci.Core.outputs.GetComputeGlobalImageCapabilitySchemasResult;
 import com.pulumi.oci.Core.outputs.GetComputeGlobalImageCapabilitySchemasVersionResult;
 import com.pulumi.oci.Core.outputs.GetComputeGlobalImageCapabilitySchemasVersionsResult;
+import com.pulumi.oci.Core.outputs.GetComputeGpuMemoryClusterInstancesResult;
+import com.pulumi.oci.Core.outputs.GetComputeGpuMemoryClusterResult;
+import com.pulumi.oci.Core.outputs.GetComputeGpuMemoryClustersResult;
+import com.pulumi.oci.Core.outputs.GetComputeGpuMemoryFabricResult;
+import com.pulumi.oci.Core.outputs.GetComputeGpuMemoryFabricsResult;
 import com.pulumi.oci.Core.outputs.GetComputeImageCapabilitySchemaResult;
 import com.pulumi.oci.Core.outputs.GetComputeImageCapabilitySchemasResult;
 import com.pulumi.oci.Core.outputs.GetConsoleHistoriesResult;
@@ -10081,6 +10096,1161 @@ public final class CoreFunctions {
      */
     public static CompletableFuture<GetComputeGlobalImageCapabilitySchemasVersionsResult> getComputeGlobalImageCapabilitySchemasVersionsPlain(GetComputeGlobalImageCapabilitySchemasVersionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getComputeGlobalImageCapabilitySchemasVersions:getComputeGlobalImageCapabilitySchemasVersions", TypeShape.of(GetComputeGlobalImageCapabilitySchemasVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Compute Gpu Memory Cluster resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified compute GPU memory cluster
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGpuMemoryCluster = CoreFunctions.getComputeGpuMemoryCluster(GetComputeGpuMemoryClusterArgs.builder()
+     *             .computeGpuMemoryClusterId(testComputeGpuMemoryClusterOciCoreComputeGpuMemoryCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetComputeGpuMemoryClusterResult> getComputeGpuMemoryCluster(GetComputeGpuMemoryClusterArgs args) {
+        return getComputeGpuMemoryCluster(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Compute Gpu Memory Cluster resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified compute GPU memory cluster
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGpuMemoryCluster = CoreFunctions.getComputeGpuMemoryCluster(GetComputeGpuMemoryClusterArgs.builder()
+     *             .computeGpuMemoryClusterId(testComputeGpuMemoryClusterOciCoreComputeGpuMemoryCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetComputeGpuMemoryClusterResult> getComputeGpuMemoryClusterPlain(GetComputeGpuMemoryClusterPlainArgs args) {
+        return getComputeGpuMemoryClusterPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Compute Gpu Memory Cluster resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified compute GPU memory cluster
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGpuMemoryCluster = CoreFunctions.getComputeGpuMemoryCluster(GetComputeGpuMemoryClusterArgs.builder()
+     *             .computeGpuMemoryClusterId(testComputeGpuMemoryClusterOciCoreComputeGpuMemoryCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetComputeGpuMemoryClusterResult> getComputeGpuMemoryCluster(GetComputeGpuMemoryClusterArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeGpuMemoryCluster:getComputeGpuMemoryCluster", TypeShape.of(GetComputeGpuMemoryClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Compute Gpu Memory Cluster resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified compute GPU memory cluster
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGpuMemoryCluster = CoreFunctions.getComputeGpuMemoryCluster(GetComputeGpuMemoryClusterArgs.builder()
+     *             .computeGpuMemoryClusterId(testComputeGpuMemoryClusterOciCoreComputeGpuMemoryCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetComputeGpuMemoryClusterResult> getComputeGpuMemoryCluster(GetComputeGpuMemoryClusterArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeGpuMemoryCluster:getComputeGpuMemoryCluster", TypeShape.of(GetComputeGpuMemoryClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Compute Gpu Memory Cluster resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified compute GPU memory cluster
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGpuMemoryCluster = CoreFunctions.getComputeGpuMemoryCluster(GetComputeGpuMemoryClusterArgs.builder()
+     *             .computeGpuMemoryClusterId(testComputeGpuMemoryClusterOciCoreComputeGpuMemoryCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetComputeGpuMemoryClusterResult> getComputeGpuMemoryClusterPlain(GetComputeGpuMemoryClusterPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Core/getComputeGpuMemoryCluster:getComputeGpuMemoryCluster", TypeShape.of(GetComputeGpuMemoryClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Gpu Memory Cluster Instances in Oracle Cloud Infrastructure Core service.
+     * 
+     * List all of the GPU memory cluster instances.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryClusterInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGpuMemoryClusterInstances = CoreFunctions.getComputeGpuMemoryClusterInstances(GetComputeGpuMemoryClusterInstancesArgs.builder()
+     *             .computeGpuMemoryClusterId(testComputeGpuMemoryCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetComputeGpuMemoryClusterInstancesResult> getComputeGpuMemoryClusterInstances(GetComputeGpuMemoryClusterInstancesArgs args) {
+        return getComputeGpuMemoryClusterInstances(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Compute Gpu Memory Cluster Instances in Oracle Cloud Infrastructure Core service.
+     * 
+     * List all of the GPU memory cluster instances.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryClusterInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGpuMemoryClusterInstances = CoreFunctions.getComputeGpuMemoryClusterInstances(GetComputeGpuMemoryClusterInstancesArgs.builder()
+     *             .computeGpuMemoryClusterId(testComputeGpuMemoryCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetComputeGpuMemoryClusterInstancesResult> getComputeGpuMemoryClusterInstancesPlain(GetComputeGpuMemoryClusterInstancesPlainArgs args) {
+        return getComputeGpuMemoryClusterInstancesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Compute Gpu Memory Cluster Instances in Oracle Cloud Infrastructure Core service.
+     * 
+     * List all of the GPU memory cluster instances.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryClusterInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGpuMemoryClusterInstances = CoreFunctions.getComputeGpuMemoryClusterInstances(GetComputeGpuMemoryClusterInstancesArgs.builder()
+     *             .computeGpuMemoryClusterId(testComputeGpuMemoryCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetComputeGpuMemoryClusterInstancesResult> getComputeGpuMemoryClusterInstances(GetComputeGpuMemoryClusterInstancesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeGpuMemoryClusterInstances:getComputeGpuMemoryClusterInstances", TypeShape.of(GetComputeGpuMemoryClusterInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Gpu Memory Cluster Instances in Oracle Cloud Infrastructure Core service.
+     * 
+     * List all of the GPU memory cluster instances.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryClusterInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGpuMemoryClusterInstances = CoreFunctions.getComputeGpuMemoryClusterInstances(GetComputeGpuMemoryClusterInstancesArgs.builder()
+     *             .computeGpuMemoryClusterId(testComputeGpuMemoryCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetComputeGpuMemoryClusterInstancesResult> getComputeGpuMemoryClusterInstances(GetComputeGpuMemoryClusterInstancesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeGpuMemoryClusterInstances:getComputeGpuMemoryClusterInstances", TypeShape.of(GetComputeGpuMemoryClusterInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Gpu Memory Cluster Instances in Oracle Cloud Infrastructure Core service.
+     * 
+     * List all of the GPU memory cluster instances.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryClusterInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGpuMemoryClusterInstances = CoreFunctions.getComputeGpuMemoryClusterInstances(GetComputeGpuMemoryClusterInstancesArgs.builder()
+     *             .computeGpuMemoryClusterId(testComputeGpuMemoryCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetComputeGpuMemoryClusterInstancesResult> getComputeGpuMemoryClusterInstancesPlain(GetComputeGpuMemoryClusterInstancesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Core/getComputeGpuMemoryClusterInstances:getComputeGpuMemoryClusterInstances", TypeShape.of(GetComputeGpuMemoryClusterInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Gpu Memory Clusters in Oracle Cloud Infrastructure Core service.
+     * 
+     * List all of the compute GPU memory clusters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGpuMemoryClusters = CoreFunctions.getComputeGpuMemoryClusters(GetComputeGpuMemoryClustersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(computeGpuMemoryClusterAvailabilityDomain)
+     *             .computeClusterId(testComputeCluster.id())
+     *             .computeGpuMemoryClusterId(testComputeGpuMemoryCluster.id())
+     *             .displayName(computeGpuMemoryClusterDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetComputeGpuMemoryClustersResult> getComputeGpuMemoryClusters(GetComputeGpuMemoryClustersArgs args) {
+        return getComputeGpuMemoryClusters(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Compute Gpu Memory Clusters in Oracle Cloud Infrastructure Core service.
+     * 
+     * List all of the compute GPU memory clusters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGpuMemoryClusters = CoreFunctions.getComputeGpuMemoryClusters(GetComputeGpuMemoryClustersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(computeGpuMemoryClusterAvailabilityDomain)
+     *             .computeClusterId(testComputeCluster.id())
+     *             .computeGpuMemoryClusterId(testComputeGpuMemoryCluster.id())
+     *             .displayName(computeGpuMemoryClusterDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetComputeGpuMemoryClustersResult> getComputeGpuMemoryClustersPlain(GetComputeGpuMemoryClustersPlainArgs args) {
+        return getComputeGpuMemoryClustersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Compute Gpu Memory Clusters in Oracle Cloud Infrastructure Core service.
+     * 
+     * List all of the compute GPU memory clusters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGpuMemoryClusters = CoreFunctions.getComputeGpuMemoryClusters(GetComputeGpuMemoryClustersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(computeGpuMemoryClusterAvailabilityDomain)
+     *             .computeClusterId(testComputeCluster.id())
+     *             .computeGpuMemoryClusterId(testComputeGpuMemoryCluster.id())
+     *             .displayName(computeGpuMemoryClusterDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetComputeGpuMemoryClustersResult> getComputeGpuMemoryClusters(GetComputeGpuMemoryClustersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeGpuMemoryClusters:getComputeGpuMemoryClusters", TypeShape.of(GetComputeGpuMemoryClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Gpu Memory Clusters in Oracle Cloud Infrastructure Core service.
+     * 
+     * List all of the compute GPU memory clusters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGpuMemoryClusters = CoreFunctions.getComputeGpuMemoryClusters(GetComputeGpuMemoryClustersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(computeGpuMemoryClusterAvailabilityDomain)
+     *             .computeClusterId(testComputeCluster.id())
+     *             .computeGpuMemoryClusterId(testComputeGpuMemoryCluster.id())
+     *             .displayName(computeGpuMemoryClusterDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetComputeGpuMemoryClustersResult> getComputeGpuMemoryClusters(GetComputeGpuMemoryClustersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeGpuMemoryClusters:getComputeGpuMemoryClusters", TypeShape.of(GetComputeGpuMemoryClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Gpu Memory Clusters in Oracle Cloud Infrastructure Core service.
+     * 
+     * List all of the compute GPU memory clusters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGpuMemoryClusters = CoreFunctions.getComputeGpuMemoryClusters(GetComputeGpuMemoryClustersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(computeGpuMemoryClusterAvailabilityDomain)
+     *             .computeClusterId(testComputeCluster.id())
+     *             .computeGpuMemoryClusterId(testComputeGpuMemoryCluster.id())
+     *             .displayName(computeGpuMemoryClusterDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetComputeGpuMemoryClustersResult> getComputeGpuMemoryClustersPlain(GetComputeGpuMemoryClustersPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Core/getComputeGpuMemoryClusters:getComputeGpuMemoryClusters", TypeShape.of(GetComputeGpuMemoryClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Compute Gpu Memory Fabric resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified compute GPU memory fabric
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryFabricArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGpuMemoryFabric = CoreFunctions.getComputeGpuMemoryFabric(GetComputeGpuMemoryFabricArgs.builder()
+     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabricOciCoreComputeGpuMemoryFabric.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetComputeGpuMemoryFabricResult> getComputeGpuMemoryFabric(GetComputeGpuMemoryFabricArgs args) {
+        return getComputeGpuMemoryFabric(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Compute Gpu Memory Fabric resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified compute GPU memory fabric
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryFabricArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGpuMemoryFabric = CoreFunctions.getComputeGpuMemoryFabric(GetComputeGpuMemoryFabricArgs.builder()
+     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabricOciCoreComputeGpuMemoryFabric.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetComputeGpuMemoryFabricResult> getComputeGpuMemoryFabricPlain(GetComputeGpuMemoryFabricPlainArgs args) {
+        return getComputeGpuMemoryFabricPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Compute Gpu Memory Fabric resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified compute GPU memory fabric
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryFabricArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGpuMemoryFabric = CoreFunctions.getComputeGpuMemoryFabric(GetComputeGpuMemoryFabricArgs.builder()
+     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabricOciCoreComputeGpuMemoryFabric.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetComputeGpuMemoryFabricResult> getComputeGpuMemoryFabric(GetComputeGpuMemoryFabricArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeGpuMemoryFabric:getComputeGpuMemoryFabric", TypeShape.of(GetComputeGpuMemoryFabricResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Compute Gpu Memory Fabric resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified compute GPU memory fabric
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryFabricArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGpuMemoryFabric = CoreFunctions.getComputeGpuMemoryFabric(GetComputeGpuMemoryFabricArgs.builder()
+     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabricOciCoreComputeGpuMemoryFabric.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetComputeGpuMemoryFabricResult> getComputeGpuMemoryFabric(GetComputeGpuMemoryFabricArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeGpuMemoryFabric:getComputeGpuMemoryFabric", TypeShape.of(GetComputeGpuMemoryFabricResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Compute Gpu Memory Fabric resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified compute GPU memory fabric
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryFabricArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGpuMemoryFabric = CoreFunctions.getComputeGpuMemoryFabric(GetComputeGpuMemoryFabricArgs.builder()
+     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabricOciCoreComputeGpuMemoryFabric.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetComputeGpuMemoryFabricResult> getComputeGpuMemoryFabricPlain(GetComputeGpuMemoryFabricPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Core/getComputeGpuMemoryFabric:getComputeGpuMemoryFabric", TypeShape.of(GetComputeGpuMemoryFabricResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Gpu Memory Fabrics in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the compute GPU memory fabrics that match the specified criteria and compartmentId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryFabricsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGpuMemoryFabrics = CoreFunctions.getComputeGpuMemoryFabrics(GetComputeGpuMemoryFabricsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(computeGpuMemoryFabricAvailabilityDomain)
+     *             .computeGpuMemoryFabricHealth(computeGpuMemoryFabricComputeGpuMemoryFabricHealth)
+     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabric.id())
+     *             .computeGpuMemoryFabricLifecycleState(computeGpuMemoryFabricComputeGpuMemoryFabricLifecycleState)
+     *             .computeHpcIslandId(testComputeHpcIsland.id())
+     *             .computeNetworkBlockId(testComputeNetworkBlock.id())
+     *             .displayName(computeGpuMemoryFabricDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetComputeGpuMemoryFabricsResult> getComputeGpuMemoryFabrics(GetComputeGpuMemoryFabricsArgs args) {
+        return getComputeGpuMemoryFabrics(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Compute Gpu Memory Fabrics in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the compute GPU memory fabrics that match the specified criteria and compartmentId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryFabricsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGpuMemoryFabrics = CoreFunctions.getComputeGpuMemoryFabrics(GetComputeGpuMemoryFabricsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(computeGpuMemoryFabricAvailabilityDomain)
+     *             .computeGpuMemoryFabricHealth(computeGpuMemoryFabricComputeGpuMemoryFabricHealth)
+     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabric.id())
+     *             .computeGpuMemoryFabricLifecycleState(computeGpuMemoryFabricComputeGpuMemoryFabricLifecycleState)
+     *             .computeHpcIslandId(testComputeHpcIsland.id())
+     *             .computeNetworkBlockId(testComputeNetworkBlock.id())
+     *             .displayName(computeGpuMemoryFabricDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetComputeGpuMemoryFabricsResult> getComputeGpuMemoryFabricsPlain(GetComputeGpuMemoryFabricsPlainArgs args) {
+        return getComputeGpuMemoryFabricsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Compute Gpu Memory Fabrics in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the compute GPU memory fabrics that match the specified criteria and compartmentId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryFabricsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGpuMemoryFabrics = CoreFunctions.getComputeGpuMemoryFabrics(GetComputeGpuMemoryFabricsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(computeGpuMemoryFabricAvailabilityDomain)
+     *             .computeGpuMemoryFabricHealth(computeGpuMemoryFabricComputeGpuMemoryFabricHealth)
+     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabric.id())
+     *             .computeGpuMemoryFabricLifecycleState(computeGpuMemoryFabricComputeGpuMemoryFabricLifecycleState)
+     *             .computeHpcIslandId(testComputeHpcIsland.id())
+     *             .computeNetworkBlockId(testComputeNetworkBlock.id())
+     *             .displayName(computeGpuMemoryFabricDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetComputeGpuMemoryFabricsResult> getComputeGpuMemoryFabrics(GetComputeGpuMemoryFabricsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeGpuMemoryFabrics:getComputeGpuMemoryFabrics", TypeShape.of(GetComputeGpuMemoryFabricsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Gpu Memory Fabrics in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the compute GPU memory fabrics that match the specified criteria and compartmentId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryFabricsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGpuMemoryFabrics = CoreFunctions.getComputeGpuMemoryFabrics(GetComputeGpuMemoryFabricsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(computeGpuMemoryFabricAvailabilityDomain)
+     *             .computeGpuMemoryFabricHealth(computeGpuMemoryFabricComputeGpuMemoryFabricHealth)
+     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabric.id())
+     *             .computeGpuMemoryFabricLifecycleState(computeGpuMemoryFabricComputeGpuMemoryFabricLifecycleState)
+     *             .computeHpcIslandId(testComputeHpcIsland.id())
+     *             .computeNetworkBlockId(testComputeNetworkBlock.id())
+     *             .displayName(computeGpuMemoryFabricDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetComputeGpuMemoryFabricsResult> getComputeGpuMemoryFabrics(GetComputeGpuMemoryFabricsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeGpuMemoryFabrics:getComputeGpuMemoryFabrics", TypeShape.of(GetComputeGpuMemoryFabricsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Gpu Memory Fabrics in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the compute GPU memory fabrics that match the specified criteria and compartmentId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryFabricsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGpuMemoryFabrics = CoreFunctions.getComputeGpuMemoryFabrics(GetComputeGpuMemoryFabricsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(computeGpuMemoryFabricAvailabilityDomain)
+     *             .computeGpuMemoryFabricHealth(computeGpuMemoryFabricComputeGpuMemoryFabricHealth)
+     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabric.id())
+     *             .computeGpuMemoryFabricLifecycleState(computeGpuMemoryFabricComputeGpuMemoryFabricLifecycleState)
+     *             .computeHpcIslandId(testComputeHpcIsland.id())
+     *             .computeNetworkBlockId(testComputeNetworkBlock.id())
+     *             .displayName(computeGpuMemoryFabricDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetComputeGpuMemoryFabricsResult> getComputeGpuMemoryFabricsPlain(GetComputeGpuMemoryFabricsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Core/getComputeGpuMemoryFabrics:getComputeGpuMemoryFabrics", TypeShape.of(GetComputeGpuMemoryFabricsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Compute Image Capability Schema resource in Oracle Cloud Infrastructure Core service.

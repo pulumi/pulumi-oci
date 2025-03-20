@@ -33,6 +33,7 @@ import (
 //			_, err := osmanagementhub.NewManagedInstanceGroupInstallPackagesManagement(ctx, "test_managed_instance_group_install_packages_management", &osmanagementhub.ManagedInstanceGroupInstallPackagesManagementArgs{
 //				ManagedInstanceGroupId: pulumi.Any(testManagedInstanceGroup.Id),
 //				PackageNames:           pulumi.Any(managedInstanceGroupInstallPackagesManagementPackageNames),
+//				IsLatest:               pulumi.Any(managedInstanceGroupInstallPackagesManagementIsLatest),
 //				WorkRequestDetails: &osmanagementhub.ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgs{
 //					Description: pulumi.Any(managedInstanceGroupInstallPackagesManagementWorkRequestDetailsDescription),
 //					DisplayName: pulumi.Any(managedInstanceGroupInstallPackagesManagementWorkRequestDetailsDisplayName),
@@ -57,6 +58,8 @@ import (
 type ManagedInstanceGroupInstallPackagesManagement struct {
 	pulumi.CustomResourceState
 
+	// Indicates whether this is the latest package version.
+	IsLatest pulumi.BoolOutput `pulumi:"isLatest"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
 	ManagedInstanceGroupId pulumi.StringOutput `pulumi:"managedInstanceGroupId"`
 	// The list of package names.
@@ -101,6 +104,8 @@ func GetManagedInstanceGroupInstallPackagesManagement(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ManagedInstanceGroupInstallPackagesManagement resources.
 type managedInstanceGroupInstallPackagesManagementState struct {
+	// Indicates whether this is the latest package version.
+	IsLatest *bool `pulumi:"isLatest"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
 	ManagedInstanceGroupId *string `pulumi:"managedInstanceGroupId"`
 	// The list of package names.
@@ -110,6 +115,8 @@ type managedInstanceGroupInstallPackagesManagementState struct {
 }
 
 type ManagedInstanceGroupInstallPackagesManagementState struct {
+	// Indicates whether this is the latest package version.
+	IsLatest pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
 	ManagedInstanceGroupId pulumi.StringPtrInput
 	// The list of package names.
@@ -123,6 +130,8 @@ func (ManagedInstanceGroupInstallPackagesManagementState) ElementType() reflect.
 }
 
 type managedInstanceGroupInstallPackagesManagementArgs struct {
+	// Indicates whether this is the latest package version.
+	IsLatest *bool `pulumi:"isLatest"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
 	ManagedInstanceGroupId string `pulumi:"managedInstanceGroupId"`
 	// The list of package names.
@@ -133,6 +142,8 @@ type managedInstanceGroupInstallPackagesManagementArgs struct {
 
 // The set of arguments for constructing a ManagedInstanceGroupInstallPackagesManagement resource.
 type ManagedInstanceGroupInstallPackagesManagementArgs struct {
+	// Indicates whether this is the latest package version.
+	IsLatest pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
 	ManagedInstanceGroupId pulumi.StringInput
 	// The list of package names.
@@ -226,6 +237,11 @@ func (o ManagedInstanceGroupInstallPackagesManagementOutput) ToManagedInstanceGr
 
 func (o ManagedInstanceGroupInstallPackagesManagementOutput) ToManagedInstanceGroupInstallPackagesManagementOutputWithContext(ctx context.Context) ManagedInstanceGroupInstallPackagesManagementOutput {
 	return o
+}
+
+// Indicates whether this is the latest package version.
+func (o ManagedInstanceGroupInstallPackagesManagementOutput) IsLatest() pulumi.BoolOutput {
+	return o.ApplyT(func(v *ManagedInstanceGroupInstallPackagesManagement) pulumi.BoolOutput { return v.IsLatest }).(pulumi.BoolOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.

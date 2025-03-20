@@ -25,12 +25,16 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ApplicationVip{}
 	case "oci:Database/autonomousContainerDatabase:AutonomousContainerDatabase":
 		r = &AutonomousContainerDatabase{}
+	case "oci:Database/autonomousContainerDatabaseAddStandby:AutonomousContainerDatabaseAddStandby":
+		r = &AutonomousContainerDatabaseAddStandby{}
 	case "oci:Database/autonomousContainerDatabaseDataguardAssociation:AutonomousContainerDatabaseDataguardAssociation":
 		r = &AutonomousContainerDatabaseDataguardAssociation{}
 	case "oci:Database/autonomousContainerDatabaseDataguardAssociationOperation:AutonomousContainerDatabaseDataguardAssociationOperation":
 		r = &AutonomousContainerDatabaseDataguardAssociationOperation{}
 	case "oci:Database/autonomousContainerDatabaseDataguardRoleChange:AutonomousContainerDatabaseDataguardRoleChange":
 		r = &AutonomousContainerDatabaseDataguardRoleChange{}
+	case "oci:Database/autonomousContainerDatabaseSnapshotStandby:AutonomousContainerDatabaseSnapshotStandby":
+		r = &AutonomousContainerDatabaseSnapshotStandby{}
 	case "oci:Database/autonomousDatabase:AutonomousDatabase":
 		r = &AutonomousDatabase{}
 	case "oci:Database/autonomousDatabaseBackup:AutonomousDatabaseBackup":
@@ -186,6 +190,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"Database/autonomousContainerDatabaseAddStandby",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"Database/autonomousContainerDatabaseDataguardAssociation",
 		&module{version},
 	)
@@ -197,6 +206,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Database/autonomousContainerDatabaseDataguardRoleChange",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Database/autonomousContainerDatabaseSnapshotStandby",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

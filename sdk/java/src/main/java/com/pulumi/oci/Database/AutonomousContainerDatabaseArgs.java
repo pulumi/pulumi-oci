@@ -210,14 +210,29 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
     }
 
     /**
-     * The lag time for my preference based on data loss tolerance in seconds.
+     * (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+     * 
+     */
+    @Import(name="failoverTrigger")
+    private @Nullable Output<Integer> failoverTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+     * 
+     */
+    public Optional<Output<Integer>> failoverTrigger() {
+        return Optional.ofNullable(this.failoverTrigger);
+    }
+
+    /**
+     * (Updatable) The lag time for my preference based on data loss tolerance in seconds.
      * 
      */
     @Import(name="fastStartFailOverLagLimitInSeconds")
     private @Nullable Output<Integer> fastStartFailOverLagLimitInSeconds;
 
     /**
-     * @return The lag time for my preference based on data loss tolerance in seconds.
+     * @return (Updatable) The lag time for my preference based on data loss tolerance in seconds.
      * 
      */
     public Optional<Output<Integer>> fastStartFailOverLagLimitInSeconds() {
@@ -449,14 +464,14 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
     }
 
     /**
-     * The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+     * (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      * 
      */
     @Import(name="protectionMode")
     private @Nullable Output<String> protectionMode;
 
     /**
-     * @return The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+     * @return (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      * 
      */
     public Optional<Output<String>> protectionMode() {
@@ -464,7 +479,25 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
     }
 
     /**
+     * (Updatable) An optional property when incremented triggers Reinstate. Could be set to any integer value.
+     * 
+     */
+    @Import(name="reinstateTrigger")
+    private @Nullable Output<Integer> reinstateTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Reinstate. Could be set to any integer value.
+     * 
+     */
+    public Optional<Output<Integer>> reinstateTrigger() {
+        return Optional.ofNullable(this.reinstateTrigger);
+    }
+
+    /**
      * (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloud_autonomous_vm_cluster_id` is set.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="rotateKeyTrigger")
@@ -472,6 +505,9 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
 
     /**
      * @return (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloud_autonomous_vm_cluster_id` is set.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Boolean>> rotateKeyTrigger() {
@@ -494,20 +530,14 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
     }
 
     /**
-     * (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
      * 
      */
     @Import(name="standbyMaintenanceBufferInDays")
     private @Nullable Output<Integer> standbyMaintenanceBufferInDays;
 
     /**
-     * @return (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
      * 
      */
     public Optional<Output<Integer>> standbyMaintenanceBufferInDays() {
@@ -515,14 +545,29 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
+     * 
+     */
+    @Import(name="switchoverTrigger")
+    private @Nullable Output<Integer> switchoverTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
+     * 
+     */
+    public Optional<Output<Integer>> switchoverTrigger() {
+        return Optional.ofNullable(this.switchoverTrigger);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
      * 
      */
     @Import(name="vaultId")
     private @Nullable Output<String> vaultId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
      * 
      */
     public Optional<Output<String>> vaultId() {
@@ -545,14 +590,14 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
     }
 
     /**
-     * The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+     * The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
      * 
      */
     @Import(name="vmFailoverReservation")
     private @Nullable Output<Integer> vmFailoverReservation;
 
     /**
-     * @return The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+     * @return The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
      * 
      */
     public Optional<Output<Integer>> vmFailoverReservation() {
@@ -575,6 +620,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.distributionAffinity = $.distributionAffinity;
+        this.failoverTrigger = $.failoverTrigger;
         this.fastStartFailOverLagLimitInSeconds = $.fastStartFailOverLagLimitInSeconds;
         this.freeformTags = $.freeformTags;
         this.isAutomaticFailoverEnabled = $.isAutomaticFailoverEnabled;
@@ -593,9 +639,11 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         this.peerCloudAutonomousVmClusterId = $.peerCloudAutonomousVmClusterId;
         this.peerDbUniqueName = $.peerDbUniqueName;
         this.protectionMode = $.protectionMode;
+        this.reinstateTrigger = $.reinstateTrigger;
         this.rotateKeyTrigger = $.rotateKeyTrigger;
         this.serviceLevelAgreementType = $.serviceLevelAgreementType;
         this.standbyMaintenanceBufferInDays = $.standbyMaintenanceBufferInDays;
+        this.switchoverTrigger = $.switchoverTrigger;
         this.vaultId = $.vaultId;
         this.versionPreference = $.versionPreference;
         this.vmFailoverReservation = $.vmFailoverReservation;
@@ -881,7 +929,28 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param fastStartFailOverLagLimitInSeconds The lag time for my preference based on data loss tolerance in seconds.
+         * @param failoverTrigger (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder failoverTrigger(@Nullable Output<Integer> failoverTrigger) {
+            $.failoverTrigger = failoverTrigger;
+            return this;
+        }
+
+        /**
+         * @param failoverTrigger (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder failoverTrigger(Integer failoverTrigger) {
+            return failoverTrigger(Output.of(failoverTrigger));
+        }
+
+        /**
+         * @param fastStartFailOverLagLimitInSeconds (Updatable) The lag time for my preference based on data loss tolerance in seconds.
          * 
          * @return builder
          * 
@@ -892,7 +961,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param fastStartFailOverLagLimitInSeconds The lag time for my preference based on data loss tolerance in seconds.
+         * @param fastStartFailOverLagLimitInSeconds (Updatable) The lag time for my preference based on data loss tolerance in seconds.
          * 
          * @return builder
          * 
@@ -1214,7 +1283,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param protectionMode The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+         * @param protectionMode (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
          * 
          * @return builder
          * 
@@ -1225,7 +1294,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param protectionMode The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+         * @param protectionMode (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
          * 
          * @return builder
          * 
@@ -1235,7 +1304,31 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         }
 
         /**
+         * @param reinstateTrigger (Updatable) An optional property when incremented triggers Reinstate. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder reinstateTrigger(@Nullable Output<Integer> reinstateTrigger) {
+            $.reinstateTrigger = reinstateTrigger;
+            return this;
+        }
+
+        /**
+         * @param reinstateTrigger (Updatable) An optional property when incremented triggers Reinstate. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder reinstateTrigger(Integer reinstateTrigger) {
+            return reinstateTrigger(Output.of(reinstateTrigger));
+        }
+
+        /**
          * @param rotateKeyTrigger (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloud_autonomous_vm_cluster_id` is set.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -1247,6 +1340,9 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
 
         /**
          * @param rotateKeyTrigger (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloud_autonomous_vm_cluster_id` is set.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -1277,10 +1373,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param standbyMaintenanceBufferInDays (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param standbyMaintenanceBufferInDays (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
          * 
          * @return builder
          * 
@@ -1291,10 +1384,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param standbyMaintenanceBufferInDays (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param standbyMaintenanceBufferInDays (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
          * 
          * @return builder
          * 
@@ -1304,7 +1394,28 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param vaultId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * @param switchoverTrigger (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder switchoverTrigger(@Nullable Output<Integer> switchoverTrigger) {
+            $.switchoverTrigger = switchoverTrigger;
+            return this;
+        }
+
+        /**
+         * @param switchoverTrigger (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder switchoverTrigger(Integer switchoverTrigger) {
+            return switchoverTrigger(Output.of(switchoverTrigger));
+        }
+
+        /**
+         * @param vaultId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
          * 
          * @return builder
          * 
@@ -1315,7 +1426,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param vaultId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * @param vaultId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
          * 
          * @return builder
          * 
@@ -1346,7 +1457,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param vmFailoverReservation The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+         * @param vmFailoverReservation The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
          * 
          * @return builder
          * 
@@ -1357,7 +1468,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param vmFailoverReservation The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+         * @param vmFailoverReservation The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
          * 
          * @return builder
          * 

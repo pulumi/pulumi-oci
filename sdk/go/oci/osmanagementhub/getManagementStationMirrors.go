@@ -68,7 +68,7 @@ type GetManagementStationMirrorsArgs struct {
 
 // A collection of values returned by getManagementStationMirrors.
 type GetManagementStationMirrorsResult struct {
-	// Display name of the mirror
+	// Display name of the mirror.
 	DisplayName         *string                             `pulumi:"displayName"`
 	DisplayNameContains *string                             `pulumi:"displayNameContains"`
 	Filters             []GetManagementStationMirrorsFilter `pulumi:"filters"`
@@ -121,7 +121,7 @@ func (o GetManagementStationMirrorsResultOutput) ToGetManagementStationMirrorsRe
 	return o
 }
 
-// Display name of the mirror
+// Display name of the mirror.
 func (o GetManagementStationMirrorsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagementStationMirrorsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }

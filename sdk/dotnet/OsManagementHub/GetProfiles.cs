@@ -36,9 +36,12 @@ namespace Pulumi.Oci.OsManagementHub
         ///         DisplayNameContains = profileDisplayNameContains,
         ///         IsDefaultProfile = profileIsDefaultProfile,
         ///         IsServiceProvidedProfile = profileIsServiceProvidedProfile,
+        ///         ManagementStations = profileManagementStation,
+        ///         ManagementStationNotEqualTos = profileManagementStationNotEqualTo,
         ///         OsFamily = profileOsFamily,
         ///         ProfileId = testProfile.Id,
         ///         ProfileTypes = profileProfileType,
+        ///         ProfileVersion = profileProfileVersion,
         ///         RegistrationTypes = profileRegistrationType,
         ///         State = profileState,
         ///         VendorName = profileVendorName,
@@ -75,9 +78,12 @@ namespace Pulumi.Oci.OsManagementHub
         ///         DisplayNameContains = profileDisplayNameContains,
         ///         IsDefaultProfile = profileIsDefaultProfile,
         ///         IsServiceProvidedProfile = profileIsServiceProvidedProfile,
+        ///         ManagementStations = profileManagementStation,
+        ///         ManagementStationNotEqualTos = profileManagementStationNotEqualTo,
         ///         OsFamily = profileOsFamily,
         ///         ProfileId = testProfile.Id,
         ///         ProfileTypes = profileProfileType,
+        ///         ProfileVersion = profileProfileVersion,
         ///         RegistrationTypes = profileRegistrationType,
         ///         State = profileState,
         ///         VendorName = profileVendorName,
@@ -114,9 +120,12 @@ namespace Pulumi.Oci.OsManagementHub
         ///         DisplayNameContains = profileDisplayNameContains,
         ///         IsDefaultProfile = profileIsDefaultProfile,
         ///         IsServiceProvidedProfile = profileIsServiceProvidedProfile,
+        ///         ManagementStations = profileManagementStation,
+        ///         ManagementStationNotEqualTos = profileManagementStationNotEqualTo,
         ///         OsFamily = profileOsFamily,
         ///         ProfileId = testProfile.Id,
         ///         ProfileTypes = profileProfileType,
+        ///         ProfileVersion = profileProfileVersion,
         ///         RegistrationTypes = profileRegistrationType,
         ///         State = profileState,
         ///         VendorName = profileVendorName,
@@ -171,7 +180,7 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// A boolean variable that is used to list only the default profile resources.
+        /// A filter to return only default profiles.
         /// </summary>
         [Input("isDefaultProfile")]
         public bool? IsDefaultProfile { get; set; }
@@ -181,6 +190,30 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         [Input("isServiceProvidedProfile")]
         public bool? IsServiceProvidedProfile { get; set; }
+
+        [Input("managementStationNotEqualTos")]
+        private List<string>? _managementStationNotEqualTos;
+
+        /// <summary>
+        /// A filter to return resources that aren't associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
+        public List<string> ManagementStationNotEqualTos
+        {
+            get => _managementStationNotEqualTos ?? (_managementStationNotEqualTos = new List<string>());
+            set => _managementStationNotEqualTos = value;
+        }
+
+        [Input("managementStations")]
+        private List<string>? _managementStations;
+
+        /// <summary>
+        /// A filter to return resources that are associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
+        public List<string> ManagementStations
+        {
+            get => _managementStations ?? (_managementStations = new List<string>());
+            set => _managementStations = value;
+        }
 
         /// <summary>
         /// A filter to return only resources that match the given operating system family.
@@ -205,6 +238,12 @@ namespace Pulumi.Oci.OsManagementHub
             get => _profileTypes ?? (_profileTypes = new List<string>());
             set => _profileTypes = value;
         }
+
+        /// <summary>
+        /// The version of the registration profile.
+        /// </summary>
+        [Input("profileVersion")]
+        public string? ProfileVersion { get; set; }
 
         [Input("registrationTypes")]
         private List<string>? _registrationTypes;
@@ -277,7 +316,7 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// A boolean variable that is used to list only the default profile resources.
+        /// A filter to return only default profiles.
         /// </summary>
         [Input("isDefaultProfile")]
         public Input<bool>? IsDefaultProfile { get; set; }
@@ -287,6 +326,30 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         [Input("isServiceProvidedProfile")]
         public Input<bool>? IsServiceProvidedProfile { get; set; }
+
+        [Input("managementStationNotEqualTos")]
+        private InputList<string>? _managementStationNotEqualTos;
+
+        /// <summary>
+        /// A filter to return resources that aren't associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
+        public InputList<string> ManagementStationNotEqualTos
+        {
+            get => _managementStationNotEqualTos ?? (_managementStationNotEqualTos = new InputList<string>());
+            set => _managementStationNotEqualTos = value;
+        }
+
+        [Input("managementStations")]
+        private InputList<string>? _managementStations;
+
+        /// <summary>
+        /// A filter to return resources that are associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
+        public InputList<string> ManagementStations
+        {
+            get => _managementStations ?? (_managementStations = new InputList<string>());
+            set => _managementStations = value;
+        }
 
         /// <summary>
         /// A filter to return only resources that match the given operating system family.
@@ -311,6 +374,12 @@ namespace Pulumi.Oci.OsManagementHub
             get => _profileTypes ?? (_profileTypes = new InputList<string>());
             set => _profileTypes = value;
         }
+
+        /// <summary>
+        /// The version of the registration profile.
+        /// </summary>
+        [Input("profileVersion")]
+        public Input<string>? ProfileVersion { get; set; }
 
         [Input("registrationTypes")]
         private InputList<string>? _registrationTypes;
@@ -372,6 +441,8 @@ namespace Pulumi.Oci.OsManagementHub
         /// Indicates if the profile was created by the service. OS Management Hub provides a limited set of standardized profiles that can be used to register Autonomous Linux or Windows instances.
         /// </summary>
         public readonly bool? IsServiceProvidedProfile;
+        public readonly ImmutableArray<string> ManagementStationNotEqualTos;
+        public readonly ImmutableArray<string> ManagementStations;
         /// <summary>
         /// The operating system family.
         /// </summary>
@@ -385,6 +456,10 @@ namespace Pulumi.Oci.OsManagementHub
         /// The type of profile.
         /// </summary>
         public readonly ImmutableArray<string> ProfileTypes;
+        /// <summary>
+        /// The version of the profile. The version is automatically incremented each time the profiled is edited.
+        /// </summary>
+        public readonly string? ProfileVersion;
         /// <summary>
         /// The type of instance to register.
         /// </summary>
@@ -416,6 +491,10 @@ namespace Pulumi.Oci.OsManagementHub
 
             bool? isServiceProvidedProfile,
 
+            ImmutableArray<string> managementStationNotEqualTos,
+
+            ImmutableArray<string> managementStations,
+
             string? osFamily,
 
             ImmutableArray<Outputs.GetProfilesProfileCollectionResult> profileCollections,
@@ -423,6 +502,8 @@ namespace Pulumi.Oci.OsManagementHub
             string? profileId,
 
             ImmutableArray<string> profileTypes,
+
+            string? profileVersion,
 
             ImmutableArray<string> registrationTypes,
 
@@ -438,10 +519,13 @@ namespace Pulumi.Oci.OsManagementHub
             Id = id;
             IsDefaultProfile = isDefaultProfile;
             IsServiceProvidedProfile = isServiceProvidedProfile;
+            ManagementStationNotEqualTos = managementStationNotEqualTos;
+            ManagementStations = managementStations;
             OsFamily = osFamily;
             ProfileCollections = profileCollections;
             ProfileId = profileId;
             ProfileTypes = profileTypes;
+            ProfileVersion = profileVersion;
             RegistrationTypes = registrationTypes;
             State = state;
             VendorName = vendorName;

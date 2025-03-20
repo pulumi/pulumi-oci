@@ -19,6 +19,12 @@ namespace Pulumi.Oci.OsManagementHub.Inputs
         public Input<string> Directory { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
+        /// </summary>
+        [Input("isSslverifyEnabled")]
+        public Input<bool>? IsSslverifyEnabled { get; set; }
+
+        /// <summary>
         /// (Updatable) Default mirror listening port for http.
         /// </summary>
         [Input("port", required: true)]

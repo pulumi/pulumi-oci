@@ -80,6 +80,7 @@ import javax.annotation.Nullable;
  *                         .build())
  *                     .build())
  *                 .packageNames(scheduledJobOperationsPackageNames)
+ *                 .rebootTimeoutInMins(scheduledJobOperationsRebootTimeoutInMins)
  *                 .softwareSourceIds(scheduledJobOperationsSoftwareSourceIds)
  *                 .switchModuleStreamsDetails(ScheduledJobOperationSwitchModuleStreamsDetailsArgs.builder()
  *                     .moduleName(scheduledJobOperationsSwitchModuleStreamsDetailsModuleName)
@@ -103,6 +104,7 @@ import javax.annotation.Nullable;
  *             .managedInstanceIds(scheduledJobManagedInstanceIds)
  *             .recurringRule(scheduledJobRecurringRule)
  *             .retryIntervals(scheduledJobRetryIntervals)
+ *             .workRequestId(testWorkRequest.id())
  *             .build());
  * 
  *     }
@@ -435,18 +437,12 @@ public class ScheduledJob extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="timeNextExecution", refs={String.class}, tree="[0]")
     private Output<String> timeNextExecution;
 
     /**
      * @return (Updatable) The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> timeNextExecution() {
@@ -465,6 +461,26 @@ public class ScheduledJob extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeUpdated() {
         return this.timeUpdated;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="workRequestId", refs={String.class}, tree="[0]")
+    private Output<String> workRequestId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<String> workRequestId() {
+        return this.workRequestId;
     }
     /**
      * The list of work request [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this scheduled job.

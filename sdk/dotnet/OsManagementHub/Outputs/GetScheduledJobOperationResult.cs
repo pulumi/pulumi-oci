@@ -26,6 +26,10 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly ImmutableArray<string> PackageNames;
         /// <summary>
+        /// The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the  timeout, the service marks the reboot job as failed.
+        /// </summary>
+        public readonly int RebootTimeoutInMins;
+        /// <summary>
         /// The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
         /// </summary>
         public readonly ImmutableArray<string> SoftwareSourceIds;
@@ -46,6 +50,8 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
 
             ImmutableArray<string> packageNames,
 
+            int rebootTimeoutInMins,
+
             ImmutableArray<string> softwareSourceIds,
 
             ImmutableArray<Outputs.GetScheduledJobOperationSwitchModuleStreamsDetailResult> switchModuleStreamsDetails,
@@ -55,6 +61,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
             ManageModuleStreamsDetails = manageModuleStreamsDetails;
             OperationType = operationType;
             PackageNames = packageNames;
+            RebootTimeoutInMins = rebootTimeoutInMins;
             SoftwareSourceIds = softwareSourceIds;
             SwitchModuleStreamsDetails = switchModuleStreamsDetails;
             WindowsUpdateNames = windowsUpdateNames;

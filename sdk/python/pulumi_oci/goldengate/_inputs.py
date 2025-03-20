@@ -25,6 +25,8 @@ __all__ = [
     'ConnectionLockArgsDict',
     'DeploymentBackupLockArgs',
     'DeploymentBackupLockArgsDict',
+    'DeploymentBackupScheduleArgs',
+    'DeploymentBackupScheduleArgsDict',
     'DeploymentDeploymentDiagnosticDataArgs',
     'DeploymentDeploymentDiagnosticDataArgsDict',
     'DeploymentIngressIpArgs',
@@ -435,6 +437,132 @@ class DeploymentBackupLockArgs:
     @time_created.setter
     def time_created(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_created", value)
+
+
+if not MYPY:
+    class DeploymentBackupScheduleArgsDict(TypedDict):
+        bucket: pulumi.Input[str]
+        """
+        (Updatable) Name of the bucket where the object is to be uploaded in the object storage
+        """
+        compartment_id: pulumi.Input[str]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+        """
+        frequency_backup_scheduled: pulumi.Input[str]
+        """
+        (Updatable) The frequency of the deployment backup schedule. Frequency can be DAILY, WEEKLY or MONTHLY.
+        """
+        is_metadata_only: pulumi.Input[bool]
+        """
+        (Updatable) Parameter to allow users to create backup without trails
+        """
+        namespace: pulumi.Input[str]
+        """
+        (Updatable) Name of namespace that serves as a container for all of your buckets
+        """
+        time_backup_scheduled: pulumi.Input[str]
+        """
+        (Updatable) The start timestamp for the deployment backup schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+        """
+elif False:
+    DeploymentBackupScheduleArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DeploymentBackupScheduleArgs:
+    def __init__(__self__, *,
+                 bucket: pulumi.Input[str],
+                 compartment_id: pulumi.Input[str],
+                 frequency_backup_scheduled: pulumi.Input[str],
+                 is_metadata_only: pulumi.Input[bool],
+                 namespace: pulumi.Input[str],
+                 time_backup_scheduled: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] bucket: (Updatable) Name of the bucket where the object is to be uploaded in the object storage
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+        :param pulumi.Input[str] frequency_backup_scheduled: (Updatable) The frequency of the deployment backup schedule. Frequency can be DAILY, WEEKLY or MONTHLY.
+        :param pulumi.Input[bool] is_metadata_only: (Updatable) Parameter to allow users to create backup without trails
+        :param pulumi.Input[str] namespace: (Updatable) Name of namespace that serves as a container for all of your buckets
+        :param pulumi.Input[str] time_backup_scheduled: (Updatable) The start timestamp for the deployment backup schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "frequency_backup_scheduled", frequency_backup_scheduled)
+        pulumi.set(__self__, "is_metadata_only", is_metadata_only)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "time_backup_scheduled", time_backup_scheduled)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Name of the bucket where the object is to be uploaded in the object storage
+        """
+        return pulumi.get(self, "bucket")
+
+    @bucket.setter
+    def bucket(self, value: pulumi.Input[str]):
+        pulumi.set(self, "bucket", value)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @compartment_id.setter
+    def compartment_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="frequencyBackupScheduled")
+    def frequency_backup_scheduled(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The frequency of the deployment backup schedule. Frequency can be DAILY, WEEKLY or MONTHLY.
+        """
+        return pulumi.get(self, "frequency_backup_scheduled")
+
+    @frequency_backup_scheduled.setter
+    def frequency_backup_scheduled(self, value: pulumi.Input[str]):
+        pulumi.set(self, "frequency_backup_scheduled", value)
+
+    @property
+    @pulumi.getter(name="isMetadataOnly")
+    def is_metadata_only(self) -> pulumi.Input[bool]:
+        """
+        (Updatable) Parameter to allow users to create backup without trails
+        """
+        return pulumi.get(self, "is_metadata_only")
+
+    @is_metadata_only.setter
+    def is_metadata_only(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "is_metadata_only", value)
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Name of namespace that serves as a container for all of your buckets
+        """
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: pulumi.Input[str]):
+        pulumi.set(self, "namespace", value)
+
+    @property
+    @pulumi.getter(name="timeBackupScheduled")
+    def time_backup_scheduled(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The start timestamp for the deployment backup schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+        """
+        return pulumi.get(self, "time_backup_scheduled")
+
+    @time_backup_scheduled.setter
+    def time_backup_scheduled(self, value: pulumi.Input[str]):
+        pulumi.set(self, "time_backup_scheduled", value)
 
 
 if not MYPY:

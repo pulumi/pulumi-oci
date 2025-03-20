@@ -11,6 +11,7 @@ import com.pulumi.oci.OsManagementHub.ManagedInstanceGroupInstallPackagesManagem
 import com.pulumi.oci.OsManagementHub.inputs.ManagedInstanceGroupInstallPackagesManagementState;
 import com.pulumi.oci.OsManagementHub.outputs.ManagedInstanceGroupInstallPackagesManagementWorkRequestDetails;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import javax.annotation.Nullable;
@@ -49,6 +50,7 @@ import javax.annotation.Nullable;
  *         var testManagedInstanceGroupInstallPackagesManagement = new ManagedInstanceGroupInstallPackagesManagement("testManagedInstanceGroupInstallPackagesManagement", ManagedInstanceGroupInstallPackagesManagementArgs.builder()
  *             .managedInstanceGroupId(testManagedInstanceGroup.id())
  *             .packageNames(managedInstanceGroupInstallPackagesManagementPackageNames)
+ *             .isLatest(managedInstanceGroupInstallPackagesManagementIsLatest)
  *             .workRequestDetails(ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgs.builder()
  *                 .description(managedInstanceGroupInstallPackagesManagementWorkRequestDetailsDescription)
  *                 .displayName(managedInstanceGroupInstallPackagesManagementWorkRequestDetailsDisplayName)
@@ -72,6 +74,20 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:OsManagementHub/managedInstanceGroupInstallPackagesManagement:ManagedInstanceGroupInstallPackagesManagement")
 public class ManagedInstanceGroupInstallPackagesManagement extends com.pulumi.resources.CustomResource {
+    /**
+     * Indicates whether this is the latest package version.
+     * 
+     */
+    @Export(name="isLatest", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isLatest;
+
+    /**
+     * @return Indicates whether this is the latest package version.
+     * 
+     */
+    public Output<Boolean> isLatest() {
+        return this.isLatest;
+    }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      * 

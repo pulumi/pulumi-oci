@@ -26,6 +26,8 @@ import (
 type ManagedInstance struct {
 	pulumi.CustomResourceState
 
+	// The version of osmh-agent running on the managed instance
+	AgentVersion pulumi.StringOutput `pulumi:"agentVersion"`
 	// The CPU architecture type of the managed instance.
 	Architecture pulumi.StringOutput `pulumi:"architecture"`
 	// (Updatable) Updatable settings for the Autonomous Linux service.
@@ -78,6 +80,8 @@ type ManagedInstance struct {
 	PrimaryManagementStationId pulumi.StringOutput `pulumi:"primaryManagementStationId"`
 	// The profile that was used to register this instance with the service.
 	Profile pulumi.StringOutput `pulumi:"profile"`
+	// The version of the profile that was used to register this instance with the service.
+	ProfileVersion pulumi.StringOutput `pulumi:"profileVersion"`
 	// Number of scheduled jobs associated with this instance.
 	ScheduledJobCount pulumi.IntOutput `pulumi:"scheduledJobCount"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station.
@@ -140,6 +144,8 @@ func GetManagedInstance(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ManagedInstance resources.
 type managedInstanceState struct {
+	// The version of osmh-agent running on the managed instance
+	AgentVersion *string `pulumi:"agentVersion"`
 	// The CPU architecture type of the managed instance.
 	Architecture *string `pulumi:"architecture"`
 	// (Updatable) Updatable settings for the Autonomous Linux service.
@@ -192,6 +198,8 @@ type managedInstanceState struct {
 	PrimaryManagementStationId *string `pulumi:"primaryManagementStationId"`
 	// The profile that was used to register this instance with the service.
 	Profile *string `pulumi:"profile"`
+	// The version of the profile that was used to register this instance with the service.
+	ProfileVersion *string `pulumi:"profileVersion"`
 	// Number of scheduled jobs associated with this instance.
 	ScheduledJobCount *int `pulumi:"scheduledJobCount"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station.
@@ -222,6 +230,8 @@ type managedInstanceState struct {
 }
 
 type ManagedInstanceState struct {
+	// The version of osmh-agent running on the managed instance
+	AgentVersion pulumi.StringPtrInput
 	// The CPU architecture type of the managed instance.
 	Architecture pulumi.StringPtrInput
 	// (Updatable) Updatable settings for the Autonomous Linux service.
@@ -274,6 +284,8 @@ type ManagedInstanceState struct {
 	PrimaryManagementStationId pulumi.StringPtrInput
 	// The profile that was used to register this instance with the service.
 	Profile pulumi.StringPtrInput
+	// The version of the profile that was used to register this instance with the service.
+	ProfileVersion pulumi.StringPtrInput
 	// Number of scheduled jobs associated with this instance.
 	ScheduledJobCount pulumi.IntPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station.
@@ -431,6 +443,11 @@ func (o ManagedInstanceOutput) ToManagedInstanceOutputWithContext(ctx context.Co
 	return o
 }
 
+// The version of osmh-agent running on the managed instance
+func (o ManagedInstanceOutput) AgentVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v *ManagedInstance) pulumi.StringOutput { return v.AgentVersion }).(pulumi.StringOutput)
+}
+
 // The CPU architecture type of the managed instance.
 func (o ManagedInstanceOutput) Architecture() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagedInstance) pulumi.StringOutput { return v.Architecture }).(pulumi.StringOutput)
@@ -563,6 +580,11 @@ func (o ManagedInstanceOutput) PrimaryManagementStationId() pulumi.StringOutput 
 // The profile that was used to register this instance with the service.
 func (o ManagedInstanceOutput) Profile() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagedInstance) pulumi.StringOutput { return v.Profile }).(pulumi.StringOutput)
+}
+
+// The version of the profile that was used to register this instance with the service.
+func (o ManagedInstanceOutput) ProfileVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v *ManagedInstance) pulumi.StringOutput { return v.ProfileVersion }).(pulumi.StringOutput)
 }
 
 // Number of scheduled jobs associated with this instance.

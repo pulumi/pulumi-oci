@@ -148,6 +148,8 @@ class _EventState:
                * `SOFTWARE_SOURCE` - Software source
                * `AGENT` - Agent
                * `MANAGEMENT_STATION` - Management Station
+               * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+               * `REBOOT` - Reboot
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -393,6 +395,8 @@ class _EventState:
         * `SOFTWARE_SOURCE` - Software source
         * `AGENT` - Agent
         * `MANAGEMENT_STATION` - Management Station
+        * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+        * `REBOOT` - Reboot
         """
         return pulumi.get(self, "type")
 
@@ -564,6 +568,8 @@ class Event(pulumi.CustomResource):
                * `SOFTWARE_SOURCE` - Software source
                * `AGENT` - Agent
                * `MANAGEMENT_STATION` - Management Station
+               * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+               * `REBOOT` - Reboot
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -733,6 +739,8 @@ class Event(pulumi.CustomResource):
         * `SOFTWARE_SOURCE` - Software source
         * `AGENT` - Agent
         * `MANAGEMENT_STATION` - Management Station
+        * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+        * `REBOOT` - Reboot
         """
         return pulumi.get(self, "type")
 

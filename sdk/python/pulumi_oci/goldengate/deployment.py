@@ -28,6 +28,7 @@ class DeploymentArgs:
                  is_auto_scaling_enabled: pulumi.Input[bool],
                  license_model: pulumi.Input[str],
                  subnet_id: pulumi.Input[str],
+                 backup_schedule: Optional[pulumi.Input['DeploymentBackupScheduleArgs']] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  deployment_backup_id: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
@@ -52,6 +53,7 @@ class DeploymentArgs:
         :param pulumi.Input[bool] is_auto_scaling_enabled: (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to a Deployment.
         :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
+        :param pulumi.Input['DeploymentBackupScheduleArgs'] backup_schedule: (Updatable) Defines the backup schedule details for create operation.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] deployment_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
         :param pulumi.Input[str] description: (Updatable) Metadata about this specific object.
@@ -73,6 +75,8 @@ class DeploymentArgs:
         pulumi.set(__self__, "is_auto_scaling_enabled", is_auto_scaling_enabled)
         pulumi.set(__self__, "license_model", license_model)
         pulumi.set(__self__, "subnet_id", subnet_id)
+        if backup_schedule is not None:
+            pulumi.set(__self__, "backup_schedule", backup_schedule)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if deployment_backup_id is not None:
@@ -187,6 +191,18 @@ class DeploymentArgs:
     @subnet_id.setter
     def subnet_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "subnet_id", value)
+
+    @property
+    @pulumi.getter(name="backupSchedule")
+    def backup_schedule(self) -> Optional[pulumi.Input['DeploymentBackupScheduleArgs']]:
+        """
+        (Updatable) Defines the backup schedule details for create operation.
+        """
+        return pulumi.get(self, "backup_schedule")
+
+    @backup_schedule.setter
+    def backup_schedule(self, value: Optional[pulumi.Input['DeploymentBackupScheduleArgs']]):
+        pulumi.set(self, "backup_schedule", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -366,6 +382,7 @@ class DeploymentArgs:
 @pulumi.input_type
 class _DeploymentState:
     def __init__(__self__, *,
+                 backup_schedule: Optional[pulumi.Input['DeploymentBackupScheduleArgs']] = None,
                  category: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  cpu_core_count: Optional[pulumi.Input[int]] = None,
@@ -405,12 +422,15 @@ class _DeploymentState:
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
+                 time_last_backup_scheduled: Optional[pulumi.Input[str]] = None,
+                 time_next_backup_scheduled: Optional[pulumi.Input[str]] = None,
                  time_of_next_maintenance: Optional[pulumi.Input[str]] = None,
                  time_ogg_version_supported_until: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
                  time_upgrade_required: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Deployment resources.
+        :param pulumi.Input['DeploymentBackupScheduleArgs'] backup_schedule: (Updatable) Defines the backup schedule details for create operation.
         :param pulumi.Input[str] category: The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         :param pulumi.Input[int] cpu_core_count: (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
@@ -448,11 +468,15 @@ class _DeploymentState:
         :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param pulumi.Input[str] time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param pulumi.Input[str] time_last_backup_scheduled: The timestamp of last deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+        :param pulumi.Input[str] time_next_backup_scheduled: The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
         :param pulumi.Input[str] time_of_next_maintenance: The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[str] time_ogg_version_supported_until: The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[str] time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[str] time_upgrade_required: Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
+        if backup_schedule is not None:
+            pulumi.set(__self__, "backup_schedule", backup_schedule)
         if category is not None:
             pulumi.set(__self__, "category", category)
         if compartment_id is not None:
@@ -531,6 +555,10 @@ class _DeploymentState:
             pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
+        if time_last_backup_scheduled is not None:
+            pulumi.set(__self__, "time_last_backup_scheduled", time_last_backup_scheduled)
+        if time_next_backup_scheduled is not None:
+            pulumi.set(__self__, "time_next_backup_scheduled", time_next_backup_scheduled)
         if time_of_next_maintenance is not None:
             pulumi.set(__self__, "time_of_next_maintenance", time_of_next_maintenance)
         if time_ogg_version_supported_until is not None:
@@ -539,6 +567,18 @@ class _DeploymentState:
             pulumi.set(__self__, "time_updated", time_updated)
         if time_upgrade_required is not None:
             pulumi.set(__self__, "time_upgrade_required", time_upgrade_required)
+
+    @property
+    @pulumi.getter(name="backupSchedule")
+    def backup_schedule(self) -> Optional[pulumi.Input['DeploymentBackupScheduleArgs']]:
+        """
+        (Updatable) Defines the backup schedule details for create operation.
+        """
+        return pulumi.get(self, "backup_schedule")
+
+    @backup_schedule.setter
+    def backup_schedule(self, value: Optional[pulumi.Input['DeploymentBackupScheduleArgs']]):
+        pulumi.set(self, "backup_schedule", value)
 
     @property
     @pulumi.getter
@@ -1003,6 +1043,30 @@ class _DeploymentState:
         pulumi.set(self, "time_created", value)
 
     @property
+    @pulumi.getter(name="timeLastBackupScheduled")
+    def time_last_backup_scheduled(self) -> Optional[pulumi.Input[str]]:
+        """
+        The timestamp of last deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+        """
+        return pulumi.get(self, "time_last_backup_scheduled")
+
+    @time_last_backup_scheduled.setter
+    def time_last_backup_scheduled(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_last_backup_scheduled", value)
+
+    @property
+    @pulumi.getter(name="timeNextBackupScheduled")
+    def time_next_backup_scheduled(self) -> Optional[pulumi.Input[str]]:
+        """
+        The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
+        """
+        return pulumi.get(self, "time_next_backup_scheduled")
+
+    @time_next_backup_scheduled.setter
+    def time_next_backup_scheduled(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_next_backup_scheduled", value)
+
+    @property
     @pulumi.getter(name="timeOfNextMaintenance")
     def time_of_next_maintenance(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1056,6 +1120,7 @@ class Deployment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 backup_schedule: Optional[pulumi.Input[Union['DeploymentBackupScheduleArgs', 'DeploymentBackupScheduleArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  cpu_core_count: Optional[pulumi.Input[int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -1094,6 +1159,7 @@ class Deployment(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Union['DeploymentBackupScheduleArgs', 'DeploymentBackupScheduleArgsDict']] backup_schedule: (Updatable) Defines the backup schedule details for create operation.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         :param pulumi.Input[int] cpu_core_count: (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
@@ -1149,6 +1215,7 @@ class Deployment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 backup_schedule: Optional[pulumi.Input[Union['DeploymentBackupScheduleArgs', 'DeploymentBackupScheduleArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  cpu_core_count: Optional[pulumi.Input[int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -1180,6 +1247,7 @@ class Deployment(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = DeploymentArgs.__new__(DeploymentArgs)
 
+            __props__.__dict__["backup_schedule"] = backup_schedule
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
@@ -1233,6 +1301,8 @@ class Deployment(pulumi.CustomResource):
             __props__.__dict__["storage_utilization_in_bytes"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
+            __props__.__dict__["time_last_backup_scheduled"] = None
+            __props__.__dict__["time_next_backup_scheduled"] = None
             __props__.__dict__["time_of_next_maintenance"] = None
             __props__.__dict__["time_ogg_version_supported_until"] = None
             __props__.__dict__["time_updated"] = None
@@ -1247,6 +1317,7 @@ class Deployment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            backup_schedule: Optional[pulumi.Input[Union['DeploymentBackupScheduleArgs', 'DeploymentBackupScheduleArgsDict']]] = None,
             category: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             cpu_core_count: Optional[pulumi.Input[int]] = None,
@@ -1286,6 +1357,8 @@ class Deployment(pulumi.CustomResource):
             subnet_id: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
+            time_last_backup_scheduled: Optional[pulumi.Input[str]] = None,
+            time_next_backup_scheduled: Optional[pulumi.Input[str]] = None,
             time_of_next_maintenance: Optional[pulumi.Input[str]] = None,
             time_ogg_version_supported_until: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
@@ -1297,6 +1370,7 @@ class Deployment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Union['DeploymentBackupScheduleArgs', 'DeploymentBackupScheduleArgsDict']] backup_schedule: (Updatable) Defines the backup schedule details for create operation.
         :param pulumi.Input[str] category: The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         :param pulumi.Input[int] cpu_core_count: (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
@@ -1334,6 +1408,8 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param pulumi.Input[str] time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param pulumi.Input[str] time_last_backup_scheduled: The timestamp of last deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+        :param pulumi.Input[str] time_next_backup_scheduled: The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
         :param pulumi.Input[str] time_of_next_maintenance: The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[str] time_ogg_version_supported_until: The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[str] time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -1343,6 +1419,7 @@ class Deployment(pulumi.CustomResource):
 
         __props__ = _DeploymentState.__new__(_DeploymentState)
 
+        __props__.__dict__["backup_schedule"] = backup_schedule
         __props__.__dict__["category"] = category
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["cpu_core_count"] = cpu_core_count
@@ -1382,11 +1459,21 @@ class Deployment(pulumi.CustomResource):
         __props__.__dict__["subnet_id"] = subnet_id
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
+        __props__.__dict__["time_last_backup_scheduled"] = time_last_backup_scheduled
+        __props__.__dict__["time_next_backup_scheduled"] = time_next_backup_scheduled
         __props__.__dict__["time_of_next_maintenance"] = time_of_next_maintenance
         __props__.__dict__["time_ogg_version_supported_until"] = time_ogg_version_supported_until
         __props__.__dict__["time_updated"] = time_updated
         __props__.__dict__["time_upgrade_required"] = time_upgrade_required
         return Deployment(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter(name="backupSchedule")
+    def backup_schedule(self) -> pulumi.Output['outputs.DeploymentBackupSchedule']:
+        """
+        (Updatable) Defines the backup schedule details for create operation.
+        """
+        return pulumi.get(self, "backup_schedule")
 
     @property
     @pulumi.getter
@@ -1693,6 +1780,22 @@ class Deployment(pulumi.CustomResource):
         The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeLastBackupScheduled")
+    def time_last_backup_scheduled(self) -> pulumi.Output[str]:
+        """
+        The timestamp of last deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+        """
+        return pulumi.get(self, "time_last_backup_scheduled")
+
+    @property
+    @pulumi.getter(name="timeNextBackupScheduled")
+    def time_next_backup_scheduled(self) -> pulumi.Output[str]:
+        """
+        The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
+        """
+        return pulumi.get(self, "time_next_backup_scheduled")
 
     @property
     @pulumi.getter(name="timeOfNextMaintenance")

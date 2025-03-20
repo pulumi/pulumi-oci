@@ -280,9 +280,6 @@ public final class ScheduledJobArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="timeNextExecution", required=true)
     private Output<String> timeNextExecution;
@@ -290,12 +287,30 @@ public final class ScheduledJobArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return (Updatable) The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
+     */
+    public Output<String> timeNextExecution() {
+        return this.timeNextExecution;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> timeNextExecution() {
-        return this.timeNextExecution;
+    @Import(name="workRequestId")
+    private @Nullable Output<String> workRequestId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<String>> workRequestId() {
+        return Optional.ofNullable(this.workRequestId);
     }
 
     private ScheduledJobArgs() {}
@@ -318,6 +333,7 @@ public final class ScheduledJobArgs extends com.pulumi.resources.ResourceArgs {
         this.retryIntervals = $.retryIntervals;
         this.scheduleType = $.scheduleType;
         this.timeNextExecution = $.timeNextExecution;
+        this.workRequestId = $.workRequestId;
     }
 
     public static Builder builder() {
@@ -771,9 +787,6 @@ public final class ScheduledJobArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param timeNextExecution (Updatable) The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -785,14 +798,38 @@ public final class ScheduledJobArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param timeNextExecution (Updatable) The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          * 
+         * @return builder
+         * 
+         */
+        public Builder timeNextExecution(String timeNextExecution) {
+            return timeNextExecution(Output.of(timeNextExecution));
+        }
+
+        /**
+         * @param workRequestId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
          */
-        public Builder timeNextExecution(String timeNextExecution) {
-            return timeNextExecution(Output.of(timeNextExecution));
+        public Builder workRequestId(@Nullable Output<String> workRequestId) {
+            $.workRequestId = workRequestId;
+            return this;
+        }
+
+        /**
+         * @param workRequestId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder workRequestId(String workRequestId) {
+            return workRequestId(Output.of(workRequestId));
         }
 
         public ScheduledJobArgs build() {

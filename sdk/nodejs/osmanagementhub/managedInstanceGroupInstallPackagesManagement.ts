@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  * const testManagedInstanceGroupInstallPackagesManagement = new oci.osmanagementhub.ManagedInstanceGroupInstallPackagesManagement("test_managed_instance_group_install_packages_management", {
  *     managedInstanceGroupId: testManagedInstanceGroup.id,
  *     packageNames: managedInstanceGroupInstallPackagesManagementPackageNames,
+ *     isLatest: managedInstanceGroupInstallPackagesManagementIsLatest,
  *     workRequestDetails: {
  *         description: managedInstanceGroupInstallPackagesManagementWorkRequestDetailsDescription,
  *         displayName: managedInstanceGroupInstallPackagesManagementWorkRequestDetailsDisplayName,
@@ -64,6 +65,10 @@ export class ManagedInstanceGroupInstallPackagesManagement extends pulumi.Custom
     }
 
     /**
+     * Indicates whether this is the latest package version.
+     */
+    public readonly isLatest!: pulumi.Output<boolean>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
     public readonly managedInstanceGroupId!: pulumi.Output<string>;
@@ -89,6 +94,7 @@ export class ManagedInstanceGroupInstallPackagesManagement extends pulumi.Custom
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagedInstanceGroupInstallPackagesManagementState | undefined;
+            resourceInputs["isLatest"] = state ? state.isLatest : undefined;
             resourceInputs["managedInstanceGroupId"] = state ? state.managedInstanceGroupId : undefined;
             resourceInputs["packageNames"] = state ? state.packageNames : undefined;
             resourceInputs["workRequestDetails"] = state ? state.workRequestDetails : undefined;
@@ -100,6 +106,7 @@ export class ManagedInstanceGroupInstallPackagesManagement extends pulumi.Custom
             if ((!args || args.packageNames === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'packageNames'");
             }
+            resourceInputs["isLatest"] = args ? args.isLatest : undefined;
             resourceInputs["managedInstanceGroupId"] = args ? args.managedInstanceGroupId : undefined;
             resourceInputs["packageNames"] = args ? args.packageNames : undefined;
             resourceInputs["workRequestDetails"] = args ? args.workRequestDetails : undefined;
@@ -113,6 +120,10 @@ export class ManagedInstanceGroupInstallPackagesManagement extends pulumi.Custom
  * Input properties used for looking up and filtering ManagedInstanceGroupInstallPackagesManagement resources.
  */
 export interface ManagedInstanceGroupInstallPackagesManagementState {
+    /**
+     * Indicates whether this is the latest package version.
+     */
+    isLatest?: pulumi.Input<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
@@ -131,6 +142,10 @@ export interface ManagedInstanceGroupInstallPackagesManagementState {
  * The set of arguments for constructing a ManagedInstanceGroupInstallPackagesManagement resource.
  */
 export interface ManagedInstanceGroupInstallPackagesManagementArgs {
+    /**
+     * Indicates whether this is the latest package version.
+     */
+    isLatest?: pulumi.Input<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */

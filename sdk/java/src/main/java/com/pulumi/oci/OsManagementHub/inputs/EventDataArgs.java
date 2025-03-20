@@ -35,6 +35,21 @@ public final class EventDataArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The actions used to attempt fixing the error.
+     * 
+     */
+    @Import(name="attemptedResolutions")
+    private @Nullable Output<List<String>> attemptedResolutions;
+
+    /**
+     * @return The actions used to attempt fixing the error.
+     * 
+     */
+    public Optional<Output<List<String>>> attemptedResolutions() {
+        return Optional.ofNullable(this.attemptedResolutions);
+    }
+
+    /**
      * Provides information collected for the exploit attempt event.
      * 
      */
@@ -47,6 +62,36 @@ public final class EventDataArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<List<EventDataContentArgs>>> contents() {
         return Optional.ofNullable(this.contents);
+    }
+
+    /**
+     * The commands executed by the agent that caused the error.
+     * 
+     */
+    @Import(name="errorCause")
+    private @Nullable Output<String> errorCause;
+
+    /**
+     * @return The commands executed by the agent that caused the error.
+     * 
+     */
+    public Optional<Output<String>> errorCause() {
+        return Optional.ofNullable(this.errorCause);
+    }
+
+    /**
+     * The output log of the error.
+     * 
+     */
+    @Import(name="errorLog")
+    private @Nullable Output<String> errorLog;
+
+    /**
+     * @return The output log of the error.
+     * 
+     */
+    public Optional<Output<String>> errorLog() {
+        return Optional.ofNullable(this.errorLog);
     }
 
     /**
@@ -80,6 +125,21 @@ public final class EventDataArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Health state of the management station
+     * 
+     */
+    @Import(name="healthState")
+    private @Nullable Output<String> healthState;
+
+    /**
+     * @return Health state of the management station
+     * 
+     */
+    public Optional<Output<String>> healthState() {
+        return Optional.ofNullable(this.healthState);
+    }
+
+    /**
      * Type of management station operation.
      * 
      */
@@ -107,6 +167,51 @@ public final class EventDataArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> reason() {
         return Optional.ofNullable(this.reason);
+    }
+
+    /**
+     * Reboot status for the current event
+     * 
+     */
+    @Import(name="rebootStatus")
+    private @Nullable Output<String> rebootStatus;
+
+    /**
+     * @return Reboot status for the current event
+     * 
+     */
+    public Optional<Output<String>> rebootStatus() {
+        return Optional.ofNullable(this.rebootStatus);
+    }
+
+    /**
+     * The log output after the resolutions.
+     * 
+     */
+    @Import(name="resolutionLog")
+    private @Nullable Output<String> resolutionLog;
+
+    /**
+     * @return The log output after the resolutions.
+     * 
+     */
+    public Optional<Output<String>> resolutionLog() {
+        return Optional.ofNullable(this.resolutionLog);
+    }
+
+    /**
+     * Indicates if the event succeeded.
+     * 
+     */
+    @Import(name="resolutionStatus")
+    private @Nullable Output<String> resolutionStatus;
+
+    /**
+     * @return Indicates if the event succeeded.
+     * 
+     */
+    public Optional<Output<String>> resolutionStatus() {
+        return Optional.ofNullable(this.resolutionStatus);
     }
 
     /**
@@ -143,11 +248,18 @@ public final class EventDataArgs extends com.pulumi.resources.ResourceArgs {
 
     private EventDataArgs(EventDataArgs $) {
         this.additionalDetails = $.additionalDetails;
+        this.attemptedResolutions = $.attemptedResolutions;
         this.contents = $.contents;
+        this.errorCause = $.errorCause;
+        this.errorLog = $.errorLog;
         this.eventCount = $.eventCount;
         this.eventFingerprint = $.eventFingerprint;
+        this.healthState = $.healthState;
         this.operationType = $.operationType;
         this.reason = $.reason;
+        this.rebootStatus = $.rebootStatus;
+        this.resolutionLog = $.resolutionLog;
+        this.resolutionStatus = $.resolutionStatus;
         this.status = $.status;
         this.timeFirstOccurred = $.timeFirstOccurred;
     }
@@ -202,6 +314,37 @@ public final class EventDataArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param attemptedResolutions The actions used to attempt fixing the error.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder attemptedResolutions(@Nullable Output<List<String>> attemptedResolutions) {
+            $.attemptedResolutions = attemptedResolutions;
+            return this;
+        }
+
+        /**
+         * @param attemptedResolutions The actions used to attempt fixing the error.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder attemptedResolutions(List<String> attemptedResolutions) {
+            return attemptedResolutions(Output.of(attemptedResolutions));
+        }
+
+        /**
+         * @param attemptedResolutions The actions used to attempt fixing the error.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder attemptedResolutions(String... attemptedResolutions) {
+            return attemptedResolutions(List.of(attemptedResolutions));
+        }
+
+        /**
          * @param contents Provides information collected for the exploit attempt event.
          * 
          * @return builder
@@ -230,6 +373,48 @@ public final class EventDataArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder contents(EventDataContentArgs... contents) {
             return contents(List.of(contents));
+        }
+
+        /**
+         * @param errorCause The commands executed by the agent that caused the error.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder errorCause(@Nullable Output<String> errorCause) {
+            $.errorCause = errorCause;
+            return this;
+        }
+
+        /**
+         * @param errorCause The commands executed by the agent that caused the error.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder errorCause(String errorCause) {
+            return errorCause(Output.of(errorCause));
+        }
+
+        /**
+         * @param errorLog The output log of the error.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder errorLog(@Nullable Output<String> errorLog) {
+            $.errorLog = errorLog;
+            return this;
+        }
+
+        /**
+         * @param errorLog The output log of the error.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder errorLog(String errorLog) {
+            return errorLog(Output.of(errorLog));
         }
 
         /**
@@ -275,6 +460,27 @@ public final class EventDataArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param healthState Health state of the management station
+         * 
+         * @return builder
+         * 
+         */
+        public Builder healthState(@Nullable Output<String> healthState) {
+            $.healthState = healthState;
+            return this;
+        }
+
+        /**
+         * @param healthState Health state of the management station
+         * 
+         * @return builder
+         * 
+         */
+        public Builder healthState(String healthState) {
+            return healthState(Output.of(healthState));
+        }
+
+        /**
          * @param operationType Type of management station operation.
          * 
          * @return builder
@@ -314,6 +520,69 @@ public final class EventDataArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder reason(String reason) {
             return reason(Output.of(reason));
+        }
+
+        /**
+         * @param rebootStatus Reboot status for the current event
+         * 
+         * @return builder
+         * 
+         */
+        public Builder rebootStatus(@Nullable Output<String> rebootStatus) {
+            $.rebootStatus = rebootStatus;
+            return this;
+        }
+
+        /**
+         * @param rebootStatus Reboot status for the current event
+         * 
+         * @return builder
+         * 
+         */
+        public Builder rebootStatus(String rebootStatus) {
+            return rebootStatus(Output.of(rebootStatus));
+        }
+
+        /**
+         * @param resolutionLog The log output after the resolutions.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resolutionLog(@Nullable Output<String> resolutionLog) {
+            $.resolutionLog = resolutionLog;
+            return this;
+        }
+
+        /**
+         * @param resolutionLog The log output after the resolutions.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resolutionLog(String resolutionLog) {
+            return resolutionLog(Output.of(resolutionLog));
+        }
+
+        /**
+         * @param resolutionStatus Indicates if the event succeeded.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resolutionStatus(@Nullable Output<String> resolutionStatus) {
+            $.resolutionStatus = resolutionStatus;
+            return this;
+        }
+
+        /**
+         * @param resolutionStatus Indicates if the event succeeded.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resolutionStatus(String resolutionStatus) {
+            return resolutionStatus(Output.of(resolutionStatus));
         }
 
         /**

@@ -85,6 +85,36 @@ public final class GetManagementStationsArgs extends com.pulumi.resources.Invoke
     }
 
     /**
+     * A filter to return only resources whose location does not match the given value.
+     * 
+     */
+    @Import(name="locationNotEqualTos")
+    private @Nullable Output<List<String>> locationNotEqualTos;
+
+    /**
+     * @return A filter to return only resources whose location does not match the given value.
+     * 
+     */
+    public Optional<Output<List<String>>> locationNotEqualTos() {
+        return Optional.ofNullable(this.locationNotEqualTos);
+    }
+
+    /**
+     * A filter to return only resources whose location matches the given value.
+     * 
+     */
+    @Import(name="locations")
+    private @Nullable Output<List<String>> locations;
+
+    /**
+     * @return A filter to return only resources whose location matches the given value.
+     * 
+     */
+    public Optional<Output<List<String>>> locations() {
+        return Optional.ofNullable(this.locations);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
      * 
      */
@@ -122,6 +152,8 @@ public final class GetManagementStationsArgs extends com.pulumi.resources.Invoke
         this.displayNameContains = $.displayNameContains;
         this.filters = $.filters;
         this.id = $.id;
+        this.locationNotEqualTos = $.locationNotEqualTos;
+        this.locations = $.locations;
         this.managedInstanceId = $.managedInstanceId;
         this.state = $.state;
     }
@@ -239,6 +271,68 @@ public final class GetManagementStationsArgs extends com.pulumi.resources.Invoke
          */
         public Builder id(String id) {
             return id(Output.of(id));
+        }
+
+        /**
+         * @param locationNotEqualTos A filter to return only resources whose location does not match the given value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locationNotEqualTos(@Nullable Output<List<String>> locationNotEqualTos) {
+            $.locationNotEqualTos = locationNotEqualTos;
+            return this;
+        }
+
+        /**
+         * @param locationNotEqualTos A filter to return only resources whose location does not match the given value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locationNotEqualTos(List<String> locationNotEqualTos) {
+            return locationNotEqualTos(Output.of(locationNotEqualTos));
+        }
+
+        /**
+         * @param locationNotEqualTos A filter to return only resources whose location does not match the given value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locationNotEqualTos(String... locationNotEqualTos) {
+            return locationNotEqualTos(List.of(locationNotEqualTos));
+        }
+
+        /**
+         * @param locations A filter to return only resources whose location matches the given value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locations(@Nullable Output<List<String>> locations) {
+            $.locations = locations;
+            return this;
+        }
+
+        /**
+         * @param locations A filter to return only resources whose location matches the given value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locations(List<String> locations) {
+            return locations(Output.of(locations));
+        }
+
+        /**
+         * @param locations A filter to return only resources whose location matches the given value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locations(String... locations) {
+            return locations(List.of(locations));
         }
 
         /**

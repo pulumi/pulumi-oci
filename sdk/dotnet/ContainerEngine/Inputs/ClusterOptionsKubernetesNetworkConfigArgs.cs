@@ -13,13 +13,13 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
     public sealed class ClusterOptionsKubernetesNetworkConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
+        /// The CIDR block for Kubernetes pods. Optional. For ipv4, defaults to 10.244.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0000::/96.
         /// </summary>
         [Input("podsCidr")]
         public Input<string>? PodsCidr { get; set; }
 
         /// <summary>
-        /// The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
+        /// The CIDR block for Kubernetes services. Optional. For ipv4, defaults to 10.96.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0001::/108.
         /// </summary>
         [Input("servicesCidr")]
         public Input<string>? ServicesCidr { get; set; }

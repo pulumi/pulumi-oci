@@ -31,6 +31,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &LifecycleStageDetachManagedInstancesManagement{}
 	case "oci:OsManagementHub/lifecycleStagePromoteSoftwareSourceManagement:LifecycleStagePromoteSoftwareSourceManagement":
 		r = &LifecycleStagePromoteSoftwareSourceManagement{}
+	case "oci:OsManagementHub/lifecycleStageRebootManagement:LifecycleStageRebootManagement":
+		r = &LifecycleStageRebootManagement{}
 	case "oci:OsManagementHub/managedInstance:ManagedInstance":
 		r = &ManagedInstance{}
 	case "oci:OsManagementHub/managedInstanceAttachProfileManagement:ManagedInstanceAttachProfileManagement":
@@ -53,16 +55,22 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ManagedInstanceGroupInstallWindowsUpdatesManagement{}
 	case "oci:OsManagementHub/managedInstanceGroupManageModuleStreamsManagement:ManagedInstanceGroupManageModuleStreamsManagement":
 		r = &ManagedInstanceGroupManageModuleStreamsManagement{}
+	case "oci:OsManagementHub/managedInstanceGroupRebootManagement:ManagedInstanceGroupRebootManagement":
+		r = &ManagedInstanceGroupRebootManagement{}
 	case "oci:OsManagementHub/managedInstanceGroupRemovePackagesManagement:ManagedInstanceGroupRemovePackagesManagement":
 		r = &ManagedInstanceGroupRemovePackagesManagement{}
 	case "oci:OsManagementHub/managedInstanceGroupUpdateAllPackagesManagement:ManagedInstanceGroupUpdateAllPackagesManagement":
 		r = &ManagedInstanceGroupUpdateAllPackagesManagement{}
 	case "oci:OsManagementHub/managedInstanceInstallWindowsUpdatesManagement:ManagedInstanceInstallWindowsUpdatesManagement":
 		r = &ManagedInstanceInstallWindowsUpdatesManagement{}
+	case "oci:OsManagementHub/managedInstanceRebootManagement:ManagedInstanceRebootManagement":
+		r = &ManagedInstanceRebootManagement{}
 	case "oci:OsManagementHub/managedInstanceUpdatePackagesManagement:ManagedInstanceUpdatePackagesManagement":
 		r = &ManagedInstanceUpdatePackagesManagement{}
 	case "oci:OsManagementHub/managementStation:ManagementStation":
 		r = &ManagementStation{}
+	case "oci:OsManagementHub/managementStationAssociateManagedInstancesManagement:ManagementStationAssociateManagedInstancesManagement":
+		r = &ManagementStationAssociateManagedInstancesManagement{}
 	case "oci:OsManagementHub/managementStationMirrorSynchronizeManagement:ManagementStationMirrorSynchronizeManagement":
 		r = &ManagementStationMirrorSynchronizeManagement{}
 	case "oci:OsManagementHub/managementStationRefreshManagement:ManagementStationRefreshManagement":
@@ -71,6 +79,16 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ManagementStationSynchronizeMirrorsManagement{}
 	case "oci:OsManagementHub/profile:Profile":
 		r = &Profile{}
+	case "oci:OsManagementHub/profileAttachLifecycleStageManagement:ProfileAttachLifecycleStageManagement":
+		r = &ProfileAttachLifecycleStageManagement{}
+	case "oci:OsManagementHub/profileAttachManagedInstanceGroupManagement:ProfileAttachManagedInstanceGroupManagement":
+		r = &ProfileAttachManagedInstanceGroupManagement{}
+	case "oci:OsManagementHub/profileAttachManagementStationManagement:ProfileAttachManagementStationManagement":
+		r = &ProfileAttachManagementStationManagement{}
+	case "oci:OsManagementHub/profileAttachSoftwareSourcesManagement:ProfileAttachSoftwareSourcesManagement":
+		r = &ProfileAttachSoftwareSourcesManagement{}
+	case "oci:OsManagementHub/profileDetachSoftwareSourcesManagement:ProfileDetachSoftwareSourcesManagement":
+		r = &ProfileDetachSoftwareSourcesManagement{}
 	case "oci:OsManagementHub/scheduledJob:ScheduledJob":
 		r = &ScheduledJob{}
 	case "oci:OsManagementHub/softwareSource:SoftwareSource":
@@ -79,6 +97,16 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &SoftwareSourceAddPackagesManagement{}
 	case "oci:OsManagementHub/softwareSourceChangeAvailabilityManagement:SoftwareSourceChangeAvailabilityManagement":
 		r = &SoftwareSourceChangeAvailabilityManagement{}
+	case "oci:OsManagementHub/softwareSourceGenerateMetadataManagement:SoftwareSourceGenerateMetadataManagement":
+		r = &SoftwareSourceGenerateMetadataManagement{}
+	case "oci:OsManagementHub/softwareSourceManifest:SoftwareSourceManifest":
+		r = &SoftwareSourceManifest{}
+	case "oci:OsManagementHub/softwareSourceRemovePackagesManagement:SoftwareSourceRemovePackagesManagement":
+		r = &SoftwareSourceRemovePackagesManagement{}
+	case "oci:OsManagementHub/softwareSourceReplacePackagesManagement:SoftwareSourceReplacePackagesManagement":
+		r = &SoftwareSourceReplacePackagesManagement{}
+	case "oci:OsManagementHub/workRequestRerunManagement:WorkRequestRerunManagement":
+		r = &WorkRequestRerunManagement{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -115,6 +143,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"OsManagementHub/lifecycleStagePromoteSoftwareSourceManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/lifecycleStageRebootManagement",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -174,6 +207,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"OsManagementHub/managedInstanceGroupRebootManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"OsManagementHub/managedInstanceGroupRemovePackagesManagement",
 		&module{version},
 	)
@@ -189,12 +227,22 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"OsManagementHub/managedInstanceRebootManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"OsManagementHub/managedInstanceUpdatePackagesManagement",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
 		"OsManagementHub/managementStation",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/managementStationAssociateManagedInstancesManagement",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -219,6 +267,31 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"OsManagementHub/profileAttachLifecycleStageManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/profileAttachManagedInstanceGroupManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/profileAttachManagementStationManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/profileAttachSoftwareSourcesManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/profileDetachSoftwareSourcesManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"OsManagementHub/scheduledJob",
 		&module{version},
 	)
@@ -235,6 +308,31 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"OsManagementHub/softwareSourceChangeAvailabilityManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/softwareSourceGenerateMetadataManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/softwareSourceManifest",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/softwareSourceRemovePackagesManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/softwareSourceReplacePackagesManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/workRequestRerunManagement",
 		&module{version},
 	)
 }

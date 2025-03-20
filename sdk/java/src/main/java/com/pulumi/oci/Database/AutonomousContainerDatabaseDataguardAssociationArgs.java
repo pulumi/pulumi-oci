@@ -59,6 +59,9 @@ public final class AutonomousContainerDatabaseDataguardAssociationArgs extends c
     /**
      * (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="isAutomaticFailoverEnabled")
     private @Nullable Output<Boolean> isAutomaticFailoverEnabled;
@@ -66,9 +69,27 @@ public final class AutonomousContainerDatabaseDataguardAssociationArgs extends c
     /**
      * @return (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     public Optional<Output<Boolean>> isAutomaticFailoverEnabled() {
         return Optional.ofNullable(this.isAutomaticFailoverEnabled);
+    }
+
+    /**
+     * (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
+     * 
+     */
+    @Import(name="migrateTrigger")
+    private @Nullable Output<Integer> migrateTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
+     * 
+     */
+    public Optional<Output<Integer>> migrateTrigger() {
+        return Optional.ofNullable(this.migrateTrigger);
     }
 
     /**
@@ -164,18 +185,12 @@ public final class AutonomousContainerDatabaseDataguardAssociationArgs extends c
     /**
      * (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="protectionMode", required=true)
     private Output<String> protectionMode;
 
     /**
      * @return (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> protectionMode() {
@@ -204,6 +219,7 @@ public final class AutonomousContainerDatabaseDataguardAssociationArgs extends c
         this.autonomousContainerDatabaseId = $.autonomousContainerDatabaseId;
         this.fastStartFailOverLagLimitInSeconds = $.fastStartFailOverLagLimitInSeconds;
         this.isAutomaticFailoverEnabled = $.isAutomaticFailoverEnabled;
+        this.migrateTrigger = $.migrateTrigger;
         this.peerAutonomousContainerDatabaseBackupConfig = $.peerAutonomousContainerDatabaseBackupConfig;
         this.peerAutonomousContainerDatabaseCompartmentId = $.peerAutonomousContainerDatabaseCompartmentId;
         this.peerAutonomousContainerDatabaseDisplayName = $.peerAutonomousContainerDatabaseDisplayName;
@@ -286,6 +302,9 @@ public final class AutonomousContainerDatabaseDataguardAssociationArgs extends c
         /**
          * @param isAutomaticFailoverEnabled (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -297,11 +316,35 @@ public final class AutonomousContainerDatabaseDataguardAssociationArgs extends c
         /**
          * @param isAutomaticFailoverEnabled (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
         public Builder isAutomaticFailoverEnabled(Boolean isAutomaticFailoverEnabled) {
             return isAutomaticFailoverEnabled(Output.of(isAutomaticFailoverEnabled));
+        }
+
+        /**
+         * @param migrateTrigger (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder migrateTrigger(@Nullable Output<Integer> migrateTrigger) {
+            $.migrateTrigger = migrateTrigger;
+            return this;
+        }
+
+        /**
+         * @param migrateTrigger (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder migrateTrigger(Integer migrateTrigger) {
+            return migrateTrigger(Output.of(migrateTrigger));
         }
 
         /**
@@ -433,9 +476,6 @@ public final class AutonomousContainerDatabaseDataguardAssociationArgs extends c
         /**
          * @param protectionMode (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -446,9 +486,6 @@ public final class AutonomousContainerDatabaseDataguardAssociationArgs extends c
 
         /**
          * @param protectionMode (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

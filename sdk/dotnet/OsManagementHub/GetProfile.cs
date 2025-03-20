@@ -14,7 +14,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides details about a specific Profile resource in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Gets information about the specified registration profile.
+        /// Returns information about the specified registration profile.
         /// 
         /// ## Example Usage
         /// 
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides details about a specific Profile resource in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Gets information about the specified registration profile.
+        /// Returns information about the specified registration profile.
         /// 
         /// ## Example Usage
         /// 
@@ -66,7 +66,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides details about a specific Profile resource in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Gets information about the specified registration profile.
+        /// Returns information about the specified registration profile.
         /// 
         /// ## Example Usage
         /// 
@@ -174,7 +174,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProfileManagedInstanceGroupResult> ManagedInstanceGroups;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an  instance once registered. Management stations are only used by non-OCI instances.
         /// </summary>
         public readonly string ManagementStationId;
         /// <summary>
@@ -186,6 +186,10 @@ namespace Pulumi.Oci.OsManagementHub
         /// The type of profile.
         /// </summary>
         public readonly string ProfileType;
+        /// <summary>
+        /// The version of the profile. The version is automatically incremented each time the profiled is edited.
+        /// </summary>
+        public readonly string ProfileVersion;
         /// <summary>
         /// The type of instance to register.
         /// </summary>
@@ -207,6 +211,10 @@ namespace Pulumi.Oci.OsManagementHub
         /// The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         /// </summary>
         public readonly string TimeCreated;
+        /// <summary>
+        /// The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        /// </summary>
+        public readonly string TimeModified;
         /// <summary>
         /// The vendor of the operating system for the instance.
         /// </summary>
@@ -250,6 +258,8 @@ namespace Pulumi.Oci.OsManagementHub
 
             string profileType,
 
+            string profileVersion,
+
             string registrationType,
 
             ImmutableArray<string> softwareSourceIds,
@@ -261,6 +271,8 @@ namespace Pulumi.Oci.OsManagementHub
             ImmutableDictionary<string, string> systemTags,
 
             string timeCreated,
+
+            string timeModified,
 
             string vendorName)
         {
@@ -282,12 +294,14 @@ namespace Pulumi.Oci.OsManagementHub
             OsFamily = osFamily;
             ProfileId = profileId;
             ProfileType = profileType;
+            ProfileVersion = profileVersion;
             RegistrationType = registrationType;
             SoftwareSourceIds = softwareSourceIds;
             SoftwareSources = softwareSources;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;
+            TimeModified = timeModified;
             VendorName = vendorName;
         }
     }

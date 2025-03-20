@@ -40,6 +40,7 @@ import (
 //				DisplayNameContains:           pulumi.StringRef(softwareSourceDisplayNameContains),
 //				DisplayNameNotEqualTos:        softwareSourceDisplayNameNotEqualTo,
 //				IsMandatoryForAutonomousLinux: pulumi.BoolRef(softwareSourceIsMandatoryForAutonomousLinux),
+//				IsMirrorSyncAllowed:           pulumi.BoolRef(softwareSourceIsMirrorSyncAllowed),
 //				OsFamilies:                    softwareSourceOsFamily,
 //				SoftwareSourceId:              pulumi.StringRef(testSoftwareSource.Id),
 //				SoftwareSourceTypes:           softwareSourceSoftwareSourceType,
@@ -68,11 +69,11 @@ func GetSoftwareSources(ctx *pulumi.Context, args *GetSoftwareSourcesArgs, opts 
 type GetSoftwareSourcesArgs struct {
 	// A filter to return only instances whose architecture type matches the given architecture.
 	ArchTypes []string `pulumi:"archTypes"`
-	// The availabilities of the software source in a non-OCI environment for a tenancy.
+	// The availability of the software source in a non-OCI environment for a tenancy.
 	Availabilities []string `pulumi:"availabilities"`
-	// The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
+	// The availability of the software source. Use this query parameter to filter across availabilities in different environments.
 	AvailabilityAnywheres []string `pulumi:"availabilityAnywheres"`
-	// The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+	// The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
 	AvailabilityAtOcis []string `pulumi:"availabilityAtOcis"`
 	// (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
@@ -85,6 +86,8 @@ type GetSoftwareSourcesArgs struct {
 	Filters                []GetSoftwareSourcesFilter `pulumi:"filters"`
 	// Indicates whether the software source is mandatory for the Autonomous Linux service.
 	IsMandatoryForAutonomousLinux *bool `pulumi:"isMandatoryForAutonomousLinux"`
+	// A filter to return software sources which can be synced to a management station.
+	IsMirrorSyncAllowed *bool `pulumi:"isMirrorSyncAllowed"`
 	// A filter to return only resources that match the given operating system family.
 	OsFamilies []string `pulumi:"osFamilies"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the software source.
@@ -117,7 +120,9 @@ type GetSoftwareSourcesResult struct {
 	Id string `pulumi:"id"`
 	// Indicates whether the software source is required for the Autonomous Linux service.
 	IsMandatoryForAutonomousLinux *bool `pulumi:"isMandatoryForAutonomousLinux"`
-	// The OS family the software source belongs to.
+	// Indicates if this software source can be mirrored to a management station.
+	IsMirrorSyncAllowed *bool `pulumi:"isMirrorSyncAllowed"`
+	// The OS family of the software source.
 	OsFamilies []string `pulumi:"osFamilies"`
 	// The list of software_source_collection.
 	SoftwareSourceCollections []GetSoftwareSourcesSoftwareSourceCollection `pulumi:"softwareSourceCollections"`
@@ -143,11 +148,11 @@ func GetSoftwareSourcesOutput(ctx *pulumi.Context, args GetSoftwareSourcesOutput
 type GetSoftwareSourcesOutputArgs struct {
 	// A filter to return only instances whose architecture type matches the given architecture.
 	ArchTypes pulumi.StringArrayInput `pulumi:"archTypes"`
-	// The availabilities of the software source in a non-OCI environment for a tenancy.
+	// The availability of the software source in a non-OCI environment for a tenancy.
 	Availabilities pulumi.StringArrayInput `pulumi:"availabilities"`
-	// The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
+	// The availability of the software source. Use this query parameter to filter across availabilities in different environments.
 	AvailabilityAnywheres pulumi.StringArrayInput `pulumi:"availabilityAnywheres"`
-	// The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+	// The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
 	AvailabilityAtOcis pulumi.StringArrayInput `pulumi:"availabilityAtOcis"`
 	// (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
@@ -160,6 +165,8 @@ type GetSoftwareSourcesOutputArgs struct {
 	Filters                GetSoftwareSourcesFilterArrayInput `pulumi:"filters"`
 	// Indicates whether the software source is mandatory for the Autonomous Linux service.
 	IsMandatoryForAutonomousLinux pulumi.BoolPtrInput `pulumi:"isMandatoryForAutonomousLinux"`
+	// A filter to return software sources which can be synced to a management station.
+	IsMirrorSyncAllowed pulumi.BoolPtrInput `pulumi:"isMirrorSyncAllowed"`
 	// A filter to return only resources that match the given operating system family.
 	OsFamilies pulumi.StringArrayInput `pulumi:"osFamilies"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the software source.
@@ -242,7 +249,12 @@ func (o GetSoftwareSourcesResultOutput) IsMandatoryForAutonomousLinux() pulumi.B
 	return o.ApplyT(func(v GetSoftwareSourcesResult) *bool { return v.IsMandatoryForAutonomousLinux }).(pulumi.BoolPtrOutput)
 }
 
-// The OS family the software source belongs to.
+// Indicates if this software source can be mirrored to a management station.
+func (o GetSoftwareSourcesResultOutput) IsMirrorSyncAllowed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesResult) *bool { return v.IsMirrorSyncAllowed }).(pulumi.BoolPtrOutput)
+}
+
+// The OS family of the software source.
 func (o GetSoftwareSourcesResultOutput) OsFamilies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetSoftwareSourcesResult) []string { return v.OsFamilies }).(pulumi.StringArrayOutput)
 }

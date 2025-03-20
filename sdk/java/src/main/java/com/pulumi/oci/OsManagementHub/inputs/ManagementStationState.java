@@ -8,7 +8,9 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.OsManagementHub.inputs.ManagementStationHealthArgs;
 import com.pulumi.oci.OsManagementHub.inputs.ManagementStationMirrorArgs;
 import com.pulumi.oci.OsManagementHub.inputs.ManagementStationMirrorSyncStatusArgs;
+import com.pulumi.oci.OsManagementHub.inputs.ManagementStationPeerManagementStationArgs;
 import com.pulumi.oci.OsManagementHub.inputs.ManagementStationProxyArgs;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -128,6 +130,36 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * (Updatable) When enabled, the station setup script automatically runs to configure the firewall and SELinux settings on the station.
+     * 
+     */
+    @Import(name="isAutoConfigEnabled")
+    private @Nullable Output<Boolean> isAutoConfigEnabled;
+
+    /**
+     * @return (Updatable) When enabled, the station setup script automatically runs to configure the firewall and SELinux settings on the station.
+     * 
+     */
+    public Optional<Output<Boolean>> isAutoConfigEnabled() {
+        return Optional.ofNullable(this.isAutoConfigEnabled);
+    }
+
+    /**
+     * The location of the instance that is acting as the management station.
+     * 
+     */
+    @Import(name="location")
+    private @Nullable Output<String> location;
+
+    /**
+     * @return The location of the instance that is acting as the management station.
+     * 
+     */
+    public Optional<Output<String>> location() {
+        return Optional.ofNullable(this.location);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
      * 
      */
@@ -173,6 +205,66 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * The total number of all packages within the mirrored software sources.
+     * 
+     */
+    @Import(name="mirrorPackageCount")
+    private @Nullable Output<Integer> mirrorPackageCount;
+
+    /**
+     * @return The total number of all packages within the mirrored software sources.
+     * 
+     */
+    public Optional<Output<Integer>> mirrorPackageCount() {
+        return Optional.ofNullable(this.mirrorPackageCount);
+    }
+
+    /**
+     * The total size of all software source mirrors in bytes.
+     * 
+     */
+    @Import(name="mirrorSize")
+    private @Nullable Output<String> mirrorSize;
+
+    /**
+     * @return The total size of all software source mirrors in bytes.
+     * 
+     */
+    public Optional<Output<String>> mirrorSize() {
+        return Optional.ofNullable(this.mirrorSize);
+    }
+
+    /**
+     * Amount of available mirror storage in bytes.
+     * 
+     */
+    @Import(name="mirrorStorageAvailableSize")
+    private @Nullable Output<String> mirrorStorageAvailableSize;
+
+    /**
+     * @return Amount of available mirror storage in bytes.
+     * 
+     */
+    public Optional<Output<String>> mirrorStorageAvailableSize() {
+        return Optional.ofNullable(this.mirrorStorageAvailableSize);
+    }
+
+    /**
+     * Total mirror storage size in bytes.
+     * 
+     */
+    @Import(name="mirrorStorageSize")
+    private @Nullable Output<String> mirrorStorageSize;
+
+    /**
+     * @return Total mirror storage size in bytes.
+     * 
+     */
+    public Optional<Output<String>> mirrorStorageSize() {
+        return Optional.ofNullable(this.mirrorStorageSize);
+    }
+
+    /**
      * Status summary of the mirror sync.
      * 
      */
@@ -185,6 +277,21 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
      */
     public Optional<Output<List<ManagementStationMirrorSyncStatusArgs>>> mirrorSyncStatuses() {
         return Optional.ofNullable(this.mirrorSyncStatuses);
+    }
+
+    /**
+     * The total number of unique packages within the mirrored software sources on the station. Each package is counted only once, regardless of how many versions it has.
+     * 
+     */
+    @Import(name="mirrorUniquePackageCount")
+    private @Nullable Output<Integer> mirrorUniquePackageCount;
+
+    /**
+     * @return The total number of unique packages within the mirrored software sources on the station. Each package is counted only once, regardless of how many versions it has.
+     * 
+     */
+    public Optional<Output<Integer>> mirrorUniquePackageCount() {
+        return Optional.ofNullable(this.mirrorUniquePackageCount);
     }
 
     /**
@@ -215,6 +322,21 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
      */
     public Optional<Output<String>> overallState() {
         return Optional.ofNullable(this.overallState);
+    }
+
+    /**
+     * A list of other management stations that are behind the same load balancer within a high availability configuration. Stations are identified as peers if they have the same hostname and compartment.
+     * 
+     */
+    @Import(name="peerManagementStations")
+    private @Nullable Output<List<ManagementStationPeerManagementStationArgs>> peerManagementStations;
+
+    /**
+     * @return A list of other management stations that are behind the same load balancer within a high availability configuration. Stations are identified as peers if they have the same hostname and compartment.
+     * 
+     */
+    public Optional<Output<List<ManagementStationPeerManagementStationArgs>>> peerManagementStations() {
+        return Optional.ofNullable(this.peerManagementStations);
     }
 
     /**
@@ -338,12 +460,20 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         this.freeformTags = $.freeformTags;
         this.healths = $.healths;
         this.hostname = $.hostname;
+        this.isAutoConfigEnabled = $.isAutoConfigEnabled;
+        this.location = $.location;
         this.managedInstanceId = $.managedInstanceId;
         this.mirror = $.mirror;
         this.mirrorCapacity = $.mirrorCapacity;
+        this.mirrorPackageCount = $.mirrorPackageCount;
+        this.mirrorSize = $.mirrorSize;
+        this.mirrorStorageAvailableSize = $.mirrorStorageAvailableSize;
+        this.mirrorStorageSize = $.mirrorStorageSize;
         this.mirrorSyncStatuses = $.mirrorSyncStatuses;
+        this.mirrorUniquePackageCount = $.mirrorUniquePackageCount;
         this.overallPercentage = $.overallPercentage;
         this.overallState = $.overallState;
+        this.peerManagementStations = $.peerManagementStations;
         this.profileId = $.profileId;
         this.proxy = $.proxy;
         this.refreshTrigger = $.refreshTrigger;
@@ -529,6 +659,48 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         }
 
         /**
+         * @param isAutoConfigEnabled (Updatable) When enabled, the station setup script automatically runs to configure the firewall and SELinux settings on the station.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAutoConfigEnabled(@Nullable Output<Boolean> isAutoConfigEnabled) {
+            $.isAutoConfigEnabled = isAutoConfigEnabled;
+            return this;
+        }
+
+        /**
+         * @param isAutoConfigEnabled (Updatable) When enabled, the station setup script automatically runs to configure the firewall and SELinux settings on the station.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAutoConfigEnabled(Boolean isAutoConfigEnabled) {
+            return isAutoConfigEnabled(Output.of(isAutoConfigEnabled));
+        }
+
+        /**
+         * @param location The location of the instance that is acting as the management station.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder location(@Nullable Output<String> location) {
+            $.location = location;
+            return this;
+        }
+
+        /**
+         * @param location The location of the instance that is acting as the management station.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder location(String location) {
+            return location(Output.of(location));
+        }
+
+        /**
          * @param managedInstanceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
          * 
          * @return builder
@@ -592,6 +764,90 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         }
 
         /**
+         * @param mirrorPackageCount The total number of all packages within the mirrored software sources.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mirrorPackageCount(@Nullable Output<Integer> mirrorPackageCount) {
+            $.mirrorPackageCount = mirrorPackageCount;
+            return this;
+        }
+
+        /**
+         * @param mirrorPackageCount The total number of all packages within the mirrored software sources.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mirrorPackageCount(Integer mirrorPackageCount) {
+            return mirrorPackageCount(Output.of(mirrorPackageCount));
+        }
+
+        /**
+         * @param mirrorSize The total size of all software source mirrors in bytes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mirrorSize(@Nullable Output<String> mirrorSize) {
+            $.mirrorSize = mirrorSize;
+            return this;
+        }
+
+        /**
+         * @param mirrorSize The total size of all software source mirrors in bytes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mirrorSize(String mirrorSize) {
+            return mirrorSize(Output.of(mirrorSize));
+        }
+
+        /**
+         * @param mirrorStorageAvailableSize Amount of available mirror storage in bytes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mirrorStorageAvailableSize(@Nullable Output<String> mirrorStorageAvailableSize) {
+            $.mirrorStorageAvailableSize = mirrorStorageAvailableSize;
+            return this;
+        }
+
+        /**
+         * @param mirrorStorageAvailableSize Amount of available mirror storage in bytes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mirrorStorageAvailableSize(String mirrorStorageAvailableSize) {
+            return mirrorStorageAvailableSize(Output.of(mirrorStorageAvailableSize));
+        }
+
+        /**
+         * @param mirrorStorageSize Total mirror storage size in bytes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mirrorStorageSize(@Nullable Output<String> mirrorStorageSize) {
+            $.mirrorStorageSize = mirrorStorageSize;
+            return this;
+        }
+
+        /**
+         * @param mirrorStorageSize Total mirror storage size in bytes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mirrorStorageSize(String mirrorStorageSize) {
+            return mirrorStorageSize(Output.of(mirrorStorageSize));
+        }
+
+        /**
          * @param mirrorSyncStatuses Status summary of the mirror sync.
          * 
          * @return builder
@@ -620,6 +876,27 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
          */
         public Builder mirrorSyncStatuses(ManagementStationMirrorSyncStatusArgs... mirrorSyncStatuses) {
             return mirrorSyncStatuses(List.of(mirrorSyncStatuses));
+        }
+
+        /**
+         * @param mirrorUniquePackageCount The total number of unique packages within the mirrored software sources on the station. Each package is counted only once, regardless of how many versions it has.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mirrorUniquePackageCount(@Nullable Output<Integer> mirrorUniquePackageCount) {
+            $.mirrorUniquePackageCount = mirrorUniquePackageCount;
+            return this;
+        }
+
+        /**
+         * @param mirrorUniquePackageCount The total number of unique packages within the mirrored software sources on the station. Each package is counted only once, regardless of how many versions it has.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mirrorUniquePackageCount(Integer mirrorUniquePackageCount) {
+            return mirrorUniquePackageCount(Output.of(mirrorUniquePackageCount));
         }
 
         /**
@@ -662,6 +939,37 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
          */
         public Builder overallState(String overallState) {
             return overallState(Output.of(overallState));
+        }
+
+        /**
+         * @param peerManagementStations A list of other management stations that are behind the same load balancer within a high availability configuration. Stations are identified as peers if they have the same hostname and compartment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerManagementStations(@Nullable Output<List<ManagementStationPeerManagementStationArgs>> peerManagementStations) {
+            $.peerManagementStations = peerManagementStations;
+            return this;
+        }
+
+        /**
+         * @param peerManagementStations A list of other management stations that are behind the same load balancer within a high availability configuration. Stations are identified as peers if they have the same hostname and compartment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerManagementStations(List<ManagementStationPeerManagementStationArgs> peerManagementStations) {
+            return peerManagementStations(Output.of(peerManagementStations));
+        }
+
+        /**
+         * @param peerManagementStations A list of other management stations that are behind the same load balancer within a high availability configuration. Stations are identified as peers if they have the same hostname and compartment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerManagementStations(ManagementStationPeerManagementStationArgs... peerManagementStations) {
+            return peerManagementStations(List.of(peerManagementStations));
         }
 
         /**

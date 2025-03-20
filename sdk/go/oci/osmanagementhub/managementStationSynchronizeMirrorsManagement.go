@@ -14,7 +14,7 @@ import (
 
 // This resource provides the Management Station Synchronize Mirrors Management resource in Oracle Cloud Infrastructure Os Management Hub service.
 //
-// Synchronize the specified software sources mirrors on the management station.
+// Synchronize the specified software sources mirrored on the management station.
 //
 // ## Example Usage
 //
@@ -55,7 +55,7 @@ type ManagementStationSynchronizeMirrorsManagement struct {
 
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
 	ManagementStationId pulumi.StringOutput `pulumi:"managementStationId"`
-	// List of Software Source OCIDs to synchronize
+	// List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to synchronize.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -100,7 +100,7 @@ func GetManagementStationSynchronizeMirrorsManagement(ctx *pulumi.Context,
 type managementStationSynchronizeMirrorsManagementState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
 	ManagementStationId *string `pulumi:"managementStationId"`
-	// List of Software Source OCIDs to synchronize
+	// List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to synchronize.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -110,7 +110,7 @@ type managementStationSynchronizeMirrorsManagementState struct {
 type ManagementStationSynchronizeMirrorsManagementState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
 	ManagementStationId pulumi.StringPtrInput
-	// List of Software Source OCIDs to synchronize
+	// List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to synchronize.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -124,7 +124,7 @@ func (ManagementStationSynchronizeMirrorsManagementState) ElementType() reflect.
 type managementStationSynchronizeMirrorsManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
 	ManagementStationId string `pulumi:"managementStationId"`
-	// List of Software Source OCIDs to synchronize
+	// List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to synchronize.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -135,7 +135,7 @@ type managementStationSynchronizeMirrorsManagementArgs struct {
 type ManagementStationSynchronizeMirrorsManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
 	ManagementStationId pulumi.StringInput
-	// List of Software Source OCIDs to synchronize
+	// List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to synchronize.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -236,7 +236,7 @@ func (o ManagementStationSynchronizeMirrorsManagementOutput) ManagementStationId
 	}).(pulumi.StringOutput)
 }
 
-// List of Software Source OCIDs to synchronize
+// List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to synchronize.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

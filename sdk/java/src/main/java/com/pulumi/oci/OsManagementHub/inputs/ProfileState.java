@@ -83,14 +83,14 @@ public final class ProfileState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * @return (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -218,14 +218,14 @@ public final class ProfileState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+     * description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is required when creating a profile for non-OCI instances.
      * 
      */
     @Import(name="managementStationId")
     private @Nullable Output<String> managementStationId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+     * @return description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is required when creating a profile for non-OCI instances.
      * 
      */
     public Optional<Output<String>> managementStationId() {
@@ -260,6 +260,21 @@ public final class ProfileState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> profileType() {
         return Optional.ofNullable(this.profileType);
+    }
+
+    /**
+     * The version of the profile. The version is automatically incremented each time the profiled is edited.
+     * 
+     */
+    @Import(name="profileVersion")
+    private @Nullable Output<String> profileVersion;
+
+    /**
+     * @return The version of the profile. The version is automatically incremented each time the profiled is edited.
+     * 
+     */
+    public Optional<Output<String>> profileVersion() {
+        return Optional.ofNullable(this.profileVersion);
     }
 
     /**
@@ -353,6 +368,21 @@ public final class ProfileState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     * 
+     */
+    @Import(name="timeModified")
+    private @Nullable Output<String> timeModified;
+
+    /**
+     * @return The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     * 
+     */
+    public Optional<Output<String>> timeModified() {
+        return Optional.ofNullable(this.timeModified);
+    }
+
+    /**
      * The vendor of the operating system for the instance.
      * 
      * ** IMPORTANT **
@@ -392,12 +422,14 @@ public final class ProfileState extends com.pulumi.resources.ResourceArgs {
         this.managementStationId = $.managementStationId;
         this.osFamily = $.osFamily;
         this.profileType = $.profileType;
+        this.profileVersion = $.profileVersion;
         this.registrationType = $.registrationType;
         this.softwareSourceIds = $.softwareSourceIds;
         this.softwareSources = $.softwareSources;
         this.state = $.state;
         this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
+        this.timeModified = $.timeModified;
         this.vendorName = $.vendorName;
     }
 
@@ -504,7 +536,7 @@ public final class ProfileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+         * @param displayName (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
          * 
          * @return builder
          * 
@@ -515,7 +547,7 @@ public final class ProfileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+         * @param displayName (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
          * 
          * @return builder
          * 
@@ -723,7 +755,7 @@ public final class ProfileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param managementStationId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+         * @param managementStationId description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is required when creating a profile for non-OCI instances.
          * 
          * @return builder
          * 
@@ -734,7 +766,7 @@ public final class ProfileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param managementStationId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+         * @param managementStationId description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is required when creating a profile for non-OCI instances.
          * 
          * @return builder
          * 
@@ -783,6 +815,27 @@ public final class ProfileState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder profileType(String profileType) {
             return profileType(Output.of(profileType));
+        }
+
+        /**
+         * @param profileVersion The version of the profile. The version is automatically incremented each time the profiled is edited.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder profileVersion(@Nullable Output<String> profileVersion) {
+            $.profileVersion = profileVersion;
+            return this;
+        }
+
+        /**
+         * @param profileVersion The version of the profile. The version is automatically incremented each time the profiled is edited.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder profileVersion(String profileVersion) {
+            return profileVersion(Output.of(profileVersion));
         }
 
         /**
@@ -929,6 +982,27 @@ public final class ProfileState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder timeCreated(String timeCreated) {
             return timeCreated(Output.of(timeCreated));
+        }
+
+        /**
+         * @param timeModified The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeModified(@Nullable Output<String> timeModified) {
+            $.timeModified = timeModified;
+            return this;
+        }
+
+        /**
+         * @param timeModified The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeModified(String timeModified) {
+            return timeModified(Output.of(timeModified));
         }
 
         /**

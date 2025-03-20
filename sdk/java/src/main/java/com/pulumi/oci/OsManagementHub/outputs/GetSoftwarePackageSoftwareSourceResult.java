@@ -49,7 +49,7 @@ public final class GetSoftwarePackageSoftwareSourceResult {
      */
     private String id;
     /**
-     * @return The OS family the software source belongs to.
+     * @return The OS family of the software source.
      * 
      */
     private @Nullable List<String> osFamilies;
@@ -123,7 +123,7 @@ public final class GetSoftwarePackageSoftwareSourceResult {
         return this.id;
     }
     /**
-     * @return The OS family the software source belongs to.
+     * @return The OS family of the software source.
      * 
      */
     public List<String> osFamilies() {

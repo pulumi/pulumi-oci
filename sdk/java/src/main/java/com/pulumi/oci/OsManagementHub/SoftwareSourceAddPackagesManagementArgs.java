@@ -6,9 +6,12 @@ package com.pulumi.oci.OsManagementHub;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class SoftwareSourceAddPackagesManagementArgs extends com.pulumi.resources.ResourceArgs {
@@ -16,14 +19,29 @@ public final class SoftwareSourceAddPackagesManagementArgs extends com.pulumi.re
     public static final SoftwareSourceAddPackagesManagementArgs Empty = new SoftwareSourceAddPackagesManagementArgs();
 
     /**
-     * List of packages specified by the full package name (NEVRA.rpm).
+     * Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
+     * 
+     */
+    @Import(name="isContinueOnMissingPackages")
+    private @Nullable Output<Boolean> isContinueOnMissingPackages;
+
+    /**
+     * @return Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
+     * 
+     */
+    public Optional<Output<Boolean>> isContinueOnMissingPackages() {
+        return Optional.ofNullable(this.isContinueOnMissingPackages);
+    }
+
+    /**
+     * List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
      * 
      */
     @Import(name="packages", required=true)
     private Output<List<String>> packages;
 
     /**
-     * @return List of packages specified by the full package name (NEVRA.rpm).
+     * @return List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
      * 
      */
     public Output<List<String>> packages() {
@@ -54,6 +72,7 @@ public final class SoftwareSourceAddPackagesManagementArgs extends com.pulumi.re
     private SoftwareSourceAddPackagesManagementArgs() {}
 
     private SoftwareSourceAddPackagesManagementArgs(SoftwareSourceAddPackagesManagementArgs $) {
+        this.isContinueOnMissingPackages = $.isContinueOnMissingPackages;
         this.packages = $.packages;
         this.softwareSourceId = $.softwareSourceId;
     }
@@ -77,7 +96,28 @@ public final class SoftwareSourceAddPackagesManagementArgs extends com.pulumi.re
         }
 
         /**
-         * @param packages List of packages specified by the full package name (NEVRA.rpm).
+         * @param isContinueOnMissingPackages Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isContinueOnMissingPackages(@Nullable Output<Boolean> isContinueOnMissingPackages) {
+            $.isContinueOnMissingPackages = isContinueOnMissingPackages;
+            return this;
+        }
+
+        /**
+         * @param isContinueOnMissingPackages Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isContinueOnMissingPackages(Boolean isContinueOnMissingPackages) {
+            return isContinueOnMissingPackages(Output.of(isContinueOnMissingPackages));
+        }
+
+        /**
+         * @param packages List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
          * 
          * @return builder
          * 
@@ -88,7 +128,7 @@ public final class SoftwareSourceAddPackagesManagementArgs extends com.pulumi.re
         }
 
         /**
-         * @param packages List of packages specified by the full package name (NEVRA.rpm).
+         * @param packages List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
          * 
          * @return builder
          * 
@@ -98,7 +138,7 @@ public final class SoftwareSourceAddPackagesManagementArgs extends com.pulumi.re
         }
 
         /**
-         * @param packages List of packages specified by the full package name (NEVRA.rpm).
+         * @param packages List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
          * 
          * @return builder
          * 

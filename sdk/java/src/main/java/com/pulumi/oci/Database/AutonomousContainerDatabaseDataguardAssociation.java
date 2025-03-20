@@ -14,6 +14,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -160,12 +161,18 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
     /**
      * (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="isAutomaticFailoverEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isAutomaticFailoverEnabled;
 
     /**
      * @return (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Boolean> isAutomaticFailoverEnabled() {
@@ -184,6 +191,20 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
+     * 
+     */
+    @Export(name="migrateTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> migrateTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
+     * 
+     */
+    public Output<Optional<Integer>> migrateTrigger() {
+        return Codegen.optional(this.migrateTrigger);
     }
     /**
      * Backup options for the standby Autonomous Container Database.
@@ -328,18 +349,12 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
     /**
      * (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="protectionMode", refs={String.class}, tree="[0]")
     private Output<String> protectionMode;
 
     /**
      * @return (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> protectionMode() {

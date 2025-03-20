@@ -193,6 +193,12 @@ namespace Pulumi.Oci.Database
         public Output<string> PeerMaintenanceRunId { get; private set; } = null!;
 
         /// <summary>
+        /// The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+        /// </summary>
+        [Output("peerMaintenanceRunIds")]
+        public Output<ImmutableArray<string>> PeerMaintenanceRunIds { get; private set; } = null!;
+
+        /// <summary>
         /// The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         /// </summary>
         [Output("state")]
@@ -497,6 +503,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("peerMaintenanceRunId")]
         public Input<string>? PeerMaintenanceRunId { get; set; }
+
+        [Input("peerMaintenanceRunIds")]
+        private InputList<string>? _peerMaintenanceRunIds;
+
+        /// <summary>
+        /// The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+        /// </summary>
+        public InputList<string> PeerMaintenanceRunIds
+        {
+            get => _peerMaintenanceRunIds ?? (_peerMaintenanceRunIds = new InputList<string>());
+            set => _peerMaintenanceRunIds = value;
+        }
 
         /// <summary>
         /// The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.

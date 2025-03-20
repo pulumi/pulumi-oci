@@ -104,6 +104,10 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("isAutomaticFailoverEnabled")]
         public Output<bool> IsAutomaticFailoverEnabled { get; private set; } = null!;
@@ -113,6 +117,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
+        /// </summary>
+        [Output("migrateTrigger")]
+        public Output<int?> MigrateTrigger { get; private set; } = null!;
 
         /// <summary>
         /// Backup options for the standby Autonomous Container Database.
@@ -175,12 +185,7 @@ namespace Pulumi.Oci.Database
         public Output<string> PeerRole { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation. 
-        /// 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         /// </summary>
         [Output("protectionMode")]
         public Output<string> ProtectionMode { get; private set; } = null!;
@@ -290,9 +295,19 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("isAutomaticFailoverEnabled")]
         public Input<bool>? IsAutomaticFailoverEnabled { get; set; }
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
+        /// </summary>
+        [Input("migrateTrigger")]
+        public Input<int>? MigrateTrigger { get; set; }
 
         /// <summary>
         /// Backup options for the standby Autonomous Container Database.
@@ -331,12 +346,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? PeerDbUniqueName { get; set; }
 
         /// <summary>
-        /// (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation. 
-        /// 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         /// </summary>
         [Input("protectionMode", required: true)]
         public Input<string> ProtectionMode { get; set; } = null!;
@@ -384,6 +394,10 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("isAutomaticFailoverEnabled")]
         public Input<bool>? IsAutomaticFailoverEnabled { get; set; }
@@ -393,6 +407,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
+        /// </summary>
+        [Input("migrateTrigger")]
+        public Input<int>? MigrateTrigger { get; set; }
 
         /// <summary>
         /// Backup options for the standby Autonomous Container Database.
@@ -455,12 +475,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? PeerRole { get; set; }
 
         /// <summary>
-        /// (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation. 
-        /// 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         /// </summary>
         [Input("protectionMode")]
         public Input<string>? ProtectionMode { get; set; }

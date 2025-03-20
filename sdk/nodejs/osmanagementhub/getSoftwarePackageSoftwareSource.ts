@@ -60,15 +60,15 @@ export interface GetSoftwarePackageSoftwareSourceArgs {
      */
     archTypes?: string[];
     /**
-     * The availabilities of the software source in a non-OCI environment for a tenancy.
+     * The availability of the software source in a non-OCI environment for a tenancy.
      */
     availabilities?: string[];
     /**
-     * The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
+     * The availability of the software source. Use this query parameter to filter across availabilities in different environments.
      */
     availabilityAnywheres?: string[];
     /**
-     * The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+     * The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
      */
     availabilityAtOcis?: string[];
     /**
@@ -134,7 +134,7 @@ export interface GetSoftwarePackageSoftwareSourceResult {
      */
     readonly id: string;
     /**
-     * The OS family the software source belongs to.
+     * The OS family of the software source.
      */
     readonly osFamilies?: string[];
     readonly softwarePackageName: string;
@@ -205,15 +205,15 @@ export interface GetSoftwarePackageSoftwareSourceOutputArgs {
      */
     archTypes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The availabilities of the software source in a non-OCI environment for a tenancy.
+     * The availability of the software source in a non-OCI environment for a tenancy.
      */
     availabilities?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
+     * The availability of the software source. Use this query parameter to filter across availabilities in different environments.
      */
     availabilityAnywheres?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+     * The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
      */
     availabilityAtOcis?: pulumi.Input<pulumi.Input<string>[]>;
     /**

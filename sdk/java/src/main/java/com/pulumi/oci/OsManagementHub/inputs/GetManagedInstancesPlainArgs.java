@@ -33,6 +33,21 @@ public final class GetManagedInstancesPlainArgs extends com.pulumi.resources.Inv
     }
 
     /**
+     * A filter to return only managed instances with the specified version of osmh-agent running.
+     * 
+     */
+    @Import(name="agentVersion")
+    private @Nullable String agentVersion;
+
+    /**
+     * @return A filter to return only managed instances with the specified version of osmh-agent running.
+     * 
+     */
+    public Optional<String> agentVersion() {
+        return Optional.ofNullable(this.agentVersion);
+    }
+
+    /**
      * A filter to return only instances whose architecture type matches the given architecture.
      * 
      */
@@ -190,6 +205,21 @@ public final class GetManagedInstancesPlainArgs extends com.pulumi.resources.Inv
     }
 
     /**
+     * A filter to return only managed instances that require a reboot to install updates.
+     * 
+     */
+    @Import(name="isRebootRequired")
+    private @Nullable Boolean isRebootRequired;
+
+    /**
+     * @return A filter to return only managed instances that require a reboot to install updates.
+     * 
+     */
+    public Optional<Boolean> isRebootRequired() {
+        return Optional.ofNullable(this.isRebootRequired);
+    }
+
+    /**
      * A filter to return only managed instances in a specific lifecycle environment.
      * 
      */
@@ -295,6 +325,36 @@ public final class GetManagedInstancesPlainArgs extends com.pulumi.resources.Inv
     }
 
     /**
+     * A filter to return resources that aren&#39;t associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    @Import(name="managementStationNotEqualTos")
+    private @Nullable List<String> managementStationNotEqualTos;
+
+    /**
+     * @return A filter to return resources that aren&#39;t associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    public Optional<List<String>> managementStationNotEqualTos() {
+        return Optional.ofNullable(this.managementStationNotEqualTos);
+    }
+
+    /**
+     * A filter to return resources that are associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    @Import(name="managementStations")
+    private @Nullable List<String> managementStations;
+
+    /**
+     * @return A filter to return resources that are associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    public Optional<List<String>> managementStations() {
+        return Optional.ofNullable(this.managementStations);
+    }
+
+    /**
      * A filter to return only resources that match the given operating system family.
      * 
      */
@@ -373,6 +433,7 @@ public final class GetManagedInstancesPlainArgs extends com.pulumi.resources.Inv
 
     private GetManagedInstancesPlainArgs(GetManagedInstancesPlainArgs $) {
         this.advisoryNames = $.advisoryNames;
+        this.agentVersion = $.agentVersion;
         this.archTypes = $.archTypes;
         this.compartmentId = $.compartmentId;
         this.displayNameContains = $.displayNameContains;
@@ -384,6 +445,7 @@ public final class GetManagedInstancesPlainArgs extends com.pulumi.resources.Inv
         this.isManagedByAutonomousLinux = $.isManagedByAutonomousLinux;
         this.isManagementStation = $.isManagementStation;
         this.isProfileAttached = $.isProfileAttached;
+        this.isRebootRequired = $.isRebootRequired;
         this.lifecycleEnvironment = $.lifecycleEnvironment;
         this.lifecycleEnvironmentNotEqualTo = $.lifecycleEnvironmentNotEqualTo;
         this.lifecycleStage = $.lifecycleStage;
@@ -391,6 +453,8 @@ public final class GetManagedInstancesPlainArgs extends com.pulumi.resources.Inv
         this.locationNotEqualTos = $.locationNotEqualTos;
         this.locations = $.locations;
         this.managedInstanceId = $.managedInstanceId;
+        this.managementStationNotEqualTos = $.managementStationNotEqualTos;
+        this.managementStations = $.managementStations;
         this.osFamilies = $.osFamilies;
         this.profileNotEqualTos = $.profileNotEqualTos;
         this.profiles = $.profiles;
@@ -435,6 +499,17 @@ public final class GetManagedInstancesPlainArgs extends com.pulumi.resources.Inv
          */
         public Builder advisoryNames(String... advisoryNames) {
             return advisoryNames(List.of(advisoryNames));
+        }
+
+        /**
+         * @param agentVersion A filter to return only managed instances with the specified version of osmh-agent running.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder agentVersion(@Nullable String agentVersion) {
+            $.agentVersion = agentVersion;
+            return this;
         }
 
         /**
@@ -577,6 +652,17 @@ public final class GetManagedInstancesPlainArgs extends com.pulumi.resources.Inv
         }
 
         /**
+         * @param isRebootRequired A filter to return only managed instances that require a reboot to install updates.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isRebootRequired(@Nullable Boolean isRebootRequired) {
+            $.isRebootRequired = isRebootRequired;
+            return this;
+        }
+
+        /**
          * @param lifecycleEnvironment A filter to return only managed instances in a specific lifecycle environment.
          * 
          * @return builder
@@ -671,6 +757,48 @@ public final class GetManagedInstancesPlainArgs extends com.pulumi.resources.Inv
         public Builder managedInstanceId(@Nullable String managedInstanceId) {
             $.managedInstanceId = managedInstanceId;
             return this;
+        }
+
+        /**
+         * @param managementStationNotEqualTos A filter to return resources that aren&#39;t associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managementStationNotEqualTos(@Nullable List<String> managementStationNotEqualTos) {
+            $.managementStationNotEqualTos = managementStationNotEqualTos;
+            return this;
+        }
+
+        /**
+         * @param managementStationNotEqualTos A filter to return resources that aren&#39;t associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managementStationNotEqualTos(String... managementStationNotEqualTos) {
+            return managementStationNotEqualTos(List.of(managementStationNotEqualTos));
+        }
+
+        /**
+         * @param managementStations A filter to return resources that are associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managementStations(@Nullable List<String> managementStations) {
+            $.managementStations = managementStations;
+            return this;
+        }
+
+        /**
+         * @param managementStations A filter to return resources that are associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managementStations(String... managementStations) {
+            return managementStations(List.of(managementStations));
         }
 
         /**

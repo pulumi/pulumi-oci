@@ -12,7 +12,7 @@ namespace Pulumi.Oci.OsManagementHub
     /// <summary>
     /// This resource provides the Software Source resource in Oracle Cloud Infrastructure Os Management Hub service.
     /// 
-    /// Creates a new versioned or custom software source.
+    /// Creates a new software source.
     /// 
     /// ## Import
     /// 
@@ -26,7 +26,13 @@ namespace Pulumi.Oci.OsManagementHub
     public partial class SoftwareSource : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The architecture type supported by the software source.
+        /// (Updatable) Advanced repository options for the software source
+        /// </summary>
+        [Output("advancedRepoOptions")]
+        public Output<string> AdvancedRepoOptions { get; private set; } = null!;
+
+        /// <summary>
+        /// The architecture type supported by the third-party software source.
         /// </summary>
         [Output("archType")]
         public Output<string> ArchType { get; private set; } = null!;
@@ -98,7 +104,7 @@ namespace Pulumi.Oci.OsManagementHub
         public Output<string> GpgKeyId { get; private set; } = null!;
 
         /// <summary>
-        /// URL of the GPG key for this software source.
+        /// (Updatable) URI of the GPG key for this software source.
         /// </summary>
         [Output("gpgKeyUrl")]
         public Output<string> GpgKeyUrl { get; private set; } = null!;
@@ -122,6 +128,12 @@ namespace Pulumi.Oci.OsManagementHub
         public Output<bool> IsCreatedFromPackageList { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Whether signature verification should be done for the software source.
+        /// </summary>
+        [Output("isGpgCheckEnabled")]
+        public Output<bool> IsGpgCheckEnabled { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
         /// * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
         /// * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
@@ -139,13 +151,25 @@ namespace Pulumi.Oci.OsManagementHub
         public Output<bool> IsMandatoryForAutonomousLinux { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Whether this software source can be synced to a management station
+        /// </summary>
+        [Output("isMirrorSyncAllowed")]
+        public Output<bool> IsMirrorSyncAllowed { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Whether SSL validation needs to be turned on
+        /// </summary>
+        [Output("isSslVerifyEnabled")]
+        public Output<bool> IsSslVerifyEnabled { get; private set; } = null!;
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
         /// </summary>
         [Output("originSoftwareSourceId")]
         public Output<string> OriginSoftwareSourceId { get; private set; } = null!;
 
         /// <summary>
-        /// The OS family the software source belongs to.
+        /// The OS family for the third-party software source.
         /// </summary>
         [Output("osFamily")]
         public Output<string> OsFamily { get; private set; } = null!;
@@ -169,10 +193,16 @@ namespace Pulumi.Oci.OsManagementHub
         public Output<string> RepoId { get; private set; } = null!;
 
         /// <summary>
-        /// The size of the software source in gigabytes (GB).
+        /// The size of the software source in bytes (B).
         /// </summary>
         [Output("size")]
         public Output<double> Size { get; private set; } = null!;
+
+        /// <summary>
+        /// The creation type of a software source.
+        /// </summary>
+        [Output("softwareSourceSubType")]
+        public Output<string> SoftwareSourceSubType { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Type of software source.
@@ -205,7 +235,13 @@ namespace Pulumi.Oci.OsManagementHub
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is 'custom/&lt;repoId&gt;'.
+        /// The date and time the metadata for this software source was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        /// </summary>
+        [Output("timeMetadataUpdated")]
+        public Output<string> TimeMetadataUpdated { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) URL for the third-party software source.
         /// </summary>
         [Output("url")]
         public Output<string> Url { get; private set; } = null!;
@@ -269,6 +305,18 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class SoftwareSourceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Updatable) Advanced repository options for the software source
+        /// </summary>
+        [Input("advancedRepoOptions")]
+        public Input<string>? AdvancedRepoOptions { get; set; }
+
+        /// <summary>
+        /// The architecture type supported by the third-party software source.
+        /// </summary>
+        [Input("archType")]
+        public Input<string>? ArchType { get; set; }
+
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
         /// </summary>
         [Input("compartmentId", required: true)]
@@ -317,6 +365,12 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
+        /// (Updatable) URI of the GPG key for this software source.
+        /// </summary>
+        [Input("gpgKeyUrl")]
+        public Input<string>? GpgKeyUrl { get; set; }
+
+        /// <summary>
         /// (Updatable) Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
         /// </summary>
         [Input("isAutoResolveDependencies")]
@@ -335,6 +389,12 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<bool>? IsCreatedFromPackageList { get; set; }
 
         /// <summary>
+        /// (Updatable) Whether signature verification should be done for the software source.
+        /// </summary>
+        [Input("isGpgCheckEnabled")]
+        public Input<bool>? IsGpgCheckEnabled { get; set; }
+
+        /// <summary>
         /// (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
         /// * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
         /// * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
@@ -346,10 +406,28 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<bool>? IsLatestContentOnly { get; set; }
 
         /// <summary>
+        /// (Updatable) Whether this software source can be synced to a management station
+        /// </summary>
+        [Input("isMirrorSyncAllowed")]
+        public Input<bool>? IsMirrorSyncAllowed { get; set; }
+
+        /// <summary>
+        /// (Updatable) Whether SSL validation needs to be turned on
+        /// </summary>
+        [Input("isSslVerifyEnabled")]
+        public Input<bool>? IsSslVerifyEnabled { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
         /// </summary>
         [Input("originSoftwareSourceId")]
         public Input<string>? OriginSoftwareSourceId { get; set; }
+
+        /// <summary>
+        /// The OS family for the third-party software source.
+        /// </summary>
+        [Input("osFamily")]
+        public Input<string>? OsFamily { get; set; }
 
         [Input("packages")]
         private InputList<string>? _packages;
@@ -364,6 +442,12 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
+        /// The creation type of a software source.
+        /// </summary>
+        [Input("softwareSourceSubType")]
+        public Input<string>? SoftwareSourceSubType { get; set; }
+
+        /// <summary>
         /// (Updatable) Type of software source.
         /// </summary>
         [Input("softwareSourceType", required: true)]
@@ -374,6 +458,12 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         [Input("softwareSourceVersion")]
         public Input<string>? SoftwareSourceVersion { get; set; }
+
+        /// <summary>
+        /// (Updatable) URL for the third-party software source.
+        /// </summary>
+        [Input("url")]
+        public Input<string>? Url { get; set; }
 
         [Input("vendorSoftwareSources")]
         private InputList<Inputs.SoftwareSourceVendorSoftwareSourceArgs>? _vendorSoftwareSources;
@@ -396,7 +486,13 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class SoftwareSourceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The architecture type supported by the software source.
+        /// (Updatable) Advanced repository options for the software source
+        /// </summary>
+        [Input("advancedRepoOptions")]
+        public Input<string>? AdvancedRepoOptions { get; set; }
+
+        /// <summary>
+        /// The architecture type supported by the third-party software source.
         /// </summary>
         [Input("archType")]
         public Input<string>? ArchType { get; set; }
@@ -480,7 +576,7 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<string>? GpgKeyId { get; set; }
 
         /// <summary>
-        /// URL of the GPG key for this software source.
+        /// (Updatable) URI of the GPG key for this software source.
         /// </summary>
         [Input("gpgKeyUrl")]
         public Input<string>? GpgKeyUrl { get; set; }
@@ -504,6 +600,12 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<bool>? IsCreatedFromPackageList { get; set; }
 
         /// <summary>
+        /// (Updatable) Whether signature verification should be done for the software source.
+        /// </summary>
+        [Input("isGpgCheckEnabled")]
+        public Input<bool>? IsGpgCheckEnabled { get; set; }
+
+        /// <summary>
         /// (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
         /// * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
         /// * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
@@ -521,13 +623,25 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<bool>? IsMandatoryForAutonomousLinux { get; set; }
 
         /// <summary>
+        /// (Updatable) Whether this software source can be synced to a management station
+        /// </summary>
+        [Input("isMirrorSyncAllowed")]
+        public Input<bool>? IsMirrorSyncAllowed { get; set; }
+
+        /// <summary>
+        /// (Updatable) Whether SSL validation needs to be turned on
+        /// </summary>
+        [Input("isSslVerifyEnabled")]
+        public Input<bool>? IsSslVerifyEnabled { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
         /// </summary>
         [Input("originSoftwareSourceId")]
         public Input<string>? OriginSoftwareSourceId { get; set; }
 
         /// <summary>
-        /// The OS family the software source belongs to.
+        /// The OS family for the third-party software source.
         /// </summary>
         [Input("osFamily")]
         public Input<string>? OsFamily { get; set; }
@@ -557,10 +671,16 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<string>? RepoId { get; set; }
 
         /// <summary>
-        /// The size of the software source in gigabytes (GB).
+        /// The size of the software source in bytes (B).
         /// </summary>
         [Input("size")]
         public Input<double>? Size { get; set; }
+
+        /// <summary>
+        /// The creation type of a software source.
+        /// </summary>
+        [Input("softwareSourceSubType")]
+        public Input<string>? SoftwareSourceSubType { get; set; }
 
         /// <summary>
         /// (Updatable) Type of software source.
@@ -599,7 +719,13 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is 'custom/&lt;repoId&gt;'.
+        /// The date and time the metadata for this software source was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        /// </summary>
+        [Input("timeMetadataUpdated")]
+        public Input<string>? TimeMetadataUpdated { get; set; }
+
+        /// <summary>
+        /// (Updatable) URL for the third-party software source.
         /// </summary>
         [Input("url")]
         public Input<string>? Url { get; set; }

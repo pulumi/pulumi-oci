@@ -80,7 +80,7 @@ public final class GetProfileResult {
      */
     private List<GetProfileManagedInstanceGroup> managedInstanceGroups;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an  instance once registered. Management stations are only used by non-OCI instances.
      * 
      */
     private String managementStationId;
@@ -95,6 +95,11 @@ public final class GetProfileResult {
      * 
      */
     private String profileType;
+    /**
+     * @return The version of the profile. The version is automatically incremented each time the profiled is edited.
+     * 
+     */
+    private String profileVersion;
     /**
      * @return The type of instance to register.
      * 
@@ -121,6 +126,11 @@ public final class GetProfileResult {
      * 
      */
     private String timeCreated;
+    /**
+     * @return The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     * 
+     */
+    private String timeModified;
     /**
      * @return The vendor of the operating system for the instance.
      * 
@@ -219,7 +229,7 @@ public final class GetProfileResult {
         return this.managedInstanceGroups;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an  instance once registered. Management stations are only used by non-OCI instances.
      * 
      */
     public String managementStationId() {
@@ -241,6 +251,13 @@ public final class GetProfileResult {
      */
     public String profileType() {
         return this.profileType;
+    }
+    /**
+     * @return The version of the profile. The version is automatically incremented each time the profiled is edited.
+     * 
+     */
+    public String profileVersion() {
+        return this.profileVersion;
     }
     /**
      * @return The type of instance to register.
@@ -281,6 +298,13 @@ public final class GetProfileResult {
         return this.timeCreated;
     }
     /**
+     * @return The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     * 
+     */
+    public String timeModified() {
+        return this.timeModified;
+    }
+    /**
      * @return The vendor of the operating system for the instance.
      * 
      */
@@ -315,12 +339,14 @@ public final class GetProfileResult {
         private String osFamily;
         private String profileId;
         private String profileType;
+        private String profileVersion;
         private String registrationType;
         private List<String> softwareSourceIds;
         private List<GetProfileSoftwareSource> softwareSources;
         private String state;
         private Map<String,String> systemTags;
         private String timeCreated;
+        private String timeModified;
         private String vendorName;
         public Builder() {}
         public Builder(GetProfileResult defaults) {
@@ -343,12 +369,14 @@ public final class GetProfileResult {
     	      this.osFamily = defaults.osFamily;
     	      this.profileId = defaults.profileId;
     	      this.profileType = defaults.profileType;
+    	      this.profileVersion = defaults.profileVersion;
     	      this.registrationType = defaults.registrationType;
     	      this.softwareSourceIds = defaults.softwareSourceIds;
     	      this.softwareSources = defaults.softwareSources;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.timeModified = defaults.timeModified;
     	      this.vendorName = defaults.vendorName;
         }
 
@@ -506,6 +534,14 @@ public final class GetProfileResult {
             return this;
         }
         @CustomType.Setter
+        public Builder profileVersion(String profileVersion) {
+            if (profileVersion == null) {
+              throw new MissingRequiredPropertyException("GetProfileResult", "profileVersion");
+            }
+            this.profileVersion = profileVersion;
+            return this;
+        }
+        @CustomType.Setter
         public Builder registrationType(String registrationType) {
             if (registrationType == null) {
               throw new MissingRequiredPropertyException("GetProfileResult", "registrationType");
@@ -560,6 +596,14 @@ public final class GetProfileResult {
             return this;
         }
         @CustomType.Setter
+        public Builder timeModified(String timeModified) {
+            if (timeModified == null) {
+              throw new MissingRequiredPropertyException("GetProfileResult", "timeModified");
+            }
+            this.timeModified = timeModified;
+            return this;
+        }
+        @CustomType.Setter
         public Builder vendorName(String vendorName) {
             if (vendorName == null) {
               throw new MissingRequiredPropertyException("GetProfileResult", "vendorName");
@@ -587,12 +631,14 @@ public final class GetProfileResult {
             _resultValue.osFamily = osFamily;
             _resultValue.profileId = profileId;
             _resultValue.profileType = profileType;
+            _resultValue.profileVersion = profileVersion;
             _resultValue.registrationType = registrationType;
             _resultValue.softwareSourceIds = softwareSourceIds;
             _resultValue.softwareSources = softwareSources;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
+            _resultValue.timeModified = timeModified;
             _resultValue.vendorName = vendorName;
             return _resultValue;
         }

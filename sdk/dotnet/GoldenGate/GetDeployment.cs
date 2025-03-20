@@ -127,6 +127,10 @@ namespace Pulumi.Oci.GoldenGate
     public sealed class GetDeploymentResult
     {
         /// <summary>
+        /// Defines the schedule of the deployment backup.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDeploymentBackupScheduleResult> BackupSchedules;
+        /// <summary>
         /// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
         /// </summary>
         public readonly string Category;
@@ -285,6 +289,14 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
+        /// The timestamp of last deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+        /// </summary>
+        public readonly string TimeLastBackupScheduled;
+        /// <summary>
+        /// The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
+        /// </summary>
+        public readonly string TimeNextBackupScheduled;
+        /// <summary>
         /// The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
         public readonly string TimeOfNextMaintenance;
@@ -303,6 +315,8 @@ namespace Pulumi.Oci.GoldenGate
 
         [OutputConstructor]
         private GetDeploymentResult(
+            ImmutableArray<Outputs.GetDeploymentBackupScheduleResult> backupSchedules,
+
             string category,
 
             string compartmentId,
@@ -385,6 +399,10 @@ namespace Pulumi.Oci.GoldenGate
 
             string timeCreated,
 
+            string timeLastBackupScheduled,
+
+            string timeNextBackupScheduled,
+
             string timeOfNextMaintenance,
 
             string timeOggVersionSupportedUntil,
@@ -393,6 +411,7 @@ namespace Pulumi.Oci.GoldenGate
 
             string timeUpgradeRequired)
         {
+            BackupSchedules = backupSchedules;
             Category = category;
             CompartmentId = compartmentId;
             CpuCoreCount = cpuCoreCount;
@@ -434,6 +453,8 @@ namespace Pulumi.Oci.GoldenGate
             SubnetId = subnetId;
             SystemTags = systemTags;
             TimeCreated = timeCreated;
+            TimeLastBackupScheduled = timeLastBackupScheduled;
+            TimeNextBackupScheduled = timeNextBackupScheduled;
             TimeOfNextMaintenance = timeOfNextMaintenance;
             TimeOggVersionSupportedUntil = timeOggVersionSupportedUntil;
             TimeUpdated = timeUpdated;

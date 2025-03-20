@@ -78,7 +78,7 @@ type Profile struct {
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) User-specified description of the registration profile.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
@@ -96,12 +96,14 @@ type Profile struct {
 	ManagedInstanceGroupId pulumi.StringOutput `pulumi:"managedInstanceGroupId"`
 	// Provides identifying information for the specified managed instance group.
 	ManagedInstanceGroups ProfileManagedInstanceGroupArrayOutput `pulumi:"managedInstanceGroups"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+	// description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is required when creating a profile for non-OCI instances.
 	ManagementStationId pulumi.StringOutput `pulumi:"managementStationId"`
 	// The operating system family.
 	OsFamily pulumi.StringOutput `pulumi:"osFamily"`
 	// The type of profile.
 	ProfileType pulumi.StringOutput `pulumi:"profileType"`
+	// The version of the profile. The version is automatically incremented each time the profiled is edited.
+	ProfileVersion pulumi.StringOutput `pulumi:"profileVersion"`
 	// The type of instance to register.
 	RegistrationType pulumi.StringOutput `pulumi:"registrationType"`
 	// The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the registration profile will use.
@@ -114,6 +116,8 @@ type Profile struct {
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	// The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+	TimeModified pulumi.StringOutput `pulumi:"timeModified"`
 	// The vendor of the operating system for the instance.
 	//
 	// ** IMPORTANT **
@@ -168,7 +172,7 @@ type profileState struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) User-specified description of the registration profile.
 	Description *string `pulumi:"description"`
-	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
@@ -186,12 +190,14 @@ type profileState struct {
 	ManagedInstanceGroupId *string `pulumi:"managedInstanceGroupId"`
 	// Provides identifying information for the specified managed instance group.
 	ManagedInstanceGroups []ProfileManagedInstanceGroup `pulumi:"managedInstanceGroups"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+	// description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is required when creating a profile for non-OCI instances.
 	ManagementStationId *string `pulumi:"managementStationId"`
 	// The operating system family.
 	OsFamily *string `pulumi:"osFamily"`
 	// The type of profile.
 	ProfileType *string `pulumi:"profileType"`
+	// The version of the profile. The version is automatically incremented each time the profiled is edited.
+	ProfileVersion *string `pulumi:"profileVersion"`
 	// The type of instance to register.
 	RegistrationType *string `pulumi:"registrationType"`
 	// The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the registration profile will use.
@@ -204,6 +210,8 @@ type profileState struct {
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeCreated *string `pulumi:"timeCreated"`
+	// The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+	TimeModified *string `pulumi:"timeModified"`
 	// The vendor of the operating system for the instance.
 	//
 	// ** IMPORTANT **
@@ -220,7 +228,7 @@ type ProfileState struct {
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) User-specified description of the registration profile.
 	Description pulumi.StringPtrInput
-	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
@@ -238,12 +246,14 @@ type ProfileState struct {
 	ManagedInstanceGroupId pulumi.StringPtrInput
 	// Provides identifying information for the specified managed instance group.
 	ManagedInstanceGroups ProfileManagedInstanceGroupArrayInput
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+	// description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is required when creating a profile for non-OCI instances.
 	ManagementStationId pulumi.StringPtrInput
 	// The operating system family.
 	OsFamily pulumi.StringPtrInput
 	// The type of profile.
 	ProfileType pulumi.StringPtrInput
+	// The version of the profile. The version is automatically incremented each time the profiled is edited.
+	ProfileVersion pulumi.StringPtrInput
 	// The type of instance to register.
 	RegistrationType pulumi.StringPtrInput
 	// The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the registration profile will use.
@@ -256,6 +266,8 @@ type ProfileState struct {
 	SystemTags pulumi.StringMapInput
 	// The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeCreated pulumi.StringPtrInput
+	// The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+	TimeModified pulumi.StringPtrInput
 	// The vendor of the operating system for the instance.
 	//
 	// ** IMPORTANT **
@@ -276,7 +288,7 @@ type profileArgs struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) User-specified description of the registration profile.
 	Description *string `pulumi:"description"`
-	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
@@ -286,7 +298,7 @@ type profileArgs struct {
 	LifecycleStageId *string `pulumi:"lifecycleStageId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group that the instance will join after registration.
 	ManagedInstanceGroupId *string `pulumi:"managedInstanceGroupId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+	// description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is required when creating a profile for non-OCI instances.
 	ManagementStationId *string `pulumi:"managementStationId"`
 	// The operating system family.
 	OsFamily *string `pulumi:"osFamily"`
@@ -313,7 +325,7 @@ type ProfileArgs struct {
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) User-specified description of the registration profile.
 	Description pulumi.StringPtrInput
-	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
 	DisplayName pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
@@ -323,7 +335,7 @@ type ProfileArgs struct {
 	LifecycleStageId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group that the instance will join after registration.
 	ManagedInstanceGroupId pulumi.StringPtrInput
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+	// description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is required when creating a profile for non-OCI instances.
 	ManagementStationId pulumi.StringPtrInput
 	// The operating system family.
 	OsFamily pulumi.StringPtrInput
@@ -447,7 +459,7 @@ func (o ProfileOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Profile) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
 func (o ProfileOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Profile) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -492,7 +504,7 @@ func (o ProfileOutput) ManagedInstanceGroups() ProfileManagedInstanceGroupArrayO
 	return o.ApplyT(func(v *Profile) ProfileManagedInstanceGroupArrayOutput { return v.ManagedInstanceGroups }).(ProfileManagedInstanceGroupArrayOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+// description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is required when creating a profile for non-OCI instances.
 func (o ProfileOutput) ManagementStationId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Profile) pulumi.StringOutput { return v.ManagementStationId }).(pulumi.StringOutput)
 }
@@ -505,6 +517,11 @@ func (o ProfileOutput) OsFamily() pulumi.StringOutput {
 // The type of profile.
 func (o ProfileOutput) ProfileType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Profile) pulumi.StringOutput { return v.ProfileType }).(pulumi.StringOutput)
+}
+
+// The version of the profile. The version is automatically incremented each time the profiled is edited.
+func (o ProfileOutput) ProfileVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v *Profile) pulumi.StringOutput { return v.ProfileVersion }).(pulumi.StringOutput)
 }
 
 // The type of instance to register.
@@ -535,6 +552,11 @@ func (o ProfileOutput) SystemTags() pulumi.StringMapOutput {
 // The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 func (o ProfileOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Profile) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+func (o ProfileOutput) TimeModified() pulumi.StringOutput {
+	return o.ApplyT(func(v *Profile) pulumi.StringOutput { return v.TimeModified }).(pulumi.StringOutput)
 }
 
 // The vendor of the operating system for the instance.

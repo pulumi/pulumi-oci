@@ -18,11 +18,11 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly string ArchType;
         /// <summary>
-        /// The availabilities of the software source in a non-OCI environment for a tenancy.
+        /// The availability of the software source in a non-OCI environment for a tenancy.
         /// </summary>
         public readonly string Availability;
         /// <summary>
-        /// The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+        /// The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
         /// </summary>
         public readonly string AvailabilityAtOci;
         /// <summary>
@@ -54,6 +54,10 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly bool IsMandatoryForAutonomousLinux;
         /// <summary>
+        /// A filter to return software sources which can be synced to a management station.
+        /// </summary>
+        public readonly bool IsMirrorSyncAllowed;
+        /// <summary>
         /// A filter to return only resources that match the given operating system family.
         /// </summary>
         public readonly string OsFamily;
@@ -66,9 +70,13 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly string RepoId;
         /// <summary>
-        /// The size of the software source in gigabytes (GB).
+        /// The size of the software source in bytes (B).
         /// </summary>
         public readonly double Size;
+        /// <summary>
+        /// Identifies how the versioned custom software source was created.
+        /// </summary>
+        public readonly string SoftwareSourceSubType;
         /// <summary>
         /// The type of the software source.
         /// </summary>
@@ -125,6 +133,8 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
 
             bool isMandatoryForAutonomousLinux,
 
+            bool isMirrorSyncAllowed,
+
             string osFamily,
 
             string packageCount,
@@ -132,6 +142,8 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
             string repoId,
 
             double size,
+
+            string softwareSourceSubType,
 
             string softwareSourceType,
 
@@ -161,10 +173,12 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
             FreeformTags = freeformTags;
             Id = id;
             IsMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
+            IsMirrorSyncAllowed = isMirrorSyncAllowed;
             OsFamily = osFamily;
             PackageCount = packageCount;
             RepoId = repoId;
             Size = size;
+            SoftwareSourceSubType = softwareSourceSubType;
             SoftwareSourceType = softwareSourceType;
             SoftwareSourceVersion = softwareSourceVersion;
             State = state;

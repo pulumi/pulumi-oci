@@ -16,6 +16,8 @@ from .compute_capacity_report import *
 from .compute_capacity_reservation import *
 from .compute_capacity_topology import *
 from .compute_cluster import *
+from .compute_gpu_memory_cluster import *
+from .compute_gpu_memory_fabric import *
 from .compute_image_capability_schema import *
 from .console_history import *
 from .cpe import *
@@ -74,6 +76,11 @@ from .get_compute_global_image_capability_schema import *
 from .get_compute_global_image_capability_schemas import *
 from .get_compute_global_image_capability_schemas_version import *
 from .get_compute_global_image_capability_schemas_versions import *
+from .get_compute_gpu_memory_cluster import *
+from .get_compute_gpu_memory_cluster_instances import *
+from .get_compute_gpu_memory_clusters import *
+from .get_compute_gpu_memory_fabric import *
+from .get_compute_gpu_memory_fabrics import *
 from .get_compute_image_capability_schema import *
 from .get_compute_image_capability_schemas import *
 from .get_console_histories import *

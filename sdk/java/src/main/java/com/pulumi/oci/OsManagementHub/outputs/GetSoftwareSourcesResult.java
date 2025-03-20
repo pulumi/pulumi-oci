@@ -56,7 +56,12 @@ public final class GetSoftwareSourcesResult {
      */
     private @Nullable Boolean isMandatoryForAutonomousLinux;
     /**
-     * @return The OS family the software source belongs to.
+     * @return Indicates if this software source can be mirrored to a management station.
+     * 
+     */
+    private @Nullable Boolean isMirrorSyncAllowed;
+    /**
+     * @return The OS family of the software source.
      * 
      */
     private @Nullable List<String> osFamilies;
@@ -145,7 +150,14 @@ public final class GetSoftwareSourcesResult {
         return Optional.ofNullable(this.isMandatoryForAutonomousLinux);
     }
     /**
-     * @return The OS family the software source belongs to.
+     * @return Indicates if this software source can be mirrored to a management station.
+     * 
+     */
+    public Optional<Boolean> isMirrorSyncAllowed() {
+        return Optional.ofNullable(this.isMirrorSyncAllowed);
+    }
+    /**
+     * @return The OS family of the software source.
      * 
      */
     public List<String> osFamilies() {
@@ -203,6 +215,7 @@ public final class GetSoftwareSourcesResult {
         private @Nullable List<GetSoftwareSourcesFilter> filters;
         private String id;
         private @Nullable Boolean isMandatoryForAutonomousLinux;
+        private @Nullable Boolean isMirrorSyncAllowed;
         private @Nullable List<String> osFamilies;
         private List<GetSoftwareSourcesSoftwareSourceCollection> softwareSourceCollections;
         private @Nullable String softwareSourceId;
@@ -223,6 +236,7 @@ public final class GetSoftwareSourcesResult {
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.isMandatoryForAutonomousLinux = defaults.isMandatoryForAutonomousLinux;
+    	      this.isMirrorSyncAllowed = defaults.isMirrorSyncAllowed;
     	      this.osFamilies = defaults.osFamilies;
     	      this.softwareSourceCollections = defaults.softwareSourceCollections;
     	      this.softwareSourceId = defaults.softwareSourceId;
@@ -318,6 +332,12 @@ public final class GetSoftwareSourcesResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isMirrorSyncAllowed(@Nullable Boolean isMirrorSyncAllowed) {
+
+            this.isMirrorSyncAllowed = isMirrorSyncAllowed;
+            return this;
+        }
+        @CustomType.Setter
         public Builder osFamilies(@Nullable List<String> osFamilies) {
 
             this.osFamilies = osFamilies;
@@ -380,6 +400,7 @@ public final class GetSoftwareSourcesResult {
             _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.isMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
+            _resultValue.isMirrorSyncAllowed = isMirrorSyncAllowed;
             _resultValue.osFamilies = osFamilies;
             _resultValue.softwareSourceCollections = softwareSourceCollections;
             _resultValue.softwareSourceId = softwareSourceId;

@@ -48,6 +48,8 @@ public final class GetProfilesResult {
      * 
      */
     private @Nullable Boolean isServiceProvidedProfile;
+    private @Nullable List<String> managementStationNotEqualTos;
+    private @Nullable List<String> managementStations;
     /**
      * @return The operating system family.
      * 
@@ -64,6 +66,11 @@ public final class GetProfilesResult {
      * 
      */
     private @Nullable List<String> profileTypes;
+    /**
+     * @return The version of the profile. The version is automatically incremented each time the profiled is edited.
+     * 
+     */
+    private @Nullable String profileVersion;
     /**
      * @return The type of instance to register.
      * 
@@ -129,6 +136,12 @@ public final class GetProfilesResult {
     public Optional<Boolean> isServiceProvidedProfile() {
         return Optional.ofNullable(this.isServiceProvidedProfile);
     }
+    public List<String> managementStationNotEqualTos() {
+        return this.managementStationNotEqualTos == null ? List.of() : this.managementStationNotEqualTos;
+    }
+    public List<String> managementStations() {
+        return this.managementStations == null ? List.of() : this.managementStations;
+    }
     /**
      * @return The operating system family.
      * 
@@ -152,6 +165,13 @@ public final class GetProfilesResult {
      */
     public List<String> profileTypes() {
         return this.profileTypes == null ? List.of() : this.profileTypes;
+    }
+    /**
+     * @return The version of the profile. The version is automatically incremented each time the profiled is edited.
+     * 
+     */
+    public Optional<String> profileVersion() {
+        return Optional.ofNullable(this.profileVersion);
     }
     /**
      * @return The type of instance to register.
@@ -192,10 +212,13 @@ public final class GetProfilesResult {
         private String id;
         private @Nullable Boolean isDefaultProfile;
         private @Nullable Boolean isServiceProvidedProfile;
+        private @Nullable List<String> managementStationNotEqualTos;
+        private @Nullable List<String> managementStations;
         private @Nullable String osFamily;
         private List<GetProfilesProfileCollection> profileCollections;
         private @Nullable String profileId;
         private @Nullable List<String> profileTypes;
+        private @Nullable String profileVersion;
         private @Nullable List<String> registrationTypes;
         private @Nullable String state;
         private @Nullable String vendorName;
@@ -210,10 +233,13 @@ public final class GetProfilesResult {
     	      this.id = defaults.id;
     	      this.isDefaultProfile = defaults.isDefaultProfile;
     	      this.isServiceProvidedProfile = defaults.isServiceProvidedProfile;
+    	      this.managementStationNotEqualTos = defaults.managementStationNotEqualTos;
+    	      this.managementStations = defaults.managementStations;
     	      this.osFamily = defaults.osFamily;
     	      this.profileCollections = defaults.profileCollections;
     	      this.profileId = defaults.profileId;
     	      this.profileTypes = defaults.profileTypes;
+    	      this.profileVersion = defaults.profileVersion;
     	      this.registrationTypes = defaults.registrationTypes;
     	      this.state = defaults.state;
     	      this.vendorName = defaults.vendorName;
@@ -276,6 +302,24 @@ public final class GetProfilesResult {
             return this;
         }
         @CustomType.Setter
+        public Builder managementStationNotEqualTos(@Nullable List<String> managementStationNotEqualTos) {
+
+            this.managementStationNotEqualTos = managementStationNotEqualTos;
+            return this;
+        }
+        public Builder managementStationNotEqualTos(String... managementStationNotEqualTos) {
+            return managementStationNotEqualTos(List.of(managementStationNotEqualTos));
+        }
+        @CustomType.Setter
+        public Builder managementStations(@Nullable List<String> managementStations) {
+
+            this.managementStations = managementStations;
+            return this;
+        }
+        public Builder managementStations(String... managementStations) {
+            return managementStations(List.of(managementStations));
+        }
+        @CustomType.Setter
         public Builder osFamily(@Nullable String osFamily) {
 
             this.osFamily = osFamily;
@@ -308,6 +352,12 @@ public final class GetProfilesResult {
             return profileTypes(List.of(profileTypes));
         }
         @CustomType.Setter
+        public Builder profileVersion(@Nullable String profileVersion) {
+
+            this.profileVersion = profileVersion;
+            return this;
+        }
+        @CustomType.Setter
         public Builder registrationTypes(@Nullable List<String> registrationTypes) {
 
             this.registrationTypes = registrationTypes;
@@ -338,10 +388,13 @@ public final class GetProfilesResult {
             _resultValue.id = id;
             _resultValue.isDefaultProfile = isDefaultProfile;
             _resultValue.isServiceProvidedProfile = isServiceProvidedProfile;
+            _resultValue.managementStationNotEqualTos = managementStationNotEqualTos;
+            _resultValue.managementStations = managementStations;
             _resultValue.osFamily = osFamily;
             _resultValue.profileCollections = profileCollections;
             _resultValue.profileId = profileId;
             _resultValue.profileTypes = profileTypes;
+            _resultValue.profileVersion = profileVersion;
             _resultValue.registrationTypes = registrationTypes;
             _resultValue.state = state;
             _resultValue.vendorName = vendorName;

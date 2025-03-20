@@ -26,6 +26,12 @@ namespace Pulumi.Oci.GoldenGate
     public partial class Deployment : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// (Updatable) Defines the backup schedule details for create operation.
+        /// </summary>
+        [Output("backupSchedule")]
+        public Output<Outputs.DeploymentBackupSchedule> BackupSchedule { get; private set; } = null!;
+
+        /// <summary>
         /// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
         /// </summary>
         [Output("category")]
@@ -254,6 +260,18 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
+        /// The timestamp of last deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+        /// </summary>
+        [Output("timeLastBackupScheduled")]
+        public Output<string> TimeLastBackupScheduled { get; private set; } = null!;
+
+        /// <summary>
+        /// The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
+        /// </summary>
+        [Output("timeNextBackupScheduled")]
+        public Output<string> TimeNextBackupScheduled { get; private set; } = null!;
+
+        /// <summary>
         /// The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
         [Output("timeOfNextMaintenance")]
@@ -323,6 +341,12 @@ namespace Pulumi.Oci.GoldenGate
 
     public sealed class DeploymentArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Updatable) Defines the backup schedule details for create operation.
+        /// </summary>
+        [Input("backupSchedule")]
+        public Input<Inputs.DeploymentBackupScheduleArgs>? BackupSchedule { get; set; }
+
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         /// </summary>
@@ -481,6 +505,12 @@ namespace Pulumi.Oci.GoldenGate
 
     public sealed class DeploymentState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Updatable) Defines the backup schedule details for create operation.
+        /// </summary>
+        [Input("backupSchedule")]
+        public Input<Inputs.DeploymentBackupScheduleGetArgs>? BackupSchedule { get; set; }
+
         /// <summary>
         /// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
         /// </summary>
@@ -750,6 +780,18 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
+
+        /// <summary>
+        /// The timestamp of last deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+        /// </summary>
+        [Input("timeLastBackupScheduled")]
+        public Input<string>? TimeLastBackupScheduled { get; set; }
+
+        /// <summary>
+        /// The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
+        /// </summary>
+        [Input("timeNextBackupScheduled")]
+        public Input<string>? TimeNextBackupScheduled { get; set; }
 
         /// <summary>
         /// The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.

@@ -50,6 +50,7 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
      * 
      */
     private String lifecycleDetails;
+    private Integer migrateTrigger;
     private List<GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig> peerAutonomousContainerDatabaseBackupConfigs;
     private String peerAutonomousContainerDatabaseCompartmentId;
     /**
@@ -165,6 +166,9 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    public Integer migrateTrigger() {
+        return this.migrateTrigger;
     }
     public List<GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig> peerAutonomousContainerDatabaseBackupConfigs() {
         return this.peerAutonomousContainerDatabaseBackupConfigs;
@@ -282,6 +286,7 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
         private String id;
         private Boolean isAutomaticFailoverEnabled;
         private String lifecycleDetails;
+        private Integer migrateTrigger;
         private List<GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig> peerAutonomousContainerDatabaseBackupConfigs;
         private String peerAutonomousContainerDatabaseCompartmentId;
         private String peerAutonomousContainerDatabaseDataguardAssociationId;
@@ -311,6 +316,7 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
     	      this.id = defaults.id;
     	      this.isAutomaticFailoverEnabled = defaults.isAutomaticFailoverEnabled;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.migrateTrigger = defaults.migrateTrigger;
     	      this.peerAutonomousContainerDatabaseBackupConfigs = defaults.peerAutonomousContainerDatabaseBackupConfigs;
     	      this.peerAutonomousContainerDatabaseCompartmentId = defaults.peerAutonomousContainerDatabaseCompartmentId;
     	      this.peerAutonomousContainerDatabaseDataguardAssociationId = defaults.peerAutonomousContainerDatabaseDataguardAssociationId;
@@ -393,6 +399,14 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
               throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation", "lifecycleDetails");
             }
             this.lifecycleDetails = lifecycleDetails;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder migrateTrigger(Integer migrateTrigger) {
+            if (migrateTrigger == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation", "migrateTrigger");
+            }
+            this.migrateTrigger = migrateTrigger;
             return this;
         }
         @CustomType.Setter
@@ -552,6 +566,7 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
             _resultValue.id = id;
             _resultValue.isAutomaticFailoverEnabled = isAutomaticFailoverEnabled;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.migrateTrigger = migrateTrigger;
             _resultValue.peerAutonomousContainerDatabaseBackupConfigs = peerAutonomousContainerDatabaseBackupConfigs;
             _resultValue.peerAutonomousContainerDatabaseCompartmentId = peerAutonomousContainerDatabaseCompartmentId;
             _resultValue.peerAutonomousContainerDatabaseDataguardAssociationId = peerAutonomousContainerDatabaseDataguardAssociationId;

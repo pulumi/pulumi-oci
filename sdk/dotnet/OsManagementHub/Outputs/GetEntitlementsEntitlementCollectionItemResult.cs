@@ -18,7 +18,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// A filter to return entitlements that match the given CSI.
+        /// A filter to return entitlements that match the given customer support identifier (CSI).
         /// </summary>
         public readonly string Csi;
         /// <summary>

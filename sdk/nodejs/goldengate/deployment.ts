@@ -48,6 +48,10 @@ export class Deployment extends pulumi.CustomResource {
     }
 
     /**
+     * (Updatable) Defines the backup schedule details for create operation.
+     */
+    public readonly backupSchedule!: pulumi.Output<outputs.GoldenGate.DeploymentBackupSchedule>;
+    /**
      * The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
      */
     public /*out*/ readonly category!: pulumi.Output<string>;
@@ -198,6 +202,14 @@ export class Deployment extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
+     * The timestamp of last deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+     */
+    public /*out*/ readonly timeLastBackupScheduled!: pulumi.Output<string>;
+    /**
+     * The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
+     */
+    public /*out*/ readonly timeNextBackupScheduled!: pulumi.Output<string>;
+    /**
      * The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
     public /*out*/ readonly timeOfNextMaintenance!: pulumi.Output<string>;
@@ -227,6 +239,7 @@ export class Deployment extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DeploymentState | undefined;
+            resourceInputs["backupSchedule"] = state ? state.backupSchedule : undefined;
             resourceInputs["category"] = state ? state.category : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["cpuCoreCount"] = state ? state.cpuCoreCount : undefined;
@@ -266,6 +279,8 @@ export class Deployment extends pulumi.CustomResource {
             resourceInputs["subnetId"] = state ? state.subnetId : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["timeLastBackupScheduled"] = state ? state.timeLastBackupScheduled : undefined;
+            resourceInputs["timeNextBackupScheduled"] = state ? state.timeNextBackupScheduled : undefined;
             resourceInputs["timeOfNextMaintenance"] = state ? state.timeOfNextMaintenance : undefined;
             resourceInputs["timeOggVersionSupportedUntil"] = state ? state.timeOggVersionSupportedUntil : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
@@ -293,6 +308,7 @@ export class Deployment extends pulumi.CustomResource {
             if ((!args || args.subnetId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'subnetId'");
             }
+            resourceInputs["backupSchedule"] = args ? args.backupSchedule : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["cpuCoreCount"] = args ? args.cpuCoreCount : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
@@ -332,6 +348,8 @@ export class Deployment extends pulumi.CustomResource {
             resourceInputs["storageUtilizationInBytes"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
+            resourceInputs["timeLastBackupScheduled"] = undefined /*out*/;
+            resourceInputs["timeNextBackupScheduled"] = undefined /*out*/;
             resourceInputs["timeOfNextMaintenance"] = undefined /*out*/;
             resourceInputs["timeOggVersionSupportedUntil"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
@@ -346,6 +364,10 @@ export class Deployment extends pulumi.CustomResource {
  * Input properties used for looking up and filtering Deployment resources.
  */
 export interface DeploymentState {
+    /**
+     * (Updatable) Defines the backup schedule details for create operation.
+     */
+    backupSchedule?: pulumi.Input<inputs.GoldenGate.DeploymentBackupSchedule>;
     /**
      * The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
      */
@@ -497,6 +519,14 @@ export interface DeploymentState {
      */
     timeCreated?: pulumi.Input<string>;
     /**
+     * The timestamp of last deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+     */
+    timeLastBackupScheduled?: pulumi.Input<string>;
+    /**
+     * The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
+     */
+    timeNextBackupScheduled?: pulumi.Input<string>;
+    /**
      * The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
     timeOfNextMaintenance?: pulumi.Input<string>;
@@ -518,6 +548,10 @@ export interface DeploymentState {
  * The set of arguments for constructing a Deployment resource.
  */
 export interface DeploymentArgs {
+    /**
+     * (Updatable) Defines the backup schedule details for create operation.
+     */
+    backupSchedule?: pulumi.Input<inputs.GoldenGate.DeploymentBackupSchedule>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      */

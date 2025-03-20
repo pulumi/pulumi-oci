@@ -274,6 +274,8 @@ public class Event extends com.pulumi.resources.CustomResource {
      * * `SOFTWARE_SOURCE` - Software source
      * * `AGENT` - Agent
      * * `MANAGEMENT_STATION` - Management Station
+     * * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+     * * `REBOOT` - Reboot
      * 
      */
     @Export(name="type", refs={String.class}, tree="[0]")
@@ -289,6 +291,8 @@ public class Event extends com.pulumi.resources.CustomResource {
      * * `SOFTWARE_SOURCE` - Software source
      * * `AGENT` - Agent
      * * `MANAGEMENT_STATION` - Management Station
+     * * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+     * * `REBOOT` - Reboot
      * 
      */
     public Output<String> type() {

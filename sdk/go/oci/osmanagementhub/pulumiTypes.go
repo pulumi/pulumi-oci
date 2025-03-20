@@ -16,16 +16,30 @@ var _ = internal.GetEnvOrDefault
 type EventData struct {
 	// Provides additional information for the work request associated with an event.
 	AdditionalDetails []EventDataAdditionalDetail `pulumi:"additionalDetails"`
+	// The actions used to attempt fixing the error.
+	AttemptedResolutions []string `pulumi:"attemptedResolutions"`
 	// Provides information collected for the exploit attempt event.
 	Contents []EventDataContent `pulumi:"contents"`
+	// The commands executed by the agent that caused the error.
+	ErrorCause *string `pulumi:"errorCause"`
+	// The output log of the error.
+	ErrorLog *string `pulumi:"errorLog"`
 	// Number of times the event has occurred.
 	EventCount *int `pulumi:"eventCount"`
 	// Fingerprint of the event.
 	EventFingerprint *string `pulumi:"eventFingerprint"`
+	// Health state of the management station
+	HealthState *string `pulumi:"healthState"`
 	// Type of management station operation.
 	OperationType *string `pulumi:"operationType"`
 	// Reason for the event.
 	Reason *string `pulumi:"reason"`
+	// Reboot status for the current event
+	RebootStatus *string `pulumi:"rebootStatus"`
+	// The log output after the resolutions.
+	ResolutionLog *string `pulumi:"resolutionLog"`
+	// Indicates if the event succeeded.
+	ResolutionStatus *string `pulumi:"resolutionStatus"`
 	// Status of the management station operation.
 	Status *string `pulumi:"status"`
 	// The date and time that the event first occurred.
@@ -46,16 +60,30 @@ type EventDataInput interface {
 type EventDataArgs struct {
 	// Provides additional information for the work request associated with an event.
 	AdditionalDetails EventDataAdditionalDetailArrayInput `pulumi:"additionalDetails"`
+	// The actions used to attempt fixing the error.
+	AttemptedResolutions pulumi.StringArrayInput `pulumi:"attemptedResolutions"`
 	// Provides information collected for the exploit attempt event.
 	Contents EventDataContentArrayInput `pulumi:"contents"`
+	// The commands executed by the agent that caused the error.
+	ErrorCause pulumi.StringPtrInput `pulumi:"errorCause"`
+	// The output log of the error.
+	ErrorLog pulumi.StringPtrInput `pulumi:"errorLog"`
 	// Number of times the event has occurred.
 	EventCount pulumi.IntPtrInput `pulumi:"eventCount"`
 	// Fingerprint of the event.
 	EventFingerprint pulumi.StringPtrInput `pulumi:"eventFingerprint"`
+	// Health state of the management station
+	HealthState pulumi.StringPtrInput `pulumi:"healthState"`
 	// Type of management station operation.
 	OperationType pulumi.StringPtrInput `pulumi:"operationType"`
 	// Reason for the event.
 	Reason pulumi.StringPtrInput `pulumi:"reason"`
+	// Reboot status for the current event
+	RebootStatus pulumi.StringPtrInput `pulumi:"rebootStatus"`
+	// The log output after the resolutions.
+	ResolutionLog pulumi.StringPtrInput `pulumi:"resolutionLog"`
+	// Indicates if the event succeeded.
+	ResolutionStatus pulumi.StringPtrInput `pulumi:"resolutionStatus"`
 	// Status of the management station operation.
 	Status pulumi.StringPtrInput `pulumi:"status"`
 	// The date and time that the event first occurred.
@@ -118,9 +146,24 @@ func (o EventDataOutput) AdditionalDetails() EventDataAdditionalDetailArrayOutpu
 	return o.ApplyT(func(v EventData) []EventDataAdditionalDetail { return v.AdditionalDetails }).(EventDataAdditionalDetailArrayOutput)
 }
 
+// The actions used to attempt fixing the error.
+func (o EventDataOutput) AttemptedResolutions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v EventData) []string { return v.AttemptedResolutions }).(pulumi.StringArrayOutput)
+}
+
 // Provides information collected for the exploit attempt event.
 func (o EventDataOutput) Contents() EventDataContentArrayOutput {
 	return o.ApplyT(func(v EventData) []EventDataContent { return v.Contents }).(EventDataContentArrayOutput)
+}
+
+// The commands executed by the agent that caused the error.
+func (o EventDataOutput) ErrorCause() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EventData) *string { return v.ErrorCause }).(pulumi.StringPtrOutput)
+}
+
+// The output log of the error.
+func (o EventDataOutput) ErrorLog() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EventData) *string { return v.ErrorLog }).(pulumi.StringPtrOutput)
 }
 
 // Number of times the event has occurred.
@@ -133,6 +176,11 @@ func (o EventDataOutput) EventFingerprint() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EventData) *string { return v.EventFingerprint }).(pulumi.StringPtrOutput)
 }
 
+// Health state of the management station
+func (o EventDataOutput) HealthState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EventData) *string { return v.HealthState }).(pulumi.StringPtrOutput)
+}
+
 // Type of management station operation.
 func (o EventDataOutput) OperationType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EventData) *string { return v.OperationType }).(pulumi.StringPtrOutput)
@@ -141,6 +189,21 @@ func (o EventDataOutput) OperationType() pulumi.StringPtrOutput {
 // Reason for the event.
 func (o EventDataOutput) Reason() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EventData) *string { return v.Reason }).(pulumi.StringPtrOutput)
+}
+
+// Reboot status for the current event
+func (o EventDataOutput) RebootStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EventData) *string { return v.RebootStatus }).(pulumi.StringPtrOutput)
+}
+
+// The log output after the resolutions.
+func (o EventDataOutput) ResolutionLog() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EventData) *string { return v.ResolutionLog }).(pulumi.StringPtrOutput)
+}
+
+// Indicates if the event succeeded.
+func (o EventDataOutput) ResolutionStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EventData) *string { return v.ResolutionStatus }).(pulumi.StringPtrOutput)
 }
 
 // Status of the management station operation.
@@ -428,6 +491,8 @@ type EventDataContent struct {
 	// * `SOFTWARE_SOURCE` - Software source
 	// * `AGENT` - Agent
 	// * `MANAGEMENT_STATION` - Management Station
+	// * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+	// * `REBOOT` - Reboot
 	Type *string `pulumi:"type"`
 }
 
@@ -467,6 +532,8 @@ type EventDataContentArgs struct {
 	// * `SOFTWARE_SOURCE` - Software source
 	// * `AGENT` - Agent
 	// * `MANAGEMENT_STATION` - Management Station
+	// * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+	// * `REBOOT` - Reboot
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -560,6 +627,8 @@ func (o EventDataContentOutput) Size() pulumi.IntPtrOutput {
 // * `SOFTWARE_SOURCE` - Software source
 // * `AGENT` - Agent
 // * `MANAGEMENT_STATION` - Management Station
+// * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+// * `REBOOT` - Reboot
 func (o EventDataContentOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EventDataContent) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -2159,6 +2228,174 @@ func (o LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsPtrOutput
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsPtrOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DisplayName
+	}).(pulumi.StringPtrOutput)
+}
+
+type LifecycleStageRebootManagementWorkRequestDetails struct {
+	// User-specified information about the job. Avoid entering confidential information.
+	Description *string `pulumi:"description"`
+	// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DisplayName *string `pulumi:"displayName"`
+}
+
+// LifecycleStageRebootManagementWorkRequestDetailsInput is an input type that accepts LifecycleStageRebootManagementWorkRequestDetailsArgs and LifecycleStageRebootManagementWorkRequestDetailsOutput values.
+// You can construct a concrete instance of `LifecycleStageRebootManagementWorkRequestDetailsInput` via:
+//
+//	LifecycleStageRebootManagementWorkRequestDetailsArgs{...}
+type LifecycleStageRebootManagementWorkRequestDetailsInput interface {
+	pulumi.Input
+
+	ToLifecycleStageRebootManagementWorkRequestDetailsOutput() LifecycleStageRebootManagementWorkRequestDetailsOutput
+	ToLifecycleStageRebootManagementWorkRequestDetailsOutputWithContext(context.Context) LifecycleStageRebootManagementWorkRequestDetailsOutput
+}
+
+type LifecycleStageRebootManagementWorkRequestDetailsArgs struct {
+	// User-specified information about the job. Avoid entering confidential information.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+}
+
+func (LifecycleStageRebootManagementWorkRequestDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LifecycleStageRebootManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (i LifecycleStageRebootManagementWorkRequestDetailsArgs) ToLifecycleStageRebootManagementWorkRequestDetailsOutput() LifecycleStageRebootManagementWorkRequestDetailsOutput {
+	return i.ToLifecycleStageRebootManagementWorkRequestDetailsOutputWithContext(context.Background())
+}
+
+func (i LifecycleStageRebootManagementWorkRequestDetailsArgs) ToLifecycleStageRebootManagementWorkRequestDetailsOutputWithContext(ctx context.Context) LifecycleStageRebootManagementWorkRequestDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LifecycleStageRebootManagementWorkRequestDetailsOutput)
+}
+
+func (i LifecycleStageRebootManagementWorkRequestDetailsArgs) ToLifecycleStageRebootManagementWorkRequestDetailsPtrOutput() LifecycleStageRebootManagementWorkRequestDetailsPtrOutput {
+	return i.ToLifecycleStageRebootManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i LifecycleStageRebootManagementWorkRequestDetailsArgs) ToLifecycleStageRebootManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) LifecycleStageRebootManagementWorkRequestDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LifecycleStageRebootManagementWorkRequestDetailsOutput).ToLifecycleStageRebootManagementWorkRequestDetailsPtrOutputWithContext(ctx)
+}
+
+// LifecycleStageRebootManagementWorkRequestDetailsPtrInput is an input type that accepts LifecycleStageRebootManagementWorkRequestDetailsArgs, LifecycleStageRebootManagementWorkRequestDetailsPtr and LifecycleStageRebootManagementWorkRequestDetailsPtrOutput values.
+// You can construct a concrete instance of `LifecycleStageRebootManagementWorkRequestDetailsPtrInput` via:
+//
+//	        LifecycleStageRebootManagementWorkRequestDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type LifecycleStageRebootManagementWorkRequestDetailsPtrInput interface {
+	pulumi.Input
+
+	ToLifecycleStageRebootManagementWorkRequestDetailsPtrOutput() LifecycleStageRebootManagementWorkRequestDetailsPtrOutput
+	ToLifecycleStageRebootManagementWorkRequestDetailsPtrOutputWithContext(context.Context) LifecycleStageRebootManagementWorkRequestDetailsPtrOutput
+}
+
+type lifecycleStageRebootManagementWorkRequestDetailsPtrType LifecycleStageRebootManagementWorkRequestDetailsArgs
+
+func LifecycleStageRebootManagementWorkRequestDetailsPtr(v *LifecycleStageRebootManagementWorkRequestDetailsArgs) LifecycleStageRebootManagementWorkRequestDetailsPtrInput {
+	return (*lifecycleStageRebootManagementWorkRequestDetailsPtrType)(v)
+}
+
+func (*lifecycleStageRebootManagementWorkRequestDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**LifecycleStageRebootManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (i *lifecycleStageRebootManagementWorkRequestDetailsPtrType) ToLifecycleStageRebootManagementWorkRequestDetailsPtrOutput() LifecycleStageRebootManagementWorkRequestDetailsPtrOutput {
+	return i.ToLifecycleStageRebootManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *lifecycleStageRebootManagementWorkRequestDetailsPtrType) ToLifecycleStageRebootManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) LifecycleStageRebootManagementWorkRequestDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LifecycleStageRebootManagementWorkRequestDetailsPtrOutput)
+}
+
+type LifecycleStageRebootManagementWorkRequestDetailsOutput struct{ *pulumi.OutputState }
+
+func (LifecycleStageRebootManagementWorkRequestDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LifecycleStageRebootManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (o LifecycleStageRebootManagementWorkRequestDetailsOutput) ToLifecycleStageRebootManagementWorkRequestDetailsOutput() LifecycleStageRebootManagementWorkRequestDetailsOutput {
+	return o
+}
+
+func (o LifecycleStageRebootManagementWorkRequestDetailsOutput) ToLifecycleStageRebootManagementWorkRequestDetailsOutputWithContext(ctx context.Context) LifecycleStageRebootManagementWorkRequestDetailsOutput {
+	return o
+}
+
+func (o LifecycleStageRebootManagementWorkRequestDetailsOutput) ToLifecycleStageRebootManagementWorkRequestDetailsPtrOutput() LifecycleStageRebootManagementWorkRequestDetailsPtrOutput {
+	return o.ToLifecycleStageRebootManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o LifecycleStageRebootManagementWorkRequestDetailsOutput) ToLifecycleStageRebootManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) LifecycleStageRebootManagementWorkRequestDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v LifecycleStageRebootManagementWorkRequestDetails) *LifecycleStageRebootManagementWorkRequestDetails {
+		return &v
+	}).(LifecycleStageRebootManagementWorkRequestDetailsPtrOutput)
+}
+
+// User-specified information about the job. Avoid entering confidential information.
+func (o LifecycleStageRebootManagementWorkRequestDetailsOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LifecycleStageRebootManagementWorkRequestDetails) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o LifecycleStageRebootManagementWorkRequestDetailsOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LifecycleStageRebootManagementWorkRequestDetails) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+type LifecycleStageRebootManagementWorkRequestDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (LifecycleStageRebootManagementWorkRequestDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**LifecycleStageRebootManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (o LifecycleStageRebootManagementWorkRequestDetailsPtrOutput) ToLifecycleStageRebootManagementWorkRequestDetailsPtrOutput() LifecycleStageRebootManagementWorkRequestDetailsPtrOutput {
+	return o
+}
+
+func (o LifecycleStageRebootManagementWorkRequestDetailsPtrOutput) ToLifecycleStageRebootManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) LifecycleStageRebootManagementWorkRequestDetailsPtrOutput {
+	return o
+}
+
+func (o LifecycleStageRebootManagementWorkRequestDetailsPtrOutput) Elem() LifecycleStageRebootManagementWorkRequestDetailsOutput {
+	return o.ApplyT(func(v *LifecycleStageRebootManagementWorkRequestDetails) LifecycleStageRebootManagementWorkRequestDetails {
+		if v != nil {
+			return *v
+		}
+		var ret LifecycleStageRebootManagementWorkRequestDetails
+		return ret
+	}).(LifecycleStageRebootManagementWorkRequestDetailsOutput)
+}
+
+// User-specified information about the job. Avoid entering confidential information.
+func (o LifecycleStageRebootManagementWorkRequestDetailsPtrOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LifecycleStageRebootManagementWorkRequestDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Description
+	}).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o LifecycleStageRebootManagementWorkRequestDetailsPtrOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LifecycleStageRebootManagementWorkRequestDetails) *string {
 		if v == nil {
 			return nil
 		}
@@ -3984,6 +4221,174 @@ func (o ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsPtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
+type ManagedInstanceGroupRebootManagementWorkRequestDetails struct {
+	// User-specified information about the job. Avoid entering confidential information.
+	Description *string `pulumi:"description"`
+	// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DisplayName *string `pulumi:"displayName"`
+}
+
+// ManagedInstanceGroupRebootManagementWorkRequestDetailsInput is an input type that accepts ManagedInstanceGroupRebootManagementWorkRequestDetailsArgs and ManagedInstanceGroupRebootManagementWorkRequestDetailsOutput values.
+// You can construct a concrete instance of `ManagedInstanceGroupRebootManagementWorkRequestDetailsInput` via:
+//
+//	ManagedInstanceGroupRebootManagementWorkRequestDetailsArgs{...}
+type ManagedInstanceGroupRebootManagementWorkRequestDetailsInput interface {
+	pulumi.Input
+
+	ToManagedInstanceGroupRebootManagementWorkRequestDetailsOutput() ManagedInstanceGroupRebootManagementWorkRequestDetailsOutput
+	ToManagedInstanceGroupRebootManagementWorkRequestDetailsOutputWithContext(context.Context) ManagedInstanceGroupRebootManagementWorkRequestDetailsOutput
+}
+
+type ManagedInstanceGroupRebootManagementWorkRequestDetailsArgs struct {
+	// User-specified information about the job. Avoid entering confidential information.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+}
+
+func (ManagedInstanceGroupRebootManagementWorkRequestDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedInstanceGroupRebootManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (i ManagedInstanceGroupRebootManagementWorkRequestDetailsArgs) ToManagedInstanceGroupRebootManagementWorkRequestDetailsOutput() ManagedInstanceGroupRebootManagementWorkRequestDetailsOutput {
+	return i.ToManagedInstanceGroupRebootManagementWorkRequestDetailsOutputWithContext(context.Background())
+}
+
+func (i ManagedInstanceGroupRebootManagementWorkRequestDetailsArgs) ToManagedInstanceGroupRebootManagementWorkRequestDetailsOutputWithContext(ctx context.Context) ManagedInstanceGroupRebootManagementWorkRequestDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceGroupRebootManagementWorkRequestDetailsOutput)
+}
+
+func (i ManagedInstanceGroupRebootManagementWorkRequestDetailsArgs) ToManagedInstanceGroupRebootManagementWorkRequestDetailsPtrOutput() ManagedInstanceGroupRebootManagementWorkRequestDetailsPtrOutput {
+	return i.ToManagedInstanceGroupRebootManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ManagedInstanceGroupRebootManagementWorkRequestDetailsArgs) ToManagedInstanceGroupRebootManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceGroupRebootManagementWorkRequestDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceGroupRebootManagementWorkRequestDetailsOutput).ToManagedInstanceGroupRebootManagementWorkRequestDetailsPtrOutputWithContext(ctx)
+}
+
+// ManagedInstanceGroupRebootManagementWorkRequestDetailsPtrInput is an input type that accepts ManagedInstanceGroupRebootManagementWorkRequestDetailsArgs, ManagedInstanceGroupRebootManagementWorkRequestDetailsPtr and ManagedInstanceGroupRebootManagementWorkRequestDetailsPtrOutput values.
+// You can construct a concrete instance of `ManagedInstanceGroupRebootManagementWorkRequestDetailsPtrInput` via:
+//
+//	        ManagedInstanceGroupRebootManagementWorkRequestDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ManagedInstanceGroupRebootManagementWorkRequestDetailsPtrInput interface {
+	pulumi.Input
+
+	ToManagedInstanceGroupRebootManagementWorkRequestDetailsPtrOutput() ManagedInstanceGroupRebootManagementWorkRequestDetailsPtrOutput
+	ToManagedInstanceGroupRebootManagementWorkRequestDetailsPtrOutputWithContext(context.Context) ManagedInstanceGroupRebootManagementWorkRequestDetailsPtrOutput
+}
+
+type managedInstanceGroupRebootManagementWorkRequestDetailsPtrType ManagedInstanceGroupRebootManagementWorkRequestDetailsArgs
+
+func ManagedInstanceGroupRebootManagementWorkRequestDetailsPtr(v *ManagedInstanceGroupRebootManagementWorkRequestDetailsArgs) ManagedInstanceGroupRebootManagementWorkRequestDetailsPtrInput {
+	return (*managedInstanceGroupRebootManagementWorkRequestDetailsPtrType)(v)
+}
+
+func (*managedInstanceGroupRebootManagementWorkRequestDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagedInstanceGroupRebootManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (i *managedInstanceGroupRebootManagementWorkRequestDetailsPtrType) ToManagedInstanceGroupRebootManagementWorkRequestDetailsPtrOutput() ManagedInstanceGroupRebootManagementWorkRequestDetailsPtrOutput {
+	return i.ToManagedInstanceGroupRebootManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *managedInstanceGroupRebootManagementWorkRequestDetailsPtrType) ToManagedInstanceGroupRebootManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceGroupRebootManagementWorkRequestDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceGroupRebootManagementWorkRequestDetailsPtrOutput)
+}
+
+type ManagedInstanceGroupRebootManagementWorkRequestDetailsOutput struct{ *pulumi.OutputState }
+
+func (ManagedInstanceGroupRebootManagementWorkRequestDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedInstanceGroupRebootManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (o ManagedInstanceGroupRebootManagementWorkRequestDetailsOutput) ToManagedInstanceGroupRebootManagementWorkRequestDetailsOutput() ManagedInstanceGroupRebootManagementWorkRequestDetailsOutput {
+	return o
+}
+
+func (o ManagedInstanceGroupRebootManagementWorkRequestDetailsOutput) ToManagedInstanceGroupRebootManagementWorkRequestDetailsOutputWithContext(ctx context.Context) ManagedInstanceGroupRebootManagementWorkRequestDetailsOutput {
+	return o
+}
+
+func (o ManagedInstanceGroupRebootManagementWorkRequestDetailsOutput) ToManagedInstanceGroupRebootManagementWorkRequestDetailsPtrOutput() ManagedInstanceGroupRebootManagementWorkRequestDetailsPtrOutput {
+	return o.ToManagedInstanceGroupRebootManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ManagedInstanceGroupRebootManagementWorkRequestDetailsOutput) ToManagedInstanceGroupRebootManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceGroupRebootManagementWorkRequestDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ManagedInstanceGroupRebootManagementWorkRequestDetails) *ManagedInstanceGroupRebootManagementWorkRequestDetails {
+		return &v
+	}).(ManagedInstanceGroupRebootManagementWorkRequestDetailsPtrOutput)
+}
+
+// User-specified information about the job. Avoid entering confidential information.
+func (o ManagedInstanceGroupRebootManagementWorkRequestDetailsOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedInstanceGroupRebootManagementWorkRequestDetails) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ManagedInstanceGroupRebootManagementWorkRequestDetailsOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedInstanceGroupRebootManagementWorkRequestDetails) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+type ManagedInstanceGroupRebootManagementWorkRequestDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ManagedInstanceGroupRebootManagementWorkRequestDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagedInstanceGroupRebootManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (o ManagedInstanceGroupRebootManagementWorkRequestDetailsPtrOutput) ToManagedInstanceGroupRebootManagementWorkRequestDetailsPtrOutput() ManagedInstanceGroupRebootManagementWorkRequestDetailsPtrOutput {
+	return o
+}
+
+func (o ManagedInstanceGroupRebootManagementWorkRequestDetailsPtrOutput) ToManagedInstanceGroupRebootManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceGroupRebootManagementWorkRequestDetailsPtrOutput {
+	return o
+}
+
+func (o ManagedInstanceGroupRebootManagementWorkRequestDetailsPtrOutput) Elem() ManagedInstanceGroupRebootManagementWorkRequestDetailsOutput {
+	return o.ApplyT(func(v *ManagedInstanceGroupRebootManagementWorkRequestDetails) ManagedInstanceGroupRebootManagementWorkRequestDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ManagedInstanceGroupRebootManagementWorkRequestDetails
+		return ret
+	}).(ManagedInstanceGroupRebootManagementWorkRequestDetailsOutput)
+}
+
+// User-specified information about the job. Avoid entering confidential information.
+func (o ManagedInstanceGroupRebootManagementWorkRequestDetailsPtrOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstanceGroupRebootManagementWorkRequestDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Description
+	}).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ManagedInstanceGroupRebootManagementWorkRequestDetailsPtrOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstanceGroupRebootManagementWorkRequestDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DisplayName
+	}).(pulumi.StringPtrOutput)
+}
+
 type ManagedInstanceGroupRemovePackagesManagementWorkRequestDetails struct {
 	// User-specified information about the job. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
@@ -4943,6 +5348,174 @@ func (o ManagedInstanceManagedInstanceGroupArrayOutput) Index(i pulumi.IntInput)
 	}).(ManagedInstanceManagedInstanceGroupOutput)
 }
 
+type ManagedInstanceRebootManagementWorkRequestDetails struct {
+	// User-specified information about the job. Avoid entering confidential information.
+	Description *string `pulumi:"description"`
+	// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DisplayName *string `pulumi:"displayName"`
+}
+
+// ManagedInstanceRebootManagementWorkRequestDetailsInput is an input type that accepts ManagedInstanceRebootManagementWorkRequestDetailsArgs and ManagedInstanceRebootManagementWorkRequestDetailsOutput values.
+// You can construct a concrete instance of `ManagedInstanceRebootManagementWorkRequestDetailsInput` via:
+//
+//	ManagedInstanceRebootManagementWorkRequestDetailsArgs{...}
+type ManagedInstanceRebootManagementWorkRequestDetailsInput interface {
+	pulumi.Input
+
+	ToManagedInstanceRebootManagementWorkRequestDetailsOutput() ManagedInstanceRebootManagementWorkRequestDetailsOutput
+	ToManagedInstanceRebootManagementWorkRequestDetailsOutputWithContext(context.Context) ManagedInstanceRebootManagementWorkRequestDetailsOutput
+}
+
+type ManagedInstanceRebootManagementWorkRequestDetailsArgs struct {
+	// User-specified information about the job. Avoid entering confidential information.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+}
+
+func (ManagedInstanceRebootManagementWorkRequestDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedInstanceRebootManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (i ManagedInstanceRebootManagementWorkRequestDetailsArgs) ToManagedInstanceRebootManagementWorkRequestDetailsOutput() ManagedInstanceRebootManagementWorkRequestDetailsOutput {
+	return i.ToManagedInstanceRebootManagementWorkRequestDetailsOutputWithContext(context.Background())
+}
+
+func (i ManagedInstanceRebootManagementWorkRequestDetailsArgs) ToManagedInstanceRebootManagementWorkRequestDetailsOutputWithContext(ctx context.Context) ManagedInstanceRebootManagementWorkRequestDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceRebootManagementWorkRequestDetailsOutput)
+}
+
+func (i ManagedInstanceRebootManagementWorkRequestDetailsArgs) ToManagedInstanceRebootManagementWorkRequestDetailsPtrOutput() ManagedInstanceRebootManagementWorkRequestDetailsPtrOutput {
+	return i.ToManagedInstanceRebootManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ManagedInstanceRebootManagementWorkRequestDetailsArgs) ToManagedInstanceRebootManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceRebootManagementWorkRequestDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceRebootManagementWorkRequestDetailsOutput).ToManagedInstanceRebootManagementWorkRequestDetailsPtrOutputWithContext(ctx)
+}
+
+// ManagedInstanceRebootManagementWorkRequestDetailsPtrInput is an input type that accepts ManagedInstanceRebootManagementWorkRequestDetailsArgs, ManagedInstanceRebootManagementWorkRequestDetailsPtr and ManagedInstanceRebootManagementWorkRequestDetailsPtrOutput values.
+// You can construct a concrete instance of `ManagedInstanceRebootManagementWorkRequestDetailsPtrInput` via:
+//
+//	        ManagedInstanceRebootManagementWorkRequestDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ManagedInstanceRebootManagementWorkRequestDetailsPtrInput interface {
+	pulumi.Input
+
+	ToManagedInstanceRebootManagementWorkRequestDetailsPtrOutput() ManagedInstanceRebootManagementWorkRequestDetailsPtrOutput
+	ToManagedInstanceRebootManagementWorkRequestDetailsPtrOutputWithContext(context.Context) ManagedInstanceRebootManagementWorkRequestDetailsPtrOutput
+}
+
+type managedInstanceRebootManagementWorkRequestDetailsPtrType ManagedInstanceRebootManagementWorkRequestDetailsArgs
+
+func ManagedInstanceRebootManagementWorkRequestDetailsPtr(v *ManagedInstanceRebootManagementWorkRequestDetailsArgs) ManagedInstanceRebootManagementWorkRequestDetailsPtrInput {
+	return (*managedInstanceRebootManagementWorkRequestDetailsPtrType)(v)
+}
+
+func (*managedInstanceRebootManagementWorkRequestDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagedInstanceRebootManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (i *managedInstanceRebootManagementWorkRequestDetailsPtrType) ToManagedInstanceRebootManagementWorkRequestDetailsPtrOutput() ManagedInstanceRebootManagementWorkRequestDetailsPtrOutput {
+	return i.ToManagedInstanceRebootManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *managedInstanceRebootManagementWorkRequestDetailsPtrType) ToManagedInstanceRebootManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceRebootManagementWorkRequestDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceRebootManagementWorkRequestDetailsPtrOutput)
+}
+
+type ManagedInstanceRebootManagementWorkRequestDetailsOutput struct{ *pulumi.OutputState }
+
+func (ManagedInstanceRebootManagementWorkRequestDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedInstanceRebootManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (o ManagedInstanceRebootManagementWorkRequestDetailsOutput) ToManagedInstanceRebootManagementWorkRequestDetailsOutput() ManagedInstanceRebootManagementWorkRequestDetailsOutput {
+	return o
+}
+
+func (o ManagedInstanceRebootManagementWorkRequestDetailsOutput) ToManagedInstanceRebootManagementWorkRequestDetailsOutputWithContext(ctx context.Context) ManagedInstanceRebootManagementWorkRequestDetailsOutput {
+	return o
+}
+
+func (o ManagedInstanceRebootManagementWorkRequestDetailsOutput) ToManagedInstanceRebootManagementWorkRequestDetailsPtrOutput() ManagedInstanceRebootManagementWorkRequestDetailsPtrOutput {
+	return o.ToManagedInstanceRebootManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ManagedInstanceRebootManagementWorkRequestDetailsOutput) ToManagedInstanceRebootManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceRebootManagementWorkRequestDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ManagedInstanceRebootManagementWorkRequestDetails) *ManagedInstanceRebootManagementWorkRequestDetails {
+		return &v
+	}).(ManagedInstanceRebootManagementWorkRequestDetailsPtrOutput)
+}
+
+// User-specified information about the job. Avoid entering confidential information.
+func (o ManagedInstanceRebootManagementWorkRequestDetailsOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedInstanceRebootManagementWorkRequestDetails) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ManagedInstanceRebootManagementWorkRequestDetailsOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedInstanceRebootManagementWorkRequestDetails) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+type ManagedInstanceRebootManagementWorkRequestDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ManagedInstanceRebootManagementWorkRequestDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagedInstanceRebootManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (o ManagedInstanceRebootManagementWorkRequestDetailsPtrOutput) ToManagedInstanceRebootManagementWorkRequestDetailsPtrOutput() ManagedInstanceRebootManagementWorkRequestDetailsPtrOutput {
+	return o
+}
+
+func (o ManagedInstanceRebootManagementWorkRequestDetailsPtrOutput) ToManagedInstanceRebootManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceRebootManagementWorkRequestDetailsPtrOutput {
+	return o
+}
+
+func (o ManagedInstanceRebootManagementWorkRequestDetailsPtrOutput) Elem() ManagedInstanceRebootManagementWorkRequestDetailsOutput {
+	return o.ApplyT(func(v *ManagedInstanceRebootManagementWorkRequestDetails) ManagedInstanceRebootManagementWorkRequestDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ManagedInstanceRebootManagementWorkRequestDetails
+		return ret
+	}).(ManagedInstanceRebootManagementWorkRequestDetailsOutput)
+}
+
+// User-specified information about the job. Avoid entering confidential information.
+func (o ManagedInstanceRebootManagementWorkRequestDetailsPtrOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstanceRebootManagementWorkRequestDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Description
+	}).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ManagedInstanceRebootManagementWorkRequestDetailsPtrOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstanceRebootManagementWorkRequestDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DisplayName
+	}).(pulumi.StringPtrOutput)
+}
+
 type ManagedInstanceSoftwareSource struct {
 	// (Updatable) User-specified description of the managed instance. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
@@ -5244,6 +5817,178 @@ func (o ManagedInstanceUpdatePackagesManagementWorkRequestDetailsPtrOutput) Disp
 	}).(pulumi.StringPtrOutput)
 }
 
+type ManagementStationAssociateManagedInstancesManagementWorkRequestDetails struct {
+	// User-specified information about the job. Avoid entering confidential information.
+	Description *string `pulumi:"description"`
+	// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DisplayName *string `pulumi:"displayName"`
+}
+
+// ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsInput is an input type that accepts ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs and ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsOutput values.
+// You can construct a concrete instance of `ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsInput` via:
+//
+//	ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs{...}
+type ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsInput interface {
+	pulumi.Input
+
+	ToManagementStationAssociateManagedInstancesManagementWorkRequestDetailsOutput() ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsOutput
+	ToManagementStationAssociateManagedInstancesManagementWorkRequestDetailsOutputWithContext(context.Context) ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsOutput
+}
+
+type ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs struct {
+	// User-specified information about the job. Avoid entering confidential information.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+}
+
+func (ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementStationAssociateManagedInstancesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (i ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs) ToManagementStationAssociateManagedInstancesManagementWorkRequestDetailsOutput() ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsOutput {
+	return i.ToManagementStationAssociateManagedInstancesManagementWorkRequestDetailsOutputWithContext(context.Background())
+}
+
+func (i ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs) ToManagementStationAssociateManagedInstancesManagementWorkRequestDetailsOutputWithContext(ctx context.Context) ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsOutput)
+}
+
+func (i ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs) ToManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrOutput() ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrOutput {
+	return i.ToManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs) ToManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsOutput).ToManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrOutputWithContext(ctx)
+}
+
+// ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrInput is an input type that accepts ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs, ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtr and ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrOutput values.
+// You can construct a concrete instance of `ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrInput` via:
+//
+//	        ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrInput interface {
+	pulumi.Input
+
+	ToManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrOutput() ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrOutput
+	ToManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrOutputWithContext(context.Context) ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrOutput
+}
+
+type managementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrType ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs
+
+func ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtr(v *ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs) ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrInput {
+	return (*managementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrType)(v)
+}
+
+func (*managementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagementStationAssociateManagedInstancesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (i *managementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrType) ToManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrOutput() ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrOutput {
+	return i.ToManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *managementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrType) ToManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrOutput)
+}
+
+type ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsOutput struct{ *pulumi.OutputState }
+
+func (ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementStationAssociateManagedInstancesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (o ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsOutput) ToManagementStationAssociateManagedInstancesManagementWorkRequestDetailsOutput() ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsOutput {
+	return o
+}
+
+func (o ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsOutput) ToManagementStationAssociateManagedInstancesManagementWorkRequestDetailsOutputWithContext(ctx context.Context) ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsOutput {
+	return o
+}
+
+func (o ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsOutput) ToManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrOutput() ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrOutput {
+	return o.ToManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsOutput) ToManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ManagementStationAssociateManagedInstancesManagementWorkRequestDetails) *ManagementStationAssociateManagedInstancesManagementWorkRequestDetails {
+		return &v
+	}).(ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrOutput)
+}
+
+// User-specified information about the job. Avoid entering confidential information.
+func (o ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementStationAssociateManagedInstancesManagementWorkRequestDetails) *string {
+		return v.Description
+	}).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementStationAssociateManagedInstancesManagementWorkRequestDetails) *string {
+		return v.DisplayName
+	}).(pulumi.StringPtrOutput)
+}
+
+type ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagementStationAssociateManagedInstancesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (o ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrOutput) ToManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrOutput() ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrOutput {
+	return o
+}
+
+func (o ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrOutput) ToManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrOutput {
+	return o
+}
+
+func (o ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrOutput) Elem() ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsOutput {
+	return o.ApplyT(func(v *ManagementStationAssociateManagedInstancesManagementWorkRequestDetails) ManagementStationAssociateManagedInstancesManagementWorkRequestDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ManagementStationAssociateManagedInstancesManagementWorkRequestDetails
+		return ret
+	}).(ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsOutput)
+}
+
+// User-specified information about the job. Avoid entering confidential information.
+func (o ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagementStationAssociateManagedInstancesManagementWorkRequestDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Description
+	}).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagementStationAssociateManagedInstancesManagementWorkRequestDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DisplayName
+	}).(pulumi.StringPtrOutput)
+}
+
 type ManagementStationHealth struct {
 	// (Updatable) User-specified description of the management station. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
@@ -5353,6 +6098,8 @@ func (o ManagementStationHealthArrayOutput) Index(i pulumi.IntInput) ManagementS
 type ManagementStationMirror struct {
 	// (Updatable) Path to the data volume on the management station where software source mirrors are stored.
 	Directory string `pulumi:"directory"`
+	// (Updatable) When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
+	IsSslverifyEnabled *bool `pulumi:"isSslverifyEnabled"`
 	// (Updatable) Default mirror listening port for http.
 	Port string `pulumi:"port"`
 	// (Updatable) Path to the SSL cerfificate.
@@ -5375,6 +6122,8 @@ type ManagementStationMirrorInput interface {
 type ManagementStationMirrorArgs struct {
 	// (Updatable) Path to the data volume on the management station where software source mirrors are stored.
 	Directory pulumi.StringInput `pulumi:"directory"`
+	// (Updatable) When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
+	IsSslverifyEnabled pulumi.BoolPtrInput `pulumi:"isSslverifyEnabled"`
 	// (Updatable) Default mirror listening port for http.
 	Port pulumi.StringInput `pulumi:"port"`
 	// (Updatable) Path to the SSL cerfificate.
@@ -5465,6 +6214,11 @@ func (o ManagementStationMirrorOutput) Directory() pulumi.StringOutput {
 	return o.ApplyT(func(v ManagementStationMirror) string { return v.Directory }).(pulumi.StringOutput)
 }
 
+// (Updatable) When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
+func (o ManagementStationMirrorOutput) IsSslverifyEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ManagementStationMirror) *bool { return v.IsSslverifyEnabled }).(pulumi.BoolPtrOutput)
+}
+
 // (Updatable) Default mirror listening port for http.
 func (o ManagementStationMirrorOutput) Port() pulumi.StringOutput {
 	return o.ApplyT(func(v ManagementStationMirror) string { return v.Port }).(pulumi.StringOutput)
@@ -5512,6 +6266,16 @@ func (o ManagementStationMirrorPtrOutput) Directory() pulumi.StringPtrOutput {
 		}
 		return &v.Directory
 	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
+func (o ManagementStationMirrorPtrOutput) IsSslverifyEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ManagementStationMirror) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsSslverifyEnabled
+	}).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Default mirror listening port for http.
@@ -5675,6 +6439,112 @@ func (o ManagementStationMirrorSyncStatusArrayOutput) Index(i pulumi.IntInput) M
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementStationMirrorSyncStatus {
 		return vs[0].([]ManagementStationMirrorSyncStatus)[vs[1].(int)]
 	}).(ManagementStationMirrorSyncStatusOutput)
+}
+
+type ManagementStationPeerManagementStation struct {
+	// (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+	DisplayName *string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
+	Id *string `pulumi:"id"`
+}
+
+// ManagementStationPeerManagementStationInput is an input type that accepts ManagementStationPeerManagementStationArgs and ManagementStationPeerManagementStationOutput values.
+// You can construct a concrete instance of `ManagementStationPeerManagementStationInput` via:
+//
+//	ManagementStationPeerManagementStationArgs{...}
+type ManagementStationPeerManagementStationInput interface {
+	pulumi.Input
+
+	ToManagementStationPeerManagementStationOutput() ManagementStationPeerManagementStationOutput
+	ToManagementStationPeerManagementStationOutputWithContext(context.Context) ManagementStationPeerManagementStationOutput
+}
+
+type ManagementStationPeerManagementStationArgs struct {
+	// (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+}
+
+func (ManagementStationPeerManagementStationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementStationPeerManagementStation)(nil)).Elem()
+}
+
+func (i ManagementStationPeerManagementStationArgs) ToManagementStationPeerManagementStationOutput() ManagementStationPeerManagementStationOutput {
+	return i.ToManagementStationPeerManagementStationOutputWithContext(context.Background())
+}
+
+func (i ManagementStationPeerManagementStationArgs) ToManagementStationPeerManagementStationOutputWithContext(ctx context.Context) ManagementStationPeerManagementStationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementStationPeerManagementStationOutput)
+}
+
+// ManagementStationPeerManagementStationArrayInput is an input type that accepts ManagementStationPeerManagementStationArray and ManagementStationPeerManagementStationArrayOutput values.
+// You can construct a concrete instance of `ManagementStationPeerManagementStationArrayInput` via:
+//
+//	ManagementStationPeerManagementStationArray{ ManagementStationPeerManagementStationArgs{...} }
+type ManagementStationPeerManagementStationArrayInput interface {
+	pulumi.Input
+
+	ToManagementStationPeerManagementStationArrayOutput() ManagementStationPeerManagementStationArrayOutput
+	ToManagementStationPeerManagementStationArrayOutputWithContext(context.Context) ManagementStationPeerManagementStationArrayOutput
+}
+
+type ManagementStationPeerManagementStationArray []ManagementStationPeerManagementStationInput
+
+func (ManagementStationPeerManagementStationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementStationPeerManagementStation)(nil)).Elem()
+}
+
+func (i ManagementStationPeerManagementStationArray) ToManagementStationPeerManagementStationArrayOutput() ManagementStationPeerManagementStationArrayOutput {
+	return i.ToManagementStationPeerManagementStationArrayOutputWithContext(context.Background())
+}
+
+func (i ManagementStationPeerManagementStationArray) ToManagementStationPeerManagementStationArrayOutputWithContext(ctx context.Context) ManagementStationPeerManagementStationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementStationPeerManagementStationArrayOutput)
+}
+
+type ManagementStationPeerManagementStationOutput struct{ *pulumi.OutputState }
+
+func (ManagementStationPeerManagementStationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementStationPeerManagementStation)(nil)).Elem()
+}
+
+func (o ManagementStationPeerManagementStationOutput) ToManagementStationPeerManagementStationOutput() ManagementStationPeerManagementStationOutput {
+	return o
+}
+
+func (o ManagementStationPeerManagementStationOutput) ToManagementStationPeerManagementStationOutputWithContext(ctx context.Context) ManagementStationPeerManagementStationOutput {
+	return o
+}
+
+// (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+func (o ManagementStationPeerManagementStationOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementStationPeerManagementStation) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
+func (o ManagementStationPeerManagementStationOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementStationPeerManagementStation) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+type ManagementStationPeerManagementStationArrayOutput struct{ *pulumi.OutputState }
+
+func (ManagementStationPeerManagementStationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementStationPeerManagementStation)(nil)).Elem()
+}
+
+func (o ManagementStationPeerManagementStationArrayOutput) ToManagementStationPeerManagementStationArrayOutput() ManagementStationPeerManagementStationArrayOutput {
+	return o
+}
+
+func (o ManagementStationPeerManagementStationArrayOutput) ToManagementStationPeerManagementStationArrayOutputWithContext(ctx context.Context) ManagementStationPeerManagementStationArrayOutput {
+	return o
+}
+
+func (o ManagementStationPeerManagementStationArrayOutput) Index(i pulumi.IntInput) ManagementStationPeerManagementStationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementStationPeerManagementStation {
+		return vs[0].([]ManagementStationPeerManagementStation)[vs[1].(int)]
+	}).(ManagementStationPeerManagementStationOutput)
 }
 
 type ManagementStationProxy struct {
@@ -5872,7 +6742,7 @@ func (o ManagementStationProxyPtrOutput) Port() pulumi.StringPtrOutput {
 }
 
 type ProfileLifecycleEnvironment struct {
-	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id *string `pulumi:"id"`
@@ -5890,7 +6760,7 @@ type ProfileLifecycleEnvironmentInput interface {
 }
 
 type ProfileLifecycleEnvironmentArgs struct {
-	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id pulumi.StringPtrInput `pulumi:"id"`
@@ -5947,7 +6817,7 @@ func (o ProfileLifecycleEnvironmentOutput) ToProfileLifecycleEnvironmentOutputWi
 	return o
 }
 
-// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
 func (o ProfileLifecycleEnvironmentOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProfileLifecycleEnvironment) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -5978,7 +6848,7 @@ func (o ProfileLifecycleEnvironmentArrayOutput) Index(i pulumi.IntInput) Profile
 }
 
 type ProfileLifecycleStage struct {
-	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id *string `pulumi:"id"`
@@ -5996,7 +6866,7 @@ type ProfileLifecycleStageInput interface {
 }
 
 type ProfileLifecycleStageArgs struct {
-	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id pulumi.StringPtrInput `pulumi:"id"`
@@ -6053,7 +6923,7 @@ func (o ProfileLifecycleStageOutput) ToProfileLifecycleStageOutputWithContext(ct
 	return o
 }
 
-// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
 func (o ProfileLifecycleStageOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProfileLifecycleStage) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -6084,7 +6954,7 @@ func (o ProfileLifecycleStageArrayOutput) Index(i pulumi.IntInput) ProfileLifecy
 }
 
 type ProfileManagedInstanceGroup struct {
-	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id *string `pulumi:"id"`
@@ -6102,7 +6972,7 @@ type ProfileManagedInstanceGroupInput interface {
 }
 
 type ProfileManagedInstanceGroupArgs struct {
-	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id pulumi.StringPtrInput `pulumi:"id"`
@@ -6159,7 +7029,7 @@ func (o ProfileManagedInstanceGroupOutput) ToProfileManagedInstanceGroupOutputWi
 	return o
 }
 
-// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
 func (o ProfileManagedInstanceGroupOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProfileManagedInstanceGroup) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -6192,7 +7062,7 @@ func (o ProfileManagedInstanceGroupArrayOutput) Index(i pulumi.IntInput) Profile
 type ProfileSoftwareSource struct {
 	// (Updatable) User-specified description of the registration profile.
 	Description *string `pulumi:"description"`
-	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id *string `pulumi:"id"`
@@ -6216,7 +7086,7 @@ type ProfileSoftwareSourceInput interface {
 type ProfileSoftwareSourceArgs struct {
 	// (Updatable) User-specified description of the registration profile.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id pulumi.StringPtrInput `pulumi:"id"`
@@ -6282,7 +7152,7 @@ func (o ProfileSoftwareSourceOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProfileSoftwareSource) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
 func (o ProfileSoftwareSourceOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProfileSoftwareSource) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -6329,6 +7199,8 @@ type ScheduledJobOperation struct {
 	OperationType string `pulumi:"operationType"`
 	// (Updatable) The names of the target packages. This parameter only applies when the scheduled job is for installing, updating, or removing packages.
 	PackageNames []string `pulumi:"packageNames"`
+	// (Updatable) The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the  timeout, the service marks the reboot job as failed.
+	RebootTimeoutInMins *int `pulumi:"rebootTimeoutInMins"`
 	// (Updatable) The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
 	SoftwareSourceIds []string `pulumi:"softwareSourceIds"`
 	// (Updatable) Provides the information used to update a module stream.
@@ -6355,6 +7227,8 @@ type ScheduledJobOperationArgs struct {
 	OperationType pulumi.StringInput `pulumi:"operationType"`
 	// (Updatable) The names of the target packages. This parameter only applies when the scheduled job is for installing, updating, or removing packages.
 	PackageNames pulumi.StringArrayInput `pulumi:"packageNames"`
+	// (Updatable) The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the  timeout, the service marks the reboot job as failed.
+	RebootTimeoutInMins pulumi.IntPtrInput `pulumi:"rebootTimeoutInMins"`
 	// (Updatable) The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
 	SoftwareSourceIds pulumi.StringArrayInput `pulumi:"softwareSourceIds"`
 	// (Updatable) Provides the information used to update a module stream.
@@ -6429,6 +7303,11 @@ func (o ScheduledJobOperationOutput) OperationType() pulumi.StringOutput {
 // (Updatable) The names of the target packages. This parameter only applies when the scheduled job is for installing, updating, or removing packages.
 func (o ScheduledJobOperationOutput) PackageNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ScheduledJobOperation) []string { return v.PackageNames }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the  timeout, the service marks the reboot job as failed.
+func (o ScheduledJobOperationOutput) RebootTimeoutInMins() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ScheduledJobOperation) *int { return v.RebootTimeoutInMins }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
@@ -8105,10 +8984,166 @@ func (o SoftwareSourceVendorSoftwareSourceArrayOutput) Index(i pulumi.IntInput) 
 	}).(SoftwareSourceVendorSoftwareSourceOutput)
 }
 
+type WorkRequestRerunManagementWorkRequestDetails struct {
+	// User-specified information about the job. Avoid entering confidential information.
+	Description *string `pulumi:"description"`
+	// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+	DisplayName *string `pulumi:"displayName"`
+}
+
+// WorkRequestRerunManagementWorkRequestDetailsInput is an input type that accepts WorkRequestRerunManagementWorkRequestDetailsArgs and WorkRequestRerunManagementWorkRequestDetailsOutput values.
+// You can construct a concrete instance of `WorkRequestRerunManagementWorkRequestDetailsInput` via:
+//
+//	WorkRequestRerunManagementWorkRequestDetailsArgs{...}
+type WorkRequestRerunManagementWorkRequestDetailsInput interface {
+	pulumi.Input
+
+	ToWorkRequestRerunManagementWorkRequestDetailsOutput() WorkRequestRerunManagementWorkRequestDetailsOutput
+	ToWorkRequestRerunManagementWorkRequestDetailsOutputWithContext(context.Context) WorkRequestRerunManagementWorkRequestDetailsOutput
+}
+
+type WorkRequestRerunManagementWorkRequestDetailsArgs struct {
+	// User-specified information about the job. Avoid entering confidential information.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+}
+
+func (WorkRequestRerunManagementWorkRequestDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkRequestRerunManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (i WorkRequestRerunManagementWorkRequestDetailsArgs) ToWorkRequestRerunManagementWorkRequestDetailsOutput() WorkRequestRerunManagementWorkRequestDetailsOutput {
+	return i.ToWorkRequestRerunManagementWorkRequestDetailsOutputWithContext(context.Background())
+}
+
+func (i WorkRequestRerunManagementWorkRequestDetailsArgs) ToWorkRequestRerunManagementWorkRequestDetailsOutputWithContext(ctx context.Context) WorkRequestRerunManagementWorkRequestDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkRequestRerunManagementWorkRequestDetailsOutput)
+}
+
+func (i WorkRequestRerunManagementWorkRequestDetailsArgs) ToWorkRequestRerunManagementWorkRequestDetailsPtrOutput() WorkRequestRerunManagementWorkRequestDetailsPtrOutput {
+	return i.ToWorkRequestRerunManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i WorkRequestRerunManagementWorkRequestDetailsArgs) ToWorkRequestRerunManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) WorkRequestRerunManagementWorkRequestDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkRequestRerunManagementWorkRequestDetailsOutput).ToWorkRequestRerunManagementWorkRequestDetailsPtrOutputWithContext(ctx)
+}
+
+// WorkRequestRerunManagementWorkRequestDetailsPtrInput is an input type that accepts WorkRequestRerunManagementWorkRequestDetailsArgs, WorkRequestRerunManagementWorkRequestDetailsPtr and WorkRequestRerunManagementWorkRequestDetailsPtrOutput values.
+// You can construct a concrete instance of `WorkRequestRerunManagementWorkRequestDetailsPtrInput` via:
+//
+//	        WorkRequestRerunManagementWorkRequestDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type WorkRequestRerunManagementWorkRequestDetailsPtrInput interface {
+	pulumi.Input
+
+	ToWorkRequestRerunManagementWorkRequestDetailsPtrOutput() WorkRequestRerunManagementWorkRequestDetailsPtrOutput
+	ToWorkRequestRerunManagementWorkRequestDetailsPtrOutputWithContext(context.Context) WorkRequestRerunManagementWorkRequestDetailsPtrOutput
+}
+
+type workRequestRerunManagementWorkRequestDetailsPtrType WorkRequestRerunManagementWorkRequestDetailsArgs
+
+func WorkRequestRerunManagementWorkRequestDetailsPtr(v *WorkRequestRerunManagementWorkRequestDetailsArgs) WorkRequestRerunManagementWorkRequestDetailsPtrInput {
+	return (*workRequestRerunManagementWorkRequestDetailsPtrType)(v)
+}
+
+func (*workRequestRerunManagementWorkRequestDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WorkRequestRerunManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (i *workRequestRerunManagementWorkRequestDetailsPtrType) ToWorkRequestRerunManagementWorkRequestDetailsPtrOutput() WorkRequestRerunManagementWorkRequestDetailsPtrOutput {
+	return i.ToWorkRequestRerunManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *workRequestRerunManagementWorkRequestDetailsPtrType) ToWorkRequestRerunManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) WorkRequestRerunManagementWorkRequestDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkRequestRerunManagementWorkRequestDetailsPtrOutput)
+}
+
+type WorkRequestRerunManagementWorkRequestDetailsOutput struct{ *pulumi.OutputState }
+
+func (WorkRequestRerunManagementWorkRequestDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkRequestRerunManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (o WorkRequestRerunManagementWorkRequestDetailsOutput) ToWorkRequestRerunManagementWorkRequestDetailsOutput() WorkRequestRerunManagementWorkRequestDetailsOutput {
+	return o
+}
+
+func (o WorkRequestRerunManagementWorkRequestDetailsOutput) ToWorkRequestRerunManagementWorkRequestDetailsOutputWithContext(ctx context.Context) WorkRequestRerunManagementWorkRequestDetailsOutput {
+	return o
+}
+
+func (o WorkRequestRerunManagementWorkRequestDetailsOutput) ToWorkRequestRerunManagementWorkRequestDetailsPtrOutput() WorkRequestRerunManagementWorkRequestDetailsPtrOutput {
+	return o.ToWorkRequestRerunManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o WorkRequestRerunManagementWorkRequestDetailsOutput) ToWorkRequestRerunManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) WorkRequestRerunManagementWorkRequestDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WorkRequestRerunManagementWorkRequestDetails) *WorkRequestRerunManagementWorkRequestDetails {
+		return &v
+	}).(WorkRequestRerunManagementWorkRequestDetailsPtrOutput)
+}
+
+// User-specified information about the job. Avoid entering confidential information.
+func (o WorkRequestRerunManagementWorkRequestDetailsOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkRequestRerunManagementWorkRequestDetails) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+func (o WorkRequestRerunManagementWorkRequestDetailsOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkRequestRerunManagementWorkRequestDetails) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+type WorkRequestRerunManagementWorkRequestDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (WorkRequestRerunManagementWorkRequestDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WorkRequestRerunManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (o WorkRequestRerunManagementWorkRequestDetailsPtrOutput) ToWorkRequestRerunManagementWorkRequestDetailsPtrOutput() WorkRequestRerunManagementWorkRequestDetailsPtrOutput {
+	return o
+}
+
+func (o WorkRequestRerunManagementWorkRequestDetailsPtrOutput) ToWorkRequestRerunManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) WorkRequestRerunManagementWorkRequestDetailsPtrOutput {
+	return o
+}
+
+func (o WorkRequestRerunManagementWorkRequestDetailsPtrOutput) Elem() WorkRequestRerunManagementWorkRequestDetailsOutput {
+	return o.ApplyT(func(v *WorkRequestRerunManagementWorkRequestDetails) WorkRequestRerunManagementWorkRequestDetails {
+		if v != nil {
+			return *v
+		}
+		var ret WorkRequestRerunManagementWorkRequestDetails
+		return ret
+	}).(WorkRequestRerunManagementWorkRequestDetailsOutput)
+}
+
+// User-specified information about the job. Avoid entering confidential information.
+func (o WorkRequestRerunManagementWorkRequestDetailsPtrOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkRequestRerunManagementWorkRequestDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Description
+	}).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+func (o WorkRequestRerunManagementWorkRequestDetailsPtrOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkRequestRerunManagementWorkRequestDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DisplayName
+	}).(pulumi.StringPtrOutput)
+}
+
 type GetEntitlementsEntitlementCollection struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// A filter to return entitlements that match the given CSI.
+	// A filter to return entitlements that match the given customer support identifier (CSI).
 	Csi string `pulumi:"csi"`
 	// List of entitlements.
 	Items []GetEntitlementsEntitlementCollectionItem `pulumi:"items"`
@@ -8128,7 +9163,7 @@ type GetEntitlementsEntitlementCollectionInput interface {
 type GetEntitlementsEntitlementCollectionArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// A filter to return entitlements that match the given CSI.
+	// A filter to return entitlements that match the given customer support identifier (CSI).
 	Csi pulumi.StringInput `pulumi:"csi"`
 	// List of entitlements.
 	Items GetEntitlementsEntitlementCollectionItemArrayInput `pulumi:"items"`
@@ -8190,7 +9225,7 @@ func (o GetEntitlementsEntitlementCollectionOutput) CompartmentId() pulumi.Strin
 	return o.ApplyT(func(v GetEntitlementsEntitlementCollection) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// A filter to return entitlements that match the given CSI.
+// A filter to return entitlements that match the given customer support identifier (CSI).
 func (o GetEntitlementsEntitlementCollectionOutput) Csi() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEntitlementsEntitlementCollection) string { return v.Csi }).(pulumi.StringOutput)
 }
@@ -8225,7 +9260,7 @@ func (o GetEntitlementsEntitlementCollectionArrayOutput) Index(i pulumi.IntInput
 type GetEntitlementsEntitlementCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// A filter to return entitlements that match the given CSI.
+	// A filter to return entitlements that match the given customer support identifier (CSI).
 	Csi string `pulumi:"csi"`
 	// A filter to return only resources that match the given vendor name.
 	VendorName string `pulumi:"vendorName"`
@@ -8245,7 +9280,7 @@ type GetEntitlementsEntitlementCollectionItemInput interface {
 type GetEntitlementsEntitlementCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// A filter to return entitlements that match the given CSI.
+	// A filter to return entitlements that match the given customer support identifier (CSI).
 	Csi pulumi.StringInput `pulumi:"csi"`
 	// A filter to return only resources that match the given vendor name.
 	VendorName pulumi.StringInput `pulumi:"vendorName"`
@@ -8307,7 +9342,7 @@ func (o GetEntitlementsEntitlementCollectionItemOutput) CompartmentId() pulumi.S
 	return o.ApplyT(func(v GetEntitlementsEntitlementCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// A filter to return entitlements that match the given CSI.
+// A filter to return entitlements that match the given customer support identifier (CSI).
 func (o GetEntitlementsEntitlementCollectionItemOutput) Csi() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEntitlementsEntitlementCollectionItem) string { return v.Csi }).(pulumi.StringOutput)
 }
@@ -9498,16 +10533,30 @@ func (o GetErratumPackageSoftwareSourceArrayOutput) Index(i pulumi.IntInput) Get
 type GetEventData struct {
 	// Provides additional information for the work request associated with an event.
 	AdditionalDetails []GetEventDataAdditionalDetail `pulumi:"additionalDetails"`
+	// The actions used to attempt fixing the error.
+	AttemptedResolutions []string `pulumi:"attemptedResolutions"`
 	// Provides information collected for the exploit attempt event.
 	Contents []GetEventDataContent `pulumi:"contents"`
+	// The commands executed by the agent that caused the error.
+	ErrorCause string `pulumi:"errorCause"`
+	// The output log of the error.
+	ErrorLog string `pulumi:"errorLog"`
 	// Number of times the event has occurred.
 	EventCount int `pulumi:"eventCount"`
 	// Fingerprint of the event.
 	EventFingerprint string `pulumi:"eventFingerprint"`
+	// Health state of the management station
+	HealthState string `pulumi:"healthState"`
 	// Type of management station operation.
 	OperationType string `pulumi:"operationType"`
 	// Reason for the event.
 	Reason string `pulumi:"reason"`
+	// Reboot status for the current event
+	RebootStatus string `pulumi:"rebootStatus"`
+	// The log output after the resolutions.
+	ResolutionLog string `pulumi:"resolutionLog"`
+	// Indicates if the event succeeded.
+	ResolutionStatus string `pulumi:"resolutionStatus"`
 	// Status of the management station operation.
 	Status string `pulumi:"status"`
 	// The date and time that the event first occurred.
@@ -9528,16 +10577,30 @@ type GetEventDataInput interface {
 type GetEventDataArgs struct {
 	// Provides additional information for the work request associated with an event.
 	AdditionalDetails GetEventDataAdditionalDetailArrayInput `pulumi:"additionalDetails"`
+	// The actions used to attempt fixing the error.
+	AttemptedResolutions pulumi.StringArrayInput `pulumi:"attemptedResolutions"`
 	// Provides information collected for the exploit attempt event.
 	Contents GetEventDataContentArrayInput `pulumi:"contents"`
+	// The commands executed by the agent that caused the error.
+	ErrorCause pulumi.StringInput `pulumi:"errorCause"`
+	// The output log of the error.
+	ErrorLog pulumi.StringInput `pulumi:"errorLog"`
 	// Number of times the event has occurred.
 	EventCount pulumi.IntInput `pulumi:"eventCount"`
 	// Fingerprint of the event.
 	EventFingerprint pulumi.StringInput `pulumi:"eventFingerprint"`
+	// Health state of the management station
+	HealthState pulumi.StringInput `pulumi:"healthState"`
 	// Type of management station operation.
 	OperationType pulumi.StringInput `pulumi:"operationType"`
 	// Reason for the event.
 	Reason pulumi.StringInput `pulumi:"reason"`
+	// Reboot status for the current event
+	RebootStatus pulumi.StringInput `pulumi:"rebootStatus"`
+	// The log output after the resolutions.
+	ResolutionLog pulumi.StringInput `pulumi:"resolutionLog"`
+	// Indicates if the event succeeded.
+	ResolutionStatus pulumi.StringInput `pulumi:"resolutionStatus"`
 	// Status of the management station operation.
 	Status pulumi.StringInput `pulumi:"status"`
 	// The date and time that the event first occurred.
@@ -9600,9 +10663,24 @@ func (o GetEventDataOutput) AdditionalDetails() GetEventDataAdditionalDetailArra
 	return o.ApplyT(func(v GetEventData) []GetEventDataAdditionalDetail { return v.AdditionalDetails }).(GetEventDataAdditionalDetailArrayOutput)
 }
 
+// The actions used to attempt fixing the error.
+func (o GetEventDataOutput) AttemptedResolutions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetEventData) []string { return v.AttemptedResolutions }).(pulumi.StringArrayOutput)
+}
+
 // Provides information collected for the exploit attempt event.
 func (o GetEventDataOutput) Contents() GetEventDataContentArrayOutput {
 	return o.ApplyT(func(v GetEventData) []GetEventDataContent { return v.Contents }).(GetEventDataContentArrayOutput)
+}
+
+// The commands executed by the agent that caused the error.
+func (o GetEventDataOutput) ErrorCause() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEventData) string { return v.ErrorCause }).(pulumi.StringOutput)
+}
+
+// The output log of the error.
+func (o GetEventDataOutput) ErrorLog() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEventData) string { return v.ErrorLog }).(pulumi.StringOutput)
 }
 
 // Number of times the event has occurred.
@@ -9615,6 +10693,11 @@ func (o GetEventDataOutput) EventFingerprint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEventData) string { return v.EventFingerprint }).(pulumi.StringOutput)
 }
 
+// Health state of the management station
+func (o GetEventDataOutput) HealthState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEventData) string { return v.HealthState }).(pulumi.StringOutput)
+}
+
 // Type of management station operation.
 func (o GetEventDataOutput) OperationType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEventData) string { return v.OperationType }).(pulumi.StringOutput)
@@ -9623,6 +10706,21 @@ func (o GetEventDataOutput) OperationType() pulumi.StringOutput {
 // Reason for the event.
 func (o GetEventDataOutput) Reason() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEventData) string { return v.Reason }).(pulumi.StringOutput)
+}
+
+// Reboot status for the current event
+func (o GetEventDataOutput) RebootStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEventData) string { return v.RebootStatus }).(pulumi.StringOutput)
+}
+
+// The log output after the resolutions.
+func (o GetEventDataOutput) ResolutionLog() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEventData) string { return v.ResolutionLog }).(pulumi.StringOutput)
+}
+
+// Indicates if the event succeeded.
+func (o GetEventDataOutput) ResolutionStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEventData) string { return v.ResolutionStatus }).(pulumi.StringOutput)
 }
 
 // Status of the management station operation.
@@ -9910,6 +11008,8 @@ type GetEventDataContent struct {
 	// * `SOFTWARE_SOURCE` - Software source
 	// * `AGENT` - Agent
 	// * `MANAGEMENT_STATION` - Management Station
+	// * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+	// * `REBOOT` - Reboot
 	Type string `pulumi:"type"`
 }
 
@@ -9949,6 +11049,8 @@ type GetEventDataContentArgs struct {
 	// * `SOFTWARE_SOURCE` - Software source
 	// * `AGENT` - Agent
 	// * `MANAGEMENT_STATION` - Management Station
+	// * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+	// * `REBOOT` - Reboot
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -10042,6 +11144,8 @@ func (o GetEventDataContentOutput) Size() pulumi.IntOutput {
 // * `SOFTWARE_SOURCE` - Software source
 // * `AGENT` - Agent
 // * `MANAGEMENT_STATION` - Management Station
+// * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+// * `REBOOT` - Reboot
 func (o GetEventDataContentOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEventDataContent) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -10563,16 +11667,30 @@ func (o GetEventsEventCollectionItemArrayOutput) Index(i pulumi.IntInput) GetEve
 type GetEventsEventCollectionItemData struct {
 	// Provides additional information for the work request associated with an event.
 	AdditionalDetails []GetEventsEventCollectionItemDataAdditionalDetail `pulumi:"additionalDetails"`
+	// The actions used to attempt fixing the error.
+	AttemptedResolutions []string `pulumi:"attemptedResolutions"`
 	// Provides information collected for the exploit attempt event.
 	Contents []GetEventsEventCollectionItemDataContent `pulumi:"contents"`
+	// The commands executed by the agent that caused the error.
+	ErrorCause string `pulumi:"errorCause"`
+	// The output log of the error.
+	ErrorLog string `pulumi:"errorLog"`
 	// Number of times the event has occurred.
 	EventCount int `pulumi:"eventCount"`
 	// The eventFingerprint of the KernelEventData.
 	EventFingerprint string `pulumi:"eventFingerprint"`
+	// Health state of the management station
+	HealthState string `pulumi:"healthState"`
 	// Type of management station operation.
 	OperationType string `pulumi:"operationType"`
 	// Reason for the event.
 	Reason string `pulumi:"reason"`
+	// Reboot status for the current event
+	RebootStatus string `pulumi:"rebootStatus"`
+	// The log output after the resolutions.
+	ResolutionLog string `pulumi:"resolutionLog"`
+	// Indicates if the event succeeded.
+	ResolutionStatus string `pulumi:"resolutionStatus"`
 	// Status of the management station operation.
 	Status string `pulumi:"status"`
 	// The date and time that the event first occurred.
@@ -10593,16 +11711,30 @@ type GetEventsEventCollectionItemDataInput interface {
 type GetEventsEventCollectionItemDataArgs struct {
 	// Provides additional information for the work request associated with an event.
 	AdditionalDetails GetEventsEventCollectionItemDataAdditionalDetailArrayInput `pulumi:"additionalDetails"`
+	// The actions used to attempt fixing the error.
+	AttemptedResolutions pulumi.StringArrayInput `pulumi:"attemptedResolutions"`
 	// Provides information collected for the exploit attempt event.
 	Contents GetEventsEventCollectionItemDataContentArrayInput `pulumi:"contents"`
+	// The commands executed by the agent that caused the error.
+	ErrorCause pulumi.StringInput `pulumi:"errorCause"`
+	// The output log of the error.
+	ErrorLog pulumi.StringInput `pulumi:"errorLog"`
 	// Number of times the event has occurred.
 	EventCount pulumi.IntInput `pulumi:"eventCount"`
 	// The eventFingerprint of the KernelEventData.
 	EventFingerprint pulumi.StringInput `pulumi:"eventFingerprint"`
+	// Health state of the management station
+	HealthState pulumi.StringInput `pulumi:"healthState"`
 	// Type of management station operation.
 	OperationType pulumi.StringInput `pulumi:"operationType"`
 	// Reason for the event.
 	Reason pulumi.StringInput `pulumi:"reason"`
+	// Reboot status for the current event
+	RebootStatus pulumi.StringInput `pulumi:"rebootStatus"`
+	// The log output after the resolutions.
+	ResolutionLog pulumi.StringInput `pulumi:"resolutionLog"`
+	// Indicates if the event succeeded.
+	ResolutionStatus pulumi.StringInput `pulumi:"resolutionStatus"`
 	// Status of the management station operation.
 	Status pulumi.StringInput `pulumi:"status"`
 	// The date and time that the event first occurred.
@@ -10667,9 +11799,24 @@ func (o GetEventsEventCollectionItemDataOutput) AdditionalDetails() GetEventsEve
 	}).(GetEventsEventCollectionItemDataAdditionalDetailArrayOutput)
 }
 
+// The actions used to attempt fixing the error.
+func (o GetEventsEventCollectionItemDataOutput) AttemptedResolutions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetEventsEventCollectionItemData) []string { return v.AttemptedResolutions }).(pulumi.StringArrayOutput)
+}
+
 // Provides information collected for the exploit attempt event.
 func (o GetEventsEventCollectionItemDataOutput) Contents() GetEventsEventCollectionItemDataContentArrayOutput {
 	return o.ApplyT(func(v GetEventsEventCollectionItemData) []GetEventsEventCollectionItemDataContent { return v.Contents }).(GetEventsEventCollectionItemDataContentArrayOutput)
+}
+
+// The commands executed by the agent that caused the error.
+func (o GetEventsEventCollectionItemDataOutput) ErrorCause() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEventsEventCollectionItemData) string { return v.ErrorCause }).(pulumi.StringOutput)
+}
+
+// The output log of the error.
+func (o GetEventsEventCollectionItemDataOutput) ErrorLog() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEventsEventCollectionItemData) string { return v.ErrorLog }).(pulumi.StringOutput)
 }
 
 // Number of times the event has occurred.
@@ -10682,6 +11829,11 @@ func (o GetEventsEventCollectionItemDataOutput) EventFingerprint() pulumi.String
 	return o.ApplyT(func(v GetEventsEventCollectionItemData) string { return v.EventFingerprint }).(pulumi.StringOutput)
 }
 
+// Health state of the management station
+func (o GetEventsEventCollectionItemDataOutput) HealthState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEventsEventCollectionItemData) string { return v.HealthState }).(pulumi.StringOutput)
+}
+
 // Type of management station operation.
 func (o GetEventsEventCollectionItemDataOutput) OperationType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEventsEventCollectionItemData) string { return v.OperationType }).(pulumi.StringOutput)
@@ -10690,6 +11842,21 @@ func (o GetEventsEventCollectionItemDataOutput) OperationType() pulumi.StringOut
 // Reason for the event.
 func (o GetEventsEventCollectionItemDataOutput) Reason() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEventsEventCollectionItemData) string { return v.Reason }).(pulumi.StringOutput)
+}
+
+// Reboot status for the current event
+func (o GetEventsEventCollectionItemDataOutput) RebootStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEventsEventCollectionItemData) string { return v.RebootStatus }).(pulumi.StringOutput)
+}
+
+// The log output after the resolutions.
+func (o GetEventsEventCollectionItemDataOutput) ResolutionLog() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEventsEventCollectionItemData) string { return v.ResolutionLog }).(pulumi.StringOutput)
+}
+
+// Indicates if the event succeeded.
+func (o GetEventsEventCollectionItemDataOutput) ResolutionStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEventsEventCollectionItemData) string { return v.ResolutionStatus }).(pulumi.StringOutput)
 }
 
 // Status of the management station operation.
@@ -20645,6 +21812,8 @@ func (o GetManagedInstancesManagedInstanceCollectionArrayOutput) Index(i pulumi.
 }
 
 type GetManagedInstancesManagedInstanceCollectionItem struct {
+	// A filter to return only managed instances with the specified version of osmh-agent running.
+	AgentVersion string `pulumi:"agentVersion"`
 	// The CPU architecture type of the managed instance.
 	Architecture string `pulumi:"architecture"`
 	// Settings for the Autonomous Linux service.
@@ -20669,7 +21838,7 @@ type GetManagedInstancesManagedInstanceCollectionItem struct {
 	IsManagedByAutonomousLinux bool `pulumi:"isManagedByAutonomousLinux"`
 	// A filter to return only managed instances that are acting as management stations.
 	IsManagementStation bool `pulumi:"isManagementStation"`
-	// Indicates whether a reboot is required to complete installation of updates.
+	// A filter to return only managed instances that require a reboot to install updates.
 	IsRebootRequired bool `pulumi:"isRebootRequired"`
 	// The ksplice effective kernel version.
 	KspliceEffectiveKernelVersion string `pulumi:"kspliceEffectiveKernelVersion"`
@@ -20699,9 +21868,11 @@ type GetManagedInstancesManagedInstanceCollectionItem struct {
 	PrimaryManagementStationId string `pulumi:"primaryManagementStationId"`
 	// A multi filter to return only managed instances that match the given profile ids.
 	Profile string `pulumi:"profile"`
+	// The version of the profile that was used to register this instance with the service.
+	ProfileVersion string `pulumi:"profileVersion"`
 	// Number of scheduled jobs associated with this instance.
 	ScheduledJobCount int `pulumi:"scheduledJobCount"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary managment station.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station.
 	SecondaryManagementStationId string `pulumi:"secondaryManagementStationId"`
 	// Number of security type updates available for installation.
 	SecurityUpdatesAvailable int `pulumi:"securityUpdatesAvailable"`
@@ -20737,6 +21908,8 @@ type GetManagedInstancesManagedInstanceCollectionItemInput interface {
 }
 
 type GetManagedInstancesManagedInstanceCollectionItemArgs struct {
+	// A filter to return only managed instances with the specified version of osmh-agent running.
+	AgentVersion pulumi.StringInput `pulumi:"agentVersion"`
 	// The CPU architecture type of the managed instance.
 	Architecture pulumi.StringInput `pulumi:"architecture"`
 	// Settings for the Autonomous Linux service.
@@ -20761,7 +21934,7 @@ type GetManagedInstancesManagedInstanceCollectionItemArgs struct {
 	IsManagedByAutonomousLinux pulumi.BoolInput `pulumi:"isManagedByAutonomousLinux"`
 	// A filter to return only managed instances that are acting as management stations.
 	IsManagementStation pulumi.BoolInput `pulumi:"isManagementStation"`
-	// Indicates whether a reboot is required to complete installation of updates.
+	// A filter to return only managed instances that require a reboot to install updates.
 	IsRebootRequired pulumi.BoolInput `pulumi:"isRebootRequired"`
 	// The ksplice effective kernel version.
 	KspliceEffectiveKernelVersion pulumi.StringInput `pulumi:"kspliceEffectiveKernelVersion"`
@@ -20791,9 +21964,11 @@ type GetManagedInstancesManagedInstanceCollectionItemArgs struct {
 	PrimaryManagementStationId pulumi.StringInput `pulumi:"primaryManagementStationId"`
 	// A multi filter to return only managed instances that match the given profile ids.
 	Profile pulumi.StringInput `pulumi:"profile"`
+	// The version of the profile that was used to register this instance with the service.
+	ProfileVersion pulumi.StringInput `pulumi:"profileVersion"`
 	// Number of scheduled jobs associated with this instance.
 	ScheduledJobCount pulumi.IntInput `pulumi:"scheduledJobCount"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary managment station.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station.
 	SecondaryManagementStationId pulumi.StringInput `pulumi:"secondaryManagementStationId"`
 	// Number of security type updates available for installation.
 	SecurityUpdatesAvailable pulumi.IntInput `pulumi:"securityUpdatesAvailable"`
@@ -20868,6 +22043,11 @@ func (o GetManagedInstancesManagedInstanceCollectionItemOutput) ToGetManagedInst
 	return o
 }
 
+// A filter to return only managed instances with the specified version of osmh-agent running.
+func (o GetManagedInstancesManagedInstanceCollectionItemOutput) AgentVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstancesManagedInstanceCollectionItem) string { return v.AgentVersion }).(pulumi.StringOutput)
+}
+
 // The CPU architecture type of the managed instance.
 func (o GetManagedInstancesManagedInstanceCollectionItemOutput) Architecture() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedInstancesManagedInstanceCollectionItem) string { return v.Architecture }).(pulumi.StringOutput)
@@ -20930,7 +22110,7 @@ func (o GetManagedInstancesManagedInstanceCollectionItemOutput) IsManagementStat
 	return o.ApplyT(func(v GetManagedInstancesManagedInstanceCollectionItem) bool { return v.IsManagementStation }).(pulumi.BoolOutput)
 }
 
-// Indicates whether a reboot is required to complete installation of updates.
+// A filter to return only managed instances that require a reboot to install updates.
 func (o GetManagedInstancesManagedInstanceCollectionItemOutput) IsRebootRequired() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetManagedInstancesManagedInstanceCollectionItem) bool { return v.IsRebootRequired }).(pulumi.BoolOutput)
 }
@@ -21013,12 +22193,17 @@ func (o GetManagedInstancesManagedInstanceCollectionItemOutput) Profile() pulumi
 	return o.ApplyT(func(v GetManagedInstancesManagedInstanceCollectionItem) string { return v.Profile }).(pulumi.StringOutput)
 }
 
+// The version of the profile that was used to register this instance with the service.
+func (o GetManagedInstancesManagedInstanceCollectionItemOutput) ProfileVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstancesManagedInstanceCollectionItem) string { return v.ProfileVersion }).(pulumi.StringOutput)
+}
+
 // Number of scheduled jobs associated with this instance.
 func (o GetManagedInstancesManagedInstanceCollectionItemOutput) ScheduledJobCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetManagedInstancesManagedInstanceCollectionItem) int { return v.ScheduledJobCount }).(pulumi.IntOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary managment station.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station.
 func (o GetManagedInstancesManagedInstanceCollectionItemOutput) SecondaryManagementStationId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedInstancesManagedInstanceCollectionItem) string { return v.SecondaryManagementStationId }).(pulumi.StringOutput)
 }
@@ -21773,6 +22958,8 @@ func (o GetManagementStationHealthArrayOutput) Index(i pulumi.IntInput) GetManag
 type GetManagementStationMirror struct {
 	// Path to the data volume on the management station where software source mirrors are stored.
 	Directory string `pulumi:"directory"`
+	// When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
+	IsSslverifyEnabled bool `pulumi:"isSslverifyEnabled"`
 	// Listening port used for the proxy.
 	Port string `pulumi:"port"`
 	// Path to the SSL cerfificate.
@@ -21795,6 +22982,8 @@ type GetManagementStationMirrorInput interface {
 type GetManagementStationMirrorArgs struct {
 	// Path to the data volume on the management station where software source mirrors are stored.
 	Directory pulumi.StringInput `pulumi:"directory"`
+	// When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
+	IsSslverifyEnabled pulumi.BoolInput `pulumi:"isSslverifyEnabled"`
 	// Listening port used for the proxy.
 	Port pulumi.StringInput `pulumi:"port"`
 	// Path to the SSL cerfificate.
@@ -21857,6 +23046,11 @@ func (o GetManagementStationMirrorOutput) ToGetManagementStationMirrorOutputWith
 // Path to the data volume on the management station where software source mirrors are stored.
 func (o GetManagementStationMirrorOutput) Directory() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagementStationMirror) string { return v.Directory }).(pulumi.StringOutput)
+}
+
+// When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
+func (o GetManagementStationMirrorOutput) IsSslverifyEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetManagementStationMirror) bool { return v.IsSslverifyEnabled }).(pulumi.BoolOutput)
 }
 
 // Listening port used for the proxy.
@@ -22233,23 +23427,27 @@ func (o GetManagementStationMirrorsMirrorsCollectionArrayOutput) Index(i pulumi.
 }
 
 type GetManagementStationMirrorsMirrorsCollectionItem struct {
-	// The architecture type supported by the Software Source
+	// The architecture type supported by the software source.
 	ArchType string `pulumi:"archType"`
 	// A filter to return resources that match the given user-friendly name.
 	DisplayName string `pulumi:"displayName"`
-	// OCID of a software source
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id string `pulumi:"id"`
 	// The current log from the management station plugin.
 	Log string `pulumi:"log"`
-	// The OS family the Software Source belongs to
+	// The OS family of the software source.
 	OsFamily string `pulumi:"osFamily"`
-	// A decimal number representing the completness percentage
+	// The number of packages within the mirrored software source.
+	PackageCount int `pulumi:"packageCount"`
+	// A decimal number representing the percentage of the software source that has been synced.
 	Percentage int `pulumi:"percentage"`
-	// Current state of the mirror
+	// The size the mirrored software source in bytes.
+	Size string `pulumi:"size"`
+	// Current state of the software source mirror.
 	State string `pulumi:"state"`
-	// Timestamp of the last time the mirror was sync
+	// Time that the software source was last synced (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeLastSynced string `pulumi:"timeLastSynced"`
-	// Type of the mirror
+	// Type of software source.
 	Type string `pulumi:"type"`
 }
 
@@ -22265,23 +23463,27 @@ type GetManagementStationMirrorsMirrorsCollectionItemInput interface {
 }
 
 type GetManagementStationMirrorsMirrorsCollectionItemArgs struct {
-	// The architecture type supported by the Software Source
+	// The architecture type supported by the software source.
 	ArchType pulumi.StringInput `pulumi:"archType"`
 	// A filter to return resources that match the given user-friendly name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// OCID of a software source
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The current log from the management station plugin.
 	Log pulumi.StringInput `pulumi:"log"`
-	// The OS family the Software Source belongs to
+	// The OS family of the software source.
 	OsFamily pulumi.StringInput `pulumi:"osFamily"`
-	// A decimal number representing the completness percentage
+	// The number of packages within the mirrored software source.
+	PackageCount pulumi.IntInput `pulumi:"packageCount"`
+	// A decimal number representing the percentage of the software source that has been synced.
 	Percentage pulumi.IntInput `pulumi:"percentage"`
-	// Current state of the mirror
+	// The size the mirrored software source in bytes.
+	Size pulumi.StringInput `pulumi:"size"`
+	// Current state of the software source mirror.
 	State pulumi.StringInput `pulumi:"state"`
-	// Timestamp of the last time the mirror was sync
+	// Time that the software source was last synced (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeLastSynced pulumi.StringInput `pulumi:"timeLastSynced"`
-	// Type of the mirror
+	// Type of software source.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -22336,7 +23538,7 @@ func (o GetManagementStationMirrorsMirrorsCollectionItemOutput) ToGetManagementS
 	return o
 }
 
-// The architecture type supported by the Software Source
+// The architecture type supported by the software source.
 func (o GetManagementStationMirrorsMirrorsCollectionItemOutput) ArchType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagementStationMirrorsMirrorsCollectionItem) string { return v.ArchType }).(pulumi.StringOutput)
 }
@@ -22346,7 +23548,7 @@ func (o GetManagementStationMirrorsMirrorsCollectionItemOutput) DisplayName() pu
 	return o.ApplyT(func(v GetManagementStationMirrorsMirrorsCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// OCID of a software source
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 func (o GetManagementStationMirrorsMirrorsCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagementStationMirrorsMirrorsCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -22356,27 +23558,37 @@ func (o GetManagementStationMirrorsMirrorsCollectionItemOutput) Log() pulumi.Str
 	return o.ApplyT(func(v GetManagementStationMirrorsMirrorsCollectionItem) string { return v.Log }).(pulumi.StringOutput)
 }
 
-// The OS family the Software Source belongs to
+// The OS family of the software source.
 func (o GetManagementStationMirrorsMirrorsCollectionItemOutput) OsFamily() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagementStationMirrorsMirrorsCollectionItem) string { return v.OsFamily }).(pulumi.StringOutput)
 }
 
-// A decimal number representing the completness percentage
+// The number of packages within the mirrored software source.
+func (o GetManagementStationMirrorsMirrorsCollectionItemOutput) PackageCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagementStationMirrorsMirrorsCollectionItem) int { return v.PackageCount }).(pulumi.IntOutput)
+}
+
+// A decimal number representing the percentage of the software source that has been synced.
 func (o GetManagementStationMirrorsMirrorsCollectionItemOutput) Percentage() pulumi.IntOutput {
 	return o.ApplyT(func(v GetManagementStationMirrorsMirrorsCollectionItem) int { return v.Percentage }).(pulumi.IntOutput)
 }
 
-// Current state of the mirror
+// The size the mirrored software source in bytes.
+func (o GetManagementStationMirrorsMirrorsCollectionItemOutput) Size() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementStationMirrorsMirrorsCollectionItem) string { return v.Size }).(pulumi.StringOutput)
+}
+
+// Current state of the software source mirror.
 func (o GetManagementStationMirrorsMirrorsCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagementStationMirrorsMirrorsCollectionItem) string { return v.State }).(pulumi.StringOutput)
 }
 
-// Timestamp of the last time the mirror was sync
+// Time that the software source was last synced (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 func (o GetManagementStationMirrorsMirrorsCollectionItemOutput) TimeLastSynced() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagementStationMirrorsMirrorsCollectionItem) string { return v.TimeLastSynced }).(pulumi.StringOutput)
 }
 
-// Type of the mirror
+// Type of software source.
 func (o GetManagementStationMirrorsMirrorsCollectionItemOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagementStationMirrorsMirrorsCollectionItem) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -22399,6 +23611,112 @@ func (o GetManagementStationMirrorsMirrorsCollectionItemArrayOutput) Index(i pul
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementStationMirrorsMirrorsCollectionItem {
 		return vs[0].([]GetManagementStationMirrorsMirrorsCollectionItem)[vs[1].(int)]
 	}).(GetManagementStationMirrorsMirrorsCollectionItemOutput)
+}
+
+type GetManagementStationPeerManagementStation struct {
+	// User-friendly name for the management station.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
+	Id string `pulumi:"id"`
+}
+
+// GetManagementStationPeerManagementStationInput is an input type that accepts GetManagementStationPeerManagementStationArgs and GetManagementStationPeerManagementStationOutput values.
+// You can construct a concrete instance of `GetManagementStationPeerManagementStationInput` via:
+//
+//	GetManagementStationPeerManagementStationArgs{...}
+type GetManagementStationPeerManagementStationInput interface {
+	pulumi.Input
+
+	ToGetManagementStationPeerManagementStationOutput() GetManagementStationPeerManagementStationOutput
+	ToGetManagementStationPeerManagementStationOutputWithContext(context.Context) GetManagementStationPeerManagementStationOutput
+}
+
+type GetManagementStationPeerManagementStationArgs struct {
+	// User-friendly name for the management station.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetManagementStationPeerManagementStationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementStationPeerManagementStation)(nil)).Elem()
+}
+
+func (i GetManagementStationPeerManagementStationArgs) ToGetManagementStationPeerManagementStationOutput() GetManagementStationPeerManagementStationOutput {
+	return i.ToGetManagementStationPeerManagementStationOutputWithContext(context.Background())
+}
+
+func (i GetManagementStationPeerManagementStationArgs) ToGetManagementStationPeerManagementStationOutputWithContext(ctx context.Context) GetManagementStationPeerManagementStationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementStationPeerManagementStationOutput)
+}
+
+// GetManagementStationPeerManagementStationArrayInput is an input type that accepts GetManagementStationPeerManagementStationArray and GetManagementStationPeerManagementStationArrayOutput values.
+// You can construct a concrete instance of `GetManagementStationPeerManagementStationArrayInput` via:
+//
+//	GetManagementStationPeerManagementStationArray{ GetManagementStationPeerManagementStationArgs{...} }
+type GetManagementStationPeerManagementStationArrayInput interface {
+	pulumi.Input
+
+	ToGetManagementStationPeerManagementStationArrayOutput() GetManagementStationPeerManagementStationArrayOutput
+	ToGetManagementStationPeerManagementStationArrayOutputWithContext(context.Context) GetManagementStationPeerManagementStationArrayOutput
+}
+
+type GetManagementStationPeerManagementStationArray []GetManagementStationPeerManagementStationInput
+
+func (GetManagementStationPeerManagementStationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementStationPeerManagementStation)(nil)).Elem()
+}
+
+func (i GetManagementStationPeerManagementStationArray) ToGetManagementStationPeerManagementStationArrayOutput() GetManagementStationPeerManagementStationArrayOutput {
+	return i.ToGetManagementStationPeerManagementStationArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagementStationPeerManagementStationArray) ToGetManagementStationPeerManagementStationArrayOutputWithContext(ctx context.Context) GetManagementStationPeerManagementStationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementStationPeerManagementStationArrayOutput)
+}
+
+type GetManagementStationPeerManagementStationOutput struct{ *pulumi.OutputState }
+
+func (GetManagementStationPeerManagementStationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementStationPeerManagementStation)(nil)).Elem()
+}
+
+func (o GetManagementStationPeerManagementStationOutput) ToGetManagementStationPeerManagementStationOutput() GetManagementStationPeerManagementStationOutput {
+	return o
+}
+
+func (o GetManagementStationPeerManagementStationOutput) ToGetManagementStationPeerManagementStationOutputWithContext(ctx context.Context) GetManagementStationPeerManagementStationOutput {
+	return o
+}
+
+// User-friendly name for the management station.
+func (o GetManagementStationPeerManagementStationOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementStationPeerManagementStation) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
+func (o GetManagementStationPeerManagementStationOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementStationPeerManagementStation) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetManagementStationPeerManagementStationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagementStationPeerManagementStationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementStationPeerManagementStation)(nil)).Elem()
+}
+
+func (o GetManagementStationPeerManagementStationArrayOutput) ToGetManagementStationPeerManagementStationArrayOutput() GetManagementStationPeerManagementStationArrayOutput {
+	return o
+}
+
+func (o GetManagementStationPeerManagementStationArrayOutput) ToGetManagementStationPeerManagementStationArrayOutputWithContext(ctx context.Context) GetManagementStationPeerManagementStationArrayOutput {
+	return o
+}
+
+func (o GetManagementStationPeerManagementStationArrayOutput) Index(i pulumi.IntInput) GetManagementStationPeerManagementStationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementStationPeerManagementStation {
+		return vs[0].([]GetManagementStationPeerManagementStation)[vs[1].(int)]
+	}).(GetManagementStationPeerManagementStationOutput)
 }
 
 type GetManagementStationProxy struct {
@@ -22743,6 +24061,8 @@ type GetManagementStationsManagementStationCollectionItem struct {
 	Hostname string `pulumi:"hostname"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station. A filter that returns information about the specified management station.
 	Id string `pulumi:"id"`
+	// A filter to return only resources whose location matches the given value.
+	Location string `pulumi:"location"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
 	ManagedInstanceId string `pulumi:"managedInstanceId"`
 	// A decimal number representing the amount of mirror capacity used by the sync.
@@ -22789,6 +24109,8 @@ type GetManagementStationsManagementStationCollectionItemArgs struct {
 	Hostname pulumi.StringInput `pulumi:"hostname"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station. A filter that returns information about the specified management station.
 	Id pulumi.StringInput `pulumi:"id"`
+	// A filter to return only resources whose location matches the given value.
+	Location pulumi.StringInput `pulumi:"location"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
 	ManagedInstanceId pulumi.StringInput `pulumi:"managedInstanceId"`
 	// A decimal number representing the amount of mirror capacity used by the sync.
@@ -22898,6 +24220,11 @@ func (o GetManagementStationsManagementStationCollectionItemOutput) Id() pulumi.
 	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// A filter to return only resources whose location matches the given value.
+func (o GetManagementStationsManagementStationCollectionItemOutput) Location() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItem) string { return v.Location }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
 func (o GetManagementStationsManagementStationCollectionItemOutput) ManagedInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItem) string { return v.ManagedInstanceId }).(pulumi.StringOutput)
@@ -22960,6 +24287,330 @@ func (o GetManagementStationsManagementStationCollectionItemArrayOutput) Index(i
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementStationsManagementStationCollectionItem {
 		return vs[0].([]GetManagementStationsManagementStationCollectionItem)[vs[1].(int)]
 	}).(GetManagementStationsManagementStationCollectionItemOutput)
+}
+
+type GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollection struct {
+	// List of available software sources.
+	Items []GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem `pulumi:"items"`
+}
+
+// GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionInput is an input type that accepts GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArgs and GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionOutput values.
+// You can construct a concrete instance of `GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionInput` via:
+//
+//	GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArgs{...}
+type GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionInput interface {
+	pulumi.Input
+
+	ToGetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionOutput() GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionOutput
+	ToGetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionOutputWithContext(context.Context) GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionOutput
+}
+
+type GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArgs struct {
+	// List of available software sources.
+	Items GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollection)(nil)).Elem()
+}
+
+func (i GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArgs) ToGetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionOutput() GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionOutput {
+	return i.ToGetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionOutputWithContext(context.Background())
+}
+
+func (i GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArgs) ToGetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionOutputWithContext(ctx context.Context) GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionOutput)
+}
+
+// GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArrayInput is an input type that accepts GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArray and GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArrayOutput values.
+// You can construct a concrete instance of `GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArrayInput` via:
+//
+//	GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArray{ GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArgs{...} }
+type GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArrayOutput() GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArrayOutput
+	ToGetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArrayOutputWithContext(context.Context) GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArrayOutput
+}
+
+type GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArray []GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionInput
+
+func (GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollection)(nil)).Elem()
+}
+
+func (i GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArray) ToGetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArrayOutput() GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArrayOutput {
+	return i.ToGetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArray) ToGetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArrayOutputWithContext(ctx context.Context) GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArrayOutput)
+}
+
+type GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollection)(nil)).Elem()
+}
+
+func (o GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionOutput) ToGetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionOutput() GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionOutput {
+	return o
+}
+
+func (o GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionOutput) ToGetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionOutputWithContext(ctx context.Context) GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionOutput {
+	return o
+}
+
+// List of available software sources.
+func (o GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionOutput) Items() GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollection) []GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem {
+		return v.Items
+	}).(GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayOutput)
+}
+
+type GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollection)(nil)).Elem()
+}
+
+func (o GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArrayOutput) ToGetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArrayOutput() GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArrayOutput {
+	return o
+}
+
+func (o GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArrayOutput) ToGetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArrayOutputWithContext(ctx context.Context) GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArrayOutput {
+	return o
+}
+
+func (o GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArrayOutput) Index(i pulumi.IntInput) GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollection {
+		return vs[0].([]GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollection)[vs[1].(int)]
+	}).(GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionOutput)
+}
+
+type GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem struct {
+	// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A filter to return resources that match the given display names.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+	Id string `pulumi:"id"`
+}
+
+// GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemInput is an input type that accepts GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArgs and GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput values.
+// You can construct a concrete instance of `GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemInput` via:
+//
+//	GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArgs{...}
+type GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput() GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput
+	ToGetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutputWithContext(context.Context) GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput
+}
+
+type GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArgs struct {
+	// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A filter to return resources that match the given display names.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem)(nil)).Elem()
+}
+
+func (i GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArgs) ToGetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput() GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput {
+	return i.ToGetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArgs) ToGetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutputWithContext(ctx context.Context) GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput)
+}
+
+// GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayInput is an input type that accepts GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArray and GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayInput` via:
+//
+//	GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArray{ GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArgs{...} }
+type GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayOutput() GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayOutput
+	ToGetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayOutputWithContext(context.Context) GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayOutput
+}
+
+type GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArray []GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemInput
+
+func (GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem)(nil)).Elem()
+}
+
+func (i GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArray) ToGetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayOutput() GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayOutput {
+	return i.ToGetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArray) ToGetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayOutputWithContext(ctx context.Context) GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayOutput)
+}
+
+type GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem)(nil)).Elem()
+}
+
+func (o GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput) ToGetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput() GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput {
+	return o
+}
+
+func (o GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput) ToGetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutputWithContext(ctx context.Context) GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput {
+	return o
+}
+
+// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+func (o GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return resources that match the given display names.
+func (o GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+func (o GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem)(nil)).Elem()
+}
+
+func (o GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayOutput) ToGetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayOutput() GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayOutput) ToGetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayOutputWithContext(ctx context.Context) GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem {
+		return vs[0].([]GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem)[vs[1].(int)]
+	}).(GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput)
+}
+
+type GetProfileAvailableSoftwareSourcesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetProfileAvailableSoftwareSourcesFilterInput is an input type that accepts GetProfileAvailableSoftwareSourcesFilterArgs and GetProfileAvailableSoftwareSourcesFilterOutput values.
+// You can construct a concrete instance of `GetProfileAvailableSoftwareSourcesFilterInput` via:
+//
+//	GetProfileAvailableSoftwareSourcesFilterArgs{...}
+type GetProfileAvailableSoftwareSourcesFilterInput interface {
+	pulumi.Input
+
+	ToGetProfileAvailableSoftwareSourcesFilterOutput() GetProfileAvailableSoftwareSourcesFilterOutput
+	ToGetProfileAvailableSoftwareSourcesFilterOutputWithContext(context.Context) GetProfileAvailableSoftwareSourcesFilterOutput
+}
+
+type GetProfileAvailableSoftwareSourcesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetProfileAvailableSoftwareSourcesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProfileAvailableSoftwareSourcesFilter)(nil)).Elem()
+}
+
+func (i GetProfileAvailableSoftwareSourcesFilterArgs) ToGetProfileAvailableSoftwareSourcesFilterOutput() GetProfileAvailableSoftwareSourcesFilterOutput {
+	return i.ToGetProfileAvailableSoftwareSourcesFilterOutputWithContext(context.Background())
+}
+
+func (i GetProfileAvailableSoftwareSourcesFilterArgs) ToGetProfileAvailableSoftwareSourcesFilterOutputWithContext(ctx context.Context) GetProfileAvailableSoftwareSourcesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProfileAvailableSoftwareSourcesFilterOutput)
+}
+
+// GetProfileAvailableSoftwareSourcesFilterArrayInput is an input type that accepts GetProfileAvailableSoftwareSourcesFilterArray and GetProfileAvailableSoftwareSourcesFilterArrayOutput values.
+// You can construct a concrete instance of `GetProfileAvailableSoftwareSourcesFilterArrayInput` via:
+//
+//	GetProfileAvailableSoftwareSourcesFilterArray{ GetProfileAvailableSoftwareSourcesFilterArgs{...} }
+type GetProfileAvailableSoftwareSourcesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetProfileAvailableSoftwareSourcesFilterArrayOutput() GetProfileAvailableSoftwareSourcesFilterArrayOutput
+	ToGetProfileAvailableSoftwareSourcesFilterArrayOutputWithContext(context.Context) GetProfileAvailableSoftwareSourcesFilterArrayOutput
+}
+
+type GetProfileAvailableSoftwareSourcesFilterArray []GetProfileAvailableSoftwareSourcesFilterInput
+
+func (GetProfileAvailableSoftwareSourcesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProfileAvailableSoftwareSourcesFilter)(nil)).Elem()
+}
+
+func (i GetProfileAvailableSoftwareSourcesFilterArray) ToGetProfileAvailableSoftwareSourcesFilterArrayOutput() GetProfileAvailableSoftwareSourcesFilterArrayOutput {
+	return i.ToGetProfileAvailableSoftwareSourcesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetProfileAvailableSoftwareSourcesFilterArray) ToGetProfileAvailableSoftwareSourcesFilterArrayOutputWithContext(ctx context.Context) GetProfileAvailableSoftwareSourcesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProfileAvailableSoftwareSourcesFilterArrayOutput)
+}
+
+type GetProfileAvailableSoftwareSourcesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetProfileAvailableSoftwareSourcesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProfileAvailableSoftwareSourcesFilter)(nil)).Elem()
+}
+
+func (o GetProfileAvailableSoftwareSourcesFilterOutput) ToGetProfileAvailableSoftwareSourcesFilterOutput() GetProfileAvailableSoftwareSourcesFilterOutput {
+	return o
+}
+
+func (o GetProfileAvailableSoftwareSourcesFilterOutput) ToGetProfileAvailableSoftwareSourcesFilterOutputWithContext(ctx context.Context) GetProfileAvailableSoftwareSourcesFilterOutput {
+	return o
+}
+
+func (o GetProfileAvailableSoftwareSourcesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProfileAvailableSoftwareSourcesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetProfileAvailableSoftwareSourcesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetProfileAvailableSoftwareSourcesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetProfileAvailableSoftwareSourcesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetProfileAvailableSoftwareSourcesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetProfileAvailableSoftwareSourcesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProfileAvailableSoftwareSourcesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProfileAvailableSoftwareSourcesFilter)(nil)).Elem()
+}
+
+func (o GetProfileAvailableSoftwareSourcesFilterArrayOutput) ToGetProfileAvailableSoftwareSourcesFilterArrayOutput() GetProfileAvailableSoftwareSourcesFilterArrayOutput {
+	return o
+}
+
+func (o GetProfileAvailableSoftwareSourcesFilterArrayOutput) ToGetProfileAvailableSoftwareSourcesFilterArrayOutputWithContext(ctx context.Context) GetProfileAvailableSoftwareSourcesFilterArrayOutput {
+	return o
+}
+
+func (o GetProfileAvailableSoftwareSourcesFilterArrayOutput) Index(i pulumi.IntInput) GetProfileAvailableSoftwareSourcesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProfileAvailableSoftwareSourcesFilter {
+		return vs[0].([]GetProfileAvailableSoftwareSourcesFilter)[vs[1].(int)]
+	}).(GetProfileAvailableSoftwareSourcesFilterOutput)
 }
 
 type GetProfileLifecycleEnvironment struct {
@@ -23413,6 +25064,457 @@ func (o GetProfileSoftwareSourceArrayOutput) Index(i pulumi.IntInput) GetProfile
 	}).(GetProfileSoftwareSourceOutput)
 }
 
+type GetProfileVersionLifecycleEnvironment struct {
+	// Software source name.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+	Id string `pulumi:"id"`
+}
+
+// GetProfileVersionLifecycleEnvironmentInput is an input type that accepts GetProfileVersionLifecycleEnvironmentArgs and GetProfileVersionLifecycleEnvironmentOutput values.
+// You can construct a concrete instance of `GetProfileVersionLifecycleEnvironmentInput` via:
+//
+//	GetProfileVersionLifecycleEnvironmentArgs{...}
+type GetProfileVersionLifecycleEnvironmentInput interface {
+	pulumi.Input
+
+	ToGetProfileVersionLifecycleEnvironmentOutput() GetProfileVersionLifecycleEnvironmentOutput
+	ToGetProfileVersionLifecycleEnvironmentOutputWithContext(context.Context) GetProfileVersionLifecycleEnvironmentOutput
+}
+
+type GetProfileVersionLifecycleEnvironmentArgs struct {
+	// Software source name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetProfileVersionLifecycleEnvironmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProfileVersionLifecycleEnvironment)(nil)).Elem()
+}
+
+func (i GetProfileVersionLifecycleEnvironmentArgs) ToGetProfileVersionLifecycleEnvironmentOutput() GetProfileVersionLifecycleEnvironmentOutput {
+	return i.ToGetProfileVersionLifecycleEnvironmentOutputWithContext(context.Background())
+}
+
+func (i GetProfileVersionLifecycleEnvironmentArgs) ToGetProfileVersionLifecycleEnvironmentOutputWithContext(ctx context.Context) GetProfileVersionLifecycleEnvironmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProfileVersionLifecycleEnvironmentOutput)
+}
+
+// GetProfileVersionLifecycleEnvironmentArrayInput is an input type that accepts GetProfileVersionLifecycleEnvironmentArray and GetProfileVersionLifecycleEnvironmentArrayOutput values.
+// You can construct a concrete instance of `GetProfileVersionLifecycleEnvironmentArrayInput` via:
+//
+//	GetProfileVersionLifecycleEnvironmentArray{ GetProfileVersionLifecycleEnvironmentArgs{...} }
+type GetProfileVersionLifecycleEnvironmentArrayInput interface {
+	pulumi.Input
+
+	ToGetProfileVersionLifecycleEnvironmentArrayOutput() GetProfileVersionLifecycleEnvironmentArrayOutput
+	ToGetProfileVersionLifecycleEnvironmentArrayOutputWithContext(context.Context) GetProfileVersionLifecycleEnvironmentArrayOutput
+}
+
+type GetProfileVersionLifecycleEnvironmentArray []GetProfileVersionLifecycleEnvironmentInput
+
+func (GetProfileVersionLifecycleEnvironmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProfileVersionLifecycleEnvironment)(nil)).Elem()
+}
+
+func (i GetProfileVersionLifecycleEnvironmentArray) ToGetProfileVersionLifecycleEnvironmentArrayOutput() GetProfileVersionLifecycleEnvironmentArrayOutput {
+	return i.ToGetProfileVersionLifecycleEnvironmentArrayOutputWithContext(context.Background())
+}
+
+func (i GetProfileVersionLifecycleEnvironmentArray) ToGetProfileVersionLifecycleEnvironmentArrayOutputWithContext(ctx context.Context) GetProfileVersionLifecycleEnvironmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProfileVersionLifecycleEnvironmentArrayOutput)
+}
+
+type GetProfileVersionLifecycleEnvironmentOutput struct{ *pulumi.OutputState }
+
+func (GetProfileVersionLifecycleEnvironmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProfileVersionLifecycleEnvironment)(nil)).Elem()
+}
+
+func (o GetProfileVersionLifecycleEnvironmentOutput) ToGetProfileVersionLifecycleEnvironmentOutput() GetProfileVersionLifecycleEnvironmentOutput {
+	return o
+}
+
+func (o GetProfileVersionLifecycleEnvironmentOutput) ToGetProfileVersionLifecycleEnvironmentOutputWithContext(ctx context.Context) GetProfileVersionLifecycleEnvironmentOutput {
+	return o
+}
+
+// Software source name.
+func (o GetProfileVersionLifecycleEnvironmentOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProfileVersionLifecycleEnvironment) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+func (o GetProfileVersionLifecycleEnvironmentOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProfileVersionLifecycleEnvironment) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetProfileVersionLifecycleEnvironmentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProfileVersionLifecycleEnvironmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProfileVersionLifecycleEnvironment)(nil)).Elem()
+}
+
+func (o GetProfileVersionLifecycleEnvironmentArrayOutput) ToGetProfileVersionLifecycleEnvironmentArrayOutput() GetProfileVersionLifecycleEnvironmentArrayOutput {
+	return o
+}
+
+func (o GetProfileVersionLifecycleEnvironmentArrayOutput) ToGetProfileVersionLifecycleEnvironmentArrayOutputWithContext(ctx context.Context) GetProfileVersionLifecycleEnvironmentArrayOutput {
+	return o
+}
+
+func (o GetProfileVersionLifecycleEnvironmentArrayOutput) Index(i pulumi.IntInput) GetProfileVersionLifecycleEnvironmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProfileVersionLifecycleEnvironment {
+		return vs[0].([]GetProfileVersionLifecycleEnvironment)[vs[1].(int)]
+	}).(GetProfileVersionLifecycleEnvironmentOutput)
+}
+
+type GetProfileVersionLifecycleStage struct {
+	// Software source name.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+	Id string `pulumi:"id"`
+}
+
+// GetProfileVersionLifecycleStageInput is an input type that accepts GetProfileVersionLifecycleStageArgs and GetProfileVersionLifecycleStageOutput values.
+// You can construct a concrete instance of `GetProfileVersionLifecycleStageInput` via:
+//
+//	GetProfileVersionLifecycleStageArgs{...}
+type GetProfileVersionLifecycleStageInput interface {
+	pulumi.Input
+
+	ToGetProfileVersionLifecycleStageOutput() GetProfileVersionLifecycleStageOutput
+	ToGetProfileVersionLifecycleStageOutputWithContext(context.Context) GetProfileVersionLifecycleStageOutput
+}
+
+type GetProfileVersionLifecycleStageArgs struct {
+	// Software source name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetProfileVersionLifecycleStageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProfileVersionLifecycleStage)(nil)).Elem()
+}
+
+func (i GetProfileVersionLifecycleStageArgs) ToGetProfileVersionLifecycleStageOutput() GetProfileVersionLifecycleStageOutput {
+	return i.ToGetProfileVersionLifecycleStageOutputWithContext(context.Background())
+}
+
+func (i GetProfileVersionLifecycleStageArgs) ToGetProfileVersionLifecycleStageOutputWithContext(ctx context.Context) GetProfileVersionLifecycleStageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProfileVersionLifecycleStageOutput)
+}
+
+// GetProfileVersionLifecycleStageArrayInput is an input type that accepts GetProfileVersionLifecycleStageArray and GetProfileVersionLifecycleStageArrayOutput values.
+// You can construct a concrete instance of `GetProfileVersionLifecycleStageArrayInput` via:
+//
+//	GetProfileVersionLifecycleStageArray{ GetProfileVersionLifecycleStageArgs{...} }
+type GetProfileVersionLifecycleStageArrayInput interface {
+	pulumi.Input
+
+	ToGetProfileVersionLifecycleStageArrayOutput() GetProfileVersionLifecycleStageArrayOutput
+	ToGetProfileVersionLifecycleStageArrayOutputWithContext(context.Context) GetProfileVersionLifecycleStageArrayOutput
+}
+
+type GetProfileVersionLifecycleStageArray []GetProfileVersionLifecycleStageInput
+
+func (GetProfileVersionLifecycleStageArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProfileVersionLifecycleStage)(nil)).Elem()
+}
+
+func (i GetProfileVersionLifecycleStageArray) ToGetProfileVersionLifecycleStageArrayOutput() GetProfileVersionLifecycleStageArrayOutput {
+	return i.ToGetProfileVersionLifecycleStageArrayOutputWithContext(context.Background())
+}
+
+func (i GetProfileVersionLifecycleStageArray) ToGetProfileVersionLifecycleStageArrayOutputWithContext(ctx context.Context) GetProfileVersionLifecycleStageArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProfileVersionLifecycleStageArrayOutput)
+}
+
+type GetProfileVersionLifecycleStageOutput struct{ *pulumi.OutputState }
+
+func (GetProfileVersionLifecycleStageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProfileVersionLifecycleStage)(nil)).Elem()
+}
+
+func (o GetProfileVersionLifecycleStageOutput) ToGetProfileVersionLifecycleStageOutput() GetProfileVersionLifecycleStageOutput {
+	return o
+}
+
+func (o GetProfileVersionLifecycleStageOutput) ToGetProfileVersionLifecycleStageOutputWithContext(ctx context.Context) GetProfileVersionLifecycleStageOutput {
+	return o
+}
+
+// Software source name.
+func (o GetProfileVersionLifecycleStageOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProfileVersionLifecycleStage) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+func (o GetProfileVersionLifecycleStageOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProfileVersionLifecycleStage) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetProfileVersionLifecycleStageArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProfileVersionLifecycleStageArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProfileVersionLifecycleStage)(nil)).Elem()
+}
+
+func (o GetProfileVersionLifecycleStageArrayOutput) ToGetProfileVersionLifecycleStageArrayOutput() GetProfileVersionLifecycleStageArrayOutput {
+	return o
+}
+
+func (o GetProfileVersionLifecycleStageArrayOutput) ToGetProfileVersionLifecycleStageArrayOutputWithContext(ctx context.Context) GetProfileVersionLifecycleStageArrayOutput {
+	return o
+}
+
+func (o GetProfileVersionLifecycleStageArrayOutput) Index(i pulumi.IntInput) GetProfileVersionLifecycleStageOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProfileVersionLifecycleStage {
+		return vs[0].([]GetProfileVersionLifecycleStage)[vs[1].(int)]
+	}).(GetProfileVersionLifecycleStageOutput)
+}
+
+type GetProfileVersionManagedInstanceGroup struct {
+	// Software source name.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+	Id string `pulumi:"id"`
+}
+
+// GetProfileVersionManagedInstanceGroupInput is an input type that accepts GetProfileVersionManagedInstanceGroupArgs and GetProfileVersionManagedInstanceGroupOutput values.
+// You can construct a concrete instance of `GetProfileVersionManagedInstanceGroupInput` via:
+//
+//	GetProfileVersionManagedInstanceGroupArgs{...}
+type GetProfileVersionManagedInstanceGroupInput interface {
+	pulumi.Input
+
+	ToGetProfileVersionManagedInstanceGroupOutput() GetProfileVersionManagedInstanceGroupOutput
+	ToGetProfileVersionManagedInstanceGroupOutputWithContext(context.Context) GetProfileVersionManagedInstanceGroupOutput
+}
+
+type GetProfileVersionManagedInstanceGroupArgs struct {
+	// Software source name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetProfileVersionManagedInstanceGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProfileVersionManagedInstanceGroup)(nil)).Elem()
+}
+
+func (i GetProfileVersionManagedInstanceGroupArgs) ToGetProfileVersionManagedInstanceGroupOutput() GetProfileVersionManagedInstanceGroupOutput {
+	return i.ToGetProfileVersionManagedInstanceGroupOutputWithContext(context.Background())
+}
+
+func (i GetProfileVersionManagedInstanceGroupArgs) ToGetProfileVersionManagedInstanceGroupOutputWithContext(ctx context.Context) GetProfileVersionManagedInstanceGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProfileVersionManagedInstanceGroupOutput)
+}
+
+// GetProfileVersionManagedInstanceGroupArrayInput is an input type that accepts GetProfileVersionManagedInstanceGroupArray and GetProfileVersionManagedInstanceGroupArrayOutput values.
+// You can construct a concrete instance of `GetProfileVersionManagedInstanceGroupArrayInput` via:
+//
+//	GetProfileVersionManagedInstanceGroupArray{ GetProfileVersionManagedInstanceGroupArgs{...} }
+type GetProfileVersionManagedInstanceGroupArrayInput interface {
+	pulumi.Input
+
+	ToGetProfileVersionManagedInstanceGroupArrayOutput() GetProfileVersionManagedInstanceGroupArrayOutput
+	ToGetProfileVersionManagedInstanceGroupArrayOutputWithContext(context.Context) GetProfileVersionManagedInstanceGroupArrayOutput
+}
+
+type GetProfileVersionManagedInstanceGroupArray []GetProfileVersionManagedInstanceGroupInput
+
+func (GetProfileVersionManagedInstanceGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProfileVersionManagedInstanceGroup)(nil)).Elem()
+}
+
+func (i GetProfileVersionManagedInstanceGroupArray) ToGetProfileVersionManagedInstanceGroupArrayOutput() GetProfileVersionManagedInstanceGroupArrayOutput {
+	return i.ToGetProfileVersionManagedInstanceGroupArrayOutputWithContext(context.Background())
+}
+
+func (i GetProfileVersionManagedInstanceGroupArray) ToGetProfileVersionManagedInstanceGroupArrayOutputWithContext(ctx context.Context) GetProfileVersionManagedInstanceGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProfileVersionManagedInstanceGroupArrayOutput)
+}
+
+type GetProfileVersionManagedInstanceGroupOutput struct{ *pulumi.OutputState }
+
+func (GetProfileVersionManagedInstanceGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProfileVersionManagedInstanceGroup)(nil)).Elem()
+}
+
+func (o GetProfileVersionManagedInstanceGroupOutput) ToGetProfileVersionManagedInstanceGroupOutput() GetProfileVersionManagedInstanceGroupOutput {
+	return o
+}
+
+func (o GetProfileVersionManagedInstanceGroupOutput) ToGetProfileVersionManagedInstanceGroupOutputWithContext(ctx context.Context) GetProfileVersionManagedInstanceGroupOutput {
+	return o
+}
+
+// Software source name.
+func (o GetProfileVersionManagedInstanceGroupOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProfileVersionManagedInstanceGroup) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+func (o GetProfileVersionManagedInstanceGroupOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProfileVersionManagedInstanceGroup) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetProfileVersionManagedInstanceGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProfileVersionManagedInstanceGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProfileVersionManagedInstanceGroup)(nil)).Elem()
+}
+
+func (o GetProfileVersionManagedInstanceGroupArrayOutput) ToGetProfileVersionManagedInstanceGroupArrayOutput() GetProfileVersionManagedInstanceGroupArrayOutput {
+	return o
+}
+
+func (o GetProfileVersionManagedInstanceGroupArrayOutput) ToGetProfileVersionManagedInstanceGroupArrayOutputWithContext(ctx context.Context) GetProfileVersionManagedInstanceGroupArrayOutput {
+	return o
+}
+
+func (o GetProfileVersionManagedInstanceGroupArrayOutput) Index(i pulumi.IntInput) GetProfileVersionManagedInstanceGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProfileVersionManagedInstanceGroup {
+		return vs[0].([]GetProfileVersionManagedInstanceGroup)[vs[1].(int)]
+	}).(GetProfileVersionManagedInstanceGroupOutput)
+}
+
+type GetProfileVersionSoftwareSource struct {
+	// Software source description.
+	Description string `pulumi:"description"`
+	// Software source name.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+	Id string `pulumi:"id"`
+	// Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+	IsMandatoryForAutonomousLinux bool `pulumi:"isMandatoryForAutonomousLinux"`
+	// Type of the software source.
+	SoftwareSourceType string `pulumi:"softwareSourceType"`
+}
+
+// GetProfileVersionSoftwareSourceInput is an input type that accepts GetProfileVersionSoftwareSourceArgs and GetProfileVersionSoftwareSourceOutput values.
+// You can construct a concrete instance of `GetProfileVersionSoftwareSourceInput` via:
+//
+//	GetProfileVersionSoftwareSourceArgs{...}
+type GetProfileVersionSoftwareSourceInput interface {
+	pulumi.Input
+
+	ToGetProfileVersionSoftwareSourceOutput() GetProfileVersionSoftwareSourceOutput
+	ToGetProfileVersionSoftwareSourceOutputWithContext(context.Context) GetProfileVersionSoftwareSourceOutput
+}
+
+type GetProfileVersionSoftwareSourceArgs struct {
+	// Software source description.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Software source name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+	IsMandatoryForAutonomousLinux pulumi.BoolInput `pulumi:"isMandatoryForAutonomousLinux"`
+	// Type of the software source.
+	SoftwareSourceType pulumi.StringInput `pulumi:"softwareSourceType"`
+}
+
+func (GetProfileVersionSoftwareSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProfileVersionSoftwareSource)(nil)).Elem()
+}
+
+func (i GetProfileVersionSoftwareSourceArgs) ToGetProfileVersionSoftwareSourceOutput() GetProfileVersionSoftwareSourceOutput {
+	return i.ToGetProfileVersionSoftwareSourceOutputWithContext(context.Background())
+}
+
+func (i GetProfileVersionSoftwareSourceArgs) ToGetProfileVersionSoftwareSourceOutputWithContext(ctx context.Context) GetProfileVersionSoftwareSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProfileVersionSoftwareSourceOutput)
+}
+
+// GetProfileVersionSoftwareSourceArrayInput is an input type that accepts GetProfileVersionSoftwareSourceArray and GetProfileVersionSoftwareSourceArrayOutput values.
+// You can construct a concrete instance of `GetProfileVersionSoftwareSourceArrayInput` via:
+//
+//	GetProfileVersionSoftwareSourceArray{ GetProfileVersionSoftwareSourceArgs{...} }
+type GetProfileVersionSoftwareSourceArrayInput interface {
+	pulumi.Input
+
+	ToGetProfileVersionSoftwareSourceArrayOutput() GetProfileVersionSoftwareSourceArrayOutput
+	ToGetProfileVersionSoftwareSourceArrayOutputWithContext(context.Context) GetProfileVersionSoftwareSourceArrayOutput
+}
+
+type GetProfileVersionSoftwareSourceArray []GetProfileVersionSoftwareSourceInput
+
+func (GetProfileVersionSoftwareSourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProfileVersionSoftwareSource)(nil)).Elem()
+}
+
+func (i GetProfileVersionSoftwareSourceArray) ToGetProfileVersionSoftwareSourceArrayOutput() GetProfileVersionSoftwareSourceArrayOutput {
+	return i.ToGetProfileVersionSoftwareSourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetProfileVersionSoftwareSourceArray) ToGetProfileVersionSoftwareSourceArrayOutputWithContext(ctx context.Context) GetProfileVersionSoftwareSourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProfileVersionSoftwareSourceArrayOutput)
+}
+
+type GetProfileVersionSoftwareSourceOutput struct{ *pulumi.OutputState }
+
+func (GetProfileVersionSoftwareSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProfileVersionSoftwareSource)(nil)).Elem()
+}
+
+func (o GetProfileVersionSoftwareSourceOutput) ToGetProfileVersionSoftwareSourceOutput() GetProfileVersionSoftwareSourceOutput {
+	return o
+}
+
+func (o GetProfileVersionSoftwareSourceOutput) ToGetProfileVersionSoftwareSourceOutputWithContext(ctx context.Context) GetProfileVersionSoftwareSourceOutput {
+	return o
+}
+
+// Software source description.
+func (o GetProfileVersionSoftwareSourceOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProfileVersionSoftwareSource) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Software source name.
+func (o GetProfileVersionSoftwareSourceOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProfileVersionSoftwareSource) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+func (o GetProfileVersionSoftwareSourceOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProfileVersionSoftwareSource) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+func (o GetProfileVersionSoftwareSourceOutput) IsMandatoryForAutonomousLinux() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetProfileVersionSoftwareSource) bool { return v.IsMandatoryForAutonomousLinux }).(pulumi.BoolOutput)
+}
+
+// Type of the software source.
+func (o GetProfileVersionSoftwareSourceOutput) SoftwareSourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProfileVersionSoftwareSource) string { return v.SoftwareSourceType }).(pulumi.StringOutput)
+}
+
+type GetProfileVersionSoftwareSourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProfileVersionSoftwareSourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProfileVersionSoftwareSource)(nil)).Elem()
+}
+
+func (o GetProfileVersionSoftwareSourceArrayOutput) ToGetProfileVersionSoftwareSourceArrayOutput() GetProfileVersionSoftwareSourceArrayOutput {
+	return o
+}
+
+func (o GetProfileVersionSoftwareSourceArrayOutput) ToGetProfileVersionSoftwareSourceArrayOutputWithContext(ctx context.Context) GetProfileVersionSoftwareSourceArrayOutput {
+	return o
+}
+
+func (o GetProfileVersionSoftwareSourceArrayOutput) Index(i pulumi.IntInput) GetProfileVersionSoftwareSourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProfileVersionSoftwareSource {
+		return vs[0].([]GetProfileVersionSoftwareSource)[vs[1].(int)]
+	}).(GetProfileVersionSoftwareSourceOutput)
+}
+
 type GetProfilesFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -23628,7 +25730,7 @@ type GetProfilesProfileCollectionItem struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id string `pulumi:"id"`
-	// A boolean variable that is used to list only the default profile resources.
+	// A filter to return only default profiles.
 	IsDefaultProfile bool `pulumi:"isDefaultProfile"`
 	// A filter to return only service-provided profiles.
 	IsServiceProvidedProfile bool `pulumi:"isServiceProvidedProfile"`
@@ -23640,12 +25742,14 @@ type GetProfilesProfileCollectionItem struct {
 	ManagedInstanceGroupId string                                           `pulumi:"managedInstanceGroupId"`
 	// Provides identifying information for the specified managed instance group.
 	ManagedInstanceGroups []GetProfilesProfileCollectionItemManagedInstanceGroup `pulumi:"managedInstanceGroups"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an  instance once registered. Management stations are only used by non-OCI instances.
 	ManagementStationId string `pulumi:"managementStationId"`
 	// A filter to return only resources that match the given operating system family.
 	OsFamily string `pulumi:"osFamily"`
 	// A filter to return registration profiles that match the given profile type.
 	ProfileType string `pulumi:"profileType"`
+	// The version of the registration profile.
+	ProfileVersion string `pulumi:"profileVersion"`
 	// A filter to return profiles that match the given instance type.
 	RegistrationType  string   `pulumi:"registrationType"`
 	SoftwareSourceIds []string `pulumi:"softwareSourceIds"`
@@ -23657,6 +25761,8 @@ type GetProfilesProfileCollectionItem struct {
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeCreated string `pulumi:"timeCreated"`
+	// The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+	TimeModified string `pulumi:"timeModified"`
 	// A filter to return only resources that match the given vendor name.
 	VendorName string `pulumi:"vendorName"`
 }
@@ -23687,7 +25793,7 @@ type GetProfilesProfileCollectionItemArgs struct {
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id pulumi.StringInput `pulumi:"id"`
-	// A boolean variable that is used to list only the default profile resources.
+	// A filter to return only default profiles.
 	IsDefaultProfile pulumi.BoolInput `pulumi:"isDefaultProfile"`
 	// A filter to return only service-provided profiles.
 	IsServiceProvidedProfile pulumi.BoolInput `pulumi:"isServiceProvidedProfile"`
@@ -23699,12 +25805,14 @@ type GetProfilesProfileCollectionItemArgs struct {
 	ManagedInstanceGroupId pulumi.StringInput                                       `pulumi:"managedInstanceGroupId"`
 	// Provides identifying information for the specified managed instance group.
 	ManagedInstanceGroups GetProfilesProfileCollectionItemManagedInstanceGroupArrayInput `pulumi:"managedInstanceGroups"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an  instance once registered. Management stations are only used by non-OCI instances.
 	ManagementStationId pulumi.StringInput `pulumi:"managementStationId"`
 	// A filter to return only resources that match the given operating system family.
 	OsFamily pulumi.StringInput `pulumi:"osFamily"`
 	// A filter to return registration profiles that match the given profile type.
 	ProfileType pulumi.StringInput `pulumi:"profileType"`
+	// The version of the registration profile.
+	ProfileVersion pulumi.StringInput `pulumi:"profileVersion"`
 	// A filter to return profiles that match the given instance type.
 	RegistrationType  pulumi.StringInput      `pulumi:"registrationType"`
 	SoftwareSourceIds pulumi.StringArrayInput `pulumi:"softwareSourceIds"`
@@ -23716,6 +25824,8 @@ type GetProfilesProfileCollectionItemArgs struct {
 	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+	TimeModified pulumi.StringInput `pulumi:"timeModified"`
 	// A filter to return only resources that match the given vendor name.
 	VendorName pulumi.StringInput `pulumi:"vendorName"`
 }
@@ -23806,7 +25916,7 @@ func (o GetProfilesProfileCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProfilesProfileCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A boolean variable that is used to list only the default profile resources.
+// A filter to return only default profiles.
 func (o GetProfilesProfileCollectionItemOutput) IsDefaultProfile() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetProfilesProfileCollectionItem) bool { return v.IsDefaultProfile }).(pulumi.BoolOutput)
 }
@@ -23845,7 +25955,7 @@ func (o GetProfilesProfileCollectionItemOutput) ManagedInstanceGroups() GetProfi
 	}).(GetProfilesProfileCollectionItemManagedInstanceGroupArrayOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an  instance once registered. Management stations are only used by non-OCI instances.
 func (o GetProfilesProfileCollectionItemOutput) ManagementStationId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProfilesProfileCollectionItem) string { return v.ManagementStationId }).(pulumi.StringOutput)
 }
@@ -23858,6 +25968,11 @@ func (o GetProfilesProfileCollectionItemOutput) OsFamily() pulumi.StringOutput {
 // A filter to return registration profiles that match the given profile type.
 func (o GetProfilesProfileCollectionItemOutput) ProfileType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProfilesProfileCollectionItem) string { return v.ProfileType }).(pulumi.StringOutput)
+}
+
+// The version of the registration profile.
+func (o GetProfilesProfileCollectionItemOutput) ProfileVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItem) string { return v.ProfileVersion }).(pulumi.StringOutput)
 }
 
 // A filter to return profiles that match the given instance type.
@@ -23889,6 +26004,11 @@ func (o GetProfilesProfileCollectionItemOutput) SystemTags() pulumi.StringMapOut
 // The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 func (o GetProfilesProfileCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProfilesProfileCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+func (o GetProfilesProfileCollectionItemOutput) TimeModified() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItem) string { return v.TimeModified }).(pulumi.StringOutput)
 }
 
 // A filter to return only resources that match the given vendor name.
@@ -24374,6 +26494,8 @@ type GetScheduledJobOperation struct {
 	OperationType string `pulumi:"operationType"`
 	// The names of the target packages. This parameter only applies when the scheduled job is for installing, updating, or removing packages.
 	PackageNames []string `pulumi:"packageNames"`
+	// The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the  timeout, the service marks the reboot job as failed.
+	RebootTimeoutInMins int `pulumi:"rebootTimeoutInMins"`
 	// The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
 	SoftwareSourceIds []string `pulumi:"softwareSourceIds"`
 	// Provides the information used to update a module stream.
@@ -24400,6 +26522,8 @@ type GetScheduledJobOperationArgs struct {
 	OperationType pulumi.StringInput `pulumi:"operationType"`
 	// The names of the target packages. This parameter only applies when the scheduled job is for installing, updating, or removing packages.
 	PackageNames pulumi.StringArrayInput `pulumi:"packageNames"`
+	// The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the  timeout, the service marks the reboot job as failed.
+	RebootTimeoutInMins pulumi.IntInput `pulumi:"rebootTimeoutInMins"`
 	// The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
 	SoftwareSourceIds pulumi.StringArrayInput `pulumi:"softwareSourceIds"`
 	// Provides the information used to update a module stream.
@@ -24474,6 +26598,11 @@ func (o GetScheduledJobOperationOutput) OperationType() pulumi.StringOutput {
 // The names of the target packages. This parameter only applies when the scheduled job is for installing, updating, or removing packages.
 func (o GetScheduledJobOperationOutput) PackageNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetScheduledJobOperation) []string { return v.PackageNames }).(pulumi.StringArrayOutput)
+}
+
+// The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the  timeout, the service marks the reboot job as failed.
+func (o GetScheduledJobOperationOutput) RebootTimeoutInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetScheduledJobOperation) int { return v.RebootTimeoutInMins }).(pulumi.IntOutput)
 }
 
 // The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
@@ -25497,6 +27626,8 @@ type GetScheduledJobsScheduledJobCollectionItem struct {
 	TimeNextExecution string `pulumi:"timeNextExecution"`
 	// The time this scheduled job was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeUpdated string `pulumi:"timeUpdated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+	WorkRequestId string `pulumi:"workRequestId"`
 	// The list of work request [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this scheduled job.
 	WorkRequestIds []string `pulumi:"workRequestIds"`
 }
@@ -25569,6 +27700,8 @@ type GetScheduledJobsScheduledJobCollectionItemArgs struct {
 	TimeNextExecution pulumi.StringInput `pulumi:"timeNextExecution"`
 	// The time this scheduled job was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+	WorkRequestId pulumi.StringInput `pulumi:"workRequestId"`
 	// The list of work request [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this scheduled job.
 	WorkRequestIds pulumi.StringArrayInput `pulumi:"workRequestIds"`
 }
@@ -25754,6 +27887,11 @@ func (o GetScheduledJobsScheduledJobCollectionItemOutput) TimeUpdated() pulumi.S
 	return o.ApplyT(func(v GetScheduledJobsScheduledJobCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+func (o GetScheduledJobsScheduledJobCollectionItemOutput) WorkRequestId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledJobsScheduledJobCollectionItem) string { return v.WorkRequestId }).(pulumi.StringOutput)
+}
+
 // The list of work request [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this scheduled job.
 func (o GetScheduledJobsScheduledJobCollectionItemOutput) WorkRequestIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetScheduledJobsScheduledJobCollectionItem) []string { return v.WorkRequestIds }).(pulumi.StringArrayOutput)
@@ -25786,6 +27924,8 @@ type GetScheduledJobsScheduledJobCollectionItemOperation struct {
 	OperationType string `pulumi:"operationType"`
 	// The names of the target packages. This parameter only applies when the scheduled job is for installing, updating, or removing packages.
 	PackageNames []string `pulumi:"packageNames"`
+	// The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the  timeout, the service marks the reboot job as failed.
+	RebootTimeoutInMins int `pulumi:"rebootTimeoutInMins"`
 	// The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
 	SoftwareSourceIds []string `pulumi:"softwareSourceIds"`
 	// Provides the information used to update a module stream.
@@ -25812,6 +27952,8 @@ type GetScheduledJobsScheduledJobCollectionItemOperationArgs struct {
 	OperationType pulumi.StringInput `pulumi:"operationType"`
 	// The names of the target packages. This parameter only applies when the scheduled job is for installing, updating, or removing packages.
 	PackageNames pulumi.StringArrayInput `pulumi:"packageNames"`
+	// The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the  timeout, the service marks the reboot job as failed.
+	RebootTimeoutInMins pulumi.IntInput `pulumi:"rebootTimeoutInMins"`
 	// The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
 	SoftwareSourceIds pulumi.StringArrayInput `pulumi:"softwareSourceIds"`
 	// Provides the information used to update a module stream.
@@ -25886,6 +28028,11 @@ func (o GetScheduledJobsScheduledJobCollectionItemOperationOutput) OperationType
 // The names of the target packages. This parameter only applies when the scheduled job is for installing, updating, or removing packages.
 func (o GetScheduledJobsScheduledJobCollectionItemOperationOutput) PackageNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetScheduledJobsScheduledJobCollectionItemOperation) []string { return v.PackageNames }).(pulumi.StringArrayOutput)
+}
+
+// The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the  timeout, the service marks the reboot job as failed.
+func (o GetScheduledJobsScheduledJobCollectionItemOperationOutput) RebootTimeoutInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetScheduledJobsScheduledJobCollectionItemOperation) int { return v.RebootTimeoutInMins }).(pulumi.IntOutput)
 }
 
 // The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
@@ -27282,9 +29429,9 @@ func (o GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionArrayOutput) Ind
 type GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItem struct {
 	// A filter to return only instances whose architecture type matches the given architecture.
 	ArchType string `pulumi:"archType"`
-	// The availabilities of the software source in a non-OCI environment for a tenancy.
+	// The availability of the software source in a non-OCI environment for a tenancy.
 	Availability string `pulumi:"availability"`
-	// The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+	// The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
 	AvailabilityAtOci string `pulumi:"availabilityAtOci"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -27300,14 +29447,18 @@ type GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItem struct {
 	Id string `pulumi:"id"`
 	// Indicates whether the software source is required for the Autonomous Linux service.
 	IsMandatoryForAutonomousLinux bool `pulumi:"isMandatoryForAutonomousLinux"`
+	// Indicates if this software source can be mirrored to a management station.
+	IsMirrorSyncAllowed bool `pulumi:"isMirrorSyncAllowed"`
 	// A filter to return only resources that match the given operating system family.
 	OsFamily string `pulumi:"osFamily"`
 	// Number of packages the software source contains.
 	PackageCount string `pulumi:"packageCount"`
 	// The repository ID for the software source.
 	RepoId string `pulumi:"repoId"`
-	// The size of the software source in gigabytes (GB).
+	// The size of the software source in bytes (B).
 	Size float64 `pulumi:"size"`
+	// Identifies how the versioned custom software source was created.
+	SoftwareSourceSubType string `pulumi:"softwareSourceSubType"`
 	// The type of the software source.
 	SoftwareSourceType string `pulumi:"softwareSourceType"`
 	// The version to assign to this custom software source.
@@ -27342,9 +29493,9 @@ type GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItemInput interface
 type GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItemArgs struct {
 	// A filter to return only instances whose architecture type matches the given architecture.
 	ArchType pulumi.StringInput `pulumi:"archType"`
-	// The availabilities of the software source in a non-OCI environment for a tenancy.
+	// The availability of the software source in a non-OCI environment for a tenancy.
 	Availability pulumi.StringInput `pulumi:"availability"`
-	// The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+	// The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
 	AvailabilityAtOci pulumi.StringInput `pulumi:"availabilityAtOci"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
@@ -27360,14 +29511,18 @@ type GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItemArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// Indicates whether the software source is required for the Autonomous Linux service.
 	IsMandatoryForAutonomousLinux pulumi.BoolInput `pulumi:"isMandatoryForAutonomousLinux"`
+	// Indicates if this software source can be mirrored to a management station.
+	IsMirrorSyncAllowed pulumi.BoolInput `pulumi:"isMirrorSyncAllowed"`
 	// A filter to return only resources that match the given operating system family.
 	OsFamily pulumi.StringInput `pulumi:"osFamily"`
 	// Number of packages the software source contains.
 	PackageCount pulumi.StringInput `pulumi:"packageCount"`
 	// The repository ID for the software source.
 	RepoId pulumi.StringInput `pulumi:"repoId"`
-	// The size of the software source in gigabytes (GB).
+	// The size of the software source in bytes (B).
 	Size pulumi.Float64Input `pulumi:"size"`
+	// Identifies how the versioned custom software source was created.
+	SoftwareSourceSubType pulumi.StringInput `pulumi:"softwareSourceSubType"`
 	// The type of the software source.
 	SoftwareSourceType pulumi.StringInput `pulumi:"softwareSourceType"`
 	// The version to assign to this custom software source.
@@ -27444,12 +29599,12 @@ func (o GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItemOutput) Arch
 	return o.ApplyT(func(v GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItem) string { return v.ArchType }).(pulumi.StringOutput)
 }
 
-// The availabilities of the software source in a non-OCI environment for a tenancy.
+// The availability of the software source in a non-OCI environment for a tenancy.
 func (o GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItemOutput) Availability() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItem) string { return v.Availability }).(pulumi.StringOutput)
 }
 
-// The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+// The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
 func (o GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItemOutput) AvailabilityAtOci() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItem) string {
 		return v.AvailabilityAtOci
@@ -27497,6 +29652,13 @@ func (o GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItemOutput) IsMa
 	}).(pulumi.BoolOutput)
 }
 
+// Indicates if this software source can be mirrored to a management station.
+func (o GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItemOutput) IsMirrorSyncAllowed() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItem) bool {
+		return v.IsMirrorSyncAllowed
+	}).(pulumi.BoolOutput)
+}
+
 // A filter to return only resources that match the given operating system family.
 func (o GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItemOutput) OsFamily() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItem) string { return v.OsFamily }).(pulumi.StringOutput)
@@ -27512,9 +29674,16 @@ func (o GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItemOutput) Repo
 	return o.ApplyT(func(v GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItem) string { return v.RepoId }).(pulumi.StringOutput)
 }
 
-// The size of the software source in gigabytes (GB).
+// The size of the software source in bytes (B).
 func (o GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItemOutput) Size() pulumi.Float64Output {
 	return o.ApplyT(func(v GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItem) float64 { return v.Size }).(pulumi.Float64Output)
+}
+
+// Identifies how the versioned custom software source was created.
+func (o GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItemOutput) SoftwareSourceSubType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItem) string {
+		return v.SoftwareSourceSubType
+	}).(pulumi.StringOutput)
 }
 
 // The type of the software source.
@@ -28526,6 +30695,551 @@ func (o GetSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayOutpu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource {
 		return vs[0].([]GetSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource)[vs[1].(int)]
 	}).(GetSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput)
+}
+
+type GetSoftwareSourceAvailableSoftwarePackagesFilter struct {
+	// Unique identifier for the package. Note that this is not an OCID.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSoftwareSourceAvailableSoftwarePackagesFilterInput is an input type that accepts GetSoftwareSourceAvailableSoftwarePackagesFilterArgs and GetSoftwareSourceAvailableSoftwarePackagesFilterOutput values.
+// You can construct a concrete instance of `GetSoftwareSourceAvailableSoftwarePackagesFilterInput` via:
+//
+//	GetSoftwareSourceAvailableSoftwarePackagesFilterArgs{...}
+type GetSoftwareSourceAvailableSoftwarePackagesFilterInput interface {
+	pulumi.Input
+
+	ToGetSoftwareSourceAvailableSoftwarePackagesFilterOutput() GetSoftwareSourceAvailableSoftwarePackagesFilterOutput
+	ToGetSoftwareSourceAvailableSoftwarePackagesFilterOutputWithContext(context.Context) GetSoftwareSourceAvailableSoftwarePackagesFilterOutput
+}
+
+type GetSoftwareSourceAvailableSoftwarePackagesFilterArgs struct {
+	// Unique identifier for the package. Note that this is not an OCID.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSoftwareSourceAvailableSoftwarePackagesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSoftwareSourceAvailableSoftwarePackagesFilter)(nil)).Elem()
+}
+
+func (i GetSoftwareSourceAvailableSoftwarePackagesFilterArgs) ToGetSoftwareSourceAvailableSoftwarePackagesFilterOutput() GetSoftwareSourceAvailableSoftwarePackagesFilterOutput {
+	return i.ToGetSoftwareSourceAvailableSoftwarePackagesFilterOutputWithContext(context.Background())
+}
+
+func (i GetSoftwareSourceAvailableSoftwarePackagesFilterArgs) ToGetSoftwareSourceAvailableSoftwarePackagesFilterOutputWithContext(ctx context.Context) GetSoftwareSourceAvailableSoftwarePackagesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceAvailableSoftwarePackagesFilterOutput)
+}
+
+// GetSoftwareSourceAvailableSoftwarePackagesFilterArrayInput is an input type that accepts GetSoftwareSourceAvailableSoftwarePackagesFilterArray and GetSoftwareSourceAvailableSoftwarePackagesFilterArrayOutput values.
+// You can construct a concrete instance of `GetSoftwareSourceAvailableSoftwarePackagesFilterArrayInput` via:
+//
+//	GetSoftwareSourceAvailableSoftwarePackagesFilterArray{ GetSoftwareSourceAvailableSoftwarePackagesFilterArgs{...} }
+type GetSoftwareSourceAvailableSoftwarePackagesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSoftwareSourceAvailableSoftwarePackagesFilterArrayOutput() GetSoftwareSourceAvailableSoftwarePackagesFilterArrayOutput
+	ToGetSoftwareSourceAvailableSoftwarePackagesFilterArrayOutputWithContext(context.Context) GetSoftwareSourceAvailableSoftwarePackagesFilterArrayOutput
+}
+
+type GetSoftwareSourceAvailableSoftwarePackagesFilterArray []GetSoftwareSourceAvailableSoftwarePackagesFilterInput
+
+func (GetSoftwareSourceAvailableSoftwarePackagesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSoftwareSourceAvailableSoftwarePackagesFilter)(nil)).Elem()
+}
+
+func (i GetSoftwareSourceAvailableSoftwarePackagesFilterArray) ToGetSoftwareSourceAvailableSoftwarePackagesFilterArrayOutput() GetSoftwareSourceAvailableSoftwarePackagesFilterArrayOutput {
+	return i.ToGetSoftwareSourceAvailableSoftwarePackagesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSoftwareSourceAvailableSoftwarePackagesFilterArray) ToGetSoftwareSourceAvailableSoftwarePackagesFilterArrayOutputWithContext(ctx context.Context) GetSoftwareSourceAvailableSoftwarePackagesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceAvailableSoftwarePackagesFilterArrayOutput)
+}
+
+type GetSoftwareSourceAvailableSoftwarePackagesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSoftwareSourceAvailableSoftwarePackagesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSoftwareSourceAvailableSoftwarePackagesFilter)(nil)).Elem()
+}
+
+func (o GetSoftwareSourceAvailableSoftwarePackagesFilterOutput) ToGetSoftwareSourceAvailableSoftwarePackagesFilterOutput() GetSoftwareSourceAvailableSoftwarePackagesFilterOutput {
+	return o
+}
+
+func (o GetSoftwareSourceAvailableSoftwarePackagesFilterOutput) ToGetSoftwareSourceAvailableSoftwarePackagesFilterOutputWithContext(ctx context.Context) GetSoftwareSourceAvailableSoftwarePackagesFilterOutput {
+	return o
+}
+
+// Unique identifier for the package. Note that this is not an OCID.
+func (o GetSoftwareSourceAvailableSoftwarePackagesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSoftwareSourceAvailableSoftwarePackagesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSoftwareSourceAvailableSoftwarePackagesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceAvailableSoftwarePackagesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSoftwareSourceAvailableSoftwarePackagesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSoftwareSourceAvailableSoftwarePackagesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSoftwareSourceAvailableSoftwarePackagesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSoftwareSourceAvailableSoftwarePackagesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSoftwareSourceAvailableSoftwarePackagesFilter)(nil)).Elem()
+}
+
+func (o GetSoftwareSourceAvailableSoftwarePackagesFilterArrayOutput) ToGetSoftwareSourceAvailableSoftwarePackagesFilterArrayOutput() GetSoftwareSourceAvailableSoftwarePackagesFilterArrayOutput {
+	return o
+}
+
+func (o GetSoftwareSourceAvailableSoftwarePackagesFilterArrayOutput) ToGetSoftwareSourceAvailableSoftwarePackagesFilterArrayOutputWithContext(ctx context.Context) GetSoftwareSourceAvailableSoftwarePackagesFilterArrayOutput {
+	return o
+}
+
+func (o GetSoftwareSourceAvailableSoftwarePackagesFilterArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourceAvailableSoftwarePackagesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSoftwareSourceAvailableSoftwarePackagesFilter {
+		return vs[0].([]GetSoftwareSourceAvailableSoftwarePackagesFilter)[vs[1].(int)]
+	}).(GetSoftwareSourceAvailableSoftwarePackagesFilterOutput)
+}
+
+type GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollection struct {
+	// List of software packages.
+	Items []GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItem `pulumi:"items"`
+}
+
+// GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionInput is an input type that accepts GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArgs and GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionOutput values.
+// You can construct a concrete instance of `GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionInput` via:
+//
+//	GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArgs{...}
+type GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionInput interface {
+	pulumi.Input
+
+	ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionOutput() GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionOutput
+	ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionOutputWithContext(context.Context) GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionOutput
+}
+
+type GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArgs struct {
+	// List of software packages.
+	Items GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollection)(nil)).Elem()
+}
+
+func (i GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArgs) ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionOutput() GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionOutput {
+	return i.ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArgs) ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionOutputWithContext(ctx context.Context) GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionOutput)
+}
+
+// GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArrayInput is an input type that accepts GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArray and GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArrayInput` via:
+//
+//	GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArray{ GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArgs{...} }
+type GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArrayOutput() GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArrayOutput
+	ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArrayOutputWithContext(context.Context) GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArrayOutput
+}
+
+type GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArray []GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionInput
+
+func (GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollection)(nil)).Elem()
+}
+
+func (i GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArray) ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArrayOutput() GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArrayOutput {
+	return i.ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArray) ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArrayOutputWithContext(ctx context.Context) GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArrayOutput)
+}
+
+type GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollection)(nil)).Elem()
+}
+
+func (o GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionOutput) ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionOutput() GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionOutput {
+	return o
+}
+
+func (o GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionOutput) ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionOutputWithContext(ctx context.Context) GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionOutput {
+	return o
+}
+
+// List of software packages.
+func (o GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionOutput) Items() GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollection) []GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItem {
+		return v.Items
+	}).(GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArrayOutput)
+}
+
+type GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollection)(nil)).Elem()
+}
+
+func (o GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArrayOutput) ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArrayOutput() GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArrayOutput {
+	return o
+}
+
+func (o GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArrayOutput) ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArrayOutputWithContext(ctx context.Context) GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArrayOutput {
+	return o
+}
+
+func (o GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollection {
+		return vs[0].([]GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollection)[vs[1].(int)]
+	}).(GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionOutput)
+}
+
+type GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItem struct {
+	// The architecture for which this software was built.
+	Architecture string `pulumi:"architecture"`
+	// Checksum of the package.
+	Checksum string `pulumi:"checksum"`
+	// Type of the checksum.
+	ChecksumType string `pulumi:"checksumType"`
+	// A filter to return resources that match the given user-friendly name.
+	DisplayName string `pulumi:"displayName"`
+	// Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
+	IsLatest bool `pulumi:"isLatest"`
+	// Unique identifier for the package. Note that this is not an OCID.
+	Name string `pulumi:"name"`
+	// The OS families the package belongs to.
+	OsFamilies []string `pulumi:"osFamilies"`
+	// List of software sources that provide the software package. This property is deprecated and it will be removed in a future API release.
+	SoftwareSources []GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource `pulumi:"softwareSources"`
+	// Type of the package.
+	Type string `pulumi:"type"`
+	// Version of the package.
+	Version string `pulumi:"version"`
+}
+
+// GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemInput is an input type that accepts GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArgs and GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemOutput values.
+// You can construct a concrete instance of `GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemInput` via:
+//
+//	GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArgs{...}
+type GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemOutput() GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemOutput
+	ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemOutputWithContext(context.Context) GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemOutput
+}
+
+type GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArgs struct {
+	// The architecture for which this software was built.
+	Architecture pulumi.StringInput `pulumi:"architecture"`
+	// Checksum of the package.
+	Checksum pulumi.StringInput `pulumi:"checksum"`
+	// Type of the checksum.
+	ChecksumType pulumi.StringInput `pulumi:"checksumType"`
+	// A filter to return resources that match the given user-friendly name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
+	IsLatest pulumi.BoolInput `pulumi:"isLatest"`
+	// Unique identifier for the package. Note that this is not an OCID.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The OS families the package belongs to.
+	OsFamilies pulumi.StringArrayInput `pulumi:"osFamilies"`
+	// List of software sources that provide the software package. This property is deprecated and it will be removed in a future API release.
+	SoftwareSources GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayInput `pulumi:"softwareSources"`
+	// Type of the package.
+	Type pulumi.StringInput `pulumi:"type"`
+	// Version of the package.
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItem)(nil)).Elem()
+}
+
+func (i GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArgs) ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemOutput() GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemOutput {
+	return i.ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArgs) ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemOutputWithContext(ctx context.Context) GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemOutput)
+}
+
+// GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArrayInput is an input type that accepts GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArray and GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArrayInput` via:
+//
+//	GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArray{ GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArgs{...} }
+type GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArrayOutput() GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArrayOutput
+	ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArrayOutputWithContext(context.Context) GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArrayOutput
+}
+
+type GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArray []GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemInput
+
+func (GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItem)(nil)).Elem()
+}
+
+func (i GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArray) ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArrayOutput() GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArrayOutput {
+	return i.ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArray) ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArrayOutputWithContext(ctx context.Context) GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArrayOutput)
+}
+
+type GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItem)(nil)).Elem()
+}
+
+func (o GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemOutput) ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemOutput() GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemOutput {
+	return o
+}
+
+func (o GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemOutput) ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemOutputWithContext(ctx context.Context) GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemOutput {
+	return o
+}
+
+// The architecture for which this software was built.
+func (o GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemOutput) Architecture() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItem) string {
+		return v.Architecture
+	}).(pulumi.StringOutput)
+}
+
+// Checksum of the package.
+func (o GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemOutput) Checksum() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItem) string {
+		return v.Checksum
+	}).(pulumi.StringOutput)
+}
+
+// Type of the checksum.
+func (o GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemOutput) ChecksumType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItem) string {
+		return v.ChecksumType
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return resources that match the given user-friendly name.
+func (o GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
+func (o GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemOutput) IsLatest() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItem) bool {
+		return v.IsLatest
+	}).(pulumi.BoolOutput)
+}
+
+// Unique identifier for the package. Note that this is not an OCID.
+func (o GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The OS families the package belongs to.
+func (o GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemOutput) OsFamilies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItem) []string {
+		return v.OsFamilies
+	}).(pulumi.StringArrayOutput)
+}
+
+// List of software sources that provide the software package. This property is deprecated and it will be removed in a future API release.
+func (o GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemOutput) SoftwareSources() GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayOutput {
+	return o.ApplyT(func(v GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItem) []GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource {
+		return v.SoftwareSources
+	}).(GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayOutput)
+}
+
+// Type of the package.
+func (o GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItem) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// Version of the package.
+func (o GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItem) string {
+		return v.Version
+	}).(pulumi.StringOutput)
+}
+
+type GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItem)(nil)).Elem()
+}
+
+func (o GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArrayOutput) ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArrayOutput() GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArrayOutput) ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArrayOutputWithContext(ctx context.Context) GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItem {
+		return vs[0].([]GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItem)[vs[1].(int)]
+	}).(GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemOutput)
+}
+
+type GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource struct {
+	// Software source description.
+	Description string `pulumi:"description"`
+	// A filter to return resources that match the given user-friendly name.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+	Id string `pulumi:"id"`
+	// Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+	IsMandatoryForAutonomousLinux bool `pulumi:"isMandatoryForAutonomousLinux"`
+	// Type of the software source.
+	SoftwareSourceType string `pulumi:"softwareSourceType"`
+}
+
+// GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceInput is an input type that accepts GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArgs and GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput values.
+// You can construct a concrete instance of `GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceInput` via:
+//
+//	GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArgs{...}
+type GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceInput interface {
+	pulumi.Input
+
+	ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput() GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput
+	ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutputWithContext(context.Context) GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput
+}
+
+type GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArgs struct {
+	// Software source description.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return resources that match the given user-friendly name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+	IsMandatoryForAutonomousLinux pulumi.BoolInput `pulumi:"isMandatoryForAutonomousLinux"`
+	// Type of the software source.
+	SoftwareSourceType pulumi.StringInput `pulumi:"softwareSourceType"`
+}
+
+func (GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource)(nil)).Elem()
+}
+
+func (i GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArgs) ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput() GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput {
+	return i.ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutputWithContext(context.Background())
+}
+
+func (i GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArgs) ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutputWithContext(ctx context.Context) GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput)
+}
+
+// GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayInput is an input type that accepts GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArray and GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayOutput values.
+// You can construct a concrete instance of `GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayInput` via:
+//
+//	GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArray{ GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArgs{...} }
+type GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayInput interface {
+	pulumi.Input
+
+	ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayOutput() GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayOutput
+	ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayOutputWithContext(context.Context) GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayOutput
+}
+
+type GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArray []GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceInput
+
+func (GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource)(nil)).Elem()
+}
+
+func (i GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArray) ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayOutput() GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayOutput {
+	return i.ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArray) ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayOutputWithContext(ctx context.Context) GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayOutput)
+}
+
+type GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput struct{ *pulumi.OutputState }
+
+func (GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource)(nil)).Elem()
+}
+
+func (o GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput) ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput() GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput {
+	return o
+}
+
+func (o GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput) ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutputWithContext(ctx context.Context) GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput {
+	return o
+}
+
+// Software source description.
+func (o GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return resources that match the given user-friendly name.
+func (o GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+func (o GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+func (o GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput) IsMandatoryForAutonomousLinux() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource) bool {
+		return v.IsMandatoryForAutonomousLinux
+	}).(pulumi.BoolOutput)
+}
+
+// Type of the software source.
+func (o GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput) SoftwareSourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource) string {
+		return v.SoftwareSourceType
+	}).(pulumi.StringOutput)
+}
+
+type GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource)(nil)).Elem()
+}
+
+func (o GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayOutput) ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayOutput() GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayOutput {
+	return o
+}
+
+func (o GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayOutput) ToGetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayOutputWithContext(ctx context.Context) GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayOutput {
+	return o
+}
+
+func (o GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource {
+		return vs[0].([]GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource)[vs[1].(int)]
+	}).(GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput)
 }
 
 type GetSoftwareSourceCustomSoftwareSourceFilter struct {
@@ -31988,9 +34702,9 @@ func (o GetSoftwareSourcesSoftwareSourceCollectionArrayOutput) Index(i pulumi.In
 type GetSoftwareSourcesSoftwareSourceCollectionItem struct {
 	// A filter to return only instances whose architecture type matches the given architecture.
 	ArchType string `pulumi:"archType"`
-	// The availabilities of the software source in a non-OCI environment for a tenancy.
+	// The availability of the software source in a non-OCI environment for a tenancy.
 	Availability string `pulumi:"availability"`
-	// The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+	// The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
 	AvailabilityAtOci string `pulumi:"availabilityAtOci"`
 	// (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -32006,14 +34720,18 @@ type GetSoftwareSourcesSoftwareSourceCollectionItem struct {
 	Id string `pulumi:"id"`
 	// Indicates whether the software source is mandatory for the Autonomous Linux service.
 	IsMandatoryForAutonomousLinux bool `pulumi:"isMandatoryForAutonomousLinux"`
+	// A filter to return software sources which can be synced to a management station.
+	IsMirrorSyncAllowed bool `pulumi:"isMirrorSyncAllowed"`
 	// A filter to return only resources that match the given operating system family.
 	OsFamily string `pulumi:"osFamily"`
 	// Number of packages the software source contains.
 	PackageCount string `pulumi:"packageCount"`
 	// The repository ID for the software source.
 	RepoId string `pulumi:"repoId"`
-	// The size of the software source in gigabytes (GB).
+	// The size of the software source in bytes (B).
 	Size float64 `pulumi:"size"`
+	// Identifies how the versioned custom software source was created.
+	SoftwareSourceSubType string `pulumi:"softwareSourceSubType"`
 	// The type of the software source.
 	SoftwareSourceType string `pulumi:"softwareSourceType"`
 	// The version to assign to this custom software source.
@@ -32047,9 +34765,9 @@ type GetSoftwareSourcesSoftwareSourceCollectionItemInput interface {
 type GetSoftwareSourcesSoftwareSourceCollectionItemArgs struct {
 	// A filter to return only instances whose architecture type matches the given architecture.
 	ArchType pulumi.StringInput `pulumi:"archType"`
-	// The availabilities of the software source in a non-OCI environment for a tenancy.
+	// The availability of the software source in a non-OCI environment for a tenancy.
 	Availability pulumi.StringInput `pulumi:"availability"`
-	// The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+	// The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
 	AvailabilityAtOci pulumi.StringInput `pulumi:"availabilityAtOci"`
 	// (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
@@ -32065,14 +34783,18 @@ type GetSoftwareSourcesSoftwareSourceCollectionItemArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// Indicates whether the software source is mandatory for the Autonomous Linux service.
 	IsMandatoryForAutonomousLinux pulumi.BoolInput `pulumi:"isMandatoryForAutonomousLinux"`
+	// A filter to return software sources which can be synced to a management station.
+	IsMirrorSyncAllowed pulumi.BoolInput `pulumi:"isMirrorSyncAllowed"`
 	// A filter to return only resources that match the given operating system family.
 	OsFamily pulumi.StringInput `pulumi:"osFamily"`
 	// Number of packages the software source contains.
 	PackageCount pulumi.StringInput `pulumi:"packageCount"`
 	// The repository ID for the software source.
 	RepoId pulumi.StringInput `pulumi:"repoId"`
-	// The size of the software source in gigabytes (GB).
+	// The size of the software source in bytes (B).
 	Size pulumi.Float64Input `pulumi:"size"`
+	// Identifies how the versioned custom software source was created.
+	SoftwareSourceSubType pulumi.StringInput `pulumi:"softwareSourceSubType"`
 	// The type of the software source.
 	SoftwareSourceType pulumi.StringInput `pulumi:"softwareSourceType"`
 	// The version to assign to this custom software source.
@@ -32148,12 +34870,12 @@ func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) ArchType() pulumi.
 	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) string { return v.ArchType }).(pulumi.StringOutput)
 }
 
-// The availabilities of the software source in a non-OCI environment for a tenancy.
+// The availability of the software source in a non-OCI environment for a tenancy.
 func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) Availability() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) string { return v.Availability }).(pulumi.StringOutput)
 }
 
-// The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+// The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
 func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) AvailabilityAtOci() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) string { return v.AvailabilityAtOci }).(pulumi.StringOutput)
 }
@@ -32193,6 +34915,11 @@ func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) IsMandatoryForAuto
 	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) bool { return v.IsMandatoryForAutonomousLinux }).(pulumi.BoolOutput)
 }
 
+// A filter to return software sources which can be synced to a management station.
+func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) IsMirrorSyncAllowed() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) bool { return v.IsMirrorSyncAllowed }).(pulumi.BoolOutput)
+}
+
 // A filter to return only resources that match the given operating system family.
 func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) OsFamily() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) string { return v.OsFamily }).(pulumi.StringOutput)
@@ -32208,9 +34935,14 @@ func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) RepoId() pulumi.St
 	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) string { return v.RepoId }).(pulumi.StringOutput)
 }
 
-// The size of the software source in gigabytes (GB).
+// The size of the software source in bytes (B).
 func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) Size() pulumi.Float64Output {
 	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) float64 { return v.Size }).(pulumi.Float64Output)
+}
+
+// Identifies how the versioned custom software source was created.
+func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) SoftwareSourceSubType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) string { return v.SoftwareSourceSubType }).(pulumi.StringOutput)
 }
 
 // The type of the software source.
@@ -32790,6 +35522,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsPtrInput)(nil)).Elem(), LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsInput)(nil)).Elem(), LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsPtrInput)(nil)).Elem(), LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LifecycleStageRebootManagementWorkRequestDetailsInput)(nil)).Elem(), LifecycleStageRebootManagementWorkRequestDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LifecycleStageRebootManagementWorkRequestDetailsPtrInput)(nil)).Elem(), LifecycleStageRebootManagementWorkRequestDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceAutonomousSettingsInput)(nil)).Elem(), ManagedInstanceAutonomousSettingsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceAutonomousSettingsPtrInput)(nil)).Elem(), ManagedInstanceAutonomousSettingsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsInput)(nil)).Elem(), ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs{})
@@ -32814,6 +35548,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceGroupManageModuleStreamsManagementRemoveArrayInput)(nil)).Elem(), ManagedInstanceGroupManageModuleStreamsManagementRemoveArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsInput)(nil)).Elem(), ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsPtrInput)(nil)).Elem(), ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceGroupRebootManagementWorkRequestDetailsInput)(nil)).Elem(), ManagedInstanceGroupRebootManagementWorkRequestDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceGroupRebootManagementWorkRequestDetailsPtrInput)(nil)).Elem(), ManagedInstanceGroupRebootManagementWorkRequestDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsInput)(nil)).Elem(), ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsPtrInput)(nil)).Elem(), ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceGroupSoftwareSourceInput)(nil)).Elem(), ManagedInstanceGroupSoftwareSourceArgs{})
@@ -32828,16 +35564,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceLifecycleStageArrayInput)(nil)).Elem(), ManagedInstanceLifecycleStageArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceManagedInstanceGroupInput)(nil)).Elem(), ManagedInstanceManagedInstanceGroupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceManagedInstanceGroupArrayInput)(nil)).Elem(), ManagedInstanceManagedInstanceGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceRebootManagementWorkRequestDetailsInput)(nil)).Elem(), ManagedInstanceRebootManagementWorkRequestDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceRebootManagementWorkRequestDetailsPtrInput)(nil)).Elem(), ManagedInstanceRebootManagementWorkRequestDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceSoftwareSourceInput)(nil)).Elem(), ManagedInstanceSoftwareSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceSoftwareSourceArrayInput)(nil)).Elem(), ManagedInstanceSoftwareSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceUpdatePackagesManagementWorkRequestDetailsInput)(nil)).Elem(), ManagedInstanceUpdatePackagesManagementWorkRequestDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceUpdatePackagesManagementWorkRequestDetailsPtrInput)(nil)).Elem(), ManagedInstanceUpdatePackagesManagementWorkRequestDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsInput)(nil)).Elem(), ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrInput)(nil)).Elem(), ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementStationHealthInput)(nil)).Elem(), ManagementStationHealthArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementStationHealthArrayInput)(nil)).Elem(), ManagementStationHealthArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementStationMirrorInput)(nil)).Elem(), ManagementStationMirrorArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementStationMirrorPtrInput)(nil)).Elem(), ManagementStationMirrorArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementStationMirrorSyncStatusInput)(nil)).Elem(), ManagementStationMirrorSyncStatusArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementStationMirrorSyncStatusArrayInput)(nil)).Elem(), ManagementStationMirrorSyncStatusArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementStationPeerManagementStationInput)(nil)).Elem(), ManagementStationPeerManagementStationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementStationPeerManagementStationArrayInput)(nil)).Elem(), ManagementStationPeerManagementStationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementStationProxyInput)(nil)).Elem(), ManagementStationProxyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementStationProxyPtrInput)(nil)).Elem(), ManagementStationProxyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ProfileLifecycleEnvironmentInput)(nil)).Elem(), ProfileLifecycleEnvironmentArgs{})
@@ -32874,6 +35616,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArrayInput)(nil)).Elem(), SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SoftwareSourceVendorSoftwareSourceInput)(nil)).Elem(), SoftwareSourceVendorSoftwareSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SoftwareSourceVendorSoftwareSourceArrayInput)(nil)).Elem(), SoftwareSourceVendorSoftwareSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkRequestRerunManagementWorkRequestDetailsInput)(nil)).Elem(), WorkRequestRerunManagementWorkRequestDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkRequestRerunManagementWorkRequestDetailsPtrInput)(nil)).Elem(), WorkRequestRerunManagementWorkRequestDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEntitlementsEntitlementCollectionInput)(nil)).Elem(), GetEntitlementsEntitlementCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEntitlementsEntitlementCollectionArrayInput)(nil)).Elem(), GetEntitlementsEntitlementCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEntitlementsEntitlementCollectionItemInput)(nil)).Elem(), GetEntitlementsEntitlementCollectionItemArgs{})
@@ -33090,6 +35834,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementStationMirrorsMirrorsCollectionArrayInput)(nil)).Elem(), GetManagementStationMirrorsMirrorsCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementStationMirrorsMirrorsCollectionItemInput)(nil)).Elem(), GetManagementStationMirrorsMirrorsCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementStationMirrorsMirrorsCollectionItemArrayInput)(nil)).Elem(), GetManagementStationMirrorsMirrorsCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementStationPeerManagementStationInput)(nil)).Elem(), GetManagementStationPeerManagementStationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementStationPeerManagementStationArrayInput)(nil)).Elem(), GetManagementStationPeerManagementStationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementStationProxyInput)(nil)).Elem(), GetManagementStationProxyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementStationProxyArrayInput)(nil)).Elem(), GetManagementStationProxyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementStationsFilterInput)(nil)).Elem(), GetManagementStationsFilterArgs{})
@@ -33098,6 +35844,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementStationsManagementStationCollectionArrayInput)(nil)).Elem(), GetManagementStationsManagementStationCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementStationsManagementStationCollectionItemInput)(nil)).Elem(), GetManagementStationsManagementStationCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementStationsManagementStationCollectionItemArrayInput)(nil)).Elem(), GetManagementStationsManagementStationCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionInput)(nil)).Elem(), GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArrayInput)(nil)).Elem(), GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemInput)(nil)).Elem(), GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayInput)(nil)).Elem(), GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProfileAvailableSoftwareSourcesFilterInput)(nil)).Elem(), GetProfileAvailableSoftwareSourcesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProfileAvailableSoftwareSourcesFilterArrayInput)(nil)).Elem(), GetProfileAvailableSoftwareSourcesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProfileLifecycleEnvironmentInput)(nil)).Elem(), GetProfileLifecycleEnvironmentArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProfileLifecycleEnvironmentArrayInput)(nil)).Elem(), GetProfileLifecycleEnvironmentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProfileLifecycleStageInput)(nil)).Elem(), GetProfileLifecycleStageArgs{})
@@ -33106,6 +35858,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProfileManagedInstanceGroupArrayInput)(nil)).Elem(), GetProfileManagedInstanceGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProfileSoftwareSourceInput)(nil)).Elem(), GetProfileSoftwareSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProfileSoftwareSourceArrayInput)(nil)).Elem(), GetProfileSoftwareSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProfileVersionLifecycleEnvironmentInput)(nil)).Elem(), GetProfileVersionLifecycleEnvironmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProfileVersionLifecycleEnvironmentArrayInput)(nil)).Elem(), GetProfileVersionLifecycleEnvironmentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProfileVersionLifecycleStageInput)(nil)).Elem(), GetProfileVersionLifecycleStageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProfileVersionLifecycleStageArrayInput)(nil)).Elem(), GetProfileVersionLifecycleStageArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProfileVersionManagedInstanceGroupInput)(nil)).Elem(), GetProfileVersionManagedInstanceGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProfileVersionManagedInstanceGroupArrayInput)(nil)).Elem(), GetProfileVersionManagedInstanceGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProfileVersionSoftwareSourceInput)(nil)).Elem(), GetProfileVersionSoftwareSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProfileVersionSoftwareSourceArrayInput)(nil)).Elem(), GetProfileVersionSoftwareSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProfilesFilterInput)(nil)).Elem(), GetProfilesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProfilesFilterArrayInput)(nil)).Elem(), GetProfilesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProfilesProfileCollectionInput)(nil)).Elem(), GetProfilesProfileCollectionArgs{})
@@ -33180,6 +35940,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSoftwarePackagesSoftwarePackageCollectionItemFileArrayInput)(nil)).Elem(), GetSoftwarePackagesSoftwarePackageCollectionItemFileArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceInput)(nil)).Elem(), GetSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayInput)(nil)).Elem(), GetSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSoftwareSourceAvailableSoftwarePackagesFilterInput)(nil)).Elem(), GetSoftwareSourceAvailableSoftwarePackagesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSoftwareSourceAvailableSoftwarePackagesFilterArrayInput)(nil)).Elem(), GetSoftwareSourceAvailableSoftwarePackagesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionInput)(nil)).Elem(), GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArrayInput)(nil)).Elem(), GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemInput)(nil)).Elem(), GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArrayInput)(nil)).Elem(), GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceInput)(nil)).Elem(), GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayInput)(nil)).Elem(), GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSoftwareSourceCustomSoftwareSourceFilterInput)(nil)).Elem(), GetSoftwareSourceCustomSoftwareSourceFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSoftwareSourceCustomSoftwareSourceFilterArrayInput)(nil)).Elem(), GetSoftwareSourceCustomSoftwareSourceFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterInput)(nil)).Elem(), GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs{})
@@ -33274,6 +36042,8 @@ func init() {
 	pulumi.RegisterOutputType(LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsPtrOutput{})
 	pulumi.RegisterOutputType(LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsOutput{})
 	pulumi.RegisterOutputType(LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsPtrOutput{})
+	pulumi.RegisterOutputType(LifecycleStageRebootManagementWorkRequestDetailsOutput{})
+	pulumi.RegisterOutputType(LifecycleStageRebootManagementWorkRequestDetailsPtrOutput{})
 	pulumi.RegisterOutputType(ManagedInstanceAutonomousSettingsOutput{})
 	pulumi.RegisterOutputType(ManagedInstanceAutonomousSettingsPtrOutput{})
 	pulumi.RegisterOutputType(ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsOutput{})
@@ -33298,6 +36068,8 @@ func init() {
 	pulumi.RegisterOutputType(ManagedInstanceGroupManageModuleStreamsManagementRemoveArrayOutput{})
 	pulumi.RegisterOutputType(ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsOutput{})
 	pulumi.RegisterOutputType(ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ManagedInstanceGroupRebootManagementWorkRequestDetailsOutput{})
+	pulumi.RegisterOutputType(ManagedInstanceGroupRebootManagementWorkRequestDetailsPtrOutput{})
 	pulumi.RegisterOutputType(ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsOutput{})
 	pulumi.RegisterOutputType(ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsPtrOutput{})
 	pulumi.RegisterOutputType(ManagedInstanceGroupSoftwareSourceOutput{})
@@ -33312,16 +36084,22 @@ func init() {
 	pulumi.RegisterOutputType(ManagedInstanceLifecycleStageArrayOutput{})
 	pulumi.RegisterOutputType(ManagedInstanceManagedInstanceGroupOutput{})
 	pulumi.RegisterOutputType(ManagedInstanceManagedInstanceGroupArrayOutput{})
+	pulumi.RegisterOutputType(ManagedInstanceRebootManagementWorkRequestDetailsOutput{})
+	pulumi.RegisterOutputType(ManagedInstanceRebootManagementWorkRequestDetailsPtrOutput{})
 	pulumi.RegisterOutputType(ManagedInstanceSoftwareSourceOutput{})
 	pulumi.RegisterOutputType(ManagedInstanceSoftwareSourceArrayOutput{})
 	pulumi.RegisterOutputType(ManagedInstanceUpdatePackagesManagementWorkRequestDetailsOutput{})
 	pulumi.RegisterOutputType(ManagedInstanceUpdatePackagesManagementWorkRequestDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsOutput{})
+	pulumi.RegisterOutputType(ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrOutput{})
 	pulumi.RegisterOutputType(ManagementStationHealthOutput{})
 	pulumi.RegisterOutputType(ManagementStationHealthArrayOutput{})
 	pulumi.RegisterOutputType(ManagementStationMirrorOutput{})
 	pulumi.RegisterOutputType(ManagementStationMirrorPtrOutput{})
 	pulumi.RegisterOutputType(ManagementStationMirrorSyncStatusOutput{})
 	pulumi.RegisterOutputType(ManagementStationMirrorSyncStatusArrayOutput{})
+	pulumi.RegisterOutputType(ManagementStationPeerManagementStationOutput{})
+	pulumi.RegisterOutputType(ManagementStationPeerManagementStationArrayOutput{})
 	pulumi.RegisterOutputType(ManagementStationProxyOutput{})
 	pulumi.RegisterOutputType(ManagementStationProxyPtrOutput{})
 	pulumi.RegisterOutputType(ProfileLifecycleEnvironmentOutput{})
@@ -33358,6 +36136,8 @@ func init() {
 	pulumi.RegisterOutputType(SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArrayOutput{})
 	pulumi.RegisterOutputType(SoftwareSourceVendorSoftwareSourceOutput{})
 	pulumi.RegisterOutputType(SoftwareSourceVendorSoftwareSourceArrayOutput{})
+	pulumi.RegisterOutputType(WorkRequestRerunManagementWorkRequestDetailsOutput{})
+	pulumi.RegisterOutputType(WorkRequestRerunManagementWorkRequestDetailsPtrOutput{})
 	pulumi.RegisterOutputType(GetEntitlementsEntitlementCollectionOutput{})
 	pulumi.RegisterOutputType(GetEntitlementsEntitlementCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetEntitlementsEntitlementCollectionItemOutput{})
@@ -33574,6 +36354,8 @@ func init() {
 	pulumi.RegisterOutputType(GetManagementStationMirrorsMirrorsCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetManagementStationMirrorsMirrorsCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetManagementStationMirrorsMirrorsCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetManagementStationPeerManagementStationOutput{})
+	pulumi.RegisterOutputType(GetManagementStationPeerManagementStationArrayOutput{})
 	pulumi.RegisterOutputType(GetManagementStationProxyOutput{})
 	pulumi.RegisterOutputType(GetManagementStationProxyArrayOutput{})
 	pulumi.RegisterOutputType(GetManagementStationsFilterOutput{})
@@ -33582,6 +36364,12 @@ func init() {
 	pulumi.RegisterOutputType(GetManagementStationsManagementStationCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetManagementStationsManagementStationCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetManagementStationsManagementStationCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionOutput{})
+	pulumi.RegisterOutputType(GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetProfileAvailableSoftwareSourcesFilterOutput{})
+	pulumi.RegisterOutputType(GetProfileAvailableSoftwareSourcesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetProfileLifecycleEnvironmentOutput{})
 	pulumi.RegisterOutputType(GetProfileLifecycleEnvironmentArrayOutput{})
 	pulumi.RegisterOutputType(GetProfileLifecycleStageOutput{})
@@ -33590,6 +36378,14 @@ func init() {
 	pulumi.RegisterOutputType(GetProfileManagedInstanceGroupArrayOutput{})
 	pulumi.RegisterOutputType(GetProfileSoftwareSourceOutput{})
 	pulumi.RegisterOutputType(GetProfileSoftwareSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetProfileVersionLifecycleEnvironmentOutput{})
+	pulumi.RegisterOutputType(GetProfileVersionLifecycleEnvironmentArrayOutput{})
+	pulumi.RegisterOutputType(GetProfileVersionLifecycleStageOutput{})
+	pulumi.RegisterOutputType(GetProfileVersionLifecycleStageArrayOutput{})
+	pulumi.RegisterOutputType(GetProfileVersionManagedInstanceGroupOutput{})
+	pulumi.RegisterOutputType(GetProfileVersionManagedInstanceGroupArrayOutput{})
+	pulumi.RegisterOutputType(GetProfileVersionSoftwareSourceOutput{})
+	pulumi.RegisterOutputType(GetProfileVersionSoftwareSourceArrayOutput{})
 	pulumi.RegisterOutputType(GetProfilesFilterOutput{})
 	pulumi.RegisterOutputType(GetProfilesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetProfilesProfileCollectionOutput{})
@@ -33664,6 +36460,14 @@ func init() {
 	pulumi.RegisterOutputType(GetSoftwarePackagesSoftwarePackageCollectionItemFileArrayOutput{})
 	pulumi.RegisterOutputType(GetSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput{})
 	pulumi.RegisterOutputType(GetSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetSoftwareSourceAvailableSoftwarePackagesFilterOutput{})
+	pulumi.RegisterOutputType(GetSoftwareSourceAvailableSoftwarePackagesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionOutput{})
+	pulumi.RegisterOutputType(GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput{})
+	pulumi.RegisterOutputType(GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayOutput{})
 	pulumi.RegisterOutputType(GetSoftwareSourceCustomSoftwareSourceFilterOutput{})
 	pulumi.RegisterOutputType(GetSoftwareSourceCustomSoftwareSourceFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterOutput{})

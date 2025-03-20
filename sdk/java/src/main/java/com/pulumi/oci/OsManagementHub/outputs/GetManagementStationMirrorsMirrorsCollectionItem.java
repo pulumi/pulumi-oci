@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetManagementStationMirrorsMirrorsCollectionItem {
     /**
-     * @return The architecture type supported by the Software Source
+     * @return The architecture type supported by the software source.
      * 
      */
     private String archType;
@@ -22,7 +22,7 @@ public final class GetManagementStationMirrorsMirrorsCollectionItem {
      */
     private String displayName;
     /**
-     * @return OCID of a software source
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     private String id;
@@ -32,34 +32,44 @@ public final class GetManagementStationMirrorsMirrorsCollectionItem {
      */
     private String log;
     /**
-     * @return The OS family the Software Source belongs to
+     * @return The OS family of the software source.
      * 
      */
     private String osFamily;
     /**
-     * @return A decimal number representing the completness percentage
+     * @return The number of packages within the mirrored software source.
+     * 
+     */
+    private Integer packageCount;
+    /**
+     * @return A decimal number representing the percentage of the software source that has been synced.
      * 
      */
     private Integer percentage;
     /**
-     * @return Current state of the mirror
+     * @return The size the mirrored software source in bytes.
+     * 
+     */
+    private String size;
+    /**
+     * @return Current state of the software source mirror.
      * 
      */
     private String state;
     /**
-     * @return Timestamp of the last time the mirror was sync
+     * @return Time that the software source was last synced (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     private String timeLastSynced;
     /**
-     * @return Type of the mirror
+     * @return Type of software source.
      * 
      */
     private String type;
 
     private GetManagementStationMirrorsMirrorsCollectionItem() {}
     /**
-     * @return The architecture type supported by the Software Source
+     * @return The architecture type supported by the software source.
      * 
      */
     public String archType() {
@@ -73,7 +83,7 @@ public final class GetManagementStationMirrorsMirrorsCollectionItem {
         return this.displayName;
     }
     /**
-     * @return OCID of a software source
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     public String id() {
@@ -87,35 +97,49 @@ public final class GetManagementStationMirrorsMirrorsCollectionItem {
         return this.log;
     }
     /**
-     * @return The OS family the Software Source belongs to
+     * @return The OS family of the software source.
      * 
      */
     public String osFamily() {
         return this.osFamily;
     }
     /**
-     * @return A decimal number representing the completness percentage
+     * @return The number of packages within the mirrored software source.
+     * 
+     */
+    public Integer packageCount() {
+        return this.packageCount;
+    }
+    /**
+     * @return A decimal number representing the percentage of the software source that has been synced.
      * 
      */
     public Integer percentage() {
         return this.percentage;
     }
     /**
-     * @return Current state of the mirror
+     * @return The size the mirrored software source in bytes.
+     * 
+     */
+    public String size() {
+        return this.size;
+    }
+    /**
+     * @return Current state of the software source mirror.
      * 
      */
     public String state() {
         return this.state;
     }
     /**
-     * @return Timestamp of the last time the mirror was sync
+     * @return Time that the software source was last synced (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     public String timeLastSynced() {
         return this.timeLastSynced;
     }
     /**
-     * @return Type of the mirror
+     * @return Type of software source.
      * 
      */
     public String type() {
@@ -136,7 +160,9 @@ public final class GetManagementStationMirrorsMirrorsCollectionItem {
         private String id;
         private String log;
         private String osFamily;
+        private Integer packageCount;
         private Integer percentage;
+        private String size;
         private String state;
         private String timeLastSynced;
         private String type;
@@ -148,7 +174,9 @@ public final class GetManagementStationMirrorsMirrorsCollectionItem {
     	      this.id = defaults.id;
     	      this.log = defaults.log;
     	      this.osFamily = defaults.osFamily;
+    	      this.packageCount = defaults.packageCount;
     	      this.percentage = defaults.percentage;
+    	      this.size = defaults.size;
     	      this.state = defaults.state;
     	      this.timeLastSynced = defaults.timeLastSynced;
     	      this.type = defaults.type;
@@ -195,11 +223,27 @@ public final class GetManagementStationMirrorsMirrorsCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder packageCount(Integer packageCount) {
+            if (packageCount == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationMirrorsMirrorsCollectionItem", "packageCount");
+            }
+            this.packageCount = packageCount;
+            return this;
+        }
+        @CustomType.Setter
         public Builder percentage(Integer percentage) {
             if (percentage == null) {
               throw new MissingRequiredPropertyException("GetManagementStationMirrorsMirrorsCollectionItem", "percentage");
             }
             this.percentage = percentage;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder size(String size) {
+            if (size == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationMirrorsMirrorsCollectionItem", "size");
+            }
+            this.size = size;
             return this;
         }
         @CustomType.Setter
@@ -233,7 +277,9 @@ public final class GetManagementStationMirrorsMirrorsCollectionItem {
             _resultValue.id = id;
             _resultValue.log = log;
             _resultValue.osFamily = osFamily;
+            _resultValue.packageCount = packageCount;
             _resultValue.percentage = percentage;
+            _resultValue.size = size;
             _resultValue.state = state;
             _resultValue.timeLastSynced = timeLastSynced;
             _resultValue.type = type;

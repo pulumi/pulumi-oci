@@ -118,6 +118,10 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+        /// </summary>
+        public readonly string WorkRequestId;
+        /// <summary>
         /// The list of work request [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this scheduled job.
         /// </summary>
         public readonly ImmutableArray<string> WorkRequestIds;
@@ -172,6 +176,8 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
 
             string timeUpdated,
 
+            string workRequestId,
+
             ImmutableArray<string> workRequestIds)
         {
             CompartmentId = compartmentId;
@@ -198,6 +204,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
             TimeLastExecution = timeLastExecution;
             TimeNextExecution = timeNextExecution;
             TimeUpdated = timeUpdated;
+            WorkRequestId = workRequestId;
             WorkRequestIds = workRequestIds;
         }
     }

@@ -32,7 +32,7 @@ public final class ManagementStationSynchronizeMirrorsManagementState extends co
     }
 
     /**
-     * List of Software Source OCIDs to synchronize
+     * List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to synchronize.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -42,7 +42,7 @@ public final class ManagementStationSynchronizeMirrorsManagementState extends co
     private @Nullable Output<List<String>> softwareSourceLists;
 
     /**
-     * @return List of Software Source OCIDs to synchronize
+     * @return List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to synchronize.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -99,7 +99,7 @@ public final class ManagementStationSynchronizeMirrorsManagementState extends co
         }
 
         /**
-         * @param softwareSourceLists List of Software Source OCIDs to synchronize
+         * @param softwareSourceLists List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to synchronize.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -113,7 +113,7 @@ public final class ManagementStationSynchronizeMirrorsManagementState extends co
         }
 
         /**
-         * @param softwareSourceLists List of Software Source OCIDs to synchronize
+         * @param softwareSourceLists List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to synchronize.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -126,7 +126,7 @@ public final class ManagementStationSynchronizeMirrorsManagementState extends co
         }
 
         /**
-         * @param softwareSourceLists List of Software Source OCIDs to synchronize
+         * @param softwareSourceLists List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to synchronize.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

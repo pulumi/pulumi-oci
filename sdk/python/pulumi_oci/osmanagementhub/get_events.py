@@ -166,6 +166,8 @@ class GetEventsResult:
         * `SOFTWARE_SOURCE` - Software source
         * `AGENT` - Agent
         * `MANAGEMENT_STATION` - Management Station
+        * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+        * `REBOOT` - Reboot
         """
         return pulumi.get(self, "types")
 

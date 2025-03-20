@@ -11,24 +11,6 @@ import * as utilities from "../utilities";
  *
  * Detaches (removes) a managed instance from a lifecycle stage.
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testLifecycleStageDetachManagedInstancesManagement = new oci.osmanagementhub.LifecycleStageDetachManagedInstancesManagement("test_lifecycle_stage_detach_managed_instances_management", {
- *     lifecycleStageId: testLifecycleStage.id,
- *     managedInstanceDetails: {
- *         managedInstances: lifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsManagedInstances,
- *         workRequestDetails: {
- *             description: lifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsDescription,
- *             displayName: lifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsDisplayName,
- *         },
- *     },
- * });
- * ```
- *
  * ## Import
  *
  * LifecycleStageDetachManagedInstancesManagement can be imported using the `id`, e.g.
@@ -94,6 +76,9 @@ export class LifecycleStageDetachManagedInstancesManagement extends pulumi.Custo
             if ((!args || args.lifecycleStageId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'lifecycleStageId'");
             }
+            if ((!args || args.managedInstanceDetails === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'managedInstanceDetails'");
+            }
             resourceInputs["lifecycleStageId"] = args ? args.lifecycleStageId : undefined;
             resourceInputs["managedInstanceDetails"] = args ? args.managedInstanceDetails : undefined;
         }
@@ -127,5 +112,5 @@ export interface LifecycleStageDetachManagedInstancesManagementArgs {
     /**
      * The details about the managed instances.
      */
-    managedInstanceDetails?: pulumi.Input<inputs.OsManagementHub.LifecycleStageDetachManagedInstancesManagementManagedInstanceDetails>;
+    managedInstanceDetails: pulumi.Input<inputs.OsManagementHub.LifecycleStageDetachManagedInstancesManagementManagedInstanceDetails>;
 }

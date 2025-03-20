@@ -1300,6 +1300,22 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Core/computeGpuMemoryCluster",
+  "fqn": "pulumi_oci.core",
+  "classes": {
+   "oci:Core/computeGpuMemoryCluster:ComputeGpuMemoryCluster": "ComputeGpuMemoryCluster"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Core/computeGpuMemoryFabric",
+  "fqn": "pulumi_oci.core",
+  "classes": {
+   "oci:Core/computeGpuMemoryFabric:ComputeGpuMemoryFabric": "ComputeGpuMemoryFabric"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Core/computeImageCapabilitySchema",
   "fqn": "pulumi_oci.core",
   "classes": {
@@ -2572,6 +2588,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Database/autonomousContainerDatabaseAddStandby",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/autonomousContainerDatabaseAddStandby:AutonomousContainerDatabaseAddStandby": "AutonomousContainerDatabaseAddStandby"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Database/autonomousContainerDatabaseDataguardAssociation",
   "fqn": "pulumi_oci.database",
   "classes": {
@@ -2592,6 +2616,14 @@ _utilities.register(
   "fqn": "pulumi_oci.database",
   "classes": {
    "oci:Database/autonomousContainerDatabaseDataguardRoleChange:AutonomousContainerDatabaseDataguardRoleChange": "AutonomousContainerDatabaseDataguardRoleChange"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Database/autonomousContainerDatabaseSnapshotStandby",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/autonomousContainerDatabaseSnapshotStandby:AutonomousContainerDatabaseSnapshotStandby": "AutonomousContainerDatabaseSnapshotStandby"
   }
  },
  {
@@ -5916,6 +5948,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "OsManagementHub/lifecycleStageRebootManagement",
+  "fqn": "pulumi_oci.osmanagementhub",
+  "classes": {
+   "oci:OsManagementHub/lifecycleStageRebootManagement:LifecycleStageRebootManagement": "LifecycleStageRebootManagement"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "OsManagementHub/managedInstance",
   "fqn": "pulumi_oci.osmanagementhub",
   "classes": {
@@ -6004,6 +6044,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "OsManagementHub/managedInstanceGroupRebootManagement",
+  "fqn": "pulumi_oci.osmanagementhub",
+  "classes": {
+   "oci:OsManagementHub/managedInstanceGroupRebootManagement:ManagedInstanceGroupRebootManagement": "ManagedInstanceGroupRebootManagement"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "OsManagementHub/managedInstanceGroupRemovePackagesManagement",
   "fqn": "pulumi_oci.osmanagementhub",
   "classes": {
@@ -6028,6 +6076,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "OsManagementHub/managedInstanceRebootManagement",
+  "fqn": "pulumi_oci.osmanagementhub",
+  "classes": {
+   "oci:OsManagementHub/managedInstanceRebootManagement:ManagedInstanceRebootManagement": "ManagedInstanceRebootManagement"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "OsManagementHub/managedInstanceUpdatePackagesManagement",
   "fqn": "pulumi_oci.osmanagementhub",
   "classes": {
@@ -6040,6 +6096,14 @@ _utilities.register(
   "fqn": "pulumi_oci.osmanagementhub",
   "classes": {
    "oci:OsManagementHub/managementStation:ManagementStation": "ManagementStation"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "OsManagementHub/managementStationAssociateManagedInstancesManagement",
+  "fqn": "pulumi_oci.osmanagementhub",
+  "classes": {
+   "oci:OsManagementHub/managementStationAssociateManagedInstancesManagement:ManagementStationAssociateManagedInstancesManagement": "ManagementStationAssociateManagedInstancesManagement"
   }
  },
  {
@@ -6076,6 +6140,46 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "OsManagementHub/profileAttachLifecycleStageManagement",
+  "fqn": "pulumi_oci.osmanagementhub",
+  "classes": {
+   "oci:OsManagementHub/profileAttachLifecycleStageManagement:ProfileAttachLifecycleStageManagement": "ProfileAttachLifecycleStageManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "OsManagementHub/profileAttachManagedInstanceGroupManagement",
+  "fqn": "pulumi_oci.osmanagementhub",
+  "classes": {
+   "oci:OsManagementHub/profileAttachManagedInstanceGroupManagement:ProfileAttachManagedInstanceGroupManagement": "ProfileAttachManagedInstanceGroupManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "OsManagementHub/profileAttachManagementStationManagement",
+  "fqn": "pulumi_oci.osmanagementhub",
+  "classes": {
+   "oci:OsManagementHub/profileAttachManagementStationManagement:ProfileAttachManagementStationManagement": "ProfileAttachManagementStationManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "OsManagementHub/profileAttachSoftwareSourcesManagement",
+  "fqn": "pulumi_oci.osmanagementhub",
+  "classes": {
+   "oci:OsManagementHub/profileAttachSoftwareSourcesManagement:ProfileAttachSoftwareSourcesManagement": "ProfileAttachSoftwareSourcesManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "OsManagementHub/profileDetachSoftwareSourcesManagement",
+  "fqn": "pulumi_oci.osmanagementhub",
+  "classes": {
+   "oci:OsManagementHub/profileDetachSoftwareSourcesManagement:ProfileDetachSoftwareSourcesManagement": "ProfileDetachSoftwareSourcesManagement"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "OsManagementHub/scheduledJob",
   "fqn": "pulumi_oci.osmanagementhub",
   "classes": {
@@ -6104,6 +6208,46 @@ _utilities.register(
   "fqn": "pulumi_oci.osmanagementhub",
   "classes": {
    "oci:OsManagementHub/softwareSourceChangeAvailabilityManagement:SoftwareSourceChangeAvailabilityManagement": "SoftwareSourceChangeAvailabilityManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "OsManagementHub/softwareSourceGenerateMetadataManagement",
+  "fqn": "pulumi_oci.osmanagementhub",
+  "classes": {
+   "oci:OsManagementHub/softwareSourceGenerateMetadataManagement:SoftwareSourceGenerateMetadataManagement": "SoftwareSourceGenerateMetadataManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "OsManagementHub/softwareSourceManifest",
+  "fqn": "pulumi_oci.osmanagementhub",
+  "classes": {
+   "oci:OsManagementHub/softwareSourceManifest:SoftwareSourceManifest": "SoftwareSourceManifest"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "OsManagementHub/softwareSourceRemovePackagesManagement",
+  "fqn": "pulumi_oci.osmanagementhub",
+  "classes": {
+   "oci:OsManagementHub/softwareSourceRemovePackagesManagement:SoftwareSourceRemovePackagesManagement": "SoftwareSourceRemovePackagesManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "OsManagementHub/softwareSourceReplacePackagesManagement",
+  "fqn": "pulumi_oci.osmanagementhub",
+  "classes": {
+   "oci:OsManagementHub/softwareSourceReplacePackagesManagement:SoftwareSourceReplacePackagesManagement": "SoftwareSourceReplacePackagesManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "OsManagementHub/workRequestRerunManagement",
+  "fqn": "pulumi_oci.osmanagementhub",
+  "classes": {
+   "oci:OsManagementHub/workRequestRerunManagement:WorkRequestRerunManagement": "WorkRequestRerunManagement"
   }
  },
  {

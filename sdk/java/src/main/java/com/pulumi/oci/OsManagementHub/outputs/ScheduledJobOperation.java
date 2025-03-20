@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.outputs.ScheduledJobOperationManageModuleStreamsDetails;
 import com.pulumi.oci.OsManagementHub.outputs.ScheduledJobOperationSwitchModuleStreamsDetails;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -30,6 +31,11 @@ public final class ScheduledJobOperation {
      * 
      */
     private @Nullable List<String> packageNames;
+    /**
+     * @return (Updatable) The number of minutes the service waits for the reboot to complete. If the instance doesn&#39;t reboot within the  timeout, the service marks the reboot job as failed.
+     * 
+     */
+    private @Nullable Integer rebootTimeoutInMins;
     /**
      * @return (Updatable) The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
      * 
@@ -69,6 +75,13 @@ public final class ScheduledJobOperation {
         return this.packageNames == null ? List.of() : this.packageNames;
     }
     /**
+     * @return (Updatable) The number of minutes the service waits for the reboot to complete. If the instance doesn&#39;t reboot within the  timeout, the service marks the reboot job as failed.
+     * 
+     */
+    public Optional<Integer> rebootTimeoutInMins() {
+        return Optional.ofNullable(this.rebootTimeoutInMins);
+    }
+    /**
      * @return (Updatable) The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
      * 
      */
@@ -102,6 +115,7 @@ public final class ScheduledJobOperation {
         private @Nullable ScheduledJobOperationManageModuleStreamsDetails manageModuleStreamsDetails;
         private String operationType;
         private @Nullable List<String> packageNames;
+        private @Nullable Integer rebootTimeoutInMins;
         private @Nullable List<String> softwareSourceIds;
         private @Nullable ScheduledJobOperationSwitchModuleStreamsDetails switchModuleStreamsDetails;
         private @Nullable List<String> windowsUpdateNames;
@@ -111,6 +125,7 @@ public final class ScheduledJobOperation {
     	      this.manageModuleStreamsDetails = defaults.manageModuleStreamsDetails;
     	      this.operationType = defaults.operationType;
     	      this.packageNames = defaults.packageNames;
+    	      this.rebootTimeoutInMins = defaults.rebootTimeoutInMins;
     	      this.softwareSourceIds = defaults.softwareSourceIds;
     	      this.switchModuleStreamsDetails = defaults.switchModuleStreamsDetails;
     	      this.windowsUpdateNames = defaults.windowsUpdateNames;
@@ -138,6 +153,12 @@ public final class ScheduledJobOperation {
         }
         public Builder packageNames(String... packageNames) {
             return packageNames(List.of(packageNames));
+        }
+        @CustomType.Setter
+        public Builder rebootTimeoutInMins(@Nullable Integer rebootTimeoutInMins) {
+
+            this.rebootTimeoutInMins = rebootTimeoutInMins;
+            return this;
         }
         @CustomType.Setter
         public Builder softwareSourceIds(@Nullable List<String> softwareSourceIds) {
@@ -168,6 +189,7 @@ public final class ScheduledJobOperation {
             _resultValue.manageModuleStreamsDetails = manageModuleStreamsDetails;
             _resultValue.operationType = operationType;
             _resultValue.packageNames = packageNames;
+            _resultValue.rebootTimeoutInMins = rebootTimeoutInMins;
             _resultValue.softwareSourceIds = softwareSourceIds;
             _resultValue.switchModuleStreamsDetails = switchModuleStreamsDetails;
             _resultValue.windowsUpdateNames = windowsUpdateNames;

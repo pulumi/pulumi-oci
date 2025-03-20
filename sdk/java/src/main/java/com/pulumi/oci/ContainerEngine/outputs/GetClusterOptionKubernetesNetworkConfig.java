@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetClusterOptionKubernetesNetworkConfig {
     /**
-     * @return The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
+     * @return The CIDR block for Kubernetes pods. Optional. For ipv4, defaults to 10.244.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0000::/96.
      * 
      */
     private String podsCidr;
     /**
-     * @return The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
+     * @return The CIDR block for Kubernetes services. Optional. For ipv4, defaults to 10.96.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0001::/108.
      * 
      */
     private String servicesCidr;
 
     private GetClusterOptionKubernetesNetworkConfig() {}
     /**
-     * @return The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
+     * @return The CIDR block for Kubernetes pods. Optional. For ipv4, defaults to 10.244.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0000::/96.
      * 
      */
     public String podsCidr() {
         return this.podsCidr;
     }
     /**
-     * @return The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
+     * @return The CIDR block for Kubernetes services. Optional. For ipv4, defaults to 10.96.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0001::/108.
      * 
      */
     public String servicesCidr() {

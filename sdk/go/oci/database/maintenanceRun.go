@@ -109,6 +109,8 @@ type MaintenanceRun struct {
 	PatchingStatus pulumi.StringOutput `pulumi:"patchingStatus"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
 	PeerMaintenanceRunId pulumi.StringOutput `pulumi:"peerMaintenanceRunId"`
+	// The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+	PeerMaintenanceRunIds pulumi.StringArrayOutput `pulumi:"peerMaintenanceRunIds"`
 	// The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The target software version for the database server patching operation.
@@ -219,6 +221,8 @@ type maintenanceRunState struct {
 	PatchingStatus *string `pulumi:"patchingStatus"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
 	PeerMaintenanceRunId *string `pulumi:"peerMaintenanceRunId"`
+	// The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+	PeerMaintenanceRunIds []string `pulumi:"peerMaintenanceRunIds"`
 	// The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
 	State *string `pulumi:"state"`
 	// The target software version for the database server patching operation.
@@ -291,6 +295,8 @@ type MaintenanceRunState struct {
 	PatchingStatus pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
 	PeerMaintenanceRunId pulumi.StringPtrInput
+	// The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+	PeerMaintenanceRunIds pulumi.StringArrayInput
 	// The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
 	State pulumi.StringPtrInput
 	// The target software version for the database server patching operation.
@@ -567,6 +573,11 @@ func (o MaintenanceRunOutput) PatchingStatus() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
 func (o MaintenanceRunOutput) PeerMaintenanceRunId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.PeerMaintenanceRunId }).(pulumi.StringOutput)
+}
+
+// The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+func (o MaintenanceRunOutput) PeerMaintenanceRunIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringArrayOutput { return v.PeerMaintenanceRunIds }).(pulumi.StringArrayOutput)
 }
 
 // The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.

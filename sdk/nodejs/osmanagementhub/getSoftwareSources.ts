@@ -28,6 +28,7 @@ import * as utilities from "../utilities";
  *     displayNameContains: softwareSourceDisplayNameContains,
  *     displayNameNotEqualTos: softwareSourceDisplayNameNotEqualTo,
  *     isMandatoryForAutonomousLinux: softwareSourceIsMandatoryForAutonomousLinux,
+ *     isMirrorSyncAllowed: softwareSourceIsMirrorSyncAllowed,
  *     osFamilies: softwareSourceOsFamily,
  *     softwareSourceId: testSoftwareSource.id,
  *     softwareSourceTypes: softwareSourceSoftwareSourceType,
@@ -50,6 +51,7 @@ export function getSoftwareSources(args?: GetSoftwareSourcesArgs, opts?: pulumi.
         "displayNameNotEqualTos": args.displayNameNotEqualTos,
         "filters": args.filters,
         "isMandatoryForAutonomousLinux": args.isMandatoryForAutonomousLinux,
+        "isMirrorSyncAllowed": args.isMirrorSyncAllowed,
         "osFamilies": args.osFamilies,
         "softwareSourceId": args.softwareSourceId,
         "softwareSourceTypes": args.softwareSourceTypes,
@@ -67,15 +69,15 @@ export interface GetSoftwareSourcesArgs {
      */
     archTypes?: string[];
     /**
-     * The availabilities of the software source in a non-OCI environment for a tenancy.
+     * The availability of the software source in a non-OCI environment for a tenancy.
      */
     availabilities?: string[];
     /**
-     * The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
+     * The availability of the software source. Use this query parameter to filter across availabilities in different environments.
      */
     availabilityAnywheres?: string[];
     /**
-     * The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+     * The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
      */
     availabilityAtOcis?: string[];
     /**
@@ -99,6 +101,10 @@ export interface GetSoftwareSourcesArgs {
      * Indicates whether the software source is mandatory for the Autonomous Linux service.
      */
     isMandatoryForAutonomousLinux?: boolean;
+    /**
+     * A filter to return software sources which can be synced to a management station.
+     */
+    isMirrorSyncAllowed?: boolean;
     /**
      * A filter to return only resources that match the given operating system family.
      */
@@ -158,7 +164,11 @@ export interface GetSoftwareSourcesResult {
      */
     readonly isMandatoryForAutonomousLinux?: boolean;
     /**
-     * The OS family the software source belongs to.
+     * Indicates if this software source can be mirrored to a management station.
+     */
+    readonly isMirrorSyncAllowed?: boolean;
+    /**
+     * The OS family of the software source.
      */
     readonly osFamilies?: string[];
     /**
@@ -201,6 +211,7 @@ export interface GetSoftwareSourcesResult {
  *     displayNameContains: softwareSourceDisplayNameContains,
  *     displayNameNotEqualTos: softwareSourceDisplayNameNotEqualTo,
  *     isMandatoryForAutonomousLinux: softwareSourceIsMandatoryForAutonomousLinux,
+ *     isMirrorSyncAllowed: softwareSourceIsMirrorSyncAllowed,
  *     osFamilies: softwareSourceOsFamily,
  *     softwareSourceId: testSoftwareSource.id,
  *     softwareSourceTypes: softwareSourceSoftwareSourceType,
@@ -223,6 +234,7 @@ export function getSoftwareSourcesOutput(args?: GetSoftwareSourcesOutputArgs, op
         "displayNameNotEqualTos": args.displayNameNotEqualTos,
         "filters": args.filters,
         "isMandatoryForAutonomousLinux": args.isMandatoryForAutonomousLinux,
+        "isMirrorSyncAllowed": args.isMirrorSyncAllowed,
         "osFamilies": args.osFamilies,
         "softwareSourceId": args.softwareSourceId,
         "softwareSourceTypes": args.softwareSourceTypes,
@@ -240,15 +252,15 @@ export interface GetSoftwareSourcesOutputArgs {
      */
     archTypes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The availabilities of the software source in a non-OCI environment for a tenancy.
+     * The availability of the software source in a non-OCI environment for a tenancy.
      */
     availabilities?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
+     * The availability of the software source. Use this query parameter to filter across availabilities in different environments.
      */
     availabilityAnywheres?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+     * The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
      */
     availabilityAtOcis?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -272,6 +284,10 @@ export interface GetSoftwareSourcesOutputArgs {
      * Indicates whether the software source is mandatory for the Autonomous Linux service.
      */
     isMandatoryForAutonomousLinux?: pulumi.Input<boolean>;
+    /**
+     * A filter to return software sources which can be synced to a management station.
+     */
+    isMirrorSyncAllowed?: pulumi.Input<boolean>;
     /**
      * A filter to return only resources that match the given operating system family.
      */

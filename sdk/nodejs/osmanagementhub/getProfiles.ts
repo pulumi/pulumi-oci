@@ -25,9 +25,12 @@ import * as utilities from "../utilities";
  *     displayNameContains: profileDisplayNameContains,
  *     isDefaultProfile: profileIsDefaultProfile,
  *     isServiceProvidedProfile: profileIsServiceProvidedProfile,
+ *     managementStations: profileManagementStation,
+ *     managementStationNotEqualTos: profileManagementStationNotEqualTo,
  *     osFamily: profileOsFamily,
  *     profileId: testProfile.id,
  *     profileTypes: profileProfileType,
+ *     profileVersion: profileProfileVersion,
  *     registrationTypes: profileRegistrationType,
  *     state: profileState,
  *     vendorName: profileVendorName,
@@ -45,9 +48,12 @@ export function getProfiles(args?: GetProfilesArgs, opts?: pulumi.InvokeOptions)
         "filters": args.filters,
         "isDefaultProfile": args.isDefaultProfile,
         "isServiceProvidedProfile": args.isServiceProvidedProfile,
+        "managementStationNotEqualTos": args.managementStationNotEqualTos,
+        "managementStations": args.managementStations,
         "osFamily": args.osFamily,
         "profileId": args.profileId,
         "profileTypes": args.profileTypes,
+        "profileVersion": args.profileVersion,
         "registrationTypes": args.registrationTypes,
         "state": args.state,
         "vendorName": args.vendorName,
@@ -76,13 +82,21 @@ export interface GetProfilesArgs {
     displayNames?: string[];
     filters?: inputs.OsManagementHub.GetProfilesFilter[];
     /**
-     * A boolean variable that is used to list only the default profile resources.
+     * A filter to return only default profiles.
      */
     isDefaultProfile?: boolean;
     /**
      * A filter to return only service-provided profiles.
      */
     isServiceProvidedProfile?: boolean;
+    /**
+     * A filter to return resources that aren't associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
+    managementStationNotEqualTos?: string[];
+    /**
+     * A filter to return resources that are associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
+    managementStations?: string[];
     /**
      * A filter to return only resources that match the given operating system family.
      */
@@ -95,6 +109,10 @@ export interface GetProfilesArgs {
      * A filter to return registration profiles that match the given profile type.
      */
     profileTypes?: string[];
+    /**
+     * The version of the registration profile.
+     */
+    profileVersion?: string;
     /**
      * A filter to return profiles that match the given instance type.
      */
@@ -139,6 +157,8 @@ export interface GetProfilesResult {
      * Indicates if the profile was created by the service. OS Management Hub provides a limited set of standardized profiles that can be used to register Autonomous Linux or Windows instances.
      */
     readonly isServiceProvidedProfile?: boolean;
+    readonly managementStationNotEqualTos?: string[];
+    readonly managementStations?: string[];
     /**
      * The operating system family.
      */
@@ -152,6 +172,10 @@ export interface GetProfilesResult {
      * The type of profile.
      */
     readonly profileTypes?: string[];
+    /**
+     * The version of the profile. The version is automatically incremented each time the profiled is edited.
+     */
+    readonly profileVersion?: string;
     /**
      * The type of instance to register.
      */
@@ -184,9 +208,12 @@ export interface GetProfilesResult {
  *     displayNameContains: profileDisplayNameContains,
  *     isDefaultProfile: profileIsDefaultProfile,
  *     isServiceProvidedProfile: profileIsServiceProvidedProfile,
+ *     managementStations: profileManagementStation,
+ *     managementStationNotEqualTos: profileManagementStationNotEqualTo,
  *     osFamily: profileOsFamily,
  *     profileId: testProfile.id,
  *     profileTypes: profileProfileType,
+ *     profileVersion: profileProfileVersion,
  *     registrationTypes: profileRegistrationType,
  *     state: profileState,
  *     vendorName: profileVendorName,
@@ -204,9 +231,12 @@ export function getProfilesOutput(args?: GetProfilesOutputArgs, opts?: pulumi.In
         "filters": args.filters,
         "isDefaultProfile": args.isDefaultProfile,
         "isServiceProvidedProfile": args.isServiceProvidedProfile,
+        "managementStationNotEqualTos": args.managementStationNotEqualTos,
+        "managementStations": args.managementStations,
         "osFamily": args.osFamily,
         "profileId": args.profileId,
         "profileTypes": args.profileTypes,
+        "profileVersion": args.profileVersion,
         "registrationTypes": args.registrationTypes,
         "state": args.state,
         "vendorName": args.vendorName,
@@ -235,13 +265,21 @@ export interface GetProfilesOutputArgs {
     displayNames?: pulumi.Input<pulumi.Input<string>[]>;
     filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetProfilesFilterArgs>[]>;
     /**
-     * A boolean variable that is used to list only the default profile resources.
+     * A filter to return only default profiles.
      */
     isDefaultProfile?: pulumi.Input<boolean>;
     /**
      * A filter to return only service-provided profiles.
      */
     isServiceProvidedProfile?: pulumi.Input<boolean>;
+    /**
+     * A filter to return resources that aren't associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
+    managementStationNotEqualTos?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A filter to return resources that are associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
+    managementStations?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * A filter to return only resources that match the given operating system family.
      */
@@ -254,6 +292,10 @@ export interface GetProfilesOutputArgs {
      * A filter to return registration profiles that match the given profile type.
      */
     profileTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The version of the registration profile.
+     */
+    profileVersion?: pulumi.Input<string>;
     /**
      * A filter to return profiles that match the given instance type.
      */

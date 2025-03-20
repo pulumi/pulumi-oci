@@ -8,6 +8,8 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetail;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseBackupConfig;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseBackupDestinationPropertiesList;
+import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseDataguard;
+import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseDataguardGroupMember;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseKeyHistoryEntry;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseMaintenanceWindow;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseMaintenanceWindowDetail;
@@ -28,6 +30,10 @@ public final class GetAutonomousContainerDatabaseResult {
      * 
      */
     private List<GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetail> associatedBackupConfigurationDetails;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+     * 
+     */
     private String autonomousContainerDatabaseId;
     /**
      * @return **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
@@ -40,7 +46,7 @@ public final class GetAutonomousContainerDatabaseResult {
      */
     private String autonomousVmClusterId;
     /**
-     * @return The availability domain of the Autonomous Container Database.
+     * @return The domain of the Autonomous Container Database
      * 
      */
     private String availabilityDomain;
@@ -75,6 +81,16 @@ public final class GetAutonomousContainerDatabaseResult {
      */
     private String computeModel;
     private String databaseSoftwareImageId;
+    /**
+     * @return Array of Dg associations.
+     * 
+     */
+    private List<GetAutonomousContainerDatabaseDataguardGroupMember> dataguardGroupMembers;
+    /**
+     * @return The properties that define Autonomous Container Databases Dataguard.
+     * 
+     */
+    private List<GetAutonomousContainerDatabaseDataguard> dataguards;
     /**
      * @return The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
      * 
@@ -111,6 +127,11 @@ public final class GetAutonomousContainerDatabaseResult {
      * 
      */
     private String dstFileVersion;
+    private Integer failoverTrigger;
+    /**
+     * @return The lag time for my preference based on data loss tolerance in seconds.
+     * 
+     */
     private Integer fastStartFailOverLagLimitInSeconds;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
@@ -127,12 +148,26 @@ public final class GetAutonomousContainerDatabaseResult {
      * 
      */
     private String infrastructureType;
+    /**
+     * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+     * 
+     */
     private Boolean isAutomaticFailoverEnabled;
+    /**
+     * @return **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
+     * 
+     */
+    private Boolean isDataGuardEnabled;
     /**
      * @return Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
      * 
      */
     private Boolean isDstFileUpdateEnabled;
+    /**
+     * @return Whether it is multiple standby Autonomous Dataguard
+     * 
+     */
+    private Boolean isMultipleStandby;
     /**
      * @return Key History Entry.
      * 
@@ -216,6 +251,10 @@ public final class GetAutonomousContainerDatabaseResult {
     private String peerAutonomousVmClusterId;
     private String peerCloudAutonomousVmClusterId;
     private String peerDbUniqueName;
+    /**
+     * @return The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+     * 
+     */
     private String protectionMode;
     /**
      * @return An array of CPU values that can be used to successfully provision a single Autonomous Database.
@@ -237,6 +276,7 @@ public final class GetAutonomousContainerDatabaseResult {
      * 
      */
     private List<GetAutonomousContainerDatabaseRecoveryApplianceDetail> recoveryApplianceDetails;
+    private Integer reinstateTrigger;
     /**
      * @return The number of CPUs reserved in an Autonomous Container Database.
      * 
@@ -263,6 +303,7 @@ public final class GetAutonomousContainerDatabaseResult {
      * 
      */
     private String state;
+    private Integer switchoverTrigger;
     /**
      * @return The date and time the Autonomous Container Database was created.
      * 
@@ -307,6 +348,10 @@ public final class GetAutonomousContainerDatabaseResult {
     public List<GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetail> associatedBackupConfigurationDetails() {
         return this.associatedBackupConfigurationDetails;
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+     * 
+     */
     public String autonomousContainerDatabaseId() {
         return this.autonomousContainerDatabaseId;
     }
@@ -325,7 +370,7 @@ public final class GetAutonomousContainerDatabaseResult {
         return this.autonomousVmClusterId;
     }
     /**
-     * @return The availability domain of the Autonomous Container Database.
+     * @return The domain of the Autonomous Container Database
      * 
      */
     public String availabilityDomain() {
@@ -375,6 +420,20 @@ public final class GetAutonomousContainerDatabaseResult {
     }
     public String databaseSoftwareImageId() {
         return this.databaseSoftwareImageId;
+    }
+    /**
+     * @return Array of Dg associations.
+     * 
+     */
+    public List<GetAutonomousContainerDatabaseDataguardGroupMember> dataguardGroupMembers() {
+        return this.dataguardGroupMembers;
+    }
+    /**
+     * @return The properties that define Autonomous Container Databases Dataguard.
+     * 
+     */
+    public List<GetAutonomousContainerDatabaseDataguard> dataguards() {
+        return this.dataguards;
     }
     /**
      * @return The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
@@ -428,6 +487,13 @@ public final class GetAutonomousContainerDatabaseResult {
     public String dstFileVersion() {
         return this.dstFileVersion;
     }
+    public Integer failoverTrigger() {
+        return this.failoverTrigger;
+    }
+    /**
+     * @return The lag time for my preference based on data loss tolerance in seconds.
+     * 
+     */
     public Integer fastStartFailOverLagLimitInSeconds() {
         return this.fastStartFailOverLagLimitInSeconds;
     }
@@ -452,8 +518,19 @@ public final class GetAutonomousContainerDatabaseResult {
     public String infrastructureType() {
         return this.infrastructureType;
     }
+    /**
+     * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+     * 
+     */
     public Boolean isAutomaticFailoverEnabled() {
         return this.isAutomaticFailoverEnabled;
+    }
+    /**
+     * @return **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
+     * 
+     */
+    public Boolean isDataGuardEnabled() {
+        return this.isDataGuardEnabled;
     }
     /**
      * @return Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
@@ -461,6 +538,13 @@ public final class GetAutonomousContainerDatabaseResult {
      */
     public Boolean isDstFileUpdateEnabled() {
         return this.isDstFileUpdateEnabled;
+    }
+    /**
+     * @return Whether it is multiple standby Autonomous Dataguard
+     * 
+     */
+    public Boolean isMultipleStandby() {
+        return this.isMultipleStandby;
     }
     /**
      * @return Key History Entry.
@@ -591,6 +675,10 @@ public final class GetAutonomousContainerDatabaseResult {
     public String peerDbUniqueName() {
         return this.peerDbUniqueName;
     }
+    /**
+     * @return The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+     * 
+     */
     public String protectionMode() {
         return this.protectionMode;
     }
@@ -621,6 +709,9 @@ public final class GetAutonomousContainerDatabaseResult {
      */
     public List<GetAutonomousContainerDatabaseRecoveryApplianceDetail> recoveryApplianceDetails() {
         return this.recoveryApplianceDetails;
+    }
+    public Integer reinstateTrigger() {
+        return this.reinstateTrigger;
     }
     /**
      * @return The number of CPUs reserved in an Autonomous Container Database.
@@ -659,6 +750,9 @@ public final class GetAutonomousContainerDatabaseResult {
      */
     public String state() {
         return this.state;
+    }
+    public Integer switchoverTrigger() {
+        return this.switchoverTrigger;
     }
     /**
      * @return The date and time the Autonomous Container Database was created.
@@ -731,6 +825,8 @@ public final class GetAutonomousContainerDatabaseResult {
         private String compartmentId;
         private String computeModel;
         private String databaseSoftwareImageId;
+        private List<GetAutonomousContainerDatabaseDataguardGroupMember> dataguardGroupMembers;
+        private List<GetAutonomousContainerDatabaseDataguard> dataguards;
         private String dbName;
         private Integer dbSplitThreshold;
         private String dbUniqueName;
@@ -739,12 +835,15 @@ public final class GetAutonomousContainerDatabaseResult {
         private String displayName;
         private String distributionAffinity;
         private String dstFileVersion;
+        private Integer failoverTrigger;
         private Integer fastStartFailOverLagLimitInSeconds;
         private Map<String,String> freeformTags;
         private String id;
         private String infrastructureType;
         private Boolean isAutomaticFailoverEnabled;
+        private Boolean isDataGuardEnabled;
         private Boolean isDstFileUpdateEnabled;
+        private Boolean isMultipleStandby;
         private List<GetAutonomousContainerDatabaseKeyHistoryEntry> keyHistoryEntries;
         private String keyStoreId;
         private String keyStoreWalletName;
@@ -773,12 +872,14 @@ public final class GetAutonomousContainerDatabaseResult {
         private Double provisionedCpus;
         private Double reclaimableCpus;
         private List<GetAutonomousContainerDatabaseRecoveryApplianceDetail> recoveryApplianceDetails;
+        private Integer reinstateTrigger;
         private Double reservedCpus;
         private String role;
         private Boolean rotateKeyTrigger;
         private String serviceLevelAgreementType;
         private Integer standbyMaintenanceBufferInDays;
         private String state;
+        private Integer switchoverTrigger;
         private String timeCreated;
         private String timeOfLastBackup;
         private String timeSnapshotStandbyRevert;
@@ -801,6 +902,8 @@ public final class GetAutonomousContainerDatabaseResult {
     	      this.compartmentId = defaults.compartmentId;
     	      this.computeModel = defaults.computeModel;
     	      this.databaseSoftwareImageId = defaults.databaseSoftwareImageId;
+    	      this.dataguardGroupMembers = defaults.dataguardGroupMembers;
+    	      this.dataguards = defaults.dataguards;
     	      this.dbName = defaults.dbName;
     	      this.dbSplitThreshold = defaults.dbSplitThreshold;
     	      this.dbUniqueName = defaults.dbUniqueName;
@@ -809,12 +912,15 @@ public final class GetAutonomousContainerDatabaseResult {
     	      this.displayName = defaults.displayName;
     	      this.distributionAffinity = defaults.distributionAffinity;
     	      this.dstFileVersion = defaults.dstFileVersion;
+    	      this.failoverTrigger = defaults.failoverTrigger;
     	      this.fastStartFailOverLagLimitInSeconds = defaults.fastStartFailOverLagLimitInSeconds;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.infrastructureType = defaults.infrastructureType;
     	      this.isAutomaticFailoverEnabled = defaults.isAutomaticFailoverEnabled;
+    	      this.isDataGuardEnabled = defaults.isDataGuardEnabled;
     	      this.isDstFileUpdateEnabled = defaults.isDstFileUpdateEnabled;
+    	      this.isMultipleStandby = defaults.isMultipleStandby;
     	      this.keyHistoryEntries = defaults.keyHistoryEntries;
     	      this.keyStoreId = defaults.keyStoreId;
     	      this.keyStoreWalletName = defaults.keyStoreWalletName;
@@ -843,12 +949,14 @@ public final class GetAutonomousContainerDatabaseResult {
     	      this.provisionedCpus = defaults.provisionedCpus;
     	      this.reclaimableCpus = defaults.reclaimableCpus;
     	      this.recoveryApplianceDetails = defaults.recoveryApplianceDetails;
+    	      this.reinstateTrigger = defaults.reinstateTrigger;
     	      this.reservedCpus = defaults.reservedCpus;
     	      this.role = defaults.role;
     	      this.rotateKeyTrigger = defaults.rotateKeyTrigger;
     	      this.serviceLevelAgreementType = defaults.serviceLevelAgreementType;
     	      this.standbyMaintenanceBufferInDays = defaults.standbyMaintenanceBufferInDays;
     	      this.state = defaults.state;
+    	      this.switchoverTrigger = defaults.switchoverTrigger;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeOfLastBackup = defaults.timeOfLastBackup;
     	      this.timeSnapshotStandbyRevert = defaults.timeSnapshotStandbyRevert;
@@ -964,6 +1072,28 @@ public final class GetAutonomousContainerDatabaseResult {
             return this;
         }
         @CustomType.Setter
+        public Builder dataguardGroupMembers(List<GetAutonomousContainerDatabaseDataguardGroupMember> dataguardGroupMembers) {
+            if (dataguardGroupMembers == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResult", "dataguardGroupMembers");
+            }
+            this.dataguardGroupMembers = dataguardGroupMembers;
+            return this;
+        }
+        public Builder dataguardGroupMembers(GetAutonomousContainerDatabaseDataguardGroupMember... dataguardGroupMembers) {
+            return dataguardGroupMembers(List.of(dataguardGroupMembers));
+        }
+        @CustomType.Setter
+        public Builder dataguards(List<GetAutonomousContainerDatabaseDataguard> dataguards) {
+            if (dataguards == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResult", "dataguards");
+            }
+            this.dataguards = dataguards;
+            return this;
+        }
+        public Builder dataguards(GetAutonomousContainerDatabaseDataguard... dataguards) {
+            return dataguards(List.of(dataguards));
+        }
+        @CustomType.Setter
         public Builder dbName(String dbName) {
             if (dbName == null) {
               throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResult", "dbName");
@@ -1028,6 +1158,14 @@ public final class GetAutonomousContainerDatabaseResult {
             return this;
         }
         @CustomType.Setter
+        public Builder failoverTrigger(Integer failoverTrigger) {
+            if (failoverTrigger == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResult", "failoverTrigger");
+            }
+            this.failoverTrigger = failoverTrigger;
+            return this;
+        }
+        @CustomType.Setter
         public Builder fastStartFailOverLagLimitInSeconds(Integer fastStartFailOverLagLimitInSeconds) {
             if (fastStartFailOverLagLimitInSeconds == null) {
               throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResult", "fastStartFailOverLagLimitInSeconds");
@@ -1068,11 +1206,27 @@ public final class GetAutonomousContainerDatabaseResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isDataGuardEnabled(Boolean isDataGuardEnabled) {
+            if (isDataGuardEnabled == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResult", "isDataGuardEnabled");
+            }
+            this.isDataGuardEnabled = isDataGuardEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isDstFileUpdateEnabled(Boolean isDstFileUpdateEnabled) {
             if (isDstFileUpdateEnabled == null) {
               throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResult", "isDstFileUpdateEnabled");
             }
             this.isDstFileUpdateEnabled = isDstFileUpdateEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isMultipleStandby(Boolean isMultipleStandby) {
+            if (isMultipleStandby == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResult", "isMultipleStandby");
+            }
+            this.isMultipleStandby = isMultipleStandby;
             return this;
         }
         @CustomType.Setter
@@ -1321,6 +1475,14 @@ public final class GetAutonomousContainerDatabaseResult {
             return recoveryApplianceDetails(List.of(recoveryApplianceDetails));
         }
         @CustomType.Setter
+        public Builder reinstateTrigger(Integer reinstateTrigger) {
+            if (reinstateTrigger == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResult", "reinstateTrigger");
+            }
+            this.reinstateTrigger = reinstateTrigger;
+            return this;
+        }
+        @CustomType.Setter
         public Builder reservedCpus(Double reservedCpus) {
             if (reservedCpus == null) {
               throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResult", "reservedCpus");
@@ -1366,6 +1528,14 @@ public final class GetAutonomousContainerDatabaseResult {
               throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResult", "state");
             }
             this.state = state;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder switchoverTrigger(Integer switchoverTrigger) {
+            if (switchoverTrigger == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResult", "switchoverTrigger");
+            }
+            this.switchoverTrigger = switchoverTrigger;
             return this;
         }
         @CustomType.Setter
@@ -1438,6 +1608,8 @@ public final class GetAutonomousContainerDatabaseResult {
             _resultValue.compartmentId = compartmentId;
             _resultValue.computeModel = computeModel;
             _resultValue.databaseSoftwareImageId = databaseSoftwareImageId;
+            _resultValue.dataguardGroupMembers = dataguardGroupMembers;
+            _resultValue.dataguards = dataguards;
             _resultValue.dbName = dbName;
             _resultValue.dbSplitThreshold = dbSplitThreshold;
             _resultValue.dbUniqueName = dbUniqueName;
@@ -1446,12 +1618,15 @@ public final class GetAutonomousContainerDatabaseResult {
             _resultValue.displayName = displayName;
             _resultValue.distributionAffinity = distributionAffinity;
             _resultValue.dstFileVersion = dstFileVersion;
+            _resultValue.failoverTrigger = failoverTrigger;
             _resultValue.fastStartFailOverLagLimitInSeconds = fastStartFailOverLagLimitInSeconds;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.infrastructureType = infrastructureType;
             _resultValue.isAutomaticFailoverEnabled = isAutomaticFailoverEnabled;
+            _resultValue.isDataGuardEnabled = isDataGuardEnabled;
             _resultValue.isDstFileUpdateEnabled = isDstFileUpdateEnabled;
+            _resultValue.isMultipleStandby = isMultipleStandby;
             _resultValue.keyHistoryEntries = keyHistoryEntries;
             _resultValue.keyStoreId = keyStoreId;
             _resultValue.keyStoreWalletName = keyStoreWalletName;
@@ -1480,12 +1655,14 @@ public final class GetAutonomousContainerDatabaseResult {
             _resultValue.provisionedCpus = provisionedCpus;
             _resultValue.reclaimableCpus = reclaimableCpus;
             _resultValue.recoveryApplianceDetails = recoveryApplianceDetails;
+            _resultValue.reinstateTrigger = reinstateTrigger;
             _resultValue.reservedCpus = reservedCpus;
             _resultValue.role = role;
             _resultValue.rotateKeyTrigger = rotateKeyTrigger;
             _resultValue.serviceLevelAgreementType = serviceLevelAgreementType;
             _resultValue.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
             _resultValue.state = state;
+            _resultValue.switchoverTrigger = switchoverTrigger;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeOfLastBackup = timeOfLastBackup;
             _resultValue.timeSnapshotStandbyRevert = timeSnapshotStandbyRevert;

@@ -115,6 +115,8 @@ type LookupScheduledJobResult struct {
 	TimeNextExecution string `pulumi:"timeNextExecution"`
 	// The time this scheduled job was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeUpdated string `pulumi:"timeUpdated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+	WorkRequestId string `pulumi:"workRequestId"`
 	// The list of work request [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this scheduled job.
 	WorkRequestIds []string `pulumi:"workRequestIds"`
 }
@@ -283,6 +285,11 @@ func (o LookupScheduledJobResultOutput) TimeNextExecution() pulumi.StringOutput 
 // The time this scheduled job was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 func (o LookupScheduledJobResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScheduledJobResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+func (o LookupScheduledJobResultOutput) WorkRequestId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupScheduledJobResult) string { return v.WorkRequestId }).(pulumi.StringOutput)
 }
 
 // The list of work request [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this scheduled job.

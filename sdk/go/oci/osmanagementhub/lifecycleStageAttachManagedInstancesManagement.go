@@ -16,39 +16,6 @@ import (
 //
 // Attaches (adds) managed instances to a lifecycle stage. Once added, you can apply operations to all managed instances in the lifecycle stage.
 //
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/osmanagementhub"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := osmanagementhub.NewLifecycleStageAttachManagedInstancesManagement(ctx, "test_lifecycle_stage_attach_managed_instances_management", &osmanagementhub.LifecycleStageAttachManagedInstancesManagementArgs{
-//				LifecycleStageId: pulumi.Any(testLifecycleStage.Id),
-//				ManagedInstanceDetails: &osmanagementhub.LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgs{
-//					ManagedInstances: pulumi.Any(lifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsManagedInstances),
-//					WorkRequestDetails: &osmanagementhub.LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgs{
-//						Description: pulumi.Any(lifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsDescription),
-//						DisplayName: pulumi.Any(lifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsDisplayName),
-//					},
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // ## Import
 //
 // LifecycleStageAttachManagedInstancesManagement can be imported using the `id`, e.g.
@@ -74,6 +41,9 @@ func NewLifecycleStageAttachManagedInstancesManagement(ctx *pulumi.Context,
 
 	if args.LifecycleStageId == nil {
 		return nil, errors.New("invalid value for required argument 'LifecycleStageId'")
+	}
+	if args.ManagedInstanceDetails == nil {
+		return nil, errors.New("invalid value for required argument 'ManagedInstanceDetails'")
 	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource LifecycleStageAttachManagedInstancesManagement
@@ -119,7 +89,7 @@ type lifecycleStageAttachManagedInstancesManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
 	LifecycleStageId string `pulumi:"lifecycleStageId"`
 	// The details about the managed instances.
-	ManagedInstanceDetails *LifecycleStageAttachManagedInstancesManagementManagedInstanceDetails `pulumi:"managedInstanceDetails"`
+	ManagedInstanceDetails LifecycleStageAttachManagedInstancesManagementManagedInstanceDetails `pulumi:"managedInstanceDetails"`
 }
 
 // The set of arguments for constructing a LifecycleStageAttachManagedInstancesManagement resource.
@@ -127,7 +97,7 @@ type LifecycleStageAttachManagedInstancesManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
 	LifecycleStageId pulumi.StringInput
 	// The details about the managed instances.
-	ManagedInstanceDetails LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsPtrInput
+	ManagedInstanceDetails LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsInput
 }
 
 func (LifecycleStageAttachManagedInstancesManagementArgs) ElementType() reflect.Type {

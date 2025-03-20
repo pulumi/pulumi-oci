@@ -11,24 +11,6 @@ import * as utilities from "../utilities";
  *
  * Attaches (adds) managed instances to a lifecycle stage. Once added, you can apply operations to all managed instances in the lifecycle stage.
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testLifecycleStageAttachManagedInstancesManagement = new oci.osmanagementhub.LifecycleStageAttachManagedInstancesManagement("test_lifecycle_stage_attach_managed_instances_management", {
- *     lifecycleStageId: testLifecycleStage.id,
- *     managedInstanceDetails: {
- *         managedInstances: lifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsManagedInstances,
- *         workRequestDetails: {
- *             description: lifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsDescription,
- *             displayName: lifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsDisplayName,
- *         },
- *     },
- * });
- * ```
- *
  * ## Import
  *
  * LifecycleStageAttachManagedInstancesManagement can be imported using the `id`, e.g.
@@ -94,6 +76,9 @@ export class LifecycleStageAttachManagedInstancesManagement extends pulumi.Custo
             if ((!args || args.lifecycleStageId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'lifecycleStageId'");
             }
+            if ((!args || args.managedInstanceDetails === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'managedInstanceDetails'");
+            }
             resourceInputs["lifecycleStageId"] = args ? args.lifecycleStageId : undefined;
             resourceInputs["managedInstanceDetails"] = args ? args.managedInstanceDetails : undefined;
         }
@@ -127,5 +112,5 @@ export interface LifecycleStageAttachManagedInstancesManagementArgs {
     /**
      * The details about the managed instances.
      */
-    managedInstanceDetails?: pulumi.Input<inputs.OsManagementHub.LifecycleStageAttachManagedInstancesManagementManagedInstanceDetails>;
+    managedInstanceDetails: pulumi.Input<inputs.OsManagementHub.LifecycleStageAttachManagedInstancesManagementManagedInstanceDetails>;
 }

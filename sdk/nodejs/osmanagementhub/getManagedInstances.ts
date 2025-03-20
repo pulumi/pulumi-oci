@@ -10,45 +10,13 @@ import * as utilities from "../utilities";
  * This data source provides the list of Managed Instances in Oracle Cloud Infrastructure Os Management Hub service.
  *
  * Lists managed instances that match the specified compartment or managed instance OCID. Filter the list against a variety of criteria including but not limited to its name, status, architecture, and OS version.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testManagedInstances = oci.OsManagementHub.getManagedInstances({
- *     advisoryNames: managedInstanceAdvisoryName,
- *     archTypes: managedInstanceArchType,
- *     compartmentId: compartmentId,
- *     displayNames: managedInstanceDisplayName,
- *     displayNameContains: managedInstanceDisplayNameContains,
- *     group: managedInstanceGroup,
- *     groupNotEqualTo: managedInstanceGroupNotEqualTo,
- *     isAttachedToGroupOrLifecycleStage: managedInstanceIsAttachedToGroupOrLifecycleStage,
- *     isManagedByAutonomousLinux: managedInstanceIsManagedByAutonomousLinux,
- *     isManagementStation: managedInstanceIsManagementStation,
- *     isProfileAttached: managedInstanceIsProfileAttached,
- *     lifecycleEnvironment: managedInstanceLifecycleEnvironment,
- *     lifecycleEnvironmentNotEqualTo: managedInstanceLifecycleEnvironmentNotEqualTo,
- *     lifecycleStage: managedInstanceLifecycleStage,
- *     lifecycleStageNotEqualTo: managedInstanceLifecycleStageNotEqualTo,
- *     locations: managedInstanceLocation,
- *     locationNotEqualTos: managedInstanceLocationNotEqualTo,
- *     managedInstanceId: testManagedInstance.id,
- *     osFamilies: managedInstanceOsFamily,
- *     profiles: managedInstanceProfile,
- *     profileNotEqualTos: managedInstanceProfileNotEqualTo,
- *     softwareSourceId: testSoftwareSource.id,
- *     statuses: managedInstanceStatus,
- * });
- * ```
  */
 export function getManagedInstances(args?: GetManagedInstancesArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedInstancesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagementHub/getManagedInstances:getManagedInstances", {
         "advisoryNames": args.advisoryNames,
+        "agentVersion": args.agentVersion,
         "archTypes": args.archTypes,
         "compartmentId": args.compartmentId,
         "displayNameContains": args.displayNameContains,
@@ -60,6 +28,7 @@ export function getManagedInstances(args?: GetManagedInstancesArgs, opts?: pulum
         "isManagedByAutonomousLinux": args.isManagedByAutonomousLinux,
         "isManagementStation": args.isManagementStation,
         "isProfileAttached": args.isProfileAttached,
+        "isRebootRequired": args.isRebootRequired,
         "lifecycleEnvironment": args.lifecycleEnvironment,
         "lifecycleEnvironmentNotEqualTo": args.lifecycleEnvironmentNotEqualTo,
         "lifecycleStage": args.lifecycleStage,
@@ -67,6 +36,8 @@ export function getManagedInstances(args?: GetManagedInstancesArgs, opts?: pulum
         "locationNotEqualTos": args.locationNotEqualTos,
         "locations": args.locations,
         "managedInstanceId": args.managedInstanceId,
+        "managementStationNotEqualTos": args.managementStationNotEqualTos,
+        "managementStations": args.managementStations,
         "osFamilies": args.osFamilies,
         "profileNotEqualTos": args.profileNotEqualTos,
         "profiles": args.profiles,
@@ -83,6 +54,10 @@ export interface GetManagedInstancesArgs {
      * The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
      */
     advisoryNames?: string[];
+    /**
+     * A filter to return only managed instances with the specified version of osmh-agent running.
+     */
+    agentVersion?: string;
     /**
      * A filter to return only instances whose architecture type matches the given architecture.
      */
@@ -125,6 +100,10 @@ export interface GetManagedInstancesArgs {
      */
     isProfileAttached?: boolean;
     /**
+     * A filter to return only managed instances that require a reboot to install updates.
+     */
+    isRebootRequired?: boolean;
+    /**
      * A filter to return only managed instances in a specific lifecycle environment.
      */
     lifecycleEnvironment?: string;
@@ -153,6 +132,14 @@ export interface GetManagedInstancesArgs {
      */
     managedInstanceId?: string;
     /**
+     * A filter to return resources that aren't associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
+    managementStationNotEqualTos?: string[];
+    /**
+     * A filter to return resources that are associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
+    managementStations?: string[];
+    /**
      * A filter to return only resources that match the given operating system family.
      */
     osFamilies?: string[];
@@ -179,6 +166,10 @@ export interface GetManagedInstancesArgs {
  */
 export interface GetManagedInstancesResult {
     readonly advisoryNames?: string[];
+    /**
+     * The version of osmh-agent running on the managed instance
+     */
+    readonly agentVersion?: string;
     readonly archTypes?: string[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance.
@@ -207,6 +198,10 @@ export interface GetManagedInstancesResult {
     readonly isManagementStation?: boolean;
     readonly isProfileAttached?: boolean;
     /**
+     * Indicates whether a reboot is required to complete installation of updates.
+     */
+    readonly isRebootRequired?: boolean;
+    /**
      * Id and name of a resource to simplify the display for the user.
      */
     readonly lifecycleEnvironment?: string;
@@ -226,6 +221,8 @@ export interface GetManagedInstancesResult {
      */
     readonly managedInstanceCollections: outputs.OsManagementHub.GetManagedInstancesManagedInstanceCollection[];
     readonly managedInstanceId?: string;
+    readonly managementStationNotEqualTos?: string[];
+    readonly managementStations?: string[];
     /**
      * The operating system type of the managed instance.
      */
@@ -245,45 +242,13 @@ export interface GetManagedInstancesResult {
  * This data source provides the list of Managed Instances in Oracle Cloud Infrastructure Os Management Hub service.
  *
  * Lists managed instances that match the specified compartment or managed instance OCID. Filter the list against a variety of criteria including but not limited to its name, status, architecture, and OS version.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testManagedInstances = oci.OsManagementHub.getManagedInstances({
- *     advisoryNames: managedInstanceAdvisoryName,
- *     archTypes: managedInstanceArchType,
- *     compartmentId: compartmentId,
- *     displayNames: managedInstanceDisplayName,
- *     displayNameContains: managedInstanceDisplayNameContains,
- *     group: managedInstanceGroup,
- *     groupNotEqualTo: managedInstanceGroupNotEqualTo,
- *     isAttachedToGroupOrLifecycleStage: managedInstanceIsAttachedToGroupOrLifecycleStage,
- *     isManagedByAutonomousLinux: managedInstanceIsManagedByAutonomousLinux,
- *     isManagementStation: managedInstanceIsManagementStation,
- *     isProfileAttached: managedInstanceIsProfileAttached,
- *     lifecycleEnvironment: managedInstanceLifecycleEnvironment,
- *     lifecycleEnvironmentNotEqualTo: managedInstanceLifecycleEnvironmentNotEqualTo,
- *     lifecycleStage: managedInstanceLifecycleStage,
- *     lifecycleStageNotEqualTo: managedInstanceLifecycleStageNotEqualTo,
- *     locations: managedInstanceLocation,
- *     locationNotEqualTos: managedInstanceLocationNotEqualTo,
- *     managedInstanceId: testManagedInstance.id,
- *     osFamilies: managedInstanceOsFamily,
- *     profiles: managedInstanceProfile,
- *     profileNotEqualTos: managedInstanceProfileNotEqualTo,
- *     softwareSourceId: testSoftwareSource.id,
- *     statuses: managedInstanceStatus,
- * });
- * ```
  */
 export function getManagedInstancesOutput(args?: GetManagedInstancesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedInstancesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsManagementHub/getManagedInstances:getManagedInstances", {
         "advisoryNames": args.advisoryNames,
+        "agentVersion": args.agentVersion,
         "archTypes": args.archTypes,
         "compartmentId": args.compartmentId,
         "displayNameContains": args.displayNameContains,
@@ -295,6 +260,7 @@ export function getManagedInstancesOutput(args?: GetManagedInstancesOutputArgs, 
         "isManagedByAutonomousLinux": args.isManagedByAutonomousLinux,
         "isManagementStation": args.isManagementStation,
         "isProfileAttached": args.isProfileAttached,
+        "isRebootRequired": args.isRebootRequired,
         "lifecycleEnvironment": args.lifecycleEnvironment,
         "lifecycleEnvironmentNotEqualTo": args.lifecycleEnvironmentNotEqualTo,
         "lifecycleStage": args.lifecycleStage,
@@ -302,6 +268,8 @@ export function getManagedInstancesOutput(args?: GetManagedInstancesOutputArgs, 
         "locationNotEqualTos": args.locationNotEqualTos,
         "locations": args.locations,
         "managedInstanceId": args.managedInstanceId,
+        "managementStationNotEqualTos": args.managementStationNotEqualTos,
+        "managementStations": args.managementStations,
         "osFamilies": args.osFamilies,
         "profileNotEqualTos": args.profileNotEqualTos,
         "profiles": args.profiles,
@@ -318,6 +286,10 @@ export interface GetManagedInstancesOutputArgs {
      * The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
      */
     advisoryNames?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A filter to return only managed instances with the specified version of osmh-agent running.
+     */
+    agentVersion?: pulumi.Input<string>;
     /**
      * A filter to return only instances whose architecture type matches the given architecture.
      */
@@ -360,6 +332,10 @@ export interface GetManagedInstancesOutputArgs {
      */
     isProfileAttached?: pulumi.Input<boolean>;
     /**
+     * A filter to return only managed instances that require a reboot to install updates.
+     */
+    isRebootRequired?: pulumi.Input<boolean>;
+    /**
      * A filter to return only managed instances in a specific lifecycle environment.
      */
     lifecycleEnvironment?: pulumi.Input<string>;
@@ -387,6 +363,14 @@ export interface GetManagedInstancesOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
      */
     managedInstanceId?: pulumi.Input<string>;
+    /**
+     * A filter to return resources that aren't associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
+    managementStationNotEqualTos?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A filter to return resources that are associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
+    managementStations?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * A filter to return only resources that match the given operating system family.
      */

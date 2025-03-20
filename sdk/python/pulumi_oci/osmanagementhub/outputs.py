@@ -30,6 +30,7 @@ __all__ = [
     'LifecycleStageDetachManagedInstancesManagementManagedInstanceDetails',
     'LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetails',
     'LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetails',
+    'LifecycleStageRebootManagementWorkRequestDetails',
     'ManagedInstanceAutonomousSettings',
     'ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetails',
     'ManagedInstanceGroupAttachSoftwareSourcesManagementWorkRequestDetails',
@@ -42,6 +43,7 @@ __all__ = [
     'ManagedInstanceGroupManageModuleStreamsManagementInstall',
     'ManagedInstanceGroupManageModuleStreamsManagementRemove',
     'ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetails',
+    'ManagedInstanceGroupRebootManagementWorkRequestDetails',
     'ManagedInstanceGroupRemovePackagesManagementWorkRequestDetails',
     'ManagedInstanceGroupSoftwareSource',
     'ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetails',
@@ -49,11 +51,14 @@ __all__ = [
     'ManagedInstanceLifecycleEnvironment',
     'ManagedInstanceLifecycleStage',
     'ManagedInstanceManagedInstanceGroup',
+    'ManagedInstanceRebootManagementWorkRequestDetails',
     'ManagedInstanceSoftwareSource',
     'ManagedInstanceUpdatePackagesManagementWorkRequestDetails',
+    'ManagementStationAssociateManagedInstancesManagementWorkRequestDetails',
     'ManagementStationHealth',
     'ManagementStationMirror',
     'ManagementStationMirrorSyncStatus',
+    'ManagementStationPeerManagementStation',
     'ManagementStationProxy',
     'ProfileLifecycleEnvironment',
     'ProfileLifecycleStage',
@@ -72,6 +77,7 @@ __all__ = [
     'SoftwareSourceCustomSoftwareSourceFilterPackageFilter',
     'SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter',
     'SoftwareSourceVendorSoftwareSource',
+    'WorkRequestRerunManagementWorkRequestDetails',
     'GetEntitlementsEntitlementCollectionResult',
     'GetEntitlementsEntitlementCollectionItemResult',
     'GetEntitlementsFilterResult',
@@ -180,14 +186,22 @@ __all__ = [
     'GetManagementStationMirrorsFilterResult',
     'GetManagementStationMirrorsMirrorsCollectionResult',
     'GetManagementStationMirrorsMirrorsCollectionItemResult',
+    'GetManagementStationPeerManagementStationResult',
     'GetManagementStationProxyResult',
     'GetManagementStationsFilterResult',
     'GetManagementStationsManagementStationCollectionResult',
     'GetManagementStationsManagementStationCollectionItemResult',
+    'GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionResult',
+    'GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemResult',
+    'GetProfileAvailableSoftwareSourcesFilterResult',
     'GetProfileLifecycleEnvironmentResult',
     'GetProfileLifecycleStageResult',
     'GetProfileManagedInstanceGroupResult',
     'GetProfileSoftwareSourceResult',
+    'GetProfileVersionLifecycleEnvironmentResult',
+    'GetProfileVersionLifecycleStageResult',
+    'GetProfileVersionManagedInstanceGroupResult',
+    'GetProfileVersionSoftwareSourceResult',
     'GetProfilesFilterResult',
     'GetProfilesProfileCollectionResult',
     'GetProfilesProfileCollectionItemResult',
@@ -225,6 +239,10 @@ __all__ = [
     'GetSoftwarePackagesSoftwarePackageCollectionItemDependencyResult',
     'GetSoftwarePackagesSoftwarePackageCollectionItemFileResult',
     'GetSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceResult',
+    'GetSoftwareSourceAvailableSoftwarePackagesFilterResult',
+    'GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionResult',
+    'GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemResult',
+    'GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceResult',
     'GetSoftwareSourceCustomSoftwareSourceFilterResult',
     'GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterResult',
     'GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterResult',
@@ -267,12 +285,26 @@ class EventData(dict):
         suggest = None
         if key == "additionalDetails":
             suggest = "additional_details"
+        elif key == "attemptedResolutions":
+            suggest = "attempted_resolutions"
+        elif key == "errorCause":
+            suggest = "error_cause"
+        elif key == "errorLog":
+            suggest = "error_log"
         elif key == "eventCount":
             suggest = "event_count"
         elif key == "eventFingerprint":
             suggest = "event_fingerprint"
+        elif key == "healthState":
+            suggest = "health_state"
         elif key == "operationType":
             suggest = "operation_type"
+        elif key == "rebootStatus":
+            suggest = "reboot_status"
+        elif key == "resolutionLog":
+            suggest = "resolution_log"
+        elif key == "resolutionStatus":
+            suggest = "resolution_status"
         elif key == "timeFirstOccurred":
             suggest = "time_first_occurred"
 
@@ -289,35 +321,63 @@ class EventData(dict):
 
     def __init__(__self__, *,
                  additional_details: Optional[Sequence['outputs.EventDataAdditionalDetail']] = None,
+                 attempted_resolutions: Optional[Sequence[str]] = None,
                  contents: Optional[Sequence['outputs.EventDataContent']] = None,
+                 error_cause: Optional[str] = None,
+                 error_log: Optional[str] = None,
                  event_count: Optional[int] = None,
                  event_fingerprint: Optional[str] = None,
+                 health_state: Optional[str] = None,
                  operation_type: Optional[str] = None,
                  reason: Optional[str] = None,
+                 reboot_status: Optional[str] = None,
+                 resolution_log: Optional[str] = None,
+                 resolution_status: Optional[str] = None,
                  status: Optional[str] = None,
                  time_first_occurred: Optional[str] = None):
         """
         :param Sequence['EventDataAdditionalDetailArgs'] additional_details: Provides additional information for the work request associated with an event.
+        :param Sequence[str] attempted_resolutions: The actions used to attempt fixing the error.
         :param Sequence['EventDataContentArgs'] contents: Provides information collected for the exploit attempt event.
+        :param str error_cause: The commands executed by the agent that caused the error.
+        :param str error_log: The output log of the error.
         :param int event_count: Number of times the event has occurred.
         :param str event_fingerprint: Fingerprint of the event.
+        :param str health_state: Health state of the management station
         :param str operation_type: Type of management station operation.
         :param str reason: Reason for the event.
+        :param str reboot_status: Reboot status for the current event
+        :param str resolution_log: The log output after the resolutions.
+        :param str resolution_status: Indicates if the event succeeded.
         :param str status: Status of the management station operation.
         :param str time_first_occurred: The date and time that the event first occurred.
         """
         if additional_details is not None:
             pulumi.set(__self__, "additional_details", additional_details)
+        if attempted_resolutions is not None:
+            pulumi.set(__self__, "attempted_resolutions", attempted_resolutions)
         if contents is not None:
             pulumi.set(__self__, "contents", contents)
+        if error_cause is not None:
+            pulumi.set(__self__, "error_cause", error_cause)
+        if error_log is not None:
+            pulumi.set(__self__, "error_log", error_log)
         if event_count is not None:
             pulumi.set(__self__, "event_count", event_count)
         if event_fingerprint is not None:
             pulumi.set(__self__, "event_fingerprint", event_fingerprint)
+        if health_state is not None:
+            pulumi.set(__self__, "health_state", health_state)
         if operation_type is not None:
             pulumi.set(__self__, "operation_type", operation_type)
         if reason is not None:
             pulumi.set(__self__, "reason", reason)
+        if reboot_status is not None:
+            pulumi.set(__self__, "reboot_status", reboot_status)
+        if resolution_log is not None:
+            pulumi.set(__self__, "resolution_log", resolution_log)
+        if resolution_status is not None:
+            pulumi.set(__self__, "resolution_status", resolution_status)
         if status is not None:
             pulumi.set(__self__, "status", status)
         if time_first_occurred is not None:
@@ -332,12 +392,36 @@ class EventData(dict):
         return pulumi.get(self, "additional_details")
 
     @property
+    @pulumi.getter(name="attemptedResolutions")
+    def attempted_resolutions(self) -> Optional[Sequence[str]]:
+        """
+        The actions used to attempt fixing the error.
+        """
+        return pulumi.get(self, "attempted_resolutions")
+
+    @property
     @pulumi.getter
     def contents(self) -> Optional[Sequence['outputs.EventDataContent']]:
         """
         Provides information collected for the exploit attempt event.
         """
         return pulumi.get(self, "contents")
+
+    @property
+    @pulumi.getter(name="errorCause")
+    def error_cause(self) -> Optional[str]:
+        """
+        The commands executed by the agent that caused the error.
+        """
+        return pulumi.get(self, "error_cause")
+
+    @property
+    @pulumi.getter(name="errorLog")
+    def error_log(self) -> Optional[str]:
+        """
+        The output log of the error.
+        """
+        return pulumi.get(self, "error_log")
 
     @property
     @pulumi.getter(name="eventCount")
@@ -356,6 +440,14 @@ class EventData(dict):
         return pulumi.get(self, "event_fingerprint")
 
     @property
+    @pulumi.getter(name="healthState")
+    def health_state(self) -> Optional[str]:
+        """
+        Health state of the management station
+        """
+        return pulumi.get(self, "health_state")
+
+    @property
     @pulumi.getter(name="operationType")
     def operation_type(self) -> Optional[str]:
         """
@@ -370,6 +462,30 @@ class EventData(dict):
         Reason for the event.
         """
         return pulumi.get(self, "reason")
+
+    @property
+    @pulumi.getter(name="rebootStatus")
+    def reboot_status(self) -> Optional[str]:
+        """
+        Reboot status for the current event
+        """
+        return pulumi.get(self, "reboot_status")
+
+    @property
+    @pulumi.getter(name="resolutionLog")
+    def resolution_log(self) -> Optional[str]:
+        """
+        The log output after the resolutions.
+        """
+        return pulumi.get(self, "resolution_log")
+
+    @property
+    @pulumi.getter(name="resolutionStatus")
+    def resolution_status(self) -> Optional[str]:
+        """
+        Indicates if the event succeeded.
+        """
+        return pulumi.get(self, "resolution_status")
 
     @property
     @pulumi.getter
@@ -547,6 +663,8 @@ class EventDataContent(dict):
                * `SOFTWARE_SOURCE` - Software source
                * `AGENT` - Agent
                * `MANAGEMENT_STATION` - Management Station
+               * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+               * `REBOOT` - Reboot
         """
         if content_availability is not None:
             pulumi.set(__self__, "content_availability", content_availability)
@@ -619,6 +737,8 @@ class EventDataContent(dict):
         * `SOFTWARE_SOURCE` - Software source
         * `AGENT` - Agent
         * `MANAGEMENT_STATION` - Management Station
+        * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+        * `REBOOT` - Reboot
         """
         return pulumi.get(self, "type")
 
@@ -1450,6 +1570,62 @@ class LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetails(dict):
 
 
 @pulumi.output_type
+class LifecycleStageRebootManagementWorkRequestDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in LifecycleStageRebootManagementWorkRequestDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        LifecycleStageRebootManagementWorkRequestDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        LifecycleStageRebootManagementWorkRequestDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None):
+        """
+        :param str description: User-specified information about the job. Avoid entering confidential information.
+        :param str display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+
+@pulumi.output_type
 class ManagedInstanceAutonomousSettings(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -2160,6 +2336,62 @@ class ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetails(dict):
 
 
 @pulumi.output_type
+class ManagedInstanceGroupRebootManagementWorkRequestDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ManagedInstanceGroupRebootManagementWorkRequestDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ManagedInstanceGroupRebootManagementWorkRequestDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ManagedInstanceGroupRebootManagementWorkRequestDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None):
+        """
+        :param str description: User-specified information about the job. Avoid entering confidential information.
+        :param str display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+
+@pulumi.output_type
 class ManagedInstanceGroupRemovePackagesManagementWorkRequestDetails(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -2560,6 +2792,62 @@ class ManagedInstanceManagedInstanceGroup(dict):
 
 
 @pulumi.output_type
+class ManagedInstanceRebootManagementWorkRequestDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ManagedInstanceRebootManagementWorkRequestDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ManagedInstanceRebootManagementWorkRequestDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ManagedInstanceRebootManagementWorkRequestDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None):
+        """
+        :param str description: User-specified information about the job. Avoid entering confidential information.
+        :param str display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+
+@pulumi.output_type
 class ManagedInstanceSoftwareSource(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -2704,6 +2992,62 @@ class ManagedInstanceUpdatePackagesManagementWorkRequestDetails(dict):
 
 
 @pulumi.output_type
+class ManagementStationAssociateManagedInstancesManagementWorkRequestDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ManagementStationAssociateManagedInstancesManagementWorkRequestDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ManagementStationAssociateManagedInstancesManagementWorkRequestDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ManagementStationAssociateManagedInstancesManagementWorkRequestDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None):
+        """
+        :param str description: User-specified information about the job. Avoid entering confidential information.
+        :param str display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+
+@pulumi.output_type
 class ManagementStationHealth(dict):
     def __init__(__self__, *,
                  description: Optional[str] = None,
@@ -2736,20 +3080,41 @@ class ManagementStationHealth(dict):
 
 @pulumi.output_type
 class ManagementStationMirror(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isSslverifyEnabled":
+            suggest = "is_sslverify_enabled"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ManagementStationMirror. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ManagementStationMirror.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ManagementStationMirror.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  directory: str,
                  port: str,
                  sslport: str,
+                 is_sslverify_enabled: Optional[bool] = None,
                  sslcert: Optional[str] = None):
         """
         :param str directory: (Updatable) Path to the data volume on the management station where software source mirrors are stored.
         :param str port: (Updatable) Default mirror listening port for http.
         :param str sslport: (Updatable) Default mirror listening port for https.
+        :param bool is_sslverify_enabled: (Updatable) When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
         :param str sslcert: (Updatable) Path to the SSL cerfificate.
         """
         pulumi.set(__self__, "directory", directory)
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "sslport", sslport)
+        if is_sslverify_enabled is not None:
+            pulumi.set(__self__, "is_sslverify_enabled", is_sslverify_enabled)
         if sslcert is not None:
             pulumi.set(__self__, "sslcert", sslcert)
 
@@ -2776,6 +3141,14 @@ class ManagementStationMirror(dict):
         (Updatable) Default mirror listening port for https.
         """
         return pulumi.get(self, "sslport")
+
+    @property
+    @pulumi.getter(name="isSslverifyEnabled")
+    def is_sslverify_enabled(self) -> Optional[bool]:
+        """
+        (Updatable) When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
+        """
+        return pulumi.get(self, "is_sslverify_enabled")
 
     @property
     @pulumi.getter
@@ -2851,6 +3224,54 @@ class ManagementStationMirrorSyncStatus(dict):
         Total number of software sources that have not yet been synced.
         """
         return pulumi.get(self, "unsynced")
+
+
+@pulumi.output_type
+class ManagementStationPeerManagementStation(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ManagementStationPeerManagementStation. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ManagementStationPeerManagementStation.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ManagementStationPeerManagementStation.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None):
+        """
+        :param str display_name: (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
+        """
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
+        """
+        return pulumi.get(self, "id")
 
 
 @pulumi.output_type
@@ -2947,7 +3368,7 @@ class ProfileLifecycleEnvironment(dict):
                  display_name: Optional[str] = None,
                  id: Optional[str] = None):
         """
-        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         if display_name is not None:
@@ -2959,7 +3380,7 @@ class ProfileLifecycleEnvironment(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -2995,7 +3416,7 @@ class ProfileLifecycleStage(dict):
                  display_name: Optional[str] = None,
                  id: Optional[str] = None):
         """
-        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         if display_name is not None:
@@ -3007,7 +3428,7 @@ class ProfileLifecycleStage(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -3043,7 +3464,7 @@ class ProfileManagedInstanceGroup(dict):
                  display_name: Optional[str] = None,
                  id: Optional[str] = None):
         """
-        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         if display_name is not None:
@@ -3055,7 +3476,7 @@ class ProfileManagedInstanceGroup(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -3099,7 +3520,7 @@ class ProfileSoftwareSource(dict):
                  software_source_type: Optional[str] = None):
         """
         :param str description: (Updatable) User-specified description of the registration profile.
-        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         :param bool is_mandatory_for_autonomous_linux: Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
         :param str software_source_type: Type of the software source.
@@ -3127,7 +3548,7 @@ class ProfileSoftwareSource(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -3167,6 +3588,8 @@ class ScheduledJobOperation(dict):
             suggest = "manage_module_streams_details"
         elif key == "packageNames":
             suggest = "package_names"
+        elif key == "rebootTimeoutInMins":
+            suggest = "reboot_timeout_in_mins"
         elif key == "softwareSourceIds":
             suggest = "software_source_ids"
         elif key == "switchModuleStreamsDetails":
@@ -3189,6 +3612,7 @@ class ScheduledJobOperation(dict):
                  operation_type: str,
                  manage_module_streams_details: Optional['outputs.ScheduledJobOperationManageModuleStreamsDetails'] = None,
                  package_names: Optional[Sequence[str]] = None,
+                 reboot_timeout_in_mins: Optional[int] = None,
                  software_source_ids: Optional[Sequence[str]] = None,
                  switch_module_streams_details: Optional['outputs.ScheduledJobOperationSwitchModuleStreamsDetails'] = None,
                  windows_update_names: Optional[Sequence[str]] = None):
@@ -3196,6 +3620,7 @@ class ScheduledJobOperation(dict):
         :param str operation_type: (Updatable) The type of operation this scheduled job performs.
         :param 'ScheduledJobOperationManageModuleStreamsDetailsArgs' manage_module_streams_details: (Updatable) The set of changes to make to the state of the modules, streams, and profiles on the managed target.
         :param Sequence[str] package_names: (Updatable) The names of the target packages. This parameter only applies when the scheduled job is for installing, updating, or removing packages.
+        :param int reboot_timeout_in_mins: (Updatable) The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the  timeout, the service marks the reboot job as failed.
         :param Sequence[str] software_source_ids: (Updatable) The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
         :param 'ScheduledJobOperationSwitchModuleStreamsDetailsArgs' switch_module_streams_details: (Updatable) Provides the information used to update a module stream.
         :param Sequence[str] windows_update_names: (Updatable) Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates. Note that this is not an OCID, but is a unique identifier assigned by Microsoft. For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
@@ -3205,6 +3630,8 @@ class ScheduledJobOperation(dict):
             pulumi.set(__self__, "manage_module_streams_details", manage_module_streams_details)
         if package_names is not None:
             pulumi.set(__self__, "package_names", package_names)
+        if reboot_timeout_in_mins is not None:
+            pulumi.set(__self__, "reboot_timeout_in_mins", reboot_timeout_in_mins)
         if software_source_ids is not None:
             pulumi.set(__self__, "software_source_ids", software_source_ids)
         if switch_module_streams_details is not None:
@@ -3235,6 +3662,14 @@ class ScheduledJobOperation(dict):
         (Updatable) The names of the target packages. This parameter only applies when the scheduled job is for installing, updating, or removing packages.
         """
         return pulumi.get(self, "package_names")
+
+    @property
+    @pulumi.getter(name="rebootTimeoutInMins")
+    def reboot_timeout_in_mins(self) -> Optional[int]:
+        """
+        (Updatable) The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the  timeout, the service marks the reboot job as failed.
+        """
+        return pulumi.get(self, "reboot_timeout_in_mins")
 
     @property
     @pulumi.getter(name="softwareSourceIds")
@@ -4048,6 +4483,54 @@ class SoftwareSourceVendorSoftwareSource(dict):
 
 
 @pulumi.output_type
+class WorkRequestRerunManagementWorkRequestDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkRequestRerunManagementWorkRequestDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkRequestRerunManagementWorkRequestDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkRequestRerunManagementWorkRequestDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None):
+        """
+        :param str description: User-specified information about the job. Avoid entering confidential information.
+        :param str display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+
+@pulumi.output_type
 class GetEntitlementsEntitlementCollectionResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
@@ -4055,7 +4538,7 @@ class GetEntitlementsEntitlementCollectionResult(dict):
                  items: Sequence['outputs.GetEntitlementsEntitlementCollectionItemResult']):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
-        :param str csi: A filter to return entitlements that match the given CSI.
+        :param str csi: A filter to return entitlements that match the given customer support identifier (CSI).
         :param Sequence['GetEntitlementsEntitlementCollectionItemArgs'] items: List of entitlements.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -4074,7 +4557,7 @@ class GetEntitlementsEntitlementCollectionResult(dict):
     @pulumi.getter
     def csi(self) -> str:
         """
-        A filter to return entitlements that match the given CSI.
+        A filter to return entitlements that match the given customer support identifier (CSI).
         """
         return pulumi.get(self, "csi")
 
@@ -4095,7 +4578,7 @@ class GetEntitlementsEntitlementCollectionItemResult(dict):
                  vendor_name: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
-        :param str csi: A filter to return entitlements that match the given CSI.
+        :param str csi: A filter to return entitlements that match the given customer support identifier (CSI).
         :param str vendor_name: A filter to return only resources that match the given vendor name.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -4114,7 +4597,7 @@ class GetEntitlementsEntitlementCollectionItemResult(dict):
     @pulumi.getter
     def csi(self) -> str:
         """
-        A filter to return entitlements that match the given CSI.
+        A filter to return entitlements that match the given customer support identifier (CSI).
         """
         return pulumi.get(self, "csi")
 
@@ -4733,29 +5216,50 @@ class GetErratumPackageSoftwareSourceResult(dict):
 class GetEventDataResult(dict):
     def __init__(__self__, *,
                  additional_details: Sequence['outputs.GetEventDataAdditionalDetailResult'],
+                 attempted_resolutions: Sequence[str],
                  contents: Sequence['outputs.GetEventDataContentResult'],
+                 error_cause: str,
+                 error_log: str,
                  event_count: int,
                  event_fingerprint: str,
+                 health_state: str,
                  operation_type: str,
                  reason: str,
+                 reboot_status: str,
+                 resolution_log: str,
+                 resolution_status: str,
                  status: str,
                  time_first_occurred: str):
         """
         :param Sequence['GetEventDataAdditionalDetailArgs'] additional_details: Provides additional information for the work request associated with an event.
+        :param Sequence[str] attempted_resolutions: The actions used to attempt fixing the error.
         :param Sequence['GetEventDataContentArgs'] contents: Provides information collected for the exploit attempt event.
+        :param str error_cause: The commands executed by the agent that caused the error.
+        :param str error_log: The output log of the error.
         :param int event_count: Number of times the event has occurred.
         :param str event_fingerprint: Fingerprint of the event.
+        :param str health_state: Health state of the management station
         :param str operation_type: Type of management station operation.
         :param str reason: Reason for the event.
+        :param str reboot_status: Reboot status for the current event
+        :param str resolution_log: The log output after the resolutions.
+        :param str resolution_status: Indicates if the event succeeded.
         :param str status: Status of the management station operation.
         :param str time_first_occurred: The date and time that the event first occurred.
         """
         pulumi.set(__self__, "additional_details", additional_details)
+        pulumi.set(__self__, "attempted_resolutions", attempted_resolutions)
         pulumi.set(__self__, "contents", contents)
+        pulumi.set(__self__, "error_cause", error_cause)
+        pulumi.set(__self__, "error_log", error_log)
         pulumi.set(__self__, "event_count", event_count)
         pulumi.set(__self__, "event_fingerprint", event_fingerprint)
+        pulumi.set(__self__, "health_state", health_state)
         pulumi.set(__self__, "operation_type", operation_type)
         pulumi.set(__self__, "reason", reason)
+        pulumi.set(__self__, "reboot_status", reboot_status)
+        pulumi.set(__self__, "resolution_log", resolution_log)
+        pulumi.set(__self__, "resolution_status", resolution_status)
         pulumi.set(__self__, "status", status)
         pulumi.set(__self__, "time_first_occurred", time_first_occurred)
 
@@ -4768,12 +5272,36 @@ class GetEventDataResult(dict):
         return pulumi.get(self, "additional_details")
 
     @property
+    @pulumi.getter(name="attemptedResolutions")
+    def attempted_resolutions(self) -> Sequence[str]:
+        """
+        The actions used to attempt fixing the error.
+        """
+        return pulumi.get(self, "attempted_resolutions")
+
+    @property
     @pulumi.getter
     def contents(self) -> Sequence['outputs.GetEventDataContentResult']:
         """
         Provides information collected for the exploit attempt event.
         """
         return pulumi.get(self, "contents")
+
+    @property
+    @pulumi.getter(name="errorCause")
+    def error_cause(self) -> str:
+        """
+        The commands executed by the agent that caused the error.
+        """
+        return pulumi.get(self, "error_cause")
+
+    @property
+    @pulumi.getter(name="errorLog")
+    def error_log(self) -> str:
+        """
+        The output log of the error.
+        """
+        return pulumi.get(self, "error_log")
 
     @property
     @pulumi.getter(name="eventCount")
@@ -4792,6 +5320,14 @@ class GetEventDataResult(dict):
         return pulumi.get(self, "event_fingerprint")
 
     @property
+    @pulumi.getter(name="healthState")
+    def health_state(self) -> str:
+        """
+        Health state of the management station
+        """
+        return pulumi.get(self, "health_state")
+
+    @property
     @pulumi.getter(name="operationType")
     def operation_type(self) -> str:
         """
@@ -4806,6 +5342,30 @@ class GetEventDataResult(dict):
         Reason for the event.
         """
         return pulumi.get(self, "reason")
+
+    @property
+    @pulumi.getter(name="rebootStatus")
+    def reboot_status(self) -> str:
+        """
+        Reboot status for the current event
+        """
+        return pulumi.get(self, "reboot_status")
+
+    @property
+    @pulumi.getter(name="resolutionLog")
+    def resolution_log(self) -> str:
+        """
+        The log output after the resolutions.
+        """
+        return pulumi.get(self, "resolution_log")
+
+    @property
+    @pulumi.getter(name="resolutionStatus")
+    def resolution_status(self) -> str:
+        """
+        Indicates if the event succeeded.
+        """
+        return pulumi.get(self, "resolution_status")
 
     @property
     @pulumi.getter
@@ -4933,6 +5493,8 @@ class GetEventDataContentResult(dict):
                * `SOFTWARE_SOURCE` - Software source
                * `AGENT` - Agent
                * `MANAGEMENT_STATION` - Management Station
+               * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+               * `REBOOT` - Reboot
         """
         pulumi.set(__self__, "content_availability", content_availability)
         pulumi.set(__self__, "content_location", content_location)
@@ -4999,6 +5561,8 @@ class GetEventDataContentResult(dict):
         * `SOFTWARE_SOURCE` - Software source
         * `AGENT` - Agent
         * `MANAGEMENT_STATION` - Management Station
+        * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+        * `REBOOT` - Reboot
         """
         return pulumi.get(self, "type")
 
@@ -5304,29 +5868,50 @@ class GetEventsEventCollectionItemResult(dict):
 class GetEventsEventCollectionItemDataResult(dict):
     def __init__(__self__, *,
                  additional_details: Sequence['outputs.GetEventsEventCollectionItemDataAdditionalDetailResult'],
+                 attempted_resolutions: Sequence[str],
                  contents: Sequence['outputs.GetEventsEventCollectionItemDataContentResult'],
+                 error_cause: str,
+                 error_log: str,
                  event_count: int,
                  event_fingerprint: str,
+                 health_state: str,
                  operation_type: str,
                  reason: str,
+                 reboot_status: str,
+                 resolution_log: str,
+                 resolution_status: str,
                  status: str,
                  time_first_occurred: str):
         """
         :param Sequence['GetEventsEventCollectionItemDataAdditionalDetailArgs'] additional_details: Provides additional information for the work request associated with an event.
+        :param Sequence[str] attempted_resolutions: The actions used to attempt fixing the error.
         :param Sequence['GetEventsEventCollectionItemDataContentArgs'] contents: Provides information collected for the exploit attempt event.
+        :param str error_cause: The commands executed by the agent that caused the error.
+        :param str error_log: The output log of the error.
         :param int event_count: Number of times the event has occurred.
         :param str event_fingerprint: The eventFingerprint of the KernelEventData.
+        :param str health_state: Health state of the management station
         :param str operation_type: Type of management station operation.
         :param str reason: Reason for the event.
+        :param str reboot_status: Reboot status for the current event
+        :param str resolution_log: The log output after the resolutions.
+        :param str resolution_status: Indicates if the event succeeded.
         :param str status: Status of the management station operation.
         :param str time_first_occurred: The date and time that the event first occurred.
         """
         pulumi.set(__self__, "additional_details", additional_details)
+        pulumi.set(__self__, "attempted_resolutions", attempted_resolutions)
         pulumi.set(__self__, "contents", contents)
+        pulumi.set(__self__, "error_cause", error_cause)
+        pulumi.set(__self__, "error_log", error_log)
         pulumi.set(__self__, "event_count", event_count)
         pulumi.set(__self__, "event_fingerprint", event_fingerprint)
+        pulumi.set(__self__, "health_state", health_state)
         pulumi.set(__self__, "operation_type", operation_type)
         pulumi.set(__self__, "reason", reason)
+        pulumi.set(__self__, "reboot_status", reboot_status)
+        pulumi.set(__self__, "resolution_log", resolution_log)
+        pulumi.set(__self__, "resolution_status", resolution_status)
         pulumi.set(__self__, "status", status)
         pulumi.set(__self__, "time_first_occurred", time_first_occurred)
 
@@ -5339,12 +5924,36 @@ class GetEventsEventCollectionItemDataResult(dict):
         return pulumi.get(self, "additional_details")
 
     @property
+    @pulumi.getter(name="attemptedResolutions")
+    def attempted_resolutions(self) -> Sequence[str]:
+        """
+        The actions used to attempt fixing the error.
+        """
+        return pulumi.get(self, "attempted_resolutions")
+
+    @property
     @pulumi.getter
     def contents(self) -> Sequence['outputs.GetEventsEventCollectionItemDataContentResult']:
         """
         Provides information collected for the exploit attempt event.
         """
         return pulumi.get(self, "contents")
+
+    @property
+    @pulumi.getter(name="errorCause")
+    def error_cause(self) -> str:
+        """
+        The commands executed by the agent that caused the error.
+        """
+        return pulumi.get(self, "error_cause")
+
+    @property
+    @pulumi.getter(name="errorLog")
+    def error_log(self) -> str:
+        """
+        The output log of the error.
+        """
+        return pulumi.get(self, "error_log")
 
     @property
     @pulumi.getter(name="eventCount")
@@ -5363,6 +5972,14 @@ class GetEventsEventCollectionItemDataResult(dict):
         return pulumi.get(self, "event_fingerprint")
 
     @property
+    @pulumi.getter(name="healthState")
+    def health_state(self) -> str:
+        """
+        Health state of the management station
+        """
+        return pulumi.get(self, "health_state")
+
+    @property
     @pulumi.getter(name="operationType")
     def operation_type(self) -> str:
         """
@@ -5377,6 +5994,30 @@ class GetEventsEventCollectionItemDataResult(dict):
         Reason for the event.
         """
         return pulumi.get(self, "reason")
+
+    @property
+    @pulumi.getter(name="rebootStatus")
+    def reboot_status(self) -> str:
+        """
+        Reboot status for the current event
+        """
+        return pulumi.get(self, "reboot_status")
+
+    @property
+    @pulumi.getter(name="resolutionLog")
+    def resolution_log(self) -> str:
+        """
+        The log output after the resolutions.
+        """
+        return pulumi.get(self, "resolution_log")
+
+    @property
+    @pulumi.getter(name="resolutionStatus")
+    def resolution_status(self) -> str:
+        """
+        Indicates if the event succeeded.
+        """
+        return pulumi.get(self, "resolution_status")
 
     @property
     @pulumi.getter
@@ -9348,6 +9989,7 @@ class GetManagedInstancesManagedInstanceCollectionResult(dict):
 @pulumi.output_type
 class GetManagedInstancesManagedInstanceCollectionItemResult(dict):
     def __init__(__self__, *,
+                 agent_version: str,
                  architecture: str,
                  autonomous_settings: Sequence['outputs.GetManagedInstancesManagedInstanceCollectionItemAutonomousSettingResult'],
                  bug_updates_available: int,
@@ -9375,6 +10017,7 @@ class GetManagedInstancesManagedInstanceCollectionItemResult(dict):
                  other_updates_available: int,
                  primary_management_station_id: str,
                  profile: str,
+                 profile_version: str,
                  scheduled_job_count: int,
                  secondary_management_station_id: str,
                  security_updates_available: int,
@@ -9388,6 +10031,7 @@ class GetManagedInstancesManagedInstanceCollectionItemResult(dict):
                  updates_available: int,
                  work_request_count: int):
         """
+        :param str agent_version: A filter to return only managed instances with the specified version of osmh-agent running.
         :param str architecture: The CPU architecture type of the managed instance.
         :param Sequence['GetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArgs'] autonomous_settings: Settings for the Autonomous Linux service.
         :param int bug_updates_available: Number of bug fix type updates available for installation.
@@ -9400,7 +10044,7 @@ class GetManagedInstancesManagedInstanceCollectionItemResult(dict):
         :param int installed_windows_updates: Number of Windows updates installed on the instance.
         :param bool is_managed_by_autonomous_linux: Indicates whether to list only resources managed by the Autonomous Linux service.
         :param bool is_management_station: A filter to return only managed instances that are acting as management stations.
-        :param bool is_reboot_required: Indicates whether a reboot is required to complete installation of updates.
+        :param bool is_reboot_required: A filter to return only managed instances that require a reboot to install updates.
         :param str ksplice_effective_kernel_version: The ksplice effective kernel version.
         :param Sequence['GetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArgs'] lifecycle_environments: A filter to return only managed instances in a specific lifecycle environment.
         :param Sequence['GetManagedInstancesManagedInstanceCollectionItemLifecycleStageArgs'] lifecycle_stages: A filter to return only managed instances that are associated with the specified lifecycle environment.
@@ -9415,8 +10059,9 @@ class GetManagedInstancesManagedInstanceCollectionItemResult(dict):
         :param int other_updates_available: Number of non-classified (other) updates available for installation.
         :param str primary_management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as primary management station.
         :param str profile: A multi filter to return only managed instances that match the given profile ids.
+        :param str profile_version: The version of the profile that was used to register this instance with the service.
         :param int scheduled_job_count: Number of scheduled jobs associated with this instance.
-        :param str secondary_management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary managment station.
+        :param str secondary_management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station.
         :param int security_updates_available: Number of security type updates available for installation.
         :param Sequence['GetManagedInstancesManagedInstanceCollectionItemSoftwareSourceArgs'] software_sources: The list of software sources currently attached to the managed instance.
         :param str status: A filter to return only managed instances whose status matches the status provided.
@@ -9428,6 +10073,7 @@ class GetManagedInstancesManagedInstanceCollectionItemResult(dict):
         :param int updates_available: Number of updates available for installation.
         :param int work_request_count: Number of work requests associated with this instance.
         """
+        pulumi.set(__self__, "agent_version", agent_version)
         pulumi.set(__self__, "architecture", architecture)
         pulumi.set(__self__, "autonomous_settings", autonomous_settings)
         pulumi.set(__self__, "bug_updates_available", bug_updates_available)
@@ -9455,6 +10101,7 @@ class GetManagedInstancesManagedInstanceCollectionItemResult(dict):
         pulumi.set(__self__, "other_updates_available", other_updates_available)
         pulumi.set(__self__, "primary_management_station_id", primary_management_station_id)
         pulumi.set(__self__, "profile", profile)
+        pulumi.set(__self__, "profile_version", profile_version)
         pulumi.set(__self__, "scheduled_job_count", scheduled_job_count)
         pulumi.set(__self__, "secondary_management_station_id", secondary_management_station_id)
         pulumi.set(__self__, "security_updates_available", security_updates_available)
@@ -9467,6 +10114,14 @@ class GetManagedInstancesManagedInstanceCollectionItemResult(dict):
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "updates_available", updates_available)
         pulumi.set(__self__, "work_request_count", work_request_count)
+
+    @property
+    @pulumi.getter(name="agentVersion")
+    def agent_version(self) -> str:
+        """
+        A filter to return only managed instances with the specified version of osmh-agent running.
+        """
+        return pulumi.get(self, "agent_version")
 
     @property
     @pulumi.getter
@@ -9568,7 +10223,7 @@ class GetManagedInstancesManagedInstanceCollectionItemResult(dict):
     @pulumi.getter(name="isRebootRequired")
     def is_reboot_required(self) -> bool:
         """
-        Indicates whether a reboot is required to complete installation of updates.
+        A filter to return only managed instances that require a reboot to install updates.
         """
         return pulumi.get(self, "is_reboot_required")
 
@@ -9685,6 +10340,14 @@ class GetManagedInstancesManagedInstanceCollectionItemResult(dict):
         return pulumi.get(self, "profile")
 
     @property
+    @pulumi.getter(name="profileVersion")
+    def profile_version(self) -> str:
+        """
+        The version of the profile that was used to register this instance with the service.
+        """
+        return pulumi.get(self, "profile_version")
+
+    @property
     @pulumi.getter(name="scheduledJobCount")
     def scheduled_job_count(self) -> int:
         """
@@ -9696,7 +10359,7 @@ class GetManagedInstancesManagedInstanceCollectionItemResult(dict):
     @pulumi.getter(name="secondaryManagementStationId")
     def secondary_management_station_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary managment station.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station.
         """
         return pulumi.get(self, "secondary_management_station_id")
 
@@ -9992,16 +10655,19 @@ class GetManagementStationHealthResult(dict):
 class GetManagementStationMirrorResult(dict):
     def __init__(__self__, *,
                  directory: str,
+                 is_sslverify_enabled: bool,
                  port: str,
                  sslcert: str,
                  sslport: str):
         """
         :param str directory: Path to the data volume on the management station where software source mirrors are stored.
+        :param bool is_sslverify_enabled: When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
         :param str port: Listening port used for the proxy.
         :param str sslcert: Path to the SSL cerfificate.
         :param str sslport: Default mirror listening port for https.
         """
         pulumi.set(__self__, "directory", directory)
+        pulumi.set(__self__, "is_sslverify_enabled", is_sslverify_enabled)
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "sslcert", sslcert)
         pulumi.set(__self__, "sslport", sslport)
@@ -10013,6 +10679,14 @@ class GetManagementStationMirrorResult(dict):
         Path to the data volume on the management station where software source mirrors are stored.
         """
         return pulumi.get(self, "directory")
+
+    @property
+    @pulumi.getter(name="isSslverifyEnabled")
+    def is_sslverify_enabled(self) -> bool:
+        """
+        When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
+        """
+        return pulumi.get(self, "is_sslverify_enabled")
 
     @property
     @pulumi.getter
@@ -10154,27 +10828,33 @@ class GetManagementStationMirrorsMirrorsCollectionItemResult(dict):
                  id: str,
                  log: str,
                  os_family: str,
+                 package_count: int,
                  percentage: int,
+                 size: str,
                  state: str,
                  time_last_synced: str,
                  type: str):
         """
-        :param str arch_type: The architecture type supported by the Software Source
+        :param str arch_type: The architecture type supported by the software source.
         :param str display_name: A filter to return resources that match the given user-friendly name.
-        :param str id: OCID of a software source
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         :param str log: The current log from the management station plugin.
-        :param str os_family: The OS family the Software Source belongs to
-        :param int percentage: A decimal number representing the completness percentage
-        :param str state: Current state of the mirror
-        :param str time_last_synced: Timestamp of the last time the mirror was sync
-        :param str type: Type of the mirror
+        :param str os_family: The OS family of the software source.
+        :param int package_count: The number of packages within the mirrored software source.
+        :param int percentage: A decimal number representing the percentage of the software source that has been synced.
+        :param str size: The size the mirrored software source in bytes.
+        :param str state: Current state of the software source mirror.
+        :param str time_last_synced: Time that the software source was last synced (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        :param str type: Type of software source.
         """
         pulumi.set(__self__, "arch_type", arch_type)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "log", log)
         pulumi.set(__self__, "os_family", os_family)
+        pulumi.set(__self__, "package_count", package_count)
         pulumi.set(__self__, "percentage", percentage)
+        pulumi.set(__self__, "size", size)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_last_synced", time_last_synced)
         pulumi.set(__self__, "type", type)
@@ -10183,7 +10863,7 @@ class GetManagementStationMirrorsMirrorsCollectionItemResult(dict):
     @pulumi.getter(name="archType")
     def arch_type(self) -> str:
         """
-        The architecture type supported by the Software Source
+        The architecture type supported by the software source.
         """
         return pulumi.get(self, "arch_type")
 
@@ -10199,7 +10879,7 @@ class GetManagementStationMirrorsMirrorsCollectionItemResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        OCID of a software source
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         return pulumi.get(self, "id")
 
@@ -10215,23 +10895,39 @@ class GetManagementStationMirrorsMirrorsCollectionItemResult(dict):
     @pulumi.getter(name="osFamily")
     def os_family(self) -> str:
         """
-        The OS family the Software Source belongs to
+        The OS family of the software source.
         """
         return pulumi.get(self, "os_family")
+
+    @property
+    @pulumi.getter(name="packageCount")
+    def package_count(self) -> int:
+        """
+        The number of packages within the mirrored software source.
+        """
+        return pulumi.get(self, "package_count")
 
     @property
     @pulumi.getter
     def percentage(self) -> int:
         """
-        A decimal number representing the completness percentage
+        A decimal number representing the percentage of the software source that has been synced.
         """
         return pulumi.get(self, "percentage")
 
     @property
     @pulumi.getter
+    def size(self) -> str:
+        """
+        The size the mirrored software source in bytes.
+        """
+        return pulumi.get(self, "size")
+
+    @property
+    @pulumi.getter
     def state(self) -> str:
         """
-        Current state of the mirror
+        Current state of the software source mirror.
         """
         return pulumi.get(self, "state")
 
@@ -10239,7 +10935,7 @@ class GetManagementStationMirrorsMirrorsCollectionItemResult(dict):
     @pulumi.getter(name="timeLastSynced")
     def time_last_synced(self) -> str:
         """
-        Timestamp of the last time the mirror was sync
+        Time that the software source was last synced (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         """
         return pulumi.get(self, "time_last_synced")
 
@@ -10247,9 +10943,38 @@ class GetManagementStationMirrorsMirrorsCollectionItemResult(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        Type of the mirror
+        Type of software source.
         """
         return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetManagementStationPeerManagementStationResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 id: str):
+        """
+        :param str display_name: User-friendly name for the management station.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        User-friendly name for the management station.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
+        """
+        return pulumi.get(self, "id")
 
 
 @pulumi.output_type
@@ -10353,6 +11078,7 @@ class GetManagementStationsManagementStationCollectionItemResult(dict):
                  health_state: str,
                  hostname: str,
                  id: str,
+                 location: str,
                  managed_instance_id: str,
                  mirror_capacity: int,
                  overall_percentage: int,
@@ -10370,6 +11096,7 @@ class GetManagementStationsManagementStationCollectionItemResult(dict):
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str hostname: Hostname of the management station.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station. A filter that returns information about the specified management station.
+        :param str location: A filter to return only resources whose location matches the given value.
         :param str managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
         :param int mirror_capacity: A decimal number representing the amount of mirror capacity used by the sync.
         :param int overall_percentage: A decimal number representing the progress of the current mirror sync.
@@ -10387,6 +11114,7 @@ class GetManagementStationsManagementStationCollectionItemResult(dict):
         pulumi.set(__self__, "health_state", health_state)
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "location", location)
         pulumi.set(__self__, "managed_instance_id", managed_instance_id)
         pulumi.set(__self__, "mirror_capacity", mirror_capacity)
         pulumi.set(__self__, "overall_percentage", overall_percentage)
@@ -10460,6 +11188,14 @@ class GetManagementStationsManagementStationCollectionItemResult(dict):
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter
+    def location(self) -> str:
+        """
+        A filter to return only resources whose location matches the given value.
+        """
+        return pulumi.get(self, "location")
+
+    @property
     @pulumi.getter(name="managedInstanceId")
     def managed_instance_id(self) -> str:
         """
@@ -10527,6 +11263,91 @@ class GetManagementStationsManagementStationCollectionItemResult(dict):
     @pulumi.getter(name="timeNextExecution")
     def time_next_execution(self) -> Optional[str]:
         return pulumi.get(self, "time_next_execution")
+
+
+@pulumi.output_type
+class GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemResult']):
+        """
+        :param Sequence['GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArgs'] items: List of available software sources.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemResult']:
+        """
+        List of available software sources.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 display_name: str,
+                 id: str):
+        """
+        :param str compartment_id: The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+        :param str display_name: A filter to return resources that match the given display names.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return resources that match the given display names.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetProfileAvailableSoftwareSourcesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
 
 
 @pulumi.output_type
@@ -10679,6 +11500,155 @@ class GetProfileSoftwareSourceResult(dict):
 
 
 @pulumi.output_type
+class GetProfileVersionLifecycleEnvironmentResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 id: str):
+        """
+        :param str display_name: Software source name.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        Software source name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetProfileVersionLifecycleStageResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 id: str):
+        """
+        :param str display_name: Software source name.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        Software source name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetProfileVersionManagedInstanceGroupResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 id: str):
+        """
+        :param str display_name: Software source name.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        Software source name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetProfileVersionSoftwareSourceResult(dict):
+    def __init__(__self__, *,
+                 description: str,
+                 display_name: str,
+                 id: str,
+                 is_mandatory_for_autonomous_linux: bool,
+                 software_source_type: str):
+        """
+        :param str description: Software source description.
+        :param str display_name: Software source name.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        :param bool is_mandatory_for_autonomous_linux: Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+        :param str software_source_type: Type of the software source.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_mandatory_for_autonomous_linux", is_mandatory_for_autonomous_linux)
+        pulumi.set(__self__, "software_source_type", software_source_type)
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Software source description.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        Software source name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isMandatoryForAutonomousLinux")
+    def is_mandatory_for_autonomous_linux(self) -> bool:
+        """
+        Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+        """
+        return pulumi.get(self, "is_mandatory_for_autonomous_linux")
+
+    @property
+    @pulumi.getter(name="softwareSourceType")
+    def software_source_type(self) -> str:
+        """
+        Type of the software source.
+        """
+        return pulumi.get(self, "software_source_type")
+
+
+@pulumi.output_type
 class GetProfilesFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
@@ -10737,12 +11707,14 @@ class GetProfilesProfileCollectionItemResult(dict):
                  management_station_id: str,
                  os_family: str,
                  profile_type: str,
+                 profile_version: str,
                  registration_type: str,
                  software_source_ids: Sequence[str],
                  software_sources: Sequence['outputs.GetProfilesProfileCollectionItemSoftwareSourceResult'],
                  state: str,
                  system_tags: Mapping[str, str],
                  time_created: str,
+                 time_modified: str,
                  vendor_name: str):
         """
         :param str arch_type: A filter to return only profiles that match the given archType.
@@ -10752,19 +11724,21 @@ class GetProfilesProfileCollectionItemResult(dict):
         :param str display_name: A filter to return resources that match the given display names.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
-        :param bool is_default_profile: A boolean variable that is used to list only the default profile resources.
+        :param bool is_default_profile: A filter to return only default profiles.
         :param bool is_service_provided_profile: A filter to return only service-provided profiles.
         :param Sequence['GetProfilesProfileCollectionItemLifecycleEnvironmentArgs'] lifecycle_environments: Provides identifying information for the specified lifecycle environment.
         :param Sequence['GetProfilesProfileCollectionItemLifecycleStageArgs'] lifecycle_stages: Provides identifying information for the specified lifecycle stage.
         :param Sequence['GetProfilesProfileCollectionItemManagedInstanceGroupArgs'] managed_instance_groups: Provides identifying information for the specified managed instance group.
-        :param str management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+        :param str management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an  instance once registered. Management stations are only used by non-OCI instances.
         :param str os_family: A filter to return only resources that match the given operating system family.
         :param str profile_type: A filter to return registration profiles that match the given profile type.
+        :param str profile_version: The version of the registration profile.
         :param str registration_type: A filter to return profiles that match the given instance type.
         :param Sequence['GetProfilesProfileCollectionItemSoftwareSourceArgs'] software_sources: The list of software sources that the registration profile will use.
         :param str state: A filter to return only registration profiles in the given state.
         :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        :param str time_modified: The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param str vendor_name: A filter to return only resources that match the given vendor name.
         """
         pulumi.set(__self__, "arch_type", arch_type)
@@ -10784,12 +11758,14 @@ class GetProfilesProfileCollectionItemResult(dict):
         pulumi.set(__self__, "management_station_id", management_station_id)
         pulumi.set(__self__, "os_family", os_family)
         pulumi.set(__self__, "profile_type", profile_type)
+        pulumi.set(__self__, "profile_version", profile_version)
         pulumi.set(__self__, "registration_type", registration_type)
         pulumi.set(__self__, "software_source_ids", software_source_ids)
         pulumi.set(__self__, "software_sources", software_sources)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_modified", time_modified)
         pulumi.set(__self__, "vendor_name", vendor_name)
 
     @property
@@ -10852,7 +11828,7 @@ class GetProfilesProfileCollectionItemResult(dict):
     @pulumi.getter(name="isDefaultProfile")
     def is_default_profile(self) -> bool:
         """
-        A boolean variable that is used to list only the default profile resources.
+        A filter to return only default profiles.
         """
         return pulumi.get(self, "is_default_profile")
 
@@ -10902,7 +11878,7 @@ class GetProfilesProfileCollectionItemResult(dict):
     @pulumi.getter(name="managementStationId")
     def management_station_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an  instance once registered. Management stations are only used by non-OCI instances.
         """
         return pulumi.get(self, "management_station_id")
 
@@ -10921,6 +11897,14 @@ class GetProfilesProfileCollectionItemResult(dict):
         A filter to return registration profiles that match the given profile type.
         """
         return pulumi.get(self, "profile_type")
+
+    @property
+    @pulumi.getter(name="profileVersion")
+    def profile_version(self) -> str:
+        """
+        The version of the registration profile.
+        """
+        return pulumi.get(self, "profile_version")
 
     @property
     @pulumi.getter(name="registrationType")
@@ -10966,6 +11950,14 @@ class GetProfilesProfileCollectionItemResult(dict):
         The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         """
         return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeModified")
+    def time_modified(self) -> str:
+        """
+        The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        """
+        return pulumi.get(self, "time_modified")
 
     @property
     @pulumi.getter(name="vendorName")
@@ -11131,6 +12123,7 @@ class GetScheduledJobOperationResult(dict):
                  manage_module_streams_details: Sequence['outputs.GetScheduledJobOperationManageModuleStreamsDetailResult'],
                  operation_type: str,
                  package_names: Sequence[str],
+                 reboot_timeout_in_mins: int,
                  software_source_ids: Sequence[str],
                  switch_module_streams_details: Sequence['outputs.GetScheduledJobOperationSwitchModuleStreamsDetailResult'],
                  windows_update_names: Sequence[str]):
@@ -11138,6 +12131,7 @@ class GetScheduledJobOperationResult(dict):
         :param Sequence['GetScheduledJobOperationManageModuleStreamsDetailArgs'] manage_module_streams_details: The set of changes to make to the state of the modules, streams, and profiles on the managed target.
         :param str operation_type: The type of operation this scheduled job performs.
         :param Sequence[str] package_names: The names of the target packages. This parameter only applies when the scheduled job is for installing, updating, or removing packages.
+        :param int reboot_timeout_in_mins: The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the  timeout, the service marks the reboot job as failed.
         :param Sequence[str] software_source_ids: The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
         :param Sequence['GetScheduledJobOperationSwitchModuleStreamsDetailArgs'] switch_module_streams_details: Provides the information used to update a module stream.
         :param Sequence[str] windows_update_names: Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates. Note that this is not an OCID, but is a unique identifier assigned by Microsoft. For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
@@ -11145,6 +12139,7 @@ class GetScheduledJobOperationResult(dict):
         pulumi.set(__self__, "manage_module_streams_details", manage_module_streams_details)
         pulumi.set(__self__, "operation_type", operation_type)
         pulumi.set(__self__, "package_names", package_names)
+        pulumi.set(__self__, "reboot_timeout_in_mins", reboot_timeout_in_mins)
         pulumi.set(__self__, "software_source_ids", software_source_ids)
         pulumi.set(__self__, "switch_module_streams_details", switch_module_streams_details)
         pulumi.set(__self__, "windows_update_names", windows_update_names)
@@ -11172,6 +12167,14 @@ class GetScheduledJobOperationResult(dict):
         The names of the target packages. This parameter only applies when the scheduled job is for installing, updating, or removing packages.
         """
         return pulumi.get(self, "package_names")
+
+    @property
+    @pulumi.getter(name="rebootTimeoutInMins")
+    def reboot_timeout_in_mins(self) -> int:
+        """
+        The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the  timeout, the service marks the reboot job as failed.
+        """
+        return pulumi.get(self, "reboot_timeout_in_mins")
 
     @property
     @pulumi.getter(name="softwareSourceIds")
@@ -11537,6 +12540,7 @@ class GetScheduledJobsScheduledJobCollectionItemResult(dict):
                  time_last_execution: str,
                  time_next_execution: str,
                  time_updated: str,
+                 work_request_id: str,
                  work_request_ids: Sequence[str]):
         """
         :param str compartment_id: (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
@@ -11571,6 +12575,7 @@ class GetScheduledJobsScheduledJobCollectionItemResult(dict):
         :param str time_last_execution: The time of the last execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param str time_next_execution: The time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param str time_updated: The time this scheduled job was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        :param str work_request_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
         :param Sequence[str] work_request_ids: The list of work request [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this scheduled job.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -11597,6 +12602,7 @@ class GetScheduledJobsScheduledJobCollectionItemResult(dict):
         pulumi.set(__self__, "time_last_execution", time_last_execution)
         pulumi.set(__self__, "time_next_execution", time_next_execution)
         pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "work_request_id", work_request_id)
         pulumi.set(__self__, "work_request_ids", work_request_ids)
 
     @property
@@ -11800,6 +12806,14 @@ class GetScheduledJobsScheduledJobCollectionItemResult(dict):
         return pulumi.get(self, "time_updated")
 
     @property
+    @pulumi.getter(name="workRequestId")
+    def work_request_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+        """
+        return pulumi.get(self, "work_request_id")
+
+    @property
     @pulumi.getter(name="workRequestIds")
     def work_request_ids(self) -> Sequence[str]:
         """
@@ -11814,6 +12828,7 @@ class GetScheduledJobsScheduledJobCollectionItemOperationResult(dict):
                  manage_module_streams_details: Sequence['outputs.GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetailResult'],
                  operation_type: str,
                  package_names: Sequence[str],
+                 reboot_timeout_in_mins: int,
                  software_source_ids: Sequence[str],
                  switch_module_streams_details: Sequence['outputs.GetScheduledJobsScheduledJobCollectionItemOperationSwitchModuleStreamsDetailResult'],
                  windows_update_names: Sequence[str]):
@@ -11821,6 +12836,7 @@ class GetScheduledJobsScheduledJobCollectionItemOperationResult(dict):
         :param Sequence['GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetailArgs'] manage_module_streams_details: The set of changes to make to the state of the modules, streams, and profiles on the managed target.
         :param str operation_type: A filter to return only scheduled jobs with the given operation type.
         :param Sequence[str] package_names: The names of the target packages. This parameter only applies when the scheduled job is for installing, updating, or removing packages.
+        :param int reboot_timeout_in_mins: The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the  timeout, the service marks the reboot job as failed.
         :param Sequence[str] software_source_ids: The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
         :param Sequence['GetScheduledJobsScheduledJobCollectionItemOperationSwitchModuleStreamsDetailArgs'] switch_module_streams_details: Provides the information used to update a module stream.
         :param Sequence[str] windows_update_names: Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates. Note that this is not an OCID, but is a unique identifier assigned by Microsoft. For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
@@ -11828,6 +12844,7 @@ class GetScheduledJobsScheduledJobCollectionItemOperationResult(dict):
         pulumi.set(__self__, "manage_module_streams_details", manage_module_streams_details)
         pulumi.set(__self__, "operation_type", operation_type)
         pulumi.set(__self__, "package_names", package_names)
+        pulumi.set(__self__, "reboot_timeout_in_mins", reboot_timeout_in_mins)
         pulumi.set(__self__, "software_source_ids", software_source_ids)
         pulumi.set(__self__, "switch_module_streams_details", switch_module_streams_details)
         pulumi.set(__self__, "windows_update_names", windows_update_names)
@@ -11855,6 +12872,14 @@ class GetScheduledJobsScheduledJobCollectionItemOperationResult(dict):
         The names of the target packages. This parameter only applies when the scheduled job is for installing, updating, or removing packages.
         """
         return pulumi.get(self, "package_names")
+
+    @property
+    @pulumi.getter(name="rebootTimeoutInMins")
+    def reboot_timeout_in_mins(self) -> int:
+        """
+        The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the  timeout, the service marks the reboot job as failed.
+        """
+        return pulumi.get(self, "reboot_timeout_in_mins")
 
     @property
     @pulumi.getter(name="softwareSourceIds")
@@ -12387,10 +13412,12 @@ class GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItemResult(dict):
                  freeform_tags: Mapping[str, str],
                  id: str,
                  is_mandatory_for_autonomous_linux: bool,
+                 is_mirror_sync_allowed: bool,
                  os_family: str,
                  package_count: str,
                  repo_id: str,
                  size: float,
+                 software_source_sub_type: str,
                  software_source_type: str,
                  software_source_version: str,
                  state: str,
@@ -12402,8 +13429,8 @@ class GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItemResult(dict):
                  vendor_software_sources: Sequence['outputs.GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItemVendorSoftwareSourceResult']):
         """
         :param str arch_type: A filter to return only instances whose architecture type matches the given architecture.
-        :param str availability: The availabilities of the software source in a non-OCI environment for a tenancy.
-        :param str availability_at_oci: The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+        :param str availability: The availability of the software source in a non-OCI environment for a tenancy.
+        :param str availability_at_oci: The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str description: Description of the software source. For custom software sources, this is user-specified.
@@ -12411,10 +13438,12 @@ class GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItemResult(dict):
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
         :param bool is_mandatory_for_autonomous_linux: Indicates whether the software source is required for the Autonomous Linux service.
+        :param bool is_mirror_sync_allowed: Indicates if this software source can be mirrored to a management station.
         :param str os_family: A filter to return only resources that match the given operating system family.
         :param str package_count: Number of packages the software source contains.
         :param str repo_id: The repository ID for the software source.
-        :param float size: The size of the software source in gigabytes (GB).
+        :param float size: The size of the software source in bytes (B).
+        :param str software_source_sub_type: Identifies how the versioned custom software source was created.
         :param str software_source_type: The type of the software source.
         :param str software_source_version: The version to assign to this custom software source.
         :param str state: A filter to return only software sources whose state matches the given state.
@@ -12435,10 +13464,12 @@ class GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItemResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_mandatory_for_autonomous_linux", is_mandatory_for_autonomous_linux)
+        pulumi.set(__self__, "is_mirror_sync_allowed", is_mirror_sync_allowed)
         pulumi.set(__self__, "os_family", os_family)
         pulumi.set(__self__, "package_count", package_count)
         pulumi.set(__self__, "repo_id", repo_id)
         pulumi.set(__self__, "size", size)
+        pulumi.set(__self__, "software_source_sub_type", software_source_sub_type)
         pulumi.set(__self__, "software_source_type", software_source_type)
         pulumi.set(__self__, "software_source_version", software_source_version)
         pulumi.set(__self__, "state", state)
@@ -12461,7 +13492,7 @@ class GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItemResult(dict):
     @pulumi.getter
     def availability(self) -> str:
         """
-        The availabilities of the software source in a non-OCI environment for a tenancy.
+        The availability of the software source in a non-OCI environment for a tenancy.
         """
         return pulumi.get(self, "availability")
 
@@ -12469,7 +13500,7 @@ class GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItemResult(dict):
     @pulumi.getter(name="availabilityAtOci")
     def availability_at_oci(self) -> str:
         """
-        The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+        The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
         """
         return pulumi.get(self, "availability_at_oci")
 
@@ -12530,6 +13561,14 @@ class GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItemResult(dict):
         return pulumi.get(self, "is_mandatory_for_autonomous_linux")
 
     @property
+    @pulumi.getter(name="isMirrorSyncAllowed")
+    def is_mirror_sync_allowed(self) -> bool:
+        """
+        Indicates if this software source can be mirrored to a management station.
+        """
+        return pulumi.get(self, "is_mirror_sync_allowed")
+
+    @property
     @pulumi.getter(name="osFamily")
     def os_family(self) -> str:
         """
@@ -12557,9 +13596,17 @@ class GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItemResult(dict):
     @pulumi.getter
     def size(self) -> float:
         """
-        The size of the software source in gigabytes (GB).
+        The size of the software source in bytes (B).
         """
         return pulumi.get(self, "size")
+
+    @property
+    @pulumi.getter(name="softwareSourceSubType")
+    def software_source_sub_type(self) -> str:
+        """
+        Identifies how the versioned custom software source was created.
+        """
+        return pulumi.get(self, "software_source_sub_type")
 
     @property
     @pulumi.getter(name="softwareSourceType")
@@ -12995,6 +14042,236 @@ class GetSoftwarePackagesSoftwarePackageCollectionItemFileResult(dict):
 
 @pulumi.output_type
 class GetSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceResult(dict):
+    def __init__(__self__, *,
+                 description: str,
+                 display_name: str,
+                 id: str,
+                 is_mandatory_for_autonomous_linux: bool,
+                 software_source_type: str):
+        """
+        :param str description: Software source description.
+        :param str display_name: A filter to return resources that match the given user-friendly name.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        :param bool is_mandatory_for_autonomous_linux: Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+        :param str software_source_type: Type of the software source.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_mandatory_for_autonomous_linux", is_mandatory_for_autonomous_linux)
+        pulumi.set(__self__, "software_source_type", software_source_type)
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Software source description.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return resources that match the given user-friendly name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isMandatoryForAutonomousLinux")
+    def is_mandatory_for_autonomous_linux(self) -> bool:
+        """
+        Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+        """
+        return pulumi.get(self, "is_mandatory_for_autonomous_linux")
+
+    @property
+    @pulumi.getter(name="softwareSourceType")
+    def software_source_type(self) -> str:
+        """
+        Type of the software source.
+        """
+        return pulumi.get(self, "software_source_type")
+
+
+@pulumi.output_type
+class GetSoftwareSourceAvailableSoftwarePackagesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: Unique identifier for the package. Note that this is not an OCID.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Unique identifier for the package. Note that this is not an OCID.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemResult']):
+        """
+        :param Sequence['GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArgs'] items: List of software packages.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemResult']:
+        """
+        List of software packages.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 architecture: str,
+                 checksum: str,
+                 checksum_type: str,
+                 display_name: str,
+                 is_latest: bool,
+                 name: str,
+                 os_families: Sequence[str],
+                 software_sources: Sequence['outputs.GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceResult'],
+                 type: str,
+                 version: str):
+        """
+        :param str architecture: The architecture for which this software was built.
+        :param str checksum: Checksum of the package.
+        :param str checksum_type: Type of the checksum.
+        :param str display_name: A filter to return resources that match the given user-friendly name.
+        :param bool is_latest: Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
+        :param str name: Unique identifier for the package. Note that this is not an OCID.
+        :param Sequence[str] os_families: The OS families the package belongs to.
+        :param Sequence['GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArgs'] software_sources: List of software sources that provide the software package. This property is deprecated and it will be removed in a future API release.
+        :param str type: Type of the package.
+        :param str version: Version of the package.
+        """
+        pulumi.set(__self__, "architecture", architecture)
+        pulumi.set(__self__, "checksum", checksum)
+        pulumi.set(__self__, "checksum_type", checksum_type)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "is_latest", is_latest)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "os_families", os_families)
+        pulumi.set(__self__, "software_sources", software_sources)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def architecture(self) -> str:
+        """
+        The architecture for which this software was built.
+        """
+        return pulumi.get(self, "architecture")
+
+    @property
+    @pulumi.getter
+    def checksum(self) -> str:
+        """
+        Checksum of the package.
+        """
+        return pulumi.get(self, "checksum")
+
+    @property
+    @pulumi.getter(name="checksumType")
+    def checksum_type(self) -> str:
+        """
+        Type of the checksum.
+        """
+        return pulumi.get(self, "checksum_type")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return resources that match the given user-friendly name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="isLatest")
+    def is_latest(self) -> bool:
+        """
+        Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
+        """
+        return pulumi.get(self, "is_latest")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Unique identifier for the package. Note that this is not an OCID.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="osFamilies")
+    def os_families(self) -> Sequence[str]:
+        """
+        The OS families the package belongs to.
+        """
+        return pulumi.get(self, "os_families")
+
+    @property
+    @pulumi.getter(name="softwareSources")
+    def software_sources(self) -> Sequence['outputs.GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceResult']:
+        """
+        List of software sources that provide the software package. This property is deprecated and it will be removed in a future API release.
+        """
+        return pulumi.get(self, "software_sources")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the package.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        """
+        Version of the package.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceResult(dict):
     def __init__(__self__, *,
                  description: str,
                  display_name: str,
@@ -14385,10 +15662,12 @@ class GetSoftwareSourcesSoftwareSourceCollectionItemResult(dict):
                  freeform_tags: Mapping[str, str],
                  id: str,
                  is_mandatory_for_autonomous_linux: bool,
+                 is_mirror_sync_allowed: bool,
                  os_family: str,
                  package_count: str,
                  repo_id: str,
                  size: float,
+                 software_source_sub_type: str,
                  software_source_type: str,
                  software_source_version: str,
                  state: str,
@@ -14400,8 +15679,8 @@ class GetSoftwareSourcesSoftwareSourceCollectionItemResult(dict):
                  vendor_software_sources: Sequence['outputs.GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceResult']):
         """
         :param str arch_type: A filter to return only instances whose architecture type matches the given architecture.
-        :param str availability: The availabilities of the software source in a non-OCI environment for a tenancy.
-        :param str availability_at_oci: The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+        :param str availability: The availability of the software source in a non-OCI environment for a tenancy.
+        :param str availability_at_oci: The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
         :param str compartment_id: (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str description: User-specified description for the software source.
@@ -14409,10 +15688,12 @@ class GetSoftwareSourcesSoftwareSourceCollectionItemResult(dict):
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
         :param bool is_mandatory_for_autonomous_linux: Indicates whether the software source is mandatory for the Autonomous Linux service.
+        :param bool is_mirror_sync_allowed: A filter to return software sources which can be synced to a management station.
         :param str os_family: A filter to return only resources that match the given operating system family.
         :param str package_count: Number of packages the software source contains.
         :param str repo_id: The repository ID for the software source.
-        :param float size: The size of the software source in gigabytes (GB).
+        :param float size: The size of the software source in bytes (B).
+        :param str software_source_sub_type: Identifies how the versioned custom software source was created.
         :param str software_source_type: The type of the software source.
         :param str software_source_version: The version to assign to this custom software source.
         :param str state: A filter to return only software sources whose state matches the given state.
@@ -14432,10 +15713,12 @@ class GetSoftwareSourcesSoftwareSourceCollectionItemResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_mandatory_for_autonomous_linux", is_mandatory_for_autonomous_linux)
+        pulumi.set(__self__, "is_mirror_sync_allowed", is_mirror_sync_allowed)
         pulumi.set(__self__, "os_family", os_family)
         pulumi.set(__self__, "package_count", package_count)
         pulumi.set(__self__, "repo_id", repo_id)
         pulumi.set(__self__, "size", size)
+        pulumi.set(__self__, "software_source_sub_type", software_source_sub_type)
         pulumi.set(__self__, "software_source_type", software_source_type)
         pulumi.set(__self__, "software_source_version", software_source_version)
         pulumi.set(__self__, "state", state)
@@ -14458,7 +15741,7 @@ class GetSoftwareSourcesSoftwareSourceCollectionItemResult(dict):
     @pulumi.getter
     def availability(self) -> str:
         """
-        The availabilities of the software source in a non-OCI environment for a tenancy.
+        The availability of the software source in a non-OCI environment for a tenancy.
         """
         return pulumi.get(self, "availability")
 
@@ -14466,7 +15749,7 @@ class GetSoftwareSourcesSoftwareSourceCollectionItemResult(dict):
     @pulumi.getter(name="availabilityAtOci")
     def availability_at_oci(self) -> str:
         """
-        The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+        The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
         """
         return pulumi.get(self, "availability_at_oci")
 
@@ -14527,6 +15810,14 @@ class GetSoftwareSourcesSoftwareSourceCollectionItemResult(dict):
         return pulumi.get(self, "is_mandatory_for_autonomous_linux")
 
     @property
+    @pulumi.getter(name="isMirrorSyncAllowed")
+    def is_mirror_sync_allowed(self) -> bool:
+        """
+        A filter to return software sources which can be synced to a management station.
+        """
+        return pulumi.get(self, "is_mirror_sync_allowed")
+
+    @property
     @pulumi.getter(name="osFamily")
     def os_family(self) -> str:
         """
@@ -14554,9 +15845,17 @@ class GetSoftwareSourcesSoftwareSourceCollectionItemResult(dict):
     @pulumi.getter
     def size(self) -> float:
         """
-        The size of the software source in gigabytes (GB).
+        The size of the software source in bytes (B).
         """
         return pulumi.get(self, "size")
+
+    @property
+    @pulumi.getter(name="softwareSourceSubType")
+    def software_source_sub_type(self) -> str:
+        """
+        Identifies how the versioned custom software source was created.
+        """
+        return pulumi.get(self, "software_source_sub_type")
 
     @property
     @pulumi.getter(name="softwareSourceType")

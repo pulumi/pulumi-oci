@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Management Station resource in Oracle Cloud Infrastructure Os Management Hub service.
  *
- * Gets information about the specified management station.
+ * Returns information about the specified management station.
  *
  * ## Example Usage
  *
@@ -56,7 +56,7 @@ export interface GetManagementStationResult {
      */
     readonly description: string;
     /**
-     * A user-friendly name for the management station.
+     * User-friendly name for the management station.
      */
     readonly displayName: string;
     /**
@@ -76,6 +76,14 @@ export interface GetManagementStationResult {
      */
     readonly id: string;
     /**
+     * When enabled, the station setup script automatically runs to configure the firewall and SELinux settings on the station.
+     */
+    readonly isAutoConfigEnabled: boolean;
+    /**
+     * The location of the instance that is acting as the management station.
+     */
+    readonly location: string;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
      */
     readonly managedInstanceId: string;
@@ -85,9 +93,29 @@ export interface GetManagementStationResult {
      */
     readonly mirrorCapacity: number;
     /**
+     * The total number of all packages within the mirrored software sources.
+     */
+    readonly mirrorPackageCount: number;
+    /**
+     * The total size of all software source mirrors in bytes.
+     */
+    readonly mirrorSize: string;
+    /**
+     * Amount of available mirror storage in bytes.
+     */
+    readonly mirrorStorageAvailableSize: string;
+    /**
+     * Total mirror storage size in bytes.
+     */
+    readonly mirrorStorageSize: string;
+    /**
      * Status summary of the mirror sync.
      */
     readonly mirrorSyncStatuses: outputs.OsManagementHub.GetManagementStationMirrorSyncStatus[];
+    /**
+     * The total number of unique packages within the mirrored software sources on the station. Each package is counted only once, regardless of how many versions it has.
+     */
+    readonly mirrorUniquePackageCount: number;
     /**
      * Mirror information used for the management station configuration.
      */
@@ -100,6 +128,10 @@ export interface GetManagementStationResult {
      * Current state of the mirror sync for the management station.
      */
     readonly overallState: string;
+    /**
+     * A list of other management stations that are behind the same load balancer within a high availability configuration. Stations are identified as peers if they have the same hostname and compartment.
+     */
+    readonly peerManagementStations: outputs.OsManagementHub.GetManagementStationPeerManagementStation[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
      */
@@ -129,7 +161,7 @@ export interface GetManagementStationResult {
 /**
  * This data source provides details about a specific Management Station resource in Oracle Cloud Infrastructure Os Management Hub service.
  *
- * Gets information about the specified management station.
+ * Returns information about the specified management station.
  *
  * ## Example Usage
  *

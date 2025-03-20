@@ -94,7 +94,7 @@ class GetAutonomousContainerDatabasesResult:
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[str]:
         """
-        The availability domain of the Autonomous Container Database.
+        The domain of the Autonomous Container Database
         """
         return pulumi.get(self, "availability_domain")
 

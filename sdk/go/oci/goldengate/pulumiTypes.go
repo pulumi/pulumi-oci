@@ -585,6 +585,238 @@ func (o DeploymentBackupLockArrayOutput) Index(i pulumi.IntInput) DeploymentBack
 	}).(DeploymentBackupLockOutput)
 }
 
+type DeploymentBackupSchedule struct {
+	// (Updatable) Name of the bucket where the object is to be uploaded in the object storage
+	Bucket string `pulumi:"bucket"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+	CompartmentId string `pulumi:"compartmentId"`
+	// (Updatable) The frequency of the deployment backup schedule. Frequency can be DAILY, WEEKLY or MONTHLY.
+	FrequencyBackupScheduled string `pulumi:"frequencyBackupScheduled"`
+	// (Updatable) Parameter to allow users to create backup without trails
+	IsMetadataOnly bool `pulumi:"isMetadataOnly"`
+	// (Updatable) Name of namespace that serves as a container for all of your buckets
+	Namespace string `pulumi:"namespace"`
+	// (Updatable) The start timestamp for the deployment backup schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+	TimeBackupScheduled string `pulumi:"timeBackupScheduled"`
+}
+
+// DeploymentBackupScheduleInput is an input type that accepts DeploymentBackupScheduleArgs and DeploymentBackupScheduleOutput values.
+// You can construct a concrete instance of `DeploymentBackupScheduleInput` via:
+//
+//	DeploymentBackupScheduleArgs{...}
+type DeploymentBackupScheduleInput interface {
+	pulumi.Input
+
+	ToDeploymentBackupScheduleOutput() DeploymentBackupScheduleOutput
+	ToDeploymentBackupScheduleOutputWithContext(context.Context) DeploymentBackupScheduleOutput
+}
+
+type DeploymentBackupScheduleArgs struct {
+	// (Updatable) Name of the bucket where the object is to be uploaded in the object storage
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// (Updatable) The frequency of the deployment backup schedule. Frequency can be DAILY, WEEKLY or MONTHLY.
+	FrequencyBackupScheduled pulumi.StringInput `pulumi:"frequencyBackupScheduled"`
+	// (Updatable) Parameter to allow users to create backup without trails
+	IsMetadataOnly pulumi.BoolInput `pulumi:"isMetadataOnly"`
+	// (Updatable) Name of namespace that serves as a container for all of your buckets
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// (Updatable) The start timestamp for the deployment backup schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+	TimeBackupScheduled pulumi.StringInput `pulumi:"timeBackupScheduled"`
+}
+
+func (DeploymentBackupScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeploymentBackupSchedule)(nil)).Elem()
+}
+
+func (i DeploymentBackupScheduleArgs) ToDeploymentBackupScheduleOutput() DeploymentBackupScheduleOutput {
+	return i.ToDeploymentBackupScheduleOutputWithContext(context.Background())
+}
+
+func (i DeploymentBackupScheduleArgs) ToDeploymentBackupScheduleOutputWithContext(ctx context.Context) DeploymentBackupScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentBackupScheduleOutput)
+}
+
+func (i DeploymentBackupScheduleArgs) ToDeploymentBackupSchedulePtrOutput() DeploymentBackupSchedulePtrOutput {
+	return i.ToDeploymentBackupSchedulePtrOutputWithContext(context.Background())
+}
+
+func (i DeploymentBackupScheduleArgs) ToDeploymentBackupSchedulePtrOutputWithContext(ctx context.Context) DeploymentBackupSchedulePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentBackupScheduleOutput).ToDeploymentBackupSchedulePtrOutputWithContext(ctx)
+}
+
+// DeploymentBackupSchedulePtrInput is an input type that accepts DeploymentBackupScheduleArgs, DeploymentBackupSchedulePtr and DeploymentBackupSchedulePtrOutput values.
+// You can construct a concrete instance of `DeploymentBackupSchedulePtrInput` via:
+//
+//	        DeploymentBackupScheduleArgs{...}
+//
+//	or:
+//
+//	        nil
+type DeploymentBackupSchedulePtrInput interface {
+	pulumi.Input
+
+	ToDeploymentBackupSchedulePtrOutput() DeploymentBackupSchedulePtrOutput
+	ToDeploymentBackupSchedulePtrOutputWithContext(context.Context) DeploymentBackupSchedulePtrOutput
+}
+
+type deploymentBackupSchedulePtrType DeploymentBackupScheduleArgs
+
+func DeploymentBackupSchedulePtr(v *DeploymentBackupScheduleArgs) DeploymentBackupSchedulePtrInput {
+	return (*deploymentBackupSchedulePtrType)(v)
+}
+
+func (*deploymentBackupSchedulePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DeploymentBackupSchedule)(nil)).Elem()
+}
+
+func (i *deploymentBackupSchedulePtrType) ToDeploymentBackupSchedulePtrOutput() DeploymentBackupSchedulePtrOutput {
+	return i.ToDeploymentBackupSchedulePtrOutputWithContext(context.Background())
+}
+
+func (i *deploymentBackupSchedulePtrType) ToDeploymentBackupSchedulePtrOutputWithContext(ctx context.Context) DeploymentBackupSchedulePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentBackupSchedulePtrOutput)
+}
+
+type DeploymentBackupScheduleOutput struct{ *pulumi.OutputState }
+
+func (DeploymentBackupScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeploymentBackupSchedule)(nil)).Elem()
+}
+
+func (o DeploymentBackupScheduleOutput) ToDeploymentBackupScheduleOutput() DeploymentBackupScheduleOutput {
+	return o
+}
+
+func (o DeploymentBackupScheduleOutput) ToDeploymentBackupScheduleOutputWithContext(ctx context.Context) DeploymentBackupScheduleOutput {
+	return o
+}
+
+func (o DeploymentBackupScheduleOutput) ToDeploymentBackupSchedulePtrOutput() DeploymentBackupSchedulePtrOutput {
+	return o.ToDeploymentBackupSchedulePtrOutputWithContext(context.Background())
+}
+
+func (o DeploymentBackupScheduleOutput) ToDeploymentBackupSchedulePtrOutputWithContext(ctx context.Context) DeploymentBackupSchedulePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DeploymentBackupSchedule) *DeploymentBackupSchedule {
+		return &v
+	}).(DeploymentBackupSchedulePtrOutput)
+}
+
+// (Updatable) Name of the bucket where the object is to be uploaded in the object storage
+func (o DeploymentBackupScheduleOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v DeploymentBackupSchedule) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+func (o DeploymentBackupScheduleOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v DeploymentBackupSchedule) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// (Updatable) The frequency of the deployment backup schedule. Frequency can be DAILY, WEEKLY or MONTHLY.
+func (o DeploymentBackupScheduleOutput) FrequencyBackupScheduled() pulumi.StringOutput {
+	return o.ApplyT(func(v DeploymentBackupSchedule) string { return v.FrequencyBackupScheduled }).(pulumi.StringOutput)
+}
+
+// (Updatable) Parameter to allow users to create backup without trails
+func (o DeploymentBackupScheduleOutput) IsMetadataOnly() pulumi.BoolOutput {
+	return o.ApplyT(func(v DeploymentBackupSchedule) bool { return v.IsMetadataOnly }).(pulumi.BoolOutput)
+}
+
+// (Updatable) Name of namespace that serves as a container for all of your buckets
+func (o DeploymentBackupScheduleOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v DeploymentBackupSchedule) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// (Updatable) The start timestamp for the deployment backup schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+func (o DeploymentBackupScheduleOutput) TimeBackupScheduled() pulumi.StringOutput {
+	return o.ApplyT(func(v DeploymentBackupSchedule) string { return v.TimeBackupScheduled }).(pulumi.StringOutput)
+}
+
+type DeploymentBackupSchedulePtrOutput struct{ *pulumi.OutputState }
+
+func (DeploymentBackupSchedulePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DeploymentBackupSchedule)(nil)).Elem()
+}
+
+func (o DeploymentBackupSchedulePtrOutput) ToDeploymentBackupSchedulePtrOutput() DeploymentBackupSchedulePtrOutput {
+	return o
+}
+
+func (o DeploymentBackupSchedulePtrOutput) ToDeploymentBackupSchedulePtrOutputWithContext(ctx context.Context) DeploymentBackupSchedulePtrOutput {
+	return o
+}
+
+func (o DeploymentBackupSchedulePtrOutput) Elem() DeploymentBackupScheduleOutput {
+	return o.ApplyT(func(v *DeploymentBackupSchedule) DeploymentBackupSchedule {
+		if v != nil {
+			return *v
+		}
+		var ret DeploymentBackupSchedule
+		return ret
+	}).(DeploymentBackupScheduleOutput)
+}
+
+// (Updatable) Name of the bucket where the object is to be uploaded in the object storage
+func (o DeploymentBackupSchedulePtrOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeploymentBackupSchedule) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Bucket
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+func (o DeploymentBackupSchedulePtrOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeploymentBackupSchedule) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.CompartmentId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The frequency of the deployment backup schedule. Frequency can be DAILY, WEEKLY or MONTHLY.
+func (o DeploymentBackupSchedulePtrOutput) FrequencyBackupScheduled() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeploymentBackupSchedule) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.FrequencyBackupScheduled
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Parameter to allow users to create backup without trails
+func (o DeploymentBackupSchedulePtrOutput) IsMetadataOnly() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DeploymentBackupSchedule) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.IsMetadataOnly
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Name of namespace that serves as a container for all of your buckets
+func (o DeploymentBackupSchedulePtrOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeploymentBackupSchedule) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Namespace
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The start timestamp for the deployment backup schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+func (o DeploymentBackupSchedulePtrOutput) TimeBackupScheduled() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeploymentBackupSchedule) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.TimeBackupScheduled
+	}).(pulumi.StringPtrOutput)
+}
+
 type DeploymentDeploymentDiagnosticData struct {
 	// Name of the bucket where the object is to be uploaded in the object storage
 	Bucket *string `pulumi:"bucket"`
@@ -6031,6 +6263,148 @@ func (o GetDeploymentBackupLockArrayOutput) Index(i pulumi.IntInput) GetDeployme
 	}).(GetDeploymentBackupLockOutput)
 }
 
+type GetDeploymentBackupSchedule struct {
+	// Name of the bucket where the object is to be uploaded in the object storage
+	Bucket string `pulumi:"bucket"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The frequency of the deployment backup schedule. Frequency can be DAILY, WEEKLY or MONTHLY.
+	FrequencyBackupScheduled string `pulumi:"frequencyBackupScheduled"`
+	// Parameter to allow users to create backup without trails
+	IsMetadataOnly bool `pulumi:"isMetadataOnly"`
+	// Name of namespace that serves as a container for all of your buckets
+	Namespace string `pulumi:"namespace"`
+	// The start timestamp for the deployment backup schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+	TimeBackupScheduled string `pulumi:"timeBackupScheduled"`
+}
+
+// GetDeploymentBackupScheduleInput is an input type that accepts GetDeploymentBackupScheduleArgs and GetDeploymentBackupScheduleOutput values.
+// You can construct a concrete instance of `GetDeploymentBackupScheduleInput` via:
+//
+//	GetDeploymentBackupScheduleArgs{...}
+type GetDeploymentBackupScheduleInput interface {
+	pulumi.Input
+
+	ToGetDeploymentBackupScheduleOutput() GetDeploymentBackupScheduleOutput
+	ToGetDeploymentBackupScheduleOutputWithContext(context.Context) GetDeploymentBackupScheduleOutput
+}
+
+type GetDeploymentBackupScheduleArgs struct {
+	// Name of the bucket where the object is to be uploaded in the object storage
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The frequency of the deployment backup schedule. Frequency can be DAILY, WEEKLY or MONTHLY.
+	FrequencyBackupScheduled pulumi.StringInput `pulumi:"frequencyBackupScheduled"`
+	// Parameter to allow users to create backup without trails
+	IsMetadataOnly pulumi.BoolInput `pulumi:"isMetadataOnly"`
+	// Name of namespace that serves as a container for all of your buckets
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The start timestamp for the deployment backup schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+	TimeBackupScheduled pulumi.StringInput `pulumi:"timeBackupScheduled"`
+}
+
+func (GetDeploymentBackupScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentBackupSchedule)(nil)).Elem()
+}
+
+func (i GetDeploymentBackupScheduleArgs) ToGetDeploymentBackupScheduleOutput() GetDeploymentBackupScheduleOutput {
+	return i.ToGetDeploymentBackupScheduleOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentBackupScheduleArgs) ToGetDeploymentBackupScheduleOutputWithContext(ctx context.Context) GetDeploymentBackupScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentBackupScheduleOutput)
+}
+
+// GetDeploymentBackupScheduleArrayInput is an input type that accepts GetDeploymentBackupScheduleArray and GetDeploymentBackupScheduleArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentBackupScheduleArrayInput` via:
+//
+//	GetDeploymentBackupScheduleArray{ GetDeploymentBackupScheduleArgs{...} }
+type GetDeploymentBackupScheduleArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentBackupScheduleArrayOutput() GetDeploymentBackupScheduleArrayOutput
+	ToGetDeploymentBackupScheduleArrayOutputWithContext(context.Context) GetDeploymentBackupScheduleArrayOutput
+}
+
+type GetDeploymentBackupScheduleArray []GetDeploymentBackupScheduleInput
+
+func (GetDeploymentBackupScheduleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentBackupSchedule)(nil)).Elem()
+}
+
+func (i GetDeploymentBackupScheduleArray) ToGetDeploymentBackupScheduleArrayOutput() GetDeploymentBackupScheduleArrayOutput {
+	return i.ToGetDeploymentBackupScheduleArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentBackupScheduleArray) ToGetDeploymentBackupScheduleArrayOutputWithContext(ctx context.Context) GetDeploymentBackupScheduleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentBackupScheduleArrayOutput)
+}
+
+type GetDeploymentBackupScheduleOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentBackupScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentBackupSchedule)(nil)).Elem()
+}
+
+func (o GetDeploymentBackupScheduleOutput) ToGetDeploymentBackupScheduleOutput() GetDeploymentBackupScheduleOutput {
+	return o
+}
+
+func (o GetDeploymentBackupScheduleOutput) ToGetDeploymentBackupScheduleOutputWithContext(ctx context.Context) GetDeploymentBackupScheduleOutput {
+	return o
+}
+
+// Name of the bucket where the object is to be uploaded in the object storage
+func (o GetDeploymentBackupScheduleOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentBackupSchedule) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+func (o GetDeploymentBackupScheduleOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentBackupSchedule) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The frequency of the deployment backup schedule. Frequency can be DAILY, WEEKLY or MONTHLY.
+func (o GetDeploymentBackupScheduleOutput) FrequencyBackupScheduled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentBackupSchedule) string { return v.FrequencyBackupScheduled }).(pulumi.StringOutput)
+}
+
+// Parameter to allow users to create backup without trails
+func (o GetDeploymentBackupScheduleOutput) IsMetadataOnly() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDeploymentBackupSchedule) bool { return v.IsMetadataOnly }).(pulumi.BoolOutput)
+}
+
+// Name of namespace that serves as a container for all of your buckets
+func (o GetDeploymentBackupScheduleOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentBackupSchedule) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The start timestamp for the deployment backup schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+func (o GetDeploymentBackupScheduleOutput) TimeBackupScheduled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentBackupSchedule) string { return v.TimeBackupScheduled }).(pulumi.StringOutput)
+}
+
+type GetDeploymentBackupScheduleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentBackupScheduleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentBackupSchedule)(nil)).Elem()
+}
+
+func (o GetDeploymentBackupScheduleArrayOutput) ToGetDeploymentBackupScheduleArrayOutput() GetDeploymentBackupScheduleArrayOutput {
+	return o
+}
+
+func (o GetDeploymentBackupScheduleArrayOutput) ToGetDeploymentBackupScheduleArrayOutputWithContext(ctx context.Context) GetDeploymentBackupScheduleArrayOutput {
+	return o
+}
+
+func (o GetDeploymentBackupScheduleArrayOutput) Index(i pulumi.IntInput) GetDeploymentBackupScheduleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentBackupSchedule {
+		return vs[0].([]GetDeploymentBackupSchedule)[vs[1].(int)]
+	}).(GetDeploymentBackupScheduleOutput)
+}
+
 type GetDeploymentBackupsDeploymentBackupCollection struct {
 	Items []GetDeploymentBackupsDeploymentBackupCollectionItem `pulumi:"items"`
 }
@@ -6128,6 +6502,8 @@ func (o GetDeploymentBackupsDeploymentBackupCollectionArrayOutput) Index(i pulum
 }
 
 type GetDeploymentBackupsDeploymentBackupCollectionItem struct {
+	// Possible deployment backup source types.
+	BackupSourceType string `pulumi:"backupSourceType"`
 	// Possible Deployment backup types.
 	BackupType string `pulumi:"backupType"`
 	// Name of the bucket where the object is to be uploaded in the object storage
@@ -6189,6 +6565,8 @@ type GetDeploymentBackupsDeploymentBackupCollectionItemInput interface {
 }
 
 type GetDeploymentBackupsDeploymentBackupCollectionItemArgs struct {
+	// Possible deployment backup source types.
+	BackupSourceType pulumi.StringInput `pulumi:"backupSourceType"`
 	// Possible Deployment backup types.
 	BackupType pulumi.StringInput `pulumi:"backupType"`
 	// Name of the bucket where the object is to be uploaded in the object storage
@@ -6287,6 +6665,11 @@ func (o GetDeploymentBackupsDeploymentBackupCollectionItemOutput) ToGetDeploymen
 
 func (o GetDeploymentBackupsDeploymentBackupCollectionItemOutput) ToGetDeploymentBackupsDeploymentBackupCollectionItemOutputWithContext(ctx context.Context) GetDeploymentBackupsDeploymentBackupCollectionItemOutput {
 	return o
+}
+
+// Possible deployment backup source types.
+func (o GetDeploymentBackupsDeploymentBackupCollectionItemOutput) BackupSourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentBackupsDeploymentBackupCollectionItem) string { return v.BackupSourceType }).(pulumi.StringOutput)
 }
 
 // Possible Deployment backup types.
@@ -9940,6 +10323,8 @@ func (o GetDeploymentsDeploymentCollectionArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetDeploymentsDeploymentCollectionItem struct {
+	// Defines the schedule of the deployment backup.
+	BackupSchedules []GetDeploymentsDeploymentCollectionItemBackupSchedule `pulumi:"backupSchedules"`
 	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
 	Category string `pulumi:"category"`
 	// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
@@ -10019,6 +10404,10 @@ type GetDeploymentsDeploymentCollectionItem struct {
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeCreated string `pulumi:"timeCreated"`
+	// The timestamp of last deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+	TimeLastBackupScheduled string `pulumi:"timeLastBackupScheduled"`
+	// The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
+	TimeNextBackupScheduled string `pulumi:"timeNextBackupScheduled"`
 	// The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeOfNextMaintenance string `pulumi:"timeOfNextMaintenance"`
 	// The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -10041,6 +10430,8 @@ type GetDeploymentsDeploymentCollectionItemInput interface {
 }
 
 type GetDeploymentsDeploymentCollectionItemArgs struct {
+	// Defines the schedule of the deployment backup.
+	BackupSchedules GetDeploymentsDeploymentCollectionItemBackupScheduleArrayInput `pulumi:"backupSchedules"`
 	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
 	Category pulumi.StringInput `pulumi:"category"`
 	// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
@@ -10120,6 +10511,10 @@ type GetDeploymentsDeploymentCollectionItemArgs struct {
 	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The timestamp of last deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+	TimeLastBackupScheduled pulumi.StringInput `pulumi:"timeLastBackupScheduled"`
+	// The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
+	TimeNextBackupScheduled pulumi.StringInput `pulumi:"timeNextBackupScheduled"`
 	// The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeOfNextMaintenance pulumi.StringInput `pulumi:"timeOfNextMaintenance"`
 	// The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -10179,6 +10574,13 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) ToGetDeploymentsDeployment
 
 func (o GetDeploymentsDeploymentCollectionItemOutput) ToGetDeploymentsDeploymentCollectionItemOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemOutput {
 	return o
+}
+
+// Defines the schedule of the deployment backup.
+func (o GetDeploymentsDeploymentCollectionItemOutput) BackupSchedules() GetDeploymentsDeploymentCollectionItemBackupScheduleArrayOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) []GetDeploymentsDeploymentCollectionItemBackupSchedule {
+		return v.BackupSchedules
+	}).(GetDeploymentsDeploymentCollectionItemBackupScheduleArrayOutput)
 }
 
 // The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
@@ -10392,6 +10794,16 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) TimeCreated() pulumi.Strin
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
+// The timestamp of last deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+func (o GetDeploymentsDeploymentCollectionItemOutput) TimeLastBackupScheduled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.TimeLastBackupScheduled }).(pulumi.StringOutput)
+}
+
+// The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
+func (o GetDeploymentsDeploymentCollectionItemOutput) TimeNextBackupScheduled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.TimeNextBackupScheduled }).(pulumi.StringOutput)
+}
+
 // The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 func (o GetDeploymentsDeploymentCollectionItemOutput) TimeOfNextMaintenance() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.TimeOfNextMaintenance }).(pulumi.StringOutput)
@@ -10430,6 +10842,148 @@ func (o GetDeploymentsDeploymentCollectionItemArrayOutput) Index(i pulumi.IntInp
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentsDeploymentCollectionItem {
 		return vs[0].([]GetDeploymentsDeploymentCollectionItem)[vs[1].(int)]
 	}).(GetDeploymentsDeploymentCollectionItemOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemBackupSchedule struct {
+	// Name of the bucket where the object is to be uploaded in the object storage
+	Bucket string `pulumi:"bucket"`
+	// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The frequency of the deployment backup schedule. Frequency can be DAILY, WEEKLY or MONTHLY.
+	FrequencyBackupScheduled string `pulumi:"frequencyBackupScheduled"`
+	// Parameter to allow users to create backup without trails
+	IsMetadataOnly bool `pulumi:"isMetadataOnly"`
+	// Name of namespace that serves as a container for all of your buckets
+	Namespace string `pulumi:"namespace"`
+	// The start timestamp for the deployment backup schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+	TimeBackupScheduled string `pulumi:"timeBackupScheduled"`
+}
+
+// GetDeploymentsDeploymentCollectionItemBackupScheduleInput is an input type that accepts GetDeploymentsDeploymentCollectionItemBackupScheduleArgs and GetDeploymentsDeploymentCollectionItemBackupScheduleOutput values.
+// You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemBackupScheduleInput` via:
+//
+//	GetDeploymentsDeploymentCollectionItemBackupScheduleArgs{...}
+type GetDeploymentsDeploymentCollectionItemBackupScheduleInput interface {
+	pulumi.Input
+
+	ToGetDeploymentsDeploymentCollectionItemBackupScheduleOutput() GetDeploymentsDeploymentCollectionItemBackupScheduleOutput
+	ToGetDeploymentsDeploymentCollectionItemBackupScheduleOutputWithContext(context.Context) GetDeploymentsDeploymentCollectionItemBackupScheduleOutput
+}
+
+type GetDeploymentsDeploymentCollectionItemBackupScheduleArgs struct {
+	// Name of the bucket where the object is to be uploaded in the object storage
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The frequency of the deployment backup schedule. Frequency can be DAILY, WEEKLY or MONTHLY.
+	FrequencyBackupScheduled pulumi.StringInput `pulumi:"frequencyBackupScheduled"`
+	// Parameter to allow users to create backup without trails
+	IsMetadataOnly pulumi.BoolInput `pulumi:"isMetadataOnly"`
+	// Name of namespace that serves as a container for all of your buckets
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The start timestamp for the deployment backup schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+	TimeBackupScheduled pulumi.StringInput `pulumi:"timeBackupScheduled"`
+}
+
+func (GetDeploymentsDeploymentCollectionItemBackupScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemBackupSchedule)(nil)).Elem()
+}
+
+func (i GetDeploymentsDeploymentCollectionItemBackupScheduleArgs) ToGetDeploymentsDeploymentCollectionItemBackupScheduleOutput() GetDeploymentsDeploymentCollectionItemBackupScheduleOutput {
+	return i.ToGetDeploymentsDeploymentCollectionItemBackupScheduleOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentsDeploymentCollectionItemBackupScheduleArgs) ToGetDeploymentsDeploymentCollectionItemBackupScheduleOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemBackupScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentsDeploymentCollectionItemBackupScheduleOutput)
+}
+
+// GetDeploymentsDeploymentCollectionItemBackupScheduleArrayInput is an input type that accepts GetDeploymentsDeploymentCollectionItemBackupScheduleArray and GetDeploymentsDeploymentCollectionItemBackupScheduleArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemBackupScheduleArrayInput` via:
+//
+//	GetDeploymentsDeploymentCollectionItemBackupScheduleArray{ GetDeploymentsDeploymentCollectionItemBackupScheduleArgs{...} }
+type GetDeploymentsDeploymentCollectionItemBackupScheduleArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentsDeploymentCollectionItemBackupScheduleArrayOutput() GetDeploymentsDeploymentCollectionItemBackupScheduleArrayOutput
+	ToGetDeploymentsDeploymentCollectionItemBackupScheduleArrayOutputWithContext(context.Context) GetDeploymentsDeploymentCollectionItemBackupScheduleArrayOutput
+}
+
+type GetDeploymentsDeploymentCollectionItemBackupScheduleArray []GetDeploymentsDeploymentCollectionItemBackupScheduleInput
+
+func (GetDeploymentsDeploymentCollectionItemBackupScheduleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentsDeploymentCollectionItemBackupSchedule)(nil)).Elem()
+}
+
+func (i GetDeploymentsDeploymentCollectionItemBackupScheduleArray) ToGetDeploymentsDeploymentCollectionItemBackupScheduleArrayOutput() GetDeploymentsDeploymentCollectionItemBackupScheduleArrayOutput {
+	return i.ToGetDeploymentsDeploymentCollectionItemBackupScheduleArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentsDeploymentCollectionItemBackupScheduleArray) ToGetDeploymentsDeploymentCollectionItemBackupScheduleArrayOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemBackupScheduleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentsDeploymentCollectionItemBackupScheduleArrayOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemBackupScheduleOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentsDeploymentCollectionItemBackupScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemBackupSchedule)(nil)).Elem()
+}
+
+func (o GetDeploymentsDeploymentCollectionItemBackupScheduleOutput) ToGetDeploymentsDeploymentCollectionItemBackupScheduleOutput() GetDeploymentsDeploymentCollectionItemBackupScheduleOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemBackupScheduleOutput) ToGetDeploymentsDeploymentCollectionItemBackupScheduleOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemBackupScheduleOutput {
+	return o
+}
+
+// Name of the bucket where the object is to be uploaded in the object storage
+func (o GetDeploymentsDeploymentCollectionItemBackupScheduleOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemBackupSchedule) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
+func (o GetDeploymentsDeploymentCollectionItemBackupScheduleOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemBackupSchedule) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The frequency of the deployment backup schedule. Frequency can be DAILY, WEEKLY or MONTHLY.
+func (o GetDeploymentsDeploymentCollectionItemBackupScheduleOutput) FrequencyBackupScheduled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemBackupSchedule) string { return v.FrequencyBackupScheduled }).(pulumi.StringOutput)
+}
+
+// Parameter to allow users to create backup without trails
+func (o GetDeploymentsDeploymentCollectionItemBackupScheduleOutput) IsMetadataOnly() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemBackupSchedule) bool { return v.IsMetadataOnly }).(pulumi.BoolOutput)
+}
+
+// Name of namespace that serves as a container for all of your buckets
+func (o GetDeploymentsDeploymentCollectionItemBackupScheduleOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemBackupSchedule) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The start timestamp for the deployment backup schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+func (o GetDeploymentsDeploymentCollectionItemBackupScheduleOutput) TimeBackupScheduled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemBackupSchedule) string { return v.TimeBackupScheduled }).(pulumi.StringOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemBackupScheduleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentsDeploymentCollectionItemBackupScheduleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentsDeploymentCollectionItemBackupSchedule)(nil)).Elem()
+}
+
+func (o GetDeploymentsDeploymentCollectionItemBackupScheduleArrayOutput) ToGetDeploymentsDeploymentCollectionItemBackupScheduleArrayOutput() GetDeploymentsDeploymentCollectionItemBackupScheduleArrayOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemBackupScheduleArrayOutput) ToGetDeploymentsDeploymentCollectionItemBackupScheduleArrayOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemBackupScheduleArrayOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemBackupScheduleArrayOutput) Index(i pulumi.IntInput) GetDeploymentsDeploymentCollectionItemBackupScheduleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentsDeploymentCollectionItemBackupSchedule {
+		return vs[0].([]GetDeploymentsDeploymentCollectionItemBackupSchedule)[vs[1].(int)]
+	}).(GetDeploymentsDeploymentCollectionItemBackupScheduleOutput)
 }
 
 type GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData struct {
@@ -16261,6 +16815,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionLockArrayInput)(nil)).Elem(), ConnectionLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentBackupLockInput)(nil)).Elem(), DeploymentBackupLockArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentBackupLockArrayInput)(nil)).Elem(), DeploymentBackupLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentBackupScheduleInput)(nil)).Elem(), DeploymentBackupScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentBackupSchedulePtrInput)(nil)).Elem(), DeploymentBackupScheduleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentDeploymentDiagnosticDataInput)(nil)).Elem(), DeploymentDeploymentDiagnosticDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentDeploymentDiagnosticDataArrayInput)(nil)).Elem(), DeploymentDeploymentDiagnosticDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentIngressIpInput)(nil)).Elem(), DeploymentIngressIpArgs{})
@@ -16325,6 +16881,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseRegistrationsFilterArrayInput)(nil)).Elem(), GetDatabaseRegistrationsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentBackupLockInput)(nil)).Elem(), GetDeploymentBackupLockArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentBackupLockArrayInput)(nil)).Elem(), GetDeploymentBackupLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentBackupScheduleInput)(nil)).Elem(), GetDeploymentBackupScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentBackupScheduleArrayInput)(nil)).Elem(), GetDeploymentBackupScheduleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentBackupsDeploymentBackupCollectionInput)(nil)).Elem(), GetDeploymentBackupsDeploymentBackupCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentBackupsDeploymentBackupCollectionArrayInput)(nil)).Elem(), GetDeploymentBackupsDeploymentBackupCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentBackupsDeploymentBackupCollectionItemInput)(nil)).Elem(), GetDeploymentBackupsDeploymentBackupCollectionItemArgs{})
@@ -16383,6 +16941,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemBackupScheduleInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemBackupScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemBackupScheduleArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemBackupScheduleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemIngressIpInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemIngressIpArgs{})
@@ -16491,6 +17051,8 @@ func init() {
 	pulumi.RegisterOutputType(ConnectionLockArrayOutput{})
 	pulumi.RegisterOutputType(DeploymentBackupLockOutput{})
 	pulumi.RegisterOutputType(DeploymentBackupLockArrayOutput{})
+	pulumi.RegisterOutputType(DeploymentBackupScheduleOutput{})
+	pulumi.RegisterOutputType(DeploymentBackupSchedulePtrOutput{})
 	pulumi.RegisterOutputType(DeploymentDeploymentDiagnosticDataOutput{})
 	pulumi.RegisterOutputType(DeploymentDeploymentDiagnosticDataArrayOutput{})
 	pulumi.RegisterOutputType(DeploymentIngressIpOutput{})
@@ -16555,6 +17117,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDatabaseRegistrationsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentBackupLockOutput{})
 	pulumi.RegisterOutputType(GetDeploymentBackupLockArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentBackupScheduleOutput{})
+	pulumi.RegisterOutputType(GetDeploymentBackupScheduleArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentBackupsDeploymentBackupCollectionOutput{})
 	pulumi.RegisterOutputType(GetDeploymentBackupsDeploymentBackupCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentBackupsDeploymentBackupCollectionItemOutput{})
@@ -16613,6 +17177,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemBackupScheduleOutput{})
+	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemBackupScheduleArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemIngressIpOutput{})

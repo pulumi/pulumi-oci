@@ -43,6 +43,10 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// A filter to return only resources whose location matches the given value.
+        /// </summary>
+        public readonly string Location;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
         /// </summary>
         public readonly string ManagedInstanceId;
@@ -94,6 +98,8 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
 
             string id,
 
+            string location,
+
             string managedInstanceId,
 
             int mirrorCapacity,
@@ -120,6 +126,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
             HealthState = healthState;
             Hostname = hostname;
             Id = id;
+            Location = location;
             ManagedInstanceId = managedInstanceId;
             MirrorCapacity = mirrorCapacity;
             OverallPercentage = overallPercentage;

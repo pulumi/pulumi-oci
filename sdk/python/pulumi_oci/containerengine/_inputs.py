@@ -781,7 +781,7 @@ if not MYPY:
         """
         ip_families: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
         """
-        IP family to use for single stack or define the order of IP families for dual-stack
+        IP family to use for single stack or define the order of IP families for dual-stack. Available values are [] (defaults to IPv4), [IPv4] (IPv4), [IPv4, IPv6] (IPv4 preferred dual stack).
         """
         kubernetes_network_config: NotRequired[pulumi.Input['ClusterOptionsKubernetesNetworkConfigArgsDict']]
         """
@@ -825,7 +825,7 @@ class ClusterOptionsArgs:
         """
         :param pulumi.Input['ClusterOptionsAddOnsArgs'] add_ons: Configurable cluster add-ons
         :param pulumi.Input['ClusterOptionsAdmissionControllerOptionsArgs'] admission_controller_options: (Updatable) Configurable cluster admission controllers
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ip_families: IP family to use for single stack or define the order of IP families for dual-stack
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] ip_families: IP family to use for single stack or define the order of IP families for dual-stack. Available values are [] (defaults to IPv4), [IPv4] (IPv4), [IPv4, IPv6] (IPv4 preferred dual stack).
         :param pulumi.Input['ClusterOptionsKubernetesNetworkConfigArgs'] kubernetes_network_config: Network configuration for Kubernetes.
         :param pulumi.Input['ClusterOptionsOpenIdConnectDiscoveryArgs'] open_id_connect_discovery: (Updatable) The property that define the status of the OIDC Discovery feature for a cluster.
         :param pulumi.Input['ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs'] open_id_connect_token_authentication_config: (Updatable) The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
@@ -880,7 +880,7 @@ class ClusterOptionsArgs:
     @pulumi.getter(name="ipFamilies")
     def ip_families(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        IP family to use for single stack or define the order of IP families for dual-stack
+        IP family to use for single stack or define the order of IP families for dual-stack. Available values are [] (defaults to IPv4), [IPv4] (IPv4), [IPv4, IPv6] (IPv4 preferred dual stack).
         """
         return pulumi.get(self, "ip_families")
 
@@ -1049,11 +1049,11 @@ if not MYPY:
     class ClusterOptionsKubernetesNetworkConfigArgsDict(TypedDict):
         pods_cidr: NotRequired[pulumi.Input[str]]
         """
-        The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
+        The CIDR block for Kubernetes pods. Optional. For ipv4, defaults to 10.244.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0000::/96.
         """
         services_cidr: NotRequired[pulumi.Input[str]]
         """
-        The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
+        The CIDR block for Kubernetes services. Optional. For ipv4, defaults to 10.96.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0001::/108.
         """
 elif False:
     ClusterOptionsKubernetesNetworkConfigArgsDict: TypeAlias = Mapping[str, Any]
@@ -1064,8 +1064,8 @@ class ClusterOptionsKubernetesNetworkConfigArgs:
                  pods_cidr: Optional[pulumi.Input[str]] = None,
                  services_cidr: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] pods_cidr: The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
-        :param pulumi.Input[str] services_cidr: The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
+        :param pulumi.Input[str] pods_cidr: The CIDR block for Kubernetes pods. Optional. For ipv4, defaults to 10.244.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0000::/96.
+        :param pulumi.Input[str] services_cidr: The CIDR block for Kubernetes services. Optional. For ipv4, defaults to 10.96.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0001::/108.
         """
         if pods_cidr is not None:
             pulumi.set(__self__, "pods_cidr", pods_cidr)
@@ -1076,7 +1076,7 @@ class ClusterOptionsKubernetesNetworkConfigArgs:
     @pulumi.getter(name="podsCidr")
     def pods_cidr(self) -> Optional[pulumi.Input[str]]:
         """
-        The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
+        The CIDR block for Kubernetes pods. Optional. For ipv4, defaults to 10.244.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0000::/96.
         """
         return pulumi.get(self, "pods_cidr")
 
@@ -1088,7 +1088,7 @@ class ClusterOptionsKubernetesNetworkConfigArgs:
     @pulumi.getter(name="servicesCidr")
     def services_cidr(self) -> Optional[pulumi.Input[str]]:
         """
-        The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
+        The CIDR block for Kubernetes services. Optional. For ipv4, defaults to 10.96.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0001::/108.
         """
         return pulumi.get(self, "services_cidr")
 

@@ -125,6 +125,8 @@ export class Event extends pulumi.CustomResource {
      * * `SOFTWARE_SOURCE` - Software source
      * * `AGENT` - Agent
      * * `MANAGEMENT_STATION` - Management Station
+     * * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+     * * `REBOOT` - Reboot
      */
     public /*out*/ readonly type!: pulumi.Output<string>;
 
@@ -268,6 +270,8 @@ export interface EventState {
      * * `SOFTWARE_SOURCE` - Software source
      * * `AGENT` - Agent
      * * `MANAGEMENT_STATION` - Management Station
+     * * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+     * * `REBOOT` - Reboot
      */
     type?: pulumi.Input<string>;
 }

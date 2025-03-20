@@ -43,6 +43,8 @@ __all__ = [
     'LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgsDict',
     'LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs',
     'LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgsDict',
+    'LifecycleStageRebootManagementWorkRequestDetailsArgs',
+    'LifecycleStageRebootManagementWorkRequestDetailsArgsDict',
     'ManagedInstanceAutonomousSettingsArgs',
     'ManagedInstanceAutonomousSettingsArgsDict',
     'ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs',
@@ -67,6 +69,8 @@ __all__ = [
     'ManagedInstanceGroupManageModuleStreamsManagementRemoveArgsDict',
     'ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgs',
     'ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgsDict',
+    'ManagedInstanceGroupRebootManagementWorkRequestDetailsArgs',
+    'ManagedInstanceGroupRebootManagementWorkRequestDetailsArgsDict',
     'ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs',
     'ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgsDict',
     'ManagedInstanceGroupSoftwareSourceArgs',
@@ -81,16 +85,22 @@ __all__ = [
     'ManagedInstanceLifecycleStageArgsDict',
     'ManagedInstanceManagedInstanceGroupArgs',
     'ManagedInstanceManagedInstanceGroupArgsDict',
+    'ManagedInstanceRebootManagementWorkRequestDetailsArgs',
+    'ManagedInstanceRebootManagementWorkRequestDetailsArgsDict',
     'ManagedInstanceSoftwareSourceArgs',
     'ManagedInstanceSoftwareSourceArgsDict',
     'ManagedInstanceUpdatePackagesManagementWorkRequestDetailsArgs',
     'ManagedInstanceUpdatePackagesManagementWorkRequestDetailsArgsDict',
+    'ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs',
+    'ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgsDict',
     'ManagementStationHealthArgs',
     'ManagementStationHealthArgsDict',
     'ManagementStationMirrorArgs',
     'ManagementStationMirrorArgsDict',
     'ManagementStationMirrorSyncStatusArgs',
     'ManagementStationMirrorSyncStatusArgsDict',
+    'ManagementStationPeerManagementStationArgs',
+    'ManagementStationPeerManagementStationArgsDict',
     'ManagementStationProxyArgs',
     'ManagementStationProxyArgsDict',
     'ProfileLifecycleEnvironmentArgs',
@@ -127,6 +137,8 @@ __all__ = [
     'SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgsDict',
     'SoftwareSourceVendorSoftwareSourceArgs',
     'SoftwareSourceVendorSoftwareSourceArgsDict',
+    'WorkRequestRerunManagementWorkRequestDetailsArgs',
+    'WorkRequestRerunManagementWorkRequestDetailsArgsDict',
     'GetEntitlementsFilterArgs',
     'GetEntitlementsFilterArgsDict',
     'GetErrataFilterArgs',
@@ -171,6 +183,8 @@ __all__ = [
     'GetManagementStationMirrorsFilterArgsDict',
     'GetManagementStationsFilterArgs',
     'GetManagementStationsFilterArgsDict',
+    'GetProfileAvailableSoftwareSourcesFilterArgs',
+    'GetProfileAvailableSoftwareSourcesFilterArgsDict',
     'GetProfilesFilterArgs',
     'GetProfilesFilterArgsDict',
     'GetScheduledJobsFilterArgs',
@@ -179,6 +193,8 @@ __all__ = [
     'GetSoftwarePackageSoftwareSourceFilterArgsDict',
     'GetSoftwarePackagesFilterArgs',
     'GetSoftwarePackagesFilterArgsDict',
+    'GetSoftwareSourceAvailableSoftwarePackagesFilterArgs',
+    'GetSoftwareSourceAvailableSoftwarePackagesFilterArgsDict',
     'GetSoftwareSourceModuleStreamProfilesFilterArgs',
     'GetSoftwareSourceModuleStreamProfilesFilterArgsDict',
     'GetSoftwareSourceModuleStreamsFilterArgs',
@@ -203,9 +219,21 @@ if not MYPY:
         """
         Provides additional information for the work request associated with an event.
         """
+        attempted_resolutions: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        The actions used to attempt fixing the error.
+        """
         contents: NotRequired[pulumi.Input[Sequence[pulumi.Input['EventDataContentArgsDict']]]]
         """
         Provides information collected for the exploit attempt event.
+        """
+        error_cause: NotRequired[pulumi.Input[str]]
+        """
+        The commands executed by the agent that caused the error.
+        """
+        error_log: NotRequired[pulumi.Input[str]]
+        """
+        The output log of the error.
         """
         event_count: NotRequired[pulumi.Input[int]]
         """
@@ -215,6 +243,10 @@ if not MYPY:
         """
         Fingerprint of the event.
         """
+        health_state: NotRequired[pulumi.Input[str]]
+        """
+        Health state of the management station
+        """
         operation_type: NotRequired[pulumi.Input[str]]
         """
         Type of management station operation.
@@ -222,6 +254,18 @@ if not MYPY:
         reason: NotRequired[pulumi.Input[str]]
         """
         Reason for the event.
+        """
+        reboot_status: NotRequired[pulumi.Input[str]]
+        """
+        Reboot status for the current event
+        """
+        resolution_log: NotRequired[pulumi.Input[str]]
+        """
+        The log output after the resolutions.
+        """
+        resolution_status: NotRequired[pulumi.Input[str]]
+        """
+        Indicates if the event succeeded.
         """
         status: NotRequired[pulumi.Input[str]]
         """
@@ -238,35 +282,63 @@ elif False:
 class EventDataArgs:
     def __init__(__self__, *,
                  additional_details: Optional[pulumi.Input[Sequence[pulumi.Input['EventDataAdditionalDetailArgs']]]] = None,
+                 attempted_resolutions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  contents: Optional[pulumi.Input[Sequence[pulumi.Input['EventDataContentArgs']]]] = None,
+                 error_cause: Optional[pulumi.Input[str]] = None,
+                 error_log: Optional[pulumi.Input[str]] = None,
                  event_count: Optional[pulumi.Input[int]] = None,
                  event_fingerprint: Optional[pulumi.Input[str]] = None,
+                 health_state: Optional[pulumi.Input[str]] = None,
                  operation_type: Optional[pulumi.Input[str]] = None,
                  reason: Optional[pulumi.Input[str]] = None,
+                 reboot_status: Optional[pulumi.Input[str]] = None,
+                 resolution_log: Optional[pulumi.Input[str]] = None,
+                 resolution_status: Optional[pulumi.Input[str]] = None,
                  status: Optional[pulumi.Input[str]] = None,
                  time_first_occurred: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['EventDataAdditionalDetailArgs']]] additional_details: Provides additional information for the work request associated with an event.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] attempted_resolutions: The actions used to attempt fixing the error.
         :param pulumi.Input[Sequence[pulumi.Input['EventDataContentArgs']]] contents: Provides information collected for the exploit attempt event.
+        :param pulumi.Input[str] error_cause: The commands executed by the agent that caused the error.
+        :param pulumi.Input[str] error_log: The output log of the error.
         :param pulumi.Input[int] event_count: Number of times the event has occurred.
         :param pulumi.Input[str] event_fingerprint: Fingerprint of the event.
+        :param pulumi.Input[str] health_state: Health state of the management station
         :param pulumi.Input[str] operation_type: Type of management station operation.
         :param pulumi.Input[str] reason: Reason for the event.
+        :param pulumi.Input[str] reboot_status: Reboot status for the current event
+        :param pulumi.Input[str] resolution_log: The log output after the resolutions.
+        :param pulumi.Input[str] resolution_status: Indicates if the event succeeded.
         :param pulumi.Input[str] status: Status of the management station operation.
         :param pulumi.Input[str] time_first_occurred: The date and time that the event first occurred.
         """
         if additional_details is not None:
             pulumi.set(__self__, "additional_details", additional_details)
+        if attempted_resolutions is not None:
+            pulumi.set(__self__, "attempted_resolutions", attempted_resolutions)
         if contents is not None:
             pulumi.set(__self__, "contents", contents)
+        if error_cause is not None:
+            pulumi.set(__self__, "error_cause", error_cause)
+        if error_log is not None:
+            pulumi.set(__self__, "error_log", error_log)
         if event_count is not None:
             pulumi.set(__self__, "event_count", event_count)
         if event_fingerprint is not None:
             pulumi.set(__self__, "event_fingerprint", event_fingerprint)
+        if health_state is not None:
+            pulumi.set(__self__, "health_state", health_state)
         if operation_type is not None:
             pulumi.set(__self__, "operation_type", operation_type)
         if reason is not None:
             pulumi.set(__self__, "reason", reason)
+        if reboot_status is not None:
+            pulumi.set(__self__, "reboot_status", reboot_status)
+        if resolution_log is not None:
+            pulumi.set(__self__, "resolution_log", resolution_log)
+        if resolution_status is not None:
+            pulumi.set(__self__, "resolution_status", resolution_status)
         if status is not None:
             pulumi.set(__self__, "status", status)
         if time_first_occurred is not None:
@@ -285,6 +357,18 @@ class EventDataArgs:
         pulumi.set(self, "additional_details", value)
 
     @property
+    @pulumi.getter(name="attemptedResolutions")
+    def attempted_resolutions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The actions used to attempt fixing the error.
+        """
+        return pulumi.get(self, "attempted_resolutions")
+
+    @attempted_resolutions.setter
+    def attempted_resolutions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "attempted_resolutions", value)
+
+    @property
     @pulumi.getter
     def contents(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['EventDataContentArgs']]]]:
         """
@@ -295,6 +379,30 @@ class EventDataArgs:
     @contents.setter
     def contents(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['EventDataContentArgs']]]]):
         pulumi.set(self, "contents", value)
+
+    @property
+    @pulumi.getter(name="errorCause")
+    def error_cause(self) -> Optional[pulumi.Input[str]]:
+        """
+        The commands executed by the agent that caused the error.
+        """
+        return pulumi.get(self, "error_cause")
+
+    @error_cause.setter
+    def error_cause(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "error_cause", value)
+
+    @property
+    @pulumi.getter(name="errorLog")
+    def error_log(self) -> Optional[pulumi.Input[str]]:
+        """
+        The output log of the error.
+        """
+        return pulumi.get(self, "error_log")
+
+    @error_log.setter
+    def error_log(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "error_log", value)
 
     @property
     @pulumi.getter(name="eventCount")
@@ -321,6 +429,18 @@ class EventDataArgs:
         pulumi.set(self, "event_fingerprint", value)
 
     @property
+    @pulumi.getter(name="healthState")
+    def health_state(self) -> Optional[pulumi.Input[str]]:
+        """
+        Health state of the management station
+        """
+        return pulumi.get(self, "health_state")
+
+    @health_state.setter
+    def health_state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "health_state", value)
+
+    @property
     @pulumi.getter(name="operationType")
     def operation_type(self) -> Optional[pulumi.Input[str]]:
         """
@@ -343,6 +463,42 @@ class EventDataArgs:
     @reason.setter
     def reason(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "reason", value)
+
+    @property
+    @pulumi.getter(name="rebootStatus")
+    def reboot_status(self) -> Optional[pulumi.Input[str]]:
+        """
+        Reboot status for the current event
+        """
+        return pulumi.get(self, "reboot_status")
+
+    @reboot_status.setter
+    def reboot_status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "reboot_status", value)
+
+    @property
+    @pulumi.getter(name="resolutionLog")
+    def resolution_log(self) -> Optional[pulumi.Input[str]]:
+        """
+        The log output after the resolutions.
+        """
+        return pulumi.get(self, "resolution_log")
+
+    @resolution_log.setter
+    def resolution_log(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resolution_log", value)
+
+    @property
+    @pulumi.getter(name="resolutionStatus")
+    def resolution_status(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates if the event succeeded.
+        """
+        return pulumi.get(self, "resolution_status")
+
+    @resolution_status.setter
+    def resolution_status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resolution_status", value)
 
     @property
     @pulumi.getter
@@ -551,6 +707,8 @@ if not MYPY:
         * `SOFTWARE_SOURCE` - Software source
         * `AGENT` - Agent
         * `MANAGEMENT_STATION` - Management Station
+        * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+        * `REBOOT` - Reboot
         """
 elif False:
     EventDataContentArgsDict: TypeAlias = Mapping[str, Any]
@@ -584,6 +742,8 @@ class EventDataContentArgs:
                * `SOFTWARE_SOURCE` - Software source
                * `AGENT` - Agent
                * `MANAGEMENT_STATION` - Management Station
+               * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+               * `REBOOT` - Reboot
         """
         if content_availability is not None:
             pulumi.set(__self__, "content_availability", content_availability)
@@ -676,6 +836,8 @@ class EventDataContentArgs:
         * `SOFTWARE_SOURCE` - Software source
         * `AGENT` - Agent
         * `MANAGEMENT_STATION` - Management Station
+        * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+        * `REBOOT` - Reboot
         """
         return pulumi.get(self, "type")
 
@@ -1709,6 +1871,70 @@ class LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs:
 
 
 if not MYPY:
+    class LifecycleStageRebootManagementWorkRequestDetailsArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    LifecycleStageRebootManagementWorkRequestDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class LifecycleStageRebootManagementWorkRequestDetailsArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[str]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] description: User-specified information about the job. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+
+if not MYPY:
     class ManagedInstanceAutonomousSettingsArgsDict(TypedDict):
         is_data_collection_authorized: NotRequired[pulumi.Input[bool]]
         """
@@ -2515,6 +2741,70 @@ class ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgs:
 
 
 if not MYPY:
+    class ManagedInstanceGroupRebootManagementWorkRequestDetailsArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    ManagedInstanceGroupRebootManagementWorkRequestDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ManagedInstanceGroupRebootManagementWorkRequestDetailsArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[str]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] description: User-specified information about the job. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+
+if not MYPY:
     class ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgsDict(TypedDict):
         description: NotRequired[pulumi.Input[str]]
         """
@@ -2975,6 +3265,70 @@ class ManagedInstanceManagedInstanceGroupArgs:
 
 
 if not MYPY:
+    class ManagedInstanceRebootManagementWorkRequestDetailsArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    ManagedInstanceRebootManagementWorkRequestDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ManagedInstanceRebootManagementWorkRequestDetailsArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[str]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] description: User-specified information about the job. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+
+if not MYPY:
     class ManagedInstanceSoftwareSourceArgsDict(TypedDict):
         description: NotRequired[pulumi.Input[str]]
         """
@@ -3151,6 +3505,70 @@ class ManagedInstanceUpdatePackagesManagementWorkRequestDetailsArgs:
 
 
 if not MYPY:
+    class ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[str]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] description: User-specified information about the job. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+
+if not MYPY:
     class ManagementStationHealthArgsDict(TypedDict):
         description: NotRequired[pulumi.Input[str]]
         """
@@ -3216,6 +3634,10 @@ if not MYPY:
         """
         (Updatable) Default mirror listening port for https.
         """
+        is_sslverify_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
+        """
         sslcert: NotRequired[pulumi.Input[str]]
         """
         (Updatable) Path to the SSL cerfificate.
@@ -3229,16 +3651,20 @@ class ManagementStationMirrorArgs:
                  directory: pulumi.Input[str],
                  port: pulumi.Input[str],
                  sslport: pulumi.Input[str],
+                 is_sslverify_enabled: Optional[pulumi.Input[bool]] = None,
                  sslcert: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] directory: (Updatable) Path to the data volume on the management station where software source mirrors are stored.
         :param pulumi.Input[str] port: (Updatable) Default mirror listening port for http.
         :param pulumi.Input[str] sslport: (Updatable) Default mirror listening port for https.
+        :param pulumi.Input[bool] is_sslverify_enabled: (Updatable) When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
         :param pulumi.Input[str] sslcert: (Updatable) Path to the SSL cerfificate.
         """
         pulumi.set(__self__, "directory", directory)
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "sslport", sslport)
+        if is_sslverify_enabled is not None:
+            pulumi.set(__self__, "is_sslverify_enabled", is_sslverify_enabled)
         if sslcert is not None:
             pulumi.set(__self__, "sslcert", sslcert)
 
@@ -3277,6 +3703,18 @@ class ManagementStationMirrorArgs:
     @sslport.setter
     def sslport(self, value: pulumi.Input[str]):
         pulumi.set(self, "sslport", value)
+
+    @property
+    @pulumi.getter(name="isSslverifyEnabled")
+    def is_sslverify_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
+        """
+        return pulumi.get(self, "is_sslverify_enabled")
+
+    @is_sslverify_enabled.setter
+    def is_sslverify_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_sslverify_enabled", value)
 
     @property
     @pulumi.getter
@@ -3404,6 +3842,58 @@ class ManagementStationMirrorSyncStatusArgs:
 
 
 if not MYPY:
+    class ManagementStationPeerManagementStationArgsDict(TypedDict):
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
+        """
+elif False:
+    ManagementStationPeerManagementStationArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ManagementStationPeerManagementStationArgs:
+    def __init__(__self__, *,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] display_name: (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
+        """
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "id", value)
+
+
+if not MYPY:
     class ManagementStationProxyArgsDict(TypedDict):
         is_enabled: pulumi.Input[bool]
         """
@@ -3498,7 +3988,7 @@ if not MYPY:
     class ProfileLifecycleEnvironmentArgsDict(TypedDict):
         display_name: NotRequired[pulumi.Input[str]]
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
         """
         id: NotRequired[pulumi.Input[str]]
         """
@@ -3513,7 +4003,7 @@ class ProfileLifecycleEnvironmentArgs:
                  display_name: Optional[pulumi.Input[str]] = None,
                  id: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
         :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         if display_name is not None:
@@ -3525,7 +4015,7 @@ class ProfileLifecycleEnvironmentArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -3550,7 +4040,7 @@ if not MYPY:
     class ProfileLifecycleStageArgsDict(TypedDict):
         display_name: NotRequired[pulumi.Input[str]]
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
         """
         id: NotRequired[pulumi.Input[str]]
         """
@@ -3565,7 +4055,7 @@ class ProfileLifecycleStageArgs:
                  display_name: Optional[pulumi.Input[str]] = None,
                  id: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
         :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         if display_name is not None:
@@ -3577,7 +4067,7 @@ class ProfileLifecycleStageArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -3602,7 +4092,7 @@ if not MYPY:
     class ProfileManagedInstanceGroupArgsDict(TypedDict):
         display_name: NotRequired[pulumi.Input[str]]
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
         """
         id: NotRequired[pulumi.Input[str]]
         """
@@ -3617,7 +4107,7 @@ class ProfileManagedInstanceGroupArgs:
                  display_name: Optional[pulumi.Input[str]] = None,
                  id: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
         :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         if display_name is not None:
@@ -3629,7 +4119,7 @@ class ProfileManagedInstanceGroupArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -3658,7 +4148,7 @@ if not MYPY:
         """
         display_name: NotRequired[pulumi.Input[str]]
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
         """
         id: NotRequired[pulumi.Input[str]]
         """
@@ -3685,7 +4175,7 @@ class ProfileSoftwareSourceArgs:
                  software_source_type: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] description: (Updatable) User-specified description of the registration profile.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
         :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         :param pulumi.Input[bool] is_mandatory_for_autonomous_linux: Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
         :param pulumi.Input[str] software_source_type: Type of the software source.
@@ -3717,7 +4207,7 @@ class ProfileSoftwareSourceArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -3776,6 +4266,10 @@ if not MYPY:
         """
         (Updatable) The names of the target packages. This parameter only applies when the scheduled job is for installing, updating, or removing packages.
         """
+        reboot_timeout_in_mins: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the  timeout, the service marks the reboot job as failed.
+        """
         software_source_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
         """
         (Updatable) The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
@@ -3797,6 +4291,7 @@ class ScheduledJobOperationArgs:
                  operation_type: pulumi.Input[str],
                  manage_module_streams_details: Optional[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsArgs']] = None,
                  package_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 reboot_timeout_in_mins: Optional[pulumi.Input[int]] = None,
                  software_source_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  switch_module_streams_details: Optional[pulumi.Input['ScheduledJobOperationSwitchModuleStreamsDetailsArgs']] = None,
                  windows_update_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
@@ -3804,6 +4299,7 @@ class ScheduledJobOperationArgs:
         :param pulumi.Input[str] operation_type: (Updatable) The type of operation this scheduled job performs.
         :param pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsArgs'] manage_module_streams_details: (Updatable) The set of changes to make to the state of the modules, streams, and profiles on the managed target.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] package_names: (Updatable) The names of the target packages. This parameter only applies when the scheduled job is for installing, updating, or removing packages.
+        :param pulumi.Input[int] reboot_timeout_in_mins: (Updatable) The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the  timeout, the service marks the reboot job as failed.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] software_source_ids: (Updatable) The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
         :param pulumi.Input['ScheduledJobOperationSwitchModuleStreamsDetailsArgs'] switch_module_streams_details: (Updatable) Provides the information used to update a module stream.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] windows_update_names: (Updatable) Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates. Note that this is not an OCID, but is a unique identifier assigned by Microsoft. For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
@@ -3813,6 +4309,8 @@ class ScheduledJobOperationArgs:
             pulumi.set(__self__, "manage_module_streams_details", manage_module_streams_details)
         if package_names is not None:
             pulumi.set(__self__, "package_names", package_names)
+        if reboot_timeout_in_mins is not None:
+            pulumi.set(__self__, "reboot_timeout_in_mins", reboot_timeout_in_mins)
         if software_source_ids is not None:
             pulumi.set(__self__, "software_source_ids", software_source_ids)
         if switch_module_streams_details is not None:
@@ -3855,6 +4353,18 @@ class ScheduledJobOperationArgs:
     @package_names.setter
     def package_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "package_names", value)
+
+    @property
+    @pulumi.getter(name="rebootTimeoutInMins")
+    def reboot_timeout_in_mins(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the  timeout, the service marks the reboot job as failed.
+        """
+        return pulumi.get(self, "reboot_timeout_in_mins")
+
+    @reboot_timeout_in_mins.setter
+    def reboot_timeout_in_mins(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "reboot_timeout_in_mins", value)
 
     @property
     @pulumi.getter(name="softwareSourceIds")
@@ -4826,6 +5336,58 @@ class SoftwareSourceVendorSoftwareSourceArgs:
     @id.setter
     def id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "id", value)
+
+
+if not MYPY:
+    class WorkRequestRerunManagementWorkRequestDetailsArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+        """
+elif False:
+    WorkRequestRerunManagementWorkRequestDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class WorkRequestRerunManagementWorkRequestDetailsArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[str]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] description: User-specified information about the job. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
 
 
 if not MYPY:
@@ -5971,6 +6533,53 @@ class GetManagementStationsFilterArgs:
 
 
 if not MYPY:
+    class GetProfileAvailableSoftwareSourcesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetProfileAvailableSoftwareSourcesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetProfileAvailableSoftwareSourcesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
     class GetProfilesFilterArgsDict(TypedDict):
         name: str
         values: Sequence[str]
@@ -6124,6 +6733,62 @@ elif False:
 
 @pulumi.input_type
 class GetSoftwarePackagesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: Unique identifier for the package. Note that this is not an OCID.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Unique identifier for the package. Note that this is not an OCID.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetSoftwareSourceAvailableSoftwarePackagesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Unique identifier for the package. Note that this is not an OCID.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSoftwareSourceAvailableSoftwarePackagesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetSoftwareSourceAvailableSoftwarePackagesFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

@@ -244,7 +244,7 @@ def get_software_package(software_package_name: Optional[str] = None,
     """
     This data source provides details about a specific Software Package resource in Oracle Cloud Infrastructure Os Management Hub service.
 
-    Returns information about the specified software package based on its fully qualified name.
+    Returns information about the specified software package based on its fully qualified name (NVRA or NEVRA).
 
     ## Example Usage
 
@@ -286,7 +286,7 @@ def get_software_package_output(software_package_name: Optional[pulumi.Input[str
     """
     This data source provides details about a specific Software Package resource in Oracle Cloud Infrastructure Os Management Hub service.
 
-    Returns information about the specified software package based on its fully qualified name.
+    Returns information about the specified software package based on its fully qualified name (NVRA or NEVRA).
 
     ## Example Usage
 

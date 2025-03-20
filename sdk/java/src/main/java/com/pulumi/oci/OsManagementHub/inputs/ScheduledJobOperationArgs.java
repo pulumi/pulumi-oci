@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.inputs.ScheduledJobOperationManageModuleStreamsDetailsArgs;
 import com.pulumi.oci.OsManagementHub.inputs.ScheduledJobOperationSwitchModuleStreamsDetailsArgs;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -65,6 +66,21 @@ public final class ScheduledJobOperationArgs extends com.pulumi.resources.Resour
     }
 
     /**
+     * (Updatable) The number of minutes the service waits for the reboot to complete. If the instance doesn&#39;t reboot within the  timeout, the service marks the reboot job as failed.
+     * 
+     */
+    @Import(name="rebootTimeoutInMins")
+    private @Nullable Output<Integer> rebootTimeoutInMins;
+
+    /**
+     * @return (Updatable) The number of minutes the service waits for the reboot to complete. If the instance doesn&#39;t reboot within the  timeout, the service marks the reboot job as failed.
+     * 
+     */
+    public Optional<Output<Integer>> rebootTimeoutInMins() {
+        return Optional.ofNullable(this.rebootTimeoutInMins);
+    }
+
+    /**
      * (Updatable) The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
      * 
      */
@@ -115,6 +131,7 @@ public final class ScheduledJobOperationArgs extends com.pulumi.resources.Resour
         this.manageModuleStreamsDetails = $.manageModuleStreamsDetails;
         this.operationType = $.operationType;
         this.packageNames = $.packageNames;
+        this.rebootTimeoutInMins = $.rebootTimeoutInMins;
         this.softwareSourceIds = $.softwareSourceIds;
         this.switchModuleStreamsDetails = $.switchModuleStreamsDetails;
         this.windowsUpdateNames = $.windowsUpdateNames;
@@ -209,6 +226,27 @@ public final class ScheduledJobOperationArgs extends com.pulumi.resources.Resour
          */
         public Builder packageNames(String... packageNames) {
             return packageNames(List.of(packageNames));
+        }
+
+        /**
+         * @param rebootTimeoutInMins (Updatable) The number of minutes the service waits for the reboot to complete. If the instance doesn&#39;t reboot within the  timeout, the service marks the reboot job as failed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder rebootTimeoutInMins(@Nullable Output<Integer> rebootTimeoutInMins) {
+            $.rebootTimeoutInMins = rebootTimeoutInMins;
+            return this;
+        }
+
+        /**
+         * @param rebootTimeoutInMins (Updatable) The number of minutes the service waits for the reboot to complete. If the instance doesn&#39;t reboot within the  timeout, the service marks the reboot job as failed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder rebootTimeoutInMins(Integer rebootTimeoutInMins) {
+            return rebootTimeoutInMins(Output.of(rebootTimeoutInMins));
         }
 
         /**

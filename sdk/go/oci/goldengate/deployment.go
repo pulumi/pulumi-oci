@@ -26,6 +26,8 @@ import (
 type Deployment struct {
 	pulumi.CustomResourceState
 
+	// (Updatable) Defines the backup schedule details for create operation.
+	BackupSchedule DeploymentBackupScheduleOutput `pulumi:"backupSchedule"`
 	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
 	Category pulumi.StringOutput `pulumi:"category"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
@@ -102,6 +104,10 @@ type Deployment struct {
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	// The timestamp of last deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+	TimeLastBackupScheduled pulumi.StringOutput `pulumi:"timeLastBackupScheduled"`
+	// The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
+	TimeNextBackupScheduled pulumi.StringOutput `pulumi:"timeNextBackupScheduled"`
 	// The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeOfNextMaintenance pulumi.StringOutput `pulumi:"timeOfNextMaintenance"`
 	// The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -163,6 +169,8 @@ func GetDeployment(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Deployment resources.
 type deploymentState struct {
+	// (Updatable) Defines the backup schedule details for create operation.
+	BackupSchedule *DeploymentBackupSchedule `pulumi:"backupSchedule"`
 	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
 	Category *string `pulumi:"category"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
@@ -239,6 +247,10 @@ type deploymentState struct {
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeCreated *string `pulumi:"timeCreated"`
+	// The timestamp of last deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+	TimeLastBackupScheduled *string `pulumi:"timeLastBackupScheduled"`
+	// The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
+	TimeNextBackupScheduled *string `pulumi:"timeNextBackupScheduled"`
 	// The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeOfNextMaintenance *string `pulumi:"timeOfNextMaintenance"`
 	// The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -250,6 +262,8 @@ type deploymentState struct {
 }
 
 type DeploymentState struct {
+	// (Updatable) Defines the backup schedule details for create operation.
+	BackupSchedule DeploymentBackupSchedulePtrInput
 	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
 	Category pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
@@ -326,6 +340,10 @@ type DeploymentState struct {
 	SystemTags pulumi.StringMapInput
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeCreated pulumi.StringPtrInput
+	// The timestamp of last deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+	TimeLastBackupScheduled pulumi.StringPtrInput
+	// The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
+	TimeNextBackupScheduled pulumi.StringPtrInput
 	// The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeOfNextMaintenance pulumi.StringPtrInput
 	// The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -341,6 +359,8 @@ func (DeploymentState) ElementType() reflect.Type {
 }
 
 type deploymentArgs struct {
+	// (Updatable) Defines the backup schedule details for create operation.
+	BackupSchedule *DeploymentBackupSchedule `pulumi:"backupSchedule"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
@@ -387,6 +407,8 @@ type deploymentArgs struct {
 
 // The set of arguments for constructing a Deployment resource.
 type DeploymentArgs struct {
+	// (Updatable) Defines the backup schedule details for create operation.
+	BackupSchedule DeploymentBackupSchedulePtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId pulumi.StringInput
 	// (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
@@ -516,6 +538,11 @@ func (o DeploymentOutput) ToDeploymentOutput() DeploymentOutput {
 
 func (o DeploymentOutput) ToDeploymentOutputWithContext(ctx context.Context) DeploymentOutput {
 	return o
+}
+
+// (Updatable) Defines the backup schedule details for create operation.
+func (o DeploymentOutput) BackupSchedule() DeploymentBackupScheduleOutput {
+	return o.ApplyT(func(v *Deployment) DeploymentBackupScheduleOutput { return v.BackupSchedule }).(DeploymentBackupScheduleOutput)
 }
 
 // The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
@@ -709,6 +736,16 @@ func (o DeploymentOutput) SystemTags() pulumi.StringMapOutput {
 // The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 func (o DeploymentOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The timestamp of last deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+func (o DeploymentOutput) TimeLastBackupScheduled() pulumi.StringOutput {
+	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.TimeLastBackupScheduled }).(pulumi.StringOutput)
+}
+
+// The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
+func (o DeploymentOutput) TimeNextBackupScheduled() pulumi.StringOutput {
+	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.TimeNextBackupScheduled }).(pulumi.StringOutput)
 }
 
 // The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.

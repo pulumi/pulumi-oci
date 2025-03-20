@@ -21,6 +21,21 @@ public final class DeploymentBackupState extends com.pulumi.resources.ResourceAr
     public static final DeploymentBackupState Empty = new DeploymentBackupState();
 
     /**
+     * Possible deployment backup source types.
+     * 
+     */
+    @Import(name="backupSourceType")
+    private @Nullable Output<String> backupSourceType;
+
+    /**
+     * @return Possible deployment backup source types.
+     * 
+     */
+    public Optional<Output<String>> backupSourceType() {
+        return Optional.ofNullable(this.backupSourceType);
+    }
+
+    /**
      * Possible Deployment backup types.
      * 
      */
@@ -366,6 +381,7 @@ public final class DeploymentBackupState extends com.pulumi.resources.ResourceAr
     private DeploymentBackupState() {}
 
     private DeploymentBackupState(DeploymentBackupState $) {
+        this.backupSourceType = $.backupSourceType;
         this.backupType = $.backupType;
         this.bucket = $.bucket;
         this.compartmentId = $.compartmentId;
@@ -407,6 +423,27 @@ public final class DeploymentBackupState extends com.pulumi.resources.ResourceAr
 
         public Builder(DeploymentBackupState defaults) {
             $ = new DeploymentBackupState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param backupSourceType Possible deployment backup source types.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupSourceType(@Nullable Output<String> backupSourceType) {
+            $.backupSourceType = backupSourceType;
+            return this;
+        }
+
+        /**
+         * @param backupSourceType Possible deployment backup source types.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupSourceType(String backupSourceType) {
+            return backupSourceType(Output.of(backupSourceType));
         }
 
         /**

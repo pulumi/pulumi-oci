@@ -24,6 +24,21 @@ public final class ManagedInstanceState extends com.pulumi.resources.ResourceArg
     public static final ManagedInstanceState Empty = new ManagedInstanceState();
 
     /**
+     * The version of osmh-agent running on the managed instance
+     * 
+     */
+    @Import(name="agentVersion")
+    private @Nullable Output<String> agentVersion;
+
+    /**
+     * @return The version of osmh-agent running on the managed instance
+     * 
+     */
+    public Optional<Output<String>> agentVersion() {
+        return Optional.ofNullable(this.agentVersion);
+    }
+
+    /**
      * The CPU architecture type of the managed instance.
      * 
      */
@@ -414,6 +429,21 @@ public final class ManagedInstanceState extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * The version of the profile that was used to register this instance with the service.
+     * 
+     */
+    @Import(name="profileVersion")
+    private @Nullable Output<String> profileVersion;
+
+    /**
+     * @return The version of the profile that was used to register this instance with the service.
+     * 
+     */
+    public Optional<Output<String>> profileVersion() {
+        return Optional.ofNullable(this.profileVersion);
+    }
+
+    /**
      * Number of scheduled jobs associated with this instance.
      * 
      */
@@ -602,6 +632,7 @@ public final class ManagedInstanceState extends com.pulumi.resources.ResourceArg
     private ManagedInstanceState() {}
 
     private ManagedInstanceState(ManagedInstanceState $) {
+        this.agentVersion = $.agentVersion;
         this.architecture = $.architecture;
         this.autonomousSettings = $.autonomousSettings;
         this.bugUpdatesAvailable = $.bugUpdatesAvailable;
@@ -628,6 +659,7 @@ public final class ManagedInstanceState extends com.pulumi.resources.ResourceArg
         this.otherUpdatesAvailable = $.otherUpdatesAvailable;
         this.primaryManagementStationId = $.primaryManagementStationId;
         this.profile = $.profile;
+        this.profileVersion = $.profileVersion;
         this.scheduledJobCount = $.scheduledJobCount;
         this.secondaryManagementStationId = $.secondaryManagementStationId;
         this.securityUpdatesAvailable = $.securityUpdatesAvailable;
@@ -658,6 +690,27 @@ public final class ManagedInstanceState extends com.pulumi.resources.ResourceArg
 
         public Builder(ManagedInstanceState defaults) {
             $ = new ManagedInstanceState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param agentVersion The version of osmh-agent running on the managed instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder agentVersion(@Nullable Output<String> agentVersion) {
+            $.agentVersion = agentVersion;
+            return this;
+        }
+
+        /**
+         * @param agentVersion The version of osmh-agent running on the managed instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder agentVersion(String agentVersion) {
+            return agentVersion(Output.of(agentVersion));
         }
 
         /**
@@ -1234,6 +1287,27 @@ public final class ManagedInstanceState extends com.pulumi.resources.ResourceArg
          */
         public Builder profile(String profile) {
             return profile(Output.of(profile));
+        }
+
+        /**
+         * @param profileVersion The version of the profile that was used to register this instance with the service.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder profileVersion(@Nullable Output<String> profileVersion) {
+            $.profileVersion = profileVersion;
+            return this;
+        }
+
+        /**
+         * @param profileVersion The version of the profile that was used to register this instance with the service.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder profileVersion(String profileVersion) {
+            return profileVersion(Output.of(profileVersion));
         }
 
         /**

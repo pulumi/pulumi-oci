@@ -44,7 +44,7 @@ namespace Pulumi.Oci.Database
         public Output<string> AutonomousVmClusterId { get; private set; } = null!;
 
         /// <summary>
-        /// The availability domain of the Autonomous Container Database
+        /// The domain of the Autonomous Container Database
         /// </summary>
         [Output("availabilityDomain")]
         public Output<string> AvailabilityDomain { get; private set; } = null!;
@@ -92,6 +92,18 @@ namespace Pulumi.Oci.Database
         public Output<string> DatabaseSoftwareImageId { get; private set; } = null!;
 
         /// <summary>
+        /// Array of Dg associations.
+        /// </summary>
+        [Output("dataguardGroupMembers")]
+        public Output<ImmutableArray<Outputs.AutonomousContainerDatabaseDataguardGroupMember>> DataguardGroupMembers { get; private set; } = null!;
+
+        /// <summary>
+        /// The properties that define Autonomous Container Databases Dataguard.
+        /// </summary>
+        [Output("dataguards")]
+        public Output<ImmutableArray<Outputs.AutonomousContainerDatabaseDataguard>> Dataguards { get; private set; } = null!;
+
+        /// <summary>
         /// The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         /// </summary>
         [Output("dbName")]
@@ -137,7 +149,13 @@ namespace Pulumi.Oci.Database
         public Output<string> DstFileVersion { get; private set; } = null!;
 
         /// <summary>
-        /// The lag time for my preference based on data loss tolerance in seconds.
+        /// (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+        /// </summary>
+        [Output("failoverTrigger")]
+        public Output<int?> FailoverTrigger { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The lag time for my preference based on data loss tolerance in seconds.
         /// </summary>
         [Output("fastStartFailOverLagLimitInSeconds")]
         public Output<int> FastStartFailOverLagLimitInSeconds { get; private set; } = null!;
@@ -161,10 +179,22 @@ namespace Pulumi.Oci.Database
         public Output<bool> IsAutomaticFailoverEnabled { get; private set; } = null!;
 
         /// <summary>
+        /// **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        /// </summary>
+        [Output("isDataGuardEnabled")]
+        public Output<bool> IsDataGuardEnabled { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         /// </summary>
         [Output("isDstFileUpdateEnabled")]
         public Output<bool> IsDstFileUpdateEnabled { get; private set; } = null!;
+
+        /// <summary>
+        /// Whether it is multiple standby Autonomous Dataguard
+        /// </summary>
+        [Output("isMultipleStandby")]
+        public Output<bool> IsMultipleStandby { get; private set; } = null!;
 
         /// <summary>
         /// Key History Entry.
@@ -299,7 +329,7 @@ namespace Pulumi.Oci.Database
         public Output<string> PeerDbUniqueName { get; private set; } = null!;
 
         /// <summary>
-        /// The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        /// (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         /// </summary>
         [Output("protectionMode")]
         public Output<string> ProtectionMode { get; private set; } = null!;
@@ -333,6 +363,12 @@ namespace Pulumi.Oci.Database
         public Output<ImmutableArray<Outputs.AutonomousContainerDatabaseRecoveryApplianceDetail>> RecoveryApplianceDetails { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) An optional property when incremented triggers Reinstate. Could be set to any integer value.
+        /// </summary>
+        [Output("reinstateTrigger")]
+        public Output<int?> ReinstateTrigger { get; private set; } = null!;
+
+        /// <summary>
         /// The number of CPUs reserved in an Autonomous Container Database.
         /// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
         /// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
@@ -348,6 +384,9 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloud_autonomous_vm_cluster_id` is set.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("rotateKeyTrigger")]
         public Output<bool?> RotateKeyTrigger { get; private set; } = null!;
@@ -359,10 +398,7 @@ namespace Pulumi.Oci.Database
         public Output<string> ServiceLevelAgreementType { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
         /// </summary>
         [Output("standbyMaintenanceBufferInDays")]
         public Output<int> StandbyMaintenanceBufferInDays { get; private set; } = null!;
@@ -372,6 +408,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
+        /// </summary>
+        [Output("switchoverTrigger")]
+        public Output<int?> SwitchoverTrigger { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the Autonomous Container Database was created.
@@ -398,7 +440,7 @@ namespace Pulumi.Oci.Database
         public Output<int> TotalCpus { get; private set; } = null!;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         /// </summary>
         [Output("vaultId")]
         public Output<string> VaultId { get; private set; } = null!;
@@ -410,7 +452,7 @@ namespace Pulumi.Oci.Database
         public Output<string> VersionPreference { get; private set; } = null!;
 
         /// <summary>
-        /// The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+        /// The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
         /// </summary>
         [Output("vmFailoverReservation")]
         public Output<int> VmFailoverReservation { get; private set; } = null!;
@@ -543,7 +585,13 @@ namespace Pulumi.Oci.Database
         public Input<string>? DistributionAffinity { get; set; }
 
         /// <summary>
-        /// The lag time for my preference based on data loss tolerance in seconds.
+        /// (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+        /// </summary>
+        [Input("failoverTrigger")]
+        public Input<int>? FailoverTrigger { get; set; }
+
+        /// <summary>
+        /// (Updatable) The lag time for my preference based on data loss tolerance in seconds.
         /// </summary>
         [Input("fastStartFailOverLagLimitInSeconds")]
         public Input<int>? FastStartFailOverLagLimitInSeconds { get; set; }
@@ -645,13 +693,22 @@ namespace Pulumi.Oci.Database
         public Input<string>? PeerDbUniqueName { get; set; }
 
         /// <summary>
-        /// The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        /// (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         /// </summary>
         [Input("protectionMode")]
         public Input<string>? ProtectionMode { get; set; }
 
         /// <summary>
+        /// (Updatable) An optional property when incremented triggers Reinstate. Could be set to any integer value.
+        /// </summary>
+        [Input("reinstateTrigger")]
+        public Input<int>? ReinstateTrigger { get; set; }
+
+        /// <summary>
         /// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloud_autonomous_vm_cluster_id` is set.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("rotateKeyTrigger")]
         public Input<bool>? RotateKeyTrigger { get; set; }
@@ -663,16 +720,19 @@ namespace Pulumi.Oci.Database
         public Input<string>? ServiceLevelAgreementType { get; set; }
 
         /// <summary>
-        /// (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
         /// </summary>
         [Input("standbyMaintenanceBufferInDays")]
         public Input<int>? StandbyMaintenanceBufferInDays { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        /// (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
+        /// </summary>
+        [Input("switchoverTrigger")]
+        public Input<int>? SwitchoverTrigger { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         /// </summary>
         [Input("vaultId")]
         public Input<string>? VaultId { get; set; }
@@ -684,7 +744,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? VersionPreference { get; set; }
 
         /// <summary>
-        /// The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+        /// The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
         /// </summary>
         [Input("vmFailoverReservation")]
         public Input<int>? VmFailoverReservation { get; set; }
@@ -722,7 +782,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? AutonomousVmClusterId { get; set; }
 
         /// <summary>
-        /// The availability domain of the Autonomous Container Database
+        /// The domain of the Autonomous Container Database
         /// </summary>
         [Input("availabilityDomain")]
         public Input<string>? AvailabilityDomain { get; set; }
@@ -774,6 +834,30 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("databaseSoftwareImageId")]
         public Input<string>? DatabaseSoftwareImageId { get; set; }
+
+        [Input("dataguardGroupMembers")]
+        private InputList<Inputs.AutonomousContainerDatabaseDataguardGroupMemberGetArgs>? _dataguardGroupMembers;
+
+        /// <summary>
+        /// Array of Dg associations.
+        /// </summary>
+        public InputList<Inputs.AutonomousContainerDatabaseDataguardGroupMemberGetArgs> DataguardGroupMembers
+        {
+            get => _dataguardGroupMembers ?? (_dataguardGroupMembers = new InputList<Inputs.AutonomousContainerDatabaseDataguardGroupMemberGetArgs>());
+            set => _dataguardGroupMembers = value;
+        }
+
+        [Input("dataguards")]
+        private InputList<Inputs.AutonomousContainerDatabaseDataguardGetArgs>? _dataguards;
+
+        /// <summary>
+        /// The properties that define Autonomous Container Databases Dataguard.
+        /// </summary>
+        public InputList<Inputs.AutonomousContainerDatabaseDataguardGetArgs> Dataguards
+        {
+            get => _dataguards ?? (_dataguards = new InputList<Inputs.AutonomousContainerDatabaseDataguardGetArgs>());
+            set => _dataguards = value;
+        }
 
         /// <summary>
         /// The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
@@ -827,7 +911,13 @@ namespace Pulumi.Oci.Database
         public Input<string>? DstFileVersion { get; set; }
 
         /// <summary>
-        /// The lag time for my preference based on data loss tolerance in seconds.
+        /// (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+        /// </summary>
+        [Input("failoverTrigger")]
+        public Input<int>? FailoverTrigger { get; set; }
+
+        /// <summary>
+        /// (Updatable) The lag time for my preference based on data loss tolerance in seconds.
         /// </summary>
         [Input("fastStartFailOverLagLimitInSeconds")]
         public Input<int>? FastStartFailOverLagLimitInSeconds { get; set; }
@@ -857,10 +947,22 @@ namespace Pulumi.Oci.Database
         public Input<bool>? IsAutomaticFailoverEnabled { get; set; }
 
         /// <summary>
+        /// **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        /// </summary>
+        [Input("isDataGuardEnabled")]
+        public Input<bool>? IsDataGuardEnabled { get; set; }
+
+        /// <summary>
         /// (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         /// </summary>
         [Input("isDstFileUpdateEnabled")]
         public Input<bool>? IsDstFileUpdateEnabled { get; set; }
+
+        /// <summary>
+        /// Whether it is multiple standby Autonomous Dataguard
+        /// </summary>
+        [Input("isMultipleStandby")]
+        public Input<bool>? IsMultipleStandby { get; set; }
 
         [Input("keyHistoryEntries")]
         private InputList<Inputs.AutonomousContainerDatabaseKeyHistoryEntryGetArgs>? _keyHistoryEntries;
@@ -1013,7 +1115,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? PeerDbUniqueName { get; set; }
 
         /// <summary>
-        /// The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        /// (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         /// </summary>
         [Input("protectionMode")]
         public Input<string>? ProtectionMode { get; set; }
@@ -1059,6 +1161,12 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
+        /// (Updatable) An optional property when incremented triggers Reinstate. Could be set to any integer value.
+        /// </summary>
+        [Input("reinstateTrigger")]
+        public Input<int>? ReinstateTrigger { get; set; }
+
+        /// <summary>
         /// The number of CPUs reserved in an Autonomous Container Database.
         /// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
         /// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
@@ -1074,6 +1182,9 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloud_autonomous_vm_cluster_id` is set.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("rotateKeyTrigger")]
         public Input<bool>? RotateKeyTrigger { get; set; }
@@ -1085,10 +1196,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? ServiceLevelAgreementType { get; set; }
 
         /// <summary>
-        /// (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
         /// </summary>
         [Input("standbyMaintenanceBufferInDays")]
         public Input<int>? StandbyMaintenanceBufferInDays { get; set; }
@@ -1098,6 +1206,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
+        /// </summary>
+        [Input("switchoverTrigger")]
+        public Input<int>? SwitchoverTrigger { get; set; }
 
         /// <summary>
         /// The date and time the Autonomous Container Database was created.
@@ -1124,7 +1238,7 @@ namespace Pulumi.Oci.Database
         public Input<int>? TotalCpus { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         /// </summary>
         [Input("vaultId")]
         public Input<string>? VaultId { get; set; }
@@ -1136,7 +1250,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? VersionPreference { get; set; }
 
         /// <summary>
-        /// The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+        /// The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
         /// </summary>
         [Input("vmFailoverReservation")]
         public Input<int>? VmFailoverReservation { get; set; }

@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Management Station resource in Oracle Cloud Infrastructure Os Management Hub service.
  *
- * Create a management station. You must provide proxy and mirror configuration information.
+ * Creates a management station using the proxy and mirror configuration information provided.
  *
  * ## Example Usage
  *
@@ -25,6 +25,7 @@ import * as utilities from "../utilities";
  *         directory: managementStationMirrorDirectory,
  *         port: managementStationMirrorPort,
  *         sslport: managementStationMirrorSslport,
+ *         isSslverifyEnabled: managementStationMirrorIsSslverifyEnabled,
  *         sslcert: managementStationMirrorSslcert,
  *     },
  *     proxy: {
@@ -40,6 +41,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     isAutoConfigEnabled: managementStationIsAutoConfigEnabled,
  * });
  * ```
  *
@@ -108,6 +110,14 @@ export class ManagementStation extends pulumi.CustomResource {
      */
     public readonly hostname!: pulumi.Output<string>;
     /**
+     * (Updatable) When enabled, the station setup script automatically runs to configure the firewall and SELinux settings on the station.
+     */
+    public readonly isAutoConfigEnabled!: pulumi.Output<boolean>;
+    /**
+     * The location of the instance that is acting as the management station.
+     */
+    public /*out*/ readonly location!: pulumi.Output<string>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
      */
     public /*out*/ readonly managedInstanceId!: pulumi.Output<string>;
@@ -120,9 +130,29 @@ export class ManagementStation extends pulumi.CustomResource {
      */
     public /*out*/ readonly mirrorCapacity!: pulumi.Output<number>;
     /**
+     * The total number of all packages within the mirrored software sources.
+     */
+    public /*out*/ readonly mirrorPackageCount!: pulumi.Output<number>;
+    /**
+     * The total size of all software source mirrors in bytes.
+     */
+    public /*out*/ readonly mirrorSize!: pulumi.Output<string>;
+    /**
+     * Amount of available mirror storage in bytes.
+     */
+    public /*out*/ readonly mirrorStorageAvailableSize!: pulumi.Output<string>;
+    /**
+     * Total mirror storage size in bytes.
+     */
+    public /*out*/ readonly mirrorStorageSize!: pulumi.Output<string>;
+    /**
      * Status summary of the mirror sync.
      */
     public /*out*/ readonly mirrorSyncStatuses!: pulumi.Output<outputs.OsManagementHub.ManagementStationMirrorSyncStatus[]>;
+    /**
+     * The total number of unique packages within the mirrored software sources on the station. Each package is counted only once, regardless of how many versions it has.
+     */
+    public /*out*/ readonly mirrorUniquePackageCount!: pulumi.Output<number>;
     /**
      * A decimal number representing the progress of the current mirror sync.
      */
@@ -131,6 +161,10 @@ export class ManagementStation extends pulumi.CustomResource {
      * Current state of the mirror sync for the management station.
      */
     public /*out*/ readonly overallState!: pulumi.Output<string>;
+    /**
+     * A list of other management stations that are behind the same load balancer within a high availability configuration. Stations are identified as peers if they have the same hostname and compartment.
+     */
+    public /*out*/ readonly peerManagementStations!: pulumi.Output<outputs.OsManagementHub.ManagementStationPeerManagementStation[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
      */
@@ -184,12 +218,20 @@ export class ManagementStation extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["healths"] = state ? state.healths : undefined;
             resourceInputs["hostname"] = state ? state.hostname : undefined;
+            resourceInputs["isAutoConfigEnabled"] = state ? state.isAutoConfigEnabled : undefined;
+            resourceInputs["location"] = state ? state.location : undefined;
             resourceInputs["managedInstanceId"] = state ? state.managedInstanceId : undefined;
             resourceInputs["mirror"] = state ? state.mirror : undefined;
             resourceInputs["mirrorCapacity"] = state ? state.mirrorCapacity : undefined;
+            resourceInputs["mirrorPackageCount"] = state ? state.mirrorPackageCount : undefined;
+            resourceInputs["mirrorSize"] = state ? state.mirrorSize : undefined;
+            resourceInputs["mirrorStorageAvailableSize"] = state ? state.mirrorStorageAvailableSize : undefined;
+            resourceInputs["mirrorStorageSize"] = state ? state.mirrorStorageSize : undefined;
             resourceInputs["mirrorSyncStatuses"] = state ? state.mirrorSyncStatuses : undefined;
+            resourceInputs["mirrorUniquePackageCount"] = state ? state.mirrorUniquePackageCount : undefined;
             resourceInputs["overallPercentage"] = state ? state.overallPercentage : undefined;
             resourceInputs["overallState"] = state ? state.overallState : undefined;
+            resourceInputs["peerManagementStations"] = state ? state.peerManagementStations : undefined;
             resourceInputs["profileId"] = state ? state.profileId : undefined;
             resourceInputs["proxy"] = state ? state.proxy : undefined;
             resourceInputs["refreshTrigger"] = state ? state.refreshTrigger : undefined;
@@ -220,15 +262,23 @@ export class ManagementStation extends pulumi.CustomResource {
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["hostname"] = args ? args.hostname : undefined;
+            resourceInputs["isAutoConfigEnabled"] = args ? args.isAutoConfigEnabled : undefined;
             resourceInputs["mirror"] = args ? args.mirror : undefined;
             resourceInputs["proxy"] = args ? args.proxy : undefined;
             resourceInputs["refreshTrigger"] = args ? args.refreshTrigger : undefined;
             resourceInputs["healths"] = undefined /*out*/;
+            resourceInputs["location"] = undefined /*out*/;
             resourceInputs["managedInstanceId"] = undefined /*out*/;
             resourceInputs["mirrorCapacity"] = undefined /*out*/;
+            resourceInputs["mirrorPackageCount"] = undefined /*out*/;
+            resourceInputs["mirrorSize"] = undefined /*out*/;
+            resourceInputs["mirrorStorageAvailableSize"] = undefined /*out*/;
+            resourceInputs["mirrorStorageSize"] = undefined /*out*/;
             resourceInputs["mirrorSyncStatuses"] = undefined /*out*/;
+            resourceInputs["mirrorUniquePackageCount"] = undefined /*out*/;
             resourceInputs["overallPercentage"] = undefined /*out*/;
             resourceInputs["overallState"] = undefined /*out*/;
+            resourceInputs["peerManagementStations"] = undefined /*out*/;
             resourceInputs["profileId"] = undefined /*out*/;
             resourceInputs["scheduledJobId"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -273,6 +323,14 @@ export interface ManagementStationState {
      */
     hostname?: pulumi.Input<string>;
     /**
+     * (Updatable) When enabled, the station setup script automatically runs to configure the firewall and SELinux settings on the station.
+     */
+    isAutoConfigEnabled?: pulumi.Input<boolean>;
+    /**
+     * The location of the instance that is acting as the management station.
+     */
+    location?: pulumi.Input<string>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
      */
     managedInstanceId?: pulumi.Input<string>;
@@ -285,9 +343,29 @@ export interface ManagementStationState {
      */
     mirrorCapacity?: pulumi.Input<number>;
     /**
+     * The total number of all packages within the mirrored software sources.
+     */
+    mirrorPackageCount?: pulumi.Input<number>;
+    /**
+     * The total size of all software source mirrors in bytes.
+     */
+    mirrorSize?: pulumi.Input<string>;
+    /**
+     * Amount of available mirror storage in bytes.
+     */
+    mirrorStorageAvailableSize?: pulumi.Input<string>;
+    /**
+     * Total mirror storage size in bytes.
+     */
+    mirrorStorageSize?: pulumi.Input<string>;
+    /**
      * Status summary of the mirror sync.
      */
     mirrorSyncStatuses?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagementStationMirrorSyncStatus>[]>;
+    /**
+     * The total number of unique packages within the mirrored software sources on the station. Each package is counted only once, regardless of how many versions it has.
+     */
+    mirrorUniquePackageCount?: pulumi.Input<number>;
     /**
      * A decimal number representing the progress of the current mirror sync.
      */
@@ -296,6 +374,10 @@ export interface ManagementStationState {
      * Current state of the mirror sync for the management station.
      */
     overallState?: pulumi.Input<string>;
+    /**
+     * A list of other management stations that are behind the same load balancer within a high availability configuration. Stations are identified as peers if they have the same hostname and compartment.
+     */
+    peerManagementStations?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagementStationPeerManagementStation>[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
      */
@@ -358,6 +440,10 @@ export interface ManagementStationArgs {
      * (Updatable) Hostname of the management station.
      */
     hostname: pulumi.Input<string>;
+    /**
+     * (Updatable) When enabled, the station setup script automatically runs to configure the firewall and SELinux settings on the station.
+     */
+    isAutoConfigEnabled?: pulumi.Input<boolean>;
     /**
      * (Updatable) Information used to create the mirror configuration for a management station.
      */

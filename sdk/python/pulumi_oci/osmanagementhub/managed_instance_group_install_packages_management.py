@@ -23,15 +23,19 @@ class ManagedInstanceGroupInstallPackagesManagementArgs:
     def __init__(__self__, *,
                  managed_instance_group_id: pulumi.Input[str],
                  package_names: pulumi.Input[Sequence[pulumi.Input[str]]],
+                 is_latest: Optional[pulumi.Input[bool]] = None,
                  work_request_details: Optional[pulumi.Input['ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgs']] = None):
         """
         The set of arguments for constructing a ManagedInstanceGroupInstallPackagesManagement resource.
         :param pulumi.Input[str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] package_names: The list of package names.
+        :param pulumi.Input[bool] is_latest: Indicates whether this is the latest package version.
         :param pulumi.Input['ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgs'] work_request_details: Provides the name and description of the job.
         """
         pulumi.set(__self__, "managed_instance_group_id", managed_instance_group_id)
         pulumi.set(__self__, "package_names", package_names)
+        if is_latest is not None:
+            pulumi.set(__self__, "is_latest", is_latest)
         if work_request_details is not None:
             pulumi.set(__self__, "work_request_details", work_request_details)
 
@@ -60,6 +64,18 @@ class ManagedInstanceGroupInstallPackagesManagementArgs:
         pulumi.set(self, "package_names", value)
 
     @property
+    @pulumi.getter(name="isLatest")
+    def is_latest(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether this is the latest package version.
+        """
+        return pulumi.get(self, "is_latest")
+
+    @is_latest.setter
+    def is_latest(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_latest", value)
+
+    @property
     @pulumi.getter(name="workRequestDetails")
     def work_request_details(self) -> Optional[pulumi.Input['ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgs']]:
         """
@@ -75,21 +91,37 @@ class ManagedInstanceGroupInstallPackagesManagementArgs:
 @pulumi.input_type
 class _ManagedInstanceGroupInstallPackagesManagementState:
     def __init__(__self__, *,
+                 is_latest: Optional[pulumi.Input[bool]] = None,
                  managed_instance_group_id: Optional[pulumi.Input[str]] = None,
                  package_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  work_request_details: Optional[pulumi.Input['ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering ManagedInstanceGroupInstallPackagesManagement resources.
+        :param pulumi.Input[bool] is_latest: Indicates whether this is the latest package version.
         :param pulumi.Input[str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] package_names: The list of package names.
         :param pulumi.Input['ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgs'] work_request_details: Provides the name and description of the job.
         """
+        if is_latest is not None:
+            pulumi.set(__self__, "is_latest", is_latest)
         if managed_instance_group_id is not None:
             pulumi.set(__self__, "managed_instance_group_id", managed_instance_group_id)
         if package_names is not None:
             pulumi.set(__self__, "package_names", package_names)
         if work_request_details is not None:
             pulumi.set(__self__, "work_request_details", work_request_details)
+
+    @property
+    @pulumi.getter(name="isLatest")
+    def is_latest(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether this is the latest package version.
+        """
+        return pulumi.get(self, "is_latest")
+
+    @is_latest.setter
+    def is_latest(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_latest", value)
 
     @property
     @pulumi.getter(name="managedInstanceGroupId")
@@ -133,6 +165,7 @@ class ManagedInstanceGroupInstallPackagesManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 is_latest: Optional[pulumi.Input[bool]] = None,
                  managed_instance_group_id: Optional[pulumi.Input[str]] = None,
                  package_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  work_request_details: Optional[pulumi.Input[Union['ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgsDict']]] = None,
@@ -151,6 +184,7 @@ class ManagedInstanceGroupInstallPackagesManagement(pulumi.CustomResource):
         test_managed_instance_group_install_packages_management = oci.os_management_hub.ManagedInstanceGroupInstallPackagesManagement("test_managed_instance_group_install_packages_management",
             managed_instance_group_id=test_managed_instance_group["id"],
             package_names=managed_instance_group_install_packages_management_package_names,
+            is_latest=managed_instance_group_install_packages_management_is_latest,
             work_request_details={
                 "description": managed_instance_group_install_packages_management_work_request_details_description,
                 "display_name": managed_instance_group_install_packages_management_work_request_details_display_name,
@@ -167,6 +201,7 @@ class ManagedInstanceGroupInstallPackagesManagement(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[bool] is_latest: Indicates whether this is the latest package version.
         :param pulumi.Input[str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] package_names: The list of package names.
         :param pulumi.Input[Union['ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgsDict']] work_request_details: Provides the name and description of the job.
@@ -191,6 +226,7 @@ class ManagedInstanceGroupInstallPackagesManagement(pulumi.CustomResource):
         test_managed_instance_group_install_packages_management = oci.os_management_hub.ManagedInstanceGroupInstallPackagesManagement("test_managed_instance_group_install_packages_management",
             managed_instance_group_id=test_managed_instance_group["id"],
             package_names=managed_instance_group_install_packages_management_package_names,
+            is_latest=managed_instance_group_install_packages_management_is_latest,
             work_request_details={
                 "description": managed_instance_group_install_packages_management_work_request_details_description,
                 "display_name": managed_instance_group_install_packages_management_work_request_details_display_name,
@@ -220,6 +256,7 @@ class ManagedInstanceGroupInstallPackagesManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 is_latest: Optional[pulumi.Input[bool]] = None,
                  managed_instance_group_id: Optional[pulumi.Input[str]] = None,
                  package_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  work_request_details: Optional[pulumi.Input[Union['ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgsDict']]] = None,
@@ -232,6 +269,7 @@ class ManagedInstanceGroupInstallPackagesManagement(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ManagedInstanceGroupInstallPackagesManagementArgs.__new__(ManagedInstanceGroupInstallPackagesManagementArgs)
 
+            __props__.__dict__["is_latest"] = is_latest
             if managed_instance_group_id is None and not opts.urn:
                 raise TypeError("Missing required property 'managed_instance_group_id'")
             __props__.__dict__["managed_instance_group_id"] = managed_instance_group_id
@@ -249,6 +287,7 @@ class ManagedInstanceGroupInstallPackagesManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            is_latest: Optional[pulumi.Input[bool]] = None,
             managed_instance_group_id: Optional[pulumi.Input[str]] = None,
             package_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             work_request_details: Optional[pulumi.Input[Union['ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgsDict']]] = None) -> 'ManagedInstanceGroupInstallPackagesManagement':
@@ -259,6 +298,7 @@ class ManagedInstanceGroupInstallPackagesManagement(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[bool] is_latest: Indicates whether this is the latest package version.
         :param pulumi.Input[str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] package_names: The list of package names.
         :param pulumi.Input[Union['ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgsDict']] work_request_details: Provides the name and description of the job.
@@ -267,10 +307,19 @@ class ManagedInstanceGroupInstallPackagesManagement(pulumi.CustomResource):
 
         __props__ = _ManagedInstanceGroupInstallPackagesManagementState.__new__(_ManagedInstanceGroupInstallPackagesManagementState)
 
+        __props__.__dict__["is_latest"] = is_latest
         __props__.__dict__["managed_instance_group_id"] = managed_instance_group_id
         __props__.__dict__["package_names"] = package_names
         __props__.__dict__["work_request_details"] = work_request_details
         return ManagedInstanceGroupInstallPackagesManagement(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter(name="isLatest")
+    def is_latest(self) -> pulumi.Output[bool]:
+        """
+        Indicates whether this is the latest package version.
+        """
+        return pulumi.get(self, "is_latest")
 
     @property
     @pulumi.getter(name="managedInstanceGroupId")

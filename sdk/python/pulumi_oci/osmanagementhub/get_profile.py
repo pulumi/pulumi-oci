@@ -27,7 +27,7 @@ class GetProfileResult:
     """
     A collection of values returned by getProfile.
     """
-    def __init__(__self__, arch_type=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_default_profile=None, is_service_provided_profile=None, lifecycle_environments=None, lifecycle_stage_id=None, lifecycle_stages=None, managed_instance_group_id=None, managed_instance_groups=None, management_station_id=None, os_family=None, profile_id=None, profile_type=None, registration_type=None, software_source_ids=None, software_sources=None, state=None, system_tags=None, time_created=None, vendor_name=None):
+    def __init__(__self__, arch_type=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_default_profile=None, is_service_provided_profile=None, lifecycle_environments=None, lifecycle_stage_id=None, lifecycle_stages=None, managed_instance_group_id=None, managed_instance_groups=None, management_station_id=None, os_family=None, profile_id=None, profile_type=None, profile_version=None, registration_type=None, software_source_ids=None, software_sources=None, state=None, system_tags=None, time_created=None, time_modified=None, vendor_name=None):
         if arch_type and not isinstance(arch_type, str):
             raise TypeError("Expected argument 'arch_type' to be a str")
         pulumi.set(__self__, "arch_type", arch_type)
@@ -82,6 +82,9 @@ class GetProfileResult:
         if profile_type and not isinstance(profile_type, str):
             raise TypeError("Expected argument 'profile_type' to be a str")
         pulumi.set(__self__, "profile_type", profile_type)
+        if profile_version and not isinstance(profile_version, str):
+            raise TypeError("Expected argument 'profile_version' to be a str")
+        pulumi.set(__self__, "profile_version", profile_version)
         if registration_type and not isinstance(registration_type, str):
             raise TypeError("Expected argument 'registration_type' to be a str")
         pulumi.set(__self__, "registration_type", registration_type)
@@ -100,6 +103,9 @@ class GetProfileResult:
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
+        if time_modified and not isinstance(time_modified, str):
+            raise TypeError("Expected argument 'time_modified' to be a str")
+        pulumi.set(__self__, "time_modified", time_modified)
         if vendor_name and not isinstance(vendor_name, str):
             raise TypeError("Expected argument 'vendor_name' to be a str")
         pulumi.set(__self__, "vendor_name", vendor_name)
@@ -214,7 +220,7 @@ class GetProfileResult:
     @pulumi.getter(name="managementStationId")
     def management_station_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an  instance once registered. Management stations are only used by non-OCI instances.
         """
         return pulumi.get(self, "management_station_id")
 
@@ -238,6 +244,14 @@ class GetProfileResult:
         The type of profile.
         """
         return pulumi.get(self, "profile_type")
+
+    @property
+    @pulumi.getter(name="profileVersion")
+    def profile_version(self) -> str:
+        """
+        The version of the profile. The version is automatically incremented each time the profiled is edited.
+        """
+        return pulumi.get(self, "profile_version")
 
     @property
     @pulumi.getter(name="registrationType")
@@ -285,6 +299,14 @@ class GetProfileResult:
         return pulumi.get(self, "time_created")
 
     @property
+    @pulumi.getter(name="timeModified")
+    def time_modified(self) -> str:
+        """
+        The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        """
+        return pulumi.get(self, "time_modified")
+
+    @property
     @pulumi.getter(name="vendorName")
     def vendor_name(self) -> str:
         """
@@ -317,12 +339,14 @@ class AwaitableGetProfileResult(GetProfileResult):
             os_family=self.os_family,
             profile_id=self.profile_id,
             profile_type=self.profile_type,
+            profile_version=self.profile_version,
             registration_type=self.registration_type,
             software_source_ids=self.software_source_ids,
             software_sources=self.software_sources,
             state=self.state,
             system_tags=self.system_tags,
             time_created=self.time_created,
+            time_modified=self.time_modified,
             vendor_name=self.vendor_name)
 
 
@@ -331,7 +355,7 @@ def get_profile(profile_id: Optional[str] = None,
     """
     This data source provides details about a specific Profile resource in Oracle Cloud Infrastructure Os Management Hub service.
 
-    Gets information about the specified registration profile.
+    Returns information about the specified registration profile.
 
     ## Example Usage
 
@@ -369,19 +393,21 @@ def get_profile(profile_id: Optional[str] = None,
         os_family=pulumi.get(__ret__, 'os_family'),
         profile_id=pulumi.get(__ret__, 'profile_id'),
         profile_type=pulumi.get(__ret__, 'profile_type'),
+        profile_version=pulumi.get(__ret__, 'profile_version'),
         registration_type=pulumi.get(__ret__, 'registration_type'),
         software_source_ids=pulumi.get(__ret__, 'software_source_ids'),
         software_sources=pulumi.get(__ret__, 'software_sources'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
+        time_modified=pulumi.get(__ret__, 'time_modified'),
         vendor_name=pulumi.get(__ret__, 'vendor_name'))
 def get_profile_output(profile_id: Optional[pulumi.Input[str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProfileResult]:
     """
     This data source provides details about a specific Profile resource in Oracle Cloud Infrastructure Os Management Hub service.
 
-    Gets information about the specified registration profile.
+    Returns information about the specified registration profile.
 
     ## Example Usage
 
@@ -418,10 +444,12 @@ def get_profile_output(profile_id: Optional[pulumi.Input[str]] = None,
         os_family=pulumi.get(__response__, 'os_family'),
         profile_id=pulumi.get(__response__, 'profile_id'),
         profile_type=pulumi.get(__response__, 'profile_type'),
+        profile_version=pulumi.get(__response__, 'profile_version'),
         registration_type=pulumi.get(__response__, 'registration_type'),
         software_source_ids=pulumi.get(__response__, 'software_source_ids'),
         software_sources=pulumi.get(__response__, 'software_sources'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
+        time_modified=pulumi.get(__response__, 'time_modified'),
         vendor_name=pulumi.get(__response__, 'vendor_name')))

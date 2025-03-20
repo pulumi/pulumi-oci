@@ -58,6 +58,8 @@ type LookupSoftwareSourceArgs struct {
 
 // A collection of values returned by getSoftwareSource.
 type LookupSoftwareSourceResult struct {
+	// Advanced repository options for the software source
+	AdvancedRepoOptions string `pulumi:"advancedRepoOptions"`
 	// The architecture type supported by the software source.
 	ArchType string `pulumi:"archType"`
 	// Availability of the software source (for non-OCI environments).
@@ -82,7 +84,7 @@ type LookupSoftwareSourceResult struct {
 	GpgKeyFingerprint string `pulumi:"gpgKeyFingerprint"`
 	// ID of the GPG key for this software source.
 	GpgKeyId string `pulumi:"gpgKeyId"`
-	// URL of the GPG key for this software source.
+	// URI of the GPG key for this software source.
 	GpgKeyUrl string `pulumi:"gpgKeyUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
 	Id string `pulumi:"id"`
@@ -92,6 +94,8 @@ type LookupSoftwareSourceResult struct {
 	IsAutomaticallyUpdated bool `pulumi:"isAutomaticallyUpdated"`
 	// Indicates whether the service should create the software source from a list of packages provided by the user.
 	IsCreatedFromPackageList bool `pulumi:"isCreatedFromPackageList"`
+	// Whether signature verification should be done for the software source
+	IsGpgCheckEnabled bool `pulumi:"isGpgCheckEnabled"`
 	// Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
 	// * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
 	// * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
@@ -101,9 +105,13 @@ type LookupSoftwareSourceResult struct {
 	IsLatestContentOnly bool `pulumi:"isLatestContentOnly"`
 	// Indicates whether the software source is required for the Autonomous Linux service.
 	IsMandatoryForAutonomousLinux bool `pulumi:"isMandatoryForAutonomousLinux"`
-	// This property applies only to replicated vendor software sources. This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment.
+	// Indicates if this software source can be mirrored to a management station.
+	IsMirrorSyncAllowed bool `pulumi:"isMirrorSyncAllowed"`
+	// Indicates if SSL validation is enabled for the software source.
+	IsSslVerifyEnabled bool `pulumi:"isSslVerifyEnabled"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment. This property applies only to replicated vendor software sources.
 	OriginSoftwareSourceId string `pulumi:"originSoftwareSourceId"`
-	// The OS family the software source belongs to.
+	// The OS family of the software source.
 	OsFamily string `pulumi:"osFamily"`
 	// Number of packages the software source contains.
 	PackageCount string `pulumi:"packageCount"`
@@ -111,9 +119,11 @@ type LookupSoftwareSourceResult struct {
 	Packages []string `pulumi:"packages"`
 	// The repository ID for the software source.
 	RepoId string `pulumi:"repoId"`
-	// The size of the software source in gigabytes (GB).
+	// The size of the software source in bytes (B).
 	Size             float64 `pulumi:"size"`
 	SoftwareSourceId string  `pulumi:"softwareSourceId"`
+	// Identifies how the versioned custom software source was created.
+	SoftwareSourceSubType string `pulumi:"softwareSourceSubType"`
 	// Type of software source.
 	SoftwareSourceType string `pulumi:"softwareSourceType"`
 	// The version to assign to this custom software source.
@@ -124,6 +134,8 @@ type LookupSoftwareSourceResult struct {
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the software source was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the metadata for this software source was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+	TimeMetadataUpdated string `pulumi:"timeMetadataUpdated"`
 	// URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is 'custom/<repoId>'.
 	Url string `pulumi:"url"`
 	// Name of the vendor providing the software source.
@@ -164,6 +176,11 @@ func (o LookupSoftwareSourceResultOutput) ToLookupSoftwareSourceResultOutput() L
 
 func (o LookupSoftwareSourceResultOutput) ToLookupSoftwareSourceResultOutputWithContext(ctx context.Context) LookupSoftwareSourceResultOutput {
 	return o
+}
+
+// Advanced repository options for the software source
+func (o LookupSoftwareSourceResultOutput) AdvancedRepoOptions() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.AdvancedRepoOptions }).(pulumi.StringOutput)
 }
 
 // The architecture type supported by the software source.
@@ -228,7 +245,7 @@ func (o LookupSoftwareSourceResultOutput) GpgKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.GpgKeyId }).(pulumi.StringOutput)
 }
 
-// URL of the GPG key for this software source.
+// URI of the GPG key for this software source.
 func (o LookupSoftwareSourceResultOutput) GpgKeyUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.GpgKeyUrl }).(pulumi.StringOutput)
 }
@@ -253,6 +270,11 @@ func (o LookupSoftwareSourceResultOutput) IsCreatedFromPackageList() pulumi.Bool
 	return o.ApplyT(func(v LookupSoftwareSourceResult) bool { return v.IsCreatedFromPackageList }).(pulumi.BoolOutput)
 }
 
+// Whether signature verification should be done for the software source
+func (o LookupSoftwareSourceResultOutput) IsGpgCheckEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupSoftwareSourceResult) bool { return v.IsGpgCheckEnabled }).(pulumi.BoolOutput)
+}
+
 // Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
 // * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
 // * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
@@ -268,12 +290,22 @@ func (o LookupSoftwareSourceResultOutput) IsMandatoryForAutonomousLinux() pulumi
 	return o.ApplyT(func(v LookupSoftwareSourceResult) bool { return v.IsMandatoryForAutonomousLinux }).(pulumi.BoolOutput)
 }
 
-// This property applies only to replicated vendor software sources. This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment.
+// Indicates if this software source can be mirrored to a management station.
+func (o LookupSoftwareSourceResultOutput) IsMirrorSyncAllowed() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupSoftwareSourceResult) bool { return v.IsMirrorSyncAllowed }).(pulumi.BoolOutput)
+}
+
+// Indicates if SSL validation is enabled for the software source.
+func (o LookupSoftwareSourceResultOutput) IsSslVerifyEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupSoftwareSourceResult) bool { return v.IsSslVerifyEnabled }).(pulumi.BoolOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment. This property applies only to replicated vendor software sources.
 func (o LookupSoftwareSourceResultOutput) OriginSoftwareSourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.OriginSoftwareSourceId }).(pulumi.StringOutput)
 }
 
-// The OS family the software source belongs to.
+// The OS family of the software source.
 func (o LookupSoftwareSourceResultOutput) OsFamily() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.OsFamily }).(pulumi.StringOutput)
 }
@@ -293,13 +325,18 @@ func (o LookupSoftwareSourceResultOutput) RepoId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.RepoId }).(pulumi.StringOutput)
 }
 
-// The size of the software source in gigabytes (GB).
+// The size of the software source in bytes (B).
 func (o LookupSoftwareSourceResultOutput) Size() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupSoftwareSourceResult) float64 { return v.Size }).(pulumi.Float64Output)
 }
 
 func (o LookupSoftwareSourceResultOutput) SoftwareSourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.SoftwareSourceId }).(pulumi.StringOutput)
+}
+
+// Identifies how the versioned custom software source was created.
+func (o LookupSoftwareSourceResultOutput) SoftwareSourceSubType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.SoftwareSourceSubType }).(pulumi.StringOutput)
 }
 
 // Type of software source.
@@ -325,6 +362,11 @@ func (o LookupSoftwareSourceResultOutput) SystemTags() pulumi.StringMapOutput {
 // The date and time the software source was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 func (o LookupSoftwareSourceResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the metadata for this software source was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+func (o LookupSoftwareSourceResultOutput) TimeMetadataUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.TimeMetadataUpdated }).(pulumi.StringOutput)
 }
 
 // URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is 'custom/<repoId>'.

@@ -5,6 +5,7 @@ package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.GoldenGate.outputs.GetDeploymentsDeploymentCollectionItemBackupSchedule;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentsDeploymentCollectionItemIngressIp;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentsDeploymentCollectionItemLock;
@@ -20,6 +21,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDeploymentsDeploymentCollectionItem {
+    /**
+     * @return Defines the schedule of the deployment backup.
+     * 
+     */
+    private List<GetDeploymentsDeploymentCollectionItemBackupSchedule> backupSchedules;
     /**
      * @return The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39; and &#39;DATA_TRANSFORMS&#39;.
      * 
@@ -217,6 +223,16 @@ public final class GetDeploymentsDeploymentCollectionItem {
      */
     private String timeCreated;
     /**
+     * @return The timestamp of last deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+     * 
+     */
+    private String timeLastBackupScheduled;
+    /**
+     * @return The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
+     * 
+     */
+    private String timeNextBackupScheduled;
+    /**
      * @return The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
@@ -238,6 +254,13 @@ public final class GetDeploymentsDeploymentCollectionItem {
     private String timeUpgradeRequired;
 
     private GetDeploymentsDeploymentCollectionItem() {}
+    /**
+     * @return Defines the schedule of the deployment backup.
+     * 
+     */
+    public List<GetDeploymentsDeploymentCollectionItemBackupSchedule> backupSchedules() {
+        return this.backupSchedules;
+    }
     /**
      * @return The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39; and &#39;DATA_TRANSFORMS&#39;.
      * 
@@ -515,6 +538,20 @@ public final class GetDeploymentsDeploymentCollectionItem {
         return this.timeCreated;
     }
     /**
+     * @return The timestamp of last deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+     * 
+     */
+    public String timeLastBackupScheduled() {
+        return this.timeLastBackupScheduled;
+    }
+    /**
+     * @return The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
+     * 
+     */
+    public String timeNextBackupScheduled() {
+        return this.timeNextBackupScheduled;
+    }
+    /**
      * @return The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
@@ -552,6 +589,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetDeploymentsDeploymentCollectionItemBackupSchedule> backupSchedules;
         private String category;
         private String compartmentId;
         private Integer cpuCoreCount;
@@ -592,6 +630,8 @@ public final class GetDeploymentsDeploymentCollectionItem {
         private String subnetId;
         private Map<String,String> systemTags;
         private String timeCreated;
+        private String timeLastBackupScheduled;
+        private String timeNextBackupScheduled;
         private String timeOfNextMaintenance;
         private String timeOggVersionSupportedUntil;
         private String timeUpdated;
@@ -599,6 +639,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
         public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.backupSchedules = defaults.backupSchedules;
     	      this.category = defaults.category;
     	      this.compartmentId = defaults.compartmentId;
     	      this.cpuCoreCount = defaults.cpuCoreCount;
@@ -639,12 +680,25 @@ public final class GetDeploymentsDeploymentCollectionItem {
     	      this.subnetId = defaults.subnetId;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.timeLastBackupScheduled = defaults.timeLastBackupScheduled;
+    	      this.timeNextBackupScheduled = defaults.timeNextBackupScheduled;
     	      this.timeOfNextMaintenance = defaults.timeOfNextMaintenance;
     	      this.timeOggVersionSupportedUntil = defaults.timeOggVersionSupportedUntil;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.timeUpgradeRequired = defaults.timeUpgradeRequired;
         }
 
+        @CustomType.Setter
+        public Builder backupSchedules(List<GetDeploymentsDeploymentCollectionItemBackupSchedule> backupSchedules) {
+            if (backupSchedules == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItem", "backupSchedules");
+            }
+            this.backupSchedules = backupSchedules;
+            return this;
+        }
+        public Builder backupSchedules(GetDeploymentsDeploymentCollectionItemBackupSchedule... backupSchedules) {
+            return backupSchedules(List.of(backupSchedules));
+        }
         @CustomType.Setter
         public Builder category(String category) {
             if (category == null) {
@@ -987,6 +1041,22 @@ public final class GetDeploymentsDeploymentCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder timeLastBackupScheduled(String timeLastBackupScheduled) {
+            if (timeLastBackupScheduled == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItem", "timeLastBackupScheduled");
+            }
+            this.timeLastBackupScheduled = timeLastBackupScheduled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeNextBackupScheduled(String timeNextBackupScheduled) {
+            if (timeNextBackupScheduled == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItem", "timeNextBackupScheduled");
+            }
+            this.timeNextBackupScheduled = timeNextBackupScheduled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeOfNextMaintenance(String timeOfNextMaintenance) {
             if (timeOfNextMaintenance == null) {
               throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItem", "timeOfNextMaintenance");
@@ -1020,6 +1090,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
         }
         public GetDeploymentsDeploymentCollectionItem build() {
             final var _resultValue = new GetDeploymentsDeploymentCollectionItem();
+            _resultValue.backupSchedules = backupSchedules;
             _resultValue.category = category;
             _resultValue.compartmentId = compartmentId;
             _resultValue.cpuCoreCount = cpuCoreCount;
@@ -1060,6 +1131,8 @@ public final class GetDeploymentsDeploymentCollectionItem {
             _resultValue.subnetId = subnetId;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
+            _resultValue.timeLastBackupScheduled = timeLastBackupScheduled;
+            _resultValue.timeNextBackupScheduled = timeNextBackupScheduled;
             _resultValue.timeOfNextMaintenance = timeOfNextMaintenance;
             _resultValue.timeOggVersionSupportedUntil = timeOggVersionSupportedUntil;
             _resultValue.timeUpdated = timeUpdated;

@@ -5,6 +5,7 @@ package com.pulumi.oci.GoldenGate.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.GoldenGate.inputs.DeploymentBackupScheduleArgs;
 import com.pulumi.oci.GoldenGate.inputs.DeploymentDeploymentDiagnosticDataArgs;
 import com.pulumi.oci.GoldenGate.inputs.DeploymentIngressIpArgs;
 import com.pulumi.oci.GoldenGate.inputs.DeploymentLockArgs;
@@ -24,6 +25,21 @@ import javax.annotation.Nullable;
 public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
 
     public static final DeploymentState Empty = new DeploymentState();
+
+    /**
+     * (Updatable) Defines the backup schedule details for create operation.
+     * 
+     */
+    @Import(name="backupSchedule")
+    private @Nullable Output<DeploymentBackupScheduleArgs> backupSchedule;
+
+    /**
+     * @return (Updatable) Defines the backup schedule details for create operation.
+     * 
+     */
+    public Optional<Output<DeploymentBackupScheduleArgs>> backupSchedule() {
+        return Optional.ofNullable(this.backupSchedule);
+    }
 
     /**
      * The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39; and &#39;DATA_TRANSFORMS&#39;.
@@ -595,6 +611,36 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The timestamp of last deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+     * 
+     */
+    @Import(name="timeLastBackupScheduled")
+    private @Nullable Output<String> timeLastBackupScheduled;
+
+    /**
+     * @return The timestamp of last deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+     * 
+     */
+    public Optional<Output<String>> timeLastBackupScheduled() {
+        return Optional.ofNullable(this.timeLastBackupScheduled);
+    }
+
+    /**
+     * The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
+     * 
+     */
+    @Import(name="timeNextBackupScheduled")
+    private @Nullable Output<String> timeNextBackupScheduled;
+
+    /**
+     * @return The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
+     * 
+     */
+    public Optional<Output<String>> timeNextBackupScheduled() {
+        return Optional.ofNullable(this.timeNextBackupScheduled);
+    }
+
+    /**
      * The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
@@ -657,6 +703,7 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
     private DeploymentState() {}
 
     private DeploymentState(DeploymentState $) {
+        this.backupSchedule = $.backupSchedule;
         this.category = $.category;
         this.compartmentId = $.compartmentId;
         this.cpuCoreCount = $.cpuCoreCount;
@@ -696,6 +743,8 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
         this.subnetId = $.subnetId;
         this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
+        this.timeLastBackupScheduled = $.timeLastBackupScheduled;
+        this.timeNextBackupScheduled = $.timeNextBackupScheduled;
         this.timeOfNextMaintenance = $.timeOfNextMaintenance;
         this.timeOggVersionSupportedUntil = $.timeOggVersionSupportedUntil;
         this.timeUpdated = $.timeUpdated;
@@ -718,6 +767,27 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
 
         public Builder(DeploymentState defaults) {
             $ = new DeploymentState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param backupSchedule (Updatable) Defines the backup schedule details for create operation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupSchedule(@Nullable Output<DeploymentBackupScheduleArgs> backupSchedule) {
+            $.backupSchedule = backupSchedule;
+            return this;
+        }
+
+        /**
+         * @param backupSchedule (Updatable) Defines the backup schedule details for create operation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupSchedule(DeploymentBackupScheduleArgs backupSchedule) {
+            return backupSchedule(Output.of(backupSchedule));
         }
 
         /**
@@ -1553,6 +1623,48 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder timeCreated(String timeCreated) {
             return timeCreated(Output.of(timeCreated));
+        }
+
+        /**
+         * @param timeLastBackupScheduled The timestamp of last deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeLastBackupScheduled(@Nullable Output<String> timeLastBackupScheduled) {
+            $.timeLastBackupScheduled = timeLastBackupScheduled;
+            return this;
+        }
+
+        /**
+         * @param timeLastBackupScheduled The timestamp of last deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeLastBackupScheduled(String timeLastBackupScheduled) {
+            return timeLastBackupScheduled(Output.of(timeLastBackupScheduled));
+        }
+
+        /**
+         * @param timeNextBackupScheduled The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeNextBackupScheduled(@Nullable Output<String> timeNextBackupScheduled) {
+            $.timeNextBackupScheduled = timeNextBackupScheduled;
+            return this;
+        }
+
+        /**
+         * @param timeNextBackupScheduled The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeNextBackupScheduled(String timeNextBackupScheduled) {
+            return timeNextBackupScheduled(Output.of(timeNextBackupScheduled));
         }
 
         /**

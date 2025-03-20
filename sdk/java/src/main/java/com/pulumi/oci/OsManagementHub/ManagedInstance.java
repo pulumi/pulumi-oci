@@ -38,6 +38,20 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:OsManagementHub/managedInstance:ManagedInstance")
 public class ManagedInstance extends com.pulumi.resources.CustomResource {
     /**
+     * The version of osmh-agent running on the managed instance
+     * 
+     */
+    @Export(name="agentVersion", refs={String.class}, tree="[0]")
+    private Output<String> agentVersion;
+
+    /**
+     * @return The version of osmh-agent running on the managed instance
+     * 
+     */
+    public Output<String> agentVersion() {
+        return this.agentVersion;
+    }
+    /**
      * The CPU architecture type of the managed instance.
      * 
      */
@@ -400,6 +414,20 @@ public class ManagedInstance extends com.pulumi.resources.CustomResource {
      */
     public Output<String> profile() {
         return this.profile;
+    }
+    /**
+     * The version of the profile that was used to register this instance with the service.
+     * 
+     */
+    @Export(name="profileVersion", refs={String.class}, tree="[0]")
+    private Output<String> profileVersion;
+
+    /**
+     * @return The version of the profile that was used to register this instance with the service.
+     * 
+     */
+    public Output<String> profileVersion() {
+        return this.profileVersion;
     }
     /**
      * Number of scheduled jobs associated with this instance.

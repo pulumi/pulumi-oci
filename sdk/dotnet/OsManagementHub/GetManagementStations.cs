@@ -14,7 +14,8 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides the list of Management Stations in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists management stations in a compartment.
+        /// Lists management stations within the specified compartment. Filter the list against a variety of criteria 
+        /// including but not limited to name, status, and location.
         /// 
         /// 
         /// ## Example Usage
@@ -33,6 +34,8 @@ namespace Pulumi.Oci.OsManagementHub
         ///         DisplayName = managementStationDisplayName,
         ///         DisplayNameContains = managementStationDisplayNameContains,
         ///         Id = managementStationId,
+        ///         Locations = managementStationLocation,
+        ///         LocationNotEqualTos = managementStationLocationNotEqualTo,
         ///         ManagedInstanceId = testManagedInstance.Id,
         ///         State = managementStationState,
         ///     });
@@ -46,7 +49,8 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides the list of Management Stations in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists management stations in a compartment.
+        /// Lists management stations within the specified compartment. Filter the list against a variety of criteria 
+        /// including but not limited to name, status, and location.
         /// 
         /// 
         /// ## Example Usage
@@ -65,6 +69,8 @@ namespace Pulumi.Oci.OsManagementHub
         ///         DisplayName = managementStationDisplayName,
         ///         DisplayNameContains = managementStationDisplayNameContains,
         ///         Id = managementStationId,
+        ///         Locations = managementStationLocation,
+        ///         LocationNotEqualTos = managementStationLocationNotEqualTo,
         ///         ManagedInstanceId = testManagedInstance.Id,
         ///         State = managementStationState,
         ///     });
@@ -78,7 +84,8 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides the list of Management Stations in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists management stations in a compartment.
+        /// Lists management stations within the specified compartment. Filter the list against a variety of criteria 
+        /// including but not limited to name, status, and location.
         /// 
         /// 
         /// ## Example Usage
@@ -97,6 +104,8 @@ namespace Pulumi.Oci.OsManagementHub
         ///         DisplayName = managementStationDisplayName,
         ///         DisplayNameContains = managementStationDisplayNameContains,
         ///         Id = managementStationId,
+        ///         Locations = managementStationLocation,
+        ///         LocationNotEqualTos = managementStationLocationNotEqualTo,
         ///         ManagedInstanceId = testManagedInstance.Id,
         ///         State = managementStationState,
         ///     });
@@ -142,6 +151,30 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         [Input("id")]
         public string? Id { get; set; }
+
+        [Input("locationNotEqualTos")]
+        private List<string>? _locationNotEqualTos;
+
+        /// <summary>
+        /// A filter to return only resources whose location does not match the given value.
+        /// </summary>
+        public List<string> LocationNotEqualTos
+        {
+            get => _locationNotEqualTos ?? (_locationNotEqualTos = new List<string>());
+            set => _locationNotEqualTos = value;
+        }
+
+        [Input("locations")]
+        private List<string>? _locations;
+
+        /// <summary>
+        /// A filter to return only resources whose location matches the given value.
+        /// </summary>
+        public List<string> Locations
+        {
+            get => _locations ?? (_locations = new List<string>());
+            set => _locations = value;
+        }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
@@ -195,6 +228,30 @@ namespace Pulumi.Oci.OsManagementHub
         [Input("id")]
         public Input<string>? Id { get; set; }
 
+        [Input("locationNotEqualTos")]
+        private InputList<string>? _locationNotEqualTos;
+
+        /// <summary>
+        /// A filter to return only resources whose location does not match the given value.
+        /// </summary>
+        public InputList<string> LocationNotEqualTos
+        {
+            get => _locationNotEqualTos ?? (_locationNotEqualTos = new InputList<string>());
+            set => _locationNotEqualTos = value;
+        }
+
+        [Input("locations")]
+        private InputList<string>? _locations;
+
+        /// <summary>
+        /// A filter to return only resources whose location matches the given value.
+        /// </summary>
+        public InputList<string> Locations
+        {
+            get => _locations ?? (_locations = new InputList<string>());
+            set => _locations = value;
+        }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
         /// </summary>
@@ -222,7 +279,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>
-        /// A user-friendly name for the management station.
+        /// User-friendly name for the management station.
         /// </summary>
         public readonly string? DisplayName;
         public readonly string? DisplayNameContains;
@@ -231,6 +288,11 @@ namespace Pulumi.Oci.OsManagementHub
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
         /// </summary>
         public readonly string? Id;
+        public readonly ImmutableArray<string> LocationNotEqualTos;
+        /// <summary>
+        /// The location of the instance that is acting as the management station.
+        /// </summary>
+        public readonly ImmutableArray<string> Locations;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
         /// </summary>
@@ -256,6 +318,10 @@ namespace Pulumi.Oci.OsManagementHub
 
             string? id,
 
+            ImmutableArray<string> locationNotEqualTos,
+
+            ImmutableArray<string> locations,
+
             string? managedInstanceId,
 
             ImmutableArray<Outputs.GetManagementStationsManagementStationCollectionResult> managementStationCollections,
@@ -267,6 +333,8 @@ namespace Pulumi.Oci.OsManagementHub
             DisplayNameContains = displayNameContains;
             Filters = filters;
             Id = id;
+            LocationNotEqualTos = locationNotEqualTos;
+            Locations = locations;
             ManagedInstanceId = managedInstanceId;
             ManagementStationCollections = managementStationCollections;
             State = state;

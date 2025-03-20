@@ -135,6 +135,8 @@ namespace Pulumi.Oci.OsManagementHub
         /// * `SOFTWARE_SOURCE` - Software source
         /// * `AGENT` - Agent
         /// * `MANAGEMENT_STATION` - Management Station
+        /// * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+        /// * `REBOOT` - Reboot
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
@@ -373,6 +375,8 @@ namespace Pulumi.Oci.OsManagementHub
         /// * `SOFTWARE_SOURCE` - Software source
         /// * `AGENT` - Agent
         /// * `MANAGEMENT_STATION` - Management Station
+        /// * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+        /// * `REBOOT` - Reboot
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

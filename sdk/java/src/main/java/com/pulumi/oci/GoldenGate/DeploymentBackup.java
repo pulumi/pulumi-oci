@@ -83,6 +83,20 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:GoldenGate/deploymentBackup:DeploymentBackup")
 public class DeploymentBackup extends com.pulumi.resources.CustomResource {
     /**
+     * Possible deployment backup source types.
+     * 
+     */
+    @Export(name="backupSourceType", refs={String.class}, tree="[0]")
+    private Output<String> backupSourceType;
+
+    /**
+     * @return Possible deployment backup source types.
+     * 
+     */
+    public Output<String> backupSourceType() {
+        return this.backupSourceType;
+    }
+    /**
      * Possible Deployment backup types.
      * 
      */

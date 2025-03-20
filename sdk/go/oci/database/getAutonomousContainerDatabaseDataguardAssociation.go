@@ -76,6 +76,7 @@ type LookupAutonomousContainerDatabaseDataguardAssociationResult struct {
 	IsAutomaticFailoverEnabled bool `pulumi:"isAutomaticFailoverEnabled"`
 	// Additional information about the current lifecycleState, if available.
 	LifecycleDetails                             string                                                                                          `pulumi:"lifecycleDetails"`
+	MigrateTrigger                               int                                                                                             `pulumi:"migrateTrigger"`
 	PeerAutonomousContainerDatabaseBackupConfigs []GetAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig `pulumi:"peerAutonomousContainerDatabaseBackupConfigs"`
 	PeerAutonomousContainerDatabaseCompartmentId string                                                                                          `pulumi:"peerAutonomousContainerDatabaseCompartmentId"`
 	// The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
@@ -188,6 +189,10 @@ func (o LookupAutonomousContainerDatabaseDataguardAssociationResultOutput) IsAut
 // Additional information about the current lifecycleState, if available.
 func (o LookupAutonomousContainerDatabaseDataguardAssociationResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseDataguardAssociationResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+func (o LookupAutonomousContainerDatabaseDataguardAssociationResultOutput) MigrateTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseDataguardAssociationResult) int { return v.MigrateTrigger }).(pulumi.IntOutput)
 }
 
 func (o LookupAutonomousContainerDatabaseDataguardAssociationResultOutput) PeerAutonomousContainerDatabaseBackupConfigs() GetAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArrayOutput {

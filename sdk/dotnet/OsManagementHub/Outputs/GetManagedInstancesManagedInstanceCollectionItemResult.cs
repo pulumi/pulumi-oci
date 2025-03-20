@@ -14,6 +14,10 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
     public sealed class GetManagedInstancesManagedInstanceCollectionItemResult
     {
         /// <summary>
+        /// A filter to return only managed instances with the specified version of osmh-agent running.
+        /// </summary>
+        public readonly string AgentVersion;
+        /// <summary>
         /// The CPU architecture type of the managed instance.
         /// </summary>
         public readonly string Architecture;
@@ -62,7 +66,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly bool IsManagementStation;
         /// <summary>
-        /// Indicates whether a reboot is required to complete installation of updates.
+        /// A filter to return only managed instances that require a reboot to install updates.
         /// </summary>
         public readonly bool IsRebootRequired;
         /// <summary>
@@ -122,11 +126,15 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly string Profile;
         /// <summary>
+        /// The version of the profile that was used to register this instance with the service.
+        /// </summary>
+        public readonly string ProfileVersion;
+        /// <summary>
         /// Number of scheduled jobs associated with this instance.
         /// </summary>
         public readonly int ScheduledJobCount;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary managment station.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station.
         /// </summary>
         public readonly string SecondaryManagementStationId;
         /// <summary>
@@ -172,6 +180,8 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
 
         [OutputConstructor]
         private GetManagedInstancesManagedInstanceCollectionItemResult(
+            string agentVersion,
+
             string architecture,
 
             ImmutableArray<Outputs.GetManagedInstancesManagedInstanceCollectionItemAutonomousSettingResult> autonomousSettings,
@@ -226,6 +236,8 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
 
             string profile,
 
+            string profileVersion,
+
             int scheduledJobCount,
 
             string secondaryManagementStationId,
@@ -250,6 +262,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
 
             int workRequestCount)
         {
+            AgentVersion = agentVersion;
             Architecture = architecture;
             AutonomousSettings = autonomousSettings;
             BugUpdatesAvailable = bugUpdatesAvailable;
@@ -277,6 +290,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
             OtherUpdatesAvailable = otherUpdatesAvailable;
             PrimaryManagementStationId = primaryManagementStationId;
             Profile = profile;
+            ProfileVersion = profileVersion;
             ScheduledJobCount = scheduledJobCount;
             SecondaryManagementStationId = secondaryManagementStationId;
             SecurityUpdatesAvailable = securityUpdatesAvailable;

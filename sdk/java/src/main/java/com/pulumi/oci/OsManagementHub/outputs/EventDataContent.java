@@ -52,6 +52,8 @@ public final class EventDataContent {
      * * `SOFTWARE_SOURCE` - Software source
      * * `AGENT` - Agent
      * * `MANAGEMENT_STATION` - Management Station
+     * * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+     * * `REBOOT` - Reboot
      * 
      */
     private @Nullable String type;
@@ -107,6 +109,8 @@ public final class EventDataContent {
      * * `SOFTWARE_SOURCE` - Software source
      * * `AGENT` - Agent
      * * `MANAGEMENT_STATION` - Management Station
+     * * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+     * * `REBOOT` - Reboot
      * 
      */
     public Optional<String> type() {

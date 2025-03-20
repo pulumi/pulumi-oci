@@ -30,7 +30,7 @@ public final class ClusterOptions {
      */
     private @Nullable ClusterOptionsAdmissionControllerOptions admissionControllerOptions;
     /**
-     * @return IP family to use for single stack or define the order of IP families for dual-stack
+     * @return IP family to use for single stack or define the order of IP families for dual-stack. Available values are [] (defaults to IPv4), [IPv4] (IPv4), [IPv4, IPv6] (IPv4 preferred dual stack).
      * 
      */
     private @Nullable List<String> ipFamilies;
@@ -81,7 +81,7 @@ public final class ClusterOptions {
         return Optional.ofNullable(this.admissionControllerOptions);
     }
     /**
-     * @return IP family to use for single stack or define the order of IP families for dual-stack
+     * @return IP family to use for single stack or define the order of IP families for dual-stack. Available values are [] (defaults to IPv4), [IPv4] (IPv4), [IPv4, IPv6] (IPv4 preferred dual stack).
      * 
      */
     public List<String> ipFamilies() {

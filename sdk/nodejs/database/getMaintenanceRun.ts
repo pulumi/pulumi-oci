@@ -138,6 +138,10 @@ export interface GetMaintenanceRunResult {
      */
     readonly peerMaintenanceRunId: string;
     /**
+     * The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+     */
+    readonly peerMaintenanceRunIds: string[];
+    /**
      * The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      */
     readonly state: string;

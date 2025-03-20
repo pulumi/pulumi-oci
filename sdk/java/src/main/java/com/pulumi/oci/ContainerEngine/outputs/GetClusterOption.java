@@ -29,7 +29,7 @@ public final class GetClusterOption {
      */
     private List<GetClusterOptionAdmissionControllerOption> admissionControllerOptions;
     /**
-     * @return IP family to use for single stack or define the order of IP families for dual-stack
+     * @return IP family to use for single stack or define the order of IP families for dual-stack. Available values are [] (defaults to IPv4), [IPv4] (IPv4), [IPv4, IPv6] (IPv4 preferred dual stack).
      * 
      */
     private List<String> ipFamilies;
@@ -80,7 +80,7 @@ public final class GetClusterOption {
         return this.admissionControllerOptions;
     }
     /**
-     * @return IP family to use for single stack or define the order of IP families for dual-stack
+     * @return IP family to use for single stack or define the order of IP families for dual-stack. Available values are [] (defaults to IPv4), [IPv4] (IPv4), [IPv4, IPv6] (IPv4 preferred dual stack).
      * 
      */
     public List<String> ipFamilies() {

@@ -57,6 +57,8 @@ namespace Pulumi.Oci.OsManagementHub.Inputs
         /// * `SOFTWARE_SOURCE` - Software source
         /// * `AGENT` - Agent
         /// * `MANAGEMENT_STATION` - Management Station
+        /// * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+        /// * `REBOOT` - Reboot
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

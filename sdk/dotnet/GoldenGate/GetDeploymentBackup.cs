@@ -127,6 +127,10 @@ namespace Pulumi.Oci.GoldenGate
     public sealed class GetDeploymentBackupResult
     {
         /// <summary>
+        /// Possible deployment backup source types.
+        /// </summary>
+        public readonly string BackupSourceType;
+        /// <summary>
         /// Possible Deployment backup types.
         /// </summary>
         public readonly string BackupType;
@@ -223,6 +227,8 @@ namespace Pulumi.Oci.GoldenGate
 
         [OutputConstructor]
         private GetDeploymentBackupResult(
+            string backupSourceType,
+
             string backupType,
 
             string bucket,
@@ -273,6 +279,7 @@ namespace Pulumi.Oci.GoldenGate
 
             string timeUpdated)
         {
+            BackupSourceType = backupSourceType;
             BackupType = backupType;
             Bucket = bucket;
             CompartmentId = compartmentId;

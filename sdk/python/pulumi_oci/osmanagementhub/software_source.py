@@ -23,44 +23,66 @@ class SoftwareSourceArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
                  software_source_type: pulumi.Input[str],
+                 advanced_repo_options: Optional[pulumi.Input[str]] = None,
+                 arch_type: Optional[pulumi.Input[str]] = None,
                  custom_software_source_filter: Optional[pulumi.Input['SoftwareSourceCustomSoftwareSourceFilterArgs']] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 gpg_key_url: Optional[pulumi.Input[str]] = None,
                  is_auto_resolve_dependencies: Optional[pulumi.Input[bool]] = None,
                  is_automatically_updated: Optional[pulumi.Input[bool]] = None,
                  is_created_from_package_list: Optional[pulumi.Input[bool]] = None,
+                 is_gpg_check_enabled: Optional[pulumi.Input[bool]] = None,
                  is_latest_content_only: Optional[pulumi.Input[bool]] = None,
+                 is_mirror_sync_allowed: Optional[pulumi.Input[bool]] = None,
+                 is_ssl_verify_enabled: Optional[pulumi.Input[bool]] = None,
                  origin_software_source_id: Optional[pulumi.Input[str]] = None,
+                 os_family: Optional[pulumi.Input[str]] = None,
                  packages: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 software_source_sub_type: Optional[pulumi.Input[str]] = None,
                  software_source_version: Optional[pulumi.Input[str]] = None,
+                 url: Optional[pulumi.Input[str]] = None,
                  vendor_software_sources: Optional[pulumi.Input[Sequence[pulumi.Input['SoftwareSourceVendorSoftwareSourceArgs']]]] = None):
         """
         The set of arguments for constructing a SoftwareSource resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
         :param pulumi.Input[str] software_source_type: (Updatable) Type of software source.
+        :param pulumi.Input[str] advanced_repo_options: (Updatable) Advanced repository options for the software source
+        :param pulumi.Input[str] arch_type: The architecture type supported by the third-party software source.
         :param pulumi.Input['SoftwareSourceCustomSoftwareSourceFilterArgs'] custom_software_source_filter: (Updatable) Provides the information used to apply filters to a vendor software source to create or update a custom software source.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) User-specified description for the software source. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[str] gpg_key_url: (Updatable) URI of the GPG key for this software source.
         :param pulumi.Input[bool] is_auto_resolve_dependencies: (Updatable) Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
         :param pulumi.Input[bool] is_automatically_updated: (Updatable) Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
         :param pulumi.Input[bool] is_created_from_package_list: Indicates whether the service should create the software source from a list of packages provided by the user.
+        :param pulumi.Input[bool] is_gpg_check_enabled: (Updatable) Whether signature verification should be done for the software source.
         :param pulumi.Input[bool] is_latest_content_only: (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
                * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
                * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
                * For a package filter that does not specify a version, this will include only the latest available version of the package.
                * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
                * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
+        :param pulumi.Input[bool] is_mirror_sync_allowed: (Updatable) Whether this software source can be synced to a management station
+        :param pulumi.Input[bool] is_ssl_verify_enabled: (Updatable) Whether SSL validation needs to be turned on
         :param pulumi.Input[str] origin_software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
+        :param pulumi.Input[str] os_family: The OS family for the third-party software source.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] packages: A property used for compatibility only. It doesn't provide a complete list of packages. See [AddPackagesToSoftwareSourceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/osmh/latest/datatypes/AddPackagesToSoftwareSourceDetails) for providing the list of packages used to create the software source when isCreatedFromPackageList is set to true.
+        :param pulumi.Input[str] software_source_sub_type: The creation type of a software source.
         :param pulumi.Input[str] software_source_version: The version to assign to this custom software source.
+        :param pulumi.Input[str] url: (Updatable) URL for the third-party software source.
         :param pulumi.Input[Sequence[pulumi.Input['SoftwareSourceVendorSoftwareSourceArgs']]] vendor_software_sources: (Updatable) List of vendor software sources.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "software_source_type", software_source_type)
+        if advanced_repo_options is not None:
+            pulumi.set(__self__, "advanced_repo_options", advanced_repo_options)
+        if arch_type is not None:
+            pulumi.set(__self__, "arch_type", arch_type)
         if custom_software_source_filter is not None:
             pulumi.set(__self__, "custom_software_source_filter", custom_software_source_filter)
         if defined_tags is not None:
@@ -71,20 +93,34 @@ class SoftwareSourceArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if gpg_key_url is not None:
+            pulumi.set(__self__, "gpg_key_url", gpg_key_url)
         if is_auto_resolve_dependencies is not None:
             pulumi.set(__self__, "is_auto_resolve_dependencies", is_auto_resolve_dependencies)
         if is_automatically_updated is not None:
             pulumi.set(__self__, "is_automatically_updated", is_automatically_updated)
         if is_created_from_package_list is not None:
             pulumi.set(__self__, "is_created_from_package_list", is_created_from_package_list)
+        if is_gpg_check_enabled is not None:
+            pulumi.set(__self__, "is_gpg_check_enabled", is_gpg_check_enabled)
         if is_latest_content_only is not None:
             pulumi.set(__self__, "is_latest_content_only", is_latest_content_only)
+        if is_mirror_sync_allowed is not None:
+            pulumi.set(__self__, "is_mirror_sync_allowed", is_mirror_sync_allowed)
+        if is_ssl_verify_enabled is not None:
+            pulumi.set(__self__, "is_ssl_verify_enabled", is_ssl_verify_enabled)
         if origin_software_source_id is not None:
             pulumi.set(__self__, "origin_software_source_id", origin_software_source_id)
+        if os_family is not None:
+            pulumi.set(__self__, "os_family", os_family)
         if packages is not None:
             pulumi.set(__self__, "packages", packages)
+        if software_source_sub_type is not None:
+            pulumi.set(__self__, "software_source_sub_type", software_source_sub_type)
         if software_source_version is not None:
             pulumi.set(__self__, "software_source_version", software_source_version)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
         if vendor_software_sources is not None:
             pulumi.set(__self__, "vendor_software_sources", vendor_software_sources)
 
@@ -111,6 +147,30 @@ class SoftwareSourceArgs:
     @software_source_type.setter
     def software_source_type(self, value: pulumi.Input[str]):
         pulumi.set(self, "software_source_type", value)
+
+    @property
+    @pulumi.getter(name="advancedRepoOptions")
+    def advanced_repo_options(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Advanced repository options for the software source
+        """
+        return pulumi.get(self, "advanced_repo_options")
+
+    @advanced_repo_options.setter
+    def advanced_repo_options(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "advanced_repo_options", value)
+
+    @property
+    @pulumi.getter(name="archType")
+    def arch_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The architecture type supported by the third-party software source.
+        """
+        return pulumi.get(self, "arch_type")
+
+    @arch_type.setter
+    def arch_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "arch_type", value)
 
     @property
     @pulumi.getter(name="customSoftwareSourceFilter")
@@ -173,6 +233,18 @@ class SoftwareSourceArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="gpgKeyUrl")
+    def gpg_key_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) URI of the GPG key for this software source.
+        """
+        return pulumi.get(self, "gpg_key_url")
+
+    @gpg_key_url.setter
+    def gpg_key_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "gpg_key_url", value)
+
+    @property
     @pulumi.getter(name="isAutoResolveDependencies")
     def is_auto_resolve_dependencies(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -209,6 +281,18 @@ class SoftwareSourceArgs:
         pulumi.set(self, "is_created_from_package_list", value)
 
     @property
+    @pulumi.getter(name="isGpgCheckEnabled")
+    def is_gpg_check_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Whether signature verification should be done for the software source.
+        """
+        return pulumi.get(self, "is_gpg_check_enabled")
+
+    @is_gpg_check_enabled.setter
+    def is_gpg_check_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_gpg_check_enabled", value)
+
+    @property
     @pulumi.getter(name="isLatestContentOnly")
     def is_latest_content_only(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -226,6 +310,30 @@ class SoftwareSourceArgs:
         pulumi.set(self, "is_latest_content_only", value)
 
     @property
+    @pulumi.getter(name="isMirrorSyncAllowed")
+    def is_mirror_sync_allowed(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Whether this software source can be synced to a management station
+        """
+        return pulumi.get(self, "is_mirror_sync_allowed")
+
+    @is_mirror_sync_allowed.setter
+    def is_mirror_sync_allowed(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_mirror_sync_allowed", value)
+
+    @property
+    @pulumi.getter(name="isSslVerifyEnabled")
+    def is_ssl_verify_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Whether SSL validation needs to be turned on
+        """
+        return pulumi.get(self, "is_ssl_verify_enabled")
+
+    @is_ssl_verify_enabled.setter
+    def is_ssl_verify_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_ssl_verify_enabled", value)
+
+    @property
     @pulumi.getter(name="originSoftwareSourceId")
     def origin_software_source_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -236,6 +344,18 @@ class SoftwareSourceArgs:
     @origin_software_source_id.setter
     def origin_software_source_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "origin_software_source_id", value)
+
+    @property
+    @pulumi.getter(name="osFamily")
+    def os_family(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OS family for the third-party software source.
+        """
+        return pulumi.get(self, "os_family")
+
+    @os_family.setter
+    def os_family(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "os_family", value)
 
     @property
     @pulumi.getter
@@ -250,6 +370,18 @@ class SoftwareSourceArgs:
         pulumi.set(self, "packages", value)
 
     @property
+    @pulumi.getter(name="softwareSourceSubType")
+    def software_source_sub_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The creation type of a software source.
+        """
+        return pulumi.get(self, "software_source_sub_type")
+
+    @software_source_sub_type.setter
+    def software_source_sub_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "software_source_sub_type", value)
+
+    @property
     @pulumi.getter(name="softwareSourceVersion")
     def software_source_version(self) -> Optional[pulumi.Input[str]]:
         """
@@ -260,6 +392,18 @@ class SoftwareSourceArgs:
     @software_source_version.setter
     def software_source_version(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "software_source_version", value)
+
+    @property
+    @pulumi.getter
+    def url(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) URL for the third-party software source.
+        """
+        return pulumi.get(self, "url")
+
+    @url.setter
+    def url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "url", value)
 
     @property
     @pulumi.getter(name="vendorSoftwareSources")
@@ -277,6 +421,7 @@ class SoftwareSourceArgs:
 @pulumi.input_type
 class _SoftwareSourceState:
     def __init__(__self__, *,
+                 advanced_repo_options: Optional[pulumi.Input[str]] = None,
                  arch_type: Optional[pulumi.Input[str]] = None,
                  availability: Optional[pulumi.Input[str]] = None,
                  availability_at_oci: Optional[pulumi.Input[str]] = None,
@@ -293,25 +438,31 @@ class _SoftwareSourceState:
                  is_auto_resolve_dependencies: Optional[pulumi.Input[bool]] = None,
                  is_automatically_updated: Optional[pulumi.Input[bool]] = None,
                  is_created_from_package_list: Optional[pulumi.Input[bool]] = None,
+                 is_gpg_check_enabled: Optional[pulumi.Input[bool]] = None,
                  is_latest_content_only: Optional[pulumi.Input[bool]] = None,
                  is_mandatory_for_autonomous_linux: Optional[pulumi.Input[bool]] = None,
+                 is_mirror_sync_allowed: Optional[pulumi.Input[bool]] = None,
+                 is_ssl_verify_enabled: Optional[pulumi.Input[bool]] = None,
                  origin_software_source_id: Optional[pulumi.Input[str]] = None,
                  os_family: Optional[pulumi.Input[str]] = None,
                  package_count: Optional[pulumi.Input[str]] = None,
                  packages: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  repo_id: Optional[pulumi.Input[str]] = None,
                  size: Optional[pulumi.Input[float]] = None,
+                 software_source_sub_type: Optional[pulumi.Input[str]] = None,
                  software_source_type: Optional[pulumi.Input[str]] = None,
                  software_source_version: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
+                 time_metadata_updated: Optional[pulumi.Input[str]] = None,
                  url: Optional[pulumi.Input[str]] = None,
                  vendor_name: Optional[pulumi.Input[str]] = None,
                  vendor_software_sources: Optional[pulumi.Input[Sequence[pulumi.Input['SoftwareSourceVendorSoftwareSourceArgs']]]] = None):
         """
         Input properties used for looking up and filtering SoftwareSource resources.
-        :param pulumi.Input[str] arch_type: The architecture type supported by the software source.
+        :param pulumi.Input[str] advanced_repo_options: (Updatable) Advanced repository options for the software source
+        :param pulumi.Input[str] arch_type: The architecture type supported by the third-party software source.
         :param pulumi.Input[str] availability: Availability of the software source (for non-OCI environments).
         :param pulumi.Input[str] availability_at_oci: Availability of the software source (for Oracle Cloud Infrastructure environments).
         :param pulumi.Input[str] checksum_type: The yum repository checksum type used by this software source.
@@ -323,10 +474,11 @@ class _SoftwareSourceState:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] gpg_key_fingerprint: Fingerprint of the GPG key for this software source.
         :param pulumi.Input[str] gpg_key_id: ID of the GPG key for this software source.
-        :param pulumi.Input[str] gpg_key_url: URL of the GPG key for this software source.
+        :param pulumi.Input[str] gpg_key_url: (Updatable) URI of the GPG key for this software source.
         :param pulumi.Input[bool] is_auto_resolve_dependencies: (Updatable) Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
         :param pulumi.Input[bool] is_automatically_updated: (Updatable) Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
         :param pulumi.Input[bool] is_created_from_package_list: Indicates whether the service should create the software source from a list of packages provided by the user.
+        :param pulumi.Input[bool] is_gpg_check_enabled: (Updatable) Whether signature verification should be done for the software source.
         :param pulumi.Input[bool] is_latest_content_only: (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
                * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
                * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
@@ -334,21 +486,27 @@ class _SoftwareSourceState:
                * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
                * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
         :param pulumi.Input[bool] is_mandatory_for_autonomous_linux: Indicates whether the software source is required for the Autonomous Linux service.
+        :param pulumi.Input[bool] is_mirror_sync_allowed: (Updatable) Whether this software source can be synced to a management station
+        :param pulumi.Input[bool] is_ssl_verify_enabled: (Updatable) Whether SSL validation needs to be turned on
         :param pulumi.Input[str] origin_software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
-        :param pulumi.Input[str] os_family: The OS family the software source belongs to.
+        :param pulumi.Input[str] os_family: The OS family for the third-party software source.
         :param pulumi.Input[str] package_count: Number of packages the software source contains.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] packages: A property used for compatibility only. It doesn't provide a complete list of packages. See [AddPackagesToSoftwareSourceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/osmh/latest/datatypes/AddPackagesToSoftwareSourceDetails) for providing the list of packages used to create the software source when isCreatedFromPackageList is set to true.
         :param pulumi.Input[str] repo_id: The repository ID for the software source.
-        :param pulumi.Input[float] size: The size of the software source in gigabytes (GB).
+        :param pulumi.Input[float] size: The size of the software source in bytes (B).
+        :param pulumi.Input[str] software_source_sub_type: The creation type of a software source.
         :param pulumi.Input[str] software_source_type: (Updatable) Type of software source.
         :param pulumi.Input[str] software_source_version: The version to assign to this custom software source.
         :param pulumi.Input[str] state: The current state of the software source.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the software source was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
-        :param pulumi.Input[str] url: URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is 'custom/<repoId>'.
+        :param pulumi.Input[str] time_metadata_updated: The date and time the metadata for this software source was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        :param pulumi.Input[str] url: (Updatable) URL for the third-party software source.
         :param pulumi.Input[str] vendor_name: Name of the vendor providing the software source.
         :param pulumi.Input[Sequence[pulumi.Input['SoftwareSourceVendorSoftwareSourceArgs']]] vendor_software_sources: (Updatable) List of vendor software sources.
         """
+        if advanced_repo_options is not None:
+            pulumi.set(__self__, "advanced_repo_options", advanced_repo_options)
         if arch_type is not None:
             pulumi.set(__self__, "arch_type", arch_type)
         if availability is not None:
@@ -381,10 +539,16 @@ class _SoftwareSourceState:
             pulumi.set(__self__, "is_automatically_updated", is_automatically_updated)
         if is_created_from_package_list is not None:
             pulumi.set(__self__, "is_created_from_package_list", is_created_from_package_list)
+        if is_gpg_check_enabled is not None:
+            pulumi.set(__self__, "is_gpg_check_enabled", is_gpg_check_enabled)
         if is_latest_content_only is not None:
             pulumi.set(__self__, "is_latest_content_only", is_latest_content_only)
         if is_mandatory_for_autonomous_linux is not None:
             pulumi.set(__self__, "is_mandatory_for_autonomous_linux", is_mandatory_for_autonomous_linux)
+        if is_mirror_sync_allowed is not None:
+            pulumi.set(__self__, "is_mirror_sync_allowed", is_mirror_sync_allowed)
+        if is_ssl_verify_enabled is not None:
+            pulumi.set(__self__, "is_ssl_verify_enabled", is_ssl_verify_enabled)
         if origin_software_source_id is not None:
             pulumi.set(__self__, "origin_software_source_id", origin_software_source_id)
         if os_family is not None:
@@ -397,6 +561,8 @@ class _SoftwareSourceState:
             pulumi.set(__self__, "repo_id", repo_id)
         if size is not None:
             pulumi.set(__self__, "size", size)
+        if software_source_sub_type is not None:
+            pulumi.set(__self__, "software_source_sub_type", software_source_sub_type)
         if software_source_type is not None:
             pulumi.set(__self__, "software_source_type", software_source_type)
         if software_source_version is not None:
@@ -407,6 +573,8 @@ class _SoftwareSourceState:
             pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
+        if time_metadata_updated is not None:
+            pulumi.set(__self__, "time_metadata_updated", time_metadata_updated)
         if url is not None:
             pulumi.set(__self__, "url", url)
         if vendor_name is not None:
@@ -415,10 +583,22 @@ class _SoftwareSourceState:
             pulumi.set(__self__, "vendor_software_sources", vendor_software_sources)
 
     @property
+    @pulumi.getter(name="advancedRepoOptions")
+    def advanced_repo_options(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Advanced repository options for the software source
+        """
+        return pulumi.get(self, "advanced_repo_options")
+
+    @advanced_repo_options.setter
+    def advanced_repo_options(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "advanced_repo_options", value)
+
+    @property
     @pulumi.getter(name="archType")
     def arch_type(self) -> Optional[pulumi.Input[str]]:
         """
-        The architecture type supported by the software source.
+        The architecture type supported by the third-party software source.
         """
         return pulumi.get(self, "arch_type")
 
@@ -562,7 +742,7 @@ class _SoftwareSourceState:
     @pulumi.getter(name="gpgKeyUrl")
     def gpg_key_url(self) -> Optional[pulumi.Input[str]]:
         """
-        URL of the GPG key for this software source.
+        (Updatable) URI of the GPG key for this software source.
         """
         return pulumi.get(self, "gpg_key_url")
 
@@ -607,6 +787,18 @@ class _SoftwareSourceState:
         pulumi.set(self, "is_created_from_package_list", value)
 
     @property
+    @pulumi.getter(name="isGpgCheckEnabled")
+    def is_gpg_check_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Whether signature verification should be done for the software source.
+        """
+        return pulumi.get(self, "is_gpg_check_enabled")
+
+    @is_gpg_check_enabled.setter
+    def is_gpg_check_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_gpg_check_enabled", value)
+
+    @property
     @pulumi.getter(name="isLatestContentOnly")
     def is_latest_content_only(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -636,6 +828,30 @@ class _SoftwareSourceState:
         pulumi.set(self, "is_mandatory_for_autonomous_linux", value)
 
     @property
+    @pulumi.getter(name="isMirrorSyncAllowed")
+    def is_mirror_sync_allowed(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Whether this software source can be synced to a management station
+        """
+        return pulumi.get(self, "is_mirror_sync_allowed")
+
+    @is_mirror_sync_allowed.setter
+    def is_mirror_sync_allowed(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_mirror_sync_allowed", value)
+
+    @property
+    @pulumi.getter(name="isSslVerifyEnabled")
+    def is_ssl_verify_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Whether SSL validation needs to be turned on
+        """
+        return pulumi.get(self, "is_ssl_verify_enabled")
+
+    @is_ssl_verify_enabled.setter
+    def is_ssl_verify_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_ssl_verify_enabled", value)
+
+    @property
     @pulumi.getter(name="originSoftwareSourceId")
     def origin_software_source_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -651,7 +867,7 @@ class _SoftwareSourceState:
     @pulumi.getter(name="osFamily")
     def os_family(self) -> Optional[pulumi.Input[str]]:
         """
-        The OS family the software source belongs to.
+        The OS family for the third-party software source.
         """
         return pulumi.get(self, "os_family")
 
@@ -699,13 +915,25 @@ class _SoftwareSourceState:
     @pulumi.getter
     def size(self) -> Optional[pulumi.Input[float]]:
         """
-        The size of the software source in gigabytes (GB).
+        The size of the software source in bytes (B).
         """
         return pulumi.get(self, "size")
 
     @size.setter
     def size(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "size", value)
+
+    @property
+    @pulumi.getter(name="softwareSourceSubType")
+    def software_source_sub_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The creation type of a software source.
+        """
+        return pulumi.get(self, "software_source_sub_type")
+
+    @software_source_sub_type.setter
+    def software_source_sub_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "software_source_sub_type", value)
 
     @property
     @pulumi.getter(name="softwareSourceType")
@@ -768,10 +996,22 @@ class _SoftwareSourceState:
         pulumi.set(self, "time_created", value)
 
     @property
+    @pulumi.getter(name="timeMetadataUpdated")
+    def time_metadata_updated(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time the metadata for this software source was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        """
+        return pulumi.get(self, "time_metadata_updated")
+
+    @time_metadata_updated.setter
+    def time_metadata_updated(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_metadata_updated", value)
+
+    @property
     @pulumi.getter
     def url(self) -> Optional[pulumi.Input[str]]:
         """
-        URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is 'custom/<repoId>'.
+        (Updatable) URL for the third-party software source.
         """
         return pulumi.get(self, "url")
 
@@ -809,26 +1049,35 @@ class SoftwareSource(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 advanced_repo_options: Optional[pulumi.Input[str]] = None,
+                 arch_type: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  custom_software_source_filter: Optional[pulumi.Input[Union['SoftwareSourceCustomSoftwareSourceFilterArgs', 'SoftwareSourceCustomSoftwareSourceFilterArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 gpg_key_url: Optional[pulumi.Input[str]] = None,
                  is_auto_resolve_dependencies: Optional[pulumi.Input[bool]] = None,
                  is_automatically_updated: Optional[pulumi.Input[bool]] = None,
                  is_created_from_package_list: Optional[pulumi.Input[bool]] = None,
+                 is_gpg_check_enabled: Optional[pulumi.Input[bool]] = None,
                  is_latest_content_only: Optional[pulumi.Input[bool]] = None,
+                 is_mirror_sync_allowed: Optional[pulumi.Input[bool]] = None,
+                 is_ssl_verify_enabled: Optional[pulumi.Input[bool]] = None,
                  origin_software_source_id: Optional[pulumi.Input[str]] = None,
+                 os_family: Optional[pulumi.Input[str]] = None,
                  packages: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 software_source_sub_type: Optional[pulumi.Input[str]] = None,
                  software_source_type: Optional[pulumi.Input[str]] = None,
                  software_source_version: Optional[pulumi.Input[str]] = None,
+                 url: Optional[pulumi.Input[str]] = None,
                  vendor_software_sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SoftwareSourceVendorSoftwareSourceArgs', 'SoftwareSourceVendorSoftwareSourceArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Software Source resource in Oracle Cloud Infrastructure Os Management Hub service.
 
-        Creates a new versioned or custom software source.
+        Creates a new software source.
 
         ## Import
 
@@ -840,25 +1089,34 @@ class SoftwareSource(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] advanced_repo_options: (Updatable) Advanced repository options for the software source
+        :param pulumi.Input[str] arch_type: The architecture type supported by the third-party software source.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
         :param pulumi.Input[Union['SoftwareSourceCustomSoftwareSourceFilterArgs', 'SoftwareSourceCustomSoftwareSourceFilterArgsDict']] custom_software_source_filter: (Updatable) Provides the information used to apply filters to a vendor software source to create or update a custom software source.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) User-specified description for the software source. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[str] gpg_key_url: (Updatable) URI of the GPG key for this software source.
         :param pulumi.Input[bool] is_auto_resolve_dependencies: (Updatable) Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
         :param pulumi.Input[bool] is_automatically_updated: (Updatable) Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
         :param pulumi.Input[bool] is_created_from_package_list: Indicates whether the service should create the software source from a list of packages provided by the user.
+        :param pulumi.Input[bool] is_gpg_check_enabled: (Updatable) Whether signature verification should be done for the software source.
         :param pulumi.Input[bool] is_latest_content_only: (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
                * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
                * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
                * For a package filter that does not specify a version, this will include only the latest available version of the package.
                * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
                * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
+        :param pulumi.Input[bool] is_mirror_sync_allowed: (Updatable) Whether this software source can be synced to a management station
+        :param pulumi.Input[bool] is_ssl_verify_enabled: (Updatable) Whether SSL validation needs to be turned on
         :param pulumi.Input[str] origin_software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
+        :param pulumi.Input[str] os_family: The OS family for the third-party software source.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] packages: A property used for compatibility only. It doesn't provide a complete list of packages. See [AddPackagesToSoftwareSourceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/osmh/latest/datatypes/AddPackagesToSoftwareSourceDetails) for providing the list of packages used to create the software source when isCreatedFromPackageList is set to true.
+        :param pulumi.Input[str] software_source_sub_type: The creation type of a software source.
         :param pulumi.Input[str] software_source_type: (Updatable) Type of software source.
         :param pulumi.Input[str] software_source_version: The version to assign to this custom software source.
+        :param pulumi.Input[str] url: (Updatable) URL for the third-party software source.
         :param pulumi.Input[Sequence[pulumi.Input[Union['SoftwareSourceVendorSoftwareSourceArgs', 'SoftwareSourceVendorSoftwareSourceArgsDict']]]] vendor_software_sources: (Updatable) List of vendor software sources.
         """
         ...
@@ -870,7 +1128,7 @@ class SoftwareSource(pulumi.CustomResource):
         """
         This resource provides the Software Source resource in Oracle Cloud Infrastructure Os Management Hub service.
 
-        Creates a new versioned or custom software source.
+        Creates a new software source.
 
         ## Import
 
@@ -895,20 +1153,29 @@ class SoftwareSource(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 advanced_repo_options: Optional[pulumi.Input[str]] = None,
+                 arch_type: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  custom_software_source_filter: Optional[pulumi.Input[Union['SoftwareSourceCustomSoftwareSourceFilterArgs', 'SoftwareSourceCustomSoftwareSourceFilterArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 gpg_key_url: Optional[pulumi.Input[str]] = None,
                  is_auto_resolve_dependencies: Optional[pulumi.Input[bool]] = None,
                  is_automatically_updated: Optional[pulumi.Input[bool]] = None,
                  is_created_from_package_list: Optional[pulumi.Input[bool]] = None,
+                 is_gpg_check_enabled: Optional[pulumi.Input[bool]] = None,
                  is_latest_content_only: Optional[pulumi.Input[bool]] = None,
+                 is_mirror_sync_allowed: Optional[pulumi.Input[bool]] = None,
+                 is_ssl_verify_enabled: Optional[pulumi.Input[bool]] = None,
                  origin_software_source_id: Optional[pulumi.Input[str]] = None,
+                 os_family: Optional[pulumi.Input[str]] = None,
                  packages: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 software_source_sub_type: Optional[pulumi.Input[str]] = None,
                  software_source_type: Optional[pulumi.Input[str]] = None,
                  software_source_version: Optional[pulumi.Input[str]] = None,
+                 url: Optional[pulumi.Input[str]] = None,
                  vendor_software_sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SoftwareSourceVendorSoftwareSourceArgs', 'SoftwareSourceVendorSoftwareSourceArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -919,6 +1186,8 @@ class SoftwareSource(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = SoftwareSourceArgs.__new__(SoftwareSourceArgs)
 
+            __props__.__dict__["advanced_repo_options"] = advanced_repo_options
+            __props__.__dict__["arch_type"] = arch_type
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
@@ -927,33 +1196,37 @@ class SoftwareSource(pulumi.CustomResource):
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["gpg_key_url"] = gpg_key_url
             __props__.__dict__["is_auto_resolve_dependencies"] = is_auto_resolve_dependencies
             __props__.__dict__["is_automatically_updated"] = is_automatically_updated
             __props__.__dict__["is_created_from_package_list"] = is_created_from_package_list
+            __props__.__dict__["is_gpg_check_enabled"] = is_gpg_check_enabled
             __props__.__dict__["is_latest_content_only"] = is_latest_content_only
+            __props__.__dict__["is_mirror_sync_allowed"] = is_mirror_sync_allowed
+            __props__.__dict__["is_ssl_verify_enabled"] = is_ssl_verify_enabled
             __props__.__dict__["origin_software_source_id"] = origin_software_source_id
+            __props__.__dict__["os_family"] = os_family
             __props__.__dict__["packages"] = packages
+            __props__.__dict__["software_source_sub_type"] = software_source_sub_type
             if software_source_type is None and not opts.urn:
                 raise TypeError("Missing required property 'software_source_type'")
             __props__.__dict__["software_source_type"] = software_source_type
             __props__.__dict__["software_source_version"] = software_source_version
+            __props__.__dict__["url"] = url
             __props__.__dict__["vendor_software_sources"] = vendor_software_sources
-            __props__.__dict__["arch_type"] = None
             __props__.__dict__["availability"] = None
             __props__.__dict__["availability_at_oci"] = None
             __props__.__dict__["checksum_type"] = None
             __props__.__dict__["gpg_key_fingerprint"] = None
             __props__.__dict__["gpg_key_id"] = None
-            __props__.__dict__["gpg_key_url"] = None
             __props__.__dict__["is_mandatory_for_autonomous_linux"] = None
-            __props__.__dict__["os_family"] = None
             __props__.__dict__["package_count"] = None
             __props__.__dict__["repo_id"] = None
             __props__.__dict__["size"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
-            __props__.__dict__["url"] = None
+            __props__.__dict__["time_metadata_updated"] = None
             __props__.__dict__["vendor_name"] = None
         super(SoftwareSource, __self__).__init__(
             'oci:OsManagementHub/softwareSource:SoftwareSource',
@@ -965,6 +1238,7 @@ class SoftwareSource(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            advanced_repo_options: Optional[pulumi.Input[str]] = None,
             arch_type: Optional[pulumi.Input[str]] = None,
             availability: Optional[pulumi.Input[str]] = None,
             availability_at_oci: Optional[pulumi.Input[str]] = None,
@@ -981,19 +1255,24 @@ class SoftwareSource(pulumi.CustomResource):
             is_auto_resolve_dependencies: Optional[pulumi.Input[bool]] = None,
             is_automatically_updated: Optional[pulumi.Input[bool]] = None,
             is_created_from_package_list: Optional[pulumi.Input[bool]] = None,
+            is_gpg_check_enabled: Optional[pulumi.Input[bool]] = None,
             is_latest_content_only: Optional[pulumi.Input[bool]] = None,
             is_mandatory_for_autonomous_linux: Optional[pulumi.Input[bool]] = None,
+            is_mirror_sync_allowed: Optional[pulumi.Input[bool]] = None,
+            is_ssl_verify_enabled: Optional[pulumi.Input[bool]] = None,
             origin_software_source_id: Optional[pulumi.Input[str]] = None,
             os_family: Optional[pulumi.Input[str]] = None,
             package_count: Optional[pulumi.Input[str]] = None,
             packages: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             repo_id: Optional[pulumi.Input[str]] = None,
             size: Optional[pulumi.Input[float]] = None,
+            software_source_sub_type: Optional[pulumi.Input[str]] = None,
             software_source_type: Optional[pulumi.Input[str]] = None,
             software_source_version: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
+            time_metadata_updated: Optional[pulumi.Input[str]] = None,
             url: Optional[pulumi.Input[str]] = None,
             vendor_name: Optional[pulumi.Input[str]] = None,
             vendor_software_sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SoftwareSourceVendorSoftwareSourceArgs', 'SoftwareSourceVendorSoftwareSourceArgsDict']]]]] = None) -> 'SoftwareSource':
@@ -1004,7 +1283,8 @@ class SoftwareSource(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] arch_type: The architecture type supported by the software source.
+        :param pulumi.Input[str] advanced_repo_options: (Updatable) Advanced repository options for the software source
+        :param pulumi.Input[str] arch_type: The architecture type supported by the third-party software source.
         :param pulumi.Input[str] availability: Availability of the software source (for non-OCI environments).
         :param pulumi.Input[str] availability_at_oci: Availability of the software source (for Oracle Cloud Infrastructure environments).
         :param pulumi.Input[str] checksum_type: The yum repository checksum type used by this software source.
@@ -1016,10 +1296,11 @@ class SoftwareSource(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] gpg_key_fingerprint: Fingerprint of the GPG key for this software source.
         :param pulumi.Input[str] gpg_key_id: ID of the GPG key for this software source.
-        :param pulumi.Input[str] gpg_key_url: URL of the GPG key for this software source.
+        :param pulumi.Input[str] gpg_key_url: (Updatable) URI of the GPG key for this software source.
         :param pulumi.Input[bool] is_auto_resolve_dependencies: (Updatable) Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
         :param pulumi.Input[bool] is_automatically_updated: (Updatable) Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
         :param pulumi.Input[bool] is_created_from_package_list: Indicates whether the service should create the software source from a list of packages provided by the user.
+        :param pulumi.Input[bool] is_gpg_check_enabled: (Updatable) Whether signature verification should be done for the software source.
         :param pulumi.Input[bool] is_latest_content_only: (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
                * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
                * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
@@ -1027,18 +1308,22 @@ class SoftwareSource(pulumi.CustomResource):
                * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
                * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
         :param pulumi.Input[bool] is_mandatory_for_autonomous_linux: Indicates whether the software source is required for the Autonomous Linux service.
+        :param pulumi.Input[bool] is_mirror_sync_allowed: (Updatable) Whether this software source can be synced to a management station
+        :param pulumi.Input[bool] is_ssl_verify_enabled: (Updatable) Whether SSL validation needs to be turned on
         :param pulumi.Input[str] origin_software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
-        :param pulumi.Input[str] os_family: The OS family the software source belongs to.
+        :param pulumi.Input[str] os_family: The OS family for the third-party software source.
         :param pulumi.Input[str] package_count: Number of packages the software source contains.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] packages: A property used for compatibility only. It doesn't provide a complete list of packages. See [AddPackagesToSoftwareSourceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/osmh/latest/datatypes/AddPackagesToSoftwareSourceDetails) for providing the list of packages used to create the software source when isCreatedFromPackageList is set to true.
         :param pulumi.Input[str] repo_id: The repository ID for the software source.
-        :param pulumi.Input[float] size: The size of the software source in gigabytes (GB).
+        :param pulumi.Input[float] size: The size of the software source in bytes (B).
+        :param pulumi.Input[str] software_source_sub_type: The creation type of a software source.
         :param pulumi.Input[str] software_source_type: (Updatable) Type of software source.
         :param pulumi.Input[str] software_source_version: The version to assign to this custom software source.
         :param pulumi.Input[str] state: The current state of the software source.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the software source was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
-        :param pulumi.Input[str] url: URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is 'custom/<repoId>'.
+        :param pulumi.Input[str] time_metadata_updated: The date and time the metadata for this software source was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        :param pulumi.Input[str] url: (Updatable) URL for the third-party software source.
         :param pulumi.Input[str] vendor_name: Name of the vendor providing the software source.
         :param pulumi.Input[Sequence[pulumi.Input[Union['SoftwareSourceVendorSoftwareSourceArgs', 'SoftwareSourceVendorSoftwareSourceArgsDict']]]] vendor_software_sources: (Updatable) List of vendor software sources.
         """
@@ -1046,6 +1331,7 @@ class SoftwareSource(pulumi.CustomResource):
 
         __props__ = _SoftwareSourceState.__new__(_SoftwareSourceState)
 
+        __props__.__dict__["advanced_repo_options"] = advanced_repo_options
         __props__.__dict__["arch_type"] = arch_type
         __props__.__dict__["availability"] = availability
         __props__.__dict__["availability_at_oci"] = availability_at_oci
@@ -1062,29 +1348,42 @@ class SoftwareSource(pulumi.CustomResource):
         __props__.__dict__["is_auto_resolve_dependencies"] = is_auto_resolve_dependencies
         __props__.__dict__["is_automatically_updated"] = is_automatically_updated
         __props__.__dict__["is_created_from_package_list"] = is_created_from_package_list
+        __props__.__dict__["is_gpg_check_enabled"] = is_gpg_check_enabled
         __props__.__dict__["is_latest_content_only"] = is_latest_content_only
         __props__.__dict__["is_mandatory_for_autonomous_linux"] = is_mandatory_for_autonomous_linux
+        __props__.__dict__["is_mirror_sync_allowed"] = is_mirror_sync_allowed
+        __props__.__dict__["is_ssl_verify_enabled"] = is_ssl_verify_enabled
         __props__.__dict__["origin_software_source_id"] = origin_software_source_id
         __props__.__dict__["os_family"] = os_family
         __props__.__dict__["package_count"] = package_count
         __props__.__dict__["packages"] = packages
         __props__.__dict__["repo_id"] = repo_id
         __props__.__dict__["size"] = size
+        __props__.__dict__["software_source_sub_type"] = software_source_sub_type
         __props__.__dict__["software_source_type"] = software_source_type
         __props__.__dict__["software_source_version"] = software_source_version
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
+        __props__.__dict__["time_metadata_updated"] = time_metadata_updated
         __props__.__dict__["url"] = url
         __props__.__dict__["vendor_name"] = vendor_name
         __props__.__dict__["vendor_software_sources"] = vendor_software_sources
         return SoftwareSource(resource_name, opts=opts, __props__=__props__)
 
     @property
+    @pulumi.getter(name="advancedRepoOptions")
+    def advanced_repo_options(self) -> pulumi.Output[str]:
+        """
+        (Updatable) Advanced repository options for the software source
+        """
+        return pulumi.get(self, "advanced_repo_options")
+
+    @property
     @pulumi.getter(name="archType")
     def arch_type(self) -> pulumi.Output[str]:
         """
-        The architecture type supported by the software source.
+        The architecture type supported by the third-party software source.
         """
         return pulumi.get(self, "arch_type")
 
@@ -1180,7 +1479,7 @@ class SoftwareSource(pulumi.CustomResource):
     @pulumi.getter(name="gpgKeyUrl")
     def gpg_key_url(self) -> pulumi.Output[str]:
         """
-        URL of the GPG key for this software source.
+        (Updatable) URI of the GPG key for this software source.
         """
         return pulumi.get(self, "gpg_key_url")
 
@@ -1209,6 +1508,14 @@ class SoftwareSource(pulumi.CustomResource):
         return pulumi.get(self, "is_created_from_package_list")
 
     @property
+    @pulumi.getter(name="isGpgCheckEnabled")
+    def is_gpg_check_enabled(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) Whether signature verification should be done for the software source.
+        """
+        return pulumi.get(self, "is_gpg_check_enabled")
+
+    @property
     @pulumi.getter(name="isLatestContentOnly")
     def is_latest_content_only(self) -> pulumi.Output[bool]:
         """
@@ -1230,6 +1537,22 @@ class SoftwareSource(pulumi.CustomResource):
         return pulumi.get(self, "is_mandatory_for_autonomous_linux")
 
     @property
+    @pulumi.getter(name="isMirrorSyncAllowed")
+    def is_mirror_sync_allowed(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) Whether this software source can be synced to a management station
+        """
+        return pulumi.get(self, "is_mirror_sync_allowed")
+
+    @property
+    @pulumi.getter(name="isSslVerifyEnabled")
+    def is_ssl_verify_enabled(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) Whether SSL validation needs to be turned on
+        """
+        return pulumi.get(self, "is_ssl_verify_enabled")
+
+    @property
     @pulumi.getter(name="originSoftwareSourceId")
     def origin_software_source_id(self) -> pulumi.Output[str]:
         """
@@ -1241,7 +1564,7 @@ class SoftwareSource(pulumi.CustomResource):
     @pulumi.getter(name="osFamily")
     def os_family(self) -> pulumi.Output[str]:
         """
-        The OS family the software source belongs to.
+        The OS family for the third-party software source.
         """
         return pulumi.get(self, "os_family")
 
@@ -1273,9 +1596,17 @@ class SoftwareSource(pulumi.CustomResource):
     @pulumi.getter
     def size(self) -> pulumi.Output[float]:
         """
-        The size of the software source in gigabytes (GB).
+        The size of the software source in bytes (B).
         """
         return pulumi.get(self, "size")
+
+    @property
+    @pulumi.getter(name="softwareSourceSubType")
+    def software_source_sub_type(self) -> pulumi.Output[str]:
+        """
+        The creation type of a software source.
+        """
+        return pulumi.get(self, "software_source_sub_type")
 
     @property
     @pulumi.getter(name="softwareSourceType")
@@ -1318,10 +1649,18 @@ class SoftwareSource(pulumi.CustomResource):
         return pulumi.get(self, "time_created")
 
     @property
+    @pulumi.getter(name="timeMetadataUpdated")
+    def time_metadata_updated(self) -> pulumi.Output[str]:
+        """
+        The date and time the metadata for this software source was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        """
+        return pulumi.get(self, "time_metadata_updated")
+
+    @property
     @pulumi.getter
     def url(self) -> pulumi.Output[str]:
         """
-        URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is 'custom/<repoId>'.
+        (Updatable) URL for the third-party software source.
         """
         return pulumi.get(self, "url")
 

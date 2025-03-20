@@ -145,6 +145,11 @@ public final class GetScheduledJobResult {
      */
     private String timeUpdated;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+     * 
+     */
+    private String workRequestId;
+    /**
      * @return The list of work request [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this scheduled job.
      * 
      */
@@ -331,6 +336,13 @@ public final class GetScheduledJobResult {
         return this.timeUpdated;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+     * 
+     */
+    public String workRequestId() {
+        return this.workRequestId;
+    }
+    /**
      * @return The list of work request [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this scheduled job.
      * 
      */
@@ -372,6 +384,7 @@ public final class GetScheduledJobResult {
         private String timeLastExecution;
         private String timeNextExecution;
         private String timeUpdated;
+        private String workRequestId;
         private List<String> workRequestIds;
         public Builder() {}
         public Builder(GetScheduledJobResult defaults) {
@@ -401,6 +414,7 @@ public final class GetScheduledJobResult {
     	      this.timeLastExecution = defaults.timeLastExecution;
     	      this.timeNextExecution = defaults.timeNextExecution;
     	      this.timeUpdated = defaults.timeUpdated;
+    	      this.workRequestId = defaults.workRequestId;
     	      this.workRequestIds = defaults.workRequestIds;
         }
 
@@ -626,6 +640,14 @@ public final class GetScheduledJobResult {
             return this;
         }
         @CustomType.Setter
+        public Builder workRequestId(String workRequestId) {
+            if (workRequestId == null) {
+              throw new MissingRequiredPropertyException("GetScheduledJobResult", "workRequestId");
+            }
+            this.workRequestId = workRequestId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder workRequestIds(List<String> workRequestIds) {
             if (workRequestIds == null) {
               throw new MissingRequiredPropertyException("GetScheduledJobResult", "workRequestIds");
@@ -663,6 +685,7 @@ public final class GetScheduledJobResult {
             _resultValue.timeLastExecution = timeLastExecution;
             _resultValue.timeNextExecution = timeNextExecution;
             _resultValue.timeUpdated = timeUpdated;
+            _resultValue.workRequestId = workRequestId;
             _resultValue.workRequestIds = workRequestIds;
             return _resultValue;
         }

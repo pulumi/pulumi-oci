@@ -27,7 +27,7 @@ class GetManagementStationResult:
     """
     A collection of values returned by getManagementStation.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, healths=None, hostname=None, id=None, managed_instance_id=None, management_station_id=None, mirror_capacity=None, mirror_sync_statuses=None, mirrors=None, overall_percentage=None, overall_state=None, profile_id=None, proxies=None, refresh_trigger=None, scheduled_job_id=None, state=None, system_tags=None, total_mirrors=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, healths=None, hostname=None, id=None, is_auto_config_enabled=None, location=None, managed_instance_id=None, management_station_id=None, mirror_capacity=None, mirror_package_count=None, mirror_size=None, mirror_storage_available_size=None, mirror_storage_size=None, mirror_sync_statuses=None, mirror_unique_package_count=None, mirrors=None, overall_percentage=None, overall_state=None, peer_management_stations=None, profile_id=None, proxies=None, refresh_trigger=None, scheduled_job_id=None, state=None, system_tags=None, total_mirrors=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -52,6 +52,12 @@ class GetManagementStationResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_auto_config_enabled and not isinstance(is_auto_config_enabled, bool):
+            raise TypeError("Expected argument 'is_auto_config_enabled' to be a bool")
+        pulumi.set(__self__, "is_auto_config_enabled", is_auto_config_enabled)
+        if location and not isinstance(location, str):
+            raise TypeError("Expected argument 'location' to be a str")
+        pulumi.set(__self__, "location", location)
         if managed_instance_id and not isinstance(managed_instance_id, str):
             raise TypeError("Expected argument 'managed_instance_id' to be a str")
         pulumi.set(__self__, "managed_instance_id", managed_instance_id)
@@ -61,9 +67,24 @@ class GetManagementStationResult:
         if mirror_capacity and not isinstance(mirror_capacity, int):
             raise TypeError("Expected argument 'mirror_capacity' to be a int")
         pulumi.set(__self__, "mirror_capacity", mirror_capacity)
+        if mirror_package_count and not isinstance(mirror_package_count, int):
+            raise TypeError("Expected argument 'mirror_package_count' to be a int")
+        pulumi.set(__self__, "mirror_package_count", mirror_package_count)
+        if mirror_size and not isinstance(mirror_size, str):
+            raise TypeError("Expected argument 'mirror_size' to be a str")
+        pulumi.set(__self__, "mirror_size", mirror_size)
+        if mirror_storage_available_size and not isinstance(mirror_storage_available_size, str):
+            raise TypeError("Expected argument 'mirror_storage_available_size' to be a str")
+        pulumi.set(__self__, "mirror_storage_available_size", mirror_storage_available_size)
+        if mirror_storage_size and not isinstance(mirror_storage_size, str):
+            raise TypeError("Expected argument 'mirror_storage_size' to be a str")
+        pulumi.set(__self__, "mirror_storage_size", mirror_storage_size)
         if mirror_sync_statuses and not isinstance(mirror_sync_statuses, list):
             raise TypeError("Expected argument 'mirror_sync_statuses' to be a list")
         pulumi.set(__self__, "mirror_sync_statuses", mirror_sync_statuses)
+        if mirror_unique_package_count and not isinstance(mirror_unique_package_count, int):
+            raise TypeError("Expected argument 'mirror_unique_package_count' to be a int")
+        pulumi.set(__self__, "mirror_unique_package_count", mirror_unique_package_count)
         if mirrors and not isinstance(mirrors, list):
             raise TypeError("Expected argument 'mirrors' to be a list")
         pulumi.set(__self__, "mirrors", mirrors)
@@ -73,6 +94,9 @@ class GetManagementStationResult:
         if overall_state and not isinstance(overall_state, str):
             raise TypeError("Expected argument 'overall_state' to be a str")
         pulumi.set(__self__, "overall_state", overall_state)
+        if peer_management_stations and not isinstance(peer_management_stations, list):
+            raise TypeError("Expected argument 'peer_management_stations' to be a list")
+        pulumi.set(__self__, "peer_management_stations", peer_management_stations)
         if profile_id and not isinstance(profile_id, str):
             raise TypeError("Expected argument 'profile_id' to be a str")
         pulumi.set(__self__, "profile_id", profile_id)
@@ -123,7 +147,7 @@ class GetManagementStationResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        A user-friendly name for the management station.
+        User-friendly name for the management station.
         """
         return pulumi.get(self, "display_name")
 
@@ -160,6 +184,22 @@ class GetManagementStationResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isAutoConfigEnabled")
+    def is_auto_config_enabled(self) -> bool:
+        """
+        When enabled, the station setup script automatically runs to configure the firewall and SELinux settings on the station.
+        """
+        return pulumi.get(self, "is_auto_config_enabled")
+
+    @property
+    @pulumi.getter
+    def location(self) -> str:
+        """
+        The location of the instance that is acting as the management station.
+        """
+        return pulumi.get(self, "location")
+
+    @property
     @pulumi.getter(name="managedInstanceId")
     def managed_instance_id(self) -> str:
         """
@@ -181,12 +221,52 @@ class GetManagementStationResult:
         return pulumi.get(self, "mirror_capacity")
 
     @property
+    @pulumi.getter(name="mirrorPackageCount")
+    def mirror_package_count(self) -> int:
+        """
+        The total number of all packages within the mirrored software sources.
+        """
+        return pulumi.get(self, "mirror_package_count")
+
+    @property
+    @pulumi.getter(name="mirrorSize")
+    def mirror_size(self) -> str:
+        """
+        The total size of all software source mirrors in bytes.
+        """
+        return pulumi.get(self, "mirror_size")
+
+    @property
+    @pulumi.getter(name="mirrorStorageAvailableSize")
+    def mirror_storage_available_size(self) -> str:
+        """
+        Amount of available mirror storage in bytes.
+        """
+        return pulumi.get(self, "mirror_storage_available_size")
+
+    @property
+    @pulumi.getter(name="mirrorStorageSize")
+    def mirror_storage_size(self) -> str:
+        """
+        Total mirror storage size in bytes.
+        """
+        return pulumi.get(self, "mirror_storage_size")
+
+    @property
     @pulumi.getter(name="mirrorSyncStatuses")
     def mirror_sync_statuses(self) -> Sequence['outputs.GetManagementStationMirrorSyncStatusResult']:
         """
         Status summary of the mirror sync.
         """
         return pulumi.get(self, "mirror_sync_statuses")
+
+    @property
+    @pulumi.getter(name="mirrorUniquePackageCount")
+    def mirror_unique_package_count(self) -> int:
+        """
+        The total number of unique packages within the mirrored software sources on the station. Each package is counted only once, regardless of how many versions it has.
+        """
+        return pulumi.get(self, "mirror_unique_package_count")
 
     @property
     @pulumi.getter
@@ -211,6 +291,14 @@ class GetManagementStationResult:
         Current state of the mirror sync for the management station.
         """
         return pulumi.get(self, "overall_state")
+
+    @property
+    @pulumi.getter(name="peerManagementStations")
+    def peer_management_stations(self) -> Sequence['outputs.GetManagementStationPeerManagementStationResult']:
+        """
+        A list of other management stations that are behind the same load balancer within a high availability configuration. Stations are identified as peers if they have the same hostname and compartment.
+        """
+        return pulumi.get(self, "peer_management_stations")
 
     @property
     @pulumi.getter(name="profileId")
@@ -280,13 +368,21 @@ class AwaitableGetManagementStationResult(GetManagementStationResult):
             healths=self.healths,
             hostname=self.hostname,
             id=self.id,
+            is_auto_config_enabled=self.is_auto_config_enabled,
+            location=self.location,
             managed_instance_id=self.managed_instance_id,
             management_station_id=self.management_station_id,
             mirror_capacity=self.mirror_capacity,
+            mirror_package_count=self.mirror_package_count,
+            mirror_size=self.mirror_size,
+            mirror_storage_available_size=self.mirror_storage_available_size,
+            mirror_storage_size=self.mirror_storage_size,
             mirror_sync_statuses=self.mirror_sync_statuses,
+            mirror_unique_package_count=self.mirror_unique_package_count,
             mirrors=self.mirrors,
             overall_percentage=self.overall_percentage,
             overall_state=self.overall_state,
+            peer_management_stations=self.peer_management_stations,
             profile_id=self.profile_id,
             proxies=self.proxies,
             refresh_trigger=self.refresh_trigger,
@@ -301,7 +397,7 @@ def get_management_station(management_station_id: Optional[str] = None,
     """
     This data source provides details about a specific Management Station resource in Oracle Cloud Infrastructure Os Management Hub service.
 
-    Gets information about the specified management station.
+    Returns information about the specified management station.
 
     ## Example Usage
 
@@ -329,13 +425,21 @@ def get_management_station(management_station_id: Optional[str] = None,
         healths=pulumi.get(__ret__, 'healths'),
         hostname=pulumi.get(__ret__, 'hostname'),
         id=pulumi.get(__ret__, 'id'),
+        is_auto_config_enabled=pulumi.get(__ret__, 'is_auto_config_enabled'),
+        location=pulumi.get(__ret__, 'location'),
         managed_instance_id=pulumi.get(__ret__, 'managed_instance_id'),
         management_station_id=pulumi.get(__ret__, 'management_station_id'),
         mirror_capacity=pulumi.get(__ret__, 'mirror_capacity'),
+        mirror_package_count=pulumi.get(__ret__, 'mirror_package_count'),
+        mirror_size=pulumi.get(__ret__, 'mirror_size'),
+        mirror_storage_available_size=pulumi.get(__ret__, 'mirror_storage_available_size'),
+        mirror_storage_size=pulumi.get(__ret__, 'mirror_storage_size'),
         mirror_sync_statuses=pulumi.get(__ret__, 'mirror_sync_statuses'),
+        mirror_unique_package_count=pulumi.get(__ret__, 'mirror_unique_package_count'),
         mirrors=pulumi.get(__ret__, 'mirrors'),
         overall_percentage=pulumi.get(__ret__, 'overall_percentage'),
         overall_state=pulumi.get(__ret__, 'overall_state'),
+        peer_management_stations=pulumi.get(__ret__, 'peer_management_stations'),
         profile_id=pulumi.get(__ret__, 'profile_id'),
         proxies=pulumi.get(__ret__, 'proxies'),
         refresh_trigger=pulumi.get(__ret__, 'refresh_trigger'),
@@ -348,7 +452,7 @@ def get_management_station_output(management_station_id: Optional[pulumi.Input[s
     """
     This data source provides details about a specific Management Station resource in Oracle Cloud Infrastructure Os Management Hub service.
 
-    Gets information about the specified management station.
+    Returns information about the specified management station.
 
     ## Example Usage
 
@@ -375,13 +479,21 @@ def get_management_station_output(management_station_id: Optional[pulumi.Input[s
         healths=pulumi.get(__response__, 'healths'),
         hostname=pulumi.get(__response__, 'hostname'),
         id=pulumi.get(__response__, 'id'),
+        is_auto_config_enabled=pulumi.get(__response__, 'is_auto_config_enabled'),
+        location=pulumi.get(__response__, 'location'),
         managed_instance_id=pulumi.get(__response__, 'managed_instance_id'),
         management_station_id=pulumi.get(__response__, 'management_station_id'),
         mirror_capacity=pulumi.get(__response__, 'mirror_capacity'),
+        mirror_package_count=pulumi.get(__response__, 'mirror_package_count'),
+        mirror_size=pulumi.get(__response__, 'mirror_size'),
+        mirror_storage_available_size=pulumi.get(__response__, 'mirror_storage_available_size'),
+        mirror_storage_size=pulumi.get(__response__, 'mirror_storage_size'),
         mirror_sync_statuses=pulumi.get(__response__, 'mirror_sync_statuses'),
+        mirror_unique_package_count=pulumi.get(__response__, 'mirror_unique_package_count'),
         mirrors=pulumi.get(__response__, 'mirrors'),
         overall_percentage=pulumi.get(__response__, 'overall_percentage'),
         overall_state=pulumi.get(__response__, 'overall_state'),
+        peer_management_stations=pulumi.get(__response__, 'peer_management_stations'),
         profile_id=pulumi.get(__response__, 'profile_id'),
         proxies=pulumi.get(__response__, 'proxies'),
         refresh_trigger=pulumi.get(__response__, 'refresh_trigger'),

@@ -70,6 +70,8 @@ import (
 type DeploymentBackup struct {
 	pulumi.CustomResourceState
 
+	// Possible deployment backup source types.
+	BackupSourceType pulumi.StringOutput `pulumi:"backupSourceType"`
 	// Possible Deployment backup types.
 	BackupType pulumi.StringOutput `pulumi:"backupType"`
 	// Name of the bucket where the object is to be uploaded in the object storage
@@ -168,6 +170,8 @@ func GetDeploymentBackup(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DeploymentBackup resources.
 type deploymentBackupState struct {
+	// Possible deployment backup source types.
+	BackupSourceType *string `pulumi:"backupSourceType"`
 	// Possible Deployment backup types.
 	BackupType *string `pulumi:"backupType"`
 	// Name of the bucket where the object is to be uploaded in the object storage
@@ -219,6 +223,8 @@ type deploymentBackupState struct {
 }
 
 type DeploymentBackupState struct {
+	// Possible deployment backup source types.
+	BackupSourceType pulumi.StringPtrInput
 	// Possible Deployment backup types.
 	BackupType pulumi.StringPtrInput
 	// Name of the bucket where the object is to be uploaded in the object storage
@@ -413,6 +419,11 @@ func (o DeploymentBackupOutput) ToDeploymentBackupOutput() DeploymentBackupOutpu
 
 func (o DeploymentBackupOutput) ToDeploymentBackupOutputWithContext(ctx context.Context) DeploymentBackupOutput {
 	return o
+}
+
+// Possible deployment backup source types.
+func (o DeploymentBackupOutput) BackupSourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v *DeploymentBackup) pulumi.StringOutput { return v.BackupSourceType }).(pulumi.StringOutput)
 }
 
 // Possible Deployment backup types.

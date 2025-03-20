@@ -42,6 +42,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// Additional information about the current lifecycleState, if available.
         /// </summary>
         public readonly string LifecycleDetails;
+        public readonly int MigrateTrigger;
         public readonly ImmutableArray<Outputs.GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigResult> PeerAutonomousContainerDatabaseBackupConfigs;
         public readonly string PeerAutonomousContainerDatabaseCompartmentId;
         /// <summary>
@@ -112,6 +113,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string lifecycleDetails,
 
+            int migrateTrigger,
+
             ImmutableArray<Outputs.GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigResult> peerAutonomousContainerDatabaseBackupConfigs,
 
             string peerAutonomousContainerDatabaseCompartmentId,
@@ -156,6 +159,7 @@ namespace Pulumi.Oci.Database.Outputs
             Id = id;
             IsAutomaticFailoverEnabled = isAutomaticFailoverEnabled;
             LifecycleDetails = lifecycleDetails;
+            MigrateTrigger = migrateTrigger;
             PeerAutonomousContainerDatabaseBackupConfigs = peerAutonomousContainerDatabaseBackupConfigs;
             PeerAutonomousContainerDatabaseCompartmentId = peerAutonomousContainerDatabaseCompartmentId;
             PeerAutonomousContainerDatabaseDataguardAssociationId = peerAutonomousContainerDatabaseDataguardAssociationId;

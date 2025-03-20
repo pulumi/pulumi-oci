@@ -12,8 +12,10 @@ import com.pulumi.oci.OsManagementHub.inputs.ManagementStationState;
 import com.pulumi.oci.OsManagementHub.outputs.ManagementStationHealth;
 import com.pulumi.oci.OsManagementHub.outputs.ManagementStationMirror;
 import com.pulumi.oci.OsManagementHub.outputs.ManagementStationMirrorSyncStatus;
+import com.pulumi.oci.OsManagementHub.outputs.ManagementStationPeerManagementStation;
 import com.pulumi.oci.OsManagementHub.outputs.ManagementStationProxy;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -24,7 +26,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Management Station resource in Oracle Cloud Infrastructure Os Management Hub service.
  * 
- * Create a management station. You must provide proxy and mirror configuration information.
+ * Creates a management station using the proxy and mirror configuration information provided.
  * 
  * ## Example Usage
  * 
@@ -61,6 +63,7 @@ import javax.annotation.Nullable;
  *                 .directory(managementStationMirrorDirectory)
  *                 .port(managementStationMirrorPort)
  *                 .sslport(managementStationMirrorSslport)
+ *                 .isSslverifyEnabled(managementStationMirrorIsSslverifyEnabled)
  *                 .sslcert(managementStationMirrorSslcert)
  *                 .build())
  *             .proxy(ManagementStationProxyArgs.builder()
@@ -72,6 +75,7 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(managementStationDescription)
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .isAutoConfigEnabled(managementStationIsAutoConfigEnabled)
  *             .build());
  * 
  *     }
@@ -190,6 +194,34 @@ public class ManagementStation extends com.pulumi.resources.CustomResource {
         return this.hostname;
     }
     /**
+     * (Updatable) When enabled, the station setup script automatically runs to configure the firewall and SELinux settings on the station.
+     * 
+     */
+    @Export(name="isAutoConfigEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isAutoConfigEnabled;
+
+    /**
+     * @return (Updatable) When enabled, the station setup script automatically runs to configure the firewall and SELinux settings on the station.
+     * 
+     */
+    public Output<Boolean> isAutoConfigEnabled() {
+        return this.isAutoConfigEnabled;
+    }
+    /**
+     * The location of the instance that is acting as the management station.
+     * 
+     */
+    @Export(name="location", refs={String.class}, tree="[0]")
+    private Output<String> location;
+
+    /**
+     * @return The location of the instance that is acting as the management station.
+     * 
+     */
+    public Output<String> location() {
+        return this.location;
+    }
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
      * 
      */
@@ -232,6 +264,62 @@ public class ManagementStation extends com.pulumi.resources.CustomResource {
         return this.mirrorCapacity;
     }
     /**
+     * The total number of all packages within the mirrored software sources.
+     * 
+     */
+    @Export(name="mirrorPackageCount", refs={Integer.class}, tree="[0]")
+    private Output<Integer> mirrorPackageCount;
+
+    /**
+     * @return The total number of all packages within the mirrored software sources.
+     * 
+     */
+    public Output<Integer> mirrorPackageCount() {
+        return this.mirrorPackageCount;
+    }
+    /**
+     * The total size of all software source mirrors in bytes.
+     * 
+     */
+    @Export(name="mirrorSize", refs={String.class}, tree="[0]")
+    private Output<String> mirrorSize;
+
+    /**
+     * @return The total size of all software source mirrors in bytes.
+     * 
+     */
+    public Output<String> mirrorSize() {
+        return this.mirrorSize;
+    }
+    /**
+     * Amount of available mirror storage in bytes.
+     * 
+     */
+    @Export(name="mirrorStorageAvailableSize", refs={String.class}, tree="[0]")
+    private Output<String> mirrorStorageAvailableSize;
+
+    /**
+     * @return Amount of available mirror storage in bytes.
+     * 
+     */
+    public Output<String> mirrorStorageAvailableSize() {
+        return this.mirrorStorageAvailableSize;
+    }
+    /**
+     * Total mirror storage size in bytes.
+     * 
+     */
+    @Export(name="mirrorStorageSize", refs={String.class}, tree="[0]")
+    private Output<String> mirrorStorageSize;
+
+    /**
+     * @return Total mirror storage size in bytes.
+     * 
+     */
+    public Output<String> mirrorStorageSize() {
+        return this.mirrorStorageSize;
+    }
+    /**
      * Status summary of the mirror sync.
      * 
      */
@@ -244,6 +332,20 @@ public class ManagementStation extends com.pulumi.resources.CustomResource {
      */
     public Output<List<ManagementStationMirrorSyncStatus>> mirrorSyncStatuses() {
         return this.mirrorSyncStatuses;
+    }
+    /**
+     * The total number of unique packages within the mirrored software sources on the station. Each package is counted only once, regardless of how many versions it has.
+     * 
+     */
+    @Export(name="mirrorUniquePackageCount", refs={Integer.class}, tree="[0]")
+    private Output<Integer> mirrorUniquePackageCount;
+
+    /**
+     * @return The total number of unique packages within the mirrored software sources on the station. Each package is counted only once, regardless of how many versions it has.
+     * 
+     */
+    public Output<Integer> mirrorUniquePackageCount() {
+        return this.mirrorUniquePackageCount;
     }
     /**
      * A decimal number representing the progress of the current mirror sync.
@@ -272,6 +374,20 @@ public class ManagementStation extends com.pulumi.resources.CustomResource {
      */
     public Output<String> overallState() {
         return this.overallState;
+    }
+    /**
+     * A list of other management stations that are behind the same load balancer within a high availability configuration. Stations are identified as peers if they have the same hostname and compartment.
+     * 
+     */
+    @Export(name="peerManagementStations", refs={List.class,ManagementStationPeerManagementStation.class}, tree="[0,1]")
+    private Output<List<ManagementStationPeerManagementStation>> peerManagementStations;
+
+    /**
+     * @return A list of other management stations that are behind the same load balancer within a high availability configuration. Stations are identified as peers if they have the same hostname and compartment.
+     * 
+     */
+    public Output<List<ManagementStationPeerManagementStation>> peerManagementStations() {
+        return this.peerManagementStations;
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.

@@ -18,7 +18,7 @@ public final class GetEntitlementsEntitlementCollection {
      */
     private String compartmentId;
     /**
-     * @return A filter to return entitlements that match the given CSI.
+     * @return A filter to return entitlements that match the given customer support identifier (CSI).
      * 
      */
     private String csi;
@@ -37,7 +37,7 @@ public final class GetEntitlementsEntitlementCollection {
         return this.compartmentId;
     }
     /**
-     * @return A filter to return entitlements that match the given CSI.
+     * @return A filter to return entitlements that match the given customer support identifier (CSI).
      * 
      */
     public String csi() {

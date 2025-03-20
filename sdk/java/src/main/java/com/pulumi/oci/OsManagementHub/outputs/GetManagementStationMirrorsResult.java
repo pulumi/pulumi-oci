@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetManagementStationMirrorsResult {
     /**
-     * @return Display name of the mirror
+     * @return Display name of the mirror.
      * 
      */
     private @Nullable String displayName;
@@ -37,7 +37,7 @@ public final class GetManagementStationMirrorsResult {
 
     private GetManagementStationMirrorsResult() {}
     /**
-     * @return Display name of the mirror
+     * @return Display name of the mirror.
      * 
      */
     public Optional<String> displayName() {

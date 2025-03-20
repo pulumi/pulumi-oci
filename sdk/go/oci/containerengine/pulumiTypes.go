@@ -1075,7 +1075,7 @@ type ClusterOptions struct {
 	AddOns *ClusterOptionsAddOns `pulumi:"addOns"`
 	// (Updatable) Configurable cluster admission controllers
 	AdmissionControllerOptions *ClusterOptionsAdmissionControllerOptions `pulumi:"admissionControllerOptions"`
-	// IP family to use for single stack or define the order of IP families for dual-stack
+	// IP family to use for single stack or define the order of IP families for dual-stack. Available values are [] (defaults to IPv4), [IPv4] (IPv4), [IPv4, IPv6] (IPv4 preferred dual stack).
 	IpFamilies []string `pulumi:"ipFamilies"`
 	// Network configuration for Kubernetes.
 	KubernetesNetworkConfig *ClusterOptionsKubernetesNetworkConfig `pulumi:"kubernetesNetworkConfig"`
@@ -1107,7 +1107,7 @@ type ClusterOptionsArgs struct {
 	AddOns ClusterOptionsAddOnsPtrInput `pulumi:"addOns"`
 	// (Updatable) Configurable cluster admission controllers
 	AdmissionControllerOptions ClusterOptionsAdmissionControllerOptionsPtrInput `pulumi:"admissionControllerOptions"`
-	// IP family to use for single stack or define the order of IP families for dual-stack
+	// IP family to use for single stack or define the order of IP families for dual-stack. Available values are [] (defaults to IPv4), [IPv4] (IPv4), [IPv4, IPv6] (IPv4 preferred dual stack).
 	IpFamilies pulumi.StringArrayInput `pulumi:"ipFamilies"`
 	// Network configuration for Kubernetes.
 	KubernetesNetworkConfig ClusterOptionsKubernetesNetworkConfigPtrInput `pulumi:"kubernetesNetworkConfig"`
@@ -1210,7 +1210,7 @@ func (o ClusterOptionsOutput) AdmissionControllerOptions() ClusterOptionsAdmissi
 	return o.ApplyT(func(v ClusterOptions) *ClusterOptionsAdmissionControllerOptions { return v.AdmissionControllerOptions }).(ClusterOptionsAdmissionControllerOptionsPtrOutput)
 }
 
-// IP family to use for single stack or define the order of IP families for dual-stack
+// IP family to use for single stack or define the order of IP families for dual-stack. Available values are [] (defaults to IPv4), [IPv4] (IPv4), [IPv4, IPv6] (IPv4 preferred dual stack).
 func (o ClusterOptionsOutput) IpFamilies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ClusterOptions) []string { return v.IpFamilies }).(pulumi.StringArrayOutput)
 }
@@ -1291,7 +1291,7 @@ func (o ClusterOptionsPtrOutput) AdmissionControllerOptions() ClusterOptionsAdmi
 	}).(ClusterOptionsAdmissionControllerOptionsPtrOutput)
 }
 
-// IP family to use for single stack or define the order of IP families for dual-stack
+// IP family to use for single stack or define the order of IP families for dual-stack. Available values are [] (defaults to IPv4), [IPv4] (IPv4), [IPv4, IPv6] (IPv4 preferred dual stack).
 func (o ClusterOptionsPtrOutput) IpFamilies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ClusterOptions) []string {
 		if v == nil {
@@ -1655,9 +1655,9 @@ func (o ClusterOptionsAdmissionControllerOptionsPtrOutput) IsPodSecurityPolicyEn
 }
 
 type ClusterOptionsKubernetesNetworkConfig struct {
-	// The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
+	// The CIDR block for Kubernetes pods. Optional. For ipv4, defaults to 10.244.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0000::/96.
 	PodsCidr *string `pulumi:"podsCidr"`
-	// The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
+	// The CIDR block for Kubernetes services. Optional. For ipv4, defaults to 10.96.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0001::/108.
 	ServicesCidr *string `pulumi:"servicesCidr"`
 }
 
@@ -1673,9 +1673,9 @@ type ClusterOptionsKubernetesNetworkConfigInput interface {
 }
 
 type ClusterOptionsKubernetesNetworkConfigArgs struct {
-	// The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
+	// The CIDR block for Kubernetes pods. Optional. For ipv4, defaults to 10.244.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0000::/96.
 	PodsCidr pulumi.StringPtrInput `pulumi:"podsCidr"`
-	// The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
+	// The CIDR block for Kubernetes services. Optional. For ipv4, defaults to 10.96.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0001::/108.
 	ServicesCidr pulumi.StringPtrInput `pulumi:"servicesCidr"`
 }
 
@@ -1756,12 +1756,12 @@ func (o ClusterOptionsKubernetesNetworkConfigOutput) ToClusterOptionsKubernetesN
 	}).(ClusterOptionsKubernetesNetworkConfigPtrOutput)
 }
 
-// The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
+// The CIDR block for Kubernetes pods. Optional. For ipv4, defaults to 10.244.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0000::/96.
 func (o ClusterOptionsKubernetesNetworkConfigOutput) PodsCidr() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterOptionsKubernetesNetworkConfig) *string { return v.PodsCidr }).(pulumi.StringPtrOutput)
 }
 
-// The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
+// The CIDR block for Kubernetes services. Optional. For ipv4, defaults to 10.96.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0001::/108.
 func (o ClusterOptionsKubernetesNetworkConfigOutput) ServicesCidr() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterOptionsKubernetesNetworkConfig) *string { return v.ServicesCidr }).(pulumi.StringPtrOutput)
 }
@@ -1790,7 +1790,7 @@ func (o ClusterOptionsKubernetesNetworkConfigPtrOutput) Elem() ClusterOptionsKub
 	}).(ClusterOptionsKubernetesNetworkConfigOutput)
 }
 
-// The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
+// The CIDR block for Kubernetes pods. Optional. For ipv4, defaults to 10.244.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0000::/96.
 func (o ClusterOptionsKubernetesNetworkConfigPtrOutput) PodsCidr() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClusterOptionsKubernetesNetworkConfig) *string {
 		if v == nil {
@@ -1800,7 +1800,7 @@ func (o ClusterOptionsKubernetesNetworkConfigPtrOutput) PodsCidr() pulumi.String
 	}).(pulumi.StringPtrOutput)
 }
 
-// The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
+// The CIDR block for Kubernetes services. Optional. For ipv4, defaults to 10.96.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0001::/108.
 func (o ClusterOptionsKubernetesNetworkConfigPtrOutput) ServicesCidr() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClusterOptionsKubernetesNetworkConfig) *string {
 		if v == nil {
@@ -9917,7 +9917,7 @@ type GetClusterOption struct {
 	AddOns []GetClusterOptionAddOn `pulumi:"addOns"`
 	// Configurable cluster admission controllers
 	AdmissionControllerOptions []GetClusterOptionAdmissionControllerOption `pulumi:"admissionControllerOptions"`
-	// IP family to use for single stack or define the order of IP families for dual-stack
+	// IP family to use for single stack or define the order of IP families for dual-stack. Available values are [] (defaults to IPv4), [IPv4] (IPv4), [IPv4, IPv6] (IPv4 preferred dual stack).
 	IpFamilies []string `pulumi:"ipFamilies"`
 	// Network configuration for Kubernetes.
 	KubernetesNetworkConfigs []GetClusterOptionKubernetesNetworkConfig `pulumi:"kubernetesNetworkConfigs"`
@@ -9949,7 +9949,7 @@ type GetClusterOptionArgs struct {
 	AddOns GetClusterOptionAddOnArrayInput `pulumi:"addOns"`
 	// Configurable cluster admission controllers
 	AdmissionControllerOptions GetClusterOptionAdmissionControllerOptionArrayInput `pulumi:"admissionControllerOptions"`
-	// IP family to use for single stack or define the order of IP families for dual-stack
+	// IP family to use for single stack or define the order of IP families for dual-stack. Available values are [] (defaults to IPv4), [IPv4] (IPv4), [IPv4, IPv6] (IPv4 preferred dual stack).
 	IpFamilies pulumi.StringArrayInput `pulumi:"ipFamilies"`
 	// Network configuration for Kubernetes.
 	KubernetesNetworkConfigs GetClusterOptionKubernetesNetworkConfigArrayInput `pulumi:"kubernetesNetworkConfigs"`
@@ -10028,7 +10028,7 @@ func (o GetClusterOptionOutput) AdmissionControllerOptions() GetClusterOptionAdm
 	}).(GetClusterOptionAdmissionControllerOptionArrayOutput)
 }
 
-// IP family to use for single stack or define the order of IP families for dual-stack
+// IP family to use for single stack or define the order of IP families for dual-stack. Available values are [] (defaults to IPv4), [IPv4] (IPv4), [IPv4, IPv6] (IPv4 preferred dual stack).
 func (o GetClusterOptionOutput) IpFamilies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterOption) []string { return v.IpFamilies }).(pulumi.StringArrayOutput)
 }
@@ -10386,9 +10386,9 @@ func (o GetClusterOptionClusterPodNetworkOptionArrayOutput) Index(i pulumi.IntIn
 }
 
 type GetClusterOptionKubernetesNetworkConfig struct {
-	// The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
+	// The CIDR block for Kubernetes pods. Optional. For ipv4, defaults to 10.244.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0000::/96.
 	PodsCidr string `pulumi:"podsCidr"`
-	// The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
+	// The CIDR block for Kubernetes services. Optional. For ipv4, defaults to 10.96.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0001::/108.
 	ServicesCidr string `pulumi:"servicesCidr"`
 }
 
@@ -10404,9 +10404,9 @@ type GetClusterOptionKubernetesNetworkConfigInput interface {
 }
 
 type GetClusterOptionKubernetesNetworkConfigArgs struct {
-	// The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
+	// The CIDR block for Kubernetes pods. Optional. For ipv4, defaults to 10.244.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0000::/96.
 	PodsCidr pulumi.StringInput `pulumi:"podsCidr"`
-	// The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
+	// The CIDR block for Kubernetes services. Optional. For ipv4, defaults to 10.96.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0001::/108.
 	ServicesCidr pulumi.StringInput `pulumi:"servicesCidr"`
 }
 
@@ -10461,12 +10461,12 @@ func (o GetClusterOptionKubernetesNetworkConfigOutput) ToGetClusterOptionKuberne
 	return o
 }
 
-// The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
+// The CIDR block for Kubernetes pods. Optional. For ipv4, defaults to 10.244.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0000::/96.
 func (o GetClusterOptionKubernetesNetworkConfigOutput) PodsCidr() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterOptionKubernetesNetworkConfig) string { return v.PodsCidr }).(pulumi.StringOutput)
 }
 
-// The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
+// The CIDR block for Kubernetes services. Optional. For ipv4, defaults to 10.96.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0001::/108.
 func (o GetClusterOptionKubernetesNetworkConfigOutput) ServicesCidr() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterOptionKubernetesNetworkConfig) string { return v.ServicesCidr }).(pulumi.StringOutput)
 }
@@ -12366,7 +12366,7 @@ type GetClustersClusterOption struct {
 	AddOns []GetClustersClusterOptionAddOn `pulumi:"addOns"`
 	// Configurable cluster admission controllers
 	AdmissionControllerOptions []GetClustersClusterOptionAdmissionControllerOption `pulumi:"admissionControllerOptions"`
-	// IP family to use for single stack or define the order of IP families for dual-stack
+	// IP family to use for single stack or define the order of IP families for dual-stack. Available values are [] (defaults to IPv4), [IPv4] (IPv4), [IPv4, IPv6] (IPv4 preferred dual stack).
 	IpFamilies []string `pulumi:"ipFamilies"`
 	// Network configuration for Kubernetes.
 	KubernetesNetworkConfigs []GetClustersClusterOptionKubernetesNetworkConfig `pulumi:"kubernetesNetworkConfigs"`
@@ -12398,7 +12398,7 @@ type GetClustersClusterOptionArgs struct {
 	AddOns GetClustersClusterOptionAddOnArrayInput `pulumi:"addOns"`
 	// Configurable cluster admission controllers
 	AdmissionControllerOptions GetClustersClusterOptionAdmissionControllerOptionArrayInput `pulumi:"admissionControllerOptions"`
-	// IP family to use for single stack or define the order of IP families for dual-stack
+	// IP family to use for single stack or define the order of IP families for dual-stack. Available values are [] (defaults to IPv4), [IPv4] (IPv4), [IPv4, IPv6] (IPv4 preferred dual stack).
 	IpFamilies pulumi.StringArrayInput `pulumi:"ipFamilies"`
 	// Network configuration for Kubernetes.
 	KubernetesNetworkConfigs GetClustersClusterOptionKubernetesNetworkConfigArrayInput `pulumi:"kubernetesNetworkConfigs"`
@@ -12477,7 +12477,7 @@ func (o GetClustersClusterOptionOutput) AdmissionControllerOptions() GetClusters
 	}).(GetClustersClusterOptionAdmissionControllerOptionArrayOutput)
 }
 
-// IP family to use for single stack or define the order of IP families for dual-stack
+// IP family to use for single stack or define the order of IP families for dual-stack. Available values are [] (defaults to IPv4), [IPv4] (IPv4), [IPv4, IPv6] (IPv4 preferred dual stack).
 func (o GetClustersClusterOptionOutput) IpFamilies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClustersClusterOption) []string { return v.IpFamilies }).(pulumi.StringArrayOutput)
 }
@@ -12744,9 +12744,9 @@ func (o GetClustersClusterOptionAdmissionControllerOptionArrayOutput) Index(i pu
 }
 
 type GetClustersClusterOptionKubernetesNetworkConfig struct {
-	// The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
+	// The CIDR block for Kubernetes pods. Optional. For ipv4, defaults to 10.244.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0000::/96.
 	PodsCidr string `pulumi:"podsCidr"`
-	// The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
+	// The CIDR block for Kubernetes services. Optional. For ipv4, defaults to 10.96.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0001::/108.
 	ServicesCidr string `pulumi:"servicesCidr"`
 }
 
@@ -12762,9 +12762,9 @@ type GetClustersClusterOptionKubernetesNetworkConfigInput interface {
 }
 
 type GetClustersClusterOptionKubernetesNetworkConfigArgs struct {
-	// The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
+	// The CIDR block for Kubernetes pods. Optional. For ipv4, defaults to 10.244.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0000::/96.
 	PodsCidr pulumi.StringInput `pulumi:"podsCidr"`
-	// The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
+	// The CIDR block for Kubernetes services. Optional. For ipv4, defaults to 10.96.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0001::/108.
 	ServicesCidr pulumi.StringInput `pulumi:"servicesCidr"`
 }
 
@@ -12819,12 +12819,12 @@ func (o GetClustersClusterOptionKubernetesNetworkConfigOutput) ToGetClustersClus
 	return o
 }
 
-// The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
+// The CIDR block for Kubernetes pods. Optional. For ipv4, defaults to 10.244.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0000::/96.
 func (o GetClustersClusterOptionKubernetesNetworkConfigOutput) PodsCidr() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClustersClusterOptionKubernetesNetworkConfig) string { return v.PodsCidr }).(pulumi.StringOutput)
 }
 
-// The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
+// The CIDR block for Kubernetes services. Optional. For ipv4, defaults to 10.96.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0001::/108.
 func (o GetClustersClusterOptionKubernetesNetworkConfigOutput) ServicesCidr() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClustersClusterOptionKubernetesNetworkConfig) string { return v.ServicesCidr }).(pulumi.StringOutput)
 }
@@ -15450,9 +15450,8 @@ type GetNodePoolsNodePool struct {
 	// Deprecated. see `nodeSource`. The name of the image running on the nodes in the node pool.
 	//
 	// Deprecated: The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
-	NodeImageName string `pulumi:"nodeImageName"`
-	// A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
-	NodeMetadata map[string]string `pulumi:"nodeMetadata"`
+	NodeImageName string            `pulumi:"nodeImageName"`
+	NodeMetadata  map[string]string `pulumi:"nodeMetadata"`
 	// Node Pool Cycling Details
 	NodePoolCyclingDetails []GetNodePoolsNodePoolNodePoolCyclingDetail `pulumi:"nodePoolCyclingDetails"`
 	NodePoolId             string                                      `pulumi:"nodePoolId"`
@@ -15516,9 +15515,8 @@ type GetNodePoolsNodePoolArgs struct {
 	// Deprecated. see `nodeSource`. The name of the image running on the nodes in the node pool.
 	//
 	// Deprecated: The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
-	NodeImageName pulumi.StringInput `pulumi:"nodeImageName"`
-	// A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
-	NodeMetadata pulumi.StringMapInput `pulumi:"nodeMetadata"`
+	NodeImageName pulumi.StringInput    `pulumi:"nodeImageName"`
+	NodeMetadata  pulumi.StringMapInput `pulumi:"nodeMetadata"`
 	// Node Pool Cycling Details
 	NodePoolCyclingDetails GetNodePoolsNodePoolNodePoolCyclingDetailArrayInput `pulumi:"nodePoolCyclingDetails"`
 	NodePoolId             pulumi.StringInput                                  `pulumi:"nodePoolId"`
@@ -15663,7 +15661,6 @@ func (o GetNodePoolsNodePoolOutput) NodeImageName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePool) string { return v.NodeImageName }).(pulumi.StringOutput)
 }
 
-// A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
 func (o GetNodePoolsNodePoolOutput) NodeMetadata() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePool) map[string]string { return v.NodeMetadata }).(pulumi.StringMapOutput)
 }

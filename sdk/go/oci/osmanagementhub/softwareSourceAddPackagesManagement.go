@@ -16,6 +16,10 @@ import (
 //
 // Adds packages to a software source. This operation can only be done for custom and versioned custom software sources that are not created using filters.
 // For a versioned custom software source, you can only add packages when the source is created. Once content is added to a versioned custom software source, it is immutable.
+// Packages can be of the format:
+//   - name (for example: git). If isLatestContentOnly is true, only the latest version of the package will be added, otherwise all versions of the package will be added.
+//   - name-version-release.architecture (for example: git-2.43.5-1.el8_10.x86_64)
+//   - name-epoch:version-release.architecture (for example: git-0:2.43.5-1.el8_10.x86_64)
 //
 // ## Example Usage
 //
@@ -32,8 +36,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := osmanagementhub.NewSoftwareSourceAddPackagesManagement(ctx, "test_software_source_add_packages_management", &osmanagementhub.SoftwareSourceAddPackagesManagementArgs{
-//				Packages:         pulumi.Any(softwareSourceAddPackagesManagementPackages),
-//				SoftwareSourceId: pulumi.Any(testSoftwareSource.Id),
+//				Packages:                    pulumi.Any(softwareSourceAddPackagesManagementPackages),
+//				SoftwareSourceId:            pulumi.Any(testSoftwareSource.Id),
+//				IsContinueOnMissingPackages: pulumi.Any(softwareSourceAddPackagesManagementIsContinueOnMissingPackages),
 //			})
 //			if err != nil {
 //				return err
@@ -54,7 +59,9 @@ import (
 type SoftwareSourceAddPackagesManagement struct {
 	pulumi.CustomResourceState
 
-	// List of packages specified by the full package name (NEVRA.rpm).
+	// Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
+	IsContinueOnMissingPackages pulumi.BoolOutput `pulumi:"isContinueOnMissingPackages"`
+	// List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
 	Packages pulumi.StringArrayOutput `pulumi:"packages"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	//
@@ -99,7 +106,9 @@ func GetSoftwareSourceAddPackagesManagement(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering SoftwareSourceAddPackagesManagement resources.
 type softwareSourceAddPackagesManagementState struct {
-	// List of packages specified by the full package name (NEVRA.rpm).
+	// Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
+	IsContinueOnMissingPackages *bool `pulumi:"isContinueOnMissingPackages"`
+	// List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
 	Packages []string `pulumi:"packages"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	//
@@ -109,7 +118,9 @@ type softwareSourceAddPackagesManagementState struct {
 }
 
 type SoftwareSourceAddPackagesManagementState struct {
-	// List of packages specified by the full package name (NEVRA.rpm).
+	// Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
+	IsContinueOnMissingPackages pulumi.BoolPtrInput
+	// List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
 	Packages pulumi.StringArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	//
@@ -123,7 +134,9 @@ func (SoftwareSourceAddPackagesManagementState) ElementType() reflect.Type {
 }
 
 type softwareSourceAddPackagesManagementArgs struct {
-	// List of packages specified by the full package name (NEVRA.rpm).
+	// Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
+	IsContinueOnMissingPackages *bool `pulumi:"isContinueOnMissingPackages"`
+	// List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
 	Packages []string `pulumi:"packages"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	//
@@ -134,7 +147,9 @@ type softwareSourceAddPackagesManagementArgs struct {
 
 // The set of arguments for constructing a SoftwareSourceAddPackagesManagement resource.
 type SoftwareSourceAddPackagesManagementArgs struct {
-	// List of packages specified by the full package name (NEVRA.rpm).
+	// Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
+	IsContinueOnMissingPackages pulumi.BoolPtrInput
+	// List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
 	Packages pulumi.StringArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	//
@@ -230,7 +245,12 @@ func (o SoftwareSourceAddPackagesManagementOutput) ToSoftwareSourceAddPackagesMa
 	return o
 }
 
-// List of packages specified by the full package name (NEVRA.rpm).
+// Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
+func (o SoftwareSourceAddPackagesManagementOutput) IsContinueOnMissingPackages() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SoftwareSourceAddPackagesManagement) pulumi.BoolOutput { return v.IsContinueOnMissingPackages }).(pulumi.BoolOutput)
+}
+
+// List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
 func (o SoftwareSourceAddPackagesManagementOutput) Packages() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *SoftwareSourceAddPackagesManagement) pulumi.StringArrayOutput { return v.Packages }).(pulumi.StringArrayOutput)
 }

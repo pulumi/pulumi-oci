@@ -75,6 +75,10 @@ export class DeploymentBackup extends pulumi.CustomResource {
     }
 
     /**
+     * Possible deployment backup source types.
+     */
+    public /*out*/ readonly backupSourceType!: pulumi.Output<string>;
+    /**
      * Possible Deployment backup types.
      */
     public /*out*/ readonly backupType!: pulumi.Output<string>;
@@ -181,6 +185,7 @@ export class DeploymentBackup extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DeploymentBackupState | undefined;
+            resourceInputs["backupSourceType"] = state ? state.backupSourceType : undefined;
             resourceInputs["backupType"] = state ? state.backupType : undefined;
             resourceInputs["bucket"] = state ? state.bucket : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
@@ -235,6 +240,7 @@ export class DeploymentBackup extends pulumi.CustomResource {
             resourceInputs["locks"] = args ? args.locks : undefined;
             resourceInputs["namespace"] = args ? args.namespace : undefined;
             resourceInputs["object"] = args ? args.object : undefined;
+            resourceInputs["backupSourceType"] = undefined /*out*/;
             resourceInputs["backupType"] = undefined /*out*/;
             resourceInputs["deploymentType"] = undefined /*out*/;
             resourceInputs["isAutomatic"] = undefined /*out*/;
@@ -257,6 +263,10 @@ export class DeploymentBackup extends pulumi.CustomResource {
  * Input properties used for looking up and filtering DeploymentBackup resources.
  */
 export interface DeploymentBackupState {
+    /**
+     * Possible deployment backup source types.
+     */
+    backupSourceType?: pulumi.Input<string>;
     /**
      * Possible Deployment backup types.
      */

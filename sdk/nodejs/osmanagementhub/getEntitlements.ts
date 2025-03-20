@@ -44,7 +44,7 @@ export interface GetEntitlementsArgs {
      */
     compartmentId: string;
     /**
-     * A filter to return entitlements that match the given CSI.
+     * A filter to return entitlements that match the given customer support identifier (CSI).
      */
     csi?: string;
     filters?: inputs.OsManagementHub.GetEntitlementsFilter[];
@@ -118,7 +118,7 @@ export interface GetEntitlementsOutputArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * A filter to return entitlements that match the given CSI.
+     * A filter to return entitlements that match the given customer support identifier (CSI).
      */
     csi?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetEntitlementsFilterArgs>[]>;

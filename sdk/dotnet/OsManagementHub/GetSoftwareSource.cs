@@ -124,6 +124,10 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetSoftwareSourceResult
     {
         /// <summary>
+        /// Advanced repository options for the software source
+        /// </summary>
+        public readonly string AdvancedRepoOptions;
+        /// <summary>
         /// The architecture type supported by the software source.
         /// </summary>
         public readonly string ArchType;
@@ -172,7 +176,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly string GpgKeyId;
         /// <summary>
-        /// URL of the GPG key for this software source.
+        /// URI of the GPG key for this software source.
         /// </summary>
         public readonly string GpgKeyUrl;
         /// <summary>
@@ -192,6 +196,10 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly bool IsCreatedFromPackageList;
         /// <summary>
+        /// Whether signature verification should be done for the software source
+        /// </summary>
+        public readonly bool IsGpgCheckEnabled;
+        /// <summary>
         /// Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
         /// * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
         /// * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
@@ -205,11 +213,19 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly bool IsMandatoryForAutonomousLinux;
         /// <summary>
-        /// This property applies only to replicated vendor software sources. This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment.
+        /// Indicates if this software source can be mirrored to a management station.
+        /// </summary>
+        public readonly bool IsMirrorSyncAllowed;
+        /// <summary>
+        /// Indicates if SSL validation is enabled for the software source.
+        /// </summary>
+        public readonly bool IsSslVerifyEnabled;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment. This property applies only to replicated vendor software sources.
         /// </summary>
         public readonly string OriginSoftwareSourceId;
         /// <summary>
-        /// The OS family the software source belongs to.
+        /// The OS family of the software source.
         /// </summary>
         public readonly string OsFamily;
         /// <summary>
@@ -225,10 +241,14 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly string RepoId;
         /// <summary>
-        /// The size of the software source in gigabytes (GB).
+        /// The size of the software source in bytes (B).
         /// </summary>
         public readonly double Size;
         public readonly string SoftwareSourceId;
+        /// <summary>
+        /// Identifies how the versioned custom software source was created.
+        /// </summary>
+        public readonly string SoftwareSourceSubType;
         /// <summary>
         /// Type of software source.
         /// </summary>
@@ -250,6 +270,10 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
+        /// The date and time the metadata for this software source was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        /// </summary>
+        public readonly string TimeMetadataUpdated;
+        /// <summary>
         /// URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is 'custom/&lt;repoId&gt;'.
         /// </summary>
         public readonly string Url;
@@ -264,6 +288,8 @@ namespace Pulumi.Oci.OsManagementHub
 
         [OutputConstructor]
         private GetSoftwareSourceResult(
+            string advancedRepoOptions,
+
             string archType,
 
             string availability,
@@ -298,9 +324,15 @@ namespace Pulumi.Oci.OsManagementHub
 
             bool isCreatedFromPackageList,
 
+            bool isGpgCheckEnabled,
+
             bool isLatestContentOnly,
 
             bool isMandatoryForAutonomousLinux,
+
+            bool isMirrorSyncAllowed,
+
+            bool isSslVerifyEnabled,
 
             string originSoftwareSourceId,
 
@@ -316,6 +348,8 @@ namespace Pulumi.Oci.OsManagementHub
 
             string softwareSourceId,
 
+            string softwareSourceSubType,
+
             string softwareSourceType,
 
             string softwareSourceVersion,
@@ -326,12 +360,15 @@ namespace Pulumi.Oci.OsManagementHub
 
             string timeCreated,
 
+            string timeMetadataUpdated,
+
             string url,
 
             string vendorName,
 
             ImmutableArray<Outputs.GetSoftwareSourceVendorSoftwareSourceResult> vendorSoftwareSources)
         {
+            AdvancedRepoOptions = advancedRepoOptions;
             ArchType = archType;
             Availability = availability;
             AvailabilityAtOci = availabilityAtOci;
@@ -349,8 +386,11 @@ namespace Pulumi.Oci.OsManagementHub
             IsAutoResolveDependencies = isAutoResolveDependencies;
             IsAutomaticallyUpdated = isAutomaticallyUpdated;
             IsCreatedFromPackageList = isCreatedFromPackageList;
+            IsGpgCheckEnabled = isGpgCheckEnabled;
             IsLatestContentOnly = isLatestContentOnly;
             IsMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
+            IsMirrorSyncAllowed = isMirrorSyncAllowed;
+            IsSslVerifyEnabled = isSslVerifyEnabled;
             OriginSoftwareSourceId = originSoftwareSourceId;
             OsFamily = osFamily;
             PackageCount = packageCount;
@@ -358,11 +398,13 @@ namespace Pulumi.Oci.OsManagementHub
             RepoId = repoId;
             Size = size;
             SoftwareSourceId = softwareSourceId;
+            SoftwareSourceSubType = softwareSourceSubType;
             SoftwareSourceType = softwareSourceType;
             SoftwareSourceVersion = softwareSourceVersion;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;
+            TimeMetadataUpdated = timeMetadataUpdated;
             Url = url;
             VendorName = vendorName;
             VendorSoftwareSources = vendorSoftwareSources;

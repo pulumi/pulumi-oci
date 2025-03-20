@@ -39,6 +39,7 @@ namespace Pulumi.Oci.OsManagementHub
         ///         DisplayNameContains = softwareSourceDisplayNameContains,
         ///         DisplayNameNotEqualTos = softwareSourceDisplayNameNotEqualTo,
         ///         IsMandatoryForAutonomousLinux = softwareSourceIsMandatoryForAutonomousLinux,
+        ///         IsMirrorSyncAllowed = softwareSourceIsMirrorSyncAllowed,
         ///         OsFamilies = softwareSourceOsFamily,
         ///         SoftwareSourceId = testSoftwareSource.Id,
         ///         SoftwareSourceTypes = softwareSourceSoftwareSourceType,
@@ -80,6 +81,7 @@ namespace Pulumi.Oci.OsManagementHub
         ///         DisplayNameContains = softwareSourceDisplayNameContains,
         ///         DisplayNameNotEqualTos = softwareSourceDisplayNameNotEqualTo,
         ///         IsMandatoryForAutonomousLinux = softwareSourceIsMandatoryForAutonomousLinux,
+        ///         IsMirrorSyncAllowed = softwareSourceIsMirrorSyncAllowed,
         ///         OsFamilies = softwareSourceOsFamily,
         ///         SoftwareSourceId = testSoftwareSource.Id,
         ///         SoftwareSourceTypes = softwareSourceSoftwareSourceType,
@@ -121,6 +123,7 @@ namespace Pulumi.Oci.OsManagementHub
         ///         DisplayNameContains = softwareSourceDisplayNameContains,
         ///         DisplayNameNotEqualTos = softwareSourceDisplayNameNotEqualTo,
         ///         IsMandatoryForAutonomousLinux = softwareSourceIsMandatoryForAutonomousLinux,
+        ///         IsMirrorSyncAllowed = softwareSourceIsMirrorSyncAllowed,
         ///         OsFamilies = softwareSourceOsFamily,
         ///         SoftwareSourceId = testSoftwareSource.Id,
         ///         SoftwareSourceTypes = softwareSourceSoftwareSourceType,
@@ -154,7 +157,7 @@ namespace Pulumi.Oci.OsManagementHub
         private List<string>? _availabilities;
 
         /// <summary>
-        /// The availabilities of the software source in a non-OCI environment for a tenancy.
+        /// The availability of the software source in a non-OCI environment for a tenancy.
         /// </summary>
         public List<string> Availabilities
         {
@@ -166,7 +169,7 @@ namespace Pulumi.Oci.OsManagementHub
         private List<string>? _availabilityAnywheres;
 
         /// <summary>
-        /// The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
+        /// The availability of the software source. Use this query parameter to filter across availabilities in different environments.
         /// </summary>
         public List<string> AvailabilityAnywheres
         {
@@ -178,7 +181,7 @@ namespace Pulumi.Oci.OsManagementHub
         private List<string>? _availabilityAtOcis;
 
         /// <summary>
-        /// The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+        /// The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
         /// </summary>
         public List<string> AvailabilityAtOcis
         {
@@ -229,6 +232,12 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         [Input("isMandatoryForAutonomousLinux")]
         public bool? IsMandatoryForAutonomousLinux { get; set; }
+
+        /// <summary>
+        /// A filter to return software sources which can be synced to a management station.
+        /// </summary>
+        [Input("isMirrorSyncAllowed")]
+        public bool? IsMirrorSyncAllowed { get; set; }
 
         [Input("osFamilies")]
         private List<string>? _osFamilies;
@@ -302,7 +311,7 @@ namespace Pulumi.Oci.OsManagementHub
         private InputList<string>? _availabilities;
 
         /// <summary>
-        /// The availabilities of the software source in a non-OCI environment for a tenancy.
+        /// The availability of the software source in a non-OCI environment for a tenancy.
         /// </summary>
         public InputList<string> Availabilities
         {
@@ -314,7 +323,7 @@ namespace Pulumi.Oci.OsManagementHub
         private InputList<string>? _availabilityAnywheres;
 
         /// <summary>
-        /// The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
+        /// The availability of the software source. Use this query parameter to filter across availabilities in different environments.
         /// </summary>
         public InputList<string> AvailabilityAnywheres
         {
@@ -326,7 +335,7 @@ namespace Pulumi.Oci.OsManagementHub
         private InputList<string>? _availabilityAtOcis;
 
         /// <summary>
-        /// The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+        /// The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
         /// </summary>
         public InputList<string> AvailabilityAtOcis
         {
@@ -377,6 +386,12 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         [Input("isMandatoryForAutonomousLinux")]
         public Input<bool>? IsMandatoryForAutonomousLinux { get; set; }
+
+        /// <summary>
+        /// A filter to return software sources which can be synced to a management station.
+        /// </summary>
+        [Input("isMirrorSyncAllowed")]
+        public Input<bool>? IsMirrorSyncAllowed { get; set; }
 
         [Input("osFamilies")]
         private InputList<string>? _osFamilies;
@@ -469,7 +484,11 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly bool? IsMandatoryForAutonomousLinux;
         /// <summary>
-        /// The OS family the software source belongs to.
+        /// Indicates if this software source can be mirrored to a management station.
+        /// </summary>
+        public readonly bool? IsMirrorSyncAllowed;
+        /// <summary>
+        /// The OS family of the software source.
         /// </summary>
         public readonly ImmutableArray<string> OsFamilies;
         /// <summary>
@@ -514,6 +533,8 @@ namespace Pulumi.Oci.OsManagementHub
 
             bool? isMandatoryForAutonomousLinux,
 
+            bool? isMirrorSyncAllowed,
+
             ImmutableArray<string> osFamilies,
 
             ImmutableArray<Outputs.GetSoftwareSourcesSoftwareSourceCollectionResult> softwareSourceCollections,
@@ -537,6 +558,7 @@ namespace Pulumi.Oci.OsManagementHub
             Filters = filters;
             Id = id;
             IsMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
+            IsMirrorSyncAllowed = isMirrorSyncAllowed;
             OsFamilies = osFamilies;
             SoftwareSourceCollections = softwareSourceCollections;
             SoftwareSourceId = softwareSourceId;

@@ -70,6 +70,8 @@ public final class GetEventsResult {
      * * `SOFTWARE_SOURCE` - Software source
      * * `AGENT` - Agent
      * * `MANAGEMENT_STATION` - Management Station
+     * * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+     * * `REBOOT` - Reboot
      * 
      */
     private @Nullable List<String> types;
@@ -153,6 +155,8 @@ public final class GetEventsResult {
      * * `SOFTWARE_SOURCE` - Software source
      * * `AGENT` - Agent
      * * `MANAGEMENT_STATION` - Management Station
+     * * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+     * * `REBOOT` - Reboot
      * 
      */
     public List<String> types() {

@@ -44,6 +44,10 @@ export interface GetManagedInstanceArgs {
  */
 export interface GetManagedInstanceResult {
     /**
+     * The version of osmh-agent running on the managed instance
+     */
+    readonly agentVersion: string;
+    /**
      * The CPU architecture type of the managed instance.
      */
     readonly architecture: string;
@@ -149,11 +153,15 @@ export interface GetManagedInstanceResult {
      */
     readonly profile: string;
     /**
+     * The version of the profile that was used to register this instance with the service.
+     */
+    readonly profileVersion: string;
+    /**
      * Number of scheduled jobs associated with this instance.
      */
     readonly scheduledJobCount: number;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary managment station.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station.
      */
     readonly secondaryManagementStationId: string;
     /**

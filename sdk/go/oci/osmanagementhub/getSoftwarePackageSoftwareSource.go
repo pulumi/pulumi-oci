@@ -65,11 +65,11 @@ func LookupSoftwarePackageSoftwareSource(ctx *pulumi.Context, args *LookupSoftwa
 type LookupSoftwarePackageSoftwareSourceArgs struct {
 	// A filter to return only instances whose architecture type matches the given architecture.
 	ArchTypes []string `pulumi:"archTypes"`
-	// The availabilities of the software source in a non-OCI environment for a tenancy.
+	// The availability of the software source in a non-OCI environment for a tenancy.
 	Availabilities []string `pulumi:"availabilities"`
-	// The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
+	// The availability of the software source. Use this query parameter to filter across availabilities in different environments.
 	AvailabilityAnywheres []string `pulumi:"availabilityAnywheres"`
-	// The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+	// The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
 	AvailabilityAtOcis []string `pulumi:"availabilityAtOcis"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -105,7 +105,7 @@ type LookupSoftwarePackageSoftwareSourceResult struct {
 	Filters             []GetSoftwarePackageSoftwareSourceFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// The OS family the software source belongs to.
+	// The OS family of the software source.
 	OsFamilies          []string `pulumi:"osFamilies"`
 	SoftwarePackageName string   `pulumi:"softwarePackageName"`
 	// The list of software_source_collection.
@@ -129,11 +129,11 @@ func LookupSoftwarePackageSoftwareSourceOutput(ctx *pulumi.Context, args LookupS
 type LookupSoftwarePackageSoftwareSourceOutputArgs struct {
 	// A filter to return only instances whose architecture type matches the given architecture.
 	ArchTypes pulumi.StringArrayInput `pulumi:"archTypes"`
-	// The availabilities of the software source in a non-OCI environment for a tenancy.
+	// The availability of the software source in a non-OCI environment for a tenancy.
 	Availabilities pulumi.StringArrayInput `pulumi:"availabilities"`
-	// The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
+	// The availability of the software source. Use this query parameter to filter across availabilities in different environments.
 	AvailabilityAnywheres pulumi.StringArrayInput `pulumi:"availabilityAnywheres"`
-	// The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+	// The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
 	AvailabilityAtOcis pulumi.StringArrayInput `pulumi:"availabilityAtOcis"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
@@ -215,7 +215,7 @@ func (o LookupSoftwarePackageSoftwareSourceResultOutput) Id() pulumi.StringOutpu
 	return o.ApplyT(func(v LookupSoftwarePackageSoftwareSourceResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The OS family the software source belongs to.
+// The OS family of the software source.
 func (o LookupSoftwarePackageSoftwareSourceResultOutput) OsFamilies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupSoftwarePackageSoftwareSourceResult) []string { return v.OsFamilies }).(pulumi.StringArrayOutput)
 }

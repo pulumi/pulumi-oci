@@ -20,24 +20,28 @@ __all__ = ['SoftwareSourceAddPackagesManagementArgs', 'SoftwareSourceAddPackages
 class SoftwareSourceAddPackagesManagementArgs:
     def __init__(__self__, *,
                  packages: pulumi.Input[Sequence[pulumi.Input[str]]],
-                 software_source_id: pulumi.Input[str]):
+                 software_source_id: pulumi.Input[str],
+                 is_continue_on_missing_packages: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a SoftwareSourceAddPackagesManagement resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] packages: List of packages specified by the full package name (NEVRA.rpm).
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] packages: List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
         :param pulumi.Input[str] software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[bool] is_continue_on_missing_packages: Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
         """
         pulumi.set(__self__, "packages", packages)
         pulumi.set(__self__, "software_source_id", software_source_id)
+        if is_continue_on_missing_packages is not None:
+            pulumi.set(__self__, "is_continue_on_missing_packages", is_continue_on_missing_packages)
 
     @property
     @pulumi.getter
     def packages(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
         """
-        List of packages specified by the full package name (NEVRA.rpm).
+        List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
         """
         return pulumi.get(self, "packages")
 
@@ -61,31 +65,59 @@ class SoftwareSourceAddPackagesManagementArgs:
     def software_source_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "software_source_id", value)
 
+    @property
+    @pulumi.getter(name="isContinueOnMissingPackages")
+    def is_continue_on_missing_packages(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
+        """
+        return pulumi.get(self, "is_continue_on_missing_packages")
+
+    @is_continue_on_missing_packages.setter
+    def is_continue_on_missing_packages(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_continue_on_missing_packages", value)
+
 
 @pulumi.input_type
 class _SoftwareSourceAddPackagesManagementState:
     def __init__(__self__, *,
+                 is_continue_on_missing_packages: Optional[pulumi.Input[bool]] = None,
                  packages: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  software_source_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering SoftwareSourceAddPackagesManagement resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] packages: List of packages specified by the full package name (NEVRA.rpm).
+        :param pulumi.Input[bool] is_continue_on_missing_packages: Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] packages: List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
         :param pulumi.Input[str] software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        if is_continue_on_missing_packages is not None:
+            pulumi.set(__self__, "is_continue_on_missing_packages", is_continue_on_missing_packages)
         if packages is not None:
             pulumi.set(__self__, "packages", packages)
         if software_source_id is not None:
             pulumi.set(__self__, "software_source_id", software_source_id)
 
     @property
+    @pulumi.getter(name="isContinueOnMissingPackages")
+    def is_continue_on_missing_packages(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
+        """
+        return pulumi.get(self, "is_continue_on_missing_packages")
+
+    @is_continue_on_missing_packages.setter
+    def is_continue_on_missing_packages(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_continue_on_missing_packages", value)
+
+    @property
     @pulumi.getter
     def packages(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        List of packages specified by the full package name (NEVRA.rpm).
+        List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
         """
         return pulumi.get(self, "packages")
 
@@ -115,6 +147,7 @@ class SoftwareSourceAddPackagesManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 is_continue_on_missing_packages: Optional[pulumi.Input[bool]] = None,
                  packages: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  software_source_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -123,6 +156,10 @@ class SoftwareSourceAddPackagesManagement(pulumi.CustomResource):
 
         Adds packages to a software source. This operation can only be done for custom and versioned custom software sources that are not created using filters.
         For a versioned custom software source, you can only add packages when the source is created. Once content is added to a versioned custom software source, it is immutable.
+        Packages can be of the format:
+          * name (for example: git). If isLatestContentOnly is true, only the latest version of the package will be added, otherwise all versions of the package will be added.
+          * name-version-release.architecture (for example: git-2.43.5-1.el8_10.x86_64)
+          * name-epoch:version-release.architecture (for example: git-0:2.43.5-1.el8_10.x86_64)
 
         ## Example Usage
 
@@ -132,7 +169,8 @@ class SoftwareSourceAddPackagesManagement(pulumi.CustomResource):
 
         test_software_source_add_packages_management = oci.os_management_hub.SoftwareSourceAddPackagesManagement("test_software_source_add_packages_management",
             packages=software_source_add_packages_management_packages,
-            software_source_id=test_software_source["id"])
+            software_source_id=test_software_source["id"],
+            is_continue_on_missing_packages=software_source_add_packages_management_is_continue_on_missing_packages)
         ```
 
         ## Import
@@ -145,7 +183,8 @@ class SoftwareSourceAddPackagesManagement(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] packages: List of packages specified by the full package name (NEVRA.rpm).
+        :param pulumi.Input[bool] is_continue_on_missing_packages: Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] packages: List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
         :param pulumi.Input[str] software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
                
                
@@ -163,6 +202,10 @@ class SoftwareSourceAddPackagesManagement(pulumi.CustomResource):
 
         Adds packages to a software source. This operation can only be done for custom and versioned custom software sources that are not created using filters.
         For a versioned custom software source, you can only add packages when the source is created. Once content is added to a versioned custom software source, it is immutable.
+        Packages can be of the format:
+          * name (for example: git). If isLatestContentOnly is true, only the latest version of the package will be added, otherwise all versions of the package will be added.
+          * name-version-release.architecture (for example: git-2.43.5-1.el8_10.x86_64)
+          * name-epoch:version-release.architecture (for example: git-0:2.43.5-1.el8_10.x86_64)
 
         ## Example Usage
 
@@ -172,7 +215,8 @@ class SoftwareSourceAddPackagesManagement(pulumi.CustomResource):
 
         test_software_source_add_packages_management = oci.os_management_hub.SoftwareSourceAddPackagesManagement("test_software_source_add_packages_management",
             packages=software_source_add_packages_management_packages,
-            software_source_id=test_software_source["id"])
+            software_source_id=test_software_source["id"],
+            is_continue_on_missing_packages=software_source_add_packages_management_is_continue_on_missing_packages)
         ```
 
         ## Import
@@ -198,6 +242,7 @@ class SoftwareSourceAddPackagesManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 is_continue_on_missing_packages: Optional[pulumi.Input[bool]] = None,
                  packages: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  software_source_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -209,6 +254,7 @@ class SoftwareSourceAddPackagesManagement(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = SoftwareSourceAddPackagesManagementArgs.__new__(SoftwareSourceAddPackagesManagementArgs)
 
+            __props__.__dict__["is_continue_on_missing_packages"] = is_continue_on_missing_packages
             if packages is None and not opts.urn:
                 raise TypeError("Missing required property 'packages'")
             __props__.__dict__["packages"] = packages
@@ -225,6 +271,7 @@ class SoftwareSourceAddPackagesManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            is_continue_on_missing_packages: Optional[pulumi.Input[bool]] = None,
             packages: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             software_source_id: Optional[pulumi.Input[str]] = None) -> 'SoftwareSourceAddPackagesManagement':
         """
@@ -234,7 +281,8 @@ class SoftwareSourceAddPackagesManagement(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] packages: List of packages specified by the full package name (NEVRA.rpm).
+        :param pulumi.Input[bool] is_continue_on_missing_packages: Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] packages: List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
         :param pulumi.Input[str] software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
                
                
@@ -245,15 +293,24 @@ class SoftwareSourceAddPackagesManagement(pulumi.CustomResource):
 
         __props__ = _SoftwareSourceAddPackagesManagementState.__new__(_SoftwareSourceAddPackagesManagementState)
 
+        __props__.__dict__["is_continue_on_missing_packages"] = is_continue_on_missing_packages
         __props__.__dict__["packages"] = packages
         __props__.__dict__["software_source_id"] = software_source_id
         return SoftwareSourceAddPackagesManagement(resource_name, opts=opts, __props__=__props__)
 
     @property
+    @pulumi.getter(name="isContinueOnMissingPackages")
+    def is_continue_on_missing_packages(self) -> pulumi.Output[bool]:
+        """
+        Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
+        """
+        return pulumi.get(self, "is_continue_on_missing_packages")
+
+    @property
     @pulumi.getter
     def packages(self) -> pulumi.Output[Sequence[str]]:
         """
-        List of packages specified by the full package name (NEVRA.rpm).
+        List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
         """
         return pulumi.get(self, "packages")
 

@@ -100,6 +100,8 @@ type LookupEventResult struct {
 	// * `SOFTWARE_SOURCE` - Software source
 	// * `AGENT` - Agent
 	// * `MANAGEMENT_STATION` - Management Station
+	// * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+	// * `REBOOT` - Reboot
 	Type string `pulumi:"type"`
 }
 
@@ -230,6 +232,8 @@ func (o LookupEventResultOutput) TimeUpdated() pulumi.StringOutput {
 // * `SOFTWARE_SOURCE` - Software source
 // * `AGENT` - Agent
 // * `MANAGEMENT_STATION` - Management Station
+// * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+// * `REBOOT` - Reboot
 func (o LookupEventResultOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupEventResult) string { return v.Type }).(pulumi.StringOutput)
 }

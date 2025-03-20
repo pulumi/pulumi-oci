@@ -44,6 +44,10 @@ export interface GetDeploymentBackupArgs {
  */
 export interface GetDeploymentBackupResult {
     /**
+     * Possible deployment backup source types.
+     */
+    readonly backupSourceType: string;
+    /**
      * Possible Deployment backup types.
      */
     readonly backupType: string;

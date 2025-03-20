@@ -94,10 +94,6 @@ public final class GetNodePoolsNodePool {
      */
     @Deprecated /* The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used. */
     private String nodeImageName;
-    /**
-     * @return A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
-     * 
-     */
     private Map<String,String> nodeMetadata;
     /**
      * @return Node Pool Cycling Details
@@ -247,10 +243,6 @@ public final class GetNodePoolsNodePool {
     public String nodeImageName() {
         return this.nodeImageName;
     }
-    /**
-     * @return A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
-     * 
-     */
     public Map<String,String> nodeMetadata() {
         return this.nodeMetadata;
     }

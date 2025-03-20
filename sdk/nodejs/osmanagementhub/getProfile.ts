@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Profile resource in Oracle Cloud Infrastructure Os Management Hub service.
  *
- * Gets information about the specified registration profile.
+ * Returns information about the specified registration profile.
  *
  * ## Example Usage
  *
@@ -94,7 +94,7 @@ export interface GetProfileResult {
      */
     readonly managedInstanceGroups: outputs.OsManagementHub.GetProfileManagedInstanceGroup[];
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an  instance once registered. Management stations are only used by non-OCI instances.
      */
     readonly managementStationId: string;
     /**
@@ -106,6 +106,10 @@ export interface GetProfileResult {
      * The type of profile.
      */
     readonly profileType: string;
+    /**
+     * The version of the profile. The version is automatically incremented each time the profiled is edited.
+     */
+    readonly profileVersion: string;
     /**
      * The type of instance to register.
      */
@@ -128,6 +132,10 @@ export interface GetProfileResult {
      */
     readonly timeCreated: string;
     /**
+     * The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     */
+    readonly timeModified: string;
+    /**
      * The vendor of the operating system for the instance.
      */
     readonly vendorName: string;
@@ -135,7 +143,7 @@ export interface GetProfileResult {
 /**
  * This data source provides details about a specific Profile resource in Oracle Cloud Infrastructure Os Management Hub service.
  *
- * Gets information about the specified registration profile.
+ * Returns information about the specified registration profile.
  *
  * ## Example Usage
  *

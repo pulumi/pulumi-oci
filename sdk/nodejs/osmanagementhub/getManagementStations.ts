@@ -9,7 +9,8 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Management Stations in Oracle Cloud Infrastructure Os Management Hub service.
  *
- * Lists management stations in a compartment.
+ * Lists management stations within the specified compartment. Filter the list against a variety of criteria
+ * including but not limited to name, status, and location.
  *
  * ## Example Usage
  *
@@ -22,6 +23,8 @@ import * as utilities from "../utilities";
  *     displayName: managementStationDisplayName,
  *     displayNameContains: managementStationDisplayNameContains,
  *     id: managementStationId,
+ *     locations: managementStationLocation,
+ *     locationNotEqualTos: managementStationLocationNotEqualTo,
  *     managedInstanceId: testManagedInstance.id,
  *     state: managementStationState,
  * });
@@ -36,6 +39,8 @@ export function getManagementStations(args?: GetManagementStationsArgs, opts?: p
         "displayNameContains": args.displayNameContains,
         "filters": args.filters,
         "id": args.id,
+        "locationNotEqualTos": args.locationNotEqualTos,
+        "locations": args.locations,
         "managedInstanceId": args.managedInstanceId,
         "state": args.state,
     }, opts);
@@ -63,6 +68,14 @@ export interface GetManagementStationsArgs {
      */
     id?: string;
     /**
+     * A filter to return only resources whose location does not match the given value.
+     */
+    locationNotEqualTos?: string[];
+    /**
+     * A filter to return only resources whose location matches the given value.
+     */
+    locations?: string[];
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
      */
     managedInstanceId?: string;
@@ -81,7 +94,7 @@ export interface GetManagementStationsResult {
      */
     readonly compartmentId?: string;
     /**
-     * A user-friendly name for the management station.
+     * User-friendly name for the management station.
      */
     readonly displayName?: string;
     readonly displayNameContains?: string;
@@ -90,6 +103,11 @@ export interface GetManagementStationsResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
      */
     readonly id?: string;
+    readonly locationNotEqualTos?: string[];
+    /**
+     * The location of the instance that is acting as the management station.
+     */
+    readonly locations?: string[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
      */
@@ -106,7 +124,8 @@ export interface GetManagementStationsResult {
 /**
  * This data source provides the list of Management Stations in Oracle Cloud Infrastructure Os Management Hub service.
  *
- * Lists management stations in a compartment.
+ * Lists management stations within the specified compartment. Filter the list against a variety of criteria
+ * including but not limited to name, status, and location.
  *
  * ## Example Usage
  *
@@ -119,6 +138,8 @@ export interface GetManagementStationsResult {
  *     displayName: managementStationDisplayName,
  *     displayNameContains: managementStationDisplayNameContains,
  *     id: managementStationId,
+ *     locations: managementStationLocation,
+ *     locationNotEqualTos: managementStationLocationNotEqualTo,
  *     managedInstanceId: testManagedInstance.id,
  *     state: managementStationState,
  * });
@@ -133,6 +154,8 @@ export function getManagementStationsOutput(args?: GetManagementStationsOutputAr
         "displayNameContains": args.displayNameContains,
         "filters": args.filters,
         "id": args.id,
+        "locationNotEqualTos": args.locationNotEqualTos,
+        "locations": args.locations,
         "managedInstanceId": args.managedInstanceId,
         "state": args.state,
     }, opts);
@@ -159,6 +182,14 @@ export interface GetManagementStationsOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station. A filter that returns information about the specified management station.
      */
     id?: pulumi.Input<string>;
+    /**
+     * A filter to return only resources whose location does not match the given value.
+     */
+    locationNotEqualTos?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A filter to return only resources whose location matches the given value.
+     */
+    locations?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
      */

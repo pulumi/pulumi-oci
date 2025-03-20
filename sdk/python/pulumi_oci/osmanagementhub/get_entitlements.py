@@ -132,7 +132,7 @@ def get_entitlements(compartment_id: Optional[str] = None,
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
-    :param str csi: A filter to return entitlements that match the given CSI.
+    :param str csi: A filter to return entitlements that match the given customer support identifier (CSI).
     :param str vendor_name: A filter to return only resources that match the given vendor name.
     """
     __args__ = dict()
@@ -174,7 +174,7 @@ def get_entitlements_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
-    :param str csi: A filter to return entitlements that match the given CSI.
+    :param str csi: A filter to return entitlements that match the given customer support identifier (CSI).
     :param str vendor_name: A filter to return only resources that match the given vendor name.
     """
     __args__ = dict()

@@ -203,6 +203,7 @@ class DeploymentBackupArgs:
 @pulumi.input_type
 class _DeploymentBackupState:
     def __init__(__self__, *,
+                 backup_source_type: Optional[pulumi.Input[str]] = None,
                  backup_type: Optional[pulumi.Input[str]] = None,
                  bucket: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
@@ -228,6 +229,7 @@ class _DeploymentBackupState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering DeploymentBackup resources.
+        :param pulumi.Input[str] backup_source_type: Possible deployment backup source types.
         :param pulumi.Input[str] backup_type: Possible Deployment backup types.
         :param pulumi.Input[str] bucket: Name of the bucket where the object is to be uploaded in the object storage
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
@@ -255,6 +257,8 @@ class _DeploymentBackupState:
         :param pulumi.Input[str] time_of_backup: The time of the resource backup. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[str] time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
+        if backup_source_type is not None:
+            pulumi.set(__self__, "backup_source_type", backup_source_type)
         if backup_type is not None:
             pulumi.set(__self__, "backup_type", backup_type)
         if bucket is not None:
@@ -301,6 +305,18 @@ class _DeploymentBackupState:
             pulumi.set(__self__, "time_of_backup", time_of_backup)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="backupSourceType")
+    def backup_source_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Possible deployment backup source types.
+        """
+        return pulumi.get(self, "backup_source_type")
+
+    @backup_source_type.setter
+    def backup_source_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "backup_source_type", value)
 
     @property
     @pulumi.getter(name="backupType")
@@ -756,6 +772,7 @@ class DeploymentBackup(pulumi.CustomResource):
             if object is None and not opts.urn:
                 raise TypeError("Missing required property 'object'")
             __props__.__dict__["object"] = object
+            __props__.__dict__["backup_source_type"] = None
             __props__.__dict__["backup_type"] = None
             __props__.__dict__["deployment_type"] = None
             __props__.__dict__["is_automatic"] = None
@@ -778,6 +795,7 @@ class DeploymentBackup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            backup_source_type: Optional[pulumi.Input[str]] = None,
             backup_type: Optional[pulumi.Input[str]] = None,
             bucket: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
@@ -808,6 +826,7 @@ class DeploymentBackup(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] backup_source_type: Possible deployment backup source types.
         :param pulumi.Input[str] backup_type: Possible Deployment backup types.
         :param pulumi.Input[str] bucket: Name of the bucket where the object is to be uploaded in the object storage
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
@@ -839,6 +858,7 @@ class DeploymentBackup(pulumi.CustomResource):
 
         __props__ = _DeploymentBackupState.__new__(_DeploymentBackupState)
 
+        __props__.__dict__["backup_source_type"] = backup_source_type
         __props__.__dict__["backup_type"] = backup_type
         __props__.__dict__["bucket"] = bucket
         __props__.__dict__["compartment_id"] = compartment_id
@@ -863,6 +883,14 @@ class DeploymentBackup(pulumi.CustomResource):
         __props__.__dict__["time_of_backup"] = time_of_backup
         __props__.__dict__["time_updated"] = time_updated
         return DeploymentBackup(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter(name="backupSourceType")
+    def backup_source_type(self) -> pulumi.Output[str]:
+        """
+        Possible deployment backup source types.
+        """
+        return pulumi.get(self, "backup_source_type")
 
     @property
     @pulumi.getter(name="backupType")

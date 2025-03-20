@@ -162,6 +162,10 @@ export class MaintenanceRun extends pulumi.CustomResource {
      */
     public /*out*/ readonly peerMaintenanceRunId!: pulumi.Output<string>;
     /**
+     * The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+     */
+    public /*out*/ readonly peerMaintenanceRunIds!: pulumi.Output<string[]>;
+    /**
      * The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
@@ -238,6 +242,7 @@ export class MaintenanceRun extends pulumi.CustomResource {
             resourceInputs["patchingStartTime"] = state ? state.patchingStartTime : undefined;
             resourceInputs["patchingStatus"] = state ? state.patchingStatus : undefined;
             resourceInputs["peerMaintenanceRunId"] = state ? state.peerMaintenanceRunId : undefined;
+            resourceInputs["peerMaintenanceRunIds"] = state ? state.peerMaintenanceRunIds : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["targetDbServerVersion"] = state ? state.targetDbServerVersion : undefined;
             resourceInputs["targetResourceId"] = state ? state.targetResourceId : undefined;
@@ -283,6 +288,7 @@ export class MaintenanceRun extends pulumi.CustomResource {
             resourceInputs["patchingStartTime"] = undefined /*out*/;
             resourceInputs["patchingStatus"] = undefined /*out*/;
             resourceInputs["peerMaintenanceRunId"] = undefined /*out*/;
+            resourceInputs["peerMaintenanceRunIds"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["targetDbServerVersion"] = undefined /*out*/;
             resourceInputs["targetResourceType"] = undefined /*out*/;
@@ -394,6 +400,10 @@ export interface MaintenanceRunState {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
      */
     peerMaintenanceRunId?: pulumi.Input<string>;
+    /**
+     * The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+     */
+    peerMaintenanceRunIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      */

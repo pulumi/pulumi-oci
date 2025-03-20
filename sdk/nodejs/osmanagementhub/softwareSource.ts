@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Software Source resource in Oracle Cloud Infrastructure Os Management Hub service.
  *
- * Creates a new versioned or custom software source.
+ * Creates a new software source.
  *
  * ## Import
  *
@@ -48,9 +48,13 @@ export class SoftwareSource extends pulumi.CustomResource {
     }
 
     /**
-     * The architecture type supported by the software source.
+     * (Updatable) Advanced repository options for the software source
      */
-    public /*out*/ readonly archType!: pulumi.Output<string>;
+    public readonly advancedRepoOptions!: pulumi.Output<string>;
+    /**
+     * The architecture type supported by the third-party software source.
+     */
+    public readonly archType!: pulumi.Output<string>;
     /**
      * Availability of the software source (for non-OCI environments).
      */
@@ -96,9 +100,9 @@ export class SoftwareSource extends pulumi.CustomResource {
      */
     public /*out*/ readonly gpgKeyId!: pulumi.Output<string>;
     /**
-     * URL of the GPG key for this software source.
+     * (Updatable) URI of the GPG key for this software source.
      */
-    public /*out*/ readonly gpgKeyUrl!: pulumi.Output<string>;
+    public readonly gpgKeyUrl!: pulumi.Output<string>;
     /**
      * (Updatable) Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
      */
@@ -111,6 +115,10 @@ export class SoftwareSource extends pulumi.CustomResource {
      * Indicates whether the service should create the software source from a list of packages provided by the user.
      */
     public readonly isCreatedFromPackageList!: pulumi.Output<boolean>;
+    /**
+     * (Updatable) Whether signature verification should be done for the software source.
+     */
+    public readonly isGpgCheckEnabled!: pulumi.Output<boolean>;
     /**
      * (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
      * * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
@@ -125,13 +133,21 @@ export class SoftwareSource extends pulumi.CustomResource {
      */
     public /*out*/ readonly isMandatoryForAutonomousLinux!: pulumi.Output<boolean>;
     /**
+     * (Updatable) Whether this software source can be synced to a management station
+     */
+    public readonly isMirrorSyncAllowed!: pulumi.Output<boolean>;
+    /**
+     * (Updatable) Whether SSL validation needs to be turned on
+     */
+    public readonly isSslVerifyEnabled!: pulumi.Output<boolean>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
      */
     public readonly originSoftwareSourceId!: pulumi.Output<string>;
     /**
-     * The OS family the software source belongs to.
+     * The OS family for the third-party software source.
      */
-    public /*out*/ readonly osFamily!: pulumi.Output<string>;
+    public readonly osFamily!: pulumi.Output<string>;
     /**
      * Number of packages the software source contains.
      */
@@ -145,9 +161,13 @@ export class SoftwareSource extends pulumi.CustomResource {
      */
     public /*out*/ readonly repoId!: pulumi.Output<string>;
     /**
-     * The size of the software source in gigabytes (GB).
+     * The size of the software source in bytes (B).
      */
     public /*out*/ readonly size!: pulumi.Output<number>;
+    /**
+     * The creation type of a software source.
+     */
+    public readonly softwareSourceSubType!: pulumi.Output<string>;
     /**
      * (Updatable) Type of software source.
      */
@@ -169,9 +189,13 @@ export class SoftwareSource extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
-     * URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is 'custom/<repoId>'.
+     * The date and time the metadata for this software source was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
-    public /*out*/ readonly url!: pulumi.Output<string>;
+    public /*out*/ readonly timeMetadataUpdated!: pulumi.Output<string>;
+    /**
+     * (Updatable) URL for the third-party software source.
+     */
+    public readonly url!: pulumi.Output<string>;
     /**
      * Name of the vendor providing the software source.
      */
@@ -194,6 +218,7 @@ export class SoftwareSource extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SoftwareSourceState | undefined;
+            resourceInputs["advancedRepoOptions"] = state ? state.advancedRepoOptions : undefined;
             resourceInputs["archType"] = state ? state.archType : undefined;
             resourceInputs["availability"] = state ? state.availability : undefined;
             resourceInputs["availabilityAtOci"] = state ? state.availabilityAtOci : undefined;
@@ -210,19 +235,24 @@ export class SoftwareSource extends pulumi.CustomResource {
             resourceInputs["isAutoResolveDependencies"] = state ? state.isAutoResolveDependencies : undefined;
             resourceInputs["isAutomaticallyUpdated"] = state ? state.isAutomaticallyUpdated : undefined;
             resourceInputs["isCreatedFromPackageList"] = state ? state.isCreatedFromPackageList : undefined;
+            resourceInputs["isGpgCheckEnabled"] = state ? state.isGpgCheckEnabled : undefined;
             resourceInputs["isLatestContentOnly"] = state ? state.isLatestContentOnly : undefined;
             resourceInputs["isMandatoryForAutonomousLinux"] = state ? state.isMandatoryForAutonomousLinux : undefined;
+            resourceInputs["isMirrorSyncAllowed"] = state ? state.isMirrorSyncAllowed : undefined;
+            resourceInputs["isSslVerifyEnabled"] = state ? state.isSslVerifyEnabled : undefined;
             resourceInputs["originSoftwareSourceId"] = state ? state.originSoftwareSourceId : undefined;
             resourceInputs["osFamily"] = state ? state.osFamily : undefined;
             resourceInputs["packageCount"] = state ? state.packageCount : undefined;
             resourceInputs["packages"] = state ? state.packages : undefined;
             resourceInputs["repoId"] = state ? state.repoId : undefined;
             resourceInputs["size"] = state ? state.size : undefined;
+            resourceInputs["softwareSourceSubType"] = state ? state.softwareSourceSubType : undefined;
             resourceInputs["softwareSourceType"] = state ? state.softwareSourceType : undefined;
             resourceInputs["softwareSourceVersion"] = state ? state.softwareSourceVersion : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["timeMetadataUpdated"] = state ? state.timeMetadataUpdated : undefined;
             resourceInputs["url"] = state ? state.url : undefined;
             resourceInputs["vendorName"] = state ? state.vendorName : undefined;
             resourceInputs["vendorSoftwareSources"] = state ? state.vendorSoftwareSources : undefined;
@@ -234,37 +264,43 @@ export class SoftwareSource extends pulumi.CustomResource {
             if ((!args || args.softwareSourceType === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'softwareSourceType'");
             }
+            resourceInputs["advancedRepoOptions"] = args ? args.advancedRepoOptions : undefined;
+            resourceInputs["archType"] = args ? args.archType : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["customSoftwareSourceFilter"] = args ? args.customSoftwareSourceFilter : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["gpgKeyUrl"] = args ? args.gpgKeyUrl : undefined;
             resourceInputs["isAutoResolveDependencies"] = args ? args.isAutoResolveDependencies : undefined;
             resourceInputs["isAutomaticallyUpdated"] = args ? args.isAutomaticallyUpdated : undefined;
             resourceInputs["isCreatedFromPackageList"] = args ? args.isCreatedFromPackageList : undefined;
+            resourceInputs["isGpgCheckEnabled"] = args ? args.isGpgCheckEnabled : undefined;
             resourceInputs["isLatestContentOnly"] = args ? args.isLatestContentOnly : undefined;
+            resourceInputs["isMirrorSyncAllowed"] = args ? args.isMirrorSyncAllowed : undefined;
+            resourceInputs["isSslVerifyEnabled"] = args ? args.isSslVerifyEnabled : undefined;
             resourceInputs["originSoftwareSourceId"] = args ? args.originSoftwareSourceId : undefined;
+            resourceInputs["osFamily"] = args ? args.osFamily : undefined;
             resourceInputs["packages"] = args ? args.packages : undefined;
+            resourceInputs["softwareSourceSubType"] = args ? args.softwareSourceSubType : undefined;
             resourceInputs["softwareSourceType"] = args ? args.softwareSourceType : undefined;
             resourceInputs["softwareSourceVersion"] = args ? args.softwareSourceVersion : undefined;
+            resourceInputs["url"] = args ? args.url : undefined;
             resourceInputs["vendorSoftwareSources"] = args ? args.vendorSoftwareSources : undefined;
-            resourceInputs["archType"] = undefined /*out*/;
             resourceInputs["availability"] = undefined /*out*/;
             resourceInputs["availabilityAtOci"] = undefined /*out*/;
             resourceInputs["checksumType"] = undefined /*out*/;
             resourceInputs["gpgKeyFingerprint"] = undefined /*out*/;
             resourceInputs["gpgKeyId"] = undefined /*out*/;
-            resourceInputs["gpgKeyUrl"] = undefined /*out*/;
             resourceInputs["isMandatoryForAutonomousLinux"] = undefined /*out*/;
-            resourceInputs["osFamily"] = undefined /*out*/;
             resourceInputs["packageCount"] = undefined /*out*/;
             resourceInputs["repoId"] = undefined /*out*/;
             resourceInputs["size"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
-            resourceInputs["url"] = undefined /*out*/;
+            resourceInputs["timeMetadataUpdated"] = undefined /*out*/;
             resourceInputs["vendorName"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -277,7 +313,11 @@ export class SoftwareSource extends pulumi.CustomResource {
  */
 export interface SoftwareSourceState {
     /**
-     * The architecture type supported by the software source.
+     * (Updatable) Advanced repository options for the software source
+     */
+    advancedRepoOptions?: pulumi.Input<string>;
+    /**
+     * The architecture type supported by the third-party software source.
      */
     archType?: pulumi.Input<string>;
     /**
@@ -325,7 +365,7 @@ export interface SoftwareSourceState {
      */
     gpgKeyId?: pulumi.Input<string>;
     /**
-     * URL of the GPG key for this software source.
+     * (Updatable) URI of the GPG key for this software source.
      */
     gpgKeyUrl?: pulumi.Input<string>;
     /**
@@ -341,6 +381,10 @@ export interface SoftwareSourceState {
      */
     isCreatedFromPackageList?: pulumi.Input<boolean>;
     /**
+     * (Updatable) Whether signature verification should be done for the software source.
+     */
+    isGpgCheckEnabled?: pulumi.Input<boolean>;
+    /**
      * (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
      * * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
      * * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
@@ -354,11 +398,19 @@ export interface SoftwareSourceState {
      */
     isMandatoryForAutonomousLinux?: pulumi.Input<boolean>;
     /**
+     * (Updatable) Whether this software source can be synced to a management station
+     */
+    isMirrorSyncAllowed?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Whether SSL validation needs to be turned on
+     */
+    isSslVerifyEnabled?: pulumi.Input<boolean>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
      */
     originSoftwareSourceId?: pulumi.Input<string>;
     /**
-     * The OS family the software source belongs to.
+     * The OS family for the third-party software source.
      */
     osFamily?: pulumi.Input<string>;
     /**
@@ -374,9 +426,13 @@ export interface SoftwareSourceState {
      */
     repoId?: pulumi.Input<string>;
     /**
-     * The size of the software source in gigabytes (GB).
+     * The size of the software source in bytes (B).
      */
     size?: pulumi.Input<number>;
+    /**
+     * The creation type of a software source.
+     */
+    softwareSourceSubType?: pulumi.Input<string>;
     /**
      * (Updatable) Type of software source.
      */
@@ -398,7 +454,11 @@ export interface SoftwareSourceState {
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is 'custom/<repoId>'.
+     * The date and time the metadata for this software source was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     */
+    timeMetadataUpdated?: pulumi.Input<string>;
+    /**
+     * (Updatable) URL for the third-party software source.
      */
     url?: pulumi.Input<string>;
     /**
@@ -415,6 +475,14 @@ export interface SoftwareSourceState {
  * The set of arguments for constructing a SoftwareSource resource.
  */
 export interface SoftwareSourceArgs {
+    /**
+     * (Updatable) Advanced repository options for the software source
+     */
+    advancedRepoOptions?: pulumi.Input<string>;
+    /**
+     * The architecture type supported by the third-party software source.
+     */
+    archType?: pulumi.Input<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
      */
@@ -440,6 +508,10 @@ export interface SoftwareSourceArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
+     * (Updatable) URI of the GPG key for this software source.
+     */
+    gpgKeyUrl?: pulumi.Input<string>;
+    /**
      * (Updatable) Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
      */
     isAutoResolveDependencies?: pulumi.Input<boolean>;
@@ -452,6 +524,10 @@ export interface SoftwareSourceArgs {
      */
     isCreatedFromPackageList?: pulumi.Input<boolean>;
     /**
+     * (Updatable) Whether signature verification should be done for the software source.
+     */
+    isGpgCheckEnabled?: pulumi.Input<boolean>;
+    /**
      * (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
      * * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
      * * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
@@ -461,13 +537,29 @@ export interface SoftwareSourceArgs {
      */
     isLatestContentOnly?: pulumi.Input<boolean>;
     /**
+     * (Updatable) Whether this software source can be synced to a management station
+     */
+    isMirrorSyncAllowed?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Whether SSL validation needs to be turned on
+     */
+    isSslVerifyEnabled?: pulumi.Input<boolean>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
      */
     originSoftwareSourceId?: pulumi.Input<string>;
     /**
+     * The OS family for the third-party software source.
+     */
+    osFamily?: pulumi.Input<string>;
+    /**
      * A property used for compatibility only. It doesn't provide a complete list of packages. See [AddPackagesToSoftwareSourceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/osmh/latest/datatypes/AddPackagesToSoftwareSourceDetails) for providing the list of packages used to create the software source when isCreatedFromPackageList is set to true.
      */
     packages?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The creation type of a software source.
+     */
+    softwareSourceSubType?: pulumi.Input<string>;
     /**
      * (Updatable) Type of software source.
      */
@@ -476,6 +568,10 @@ export interface SoftwareSourceArgs {
      * The version to assign to this custom software source.
      */
     softwareSourceVersion?: pulumi.Input<string>;
+    /**
+     * (Updatable) URL for the third-party software source.
+     */
+    url?: pulumi.Input<string>;
     /**
      * (Updatable) List of vendor software sources.
      */

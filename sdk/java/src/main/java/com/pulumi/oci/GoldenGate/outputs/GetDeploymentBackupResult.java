@@ -16,6 +16,11 @@ import java.util.Objects;
 @CustomType
 public final class GetDeploymentBackupResult {
     /**
+     * @return Possible deployment backup source types.
+     * 
+     */
+    private String backupSourceType;
+    /**
      * @return Possible Deployment backup types.
      * 
      */
@@ -134,6 +139,13 @@ public final class GetDeploymentBackupResult {
     private String timeUpdated;
 
     private GetDeploymentBackupResult() {}
+    /**
+     * @return Possible deployment backup source types.
+     * 
+     */
+    public String backupSourceType() {
+        return this.backupSourceType;
+    }
     /**
      * @return Possible Deployment backup types.
      * 
@@ -311,6 +323,7 @@ public final class GetDeploymentBackupResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String backupSourceType;
         private String backupType;
         private String bucket;
         private String compartmentId;
@@ -339,6 +352,7 @@ public final class GetDeploymentBackupResult {
         public Builder() {}
         public Builder(GetDeploymentBackupResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.backupSourceType = defaults.backupSourceType;
     	      this.backupType = defaults.backupType;
     	      this.bucket = defaults.bucket;
     	      this.compartmentId = defaults.compartmentId;
@@ -366,6 +380,14 @@ public final class GetDeploymentBackupResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
+        public Builder backupSourceType(String backupSourceType) {
+            if (backupSourceType == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentBackupResult", "backupSourceType");
+            }
+            this.backupSourceType = backupSourceType;
+            return this;
+        }
         @CustomType.Setter
         public Builder backupType(String backupType) {
             if (backupType == null) {
@@ -571,6 +593,7 @@ public final class GetDeploymentBackupResult {
         }
         public GetDeploymentBackupResult build() {
             final var _resultValue = new GetDeploymentBackupResult();
+            _resultValue.backupSourceType = backupSourceType;
             _resultValue.backupType = backupType;
             _resultValue.bucket = bucket;
             _resultValue.compartmentId = compartmentId;

@@ -200,7 +200,7 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetManagementStationMirrorsResult
     {
         /// <summary>
-        /// Display name of the mirror
+        /// Display name of the mirror.
         /// </summary>
         public readonly string? DisplayName;
         public readonly string? DisplayNameContains;

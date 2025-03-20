@@ -74,6 +74,7 @@ namespace Pulumi.Oci.OsManagementHub
     ///                     },
     ///                 },
     ///                 PackageNames = scheduledJobOperationsPackageNames,
+    ///                 RebootTimeoutInMins = scheduledJobOperationsRebootTimeoutInMins,
     ///                 SoftwareSourceIds = scheduledJobOperationsSoftwareSourceIds,
     ///                 SwitchModuleStreamsDetails = new Oci.OsManagementHub.Inputs.ScheduledJobOperationSwitchModuleStreamsDetailsArgs
     ///                 {
@@ -105,6 +106,7 @@ namespace Pulumi.Oci.OsManagementHub
     ///         ManagedInstanceIds = scheduledJobManagedInstanceIds,
     ///         RecurringRule = scheduledJobRecurringRule,
     ///         RetryIntervals = scheduledJobRetryIntervals,
+    ///         WorkRequestId = testWorkRequest.Id,
     ///     });
     /// 
     /// });
@@ -257,10 +259,6 @@ namespace Pulumi.Oci.OsManagementHub
 
         /// <summary>
         /// (Updatable) The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("timeNextExecution")]
         public Output<string> TimeNextExecution { get; private set; } = null!;
@@ -270,6 +268,16 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("workRequestId")]
+        public Output<string> WorkRequestId { get; private set; } = null!;
 
         /// <summary>
         /// The list of work request [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this scheduled job.
@@ -483,13 +491,19 @@ namespace Pulumi.Oci.OsManagementHub
 
         /// <summary>
         /// (Updatable) The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        /// </summary>
+        [Input("timeNextExecution", required: true)]
+        public Input<string> TimeNextExecution { get; set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("timeNextExecution", required: true)]
-        public Input<string> TimeNextExecution { get; set; } = null!;
+        [Input("workRequestId")]
+        public Input<string>? WorkRequestId { get; set; }
 
         public ScheduledJobArgs()
         {
@@ -695,10 +709,6 @@ namespace Pulumi.Oci.OsManagementHub
 
         /// <summary>
         /// (Updatable) The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("timeNextExecution")]
         public Input<string>? TimeNextExecution { get; set; }
@@ -708,6 +718,16 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("workRequestId")]
+        public Input<string>? WorkRequestId { get; set; }
 
         [Input("workRequestIds")]
         private InputList<string>? _workRequestIds;

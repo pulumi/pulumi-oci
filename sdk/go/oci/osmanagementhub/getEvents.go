@@ -118,6 +118,8 @@ type GetEventsResult struct {
 	// * `SOFTWARE_SOURCE` - Software source
 	// * `AGENT` - Agent
 	// * `MANAGEMENT_STATION` - Management Station
+	// * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+	// * `REBOOT` - Reboot
 	Types []string `pulumi:"types"`
 }
 
@@ -241,6 +243,8 @@ func (o GetEventsResultOutput) TimeCreatedLessThan() pulumi.StringPtrOutput {
 // * `SOFTWARE_SOURCE` - Software source
 // * `AGENT` - Agent
 // * `MANAGEMENT_STATION` - Management Station
+// * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+// * `REBOOT` - Reboot
 func (o GetEventsResultOutput) Types() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetEventsResult) []string { return v.Types }).(pulumi.StringArrayOutput)
 }

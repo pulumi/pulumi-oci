@@ -16,12 +16,24 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'AutonomousContainerDatabaseAddStandbyBackupConfig',
+    'AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetail',
+    'AutonomousContainerDatabaseAddStandbyDataguard',
+    'AutonomousContainerDatabaseAddStandbyDataguardGroupMember',
+    'AutonomousContainerDatabaseAddStandbyKeyHistoryEntry',
+    'AutonomousContainerDatabaseAddStandbyMaintenanceWindow',
+    'AutonomousContainerDatabaseAddStandbyMaintenanceWindowDaysOfWeek',
+    'AutonomousContainerDatabaseAddStandbyMaintenanceWindowMonth',
+    'AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfig',
+    'AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail',
     'AutonomousContainerDatabaseAssociatedBackupConfigurationDetail',
     'AutonomousContainerDatabaseBackupConfig',
     'AutonomousContainerDatabaseBackupConfigBackupDestinationDetails',
     'AutonomousContainerDatabaseBackupDestinationPropertiesList',
+    'AutonomousContainerDatabaseDataguard',
     'AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig',
     'AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail',
+    'AutonomousContainerDatabaseDataguardGroupMember',
     'AutonomousContainerDatabaseKeyHistoryEntry',
     'AutonomousContainerDatabaseMaintenanceWindow',
     'AutonomousContainerDatabaseMaintenanceWindowDaysOfWeek',
@@ -225,12 +237,14 @@ __all__ = [
     'GetAutonomousContainerDatabaseBackupConfigResult',
     'GetAutonomousContainerDatabaseBackupConfigBackupDestinationDetailResult',
     'GetAutonomousContainerDatabaseBackupDestinationPropertiesListResult',
+    'GetAutonomousContainerDatabaseDataguardResult',
     'GetAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigResult',
     'GetAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailResult',
     'GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationResult',
     'GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigResult',
     'GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailResult',
     'GetAutonomousContainerDatabaseDataguardAssociationsFilterResult',
+    'GetAutonomousContainerDatabaseDataguardGroupMemberResult',
     'GetAutonomousContainerDatabaseKeyHistoryEntryResult',
     'GetAutonomousContainerDatabaseMaintenanceWindowResult',
     'GetAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekResult',
@@ -250,6 +264,8 @@ __all__ = [
     'GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigResult',
     'GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigBackupDestinationDetailResult',
     'GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupDestinationPropertiesListResult',
+    'GetAutonomousContainerDatabasesAutonomousContainerDatabaseDataguardResult',
+    'GetAutonomousContainerDatabasesAutonomousContainerDatabaseDataguardGroupMemberResult',
     'GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntryResult',
     'GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowResult',
     'GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekResult',
@@ -732,6 +748,1107 @@ __all__ = [
 ]
 
 @pulumi.output_type
+class AutonomousContainerDatabaseAddStandbyBackupConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "backupDestinationDetails":
+            suggest = "backup_destination_details"
+        elif key == "recoveryWindowInDays":
+            suggest = "recovery_window_in_days"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutonomousContainerDatabaseAddStandbyBackupConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutonomousContainerDatabaseAddStandbyBackupConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutonomousContainerDatabaseAddStandbyBackupConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 backup_destination_details: Optional[Sequence['outputs.AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetail']] = None,
+                 recovery_window_in_days: Optional[int] = None):
+        """
+        :param Sequence['AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetailArgs'] backup_destination_details: Backup destination details.
+        :param int recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
+        """
+        if backup_destination_details is not None:
+            pulumi.set(__self__, "backup_destination_details", backup_destination_details)
+        if recovery_window_in_days is not None:
+            pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
+
+    @property
+    @pulumi.getter(name="backupDestinationDetails")
+    def backup_destination_details(self) -> Optional[Sequence['outputs.AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetail']]:
+        """
+        Backup destination details.
+        """
+        return pulumi.get(self, "backup_destination_details")
+
+    @property
+    @pulumi.getter(name="recoveryWindowInDays")
+    def recovery_window_in_days(self) -> Optional[int]:
+        """
+        Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
+        """
+        return pulumi.get(self, "recovery_window_in_days")
+
+
+@pulumi.output_type
+class AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dbrsPolicyId":
+            suggest = "dbrs_policy_id"
+        elif key == "internetProxy":
+            suggest = "internet_proxy"
+        elif key == "vpcPassword":
+            suggest = "vpc_password"
+        elif key == "vpcUser":
+            suggest = "vpc_user"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 dbrs_policy_id: Optional[str] = None,
+                 id: Optional[str] = None,
+                 internet_proxy: Optional[str] = None,
+                 type: Optional[str] = None,
+                 vpc_password: Optional[str] = None,
+                 vpc_user: Optional[str] = None):
+        """
+        :param str dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+        :param str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        :param str internet_proxy: Proxy URL to connect to object store.
+        :param str type: Type of the database backup destination.
+        :param str vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+        :param str vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+        """
+        if dbrs_policy_id is not None:
+            pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if internet_proxy is not None:
+            pulumi.set(__self__, "internet_proxy", internet_proxy)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if vpc_password is not None:
+            pulumi.set(__self__, "vpc_password", vpc_password)
+        if vpc_user is not None:
+            pulumi.set(__self__, "vpc_user", vpc_user)
+
+    @property
+    @pulumi.getter(name="dbrsPolicyId")
+    def dbrs_policy_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+        """
+        return pulumi.get(self, "dbrs_policy_id")
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[str]:
+        """
+        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="internetProxy")
+    def internet_proxy(self) -> Optional[str]:
+        """
+        Proxy URL to connect to object store.
+        """
+        return pulumi.get(self, "internet_proxy")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
+        """
+        Type of the database backup destination.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="vpcPassword")
+    def vpc_password(self) -> Optional[str]:
+        """
+        For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+        """
+        return pulumi.get(self, "vpc_password")
+
+    @property
+    @pulumi.getter(name="vpcUser")
+    def vpc_user(self) -> Optional[str]:
+        """
+        For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+        """
+        return pulumi.get(self, "vpc_user")
+
+
+@pulumi.output_type
+class AutonomousContainerDatabaseAddStandbyDataguard(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "applyLag":
+            suggest = "apply_lag"
+        elif key == "applyRate":
+            suggest = "apply_rate"
+        elif key == "automaticFailoverTarget":
+            suggest = "automatic_failover_target"
+        elif key == "autonomousContainerDatabaseId":
+            suggest = "autonomous_container_database_id"
+        elif key == "availabilityDomain":
+            suggest = "availability_domain"
+        elif key == "fastStartFailOverLagLimitInSeconds":
+            suggest = "fast_start_fail_over_lag_limit_in_seconds"
+        elif key == "isAutomaticFailoverEnabled":
+            suggest = "is_automatic_failover_enabled"
+        elif key == "lifecycleDetails":
+            suggest = "lifecycle_details"
+        elif key == "protectionMode":
+            suggest = "protection_mode"
+        elif key == "redoTransportMode":
+            suggest = "redo_transport_mode"
+        elif key == "timeCreated":
+            suggest = "time_created"
+        elif key == "timeLagRefreshedOn":
+            suggest = "time_lag_refreshed_on"
+        elif key == "timeLastRoleChanged":
+            suggest = "time_last_role_changed"
+        elif key == "timeLastSynced":
+            suggest = "time_last_synced"
+        elif key == "transportLag":
+            suggest = "transport_lag"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutonomousContainerDatabaseAddStandbyDataguard. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutonomousContainerDatabaseAddStandbyDataguard.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutonomousContainerDatabaseAddStandbyDataguard.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 apply_lag: Optional[str] = None,
+                 apply_rate: Optional[str] = None,
+                 automatic_failover_target: Optional[str] = None,
+                 autonomous_container_database_id: Optional[str] = None,
+                 availability_domain: Optional[str] = None,
+                 fast_start_fail_over_lag_limit_in_seconds: Optional[int] = None,
+                 is_automatic_failover_enabled: Optional[bool] = None,
+                 lifecycle_details: Optional[str] = None,
+                 protection_mode: Optional[str] = None,
+                 redo_transport_mode: Optional[str] = None,
+                 role: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_lag_refreshed_on: Optional[str] = None,
+                 time_last_role_changed: Optional[str] = None,
+                 time_last_synced: Optional[str] = None,
+                 transport_lag: Optional[str] = None):
+        """
+        :param str apply_lag: The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database. Example: `9 seconds`
+        :param str apply_rate: The rate at which redo logs are synchronized between the associated Autonomous Container Databases. Example: `180 Mb per second`
+        :param str automatic_failover_target: Automatically selected by backend when observer is enabled.
+        :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str availability_domain: The domain of the Autonomous Container Database
+        :param int fast_start_fail_over_lag_limit_in_seconds: The lag time for my preference based on data loss tolerance in seconds.
+        :param bool is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param str protection_mode: The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        :param str redo_transport_mode: Automatically selected by backend based on the protection mode.
+        :param str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        :param str state: The current state of the Autonomous Container Database.
+        :param str time_created: The date and time the Autonomous Container Database was created.
+        :param str time_lag_refreshed_on: Timestamp when the lags were last calculated for a standby.
+        :param str time_last_role_changed: The date and time when the last role change action happened.
+        :param str time_last_synced: The date and time of the last update to the apply lag, apply rate, and transport lag values.
+        :param str transport_lag: The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database. Example: `7 seconds`
+        """
+        if apply_lag is not None:
+            pulumi.set(__self__, "apply_lag", apply_lag)
+        if apply_rate is not None:
+            pulumi.set(__self__, "apply_rate", apply_rate)
+        if automatic_failover_target is not None:
+            pulumi.set(__self__, "automatic_failover_target", automatic_failover_target)
+        if autonomous_container_database_id is not None:
+            pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
+        if fast_start_fail_over_lag_limit_in_seconds is not None:
+            pulumi.set(__self__, "fast_start_fail_over_lag_limit_in_seconds", fast_start_fail_over_lag_limit_in_seconds)
+        if is_automatic_failover_enabled is not None:
+            pulumi.set(__self__, "is_automatic_failover_enabled", is_automatic_failover_enabled)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if protection_mode is not None:
+            pulumi.set(__self__, "protection_mode", protection_mode)
+        if redo_transport_mode is not None:
+            pulumi.set(__self__, "redo_transport_mode", redo_transport_mode)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_lag_refreshed_on is not None:
+            pulumi.set(__self__, "time_lag_refreshed_on", time_lag_refreshed_on)
+        if time_last_role_changed is not None:
+            pulumi.set(__self__, "time_last_role_changed", time_last_role_changed)
+        if time_last_synced is not None:
+            pulumi.set(__self__, "time_last_synced", time_last_synced)
+        if transport_lag is not None:
+            pulumi.set(__self__, "transport_lag", transport_lag)
+
+    @property
+    @pulumi.getter(name="applyLag")
+    def apply_lag(self) -> Optional[str]:
+        """
+        The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database. Example: `9 seconds`
+        """
+        return pulumi.get(self, "apply_lag")
+
+    @property
+    @pulumi.getter(name="applyRate")
+    def apply_rate(self) -> Optional[str]:
+        """
+        The rate at which redo logs are synchronized between the associated Autonomous Container Databases. Example: `180 Mb per second`
+        """
+        return pulumi.get(self, "apply_rate")
+
+    @property
+    @pulumi.getter(name="automaticFailoverTarget")
+    def automatic_failover_target(self) -> Optional[str]:
+        """
+        Automatically selected by backend when observer is enabled.
+        """
+        return pulumi.get(self, "automatic_failover_target")
+
+    @property
+    @pulumi.getter(name="autonomousContainerDatabaseId")
+    def autonomous_container_database_id(self) -> Optional[str]:
+        """
+        The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "autonomous_container_database_id")
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> Optional[str]:
+        """
+        The domain of the Autonomous Container Database
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="fastStartFailOverLagLimitInSeconds")
+    def fast_start_fail_over_lag_limit_in_seconds(self) -> Optional[int]:
+        """
+        The lag time for my preference based on data loss tolerance in seconds.
+        """
+        return pulumi.get(self, "fast_start_fail_over_lag_limit_in_seconds")
+
+    @property
+    @pulumi.getter(name="isAutomaticFailoverEnabled")
+    def is_automatic_failover_enabled(self) -> Optional[bool]:
+        """
+        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        """
+        return pulumi.get(self, "is_automatic_failover_enabled")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[str]:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="protectionMode")
+    def protection_mode(self) -> Optional[str]:
+        """
+        The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        """
+        return pulumi.get(self, "protection_mode")
+
+    @property
+    @pulumi.getter(name="redoTransportMode")
+    def redo_transport_mode(self) -> Optional[str]:
+        """
+        Automatically selected by backend based on the protection mode.
+        """
+        return pulumi.get(self, "redo_transport_mode")
+
+    @property
+    @pulumi.getter
+    def role(self) -> Optional[str]:
+        """
+        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        """
+        return pulumi.get(self, "role")
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[str]:
+        """
+        The current state of the Autonomous Container Database.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        The date and time the Autonomous Container Database was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeLagRefreshedOn")
+    def time_lag_refreshed_on(self) -> Optional[str]:
+        """
+        Timestamp when the lags were last calculated for a standby.
+        """
+        return pulumi.get(self, "time_lag_refreshed_on")
+
+    @property
+    @pulumi.getter(name="timeLastRoleChanged")
+    def time_last_role_changed(self) -> Optional[str]:
+        """
+        The date and time when the last role change action happened.
+        """
+        return pulumi.get(self, "time_last_role_changed")
+
+    @property
+    @pulumi.getter(name="timeLastSynced")
+    def time_last_synced(self) -> Optional[str]:
+        """
+        The date and time of the last update to the apply lag, apply rate, and transport lag values.
+        """
+        return pulumi.get(self, "time_last_synced")
+
+    @property
+    @pulumi.getter(name="transportLag")
+    def transport_lag(self) -> Optional[str]:
+        """
+        The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database. Example: `7 seconds`
+        """
+        return pulumi.get(self, "transport_lag")
+
+
+@pulumi.output_type
+class AutonomousContainerDatabaseAddStandbyDataguardGroupMember(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "applyLag":
+            suggest = "apply_lag"
+        elif key == "applyRate":
+            suggest = "apply_rate"
+        elif key == "automaticFailoverTarget":
+            suggest = "automatic_failover_target"
+        elif key == "autonomousContainerDatabaseId":
+            suggest = "autonomous_container_database_id"
+        elif key == "availabilityDomain":
+            suggest = "availability_domain"
+        elif key == "fastStartFailOverLagLimitInSeconds":
+            suggest = "fast_start_fail_over_lag_limit_in_seconds"
+        elif key == "isAutomaticFailoverEnabled":
+            suggest = "is_automatic_failover_enabled"
+        elif key == "lifecycleDetails":
+            suggest = "lifecycle_details"
+        elif key == "protectionMode":
+            suggest = "protection_mode"
+        elif key == "redoTransportMode":
+            suggest = "redo_transport_mode"
+        elif key == "timeCreated":
+            suggest = "time_created"
+        elif key == "timeLagRefreshedOn":
+            suggest = "time_lag_refreshed_on"
+        elif key == "timeLastRoleChanged":
+            suggest = "time_last_role_changed"
+        elif key == "timeLastSynced":
+            suggest = "time_last_synced"
+        elif key == "transportLag":
+            suggest = "transport_lag"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutonomousContainerDatabaseAddStandbyDataguardGroupMember. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutonomousContainerDatabaseAddStandbyDataguardGroupMember.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutonomousContainerDatabaseAddStandbyDataguardGroupMember.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 apply_lag: Optional[str] = None,
+                 apply_rate: Optional[str] = None,
+                 automatic_failover_target: Optional[str] = None,
+                 autonomous_container_database_id: Optional[str] = None,
+                 availability_domain: Optional[str] = None,
+                 fast_start_fail_over_lag_limit_in_seconds: Optional[int] = None,
+                 is_automatic_failover_enabled: Optional[bool] = None,
+                 lifecycle_details: Optional[str] = None,
+                 protection_mode: Optional[str] = None,
+                 redo_transport_mode: Optional[str] = None,
+                 role: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_lag_refreshed_on: Optional[str] = None,
+                 time_last_role_changed: Optional[str] = None,
+                 time_last_synced: Optional[str] = None,
+                 transport_lag: Optional[str] = None):
+        """
+        :param str apply_lag: The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database. Example: `9 seconds`
+        :param str apply_rate: The rate at which redo logs are synchronized between the associated Autonomous Container Databases. Example: `180 Mb per second`
+        :param str automatic_failover_target: Automatically selected by backend when observer is enabled.
+        :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str availability_domain: The domain of the Autonomous Container Database
+        :param int fast_start_fail_over_lag_limit_in_seconds: The lag time for my preference based on data loss tolerance in seconds.
+        :param bool is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param str protection_mode: The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        :param str redo_transport_mode: Automatically selected by backend based on the protection mode.
+        :param str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        :param str state: The current state of the Autonomous Container Database.
+        :param str time_created: The date and time the Autonomous Container Database was created.
+        :param str time_lag_refreshed_on: Timestamp when the lags were last calculated for a standby.
+        :param str time_last_role_changed: The date and time when the last role change action happened.
+        :param str time_last_synced: The date and time of the last update to the apply lag, apply rate, and transport lag values.
+        :param str transport_lag: The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database. Example: `7 seconds`
+        """
+        if apply_lag is not None:
+            pulumi.set(__self__, "apply_lag", apply_lag)
+        if apply_rate is not None:
+            pulumi.set(__self__, "apply_rate", apply_rate)
+        if automatic_failover_target is not None:
+            pulumi.set(__self__, "automatic_failover_target", automatic_failover_target)
+        if autonomous_container_database_id is not None:
+            pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
+        if fast_start_fail_over_lag_limit_in_seconds is not None:
+            pulumi.set(__self__, "fast_start_fail_over_lag_limit_in_seconds", fast_start_fail_over_lag_limit_in_seconds)
+        if is_automatic_failover_enabled is not None:
+            pulumi.set(__self__, "is_automatic_failover_enabled", is_automatic_failover_enabled)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if protection_mode is not None:
+            pulumi.set(__self__, "protection_mode", protection_mode)
+        if redo_transport_mode is not None:
+            pulumi.set(__self__, "redo_transport_mode", redo_transport_mode)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_lag_refreshed_on is not None:
+            pulumi.set(__self__, "time_lag_refreshed_on", time_lag_refreshed_on)
+        if time_last_role_changed is not None:
+            pulumi.set(__self__, "time_last_role_changed", time_last_role_changed)
+        if time_last_synced is not None:
+            pulumi.set(__self__, "time_last_synced", time_last_synced)
+        if transport_lag is not None:
+            pulumi.set(__self__, "transport_lag", transport_lag)
+
+    @property
+    @pulumi.getter(name="applyLag")
+    def apply_lag(self) -> Optional[str]:
+        """
+        The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database. Example: `9 seconds`
+        """
+        return pulumi.get(self, "apply_lag")
+
+    @property
+    @pulumi.getter(name="applyRate")
+    def apply_rate(self) -> Optional[str]:
+        """
+        The rate at which redo logs are synchronized between the associated Autonomous Container Databases. Example: `180 Mb per second`
+        """
+        return pulumi.get(self, "apply_rate")
+
+    @property
+    @pulumi.getter(name="automaticFailoverTarget")
+    def automatic_failover_target(self) -> Optional[str]:
+        """
+        Automatically selected by backend when observer is enabled.
+        """
+        return pulumi.get(self, "automatic_failover_target")
+
+    @property
+    @pulumi.getter(name="autonomousContainerDatabaseId")
+    def autonomous_container_database_id(self) -> Optional[str]:
+        """
+        The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "autonomous_container_database_id")
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> Optional[str]:
+        """
+        The domain of the Autonomous Container Database
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="fastStartFailOverLagLimitInSeconds")
+    def fast_start_fail_over_lag_limit_in_seconds(self) -> Optional[int]:
+        """
+        The lag time for my preference based on data loss tolerance in seconds.
+        """
+        return pulumi.get(self, "fast_start_fail_over_lag_limit_in_seconds")
+
+    @property
+    @pulumi.getter(name="isAutomaticFailoverEnabled")
+    def is_automatic_failover_enabled(self) -> Optional[bool]:
+        """
+        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        """
+        return pulumi.get(self, "is_automatic_failover_enabled")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[str]:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="protectionMode")
+    def protection_mode(self) -> Optional[str]:
+        """
+        The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        """
+        return pulumi.get(self, "protection_mode")
+
+    @property
+    @pulumi.getter(name="redoTransportMode")
+    def redo_transport_mode(self) -> Optional[str]:
+        """
+        Automatically selected by backend based on the protection mode.
+        """
+        return pulumi.get(self, "redo_transport_mode")
+
+    @property
+    @pulumi.getter
+    def role(self) -> Optional[str]:
+        """
+        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        """
+        return pulumi.get(self, "role")
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[str]:
+        """
+        The current state of the Autonomous Container Database.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        The date and time the Autonomous Container Database was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeLagRefreshedOn")
+    def time_lag_refreshed_on(self) -> Optional[str]:
+        """
+        Timestamp when the lags were last calculated for a standby.
+        """
+        return pulumi.get(self, "time_lag_refreshed_on")
+
+    @property
+    @pulumi.getter(name="timeLastRoleChanged")
+    def time_last_role_changed(self) -> Optional[str]:
+        """
+        The date and time when the last role change action happened.
+        """
+        return pulumi.get(self, "time_last_role_changed")
+
+    @property
+    @pulumi.getter(name="timeLastSynced")
+    def time_last_synced(self) -> Optional[str]:
+        """
+        The date and time of the last update to the apply lag, apply rate, and transport lag values.
+        """
+        return pulumi.get(self, "time_last_synced")
+
+    @property
+    @pulumi.getter(name="transportLag")
+    def transport_lag(self) -> Optional[str]:
+        """
+        The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database. Example: `7 seconds`
+        """
+        return pulumi.get(self, "transport_lag")
+
+
+@pulumi.output_type
+class AutonomousContainerDatabaseAddStandbyKeyHistoryEntry(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "kmsKeyVersionId":
+            suggest = "kms_key_version_id"
+        elif key == "timeActivated":
+            suggest = "time_activated"
+        elif key == "vaultId":
+            suggest = "vault_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutonomousContainerDatabaseAddStandbyKeyHistoryEntry. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutonomousContainerDatabaseAddStandbyKeyHistoryEntry.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutonomousContainerDatabaseAddStandbyKeyHistoryEntry.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 id: Optional[str] = None,
+                 kms_key_version_id: Optional[str] = None,
+                 time_activated: Optional[str] = None,
+                 vault_id: Optional[str] = None):
+        """
+        :param str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        :param str time_activated: The date and time the kms key activated.
+        :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        """
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if kms_key_version_id is not None:
+            pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
+        if time_activated is not None:
+            pulumi.set(__self__, "time_activated", time_activated)
+        if vault_id is not None:
+            pulumi.set(__self__, "vault_id", vault_id)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[str]:
+        """
+        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="kmsKeyVersionId")
+    def kms_key_version_id(self) -> Optional[str]:
+        """
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        """
+        return pulumi.get(self, "kms_key_version_id")
+
+    @property
+    @pulumi.getter(name="timeActivated")
+    def time_activated(self) -> Optional[str]:
+        """
+        The date and time the kms key activated.
+        """
+        return pulumi.get(self, "time_activated")
+
+    @property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        """
+        return pulumi.get(self, "vault_id")
+
+
+@pulumi.output_type
+class AutonomousContainerDatabaseAddStandbyMaintenanceWindow(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customActionTimeoutInMins":
+            suggest = "custom_action_timeout_in_mins"
+        elif key == "daysOfWeeks":
+            suggest = "days_of_weeks"
+        elif key == "hoursOfDays":
+            suggest = "hours_of_days"
+        elif key == "isCustomActionTimeoutEnabled":
+            suggest = "is_custom_action_timeout_enabled"
+        elif key == "isMonthlyPatchingEnabled":
+            suggest = "is_monthly_patching_enabled"
+        elif key == "leadTimeInWeeks":
+            suggest = "lead_time_in_weeks"
+        elif key == "patchingMode":
+            suggest = "patching_mode"
+        elif key == "skipRus":
+            suggest = "skip_rus"
+        elif key == "weeksOfMonths":
+            suggest = "weeks_of_months"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutonomousContainerDatabaseAddStandbyMaintenanceWindow. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutonomousContainerDatabaseAddStandbyMaintenanceWindow.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutonomousContainerDatabaseAddStandbyMaintenanceWindow.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 custom_action_timeout_in_mins: Optional[int] = None,
+                 days_of_weeks: Optional[Sequence['outputs.AutonomousContainerDatabaseAddStandbyMaintenanceWindowDaysOfWeek']] = None,
+                 hours_of_days: Optional[Sequence[int]] = None,
+                 is_custom_action_timeout_enabled: Optional[bool] = None,
+                 is_monthly_patching_enabled: Optional[bool] = None,
+                 lead_time_in_weeks: Optional[int] = None,
+                 months: Optional[Sequence['outputs.AutonomousContainerDatabaseAddStandbyMaintenanceWindowMonth']] = None,
+                 patching_mode: Optional[str] = None,
+                 preference: Optional[str] = None,
+                 skip_rus: Optional[Sequence[bool]] = None,
+                 weeks_of_months: Optional[Sequence[int]] = None):
+        """
+        :param int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+        :param Sequence['AutonomousContainerDatabaseAddStandbyMaintenanceWindowDaysOfWeekArgs'] days_of_weeks: Days during the week when maintenance should be performed.
+        :param Sequence[int] hours_of_days: The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        :param bool is_custom_action_timeout_enabled: If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        :param bool is_monthly_patching_enabled: If true, enables the monthly patching option.
+        :param int lead_time_in_weeks: Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+        :param Sequence['AutonomousContainerDatabaseAddStandbyMaintenanceWindowMonthArgs'] months: Months during the year when maintenance should be performed.
+        :param str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        :param str preference: The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        """
+        if custom_action_timeout_in_mins is not None:
+            pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+        if days_of_weeks is not None:
+            pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+        if hours_of_days is not None:
+            pulumi.set(__self__, "hours_of_days", hours_of_days)
+        if is_custom_action_timeout_enabled is not None:
+            pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+        if is_monthly_patching_enabled is not None:
+            pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
+        if lead_time_in_weeks is not None:
+            pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
+        if months is not None:
+            pulumi.set(__self__, "months", months)
+        if patching_mode is not None:
+            pulumi.set(__self__, "patching_mode", patching_mode)
+        if preference is not None:
+            pulumi.set(__self__, "preference", preference)
+        if skip_rus is not None:
+            pulumi.set(__self__, "skip_rus", skip_rus)
+        if weeks_of_months is not None:
+            pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+
+    @property
+    @pulumi.getter(name="customActionTimeoutInMins")
+    def custom_action_timeout_in_mins(self) -> Optional[int]:
+        """
+        Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+        """
+        return pulumi.get(self, "custom_action_timeout_in_mins")
+
+    @property
+    @pulumi.getter(name="daysOfWeeks")
+    def days_of_weeks(self) -> Optional[Sequence['outputs.AutonomousContainerDatabaseAddStandbyMaintenanceWindowDaysOfWeek']]:
+        """
+        Days during the week when maintenance should be performed.
+        """
+        return pulumi.get(self, "days_of_weeks")
+
+    @property
+    @pulumi.getter(name="hoursOfDays")
+    def hours_of_days(self) -> Optional[Sequence[int]]:
+        """
+        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        """
+        return pulumi.get(self, "hours_of_days")
+
+    @property
+    @pulumi.getter(name="isCustomActionTimeoutEnabled")
+    def is_custom_action_timeout_enabled(self) -> Optional[bool]:
+        """
+        If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        """
+        return pulumi.get(self, "is_custom_action_timeout_enabled")
+
+    @property
+    @pulumi.getter(name="isMonthlyPatchingEnabled")
+    def is_monthly_patching_enabled(self) -> Optional[bool]:
+        """
+        If true, enables the monthly patching option.
+        """
+        return pulumi.get(self, "is_monthly_patching_enabled")
+
+    @property
+    @pulumi.getter(name="leadTimeInWeeks")
+    def lead_time_in_weeks(self) -> Optional[int]:
+        """
+        Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+        """
+        return pulumi.get(self, "lead_time_in_weeks")
+
+    @property
+    @pulumi.getter
+    def months(self) -> Optional[Sequence['outputs.AutonomousContainerDatabaseAddStandbyMaintenanceWindowMonth']]:
+        """
+        Months during the year when maintenance should be performed.
+        """
+        return pulumi.get(self, "months")
+
+    @property
+    @pulumi.getter(name="patchingMode")
+    def patching_mode(self) -> Optional[str]:
+        """
+        Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        """
+        return pulumi.get(self, "patching_mode")
+
+    @property
+    @pulumi.getter
+    def preference(self) -> Optional[str]:
+        """
+        The maintenance window scheduling preference.
+        """
+        return pulumi.get(self, "preference")
+
+    @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Optional[Sequence[bool]]:
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
+        return pulumi.get(self, "skip_rus")
+
+    @property
+    @pulumi.getter(name="weeksOfMonths")
+    def weeks_of_months(self) -> Optional[Sequence[int]]:
+        """
+        Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        """
+        return pulumi.get(self, "weeks_of_months")
+
+
+@pulumi.output_type
+class AutonomousContainerDatabaseAddStandbyMaintenanceWindowDaysOfWeek(dict):
+    def __init__(__self__, *,
+                 name: Optional[str] = None):
+        """
+        :param str name: Name of the month of the year.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class AutonomousContainerDatabaseAddStandbyMaintenanceWindowMonth(dict):
+    def __init__(__self__, *,
+                 name: Optional[str] = None):
+        """
+        :param str name: Name of the month of the year.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "backupDestinationDetails":
+            suggest = "backup_destination_details"
+        elif key == "recoveryWindowInDays":
+            suggest = "recovery_window_in_days"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 backup_destination_details: Optional[Sequence['outputs.AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail']] = None,
+                 recovery_window_in_days: Optional[int] = None):
+        """
+        :param Sequence['AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs'] backup_destination_details: Backup destination details.
+        :param int recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
+        """
+        if backup_destination_details is not None:
+            pulumi.set(__self__, "backup_destination_details", backup_destination_details)
+        if recovery_window_in_days is not None:
+            pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
+
+    @property
+    @pulumi.getter(name="backupDestinationDetails")
+    def backup_destination_details(self) -> Optional[Sequence['outputs.AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail']]:
+        """
+        Backup destination details.
+        """
+        return pulumi.get(self, "backup_destination_details")
+
+    @property
+    @pulumi.getter(name="recoveryWindowInDays")
+    def recovery_window_in_days(self) -> Optional[int]:
+        """
+        Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
+        """
+        return pulumi.get(self, "recovery_window_in_days")
+
+
+@pulumi.output_type
+class AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dbrsPolicyId":
+            suggest = "dbrs_policy_id"
+        elif key == "internetProxy":
+            suggest = "internet_proxy"
+        elif key == "vpcPassword":
+            suggest = "vpc_password"
+        elif key == "vpcUser":
+            suggest = "vpc_user"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: str,
+                 dbrs_policy_id: Optional[str] = None,
+                 id: Optional[str] = None,
+                 internet_proxy: Optional[str] = None,
+                 vpc_password: Optional[str] = None,
+                 vpc_user: Optional[str] = None):
+        """
+        :param str type: Type of the database backup destination.
+        :param str dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+        :param str internet_proxy: Proxy URL to connect to object store.
+        :param str vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+        :param str vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+        """
+        pulumi.set(__self__, "type", type)
+        if dbrs_policy_id is not None:
+            pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if internet_proxy is not None:
+            pulumi.set(__self__, "internet_proxy", internet_proxy)
+        if vpc_password is not None:
+            pulumi.set(__self__, "vpc_password", vpc_password)
+        if vpc_user is not None:
+            pulumi.set(__self__, "vpc_user", vpc_user)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the database backup destination.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="dbrsPolicyId")
+    def dbrs_policy_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+        """
+        return pulumi.get(self, "dbrs_policy_id")
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="internetProxy")
+    def internet_proxy(self) -> Optional[str]:
+        """
+        Proxy URL to connect to object store.
+        """
+        return pulumi.get(self, "internet_proxy")
+
+    @property
+    @pulumi.getter(name="vpcPassword")
+    def vpc_password(self) -> Optional[str]:
+        """
+        For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+        """
+        return pulumi.get(self, "vpc_password")
+
+    @property
+    @pulumi.getter(name="vpcUser")
+    def vpc_user(self) -> Optional[str]:
+        """
+        For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+        """
+        return pulumi.get(self, "vpc_user")
+
+
+@pulumi.output_type
 class AutonomousContainerDatabaseAssociatedBackupConfigurationDetail(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -1091,6 +2208,262 @@ class AutonomousContainerDatabaseBackupDestinationPropertiesList(dict):
 
 
 @pulumi.output_type
+class AutonomousContainerDatabaseDataguard(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "applyLag":
+            suggest = "apply_lag"
+        elif key == "applyRate":
+            suggest = "apply_rate"
+        elif key == "automaticFailoverTarget":
+            suggest = "automatic_failover_target"
+        elif key == "autonomousContainerDatabaseId":
+            suggest = "autonomous_container_database_id"
+        elif key == "availabilityDomain":
+            suggest = "availability_domain"
+        elif key == "fastStartFailOverLagLimitInSeconds":
+            suggest = "fast_start_fail_over_lag_limit_in_seconds"
+        elif key == "isAutomaticFailoverEnabled":
+            suggest = "is_automatic_failover_enabled"
+        elif key == "lifecycleDetails":
+            suggest = "lifecycle_details"
+        elif key == "protectionMode":
+            suggest = "protection_mode"
+        elif key == "redoTransportMode":
+            suggest = "redo_transport_mode"
+        elif key == "timeCreated":
+            suggest = "time_created"
+        elif key == "timeLagRefreshedOn":
+            suggest = "time_lag_refreshed_on"
+        elif key == "timeLastRoleChanged":
+            suggest = "time_last_role_changed"
+        elif key == "timeLastSynced":
+            suggest = "time_last_synced"
+        elif key == "transportLag":
+            suggest = "transport_lag"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutonomousContainerDatabaseDataguard. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutonomousContainerDatabaseDataguard.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutonomousContainerDatabaseDataguard.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 apply_lag: Optional[str] = None,
+                 apply_rate: Optional[str] = None,
+                 automatic_failover_target: Optional[str] = None,
+                 autonomous_container_database_id: Optional[str] = None,
+                 availability_domain: Optional[str] = None,
+                 fast_start_fail_over_lag_limit_in_seconds: Optional[int] = None,
+                 is_automatic_failover_enabled: Optional[bool] = None,
+                 lifecycle_details: Optional[str] = None,
+                 protection_mode: Optional[str] = None,
+                 redo_transport_mode: Optional[str] = None,
+                 role: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_lag_refreshed_on: Optional[str] = None,
+                 time_last_role_changed: Optional[str] = None,
+                 time_last_synced: Optional[str] = None,
+                 transport_lag: Optional[str] = None):
+        """
+        :param str apply_lag: The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database. Example: `9 seconds`
+        :param str apply_rate: The rate at which redo logs are synchronized between the associated Autonomous Container Databases. Example: `180 Mb per second`
+        :param str automatic_failover_target: Automatically selected by backend when observer is enabled.
+        :param str autonomous_container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        :param str availability_domain: The domain of the Autonomous Container Database
+        :param int fast_start_fail_over_lag_limit_in_seconds: (Updatable) The lag time for my preference based on data loss tolerance in seconds.
+        :param bool is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
+        :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param str protection_mode: (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        :param str redo_transport_mode: Automatically selected by backend based on the protection mode.
+        :param str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        :param str state: The current state of the Autonomous Container Database.
+        :param str time_created: The date and time the Autonomous Container Database was created.
+        :param str time_lag_refreshed_on: Timestamp when the lags were last calculated for a standby.
+        :param str time_last_role_changed: The date and time when the last role change action happened.
+        :param str time_last_synced: The date and time of the last update to the apply lag, apply rate, and transport lag values.
+        :param str transport_lag: The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database. Example: `7 seconds`
+        """
+        if apply_lag is not None:
+            pulumi.set(__self__, "apply_lag", apply_lag)
+        if apply_rate is not None:
+            pulumi.set(__self__, "apply_rate", apply_rate)
+        if automatic_failover_target is not None:
+            pulumi.set(__self__, "automatic_failover_target", automatic_failover_target)
+        if autonomous_container_database_id is not None:
+            pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
+        if fast_start_fail_over_lag_limit_in_seconds is not None:
+            pulumi.set(__self__, "fast_start_fail_over_lag_limit_in_seconds", fast_start_fail_over_lag_limit_in_seconds)
+        if is_automatic_failover_enabled is not None:
+            pulumi.set(__self__, "is_automatic_failover_enabled", is_automatic_failover_enabled)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if protection_mode is not None:
+            pulumi.set(__self__, "protection_mode", protection_mode)
+        if redo_transport_mode is not None:
+            pulumi.set(__self__, "redo_transport_mode", redo_transport_mode)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_lag_refreshed_on is not None:
+            pulumi.set(__self__, "time_lag_refreshed_on", time_lag_refreshed_on)
+        if time_last_role_changed is not None:
+            pulumi.set(__self__, "time_last_role_changed", time_last_role_changed)
+        if time_last_synced is not None:
+            pulumi.set(__self__, "time_last_synced", time_last_synced)
+        if transport_lag is not None:
+            pulumi.set(__self__, "transport_lag", transport_lag)
+
+    @property
+    @pulumi.getter(name="applyLag")
+    def apply_lag(self) -> Optional[str]:
+        """
+        The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database. Example: `9 seconds`
+        """
+        return pulumi.get(self, "apply_lag")
+
+    @property
+    @pulumi.getter(name="applyRate")
+    def apply_rate(self) -> Optional[str]:
+        """
+        The rate at which redo logs are synchronized between the associated Autonomous Container Databases. Example: `180 Mb per second`
+        """
+        return pulumi.get(self, "apply_rate")
+
+    @property
+    @pulumi.getter(name="automaticFailoverTarget")
+    def automatic_failover_target(self) -> Optional[str]:
+        """
+        Automatically selected by backend when observer is enabled.
+        """
+        return pulumi.get(self, "automatic_failover_target")
+
+    @property
+    @pulumi.getter(name="autonomousContainerDatabaseId")
+    def autonomous_container_database_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        """
+        return pulumi.get(self, "autonomous_container_database_id")
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> Optional[str]:
+        """
+        The domain of the Autonomous Container Database
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="fastStartFailOverLagLimitInSeconds")
+    def fast_start_fail_over_lag_limit_in_seconds(self) -> Optional[int]:
+        """
+        (Updatable) The lag time for my preference based on data loss tolerance in seconds.
+        """
+        return pulumi.get(self, "fast_start_fail_over_lag_limit_in_seconds")
+
+    @property
+    @pulumi.getter(name="isAutomaticFailoverEnabled")
+    def is_automatic_failover_enabled(self) -> Optional[bool]:
+        """
+        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
+        """
+        return pulumi.get(self, "is_automatic_failover_enabled")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[str]:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="protectionMode")
+    def protection_mode(self) -> Optional[str]:
+        """
+        (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        """
+        return pulumi.get(self, "protection_mode")
+
+    @property
+    @pulumi.getter(name="redoTransportMode")
+    def redo_transport_mode(self) -> Optional[str]:
+        """
+        Automatically selected by backend based on the protection mode.
+        """
+        return pulumi.get(self, "redo_transport_mode")
+
+    @property
+    @pulumi.getter
+    def role(self) -> Optional[str]:
+        """
+        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        """
+        return pulumi.get(self, "role")
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[str]:
+        """
+        The current state of the Autonomous Container Database.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        The date and time the Autonomous Container Database was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeLagRefreshedOn")
+    def time_lag_refreshed_on(self) -> Optional[str]:
+        """
+        Timestamp when the lags were last calculated for a standby.
+        """
+        return pulumi.get(self, "time_lag_refreshed_on")
+
+    @property
+    @pulumi.getter(name="timeLastRoleChanged")
+    def time_last_role_changed(self) -> Optional[str]:
+        """
+        The date and time when the last role change action happened.
+        """
+        return pulumi.get(self, "time_last_role_changed")
+
+    @property
+    @pulumi.getter(name="timeLastSynced")
+    def time_last_synced(self) -> Optional[str]:
+        """
+        The date and time of the last update to the apply lag, apply rate, and transport lag values.
+        """
+        return pulumi.get(self, "time_last_synced")
+
+    @property
+    @pulumi.getter(name="transportLag")
+    def transport_lag(self) -> Optional[str]:
+        """
+        The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database. Example: `7 seconds`
+        """
+        return pulumi.get(self, "transport_lag")
+
+
+@pulumi.output_type
 class AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -1242,6 +2615,262 @@ class AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerData
 
 
 @pulumi.output_type
+class AutonomousContainerDatabaseDataguardGroupMember(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "applyLag":
+            suggest = "apply_lag"
+        elif key == "applyRate":
+            suggest = "apply_rate"
+        elif key == "automaticFailoverTarget":
+            suggest = "automatic_failover_target"
+        elif key == "autonomousContainerDatabaseId":
+            suggest = "autonomous_container_database_id"
+        elif key == "availabilityDomain":
+            suggest = "availability_domain"
+        elif key == "fastStartFailOverLagLimitInSeconds":
+            suggest = "fast_start_fail_over_lag_limit_in_seconds"
+        elif key == "isAutomaticFailoverEnabled":
+            suggest = "is_automatic_failover_enabled"
+        elif key == "lifecycleDetails":
+            suggest = "lifecycle_details"
+        elif key == "protectionMode":
+            suggest = "protection_mode"
+        elif key == "redoTransportMode":
+            suggest = "redo_transport_mode"
+        elif key == "timeCreated":
+            suggest = "time_created"
+        elif key == "timeLagRefreshedOn":
+            suggest = "time_lag_refreshed_on"
+        elif key == "timeLastRoleChanged":
+            suggest = "time_last_role_changed"
+        elif key == "timeLastSynced":
+            suggest = "time_last_synced"
+        elif key == "transportLag":
+            suggest = "transport_lag"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutonomousContainerDatabaseDataguardGroupMember. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutonomousContainerDatabaseDataguardGroupMember.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutonomousContainerDatabaseDataguardGroupMember.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 apply_lag: Optional[str] = None,
+                 apply_rate: Optional[str] = None,
+                 automatic_failover_target: Optional[str] = None,
+                 autonomous_container_database_id: Optional[str] = None,
+                 availability_domain: Optional[str] = None,
+                 fast_start_fail_over_lag_limit_in_seconds: Optional[int] = None,
+                 is_automatic_failover_enabled: Optional[bool] = None,
+                 lifecycle_details: Optional[str] = None,
+                 protection_mode: Optional[str] = None,
+                 redo_transport_mode: Optional[str] = None,
+                 role: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_lag_refreshed_on: Optional[str] = None,
+                 time_last_role_changed: Optional[str] = None,
+                 time_last_synced: Optional[str] = None,
+                 transport_lag: Optional[str] = None):
+        """
+        :param str apply_lag: The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database. Example: `9 seconds`
+        :param str apply_rate: The rate at which redo logs are synchronized between the associated Autonomous Container Databases. Example: `180 Mb per second`
+        :param str automatic_failover_target: Automatically selected by backend when observer is enabled.
+        :param str autonomous_container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        :param str availability_domain: The domain of the Autonomous Container Database
+        :param int fast_start_fail_over_lag_limit_in_seconds: (Updatable) The lag time for my preference based on data loss tolerance in seconds.
+        :param bool is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
+        :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param str protection_mode: (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        :param str redo_transport_mode: Automatically selected by backend based on the protection mode.
+        :param str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        :param str state: The current state of the Autonomous Container Database.
+        :param str time_created: The date and time the Autonomous Container Database was created.
+        :param str time_lag_refreshed_on: Timestamp when the lags were last calculated for a standby.
+        :param str time_last_role_changed: The date and time when the last role change action happened.
+        :param str time_last_synced: The date and time of the last update to the apply lag, apply rate, and transport lag values.
+        :param str transport_lag: The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database. Example: `7 seconds`
+        """
+        if apply_lag is not None:
+            pulumi.set(__self__, "apply_lag", apply_lag)
+        if apply_rate is not None:
+            pulumi.set(__self__, "apply_rate", apply_rate)
+        if automatic_failover_target is not None:
+            pulumi.set(__self__, "automatic_failover_target", automatic_failover_target)
+        if autonomous_container_database_id is not None:
+            pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
+        if fast_start_fail_over_lag_limit_in_seconds is not None:
+            pulumi.set(__self__, "fast_start_fail_over_lag_limit_in_seconds", fast_start_fail_over_lag_limit_in_seconds)
+        if is_automatic_failover_enabled is not None:
+            pulumi.set(__self__, "is_automatic_failover_enabled", is_automatic_failover_enabled)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if protection_mode is not None:
+            pulumi.set(__self__, "protection_mode", protection_mode)
+        if redo_transport_mode is not None:
+            pulumi.set(__self__, "redo_transport_mode", redo_transport_mode)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_lag_refreshed_on is not None:
+            pulumi.set(__self__, "time_lag_refreshed_on", time_lag_refreshed_on)
+        if time_last_role_changed is not None:
+            pulumi.set(__self__, "time_last_role_changed", time_last_role_changed)
+        if time_last_synced is not None:
+            pulumi.set(__self__, "time_last_synced", time_last_synced)
+        if transport_lag is not None:
+            pulumi.set(__self__, "transport_lag", transport_lag)
+
+    @property
+    @pulumi.getter(name="applyLag")
+    def apply_lag(self) -> Optional[str]:
+        """
+        The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database. Example: `9 seconds`
+        """
+        return pulumi.get(self, "apply_lag")
+
+    @property
+    @pulumi.getter(name="applyRate")
+    def apply_rate(self) -> Optional[str]:
+        """
+        The rate at which redo logs are synchronized between the associated Autonomous Container Databases. Example: `180 Mb per second`
+        """
+        return pulumi.get(self, "apply_rate")
+
+    @property
+    @pulumi.getter(name="automaticFailoverTarget")
+    def automatic_failover_target(self) -> Optional[str]:
+        """
+        Automatically selected by backend when observer is enabled.
+        """
+        return pulumi.get(self, "automatic_failover_target")
+
+    @property
+    @pulumi.getter(name="autonomousContainerDatabaseId")
+    def autonomous_container_database_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        """
+        return pulumi.get(self, "autonomous_container_database_id")
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> Optional[str]:
+        """
+        The domain of the Autonomous Container Database
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="fastStartFailOverLagLimitInSeconds")
+    def fast_start_fail_over_lag_limit_in_seconds(self) -> Optional[int]:
+        """
+        (Updatable) The lag time for my preference based on data loss tolerance in seconds.
+        """
+        return pulumi.get(self, "fast_start_fail_over_lag_limit_in_seconds")
+
+    @property
+    @pulumi.getter(name="isAutomaticFailoverEnabled")
+    def is_automatic_failover_enabled(self) -> Optional[bool]:
+        """
+        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
+        """
+        return pulumi.get(self, "is_automatic_failover_enabled")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[str]:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="protectionMode")
+    def protection_mode(self) -> Optional[str]:
+        """
+        (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        """
+        return pulumi.get(self, "protection_mode")
+
+    @property
+    @pulumi.getter(name="redoTransportMode")
+    def redo_transport_mode(self) -> Optional[str]:
+        """
+        Automatically selected by backend based on the protection mode.
+        """
+        return pulumi.get(self, "redo_transport_mode")
+
+    @property
+    @pulumi.getter
+    def role(self) -> Optional[str]:
+        """
+        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        """
+        return pulumi.get(self, "role")
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[str]:
+        """
+        The current state of the Autonomous Container Database.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        The date and time the Autonomous Container Database was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeLagRefreshedOn")
+    def time_lag_refreshed_on(self) -> Optional[str]:
+        """
+        Timestamp when the lags were last calculated for a standby.
+        """
+        return pulumi.get(self, "time_lag_refreshed_on")
+
+    @property
+    @pulumi.getter(name="timeLastRoleChanged")
+    def time_last_role_changed(self) -> Optional[str]:
+        """
+        The date and time when the last role change action happened.
+        """
+        return pulumi.get(self, "time_last_role_changed")
+
+    @property
+    @pulumi.getter(name="timeLastSynced")
+    def time_last_synced(self) -> Optional[str]:
+        """
+        The date and time of the last update to the apply lag, apply rate, and transport lag values.
+        """
+        return pulumi.get(self, "time_last_synced")
+
+    @property
+    @pulumi.getter(name="transportLag")
+    def transport_lag(self) -> Optional[str]:
+        """
+        The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database. Example: `7 seconds`
+        """
+        return pulumi.get(self, "transport_lag")
+
+
+@pulumi.output_type
 class AutonomousContainerDatabaseKeyHistoryEntry(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -1273,7 +2902,7 @@ class AutonomousContainerDatabaseKeyHistoryEntry(dict):
         :param str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         :param str time_activated: The date and time the kms key activated.
-        :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         if id is not None:
             pulumi.set(__self__, "id", id)
@@ -1312,7 +2941,7 @@ class AutonomousContainerDatabaseKeyHistoryEntry(dict):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> Optional[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         return pulumi.get(self, "vault_id")
 
@@ -16287,6 +17916,200 @@ class GetAutonomousContainerDatabaseBackupDestinationPropertiesListResult(dict):
 
 
 @pulumi.output_type
+class GetAutonomousContainerDatabaseDataguardResult(dict):
+    def __init__(__self__, *,
+                 apply_lag: str,
+                 apply_rate: str,
+                 automatic_failover_target: str,
+                 autonomous_container_database_id: str,
+                 availability_domain: str,
+                 fast_start_fail_over_lag_limit_in_seconds: int,
+                 is_automatic_failover_enabled: bool,
+                 lifecycle_details: str,
+                 protection_mode: str,
+                 redo_transport_mode: str,
+                 role: str,
+                 state: str,
+                 time_created: str,
+                 time_lag_refreshed_on: str,
+                 time_last_role_changed: str,
+                 time_last_synced: str,
+                 transport_lag: str):
+        """
+        :param str apply_lag: The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database. Example: `9 seconds`
+        :param str apply_rate: The rate at which redo logs are synchronized between the associated Autonomous Container Databases. Example: `180 Mb per second`
+        :param str automatic_failover_target: Automatically selected by backend when observer is enabled.
+        :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str availability_domain: The domain of the Autonomous Container Database
+        :param int fast_start_fail_over_lag_limit_in_seconds: The lag time for my preference based on data loss tolerance in seconds.
+        :param bool is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param str protection_mode: The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        :param str redo_transport_mode: Automatically selected by backend based on the protection mode.
+        :param str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        :param str state: The current state of the Autonomous Container Database.
+        :param str time_created: The date and time the Autonomous Container Database was created.
+        :param str time_lag_refreshed_on: Timestamp when the lags were last calculated for a standby.
+        :param str time_last_role_changed: The date and time when the last role change action happened.
+        :param str time_last_synced: The date and time of the last update to the apply lag, apply rate, and transport lag values.
+        :param str transport_lag: The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database. Example: `7 seconds`
+        """
+        pulumi.set(__self__, "apply_lag", apply_lag)
+        pulumi.set(__self__, "apply_rate", apply_rate)
+        pulumi.set(__self__, "automatic_failover_target", automatic_failover_target)
+        pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "fast_start_fail_over_lag_limit_in_seconds", fast_start_fail_over_lag_limit_in_seconds)
+        pulumi.set(__self__, "is_automatic_failover_enabled", is_automatic_failover_enabled)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "protection_mode", protection_mode)
+        pulumi.set(__self__, "redo_transport_mode", redo_transport_mode)
+        pulumi.set(__self__, "role", role)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_lag_refreshed_on", time_lag_refreshed_on)
+        pulumi.set(__self__, "time_last_role_changed", time_last_role_changed)
+        pulumi.set(__self__, "time_last_synced", time_last_synced)
+        pulumi.set(__self__, "transport_lag", transport_lag)
+
+    @property
+    @pulumi.getter(name="applyLag")
+    def apply_lag(self) -> str:
+        """
+        The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database. Example: `9 seconds`
+        """
+        return pulumi.get(self, "apply_lag")
+
+    @property
+    @pulumi.getter(name="applyRate")
+    def apply_rate(self) -> str:
+        """
+        The rate at which redo logs are synchronized between the associated Autonomous Container Databases. Example: `180 Mb per second`
+        """
+        return pulumi.get(self, "apply_rate")
+
+    @property
+    @pulumi.getter(name="automaticFailoverTarget")
+    def automatic_failover_target(self) -> str:
+        """
+        Automatically selected by backend when observer is enabled.
+        """
+        return pulumi.get(self, "automatic_failover_target")
+
+    @property
+    @pulumi.getter(name="autonomousContainerDatabaseId")
+    def autonomous_container_database_id(self) -> str:
+        """
+        The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "autonomous_container_database_id")
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> str:
+        """
+        The domain of the Autonomous Container Database
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="fastStartFailOverLagLimitInSeconds")
+    def fast_start_fail_over_lag_limit_in_seconds(self) -> int:
+        """
+        The lag time for my preference based on data loss tolerance in seconds.
+        """
+        return pulumi.get(self, "fast_start_fail_over_lag_limit_in_seconds")
+
+    @property
+    @pulumi.getter(name="isAutomaticFailoverEnabled")
+    def is_automatic_failover_enabled(self) -> bool:
+        """
+        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        """
+        return pulumi.get(self, "is_automatic_failover_enabled")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="protectionMode")
+    def protection_mode(self) -> str:
+        """
+        The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        """
+        return pulumi.get(self, "protection_mode")
+
+    @property
+    @pulumi.getter(name="redoTransportMode")
+    def redo_transport_mode(self) -> str:
+        """
+        Automatically selected by backend based on the protection mode.
+        """
+        return pulumi.get(self, "redo_transport_mode")
+
+    @property
+    @pulumi.getter
+    def role(self) -> str:
+        """
+        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        """
+        return pulumi.get(self, "role")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the Autonomous Container Database.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the Autonomous Container Database was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeLagRefreshedOn")
+    def time_lag_refreshed_on(self) -> str:
+        """
+        Timestamp when the lags were last calculated for a standby.
+        """
+        return pulumi.get(self, "time_lag_refreshed_on")
+
+    @property
+    @pulumi.getter(name="timeLastRoleChanged")
+    def time_last_role_changed(self) -> str:
+        """
+        The date and time when the last role change action happened.
+        """
+        return pulumi.get(self, "time_last_role_changed")
+
+    @property
+    @pulumi.getter(name="timeLastSynced")
+    def time_last_synced(self) -> str:
+        """
+        The date and time of the last update to the apply lag, apply rate, and transport lag values.
+        """
+        return pulumi.get(self, "time_last_synced")
+
+    @property
+    @pulumi.getter(name="transportLag")
+    def transport_lag(self) -> str:
+        """
+        The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database. Example: `7 seconds`
+        """
+        return pulumi.get(self, "transport_lag")
+
+
+@pulumi.output_type
 class GetAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigResult(dict):
     def __init__(__self__, *,
                  backup_destination_details: Sequence['outputs.GetAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailResult'],
@@ -16369,6 +18192,7 @@ class GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerData
                  id: str,
                  is_automatic_failover_enabled: bool,
                  lifecycle_details: str,
+                 migrate_trigger: int,
                  peer_autonomous_container_database_backup_configs: Sequence['outputs.GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigResult'],
                  peer_autonomous_container_database_compartment_id: str,
                  peer_autonomous_container_database_dataguard_association_id: str,
@@ -16415,6 +18239,7 @@ class GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerData
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_automatic_failover_enabled", is_automatic_failover_enabled)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "migrate_trigger", migrate_trigger)
         pulumi.set(__self__, "peer_autonomous_container_database_backup_configs", peer_autonomous_container_database_backup_configs)
         pulumi.set(__self__, "peer_autonomous_container_database_compartment_id", peer_autonomous_container_database_compartment_id)
         pulumi.set(__self__, "peer_autonomous_container_database_dataguard_association_id", peer_autonomous_container_database_dataguard_association_id)
@@ -16494,6 +18319,11 @@ class GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerData
         Additional information about the current lifecycleState, if available.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="migrateTrigger")
+    def migrate_trigger(self) -> int:
+        return pulumi.get(self, "migrate_trigger")
 
     @property
     @pulumi.getter(name="peerAutonomousContainerDatabaseBackupConfigs")
@@ -16716,6 +18546,200 @@ class GetAutonomousContainerDatabaseDataguardAssociationsFilterResult(dict):
     @pulumi.getter
     def regex(self) -> Optional[bool]:
         return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetAutonomousContainerDatabaseDataguardGroupMemberResult(dict):
+    def __init__(__self__, *,
+                 apply_lag: str,
+                 apply_rate: str,
+                 automatic_failover_target: str,
+                 autonomous_container_database_id: str,
+                 availability_domain: str,
+                 fast_start_fail_over_lag_limit_in_seconds: int,
+                 is_automatic_failover_enabled: bool,
+                 lifecycle_details: str,
+                 protection_mode: str,
+                 redo_transport_mode: str,
+                 role: str,
+                 state: str,
+                 time_created: str,
+                 time_lag_refreshed_on: str,
+                 time_last_role_changed: str,
+                 time_last_synced: str,
+                 transport_lag: str):
+        """
+        :param str apply_lag: The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database. Example: `9 seconds`
+        :param str apply_rate: The rate at which redo logs are synchronized between the associated Autonomous Container Databases. Example: `180 Mb per second`
+        :param str automatic_failover_target: Automatically selected by backend when observer is enabled.
+        :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str availability_domain: The domain of the Autonomous Container Database
+        :param int fast_start_fail_over_lag_limit_in_seconds: The lag time for my preference based on data loss tolerance in seconds.
+        :param bool is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param str protection_mode: The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        :param str redo_transport_mode: Automatically selected by backend based on the protection mode.
+        :param str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        :param str state: The current state of the Autonomous Container Database.
+        :param str time_created: The date and time the Autonomous Container Database was created.
+        :param str time_lag_refreshed_on: Timestamp when the lags were last calculated for a standby.
+        :param str time_last_role_changed: The date and time when the last role change action happened.
+        :param str time_last_synced: The date and time of the last update to the apply lag, apply rate, and transport lag values.
+        :param str transport_lag: The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database. Example: `7 seconds`
+        """
+        pulumi.set(__self__, "apply_lag", apply_lag)
+        pulumi.set(__self__, "apply_rate", apply_rate)
+        pulumi.set(__self__, "automatic_failover_target", automatic_failover_target)
+        pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "fast_start_fail_over_lag_limit_in_seconds", fast_start_fail_over_lag_limit_in_seconds)
+        pulumi.set(__self__, "is_automatic_failover_enabled", is_automatic_failover_enabled)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "protection_mode", protection_mode)
+        pulumi.set(__self__, "redo_transport_mode", redo_transport_mode)
+        pulumi.set(__self__, "role", role)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_lag_refreshed_on", time_lag_refreshed_on)
+        pulumi.set(__self__, "time_last_role_changed", time_last_role_changed)
+        pulumi.set(__self__, "time_last_synced", time_last_synced)
+        pulumi.set(__self__, "transport_lag", transport_lag)
+
+    @property
+    @pulumi.getter(name="applyLag")
+    def apply_lag(self) -> str:
+        """
+        The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database. Example: `9 seconds`
+        """
+        return pulumi.get(self, "apply_lag")
+
+    @property
+    @pulumi.getter(name="applyRate")
+    def apply_rate(self) -> str:
+        """
+        The rate at which redo logs are synchronized between the associated Autonomous Container Databases. Example: `180 Mb per second`
+        """
+        return pulumi.get(self, "apply_rate")
+
+    @property
+    @pulumi.getter(name="automaticFailoverTarget")
+    def automatic_failover_target(self) -> str:
+        """
+        Automatically selected by backend when observer is enabled.
+        """
+        return pulumi.get(self, "automatic_failover_target")
+
+    @property
+    @pulumi.getter(name="autonomousContainerDatabaseId")
+    def autonomous_container_database_id(self) -> str:
+        """
+        The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "autonomous_container_database_id")
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> str:
+        """
+        The domain of the Autonomous Container Database
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="fastStartFailOverLagLimitInSeconds")
+    def fast_start_fail_over_lag_limit_in_seconds(self) -> int:
+        """
+        The lag time for my preference based on data loss tolerance in seconds.
+        """
+        return pulumi.get(self, "fast_start_fail_over_lag_limit_in_seconds")
+
+    @property
+    @pulumi.getter(name="isAutomaticFailoverEnabled")
+    def is_automatic_failover_enabled(self) -> bool:
+        """
+        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        """
+        return pulumi.get(self, "is_automatic_failover_enabled")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="protectionMode")
+    def protection_mode(self) -> str:
+        """
+        The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        """
+        return pulumi.get(self, "protection_mode")
+
+    @property
+    @pulumi.getter(name="redoTransportMode")
+    def redo_transport_mode(self) -> str:
+        """
+        Automatically selected by backend based on the protection mode.
+        """
+        return pulumi.get(self, "redo_transport_mode")
+
+    @property
+    @pulumi.getter
+    def role(self) -> str:
+        """
+        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        """
+        return pulumi.get(self, "role")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the Autonomous Container Database.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the Autonomous Container Database was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeLagRefreshedOn")
+    def time_lag_refreshed_on(self) -> str:
+        """
+        Timestamp when the lags were last calculated for a standby.
+        """
+        return pulumi.get(self, "time_lag_refreshed_on")
+
+    @property
+    @pulumi.getter(name="timeLastRoleChanged")
+    def time_last_role_changed(self) -> str:
+        """
+        The date and time when the last role change action happened.
+        """
+        return pulumi.get(self, "time_last_role_changed")
+
+    @property
+    @pulumi.getter(name="timeLastSynced")
+    def time_last_synced(self) -> str:
+        """
+        The date and time of the last update to the apply lag, apply rate, and transport lag values.
+        """
+        return pulumi.get(self, "time_last_synced")
+
+    @property
+    @pulumi.getter(name="transportLag")
+    def transport_lag(self) -> str:
+        """
+        The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database. Example: `7 seconds`
+        """
+        return pulumi.get(self, "transport_lag")
 
 
 @pulumi.output_type
@@ -17437,6 +19461,8 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
                  compartment_id: str,
                  compute_model: str,
                  database_software_image_id: str,
+                 dataguard_group_members: Sequence['outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseDataguardGroupMemberResult'],
+                 dataguards: Sequence['outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseDataguardResult'],
                  db_name: str,
                  db_split_threshold: int,
                  db_unique_name: str,
@@ -17445,12 +19471,15 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
                  display_name: str,
                  distribution_affinity: str,
                  dst_file_version: str,
+                 failover_trigger: int,
                  fast_start_fail_over_lag_limit_in_seconds: int,
                  freeform_tags: Mapping[str, str],
                  id: str,
                  infrastructure_type: str,
                  is_automatic_failover_enabled: bool,
+                 is_data_guard_enabled: bool,
                  is_dst_file_update_enabled: bool,
+                 is_multiple_standby: bool,
                  key_history_entries: Sequence['outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntryResult'],
                  key_store_id: str,
                  key_store_wallet_name: str,
@@ -17479,12 +19508,14 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
                  provisioned_cpus: float,
                  reclaimable_cpus: float,
                  recovery_appliance_details: Sequence['outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseRecoveryApplianceDetailResult'],
+                 reinstate_trigger: int,
                  reserved_cpus: float,
                  role: str,
                  rotate_key_trigger: bool,
                  service_level_agreement_type: str,
                  standby_maintenance_buffer_in_days: int,
                  state: str,
+                 switchover_trigger: int,
                  time_created: str,
                  time_of_last_backup: str,
                  time_snapshot_standby_revert: str,
@@ -17503,6 +19534,8 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         :param str cloud_autonomous_vm_cluster_id: The cloud Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str compute_model: The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        :param Sequence['GetAutonomousContainerDatabasesAutonomousContainerDatabaseDataguardGroupMemberArgs'] dataguard_group_members: Array of Dg associations.
+        :param Sequence['GetAutonomousContainerDatabasesAutonomousContainerDatabaseDataguardArgs'] dataguards: The properties that define Autonomous Container Databases Dataguard.
         :param str db_name: The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         :param int db_split_threshold: The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
         :param str db_version: Oracle Database version of the Autonomous Container Database.
@@ -17510,10 +19543,14 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param str distribution_affinity: Determines whether an Autonomous Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
         :param str dst_file_version: DST Time-zone File version of the Autonomous Container Database.
+        :param int fast_start_fail_over_lag_limit_in_seconds: The lag time for my preference based on data loss tolerance in seconds.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         :param str infrastructure_type: A filter to return only resources that match the given Infrastructure Type.
+        :param bool is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        :param bool is_data_guard_enabled: **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param bool is_dst_file_update_enabled: Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+        :param bool is_multiple_standby: Whether it is multiple standby Autonomous Dataguard
         :param Sequence['GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntryArgs'] key_history_entries: Key History Entry.
         :param str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param str key_store_wallet_name: The wallet name for Oracle Key Vault.
@@ -17528,6 +19565,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         :param str next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param str patch_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
         :param str patch_model: Database patch model preference.
+        :param str protection_mode: The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         :param Sequence[float] provisionable_cpuses: An array of CPU values that can be used to successfully provision a single Autonomous Database.
         :param float provisioned_cpus: The number of CPUs provisioned in an Autonomous Container Database.
         :param float reclaimable_cpus: CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
@@ -17556,6 +19594,8 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "compute_model", compute_model)
         pulumi.set(__self__, "database_software_image_id", database_software_image_id)
+        pulumi.set(__self__, "dataguard_group_members", dataguard_group_members)
+        pulumi.set(__self__, "dataguards", dataguards)
         pulumi.set(__self__, "db_name", db_name)
         pulumi.set(__self__, "db_split_threshold", db_split_threshold)
         pulumi.set(__self__, "db_unique_name", db_unique_name)
@@ -17564,12 +19604,15 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "distribution_affinity", distribution_affinity)
         pulumi.set(__self__, "dst_file_version", dst_file_version)
+        pulumi.set(__self__, "failover_trigger", failover_trigger)
         pulumi.set(__self__, "fast_start_fail_over_lag_limit_in_seconds", fast_start_fail_over_lag_limit_in_seconds)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "infrastructure_type", infrastructure_type)
         pulumi.set(__self__, "is_automatic_failover_enabled", is_automatic_failover_enabled)
+        pulumi.set(__self__, "is_data_guard_enabled", is_data_guard_enabled)
         pulumi.set(__self__, "is_dst_file_update_enabled", is_dst_file_update_enabled)
+        pulumi.set(__self__, "is_multiple_standby", is_multiple_standby)
         pulumi.set(__self__, "key_history_entries", key_history_entries)
         pulumi.set(__self__, "key_store_id", key_store_id)
         pulumi.set(__self__, "key_store_wallet_name", key_store_wallet_name)
@@ -17598,12 +19641,14 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         pulumi.set(__self__, "provisioned_cpus", provisioned_cpus)
         pulumi.set(__self__, "reclaimable_cpus", reclaimable_cpus)
         pulumi.set(__self__, "recovery_appliance_details", recovery_appliance_details)
+        pulumi.set(__self__, "reinstate_trigger", reinstate_trigger)
         pulumi.set(__self__, "reserved_cpus", reserved_cpus)
         pulumi.set(__self__, "role", role)
         pulumi.set(__self__, "rotate_key_trigger", rotate_key_trigger)
         pulumi.set(__self__, "service_level_agreement_type", service_level_agreement_type)
         pulumi.set(__self__, "standby_maintenance_buffer_in_days", standby_maintenance_buffer_in_days)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "switchover_trigger", switchover_trigger)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_of_last_backup", time_of_last_backup)
         pulumi.set(__self__, "time_snapshot_standby_revert", time_snapshot_standby_revert)
@@ -17698,6 +19743,22 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         return pulumi.get(self, "database_software_image_id")
 
     @property
+    @pulumi.getter(name="dataguardGroupMembers")
+    def dataguard_group_members(self) -> Sequence['outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseDataguardGroupMemberResult']:
+        """
+        Array of Dg associations.
+        """
+        return pulumi.get(self, "dataguard_group_members")
+
+    @property
+    @pulumi.getter
+    def dataguards(self) -> Sequence['outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseDataguardResult']:
+        """
+        The properties that define Autonomous Container Databases Dataguard.
+        """
+        return pulumi.get(self, "dataguards")
+
+    @property
     @pulumi.getter(name="dbName")
     def db_name(self) -> str:
         """
@@ -17759,8 +19820,16 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         return pulumi.get(self, "dst_file_version")
 
     @property
+    @pulumi.getter(name="failoverTrigger")
+    def failover_trigger(self) -> int:
+        return pulumi.get(self, "failover_trigger")
+
+    @property
     @pulumi.getter(name="fastStartFailOverLagLimitInSeconds")
     def fast_start_fail_over_lag_limit_in_seconds(self) -> int:
+        """
+        The lag time for my preference based on data loss tolerance in seconds.
+        """
         return pulumi.get(self, "fast_start_fail_over_lag_limit_in_seconds")
 
     @property
@@ -17790,7 +19859,18 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @property
     @pulumi.getter(name="isAutomaticFailoverEnabled")
     def is_automatic_failover_enabled(self) -> bool:
+        """
+        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        """
         return pulumi.get(self, "is_automatic_failover_enabled")
+
+    @property
+    @pulumi.getter(name="isDataGuardEnabled")
+    def is_data_guard_enabled(self) -> bool:
+        """
+        **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        """
+        return pulumi.get(self, "is_data_guard_enabled")
 
     @property
     @pulumi.getter(name="isDstFileUpdateEnabled")
@@ -17799,6 +19879,14 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         """
         return pulumi.get(self, "is_dst_file_update_enabled")
+
+    @property
+    @pulumi.getter(name="isMultipleStandby")
+    def is_multiple_standby(self) -> bool:
+        """
+        Whether it is multiple standby Autonomous Dataguard
+        """
+        return pulumi.get(self, "is_multiple_standby")
 
     @property
     @pulumi.getter(name="keyHistoryEntries")
@@ -17960,6 +20048,9 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @property
     @pulumi.getter(name="protectionMode")
     def protection_mode(self) -> str:
+        """
+        The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        """
         return pulumi.get(self, "protection_mode")
 
     @property
@@ -17993,6 +20084,11 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         Information about the recovery appliance configuration associated with the Autonomous Container Database.
         """
         return pulumi.get(self, "recovery_appliance_details")
+
+    @property
+    @pulumi.getter(name="reinstateTrigger")
+    def reinstate_trigger(self) -> int:
+        return pulumi.get(self, "reinstate_trigger")
 
     @property
     @pulumi.getter(name="reservedCpus")
@@ -18038,6 +20134,11 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         A filter to return only resources that match the given lifecycle state exactly.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="switchoverTrigger")
+    def switchover_trigger(self) -> int:
+        return pulumi.get(self, "switchover_trigger")
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -18342,6 +20443,394 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupDestinatio
         The latest timestamp when the backup destination details, such as 'spaceUtilized,' are updated.
         """
         return pulumi.get(self, "time_at_which_storage_details_are_updated")
+
+
+@pulumi.output_type
+class GetAutonomousContainerDatabasesAutonomousContainerDatabaseDataguardResult(dict):
+    def __init__(__self__, *,
+                 apply_lag: str,
+                 apply_rate: str,
+                 automatic_failover_target: str,
+                 autonomous_container_database_id: str,
+                 availability_domain: str,
+                 fast_start_fail_over_lag_limit_in_seconds: int,
+                 is_automatic_failover_enabled: bool,
+                 lifecycle_details: str,
+                 protection_mode: str,
+                 redo_transport_mode: str,
+                 role: str,
+                 state: str,
+                 time_created: str,
+                 time_lag_refreshed_on: str,
+                 time_last_role_changed: str,
+                 time_last_synced: str,
+                 transport_lag: str):
+        """
+        :param str apply_lag: The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database. Example: `9 seconds`
+        :param str apply_rate: The rate at which redo logs are synchronized between the associated Autonomous Container Databases. Example: `180 Mb per second`
+        :param str automatic_failover_target: Automatically selected by backend when observer is enabled.
+        :param str autonomous_container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        :param str availability_domain: A filter to return only resources that match the given availability domain exactly.
+        :param int fast_start_fail_over_lag_limit_in_seconds: The lag time for my preference based on data loss tolerance in seconds.
+        :param bool is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param str protection_mode: The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        :param str redo_transport_mode: Automatically selected by backend based on the protection mode.
+        :param str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        :param str state: A filter to return only resources that match the given lifecycle state exactly.
+        :param str time_created: The date and time the Autonomous Container Database was created.
+        :param str time_lag_refreshed_on: Timestamp when the lags were last calculated for a standby.
+        :param str time_last_role_changed: The date and time when the last role change action happened.
+        :param str time_last_synced: The date and time of the last update to the apply lag, apply rate, and transport lag values.
+        :param str transport_lag: The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database. Example: `7 seconds`
+        """
+        pulumi.set(__self__, "apply_lag", apply_lag)
+        pulumi.set(__self__, "apply_rate", apply_rate)
+        pulumi.set(__self__, "automatic_failover_target", automatic_failover_target)
+        pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "fast_start_fail_over_lag_limit_in_seconds", fast_start_fail_over_lag_limit_in_seconds)
+        pulumi.set(__self__, "is_automatic_failover_enabled", is_automatic_failover_enabled)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "protection_mode", protection_mode)
+        pulumi.set(__self__, "redo_transport_mode", redo_transport_mode)
+        pulumi.set(__self__, "role", role)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_lag_refreshed_on", time_lag_refreshed_on)
+        pulumi.set(__self__, "time_last_role_changed", time_last_role_changed)
+        pulumi.set(__self__, "time_last_synced", time_last_synced)
+        pulumi.set(__self__, "transport_lag", transport_lag)
+
+    @property
+    @pulumi.getter(name="applyLag")
+    def apply_lag(self) -> str:
+        """
+        The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database. Example: `9 seconds`
+        """
+        return pulumi.get(self, "apply_lag")
+
+    @property
+    @pulumi.getter(name="applyRate")
+    def apply_rate(self) -> str:
+        """
+        The rate at which redo logs are synchronized between the associated Autonomous Container Databases. Example: `180 Mb per second`
+        """
+        return pulumi.get(self, "apply_rate")
+
+    @property
+    @pulumi.getter(name="automaticFailoverTarget")
+    def automatic_failover_target(self) -> str:
+        """
+        Automatically selected by backend when observer is enabled.
+        """
+        return pulumi.get(self, "automatic_failover_target")
+
+    @property
+    @pulumi.getter(name="autonomousContainerDatabaseId")
+    def autonomous_container_database_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        """
+        return pulumi.get(self, "autonomous_container_database_id")
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> str:
+        """
+        A filter to return only resources that match the given availability domain exactly.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="fastStartFailOverLagLimitInSeconds")
+    def fast_start_fail_over_lag_limit_in_seconds(self) -> int:
+        """
+        The lag time for my preference based on data loss tolerance in seconds.
+        """
+        return pulumi.get(self, "fast_start_fail_over_lag_limit_in_seconds")
+
+    @property
+    @pulumi.getter(name="isAutomaticFailoverEnabled")
+    def is_automatic_failover_enabled(self) -> bool:
+        """
+        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        """
+        return pulumi.get(self, "is_automatic_failover_enabled")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="protectionMode")
+    def protection_mode(self) -> str:
+        """
+        The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        """
+        return pulumi.get(self, "protection_mode")
+
+    @property
+    @pulumi.getter(name="redoTransportMode")
+    def redo_transport_mode(self) -> str:
+        """
+        Automatically selected by backend based on the protection mode.
+        """
+        return pulumi.get(self, "redo_transport_mode")
+
+    @property
+    @pulumi.getter
+    def role(self) -> str:
+        """
+        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        """
+        return pulumi.get(self, "role")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only resources that match the given lifecycle state exactly.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the Autonomous Container Database was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeLagRefreshedOn")
+    def time_lag_refreshed_on(self) -> str:
+        """
+        Timestamp when the lags were last calculated for a standby.
+        """
+        return pulumi.get(self, "time_lag_refreshed_on")
+
+    @property
+    @pulumi.getter(name="timeLastRoleChanged")
+    def time_last_role_changed(self) -> str:
+        """
+        The date and time when the last role change action happened.
+        """
+        return pulumi.get(self, "time_last_role_changed")
+
+    @property
+    @pulumi.getter(name="timeLastSynced")
+    def time_last_synced(self) -> str:
+        """
+        The date and time of the last update to the apply lag, apply rate, and transport lag values.
+        """
+        return pulumi.get(self, "time_last_synced")
+
+    @property
+    @pulumi.getter(name="transportLag")
+    def transport_lag(self) -> str:
+        """
+        The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database. Example: `7 seconds`
+        """
+        return pulumi.get(self, "transport_lag")
+
+
+@pulumi.output_type
+class GetAutonomousContainerDatabasesAutonomousContainerDatabaseDataguardGroupMemberResult(dict):
+    def __init__(__self__, *,
+                 apply_lag: str,
+                 apply_rate: str,
+                 automatic_failover_target: str,
+                 autonomous_container_database_id: str,
+                 availability_domain: str,
+                 fast_start_fail_over_lag_limit_in_seconds: int,
+                 is_automatic_failover_enabled: bool,
+                 lifecycle_details: str,
+                 protection_mode: str,
+                 redo_transport_mode: str,
+                 role: str,
+                 state: str,
+                 time_created: str,
+                 time_lag_refreshed_on: str,
+                 time_last_role_changed: str,
+                 time_last_synced: str,
+                 transport_lag: str):
+        """
+        :param str apply_lag: The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database. Example: `9 seconds`
+        :param str apply_rate: The rate at which redo logs are synchronized between the associated Autonomous Container Databases. Example: `180 Mb per second`
+        :param str automatic_failover_target: Automatically selected by backend when observer is enabled.
+        :param str autonomous_container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        :param str availability_domain: A filter to return only resources that match the given availability domain exactly.
+        :param int fast_start_fail_over_lag_limit_in_seconds: The lag time for my preference based on data loss tolerance in seconds.
+        :param bool is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param str protection_mode: The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        :param str redo_transport_mode: Automatically selected by backend based on the protection mode.
+        :param str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        :param str state: A filter to return only resources that match the given lifecycle state exactly.
+        :param str time_created: The date and time the Autonomous Container Database was created.
+        :param str time_lag_refreshed_on: Timestamp when the lags were last calculated for a standby.
+        :param str time_last_role_changed: The date and time when the last role change action happened.
+        :param str time_last_synced: The date and time of the last update to the apply lag, apply rate, and transport lag values.
+        :param str transport_lag: The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database. Example: `7 seconds`
+        """
+        pulumi.set(__self__, "apply_lag", apply_lag)
+        pulumi.set(__self__, "apply_rate", apply_rate)
+        pulumi.set(__self__, "automatic_failover_target", automatic_failover_target)
+        pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "fast_start_fail_over_lag_limit_in_seconds", fast_start_fail_over_lag_limit_in_seconds)
+        pulumi.set(__self__, "is_automatic_failover_enabled", is_automatic_failover_enabled)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "protection_mode", protection_mode)
+        pulumi.set(__self__, "redo_transport_mode", redo_transport_mode)
+        pulumi.set(__self__, "role", role)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_lag_refreshed_on", time_lag_refreshed_on)
+        pulumi.set(__self__, "time_last_role_changed", time_last_role_changed)
+        pulumi.set(__self__, "time_last_synced", time_last_synced)
+        pulumi.set(__self__, "transport_lag", transport_lag)
+
+    @property
+    @pulumi.getter(name="applyLag")
+    def apply_lag(self) -> str:
+        """
+        The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database. Example: `9 seconds`
+        """
+        return pulumi.get(self, "apply_lag")
+
+    @property
+    @pulumi.getter(name="applyRate")
+    def apply_rate(self) -> str:
+        """
+        The rate at which redo logs are synchronized between the associated Autonomous Container Databases. Example: `180 Mb per second`
+        """
+        return pulumi.get(self, "apply_rate")
+
+    @property
+    @pulumi.getter(name="automaticFailoverTarget")
+    def automatic_failover_target(self) -> str:
+        """
+        Automatically selected by backend when observer is enabled.
+        """
+        return pulumi.get(self, "automatic_failover_target")
+
+    @property
+    @pulumi.getter(name="autonomousContainerDatabaseId")
+    def autonomous_container_database_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        """
+        return pulumi.get(self, "autonomous_container_database_id")
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> str:
+        """
+        A filter to return only resources that match the given availability domain exactly.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="fastStartFailOverLagLimitInSeconds")
+    def fast_start_fail_over_lag_limit_in_seconds(self) -> int:
+        """
+        The lag time for my preference based on data loss tolerance in seconds.
+        """
+        return pulumi.get(self, "fast_start_fail_over_lag_limit_in_seconds")
+
+    @property
+    @pulumi.getter(name="isAutomaticFailoverEnabled")
+    def is_automatic_failover_enabled(self) -> bool:
+        """
+        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        """
+        return pulumi.get(self, "is_automatic_failover_enabled")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="protectionMode")
+    def protection_mode(self) -> str:
+        """
+        The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        """
+        return pulumi.get(self, "protection_mode")
+
+    @property
+    @pulumi.getter(name="redoTransportMode")
+    def redo_transport_mode(self) -> str:
+        """
+        Automatically selected by backend based on the protection mode.
+        """
+        return pulumi.get(self, "redo_transport_mode")
+
+    @property
+    @pulumi.getter
+    def role(self) -> str:
+        """
+        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        """
+        return pulumi.get(self, "role")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only resources that match the given lifecycle state exactly.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the Autonomous Container Database was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeLagRefreshedOn")
+    def time_lag_refreshed_on(self) -> str:
+        """
+        Timestamp when the lags were last calculated for a standby.
+        """
+        return pulumi.get(self, "time_lag_refreshed_on")
+
+    @property
+    @pulumi.getter(name="timeLastRoleChanged")
+    def time_last_role_changed(self) -> str:
+        """
+        The date and time when the last role change action happened.
+        """
+        return pulumi.get(self, "time_last_role_changed")
+
+    @property
+    @pulumi.getter(name="timeLastSynced")
+    def time_last_synced(self) -> str:
+        """
+        The date and time of the last update to the apply lag, apply rate, and transport lag values.
+        """
+        return pulumi.get(self, "time_last_synced")
+
+    @property
+    @pulumi.getter(name="transportLag")
+    def transport_lag(self) -> str:
+        """
+        The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database. Example: `7 seconds`
+        """
+        return pulumi.get(self, "transport_lag")
 
 
 @pulumi.output_type
@@ -36683,6 +39172,7 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetai
                  patching_start_time: str,
                  patching_status: str,
                  peer_maintenance_run_id: str,
+                 peer_maintenance_run_ids: Sequence[str],
                  state: str,
                  target_db_server_version: str,
                  target_resource_id: str,
@@ -36716,6 +39206,7 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetai
         :param str patching_start_time: The time when the patching operation started.
         :param str patching_status: The status of the patching operation.
         :param str peer_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
+        :param Sequence[str] peer_maintenance_run_ids: The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
         :param str state: The state of the maintenance run history.
         :param str target_db_server_version: The target software version for the database server patching operation.
         :param str target_resource_id: The target resource ID.
@@ -36749,6 +39240,7 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetai
         pulumi.set(__self__, "patching_start_time", patching_start_time)
         pulumi.set(__self__, "patching_status", patching_status)
         pulumi.set(__self__, "peer_maintenance_run_id", peer_maintenance_run_id)
+        pulumi.set(__self__, "peer_maintenance_run_ids", peer_maintenance_run_ids)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "target_db_server_version", target_db_server_version)
         pulumi.set(__self__, "target_resource_id", target_resource_id)
@@ -36942,6 +39434,14 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetai
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
         """
         return pulumi.get(self, "peer_maintenance_run_id")
+
+    @property
+    @pulumi.getter(name="peerMaintenanceRunIds")
+    def peer_maintenance_run_ids(self) -> Sequence[str]:
+        """
+        The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+        """
+        return pulumi.get(self, "peer_maintenance_run_ids")
 
     @property
     @pulumi.getter
@@ -37721,6 +40221,7 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
                  patching_start_time: str,
                  patching_status: str,
                  peer_maintenance_run_id: str,
+                 peer_maintenance_run_ids: Sequence[str],
                  state: str,
                  target_db_server_version: str,
                  target_resource_id: str,
@@ -37754,6 +40255,7 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
         :param str patching_start_time: The time when the patching operation started.
         :param str patching_status: The status of the patching operation.
         :param str peer_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
+        :param Sequence[str] peer_maintenance_run_ids: The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
         :param str state: The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         :param str target_db_server_version: The target software version for the database server patching operation.
         :param str target_resource_id: The ID of the target resource on which the maintenance run occurs.
@@ -37787,6 +40289,7 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
         pulumi.set(__self__, "patching_start_time", patching_start_time)
         pulumi.set(__self__, "patching_status", patching_status)
         pulumi.set(__self__, "peer_maintenance_run_id", peer_maintenance_run_id)
+        pulumi.set(__self__, "peer_maintenance_run_ids", peer_maintenance_run_ids)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "target_db_server_version", target_db_server_version)
         pulumi.set(__self__, "target_resource_id", target_resource_id)
@@ -37980,6 +40483,14 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
         """
         return pulumi.get(self, "peer_maintenance_run_id")
+
+    @property
+    @pulumi.getter(name="peerMaintenanceRunIds")
+    def peer_maintenance_run_ids(self) -> Sequence[str]:
+        """
+        The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+        """
+        return pulumi.get(self, "peer_maintenance_run_ids")
 
     @property
     @pulumi.getter
@@ -51038,6 +53549,7 @@ class GetMaintenanceRunsMaintenanceRunResult(dict):
                  patching_start_time: str,
                  patching_status: str,
                  peer_maintenance_run_id: str,
+                 peer_maintenance_run_ids: Sequence[str],
                  state: str,
                  target_db_server_version: str,
                  target_resource_id: str,
@@ -51071,6 +53583,7 @@ class GetMaintenanceRunsMaintenanceRunResult(dict):
         :param str patching_start_time: The time when the patching operation started.
         :param str patching_status: The status of the patching operation.
         :param str peer_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
+        :param Sequence[str] peer_maintenance_run_ids: The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param str target_db_server_version: The target software version for the database server patching operation.
         :param str target_resource_id: The target resource ID.
@@ -51105,6 +53618,7 @@ class GetMaintenanceRunsMaintenanceRunResult(dict):
         pulumi.set(__self__, "patching_start_time", patching_start_time)
         pulumi.set(__self__, "patching_status", patching_status)
         pulumi.set(__self__, "peer_maintenance_run_id", peer_maintenance_run_id)
+        pulumi.set(__self__, "peer_maintenance_run_ids", peer_maintenance_run_ids)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "target_db_server_version", target_db_server_version)
         pulumi.set(__self__, "target_resource_id", target_resource_id)
@@ -51303,6 +53817,14 @@ class GetMaintenanceRunsMaintenanceRunResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
         """
         return pulumi.get(self, "peer_maintenance_run_id")
+
+    @property
+    @pulumi.getter(name="peerMaintenanceRunIds")
+    def peer_maintenance_run_ids(self) -> Sequence[str]:
+        """
+        The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+        """
+        return pulumi.get(self, "peer_maintenance_run_ids")
 
     @property
     @pulumi.getter

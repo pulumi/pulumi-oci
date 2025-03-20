@@ -14,33 +14,6 @@ namespace Pulumi.Oci.OsManagementHub
     /// 
     /// Detaches (removes) a managed instance from a lifecycle stage.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testLifecycleStageDetachManagedInstancesManagement = new Oci.OsManagementHub.LifecycleStageDetachManagedInstancesManagement("test_lifecycle_stage_detach_managed_instances_management", new()
-    ///     {
-    ///         LifecycleStageId = testLifecycleStage.Id,
-    ///         ManagedInstanceDetails = new Oci.OsManagementHub.Inputs.LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs
-    ///         {
-    ///             ManagedInstances = lifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsManagedInstances,
-    ///             WorkRequestDetails = new Oci.OsManagementHub.Inputs.LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgs
-    ///             {
-    ///                 Description = lifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsDescription,
-    ///                 DisplayName = lifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsDisplayName,
-    ///             },
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// LifecycleStageDetachManagedInstancesManagement can be imported using the `id`, e.g.
@@ -119,8 +92,8 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// The details about the managed instances.
         /// </summary>
-        [Input("managedInstanceDetails")]
-        public Input<Inputs.LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs>? ManagedInstanceDetails { get; set; }
+        [Input("managedInstanceDetails", required: true)]
+        public Input<Inputs.LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs> ManagedInstanceDetails { get; set; } = null!;
 
         public LifecycleStageDetachManagedInstancesManagementArgs()
         {

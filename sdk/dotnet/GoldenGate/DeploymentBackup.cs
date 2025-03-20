@@ -66,6 +66,12 @@ namespace Pulumi.Oci.GoldenGate
     public partial class DeploymentBackup : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// Possible deployment backup source types.
+        /// </summary>
+        [Output("backupSourceType")]
+        public Output<string> BackupSourceType { get; private set; } = null!;
+
+        /// <summary>
         /// Possible Deployment backup types.
         /// </summary>
         [Output("backupType")]
@@ -343,6 +349,12 @@ namespace Pulumi.Oci.GoldenGate
 
     public sealed class DeploymentBackupState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Possible deployment backup source types.
+        /// </summary>
+        [Input("backupSourceType")]
+        public Input<string>? BackupSourceType { get; set; }
+
         /// <summary>
         /// Possible Deployment backup types.
         /// </summary>

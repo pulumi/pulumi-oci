@@ -111,6 +111,8 @@ public final class EventDataContentArgs extends com.pulumi.resources.ResourceArg
      * * `SOFTWARE_SOURCE` - Software source
      * * `AGENT` - Agent
      * * `MANAGEMENT_STATION` - Management Station
+     * * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+     * * `REBOOT` - Reboot
      * 
      */
     @Import(name="type")
@@ -126,6 +128,8 @@ public final class EventDataContentArgs extends com.pulumi.resources.ResourceArg
      * * `SOFTWARE_SOURCE` - Software source
      * * `AGENT` - Agent
      * * `MANAGEMENT_STATION` - Management Station
+     * * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+     * * `REBOOT` - Reboot
      * 
      */
     public Optional<Output<String>> type() {
@@ -286,6 +290,8 @@ public final class EventDataContentArgs extends com.pulumi.resources.ResourceArg
          * * `SOFTWARE_SOURCE` - Software source
          * * `AGENT` - Agent
          * * `MANAGEMENT_STATION` - Management Station
+         * * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+         * * `REBOOT` - Reboot
          * 
          * @return builder
          * 
@@ -305,6 +311,8 @@ public final class EventDataContentArgs extends com.pulumi.resources.ResourceArg
          * * `SOFTWARE_SOURCE` - Software source
          * * `AGENT` - Agent
          * * `MANAGEMENT_STATION` - Management Station
+         * * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+         * * `REBOOT` - Reboot
          * 
          * @return builder
          * 

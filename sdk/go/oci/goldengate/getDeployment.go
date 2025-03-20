@@ -58,6 +58,8 @@ type LookupDeploymentArgs struct {
 
 // A collection of values returned by getDeployment.
 type LookupDeploymentResult struct {
+	// Defines the schedule of the deployment backup.
+	BackupSchedules []GetDeploymentBackupSchedule `pulumi:"backupSchedules"`
 	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
 	Category string `pulumi:"category"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
@@ -138,6 +140,10 @@ type LookupDeploymentResult struct {
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeCreated string `pulumi:"timeCreated"`
+	// The timestamp of last deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+	TimeLastBackupScheduled string `pulumi:"timeLastBackupScheduled"`
+	// The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
+	TimeNextBackupScheduled string `pulumi:"timeNextBackupScheduled"`
 	// The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeOfNextMaintenance string `pulumi:"timeOfNextMaintenance"`
 	// The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -180,6 +186,11 @@ func (o LookupDeploymentResultOutput) ToLookupDeploymentResultOutput() LookupDep
 
 func (o LookupDeploymentResultOutput) ToLookupDeploymentResultOutputWithContext(ctx context.Context) LookupDeploymentResultOutput {
 	return o
+}
+
+// Defines the schedule of the deployment backup.
+func (o LookupDeploymentResultOutput) BackupSchedules() GetDeploymentBackupScheduleArrayOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) []GetDeploymentBackupSchedule { return v.BackupSchedules }).(GetDeploymentBackupScheduleArrayOutput)
 }
 
 // The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
@@ -387,6 +398,16 @@ func (o LookupDeploymentResultOutput) SystemTags() pulumi.StringMapOutput {
 // The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 func (o LookupDeploymentResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The timestamp of last deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+func (o LookupDeploymentResultOutput) TimeLastBackupScheduled() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) string { return v.TimeLastBackupScheduled }).(pulumi.StringOutput)
+}
+
+// The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
+func (o LookupDeploymentResultOutput) TimeNextBackupScheduled() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) string { return v.TimeNextBackupScheduled }).(pulumi.StringOutput)
 }
 
 // The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.

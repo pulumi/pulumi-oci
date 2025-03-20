@@ -404,6 +404,20 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
         return this.peerMaintenanceRunId;
     }
     /**
+     * The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+     * 
+     */
+    @Export(name="peerMaintenanceRunIds", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> peerMaintenanceRunIds;
+
+    /**
+     * @return The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+     * 
+     */
+    public Output<List<String>> peerMaintenanceRunIds() {
+        return this.peerMaintenanceRunIds;
+    }
+    /**
      * The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      * 
      */

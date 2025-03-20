@@ -14,7 +14,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
     public sealed class GetManagementStationMirrorsMirrorsCollectionItemResult
     {
         /// <summary>
-        /// The architecture type supported by the Software Source
+        /// The architecture type supported by the software source.
         /// </summary>
         public readonly string ArchType;
         /// <summary>
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// OCID of a software source
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -30,23 +30,31 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly string Log;
         /// <summary>
-        /// The OS family the Software Source belongs to
+        /// The OS family of the software source.
         /// </summary>
         public readonly string OsFamily;
         /// <summary>
-        /// A decimal number representing the completness percentage
+        /// The number of packages within the mirrored software source.
+        /// </summary>
+        public readonly int PackageCount;
+        /// <summary>
+        /// A decimal number representing the percentage of the software source that has been synced.
         /// </summary>
         public readonly int Percentage;
         /// <summary>
-        /// Current state of the mirror
+        /// The size the mirrored software source in bytes.
+        /// </summary>
+        public readonly string Size;
+        /// <summary>
+        /// Current state of the software source mirror.
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// Timestamp of the last time the mirror was sync
+        /// Time that the software source was last synced (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         /// </summary>
         public readonly string TimeLastSynced;
         /// <summary>
-        /// Type of the mirror
+        /// Type of software source.
         /// </summary>
         public readonly string Type;
 
@@ -62,7 +70,11 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
 
             string osFamily,
 
+            int packageCount,
+
             int percentage,
+
+            string size,
 
             string state,
 
@@ -75,7 +87,9 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
             Id = id;
             Log = log;
             OsFamily = osFamily;
+            PackageCount = packageCount;
             Percentage = percentage;
+            Size = size;
             State = state;
             TimeLastSynced = timeLastSynced;
             Type = type;

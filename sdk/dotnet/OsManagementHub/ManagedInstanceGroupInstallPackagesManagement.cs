@@ -28,6 +28,7 @@ namespace Pulumi.Oci.OsManagementHub
     ///     {
     ///         ManagedInstanceGroupId = testManagedInstanceGroup.Id,
     ///         PackageNames = managedInstanceGroupInstallPackagesManagementPackageNames,
+    ///         IsLatest = managedInstanceGroupInstallPackagesManagementIsLatest,
     ///         WorkRequestDetails = new Oci.OsManagementHub.Inputs.ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgs
     ///         {
     ///             Description = managedInstanceGroupInstallPackagesManagementWorkRequestDetailsDescription,
@@ -49,6 +50,12 @@ namespace Pulumi.Oci.OsManagementHub
     [OciResourceType("oci:OsManagementHub/managedInstanceGroupInstallPackagesManagement:ManagedInstanceGroupInstallPackagesManagement")]
     public partial class ManagedInstanceGroupInstallPackagesManagement : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// Indicates whether this is the latest package version.
+        /// </summary>
+        [Output("isLatest")]
+        public Output<bool> IsLatest { get; private set; } = null!;
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         /// </summary>
@@ -114,6 +121,12 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class ManagedInstanceGroupInstallPackagesManagementArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Indicates whether this is the latest package version.
+        /// </summary>
+        [Input("isLatest")]
+        public Input<bool>? IsLatest { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         /// </summary>
         [Input("managedInstanceGroupId", required: true)]
@@ -145,6 +158,12 @@ namespace Pulumi.Oci.OsManagementHub
 
     public sealed class ManagedInstanceGroupInstallPackagesManagementState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Indicates whether this is the latest package version.
+        /// </summary>
+        [Input("isLatest")]
+        public Input<bool>? IsLatest { get; set; }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         /// </summary>

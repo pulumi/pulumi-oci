@@ -28,10 +28,13 @@ class GetManagedInstancesResult:
     """
     A collection of values returned by getManagedInstances.
     """
-    def __init__(__self__, advisory_names=None, arch_types=None, compartment_id=None, display_name_contains=None, display_names=None, filters=None, group=None, group_not_equal_to=None, id=None, is_attached_to_group_or_lifecycle_stage=None, is_managed_by_autonomous_linux=None, is_management_station=None, is_profile_attached=None, lifecycle_environment=None, lifecycle_environment_not_equal_to=None, lifecycle_stage=None, lifecycle_stage_not_equal_to=None, location_not_equal_tos=None, locations=None, managed_instance_collections=None, managed_instance_id=None, os_families=None, profile_not_equal_tos=None, profiles=None, software_source_id=None, statuses=None):
+    def __init__(__self__, advisory_names=None, agent_version=None, arch_types=None, compartment_id=None, display_name_contains=None, display_names=None, filters=None, group=None, group_not_equal_to=None, id=None, is_attached_to_group_or_lifecycle_stage=None, is_managed_by_autonomous_linux=None, is_management_station=None, is_profile_attached=None, is_reboot_required=None, lifecycle_environment=None, lifecycle_environment_not_equal_to=None, lifecycle_stage=None, lifecycle_stage_not_equal_to=None, location_not_equal_tos=None, locations=None, managed_instance_collections=None, managed_instance_id=None, management_station_not_equal_tos=None, management_stations=None, os_families=None, profile_not_equal_tos=None, profiles=None, software_source_id=None, statuses=None):
         if advisory_names and not isinstance(advisory_names, list):
             raise TypeError("Expected argument 'advisory_names' to be a list")
         pulumi.set(__self__, "advisory_names", advisory_names)
+        if agent_version and not isinstance(agent_version, str):
+            raise TypeError("Expected argument 'agent_version' to be a str")
+        pulumi.set(__self__, "agent_version", agent_version)
         if arch_types and not isinstance(arch_types, list):
             raise TypeError("Expected argument 'arch_types' to be a list")
         pulumi.set(__self__, "arch_types", arch_types)
@@ -68,6 +71,9 @@ class GetManagedInstancesResult:
         if is_profile_attached and not isinstance(is_profile_attached, bool):
             raise TypeError("Expected argument 'is_profile_attached' to be a bool")
         pulumi.set(__self__, "is_profile_attached", is_profile_attached)
+        if is_reboot_required and not isinstance(is_reboot_required, bool):
+            raise TypeError("Expected argument 'is_reboot_required' to be a bool")
+        pulumi.set(__self__, "is_reboot_required", is_reboot_required)
         if lifecycle_environment and not isinstance(lifecycle_environment, str):
             raise TypeError("Expected argument 'lifecycle_environment' to be a str")
         pulumi.set(__self__, "lifecycle_environment", lifecycle_environment)
@@ -92,6 +98,12 @@ class GetManagedInstancesResult:
         if managed_instance_id and not isinstance(managed_instance_id, str):
             raise TypeError("Expected argument 'managed_instance_id' to be a str")
         pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+        if management_station_not_equal_tos and not isinstance(management_station_not_equal_tos, list):
+            raise TypeError("Expected argument 'management_station_not_equal_tos' to be a list")
+        pulumi.set(__self__, "management_station_not_equal_tos", management_station_not_equal_tos)
+        if management_stations and not isinstance(management_stations, list):
+            raise TypeError("Expected argument 'management_stations' to be a list")
+        pulumi.set(__self__, "management_stations", management_stations)
         if os_families and not isinstance(os_families, list):
             raise TypeError("Expected argument 'os_families' to be a list")
         pulumi.set(__self__, "os_families", os_families)
@@ -112,6 +124,14 @@ class GetManagedInstancesResult:
     @pulumi.getter(name="advisoryNames")
     def advisory_names(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "advisory_names")
+
+    @property
+    @pulumi.getter(name="agentVersion")
+    def agent_version(self) -> Optional[str]:
+        """
+        The version of osmh-agent running on the managed instance
+        """
+        return pulumi.get(self, "agent_version")
 
     @property
     @pulumi.getter(name="archTypes")
@@ -189,6 +209,14 @@ class GetManagedInstancesResult:
         return pulumi.get(self, "is_profile_attached")
 
     @property
+    @pulumi.getter(name="isRebootRequired")
+    def is_reboot_required(self) -> Optional[bool]:
+        """
+        Indicates whether a reboot is required to complete installation of updates.
+        """
+        return pulumi.get(self, "is_reboot_required")
+
+    @property
     @pulumi.getter(name="lifecycleEnvironment")
     def lifecycle_environment(self) -> Optional[str]:
         """
@@ -241,6 +269,16 @@ class GetManagedInstancesResult:
         return pulumi.get(self, "managed_instance_id")
 
     @property
+    @pulumi.getter(name="managementStationNotEqualTos")
+    def management_station_not_equal_tos(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "management_station_not_equal_tos")
+
+    @property
+    @pulumi.getter(name="managementStations")
+    def management_stations(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "management_stations")
+
+    @property
     @pulumi.getter(name="osFamilies")
     def os_families(self) -> Optional[Sequence[str]]:
         """
@@ -282,6 +320,7 @@ class AwaitableGetManagedInstancesResult(GetManagedInstancesResult):
             yield self
         return GetManagedInstancesResult(
             advisory_names=self.advisory_names,
+            agent_version=self.agent_version,
             arch_types=self.arch_types,
             compartment_id=self.compartment_id,
             display_name_contains=self.display_name_contains,
@@ -294,6 +333,7 @@ class AwaitableGetManagedInstancesResult(GetManagedInstancesResult):
             is_managed_by_autonomous_linux=self.is_managed_by_autonomous_linux,
             is_management_station=self.is_management_station,
             is_profile_attached=self.is_profile_attached,
+            is_reboot_required=self.is_reboot_required,
             lifecycle_environment=self.lifecycle_environment,
             lifecycle_environment_not_equal_to=self.lifecycle_environment_not_equal_to,
             lifecycle_stage=self.lifecycle_stage,
@@ -302,6 +342,8 @@ class AwaitableGetManagedInstancesResult(GetManagedInstancesResult):
             locations=self.locations,
             managed_instance_collections=self.managed_instance_collections,
             managed_instance_id=self.managed_instance_id,
+            management_station_not_equal_tos=self.management_station_not_equal_tos,
+            management_stations=self.management_stations,
             os_families=self.os_families,
             profile_not_equal_tos=self.profile_not_equal_tos,
             profiles=self.profiles,
@@ -310,6 +352,7 @@ class AwaitableGetManagedInstancesResult(GetManagedInstancesResult):
 
 
 def get_managed_instances(advisory_names: Optional[Sequence[str]] = None,
+                          agent_version: Optional[str] = None,
                           arch_types: Optional[Sequence[str]] = None,
                           compartment_id: Optional[str] = None,
                           display_name_contains: Optional[str] = None,
@@ -321,6 +364,7 @@ def get_managed_instances(advisory_names: Optional[Sequence[str]] = None,
                           is_managed_by_autonomous_linux: Optional[bool] = None,
                           is_management_station: Optional[bool] = None,
                           is_profile_attached: Optional[bool] = None,
+                          is_reboot_required: Optional[bool] = None,
                           lifecycle_environment: Optional[str] = None,
                           lifecycle_environment_not_equal_to: Optional[str] = None,
                           lifecycle_stage: Optional[str] = None,
@@ -328,6 +372,8 @@ def get_managed_instances(advisory_names: Optional[Sequence[str]] = None,
                           location_not_equal_tos: Optional[Sequence[str]] = None,
                           locations: Optional[Sequence[str]] = None,
                           managed_instance_id: Optional[str] = None,
+                          management_station_not_equal_tos: Optional[Sequence[str]] = None,
+                          management_stations: Optional[Sequence[str]] = None,
                           os_families: Optional[Sequence[str]] = None,
                           profile_not_equal_tos: Optional[Sequence[str]] = None,
                           profiles: Optional[Sequence[str]] = None,
@@ -339,39 +385,9 @@ def get_managed_instances(advisory_names: Optional[Sequence[str]] = None,
 
     Lists managed instances that match the specified compartment or managed instance OCID. Filter the list against a variety of criteria including but not limited to its name, status, architecture, and OS version.
 
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_instances = oci.OsManagementHub.get_managed_instances(advisory_names=managed_instance_advisory_name,
-        arch_types=managed_instance_arch_type,
-        compartment_id=compartment_id,
-        display_names=managed_instance_display_name,
-        display_name_contains=managed_instance_display_name_contains,
-        group=managed_instance_group,
-        group_not_equal_to=managed_instance_group_not_equal_to,
-        is_attached_to_group_or_lifecycle_stage=managed_instance_is_attached_to_group_or_lifecycle_stage,
-        is_managed_by_autonomous_linux=managed_instance_is_managed_by_autonomous_linux,
-        is_management_station=managed_instance_is_management_station,
-        is_profile_attached=managed_instance_is_profile_attached,
-        lifecycle_environment=managed_instance_lifecycle_environment,
-        lifecycle_environment_not_equal_to=managed_instance_lifecycle_environment_not_equal_to,
-        lifecycle_stage=managed_instance_lifecycle_stage,
-        lifecycle_stage_not_equal_to=managed_instance_lifecycle_stage_not_equal_to,
-        locations=managed_instance_location,
-        location_not_equal_tos=managed_instance_location_not_equal_to,
-        managed_instance_id=test_managed_instance["id"],
-        os_families=managed_instance_os_family,
-        profiles=managed_instance_profile,
-        profile_not_equal_tos=managed_instance_profile_not_equal_to,
-        software_source_id=test_software_source["id"],
-        statuses=managed_instance_status)
-    ```
-
 
     :param Sequence[str] advisory_names: The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+    :param str agent_version: A filter to return only managed instances with the specified version of osmh-agent running.
     :param Sequence[str] arch_types: A filter to return only instances whose architecture type matches the given architecture.
     :param str compartment_id: The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
     :param str display_name_contains: A filter to return resources that may partially match the given display name.
@@ -382,6 +398,7 @@ def get_managed_instances(advisory_names: Optional[Sequence[str]] = None,
     :param bool is_managed_by_autonomous_linux: Indicates whether to list only resources managed by the Autonomous Linux service.
     :param bool is_management_station: A filter to return only managed instances that are acting as management stations.
     :param bool is_profile_attached: A filter to return only managed instances with a registration profile attached.
+    :param bool is_reboot_required: A filter to return only managed instances that require a reboot to install updates.
     :param str lifecycle_environment: A filter to return only managed instances in a specific lifecycle environment.
     :param str lifecycle_environment_not_equal_to: A filter to return only managed instances that aren't in a specific lifecycle environment.
     :param str lifecycle_stage: A filter to return only managed instances that are associated with the specified lifecycle environment.
@@ -389,6 +406,8 @@ def get_managed_instances(advisory_names: Optional[Sequence[str]] = None,
     :param Sequence[str] location_not_equal_tos: A filter to return only resources whose location does not match the given value.
     :param Sequence[str] locations: A filter to return only resources whose location matches the given value.
     :param str managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
+    :param Sequence[str] management_station_not_equal_tos: A filter to return resources that aren't associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    :param Sequence[str] management_stations: A filter to return resources that are associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param Sequence[str] os_families: A filter to return only resources that match the given operating system family.
     :param Sequence[str] profile_not_equal_tos: A multi filter to return only managed instances that don't contain the given profile [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param Sequence[str] profiles: A multi filter to return only managed instances that match the given profile ids.
@@ -397,6 +416,7 @@ def get_managed_instances(advisory_names: Optional[Sequence[str]] = None,
     """
     __args__ = dict()
     __args__['advisoryNames'] = advisory_names
+    __args__['agentVersion'] = agent_version
     __args__['archTypes'] = arch_types
     __args__['compartmentId'] = compartment_id
     __args__['displayNameContains'] = display_name_contains
@@ -408,6 +428,7 @@ def get_managed_instances(advisory_names: Optional[Sequence[str]] = None,
     __args__['isManagedByAutonomousLinux'] = is_managed_by_autonomous_linux
     __args__['isManagementStation'] = is_management_station
     __args__['isProfileAttached'] = is_profile_attached
+    __args__['isRebootRequired'] = is_reboot_required
     __args__['lifecycleEnvironment'] = lifecycle_environment
     __args__['lifecycleEnvironmentNotEqualTo'] = lifecycle_environment_not_equal_to
     __args__['lifecycleStage'] = lifecycle_stage
@@ -415,6 +436,8 @@ def get_managed_instances(advisory_names: Optional[Sequence[str]] = None,
     __args__['locationNotEqualTos'] = location_not_equal_tos
     __args__['locations'] = locations
     __args__['managedInstanceId'] = managed_instance_id
+    __args__['managementStationNotEqualTos'] = management_station_not_equal_tos
+    __args__['managementStations'] = management_stations
     __args__['osFamilies'] = os_families
     __args__['profileNotEqualTos'] = profile_not_equal_tos
     __args__['profiles'] = profiles
@@ -425,6 +448,7 @@ def get_managed_instances(advisory_names: Optional[Sequence[str]] = None,
 
     return AwaitableGetManagedInstancesResult(
         advisory_names=pulumi.get(__ret__, 'advisory_names'),
+        agent_version=pulumi.get(__ret__, 'agent_version'),
         arch_types=pulumi.get(__ret__, 'arch_types'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         display_name_contains=pulumi.get(__ret__, 'display_name_contains'),
@@ -437,6 +461,7 @@ def get_managed_instances(advisory_names: Optional[Sequence[str]] = None,
         is_managed_by_autonomous_linux=pulumi.get(__ret__, 'is_managed_by_autonomous_linux'),
         is_management_station=pulumi.get(__ret__, 'is_management_station'),
         is_profile_attached=pulumi.get(__ret__, 'is_profile_attached'),
+        is_reboot_required=pulumi.get(__ret__, 'is_reboot_required'),
         lifecycle_environment=pulumi.get(__ret__, 'lifecycle_environment'),
         lifecycle_environment_not_equal_to=pulumi.get(__ret__, 'lifecycle_environment_not_equal_to'),
         lifecycle_stage=pulumi.get(__ret__, 'lifecycle_stage'),
@@ -445,12 +470,15 @@ def get_managed_instances(advisory_names: Optional[Sequence[str]] = None,
         locations=pulumi.get(__ret__, 'locations'),
         managed_instance_collections=pulumi.get(__ret__, 'managed_instance_collections'),
         managed_instance_id=pulumi.get(__ret__, 'managed_instance_id'),
+        management_station_not_equal_tos=pulumi.get(__ret__, 'management_station_not_equal_tos'),
+        management_stations=pulumi.get(__ret__, 'management_stations'),
         os_families=pulumi.get(__ret__, 'os_families'),
         profile_not_equal_tos=pulumi.get(__ret__, 'profile_not_equal_tos'),
         profiles=pulumi.get(__ret__, 'profiles'),
         software_source_id=pulumi.get(__ret__, 'software_source_id'),
         statuses=pulumi.get(__ret__, 'statuses'))
 def get_managed_instances_output(advisory_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
+                                 agent_version: Optional[pulumi.Input[Optional[str]]] = None,
                                  arch_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                  compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  display_name_contains: Optional[pulumi.Input[Optional[str]]] = None,
@@ -462,6 +490,7 @@ def get_managed_instances_output(advisory_names: Optional[pulumi.Input[Optional[
                                  is_managed_by_autonomous_linux: Optional[pulumi.Input[Optional[bool]]] = None,
                                  is_management_station: Optional[pulumi.Input[Optional[bool]]] = None,
                                  is_profile_attached: Optional[pulumi.Input[Optional[bool]]] = None,
+                                 is_reboot_required: Optional[pulumi.Input[Optional[bool]]] = None,
                                  lifecycle_environment: Optional[pulumi.Input[Optional[str]]] = None,
                                  lifecycle_environment_not_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                  lifecycle_stage: Optional[pulumi.Input[Optional[str]]] = None,
@@ -469,6 +498,8 @@ def get_managed_instances_output(advisory_names: Optional[pulumi.Input[Optional[
                                  location_not_equal_tos: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                  locations: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                  managed_instance_id: Optional[pulumi.Input[Optional[str]]] = None,
+                                 management_station_not_equal_tos: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
+                                 management_stations: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                  os_families: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                  profile_not_equal_tos: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                  profiles: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
@@ -480,39 +511,9 @@ def get_managed_instances_output(advisory_names: Optional[pulumi.Input[Optional[
 
     Lists managed instances that match the specified compartment or managed instance OCID. Filter the list against a variety of criteria including but not limited to its name, status, architecture, and OS version.
 
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_instances = oci.OsManagementHub.get_managed_instances(advisory_names=managed_instance_advisory_name,
-        arch_types=managed_instance_arch_type,
-        compartment_id=compartment_id,
-        display_names=managed_instance_display_name,
-        display_name_contains=managed_instance_display_name_contains,
-        group=managed_instance_group,
-        group_not_equal_to=managed_instance_group_not_equal_to,
-        is_attached_to_group_or_lifecycle_stage=managed_instance_is_attached_to_group_or_lifecycle_stage,
-        is_managed_by_autonomous_linux=managed_instance_is_managed_by_autonomous_linux,
-        is_management_station=managed_instance_is_management_station,
-        is_profile_attached=managed_instance_is_profile_attached,
-        lifecycle_environment=managed_instance_lifecycle_environment,
-        lifecycle_environment_not_equal_to=managed_instance_lifecycle_environment_not_equal_to,
-        lifecycle_stage=managed_instance_lifecycle_stage,
-        lifecycle_stage_not_equal_to=managed_instance_lifecycle_stage_not_equal_to,
-        locations=managed_instance_location,
-        location_not_equal_tos=managed_instance_location_not_equal_to,
-        managed_instance_id=test_managed_instance["id"],
-        os_families=managed_instance_os_family,
-        profiles=managed_instance_profile,
-        profile_not_equal_tos=managed_instance_profile_not_equal_to,
-        software_source_id=test_software_source["id"],
-        statuses=managed_instance_status)
-    ```
-
 
     :param Sequence[str] advisory_names: The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+    :param str agent_version: A filter to return only managed instances with the specified version of osmh-agent running.
     :param Sequence[str] arch_types: A filter to return only instances whose architecture type matches the given architecture.
     :param str compartment_id: The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
     :param str display_name_contains: A filter to return resources that may partially match the given display name.
@@ -523,6 +524,7 @@ def get_managed_instances_output(advisory_names: Optional[pulumi.Input[Optional[
     :param bool is_managed_by_autonomous_linux: Indicates whether to list only resources managed by the Autonomous Linux service.
     :param bool is_management_station: A filter to return only managed instances that are acting as management stations.
     :param bool is_profile_attached: A filter to return only managed instances with a registration profile attached.
+    :param bool is_reboot_required: A filter to return only managed instances that require a reboot to install updates.
     :param str lifecycle_environment: A filter to return only managed instances in a specific lifecycle environment.
     :param str lifecycle_environment_not_equal_to: A filter to return only managed instances that aren't in a specific lifecycle environment.
     :param str lifecycle_stage: A filter to return only managed instances that are associated with the specified lifecycle environment.
@@ -530,6 +532,8 @@ def get_managed_instances_output(advisory_names: Optional[pulumi.Input[Optional[
     :param Sequence[str] location_not_equal_tos: A filter to return only resources whose location does not match the given value.
     :param Sequence[str] locations: A filter to return only resources whose location matches the given value.
     :param str managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
+    :param Sequence[str] management_station_not_equal_tos: A filter to return resources that aren't associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    :param Sequence[str] management_stations: A filter to return resources that are associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param Sequence[str] os_families: A filter to return only resources that match the given operating system family.
     :param Sequence[str] profile_not_equal_tos: A multi filter to return only managed instances that don't contain the given profile [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param Sequence[str] profiles: A multi filter to return only managed instances that match the given profile ids.
@@ -538,6 +542,7 @@ def get_managed_instances_output(advisory_names: Optional[pulumi.Input[Optional[
     """
     __args__ = dict()
     __args__['advisoryNames'] = advisory_names
+    __args__['agentVersion'] = agent_version
     __args__['archTypes'] = arch_types
     __args__['compartmentId'] = compartment_id
     __args__['displayNameContains'] = display_name_contains
@@ -549,6 +554,7 @@ def get_managed_instances_output(advisory_names: Optional[pulumi.Input[Optional[
     __args__['isManagedByAutonomousLinux'] = is_managed_by_autonomous_linux
     __args__['isManagementStation'] = is_management_station
     __args__['isProfileAttached'] = is_profile_attached
+    __args__['isRebootRequired'] = is_reboot_required
     __args__['lifecycleEnvironment'] = lifecycle_environment
     __args__['lifecycleEnvironmentNotEqualTo'] = lifecycle_environment_not_equal_to
     __args__['lifecycleStage'] = lifecycle_stage
@@ -556,6 +562,8 @@ def get_managed_instances_output(advisory_names: Optional[pulumi.Input[Optional[
     __args__['locationNotEqualTos'] = location_not_equal_tos
     __args__['locations'] = locations
     __args__['managedInstanceId'] = managed_instance_id
+    __args__['managementStationNotEqualTos'] = management_station_not_equal_tos
+    __args__['managementStations'] = management_stations
     __args__['osFamilies'] = os_families
     __args__['profileNotEqualTos'] = profile_not_equal_tos
     __args__['profiles'] = profiles
@@ -565,6 +573,7 @@ def get_managed_instances_output(advisory_names: Optional[pulumi.Input[Optional[
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getManagedInstances:getManagedInstances', __args__, opts=opts, typ=GetManagedInstancesResult)
     return __ret__.apply(lambda __response__: GetManagedInstancesResult(
         advisory_names=pulumi.get(__response__, 'advisory_names'),
+        agent_version=pulumi.get(__response__, 'agent_version'),
         arch_types=pulumi.get(__response__, 'arch_types'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         display_name_contains=pulumi.get(__response__, 'display_name_contains'),
@@ -577,6 +586,7 @@ def get_managed_instances_output(advisory_names: Optional[pulumi.Input[Optional[
         is_managed_by_autonomous_linux=pulumi.get(__response__, 'is_managed_by_autonomous_linux'),
         is_management_station=pulumi.get(__response__, 'is_management_station'),
         is_profile_attached=pulumi.get(__response__, 'is_profile_attached'),
+        is_reboot_required=pulumi.get(__response__, 'is_reboot_required'),
         lifecycle_environment=pulumi.get(__response__, 'lifecycle_environment'),
         lifecycle_environment_not_equal_to=pulumi.get(__response__, 'lifecycle_environment_not_equal_to'),
         lifecycle_stage=pulumi.get(__response__, 'lifecycle_stage'),
@@ -585,6 +595,8 @@ def get_managed_instances_output(advisory_names: Optional[pulumi.Input[Optional[
         locations=pulumi.get(__response__, 'locations'),
         managed_instance_collections=pulumi.get(__response__, 'managed_instance_collections'),
         managed_instance_id=pulumi.get(__response__, 'managed_instance_id'),
+        management_station_not_equal_tos=pulumi.get(__response__, 'management_station_not_equal_tos'),
+        management_stations=pulumi.get(__response__, 'management_stations'),
         os_families=pulumi.get(__response__, 'os_families'),
         profile_not_equal_tos=pulumi.get(__response__, 'profile_not_equal_tos'),
         profiles=pulumi.get(__response__, 'profiles'),

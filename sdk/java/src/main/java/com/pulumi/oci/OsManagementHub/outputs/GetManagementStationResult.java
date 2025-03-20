@@ -8,7 +8,9 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagementStationHealth;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagementStationMirror;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagementStationMirrorSyncStatus;
+import com.pulumi.oci.OsManagementHub.outputs.GetManagementStationPeerManagementStation;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagementStationProxy;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -33,7 +35,7 @@ public final class GetManagementStationResult {
      */
     private String description;
     /**
-     * @return A user-friendly name for the management station.
+     * @return User-friendly name for the management station.
      * 
      */
     private String displayName;
@@ -58,6 +60,16 @@ public final class GetManagementStationResult {
      */
     private String id;
     /**
+     * @return When enabled, the station setup script automatically runs to configure the firewall and SELinux settings on the station.
+     * 
+     */
+    private Boolean isAutoConfigEnabled;
+    /**
+     * @return The location of the instance that is acting as the management station.
+     * 
+     */
+    private String location;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
      * 
      */
@@ -69,10 +81,35 @@ public final class GetManagementStationResult {
      */
     private Integer mirrorCapacity;
     /**
+     * @return The total number of all packages within the mirrored software sources.
+     * 
+     */
+    private Integer mirrorPackageCount;
+    /**
+     * @return The total size of all software source mirrors in bytes.
+     * 
+     */
+    private String mirrorSize;
+    /**
+     * @return Amount of available mirror storage in bytes.
+     * 
+     */
+    private String mirrorStorageAvailableSize;
+    /**
+     * @return Total mirror storage size in bytes.
+     * 
+     */
+    private String mirrorStorageSize;
+    /**
      * @return Status summary of the mirror sync.
      * 
      */
     private List<GetManagementStationMirrorSyncStatus> mirrorSyncStatuses;
+    /**
+     * @return The total number of unique packages within the mirrored software sources on the station. Each package is counted only once, regardless of how many versions it has.
+     * 
+     */
+    private Integer mirrorUniquePackageCount;
     /**
      * @return Mirror information used for the management station configuration.
      * 
@@ -88,6 +125,11 @@ public final class GetManagementStationResult {
      * 
      */
     private String overallState;
+    /**
+     * @return A list of other management stations that are behind the same load balancer within a high availability configuration. Stations are identified as peers if they have the same hostname and compartment.
+     * 
+     */
+    private List<GetManagementStationPeerManagementStation> peerManagementStations;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
      * 
@@ -143,7 +185,7 @@ public final class GetManagementStationResult {
         return this.description;
     }
     /**
-     * @return A user-friendly name for the management station.
+     * @return User-friendly name for the management station.
      * 
      */
     public String displayName() {
@@ -178,6 +220,20 @@ public final class GetManagementStationResult {
         return this.id;
     }
     /**
+     * @return When enabled, the station setup script automatically runs to configure the firewall and SELinux settings on the station.
+     * 
+     */
+    public Boolean isAutoConfigEnabled() {
+        return this.isAutoConfigEnabled;
+    }
+    /**
+     * @return The location of the instance that is acting as the management station.
+     * 
+     */
+    public String location() {
+        return this.location;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
      * 
      */
@@ -195,11 +251,46 @@ public final class GetManagementStationResult {
         return this.mirrorCapacity;
     }
     /**
+     * @return The total number of all packages within the mirrored software sources.
+     * 
+     */
+    public Integer mirrorPackageCount() {
+        return this.mirrorPackageCount;
+    }
+    /**
+     * @return The total size of all software source mirrors in bytes.
+     * 
+     */
+    public String mirrorSize() {
+        return this.mirrorSize;
+    }
+    /**
+     * @return Amount of available mirror storage in bytes.
+     * 
+     */
+    public String mirrorStorageAvailableSize() {
+        return this.mirrorStorageAvailableSize;
+    }
+    /**
+     * @return Total mirror storage size in bytes.
+     * 
+     */
+    public String mirrorStorageSize() {
+        return this.mirrorStorageSize;
+    }
+    /**
      * @return Status summary of the mirror sync.
      * 
      */
     public List<GetManagementStationMirrorSyncStatus> mirrorSyncStatuses() {
         return this.mirrorSyncStatuses;
+    }
+    /**
+     * @return The total number of unique packages within the mirrored software sources on the station. Each package is counted only once, regardless of how many versions it has.
+     * 
+     */
+    public Integer mirrorUniquePackageCount() {
+        return this.mirrorUniquePackageCount;
     }
     /**
      * @return Mirror information used for the management station configuration.
@@ -221,6 +312,13 @@ public final class GetManagementStationResult {
      */
     public String overallState() {
         return this.overallState;
+    }
+    /**
+     * @return A list of other management stations that are behind the same load balancer within a high availability configuration. Stations are identified as peers if they have the same hostname and compartment.
+     * 
+     */
+    public List<GetManagementStationPeerManagementStation> peerManagementStations() {
+        return this.peerManagementStations;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
@@ -285,13 +383,21 @@ public final class GetManagementStationResult {
         private List<GetManagementStationHealth> healths;
         private String hostname;
         private String id;
+        private Boolean isAutoConfigEnabled;
+        private String location;
         private String managedInstanceId;
         private String managementStationId;
         private Integer mirrorCapacity;
+        private Integer mirrorPackageCount;
+        private String mirrorSize;
+        private String mirrorStorageAvailableSize;
+        private String mirrorStorageSize;
         private List<GetManagementStationMirrorSyncStatus> mirrorSyncStatuses;
+        private Integer mirrorUniquePackageCount;
         private List<GetManagementStationMirror> mirrors;
         private Integer overallPercentage;
         private String overallState;
+        private List<GetManagementStationPeerManagementStation> peerManagementStations;
         private String profileId;
         private List<GetManagementStationProxy> proxies;
         private Integer refreshTrigger;
@@ -310,13 +416,21 @@ public final class GetManagementStationResult {
     	      this.healths = defaults.healths;
     	      this.hostname = defaults.hostname;
     	      this.id = defaults.id;
+    	      this.isAutoConfigEnabled = defaults.isAutoConfigEnabled;
+    	      this.location = defaults.location;
     	      this.managedInstanceId = defaults.managedInstanceId;
     	      this.managementStationId = defaults.managementStationId;
     	      this.mirrorCapacity = defaults.mirrorCapacity;
+    	      this.mirrorPackageCount = defaults.mirrorPackageCount;
+    	      this.mirrorSize = defaults.mirrorSize;
+    	      this.mirrorStorageAvailableSize = defaults.mirrorStorageAvailableSize;
+    	      this.mirrorStorageSize = defaults.mirrorStorageSize;
     	      this.mirrorSyncStatuses = defaults.mirrorSyncStatuses;
+    	      this.mirrorUniquePackageCount = defaults.mirrorUniquePackageCount;
     	      this.mirrors = defaults.mirrors;
     	      this.overallPercentage = defaults.overallPercentage;
     	      this.overallState = defaults.overallState;
+    	      this.peerManagementStations = defaults.peerManagementStations;
     	      this.profileId = defaults.profileId;
     	      this.proxies = defaults.proxies;
     	      this.refreshTrigger = defaults.refreshTrigger;
@@ -394,6 +508,22 @@ public final class GetManagementStationResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isAutoConfigEnabled(Boolean isAutoConfigEnabled) {
+            if (isAutoConfigEnabled == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationResult", "isAutoConfigEnabled");
+            }
+            this.isAutoConfigEnabled = isAutoConfigEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder location(String location) {
+            if (location == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationResult", "location");
+            }
+            this.location = location;
+            return this;
+        }
+        @CustomType.Setter
         public Builder managedInstanceId(String managedInstanceId) {
             if (managedInstanceId == null) {
               throw new MissingRequiredPropertyException("GetManagementStationResult", "managedInstanceId");
@@ -418,6 +548,38 @@ public final class GetManagementStationResult {
             return this;
         }
         @CustomType.Setter
+        public Builder mirrorPackageCount(Integer mirrorPackageCount) {
+            if (mirrorPackageCount == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationResult", "mirrorPackageCount");
+            }
+            this.mirrorPackageCount = mirrorPackageCount;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder mirrorSize(String mirrorSize) {
+            if (mirrorSize == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationResult", "mirrorSize");
+            }
+            this.mirrorSize = mirrorSize;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder mirrorStorageAvailableSize(String mirrorStorageAvailableSize) {
+            if (mirrorStorageAvailableSize == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationResult", "mirrorStorageAvailableSize");
+            }
+            this.mirrorStorageAvailableSize = mirrorStorageAvailableSize;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder mirrorStorageSize(String mirrorStorageSize) {
+            if (mirrorStorageSize == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationResult", "mirrorStorageSize");
+            }
+            this.mirrorStorageSize = mirrorStorageSize;
+            return this;
+        }
+        @CustomType.Setter
         public Builder mirrorSyncStatuses(List<GetManagementStationMirrorSyncStatus> mirrorSyncStatuses) {
             if (mirrorSyncStatuses == null) {
               throw new MissingRequiredPropertyException("GetManagementStationResult", "mirrorSyncStatuses");
@@ -427,6 +589,14 @@ public final class GetManagementStationResult {
         }
         public Builder mirrorSyncStatuses(GetManagementStationMirrorSyncStatus... mirrorSyncStatuses) {
             return mirrorSyncStatuses(List.of(mirrorSyncStatuses));
+        }
+        @CustomType.Setter
+        public Builder mirrorUniquePackageCount(Integer mirrorUniquePackageCount) {
+            if (mirrorUniquePackageCount == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationResult", "mirrorUniquePackageCount");
+            }
+            this.mirrorUniquePackageCount = mirrorUniquePackageCount;
+            return this;
         }
         @CustomType.Setter
         public Builder mirrors(List<GetManagementStationMirror> mirrors) {
@@ -454,6 +624,17 @@ public final class GetManagementStationResult {
             }
             this.overallState = overallState;
             return this;
+        }
+        @CustomType.Setter
+        public Builder peerManagementStations(List<GetManagementStationPeerManagementStation> peerManagementStations) {
+            if (peerManagementStations == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationResult", "peerManagementStations");
+            }
+            this.peerManagementStations = peerManagementStations;
+            return this;
+        }
+        public Builder peerManagementStations(GetManagementStationPeerManagementStation... peerManagementStations) {
+            return peerManagementStations(List.of(peerManagementStations));
         }
         @CustomType.Setter
         public Builder profileId(String profileId) {
@@ -524,13 +705,21 @@ public final class GetManagementStationResult {
             _resultValue.healths = healths;
             _resultValue.hostname = hostname;
             _resultValue.id = id;
+            _resultValue.isAutoConfigEnabled = isAutoConfigEnabled;
+            _resultValue.location = location;
             _resultValue.managedInstanceId = managedInstanceId;
             _resultValue.managementStationId = managementStationId;
             _resultValue.mirrorCapacity = mirrorCapacity;
+            _resultValue.mirrorPackageCount = mirrorPackageCount;
+            _resultValue.mirrorSize = mirrorSize;
+            _resultValue.mirrorStorageAvailableSize = mirrorStorageAvailableSize;
+            _resultValue.mirrorStorageSize = mirrorStorageSize;
             _resultValue.mirrorSyncStatuses = mirrorSyncStatuses;
+            _resultValue.mirrorUniquePackageCount = mirrorUniquePackageCount;
             _resultValue.mirrors = mirrors;
             _resultValue.overallPercentage = overallPercentage;
             _resultValue.overallState = overallState;
+            _resultValue.peerManagementStations = peerManagementStations;
             _resultValue.profileId = profileId;
             _resultValue.proxies = proxies;
             _resultValue.refreshTrigger = refreshTrigger;

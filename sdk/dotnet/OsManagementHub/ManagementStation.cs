@@ -12,7 +12,7 @@ namespace Pulumi.Oci.OsManagementHub
     /// <summary>
     /// This resource provides the Management Station resource in Oracle Cloud Infrastructure Os Management Hub service.
     /// 
-    /// Create a management station. You must provide proxy and mirror configuration information.
+    /// Creates a management station using the proxy and mirror configuration information provided.
     /// 
     /// ## Example Usage
     /// 
@@ -34,6 +34,7 @@ namespace Pulumi.Oci.OsManagementHub
     ///             Directory = managementStationMirrorDirectory,
     ///             Port = managementStationMirrorPort,
     ///             Sslport = managementStationMirrorSslport,
+    ///             IsSslverifyEnabled = managementStationMirrorIsSslverifyEnabled,
     ///             Sslcert = managementStationMirrorSslcert,
     ///         },
     ///         Proxy = new Oci.OsManagementHub.Inputs.ManagementStationProxyArgs
@@ -52,6 +53,7 @@ namespace Pulumi.Oci.OsManagementHub
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         IsAutoConfigEnabled = managementStationIsAutoConfigEnabled,
     ///     });
     /// 
     /// });
@@ -111,6 +113,18 @@ namespace Pulumi.Oci.OsManagementHub
         public Output<string> Hostname { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) When enabled, the station setup script automatically runs to configure the firewall and SELinux settings on the station.
+        /// </summary>
+        [Output("isAutoConfigEnabled")]
+        public Output<bool> IsAutoConfigEnabled { get; private set; } = null!;
+
+        /// <summary>
+        /// The location of the instance that is acting as the management station.
+        /// </summary>
+        [Output("location")]
+        public Output<string> Location { get; private set; } = null!;
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
         /// </summary>
         [Output("managedInstanceId")]
@@ -129,10 +143,40 @@ namespace Pulumi.Oci.OsManagementHub
         public Output<int> MirrorCapacity { get; private set; } = null!;
 
         /// <summary>
+        /// The total number of all packages within the mirrored software sources.
+        /// </summary>
+        [Output("mirrorPackageCount")]
+        public Output<int> MirrorPackageCount { get; private set; } = null!;
+
+        /// <summary>
+        /// The total size of all software source mirrors in bytes.
+        /// </summary>
+        [Output("mirrorSize")]
+        public Output<string> MirrorSize { get; private set; } = null!;
+
+        /// <summary>
+        /// Amount of available mirror storage in bytes.
+        /// </summary>
+        [Output("mirrorStorageAvailableSize")]
+        public Output<string> MirrorStorageAvailableSize { get; private set; } = null!;
+
+        /// <summary>
+        /// Total mirror storage size in bytes.
+        /// </summary>
+        [Output("mirrorStorageSize")]
+        public Output<string> MirrorStorageSize { get; private set; } = null!;
+
+        /// <summary>
         /// Status summary of the mirror sync.
         /// </summary>
         [Output("mirrorSyncStatuses")]
         public Output<ImmutableArray<Outputs.ManagementStationMirrorSyncStatus>> MirrorSyncStatuses { get; private set; } = null!;
+
+        /// <summary>
+        /// The total number of unique packages within the mirrored software sources on the station. Each package is counted only once, regardless of how many versions it has.
+        /// </summary>
+        [Output("mirrorUniquePackageCount")]
+        public Output<int> MirrorUniquePackageCount { get; private set; } = null!;
 
         /// <summary>
         /// A decimal number representing the progress of the current mirror sync.
@@ -145,6 +189,12 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         [Output("overallState")]
         public Output<string> OverallState { get; private set; } = null!;
+
+        /// <summary>
+        /// A list of other management stations that are behind the same load balancer within a high availability configuration. Stations are identified as peers if they have the same hostname and compartment.
+        /// </summary>
+        [Output("peerManagementStations")]
+        public Output<ImmutableArray<Outputs.ManagementStationPeerManagementStation>> PeerManagementStations { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
@@ -287,6 +337,12 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<string> Hostname { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) When enabled, the station setup script automatically runs to configure the firewall and SELinux settings on the station.
+        /// </summary>
+        [Input("isAutoConfigEnabled")]
+        public Input<bool>? IsAutoConfigEnabled { get; set; }
+
+        /// <summary>
         /// (Updatable) Information used to create the mirror configuration for a management station.
         /// </summary>
         [Input("mirror", required: true)]
@@ -377,6 +433,18 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<string>? Hostname { get; set; }
 
         /// <summary>
+        /// (Updatable) When enabled, the station setup script automatically runs to configure the firewall and SELinux settings on the station.
+        /// </summary>
+        [Input("isAutoConfigEnabled")]
+        public Input<bool>? IsAutoConfigEnabled { get; set; }
+
+        /// <summary>
+        /// The location of the instance that is acting as the management station.
+        /// </summary>
+        [Input("location")]
+        public Input<string>? Location { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
         /// </summary>
         [Input("managedInstanceId")]
@@ -394,6 +462,30 @@ namespace Pulumi.Oci.OsManagementHub
         [Input("mirrorCapacity")]
         public Input<int>? MirrorCapacity { get; set; }
 
+        /// <summary>
+        /// The total number of all packages within the mirrored software sources.
+        /// </summary>
+        [Input("mirrorPackageCount")]
+        public Input<int>? MirrorPackageCount { get; set; }
+
+        /// <summary>
+        /// The total size of all software source mirrors in bytes.
+        /// </summary>
+        [Input("mirrorSize")]
+        public Input<string>? MirrorSize { get; set; }
+
+        /// <summary>
+        /// Amount of available mirror storage in bytes.
+        /// </summary>
+        [Input("mirrorStorageAvailableSize")]
+        public Input<string>? MirrorStorageAvailableSize { get; set; }
+
+        /// <summary>
+        /// Total mirror storage size in bytes.
+        /// </summary>
+        [Input("mirrorStorageSize")]
+        public Input<string>? MirrorStorageSize { get; set; }
+
         [Input("mirrorSyncStatuses")]
         private InputList<Inputs.ManagementStationMirrorSyncStatusGetArgs>? _mirrorSyncStatuses;
 
@@ -407,6 +499,12 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
+        /// The total number of unique packages within the mirrored software sources on the station. Each package is counted only once, regardless of how many versions it has.
+        /// </summary>
+        [Input("mirrorUniquePackageCount")]
+        public Input<int>? MirrorUniquePackageCount { get; set; }
+
+        /// <summary>
         /// A decimal number representing the progress of the current mirror sync.
         /// </summary>
         [Input("overallPercentage")]
@@ -417,6 +515,18 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         [Input("overallState")]
         public Input<string>? OverallState { get; set; }
+
+        [Input("peerManagementStations")]
+        private InputList<Inputs.ManagementStationPeerManagementStationGetArgs>? _peerManagementStations;
+
+        /// <summary>
+        /// A list of other management stations that are behind the same load balancer within a high availability configuration. Stations are identified as peers if they have the same hostname and compartment.
+        /// </summary>
+        public InputList<Inputs.ManagementStationPeerManagementStationGetArgs> PeerManagementStations
+        {
+            get => _peerManagementStations ?? (_peerManagementStations = new InputList<Inputs.ManagementStationPeerManagementStationGetArgs>());
+            set => _peerManagementStations = value;
+        }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.

@@ -28,7 +28,7 @@ class GetProfilesResult:
     """
     A collection of values returned by getProfiles.
     """
-    def __init__(__self__, arch_type=None, compartment_id=None, display_name_contains=None, display_names=None, filters=None, id=None, is_default_profile=None, is_service_provided_profile=None, os_family=None, profile_collections=None, profile_id=None, profile_types=None, registration_types=None, state=None, vendor_name=None):
+    def __init__(__self__, arch_type=None, compartment_id=None, display_name_contains=None, display_names=None, filters=None, id=None, is_default_profile=None, is_service_provided_profile=None, management_station_not_equal_tos=None, management_stations=None, os_family=None, profile_collections=None, profile_id=None, profile_types=None, profile_version=None, registration_types=None, state=None, vendor_name=None):
         if arch_type and not isinstance(arch_type, str):
             raise TypeError("Expected argument 'arch_type' to be a str")
         pulumi.set(__self__, "arch_type", arch_type)
@@ -53,6 +53,12 @@ class GetProfilesResult:
         if is_service_provided_profile and not isinstance(is_service_provided_profile, bool):
             raise TypeError("Expected argument 'is_service_provided_profile' to be a bool")
         pulumi.set(__self__, "is_service_provided_profile", is_service_provided_profile)
+        if management_station_not_equal_tos and not isinstance(management_station_not_equal_tos, list):
+            raise TypeError("Expected argument 'management_station_not_equal_tos' to be a list")
+        pulumi.set(__self__, "management_station_not_equal_tos", management_station_not_equal_tos)
+        if management_stations and not isinstance(management_stations, list):
+            raise TypeError("Expected argument 'management_stations' to be a list")
+        pulumi.set(__self__, "management_stations", management_stations)
         if os_family and not isinstance(os_family, str):
             raise TypeError("Expected argument 'os_family' to be a str")
         pulumi.set(__self__, "os_family", os_family)
@@ -65,6 +71,9 @@ class GetProfilesResult:
         if profile_types and not isinstance(profile_types, list):
             raise TypeError("Expected argument 'profile_types' to be a list")
         pulumi.set(__self__, "profile_types", profile_types)
+        if profile_version and not isinstance(profile_version, str):
+            raise TypeError("Expected argument 'profile_version' to be a str")
+        pulumi.set(__self__, "profile_version", profile_version)
         if registration_types and not isinstance(registration_types, list):
             raise TypeError("Expected argument 'registration_types' to be a list")
         pulumi.set(__self__, "registration_types", registration_types)
@@ -134,6 +143,16 @@ class GetProfilesResult:
         return pulumi.get(self, "is_service_provided_profile")
 
     @property
+    @pulumi.getter(name="managementStationNotEqualTos")
+    def management_station_not_equal_tos(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "management_station_not_equal_tos")
+
+    @property
+    @pulumi.getter(name="managementStations")
+    def management_stations(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "management_stations")
+
+    @property
     @pulumi.getter(name="osFamily")
     def os_family(self) -> Optional[str]:
         """
@@ -161,6 +180,14 @@ class GetProfilesResult:
         The type of profile.
         """
         return pulumi.get(self, "profile_types")
+
+    @property
+    @pulumi.getter(name="profileVersion")
+    def profile_version(self) -> Optional[str]:
+        """
+        The version of the profile. The version is automatically incremented each time the profiled is edited.
+        """
+        return pulumi.get(self, "profile_version")
 
     @property
     @pulumi.getter(name="registrationTypes")
@@ -201,10 +228,13 @@ class AwaitableGetProfilesResult(GetProfilesResult):
             id=self.id,
             is_default_profile=self.is_default_profile,
             is_service_provided_profile=self.is_service_provided_profile,
+            management_station_not_equal_tos=self.management_station_not_equal_tos,
+            management_stations=self.management_stations,
             os_family=self.os_family,
             profile_collections=self.profile_collections,
             profile_id=self.profile_id,
             profile_types=self.profile_types,
+            profile_version=self.profile_version,
             registration_types=self.registration_types,
             state=self.state,
             vendor_name=self.vendor_name)
@@ -217,9 +247,12 @@ def get_profiles(arch_type: Optional[str] = None,
                  filters: Optional[Sequence[Union['GetProfilesFilterArgs', 'GetProfilesFilterArgsDict']]] = None,
                  is_default_profile: Optional[bool] = None,
                  is_service_provided_profile: Optional[bool] = None,
+                 management_station_not_equal_tos: Optional[Sequence[str]] = None,
+                 management_stations: Optional[Sequence[str]] = None,
                  os_family: Optional[str] = None,
                  profile_id: Optional[str] = None,
                  profile_types: Optional[Sequence[str]] = None,
+                 profile_version: Optional[str] = None,
                  registration_types: Optional[Sequence[str]] = None,
                  state: Optional[str] = None,
                  vendor_name: Optional[str] = None,
@@ -242,9 +275,12 @@ def get_profiles(arch_type: Optional[str] = None,
         display_name_contains=profile_display_name_contains,
         is_default_profile=profile_is_default_profile,
         is_service_provided_profile=profile_is_service_provided_profile,
+        management_stations=profile_management_station,
+        management_station_not_equal_tos=profile_management_station_not_equal_to,
         os_family=profile_os_family,
         profile_id=test_profile["id"],
         profile_types=profile_profile_type,
+        profile_version=profile_profile_version,
         registration_types=profile_registration_type,
         state=profile_state,
         vendor_name=profile_vendor_name)
@@ -255,11 +291,14 @@ def get_profiles(arch_type: Optional[str] = None,
     :param str compartment_id: (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
     :param str display_name_contains: A filter to return resources that may partially match the given display name.
     :param Sequence[str] display_names: A filter to return resources that match the given display names.
-    :param bool is_default_profile: A boolean variable that is used to list only the default profile resources.
+    :param bool is_default_profile: A filter to return only default profiles.
     :param bool is_service_provided_profile: A filter to return only service-provided profiles.
+    :param Sequence[str] management_station_not_equal_tos: A filter to return resources that aren't associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    :param Sequence[str] management_stations: A filter to return resources that are associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str os_family: A filter to return only resources that match the given operating system family.
     :param str profile_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile. A filter used to return the specified profile.
     :param Sequence[str] profile_types: A filter to return registration profiles that match the given profile type.
+    :param str profile_version: The version of the registration profile.
     :param Sequence[str] registration_types: A filter to return profiles that match the given instance type.
     :param str state: A filter to return only registration profiles in the given state.
     :param str vendor_name: A filter to return only resources that match the given vendor name.
@@ -272,9 +311,12 @@ def get_profiles(arch_type: Optional[str] = None,
     __args__['filters'] = filters
     __args__['isDefaultProfile'] = is_default_profile
     __args__['isServiceProvidedProfile'] = is_service_provided_profile
+    __args__['managementStationNotEqualTos'] = management_station_not_equal_tos
+    __args__['managementStations'] = management_stations
     __args__['osFamily'] = os_family
     __args__['profileId'] = profile_id
     __args__['profileTypes'] = profile_types
+    __args__['profileVersion'] = profile_version
     __args__['registrationTypes'] = registration_types
     __args__['state'] = state
     __args__['vendorName'] = vendor_name
@@ -290,10 +332,13 @@ def get_profiles(arch_type: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         is_default_profile=pulumi.get(__ret__, 'is_default_profile'),
         is_service_provided_profile=pulumi.get(__ret__, 'is_service_provided_profile'),
+        management_station_not_equal_tos=pulumi.get(__ret__, 'management_station_not_equal_tos'),
+        management_stations=pulumi.get(__ret__, 'management_stations'),
         os_family=pulumi.get(__ret__, 'os_family'),
         profile_collections=pulumi.get(__ret__, 'profile_collections'),
         profile_id=pulumi.get(__ret__, 'profile_id'),
         profile_types=pulumi.get(__ret__, 'profile_types'),
+        profile_version=pulumi.get(__ret__, 'profile_version'),
         registration_types=pulumi.get(__ret__, 'registration_types'),
         state=pulumi.get(__ret__, 'state'),
         vendor_name=pulumi.get(__ret__, 'vendor_name'))
@@ -304,9 +349,12 @@ def get_profiles_output(arch_type: Optional[pulumi.Input[Optional[str]]] = None,
                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetProfilesFilterArgs', 'GetProfilesFilterArgsDict']]]]] = None,
                         is_default_profile: Optional[pulumi.Input[Optional[bool]]] = None,
                         is_service_provided_profile: Optional[pulumi.Input[Optional[bool]]] = None,
+                        management_station_not_equal_tos: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
+                        management_stations: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                         os_family: Optional[pulumi.Input[Optional[str]]] = None,
                         profile_id: Optional[pulumi.Input[Optional[str]]] = None,
                         profile_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
+                        profile_version: Optional[pulumi.Input[Optional[str]]] = None,
                         registration_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                         state: Optional[pulumi.Input[Optional[str]]] = None,
                         vendor_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -329,9 +377,12 @@ def get_profiles_output(arch_type: Optional[pulumi.Input[Optional[str]]] = None,
         display_name_contains=profile_display_name_contains,
         is_default_profile=profile_is_default_profile,
         is_service_provided_profile=profile_is_service_provided_profile,
+        management_stations=profile_management_station,
+        management_station_not_equal_tos=profile_management_station_not_equal_to,
         os_family=profile_os_family,
         profile_id=test_profile["id"],
         profile_types=profile_profile_type,
+        profile_version=profile_profile_version,
         registration_types=profile_registration_type,
         state=profile_state,
         vendor_name=profile_vendor_name)
@@ -342,11 +393,14 @@ def get_profiles_output(arch_type: Optional[pulumi.Input[Optional[str]]] = None,
     :param str compartment_id: (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
     :param str display_name_contains: A filter to return resources that may partially match the given display name.
     :param Sequence[str] display_names: A filter to return resources that match the given display names.
-    :param bool is_default_profile: A boolean variable that is used to list only the default profile resources.
+    :param bool is_default_profile: A filter to return only default profiles.
     :param bool is_service_provided_profile: A filter to return only service-provided profiles.
+    :param Sequence[str] management_station_not_equal_tos: A filter to return resources that aren't associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    :param Sequence[str] management_stations: A filter to return resources that are associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str os_family: A filter to return only resources that match the given operating system family.
     :param str profile_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile. A filter used to return the specified profile.
     :param Sequence[str] profile_types: A filter to return registration profiles that match the given profile type.
+    :param str profile_version: The version of the registration profile.
     :param Sequence[str] registration_types: A filter to return profiles that match the given instance type.
     :param str state: A filter to return only registration profiles in the given state.
     :param str vendor_name: A filter to return only resources that match the given vendor name.
@@ -359,9 +413,12 @@ def get_profiles_output(arch_type: Optional[pulumi.Input[Optional[str]]] = None,
     __args__['filters'] = filters
     __args__['isDefaultProfile'] = is_default_profile
     __args__['isServiceProvidedProfile'] = is_service_provided_profile
+    __args__['managementStationNotEqualTos'] = management_station_not_equal_tos
+    __args__['managementStations'] = management_stations
     __args__['osFamily'] = os_family
     __args__['profileId'] = profile_id
     __args__['profileTypes'] = profile_types
+    __args__['profileVersion'] = profile_version
     __args__['registrationTypes'] = registration_types
     __args__['state'] = state
     __args__['vendorName'] = vendor_name
@@ -376,10 +433,13 @@ def get_profiles_output(arch_type: Optional[pulumi.Input[Optional[str]]] = None,
         id=pulumi.get(__response__, 'id'),
         is_default_profile=pulumi.get(__response__, 'is_default_profile'),
         is_service_provided_profile=pulumi.get(__response__, 'is_service_provided_profile'),
+        management_station_not_equal_tos=pulumi.get(__response__, 'management_station_not_equal_tos'),
+        management_stations=pulumi.get(__response__, 'management_stations'),
         os_family=pulumi.get(__response__, 'os_family'),
         profile_collections=pulumi.get(__response__, 'profile_collections'),
         profile_id=pulumi.get(__response__, 'profile_id'),
         profile_types=pulumi.get(__response__, 'profile_types'),
+        profile_version=pulumi.get(__response__, 'profile_version'),
         registration_types=pulumi.get(__response__, 'registration_types'),
         state=pulumi.get(__response__, 'state'),
         vendor_name=pulumi.get(__response__, 'vendor_name')))

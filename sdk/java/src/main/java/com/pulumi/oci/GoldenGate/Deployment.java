@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.GoldenGate.DeploymentArgs;
 import com.pulumi.oci.GoldenGate.inputs.DeploymentState;
+import com.pulumi.oci.GoldenGate.outputs.DeploymentBackupSchedule;
 import com.pulumi.oci.GoldenGate.outputs.DeploymentDeploymentDiagnosticData;
 import com.pulumi.oci.GoldenGate.outputs.DeploymentIngressIp;
 import com.pulumi.oci.GoldenGate.outputs.DeploymentLock;
@@ -39,6 +40,20 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:GoldenGate/deployment:Deployment")
 public class Deployment extends com.pulumi.resources.CustomResource {
+    /**
+     * (Updatable) Defines the backup schedule details for create operation.
+     * 
+     */
+    @Export(name="backupSchedule", refs={DeploymentBackupSchedule.class}, tree="[0]")
+    private Output<DeploymentBackupSchedule> backupSchedule;
+
+    /**
+     * @return (Updatable) Defines the backup schedule details for create operation.
+     * 
+     */
+    public Output<DeploymentBackupSchedule> backupSchedule() {
+        return this.backupSchedule;
+    }
     /**
      * The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39; and &#39;DATA_TRANSFORMS&#39;.
      * 
@@ -568,6 +583,34 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
+    }
+    /**
+     * The timestamp of last deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+     * 
+     */
+    @Export(name="timeLastBackupScheduled", refs={String.class}, tree="[0]")
+    private Output<String> timeLastBackupScheduled;
+
+    /**
+     * @return The timestamp of last deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+     * 
+     */
+    public Output<String> timeLastBackupScheduled() {
+        return this.timeLastBackupScheduled;
+    }
+    /**
+     * The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
+     * 
+     */
+    @Export(name="timeNextBackupScheduled", refs={String.class}, tree="[0]")
+    private Output<String> timeNextBackupScheduled;
+
+    /**
+     * @return The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
+     * 
+     */
+    public Output<String> timeNextBackupScheduled() {
+        return this.timeNextBackupScheduled;
     }
     /**
      * The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.

@@ -36,6 +36,12 @@ namespace Pulumi.Oci.OsManagementHub.Inputs
             set => _packageNames = value;
         }
 
+        /// <summary>
+        /// (Updatable) The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the  timeout, the service marks the reboot job as failed.
+        /// </summary>
+        [Input("rebootTimeoutInMins")]
+        public Input<int>? RebootTimeoutInMins { get; set; }
+
         [Input("softwareSourceIds")]
         private InputList<string>? _softwareSourceIds;
 

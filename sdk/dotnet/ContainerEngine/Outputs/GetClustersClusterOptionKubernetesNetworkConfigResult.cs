@@ -14,11 +14,11 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
     public sealed class GetClustersClusterOptionKubernetesNetworkConfigResult
     {
         /// <summary>
-        /// The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
+        /// The CIDR block for Kubernetes pods. Optional. For ipv4, defaults to 10.244.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0000::/96.
         /// </summary>
         public readonly string PodsCidr;
         /// <summary>
-        /// The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
+        /// The CIDR block for Kubernetes services. Optional. For ipv4, defaults to 10.96.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0001::/108.
         /// </summary>
         public readonly string ServicesCidr;
 

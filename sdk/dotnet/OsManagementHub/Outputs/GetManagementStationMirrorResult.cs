@@ -18,6 +18,10 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly string Directory;
         /// <summary>
+        /// When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
+        /// </summary>
+        public readonly bool IsSslverifyEnabled;
+        /// <summary>
         /// Listening port used for the proxy.
         /// </summary>
         public readonly string Port;
@@ -34,6 +38,8 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         private GetManagementStationMirrorResult(
             string directory,
 
+            bool isSslverifyEnabled,
+
             string port,
 
             string sslcert,
@@ -41,6 +47,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
             string sslport)
         {
             Directory = directory;
+            IsSslverifyEnabled = isSslverifyEnabled;
             Port = port;
             Sslcert = sslcert;
             Sslport = sslport;

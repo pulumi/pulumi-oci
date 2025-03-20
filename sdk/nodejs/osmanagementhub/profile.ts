@@ -93,7 +93,7 @@ export class Profile extends pulumi.CustomResource {
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -129,7 +129,7 @@ export class Profile extends pulumi.CustomResource {
      */
     public /*out*/ readonly managedInstanceGroups!: pulumi.Output<outputs.OsManagementHub.ProfileManagedInstanceGroup[]>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+     * description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is required when creating a profile for non-OCI instances.
      */
     public readonly managementStationId!: pulumi.Output<string>;
     /**
@@ -140,6 +140,10 @@ export class Profile extends pulumi.CustomResource {
      * The type of profile.
      */
     public readonly profileType!: pulumi.Output<string>;
+    /**
+     * The version of the profile. The version is automatically incremented each time the profiled is edited.
+     */
+    public /*out*/ readonly profileVersion!: pulumi.Output<string>;
     /**
      * The type of instance to register.
      */
@@ -164,6 +168,10 @@ export class Profile extends pulumi.CustomResource {
      * The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    /**
+     * The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     */
+    public /*out*/ readonly timeModified!: pulumi.Output<string>;
     /**
      * The vendor of the operating system for the instance.
      *
@@ -202,12 +210,14 @@ export class Profile extends pulumi.CustomResource {
             resourceInputs["managementStationId"] = state ? state.managementStationId : undefined;
             resourceInputs["osFamily"] = state ? state.osFamily : undefined;
             resourceInputs["profileType"] = state ? state.profileType : undefined;
+            resourceInputs["profileVersion"] = state ? state.profileVersion : undefined;
             resourceInputs["registrationType"] = state ? state.registrationType : undefined;
             resourceInputs["softwareSourceIds"] = state ? state.softwareSourceIds : undefined;
             resourceInputs["softwareSources"] = state ? state.softwareSources : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["timeModified"] = state ? state.timeModified : undefined;
             resourceInputs["vendorName"] = state ? state.vendorName : undefined;
         } else {
             const args = argsOrState as ProfileArgs | undefined;
@@ -239,10 +249,12 @@ export class Profile extends pulumi.CustomResource {
             resourceInputs["lifecycleEnvironments"] = undefined /*out*/;
             resourceInputs["lifecycleStages"] = undefined /*out*/;
             resourceInputs["managedInstanceGroups"] = undefined /*out*/;
+            resourceInputs["profileVersion"] = undefined /*out*/;
             resourceInputs["softwareSources"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
+            resourceInputs["timeModified"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Profile.__pulumiType, name, resourceInputs, opts);
@@ -270,7 +282,7 @@ export interface ProfileState {
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -306,7 +318,7 @@ export interface ProfileState {
      */
     managedInstanceGroups?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ProfileManagedInstanceGroup>[]>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+     * description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is required when creating a profile for non-OCI instances.
      */
     managementStationId?: pulumi.Input<string>;
     /**
@@ -317,6 +329,10 @@ export interface ProfileState {
      * The type of profile.
      */
     profileType?: pulumi.Input<string>;
+    /**
+     * The version of the profile. The version is automatically incremented each time the profiled is edited.
+     */
+    profileVersion?: pulumi.Input<string>;
     /**
      * The type of instance to register.
      */
@@ -341,6 +357,10 @@ export interface ProfileState {
      * The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
     timeCreated?: pulumi.Input<string>;
+    /**
+     * The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     */
+    timeModified?: pulumi.Input<string>;
     /**
      * The vendor of the operating system for the instance.
      *
@@ -372,7 +392,7 @@ export interface ProfileArgs {
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
      */
     displayName: pulumi.Input<string>;
     /**
@@ -392,7 +412,7 @@ export interface ProfileArgs {
      */
     managedInstanceGroupId?: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+     * description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is required when creating a profile for non-OCI instances.
      */
     managementStationId?: pulumi.Input<string>;
     /**

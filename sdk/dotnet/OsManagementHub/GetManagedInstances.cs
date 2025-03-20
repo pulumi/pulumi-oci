@@ -15,46 +15,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// This data source provides the list of Managed Instances in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
         /// Lists managed instances that match the specified compartment or managed instance OCID. Filter the list against a variety of criteria including but not limited to its name, status, architecture, and OS version.
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Oci = Pulumi.Oci;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var testManagedInstances = Oci.OsManagementHub.GetManagedInstances.Invoke(new()
-        ///     {
-        ///         AdvisoryNames = managedInstanceAdvisoryName,
-        ///         ArchTypes = managedInstanceArchType,
-        ///         CompartmentId = compartmentId,
-        ///         DisplayNames = managedInstanceDisplayName,
-        ///         DisplayNameContains = managedInstanceDisplayNameContains,
-        ///         Group = managedInstanceGroup,
-        ///         GroupNotEqualTo = managedInstanceGroupNotEqualTo,
-        ///         IsAttachedToGroupOrLifecycleStage = managedInstanceIsAttachedToGroupOrLifecycleStage,
-        ///         IsManagedByAutonomousLinux = managedInstanceIsManagedByAutonomousLinux,
-        ///         IsManagementStation = managedInstanceIsManagementStation,
-        ///         IsProfileAttached = managedInstanceIsProfileAttached,
-        ///         LifecycleEnvironment = managedInstanceLifecycleEnvironment,
-        ///         LifecycleEnvironmentNotEqualTo = managedInstanceLifecycleEnvironmentNotEqualTo,
-        ///         LifecycleStage = managedInstanceLifecycleStage,
-        ///         LifecycleStageNotEqualTo = managedInstanceLifecycleStageNotEqualTo,
-        ///         Locations = managedInstanceLocation,
-        ///         LocationNotEqualTos = managedInstanceLocationNotEqualTo,
-        ///         ManagedInstanceId = testManagedInstance.Id,
-        ///         OsFamilies = managedInstanceOsFamily,
-        ///         Profiles = managedInstanceProfile,
-        ///         ProfileNotEqualTos = managedInstanceProfileNotEqualTo,
-        ///         SoftwareSourceId = testSoftwareSource.Id,
-        ///         Statuses = managedInstanceStatus,
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
         public static Task<GetManagedInstancesResult> InvokeAsync(GetManagedInstancesArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedInstancesResult>("oci:OsManagementHub/getManagedInstances:getManagedInstances", args ?? new GetManagedInstancesArgs(), options.WithDefaults());
@@ -63,46 +23,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// This data source provides the list of Managed Instances in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
         /// Lists managed instances that match the specified compartment or managed instance OCID. Filter the list against a variety of criteria including but not limited to its name, status, architecture, and OS version.
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Oci = Pulumi.Oci;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var testManagedInstances = Oci.OsManagementHub.GetManagedInstances.Invoke(new()
-        ///     {
-        ///         AdvisoryNames = managedInstanceAdvisoryName,
-        ///         ArchTypes = managedInstanceArchType,
-        ///         CompartmentId = compartmentId,
-        ///         DisplayNames = managedInstanceDisplayName,
-        ///         DisplayNameContains = managedInstanceDisplayNameContains,
-        ///         Group = managedInstanceGroup,
-        ///         GroupNotEqualTo = managedInstanceGroupNotEqualTo,
-        ///         IsAttachedToGroupOrLifecycleStage = managedInstanceIsAttachedToGroupOrLifecycleStage,
-        ///         IsManagedByAutonomousLinux = managedInstanceIsManagedByAutonomousLinux,
-        ///         IsManagementStation = managedInstanceIsManagementStation,
-        ///         IsProfileAttached = managedInstanceIsProfileAttached,
-        ///         LifecycleEnvironment = managedInstanceLifecycleEnvironment,
-        ///         LifecycleEnvironmentNotEqualTo = managedInstanceLifecycleEnvironmentNotEqualTo,
-        ///         LifecycleStage = managedInstanceLifecycleStage,
-        ///         LifecycleStageNotEqualTo = managedInstanceLifecycleStageNotEqualTo,
-        ///         Locations = managedInstanceLocation,
-        ///         LocationNotEqualTos = managedInstanceLocationNotEqualTo,
-        ///         ManagedInstanceId = testManagedInstance.Id,
-        ///         OsFamilies = managedInstanceOsFamily,
-        ///         Profiles = managedInstanceProfile,
-        ///         ProfileNotEqualTos = managedInstanceProfileNotEqualTo,
-        ///         SoftwareSourceId = testSoftwareSource.Id,
-        ///         Statuses = managedInstanceStatus,
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
         public static Output<GetManagedInstancesResult> Invoke(GetManagedInstancesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstancesResult>("oci:OsManagementHub/getManagedInstances:getManagedInstances", args ?? new GetManagedInstancesInvokeArgs(), options.WithDefaults());
@@ -111,46 +31,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// This data source provides the list of Managed Instances in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
         /// Lists managed instances that match the specified compartment or managed instance OCID. Filter the list against a variety of criteria including but not limited to its name, status, architecture, and OS version.
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Oci = Pulumi.Oci;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var testManagedInstances = Oci.OsManagementHub.GetManagedInstances.Invoke(new()
-        ///     {
-        ///         AdvisoryNames = managedInstanceAdvisoryName,
-        ///         ArchTypes = managedInstanceArchType,
-        ///         CompartmentId = compartmentId,
-        ///         DisplayNames = managedInstanceDisplayName,
-        ///         DisplayNameContains = managedInstanceDisplayNameContains,
-        ///         Group = managedInstanceGroup,
-        ///         GroupNotEqualTo = managedInstanceGroupNotEqualTo,
-        ///         IsAttachedToGroupOrLifecycleStage = managedInstanceIsAttachedToGroupOrLifecycleStage,
-        ///         IsManagedByAutonomousLinux = managedInstanceIsManagedByAutonomousLinux,
-        ///         IsManagementStation = managedInstanceIsManagementStation,
-        ///         IsProfileAttached = managedInstanceIsProfileAttached,
-        ///         LifecycleEnvironment = managedInstanceLifecycleEnvironment,
-        ///         LifecycleEnvironmentNotEqualTo = managedInstanceLifecycleEnvironmentNotEqualTo,
-        ///         LifecycleStage = managedInstanceLifecycleStage,
-        ///         LifecycleStageNotEqualTo = managedInstanceLifecycleStageNotEqualTo,
-        ///         Locations = managedInstanceLocation,
-        ///         LocationNotEqualTos = managedInstanceLocationNotEqualTo,
-        ///         ManagedInstanceId = testManagedInstance.Id,
-        ///         OsFamilies = managedInstanceOsFamily,
-        ///         Profiles = managedInstanceProfile,
-        ///         ProfileNotEqualTos = managedInstanceProfileNotEqualTo,
-        ///         SoftwareSourceId = testSoftwareSource.Id,
-        ///         Statuses = managedInstanceStatus,
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
         public static Output<GetManagedInstancesResult> Invoke(GetManagedInstancesInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstancesResult>("oci:OsManagementHub/getManagedInstances:getManagedInstances", args ?? new GetManagedInstancesInvokeArgs(), options.WithDefaults());
@@ -170,6 +50,12 @@ namespace Pulumi.Oci.OsManagementHub
             get => _advisoryNames ?? (_advisoryNames = new List<string>());
             set => _advisoryNames = value;
         }
+
+        /// <summary>
+        /// A filter to return only managed instances with the specified version of osmh-agent running.
+        /// </summary>
+        [Input("agentVersion")]
+        public string? AgentVersion { get; set; }
 
         [Input("archTypes")]
         private List<string>? _archTypes;
@@ -252,6 +138,12 @@ namespace Pulumi.Oci.OsManagementHub
         public bool? IsProfileAttached { get; set; }
 
         /// <summary>
+        /// A filter to return only managed instances that require a reboot to install updates.
+        /// </summary>
+        [Input("isRebootRequired")]
+        public bool? IsRebootRequired { get; set; }
+
+        /// <summary>
         /// A filter to return only managed instances in a specific lifecycle environment.
         /// </summary>
         [Input("lifecycleEnvironment")]
@@ -304,6 +196,30 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         [Input("managedInstanceId")]
         public string? ManagedInstanceId { get; set; }
+
+        [Input("managementStationNotEqualTos")]
+        private List<string>? _managementStationNotEqualTos;
+
+        /// <summary>
+        /// A filter to return resources that aren't associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
+        public List<string> ManagementStationNotEqualTos
+        {
+            get => _managementStationNotEqualTos ?? (_managementStationNotEqualTos = new List<string>());
+            set => _managementStationNotEqualTos = value;
+        }
+
+        [Input("managementStations")]
+        private List<string>? _managementStations;
+
+        /// <summary>
+        /// A filter to return resources that are associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
+        public List<string> ManagementStations
+        {
+            get => _managementStations ?? (_managementStations = new List<string>());
+            set => _managementStations = value;
+        }
 
         [Input("osFamilies")]
         private List<string>? _osFamilies;
@@ -378,6 +294,12 @@ namespace Pulumi.Oci.OsManagementHub
             get => _advisoryNames ?? (_advisoryNames = new InputList<string>());
             set => _advisoryNames = value;
         }
+
+        /// <summary>
+        /// A filter to return only managed instances with the specified version of osmh-agent running.
+        /// </summary>
+        [Input("agentVersion")]
+        public Input<string>? AgentVersion { get; set; }
 
         [Input("archTypes")]
         private InputList<string>? _archTypes;
@@ -460,6 +382,12 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<bool>? IsProfileAttached { get; set; }
 
         /// <summary>
+        /// A filter to return only managed instances that require a reboot to install updates.
+        /// </summary>
+        [Input("isRebootRequired")]
+        public Input<bool>? IsRebootRequired { get; set; }
+
+        /// <summary>
         /// A filter to return only managed instances in a specific lifecycle environment.
         /// </summary>
         [Input("lifecycleEnvironment")]
@@ -512,6 +440,30 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         [Input("managedInstanceId")]
         public Input<string>? ManagedInstanceId { get; set; }
+
+        [Input("managementStationNotEqualTos")]
+        private InputList<string>? _managementStationNotEqualTos;
+
+        /// <summary>
+        /// A filter to return resources that aren't associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
+        public InputList<string> ManagementStationNotEqualTos
+        {
+            get => _managementStationNotEqualTos ?? (_managementStationNotEqualTos = new InputList<string>());
+            set => _managementStationNotEqualTos = value;
+        }
+
+        [Input("managementStations")]
+        private InputList<string>? _managementStations;
+
+        /// <summary>
+        /// A filter to return resources that are associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
+        public InputList<string> ManagementStations
+        {
+            get => _managementStations ?? (_managementStations = new InputList<string>());
+            set => _managementStations = value;
+        }
 
         [Input("osFamilies")]
         private InputList<string>? _osFamilies;
@@ -578,6 +530,10 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetManagedInstancesResult
     {
         public readonly ImmutableArray<string> AdvisoryNames;
+        /// <summary>
+        /// The version of osmh-agent running on the managed instance
+        /// </summary>
+        public readonly string? AgentVersion;
         public readonly ImmutableArray<string> ArchTypes;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance.
@@ -606,6 +562,10 @@ namespace Pulumi.Oci.OsManagementHub
         public readonly bool? IsManagementStation;
         public readonly bool? IsProfileAttached;
         /// <summary>
+        /// Indicates whether a reboot is required to complete installation of updates.
+        /// </summary>
+        public readonly bool? IsRebootRequired;
+        /// <summary>
         /// Id and name of a resource to simplify the display for the user.
         /// </summary>
         public readonly string? LifecycleEnvironment;
@@ -625,6 +585,8 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly ImmutableArray<Outputs.GetManagedInstancesManagedInstanceCollectionResult> ManagedInstanceCollections;
         public readonly string? ManagedInstanceId;
+        public readonly ImmutableArray<string> ManagementStationNotEqualTos;
+        public readonly ImmutableArray<string> ManagementStations;
         /// <summary>
         /// The operating system type of the managed instance.
         /// </summary>
@@ -643,6 +605,8 @@ namespace Pulumi.Oci.OsManagementHub
         [OutputConstructor]
         private GetManagedInstancesResult(
             ImmutableArray<string> advisoryNames,
+
+            string? agentVersion,
 
             ImmutableArray<string> archTypes,
 
@@ -668,6 +632,8 @@ namespace Pulumi.Oci.OsManagementHub
 
             bool? isProfileAttached,
 
+            bool? isRebootRequired,
+
             string? lifecycleEnvironment,
 
             string? lifecycleEnvironmentNotEqualTo,
@@ -684,6 +650,10 @@ namespace Pulumi.Oci.OsManagementHub
 
             string? managedInstanceId,
 
+            ImmutableArray<string> managementStationNotEqualTos,
+
+            ImmutableArray<string> managementStations,
+
             ImmutableArray<string> osFamilies,
 
             ImmutableArray<string> profileNotEqualTos,
@@ -695,6 +665,7 @@ namespace Pulumi.Oci.OsManagementHub
             ImmutableArray<string> statuses)
         {
             AdvisoryNames = advisoryNames;
+            AgentVersion = agentVersion;
             ArchTypes = archTypes;
             CompartmentId = compartmentId;
             DisplayNameContains = displayNameContains;
@@ -707,6 +678,7 @@ namespace Pulumi.Oci.OsManagementHub
             IsManagedByAutonomousLinux = isManagedByAutonomousLinux;
             IsManagementStation = isManagementStation;
             IsProfileAttached = isProfileAttached;
+            IsRebootRequired = isRebootRequired;
             LifecycleEnvironment = lifecycleEnvironment;
             LifecycleEnvironmentNotEqualTo = lifecycleEnvironmentNotEqualTo;
             LifecycleStage = lifecycleStage;
@@ -715,6 +687,8 @@ namespace Pulumi.Oci.OsManagementHub
             Locations = locations;
             ManagedInstanceCollections = managedInstanceCollections;
             ManagedInstanceId = managedInstanceId;
+            ManagementStationNotEqualTos = managementStationNotEqualTos;
+            ManagementStations = managementStations;
             OsFamilies = osFamilies;
             ProfileNotEqualTos = profileNotEqualTos;
             Profiles = profiles;

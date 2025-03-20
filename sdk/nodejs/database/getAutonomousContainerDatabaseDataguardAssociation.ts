@@ -78,6 +78,7 @@ export interface GetAutonomousContainerDatabaseDataguardAssociationResult {
      * Additional information about the current lifecycleState, if available.
      */
     readonly lifecycleDetails: string;
+    readonly migrateTrigger: number;
     readonly peerAutonomousContainerDatabaseBackupConfigs: outputs.Database.GetAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig[];
     readonly peerAutonomousContainerDatabaseCompartmentId: string;
     /**

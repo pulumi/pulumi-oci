@@ -44,6 +44,10 @@ export interface GetDeploymentArgs {
  */
 export interface GetDeploymentResult {
     /**
+     * Defines the schedule of the deployment backup.
+     */
+    readonly backupSchedules: outputs.GoldenGate.GetDeploymentBackupSchedule[];
+    /**
      * The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
      */
     readonly category: string;
@@ -201,6 +205,14 @@ export interface GetDeploymentResult {
      * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
     readonly timeCreated: string;
+    /**
+     * The timestamp of last deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+     */
+    readonly timeLastBackupScheduled: string;
+    /**
+     * The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
+     */
+    readonly timeNextBackupScheduled: string;
     /**
      * The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */

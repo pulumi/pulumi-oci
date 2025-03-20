@@ -48,6 +48,8 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// * `SOFTWARE_SOURCE` - Software source
         /// * `AGENT` - Agent
         /// * `MANAGEMENT_STATION` - Management Station
+        /// * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+        /// * `REBOOT` - Reboot
         /// </summary>
         public readonly string? Type;
 

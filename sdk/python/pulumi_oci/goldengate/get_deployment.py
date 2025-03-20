@@ -27,7 +27,10 @@ class GetDeploymentResult:
     """
     A collection of values returned by getDeployment.
     """
-    def __init__(__self__, category=None, compartment_id=None, cpu_core_count=None, defined_tags=None, deployment_backup_id=None, deployment_diagnostic_datas=None, deployment_id=None, deployment_type=None, deployment_url=None, description=None, display_name=None, environment_type=None, fqdn=None, freeform_tags=None, id=None, ingress_ips=None, is_auto_scaling_enabled=None, is_healthy=None, is_latest_version=None, is_lock_override=None, is_public=None, is_storage_utilization_limit_exceeded=None, license_model=None, lifecycle_details=None, lifecycle_sub_state=None, load_balancer_id=None, load_balancer_subnet_id=None, locks=None, maintenance_configurations=None, maintenance_windows=None, next_maintenance_action_type=None, next_maintenance_description=None, nsg_ids=None, ogg_datas=None, private_ip_address=None, public_ip_address=None, state=None, storage_utilization_in_bytes=None, subnet_id=None, system_tags=None, time_created=None, time_of_next_maintenance=None, time_ogg_version_supported_until=None, time_updated=None, time_upgrade_required=None):
+    def __init__(__self__, backup_schedules=None, category=None, compartment_id=None, cpu_core_count=None, defined_tags=None, deployment_backup_id=None, deployment_diagnostic_datas=None, deployment_id=None, deployment_type=None, deployment_url=None, description=None, display_name=None, environment_type=None, fqdn=None, freeform_tags=None, id=None, ingress_ips=None, is_auto_scaling_enabled=None, is_healthy=None, is_latest_version=None, is_lock_override=None, is_public=None, is_storage_utilization_limit_exceeded=None, license_model=None, lifecycle_details=None, lifecycle_sub_state=None, load_balancer_id=None, load_balancer_subnet_id=None, locks=None, maintenance_configurations=None, maintenance_windows=None, next_maintenance_action_type=None, next_maintenance_description=None, nsg_ids=None, ogg_datas=None, private_ip_address=None, public_ip_address=None, state=None, storage_utilization_in_bytes=None, subnet_id=None, system_tags=None, time_created=None, time_last_backup_scheduled=None, time_next_backup_scheduled=None, time_of_next_maintenance=None, time_ogg_version_supported_until=None, time_updated=None, time_upgrade_required=None):
+        if backup_schedules and not isinstance(backup_schedules, list):
+            raise TypeError("Expected argument 'backup_schedules' to be a list")
+        pulumi.set(__self__, "backup_schedules", backup_schedules)
         if category and not isinstance(category, str):
             raise TypeError("Expected argument 'category' to be a str")
         pulumi.set(__self__, "category", category)
@@ -151,6 +154,12 @@ class GetDeploymentResult:
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
+        if time_last_backup_scheduled and not isinstance(time_last_backup_scheduled, str):
+            raise TypeError("Expected argument 'time_last_backup_scheduled' to be a str")
+        pulumi.set(__self__, "time_last_backup_scheduled", time_last_backup_scheduled)
+        if time_next_backup_scheduled and not isinstance(time_next_backup_scheduled, str):
+            raise TypeError("Expected argument 'time_next_backup_scheduled' to be a str")
+        pulumi.set(__self__, "time_next_backup_scheduled", time_next_backup_scheduled)
         if time_of_next_maintenance and not isinstance(time_of_next_maintenance, str):
             raise TypeError("Expected argument 'time_of_next_maintenance' to be a str")
         pulumi.set(__self__, "time_of_next_maintenance", time_of_next_maintenance)
@@ -163,6 +172,14 @@ class GetDeploymentResult:
         if time_upgrade_required and not isinstance(time_upgrade_required, str):
             raise TypeError("Expected argument 'time_upgrade_required' to be a str")
         pulumi.set(__self__, "time_upgrade_required", time_upgrade_required)
+
+    @property
+    @pulumi.getter(name="backupSchedules")
+    def backup_schedules(self) -> Sequence['outputs.GetDeploymentBackupScheduleResult']:
+        """
+        Defines the schedule of the deployment backup.
+        """
+        return pulumi.get(self, "backup_schedules")
 
     @property
     @pulumi.getter
@@ -487,6 +504,22 @@ class GetDeploymentResult:
         return pulumi.get(self, "time_created")
 
     @property
+    @pulumi.getter(name="timeLastBackupScheduled")
+    def time_last_backup_scheduled(self) -> str:
+        """
+        The timestamp of last deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+        """
+        return pulumi.get(self, "time_last_backup_scheduled")
+
+    @property
+    @pulumi.getter(name="timeNextBackupScheduled")
+    def time_next_backup_scheduled(self) -> str:
+        """
+        The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
+        """
+        return pulumi.get(self, "time_next_backup_scheduled")
+
+    @property
     @pulumi.getter(name="timeOfNextMaintenance")
     def time_of_next_maintenance(self) -> str:
         """
@@ -525,6 +558,7 @@ class AwaitableGetDeploymentResult(GetDeploymentResult):
         if False:
             yield self
         return GetDeploymentResult(
+            backup_schedules=self.backup_schedules,
             category=self.category,
             compartment_id=self.compartment_id,
             cpu_core_count=self.cpu_core_count,
@@ -566,6 +600,8 @@ class AwaitableGetDeploymentResult(GetDeploymentResult):
             subnet_id=self.subnet_id,
             system_tags=self.system_tags,
             time_created=self.time_created,
+            time_last_backup_scheduled=self.time_last_backup_scheduled,
+            time_next_backup_scheduled=self.time_next_backup_scheduled,
             time_of_next_maintenance=self.time_of_next_maintenance,
             time_ogg_version_supported_until=self.time_ogg_version_supported_until,
             time_updated=self.time_updated,
@@ -597,6 +633,7 @@ def get_deployment(deployment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:GoldenGate/getDeployment:getDeployment', __args__, opts=opts, typ=GetDeploymentResult).value
 
     return AwaitableGetDeploymentResult(
+        backup_schedules=pulumi.get(__ret__, 'backup_schedules'),
         category=pulumi.get(__ret__, 'category'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         cpu_core_count=pulumi.get(__ret__, 'cpu_core_count'),
@@ -638,6 +675,8 @@ def get_deployment(deployment_id: Optional[str] = None,
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
+        time_last_backup_scheduled=pulumi.get(__ret__, 'time_last_backup_scheduled'),
+        time_next_backup_scheduled=pulumi.get(__ret__, 'time_next_backup_scheduled'),
         time_of_next_maintenance=pulumi.get(__ret__, 'time_of_next_maintenance'),
         time_ogg_version_supported_until=pulumi.get(__ret__, 'time_ogg_version_supported_until'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
@@ -666,6 +705,7 @@ def get_deployment_output(deployment_id: Optional[pulumi.Input[str]] = None,
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:GoldenGate/getDeployment:getDeployment', __args__, opts=opts, typ=GetDeploymentResult)
     return __ret__.apply(lambda __response__: GetDeploymentResult(
+        backup_schedules=pulumi.get(__response__, 'backup_schedules'),
         category=pulumi.get(__response__, 'category'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         cpu_core_count=pulumi.get(__response__, 'cpu_core_count'),
@@ -707,6 +747,8 @@ def get_deployment_output(deployment_id: Optional[pulumi.Input[str]] = None,
         subnet_id=pulumi.get(__response__, 'subnet_id'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
+        time_last_backup_scheduled=pulumi.get(__response__, 'time_last_backup_scheduled'),
+        time_next_backup_scheduled=pulumi.get(__response__, 'time_next_backup_scheduled'),
         time_of_next_maintenance=pulumi.get(__response__, 'time_of_next_maintenance'),
         time_ogg_version_supported_until=pulumi.get(__response__, 'time_ogg_version_supported_until'),
         time_updated=pulumi.get(__response__, 'time_updated'),

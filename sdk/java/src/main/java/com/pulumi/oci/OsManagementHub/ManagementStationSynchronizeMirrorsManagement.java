@@ -17,7 +17,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Management Station Synchronize Mirrors Management resource in Oracle Cloud Infrastructure Os Management Hub service.
  * 
- * Synchronize the specified software sources mirrors on the management station.
+ * Synchronize the specified software sources mirrored on the management station.
  * 
  * ## Example Usage
  * 
@@ -81,7 +81,7 @@ public class ManagementStationSynchronizeMirrorsManagement extends com.pulumi.re
         return this.managementStationId;
     }
     /**
-     * List of Software Source OCIDs to synchronize
+     * List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to synchronize.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -91,7 +91,7 @@ public class ManagementStationSynchronizeMirrorsManagement extends com.pulumi.re
     private Output<List<String>> softwareSourceLists;
 
     /**
-     * @return List of Software Source OCIDs to synchronize
+     * @return List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to synchronize.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.OsManagementHub.SoftwareSourceAddPackagesManagementArgs;
 import com.pulumi.oci.OsManagementHub.inputs.SoftwareSourceAddPackagesManagementState;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import javax.annotation.Nullable;
@@ -19,6 +20,10 @@ import javax.annotation.Nullable;
  * 
  * Adds packages to a software source. This operation can only be done for custom and versioned custom software sources that are not created using filters.
  * For a versioned custom software source, you can only add packages when the source is created. Once content is added to a versioned custom software source, it is immutable.
+ * Packages can be of the format:
+ *   * name (for example: git). If isLatestContentOnly is true, only the latest version of the package will be added, otherwise all versions of the package will be added.
+ *   * name-version-release.architecture (for example: git-2.43.5-1.el8_10.x86_64)
+ *   * name-epoch:version-release.architecture (for example: git-0:2.43.5-1.el8_10.x86_64)
  * 
  * ## Example Usage
  * 
@@ -48,6 +53,7 @@ import javax.annotation.Nullable;
  *         var testSoftwareSourceAddPackagesManagement = new SoftwareSourceAddPackagesManagement("testSoftwareSourceAddPackagesManagement", SoftwareSourceAddPackagesManagementArgs.builder()
  *             .packages(softwareSourceAddPackagesManagementPackages)
  *             .softwareSourceId(testSoftwareSource.id())
+ *             .isContinueOnMissingPackages(softwareSourceAddPackagesManagementIsContinueOnMissingPackages)
  *             .build());
  * 
  *     }
@@ -68,14 +74,28 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:OsManagementHub/softwareSourceAddPackagesManagement:SoftwareSourceAddPackagesManagement")
 public class SoftwareSourceAddPackagesManagement extends com.pulumi.resources.CustomResource {
     /**
-     * List of packages specified by the full package name (NEVRA.rpm).
+     * Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
+     * 
+     */
+    @Export(name="isContinueOnMissingPackages", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isContinueOnMissingPackages;
+
+    /**
+     * @return Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
+     * 
+     */
+    public Output<Boolean> isContinueOnMissingPackages() {
+        return this.isContinueOnMissingPackages;
+    }
+    /**
+     * List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
      * 
      */
     @Export(name="packages", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> packages;
 
     /**
-     * @return List of packages specified by the full package name (NEVRA.rpm).
+     * @return List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
      * 
      */
     public Output<List<String>> packages() {

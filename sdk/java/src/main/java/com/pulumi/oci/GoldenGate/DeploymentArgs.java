@@ -6,6 +6,7 @@ package com.pulumi.oci.GoldenGate;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.GoldenGate.inputs.DeploymentBackupScheduleArgs;
 import com.pulumi.oci.GoldenGate.inputs.DeploymentLockArgs;
 import com.pulumi.oci.GoldenGate.inputs.DeploymentMaintenanceConfigurationArgs;
 import com.pulumi.oci.GoldenGate.inputs.DeploymentMaintenanceWindowArgs;
@@ -23,6 +24,21 @@ import javax.annotation.Nullable;
 public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final DeploymentArgs Empty = new DeploymentArgs();
+
+    /**
+     * (Updatable) Defines the backup schedule details for create operation.
+     * 
+     */
+    @Import(name="backupSchedule")
+    private @Nullable Output<DeploymentBackupScheduleArgs> backupSchedule;
+
+    /**
+     * @return (Updatable) Defines the backup schedule details for create operation.
+     * 
+     */
+    public Optional<Output<DeploymentBackupScheduleArgs>> backupSchedule() {
+        return Optional.ofNullable(this.backupSchedule);
+    }
 
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
@@ -341,6 +357,7 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
     private DeploymentArgs() {}
 
     private DeploymentArgs(DeploymentArgs $) {
+        this.backupSchedule = $.backupSchedule;
         this.compartmentId = $.compartmentId;
         this.cpuCoreCount = $.cpuCoreCount;
         this.definedTags = $.definedTags;
@@ -381,6 +398,27 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder(DeploymentArgs defaults) {
             $ = new DeploymentArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param backupSchedule (Updatable) Defines the backup schedule details for create operation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupSchedule(@Nullable Output<DeploymentBackupScheduleArgs> backupSchedule) {
+            $.backupSchedule = backupSchedule;
+            return this;
+        }
+
+        /**
+         * @param backupSchedule (Updatable) Defines the backup schedule details for create operation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupSchedule(DeploymentBackupScheduleArgs backupSchedule) {
+            return backupSchedule(Output.of(backupSchedule));
         }
 
         /**

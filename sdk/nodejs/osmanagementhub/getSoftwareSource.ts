@@ -44,6 +44,10 @@ export interface GetSoftwareSourceArgs {
  */
 export interface GetSoftwareSourceResult {
     /**
+     * Advanced repository options for the software source
+     */
+    readonly advancedRepoOptions: string;
+    /**
      * The architecture type supported by the software source.
      */
     readonly archType: string;
@@ -92,7 +96,7 @@ export interface GetSoftwareSourceResult {
      */
     readonly gpgKeyId: string;
     /**
-     * URL of the GPG key for this software source.
+     * URI of the GPG key for this software source.
      */
     readonly gpgKeyUrl: string;
     /**
@@ -112,6 +116,10 @@ export interface GetSoftwareSourceResult {
      */
     readonly isCreatedFromPackageList: boolean;
     /**
+     * Whether signature verification should be done for the software source
+     */
+    readonly isGpgCheckEnabled: boolean;
+    /**
      * Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
      * * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
      * * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
@@ -125,11 +133,19 @@ export interface GetSoftwareSourceResult {
      */
     readonly isMandatoryForAutonomousLinux: boolean;
     /**
-     * This property applies only to replicated vendor software sources. This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment.
+     * Indicates if this software source can be mirrored to a management station.
+     */
+    readonly isMirrorSyncAllowed: boolean;
+    /**
+     * Indicates if SSL validation is enabled for the software source.
+     */
+    readonly isSslVerifyEnabled: boolean;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment. This property applies only to replicated vendor software sources.
      */
     readonly originSoftwareSourceId: string;
     /**
-     * The OS family the software source belongs to.
+     * The OS family of the software source.
      */
     readonly osFamily: string;
     /**
@@ -145,10 +161,14 @@ export interface GetSoftwareSourceResult {
      */
     readonly repoId: string;
     /**
-     * The size of the software source in gigabytes (GB).
+     * The size of the software source in bytes (B).
      */
     readonly size: number;
     readonly softwareSourceId: string;
+    /**
+     * Identifies how the versioned custom software source was created.
+     */
+    readonly softwareSourceSubType: string;
     /**
      * Type of software source.
      */
@@ -169,6 +189,10 @@ export interface GetSoftwareSourceResult {
      * The date and time the software source was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
     readonly timeCreated: string;
+    /**
+     * The date and time the metadata for this software source was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     */
+    readonly timeMetadataUpdated: string;
     /**
      * URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is 'custom/<repoId>'.
      */

@@ -24,6 +24,18 @@ namespace Pulumi.Oci.OsManagementHub.Inputs
             set => _additionalDetails = value;
         }
 
+        [Input("attemptedResolutions")]
+        private InputList<string>? _attemptedResolutions;
+
+        /// <summary>
+        /// The actions used to attempt fixing the error.
+        /// </summary>
+        public InputList<string> AttemptedResolutions
+        {
+            get => _attemptedResolutions ?? (_attemptedResolutions = new InputList<string>());
+            set => _attemptedResolutions = value;
+        }
+
         [Input("contents")]
         private InputList<Inputs.EventDataContentGetArgs>? _contents;
 
@@ -35,6 +47,18 @@ namespace Pulumi.Oci.OsManagementHub.Inputs
             get => _contents ?? (_contents = new InputList<Inputs.EventDataContentGetArgs>());
             set => _contents = value;
         }
+
+        /// <summary>
+        /// The commands executed by the agent that caused the error.
+        /// </summary>
+        [Input("errorCause")]
+        public Input<string>? ErrorCause { get; set; }
+
+        /// <summary>
+        /// The output log of the error.
+        /// </summary>
+        [Input("errorLog")]
+        public Input<string>? ErrorLog { get; set; }
 
         /// <summary>
         /// Number of times the event has occurred.
@@ -49,6 +73,12 @@ namespace Pulumi.Oci.OsManagementHub.Inputs
         public Input<string>? EventFingerprint { get; set; }
 
         /// <summary>
+        /// Health state of the management station
+        /// </summary>
+        [Input("healthState")]
+        public Input<string>? HealthState { get; set; }
+
+        /// <summary>
         /// Type of management station operation.
         /// </summary>
         [Input("operationType")]
@@ -59,6 +89,24 @@ namespace Pulumi.Oci.OsManagementHub.Inputs
         /// </summary>
         [Input("reason")]
         public Input<string>? Reason { get; set; }
+
+        /// <summary>
+        /// Reboot status for the current event
+        /// </summary>
+        [Input("rebootStatus")]
+        public Input<string>? RebootStatus { get; set; }
+
+        /// <summary>
+        /// The log output after the resolutions.
+        /// </summary>
+        [Input("resolutionLog")]
+        public Input<string>? ResolutionLog { get; set; }
+
+        /// <summary>
+        /// Indicates if the event succeeded.
+        /// </summary>
+        [Input("resolutionStatus")]
+        public Input<string>? ResolutionStatus { get; set; }
 
         /// <summary>
         /// Status of the management station operation.

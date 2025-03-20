@@ -88,7 +88,7 @@ namespace Pulumi.Oci.OsManagementHub
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -142,7 +142,7 @@ namespace Pulumi.Oci.OsManagementHub
         public Output<ImmutableArray<Outputs.ProfileManagedInstanceGroup>> ManagedInstanceGroups { get; private set; } = null!;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+        /// description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is required when creating a profile for non-OCI instances.
         /// </summary>
         [Output("managementStationId")]
         public Output<string> ManagementStationId { get; private set; } = null!;
@@ -158,6 +158,12 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         [Output("profileType")]
         public Output<string> ProfileType { get; private set; } = null!;
+
+        /// <summary>
+        /// The version of the profile. The version is automatically incremented each time the profiled is edited.
+        /// </summary>
+        [Output("profileVersion")]
+        public Output<string> ProfileVersion { get; private set; } = null!;
 
         /// <summary>
         /// The type of instance to register.
@@ -194,6 +200,12 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
+
+        /// <summary>
+        /// The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        /// </summary>
+        [Output("timeModified")]
+        public Output<string> TimeModified { get; private set; } = null!;
 
         /// <summary>
         /// The vendor of the operating system for the instance.
@@ -282,7 +294,7 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
@@ -318,7 +330,7 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<string>? ManagedInstanceGroupId { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+        /// description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is required when creating a profile for non-OCI instances.
         /// </summary>
         [Input("managementStationId")]
         public Input<string>? ManagementStationId { get; set; }
@@ -402,7 +414,7 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -480,7 +492,7 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+        /// description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is required when creating a profile for non-OCI instances.
         /// </summary>
         [Input("managementStationId")]
         public Input<string>? ManagementStationId { get; set; }
@@ -496,6 +508,12 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         [Input("profileType")]
         public Input<string>? ProfileType { get; set; }
+
+        /// <summary>
+        /// The version of the profile. The version is automatically incremented each time the profiled is edited.
+        /// </summary>
+        [Input("profileVersion")]
+        public Input<string>? ProfileVersion { get; set; }
 
         /// <summary>
         /// The type of instance to register.
@@ -550,6 +568,12 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
+
+        /// <summary>
+        /// The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        /// </summary>
+        [Input("timeModified")]
+        public Input<string>? TimeModified { get; set; }
 
         /// <summary>
         /// The vendor of the operating system for the instance.

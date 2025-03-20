@@ -14,33 +14,6 @@ namespace Pulumi.Oci.OsManagementHub
     /// 
     /// Attaches (adds) managed instances to a lifecycle stage. Once added, you can apply operations to all managed instances in the lifecycle stage.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testLifecycleStageAttachManagedInstancesManagement = new Oci.OsManagementHub.LifecycleStageAttachManagedInstancesManagement("test_lifecycle_stage_attach_managed_instances_management", new()
-    ///     {
-    ///         LifecycleStageId = testLifecycleStage.Id,
-    ///         ManagedInstanceDetails = new Oci.OsManagementHub.Inputs.LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgs
-    ///         {
-    ///             ManagedInstances = lifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsManagedInstances,
-    ///             WorkRequestDetails = new Oci.OsManagementHub.Inputs.LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgs
-    ///             {
-    ///                 Description = lifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsDescription,
-    ///                 DisplayName = lifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsDisplayName,
-    ///             },
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// LifecycleStageAttachManagedInstancesManagement can be imported using the `id`, e.g.
@@ -119,8 +92,8 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// The details about the managed instances.
         /// </summary>
-        [Input("managedInstanceDetails")]
-        public Input<Inputs.LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgs>? ManagedInstanceDetails { get; set; }
+        [Input("managedInstanceDetails", required: true)]
+        public Input<Inputs.LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgs> ManagedInstanceDetails { get; set; } = null!;
 
         public LifecycleStageAttachManagedInstancesManagementArgs()
         {

@@ -429,6 +429,12 @@ __all__ = [
     'GetComputeGlobalImageCapabilitySchemasFilterArgsDict',
     'GetComputeGlobalImageCapabilitySchemasVersionsFilterArgs',
     'GetComputeGlobalImageCapabilitySchemasVersionsFilterArgsDict',
+    'GetComputeGpuMemoryClusterInstancesFilterArgs',
+    'GetComputeGpuMemoryClusterInstancesFilterArgsDict',
+    'GetComputeGpuMemoryClustersFilterArgs',
+    'GetComputeGpuMemoryClustersFilterArgsDict',
+    'GetComputeGpuMemoryFabricsFilterArgs',
+    'GetComputeGpuMemoryFabricsFilterArgsDict',
     'GetComputeImageCapabilitySchemasFilterArgs',
     'GetComputeImageCapabilitySchemasFilterArgsDict',
     'GetConsoleHistoriesFilterArgs',
@@ -20916,6 +20922,147 @@ class GetComputeGlobalImageCapabilitySchemasVersionsFilterArgs:
         """
         the list of values for the enum
         """
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetComputeGpuMemoryClusterInstancesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetComputeGpuMemoryClusterInstancesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetComputeGpuMemoryClusterInstancesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetComputeGpuMemoryClustersFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetComputeGpuMemoryClustersFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetComputeGpuMemoryClustersFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetComputeGpuMemoryFabricsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetComputeGpuMemoryFabricsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetComputeGpuMemoryFabricsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
         return pulumi.get(self, "values")
 
     @values.setter

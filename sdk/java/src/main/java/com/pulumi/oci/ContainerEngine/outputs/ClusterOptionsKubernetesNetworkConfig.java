@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ClusterOptionsKubernetesNetworkConfig {
     /**
-     * @return The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
+     * @return The CIDR block for Kubernetes pods. Optional. For ipv4, defaults to 10.244.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0000::/96.
      * 
      */
     private @Nullable String podsCidr;
     /**
-     * @return The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
+     * @return The CIDR block for Kubernetes services. Optional. For ipv4, defaults to 10.96.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0001::/108.
      * 
      */
     private @Nullable String servicesCidr;
 
     private ClusterOptionsKubernetesNetworkConfig() {}
     /**
-     * @return The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
+     * @return The CIDR block for Kubernetes pods. Optional. For ipv4, defaults to 10.244.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0000::/96.
      * 
      */
     public Optional<String> podsCidr() {
         return Optional.ofNullable(this.podsCidr);
     }
     /**
-     * @return The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
+     * @return The CIDR block for Kubernetes services. Optional. For ipv4, defaults to 10.96.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0001::/108.
      * 
      */
     public Optional<String> servicesCidr() {

@@ -47,6 +47,9 @@ export interface GetAutonomousContainerDatabaseResult {
      * A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
      */
     readonly associatedBackupConfigurationDetails: outputs.Database.GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetail[];
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+     */
     readonly autonomousContainerDatabaseId: string;
     /**
      * **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
@@ -57,7 +60,7 @@ export interface GetAutonomousContainerDatabaseResult {
      */
     readonly autonomousVmClusterId: string;
     /**
-     * The availability domain of the Autonomous Container Database.
+     * The domain of the Autonomous Container Database
      */
     readonly availabilityDomain: string;
     /**
@@ -85,6 +88,14 @@ export interface GetAutonomousContainerDatabaseResult {
      */
     readonly computeModel: string;
     readonly databaseSoftwareImageId: string;
+    /**
+     * Array of Dg associations.
+     */
+    readonly dataguardGroupMembers: outputs.Database.GetAutonomousContainerDatabaseDataguardGroupMember[];
+    /**
+     * The properties that define Autonomous Container Databases Dataguard.
+     */
+    readonly dataguards: outputs.Database.GetAutonomousContainerDatabaseDataguard[];
     /**
      * The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
      */
@@ -114,6 +125,10 @@ export interface GetAutonomousContainerDatabaseResult {
      * DST Time-zone File version of the Autonomous Container Database.
      */
     readonly dstFileVersion: string;
+    readonly failoverTrigger: number;
+    /**
+     * The lag time for my preference based on data loss tolerance in seconds.
+     */
     readonly fastStartFailOverLagLimitInSeconds: number;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -127,11 +142,22 @@ export interface GetAutonomousContainerDatabaseResult {
      * The infrastructure type this resource belongs to.
      */
     readonly infrastructureType: string;
+    /**
+     * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+     */
     readonly isAutomaticFailoverEnabled: boolean;
+    /**
+     * **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     */
+    readonly isDataGuardEnabled: boolean;
     /**
      * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
      */
     readonly isDstFileUpdateEnabled: boolean;
+    /**
+     * Whether it is multiple standby Autonomous Dataguard
+     */
+    readonly isMultipleStandby: boolean;
     /**
      * Key History Entry.
      */
@@ -200,6 +226,9 @@ export interface GetAutonomousContainerDatabaseResult {
     readonly peerAutonomousVmClusterId: string;
     readonly peerCloudAutonomousVmClusterId: string;
     readonly peerDbUniqueName: string;
+    /**
+     * The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+     */
     readonly protectionMode: string;
     /**
      * An array of CPU values that can be used to successfully provision a single Autonomous Database.
@@ -217,6 +246,7 @@ export interface GetAutonomousContainerDatabaseResult {
      * Information about the recovery appliance configuration associated with the Autonomous Container Database.
      */
     readonly recoveryApplianceDetails: outputs.Database.GetAutonomousContainerDatabaseRecoveryApplianceDetail[];
+    readonly reinstateTrigger: number;
     /**
      * The number of CPUs reserved in an Autonomous Container Database.
      */
@@ -238,6 +268,7 @@ export interface GetAutonomousContainerDatabaseResult {
      * The current state of the Autonomous Container Database.
      */
     readonly state: string;
+    readonly switchoverTrigger: number;
     /**
      * The date and time the Autonomous Container Database was created.
      */

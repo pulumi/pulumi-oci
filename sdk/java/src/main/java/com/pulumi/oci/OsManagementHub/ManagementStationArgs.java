@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.inputs.ManagementStationMirrorArgs;
 import com.pulumi.oci.OsManagementHub.inputs.ManagementStationProxyArgs;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Map;
@@ -111,6 +112,21 @@ public final class ManagementStationArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
+     * (Updatable) When enabled, the station setup script automatically runs to configure the firewall and SELinux settings on the station.
+     * 
+     */
+    @Import(name="isAutoConfigEnabled")
+    private @Nullable Output<Boolean> isAutoConfigEnabled;
+
+    /**
+     * @return (Updatable) When enabled, the station setup script automatically runs to configure the firewall and SELinux settings on the station.
+     * 
+     */
+    public Optional<Output<Boolean>> isAutoConfigEnabled() {
+        return Optional.ofNullable(this.isAutoConfigEnabled);
+    }
+
+    /**
      * (Updatable) Information used to create the mirror configuration for a management station.
      * 
      */
@@ -170,6 +186,7 @@ public final class ManagementStationArgs extends com.pulumi.resources.ResourceAr
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.hostname = $.hostname;
+        this.isAutoConfigEnabled = $.isAutoConfigEnabled;
         this.mirror = $.mirror;
         this.proxy = $.proxy;
         this.refreshTrigger = $.refreshTrigger;
@@ -317,6 +334,27 @@ public final class ManagementStationArgs extends com.pulumi.resources.ResourceAr
          */
         public Builder hostname(String hostname) {
             return hostname(Output.of(hostname));
+        }
+
+        /**
+         * @param isAutoConfigEnabled (Updatable) When enabled, the station setup script automatically runs to configure the firewall and SELinux settings on the station.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAutoConfigEnabled(@Nullable Output<Boolean> isAutoConfigEnabled) {
+            $.isAutoConfigEnabled = isAutoConfigEnabled;
+            return this;
+        }
+
+        /**
+         * @param isAutoConfigEnabled (Updatable) When enabled, the station setup script automatically runs to configure the firewall and SELinux settings on the station.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAutoConfigEnabled(Boolean isAutoConfigEnabled) {
+            return isAutoConfigEnabled(Output.of(isAutoConfigEnabled));
         }
 
         /**

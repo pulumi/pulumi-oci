@@ -34,14 +34,14 @@ public final class GetSoftwareSourcesArgs extends com.pulumi.resources.InvokeArg
     }
 
     /**
-     * The availabilities of the software source in a non-OCI environment for a tenancy.
+     * The availability of the software source in a non-OCI environment for a tenancy.
      * 
      */
     @Import(name="availabilities")
     private @Nullable Output<List<String>> availabilities;
 
     /**
-     * @return The availabilities of the software source in a non-OCI environment for a tenancy.
+     * @return The availability of the software source in a non-OCI environment for a tenancy.
      * 
      */
     public Optional<Output<List<String>>> availabilities() {
@@ -49,14 +49,14 @@ public final class GetSoftwareSourcesArgs extends com.pulumi.resources.InvokeArg
     }
 
     /**
-     * The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
+     * The availability of the software source. Use this query parameter to filter across availabilities in different environments.
      * 
      */
     @Import(name="availabilityAnywheres")
     private @Nullable Output<List<String>> availabilityAnywheres;
 
     /**
-     * @return The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
+     * @return The availability of the software source. Use this query parameter to filter across availabilities in different environments.
      * 
      */
     public Optional<Output<List<String>>> availabilityAnywheres() {
@@ -64,14 +64,14 @@ public final class GetSoftwareSourcesArgs extends com.pulumi.resources.InvokeArg
     }
 
     /**
-     * The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+     * The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
      * 
      */
     @Import(name="availabilityAtOcis")
     private @Nullable Output<List<String>> availabilityAtOcis;
 
     /**
-     * @return The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+     * @return The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
      * 
      */
     public Optional<Output<List<String>>> availabilityAtOcis() {
@@ -158,6 +158,21 @@ public final class GetSoftwareSourcesArgs extends com.pulumi.resources.InvokeArg
      */
     public Optional<Output<Boolean>> isMandatoryForAutonomousLinux() {
         return Optional.ofNullable(this.isMandatoryForAutonomousLinux);
+    }
+
+    /**
+     * A filter to return software sources which can be synced to a management station.
+     * 
+     */
+    @Import(name="isMirrorSyncAllowed")
+    private @Nullable Output<Boolean> isMirrorSyncAllowed;
+
+    /**
+     * @return A filter to return software sources which can be synced to a management station.
+     * 
+     */
+    public Optional<Output<Boolean>> isMirrorSyncAllowed() {
+        return Optional.ofNullable(this.isMirrorSyncAllowed);
     }
 
     /**
@@ -248,6 +263,7 @@ public final class GetSoftwareSourcesArgs extends com.pulumi.resources.InvokeArg
         this.displayNameNotEqualTos = $.displayNameNotEqualTos;
         this.filters = $.filters;
         this.isMandatoryForAutonomousLinux = $.isMandatoryForAutonomousLinux;
+        this.isMirrorSyncAllowed = $.isMirrorSyncAllowed;
         this.osFamilies = $.osFamilies;
         this.softwareSourceId = $.softwareSourceId;
         this.softwareSourceTypes = $.softwareSourceTypes;
@@ -305,7 +321,7 @@ public final class GetSoftwareSourcesArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param availabilities The availabilities of the software source in a non-OCI environment for a tenancy.
+         * @param availabilities The availability of the software source in a non-OCI environment for a tenancy.
          * 
          * @return builder
          * 
@@ -316,7 +332,7 @@ public final class GetSoftwareSourcesArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param availabilities The availabilities of the software source in a non-OCI environment for a tenancy.
+         * @param availabilities The availability of the software source in a non-OCI environment for a tenancy.
          * 
          * @return builder
          * 
@@ -326,7 +342,7 @@ public final class GetSoftwareSourcesArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param availabilities The availabilities of the software source in a non-OCI environment for a tenancy.
+         * @param availabilities The availability of the software source in a non-OCI environment for a tenancy.
          * 
          * @return builder
          * 
@@ -336,7 +352,7 @@ public final class GetSoftwareSourcesArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param availabilityAnywheres The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
+         * @param availabilityAnywheres The availability of the software source. Use this query parameter to filter across availabilities in different environments.
          * 
          * @return builder
          * 
@@ -347,7 +363,7 @@ public final class GetSoftwareSourcesArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param availabilityAnywheres The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
+         * @param availabilityAnywheres The availability of the software source. Use this query parameter to filter across availabilities in different environments.
          * 
          * @return builder
          * 
@@ -357,7 +373,7 @@ public final class GetSoftwareSourcesArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param availabilityAnywheres The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
+         * @param availabilityAnywheres The availability of the software source. Use this query parameter to filter across availabilities in different environments.
          * 
          * @return builder
          * 
@@ -367,7 +383,7 @@ public final class GetSoftwareSourcesArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param availabilityAtOcis The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+         * @param availabilityAtOcis The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
          * 
          * @return builder
          * 
@@ -378,7 +394,7 @@ public final class GetSoftwareSourcesArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param availabilityAtOcis The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+         * @param availabilityAtOcis The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
          * 
          * @return builder
          * 
@@ -388,7 +404,7 @@ public final class GetSoftwareSourcesArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param availabilityAtOcis The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+         * @param availabilityAtOcis The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
          * 
          * @return builder
          * 
@@ -523,6 +539,27 @@ public final class GetSoftwareSourcesArgs extends com.pulumi.resources.InvokeArg
          */
         public Builder isMandatoryForAutonomousLinux(Boolean isMandatoryForAutonomousLinux) {
             return isMandatoryForAutonomousLinux(Output.of(isMandatoryForAutonomousLinux));
+        }
+
+        /**
+         * @param isMirrorSyncAllowed A filter to return software sources which can be synced to a management station.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMirrorSyncAllowed(@Nullable Output<Boolean> isMirrorSyncAllowed) {
+            $.isMirrorSyncAllowed = isMirrorSyncAllowed;
+            return this;
+        }
+
+        /**
+         * @param isMirrorSyncAllowed A filter to return software sources which can be synced to a management station.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMirrorSyncAllowed(Boolean isMirrorSyncAllowed) {
+            return isMirrorSyncAllowed(Output.of(isMirrorSyncAllowed));
         }
 
         /**

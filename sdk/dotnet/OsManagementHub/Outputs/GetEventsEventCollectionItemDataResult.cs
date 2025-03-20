@@ -18,9 +18,21 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetEventsEventCollectionItemDataAdditionalDetailResult> AdditionalDetails;
         /// <summary>
+        /// The actions used to attempt fixing the error.
+        /// </summary>
+        public readonly ImmutableArray<string> AttemptedResolutions;
+        /// <summary>
         /// Provides information collected for the exploit attempt event.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetEventsEventCollectionItemDataContentResult> Contents;
+        /// <summary>
+        /// The commands executed by the agent that caused the error.
+        /// </summary>
+        public readonly string ErrorCause;
+        /// <summary>
+        /// The output log of the error.
+        /// </summary>
+        public readonly string ErrorLog;
         /// <summary>
         /// Number of times the event has occurred.
         /// </summary>
@@ -30,6 +42,10 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly string EventFingerprint;
         /// <summary>
+        /// Health state of the management station
+        /// </summary>
+        public readonly string HealthState;
+        /// <summary>
         /// Type of management station operation.
         /// </summary>
         public readonly string OperationType;
@@ -37,6 +53,18 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// Reason for the event.
         /// </summary>
         public readonly string Reason;
+        /// <summary>
+        /// Reboot status for the current event
+        /// </summary>
+        public readonly string RebootStatus;
+        /// <summary>
+        /// The log output after the resolutions.
+        /// </summary>
+        public readonly string ResolutionLog;
+        /// <summary>
+        /// Indicates if the event succeeded.
+        /// </summary>
+        public readonly string ResolutionStatus;
         /// <summary>
         /// Status of the management station operation.
         /// </summary>
@@ -50,26 +78,47 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         private GetEventsEventCollectionItemDataResult(
             ImmutableArray<Outputs.GetEventsEventCollectionItemDataAdditionalDetailResult> additionalDetails,
 
+            ImmutableArray<string> attemptedResolutions,
+
             ImmutableArray<Outputs.GetEventsEventCollectionItemDataContentResult> contents,
+
+            string errorCause,
+
+            string errorLog,
 
             int eventCount,
 
             string eventFingerprint,
 
+            string healthState,
+
             string operationType,
 
             string reason,
+
+            string rebootStatus,
+
+            string resolutionLog,
+
+            string resolutionStatus,
 
             string status,
 
             string timeFirstOccurred)
         {
             AdditionalDetails = additionalDetails;
+            AttemptedResolutions = attemptedResolutions;
             Contents = contents;
+            ErrorCause = errorCause;
+            ErrorLog = errorLog;
             EventCount = eventCount;
             EventFingerprint = eventFingerprint;
+            HealthState = healthState;
             OperationType = operationType;
             Reason = reason;
+            RebootStatus = rebootStatus;
+            ResolutionLog = resolutionLog;
+            ResolutionStatus = resolutionStatus;
             Status = status;
             TimeFirstOccurred = timeFirstOccurred;
         }

@@ -55,7 +55,7 @@ class GetManagementStationMirrorsResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        Display name of the mirror
+        Display name of the mirror.
         """
         return pulumi.get(self, "display_name")
 

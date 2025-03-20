@@ -337,6 +337,15 @@ __all__ = [
     'GetComputeGlobalImageCapabilitySchemasFilterResult',
     'GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalImageCapabilitySchemaVersionResult',
     'GetComputeGlobalImageCapabilitySchemasVersionsFilterResult',
+    'GetComputeGpuMemoryClusterInstancesComputeGpuMemoryClusterInstanceCollectionResult',
+    'GetComputeGpuMemoryClusterInstancesComputeGpuMemoryClusterInstanceCollectionItemResult',
+    'GetComputeGpuMemoryClusterInstancesFilterResult',
+    'GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionResult',
+    'GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItemResult',
+    'GetComputeGpuMemoryClustersFilterResult',
+    'GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionResult',
+    'GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionItemResult',
+    'GetComputeGpuMemoryFabricsFilterResult',
     'GetComputeImageCapabilitySchemasComputeImageCapabilitySchemaResult',
     'GetComputeImageCapabilitySchemasFilterResult',
     'GetConsoleHistoriesConsoleHistoryResult',
@@ -23042,6 +23051,579 @@ class GetComputeGlobalImageCapabilitySchemasVersionsFilterResult(dict):
         """
         the list of values for the enum
         """
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetComputeGpuMemoryClusterInstancesComputeGpuMemoryClusterInstanceCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetComputeGpuMemoryClusterInstancesComputeGpuMemoryClusterInstanceCollectionItemResult']):
+        """
+        :param Sequence['GetComputeGpuMemoryClusterInstancesComputeGpuMemoryClusterInstanceCollectionItemArgs'] items: The list of compute GPU memory cluster instances.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetComputeGpuMemoryClusterInstancesComputeGpuMemoryClusterInstanceCollectionItemResult']:
+        """
+        The list of compute GPU memory cluster instances.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetComputeGpuMemoryClusterInstancesComputeGpuMemoryClusterInstanceCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 availability_domain: str,
+                 compartment_id: str,
+                 display_name: str,
+                 fault_domain: str,
+                 id: str,
+                 instance_configuration_id: str,
+                 instance_shape: str,
+                 region: str,
+                 state: str,
+                 time_created: str):
+        """
+        :param str availability_domain: The availability domain of the GPU memory cluster instance.
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment compartment.
+        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param str fault_domain: The fault domain the GPU memory cluster instance is running in.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory cluster instance
+        :param str instance_configuration_id: Configuration to be used for this GPU Memory Cluster instance.
+        :param str instance_shape: The shape of an instance. The shape determines the number of CPUs, amount of memory,  and other resources allocated to the instance. The shape determines the number of CPUs,  the amount of memory, and other resources allocated to the instance. You can list all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+        :param str region: The region that contains the availability domain the instance is running in.
+        :param str state: The lifecycle state of the GPU memory cluster instance
+        :param str time_created: The date and time the GPU memory cluster instance was created.  Example: `2016-09-15T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "fault_domain", fault_domain)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "instance_configuration_id", instance_configuration_id)
+        pulumi.set(__self__, "instance_shape", instance_shape)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> str:
+        """
+        The availability domain of the GPU memory cluster instance.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="faultDomain")
+    def fault_domain(self) -> str:
+        """
+        The fault domain the GPU memory cluster instance is running in.
+        """
+        return pulumi.get(self, "fault_domain")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory cluster instance
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="instanceConfigurationId")
+    def instance_configuration_id(self) -> str:
+        """
+        Configuration to be used for this GPU Memory Cluster instance.
+        """
+        return pulumi.get(self, "instance_configuration_id")
+
+    @property
+    @pulumi.getter(name="instanceShape")
+    def instance_shape(self) -> str:
+        """
+        The shape of an instance. The shape determines the number of CPUs, amount of memory,  and other resources allocated to the instance. The shape determines the number of CPUs,  the amount of memory, and other resources allocated to the instance. You can list all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+        """
+        return pulumi.get(self, "instance_shape")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        """
+        The region that contains the availability domain the instance is running in.
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The lifecycle state of the GPU memory cluster instance
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the GPU memory cluster instance was created.  Example: `2016-09-15T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class GetComputeGpuMemoryClusterInstancesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 availability_domain: str,
+                 compartment_id: str,
+                 compute_cluster_id: str,
+                 defined_tags: Mapping[str, str],
+                 display_name: str,
+                 freeform_tags: Mapping[str, str],
+                 gpu_memory_fabric_id: str,
+                 id: str,
+                 instance_configuration_id: str,
+                 size: str,
+                 state: str,
+                 system_tags: Mapping[str, str],
+                 time_created: str):
+        """
+        :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param str compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param str gpu_memory_fabric_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory cluster
+        :param str instance_configuration_id: The OCID of the Instance Configuration used to source launch details for this instance.
+        :param str size: The number of instances currently running in the GpuMemoryCluster
+        :param str state: The lifecycle state of the GPU memory cluster
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The date and time the GPU memory cluster was created.  Example: `2016-09-15T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compute_cluster_id", compute_cluster_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "gpu_memory_fabric_id", gpu_memory_fabric_id)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "instance_configuration_id", instance_configuration_id)
+        pulumi.set(__self__, "size", size)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> str:
+        """
+        The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="computeClusterId")
+    def compute_cluster_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
+        """
+        return pulumi.get(self, "compute_cluster_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="gpuMemoryFabricId")
+    def gpu_memory_fabric_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.
+        """
+        return pulumi.get(self, "gpu_memory_fabric_id")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory cluster
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="instanceConfigurationId")
+    def instance_configuration_id(self) -> str:
+        """
+        The OCID of the Instance Configuration used to source launch details for this instance.
+        """
+        return pulumi.get(self, "instance_configuration_id")
+
+    @property
+    @pulumi.getter
+    def size(self) -> str:
+        """
+        The number of instances currently running in the GpuMemoryCluster
+        """
+        return pulumi.get(self, "size")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The lifecycle state of the GPU memory cluster
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the GPU memory cluster was created.  Example: `2016-09-15T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class GetComputeGpuMemoryClustersFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 additional_data: Mapping[str, str],
+                 compartment_id: str,
+                 compute_gpu_memory_fabric_id: str,
+                 compute_hpc_island_id: str,
+                 compute_local_block_id: str,
+                 compute_network_block_id: str,
+                 defined_tags: Mapping[str, str],
+                 display_name: str,
+                 fabric_health: str,
+                 freeform_tags: Mapping[str, str],
+                 healthy_host_count: str,
+                 id: str,
+                 state: str,
+                 system_tags: Mapping[str, str],
+                 time_created: str,
+                 total_host_count: str):
+        """
+        :param Mapping[str, str] additional_data: Additional data that can be exposed to the customer. Right now it will include the switch tray ids.
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param str compute_gpu_memory_fabric_id: A filter to return only the listings that matches the given GPU memory fabric id.
+        :param str compute_hpc_island_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute HPC island.
+        :param str compute_local_block_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Local Block
+        :param str compute_network_block_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute network block.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param str display_name: A filter to return only resources that match the given display name exactly.
+        :param str fabric_health: The health state of the GPU memory fabric
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param str healthy_host_count: The total number of healthy bare metal hosts located in this compute GPU memory fabric.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory fabric
+        :param str state: The lifecycle state of the GPU memory fabric
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The date and time that the compute GPU memory fabric record was created, in the format defined by [RFC3339] (https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param str total_host_count: The total number of bare metal hosts located in this compute GPU memory fabric.
+        """
+        pulumi.set(__self__, "additional_data", additional_data)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compute_gpu_memory_fabric_id", compute_gpu_memory_fabric_id)
+        pulumi.set(__self__, "compute_hpc_island_id", compute_hpc_island_id)
+        pulumi.set(__self__, "compute_local_block_id", compute_local_block_id)
+        pulumi.set(__self__, "compute_network_block_id", compute_network_block_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "fabric_health", fabric_health)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "healthy_host_count", healthy_host_count)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "total_host_count", total_host_count)
+
+    @property
+    @pulumi.getter(name="additionalData")
+    def additional_data(self) -> Mapping[str, str]:
+        """
+        Additional data that can be exposed to the customer. Right now it will include the switch tray ids.
+        """
+        return pulumi.get(self, "additional_data")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="computeGpuMemoryFabricId")
+    def compute_gpu_memory_fabric_id(self) -> str:
+        """
+        A filter to return only the listings that matches the given GPU memory fabric id.
+        """
+        return pulumi.get(self, "compute_gpu_memory_fabric_id")
+
+    @property
+    @pulumi.getter(name="computeHpcIslandId")
+    def compute_hpc_island_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute HPC island.
+        """
+        return pulumi.get(self, "compute_hpc_island_id")
+
+    @property
+    @pulumi.getter(name="computeLocalBlockId")
+    def compute_local_block_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Local Block
+        """
+        return pulumi.get(self, "compute_local_block_id")
+
+    @property
+    @pulumi.getter(name="computeNetworkBlockId")
+    def compute_network_block_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute network block.
+        """
+        return pulumi.get(self, "compute_network_block_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="fabricHealth")
+    def fabric_health(self) -> str:
+        """
+        The health state of the GPU memory fabric
+        """
+        return pulumi.get(self, "fabric_health")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="healthyHostCount")
+    def healthy_host_count(self) -> str:
+        """
+        The total number of healthy bare metal hosts located in this compute GPU memory fabric.
+        """
+        return pulumi.get(self, "healthy_host_count")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory fabric
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The lifecycle state of the GPU memory fabric
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time that the compute GPU memory fabric record was created, in the format defined by [RFC3339] (https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="totalHostCount")
+    def total_host_count(self) -> str:
+        """
+        The total number of bare metal hosts located in this compute GPU memory fabric.
+        """
+        return pulumi.get(self, "total_host_count")
+
+
+@pulumi.output_type
+class GetComputeGpuMemoryFabricsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
         return pulumi.get(self, "values")
 
     @property

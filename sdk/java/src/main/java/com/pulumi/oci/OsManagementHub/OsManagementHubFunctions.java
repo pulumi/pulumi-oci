@@ -67,7 +67,11 @@ import com.pulumi.oci.OsManagementHub.inputs.GetManagementStationPlainArgs;
 import com.pulumi.oci.OsManagementHub.inputs.GetManagementStationsArgs;
 import com.pulumi.oci.OsManagementHub.inputs.GetManagementStationsPlainArgs;
 import com.pulumi.oci.OsManagementHub.inputs.GetProfileArgs;
+import com.pulumi.oci.OsManagementHub.inputs.GetProfileAvailableSoftwareSourcesArgs;
+import com.pulumi.oci.OsManagementHub.inputs.GetProfileAvailableSoftwareSourcesPlainArgs;
 import com.pulumi.oci.OsManagementHub.inputs.GetProfilePlainArgs;
+import com.pulumi.oci.OsManagementHub.inputs.GetProfileVersionArgs;
+import com.pulumi.oci.OsManagementHub.inputs.GetProfileVersionPlainArgs;
 import com.pulumi.oci.OsManagementHub.inputs.GetProfilesArgs;
 import com.pulumi.oci.OsManagementHub.inputs.GetProfilesPlainArgs;
 import com.pulumi.oci.OsManagementHub.inputs.GetScheduledJobArgs;
@@ -81,6 +85,10 @@ import com.pulumi.oci.OsManagementHub.inputs.GetSoftwarePackageSoftwareSourcePla
 import com.pulumi.oci.OsManagementHub.inputs.GetSoftwarePackagesArgs;
 import com.pulumi.oci.OsManagementHub.inputs.GetSoftwarePackagesPlainArgs;
 import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceArgs;
+import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceAvailableSoftwarePackagesArgs;
+import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceAvailableSoftwarePackagesPlainArgs;
+import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceManifestArgs;
+import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceManifestPlainArgs;
 import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceModuleStreamArgs;
 import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceModuleStreamPlainArgs;
 import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceModuleStreamProfileArgs;
@@ -135,13 +143,17 @@ import com.pulumi.oci.OsManagementHub.outputs.GetManagedInstancesResult;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagementStationMirrorsResult;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagementStationResult;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagementStationsResult;
+import com.pulumi.oci.OsManagementHub.outputs.GetProfileAvailableSoftwareSourcesResult;
 import com.pulumi.oci.OsManagementHub.outputs.GetProfileResult;
+import com.pulumi.oci.OsManagementHub.outputs.GetProfileVersionResult;
 import com.pulumi.oci.OsManagementHub.outputs.GetProfilesResult;
 import com.pulumi.oci.OsManagementHub.outputs.GetScheduledJobResult;
 import com.pulumi.oci.OsManagementHub.outputs.GetScheduledJobsResult;
 import com.pulumi.oci.OsManagementHub.outputs.GetSoftwarePackageResult;
 import com.pulumi.oci.OsManagementHub.outputs.GetSoftwarePackageSoftwareSourceResult;
 import com.pulumi.oci.OsManagementHub.outputs.GetSoftwarePackagesResult;
+import com.pulumi.oci.OsManagementHub.outputs.GetSoftwareSourceAvailableSoftwarePackagesResult;
+import com.pulumi.oci.OsManagementHub.outputs.GetSoftwareSourceManifestResult;
 import com.pulumi.oci.OsManagementHub.outputs.GetSoftwareSourceModuleStreamProfileResult;
 import com.pulumi.oci.OsManagementHub.outputs.GetSoftwareSourceModuleStreamProfilesResult;
 import com.pulumi.oci.OsManagementHub.outputs.GetSoftwareSourceModuleStreamResult;
@@ -6717,63 +6729,6 @@ public final class OsManagementHubFunctions {
      * 
      * Lists managed instances that match the specified compartment or managed instance OCID. Filter the list against a variety of criteria including but not limited to its name, status, architecture, and OS version.
      * 
-     * ## Example Usage
-     * 
-     * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
-     * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstancesArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstances = OsManagementHubFunctions.getManagedInstances(GetManagedInstancesArgs.builder()
-     *             .advisoryNames(managedInstanceAdvisoryName)
-     *             .archTypes(managedInstanceArchType)
-     *             .compartmentId(compartmentId)
-     *             .displayNames(managedInstanceDisplayName)
-     *             .displayNameContains(managedInstanceDisplayNameContains)
-     *             .group(managedInstanceGroup)
-     *             .groupNotEqualTo(managedInstanceGroupNotEqualTo)
-     *             .isAttachedToGroupOrLifecycleStage(managedInstanceIsAttachedToGroupOrLifecycleStage)
-     *             .isManagedByAutonomousLinux(managedInstanceIsManagedByAutonomousLinux)
-     *             .isManagementStation(managedInstanceIsManagementStation)
-     *             .isProfileAttached(managedInstanceIsProfileAttached)
-     *             .lifecycleEnvironment(managedInstanceLifecycleEnvironment)
-     *             .lifecycleEnvironmentNotEqualTo(managedInstanceLifecycleEnvironmentNotEqualTo)
-     *             .lifecycleStage(managedInstanceLifecycleStage)
-     *             .lifecycleStageNotEqualTo(managedInstanceLifecycleStageNotEqualTo)
-     *             .locations(managedInstanceLocation)
-     *             .locationNotEqualTos(managedInstanceLocationNotEqualTo)
-     *             .managedInstanceId(testManagedInstance.id())
-     *             .osFamilies(managedInstanceOsFamily)
-     *             .profiles(managedInstanceProfile)
-     *             .profileNotEqualTos(managedInstanceProfileNotEqualTo)
-     *             .softwareSourceId(testSoftwareSource.id())
-     *             .statuses(managedInstanceStatus)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * &lt;!--End PulumiCodeChooser --&gt;
-     * 
      */
     public static Output<GetManagedInstancesResult> getManagedInstances() {
         return getManagedInstances(GetManagedInstancesArgs.Empty, InvokeOptions.Empty);
@@ -6782,63 +6737,6 @@ public final class OsManagementHubFunctions {
      * This data source provides the list of Managed Instances in Oracle Cloud Infrastructure Os Management Hub service.
      * 
      * Lists managed instances that match the specified compartment or managed instance OCID. Filter the list against a variety of criteria including but not limited to its name, status, architecture, and OS version.
-     * 
-     * ## Example Usage
-     * 
-     * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
-     * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstancesArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstances = OsManagementHubFunctions.getManagedInstances(GetManagedInstancesArgs.builder()
-     *             .advisoryNames(managedInstanceAdvisoryName)
-     *             .archTypes(managedInstanceArchType)
-     *             .compartmentId(compartmentId)
-     *             .displayNames(managedInstanceDisplayName)
-     *             .displayNameContains(managedInstanceDisplayNameContains)
-     *             .group(managedInstanceGroup)
-     *             .groupNotEqualTo(managedInstanceGroupNotEqualTo)
-     *             .isAttachedToGroupOrLifecycleStage(managedInstanceIsAttachedToGroupOrLifecycleStage)
-     *             .isManagedByAutonomousLinux(managedInstanceIsManagedByAutonomousLinux)
-     *             .isManagementStation(managedInstanceIsManagementStation)
-     *             .isProfileAttached(managedInstanceIsProfileAttached)
-     *             .lifecycleEnvironment(managedInstanceLifecycleEnvironment)
-     *             .lifecycleEnvironmentNotEqualTo(managedInstanceLifecycleEnvironmentNotEqualTo)
-     *             .lifecycleStage(managedInstanceLifecycleStage)
-     *             .lifecycleStageNotEqualTo(managedInstanceLifecycleStageNotEqualTo)
-     *             .locations(managedInstanceLocation)
-     *             .locationNotEqualTos(managedInstanceLocationNotEqualTo)
-     *             .managedInstanceId(testManagedInstance.id())
-     *             .osFamilies(managedInstanceOsFamily)
-     *             .profiles(managedInstanceProfile)
-     *             .profileNotEqualTos(managedInstanceProfileNotEqualTo)
-     *             .softwareSourceId(testSoftwareSource.id())
-     *             .statuses(managedInstanceStatus)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedInstancesResult> getManagedInstancesPlain() {
@@ -6849,63 +6747,6 @@ public final class OsManagementHubFunctions {
      * 
      * Lists managed instances that match the specified compartment or managed instance OCID. Filter the list against a variety of criteria including but not limited to its name, status, architecture, and OS version.
      * 
-     * ## Example Usage
-     * 
-     * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
-     * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstancesArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstances = OsManagementHubFunctions.getManagedInstances(GetManagedInstancesArgs.builder()
-     *             .advisoryNames(managedInstanceAdvisoryName)
-     *             .archTypes(managedInstanceArchType)
-     *             .compartmentId(compartmentId)
-     *             .displayNames(managedInstanceDisplayName)
-     *             .displayNameContains(managedInstanceDisplayNameContains)
-     *             .group(managedInstanceGroup)
-     *             .groupNotEqualTo(managedInstanceGroupNotEqualTo)
-     *             .isAttachedToGroupOrLifecycleStage(managedInstanceIsAttachedToGroupOrLifecycleStage)
-     *             .isManagedByAutonomousLinux(managedInstanceIsManagedByAutonomousLinux)
-     *             .isManagementStation(managedInstanceIsManagementStation)
-     *             .isProfileAttached(managedInstanceIsProfileAttached)
-     *             .lifecycleEnvironment(managedInstanceLifecycleEnvironment)
-     *             .lifecycleEnvironmentNotEqualTo(managedInstanceLifecycleEnvironmentNotEqualTo)
-     *             .lifecycleStage(managedInstanceLifecycleStage)
-     *             .lifecycleStageNotEqualTo(managedInstanceLifecycleStageNotEqualTo)
-     *             .locations(managedInstanceLocation)
-     *             .locationNotEqualTos(managedInstanceLocationNotEqualTo)
-     *             .managedInstanceId(testManagedInstance.id())
-     *             .osFamilies(managedInstanceOsFamily)
-     *             .profiles(managedInstanceProfile)
-     *             .profileNotEqualTos(managedInstanceProfileNotEqualTo)
-     *             .softwareSourceId(testSoftwareSource.id())
-     *             .statuses(managedInstanceStatus)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * &lt;!--End PulumiCodeChooser --&gt;
-     * 
      */
     public static Output<GetManagedInstancesResult> getManagedInstances(GetManagedInstancesArgs args) {
         return getManagedInstances(args, InvokeOptions.Empty);
@@ -6914,63 +6755,6 @@ public final class OsManagementHubFunctions {
      * This data source provides the list of Managed Instances in Oracle Cloud Infrastructure Os Management Hub service.
      * 
      * Lists managed instances that match the specified compartment or managed instance OCID. Filter the list against a variety of criteria including but not limited to its name, status, architecture, and OS version.
-     * 
-     * ## Example Usage
-     * 
-     * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
-     * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstancesArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstances = OsManagementHubFunctions.getManagedInstances(GetManagedInstancesArgs.builder()
-     *             .advisoryNames(managedInstanceAdvisoryName)
-     *             .archTypes(managedInstanceArchType)
-     *             .compartmentId(compartmentId)
-     *             .displayNames(managedInstanceDisplayName)
-     *             .displayNameContains(managedInstanceDisplayNameContains)
-     *             .group(managedInstanceGroup)
-     *             .groupNotEqualTo(managedInstanceGroupNotEqualTo)
-     *             .isAttachedToGroupOrLifecycleStage(managedInstanceIsAttachedToGroupOrLifecycleStage)
-     *             .isManagedByAutonomousLinux(managedInstanceIsManagedByAutonomousLinux)
-     *             .isManagementStation(managedInstanceIsManagementStation)
-     *             .isProfileAttached(managedInstanceIsProfileAttached)
-     *             .lifecycleEnvironment(managedInstanceLifecycleEnvironment)
-     *             .lifecycleEnvironmentNotEqualTo(managedInstanceLifecycleEnvironmentNotEqualTo)
-     *             .lifecycleStage(managedInstanceLifecycleStage)
-     *             .lifecycleStageNotEqualTo(managedInstanceLifecycleStageNotEqualTo)
-     *             .locations(managedInstanceLocation)
-     *             .locationNotEqualTos(managedInstanceLocationNotEqualTo)
-     *             .managedInstanceId(testManagedInstance.id())
-     *             .osFamilies(managedInstanceOsFamily)
-     *             .profiles(managedInstanceProfile)
-     *             .profileNotEqualTos(managedInstanceProfileNotEqualTo)
-     *             .softwareSourceId(testSoftwareSource.id())
-     *             .statuses(managedInstanceStatus)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedInstancesResult> getManagedInstancesPlain(GetManagedInstancesPlainArgs args) {
@@ -6981,63 +6765,6 @@ public final class OsManagementHubFunctions {
      * 
      * Lists managed instances that match the specified compartment or managed instance OCID. Filter the list against a variety of criteria including but not limited to its name, status, architecture, and OS version.
      * 
-     * ## Example Usage
-     * 
-     * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
-     * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstancesArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstances = OsManagementHubFunctions.getManagedInstances(GetManagedInstancesArgs.builder()
-     *             .advisoryNames(managedInstanceAdvisoryName)
-     *             .archTypes(managedInstanceArchType)
-     *             .compartmentId(compartmentId)
-     *             .displayNames(managedInstanceDisplayName)
-     *             .displayNameContains(managedInstanceDisplayNameContains)
-     *             .group(managedInstanceGroup)
-     *             .groupNotEqualTo(managedInstanceGroupNotEqualTo)
-     *             .isAttachedToGroupOrLifecycleStage(managedInstanceIsAttachedToGroupOrLifecycleStage)
-     *             .isManagedByAutonomousLinux(managedInstanceIsManagedByAutonomousLinux)
-     *             .isManagementStation(managedInstanceIsManagementStation)
-     *             .isProfileAttached(managedInstanceIsProfileAttached)
-     *             .lifecycleEnvironment(managedInstanceLifecycleEnvironment)
-     *             .lifecycleEnvironmentNotEqualTo(managedInstanceLifecycleEnvironmentNotEqualTo)
-     *             .lifecycleStage(managedInstanceLifecycleStage)
-     *             .lifecycleStageNotEqualTo(managedInstanceLifecycleStageNotEqualTo)
-     *             .locations(managedInstanceLocation)
-     *             .locationNotEqualTos(managedInstanceLocationNotEqualTo)
-     *             .managedInstanceId(testManagedInstance.id())
-     *             .osFamilies(managedInstanceOsFamily)
-     *             .profiles(managedInstanceProfile)
-     *             .profileNotEqualTos(managedInstanceProfileNotEqualTo)
-     *             .softwareSourceId(testSoftwareSource.id())
-     *             .statuses(managedInstanceStatus)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * &lt;!--End PulumiCodeChooser --&gt;
-     * 
      */
     public static Output<GetManagedInstancesResult> getManagedInstances(GetManagedInstancesArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:OsManagementHub/getManagedInstances:getManagedInstances", TypeShape.of(GetManagedInstancesResult.class), args, Utilities.withVersion(options));
@@ -7046,63 +6773,6 @@ public final class OsManagementHubFunctions {
      * This data source provides the list of Managed Instances in Oracle Cloud Infrastructure Os Management Hub service.
      * 
      * Lists managed instances that match the specified compartment or managed instance OCID. Filter the list against a variety of criteria including but not limited to its name, status, architecture, and OS version.
-     * 
-     * ## Example Usage
-     * 
-     * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
-     * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstancesArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstances = OsManagementHubFunctions.getManagedInstances(GetManagedInstancesArgs.builder()
-     *             .advisoryNames(managedInstanceAdvisoryName)
-     *             .archTypes(managedInstanceArchType)
-     *             .compartmentId(compartmentId)
-     *             .displayNames(managedInstanceDisplayName)
-     *             .displayNameContains(managedInstanceDisplayNameContains)
-     *             .group(managedInstanceGroup)
-     *             .groupNotEqualTo(managedInstanceGroupNotEqualTo)
-     *             .isAttachedToGroupOrLifecycleStage(managedInstanceIsAttachedToGroupOrLifecycleStage)
-     *             .isManagedByAutonomousLinux(managedInstanceIsManagedByAutonomousLinux)
-     *             .isManagementStation(managedInstanceIsManagementStation)
-     *             .isProfileAttached(managedInstanceIsProfileAttached)
-     *             .lifecycleEnvironment(managedInstanceLifecycleEnvironment)
-     *             .lifecycleEnvironmentNotEqualTo(managedInstanceLifecycleEnvironmentNotEqualTo)
-     *             .lifecycleStage(managedInstanceLifecycleStage)
-     *             .lifecycleStageNotEqualTo(managedInstanceLifecycleStageNotEqualTo)
-     *             .locations(managedInstanceLocation)
-     *             .locationNotEqualTos(managedInstanceLocationNotEqualTo)
-     *             .managedInstanceId(testManagedInstance.id())
-     *             .osFamilies(managedInstanceOsFamily)
-     *             .profiles(managedInstanceProfile)
-     *             .profileNotEqualTos(managedInstanceProfileNotEqualTo)
-     *             .softwareSourceId(testSoftwareSource.id())
-     *             .statuses(managedInstanceStatus)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedInstancesResult> getManagedInstances(GetManagedInstancesArgs args, InvokeOutputOptions options) {
@@ -7113,63 +6783,6 @@ public final class OsManagementHubFunctions {
      * 
      * Lists managed instances that match the specified compartment or managed instance OCID. Filter the list against a variety of criteria including but not limited to its name, status, architecture, and OS version.
      * 
-     * ## Example Usage
-     * 
-     * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
-     * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstancesArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstances = OsManagementHubFunctions.getManagedInstances(GetManagedInstancesArgs.builder()
-     *             .advisoryNames(managedInstanceAdvisoryName)
-     *             .archTypes(managedInstanceArchType)
-     *             .compartmentId(compartmentId)
-     *             .displayNames(managedInstanceDisplayName)
-     *             .displayNameContains(managedInstanceDisplayNameContains)
-     *             .group(managedInstanceGroup)
-     *             .groupNotEqualTo(managedInstanceGroupNotEqualTo)
-     *             .isAttachedToGroupOrLifecycleStage(managedInstanceIsAttachedToGroupOrLifecycleStage)
-     *             .isManagedByAutonomousLinux(managedInstanceIsManagedByAutonomousLinux)
-     *             .isManagementStation(managedInstanceIsManagementStation)
-     *             .isProfileAttached(managedInstanceIsProfileAttached)
-     *             .lifecycleEnvironment(managedInstanceLifecycleEnvironment)
-     *             .lifecycleEnvironmentNotEqualTo(managedInstanceLifecycleEnvironmentNotEqualTo)
-     *             .lifecycleStage(managedInstanceLifecycleStage)
-     *             .lifecycleStageNotEqualTo(managedInstanceLifecycleStageNotEqualTo)
-     *             .locations(managedInstanceLocation)
-     *             .locationNotEqualTos(managedInstanceLocationNotEqualTo)
-     *             .managedInstanceId(testManagedInstance.id())
-     *             .osFamilies(managedInstanceOsFamily)
-     *             .profiles(managedInstanceProfile)
-     *             .profileNotEqualTos(managedInstanceProfileNotEqualTo)
-     *             .softwareSourceId(testSoftwareSource.id())
-     *             .statuses(managedInstanceStatus)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * &lt;!--End PulumiCodeChooser --&gt;
-     * 
      */
     public static CompletableFuture<GetManagedInstancesResult> getManagedInstancesPlain(GetManagedInstancesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:OsManagementHub/getManagedInstances:getManagedInstances", TypeShape.of(GetManagedInstancesResult.class), args, Utilities.withVersion(options));
@@ -7177,7 +6790,7 @@ public final class OsManagementHubFunctions {
     /**
      * This data source provides details about a specific Management Station resource in Oracle Cloud Infrastructure Os Management Hub service.
      * 
-     * Gets information about the specified management station.
+     * Returns information about the specified management station.
      * 
      * ## Example Usage
      * 
@@ -7221,7 +6834,7 @@ public final class OsManagementHubFunctions {
     /**
      * This data source provides details about a specific Management Station resource in Oracle Cloud Infrastructure Os Management Hub service.
      * 
-     * Gets information about the specified management station.
+     * Returns information about the specified management station.
      * 
      * ## Example Usage
      * 
@@ -7265,7 +6878,7 @@ public final class OsManagementHubFunctions {
     /**
      * This data source provides details about a specific Management Station resource in Oracle Cloud Infrastructure Os Management Hub service.
      * 
-     * Gets information about the specified management station.
+     * Returns information about the specified management station.
      * 
      * ## Example Usage
      * 
@@ -7309,7 +6922,7 @@ public final class OsManagementHubFunctions {
     /**
      * This data source provides details about a specific Management Station resource in Oracle Cloud Infrastructure Os Management Hub service.
      * 
-     * Gets information about the specified management station.
+     * Returns information about the specified management station.
      * 
      * ## Example Usage
      * 
@@ -7353,7 +6966,7 @@ public final class OsManagementHubFunctions {
     /**
      * This data source provides details about a specific Management Station resource in Oracle Cloud Infrastructure Os Management Hub service.
      * 
-     * Gets information about the specified management station.
+     * Returns information about the specified management station.
      * 
      * ## Example Usage
      * 
@@ -7632,7 +7245,8 @@ public final class OsManagementHubFunctions {
     /**
      * This data source provides the list of Management Stations in Oracle Cloud Infrastructure Os Management Hub service.
      * 
-     * Lists management stations in a compartment.
+     * Lists management stations within the specified compartment. Filter the list against a variety of criteria
+     * including but not limited to name, status, and location.
      * 
      * ## Example Usage
      * 
@@ -7664,6 +7278,8 @@ public final class OsManagementHubFunctions {
      *             .displayName(managementStationDisplayName)
      *             .displayNameContains(managementStationDisplayNameContains)
      *             .id(managementStationId)
+     *             .locations(managementStationLocation)
+     *             .locationNotEqualTos(managementStationLocationNotEqualTo)
      *             .managedInstanceId(testManagedInstance.id())
      *             .state(managementStationState)
      *             .build());
@@ -7681,7 +7297,8 @@ public final class OsManagementHubFunctions {
     /**
      * This data source provides the list of Management Stations in Oracle Cloud Infrastructure Os Management Hub service.
      * 
-     * Lists management stations in a compartment.
+     * Lists management stations within the specified compartment. Filter the list against a variety of criteria
+     * including but not limited to name, status, and location.
      * 
      * ## Example Usage
      * 
@@ -7713,6 +7330,8 @@ public final class OsManagementHubFunctions {
      *             .displayName(managementStationDisplayName)
      *             .displayNameContains(managementStationDisplayNameContains)
      *             .id(managementStationId)
+     *             .locations(managementStationLocation)
+     *             .locationNotEqualTos(managementStationLocationNotEqualTo)
      *             .managedInstanceId(testManagedInstance.id())
      *             .state(managementStationState)
      *             .build());
@@ -7730,7 +7349,8 @@ public final class OsManagementHubFunctions {
     /**
      * This data source provides the list of Management Stations in Oracle Cloud Infrastructure Os Management Hub service.
      * 
-     * Lists management stations in a compartment.
+     * Lists management stations within the specified compartment. Filter the list against a variety of criteria
+     * including but not limited to name, status, and location.
      * 
      * ## Example Usage
      * 
@@ -7762,6 +7382,8 @@ public final class OsManagementHubFunctions {
      *             .displayName(managementStationDisplayName)
      *             .displayNameContains(managementStationDisplayNameContains)
      *             .id(managementStationId)
+     *             .locations(managementStationLocation)
+     *             .locationNotEqualTos(managementStationLocationNotEqualTo)
      *             .managedInstanceId(testManagedInstance.id())
      *             .state(managementStationState)
      *             .build());
@@ -7779,7 +7401,8 @@ public final class OsManagementHubFunctions {
     /**
      * This data source provides the list of Management Stations in Oracle Cloud Infrastructure Os Management Hub service.
      * 
-     * Lists management stations in a compartment.
+     * Lists management stations within the specified compartment. Filter the list against a variety of criteria
+     * including but not limited to name, status, and location.
      * 
      * ## Example Usage
      * 
@@ -7811,6 +7434,8 @@ public final class OsManagementHubFunctions {
      *             .displayName(managementStationDisplayName)
      *             .displayNameContains(managementStationDisplayNameContains)
      *             .id(managementStationId)
+     *             .locations(managementStationLocation)
+     *             .locationNotEqualTos(managementStationLocationNotEqualTo)
      *             .managedInstanceId(testManagedInstance.id())
      *             .state(managementStationState)
      *             .build());
@@ -7828,7 +7453,8 @@ public final class OsManagementHubFunctions {
     /**
      * This data source provides the list of Management Stations in Oracle Cloud Infrastructure Os Management Hub service.
      * 
-     * Lists management stations in a compartment.
+     * Lists management stations within the specified compartment. Filter the list against a variety of criteria
+     * including but not limited to name, status, and location.
      * 
      * ## Example Usage
      * 
@@ -7860,6 +7486,8 @@ public final class OsManagementHubFunctions {
      *             .displayName(managementStationDisplayName)
      *             .displayNameContains(managementStationDisplayNameContains)
      *             .id(managementStationId)
+     *             .locations(managementStationLocation)
+     *             .locationNotEqualTos(managementStationLocationNotEqualTo)
      *             .managedInstanceId(testManagedInstance.id())
      *             .state(managementStationState)
      *             .build());
@@ -7877,7 +7505,8 @@ public final class OsManagementHubFunctions {
     /**
      * This data source provides the list of Management Stations in Oracle Cloud Infrastructure Os Management Hub service.
      * 
-     * Lists management stations in a compartment.
+     * Lists management stations within the specified compartment. Filter the list against a variety of criteria
+     * including but not limited to name, status, and location.
      * 
      * ## Example Usage
      * 
@@ -7909,6 +7538,8 @@ public final class OsManagementHubFunctions {
      *             .displayName(managementStationDisplayName)
      *             .displayNameContains(managementStationDisplayNameContains)
      *             .id(managementStationId)
+     *             .locations(managementStationLocation)
+     *             .locationNotEqualTos(managementStationLocationNotEqualTo)
      *             .managedInstanceId(testManagedInstance.id())
      *             .state(managementStationState)
      *             .build());
@@ -7926,7 +7557,8 @@ public final class OsManagementHubFunctions {
     /**
      * This data source provides the list of Management Stations in Oracle Cloud Infrastructure Os Management Hub service.
      * 
-     * Lists management stations in a compartment.
+     * Lists management stations within the specified compartment. Filter the list against a variety of criteria
+     * including but not limited to name, status, and location.
      * 
      * ## Example Usage
      * 
@@ -7958,6 +7590,8 @@ public final class OsManagementHubFunctions {
      *             .displayName(managementStationDisplayName)
      *             .displayNameContains(managementStationDisplayNameContains)
      *             .id(managementStationId)
+     *             .locations(managementStationLocation)
+     *             .locationNotEqualTos(managementStationLocationNotEqualTo)
      *             .managedInstanceId(testManagedInstance.id())
      *             .state(managementStationState)
      *             .build());
@@ -7975,7 +7609,7 @@ public final class OsManagementHubFunctions {
     /**
      * This data source provides details about a specific Profile resource in Oracle Cloud Infrastructure Os Management Hub service.
      * 
-     * Gets information about the specified registration profile.
+     * Returns information about the specified registration profile.
      * 
      * ## Example Usage
      * 
@@ -8019,7 +7653,7 @@ public final class OsManagementHubFunctions {
     /**
      * This data source provides details about a specific Profile resource in Oracle Cloud Infrastructure Os Management Hub service.
      * 
-     * Gets information about the specified registration profile.
+     * Returns information about the specified registration profile.
      * 
      * ## Example Usage
      * 
@@ -8063,7 +7697,7 @@ public final class OsManagementHubFunctions {
     /**
      * This data source provides details about a specific Profile resource in Oracle Cloud Infrastructure Os Management Hub service.
      * 
-     * Gets information about the specified registration profile.
+     * Returns information about the specified registration profile.
      * 
      * ## Example Usage
      * 
@@ -8107,7 +7741,7 @@ public final class OsManagementHubFunctions {
     /**
      * This data source provides details about a specific Profile resource in Oracle Cloud Infrastructure Os Management Hub service.
      * 
-     * Gets information about the specified registration profile.
+     * Returns information about the specified registration profile.
      * 
      * ## Example Usage
      * 
@@ -8151,7 +7785,7 @@ public final class OsManagementHubFunctions {
     /**
      * This data source provides details about a specific Profile resource in Oracle Cloud Infrastructure Os Management Hub service.
      * 
-     * Gets information about the specified registration profile.
+     * Returns information about the specified registration profile.
      * 
      * ## Example Usage
      * 
@@ -8193,6 +7827,466 @@ public final class OsManagementHubFunctions {
         return Deployment.getInstance().invokeAsync("oci:OsManagementHub/getProfile:getProfile", TypeShape.of(GetProfileResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Profile Available Software Sources in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Lists available software sources for a specified profile. Filter the list against a variety of criteria including but not limited to the software source name. The results list only software sources that have not already been added to the profile.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetProfileAvailableSoftwareSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProfileAvailableSoftwareSources = OsManagementHubFunctions.getProfileAvailableSoftwareSources(GetProfileAvailableSoftwareSourcesArgs.builder()
+     *             .profileId(testProfile.id())
+     *             .compartmentId(compartmentId)
+     *             .displayNames(profileAvailableSoftwareSourceDisplayName)
+     *             .displayNameContains(profileAvailableSoftwareSourceDisplayNameContains)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetProfileAvailableSoftwareSourcesResult> getProfileAvailableSoftwareSources(GetProfileAvailableSoftwareSourcesArgs args) {
+        return getProfileAvailableSoftwareSources(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Profile Available Software Sources in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Lists available software sources for a specified profile. Filter the list against a variety of criteria including but not limited to the software source name. The results list only software sources that have not already been added to the profile.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetProfileAvailableSoftwareSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProfileAvailableSoftwareSources = OsManagementHubFunctions.getProfileAvailableSoftwareSources(GetProfileAvailableSoftwareSourcesArgs.builder()
+     *             .profileId(testProfile.id())
+     *             .compartmentId(compartmentId)
+     *             .displayNames(profileAvailableSoftwareSourceDisplayName)
+     *             .displayNameContains(profileAvailableSoftwareSourceDisplayNameContains)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetProfileAvailableSoftwareSourcesResult> getProfileAvailableSoftwareSourcesPlain(GetProfileAvailableSoftwareSourcesPlainArgs args) {
+        return getProfileAvailableSoftwareSourcesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Profile Available Software Sources in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Lists available software sources for a specified profile. Filter the list against a variety of criteria including but not limited to the software source name. The results list only software sources that have not already been added to the profile.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetProfileAvailableSoftwareSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProfileAvailableSoftwareSources = OsManagementHubFunctions.getProfileAvailableSoftwareSources(GetProfileAvailableSoftwareSourcesArgs.builder()
+     *             .profileId(testProfile.id())
+     *             .compartmentId(compartmentId)
+     *             .displayNames(profileAvailableSoftwareSourceDisplayName)
+     *             .displayNameContains(profileAvailableSoftwareSourceDisplayNameContains)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetProfileAvailableSoftwareSourcesResult> getProfileAvailableSoftwareSources(GetProfileAvailableSoftwareSourcesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OsManagementHub/getProfileAvailableSoftwareSources:getProfileAvailableSoftwareSources", TypeShape.of(GetProfileAvailableSoftwareSourcesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Profile Available Software Sources in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Lists available software sources for a specified profile. Filter the list against a variety of criteria including but not limited to the software source name. The results list only software sources that have not already been added to the profile.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetProfileAvailableSoftwareSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProfileAvailableSoftwareSources = OsManagementHubFunctions.getProfileAvailableSoftwareSources(GetProfileAvailableSoftwareSourcesArgs.builder()
+     *             .profileId(testProfile.id())
+     *             .compartmentId(compartmentId)
+     *             .displayNames(profileAvailableSoftwareSourceDisplayName)
+     *             .displayNameContains(profileAvailableSoftwareSourceDisplayNameContains)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetProfileAvailableSoftwareSourcesResult> getProfileAvailableSoftwareSources(GetProfileAvailableSoftwareSourcesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:OsManagementHub/getProfileAvailableSoftwareSources:getProfileAvailableSoftwareSources", TypeShape.of(GetProfileAvailableSoftwareSourcesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Profile Available Software Sources in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Lists available software sources for a specified profile. Filter the list against a variety of criteria including but not limited to the software source name. The results list only software sources that have not already been added to the profile.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetProfileAvailableSoftwareSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProfileAvailableSoftwareSources = OsManagementHubFunctions.getProfileAvailableSoftwareSources(GetProfileAvailableSoftwareSourcesArgs.builder()
+     *             .profileId(testProfile.id())
+     *             .compartmentId(compartmentId)
+     *             .displayNames(profileAvailableSoftwareSourceDisplayName)
+     *             .displayNameContains(profileAvailableSoftwareSourceDisplayNameContains)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetProfileAvailableSoftwareSourcesResult> getProfileAvailableSoftwareSourcesPlain(GetProfileAvailableSoftwareSourcesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:OsManagementHub/getProfileAvailableSoftwareSources:getProfileAvailableSoftwareSources", TypeShape.of(GetProfileAvailableSoftwareSourcesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Profile Version resource in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Returns information about the version of the specified registration profile.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetProfileVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProfileVersion = OsManagementHubFunctions.getProfileVersion(GetProfileVersionArgs.builder()
+     *             .profileId(testProfile.id())
+     *             .profileVersion(profileVersionProfileVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetProfileVersionResult> getProfileVersion(GetProfileVersionArgs args) {
+        return getProfileVersion(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Profile Version resource in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Returns information about the version of the specified registration profile.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetProfileVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProfileVersion = OsManagementHubFunctions.getProfileVersion(GetProfileVersionArgs.builder()
+     *             .profileId(testProfile.id())
+     *             .profileVersion(profileVersionProfileVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetProfileVersionResult> getProfileVersionPlain(GetProfileVersionPlainArgs args) {
+        return getProfileVersionPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Profile Version resource in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Returns information about the version of the specified registration profile.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetProfileVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProfileVersion = OsManagementHubFunctions.getProfileVersion(GetProfileVersionArgs.builder()
+     *             .profileId(testProfile.id())
+     *             .profileVersion(profileVersionProfileVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetProfileVersionResult> getProfileVersion(GetProfileVersionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OsManagementHub/getProfileVersion:getProfileVersion", TypeShape.of(GetProfileVersionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Profile Version resource in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Returns information about the version of the specified registration profile.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetProfileVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProfileVersion = OsManagementHubFunctions.getProfileVersion(GetProfileVersionArgs.builder()
+     *             .profileId(testProfile.id())
+     *             .profileVersion(profileVersionProfileVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetProfileVersionResult> getProfileVersion(GetProfileVersionArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:OsManagementHub/getProfileVersion:getProfileVersion", TypeShape.of(GetProfileVersionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Profile Version resource in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Returns information about the version of the specified registration profile.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetProfileVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProfileVersion = OsManagementHubFunctions.getProfileVersion(GetProfileVersionArgs.builder()
+     *             .profileId(testProfile.id())
+     *             .profileVersion(profileVersionProfileVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetProfileVersionResult> getProfileVersionPlain(GetProfileVersionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:OsManagementHub/getProfileVersion:getProfileVersion", TypeShape.of(GetProfileVersionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Profiles in Oracle Cloud Infrastructure Os Management Hub service.
      * 
      * Lists registration profiles that match the specified compartment or profile OCID. Filter the list against a
@@ -8230,9 +8324,12 @@ public final class OsManagementHubFunctions {
      *             .displayNameContains(profileDisplayNameContains)
      *             .isDefaultProfile(profileIsDefaultProfile)
      *             .isServiceProvidedProfile(profileIsServiceProvidedProfile)
+     *             .managementStations(profileManagementStation)
+     *             .managementStationNotEqualTos(profileManagementStationNotEqualTo)
      *             .osFamily(profileOsFamily)
      *             .profileId(testProfile.id())
      *             .profileTypes(profileProfileType)
+     *             .profileVersion(profileProfileVersion)
      *             .registrationTypes(profileRegistrationType)
      *             .state(profileState)
      *             .vendorName(profileVendorName)
@@ -8286,9 +8383,12 @@ public final class OsManagementHubFunctions {
      *             .displayNameContains(profileDisplayNameContains)
      *             .isDefaultProfile(profileIsDefaultProfile)
      *             .isServiceProvidedProfile(profileIsServiceProvidedProfile)
+     *             .managementStations(profileManagementStation)
+     *             .managementStationNotEqualTos(profileManagementStationNotEqualTo)
      *             .osFamily(profileOsFamily)
      *             .profileId(testProfile.id())
      *             .profileTypes(profileProfileType)
+     *             .profileVersion(profileProfileVersion)
      *             .registrationTypes(profileRegistrationType)
      *             .state(profileState)
      *             .vendorName(profileVendorName)
@@ -8342,9 +8442,12 @@ public final class OsManagementHubFunctions {
      *             .displayNameContains(profileDisplayNameContains)
      *             .isDefaultProfile(profileIsDefaultProfile)
      *             .isServiceProvidedProfile(profileIsServiceProvidedProfile)
+     *             .managementStations(profileManagementStation)
+     *             .managementStationNotEqualTos(profileManagementStationNotEqualTo)
      *             .osFamily(profileOsFamily)
      *             .profileId(testProfile.id())
      *             .profileTypes(profileProfileType)
+     *             .profileVersion(profileProfileVersion)
      *             .registrationTypes(profileRegistrationType)
      *             .state(profileState)
      *             .vendorName(profileVendorName)
@@ -8398,9 +8501,12 @@ public final class OsManagementHubFunctions {
      *             .displayNameContains(profileDisplayNameContains)
      *             .isDefaultProfile(profileIsDefaultProfile)
      *             .isServiceProvidedProfile(profileIsServiceProvidedProfile)
+     *             .managementStations(profileManagementStation)
+     *             .managementStationNotEqualTos(profileManagementStationNotEqualTo)
      *             .osFamily(profileOsFamily)
      *             .profileId(testProfile.id())
      *             .profileTypes(profileProfileType)
+     *             .profileVersion(profileProfileVersion)
      *             .registrationTypes(profileRegistrationType)
      *             .state(profileState)
      *             .vendorName(profileVendorName)
@@ -8454,9 +8560,12 @@ public final class OsManagementHubFunctions {
      *             .displayNameContains(profileDisplayNameContains)
      *             .isDefaultProfile(profileIsDefaultProfile)
      *             .isServiceProvidedProfile(profileIsServiceProvidedProfile)
+     *             .managementStations(profileManagementStation)
+     *             .managementStationNotEqualTos(profileManagementStationNotEqualTo)
      *             .osFamily(profileOsFamily)
      *             .profileId(testProfile.id())
      *             .profileTypes(profileProfileType)
+     *             .profileVersion(profileProfileVersion)
      *             .registrationTypes(profileRegistrationType)
      *             .state(profileState)
      *             .vendorName(profileVendorName)
@@ -8510,9 +8619,12 @@ public final class OsManagementHubFunctions {
      *             .displayNameContains(profileDisplayNameContains)
      *             .isDefaultProfile(profileIsDefaultProfile)
      *             .isServiceProvidedProfile(profileIsServiceProvidedProfile)
+     *             .managementStations(profileManagementStation)
+     *             .managementStationNotEqualTos(profileManagementStationNotEqualTo)
      *             .osFamily(profileOsFamily)
      *             .profileId(testProfile.id())
      *             .profileTypes(profileProfileType)
+     *             .profileVersion(profileProfileVersion)
      *             .registrationTypes(profileRegistrationType)
      *             .state(profileState)
      *             .vendorName(profileVendorName)
@@ -8566,9 +8678,12 @@ public final class OsManagementHubFunctions {
      *             .displayNameContains(profileDisplayNameContains)
      *             .isDefaultProfile(profileIsDefaultProfile)
      *             .isServiceProvidedProfile(profileIsServiceProvidedProfile)
+     *             .managementStations(profileManagementStation)
+     *             .managementStationNotEqualTos(profileManagementStationNotEqualTo)
      *             .osFamily(profileOsFamily)
      *             .profileId(testProfile.id())
      *             .profileTypes(profileProfileType)
+     *             .profileVersion(profileProfileVersion)
      *             .registrationTypes(profileRegistrationType)
      *             .state(profileState)
      *             .vendorName(profileVendorName)
@@ -9234,7 +9349,7 @@ public final class OsManagementHubFunctions {
     /**
      * This data source provides details about a specific Software Package resource in Oracle Cloud Infrastructure Os Management Hub service.
      * 
-     * Returns information about the specified software package based on its fully qualified name.
+     * Returns information about the specified software package based on its fully qualified name (NVRA or NEVRA).
      * 
      * ## Example Usage
      * 
@@ -9278,7 +9393,7 @@ public final class OsManagementHubFunctions {
     /**
      * This data source provides details about a specific Software Package resource in Oracle Cloud Infrastructure Os Management Hub service.
      * 
-     * Returns information about the specified software package based on its fully qualified name.
+     * Returns information about the specified software package based on its fully qualified name (NVRA or NEVRA).
      * 
      * ## Example Usage
      * 
@@ -9322,7 +9437,7 @@ public final class OsManagementHubFunctions {
     /**
      * This data source provides details about a specific Software Package resource in Oracle Cloud Infrastructure Os Management Hub service.
      * 
-     * Returns information about the specified software package based on its fully qualified name.
+     * Returns information about the specified software package based on its fully qualified name (NVRA or NEVRA).
      * 
      * ## Example Usage
      * 
@@ -9366,7 +9481,7 @@ public final class OsManagementHubFunctions {
     /**
      * This data source provides details about a specific Software Package resource in Oracle Cloud Infrastructure Os Management Hub service.
      * 
-     * Returns information about the specified software package based on its fully qualified name.
+     * Returns information about the specified software package based on its fully qualified name (NVRA or NEVRA).
      * 
      * ## Example Usage
      * 
@@ -9410,7 +9525,7 @@ public final class OsManagementHubFunctions {
     /**
      * This data source provides details about a specific Software Package resource in Oracle Cloud Infrastructure Os Management Hub service.
      * 
-     * Returns information about the specified software package based on its fully qualified name.
+     * Returns information about the specified software package based on its fully qualified name (NVRA or NEVRA).
      * 
      * ## Example Usage
      * 
@@ -10295,6 +10410,466 @@ public final class OsManagementHubFunctions {
      */
     public static CompletableFuture<GetSoftwareSourceResult> getSoftwareSourcePlain(GetSoftwareSourcePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:OsManagementHub/getSoftwareSource:getSoftwareSource", TypeShape.of(GetSoftwareSourceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Software Source Available Software Packages in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Lists software packages that are available to be added to a custom software source of type MANIFEST.  Filter the list against a variety of criteria
+     * including but not limited to its name.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceAvailableSoftwarePackagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSoftwareSourceAvailableSoftwarePackages = OsManagementHubFunctions.getSoftwareSourceAvailableSoftwarePackages(GetSoftwareSourceAvailableSoftwarePackagesArgs.builder()
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .displayName(softwareSourceAvailableSoftwarePackageDisplayName)
+     *             .displayNameContains(softwareSourceAvailableSoftwarePackageDisplayNameContains)
+     *             .isLatest(softwareSourceAvailableSoftwarePackageIsLatest)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSoftwareSourceAvailableSoftwarePackagesResult> getSoftwareSourceAvailableSoftwarePackages(GetSoftwareSourceAvailableSoftwarePackagesArgs args) {
+        return getSoftwareSourceAvailableSoftwarePackages(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Software Source Available Software Packages in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Lists software packages that are available to be added to a custom software source of type MANIFEST.  Filter the list against a variety of criteria
+     * including but not limited to its name.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceAvailableSoftwarePackagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSoftwareSourceAvailableSoftwarePackages = OsManagementHubFunctions.getSoftwareSourceAvailableSoftwarePackages(GetSoftwareSourceAvailableSoftwarePackagesArgs.builder()
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .displayName(softwareSourceAvailableSoftwarePackageDisplayName)
+     *             .displayNameContains(softwareSourceAvailableSoftwarePackageDisplayNameContains)
+     *             .isLatest(softwareSourceAvailableSoftwarePackageIsLatest)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSoftwareSourceAvailableSoftwarePackagesResult> getSoftwareSourceAvailableSoftwarePackagesPlain(GetSoftwareSourceAvailableSoftwarePackagesPlainArgs args) {
+        return getSoftwareSourceAvailableSoftwarePackagesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Software Source Available Software Packages in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Lists software packages that are available to be added to a custom software source of type MANIFEST.  Filter the list against a variety of criteria
+     * including but not limited to its name.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceAvailableSoftwarePackagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSoftwareSourceAvailableSoftwarePackages = OsManagementHubFunctions.getSoftwareSourceAvailableSoftwarePackages(GetSoftwareSourceAvailableSoftwarePackagesArgs.builder()
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .displayName(softwareSourceAvailableSoftwarePackageDisplayName)
+     *             .displayNameContains(softwareSourceAvailableSoftwarePackageDisplayNameContains)
+     *             .isLatest(softwareSourceAvailableSoftwarePackageIsLatest)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSoftwareSourceAvailableSoftwarePackagesResult> getSoftwareSourceAvailableSoftwarePackages(GetSoftwareSourceAvailableSoftwarePackagesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OsManagementHub/getSoftwareSourceAvailableSoftwarePackages:getSoftwareSourceAvailableSoftwarePackages", TypeShape.of(GetSoftwareSourceAvailableSoftwarePackagesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Software Source Available Software Packages in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Lists software packages that are available to be added to a custom software source of type MANIFEST.  Filter the list against a variety of criteria
+     * including but not limited to its name.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceAvailableSoftwarePackagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSoftwareSourceAvailableSoftwarePackages = OsManagementHubFunctions.getSoftwareSourceAvailableSoftwarePackages(GetSoftwareSourceAvailableSoftwarePackagesArgs.builder()
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .displayName(softwareSourceAvailableSoftwarePackageDisplayName)
+     *             .displayNameContains(softwareSourceAvailableSoftwarePackageDisplayNameContains)
+     *             .isLatest(softwareSourceAvailableSoftwarePackageIsLatest)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSoftwareSourceAvailableSoftwarePackagesResult> getSoftwareSourceAvailableSoftwarePackages(GetSoftwareSourceAvailableSoftwarePackagesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:OsManagementHub/getSoftwareSourceAvailableSoftwarePackages:getSoftwareSourceAvailableSoftwarePackages", TypeShape.of(GetSoftwareSourceAvailableSoftwarePackagesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Software Source Available Software Packages in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Lists software packages that are available to be added to a custom software source of type MANIFEST.  Filter the list against a variety of criteria
+     * including but not limited to its name.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceAvailableSoftwarePackagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSoftwareSourceAvailableSoftwarePackages = OsManagementHubFunctions.getSoftwareSourceAvailableSoftwarePackages(GetSoftwareSourceAvailableSoftwarePackagesArgs.builder()
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .displayName(softwareSourceAvailableSoftwarePackageDisplayName)
+     *             .displayNameContains(softwareSourceAvailableSoftwarePackageDisplayNameContains)
+     *             .isLatest(softwareSourceAvailableSoftwarePackageIsLatest)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSoftwareSourceAvailableSoftwarePackagesResult> getSoftwareSourceAvailableSoftwarePackagesPlain(GetSoftwareSourceAvailableSoftwarePackagesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:OsManagementHub/getSoftwareSourceAvailableSoftwarePackages:getSoftwareSourceAvailableSoftwarePackages", TypeShape.of(GetSoftwareSourceAvailableSoftwarePackagesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Software Source Manifest resource in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Returns an archive containing the list of packages in the software source.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceManifestArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSoftwareSourceManifest = OsManagementHubFunctions.getSoftwareSourceManifest(GetSoftwareSourceManifestArgs.builder()
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSoftwareSourceManifestResult> getSoftwareSourceManifest(GetSoftwareSourceManifestArgs args) {
+        return getSoftwareSourceManifest(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Software Source Manifest resource in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Returns an archive containing the list of packages in the software source.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceManifestArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSoftwareSourceManifest = OsManagementHubFunctions.getSoftwareSourceManifest(GetSoftwareSourceManifestArgs.builder()
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSoftwareSourceManifestResult> getSoftwareSourceManifestPlain(GetSoftwareSourceManifestPlainArgs args) {
+        return getSoftwareSourceManifestPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Software Source Manifest resource in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Returns an archive containing the list of packages in the software source.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceManifestArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSoftwareSourceManifest = OsManagementHubFunctions.getSoftwareSourceManifest(GetSoftwareSourceManifestArgs.builder()
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSoftwareSourceManifestResult> getSoftwareSourceManifest(GetSoftwareSourceManifestArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OsManagementHub/getSoftwareSourceManifest:getSoftwareSourceManifest", TypeShape.of(GetSoftwareSourceManifestResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Software Source Manifest resource in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Returns an archive containing the list of packages in the software source.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceManifestArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSoftwareSourceManifest = OsManagementHubFunctions.getSoftwareSourceManifest(GetSoftwareSourceManifestArgs.builder()
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSoftwareSourceManifestResult> getSoftwareSourceManifest(GetSoftwareSourceManifestArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:OsManagementHub/getSoftwareSourceManifest:getSoftwareSourceManifest", TypeShape.of(GetSoftwareSourceManifestResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Software Source Manifest resource in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Returns an archive containing the list of packages in the software source.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceManifestArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSoftwareSourceManifest = OsManagementHubFunctions.getSoftwareSourceManifest(GetSoftwareSourceManifestArgs.builder()
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSoftwareSourceManifestResult> getSoftwareSourceManifestPlain(GetSoftwareSourceManifestPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:OsManagementHub/getSoftwareSourceManifest:getSoftwareSourceManifest", TypeShape.of(GetSoftwareSourceManifestResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Software Source Module Stream resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -12452,6 +13027,7 @@ public final class OsManagementHubFunctions {
      *             .displayNameContains(softwareSourceDisplayNameContains)
      *             .displayNameNotEqualTos(softwareSourceDisplayNameNotEqualTo)
      *             .isMandatoryForAutonomousLinux(softwareSourceIsMandatoryForAutonomousLinux)
+     *             .isMirrorSyncAllowed(softwareSourceIsMirrorSyncAllowed)
      *             .osFamilies(softwareSourceOsFamily)
      *             .softwareSourceId(testSoftwareSource.id())
      *             .softwareSourceTypes(softwareSourceSoftwareSourceType)
@@ -12510,6 +13086,7 @@ public final class OsManagementHubFunctions {
      *             .displayNameContains(softwareSourceDisplayNameContains)
      *             .displayNameNotEqualTos(softwareSourceDisplayNameNotEqualTo)
      *             .isMandatoryForAutonomousLinux(softwareSourceIsMandatoryForAutonomousLinux)
+     *             .isMirrorSyncAllowed(softwareSourceIsMirrorSyncAllowed)
      *             .osFamilies(softwareSourceOsFamily)
      *             .softwareSourceId(testSoftwareSource.id())
      *             .softwareSourceTypes(softwareSourceSoftwareSourceType)
@@ -12568,6 +13145,7 @@ public final class OsManagementHubFunctions {
      *             .displayNameContains(softwareSourceDisplayNameContains)
      *             .displayNameNotEqualTos(softwareSourceDisplayNameNotEqualTo)
      *             .isMandatoryForAutonomousLinux(softwareSourceIsMandatoryForAutonomousLinux)
+     *             .isMirrorSyncAllowed(softwareSourceIsMirrorSyncAllowed)
      *             .osFamilies(softwareSourceOsFamily)
      *             .softwareSourceId(testSoftwareSource.id())
      *             .softwareSourceTypes(softwareSourceSoftwareSourceType)
@@ -12626,6 +13204,7 @@ public final class OsManagementHubFunctions {
      *             .displayNameContains(softwareSourceDisplayNameContains)
      *             .displayNameNotEqualTos(softwareSourceDisplayNameNotEqualTo)
      *             .isMandatoryForAutonomousLinux(softwareSourceIsMandatoryForAutonomousLinux)
+     *             .isMirrorSyncAllowed(softwareSourceIsMirrorSyncAllowed)
      *             .osFamilies(softwareSourceOsFamily)
      *             .softwareSourceId(testSoftwareSource.id())
      *             .softwareSourceTypes(softwareSourceSoftwareSourceType)
@@ -12684,6 +13263,7 @@ public final class OsManagementHubFunctions {
      *             .displayNameContains(softwareSourceDisplayNameContains)
      *             .displayNameNotEqualTos(softwareSourceDisplayNameNotEqualTo)
      *             .isMandatoryForAutonomousLinux(softwareSourceIsMandatoryForAutonomousLinux)
+     *             .isMirrorSyncAllowed(softwareSourceIsMirrorSyncAllowed)
      *             .osFamilies(softwareSourceOsFamily)
      *             .softwareSourceId(testSoftwareSource.id())
      *             .softwareSourceTypes(softwareSourceSoftwareSourceType)
@@ -12742,6 +13322,7 @@ public final class OsManagementHubFunctions {
      *             .displayNameContains(softwareSourceDisplayNameContains)
      *             .displayNameNotEqualTos(softwareSourceDisplayNameNotEqualTo)
      *             .isMandatoryForAutonomousLinux(softwareSourceIsMandatoryForAutonomousLinux)
+     *             .isMirrorSyncAllowed(softwareSourceIsMirrorSyncAllowed)
      *             .osFamilies(softwareSourceOsFamily)
      *             .softwareSourceId(testSoftwareSource.id())
      *             .softwareSourceTypes(softwareSourceSoftwareSourceType)
@@ -12800,6 +13381,7 @@ public final class OsManagementHubFunctions {
      *             .displayNameContains(softwareSourceDisplayNameContains)
      *             .displayNameNotEqualTos(softwareSourceDisplayNameNotEqualTo)
      *             .isMandatoryForAutonomousLinux(softwareSourceIsMandatoryForAutonomousLinux)
+     *             .isMirrorSyncAllowed(softwareSourceIsMirrorSyncAllowed)
      *             .osFamilies(softwareSourceOsFamily)
      *             .softwareSourceId(testSoftwareSource.id())
      *             .softwareSourceTypes(softwareSourceSoftwareSourceType)

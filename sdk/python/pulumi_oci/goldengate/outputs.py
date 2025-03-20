@@ -21,6 +21,7 @@ __all__ = [
     'ConnectionIngressIp',
     'ConnectionLock',
     'DeploymentBackupLock',
+    'DeploymentBackupSchedule',
     'DeploymentDeploymentDiagnosticData',
     'DeploymentIngressIp',
     'DeploymentLock',
@@ -53,6 +54,7 @@ __all__ = [
     'GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult',
     'GetDatabaseRegistrationsFilterResult',
     'GetDeploymentBackupLockResult',
+    'GetDeploymentBackupScheduleResult',
     'GetDeploymentBackupsDeploymentBackupCollectionResult',
     'GetDeploymentBackupsDeploymentBackupCollectionItemResult',
     'GetDeploymentBackupsDeploymentBackupCollectionItemLockResult',
@@ -82,6 +84,7 @@ __all__ = [
     'GetDeploymentVersionsFilterResult',
     'GetDeploymentsDeploymentCollectionResult',
     'GetDeploymentsDeploymentCollectionItemResult',
+    'GetDeploymentsDeploymentCollectionItemBackupScheduleResult',
     'GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataResult',
     'GetDeploymentsDeploymentCollectionItemIngressIpResult',
     'GetDeploymentsDeploymentCollectionItemLockResult',
@@ -408,6 +411,102 @@ class DeploymentBackupLock(dict):
         The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class DeploymentBackupSchedule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compartmentId":
+            suggest = "compartment_id"
+        elif key == "frequencyBackupScheduled":
+            suggest = "frequency_backup_scheduled"
+        elif key == "isMetadataOnly":
+            suggest = "is_metadata_only"
+        elif key == "timeBackupScheduled":
+            suggest = "time_backup_scheduled"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DeploymentBackupSchedule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DeploymentBackupSchedule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DeploymentBackupSchedule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 bucket: str,
+                 compartment_id: str,
+                 frequency_backup_scheduled: str,
+                 is_metadata_only: bool,
+                 namespace: str,
+                 time_backup_scheduled: str):
+        """
+        :param str bucket: (Updatable) Name of the bucket where the object is to be uploaded in the object storage
+        :param str compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+        :param str frequency_backup_scheduled: (Updatable) The frequency of the deployment backup schedule. Frequency can be DAILY, WEEKLY or MONTHLY.
+        :param bool is_metadata_only: (Updatable) Parameter to allow users to create backup without trails
+        :param str namespace: (Updatable) Name of namespace that serves as a container for all of your buckets
+        :param str time_backup_scheduled: (Updatable) The start timestamp for the deployment backup schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "frequency_backup_scheduled", frequency_backup_scheduled)
+        pulumi.set(__self__, "is_metadata_only", is_metadata_only)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "time_backup_scheduled", time_backup_scheduled)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        """
+        (Updatable) Name of the bucket where the object is to be uploaded in the object storage
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="frequencyBackupScheduled")
+    def frequency_backup_scheduled(self) -> str:
+        """
+        (Updatable) The frequency of the deployment backup schedule. Frequency can be DAILY, WEEKLY or MONTHLY.
+        """
+        return pulumi.get(self, "frequency_backup_scheduled")
+
+    @property
+    @pulumi.getter(name="isMetadataOnly")
+    def is_metadata_only(self) -> bool:
+        """
+        (Updatable) Parameter to allow users to create backup without trails
+        """
+        return pulumi.get(self, "is_metadata_only")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        (Updatable) Name of namespace that serves as a container for all of your buckets
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter(name="timeBackupScheduled")
+    def time_backup_scheduled(self) -> str:
+        """
+        (Updatable) The start timestamp for the deployment backup schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+        """
+        return pulumi.get(self, "time_backup_scheduled")
 
 
 @pulumi.output_type
@@ -3347,6 +3446,79 @@ class GetDeploymentBackupLockResult(dict):
 
 
 @pulumi.output_type
+class GetDeploymentBackupScheduleResult(dict):
+    def __init__(__self__, *,
+                 bucket: str,
+                 compartment_id: str,
+                 frequency_backup_scheduled: str,
+                 is_metadata_only: bool,
+                 namespace: str,
+                 time_backup_scheduled: str):
+        """
+        :param str bucket: Name of the bucket where the object is to be uploaded in the object storage
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+        :param str frequency_backup_scheduled: The frequency of the deployment backup schedule. Frequency can be DAILY, WEEKLY or MONTHLY.
+        :param bool is_metadata_only: Parameter to allow users to create backup without trails
+        :param str namespace: Name of namespace that serves as a container for all of your buckets
+        :param str time_backup_scheduled: The start timestamp for the deployment backup schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "frequency_backup_scheduled", frequency_backup_scheduled)
+        pulumi.set(__self__, "is_metadata_only", is_metadata_only)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "time_backup_scheduled", time_backup_scheduled)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        """
+        Name of the bucket where the object is to be uploaded in the object storage
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="frequencyBackupScheduled")
+    def frequency_backup_scheduled(self) -> str:
+        """
+        The frequency of the deployment backup schedule. Frequency can be DAILY, WEEKLY or MONTHLY.
+        """
+        return pulumi.get(self, "frequency_backup_scheduled")
+
+    @property
+    @pulumi.getter(name="isMetadataOnly")
+    def is_metadata_only(self) -> bool:
+        """
+        Parameter to allow users to create backup without trails
+        """
+        return pulumi.get(self, "is_metadata_only")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        Name of namespace that serves as a container for all of your buckets
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter(name="timeBackupScheduled")
+    def time_backup_scheduled(self) -> str:
+        """
+        The start timestamp for the deployment backup schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+        """
+        return pulumi.get(self, "time_backup_scheduled")
+
+
+@pulumi.output_type
 class GetDeploymentBackupsDeploymentBackupCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDeploymentBackupsDeploymentBackupCollectionItemResult']):
@@ -3361,6 +3533,7 @@ class GetDeploymentBackupsDeploymentBackupCollectionResult(dict):
 @pulumi.output_type
 class GetDeploymentBackupsDeploymentBackupCollectionItemResult(dict):
     def __init__(__self__, *,
+                 backup_source_type: str,
                  backup_type: str,
                  bucket: str,
                  compartment_id: str,
@@ -3386,6 +3559,7 @@ class GetDeploymentBackupsDeploymentBackupCollectionItemResult(dict):
                  time_of_backup: str,
                  time_updated: str):
         """
+        :param str backup_source_type: Possible deployment backup source types.
         :param str backup_type: Possible Deployment backup types.
         :param str bucket: Name of the bucket where the object is to be uploaded in the object storage
         :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
@@ -3410,6 +3584,7 @@ class GetDeploymentBackupsDeploymentBackupCollectionItemResult(dict):
         :param str time_of_backup: The time of the resource backup. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
+        pulumi.set(__self__, "backup_source_type", backup_source_type)
         pulumi.set(__self__, "backup_type", backup_type)
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -3434,6 +3609,14 @@ class GetDeploymentBackupsDeploymentBackupCollectionItemResult(dict):
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_of_backup", time_of_backup)
         pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="backupSourceType")
+    def backup_source_type(self) -> str:
+        """
+        Possible deployment backup source types.
+        """
+        return pulumi.get(self, "backup_source_type")
 
     @property
     @pulumi.getter(name="backupType")
@@ -5257,6 +5440,7 @@ class GetDeploymentsDeploymentCollectionResult(dict):
 @pulumi.output_type
 class GetDeploymentsDeploymentCollectionItemResult(dict):
     def __init__(__self__, *,
+                 backup_schedules: Sequence['outputs.GetDeploymentsDeploymentCollectionItemBackupScheduleResult'],
                  category: str,
                  compartment_id: str,
                  cpu_core_count: int,
@@ -5297,11 +5481,14 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
                  subnet_id: str,
                  system_tags: Mapping[str, str],
                  time_created: str,
+                 time_last_backup_scheduled: str,
+                 time_next_backup_scheduled: str,
                  time_of_next_maintenance: str,
                  time_ogg_version_supported_until: str,
                  time_updated: str,
                  time_upgrade_required: str):
         """
+        :param Sequence['GetDeploymentsDeploymentCollectionItemBackupScheduleArgs'] backup_schedules: Defines the schedule of the deployment backup.
         :param str category: The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
         :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
         :param int cpu_core_count: The Minimum number of OCPUs to be made available for this Deployment.
@@ -5341,11 +5528,14 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
         :param Mapping[str, str] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param str time_last_backup_scheduled: The timestamp of last deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+        :param str time_next_backup_scheduled: The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
         :param str time_of_next_maintenance: The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_ogg_version_supported_until: The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_upgrade_required: Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
+        pulumi.set(__self__, "backup_schedules", backup_schedules)
         pulumi.set(__self__, "category", category)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
@@ -5386,10 +5576,20 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_last_backup_scheduled", time_last_backup_scheduled)
+        pulumi.set(__self__, "time_next_backup_scheduled", time_next_backup_scheduled)
         pulumi.set(__self__, "time_of_next_maintenance", time_of_next_maintenance)
         pulumi.set(__self__, "time_ogg_version_supported_until", time_ogg_version_supported_until)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "time_upgrade_required", time_upgrade_required)
+
+    @property
+    @pulumi.getter(name="backupSchedules")
+    def backup_schedules(self) -> Sequence['outputs.GetDeploymentsDeploymentCollectionItemBackupScheduleResult']:
+        """
+        Defines the schedule of the deployment backup.
+        """
+        return pulumi.get(self, "backup_schedules")
 
     @property
     @pulumi.getter
@@ -5709,6 +5909,22 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         return pulumi.get(self, "time_created")
 
     @property
+    @pulumi.getter(name="timeLastBackupScheduled")
+    def time_last_backup_scheduled(self) -> str:
+        """
+        The timestamp of last deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+        """
+        return pulumi.get(self, "time_last_backup_scheduled")
+
+    @property
+    @pulumi.getter(name="timeNextBackupScheduled")
+    def time_next_backup_scheduled(self) -> str:
+        """
+        The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
+        """
+        return pulumi.get(self, "time_next_backup_scheduled")
+
+    @property
     @pulumi.getter(name="timeOfNextMaintenance")
     def time_of_next_maintenance(self) -> str:
         """
@@ -5739,6 +5955,79 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_upgrade_required")
+
+
+@pulumi.output_type
+class GetDeploymentsDeploymentCollectionItemBackupScheduleResult(dict):
+    def __init__(__self__, *,
+                 bucket: str,
+                 compartment_id: str,
+                 frequency_backup_scheduled: str,
+                 is_metadata_only: bool,
+                 namespace: str,
+                 time_backup_scheduled: str):
+        """
+        :param str bucket: Name of the bucket where the object is to be uploaded in the object storage
+        :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
+        :param str frequency_backup_scheduled: The frequency of the deployment backup schedule. Frequency can be DAILY, WEEKLY or MONTHLY.
+        :param bool is_metadata_only: Parameter to allow users to create backup without trails
+        :param str namespace: Name of namespace that serves as a container for all of your buckets
+        :param str time_backup_scheduled: The start timestamp for the deployment backup schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "frequency_backup_scheduled", frequency_backup_scheduled)
+        pulumi.set(__self__, "is_metadata_only", is_metadata_only)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "time_backup_scheduled", time_backup_scheduled)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        """
+        Name of the bucket where the object is to be uploaded in the object storage
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="frequencyBackupScheduled")
+    def frequency_backup_scheduled(self) -> str:
+        """
+        The frequency of the deployment backup schedule. Frequency can be DAILY, WEEKLY or MONTHLY.
+        """
+        return pulumi.get(self, "frequency_backup_scheduled")
+
+    @property
+    @pulumi.getter(name="isMetadataOnly")
+    def is_metadata_only(self) -> bool:
+        """
+        Parameter to allow users to create backup without trails
+        """
+        return pulumi.get(self, "is_metadata_only")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        Name of namespace that serves as a container for all of your buckets
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter(name="timeBackupScheduled")
+    def time_backup_scheduled(self) -> str:
+        """
+        The start timestamp for the deployment backup schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+        """
+        return pulumi.get(self, "time_backup_scheduled")
 
 
 @pulumi.output_type

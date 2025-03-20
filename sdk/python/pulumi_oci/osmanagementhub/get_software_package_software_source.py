@@ -139,7 +139,7 @@ class GetSoftwarePackageSoftwareSourceResult:
     @pulumi.getter(name="osFamilies")
     def os_families(self) -> Optional[Sequence[str]]:
         """
-        The OS family the software source belongs to.
+        The OS family of the software source.
         """
         return pulumi.get(self, "os_families")
 
@@ -235,9 +235,9 @@ def get_software_package_software_source(arch_types: Optional[Sequence[str]] = N
 
 
     :param Sequence[str] arch_types: A filter to return only instances whose architecture type matches the given architecture.
-    :param Sequence[str] availabilities: The availabilities of the software source in a non-OCI environment for a tenancy.
-    :param Sequence[str] availability_anywheres: The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
-    :param Sequence[str] availability_at_ocis: The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+    :param Sequence[str] availabilities: The availability of the software source in a non-OCI environment for a tenancy.
+    :param Sequence[str] availability_anywheres: The availability of the software source. Use this query parameter to filter across availabilities in different environments.
+    :param Sequence[str] availability_at_ocis: The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
     :param str display_name: A filter to return resources that match the given user-friendly name.
     :param str display_name_contains: A filter to return resources that may partially match the given display name.
@@ -317,9 +317,9 @@ def get_software_package_software_source_output(arch_types: Optional[pulumi.Inpu
 
 
     :param Sequence[str] arch_types: A filter to return only instances whose architecture type matches the given architecture.
-    :param Sequence[str] availabilities: The availabilities of the software source in a non-OCI environment for a tenancy.
-    :param Sequence[str] availability_anywheres: The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
-    :param Sequence[str] availability_at_ocis: The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+    :param Sequence[str] availabilities: The availability of the software source in a non-OCI environment for a tenancy.
+    :param Sequence[str] availability_anywheres: The availability of the software source. Use this query parameter to filter across availabilities in different environments.
+    :param Sequence[str] availability_at_ocis: The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
     :param str display_name: A filter to return resources that match the given user-friendly name.
     :param str display_name_contains: A filter to return resources that may partially match the given display name.

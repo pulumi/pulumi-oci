@@ -27,7 +27,7 @@ class GetAutonomousContainerDatabaseDataguardAssociationResult:
     """
     A collection of values returned by getAutonomousContainerDatabaseDataguardAssociation.
     """
-    def __init__(__self__, apply_lag=None, apply_rate=None, autonomous_container_database_dataguard_association_id=None, autonomous_container_database_id=None, fast_start_fail_over_lag_limit_in_seconds=None, id=None, is_automatic_failover_enabled=None, lifecycle_details=None, peer_autonomous_container_database_backup_configs=None, peer_autonomous_container_database_compartment_id=None, peer_autonomous_container_database_dataguard_association_id=None, peer_autonomous_container_database_display_name=None, peer_autonomous_container_database_id=None, peer_autonomous_vm_cluster_id=None, peer_cloud_autonomous_vm_cluster_id=None, peer_db_unique_name=None, peer_lifecycle_state=None, peer_role=None, protection_mode=None, role=None, standby_maintenance_buffer_in_days=None, state=None, time_created=None, time_last_role_changed=None, time_last_synced=None, transport_lag=None):
+    def __init__(__self__, apply_lag=None, apply_rate=None, autonomous_container_database_dataguard_association_id=None, autonomous_container_database_id=None, fast_start_fail_over_lag_limit_in_seconds=None, id=None, is_automatic_failover_enabled=None, lifecycle_details=None, migrate_trigger=None, peer_autonomous_container_database_backup_configs=None, peer_autonomous_container_database_compartment_id=None, peer_autonomous_container_database_dataguard_association_id=None, peer_autonomous_container_database_display_name=None, peer_autonomous_container_database_id=None, peer_autonomous_vm_cluster_id=None, peer_cloud_autonomous_vm_cluster_id=None, peer_db_unique_name=None, peer_lifecycle_state=None, peer_role=None, protection_mode=None, role=None, standby_maintenance_buffer_in_days=None, state=None, time_created=None, time_last_role_changed=None, time_last_synced=None, transport_lag=None):
         if apply_lag and not isinstance(apply_lag, str):
             raise TypeError("Expected argument 'apply_lag' to be a str")
         pulumi.set(__self__, "apply_lag", apply_lag)
@@ -52,6 +52,9 @@ class GetAutonomousContainerDatabaseDataguardAssociationResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if migrate_trigger and not isinstance(migrate_trigger, int):
+            raise TypeError("Expected argument 'migrate_trigger' to be a int")
+        pulumi.set(__self__, "migrate_trigger", migrate_trigger)
         if peer_autonomous_container_database_backup_configs and not isinstance(peer_autonomous_container_database_backup_configs, list):
             raise TypeError("Expected argument 'peer_autonomous_container_database_backup_configs' to be a list")
         pulumi.set(__self__, "peer_autonomous_container_database_backup_configs", peer_autonomous_container_database_backup_configs)
@@ -167,6 +170,11 @@ class GetAutonomousContainerDatabaseDataguardAssociationResult:
         Additional information about the current lifecycleState, if available.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="migrateTrigger")
+    def migrate_trigger(self) -> int:
+        return pulumi.get(self, "migrate_trigger")
 
     @property
     @pulumi.getter(name="peerAutonomousContainerDatabaseBackupConfigs")
@@ -306,6 +314,7 @@ class AwaitableGetAutonomousContainerDatabaseDataguardAssociationResult(GetAuton
             id=self.id,
             is_automatic_failover_enabled=self.is_automatic_failover_enabled,
             lifecycle_details=self.lifecycle_details,
+            migrate_trigger=self.migrate_trigger,
             peer_autonomous_container_database_backup_configs=self.peer_autonomous_container_database_backup_configs,
             peer_autonomous_container_database_compartment_id=self.peer_autonomous_container_database_compartment_id,
             peer_autonomous_container_database_dataguard_association_id=self.peer_autonomous_container_database_dataguard_association_id,
@@ -363,6 +372,7 @@ def get_autonomous_container_database_dataguard_association(autonomous_container
         id=pulumi.get(__ret__, 'id'),
         is_automatic_failover_enabled=pulumi.get(__ret__, 'is_automatic_failover_enabled'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        migrate_trigger=pulumi.get(__ret__, 'migrate_trigger'),
         peer_autonomous_container_database_backup_configs=pulumi.get(__ret__, 'peer_autonomous_container_database_backup_configs'),
         peer_autonomous_container_database_compartment_id=pulumi.get(__ret__, 'peer_autonomous_container_database_compartment_id'),
         peer_autonomous_container_database_dataguard_association_id=pulumi.get(__ret__, 'peer_autonomous_container_database_dataguard_association_id'),
@@ -417,6 +427,7 @@ def get_autonomous_container_database_dataguard_association_output(autonomous_co
         id=pulumi.get(__response__, 'id'),
         is_automatic_failover_enabled=pulumi.get(__response__, 'is_automatic_failover_enabled'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        migrate_trigger=pulumi.get(__response__, 'migrate_trigger'),
         peer_autonomous_container_database_backup_configs=pulumi.get(__response__, 'peer_autonomous_container_database_backup_configs'),
         peer_autonomous_container_database_compartment_id=pulumi.get(__response__, 'peer_autonomous_container_database_compartment_id'),
         peer_autonomous_container_database_dataguard_association_id=pulumi.get(__response__, 'peer_autonomous_container_database_dataguard_association_id'),

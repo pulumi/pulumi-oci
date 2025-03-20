@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ProfileManagedInstanceGroup {
     /**
-     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * @return (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
      * 
      */
     private @Nullable String displayName;
@@ -24,7 +24,7 @@ public final class ProfileManagedInstanceGroup {
 
     private ProfileManagedInstanceGroup() {}
     /**
-     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * @return (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
      * 
      */
     public Optional<String> displayName() {

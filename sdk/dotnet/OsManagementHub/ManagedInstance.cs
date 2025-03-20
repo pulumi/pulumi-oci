@@ -26,6 +26,12 @@ namespace Pulumi.Oci.OsManagementHub
     public partial class ManagedInstance : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// The version of osmh-agent running on the managed instance
+        /// </summary>
+        [Output("agentVersion")]
+        public Output<string> AgentVersion { get; private set; } = null!;
+
+        /// <summary>
         /// The CPU architecture type of the managed instance.
         /// </summary>
         [Output("architecture")]
@@ -180,6 +186,12 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         [Output("profile")]
         public Output<string> Profile { get; private set; } = null!;
+
+        /// <summary>
+        /// The version of the profile that was used to register this instance with the service.
+        /// </summary>
+        [Output("profileVersion")]
+        public Output<string> ProfileVersion { get; private set; } = null!;
 
         /// <summary>
         /// Number of scheduled jobs associated with this instance.
@@ -351,6 +363,12 @@ namespace Pulumi.Oci.OsManagementHub
 
     public sealed class ManagedInstanceState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The version of osmh-agent running on the managed instance
+        /// </summary>
+        [Input("agentVersion")]
+        public Input<string>? AgentVersion { get; set; }
+
         /// <summary>
         /// The CPU architecture type of the managed instance.
         /// </summary>
@@ -524,6 +542,12 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         [Input("profile")]
         public Input<string>? Profile { get; set; }
+
+        /// <summary>
+        /// The version of the profile that was used to register this instance with the service.
+        /// </summary>
+        [Input("profileVersion")]
+        public Input<string>? ProfileVersion { get; set; }
 
         /// <summary>
         /// Number of scheduled jobs associated with this instance.

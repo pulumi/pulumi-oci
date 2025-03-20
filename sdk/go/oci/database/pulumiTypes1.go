@@ -13,6 +13,2645 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetDbHomesDbHome struct {
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	DatabaseSoftwareImageId string                     `pulumi:"databaseSoftwareImageId"`
+	Databases               []GetDbHomesDbHomeDatabase `pulumi:"databases"`
+	DbHomeId                string                     `pulumi:"dbHomeId"`
+	// The location of the Oracle Database Home.
+	DbHomeLocation string `pulumi:"dbHomeLocation"`
+	// The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
+	DbSystemId string `pulumi:"dbSystemId"`
+	// A filter to return only DB Homes that match the specified dbVersion.
+	DbVersion string `pulumi:"dbVersion"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName          string `pulumi:"displayName"`
+	EnableDatabaseDelete bool   `pulumi:"enableDatabaseDelete"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+	Id                   string `pulumi:"id"`
+	IsDesupportedVersion bool   `pulumi:"isDesupportedVersion"`
+	// Indicates whether unified autiding is enabled or not.
+	IsUnifiedAuditingEnabled bool `pulumi:"isUnifiedAuditingEnabled"`
+	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+	KmsKeyId        string `pulumi:"kmsKeyId"`
+	KmsKeyVersionId string `pulumi:"kmsKeyVersionId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation is started.
+	LastPatchHistoryEntryId string `pulumi:"lastPatchHistoryEntryId"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	Source           string `pulumi:"source"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State string `pulumi:"state"`
+	// The date and time the Database Home was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+	VmClusterId string `pulumi:"vmClusterId"`
+}
+
+// GetDbHomesDbHomeInput is an input type that accepts GetDbHomesDbHomeArgs and GetDbHomesDbHomeOutput values.
+// You can construct a concrete instance of `GetDbHomesDbHomeInput` via:
+//
+//	GetDbHomesDbHomeArgs{...}
+type GetDbHomesDbHomeInput interface {
+	pulumi.Input
+
+	ToGetDbHomesDbHomeOutput() GetDbHomesDbHomeOutput
+	ToGetDbHomesDbHomeOutputWithContext(context.Context) GetDbHomesDbHomeOutput
+}
+
+type GetDbHomesDbHomeArgs struct {
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	DatabaseSoftwareImageId pulumi.StringInput                 `pulumi:"databaseSoftwareImageId"`
+	Databases               GetDbHomesDbHomeDatabaseArrayInput `pulumi:"databases"`
+	DbHomeId                pulumi.StringInput                 `pulumi:"dbHomeId"`
+	// The location of the Oracle Database Home.
+	DbHomeLocation pulumi.StringInput `pulumi:"dbHomeLocation"`
+	// The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
+	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	// A filter to return only DB Homes that match the specified dbVersion.
+	DbVersion pulumi.StringInput `pulumi:"dbVersion"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName          pulumi.StringInput `pulumi:"displayName"`
+	EnableDatabaseDelete pulumi.BoolInput   `pulumi:"enableDatabaseDelete"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+	Id                   pulumi.StringInput `pulumi:"id"`
+	IsDesupportedVersion pulumi.BoolInput   `pulumi:"isDesupportedVersion"`
+	// Indicates whether unified autiding is enabled or not.
+	IsUnifiedAuditingEnabled pulumi.BoolInput `pulumi:"isUnifiedAuditingEnabled"`
+	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+	KmsKeyId        pulumi.StringInput `pulumi:"kmsKeyId"`
+	KmsKeyVersionId pulumi.StringInput `pulumi:"kmsKeyVersionId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation is started.
+	LastPatchHistoryEntryId pulumi.StringInput `pulumi:"lastPatchHistoryEntryId"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	Source           pulumi.StringInput `pulumi:"source"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the Database Home was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+	VmClusterId pulumi.StringInput `pulumi:"vmClusterId"`
+}
+
+func (GetDbHomesDbHomeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbHomesDbHome)(nil)).Elem()
+}
+
+func (i GetDbHomesDbHomeArgs) ToGetDbHomesDbHomeOutput() GetDbHomesDbHomeOutput {
+	return i.ToGetDbHomesDbHomeOutputWithContext(context.Background())
+}
+
+func (i GetDbHomesDbHomeArgs) ToGetDbHomesDbHomeOutputWithContext(ctx context.Context) GetDbHomesDbHomeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbHomesDbHomeOutput)
+}
+
+// GetDbHomesDbHomeArrayInput is an input type that accepts GetDbHomesDbHomeArray and GetDbHomesDbHomeArrayOutput values.
+// You can construct a concrete instance of `GetDbHomesDbHomeArrayInput` via:
+//
+//	GetDbHomesDbHomeArray{ GetDbHomesDbHomeArgs{...} }
+type GetDbHomesDbHomeArrayInput interface {
+	pulumi.Input
+
+	ToGetDbHomesDbHomeArrayOutput() GetDbHomesDbHomeArrayOutput
+	ToGetDbHomesDbHomeArrayOutputWithContext(context.Context) GetDbHomesDbHomeArrayOutput
+}
+
+type GetDbHomesDbHomeArray []GetDbHomesDbHomeInput
+
+func (GetDbHomesDbHomeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbHomesDbHome)(nil)).Elem()
+}
+
+func (i GetDbHomesDbHomeArray) ToGetDbHomesDbHomeArrayOutput() GetDbHomesDbHomeArrayOutput {
+	return i.ToGetDbHomesDbHomeArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbHomesDbHomeArray) ToGetDbHomesDbHomeArrayOutputWithContext(ctx context.Context) GetDbHomesDbHomeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbHomesDbHomeArrayOutput)
+}
+
+type GetDbHomesDbHomeOutput struct{ *pulumi.OutputState }
+
+func (GetDbHomesDbHomeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbHomesDbHome)(nil)).Elem()
+}
+
+func (o GetDbHomesDbHomeOutput) ToGetDbHomesDbHomeOutput() GetDbHomesDbHomeOutput {
+	return o
+}
+
+func (o GetDbHomesDbHomeOutput) ToGetDbHomesDbHomeOutputWithContext(ctx context.Context) GetDbHomesDbHomeOutput {
+	return o
+}
+
+// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetDbHomesDbHomeOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHome) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+func (o GetDbHomesDbHomeOutput) DatabaseSoftwareImageId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHome) string { return v.DatabaseSoftwareImageId }).(pulumi.StringOutput)
+}
+
+func (o GetDbHomesDbHomeOutput) Databases() GetDbHomesDbHomeDatabaseArrayOutput {
+	return o.ApplyT(func(v GetDbHomesDbHome) []GetDbHomesDbHomeDatabase { return v.Databases }).(GetDbHomesDbHomeDatabaseArrayOutput)
+}
+
+func (o GetDbHomesDbHomeOutput) DbHomeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHome) string { return v.DbHomeId }).(pulumi.StringOutput)
+}
+
+// The location of the Oracle Database Home.
+func (o GetDbHomesDbHomeOutput) DbHomeLocation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHome) string { return v.DbHomeLocation }).(pulumi.StringOutput)
+}
+
+// The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
+func (o GetDbHomesDbHomeOutput) DbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHome) string { return v.DbSystemId }).(pulumi.StringOutput)
+}
+
+// A filter to return only DB Homes that match the specified dbVersion.
+func (o GetDbHomesDbHomeOutput) DbVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHome) string { return v.DbVersion }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetDbHomesDbHomeOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbHomesDbHome) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+func (o GetDbHomesDbHomeOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHome) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+func (o GetDbHomesDbHomeOutput) EnableDatabaseDelete() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbHomesDbHome) bool { return v.EnableDatabaseDelete }).(pulumi.BoolOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetDbHomesDbHomeOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbHomesDbHome) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+func (o GetDbHomesDbHomeOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHome) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetDbHomesDbHomeOutput) IsDesupportedVersion() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbHomesDbHome) bool { return v.IsDesupportedVersion }).(pulumi.BoolOutput)
+}
+
+// Indicates whether unified autiding is enabled or not.
+func (o GetDbHomesDbHomeOutput) IsUnifiedAuditingEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbHomesDbHome) bool { return v.IsUnifiedAuditingEnabled }).(pulumi.BoolOutput)
+}
+
+// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+func (o GetDbHomesDbHomeOutput) KmsKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHome) string { return v.KmsKeyId }).(pulumi.StringOutput)
+}
+
+func (o GetDbHomesDbHomeOutput) KmsKeyVersionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHome) string { return v.KmsKeyVersionId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation is started.
+func (o GetDbHomesDbHomeOutput) LastPatchHistoryEntryId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHome) string { return v.LastPatchHistoryEntryId }).(pulumi.StringOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetDbHomesDbHomeOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHome) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+func (o GetDbHomesDbHomeOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHome) string { return v.Source }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state exactly.
+func (o GetDbHomesDbHomeOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHome) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the Database Home was created.
+func (o GetDbHomesDbHomeOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHome) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+func (o GetDbHomesDbHomeOutput) VmClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHome) string { return v.VmClusterId }).(pulumi.StringOutput)
+}
+
+type GetDbHomesDbHomeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbHomesDbHomeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbHomesDbHome)(nil)).Elem()
+}
+
+func (o GetDbHomesDbHomeArrayOutput) ToGetDbHomesDbHomeArrayOutput() GetDbHomesDbHomeArrayOutput {
+	return o
+}
+
+func (o GetDbHomesDbHomeArrayOutput) ToGetDbHomesDbHomeArrayOutputWithContext(ctx context.Context) GetDbHomesDbHomeArrayOutput {
+	return o
+}
+
+func (o GetDbHomesDbHomeArrayOutput) Index(i pulumi.IntInput) GetDbHomesDbHomeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbHomesDbHome {
+		return vs[0].([]GetDbHomesDbHome)[vs[1].(int)]
+	}).(GetDbHomesDbHomeOutput)
+}
+
+type GetDbHomesDbHomeDatabase struct {
+	AdminPassword string `pulumi:"adminPassword"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup. Specify a backupId to list only the DB systems or DB homes that support creating a database using this backup in this compartment.
+	BackupId          string                                     `pulumi:"backupId"`
+	BackupTdePassword string                                     `pulumi:"backupTdePassword"`
+	CharacterSet      string                                     `pulumi:"characterSet"`
+	ConnectionStrings []GetDbHomesDbHomeDatabaseConnectionString `pulumi:"connectionStrings"`
+	DatabaseId        string                                     `pulumi:"databaseId"`
+	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	DatabaseSoftwareImageId string                                   `pulumi:"databaseSoftwareImageId"`
+	DbBackupConfigs         []GetDbHomesDbHomeDatabaseDbBackupConfig `pulumi:"dbBackupConfigs"`
+	DbName                  string                                   `pulumi:"dbName"`
+	DbUniqueName            string                                   `pulumi:"dbUniqueName"`
+	DbWorkload              string                                   `pulumi:"dbWorkload"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags                  map[string]string                                     `pulumi:"definedTags"`
+	EncryptionKeyLocationDetails []GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail `pulumi:"encryptionKeyLocationDetails"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+	Id         string `pulumi:"id"`
+	KeyStoreId string `pulumi:"keyStoreId"`
+	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+	KmsKeyId        string `pulumi:"kmsKeyId"`
+	KmsKeyVersionId string `pulumi:"kmsKeyVersionId"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	NcharacterSet    string `pulumi:"ncharacterSet"`
+	// List of one-off patches for Database Homes.
+	OneOffPatches      []string `pulumi:"oneOffPatches"`
+	PdbName            string   `pulumi:"pdbName"`
+	PluggableDatabases []string `pulumi:"pluggableDatabases"`
+	SidPrefix          string   `pulumi:"sidPrefix"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State             string `pulumi:"state"`
+	TdeWalletPassword string `pulumi:"tdeWalletPassword"`
+	// The date and time the Database Home was created.
+	TimeCreated                     string `pulumi:"timeCreated"`
+	TimeStampForPointInTimeRecovery string `pulumi:"timeStampForPointInTimeRecovery"`
+	VaultId                         string `pulumi:"vaultId"`
+}
+
+// GetDbHomesDbHomeDatabaseInput is an input type that accepts GetDbHomesDbHomeDatabaseArgs and GetDbHomesDbHomeDatabaseOutput values.
+// You can construct a concrete instance of `GetDbHomesDbHomeDatabaseInput` via:
+//
+//	GetDbHomesDbHomeDatabaseArgs{...}
+type GetDbHomesDbHomeDatabaseInput interface {
+	pulumi.Input
+
+	ToGetDbHomesDbHomeDatabaseOutput() GetDbHomesDbHomeDatabaseOutput
+	ToGetDbHomesDbHomeDatabaseOutputWithContext(context.Context) GetDbHomesDbHomeDatabaseOutput
+}
+
+type GetDbHomesDbHomeDatabaseArgs struct {
+	AdminPassword pulumi.StringInput `pulumi:"adminPassword"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup. Specify a backupId to list only the DB systems or DB homes that support creating a database using this backup in this compartment.
+	BackupId          pulumi.StringInput                                 `pulumi:"backupId"`
+	BackupTdePassword pulumi.StringInput                                 `pulumi:"backupTdePassword"`
+	CharacterSet      pulumi.StringInput                                 `pulumi:"characterSet"`
+	ConnectionStrings GetDbHomesDbHomeDatabaseConnectionStringArrayInput `pulumi:"connectionStrings"`
+	DatabaseId        pulumi.StringInput                                 `pulumi:"databaseId"`
+	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	DatabaseSoftwareImageId pulumi.StringInput                               `pulumi:"databaseSoftwareImageId"`
+	DbBackupConfigs         GetDbHomesDbHomeDatabaseDbBackupConfigArrayInput `pulumi:"dbBackupConfigs"`
+	DbName                  pulumi.StringInput                               `pulumi:"dbName"`
+	DbUniqueName            pulumi.StringInput                               `pulumi:"dbUniqueName"`
+	DbWorkload              pulumi.StringInput                               `pulumi:"dbWorkload"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags                  pulumi.StringMapInput                                         `pulumi:"definedTags"`
+	EncryptionKeyLocationDetails GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArrayInput `pulumi:"encryptionKeyLocationDetails"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+	Id         pulumi.StringInput `pulumi:"id"`
+	KeyStoreId pulumi.StringInput `pulumi:"keyStoreId"`
+	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+	KmsKeyId        pulumi.StringInput `pulumi:"kmsKeyId"`
+	KmsKeyVersionId pulumi.StringInput `pulumi:"kmsKeyVersionId"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	NcharacterSet    pulumi.StringInput `pulumi:"ncharacterSet"`
+	// List of one-off patches for Database Homes.
+	OneOffPatches      pulumi.StringArrayInput `pulumi:"oneOffPatches"`
+	PdbName            pulumi.StringInput      `pulumi:"pdbName"`
+	PluggableDatabases pulumi.StringArrayInput `pulumi:"pluggableDatabases"`
+	SidPrefix          pulumi.StringInput      `pulumi:"sidPrefix"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State             pulumi.StringInput `pulumi:"state"`
+	TdeWalletPassword pulumi.StringInput `pulumi:"tdeWalletPassword"`
+	// The date and time the Database Home was created.
+	TimeCreated                     pulumi.StringInput `pulumi:"timeCreated"`
+	TimeStampForPointInTimeRecovery pulumi.StringInput `pulumi:"timeStampForPointInTimeRecovery"`
+	VaultId                         pulumi.StringInput `pulumi:"vaultId"`
+}
+
+func (GetDbHomesDbHomeDatabaseArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbHomesDbHomeDatabase)(nil)).Elem()
+}
+
+func (i GetDbHomesDbHomeDatabaseArgs) ToGetDbHomesDbHomeDatabaseOutput() GetDbHomesDbHomeDatabaseOutput {
+	return i.ToGetDbHomesDbHomeDatabaseOutputWithContext(context.Background())
+}
+
+func (i GetDbHomesDbHomeDatabaseArgs) ToGetDbHomesDbHomeDatabaseOutputWithContext(ctx context.Context) GetDbHomesDbHomeDatabaseOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbHomesDbHomeDatabaseOutput)
+}
+
+// GetDbHomesDbHomeDatabaseArrayInput is an input type that accepts GetDbHomesDbHomeDatabaseArray and GetDbHomesDbHomeDatabaseArrayOutput values.
+// You can construct a concrete instance of `GetDbHomesDbHomeDatabaseArrayInput` via:
+//
+//	GetDbHomesDbHomeDatabaseArray{ GetDbHomesDbHomeDatabaseArgs{...} }
+type GetDbHomesDbHomeDatabaseArrayInput interface {
+	pulumi.Input
+
+	ToGetDbHomesDbHomeDatabaseArrayOutput() GetDbHomesDbHomeDatabaseArrayOutput
+	ToGetDbHomesDbHomeDatabaseArrayOutputWithContext(context.Context) GetDbHomesDbHomeDatabaseArrayOutput
+}
+
+type GetDbHomesDbHomeDatabaseArray []GetDbHomesDbHomeDatabaseInput
+
+func (GetDbHomesDbHomeDatabaseArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbHomesDbHomeDatabase)(nil)).Elem()
+}
+
+func (i GetDbHomesDbHomeDatabaseArray) ToGetDbHomesDbHomeDatabaseArrayOutput() GetDbHomesDbHomeDatabaseArrayOutput {
+	return i.ToGetDbHomesDbHomeDatabaseArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbHomesDbHomeDatabaseArray) ToGetDbHomesDbHomeDatabaseArrayOutputWithContext(ctx context.Context) GetDbHomesDbHomeDatabaseArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbHomesDbHomeDatabaseArrayOutput)
+}
+
+type GetDbHomesDbHomeDatabaseOutput struct{ *pulumi.OutputState }
+
+func (GetDbHomesDbHomeDatabaseOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbHomesDbHomeDatabase)(nil)).Elem()
+}
+
+func (o GetDbHomesDbHomeDatabaseOutput) ToGetDbHomesDbHomeDatabaseOutput() GetDbHomesDbHomeDatabaseOutput {
+	return o
+}
+
+func (o GetDbHomesDbHomeDatabaseOutput) ToGetDbHomesDbHomeDatabaseOutputWithContext(ctx context.Context) GetDbHomesDbHomeDatabaseOutput {
+	return o
+}
+
+func (o GetDbHomesDbHomeDatabaseOutput) AdminPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabase) string { return v.AdminPassword }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup. Specify a backupId to list only the DB systems or DB homes that support creating a database using this backup in this compartment.
+func (o GetDbHomesDbHomeDatabaseOutput) BackupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabase) string { return v.BackupId }).(pulumi.StringOutput)
+}
+
+func (o GetDbHomesDbHomeDatabaseOutput) BackupTdePassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabase) string { return v.BackupTdePassword }).(pulumi.StringOutput)
+}
+
+func (o GetDbHomesDbHomeDatabaseOutput) CharacterSet() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabase) string { return v.CharacterSet }).(pulumi.StringOutput)
+}
+
+func (o GetDbHomesDbHomeDatabaseOutput) ConnectionStrings() GetDbHomesDbHomeDatabaseConnectionStringArrayOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabase) []GetDbHomesDbHomeDatabaseConnectionString {
+		return v.ConnectionStrings
+	}).(GetDbHomesDbHomeDatabaseConnectionStringArrayOutput)
+}
+
+func (o GetDbHomesDbHomeDatabaseOutput) DatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabase) string { return v.DatabaseId }).(pulumi.StringOutput)
+}
+
+// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+func (o GetDbHomesDbHomeDatabaseOutput) DatabaseSoftwareImageId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabase) string { return v.DatabaseSoftwareImageId }).(pulumi.StringOutput)
+}
+
+func (o GetDbHomesDbHomeDatabaseOutput) DbBackupConfigs() GetDbHomesDbHomeDatabaseDbBackupConfigArrayOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabase) []GetDbHomesDbHomeDatabaseDbBackupConfig { return v.DbBackupConfigs }).(GetDbHomesDbHomeDatabaseDbBackupConfigArrayOutput)
+}
+
+func (o GetDbHomesDbHomeDatabaseOutput) DbName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabase) string { return v.DbName }).(pulumi.StringOutput)
+}
+
+func (o GetDbHomesDbHomeDatabaseOutput) DbUniqueName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabase) string { return v.DbUniqueName }).(pulumi.StringOutput)
+}
+
+func (o GetDbHomesDbHomeDatabaseOutput) DbWorkload() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabase) string { return v.DbWorkload }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetDbHomesDbHomeDatabaseOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabase) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+func (o GetDbHomesDbHomeDatabaseOutput) EncryptionKeyLocationDetails() GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArrayOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabase) []GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail {
+		return v.EncryptionKeyLocationDetails
+	}).(GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArrayOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetDbHomesDbHomeDatabaseOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabase) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+func (o GetDbHomesDbHomeDatabaseOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabase) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetDbHomesDbHomeDatabaseOutput) KeyStoreId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabase) string { return v.KeyStoreId }).(pulumi.StringOutput)
+}
+
+// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+func (o GetDbHomesDbHomeDatabaseOutput) KmsKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabase) string { return v.KmsKeyId }).(pulumi.StringOutput)
+}
+
+func (o GetDbHomesDbHomeDatabaseOutput) KmsKeyVersionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabase) string { return v.KmsKeyVersionId }).(pulumi.StringOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetDbHomesDbHomeDatabaseOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabase) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+func (o GetDbHomesDbHomeDatabaseOutput) NcharacterSet() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabase) string { return v.NcharacterSet }).(pulumi.StringOutput)
+}
+
+// List of one-off patches for Database Homes.
+func (o GetDbHomesDbHomeDatabaseOutput) OneOffPatches() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabase) []string { return v.OneOffPatches }).(pulumi.StringArrayOutput)
+}
+
+func (o GetDbHomesDbHomeDatabaseOutput) PdbName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabase) string { return v.PdbName }).(pulumi.StringOutput)
+}
+
+func (o GetDbHomesDbHomeDatabaseOutput) PluggableDatabases() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabase) []string { return v.PluggableDatabases }).(pulumi.StringArrayOutput)
+}
+
+func (o GetDbHomesDbHomeDatabaseOutput) SidPrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabase) string { return v.SidPrefix }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state exactly.
+func (o GetDbHomesDbHomeDatabaseOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabase) string { return v.State }).(pulumi.StringOutput)
+}
+
+func (o GetDbHomesDbHomeDatabaseOutput) TdeWalletPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabase) string { return v.TdeWalletPassword }).(pulumi.StringOutput)
+}
+
+// The date and time the Database Home was created.
+func (o GetDbHomesDbHomeDatabaseOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabase) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+func (o GetDbHomesDbHomeDatabaseOutput) TimeStampForPointInTimeRecovery() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabase) string { return v.TimeStampForPointInTimeRecovery }).(pulumi.StringOutput)
+}
+
+func (o GetDbHomesDbHomeDatabaseOutput) VaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabase) string { return v.VaultId }).(pulumi.StringOutput)
+}
+
+type GetDbHomesDbHomeDatabaseArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbHomesDbHomeDatabaseArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbHomesDbHomeDatabase)(nil)).Elem()
+}
+
+func (o GetDbHomesDbHomeDatabaseArrayOutput) ToGetDbHomesDbHomeDatabaseArrayOutput() GetDbHomesDbHomeDatabaseArrayOutput {
+	return o
+}
+
+func (o GetDbHomesDbHomeDatabaseArrayOutput) ToGetDbHomesDbHomeDatabaseArrayOutputWithContext(ctx context.Context) GetDbHomesDbHomeDatabaseArrayOutput {
+	return o
+}
+
+func (o GetDbHomesDbHomeDatabaseArrayOutput) Index(i pulumi.IntInput) GetDbHomesDbHomeDatabaseOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbHomesDbHomeDatabase {
+		return vs[0].([]GetDbHomesDbHomeDatabase)[vs[1].(int)]
+	}).(GetDbHomesDbHomeDatabaseOutput)
+}
+
+type GetDbHomesDbHomeDatabaseConnectionString struct {
+	AllConnectionStrings map[string]string `pulumi:"allConnectionStrings"`
+	CdbDefault           string            `pulumi:"cdbDefault"`
+	CdbIpDefault         string            `pulumi:"cdbIpDefault"`
+}
+
+// GetDbHomesDbHomeDatabaseConnectionStringInput is an input type that accepts GetDbHomesDbHomeDatabaseConnectionStringArgs and GetDbHomesDbHomeDatabaseConnectionStringOutput values.
+// You can construct a concrete instance of `GetDbHomesDbHomeDatabaseConnectionStringInput` via:
+//
+//	GetDbHomesDbHomeDatabaseConnectionStringArgs{...}
+type GetDbHomesDbHomeDatabaseConnectionStringInput interface {
+	pulumi.Input
+
+	ToGetDbHomesDbHomeDatabaseConnectionStringOutput() GetDbHomesDbHomeDatabaseConnectionStringOutput
+	ToGetDbHomesDbHomeDatabaseConnectionStringOutputWithContext(context.Context) GetDbHomesDbHomeDatabaseConnectionStringOutput
+}
+
+type GetDbHomesDbHomeDatabaseConnectionStringArgs struct {
+	AllConnectionStrings pulumi.StringMapInput `pulumi:"allConnectionStrings"`
+	CdbDefault           pulumi.StringInput    `pulumi:"cdbDefault"`
+	CdbIpDefault         pulumi.StringInput    `pulumi:"cdbIpDefault"`
+}
+
+func (GetDbHomesDbHomeDatabaseConnectionStringArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbHomesDbHomeDatabaseConnectionString)(nil)).Elem()
+}
+
+func (i GetDbHomesDbHomeDatabaseConnectionStringArgs) ToGetDbHomesDbHomeDatabaseConnectionStringOutput() GetDbHomesDbHomeDatabaseConnectionStringOutput {
+	return i.ToGetDbHomesDbHomeDatabaseConnectionStringOutputWithContext(context.Background())
+}
+
+func (i GetDbHomesDbHomeDatabaseConnectionStringArgs) ToGetDbHomesDbHomeDatabaseConnectionStringOutputWithContext(ctx context.Context) GetDbHomesDbHomeDatabaseConnectionStringOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbHomesDbHomeDatabaseConnectionStringOutput)
+}
+
+// GetDbHomesDbHomeDatabaseConnectionStringArrayInput is an input type that accepts GetDbHomesDbHomeDatabaseConnectionStringArray and GetDbHomesDbHomeDatabaseConnectionStringArrayOutput values.
+// You can construct a concrete instance of `GetDbHomesDbHomeDatabaseConnectionStringArrayInput` via:
+//
+//	GetDbHomesDbHomeDatabaseConnectionStringArray{ GetDbHomesDbHomeDatabaseConnectionStringArgs{...} }
+type GetDbHomesDbHomeDatabaseConnectionStringArrayInput interface {
+	pulumi.Input
+
+	ToGetDbHomesDbHomeDatabaseConnectionStringArrayOutput() GetDbHomesDbHomeDatabaseConnectionStringArrayOutput
+	ToGetDbHomesDbHomeDatabaseConnectionStringArrayOutputWithContext(context.Context) GetDbHomesDbHomeDatabaseConnectionStringArrayOutput
+}
+
+type GetDbHomesDbHomeDatabaseConnectionStringArray []GetDbHomesDbHomeDatabaseConnectionStringInput
+
+func (GetDbHomesDbHomeDatabaseConnectionStringArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbHomesDbHomeDatabaseConnectionString)(nil)).Elem()
+}
+
+func (i GetDbHomesDbHomeDatabaseConnectionStringArray) ToGetDbHomesDbHomeDatabaseConnectionStringArrayOutput() GetDbHomesDbHomeDatabaseConnectionStringArrayOutput {
+	return i.ToGetDbHomesDbHomeDatabaseConnectionStringArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbHomesDbHomeDatabaseConnectionStringArray) ToGetDbHomesDbHomeDatabaseConnectionStringArrayOutputWithContext(ctx context.Context) GetDbHomesDbHomeDatabaseConnectionStringArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbHomesDbHomeDatabaseConnectionStringArrayOutput)
+}
+
+type GetDbHomesDbHomeDatabaseConnectionStringOutput struct{ *pulumi.OutputState }
+
+func (GetDbHomesDbHomeDatabaseConnectionStringOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbHomesDbHomeDatabaseConnectionString)(nil)).Elem()
+}
+
+func (o GetDbHomesDbHomeDatabaseConnectionStringOutput) ToGetDbHomesDbHomeDatabaseConnectionStringOutput() GetDbHomesDbHomeDatabaseConnectionStringOutput {
+	return o
+}
+
+func (o GetDbHomesDbHomeDatabaseConnectionStringOutput) ToGetDbHomesDbHomeDatabaseConnectionStringOutputWithContext(ctx context.Context) GetDbHomesDbHomeDatabaseConnectionStringOutput {
+	return o
+}
+
+func (o GetDbHomesDbHomeDatabaseConnectionStringOutput) AllConnectionStrings() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabaseConnectionString) map[string]string { return v.AllConnectionStrings }).(pulumi.StringMapOutput)
+}
+
+func (o GetDbHomesDbHomeDatabaseConnectionStringOutput) CdbDefault() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabaseConnectionString) string { return v.CdbDefault }).(pulumi.StringOutput)
+}
+
+func (o GetDbHomesDbHomeDatabaseConnectionStringOutput) CdbIpDefault() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabaseConnectionString) string { return v.CdbIpDefault }).(pulumi.StringOutput)
+}
+
+type GetDbHomesDbHomeDatabaseConnectionStringArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbHomesDbHomeDatabaseConnectionStringArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbHomesDbHomeDatabaseConnectionString)(nil)).Elem()
+}
+
+func (o GetDbHomesDbHomeDatabaseConnectionStringArrayOutput) ToGetDbHomesDbHomeDatabaseConnectionStringArrayOutput() GetDbHomesDbHomeDatabaseConnectionStringArrayOutput {
+	return o
+}
+
+func (o GetDbHomesDbHomeDatabaseConnectionStringArrayOutput) ToGetDbHomesDbHomeDatabaseConnectionStringArrayOutputWithContext(ctx context.Context) GetDbHomesDbHomeDatabaseConnectionStringArrayOutput {
+	return o
+}
+
+func (o GetDbHomesDbHomeDatabaseConnectionStringArrayOutput) Index(i pulumi.IntInput) GetDbHomesDbHomeDatabaseConnectionStringOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbHomesDbHomeDatabaseConnectionString {
+		return vs[0].([]GetDbHomesDbHomeDatabaseConnectionString)[vs[1].(int)]
+	}).(GetDbHomesDbHomeDatabaseConnectionStringOutput)
+}
+
+type GetDbHomesDbHomeDatabaseDbBackupConfig struct {
+	AutoBackupEnabled        bool                                                            `pulumi:"autoBackupEnabled"`
+	AutoBackupWindow         string                                                          `pulumi:"autoBackupWindow"`
+	AutoFullBackupDay        string                                                          `pulumi:"autoFullBackupDay"`
+	AutoFullBackupWindow     string                                                          `pulumi:"autoFullBackupWindow"`
+	BackupDeletionPolicy     string                                                          `pulumi:"backupDeletionPolicy"`
+	BackupDestinationDetails []GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail `pulumi:"backupDestinationDetails"`
+	RecoveryWindowInDays     int                                                             `pulumi:"recoveryWindowInDays"`
+	RunImmediateFullBackup   bool                                                            `pulumi:"runImmediateFullBackup"`
+}
+
+// GetDbHomesDbHomeDatabaseDbBackupConfigInput is an input type that accepts GetDbHomesDbHomeDatabaseDbBackupConfigArgs and GetDbHomesDbHomeDatabaseDbBackupConfigOutput values.
+// You can construct a concrete instance of `GetDbHomesDbHomeDatabaseDbBackupConfigInput` via:
+//
+//	GetDbHomesDbHomeDatabaseDbBackupConfigArgs{...}
+type GetDbHomesDbHomeDatabaseDbBackupConfigInput interface {
+	pulumi.Input
+
+	ToGetDbHomesDbHomeDatabaseDbBackupConfigOutput() GetDbHomesDbHomeDatabaseDbBackupConfigOutput
+	ToGetDbHomesDbHomeDatabaseDbBackupConfigOutputWithContext(context.Context) GetDbHomesDbHomeDatabaseDbBackupConfigOutput
+}
+
+type GetDbHomesDbHomeDatabaseDbBackupConfigArgs struct {
+	AutoBackupEnabled        pulumi.BoolInput                                                        `pulumi:"autoBackupEnabled"`
+	AutoBackupWindow         pulumi.StringInput                                                      `pulumi:"autoBackupWindow"`
+	AutoFullBackupDay        pulumi.StringInput                                                      `pulumi:"autoFullBackupDay"`
+	AutoFullBackupWindow     pulumi.StringInput                                                      `pulumi:"autoFullBackupWindow"`
+	BackupDeletionPolicy     pulumi.StringInput                                                      `pulumi:"backupDeletionPolicy"`
+	BackupDestinationDetails GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayInput `pulumi:"backupDestinationDetails"`
+	RecoveryWindowInDays     pulumi.IntInput                                                         `pulumi:"recoveryWindowInDays"`
+	RunImmediateFullBackup   pulumi.BoolInput                                                        `pulumi:"runImmediateFullBackup"`
+}
+
+func (GetDbHomesDbHomeDatabaseDbBackupConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbHomesDbHomeDatabaseDbBackupConfig)(nil)).Elem()
+}
+
+func (i GetDbHomesDbHomeDatabaseDbBackupConfigArgs) ToGetDbHomesDbHomeDatabaseDbBackupConfigOutput() GetDbHomesDbHomeDatabaseDbBackupConfigOutput {
+	return i.ToGetDbHomesDbHomeDatabaseDbBackupConfigOutputWithContext(context.Background())
+}
+
+func (i GetDbHomesDbHomeDatabaseDbBackupConfigArgs) ToGetDbHomesDbHomeDatabaseDbBackupConfigOutputWithContext(ctx context.Context) GetDbHomesDbHomeDatabaseDbBackupConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbHomesDbHomeDatabaseDbBackupConfigOutput)
+}
+
+// GetDbHomesDbHomeDatabaseDbBackupConfigArrayInput is an input type that accepts GetDbHomesDbHomeDatabaseDbBackupConfigArray and GetDbHomesDbHomeDatabaseDbBackupConfigArrayOutput values.
+// You can construct a concrete instance of `GetDbHomesDbHomeDatabaseDbBackupConfigArrayInput` via:
+//
+//	GetDbHomesDbHomeDatabaseDbBackupConfigArray{ GetDbHomesDbHomeDatabaseDbBackupConfigArgs{...} }
+type GetDbHomesDbHomeDatabaseDbBackupConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetDbHomesDbHomeDatabaseDbBackupConfigArrayOutput() GetDbHomesDbHomeDatabaseDbBackupConfigArrayOutput
+	ToGetDbHomesDbHomeDatabaseDbBackupConfigArrayOutputWithContext(context.Context) GetDbHomesDbHomeDatabaseDbBackupConfigArrayOutput
+}
+
+type GetDbHomesDbHomeDatabaseDbBackupConfigArray []GetDbHomesDbHomeDatabaseDbBackupConfigInput
+
+func (GetDbHomesDbHomeDatabaseDbBackupConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbHomesDbHomeDatabaseDbBackupConfig)(nil)).Elem()
+}
+
+func (i GetDbHomesDbHomeDatabaseDbBackupConfigArray) ToGetDbHomesDbHomeDatabaseDbBackupConfigArrayOutput() GetDbHomesDbHomeDatabaseDbBackupConfigArrayOutput {
+	return i.ToGetDbHomesDbHomeDatabaseDbBackupConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbHomesDbHomeDatabaseDbBackupConfigArray) ToGetDbHomesDbHomeDatabaseDbBackupConfigArrayOutputWithContext(ctx context.Context) GetDbHomesDbHomeDatabaseDbBackupConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbHomesDbHomeDatabaseDbBackupConfigArrayOutput)
+}
+
+type GetDbHomesDbHomeDatabaseDbBackupConfigOutput struct{ *pulumi.OutputState }
+
+func (GetDbHomesDbHomeDatabaseDbBackupConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbHomesDbHomeDatabaseDbBackupConfig)(nil)).Elem()
+}
+
+func (o GetDbHomesDbHomeDatabaseDbBackupConfigOutput) ToGetDbHomesDbHomeDatabaseDbBackupConfigOutput() GetDbHomesDbHomeDatabaseDbBackupConfigOutput {
+	return o
+}
+
+func (o GetDbHomesDbHomeDatabaseDbBackupConfigOutput) ToGetDbHomesDbHomeDatabaseDbBackupConfigOutputWithContext(ctx context.Context) GetDbHomesDbHomeDatabaseDbBackupConfigOutput {
+	return o
+}
+
+func (o GetDbHomesDbHomeDatabaseDbBackupConfigOutput) AutoBackupEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabaseDbBackupConfig) bool { return v.AutoBackupEnabled }).(pulumi.BoolOutput)
+}
+
+func (o GetDbHomesDbHomeDatabaseDbBackupConfigOutput) AutoBackupWindow() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabaseDbBackupConfig) string { return v.AutoBackupWindow }).(pulumi.StringOutput)
+}
+
+func (o GetDbHomesDbHomeDatabaseDbBackupConfigOutput) AutoFullBackupDay() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabaseDbBackupConfig) string { return v.AutoFullBackupDay }).(pulumi.StringOutput)
+}
+
+func (o GetDbHomesDbHomeDatabaseDbBackupConfigOutput) AutoFullBackupWindow() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabaseDbBackupConfig) string { return v.AutoFullBackupWindow }).(pulumi.StringOutput)
+}
+
+func (o GetDbHomesDbHomeDatabaseDbBackupConfigOutput) BackupDeletionPolicy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabaseDbBackupConfig) string { return v.BackupDeletionPolicy }).(pulumi.StringOutput)
+}
+
+func (o GetDbHomesDbHomeDatabaseDbBackupConfigOutput) BackupDestinationDetails() GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabaseDbBackupConfig) []GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail {
+		return v.BackupDestinationDetails
+	}).(GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput)
+}
+
+func (o GetDbHomesDbHomeDatabaseDbBackupConfigOutput) RecoveryWindowInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabaseDbBackupConfig) int { return v.RecoveryWindowInDays }).(pulumi.IntOutput)
+}
+
+func (o GetDbHomesDbHomeDatabaseDbBackupConfigOutput) RunImmediateFullBackup() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabaseDbBackupConfig) bool { return v.RunImmediateFullBackup }).(pulumi.BoolOutput)
+}
+
+type GetDbHomesDbHomeDatabaseDbBackupConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbHomesDbHomeDatabaseDbBackupConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbHomesDbHomeDatabaseDbBackupConfig)(nil)).Elem()
+}
+
+func (o GetDbHomesDbHomeDatabaseDbBackupConfigArrayOutput) ToGetDbHomesDbHomeDatabaseDbBackupConfigArrayOutput() GetDbHomesDbHomeDatabaseDbBackupConfigArrayOutput {
+	return o
+}
+
+func (o GetDbHomesDbHomeDatabaseDbBackupConfigArrayOutput) ToGetDbHomesDbHomeDatabaseDbBackupConfigArrayOutputWithContext(ctx context.Context) GetDbHomesDbHomeDatabaseDbBackupConfigArrayOutput {
+	return o
+}
+
+func (o GetDbHomesDbHomeDatabaseDbBackupConfigArrayOutput) Index(i pulumi.IntInput) GetDbHomesDbHomeDatabaseDbBackupConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbHomesDbHomeDatabaseDbBackupConfig {
+		return vs[0].([]GetDbHomesDbHomeDatabaseDbBackupConfig)[vs[1].(int)]
+	}).(GetDbHomesDbHomeDatabaseDbBackupConfigOutput)
+}
+
+type GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail struct {
+	DbrsPolicyId string `pulumi:"dbrsPolicyId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+	Id   string `pulumi:"id"`
+	Type string `pulumi:"type"`
+}
+
+// GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailInput is an input type that accepts GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs and GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput values.
+// You can construct a concrete instance of `GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailInput` via:
+//
+//	GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs{...}
+type GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailInput interface {
+	pulumi.Input
+
+	ToGetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput() GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput
+	ToGetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutputWithContext(context.Context) GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput
+}
+
+type GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs struct {
+	DbrsPolicyId pulumi.StringInput `pulumi:"dbrsPolicyId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+	Id   pulumi.StringInput `pulumi:"id"`
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail)(nil)).Elem()
+}
+
+func (i GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs) ToGetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput() GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput {
+	return i.ToGetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutputWithContext(context.Background())
+}
+
+func (i GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs) ToGetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutputWithContext(ctx context.Context) GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput)
+}
+
+// GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayInput is an input type that accepts GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArray and GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput values.
+// You can construct a concrete instance of `GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayInput` via:
+//
+//	GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArray{ GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs{...} }
+type GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput() GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput
+	ToGetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutputWithContext(context.Context) GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput
+}
+
+type GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArray []GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailInput
+
+func (GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail)(nil)).Elem()
+}
+
+func (i GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArray) ToGetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput() GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput {
+	return i.ToGetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArray) ToGetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutputWithContext(ctx context.Context) GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput)
+}
+
+type GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail)(nil)).Elem()
+}
+
+func (o GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) ToGetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput() GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput {
+	return o
+}
+
+func (o GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) ToGetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutputWithContext(ctx context.Context) GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput {
+	return o
+}
+
+func (o GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) DbrsPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail) string { return v.DbrsPolicyId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+func (o GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail)(nil)).Elem()
+}
+
+func (o GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput) ToGetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput() GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput {
+	return o
+}
+
+func (o GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput) ToGetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutputWithContext(ctx context.Context) GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput {
+	return o
+}
+
+func (o GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput) Index(i pulumi.IntInput) GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail {
+		return vs[0].([]GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail)[vs[1].(int)]
+	}).(GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput)
+}
+
+type GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail struct {
+	HsmPassword  string `pulumi:"hsmPassword"`
+	ProviderType string `pulumi:"providerType"`
+}
+
+// GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailInput is an input type that accepts GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArgs and GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailOutput values.
+// You can construct a concrete instance of `GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailInput` via:
+//
+//	GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArgs{...}
+type GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailInput interface {
+	pulumi.Input
+
+	ToGetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailOutput() GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailOutput
+	ToGetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailOutputWithContext(context.Context) GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailOutput
+}
+
+type GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArgs struct {
+	HsmPassword  pulumi.StringInput `pulumi:"hsmPassword"`
+	ProviderType pulumi.StringInput `pulumi:"providerType"`
+}
+
+func (GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail)(nil)).Elem()
+}
+
+func (i GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArgs) ToGetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailOutput() GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailOutput {
+	return i.ToGetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailOutputWithContext(context.Background())
+}
+
+func (i GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArgs) ToGetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailOutputWithContext(ctx context.Context) GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailOutput)
+}
+
+// GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArrayInput is an input type that accepts GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArray and GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArrayOutput values.
+// You can construct a concrete instance of `GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArrayInput` via:
+//
+//	GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArray{ GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArgs{...} }
+type GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArrayOutput() GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArrayOutput
+	ToGetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArrayOutputWithContext(context.Context) GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArrayOutput
+}
+
+type GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArray []GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailInput
+
+func (GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail)(nil)).Elem()
+}
+
+func (i GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArray) ToGetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArrayOutput() GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArrayOutput {
+	return i.ToGetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArray) ToGetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArrayOutputWithContext(ctx context.Context) GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArrayOutput)
+}
+
+type GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail)(nil)).Elem()
+}
+
+func (o GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailOutput) ToGetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailOutput() GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailOutput {
+	return o
+}
+
+func (o GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailOutput) ToGetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailOutputWithContext(ctx context.Context) GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailOutput {
+	return o
+}
+
+func (o GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailOutput) HsmPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail) string { return v.HsmPassword }).(pulumi.StringOutput)
+}
+
+func (o GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailOutput) ProviderType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail) string { return v.ProviderType }).(pulumi.StringOutput)
+}
+
+type GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail)(nil)).Elem()
+}
+
+func (o GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArrayOutput) ToGetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArrayOutput() GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArrayOutput {
+	return o
+}
+
+func (o GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArrayOutput) ToGetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArrayOutputWithContext(ctx context.Context) GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArrayOutput {
+	return o
+}
+
+func (o GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArrayOutput) Index(i pulumi.IntInput) GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail {
+		return vs[0].([]GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail)[vs[1].(int)]
+	}).(GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailOutput)
+}
+
+type GetDbHomesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDbHomesFilterInput is an input type that accepts GetDbHomesFilterArgs and GetDbHomesFilterOutput values.
+// You can construct a concrete instance of `GetDbHomesFilterInput` via:
+//
+//	GetDbHomesFilterArgs{...}
+type GetDbHomesFilterInput interface {
+	pulumi.Input
+
+	ToGetDbHomesFilterOutput() GetDbHomesFilterOutput
+	ToGetDbHomesFilterOutputWithContext(context.Context) GetDbHomesFilterOutput
+}
+
+type GetDbHomesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDbHomesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbHomesFilter)(nil)).Elem()
+}
+
+func (i GetDbHomesFilterArgs) ToGetDbHomesFilterOutput() GetDbHomesFilterOutput {
+	return i.ToGetDbHomesFilterOutputWithContext(context.Background())
+}
+
+func (i GetDbHomesFilterArgs) ToGetDbHomesFilterOutputWithContext(ctx context.Context) GetDbHomesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbHomesFilterOutput)
+}
+
+// GetDbHomesFilterArrayInput is an input type that accepts GetDbHomesFilterArray and GetDbHomesFilterArrayOutput values.
+// You can construct a concrete instance of `GetDbHomesFilterArrayInput` via:
+//
+//	GetDbHomesFilterArray{ GetDbHomesFilterArgs{...} }
+type GetDbHomesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDbHomesFilterArrayOutput() GetDbHomesFilterArrayOutput
+	ToGetDbHomesFilterArrayOutputWithContext(context.Context) GetDbHomesFilterArrayOutput
+}
+
+type GetDbHomesFilterArray []GetDbHomesFilterInput
+
+func (GetDbHomesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbHomesFilter)(nil)).Elem()
+}
+
+func (i GetDbHomesFilterArray) ToGetDbHomesFilterArrayOutput() GetDbHomesFilterArrayOutput {
+	return i.ToGetDbHomesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbHomesFilterArray) ToGetDbHomesFilterArrayOutputWithContext(ctx context.Context) GetDbHomesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbHomesFilterArrayOutput)
+}
+
+type GetDbHomesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDbHomesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbHomesFilter)(nil)).Elem()
+}
+
+func (o GetDbHomesFilterOutput) ToGetDbHomesFilterOutput() GetDbHomesFilterOutput {
+	return o
+}
+
+func (o GetDbHomesFilterOutput) ToGetDbHomesFilterOutputWithContext(ctx context.Context) GetDbHomesFilterOutput {
+	return o
+}
+
+func (o GetDbHomesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDbHomesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDbHomesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDbHomesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbHomesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDbHomesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbHomesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbHomesFilter)(nil)).Elem()
+}
+
+func (o GetDbHomesFilterArrayOutput) ToGetDbHomesFilterArrayOutput() GetDbHomesFilterArrayOutput {
+	return o
+}
+
+func (o GetDbHomesFilterArrayOutput) ToGetDbHomesFilterArrayOutputWithContext(ctx context.Context) GetDbHomesFilterArrayOutput {
+	return o
+}
+
+func (o GetDbHomesFilterArrayOutput) Index(i pulumi.IntInput) GetDbHomesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbHomesFilter {
+		return vs[0].([]GetDbHomesFilter)[vs[1].(int)]
+	}).(GetDbHomesFilterOutput)
+}
+
+type GetDbNodeConsoleConnectionsConsoleConnection struct {
+	// The OCID of the compartment to contain the console connection.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The SSH connection string for the console connection.
+	ConnectionString string `pulumi:"connectionString"`
+	// The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	DbNodeId string `pulumi:"dbNodeId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The SSH public key fingerprint for the console connection.
+	Fingerprint string `pulumi:"fingerprint"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the console connection.
+	Id string `pulumi:"id"`
+	// Information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	PublicKey        string `pulumi:"publicKey"`
+	// The SSH public key's fingerprint for the console connection service host.
+	ServiceHostKeyFingerprint string `pulumi:"serviceHostKeyFingerprint"`
+	// The current state of the console connection.
+	State string `pulumi:"state"`
+}
+
+// GetDbNodeConsoleConnectionsConsoleConnectionInput is an input type that accepts GetDbNodeConsoleConnectionsConsoleConnectionArgs and GetDbNodeConsoleConnectionsConsoleConnectionOutput values.
+// You can construct a concrete instance of `GetDbNodeConsoleConnectionsConsoleConnectionInput` via:
+//
+//	GetDbNodeConsoleConnectionsConsoleConnectionArgs{...}
+type GetDbNodeConsoleConnectionsConsoleConnectionInput interface {
+	pulumi.Input
+
+	ToGetDbNodeConsoleConnectionsConsoleConnectionOutput() GetDbNodeConsoleConnectionsConsoleConnectionOutput
+	ToGetDbNodeConsoleConnectionsConsoleConnectionOutputWithContext(context.Context) GetDbNodeConsoleConnectionsConsoleConnectionOutput
+}
+
+type GetDbNodeConsoleConnectionsConsoleConnectionArgs struct {
+	// The OCID of the compartment to contain the console connection.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The SSH connection string for the console connection.
+	ConnectionString pulumi.StringInput `pulumi:"connectionString"`
+	// The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	DbNodeId pulumi.StringInput `pulumi:"dbNodeId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// The SSH public key fingerprint for the console connection.
+	Fingerprint pulumi.StringInput `pulumi:"fingerprint"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the console connection.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	PublicKey        pulumi.StringInput `pulumi:"publicKey"`
+	// The SSH public key's fingerprint for the console connection service host.
+	ServiceHostKeyFingerprint pulumi.StringInput `pulumi:"serviceHostKeyFingerprint"`
+	// The current state of the console connection.
+	State pulumi.StringInput `pulumi:"state"`
+}
+
+func (GetDbNodeConsoleConnectionsConsoleConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbNodeConsoleConnectionsConsoleConnection)(nil)).Elem()
+}
+
+func (i GetDbNodeConsoleConnectionsConsoleConnectionArgs) ToGetDbNodeConsoleConnectionsConsoleConnectionOutput() GetDbNodeConsoleConnectionsConsoleConnectionOutput {
+	return i.ToGetDbNodeConsoleConnectionsConsoleConnectionOutputWithContext(context.Background())
+}
+
+func (i GetDbNodeConsoleConnectionsConsoleConnectionArgs) ToGetDbNodeConsoleConnectionsConsoleConnectionOutputWithContext(ctx context.Context) GetDbNodeConsoleConnectionsConsoleConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbNodeConsoleConnectionsConsoleConnectionOutput)
+}
+
+// GetDbNodeConsoleConnectionsConsoleConnectionArrayInput is an input type that accepts GetDbNodeConsoleConnectionsConsoleConnectionArray and GetDbNodeConsoleConnectionsConsoleConnectionArrayOutput values.
+// You can construct a concrete instance of `GetDbNodeConsoleConnectionsConsoleConnectionArrayInput` via:
+//
+//	GetDbNodeConsoleConnectionsConsoleConnectionArray{ GetDbNodeConsoleConnectionsConsoleConnectionArgs{...} }
+type GetDbNodeConsoleConnectionsConsoleConnectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDbNodeConsoleConnectionsConsoleConnectionArrayOutput() GetDbNodeConsoleConnectionsConsoleConnectionArrayOutput
+	ToGetDbNodeConsoleConnectionsConsoleConnectionArrayOutputWithContext(context.Context) GetDbNodeConsoleConnectionsConsoleConnectionArrayOutput
+}
+
+type GetDbNodeConsoleConnectionsConsoleConnectionArray []GetDbNodeConsoleConnectionsConsoleConnectionInput
+
+func (GetDbNodeConsoleConnectionsConsoleConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbNodeConsoleConnectionsConsoleConnection)(nil)).Elem()
+}
+
+func (i GetDbNodeConsoleConnectionsConsoleConnectionArray) ToGetDbNodeConsoleConnectionsConsoleConnectionArrayOutput() GetDbNodeConsoleConnectionsConsoleConnectionArrayOutput {
+	return i.ToGetDbNodeConsoleConnectionsConsoleConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbNodeConsoleConnectionsConsoleConnectionArray) ToGetDbNodeConsoleConnectionsConsoleConnectionArrayOutputWithContext(ctx context.Context) GetDbNodeConsoleConnectionsConsoleConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbNodeConsoleConnectionsConsoleConnectionArrayOutput)
+}
+
+type GetDbNodeConsoleConnectionsConsoleConnectionOutput struct{ *pulumi.OutputState }
+
+func (GetDbNodeConsoleConnectionsConsoleConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbNodeConsoleConnectionsConsoleConnection)(nil)).Elem()
+}
+
+func (o GetDbNodeConsoleConnectionsConsoleConnectionOutput) ToGetDbNodeConsoleConnectionsConsoleConnectionOutput() GetDbNodeConsoleConnectionsConsoleConnectionOutput {
+	return o
+}
+
+func (o GetDbNodeConsoleConnectionsConsoleConnectionOutput) ToGetDbNodeConsoleConnectionsConsoleConnectionOutputWithContext(ctx context.Context) GetDbNodeConsoleConnectionsConsoleConnectionOutput {
+	return o
+}
+
+// The OCID of the compartment to contain the console connection.
+func (o GetDbNodeConsoleConnectionsConsoleConnectionOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodeConsoleConnectionsConsoleConnection) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The SSH connection string for the console connection.
+func (o GetDbNodeConsoleConnectionsConsoleConnectionOutput) ConnectionString() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodeConsoleConnectionsConsoleConnection) string { return v.ConnectionString }).(pulumi.StringOutput)
+}
+
+// The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetDbNodeConsoleConnectionsConsoleConnectionOutput) DbNodeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodeConsoleConnectionsConsoleConnection) string { return v.DbNodeId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetDbNodeConsoleConnectionsConsoleConnectionOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbNodeConsoleConnectionsConsoleConnection) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// The SSH public key fingerprint for the console connection.
+func (o GetDbNodeConsoleConnectionsConsoleConnectionOutput) Fingerprint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodeConsoleConnectionsConsoleConnection) string { return v.Fingerprint }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetDbNodeConsoleConnectionsConsoleConnectionOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbNodeConsoleConnectionsConsoleConnection) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The OCID of the console connection.
+func (o GetDbNodeConsoleConnectionsConsoleConnectionOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodeConsoleConnectionsConsoleConnection) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Information about the current lifecycle state.
+func (o GetDbNodeConsoleConnectionsConsoleConnectionOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodeConsoleConnectionsConsoleConnection) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+func (o GetDbNodeConsoleConnectionsConsoleConnectionOutput) PublicKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodeConsoleConnectionsConsoleConnection) string { return v.PublicKey }).(pulumi.StringOutput)
+}
+
+// The SSH public key's fingerprint for the console connection service host.
+func (o GetDbNodeConsoleConnectionsConsoleConnectionOutput) ServiceHostKeyFingerprint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodeConsoleConnectionsConsoleConnection) string { return v.ServiceHostKeyFingerprint }).(pulumi.StringOutput)
+}
+
+// The current state of the console connection.
+func (o GetDbNodeConsoleConnectionsConsoleConnectionOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodeConsoleConnectionsConsoleConnection) string { return v.State }).(pulumi.StringOutput)
+}
+
+type GetDbNodeConsoleConnectionsConsoleConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbNodeConsoleConnectionsConsoleConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbNodeConsoleConnectionsConsoleConnection)(nil)).Elem()
+}
+
+func (o GetDbNodeConsoleConnectionsConsoleConnectionArrayOutput) ToGetDbNodeConsoleConnectionsConsoleConnectionArrayOutput() GetDbNodeConsoleConnectionsConsoleConnectionArrayOutput {
+	return o
+}
+
+func (o GetDbNodeConsoleConnectionsConsoleConnectionArrayOutput) ToGetDbNodeConsoleConnectionsConsoleConnectionArrayOutputWithContext(ctx context.Context) GetDbNodeConsoleConnectionsConsoleConnectionArrayOutput {
+	return o
+}
+
+func (o GetDbNodeConsoleConnectionsConsoleConnectionArrayOutput) Index(i pulumi.IntInput) GetDbNodeConsoleConnectionsConsoleConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbNodeConsoleConnectionsConsoleConnection {
+		return vs[0].([]GetDbNodeConsoleConnectionsConsoleConnection)[vs[1].(int)]
+	}).(GetDbNodeConsoleConnectionsConsoleConnectionOutput)
+}
+
+type GetDbNodeConsoleConnectionsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDbNodeConsoleConnectionsFilterInput is an input type that accepts GetDbNodeConsoleConnectionsFilterArgs and GetDbNodeConsoleConnectionsFilterOutput values.
+// You can construct a concrete instance of `GetDbNodeConsoleConnectionsFilterInput` via:
+//
+//	GetDbNodeConsoleConnectionsFilterArgs{...}
+type GetDbNodeConsoleConnectionsFilterInput interface {
+	pulumi.Input
+
+	ToGetDbNodeConsoleConnectionsFilterOutput() GetDbNodeConsoleConnectionsFilterOutput
+	ToGetDbNodeConsoleConnectionsFilterOutputWithContext(context.Context) GetDbNodeConsoleConnectionsFilterOutput
+}
+
+type GetDbNodeConsoleConnectionsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDbNodeConsoleConnectionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbNodeConsoleConnectionsFilter)(nil)).Elem()
+}
+
+func (i GetDbNodeConsoleConnectionsFilterArgs) ToGetDbNodeConsoleConnectionsFilterOutput() GetDbNodeConsoleConnectionsFilterOutput {
+	return i.ToGetDbNodeConsoleConnectionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetDbNodeConsoleConnectionsFilterArgs) ToGetDbNodeConsoleConnectionsFilterOutputWithContext(ctx context.Context) GetDbNodeConsoleConnectionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbNodeConsoleConnectionsFilterOutput)
+}
+
+// GetDbNodeConsoleConnectionsFilterArrayInput is an input type that accepts GetDbNodeConsoleConnectionsFilterArray and GetDbNodeConsoleConnectionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetDbNodeConsoleConnectionsFilterArrayInput` via:
+//
+//	GetDbNodeConsoleConnectionsFilterArray{ GetDbNodeConsoleConnectionsFilterArgs{...} }
+type GetDbNodeConsoleConnectionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDbNodeConsoleConnectionsFilterArrayOutput() GetDbNodeConsoleConnectionsFilterArrayOutput
+	ToGetDbNodeConsoleConnectionsFilterArrayOutputWithContext(context.Context) GetDbNodeConsoleConnectionsFilterArrayOutput
+}
+
+type GetDbNodeConsoleConnectionsFilterArray []GetDbNodeConsoleConnectionsFilterInput
+
+func (GetDbNodeConsoleConnectionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbNodeConsoleConnectionsFilter)(nil)).Elem()
+}
+
+func (i GetDbNodeConsoleConnectionsFilterArray) ToGetDbNodeConsoleConnectionsFilterArrayOutput() GetDbNodeConsoleConnectionsFilterArrayOutput {
+	return i.ToGetDbNodeConsoleConnectionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbNodeConsoleConnectionsFilterArray) ToGetDbNodeConsoleConnectionsFilterArrayOutputWithContext(ctx context.Context) GetDbNodeConsoleConnectionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbNodeConsoleConnectionsFilterArrayOutput)
+}
+
+type GetDbNodeConsoleConnectionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDbNodeConsoleConnectionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbNodeConsoleConnectionsFilter)(nil)).Elem()
+}
+
+func (o GetDbNodeConsoleConnectionsFilterOutput) ToGetDbNodeConsoleConnectionsFilterOutput() GetDbNodeConsoleConnectionsFilterOutput {
+	return o
+}
+
+func (o GetDbNodeConsoleConnectionsFilterOutput) ToGetDbNodeConsoleConnectionsFilterOutputWithContext(ctx context.Context) GetDbNodeConsoleConnectionsFilterOutput {
+	return o
+}
+
+func (o GetDbNodeConsoleConnectionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodeConsoleConnectionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDbNodeConsoleConnectionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDbNodeConsoleConnectionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDbNodeConsoleConnectionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbNodeConsoleConnectionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDbNodeConsoleConnectionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbNodeConsoleConnectionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbNodeConsoleConnectionsFilter)(nil)).Elem()
+}
+
+func (o GetDbNodeConsoleConnectionsFilterArrayOutput) ToGetDbNodeConsoleConnectionsFilterArrayOutput() GetDbNodeConsoleConnectionsFilterArrayOutput {
+	return o
+}
+
+func (o GetDbNodeConsoleConnectionsFilterArrayOutput) ToGetDbNodeConsoleConnectionsFilterArrayOutputWithContext(ctx context.Context) GetDbNodeConsoleConnectionsFilterArrayOutput {
+	return o
+}
+
+func (o GetDbNodeConsoleConnectionsFilterArrayOutput) Index(i pulumi.IntInput) GetDbNodeConsoleConnectionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbNodeConsoleConnectionsFilter {
+		return vs[0].([]GetDbNodeConsoleConnectionsFilter)[vs[1].(int)]
+	}).(GetDbNodeConsoleConnectionsFilterOutput)
+}
+
+type GetDbNodeConsoleHistoriesConsoleHistoryCollection struct {
+	Items []GetDbNodeConsoleHistoriesConsoleHistoryCollectionItem `pulumi:"items"`
+}
+
+// GetDbNodeConsoleHistoriesConsoleHistoryCollectionInput is an input type that accepts GetDbNodeConsoleHistoriesConsoleHistoryCollectionArgs and GetDbNodeConsoleHistoriesConsoleHistoryCollectionOutput values.
+// You can construct a concrete instance of `GetDbNodeConsoleHistoriesConsoleHistoryCollectionInput` via:
+//
+//	GetDbNodeConsoleHistoriesConsoleHistoryCollectionArgs{...}
+type GetDbNodeConsoleHistoriesConsoleHistoryCollectionInput interface {
+	pulumi.Input
+
+	ToGetDbNodeConsoleHistoriesConsoleHistoryCollectionOutput() GetDbNodeConsoleHistoriesConsoleHistoryCollectionOutput
+	ToGetDbNodeConsoleHistoriesConsoleHistoryCollectionOutputWithContext(context.Context) GetDbNodeConsoleHistoriesConsoleHistoryCollectionOutput
+}
+
+type GetDbNodeConsoleHistoriesConsoleHistoryCollectionArgs struct {
+	Items GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDbNodeConsoleHistoriesConsoleHistoryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbNodeConsoleHistoriesConsoleHistoryCollection)(nil)).Elem()
+}
+
+func (i GetDbNodeConsoleHistoriesConsoleHistoryCollectionArgs) ToGetDbNodeConsoleHistoriesConsoleHistoryCollectionOutput() GetDbNodeConsoleHistoriesConsoleHistoryCollectionOutput {
+	return i.ToGetDbNodeConsoleHistoriesConsoleHistoryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDbNodeConsoleHistoriesConsoleHistoryCollectionArgs) ToGetDbNodeConsoleHistoriesConsoleHistoryCollectionOutputWithContext(ctx context.Context) GetDbNodeConsoleHistoriesConsoleHistoryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbNodeConsoleHistoriesConsoleHistoryCollectionOutput)
+}
+
+// GetDbNodeConsoleHistoriesConsoleHistoryCollectionArrayInput is an input type that accepts GetDbNodeConsoleHistoriesConsoleHistoryCollectionArray and GetDbNodeConsoleHistoriesConsoleHistoryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDbNodeConsoleHistoriesConsoleHistoryCollectionArrayInput` via:
+//
+//	GetDbNodeConsoleHistoriesConsoleHistoryCollectionArray{ GetDbNodeConsoleHistoriesConsoleHistoryCollectionArgs{...} }
+type GetDbNodeConsoleHistoriesConsoleHistoryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDbNodeConsoleHistoriesConsoleHistoryCollectionArrayOutput() GetDbNodeConsoleHistoriesConsoleHistoryCollectionArrayOutput
+	ToGetDbNodeConsoleHistoriesConsoleHistoryCollectionArrayOutputWithContext(context.Context) GetDbNodeConsoleHistoriesConsoleHistoryCollectionArrayOutput
+}
+
+type GetDbNodeConsoleHistoriesConsoleHistoryCollectionArray []GetDbNodeConsoleHistoriesConsoleHistoryCollectionInput
+
+func (GetDbNodeConsoleHistoriesConsoleHistoryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbNodeConsoleHistoriesConsoleHistoryCollection)(nil)).Elem()
+}
+
+func (i GetDbNodeConsoleHistoriesConsoleHistoryCollectionArray) ToGetDbNodeConsoleHistoriesConsoleHistoryCollectionArrayOutput() GetDbNodeConsoleHistoriesConsoleHistoryCollectionArrayOutput {
+	return i.ToGetDbNodeConsoleHistoriesConsoleHistoryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbNodeConsoleHistoriesConsoleHistoryCollectionArray) ToGetDbNodeConsoleHistoriesConsoleHistoryCollectionArrayOutputWithContext(ctx context.Context) GetDbNodeConsoleHistoriesConsoleHistoryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbNodeConsoleHistoriesConsoleHistoryCollectionArrayOutput)
+}
+
+type GetDbNodeConsoleHistoriesConsoleHistoryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDbNodeConsoleHistoriesConsoleHistoryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbNodeConsoleHistoriesConsoleHistoryCollection)(nil)).Elem()
+}
+
+func (o GetDbNodeConsoleHistoriesConsoleHistoryCollectionOutput) ToGetDbNodeConsoleHistoriesConsoleHistoryCollectionOutput() GetDbNodeConsoleHistoriesConsoleHistoryCollectionOutput {
+	return o
+}
+
+func (o GetDbNodeConsoleHistoriesConsoleHistoryCollectionOutput) ToGetDbNodeConsoleHistoriesConsoleHistoryCollectionOutputWithContext(ctx context.Context) GetDbNodeConsoleHistoriesConsoleHistoryCollectionOutput {
+	return o
+}
+
+func (o GetDbNodeConsoleHistoriesConsoleHistoryCollectionOutput) Items() GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDbNodeConsoleHistoriesConsoleHistoryCollection) []GetDbNodeConsoleHistoriesConsoleHistoryCollectionItem {
+		return v.Items
+	}).(GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArrayOutput)
+}
+
+type GetDbNodeConsoleHistoriesConsoleHistoryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbNodeConsoleHistoriesConsoleHistoryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbNodeConsoleHistoriesConsoleHistoryCollection)(nil)).Elem()
+}
+
+func (o GetDbNodeConsoleHistoriesConsoleHistoryCollectionArrayOutput) ToGetDbNodeConsoleHistoriesConsoleHistoryCollectionArrayOutput() GetDbNodeConsoleHistoriesConsoleHistoryCollectionArrayOutput {
+	return o
+}
+
+func (o GetDbNodeConsoleHistoriesConsoleHistoryCollectionArrayOutput) ToGetDbNodeConsoleHistoriesConsoleHistoryCollectionArrayOutputWithContext(ctx context.Context) GetDbNodeConsoleHistoriesConsoleHistoryCollectionArrayOutput {
+	return o
+}
+
+func (o GetDbNodeConsoleHistoriesConsoleHistoryCollectionArrayOutput) Index(i pulumi.IntInput) GetDbNodeConsoleHistoriesConsoleHistoryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbNodeConsoleHistoriesConsoleHistoryCollection {
+		return vs[0].([]GetDbNodeConsoleHistoriesConsoleHistoryCollection)[vs[1].(int)]
+	}).(GetDbNodeConsoleHistoriesConsoleHistoryCollectionOutput)
+}
+
+type GetDbNodeConsoleHistoriesConsoleHistoryCollectionItem struct {
+	// The OCID of the compartment containing the console history.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	DbNodeId string `pulumi:"dbNodeId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the console history.
+	Id string `pulumi:"id"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State string `pulumi:"state"`
+	// The date and time the console history was created.
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemInput is an input type that accepts GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArgs and GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemOutput values.
+// You can construct a concrete instance of `GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemInput` via:
+//
+//	GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArgs{...}
+type GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDbNodeConsoleHistoriesConsoleHistoryCollectionItemOutput() GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemOutput
+	ToGetDbNodeConsoleHistoriesConsoleHistoryCollectionItemOutputWithContext(context.Context) GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemOutput
+}
+
+type GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArgs struct {
+	// The OCID of the compartment containing the console history.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	DbNodeId pulumi.StringInput `pulumi:"dbNodeId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the console history.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the console history was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbNodeConsoleHistoriesConsoleHistoryCollectionItem)(nil)).Elem()
+}
+
+func (i GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArgs) ToGetDbNodeConsoleHistoriesConsoleHistoryCollectionItemOutput() GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemOutput {
+	return i.ToGetDbNodeConsoleHistoriesConsoleHistoryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArgs) ToGetDbNodeConsoleHistoriesConsoleHistoryCollectionItemOutputWithContext(ctx context.Context) GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemOutput)
+}
+
+// GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArrayInput is an input type that accepts GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArray and GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArrayInput` via:
+//
+//	GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArray{ GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArgs{...} }
+type GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArrayOutput() GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArrayOutput
+	ToGetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArrayOutputWithContext(context.Context) GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArrayOutput
+}
+
+type GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArray []GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemInput
+
+func (GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbNodeConsoleHistoriesConsoleHistoryCollectionItem)(nil)).Elem()
+}
+
+func (i GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArray) ToGetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArrayOutput() GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArrayOutput {
+	return i.ToGetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArray) ToGetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArrayOutputWithContext(ctx context.Context) GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArrayOutput)
+}
+
+type GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbNodeConsoleHistoriesConsoleHistoryCollectionItem)(nil)).Elem()
+}
+
+func (o GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemOutput) ToGetDbNodeConsoleHistoriesConsoleHistoryCollectionItemOutput() GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemOutput {
+	return o
+}
+
+func (o GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemOutput) ToGetDbNodeConsoleHistoriesConsoleHistoryCollectionItemOutputWithContext(ctx context.Context) GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemOutput {
+	return o
+}
+
+// The OCID of the compartment containing the console history.
+func (o GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodeConsoleHistoriesConsoleHistoryCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemOutput) DbNodeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodeConsoleHistoriesConsoleHistoryCollectionItem) string { return v.DbNodeId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbNodeConsoleHistoriesConsoleHistoryCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+func (o GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodeConsoleHistoriesConsoleHistoryCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbNodeConsoleHistoriesConsoleHistoryCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The OCID of the console history.
+func (o GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodeConsoleHistoriesConsoleHistoryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodeConsoleHistoriesConsoleHistoryCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state exactly.
+func (o GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodeConsoleHistoriesConsoleHistoryCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the console history was created.
+func (o GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodeConsoleHistoriesConsoleHistoryCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbNodeConsoleHistoriesConsoleHistoryCollectionItem)(nil)).Elem()
+}
+
+func (o GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArrayOutput) ToGetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArrayOutput() GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArrayOutput) ToGetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArrayOutputWithContext(ctx context.Context) GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbNodeConsoleHistoriesConsoleHistoryCollectionItem {
+		return vs[0].([]GetDbNodeConsoleHistoriesConsoleHistoryCollectionItem)[vs[1].(int)]
+	}).(GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemOutput)
+}
+
+type GetDbNodeConsoleHistoriesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDbNodeConsoleHistoriesFilterInput is an input type that accepts GetDbNodeConsoleHistoriesFilterArgs and GetDbNodeConsoleHistoriesFilterOutput values.
+// You can construct a concrete instance of `GetDbNodeConsoleHistoriesFilterInput` via:
+//
+//	GetDbNodeConsoleHistoriesFilterArgs{...}
+type GetDbNodeConsoleHistoriesFilterInput interface {
+	pulumi.Input
+
+	ToGetDbNodeConsoleHistoriesFilterOutput() GetDbNodeConsoleHistoriesFilterOutput
+	ToGetDbNodeConsoleHistoriesFilterOutputWithContext(context.Context) GetDbNodeConsoleHistoriesFilterOutput
+}
+
+type GetDbNodeConsoleHistoriesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDbNodeConsoleHistoriesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbNodeConsoleHistoriesFilter)(nil)).Elem()
+}
+
+func (i GetDbNodeConsoleHistoriesFilterArgs) ToGetDbNodeConsoleHistoriesFilterOutput() GetDbNodeConsoleHistoriesFilterOutput {
+	return i.ToGetDbNodeConsoleHistoriesFilterOutputWithContext(context.Background())
+}
+
+func (i GetDbNodeConsoleHistoriesFilterArgs) ToGetDbNodeConsoleHistoriesFilterOutputWithContext(ctx context.Context) GetDbNodeConsoleHistoriesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbNodeConsoleHistoriesFilterOutput)
+}
+
+// GetDbNodeConsoleHistoriesFilterArrayInput is an input type that accepts GetDbNodeConsoleHistoriesFilterArray and GetDbNodeConsoleHistoriesFilterArrayOutput values.
+// You can construct a concrete instance of `GetDbNodeConsoleHistoriesFilterArrayInput` via:
+//
+//	GetDbNodeConsoleHistoriesFilterArray{ GetDbNodeConsoleHistoriesFilterArgs{...} }
+type GetDbNodeConsoleHistoriesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDbNodeConsoleHistoriesFilterArrayOutput() GetDbNodeConsoleHistoriesFilterArrayOutput
+	ToGetDbNodeConsoleHistoriesFilterArrayOutputWithContext(context.Context) GetDbNodeConsoleHistoriesFilterArrayOutput
+}
+
+type GetDbNodeConsoleHistoriesFilterArray []GetDbNodeConsoleHistoriesFilterInput
+
+func (GetDbNodeConsoleHistoriesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbNodeConsoleHistoriesFilter)(nil)).Elem()
+}
+
+func (i GetDbNodeConsoleHistoriesFilterArray) ToGetDbNodeConsoleHistoriesFilterArrayOutput() GetDbNodeConsoleHistoriesFilterArrayOutput {
+	return i.ToGetDbNodeConsoleHistoriesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbNodeConsoleHistoriesFilterArray) ToGetDbNodeConsoleHistoriesFilterArrayOutputWithContext(ctx context.Context) GetDbNodeConsoleHistoriesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbNodeConsoleHistoriesFilterArrayOutput)
+}
+
+type GetDbNodeConsoleHistoriesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDbNodeConsoleHistoriesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbNodeConsoleHistoriesFilter)(nil)).Elem()
+}
+
+func (o GetDbNodeConsoleHistoriesFilterOutput) ToGetDbNodeConsoleHistoriesFilterOutput() GetDbNodeConsoleHistoriesFilterOutput {
+	return o
+}
+
+func (o GetDbNodeConsoleHistoriesFilterOutput) ToGetDbNodeConsoleHistoriesFilterOutputWithContext(ctx context.Context) GetDbNodeConsoleHistoriesFilterOutput {
+	return o
+}
+
+func (o GetDbNodeConsoleHistoriesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodeConsoleHistoriesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDbNodeConsoleHistoriesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDbNodeConsoleHistoriesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDbNodeConsoleHistoriesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbNodeConsoleHistoriesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDbNodeConsoleHistoriesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbNodeConsoleHistoriesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbNodeConsoleHistoriesFilter)(nil)).Elem()
+}
+
+func (o GetDbNodeConsoleHistoriesFilterArrayOutput) ToGetDbNodeConsoleHistoriesFilterArrayOutput() GetDbNodeConsoleHistoriesFilterArrayOutput {
+	return o
+}
+
+func (o GetDbNodeConsoleHistoriesFilterArrayOutput) ToGetDbNodeConsoleHistoriesFilterArrayOutputWithContext(ctx context.Context) GetDbNodeConsoleHistoriesFilterArrayOutput {
+	return o
+}
+
+func (o GetDbNodeConsoleHistoriesFilterArrayOutput) Index(i pulumi.IntInput) GetDbNodeConsoleHistoriesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbNodeConsoleHistoriesFilter {
+		return vs[0].([]GetDbNodeConsoleHistoriesFilter)[vs[1].(int)]
+	}).(GetDbNodeConsoleHistoriesFilterOutput)
+}
+
+type GetDbNodesDbNode struct {
+	// Additional information about the planned maintenance.
+	AdditionalDetails string `pulumi:"additionalDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IPv4 address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IPv4 address needed to make a database connection.
+	BackupIpId string `pulumi:"backupIpId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IPv6 address associated with the database node. Use this OCID with the [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6) API to get the IPv6 address needed to make a database connection.
+	BackupIpv6id string `pulumi:"backupIpv6id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
+	BackupVnic2id string `pulumi:"backupVnic2id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup VNIC.
+	BackupVnicId string `pulumi:"backupVnicId"`
+	// The number of CPU cores enabled on the Db node.
+	CpuCoreCount int    `pulumi:"cpuCoreCount"`
+	DbNodeId     string `pulumi:"dbNodeId"`
+	// The allocated local node storage in GBs on the Db node.
+	DbNodeStorageSizeInGbs int `pulumi:"dbNodeStorageSizeInGbs"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server.
+	DbServerId string `pulumi:"dbServerId"`
+	// The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
+	DbSystemId string `pulumi:"dbSystemId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The name of the Fault Domain the instance is contained in.
+	FaultDomain string `pulumi:"faultDomain"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IPv4 address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IPv4 address needed to make a database connection.
+	HostIpId string `pulumi:"hostIpId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IPv6 address associated with the database node. Use this OCID with the [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6) API to get the IPv6 address needed to make a database connection.
+	HostIpv6id string `pulumi:"hostIpv6id"`
+	// The host name for the database node.
+	Hostname string `pulumi:"hostname"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database node.
+	Id string `pulumi:"id"`
+	// Information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The type of database node maintenance.
+	MaintenanceType string `pulumi:"maintenanceType"`
+	// The allocated memory in GBs on the Db node.
+	MemorySizeInGbs int `pulumi:"memorySizeInGbs"`
+	// The size (in GB) of the block storage volume allocation for the DB system. This attribute applies only for virtual machine DB systems.
+	SoftwareStorageSizeInGb int `pulumi:"softwareStorageSizeInGb"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State string `pulumi:"state"`
+	// The date and time that the database node was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// End date and time of maintenance window.
+	TimeMaintenanceWindowEnd string `pulumi:"timeMaintenanceWindowEnd"`
+	// Start date and time of maintenance window.
+	TimeMaintenanceWindowStart string `pulumi:"timeMaintenanceWindowStart"`
+	// The total number of CPU cores reserved on the Db node.
+	TotalCpuCoreCount int `pulumi:"totalCpuCoreCount"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
+	Vnic2id string `pulumi:"vnic2id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
+	VnicId string `pulumi:"vnicId"`
+}
+
+// GetDbNodesDbNodeInput is an input type that accepts GetDbNodesDbNodeArgs and GetDbNodesDbNodeOutput values.
+// You can construct a concrete instance of `GetDbNodesDbNodeInput` via:
+//
+//	GetDbNodesDbNodeArgs{...}
+type GetDbNodesDbNodeInput interface {
+	pulumi.Input
+
+	ToGetDbNodesDbNodeOutput() GetDbNodesDbNodeOutput
+	ToGetDbNodesDbNodeOutputWithContext(context.Context) GetDbNodesDbNodeOutput
+}
+
+type GetDbNodesDbNodeArgs struct {
+	// Additional information about the planned maintenance.
+	AdditionalDetails pulumi.StringInput `pulumi:"additionalDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IPv4 address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IPv4 address needed to make a database connection.
+	BackupIpId pulumi.StringInput `pulumi:"backupIpId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IPv6 address associated with the database node. Use this OCID with the [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6) API to get the IPv6 address needed to make a database connection.
+	BackupIpv6id pulumi.StringInput `pulumi:"backupIpv6id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
+	BackupVnic2id pulumi.StringInput `pulumi:"backupVnic2id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup VNIC.
+	BackupVnicId pulumi.StringInput `pulumi:"backupVnicId"`
+	// The number of CPU cores enabled on the Db node.
+	CpuCoreCount pulumi.IntInput    `pulumi:"cpuCoreCount"`
+	DbNodeId     pulumi.StringInput `pulumi:"dbNodeId"`
+	// The allocated local node storage in GBs on the Db node.
+	DbNodeStorageSizeInGbs pulumi.IntInput `pulumi:"dbNodeStorageSizeInGbs"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server.
+	DbServerId pulumi.StringInput `pulumi:"dbServerId"`
+	// The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
+	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// The name of the Fault Domain the instance is contained in.
+	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IPv4 address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IPv4 address needed to make a database connection.
+	HostIpId pulumi.StringInput `pulumi:"hostIpId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IPv6 address associated with the database node. Use this OCID with the [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6) API to get the IPv6 address needed to make a database connection.
+	HostIpv6id pulumi.StringInput `pulumi:"hostIpv6id"`
+	// The host name for the database node.
+	Hostname pulumi.StringInput `pulumi:"hostname"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database node.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The type of database node maintenance.
+	MaintenanceType pulumi.StringInput `pulumi:"maintenanceType"`
+	// The allocated memory in GBs on the Db node.
+	MemorySizeInGbs pulumi.IntInput `pulumi:"memorySizeInGbs"`
+	// The size (in GB) of the block storage volume allocation for the DB system. This attribute applies only for virtual machine DB systems.
+	SoftwareStorageSizeInGb pulumi.IntInput `pulumi:"softwareStorageSizeInGb"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time that the database node was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// End date and time of maintenance window.
+	TimeMaintenanceWindowEnd pulumi.StringInput `pulumi:"timeMaintenanceWindowEnd"`
+	// Start date and time of maintenance window.
+	TimeMaintenanceWindowStart pulumi.StringInput `pulumi:"timeMaintenanceWindowStart"`
+	// The total number of CPU cores reserved on the Db node.
+	TotalCpuCoreCount pulumi.IntInput `pulumi:"totalCpuCoreCount"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
+	Vnic2id pulumi.StringInput `pulumi:"vnic2id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
+	VnicId pulumi.StringInput `pulumi:"vnicId"`
+}
+
+func (GetDbNodesDbNodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbNodesDbNode)(nil)).Elem()
+}
+
+func (i GetDbNodesDbNodeArgs) ToGetDbNodesDbNodeOutput() GetDbNodesDbNodeOutput {
+	return i.ToGetDbNodesDbNodeOutputWithContext(context.Background())
+}
+
+func (i GetDbNodesDbNodeArgs) ToGetDbNodesDbNodeOutputWithContext(ctx context.Context) GetDbNodesDbNodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbNodesDbNodeOutput)
+}
+
+// GetDbNodesDbNodeArrayInput is an input type that accepts GetDbNodesDbNodeArray and GetDbNodesDbNodeArrayOutput values.
+// You can construct a concrete instance of `GetDbNodesDbNodeArrayInput` via:
+//
+//	GetDbNodesDbNodeArray{ GetDbNodesDbNodeArgs{...} }
+type GetDbNodesDbNodeArrayInput interface {
+	pulumi.Input
+
+	ToGetDbNodesDbNodeArrayOutput() GetDbNodesDbNodeArrayOutput
+	ToGetDbNodesDbNodeArrayOutputWithContext(context.Context) GetDbNodesDbNodeArrayOutput
+}
+
+type GetDbNodesDbNodeArray []GetDbNodesDbNodeInput
+
+func (GetDbNodesDbNodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbNodesDbNode)(nil)).Elem()
+}
+
+func (i GetDbNodesDbNodeArray) ToGetDbNodesDbNodeArrayOutput() GetDbNodesDbNodeArrayOutput {
+	return i.ToGetDbNodesDbNodeArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbNodesDbNodeArray) ToGetDbNodesDbNodeArrayOutputWithContext(ctx context.Context) GetDbNodesDbNodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbNodesDbNodeArrayOutput)
+}
+
+type GetDbNodesDbNodeOutput struct{ *pulumi.OutputState }
+
+func (GetDbNodesDbNodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbNodesDbNode)(nil)).Elem()
+}
+
+func (o GetDbNodesDbNodeOutput) ToGetDbNodesDbNodeOutput() GetDbNodesDbNodeOutput {
+	return o
+}
+
+func (o GetDbNodesDbNodeOutput) ToGetDbNodesDbNodeOutputWithContext(ctx context.Context) GetDbNodesDbNodeOutput {
+	return o
+}
+
+// Additional information about the planned maintenance.
+func (o GetDbNodesDbNodeOutput) AdditionalDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodesDbNode) string { return v.AdditionalDetails }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IPv4 address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IPv4 address needed to make a database connection.
+func (o GetDbNodesDbNodeOutput) BackupIpId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodesDbNode) string { return v.BackupIpId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IPv6 address associated with the database node. Use this OCID with the [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6) API to get the IPv6 address needed to make a database connection.
+func (o GetDbNodesDbNodeOutput) BackupIpv6id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodesDbNode) string { return v.BackupIpv6id }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
+func (o GetDbNodesDbNodeOutput) BackupVnic2id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodesDbNode) string { return v.BackupVnic2id }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup VNIC.
+func (o GetDbNodesDbNodeOutput) BackupVnicId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodesDbNode) string { return v.BackupVnicId }).(pulumi.StringOutput)
+}
+
+// The number of CPU cores enabled on the Db node.
+func (o GetDbNodesDbNodeOutput) CpuCoreCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbNodesDbNode) int { return v.CpuCoreCount }).(pulumi.IntOutput)
+}
+
+func (o GetDbNodesDbNodeOutput) DbNodeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodesDbNode) string { return v.DbNodeId }).(pulumi.StringOutput)
+}
+
+// The allocated local node storage in GBs on the Db node.
+func (o GetDbNodesDbNodeOutput) DbNodeStorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbNodesDbNode) int { return v.DbNodeStorageSizeInGbs }).(pulumi.IntOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server.
+func (o GetDbNodesDbNodeOutput) DbServerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodesDbNode) string { return v.DbServerId }).(pulumi.StringOutput)
+}
+
+// The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
+func (o GetDbNodesDbNodeOutput) DbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodesDbNode) string { return v.DbSystemId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetDbNodesDbNodeOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbNodesDbNode) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// The name of the Fault Domain the instance is contained in.
+func (o GetDbNodesDbNodeOutput) FaultDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodesDbNode) string { return v.FaultDomain }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetDbNodesDbNodeOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbNodesDbNode) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IPv4 address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IPv4 address needed to make a database connection.
+func (o GetDbNodesDbNodeOutput) HostIpId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodesDbNode) string { return v.HostIpId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IPv6 address associated with the database node. Use this OCID with the [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6) API to get the IPv6 address needed to make a database connection.
+func (o GetDbNodesDbNodeOutput) HostIpv6id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodesDbNode) string { return v.HostIpv6id }).(pulumi.StringOutput)
+}
+
+// The host name for the database node.
+func (o GetDbNodesDbNodeOutput) Hostname() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodesDbNode) string { return v.Hostname }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database node.
+func (o GetDbNodesDbNodeOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodesDbNode) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Information about the current lifecycle state.
+func (o GetDbNodesDbNodeOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodesDbNode) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The type of database node maintenance.
+func (o GetDbNodesDbNodeOutput) MaintenanceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodesDbNode) string { return v.MaintenanceType }).(pulumi.StringOutput)
+}
+
+// The allocated memory in GBs on the Db node.
+func (o GetDbNodesDbNodeOutput) MemorySizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbNodesDbNode) int { return v.MemorySizeInGbs }).(pulumi.IntOutput)
+}
+
+// The size (in GB) of the block storage volume allocation for the DB system. This attribute applies only for virtual machine DB systems.
+func (o GetDbNodesDbNodeOutput) SoftwareStorageSizeInGb() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbNodesDbNode) int { return v.SoftwareStorageSizeInGb }).(pulumi.IntOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state exactly.
+func (o GetDbNodesDbNodeOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodesDbNode) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time that the database node was created.
+func (o GetDbNodesDbNodeOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodesDbNode) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// End date and time of maintenance window.
+func (o GetDbNodesDbNodeOutput) TimeMaintenanceWindowEnd() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodesDbNode) string { return v.TimeMaintenanceWindowEnd }).(pulumi.StringOutput)
+}
+
+// Start date and time of maintenance window.
+func (o GetDbNodesDbNodeOutput) TimeMaintenanceWindowStart() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodesDbNode) string { return v.TimeMaintenanceWindowStart }).(pulumi.StringOutput)
+}
+
+// The total number of CPU cores reserved on the Db node.
+func (o GetDbNodesDbNodeOutput) TotalCpuCoreCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbNodesDbNode) int { return v.TotalCpuCoreCount }).(pulumi.IntOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
+func (o GetDbNodesDbNodeOutput) Vnic2id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodesDbNode) string { return v.Vnic2id }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
+func (o GetDbNodesDbNodeOutput) VnicId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodesDbNode) string { return v.VnicId }).(pulumi.StringOutput)
+}
+
+type GetDbNodesDbNodeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbNodesDbNodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbNodesDbNode)(nil)).Elem()
+}
+
+func (o GetDbNodesDbNodeArrayOutput) ToGetDbNodesDbNodeArrayOutput() GetDbNodesDbNodeArrayOutput {
+	return o
+}
+
+func (o GetDbNodesDbNodeArrayOutput) ToGetDbNodesDbNodeArrayOutputWithContext(ctx context.Context) GetDbNodesDbNodeArrayOutput {
+	return o
+}
+
+func (o GetDbNodesDbNodeArrayOutput) Index(i pulumi.IntInput) GetDbNodesDbNodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbNodesDbNode {
+		return vs[0].([]GetDbNodesDbNode)[vs[1].(int)]
+	}).(GetDbNodesDbNodeOutput)
+}
+
+type GetDbNodesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDbNodesFilterInput is an input type that accepts GetDbNodesFilterArgs and GetDbNodesFilterOutput values.
+// You can construct a concrete instance of `GetDbNodesFilterInput` via:
+//
+//	GetDbNodesFilterArgs{...}
+type GetDbNodesFilterInput interface {
+	pulumi.Input
+
+	ToGetDbNodesFilterOutput() GetDbNodesFilterOutput
+	ToGetDbNodesFilterOutputWithContext(context.Context) GetDbNodesFilterOutput
+}
+
+type GetDbNodesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDbNodesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbNodesFilter)(nil)).Elem()
+}
+
+func (i GetDbNodesFilterArgs) ToGetDbNodesFilterOutput() GetDbNodesFilterOutput {
+	return i.ToGetDbNodesFilterOutputWithContext(context.Background())
+}
+
+func (i GetDbNodesFilterArgs) ToGetDbNodesFilterOutputWithContext(ctx context.Context) GetDbNodesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbNodesFilterOutput)
+}
+
+// GetDbNodesFilterArrayInput is an input type that accepts GetDbNodesFilterArray and GetDbNodesFilterArrayOutput values.
+// You can construct a concrete instance of `GetDbNodesFilterArrayInput` via:
+//
+//	GetDbNodesFilterArray{ GetDbNodesFilterArgs{...} }
+type GetDbNodesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDbNodesFilterArrayOutput() GetDbNodesFilterArrayOutput
+	ToGetDbNodesFilterArrayOutputWithContext(context.Context) GetDbNodesFilterArrayOutput
+}
+
+type GetDbNodesFilterArray []GetDbNodesFilterInput
+
+func (GetDbNodesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbNodesFilter)(nil)).Elem()
+}
+
+func (i GetDbNodesFilterArray) ToGetDbNodesFilterArrayOutput() GetDbNodesFilterArrayOutput {
+	return i.ToGetDbNodesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbNodesFilterArray) ToGetDbNodesFilterArrayOutputWithContext(ctx context.Context) GetDbNodesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbNodesFilterArrayOutput)
+}
+
+type GetDbNodesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDbNodesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbNodesFilter)(nil)).Elem()
+}
+
+func (o GetDbNodesFilterOutput) ToGetDbNodesFilterOutput() GetDbNodesFilterOutput {
+	return o
+}
+
+func (o GetDbNodesFilterOutput) ToGetDbNodesFilterOutputWithContext(ctx context.Context) GetDbNodesFilterOutput {
+	return o
+}
+
+func (o GetDbNodesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDbNodesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDbNodesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDbNodesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbNodesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDbNodesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbNodesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbNodesFilter)(nil)).Elem()
+}
+
+func (o GetDbNodesFilterArrayOutput) ToGetDbNodesFilterArrayOutput() GetDbNodesFilterArrayOutput {
+	return o
+}
+
+func (o GetDbNodesFilterArrayOutput) ToGetDbNodesFilterArrayOutputWithContext(ctx context.Context) GetDbNodesFilterArrayOutput {
+	return o
+}
+
+func (o GetDbNodesFilterArrayOutput) Index(i pulumi.IntInput) GetDbNodesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbNodesFilter {
+		return vs[0].([]GetDbNodesFilter)[vs[1].(int)]
+	}).(GetDbNodesFilterOutput)
+}
+
+type GetDbServerDbServerPatchingDetail struct {
+	// Estimated time, in minutes, to patch one database server.
+	EstimatedPatchDuration int `pulumi:"estimatedPatchDuration"`
+	// The status of the patching operation.
+	PatchingStatus string `pulumi:"patchingStatus"`
+	// The time when the patching operation ended.
+	TimePatchingEnded string `pulumi:"timePatchingEnded"`
+	// The time when the patching operation started.
+	TimePatchingStarted string `pulumi:"timePatchingStarted"`
+}
+
+// GetDbServerDbServerPatchingDetailInput is an input type that accepts GetDbServerDbServerPatchingDetailArgs and GetDbServerDbServerPatchingDetailOutput values.
+// You can construct a concrete instance of `GetDbServerDbServerPatchingDetailInput` via:
+//
+//	GetDbServerDbServerPatchingDetailArgs{...}
+type GetDbServerDbServerPatchingDetailInput interface {
+	pulumi.Input
+
+	ToGetDbServerDbServerPatchingDetailOutput() GetDbServerDbServerPatchingDetailOutput
+	ToGetDbServerDbServerPatchingDetailOutputWithContext(context.Context) GetDbServerDbServerPatchingDetailOutput
+}
+
+type GetDbServerDbServerPatchingDetailArgs struct {
+	// Estimated time, in minutes, to patch one database server.
+	EstimatedPatchDuration pulumi.IntInput `pulumi:"estimatedPatchDuration"`
+	// The status of the patching operation.
+	PatchingStatus pulumi.StringInput `pulumi:"patchingStatus"`
+	// The time when the patching operation ended.
+	TimePatchingEnded pulumi.StringInput `pulumi:"timePatchingEnded"`
+	// The time when the patching operation started.
+	TimePatchingStarted pulumi.StringInput `pulumi:"timePatchingStarted"`
+}
+
+func (GetDbServerDbServerPatchingDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbServerDbServerPatchingDetail)(nil)).Elem()
+}
+
+func (i GetDbServerDbServerPatchingDetailArgs) ToGetDbServerDbServerPatchingDetailOutput() GetDbServerDbServerPatchingDetailOutput {
+	return i.ToGetDbServerDbServerPatchingDetailOutputWithContext(context.Background())
+}
+
+func (i GetDbServerDbServerPatchingDetailArgs) ToGetDbServerDbServerPatchingDetailOutputWithContext(ctx context.Context) GetDbServerDbServerPatchingDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbServerDbServerPatchingDetailOutput)
+}
+
+// GetDbServerDbServerPatchingDetailArrayInput is an input type that accepts GetDbServerDbServerPatchingDetailArray and GetDbServerDbServerPatchingDetailArrayOutput values.
+// You can construct a concrete instance of `GetDbServerDbServerPatchingDetailArrayInput` via:
+//
+//	GetDbServerDbServerPatchingDetailArray{ GetDbServerDbServerPatchingDetailArgs{...} }
+type GetDbServerDbServerPatchingDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDbServerDbServerPatchingDetailArrayOutput() GetDbServerDbServerPatchingDetailArrayOutput
+	ToGetDbServerDbServerPatchingDetailArrayOutputWithContext(context.Context) GetDbServerDbServerPatchingDetailArrayOutput
+}
+
+type GetDbServerDbServerPatchingDetailArray []GetDbServerDbServerPatchingDetailInput
+
+func (GetDbServerDbServerPatchingDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbServerDbServerPatchingDetail)(nil)).Elem()
+}
+
+func (i GetDbServerDbServerPatchingDetailArray) ToGetDbServerDbServerPatchingDetailArrayOutput() GetDbServerDbServerPatchingDetailArrayOutput {
+	return i.ToGetDbServerDbServerPatchingDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbServerDbServerPatchingDetailArray) ToGetDbServerDbServerPatchingDetailArrayOutputWithContext(ctx context.Context) GetDbServerDbServerPatchingDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbServerDbServerPatchingDetailArrayOutput)
+}
+
+type GetDbServerDbServerPatchingDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDbServerDbServerPatchingDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbServerDbServerPatchingDetail)(nil)).Elem()
+}
+
+func (o GetDbServerDbServerPatchingDetailOutput) ToGetDbServerDbServerPatchingDetailOutput() GetDbServerDbServerPatchingDetailOutput {
+	return o
+}
+
+func (o GetDbServerDbServerPatchingDetailOutput) ToGetDbServerDbServerPatchingDetailOutputWithContext(ctx context.Context) GetDbServerDbServerPatchingDetailOutput {
+	return o
+}
+
+// Estimated time, in minutes, to patch one database server.
+func (o GetDbServerDbServerPatchingDetailOutput) EstimatedPatchDuration() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbServerDbServerPatchingDetail) int { return v.EstimatedPatchDuration }).(pulumi.IntOutput)
+}
+
+// The status of the patching operation.
+func (o GetDbServerDbServerPatchingDetailOutput) PatchingStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbServerDbServerPatchingDetail) string { return v.PatchingStatus }).(pulumi.StringOutput)
+}
+
+// The time when the patching operation ended.
+func (o GetDbServerDbServerPatchingDetailOutput) TimePatchingEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbServerDbServerPatchingDetail) string { return v.TimePatchingEnded }).(pulumi.StringOutput)
+}
+
+// The time when the patching operation started.
+func (o GetDbServerDbServerPatchingDetailOutput) TimePatchingStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbServerDbServerPatchingDetail) string { return v.TimePatchingStarted }).(pulumi.StringOutput)
+}
+
+type GetDbServerDbServerPatchingDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbServerDbServerPatchingDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbServerDbServerPatchingDetail)(nil)).Elem()
+}
+
+func (o GetDbServerDbServerPatchingDetailArrayOutput) ToGetDbServerDbServerPatchingDetailArrayOutput() GetDbServerDbServerPatchingDetailArrayOutput {
+	return o
+}
+
+func (o GetDbServerDbServerPatchingDetailArrayOutput) ToGetDbServerDbServerPatchingDetailArrayOutputWithContext(ctx context.Context) GetDbServerDbServerPatchingDetailArrayOutput {
+	return o
+}
+
+func (o GetDbServerDbServerPatchingDetailArrayOutput) Index(i pulumi.IntInput) GetDbServerDbServerPatchingDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbServerDbServerPatchingDetail {
+		return vs[0].([]GetDbServerDbServerPatchingDetail)[vs[1].(int)]
+	}).(GetDbServerDbServerPatchingDetailOutput)
+}
+
+type GetDbServersDbServer struct {
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Virtual Machines associated with the Db server.
+	AutonomousVirtualMachineIds []string `pulumi:"autonomousVirtualMachineIds"`
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM Clusters associated with the Db server.
+	AutonomousVmClusterIds []string `pulumi:"autonomousVmClusterIds"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+	ComputeModel string `pulumi:"computeModel"`
+	// The number of CPU cores enabled on the Db server.
+	CpuCoreCount int `pulumi:"cpuCoreCount"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db nodes associated with the Db server.
+	DbNodeIds []string `pulumi:"dbNodeIds"`
+	// The allocated local node storage in GBs on the Db server.
+	DbNodeStorageSizeInGbs int `pulumi:"dbNodeStorageSizeInGbs"`
+	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+	DbServerPatchingDetails []GetDbServersDbServerDbServerPatchingDetail `pulumi:"dbServerPatchingDetails"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ExadataInfrastructure.
+	ExadataInfrastructureId string `pulumi:"exadataInfrastructureId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server.
+	Id string `pulumi:"id"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The total number of CPU cores available.
+	MaxCpuCount int `pulumi:"maxCpuCount"`
+	// The total local node storage available in GBs.
+	MaxDbNodeStorageInGbs int `pulumi:"maxDbNodeStorageInGbs"`
+	// The total memory available in GBs.
+	MaxMemoryInGbs int `pulumi:"maxMemoryInGbs"`
+	// The allocated memory in GBs on the Db server.
+	MemorySizeInGbs int `pulumi:"memorySizeInGbs"`
+	// The shape of the Db server. The shape determines the amount of CPU, storage, and memory resources available.
+	Shape string `pulumi:"shape"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State string `pulumi:"state"`
+	// The date and time that the Db Server was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Clusters associated with the Db server.
+	VmClusterIds []string `pulumi:"vmClusterIds"`
+}
+
+// GetDbServersDbServerInput is an input type that accepts GetDbServersDbServerArgs and GetDbServersDbServerOutput values.
+// You can construct a concrete instance of `GetDbServersDbServerInput` via:
+//
+//	GetDbServersDbServerArgs{...}
+type GetDbServersDbServerInput interface {
+	pulumi.Input
+
+	ToGetDbServersDbServerOutput() GetDbServersDbServerOutput
+	ToGetDbServersDbServerOutputWithContext(context.Context) GetDbServersDbServerOutput
+}
+
+type GetDbServersDbServerArgs struct {
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Virtual Machines associated with the Db server.
+	AutonomousVirtualMachineIds pulumi.StringArrayInput `pulumi:"autonomousVirtualMachineIds"`
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM Clusters associated with the Db server.
+	AutonomousVmClusterIds pulumi.StringArrayInput `pulumi:"autonomousVmClusterIds"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+	ComputeModel pulumi.StringInput `pulumi:"computeModel"`
+	// The number of CPU cores enabled on the Db server.
+	CpuCoreCount pulumi.IntInput `pulumi:"cpuCoreCount"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db nodes associated with the Db server.
+	DbNodeIds pulumi.StringArrayInput `pulumi:"dbNodeIds"`
+	// The allocated local node storage in GBs on the Db server.
+	DbNodeStorageSizeInGbs pulumi.IntInput `pulumi:"dbNodeStorageSizeInGbs"`
+	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+	DbServerPatchingDetails GetDbServersDbServerDbServerPatchingDetailArrayInput `pulumi:"dbServerPatchingDetails"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ExadataInfrastructure.
+	ExadataInfrastructureId pulumi.StringInput `pulumi:"exadataInfrastructureId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The total number of CPU cores available.
+	MaxCpuCount pulumi.IntInput `pulumi:"maxCpuCount"`
+	// The total local node storage available in GBs.
+	MaxDbNodeStorageInGbs pulumi.IntInput `pulumi:"maxDbNodeStorageInGbs"`
+	// The total memory available in GBs.
+	MaxMemoryInGbs pulumi.IntInput `pulumi:"maxMemoryInGbs"`
+	// The allocated memory in GBs on the Db server.
+	MemorySizeInGbs pulumi.IntInput `pulumi:"memorySizeInGbs"`
+	// The shape of the Db server. The shape determines the amount of CPU, storage, and memory resources available.
+	Shape pulumi.StringInput `pulumi:"shape"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time that the Db Server was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Clusters associated with the Db server.
+	VmClusterIds pulumi.StringArrayInput `pulumi:"vmClusterIds"`
+}
+
+func (GetDbServersDbServerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbServersDbServer)(nil)).Elem()
+}
+
+func (i GetDbServersDbServerArgs) ToGetDbServersDbServerOutput() GetDbServersDbServerOutput {
+	return i.ToGetDbServersDbServerOutputWithContext(context.Background())
+}
+
+func (i GetDbServersDbServerArgs) ToGetDbServersDbServerOutputWithContext(ctx context.Context) GetDbServersDbServerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbServersDbServerOutput)
+}
+
+// GetDbServersDbServerArrayInput is an input type that accepts GetDbServersDbServerArray and GetDbServersDbServerArrayOutput values.
+// You can construct a concrete instance of `GetDbServersDbServerArrayInput` via:
+//
+//	GetDbServersDbServerArray{ GetDbServersDbServerArgs{...} }
+type GetDbServersDbServerArrayInput interface {
+	pulumi.Input
+
+	ToGetDbServersDbServerArrayOutput() GetDbServersDbServerArrayOutput
+	ToGetDbServersDbServerArrayOutputWithContext(context.Context) GetDbServersDbServerArrayOutput
+}
+
+type GetDbServersDbServerArray []GetDbServersDbServerInput
+
+func (GetDbServersDbServerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbServersDbServer)(nil)).Elem()
+}
+
+func (i GetDbServersDbServerArray) ToGetDbServersDbServerArrayOutput() GetDbServersDbServerArrayOutput {
+	return i.ToGetDbServersDbServerArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbServersDbServerArray) ToGetDbServersDbServerArrayOutputWithContext(ctx context.Context) GetDbServersDbServerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbServersDbServerArrayOutput)
+}
+
+type GetDbServersDbServerOutput struct{ *pulumi.OutputState }
+
+func (GetDbServersDbServerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbServersDbServer)(nil)).Elem()
+}
+
+func (o GetDbServersDbServerOutput) ToGetDbServersDbServerOutput() GetDbServersDbServerOutput {
+	return o
+}
+
+func (o GetDbServersDbServerOutput) ToGetDbServersDbServerOutputWithContext(ctx context.Context) GetDbServersDbServerOutput {
+	return o
+}
+
+// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Virtual Machines associated with the Db server.
+func (o GetDbServersDbServerOutput) AutonomousVirtualMachineIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbServersDbServer) []string { return v.AutonomousVirtualMachineIds }).(pulumi.StringArrayOutput)
+}
+
+// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM Clusters associated with the Db server.
+func (o GetDbServersDbServerOutput) AutonomousVmClusterIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbServersDbServer) []string { return v.AutonomousVmClusterIds }).(pulumi.StringArrayOutput)
+}
+
+// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetDbServersDbServerOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbServersDbServer) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+func (o GetDbServersDbServerOutput) ComputeModel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbServersDbServer) string { return v.ComputeModel }).(pulumi.StringOutput)
+}
+
+// The number of CPU cores enabled on the Db server.
+func (o GetDbServersDbServerOutput) CpuCoreCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbServersDbServer) int { return v.CpuCoreCount }).(pulumi.IntOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db nodes associated with the Db server.
+func (o GetDbServersDbServerOutput) DbNodeIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbServersDbServer) []string { return v.DbNodeIds }).(pulumi.StringArrayOutput)
+}
+
+// The allocated local node storage in GBs on the Db server.
+func (o GetDbServersDbServerOutput) DbNodeStorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbServersDbServer) int { return v.DbNodeStorageSizeInGbs }).(pulumi.IntOutput)
+}
+
+// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+func (o GetDbServersDbServerOutput) DbServerPatchingDetails() GetDbServersDbServerDbServerPatchingDetailArrayOutput {
+	return o.ApplyT(func(v GetDbServersDbServer) []GetDbServersDbServerDbServerPatchingDetail {
+		return v.DbServerPatchingDetails
+	}).(GetDbServersDbServerDbServerPatchingDetailArrayOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetDbServersDbServerOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbServersDbServer) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+func (o GetDbServersDbServerOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbServersDbServer) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ExadataInfrastructure.
+func (o GetDbServersDbServerOutput) ExadataInfrastructureId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbServersDbServer) string { return v.ExadataInfrastructureId }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetDbServersDbServerOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbServersDbServer) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server.
+func (o GetDbServersDbServerOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbServersDbServer) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetDbServersDbServerOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbServersDbServer) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The total number of CPU cores available.
+func (o GetDbServersDbServerOutput) MaxCpuCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbServersDbServer) int { return v.MaxCpuCount }).(pulumi.IntOutput)
+}
+
+// The total local node storage available in GBs.
+func (o GetDbServersDbServerOutput) MaxDbNodeStorageInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbServersDbServer) int { return v.MaxDbNodeStorageInGbs }).(pulumi.IntOutput)
+}
+
+// The total memory available in GBs.
+func (o GetDbServersDbServerOutput) MaxMemoryInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbServersDbServer) int { return v.MaxMemoryInGbs }).(pulumi.IntOutput)
+}
+
+// The allocated memory in GBs on the Db server.
+func (o GetDbServersDbServerOutput) MemorySizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbServersDbServer) int { return v.MemorySizeInGbs }).(pulumi.IntOutput)
+}
+
+// The shape of the Db server. The shape determines the amount of CPU, storage, and memory resources available.
+func (o GetDbServersDbServerOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbServersDbServer) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state exactly.
+func (o GetDbServersDbServerOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbServersDbServer) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time that the Db Server was created.
+func (o GetDbServersDbServerOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbServersDbServer) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Clusters associated with the Db server.
+func (o GetDbServersDbServerOutput) VmClusterIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbServersDbServer) []string { return v.VmClusterIds }).(pulumi.StringArrayOutput)
+}
+
+type GetDbServersDbServerArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbServersDbServerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbServersDbServer)(nil)).Elem()
+}
+
+func (o GetDbServersDbServerArrayOutput) ToGetDbServersDbServerArrayOutput() GetDbServersDbServerArrayOutput {
+	return o
+}
+
+func (o GetDbServersDbServerArrayOutput) ToGetDbServersDbServerArrayOutputWithContext(ctx context.Context) GetDbServersDbServerArrayOutput {
+	return o
+}
+
+func (o GetDbServersDbServerArrayOutput) Index(i pulumi.IntInput) GetDbServersDbServerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbServersDbServer {
+		return vs[0].([]GetDbServersDbServer)[vs[1].(int)]
+	}).(GetDbServersDbServerOutput)
+}
+
 type GetDbServersDbServerDbServerPatchingDetail struct {
 	// Estimated time, in minutes, to patch one database server.
 	EstimatedPatchDuration int `pulumi:"estimatedPatchDuration"`
@@ -18123,6 +20762,8 @@ type GetMaintenanceRunsMaintenanceRun struct {
 	PatchingStatus string `pulumi:"patchingStatus"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
 	PeerMaintenanceRunId string `pulumi:"peerMaintenanceRunId"`
+	// The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+	PeerMaintenanceRunIds []string `pulumi:"peerMaintenanceRunIds"`
 	// A filter to return only resources that match the given lifecycle state exactly.
 	State string `pulumi:"state"`
 	// The target software version for the database server patching operation.
@@ -18202,6 +20843,8 @@ type GetMaintenanceRunsMaintenanceRunArgs struct {
 	PatchingStatus pulumi.StringInput `pulumi:"patchingStatus"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
 	PeerMaintenanceRunId pulumi.StringInput `pulumi:"peerMaintenanceRunId"`
+	// The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+	PeerMaintenanceRunIds pulumi.StringArrayInput `pulumi:"peerMaintenanceRunIds"`
 	// A filter to return only resources that match the given lifecycle state exactly.
 	State pulumi.StringInput `pulumi:"state"`
 	// The target software version for the database server patching operation.
@@ -18392,6 +21035,11 @@ func (o GetMaintenanceRunsMaintenanceRunOutput) PatchingStatus() pulumi.StringOu
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
 func (o GetMaintenanceRunsMaintenanceRunOutput) PeerMaintenanceRunId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) string { return v.PeerMaintenanceRunId }).(pulumi.StringOutput)
+}
+
+// The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+func (o GetMaintenanceRunsMaintenanceRunOutput) PeerMaintenanceRunIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) []string { return v.PeerMaintenanceRunIds }).(pulumi.StringArrayOutput)
 }
 
 // A filter to return only resources that match the given lifecycle state exactly.
@@ -29558,6 +32206,38 @@ func (o GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput) Index(i 
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbHomesDbHomeInput)(nil)).Elem(), GetDbHomesDbHomeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbHomesDbHomeArrayInput)(nil)).Elem(), GetDbHomesDbHomeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbHomesDbHomeDatabaseInput)(nil)).Elem(), GetDbHomesDbHomeDatabaseArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbHomesDbHomeDatabaseArrayInput)(nil)).Elem(), GetDbHomesDbHomeDatabaseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbHomesDbHomeDatabaseConnectionStringInput)(nil)).Elem(), GetDbHomesDbHomeDatabaseConnectionStringArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbHomesDbHomeDatabaseConnectionStringArrayInput)(nil)).Elem(), GetDbHomesDbHomeDatabaseConnectionStringArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbHomesDbHomeDatabaseDbBackupConfigInput)(nil)).Elem(), GetDbHomesDbHomeDatabaseDbBackupConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbHomesDbHomeDatabaseDbBackupConfigArrayInput)(nil)).Elem(), GetDbHomesDbHomeDatabaseDbBackupConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailInput)(nil)).Elem(), GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayInput)(nil)).Elem(), GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailInput)(nil)).Elem(), GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArrayInput)(nil)).Elem(), GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbHomesFilterInput)(nil)).Elem(), GetDbHomesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbHomesFilterArrayInput)(nil)).Elem(), GetDbHomesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbNodeConsoleConnectionsConsoleConnectionInput)(nil)).Elem(), GetDbNodeConsoleConnectionsConsoleConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbNodeConsoleConnectionsConsoleConnectionArrayInput)(nil)).Elem(), GetDbNodeConsoleConnectionsConsoleConnectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbNodeConsoleConnectionsFilterInput)(nil)).Elem(), GetDbNodeConsoleConnectionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbNodeConsoleConnectionsFilterArrayInput)(nil)).Elem(), GetDbNodeConsoleConnectionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbNodeConsoleHistoriesConsoleHistoryCollectionInput)(nil)).Elem(), GetDbNodeConsoleHistoriesConsoleHistoryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbNodeConsoleHistoriesConsoleHistoryCollectionArrayInput)(nil)).Elem(), GetDbNodeConsoleHistoriesConsoleHistoryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemInput)(nil)).Elem(), GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArrayInput)(nil)).Elem(), GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbNodeConsoleHistoriesFilterInput)(nil)).Elem(), GetDbNodeConsoleHistoriesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbNodeConsoleHistoriesFilterArrayInput)(nil)).Elem(), GetDbNodeConsoleHistoriesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbNodesDbNodeInput)(nil)).Elem(), GetDbNodesDbNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbNodesDbNodeArrayInput)(nil)).Elem(), GetDbNodesDbNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbNodesFilterInput)(nil)).Elem(), GetDbNodesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbNodesFilterArrayInput)(nil)).Elem(), GetDbNodesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbServerDbServerPatchingDetailInput)(nil)).Elem(), GetDbServerDbServerPatchingDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbServerDbServerPatchingDetailArrayInput)(nil)).Elem(), GetDbServerDbServerPatchingDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbServersDbServerInput)(nil)).Elem(), GetDbServersDbServerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbServersDbServerArrayInput)(nil)).Elem(), GetDbServersDbServerArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbServersDbServerDbServerPatchingDetailInput)(nil)).Elem(), GetDbServersDbServerDbServerPatchingDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbServersDbServerDbServerPatchingDetailArrayInput)(nil)).Elem(), GetDbServersDbServerDbServerPatchingDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbServersFilterInput)(nil)).Elem(), GetDbServersFilterArgs{})
@@ -29984,6 +32664,38 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetVmClustersVmClusterDataCollectionOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailArrayInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArray{})
+	pulumi.RegisterOutputType(GetDbHomesDbHomeOutput{})
+	pulumi.RegisterOutputType(GetDbHomesDbHomeArrayOutput{})
+	pulumi.RegisterOutputType(GetDbHomesDbHomeDatabaseOutput{})
+	pulumi.RegisterOutputType(GetDbHomesDbHomeDatabaseArrayOutput{})
+	pulumi.RegisterOutputType(GetDbHomesDbHomeDatabaseConnectionStringOutput{})
+	pulumi.RegisterOutputType(GetDbHomesDbHomeDatabaseConnectionStringArrayOutput{})
+	pulumi.RegisterOutputType(GetDbHomesDbHomeDatabaseDbBackupConfigOutput{})
+	pulumi.RegisterOutputType(GetDbHomesDbHomeDatabaseDbBackupConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput{})
+	pulumi.RegisterOutputType(GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailOutput{})
+	pulumi.RegisterOutputType(GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDbHomesFilterOutput{})
+	pulumi.RegisterOutputType(GetDbHomesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDbNodeConsoleConnectionsConsoleConnectionOutput{})
+	pulumi.RegisterOutputType(GetDbNodeConsoleConnectionsConsoleConnectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDbNodeConsoleConnectionsFilterOutput{})
+	pulumi.RegisterOutputType(GetDbNodeConsoleConnectionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDbNodeConsoleHistoriesConsoleHistoryCollectionOutput{})
+	pulumi.RegisterOutputType(GetDbNodeConsoleHistoriesConsoleHistoryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDbNodeConsoleHistoriesFilterOutput{})
+	pulumi.RegisterOutputType(GetDbNodeConsoleHistoriesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDbNodesDbNodeOutput{})
+	pulumi.RegisterOutputType(GetDbNodesDbNodeArrayOutput{})
+	pulumi.RegisterOutputType(GetDbNodesFilterOutput{})
+	pulumi.RegisterOutputType(GetDbNodesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDbServerDbServerPatchingDetailOutput{})
+	pulumi.RegisterOutputType(GetDbServerDbServerPatchingDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDbServersDbServerOutput{})
+	pulumi.RegisterOutputType(GetDbServersDbServerArrayOutput{})
 	pulumi.RegisterOutputType(GetDbServersDbServerDbServerPatchingDetailOutput{})
 	pulumi.RegisterOutputType(GetDbServersDbServerDbServerPatchingDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDbServersFilterOutput{})

@@ -53,7 +53,7 @@ public final class GetProfilesProfileCollectionItem {
      */
     private String id;
     /**
-     * @return A boolean variable that is used to list only the default profile resources.
+     * @return A filter to return only default profiles.
      * 
      */
     private Boolean isDefaultProfile;
@@ -80,7 +80,7 @@ public final class GetProfilesProfileCollectionItem {
      */
     private List<GetProfilesProfileCollectionItemManagedInstanceGroup> managedInstanceGroups;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an  instance once registered. Management stations are only used by non-OCI instances.
      * 
      */
     private String managementStationId;
@@ -94,6 +94,11 @@ public final class GetProfilesProfileCollectionItem {
      * 
      */
     private String profileType;
+    /**
+     * @return The version of the registration profile.
+     * 
+     */
+    private String profileVersion;
     /**
      * @return A filter to return profiles that match the given instance type.
      * 
@@ -120,6 +125,11 @@ public final class GetProfilesProfileCollectionItem {
      * 
      */
     private String timeCreated;
+    /**
+     * @return The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     * 
+     */
+    private String timeModified;
     /**
      * @return A filter to return only resources that match the given vendor name.
      * 
@@ -177,7 +187,7 @@ public final class GetProfilesProfileCollectionItem {
         return this.id;
     }
     /**
-     * @return A boolean variable that is used to list only the default profile resources.
+     * @return A filter to return only default profiles.
      * 
      */
     public Boolean isDefaultProfile() {
@@ -218,7 +228,7 @@ public final class GetProfilesProfileCollectionItem {
         return this.managedInstanceGroups;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an  instance once registered. Management stations are only used by non-OCI instances.
      * 
      */
     public String managementStationId() {
@@ -237,6 +247,13 @@ public final class GetProfilesProfileCollectionItem {
      */
     public String profileType() {
         return this.profileType;
+    }
+    /**
+     * @return The version of the registration profile.
+     * 
+     */
+    public String profileVersion() {
+        return this.profileVersion;
     }
     /**
      * @return A filter to return profiles that match the given instance type.
@@ -277,6 +294,13 @@ public final class GetProfilesProfileCollectionItem {
         return this.timeCreated;
     }
     /**
+     * @return The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     * 
+     */
+    public String timeModified() {
+        return this.timeModified;
+    }
+    /**
      * @return A filter to return only resources that match the given vendor name.
      * 
      */
@@ -310,12 +334,14 @@ public final class GetProfilesProfileCollectionItem {
         private String managementStationId;
         private String osFamily;
         private String profileType;
+        private String profileVersion;
         private String registrationType;
         private List<String> softwareSourceIds;
         private List<GetProfilesProfileCollectionItemSoftwareSource> softwareSources;
         private String state;
         private Map<String,String> systemTags;
         private String timeCreated;
+        private String timeModified;
         private String vendorName;
         public Builder() {}
         public Builder(GetProfilesProfileCollectionItem defaults) {
@@ -337,12 +363,14 @@ public final class GetProfilesProfileCollectionItem {
     	      this.managementStationId = defaults.managementStationId;
     	      this.osFamily = defaults.osFamily;
     	      this.profileType = defaults.profileType;
+    	      this.profileVersion = defaults.profileVersion;
     	      this.registrationType = defaults.registrationType;
     	      this.softwareSourceIds = defaults.softwareSourceIds;
     	      this.softwareSources = defaults.softwareSources;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.timeModified = defaults.timeModified;
     	      this.vendorName = defaults.vendorName;
         }
 
@@ -492,6 +520,14 @@ public final class GetProfilesProfileCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder profileVersion(String profileVersion) {
+            if (profileVersion == null) {
+              throw new MissingRequiredPropertyException("GetProfilesProfileCollectionItem", "profileVersion");
+            }
+            this.profileVersion = profileVersion;
+            return this;
+        }
+        @CustomType.Setter
         public Builder registrationType(String registrationType) {
             if (registrationType == null) {
               throw new MissingRequiredPropertyException("GetProfilesProfileCollectionItem", "registrationType");
@@ -546,6 +582,14 @@ public final class GetProfilesProfileCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder timeModified(String timeModified) {
+            if (timeModified == null) {
+              throw new MissingRequiredPropertyException("GetProfilesProfileCollectionItem", "timeModified");
+            }
+            this.timeModified = timeModified;
+            return this;
+        }
+        @CustomType.Setter
         public Builder vendorName(String vendorName) {
             if (vendorName == null) {
               throw new MissingRequiredPropertyException("GetProfilesProfileCollectionItem", "vendorName");
@@ -572,12 +616,14 @@ public final class GetProfilesProfileCollectionItem {
             _resultValue.managementStationId = managementStationId;
             _resultValue.osFamily = osFamily;
             _resultValue.profileType = profileType;
+            _resultValue.profileVersion = profileVersion;
             _resultValue.registrationType = registrationType;
             _resultValue.softwareSourceIds = softwareSourceIds;
             _resultValue.softwareSources = softwareSources;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
+            _resultValue.timeModified = timeModified;
             _resultValue.vendorName = vendorName;
             return _resultValue;
         }

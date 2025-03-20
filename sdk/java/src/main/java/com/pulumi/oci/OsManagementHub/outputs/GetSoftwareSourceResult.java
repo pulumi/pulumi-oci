@@ -17,6 +17,11 @@ import java.util.Objects;
 @CustomType
 public final class GetSoftwareSourceResult {
     /**
+     * @return Advanced repository options for the software source
+     * 
+     */
+    private String advancedRepoOptions;
+    /**
      * @return The architecture type supported by the software source.
      * 
      */
@@ -77,7 +82,7 @@ public final class GetSoftwareSourceResult {
      */
     private String gpgKeyId;
     /**
-     * @return URL of the GPG key for this software source.
+     * @return URI of the GPG key for this software source.
      * 
      */
     private String gpgKeyUrl;
@@ -102,6 +107,11 @@ public final class GetSoftwareSourceResult {
      */
     private Boolean isCreatedFromPackageList;
     /**
+     * @return Whether signature verification should be done for the software source
+     * 
+     */
+    private Boolean isGpgCheckEnabled;
+    /**
      * @return Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
      * * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
      * * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
@@ -117,12 +127,22 @@ public final class GetSoftwareSourceResult {
      */
     private Boolean isMandatoryForAutonomousLinux;
     /**
-     * @return This property applies only to replicated vendor software sources. This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment.
+     * @return Indicates if this software source can be mirrored to a management station.
+     * 
+     */
+    private Boolean isMirrorSyncAllowed;
+    /**
+     * @return Indicates if SSL validation is enabled for the software source.
+     * 
+     */
+    private Boolean isSslVerifyEnabled;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment. This property applies only to replicated vendor software sources.
      * 
      */
     private String originSoftwareSourceId;
     /**
-     * @return The OS family the software source belongs to.
+     * @return The OS family of the software source.
      * 
      */
     private String osFamily;
@@ -142,11 +162,16 @@ public final class GetSoftwareSourceResult {
      */
     private String repoId;
     /**
-     * @return The size of the software source in gigabytes (GB).
+     * @return The size of the software source in bytes (B).
      * 
      */
     private Double size;
     private String softwareSourceId;
+    /**
+     * @return Identifies how the versioned custom software source was created.
+     * 
+     */
+    private String softwareSourceSubType;
     /**
      * @return Type of software source.
      * 
@@ -173,6 +198,11 @@ public final class GetSoftwareSourceResult {
      */
     private String timeCreated;
     /**
+     * @return The date and time the metadata for this software source was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     * 
+     */
+    private String timeMetadataUpdated;
+    /**
      * @return URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is &#39;custom/&lt;repoId&gt;&#39;.
      * 
      */
@@ -189,6 +219,13 @@ public final class GetSoftwareSourceResult {
     private List<GetSoftwareSourceVendorSoftwareSource> vendorSoftwareSources;
 
     private GetSoftwareSourceResult() {}
+    /**
+     * @return Advanced repository options for the software source
+     * 
+     */
+    public String advancedRepoOptions() {
+        return this.advancedRepoOptions;
+    }
     /**
      * @return The architecture type supported by the software source.
      * 
@@ -274,7 +311,7 @@ public final class GetSoftwareSourceResult {
         return this.gpgKeyId;
     }
     /**
-     * @return URL of the GPG key for this software source.
+     * @return URI of the GPG key for this software source.
      * 
      */
     public String gpgKeyUrl() {
@@ -309,6 +346,13 @@ public final class GetSoftwareSourceResult {
         return this.isCreatedFromPackageList;
     }
     /**
+     * @return Whether signature verification should be done for the software source
+     * 
+     */
+    public Boolean isGpgCheckEnabled() {
+        return this.isGpgCheckEnabled;
+    }
+    /**
      * @return Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
      * * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
      * * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
@@ -328,14 +372,28 @@ public final class GetSoftwareSourceResult {
         return this.isMandatoryForAutonomousLinux;
     }
     /**
-     * @return This property applies only to replicated vendor software sources. This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment.
+     * @return Indicates if this software source can be mirrored to a management station.
+     * 
+     */
+    public Boolean isMirrorSyncAllowed() {
+        return this.isMirrorSyncAllowed;
+    }
+    /**
+     * @return Indicates if SSL validation is enabled for the software source.
+     * 
+     */
+    public Boolean isSslVerifyEnabled() {
+        return this.isSslVerifyEnabled;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment. This property applies only to replicated vendor software sources.
      * 
      */
     public String originSoftwareSourceId() {
         return this.originSoftwareSourceId;
     }
     /**
-     * @return The OS family the software source belongs to.
+     * @return The OS family of the software source.
      * 
      */
     public String osFamily() {
@@ -363,7 +421,7 @@ public final class GetSoftwareSourceResult {
         return this.repoId;
     }
     /**
-     * @return The size of the software source in gigabytes (GB).
+     * @return The size of the software source in bytes (B).
      * 
      */
     public Double size() {
@@ -371,6 +429,13 @@ public final class GetSoftwareSourceResult {
     }
     public String softwareSourceId() {
         return this.softwareSourceId;
+    }
+    /**
+     * @return Identifies how the versioned custom software source was created.
+     * 
+     */
+    public String softwareSourceSubType() {
+        return this.softwareSourceSubType;
     }
     /**
      * @return Type of software source.
@@ -408,6 +473,13 @@ public final class GetSoftwareSourceResult {
         return this.timeCreated;
     }
     /**
+     * @return The date and time the metadata for this software source was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     * 
+     */
+    public String timeMetadataUpdated() {
+        return this.timeMetadataUpdated;
+    }
+    /**
      * @return URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is &#39;custom/&lt;repoId&gt;&#39;.
      * 
      */
@@ -438,6 +510,7 @@ public final class GetSoftwareSourceResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String advancedRepoOptions;
         private String archType;
         private String availability;
         private String availabilityAtOci;
@@ -455,8 +528,11 @@ public final class GetSoftwareSourceResult {
         private Boolean isAutoResolveDependencies;
         private Boolean isAutomaticallyUpdated;
         private Boolean isCreatedFromPackageList;
+        private Boolean isGpgCheckEnabled;
         private Boolean isLatestContentOnly;
         private Boolean isMandatoryForAutonomousLinux;
+        private Boolean isMirrorSyncAllowed;
+        private Boolean isSslVerifyEnabled;
         private String originSoftwareSourceId;
         private String osFamily;
         private String packageCount;
@@ -464,17 +540,20 @@ public final class GetSoftwareSourceResult {
         private String repoId;
         private Double size;
         private String softwareSourceId;
+        private String softwareSourceSubType;
         private String softwareSourceType;
         private String softwareSourceVersion;
         private String state;
         private Map<String,String> systemTags;
         private String timeCreated;
+        private String timeMetadataUpdated;
         private String url;
         private String vendorName;
         private List<GetSoftwareSourceVendorSoftwareSource> vendorSoftwareSources;
         public Builder() {}
         public Builder(GetSoftwareSourceResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.advancedRepoOptions = defaults.advancedRepoOptions;
     	      this.archType = defaults.archType;
     	      this.availability = defaults.availability;
     	      this.availabilityAtOci = defaults.availabilityAtOci;
@@ -492,8 +571,11 @@ public final class GetSoftwareSourceResult {
     	      this.isAutoResolveDependencies = defaults.isAutoResolveDependencies;
     	      this.isAutomaticallyUpdated = defaults.isAutomaticallyUpdated;
     	      this.isCreatedFromPackageList = defaults.isCreatedFromPackageList;
+    	      this.isGpgCheckEnabled = defaults.isGpgCheckEnabled;
     	      this.isLatestContentOnly = defaults.isLatestContentOnly;
     	      this.isMandatoryForAutonomousLinux = defaults.isMandatoryForAutonomousLinux;
+    	      this.isMirrorSyncAllowed = defaults.isMirrorSyncAllowed;
+    	      this.isSslVerifyEnabled = defaults.isSslVerifyEnabled;
     	      this.originSoftwareSourceId = defaults.originSoftwareSourceId;
     	      this.osFamily = defaults.osFamily;
     	      this.packageCount = defaults.packageCount;
@@ -501,16 +583,26 @@ public final class GetSoftwareSourceResult {
     	      this.repoId = defaults.repoId;
     	      this.size = defaults.size;
     	      this.softwareSourceId = defaults.softwareSourceId;
+    	      this.softwareSourceSubType = defaults.softwareSourceSubType;
     	      this.softwareSourceType = defaults.softwareSourceType;
     	      this.softwareSourceVersion = defaults.softwareSourceVersion;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.timeMetadataUpdated = defaults.timeMetadataUpdated;
     	      this.url = defaults.url;
     	      this.vendorName = defaults.vendorName;
     	      this.vendorSoftwareSources = defaults.vendorSoftwareSources;
         }
 
+        @CustomType.Setter
+        public Builder advancedRepoOptions(String advancedRepoOptions) {
+            if (advancedRepoOptions == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceResult", "advancedRepoOptions");
+            }
+            this.advancedRepoOptions = advancedRepoOptions;
+            return this;
+        }
         @CustomType.Setter
         public Builder archType(String archType) {
             if (archType == null) {
@@ -651,6 +743,14 @@ public final class GetSoftwareSourceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isGpgCheckEnabled(Boolean isGpgCheckEnabled) {
+            if (isGpgCheckEnabled == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceResult", "isGpgCheckEnabled");
+            }
+            this.isGpgCheckEnabled = isGpgCheckEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isLatestContentOnly(Boolean isLatestContentOnly) {
             if (isLatestContentOnly == null) {
               throw new MissingRequiredPropertyException("GetSoftwareSourceResult", "isLatestContentOnly");
@@ -664,6 +764,22 @@ public final class GetSoftwareSourceResult {
               throw new MissingRequiredPropertyException("GetSoftwareSourceResult", "isMandatoryForAutonomousLinux");
             }
             this.isMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isMirrorSyncAllowed(Boolean isMirrorSyncAllowed) {
+            if (isMirrorSyncAllowed == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceResult", "isMirrorSyncAllowed");
+            }
+            this.isMirrorSyncAllowed = isMirrorSyncAllowed;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isSslVerifyEnabled(Boolean isSslVerifyEnabled) {
+            if (isSslVerifyEnabled == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceResult", "isSslVerifyEnabled");
+            }
+            this.isSslVerifyEnabled = isSslVerifyEnabled;
             return this;
         }
         @CustomType.Setter
@@ -726,6 +842,14 @@ public final class GetSoftwareSourceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder softwareSourceSubType(String softwareSourceSubType) {
+            if (softwareSourceSubType == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceResult", "softwareSourceSubType");
+            }
+            this.softwareSourceSubType = softwareSourceSubType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder softwareSourceType(String softwareSourceType) {
             if (softwareSourceType == null) {
               throw new MissingRequiredPropertyException("GetSoftwareSourceResult", "softwareSourceType");
@@ -766,6 +890,14 @@ public final class GetSoftwareSourceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder timeMetadataUpdated(String timeMetadataUpdated) {
+            if (timeMetadataUpdated == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceResult", "timeMetadataUpdated");
+            }
+            this.timeMetadataUpdated = timeMetadataUpdated;
+            return this;
+        }
+        @CustomType.Setter
         public Builder url(String url) {
             if (url == null) {
               throw new MissingRequiredPropertyException("GetSoftwareSourceResult", "url");
@@ -794,6 +926,7 @@ public final class GetSoftwareSourceResult {
         }
         public GetSoftwareSourceResult build() {
             final var _resultValue = new GetSoftwareSourceResult();
+            _resultValue.advancedRepoOptions = advancedRepoOptions;
             _resultValue.archType = archType;
             _resultValue.availability = availability;
             _resultValue.availabilityAtOci = availabilityAtOci;
@@ -811,8 +944,11 @@ public final class GetSoftwareSourceResult {
             _resultValue.isAutoResolveDependencies = isAutoResolveDependencies;
             _resultValue.isAutomaticallyUpdated = isAutomaticallyUpdated;
             _resultValue.isCreatedFromPackageList = isCreatedFromPackageList;
+            _resultValue.isGpgCheckEnabled = isGpgCheckEnabled;
             _resultValue.isLatestContentOnly = isLatestContentOnly;
             _resultValue.isMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
+            _resultValue.isMirrorSyncAllowed = isMirrorSyncAllowed;
+            _resultValue.isSslVerifyEnabled = isSslVerifyEnabled;
             _resultValue.originSoftwareSourceId = originSoftwareSourceId;
             _resultValue.osFamily = osFamily;
             _resultValue.packageCount = packageCount;
@@ -820,11 +956,13 @@ public final class GetSoftwareSourceResult {
             _resultValue.repoId = repoId;
             _resultValue.size = size;
             _resultValue.softwareSourceId = softwareSourceId;
+            _resultValue.softwareSourceSubType = softwareSourceSubType;
             _resultValue.softwareSourceType = softwareSourceType;
             _resultValue.softwareSourceVersion = softwareSourceVersion;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
+            _resultValue.timeMetadataUpdated = timeMetadataUpdated;
             _resultValue.url = url;
             _resultValue.vendorName = vendorName;
             _resultValue.vendorSoftwareSources = vendorSoftwareSources;

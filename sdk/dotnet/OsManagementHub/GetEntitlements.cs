@@ -112,7 +112,7 @@ namespace Pulumi.Oci.OsManagementHub
         public string CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// A filter to return entitlements that match the given CSI.
+        /// A filter to return entitlements that match the given customer support identifier (CSI).
         /// </summary>
         [Input("csi")]
         public string? Csi { get; set; }
@@ -146,7 +146,7 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// A filter to return entitlements that match the given CSI.
+        /// A filter to return entitlements that match the given customer support identifier (CSI).
         /// </summary>
         [Input("csi")]
         public Input<string>? Csi { get; set; }

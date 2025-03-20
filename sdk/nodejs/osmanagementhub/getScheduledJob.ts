@@ -149,6 +149,10 @@ export interface GetScheduledJobResult {
      */
     readonly timeUpdated: string;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+     */
+    readonly workRequestId: string;
+    /**
      * The list of work request [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this scheduled job.
      */
     readonly workRequestIds: string[];

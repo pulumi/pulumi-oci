@@ -70,6 +70,8 @@ type Event struct {
 	// * `SOFTWARE_SOURCE` - Software source
 	// * `AGENT` - Agent
 	// * `MANAGEMENT_STATION` - Management Station
+	// * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+	// * `REBOOT` - Reboot
 	Type pulumi.StringOutput `pulumi:"type"`
 }
 
@@ -150,6 +152,8 @@ type eventState struct {
 	// * `SOFTWARE_SOURCE` - Software source
 	// * `AGENT` - Agent
 	// * `MANAGEMENT_STATION` - Management Station
+	// * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+	// * `REBOOT` - Reboot
 	Type *string `pulumi:"type"`
 }
 
@@ -198,6 +202,8 @@ type EventState struct {
 	// * `SOFTWARE_SOURCE` - Software source
 	// * `AGENT` - Agent
 	// * `MANAGEMENT_STATION` - Management Station
+	// * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+	// * `REBOOT` - Reboot
 	Type pulumi.StringPtrInput
 }
 
@@ -413,6 +419,8 @@ func (o EventOutput) TimeUpdated() pulumi.StringOutput {
 // * `SOFTWARE_SOURCE` - Software source
 // * `AGENT` - Agent
 // * `MANAGEMENT_STATION` - Management Station
+// * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+// * `REBOOT` - Reboot
 func (o EventOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *Event) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }

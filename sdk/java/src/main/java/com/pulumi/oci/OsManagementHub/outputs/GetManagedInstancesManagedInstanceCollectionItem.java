@@ -19,6 +19,11 @@ import java.util.Objects;
 @CustomType
 public final class GetManagedInstancesManagedInstanceCollectionItem {
     /**
+     * @return A filter to return only managed instances with the specified version of osmh-agent running.
+     * 
+     */
+    private String agentVersion;
+    /**
      * @return The CPU architecture type of the managed instance.
      * 
      */
@@ -79,7 +84,7 @@ public final class GetManagedInstancesManagedInstanceCollectionItem {
      */
     private Boolean isManagementStation;
     /**
-     * @return Indicates whether a reboot is required to complete installation of updates.
+     * @return A filter to return only managed instances that require a reboot to install updates.
      * 
      */
     private Boolean isRebootRequired;
@@ -154,12 +159,17 @@ public final class GetManagedInstancesManagedInstanceCollectionItem {
      */
     private String profile;
     /**
+     * @return The version of the profile that was used to register this instance with the service.
+     * 
+     */
+    private String profileVersion;
+    /**
      * @return Number of scheduled jobs associated with this instance.
      * 
      */
     private Integer scheduledJobCount;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary managment station.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station.
      * 
      */
     private String secondaryManagementStationId;
@@ -215,6 +225,13 @@ public final class GetManagedInstancesManagedInstanceCollectionItem {
     private Integer workRequestCount;
 
     private GetManagedInstancesManagedInstanceCollectionItem() {}
+    /**
+     * @return A filter to return only managed instances with the specified version of osmh-agent running.
+     * 
+     */
+    public String agentVersion() {
+        return this.agentVersion;
+    }
     /**
      * @return The CPU architecture type of the managed instance.
      * 
@@ -300,7 +317,7 @@ public final class GetManagedInstancesManagedInstanceCollectionItem {
         return this.isManagementStation;
     }
     /**
-     * @return Indicates whether a reboot is required to complete installation of updates.
+     * @return A filter to return only managed instances that require a reboot to install updates.
      * 
      */
     public Boolean isRebootRequired() {
@@ -405,6 +422,13 @@ public final class GetManagedInstancesManagedInstanceCollectionItem {
         return this.profile;
     }
     /**
+     * @return The version of the profile that was used to register this instance with the service.
+     * 
+     */
+    public String profileVersion() {
+        return this.profileVersion;
+    }
+    /**
      * @return Number of scheduled jobs associated with this instance.
      * 
      */
@@ -412,7 +436,7 @@ public final class GetManagedInstancesManagedInstanceCollectionItem {
         return this.scheduledJobCount;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary managment station.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station.
      * 
      */
     public String secondaryManagementStationId() {
@@ -498,6 +522,7 @@ public final class GetManagedInstancesManagedInstanceCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String agentVersion;
         private String architecture;
         private List<GetManagedInstancesManagedInstanceCollectionItemAutonomousSetting> autonomousSettings;
         private Integer bugUpdatesAvailable;
@@ -525,6 +550,7 @@ public final class GetManagedInstancesManagedInstanceCollectionItem {
         private Integer otherUpdatesAvailable;
         private String primaryManagementStationId;
         private String profile;
+        private String profileVersion;
         private Integer scheduledJobCount;
         private String secondaryManagementStationId;
         private Integer securityUpdatesAvailable;
@@ -540,6 +566,7 @@ public final class GetManagedInstancesManagedInstanceCollectionItem {
         public Builder() {}
         public Builder(GetManagedInstancesManagedInstanceCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.agentVersion = defaults.agentVersion;
     	      this.architecture = defaults.architecture;
     	      this.autonomousSettings = defaults.autonomousSettings;
     	      this.bugUpdatesAvailable = defaults.bugUpdatesAvailable;
@@ -567,6 +594,7 @@ public final class GetManagedInstancesManagedInstanceCollectionItem {
     	      this.otherUpdatesAvailable = defaults.otherUpdatesAvailable;
     	      this.primaryManagementStationId = defaults.primaryManagementStationId;
     	      this.profile = defaults.profile;
+    	      this.profileVersion = defaults.profileVersion;
     	      this.scheduledJobCount = defaults.scheduledJobCount;
     	      this.secondaryManagementStationId = defaults.secondaryManagementStationId;
     	      this.securityUpdatesAvailable = defaults.securityUpdatesAvailable;
@@ -581,6 +609,14 @@ public final class GetManagedInstancesManagedInstanceCollectionItem {
     	      this.workRequestCount = defaults.workRequestCount;
         }
 
+        @CustomType.Setter
+        public Builder agentVersion(String agentVersion) {
+            if (agentVersion == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstancesManagedInstanceCollectionItem", "agentVersion");
+            }
+            this.agentVersion = agentVersion;
+            return this;
+        }
         @CustomType.Setter
         public Builder architecture(String architecture) {
             if (architecture == null) {
@@ -810,6 +846,14 @@ public final class GetManagedInstancesManagedInstanceCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder profileVersion(String profileVersion) {
+            if (profileVersion == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstancesManagedInstanceCollectionItem", "profileVersion");
+            }
+            this.profileVersion = profileVersion;
+            return this;
+        }
+        @CustomType.Setter
         public Builder scheduledJobCount(Integer scheduledJobCount) {
             if (scheduledJobCount == null) {
               throw new MissingRequiredPropertyException("GetManagedInstancesManagedInstanceCollectionItem", "scheduledJobCount");
@@ -910,6 +954,7 @@ public final class GetManagedInstancesManagedInstanceCollectionItem {
         }
         public GetManagedInstancesManagedInstanceCollectionItem build() {
             final var _resultValue = new GetManagedInstancesManagedInstanceCollectionItem();
+            _resultValue.agentVersion = agentVersion;
             _resultValue.architecture = architecture;
             _resultValue.autonomousSettings = autonomousSettings;
             _resultValue.bugUpdatesAvailable = bugUpdatesAvailable;
@@ -937,6 +982,7 @@ public final class GetManagedInstancesManagedInstanceCollectionItem {
             _resultValue.otherUpdatesAvailable = otherUpdatesAvailable;
             _resultValue.primaryManagementStationId = primaryManagementStationId;
             _resultValue.profile = profile;
+            _resultValue.profileVersion = profileVersion;
             _resultValue.scheduledJobCount = scheduledJobCount;
             _resultValue.secondaryManagementStationId = secondaryManagementStationId;
             _resultValue.securityUpdatesAvailable = securityUpdatesAvailable;

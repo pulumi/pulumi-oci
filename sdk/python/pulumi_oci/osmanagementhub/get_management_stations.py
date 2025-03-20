@@ -28,7 +28,7 @@ class GetManagementStationsResult:
     """
     A collection of values returned by getManagementStations.
     """
-    def __init__(__self__, compartment_id=None, display_name=None, display_name_contains=None, filters=None, id=None, managed_instance_id=None, management_station_collections=None, state=None):
+    def __init__(__self__, compartment_id=None, display_name=None, display_name_contains=None, filters=None, id=None, location_not_equal_tos=None, locations=None, managed_instance_id=None, management_station_collections=None, state=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -44,6 +44,12 @@ class GetManagementStationsResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if location_not_equal_tos and not isinstance(location_not_equal_tos, list):
+            raise TypeError("Expected argument 'location_not_equal_tos' to be a list")
+        pulumi.set(__self__, "location_not_equal_tos", location_not_equal_tos)
+        if locations and not isinstance(locations, list):
+            raise TypeError("Expected argument 'locations' to be a list")
+        pulumi.set(__self__, "locations", locations)
         if managed_instance_id and not isinstance(managed_instance_id, str):
             raise TypeError("Expected argument 'managed_instance_id' to be a str")
         pulumi.set(__self__, "managed_instance_id", managed_instance_id)
@@ -66,7 +72,7 @@ class GetManagementStationsResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        A user-friendly name for the management station.
+        User-friendly name for the management station.
         """
         return pulumi.get(self, "display_name")
 
@@ -87,6 +93,19 @@ class GetManagementStationsResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="locationNotEqualTos")
+    def location_not_equal_tos(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "location_not_equal_tos")
+
+    @property
+    @pulumi.getter
+    def locations(self) -> Optional[Sequence[str]]:
+        """
+        The location of the instance that is acting as the management station.
+        """
+        return pulumi.get(self, "locations")
 
     @property
     @pulumi.getter(name="managedInstanceId")
@@ -124,6 +143,8 @@ class AwaitableGetManagementStationsResult(GetManagementStationsResult):
             display_name_contains=self.display_name_contains,
             filters=self.filters,
             id=self.id,
+            location_not_equal_tos=self.location_not_equal_tos,
+            locations=self.locations,
             managed_instance_id=self.managed_instance_id,
             management_station_collections=self.management_station_collections,
             state=self.state)
@@ -134,13 +155,16 @@ def get_management_stations(compartment_id: Optional[str] = None,
                             display_name_contains: Optional[str] = None,
                             filters: Optional[Sequence[Union['GetManagementStationsFilterArgs', 'GetManagementStationsFilterArgsDict']]] = None,
                             id: Optional[str] = None,
+                            location_not_equal_tos: Optional[Sequence[str]] = None,
+                            locations: Optional[Sequence[str]] = None,
                             managed_instance_id: Optional[str] = None,
                             state: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagementStationsResult:
     """
     This data source provides the list of Management Stations in Oracle Cloud Infrastructure Os Management Hub service.
 
-    Lists management stations in a compartment.
+    Lists management stations within the specified compartment. Filter the list against a variety of criteria
+    including but not limited to name, status, and location.
 
     ## Example Usage
 
@@ -152,6 +176,8 @@ def get_management_stations(compartment_id: Optional[str] = None,
         display_name=management_station_display_name,
         display_name_contains=management_station_display_name_contains,
         id=management_station_id,
+        locations=management_station_location,
+        location_not_equal_tos=management_station_location_not_equal_to,
         managed_instance_id=test_managed_instance["id"],
         state=management_station_state)
     ```
@@ -161,6 +187,8 @@ def get_management_stations(compartment_id: Optional[str] = None,
     :param str display_name: A filter to return resources that match the given user-friendly name.
     :param str display_name_contains: A filter to return resources that may partially match the given display name.
     :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station. A filter that returns information about the specified management station.
+    :param Sequence[str] location_not_equal_tos: A filter to return only resources whose location does not match the given value.
+    :param Sequence[str] locations: A filter to return only resources whose location matches the given value.
     :param str managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
     :param str state: A filter that returns information for management stations in the specified state.
     """
@@ -170,6 +198,8 @@ def get_management_stations(compartment_id: Optional[str] = None,
     __args__['displayNameContains'] = display_name_contains
     __args__['filters'] = filters
     __args__['id'] = id
+    __args__['locationNotEqualTos'] = location_not_equal_tos
+    __args__['locations'] = locations
     __args__['managedInstanceId'] = managed_instance_id
     __args__['state'] = state
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -181,6 +211,8 @@ def get_management_stations(compartment_id: Optional[str] = None,
         display_name_contains=pulumi.get(__ret__, 'display_name_contains'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
+        location_not_equal_tos=pulumi.get(__ret__, 'location_not_equal_tos'),
+        locations=pulumi.get(__ret__, 'locations'),
         managed_instance_id=pulumi.get(__ret__, 'managed_instance_id'),
         management_station_collections=pulumi.get(__ret__, 'management_station_collections'),
         state=pulumi.get(__ret__, 'state'))
@@ -189,13 +221,16 @@ def get_management_stations_output(compartment_id: Optional[pulumi.Input[Optiona
                                    display_name_contains: Optional[pulumi.Input[Optional[str]]] = None,
                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagementStationsFilterArgs', 'GetManagementStationsFilterArgsDict']]]]] = None,
                                    id: Optional[pulumi.Input[Optional[str]]] = None,
+                                   location_not_equal_tos: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
+                                   locations: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                    managed_instance_id: Optional[pulumi.Input[Optional[str]]] = None,
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementStationsResult]:
     """
     This data source provides the list of Management Stations in Oracle Cloud Infrastructure Os Management Hub service.
 
-    Lists management stations in a compartment.
+    Lists management stations within the specified compartment. Filter the list against a variety of criteria
+    including but not limited to name, status, and location.
 
     ## Example Usage
 
@@ -207,6 +242,8 @@ def get_management_stations_output(compartment_id: Optional[pulumi.Input[Optiona
         display_name=management_station_display_name,
         display_name_contains=management_station_display_name_contains,
         id=management_station_id,
+        locations=management_station_location,
+        location_not_equal_tos=management_station_location_not_equal_to,
         managed_instance_id=test_managed_instance["id"],
         state=management_station_state)
     ```
@@ -216,6 +253,8 @@ def get_management_stations_output(compartment_id: Optional[pulumi.Input[Optiona
     :param str display_name: A filter to return resources that match the given user-friendly name.
     :param str display_name_contains: A filter to return resources that may partially match the given display name.
     :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station. A filter that returns information about the specified management station.
+    :param Sequence[str] location_not_equal_tos: A filter to return only resources whose location does not match the given value.
+    :param Sequence[str] locations: A filter to return only resources whose location matches the given value.
     :param str managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
     :param str state: A filter that returns information for management stations in the specified state.
     """
@@ -225,6 +264,8 @@ def get_management_stations_output(compartment_id: Optional[pulumi.Input[Optiona
     __args__['displayNameContains'] = display_name_contains
     __args__['filters'] = filters
     __args__['id'] = id
+    __args__['locationNotEqualTos'] = location_not_equal_tos
+    __args__['locations'] = locations
     __args__['managedInstanceId'] = managed_instance_id
     __args__['state'] = state
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -235,6 +276,8 @@ def get_management_stations_output(compartment_id: Optional[pulumi.Input[Optiona
         display_name_contains=pulumi.get(__response__, 'display_name_contains'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
+        location_not_equal_tos=pulumi.get(__response__, 'location_not_equal_tos'),
+        locations=pulumi.get(__response__, 'locations'),
         managed_instance_id=pulumi.get(__response__, 'managed_instance_id'),
         management_station_collections=pulumi.get(__response__, 'management_station_collections'),
         state=pulumi.get(__response__, 'state')))

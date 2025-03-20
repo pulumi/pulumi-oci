@@ -24,7 +24,7 @@ class ManagementStationSynchronizeMirrorsManagementArgs:
         """
         The set of arguments for constructing a ManagementStationSynchronizeMirrorsManagement resource.
         :param pulumi.Input[str] management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] software_source_lists: List of Software Source OCIDs to synchronize
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] software_source_lists: List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to synchronize.
                
                
                ** IMPORTANT **
@@ -49,7 +49,7 @@ class ManagementStationSynchronizeMirrorsManagementArgs:
     @pulumi.getter(name="softwareSourceLists")
     def software_source_lists(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
         """
-        List of Software Source OCIDs to synchronize
+        List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to synchronize.
 
 
         ** IMPORTANT **
@@ -70,7 +70,7 @@ class _ManagementStationSynchronizeMirrorsManagementState:
         """
         Input properties used for looking up and filtering ManagementStationSynchronizeMirrorsManagement resources.
         :param pulumi.Input[str] management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] software_source_lists: List of Software Source OCIDs to synchronize
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] software_source_lists: List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to synchronize.
                
                
                ** IMPORTANT **
@@ -97,7 +97,7 @@ class _ManagementStationSynchronizeMirrorsManagementState:
     @pulumi.getter(name="softwareSourceLists")
     def software_source_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        List of Software Source OCIDs to synchronize
+        List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to synchronize.
 
 
         ** IMPORTANT **
@@ -121,7 +121,7 @@ class ManagementStationSynchronizeMirrorsManagement(pulumi.CustomResource):
         """
         This resource provides the Management Station Synchronize Mirrors Management resource in Oracle Cloud Infrastructure Os Management Hub service.
 
-        Synchronize the specified software sources mirrors on the management station.
+        Synchronize the specified software sources mirrored on the management station.
 
         ## Example Usage
 
@@ -145,7 +145,7 @@ class ManagementStationSynchronizeMirrorsManagement(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] software_source_lists: List of Software Source OCIDs to synchronize
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] software_source_lists: List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to synchronize.
                
                
                ** IMPORTANT **
@@ -160,7 +160,7 @@ class ManagementStationSynchronizeMirrorsManagement(pulumi.CustomResource):
         """
         This resource provides the Management Station Synchronize Mirrors Management resource in Oracle Cloud Infrastructure Os Management Hub service.
 
-        Synchronize the specified software sources mirrors on the management station.
+        Synchronize the specified software sources mirrored on the management station.
 
         ## Example Usage
 
@@ -233,7 +233,7 @@ class ManagementStationSynchronizeMirrorsManagement(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] software_source_lists: List of Software Source OCIDs to synchronize
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] software_source_lists: List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to synchronize.
                
                
                ** IMPORTANT **
@@ -259,7 +259,7 @@ class ManagementStationSynchronizeMirrorsManagement(pulumi.CustomResource):
     @pulumi.getter(name="softwareSourceLists")
     def software_source_lists(self) -> pulumi.Output[Sequence[str]]:
         """
-        List of Software Source OCIDs to synchronize
+        List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to synchronize.
 
 
         ** IMPORTANT **

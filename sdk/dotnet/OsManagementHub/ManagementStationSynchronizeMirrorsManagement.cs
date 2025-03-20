@@ -12,7 +12,7 @@ namespace Pulumi.Oci.OsManagementHub
     /// <summary>
     /// This resource provides the Management Station Synchronize Mirrors Management resource in Oracle Cloud Infrastructure Os Management Hub service.
     /// 
-    /// Synchronize the specified software sources mirrors on the management station.
+    /// Synchronize the specified software sources mirrored on the management station.
     /// 
     /// ## Example Usage
     /// 
@@ -51,7 +51,7 @@ namespace Pulumi.Oci.OsManagementHub
         public Output<string> ManagementStationId { get; private set; } = null!;
 
         /// <summary>
-        /// List of Software Source OCIDs to synchronize
+        /// List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to synchronize.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -116,7 +116,7 @@ namespace Pulumi.Oci.OsManagementHub
         private InputList<string>? _softwareSourceLists;
 
         /// <summary>
-        /// List of Software Source OCIDs to synchronize
+        /// List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to synchronize.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -146,7 +146,7 @@ namespace Pulumi.Oci.OsManagementHub
         private InputList<string>? _softwareSourceLists;
 
         /// <summary>
-        /// List of Software Source OCIDs to synchronize
+        /// List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to synchronize.
         /// 
         /// 
         /// ** IMPORTANT **

@@ -14,54 +14,6 @@ import (
 // This data source provides the list of Managed Instances in Oracle Cloud Infrastructure Os Management Hub service.
 //
 // Lists managed instances that match the specified compartment or managed instance OCID. Filter the list against a variety of criteria including but not limited to its name, status, architecture, and OS version.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/osmanagementhub"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := osmanagementhub.GetManagedInstances(ctx, &osmanagementhub.GetManagedInstancesArgs{
-//				AdvisoryNames:                     managedInstanceAdvisoryName,
-//				ArchTypes:                         managedInstanceArchType,
-//				CompartmentId:                     pulumi.StringRef(compartmentId),
-//				DisplayNames:                      managedInstanceDisplayName,
-//				DisplayNameContains:               pulumi.StringRef(managedInstanceDisplayNameContains),
-//				Group:                             pulumi.StringRef(managedInstanceGroup),
-//				GroupNotEqualTo:                   pulumi.StringRef(managedInstanceGroupNotEqualTo),
-//				IsAttachedToGroupOrLifecycleStage: pulumi.BoolRef(managedInstanceIsAttachedToGroupOrLifecycleStage),
-//				IsManagedByAutonomousLinux:        pulumi.BoolRef(managedInstanceIsManagedByAutonomousLinux),
-//				IsManagementStation:               pulumi.BoolRef(managedInstanceIsManagementStation),
-//				IsProfileAttached:                 pulumi.BoolRef(managedInstanceIsProfileAttached),
-//				LifecycleEnvironment:              pulumi.StringRef(managedInstanceLifecycleEnvironment),
-//				LifecycleEnvironmentNotEqualTo:    pulumi.StringRef(managedInstanceLifecycleEnvironmentNotEqualTo),
-//				LifecycleStage:                    pulumi.StringRef(managedInstanceLifecycleStage),
-//				LifecycleStageNotEqualTo:          pulumi.StringRef(managedInstanceLifecycleStageNotEqualTo),
-//				Locations:                         managedInstanceLocation,
-//				LocationNotEqualTos:               managedInstanceLocationNotEqualTo,
-//				ManagedInstanceId:                 pulumi.StringRef(testManagedInstance.Id),
-//				OsFamilies:                        managedInstanceOsFamily,
-//				Profiles:                          managedInstanceProfile,
-//				ProfileNotEqualTos:                managedInstanceProfileNotEqualTo,
-//				SoftwareSourceId:                  pulumi.StringRef(testSoftwareSource.Id),
-//				Statuses:                          managedInstanceStatus,
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 func GetManagedInstances(ctx *pulumi.Context, args *GetManagedInstancesArgs, opts ...pulumi.InvokeOption) (*GetManagedInstancesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedInstancesResult
@@ -76,6 +28,8 @@ func GetManagedInstances(ctx *pulumi.Context, args *GetManagedInstancesArgs, opt
 type GetManagedInstancesArgs struct {
 	// The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
 	AdvisoryNames []string `pulumi:"advisoryNames"`
+	// A filter to return only managed instances with the specified version of osmh-agent running.
+	AgentVersion *string `pulumi:"agentVersion"`
 	// A filter to return only instances whose architecture type matches the given architecture.
 	ArchTypes []string `pulumi:"archTypes"`
 	// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
@@ -97,6 +51,8 @@ type GetManagedInstancesArgs struct {
 	IsManagementStation *bool `pulumi:"isManagementStation"`
 	// A filter to return only managed instances with a registration profile attached.
 	IsProfileAttached *bool `pulumi:"isProfileAttached"`
+	// A filter to return only managed instances that require a reboot to install updates.
+	IsRebootRequired *bool `pulumi:"isRebootRequired"`
 	// A filter to return only managed instances in a specific lifecycle environment.
 	LifecycleEnvironment *string `pulumi:"lifecycleEnvironment"`
 	// A filter to return only managed instances that aren't in a specific lifecycle environment.
@@ -111,6 +67,10 @@ type GetManagedInstancesArgs struct {
 	Locations []string `pulumi:"locations"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
 	ManagedInstanceId *string `pulumi:"managedInstanceId"`
+	// A filter to return resources that aren't associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	ManagementStationNotEqualTos []string `pulumi:"managementStationNotEqualTos"`
+	// A filter to return resources that are associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	ManagementStations []string `pulumi:"managementStations"`
 	// A filter to return only resources that match the given operating system family.
 	OsFamilies []string `pulumi:"osFamilies"`
 	// A multi filter to return only managed instances that don't contain the given profile [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -126,7 +86,9 @@ type GetManagedInstancesArgs struct {
 // A collection of values returned by getManagedInstances.
 type GetManagedInstancesResult struct {
 	AdvisoryNames []string `pulumi:"advisoryNames"`
-	ArchTypes     []string `pulumi:"archTypes"`
+	// The version of osmh-agent running on the managed instance
+	AgentVersion *string  `pulumi:"agentVersion"`
+	ArchTypes    []string `pulumi:"archTypes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance.
 	CompartmentId       *string `pulumi:"compartmentId"`
 	DisplayNameContains *string `pulumi:"displayNameContains"`
@@ -143,6 +105,8 @@ type GetManagedInstancesResult struct {
 	// Indicates whether this managed instance is acting as an on-premises management station.
 	IsManagementStation *bool `pulumi:"isManagementStation"`
 	IsProfileAttached   *bool `pulumi:"isProfileAttached"`
+	// Indicates whether a reboot is required to complete installation of updates.
+	IsRebootRequired *bool `pulumi:"isRebootRequired"`
 	// Id and name of a resource to simplify the display for the user.
 	LifecycleEnvironment           *string `pulumi:"lifecycleEnvironment"`
 	LifecycleEnvironmentNotEqualTo *string `pulumi:"lifecycleEnvironmentNotEqualTo"`
@@ -153,8 +117,10 @@ type GetManagedInstancesResult struct {
 	// The location of the managed instance.
 	Locations []string `pulumi:"locations"`
 	// The list of managed_instance_collection.
-	ManagedInstanceCollections []GetManagedInstancesManagedInstanceCollection `pulumi:"managedInstanceCollections"`
-	ManagedInstanceId          *string                                        `pulumi:"managedInstanceId"`
+	ManagedInstanceCollections   []GetManagedInstancesManagedInstanceCollection `pulumi:"managedInstanceCollections"`
+	ManagedInstanceId            *string                                        `pulumi:"managedInstanceId"`
+	ManagementStationNotEqualTos []string                                       `pulumi:"managementStationNotEqualTos"`
+	ManagementStations           []string                                       `pulumi:"managementStations"`
 	// The operating system type of the managed instance.
 	OsFamilies         []string `pulumi:"osFamilies"`
 	ProfileNotEqualTos []string `pulumi:"profileNotEqualTos"`
@@ -178,6 +144,8 @@ func GetManagedInstancesOutput(ctx *pulumi.Context, args GetManagedInstancesOutp
 type GetManagedInstancesOutputArgs struct {
 	// The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
 	AdvisoryNames pulumi.StringArrayInput `pulumi:"advisoryNames"`
+	// A filter to return only managed instances with the specified version of osmh-agent running.
+	AgentVersion pulumi.StringPtrInput `pulumi:"agentVersion"`
 	// A filter to return only instances whose architecture type matches the given architecture.
 	ArchTypes pulumi.StringArrayInput `pulumi:"archTypes"`
 	// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
@@ -199,6 +167,8 @@ type GetManagedInstancesOutputArgs struct {
 	IsManagementStation pulumi.BoolPtrInput `pulumi:"isManagementStation"`
 	// A filter to return only managed instances with a registration profile attached.
 	IsProfileAttached pulumi.BoolPtrInput `pulumi:"isProfileAttached"`
+	// A filter to return only managed instances that require a reboot to install updates.
+	IsRebootRequired pulumi.BoolPtrInput `pulumi:"isRebootRequired"`
 	// A filter to return only managed instances in a specific lifecycle environment.
 	LifecycleEnvironment pulumi.StringPtrInput `pulumi:"lifecycleEnvironment"`
 	// A filter to return only managed instances that aren't in a specific lifecycle environment.
@@ -213,6 +183,10 @@ type GetManagedInstancesOutputArgs struct {
 	Locations pulumi.StringArrayInput `pulumi:"locations"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
 	ManagedInstanceId pulumi.StringPtrInput `pulumi:"managedInstanceId"`
+	// A filter to return resources that aren't associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	ManagementStationNotEqualTos pulumi.StringArrayInput `pulumi:"managementStationNotEqualTos"`
+	// A filter to return resources that are associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	ManagementStations pulumi.StringArrayInput `pulumi:"managementStations"`
 	// A filter to return only resources that match the given operating system family.
 	OsFamilies pulumi.StringArrayInput `pulumi:"osFamilies"`
 	// A multi filter to return only managed instances that don't contain the given profile [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -246,6 +220,11 @@ func (o GetManagedInstancesResultOutput) ToGetManagedInstancesResultOutputWithCo
 
 func (o GetManagedInstancesResultOutput) AdvisoryNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetManagedInstancesResult) []string { return v.AdvisoryNames }).(pulumi.StringArrayOutput)
+}
+
+// The version of osmh-agent running on the managed instance
+func (o GetManagedInstancesResultOutput) AgentVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstancesResult) *string { return v.AgentVersion }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedInstancesResultOutput) ArchTypes() pulumi.StringArrayOutput {
@@ -301,6 +280,11 @@ func (o GetManagedInstancesResultOutput) IsProfileAttached() pulumi.BoolPtrOutpu
 	return o.ApplyT(func(v GetManagedInstancesResult) *bool { return v.IsProfileAttached }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates whether a reboot is required to complete installation of updates.
+func (o GetManagedInstancesResultOutput) IsRebootRequired() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedInstancesResult) *bool { return v.IsRebootRequired }).(pulumi.BoolPtrOutput)
+}
+
 // Id and name of a resource to simplify the display for the user.
 func (o GetManagedInstancesResultOutput) LifecycleEnvironment() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagedInstancesResult) *string { return v.LifecycleEnvironment }).(pulumi.StringPtrOutput)
@@ -337,6 +321,14 @@ func (o GetManagedInstancesResultOutput) ManagedInstanceCollections() GetManaged
 
 func (o GetManagedInstancesResultOutput) ManagedInstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagedInstancesResult) *string { return v.ManagedInstanceId }).(pulumi.StringPtrOutput)
+}
+
+func (o GetManagedInstancesResultOutput) ManagementStationNotEqualTos() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedInstancesResult) []string { return v.ManagementStationNotEqualTos }).(pulumi.StringArrayOutput)
+}
+
+func (o GetManagedInstancesResultOutput) ManagementStations() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedInstancesResult) []string { return v.ManagementStations }).(pulumi.StringArrayOutput)
 }
 
 // The operating system type of the managed instance.

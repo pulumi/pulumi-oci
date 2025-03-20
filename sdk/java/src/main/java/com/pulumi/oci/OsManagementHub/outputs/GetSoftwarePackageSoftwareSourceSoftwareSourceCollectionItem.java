@@ -21,12 +21,12 @@ public final class GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItem 
      */
     private String archType;
     /**
-     * @return The availabilities of the software source in a non-OCI environment for a tenancy.
+     * @return The availability of the software source in a non-OCI environment for a tenancy.
      * 
      */
     private String availability;
     /**
-     * @return The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+     * @return The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
      * 
      */
     private String availabilityAtOci;
@@ -66,6 +66,11 @@ public final class GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItem 
      */
     private Boolean isMandatoryForAutonomousLinux;
     /**
+     * @return Indicates if this software source can be mirrored to a management station.
+     * 
+     */
+    private Boolean isMirrorSyncAllowed;
+    /**
      * @return A filter to return only resources that match the given operating system family.
      * 
      */
@@ -81,10 +86,15 @@ public final class GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItem 
      */
     private String repoId;
     /**
-     * @return The size of the software source in gigabytes (GB).
+     * @return The size of the software source in bytes (B).
      * 
      */
     private Double size;
+    /**
+     * @return Identifies how the versioned custom software source was created.
+     * 
+     */
+    private String softwareSourceSubType;
     /**
      * @return The type of the software source.
      * 
@@ -140,14 +150,14 @@ public final class GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItem 
         return this.archType;
     }
     /**
-     * @return The availabilities of the software source in a non-OCI environment for a tenancy.
+     * @return The availability of the software source in a non-OCI environment for a tenancy.
      * 
      */
     public String availability() {
         return this.availability;
     }
     /**
-     * @return The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+     * @return The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
      * 
      */
     public String availabilityAtOci() {
@@ -203,6 +213,13 @@ public final class GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItem 
         return this.isMandatoryForAutonomousLinux;
     }
     /**
+     * @return Indicates if this software source can be mirrored to a management station.
+     * 
+     */
+    public Boolean isMirrorSyncAllowed() {
+        return this.isMirrorSyncAllowed;
+    }
+    /**
      * @return A filter to return only resources that match the given operating system family.
      * 
      */
@@ -224,11 +241,18 @@ public final class GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItem 
         return this.repoId;
     }
     /**
-     * @return The size of the software source in gigabytes (GB).
+     * @return The size of the software source in bytes (B).
      * 
      */
     public Double size() {
         return this.size;
+    }
+    /**
+     * @return Identifies how the versioned custom software source was created.
+     * 
+     */
+    public String softwareSourceSubType() {
+        return this.softwareSourceSubType;
     }
     /**
      * @return The type of the software source.
@@ -313,10 +337,12 @@ public final class GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItem 
         private Map<String,String> freeformTags;
         private String id;
         private Boolean isMandatoryForAutonomousLinux;
+        private Boolean isMirrorSyncAllowed;
         private String osFamily;
         private String packageCount;
         private String repoId;
         private Double size;
+        private String softwareSourceSubType;
         private String softwareSourceType;
         private String softwareSourceVersion;
         private String state;
@@ -339,10 +365,12 @@ public final class GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItem 
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isMandatoryForAutonomousLinux = defaults.isMandatoryForAutonomousLinux;
+    	      this.isMirrorSyncAllowed = defaults.isMirrorSyncAllowed;
     	      this.osFamily = defaults.osFamily;
     	      this.packageCount = defaults.packageCount;
     	      this.repoId = defaults.repoId;
     	      this.size = defaults.size;
+    	      this.softwareSourceSubType = defaults.softwareSourceSubType;
     	      this.softwareSourceType = defaults.softwareSourceType;
     	      this.softwareSourceVersion = defaults.softwareSourceVersion;
     	      this.state = defaults.state;
@@ -435,6 +463,14 @@ public final class GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItem 
             return this;
         }
         @CustomType.Setter
+        public Builder isMirrorSyncAllowed(Boolean isMirrorSyncAllowed) {
+            if (isMirrorSyncAllowed == null) {
+              throw new MissingRequiredPropertyException("GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItem", "isMirrorSyncAllowed");
+            }
+            this.isMirrorSyncAllowed = isMirrorSyncAllowed;
+            return this;
+        }
+        @CustomType.Setter
         public Builder osFamily(String osFamily) {
             if (osFamily == null) {
               throw new MissingRequiredPropertyException("GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItem", "osFamily");
@@ -464,6 +500,14 @@ public final class GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItem 
               throw new MissingRequiredPropertyException("GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItem", "size");
             }
             this.size = size;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder softwareSourceSubType(String softwareSourceSubType) {
+            if (softwareSourceSubType == null) {
+              throw new MissingRequiredPropertyException("GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItem", "softwareSourceSubType");
+            }
+            this.softwareSourceSubType = softwareSourceSubType;
             return this;
         }
         @CustomType.Setter
@@ -553,10 +597,12 @@ public final class GetSoftwarePackageSoftwareSourceSoftwareSourceCollectionItem 
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.isMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
+            _resultValue.isMirrorSyncAllowed = isMirrorSyncAllowed;
             _resultValue.osFamily = osFamily;
             _resultValue.packageCount = packageCount;
             _resultValue.repoId = repoId;
             _resultValue.size = size;
+            _resultValue.softwareSourceSubType = softwareSourceSubType;
             _resultValue.softwareSourceType = softwareSourceType;
             _resultValue.softwareSourceVersion = softwareSourceVersion;
             _resultValue.state = state;

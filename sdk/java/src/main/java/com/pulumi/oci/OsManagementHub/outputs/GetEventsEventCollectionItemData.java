@@ -20,10 +20,25 @@ public final class GetEventsEventCollectionItemData {
      */
     private List<GetEventsEventCollectionItemDataAdditionalDetail> additionalDetails;
     /**
+     * @return The actions used to attempt fixing the error.
+     * 
+     */
+    private List<String> attemptedResolutions;
+    /**
      * @return Provides information collected for the exploit attempt event.
      * 
      */
     private List<GetEventsEventCollectionItemDataContent> contents;
+    /**
+     * @return The commands executed by the agent that caused the error.
+     * 
+     */
+    private String errorCause;
+    /**
+     * @return The output log of the error.
+     * 
+     */
+    private String errorLog;
     /**
      * @return Number of times the event has occurred.
      * 
@@ -35,6 +50,11 @@ public final class GetEventsEventCollectionItemData {
      */
     private String eventFingerprint;
     /**
+     * @return Health state of the management station
+     * 
+     */
+    private String healthState;
+    /**
      * @return Type of management station operation.
      * 
      */
@@ -44,6 +64,21 @@ public final class GetEventsEventCollectionItemData {
      * 
      */
     private String reason;
+    /**
+     * @return Reboot status for the current event
+     * 
+     */
+    private String rebootStatus;
+    /**
+     * @return The log output after the resolutions.
+     * 
+     */
+    private String resolutionLog;
+    /**
+     * @return Indicates if the event succeeded.
+     * 
+     */
+    private String resolutionStatus;
     /**
      * @return Status of the management station operation.
      * 
@@ -64,11 +99,32 @@ public final class GetEventsEventCollectionItemData {
         return this.additionalDetails;
     }
     /**
+     * @return The actions used to attempt fixing the error.
+     * 
+     */
+    public List<String> attemptedResolutions() {
+        return this.attemptedResolutions;
+    }
+    /**
      * @return Provides information collected for the exploit attempt event.
      * 
      */
     public List<GetEventsEventCollectionItemDataContent> contents() {
         return this.contents;
+    }
+    /**
+     * @return The commands executed by the agent that caused the error.
+     * 
+     */
+    public String errorCause() {
+        return this.errorCause;
+    }
+    /**
+     * @return The output log of the error.
+     * 
+     */
+    public String errorLog() {
+        return this.errorLog;
     }
     /**
      * @return Number of times the event has occurred.
@@ -85,6 +141,13 @@ public final class GetEventsEventCollectionItemData {
         return this.eventFingerprint;
     }
     /**
+     * @return Health state of the management station
+     * 
+     */
+    public String healthState() {
+        return this.healthState;
+    }
+    /**
      * @return Type of management station operation.
      * 
      */
@@ -97,6 +160,27 @@ public final class GetEventsEventCollectionItemData {
      */
     public String reason() {
         return this.reason;
+    }
+    /**
+     * @return Reboot status for the current event
+     * 
+     */
+    public String rebootStatus() {
+        return this.rebootStatus;
+    }
+    /**
+     * @return The log output after the resolutions.
+     * 
+     */
+    public String resolutionLog() {
+        return this.resolutionLog;
+    }
+    /**
+     * @return Indicates if the event succeeded.
+     * 
+     */
+    public String resolutionStatus() {
+        return this.resolutionStatus;
     }
     /**
      * @return Status of the management station operation.
@@ -123,22 +207,36 @@ public final class GetEventsEventCollectionItemData {
     @CustomType.Builder
     public static final class Builder {
         private List<GetEventsEventCollectionItemDataAdditionalDetail> additionalDetails;
+        private List<String> attemptedResolutions;
         private List<GetEventsEventCollectionItemDataContent> contents;
+        private String errorCause;
+        private String errorLog;
         private Integer eventCount;
         private String eventFingerprint;
+        private String healthState;
         private String operationType;
         private String reason;
+        private String rebootStatus;
+        private String resolutionLog;
+        private String resolutionStatus;
         private String status;
         private String timeFirstOccurred;
         public Builder() {}
         public Builder(GetEventsEventCollectionItemData defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.additionalDetails = defaults.additionalDetails;
+    	      this.attemptedResolutions = defaults.attemptedResolutions;
     	      this.contents = defaults.contents;
+    	      this.errorCause = defaults.errorCause;
+    	      this.errorLog = defaults.errorLog;
     	      this.eventCount = defaults.eventCount;
     	      this.eventFingerprint = defaults.eventFingerprint;
+    	      this.healthState = defaults.healthState;
     	      this.operationType = defaults.operationType;
     	      this.reason = defaults.reason;
+    	      this.rebootStatus = defaults.rebootStatus;
+    	      this.resolutionLog = defaults.resolutionLog;
+    	      this.resolutionStatus = defaults.resolutionStatus;
     	      this.status = defaults.status;
     	      this.timeFirstOccurred = defaults.timeFirstOccurred;
         }
@@ -155,6 +253,17 @@ public final class GetEventsEventCollectionItemData {
             return additionalDetails(List.of(additionalDetails));
         }
         @CustomType.Setter
+        public Builder attemptedResolutions(List<String> attemptedResolutions) {
+            if (attemptedResolutions == null) {
+              throw new MissingRequiredPropertyException("GetEventsEventCollectionItemData", "attemptedResolutions");
+            }
+            this.attemptedResolutions = attemptedResolutions;
+            return this;
+        }
+        public Builder attemptedResolutions(String... attemptedResolutions) {
+            return attemptedResolutions(List.of(attemptedResolutions));
+        }
+        @CustomType.Setter
         public Builder contents(List<GetEventsEventCollectionItemDataContent> contents) {
             if (contents == null) {
               throw new MissingRequiredPropertyException("GetEventsEventCollectionItemData", "contents");
@@ -164,6 +273,22 @@ public final class GetEventsEventCollectionItemData {
         }
         public Builder contents(GetEventsEventCollectionItemDataContent... contents) {
             return contents(List.of(contents));
+        }
+        @CustomType.Setter
+        public Builder errorCause(String errorCause) {
+            if (errorCause == null) {
+              throw new MissingRequiredPropertyException("GetEventsEventCollectionItemData", "errorCause");
+            }
+            this.errorCause = errorCause;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder errorLog(String errorLog) {
+            if (errorLog == null) {
+              throw new MissingRequiredPropertyException("GetEventsEventCollectionItemData", "errorLog");
+            }
+            this.errorLog = errorLog;
+            return this;
         }
         @CustomType.Setter
         public Builder eventCount(Integer eventCount) {
@@ -182,6 +307,14 @@ public final class GetEventsEventCollectionItemData {
             return this;
         }
         @CustomType.Setter
+        public Builder healthState(String healthState) {
+            if (healthState == null) {
+              throw new MissingRequiredPropertyException("GetEventsEventCollectionItemData", "healthState");
+            }
+            this.healthState = healthState;
+            return this;
+        }
+        @CustomType.Setter
         public Builder operationType(String operationType) {
             if (operationType == null) {
               throw new MissingRequiredPropertyException("GetEventsEventCollectionItemData", "operationType");
@@ -195,6 +328,30 @@ public final class GetEventsEventCollectionItemData {
               throw new MissingRequiredPropertyException("GetEventsEventCollectionItemData", "reason");
             }
             this.reason = reason;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder rebootStatus(String rebootStatus) {
+            if (rebootStatus == null) {
+              throw new MissingRequiredPropertyException("GetEventsEventCollectionItemData", "rebootStatus");
+            }
+            this.rebootStatus = rebootStatus;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder resolutionLog(String resolutionLog) {
+            if (resolutionLog == null) {
+              throw new MissingRequiredPropertyException("GetEventsEventCollectionItemData", "resolutionLog");
+            }
+            this.resolutionLog = resolutionLog;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder resolutionStatus(String resolutionStatus) {
+            if (resolutionStatus == null) {
+              throw new MissingRequiredPropertyException("GetEventsEventCollectionItemData", "resolutionStatus");
+            }
+            this.resolutionStatus = resolutionStatus;
             return this;
         }
         @CustomType.Setter
@@ -216,11 +373,18 @@ public final class GetEventsEventCollectionItemData {
         public GetEventsEventCollectionItemData build() {
             final var _resultValue = new GetEventsEventCollectionItemData();
             _resultValue.additionalDetails = additionalDetails;
+            _resultValue.attemptedResolutions = attemptedResolutions;
             _resultValue.contents = contents;
+            _resultValue.errorCause = errorCause;
+            _resultValue.errorLog = errorLog;
             _resultValue.eventCount = eventCount;
             _resultValue.eventFingerprint = eventFingerprint;
+            _resultValue.healthState = healthState;
             _resultValue.operationType = operationType;
             _resultValue.reason = reason;
+            _resultValue.rebootStatus = rebootStatus;
+            _resultValue.resolutionLog = resolutionLog;
+            _resultValue.resolutionStatus = resolutionStatus;
             _resultValue.status = status;
             _resultValue.timeFirstOccurred = timeFirstOccurred;
             return _resultValue;

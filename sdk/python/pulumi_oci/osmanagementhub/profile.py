@@ -39,7 +39,7 @@ class ProfileArgs:
         """
         The set of arguments for constructing a Profile resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
         :param pulumi.Input[str] profile_type: The type of profile.
         :param pulumi.Input[str] arch_type: The architecture type.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -48,7 +48,7 @@ class ProfileArgs:
         :param pulumi.Input[bool] is_default_profile: (Updatable) Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
         :param pulumi.Input[str] lifecycle_stage_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage that the instance will be associated with.
         :param pulumi.Input[str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group that the instance will join after registration.
-        :param pulumi.Input[str] management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+        :param pulumi.Input[str] management_station_id: description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is required when creating a profile for non-OCI instances.
         :param pulumi.Input[str] os_family: The operating system family.
         :param pulumi.Input[str] registration_type: The type of instance to register.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] software_source_ids: The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the registration profile will use.
@@ -102,7 +102,7 @@ class ProfileArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -210,7 +210,7 @@ class ProfileArgs:
     @pulumi.getter(name="managementStationId")
     def management_station_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+        description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is required when creating a profile for non-OCI instances.
         """
         return pulumi.get(self, "management_station_id")
 
@@ -290,12 +290,14 @@ class _ProfileState:
                  management_station_id: Optional[pulumi.Input[str]] = None,
                  os_family: Optional[pulumi.Input[str]] = None,
                  profile_type: Optional[pulumi.Input[str]] = None,
+                 profile_version: Optional[pulumi.Input[str]] = None,
                  registration_type: Optional[pulumi.Input[str]] = None,
                  software_source_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  software_sources: Optional[pulumi.Input[Sequence[pulumi.Input['ProfileSoftwareSourceArgs']]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
+                 time_modified: Optional[pulumi.Input[str]] = None,
                  vendor_name: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Profile resources.
@@ -303,7 +305,7 @@ class _ProfileState:
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) User-specified description of the registration profile.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_default_profile: (Updatable) Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
         :param pulumi.Input[bool] is_service_provided_profile: Indicates if the profile was created by the service. OS Management Hub provides a limited set of standardized profiles that can be used to register Autonomous Linux or Windows instances.
@@ -312,15 +314,17 @@ class _ProfileState:
         :param pulumi.Input[Sequence[pulumi.Input['ProfileLifecycleStageArgs']]] lifecycle_stages: Provides identifying information for the specified lifecycle stage.
         :param pulumi.Input[str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group that the instance will join after registration.
         :param pulumi.Input[Sequence[pulumi.Input['ProfileManagedInstanceGroupArgs']]] managed_instance_groups: Provides identifying information for the specified managed instance group.
-        :param pulumi.Input[str] management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+        :param pulumi.Input[str] management_station_id: description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is required when creating a profile for non-OCI instances.
         :param pulumi.Input[str] os_family: The operating system family.
         :param pulumi.Input[str] profile_type: The type of profile.
+        :param pulumi.Input[str] profile_version: The version of the profile. The version is automatically incremented each time the profiled is edited.
         :param pulumi.Input[str] registration_type: The type of instance to register.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] software_source_ids: The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the registration profile will use.
         :param pulumi.Input[Sequence[pulumi.Input['ProfileSoftwareSourceArgs']]] software_sources: The list of software sources that the registration profile will use.
         :param pulumi.Input[str] state: The current state of the registration profile.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        :param pulumi.Input[str] time_modified: The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[str] vendor_name: The vendor of the operating system for the instance.
                
                
@@ -359,6 +363,8 @@ class _ProfileState:
             pulumi.set(__self__, "os_family", os_family)
         if profile_type is not None:
             pulumi.set(__self__, "profile_type", profile_type)
+        if profile_version is not None:
+            pulumi.set(__self__, "profile_version", profile_version)
         if registration_type is not None:
             pulumi.set(__self__, "registration_type", registration_type)
         if software_source_ids is not None:
@@ -371,6 +377,8 @@ class _ProfileState:
             pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
+        if time_modified is not None:
+            pulumi.set(__self__, "time_modified", time_modified)
         if vendor_name is not None:
             pulumi.set(__self__, "vendor_name", vendor_name)
 
@@ -426,7 +434,7 @@ class _ProfileState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -534,7 +542,7 @@ class _ProfileState:
     @pulumi.getter(name="managementStationId")
     def management_station_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+        description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is required when creating a profile for non-OCI instances.
         """
         return pulumi.get(self, "management_station_id")
 
@@ -565,6 +573,18 @@ class _ProfileState:
     @profile_type.setter
     def profile_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "profile_type", value)
+
+    @property
+    @pulumi.getter(name="profileVersion")
+    def profile_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        The version of the profile. The version is automatically incremented each time the profiled is edited.
+        """
+        return pulumi.get(self, "profile_version")
+
+    @profile_version.setter
+    def profile_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "profile_version", value)
 
     @property
     @pulumi.getter(name="registrationType")
@@ -637,6 +657,18 @@ class _ProfileState:
     @time_created.setter
     def time_created(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_created", value)
+
+    @property
+    @pulumi.getter(name="timeModified")
+    def time_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        """
+        return pulumi.get(self, "time_modified")
+
+    @time_modified.setter
+    def time_modified(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_modified", value)
 
     @property
     @pulumi.getter(name="vendorName")
@@ -723,12 +755,12 @@ class Profile(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) User-specified description of the registration profile.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_default_profile: (Updatable) Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
         :param pulumi.Input[str] lifecycle_stage_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage that the instance will be associated with.
         :param pulumi.Input[str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group that the instance will join after registration.
-        :param pulumi.Input[str] management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+        :param pulumi.Input[str] management_station_id: description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is required when creating a profile for non-OCI instances.
         :param pulumi.Input[str] os_family: The operating system family.
         :param pulumi.Input[str] profile_type: The type of profile.
         :param pulumi.Input[str] registration_type: The type of instance to register.
@@ -850,10 +882,12 @@ class Profile(pulumi.CustomResource):
             __props__.__dict__["lifecycle_environments"] = None
             __props__.__dict__["lifecycle_stages"] = None
             __props__.__dict__["managed_instance_groups"] = None
+            __props__.__dict__["profile_version"] = None
             __props__.__dict__["software_sources"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
+            __props__.__dict__["time_modified"] = None
         super(Profile, __self__).__init__(
             'oci:OsManagementHub/profile:Profile',
             resource_name,
@@ -880,12 +914,14 @@ class Profile(pulumi.CustomResource):
             management_station_id: Optional[pulumi.Input[str]] = None,
             os_family: Optional[pulumi.Input[str]] = None,
             profile_type: Optional[pulumi.Input[str]] = None,
+            profile_version: Optional[pulumi.Input[str]] = None,
             registration_type: Optional[pulumi.Input[str]] = None,
             software_source_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             software_sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProfileSoftwareSourceArgs', 'ProfileSoftwareSourceArgsDict']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
+            time_modified: Optional[pulumi.Input[str]] = None,
             vendor_name: Optional[pulumi.Input[str]] = None) -> 'Profile':
         """
         Get an existing Profile resource's state with the given name, id, and optional extra
@@ -898,7 +934,7 @@ class Profile(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) User-specified description of the registration profile.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_default_profile: (Updatable) Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
         :param pulumi.Input[bool] is_service_provided_profile: Indicates if the profile was created by the service. OS Management Hub provides a limited set of standardized profiles that can be used to register Autonomous Linux or Windows instances.
@@ -907,15 +943,17 @@ class Profile(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['ProfileLifecycleStageArgs', 'ProfileLifecycleStageArgsDict']]]] lifecycle_stages: Provides identifying information for the specified lifecycle stage.
         :param pulumi.Input[str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group that the instance will join after registration.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ProfileManagedInstanceGroupArgs', 'ProfileManagedInstanceGroupArgsDict']]]] managed_instance_groups: Provides identifying information for the specified managed instance group.
-        :param pulumi.Input[str] management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+        :param pulumi.Input[str] management_station_id: description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is required when creating a profile for non-OCI instances.
         :param pulumi.Input[str] os_family: The operating system family.
         :param pulumi.Input[str] profile_type: The type of profile.
+        :param pulumi.Input[str] profile_version: The version of the profile. The version is automatically incremented each time the profiled is edited.
         :param pulumi.Input[str] registration_type: The type of instance to register.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] software_source_ids: The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the registration profile will use.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ProfileSoftwareSourceArgs', 'ProfileSoftwareSourceArgsDict']]]] software_sources: The list of software sources that the registration profile will use.
         :param pulumi.Input[str] state: The current state of the registration profile.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        :param pulumi.Input[str] time_modified: The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[str] vendor_name: The vendor of the operating system for the instance.
                
                
@@ -942,12 +980,14 @@ class Profile(pulumi.CustomResource):
         __props__.__dict__["management_station_id"] = management_station_id
         __props__.__dict__["os_family"] = os_family
         __props__.__dict__["profile_type"] = profile_type
+        __props__.__dict__["profile_version"] = profile_version
         __props__.__dict__["registration_type"] = registration_type
         __props__.__dict__["software_source_ids"] = software_source_ids
         __props__.__dict__["software_sources"] = software_sources
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
+        __props__.__dict__["time_modified"] = time_modified
         __props__.__dict__["vendor_name"] = vendor_name
         return Profile(resource_name, opts=opts, __props__=__props__)
 
@@ -987,7 +1027,7 @@ class Profile(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -1059,7 +1099,7 @@ class Profile(pulumi.CustomResource):
     @pulumi.getter(name="managementStationId")
     def management_station_id(self) -> pulumi.Output[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+        description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is required when creating a profile for non-OCI instances.
         """
         return pulumi.get(self, "management_station_id")
 
@@ -1078,6 +1118,14 @@ class Profile(pulumi.CustomResource):
         The type of profile.
         """
         return pulumi.get(self, "profile_type")
+
+    @property
+    @pulumi.getter(name="profileVersion")
+    def profile_version(self) -> pulumi.Output[str]:
+        """
+        The version of the profile. The version is automatically incremented each time the profiled is edited.
+        """
+        return pulumi.get(self, "profile_version")
 
     @property
     @pulumi.getter(name="registrationType")
@@ -1126,6 +1174,14 @@ class Profile(pulumi.CustomResource):
         The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         """
         return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeModified")
+    def time_modified(self) -> pulumi.Output[str]:
+        """
+        The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        """
+        return pulumi.get(self, "time_modified")
 
     @property
     @pulumi.getter(name="vendorName")

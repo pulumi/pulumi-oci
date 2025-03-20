@@ -10910,7 +10910,7 @@ export namespace ContainerEngine {
          */
         admissionControllerOptions?: pulumi.Input<inputs.ContainerEngine.ClusterOptionsAdmissionControllerOptions>;
         /**
-         * IP family to use for single stack or define the order of IP families for dual-stack
+         * IP family to use for single stack or define the order of IP families for dual-stack. Available values are [] (defaults to IPv4), [IPv4] (IPv4), [IPv4, IPv6] (IPv4 preferred dual stack).
          */
         ipFamilies?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -10959,11 +10959,11 @@ export namespace ContainerEngine {
 
     export interface ClusterOptionsKubernetesNetworkConfig {
         /**
-         * The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
+         * The CIDR block for Kubernetes pods. Optional. For ipv4, defaults to 10.244.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0000::/96.
          */
         podsCidr?: pulumi.Input<string>;
         /**
-         * The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
+         * The CIDR block for Kubernetes services. Optional. For ipv4, defaults to 10.96.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0001::/108.
          */
         servicesCidr?: pulumi.Input<string>;
     }
@@ -13247,6 +13247,42 @@ export namespace Core {
         /**
          * the list of values for the enum
          */
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetComputeGpuMemoryClusterInstancesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetComputeGpuMemoryClusterInstancesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetComputeGpuMemoryClustersFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetComputeGpuMemoryClustersFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetComputeGpuMemoryFabricsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetComputeGpuMemoryFabricsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
@@ -25002,6 +25038,304 @@ export namespace DataScience {
 }
 
 export namespace Database {
+    export interface AutonomousContainerDatabaseAddStandbyBackupConfig {
+        /**
+         * Backup destination details.
+         */
+        backupDestinationDetails?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetail>[]>;
+        /**
+         * Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
+         */
+        recoveryWindowInDays?: pulumi.Input<number>;
+    }
+
+    export interface AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetail {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+         */
+        dbrsPolicyId?: pulumi.Input<string>;
+        /**
+         * The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * Proxy URL to connect to object store.
+         */
+        internetProxy?: pulumi.Input<string>;
+        /**
+         * Type of the database backup destination.
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+         */
+        vpcPassword?: pulumi.Input<string>;
+        /**
+         * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+         */
+        vpcUser?: pulumi.Input<string>;
+    }
+
+    export interface AutonomousContainerDatabaseAddStandbyDataguard {
+        /**
+         * The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database. Example: `9 seconds`
+         */
+        applyLag?: pulumi.Input<string>;
+        /**
+         * The rate at which redo logs are synchronized between the associated Autonomous Container Databases. Example: `180 Mb per second`
+         */
+        applyRate?: pulumi.Input<string>;
+        /**
+         * Automatically selected by backend when observer is enabled.
+         */
+        automaticFailoverTarget?: pulumi.Input<string>;
+        /**
+         * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
+        autonomousContainerDatabaseId?: pulumi.Input<string>;
+        /**
+         * The domain of the Autonomous Container Database
+         */
+        availabilityDomain?: pulumi.Input<string>;
+        /**
+         * The lag time for my preference based on data loss tolerance in seconds.
+         */
+        fastStartFailOverLagLimitInSeconds?: pulumi.Input<number>;
+        /**
+         * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+         */
+        isAutomaticFailoverEnabled?: pulumi.Input<boolean>;
+        /**
+         * Additional information about the current lifecycle state.
+         */
+        lifecycleDetails?: pulumi.Input<string>;
+        /**
+         * The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+         */
+        protectionMode?: pulumi.Input<string>;
+        /**
+         * Automatically selected by backend based on the protection mode.
+         */
+        redoTransportMode?: pulumi.Input<string>;
+        /**
+         * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+         */
+        role?: pulumi.Input<string>;
+        /**
+         * The current state of the Autonomous Container Database.
+         */
+        state?: pulumi.Input<string>;
+        /**
+         * The date and time the Autonomous Container Database was created.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * Timestamp when the lags were last calculated for a standby.
+         */
+        timeLagRefreshedOn?: pulumi.Input<string>;
+        /**
+         * The date and time when the last role change action happened.
+         */
+        timeLastRoleChanged?: pulumi.Input<string>;
+        /**
+         * The date and time of the last update to the apply lag, apply rate, and transport lag values.
+         */
+        timeLastSynced?: pulumi.Input<string>;
+        /**
+         * The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database. Example: `7 seconds`
+         */
+        transportLag?: pulumi.Input<string>;
+    }
+
+    export interface AutonomousContainerDatabaseAddStandbyDataguardGroupMember {
+        /**
+         * The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database. Example: `9 seconds`
+         */
+        applyLag?: pulumi.Input<string>;
+        /**
+         * The rate at which redo logs are synchronized between the associated Autonomous Container Databases. Example: `180 Mb per second`
+         */
+        applyRate?: pulumi.Input<string>;
+        /**
+         * Automatically selected by backend when observer is enabled.
+         */
+        automaticFailoverTarget?: pulumi.Input<string>;
+        /**
+         * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
+        autonomousContainerDatabaseId?: pulumi.Input<string>;
+        /**
+         * The domain of the Autonomous Container Database
+         */
+        availabilityDomain?: pulumi.Input<string>;
+        /**
+         * The lag time for my preference based on data loss tolerance in seconds.
+         */
+        fastStartFailOverLagLimitInSeconds?: pulumi.Input<number>;
+        /**
+         * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+         */
+        isAutomaticFailoverEnabled?: pulumi.Input<boolean>;
+        /**
+         * Additional information about the current lifecycle state.
+         */
+        lifecycleDetails?: pulumi.Input<string>;
+        /**
+         * The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+         */
+        protectionMode?: pulumi.Input<string>;
+        /**
+         * Automatically selected by backend based on the protection mode.
+         */
+        redoTransportMode?: pulumi.Input<string>;
+        /**
+         * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+         */
+        role?: pulumi.Input<string>;
+        /**
+         * The current state of the Autonomous Container Database.
+         */
+        state?: pulumi.Input<string>;
+        /**
+         * The date and time the Autonomous Container Database was created.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * Timestamp when the lags were last calculated for a standby.
+         */
+        timeLagRefreshedOn?: pulumi.Input<string>;
+        /**
+         * The date and time when the last role change action happened.
+         */
+        timeLastRoleChanged?: pulumi.Input<string>;
+        /**
+         * The date and time of the last update to the apply lag, apply rate, and transport lag values.
+         */
+        timeLastSynced?: pulumi.Input<string>;
+        /**
+         * The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database. Example: `7 seconds`
+         */
+        transportLag?: pulumi.Input<string>;
+    }
+
+    export interface AutonomousContainerDatabaseAddStandbyKeyHistoryEntry {
+        /**
+         * The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+         */
+        kmsKeyVersionId?: pulumi.Input<string>;
+        /**
+         * The date and time the kms key activated.
+         */
+        timeActivated?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string>;
+    }
+
+    export interface AutonomousContainerDatabaseAddStandbyMaintenanceWindow {
+        /**
+         * Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+         */
+        customActionTimeoutInMins?: pulumi.Input<number>;
+        /**
+         * Days during the week when maintenance should be performed.
+         */
+        daysOfWeeks?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseAddStandbyMaintenanceWindowDaysOfWeek>[]>;
+        /**
+         * The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+         */
+        hoursOfDays?: pulumi.Input<pulumi.Input<number>[]>;
+        /**
+         * If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+         */
+        isCustomActionTimeoutEnabled?: pulumi.Input<boolean>;
+        /**
+         * If true, enables the monthly patching option.
+         */
+        isMonthlyPatchingEnabled?: pulumi.Input<boolean>;
+        /**
+         * Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+         */
+        leadTimeInWeeks?: pulumi.Input<number>;
+        /**
+         * Months during the year when maintenance should be performed.
+         */
+        months?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseAddStandbyMaintenanceWindowMonth>[]>;
+        /**
+         * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+         */
+        patchingMode?: pulumi.Input<string>;
+        /**
+         * The maintenance window scheduling preference.
+         */
+        preference?: pulumi.Input<string>;
+        /**
+         * If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+         */
+        skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
+        /**
+         * Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+         */
+        weeksOfMonths?: pulumi.Input<pulumi.Input<number>[]>;
+    }
+
+    export interface AutonomousContainerDatabaseAddStandbyMaintenanceWindowDaysOfWeek {
+        /**
+         * Name of the month of the year.
+         */
+        name?: pulumi.Input<string>;
+    }
+
+    export interface AutonomousContainerDatabaseAddStandbyMaintenanceWindowMonth {
+        /**
+         * Name of the month of the year.
+         */
+        name?: pulumi.Input<string>;
+    }
+
+    export interface AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfig {
+        /**
+         * Backup destination details.
+         */
+        backupDestinationDetails?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail>[]>;
+        /**
+         * Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
+         */
+        recoveryWindowInDays?: pulumi.Input<number>;
+    }
+
+    export interface AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+         */
+        dbrsPolicyId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * Proxy URL to connect to object store.
+         */
+        internetProxy?: pulumi.Input<string>;
+        /**
+         * Type of the database backup destination.
+         */
+        type: pulumi.Input<string>;
+        /**
+         * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+         */
+        vpcPassword?: pulumi.Input<string>;
+        /**
+         * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+         */
+        vpcUser?: pulumi.Input<string>;
+    }
+
     export interface AutonomousContainerDatabaseAssociatedBackupConfigurationDetail {
         /**
          * The timestamps at which this backup destination is used as the preferred destination to host the Autonomous Container Database backups.
@@ -25094,6 +25428,77 @@ export namespace Database {
         timeAtWhichStorageDetailsAreUpdated?: pulumi.Input<string>;
     }
 
+    export interface AutonomousContainerDatabaseDataguard {
+        /**
+         * The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database. Example: `9 seconds`
+         */
+        applyLag?: pulumi.Input<string>;
+        /**
+         * The rate at which redo logs are synchronized between the associated Autonomous Container Databases. Example: `180 Mb per second`
+         */
+        applyRate?: pulumi.Input<string>;
+        /**
+         * Automatically selected by backend when observer is enabled.
+         */
+        automaticFailoverTarget?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+         */
+        autonomousContainerDatabaseId?: pulumi.Input<string>;
+        /**
+         * The domain of the Autonomous Container Database
+         */
+        availabilityDomain?: pulumi.Input<string>;
+        /**
+         * (Updatable) The lag time for my preference based on data loss tolerance in seconds.
+         */
+        fastStartFailOverLagLimitInSeconds?: pulumi.Input<number>;
+        /**
+         * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : isAutomaticFailoverEnabled = true.
+         */
+        isAutomaticFailoverEnabled?: pulumi.Input<boolean>;
+        /**
+         * Additional information about the current lifecycle state.
+         */
+        lifecycleDetails?: pulumi.Input<string>;
+        /**
+         * (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+         */
+        protectionMode?: pulumi.Input<string>;
+        /**
+         * Automatically selected by backend based on the protection mode.
+         */
+        redoTransportMode?: pulumi.Input<string>;
+        /**
+         * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+         */
+        role?: pulumi.Input<string>;
+        /**
+         * The current state of the Autonomous Container Database.
+         */
+        state?: pulumi.Input<string>;
+        /**
+         * The date and time the Autonomous Container Database was created.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * Timestamp when the lags were last calculated for a standby.
+         */
+        timeLagRefreshedOn?: pulumi.Input<string>;
+        /**
+         * The date and time when the last role change action happened.
+         */
+        timeLastRoleChanged?: pulumi.Input<string>;
+        /**
+         * The date and time of the last update to the apply lag, apply rate, and transport lag values.
+         */
+        timeLastSynced?: pulumi.Input<string>;
+        /**
+         * The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database. Example: `7 seconds`
+         */
+        transportLag?: pulumi.Input<string>;
+    }
+
     export interface AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig {
         /**
          * Backup destination details.
@@ -25132,6 +25537,77 @@ export namespace Database {
         vpcUser?: pulumi.Input<string>;
     }
 
+    export interface AutonomousContainerDatabaseDataguardGroupMember {
+        /**
+         * The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database. Example: `9 seconds`
+         */
+        applyLag?: pulumi.Input<string>;
+        /**
+         * The rate at which redo logs are synchronized between the associated Autonomous Container Databases. Example: `180 Mb per second`
+         */
+        applyRate?: pulumi.Input<string>;
+        /**
+         * Automatically selected by backend when observer is enabled.
+         */
+        automaticFailoverTarget?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+         */
+        autonomousContainerDatabaseId?: pulumi.Input<string>;
+        /**
+         * The domain of the Autonomous Container Database
+         */
+        availabilityDomain?: pulumi.Input<string>;
+        /**
+         * (Updatable) The lag time for my preference based on data loss tolerance in seconds.
+         */
+        fastStartFailOverLagLimitInSeconds?: pulumi.Input<number>;
+        /**
+         * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : isAutomaticFailoverEnabled = true.
+         */
+        isAutomaticFailoverEnabled?: pulumi.Input<boolean>;
+        /**
+         * Additional information about the current lifecycle state.
+         */
+        lifecycleDetails?: pulumi.Input<string>;
+        /**
+         * (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+         */
+        protectionMode?: pulumi.Input<string>;
+        /**
+         * Automatically selected by backend based on the protection mode.
+         */
+        redoTransportMode?: pulumi.Input<string>;
+        /**
+         * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+         */
+        role?: pulumi.Input<string>;
+        /**
+         * The current state of the Autonomous Container Database.
+         */
+        state?: pulumi.Input<string>;
+        /**
+         * The date and time the Autonomous Container Database was created.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * Timestamp when the lags were last calculated for a standby.
+         */
+        timeLagRefreshedOn?: pulumi.Input<string>;
+        /**
+         * The date and time when the last role change action happened.
+         */
+        timeLastRoleChanged?: pulumi.Input<string>;
+        /**
+         * The date and time of the last update to the apply lag, apply rate, and transport lag values.
+         */
+        timeLastSynced?: pulumi.Input<string>;
+        /**
+         * The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database. Example: `7 seconds`
+         */
+        transportLag?: pulumi.Input<string>;
+    }
+
     export interface AutonomousContainerDatabaseKeyHistoryEntry {
         /**
          * The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
@@ -25146,7 +25622,7 @@ export namespace Database {
          */
         timeActivated?: pulumi.Input<string>;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
          */
         vaultId?: pulumi.Input<string>;
     }
@@ -40577,6 +41053,33 @@ export namespace GoldenGate {
          * Type of the lock.
          */
         type: pulumi.Input<string>;
+    }
+
+    export interface DeploymentBackupSchedule {
+        /**
+         * (Updatable) Name of the bucket where the object is to be uploaded in the object storage
+         */
+        bucket: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+         */
+        compartmentId: pulumi.Input<string>;
+        /**
+         * (Updatable) The frequency of the deployment backup schedule. Frequency can be DAILY, WEEKLY or MONTHLY.
+         */
+        frequencyBackupScheduled: pulumi.Input<string>;
+        /**
+         * (Updatable) Parameter to allow users to create backup without trails
+         */
+        isMetadataOnly: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Name of namespace that serves as a container for all of your buckets
+         */
+        namespace: pulumi.Input<string>;
+        /**
+         * (Updatable) The start timestamp for the deployment backup schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+         */
+        timeBackupScheduled: pulumi.Input<string>;
     }
 
     export interface DeploymentDeploymentDiagnosticData {
@@ -78947,9 +79450,21 @@ export namespace OsManagementHub {
          */
         additionalDetails?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.EventDataAdditionalDetail>[]>;
         /**
+         * The actions used to attempt fixing the error.
+         */
+        attemptedResolutions?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
          * Provides information collected for the exploit attempt event.
          */
         contents?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.EventDataContent>[]>;
+        /**
+         * The commands executed by the agent that caused the error.
+         */
+        errorCause?: pulumi.Input<string>;
+        /**
+         * The output log of the error.
+         */
+        errorLog?: pulumi.Input<string>;
         /**
          * Number of times the event has occurred.
          */
@@ -78959,6 +79474,10 @@ export namespace OsManagementHub {
          */
         eventFingerprint?: pulumi.Input<string>;
         /**
+         * Health state of the management station
+         */
+        healthState?: pulumi.Input<string>;
+        /**
          * Type of management station operation.
          */
         operationType?: pulumi.Input<string>;
@@ -78966,6 +79485,18 @@ export namespace OsManagementHub {
          * Reason for the event.
          */
         reason?: pulumi.Input<string>;
+        /**
+         * Reboot status for the current event
+         */
+        rebootStatus?: pulumi.Input<string>;
+        /**
+         * The log output after the resolutions.
+         */
+        resolutionLog?: pulumi.Input<string>;
+        /**
+         * Indicates if the event succeeded.
+         */
+        resolutionStatus?: pulumi.Input<string>;
         /**
          * Status of the management station operation.
          */
@@ -79042,6 +79573,8 @@ export namespace OsManagementHub {
          * * `SOFTWARE_SOURCE` - Software source
          * * `AGENT` - Agent
          * * `MANAGEMENT_STATION` - Management Station
+         * * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+         * * `REBOOT` - Reboot
          */
         type?: pulumi.Input<string>;
     }
@@ -79413,6 +79946,18 @@ export namespace OsManagementHub {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetProfileAvailableSoftwareSourcesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetProfileAvailableSoftwareSourcesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetProfilesFilter {
         name: string;
         regex?: boolean;
@@ -79459,6 +80004,24 @@ export namespace OsManagementHub {
     }
 
     export interface GetSoftwarePackagesFilterArgs {
+        /**
+         * Unique identifier for the package. Note that this is not an OCID.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSoftwareSourceAvailableSoftwarePackagesFilter {
+        /**
+         * Unique identifier for the package. Note that this is not an OCID.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSoftwareSourceAvailableSoftwarePackagesFilterArgs {
         /**
          * Unique identifier for the package. Note that this is not an OCID.
          */
@@ -79774,6 +80337,21 @@ export namespace OsManagementHub {
         displayName?: pulumi.Input<string>;
     }
 
+    export interface LifecycleStageRebootManagementWorkRequestDetails {
+        /**
+         * User-specified information about the job. Avoid entering confidential information.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        displayName?: pulumi.Input<string>;
+    }
+
     export interface ManagedInstanceAutonomousSettings {
         /**
          * (Updatable) Indicates whether Autonomous Linux will collect crash files.
@@ -79954,6 +80532,21 @@ export namespace OsManagementHub {
         displayName?: pulumi.Input<string>;
     }
 
+    export interface ManagedInstanceGroupRebootManagementWorkRequestDetails {
+        /**
+         * User-specified information about the job. Avoid entering confidential information.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        displayName?: pulumi.Input<string>;
+    }
+
     export interface ManagedInstanceGroupRemovePackagesManagementWorkRequestDetails {
         /**
          * User-specified information about the job. Avoid entering confidential information.
@@ -80055,6 +80648,21 @@ export namespace OsManagementHub {
         id?: pulumi.Input<string>;
     }
 
+    export interface ManagedInstanceRebootManagementWorkRequestDetails {
+        /**
+         * User-specified information about the job. Avoid entering confidential information.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        displayName?: pulumi.Input<string>;
+    }
+
     export interface ManagedInstanceSoftwareSource {
         /**
          * (Updatable) User-specified description of the managed instance. Avoid entering confidential information.
@@ -80093,6 +80701,21 @@ export namespace OsManagementHub {
         displayName?: pulumi.Input<string>;
     }
 
+    export interface ManagementStationAssociateManagedInstancesManagementWorkRequestDetails {
+        /**
+         * User-specified information about the job. Avoid entering confidential information.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        displayName?: pulumi.Input<string>;
+    }
+
     export interface ManagementStationHealth {
         /**
          * (Updatable) User-specified description of the management station. Avoid entering confidential information.
@@ -80109,6 +80732,10 @@ export namespace OsManagementHub {
          * (Updatable) Path to the data volume on the management station where software source mirrors are stored.
          */
         directory: pulumi.Input<string>;
+        /**
+         * (Updatable) When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
+         */
+        isSslverifyEnabled?: pulumi.Input<boolean>;
         /**
          * (Updatable) Default mirror listening port for http.
          */
@@ -80146,6 +80773,17 @@ export namespace OsManagementHub {
         unsynced?: pulumi.Input<number>;
     }
 
+    export interface ManagementStationPeerManagementStation {
+        /**
+         * (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
+         */
+        id?: pulumi.Input<string>;
+    }
+
     export interface ManagementStationProxy {
         /**
          * (Updatable) The URL the proxy will forward to.
@@ -80167,7 +80805,7 @@ export namespace OsManagementHub {
 
     export interface ProfileLifecycleEnvironment {
         /**
-         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -80178,7 +80816,7 @@ export namespace OsManagementHub {
 
     export interface ProfileLifecycleStage {
         /**
-         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -80189,7 +80827,7 @@ export namespace OsManagementHub {
 
     export interface ProfileManagedInstanceGroup {
         /**
-         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -80204,7 +80842,7 @@ export namespace OsManagementHub {
          */
         description?: pulumi.Input<string>;
         /**
-         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -80234,6 +80872,10 @@ export namespace OsManagementHub {
          * (Updatable) The names of the target packages. This parameter only applies when the scheduled job is for installing, updating, or removing packages.
          */
         packageNames?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the  timeout, the service marks the reboot job as failed.
+         */
+        rebootTimeoutInMins?: pulumi.Input<number>;
         /**
          * (Updatable) The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
          */
@@ -80446,6 +81088,17 @@ export namespace OsManagementHub {
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         id?: pulumi.Input<string>;
+    }
+
+    export interface WorkRequestRerunManagementWorkRequestDetails {
+        /**
+         * User-specified information about the job. Avoid entering confidential information.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+         */
+        displayName?: pulumi.Input<string>;
     }
 }
 

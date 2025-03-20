@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.inputs.ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -17,6 +18,21 @@ import javax.annotation.Nullable;
 public final class ManagedInstanceGroupInstallPackagesManagementArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final ManagedInstanceGroupInstallPackagesManagementArgs Empty = new ManagedInstanceGroupInstallPackagesManagementArgs();
+
+    /**
+     * Indicates whether this is the latest package version.
+     * 
+     */
+    @Import(name="isLatest")
+    private @Nullable Output<Boolean> isLatest;
+
+    /**
+     * @return Indicates whether this is the latest package version.
+     * 
+     */
+    public Optional<Output<Boolean>> isLatest() {
+        return Optional.ofNullable(this.isLatest);
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
@@ -66,6 +82,7 @@ public final class ManagedInstanceGroupInstallPackagesManagementArgs extends com
     private ManagedInstanceGroupInstallPackagesManagementArgs() {}
 
     private ManagedInstanceGroupInstallPackagesManagementArgs(ManagedInstanceGroupInstallPackagesManagementArgs $) {
+        this.isLatest = $.isLatest;
         this.managedInstanceGroupId = $.managedInstanceGroupId;
         this.packageNames = $.packageNames;
         this.workRequestDetails = $.workRequestDetails;
@@ -87,6 +104,27 @@ public final class ManagedInstanceGroupInstallPackagesManagementArgs extends com
 
         public Builder(ManagedInstanceGroupInstallPackagesManagementArgs defaults) {
             $ = new ManagedInstanceGroupInstallPackagesManagementArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param isLatest Indicates whether this is the latest package version.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isLatest(@Nullable Output<Boolean> isLatest) {
+            $.isLatest = isLatest;
+            return this;
+        }
+
+        /**
+         * @param isLatest Indicates whether this is the latest package version.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isLatest(Boolean isLatest) {
+            return isLatest(Output.of(isLatest));
         }
 
         /**

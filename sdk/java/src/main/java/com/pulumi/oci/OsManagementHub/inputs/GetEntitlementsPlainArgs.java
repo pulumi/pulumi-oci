@@ -33,14 +33,14 @@ public final class GetEntitlementsPlainArgs extends com.pulumi.resources.InvokeA
     }
 
     /**
-     * A filter to return entitlements that match the given CSI.
+     * A filter to return entitlements that match the given customer support identifier (CSI).
      * 
      */
     @Import(name="csi")
     private @Nullable String csi;
 
     /**
-     * @return A filter to return entitlements that match the given CSI.
+     * @return A filter to return entitlements that match the given customer support identifier (CSI).
      * 
      */
     public Optional<String> csi() {
@@ -108,7 +108,7 @@ public final class GetEntitlementsPlainArgs extends com.pulumi.resources.InvokeA
         }
 
         /**
-         * @param csi A filter to return entitlements that match the given CSI.
+         * @param csi A filter to return entitlements that match the given customer support identifier (CSI).
          * 
          * @return builder
          * 

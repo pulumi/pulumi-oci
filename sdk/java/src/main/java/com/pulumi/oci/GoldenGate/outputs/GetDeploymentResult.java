@@ -5,6 +5,7 @@ package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.GoldenGate.outputs.GetDeploymentBackupSchedule;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentDeploymentDiagnosticData;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentIngressIp;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentLock;
@@ -20,6 +21,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDeploymentResult {
+    /**
+     * @return Defines the schedule of the deployment backup.
+     * 
+     */
+    private List<GetDeploymentBackupSchedule> backupSchedules;
     /**
      * @return The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39; and &#39;DATA_TRANSFORMS&#39;.
      * 
@@ -218,6 +224,16 @@ public final class GetDeploymentResult {
      */
     private String timeCreated;
     /**
+     * @return The timestamp of last deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+     * 
+     */
+    private String timeLastBackupScheduled;
+    /**
+     * @return The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
+     * 
+     */
+    private String timeNextBackupScheduled;
+    /**
      * @return The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
@@ -239,6 +255,13 @@ public final class GetDeploymentResult {
     private String timeUpgradeRequired;
 
     private GetDeploymentResult() {}
+    /**
+     * @return Defines the schedule of the deployment backup.
+     * 
+     */
+    public List<GetDeploymentBackupSchedule> backupSchedules() {
+        return this.backupSchedules;
+    }
     /**
      * @return The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39; and &#39;DATA_TRANSFORMS&#39;.
      * 
@@ -519,6 +542,20 @@ public final class GetDeploymentResult {
         return this.timeCreated;
     }
     /**
+     * @return The timestamp of last deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+     * 
+     */
+    public String timeLastBackupScheduled() {
+        return this.timeLastBackupScheduled;
+    }
+    /**
+     * @return The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
+     * 
+     */
+    public String timeNextBackupScheduled() {
+        return this.timeNextBackupScheduled;
+    }
+    /**
      * @return The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
@@ -556,6 +593,7 @@ public final class GetDeploymentResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetDeploymentBackupSchedule> backupSchedules;
         private String category;
         private String compartmentId;
         private Integer cpuCoreCount;
@@ -597,6 +635,8 @@ public final class GetDeploymentResult {
         private String subnetId;
         private Map<String,String> systemTags;
         private String timeCreated;
+        private String timeLastBackupScheduled;
+        private String timeNextBackupScheduled;
         private String timeOfNextMaintenance;
         private String timeOggVersionSupportedUntil;
         private String timeUpdated;
@@ -604,6 +644,7 @@ public final class GetDeploymentResult {
         public Builder() {}
         public Builder(GetDeploymentResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.backupSchedules = defaults.backupSchedules;
     	      this.category = defaults.category;
     	      this.compartmentId = defaults.compartmentId;
     	      this.cpuCoreCount = defaults.cpuCoreCount;
@@ -645,12 +686,25 @@ public final class GetDeploymentResult {
     	      this.subnetId = defaults.subnetId;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.timeLastBackupScheduled = defaults.timeLastBackupScheduled;
+    	      this.timeNextBackupScheduled = defaults.timeNextBackupScheduled;
     	      this.timeOfNextMaintenance = defaults.timeOfNextMaintenance;
     	      this.timeOggVersionSupportedUntil = defaults.timeOggVersionSupportedUntil;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.timeUpgradeRequired = defaults.timeUpgradeRequired;
         }
 
+        @CustomType.Setter
+        public Builder backupSchedules(List<GetDeploymentBackupSchedule> backupSchedules) {
+            if (backupSchedules == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "backupSchedules");
+            }
+            this.backupSchedules = backupSchedules;
+            return this;
+        }
+        public Builder backupSchedules(GetDeploymentBackupSchedule... backupSchedules) {
+            return backupSchedules(List.of(backupSchedules));
+        }
         @CustomType.Setter
         public Builder category(String category) {
             if (category == null) {
@@ -1001,6 +1055,22 @@ public final class GetDeploymentResult {
             return this;
         }
         @CustomType.Setter
+        public Builder timeLastBackupScheduled(String timeLastBackupScheduled) {
+            if (timeLastBackupScheduled == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "timeLastBackupScheduled");
+            }
+            this.timeLastBackupScheduled = timeLastBackupScheduled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeNextBackupScheduled(String timeNextBackupScheduled) {
+            if (timeNextBackupScheduled == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "timeNextBackupScheduled");
+            }
+            this.timeNextBackupScheduled = timeNextBackupScheduled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeOfNextMaintenance(String timeOfNextMaintenance) {
             if (timeOfNextMaintenance == null) {
               throw new MissingRequiredPropertyException("GetDeploymentResult", "timeOfNextMaintenance");
@@ -1034,6 +1104,7 @@ public final class GetDeploymentResult {
         }
         public GetDeploymentResult build() {
             final var _resultValue = new GetDeploymentResult();
+            _resultValue.backupSchedules = backupSchedules;
             _resultValue.category = category;
             _resultValue.compartmentId = compartmentId;
             _resultValue.cpuCoreCount = cpuCoreCount;
@@ -1075,6 +1146,8 @@ public final class GetDeploymentResult {
             _resultValue.subnetId = subnetId;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
+            _resultValue.timeLastBackupScheduled = timeLastBackupScheduled;
+            _resultValue.timeNextBackupScheduled = timeNextBackupScheduled;
             _resultValue.timeOfNextMaintenance = timeOfNextMaintenance;
             _resultValue.timeOggVersionSupportedUntil = timeOggVersionSupportedUntil;
             _resultValue.timeUpdated = timeUpdated;

@@ -22,15 +22,14 @@ __all__ = ['LifecycleStageDetachManagedInstancesManagementArgs', 'LifecycleStage
 class LifecycleStageDetachManagedInstancesManagementArgs:
     def __init__(__self__, *,
                  lifecycle_stage_id: pulumi.Input[str],
-                 managed_instance_details: Optional[pulumi.Input['LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs']] = None):
+                 managed_instance_details: pulumi.Input['LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs']):
         """
         The set of arguments for constructing a LifecycleStageDetachManagedInstancesManagement resource.
         :param pulumi.Input[str] lifecycle_stage_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
         :param pulumi.Input['LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs'] managed_instance_details: The details about the managed instances.
         """
         pulumi.set(__self__, "lifecycle_stage_id", lifecycle_stage_id)
-        if managed_instance_details is not None:
-            pulumi.set(__self__, "managed_instance_details", managed_instance_details)
+        pulumi.set(__self__, "managed_instance_details", managed_instance_details)
 
     @property
     @pulumi.getter(name="lifecycleStageId")
@@ -46,14 +45,14 @@ class LifecycleStageDetachManagedInstancesManagementArgs:
 
     @property
     @pulumi.getter(name="managedInstanceDetails")
-    def managed_instance_details(self) -> Optional[pulumi.Input['LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs']]:
+    def managed_instance_details(self) -> pulumi.Input['LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs']:
         """
         The details about the managed instances.
         """
         return pulumi.get(self, "managed_instance_details")
 
     @managed_instance_details.setter
-    def managed_instance_details(self, value: Optional[pulumi.Input['LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs']]):
+    def managed_instance_details(self, value: pulumi.Input['LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs']):
         pulumi.set(self, "managed_instance_details", value)
 
 
@@ -110,23 +109,6 @@ class LifecycleStageDetachManagedInstancesManagement(pulumi.CustomResource):
 
         Detaches (removes) a managed instance from a lifecycle stage.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_lifecycle_stage_detach_managed_instances_management = oci.os_management_hub.LifecycleStageDetachManagedInstancesManagement("test_lifecycle_stage_detach_managed_instances_management",
-            lifecycle_stage_id=test_lifecycle_stage["id"],
-            managed_instance_details={
-                "managed_instances": lifecycle_stage_detach_managed_instances_management_managed_instance_details_managed_instances,
-                "work_request_details": {
-                    "description": lifecycle_stage_detach_managed_instances_management_managed_instance_details_work_request_details_description,
-                    "display_name": lifecycle_stage_detach_managed_instances_management_managed_instance_details_work_request_details_display_name,
-                },
-            })
-        ```
-
         ## Import
 
         LifecycleStageDetachManagedInstancesManagement can be imported using the `id`, e.g.
@@ -150,23 +132,6 @@ class LifecycleStageDetachManagedInstancesManagement(pulumi.CustomResource):
         This resource provides the Lifecycle Stage Detach Managed Instances Management resource in Oracle Cloud Infrastructure Os Management Hub service.
 
         Detaches (removes) a managed instance from a lifecycle stage.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_lifecycle_stage_detach_managed_instances_management = oci.os_management_hub.LifecycleStageDetachManagedInstancesManagement("test_lifecycle_stage_detach_managed_instances_management",
-            lifecycle_stage_id=test_lifecycle_stage["id"],
-            managed_instance_details={
-                "managed_instances": lifecycle_stage_detach_managed_instances_management_managed_instance_details_managed_instances,
-                "work_request_details": {
-                    "description": lifecycle_stage_detach_managed_instances_management_managed_instance_details_work_request_details_description,
-                    "display_name": lifecycle_stage_detach_managed_instances_management_managed_instance_details_work_request_details_display_name,
-                },
-            })
-        ```
 
         ## Import
 
@@ -205,6 +170,8 @@ class LifecycleStageDetachManagedInstancesManagement(pulumi.CustomResource):
             if lifecycle_stage_id is None and not opts.urn:
                 raise TypeError("Missing required property 'lifecycle_stage_id'")
             __props__.__dict__["lifecycle_stage_id"] = lifecycle_stage_id
+            if managed_instance_details is None and not opts.urn:
+                raise TypeError("Missing required property 'managed_instance_details'")
             __props__.__dict__["managed_instance_details"] = managed_instance_details
         super(LifecycleStageDetachManagedInstancesManagement, __self__).__init__(
             'oci:OsManagementHub/lifecycleStageDetachManagedInstancesManagement:LifecycleStageDetachManagedInstancesManagement',

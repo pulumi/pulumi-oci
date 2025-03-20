@@ -37,7 +37,8 @@ class ScheduledJobArgs:
                  managed_instance_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  managed_instance_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  recurring_rule: Optional[pulumi.Input[str]] = None,
-                 retry_intervals: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None):
+                 retry_intervals: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+                 work_request_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ScheduledJob resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the scheduled job.
@@ -52,10 +53,6 @@ class ScheduledJobArgs:
                * UPDATE_KSPLICE_KERNEL
         :param pulumi.Input[str] schedule_type: (Updatable) The type of scheduling frequency for the scheduled job.
         :param pulumi.Input[str] time_next_execution: (Updatable) The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) User-specified description of the scheduled job. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) User-friendly name for the scheduled job. Does not have to be unique and you can change the name later. Avoid entering confidential information.
@@ -69,6 +66,11 @@ class ScheduledJobArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] managed_instance_ids: The managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or  managedInstanceGroupIds, or managedCompartmentIds, or lifecycleStageIds.
         :param pulumi.Input[str] recurring_rule: (Updatable) The frequency schedule for a recurring scheduled job.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] retry_intervals: (Updatable) The amount of time in minutes to wait until retrying the scheduled job. If set, the service will automatically  retry a failed scheduled job after the interval. For example, you could set the interval to [2,5,10]. If the initial execution of the job fails, the service waits 2 minutes and then retries. If that fails, the service  waits 5 minutes and then retries. If that fails, the service waits 10 minutes and then retries.
+        :param pulumi.Input[str] work_request_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "operations", operations)
@@ -100,6 +102,8 @@ class ScheduledJobArgs:
             pulumi.set(__self__, "recurring_rule", recurring_rule)
         if retry_intervals is not None:
             pulumi.set(__self__, "retry_intervals", retry_intervals)
+        if work_request_id is not None:
+            pulumi.set(__self__, "work_request_id", work_request_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -150,10 +154,6 @@ class ScheduledJobArgs:
     def time_next_execution(self) -> pulumi.Input[str]:
         """
         (Updatable) The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_next_execution")
 
@@ -317,6 +317,22 @@ class ScheduledJobArgs:
     def retry_intervals(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]):
         pulumi.set(self, "retry_intervals", value)
 
+    @property
+    @pulumi.getter(name="workRequestId")
+    def work_request_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "work_request_id")
+
+    @work_request_id.setter
+    def work_request_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "work_request_id", value)
+
 
 @pulumi.input_type
 class _ScheduledJobState:
@@ -344,6 +360,7 @@ class _ScheduledJobState:
                  time_last_execution: Optional[pulumi.Input[str]] = None,
                  time_next_execution: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
+                 work_request_id: Optional[pulumi.Input[str]] = None,
                  work_request_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         Input properties used for looking up and filtering ScheduledJob resources.
@@ -377,11 +394,12 @@ class _ScheduledJobState:
         :param pulumi.Input[str] time_created: The time this scheduled job was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[str] time_last_execution: The time of the last execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[str] time_next_execution: (Updatable) The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        :param pulumi.Input[str] time_updated: The time this scheduled job was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        :param pulumi.Input[str] work_request_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_updated: The time this scheduled job was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[Sequence[pulumi.Input[str]]] work_request_ids: The list of work request [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this scheduled job.
         """
         if compartment_id is not None:
@@ -430,6 +448,8 @@ class _ScheduledJobState:
             pulumi.set(__self__, "time_next_execution", time_next_execution)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
+        if work_request_id is not None:
+            pulumi.set(__self__, "work_request_id", work_request_id)
         if work_request_ids is not None:
             pulumi.set(__self__, "work_request_ids", work_request_ids)
 
@@ -698,10 +718,6 @@ class _ScheduledJobState:
     def time_next_execution(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_next_execution")
 
@@ -720,6 +736,22 @@ class _ScheduledJobState:
     @time_updated.setter
     def time_updated(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_updated", value)
+
+    @property
+    @pulumi.getter(name="workRequestId")
+    def work_request_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "work_request_id")
+
+    @work_request_id.setter
+    def work_request_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "work_request_id", value)
 
     @property
     @pulumi.getter(name="workRequestIds")
@@ -756,6 +788,7 @@ class ScheduledJob(pulumi.CustomResource):
                  retry_intervals: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
                  schedule_type: Optional[pulumi.Input[str]] = None,
                  time_next_execution: Optional[pulumi.Input[str]] = None,
+                 work_request_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         This resource provides the Scheduled Job resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -797,6 +830,7 @@ class ScheduledJob(pulumi.CustomResource):
                     }],
                 },
                 "package_names": scheduled_job_operations_package_names,
+                "reboot_timeout_in_mins": scheduled_job_operations_reboot_timeout_in_mins,
                 "software_source_ids": scheduled_job_operations_software_source_ids,
                 "switch_module_streams_details": {
                     "module_name": scheduled_job_operations_switch_module_streams_details_module_name,
@@ -823,7 +857,8 @@ class ScheduledJob(pulumi.CustomResource):
             managed_instance_group_ids=scheduled_job_managed_instance_group_ids,
             managed_instance_ids=scheduled_job_managed_instance_ids,
             recurring_rule=scheduled_job_recurring_rule,
-            retry_intervals=scheduled_job_retry_intervals)
+            retry_intervals=scheduled_job_retry_intervals,
+            work_request_id=test_work_request["id"])
         ```
 
         ## Import
@@ -861,6 +896,7 @@ class ScheduledJob(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[int]]] retry_intervals: (Updatable) The amount of time in minutes to wait until retrying the scheduled job. If set, the service will automatically  retry a failed scheduled job after the interval. For example, you could set the interval to [2,5,10]. If the initial execution of the job fails, the service waits 2 minutes and then retries. If that fails, the service  waits 5 minutes and then retries. If that fails, the service waits 10 minutes and then retries.
         :param pulumi.Input[str] schedule_type: (Updatable) The type of scheduling frequency for the scheduled job.
         :param pulumi.Input[str] time_next_execution: (Updatable) The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        :param pulumi.Input[str] work_request_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
                
                
                ** IMPORTANT **
@@ -912,6 +948,7 @@ class ScheduledJob(pulumi.CustomResource):
                     }],
                 },
                 "package_names": scheduled_job_operations_package_names,
+                "reboot_timeout_in_mins": scheduled_job_operations_reboot_timeout_in_mins,
                 "software_source_ids": scheduled_job_operations_software_source_ids,
                 "switch_module_streams_details": {
                     "module_name": scheduled_job_operations_switch_module_streams_details_module_name,
@@ -938,7 +975,8 @@ class ScheduledJob(pulumi.CustomResource):
             managed_instance_group_ids=scheduled_job_managed_instance_group_ids,
             managed_instance_ids=scheduled_job_managed_instance_ids,
             recurring_rule=scheduled_job_recurring_rule,
-            retry_intervals=scheduled_job_retry_intervals)
+            retry_intervals=scheduled_job_retry_intervals,
+            work_request_id=test_work_request["id"])
         ```
 
         ## Import
@@ -981,6 +1019,7 @@ class ScheduledJob(pulumi.CustomResource):
                  retry_intervals: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
                  schedule_type: Optional[pulumi.Input[str]] = None,
                  time_next_execution: Optional[pulumi.Input[str]] = None,
+                 work_request_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1015,6 +1054,7 @@ class ScheduledJob(pulumi.CustomResource):
             if time_next_execution is None and not opts.urn:
                 raise TypeError("Missing required property 'time_next_execution'")
             __props__.__dict__["time_next_execution"] = time_next_execution
+            __props__.__dict__["work_request_id"] = work_request_id
             __props__.__dict__["is_restricted"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
@@ -1055,6 +1095,7 @@ class ScheduledJob(pulumi.CustomResource):
             time_last_execution: Optional[pulumi.Input[str]] = None,
             time_next_execution: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
+            work_request_id: Optional[pulumi.Input[str]] = None,
             work_request_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None) -> 'ScheduledJob':
         """
         Get an existing ScheduledJob resource's state with the given name, id, and optional extra
@@ -1093,11 +1134,12 @@ class ScheduledJob(pulumi.CustomResource):
         :param pulumi.Input[str] time_created: The time this scheduled job was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[str] time_last_execution: The time of the last execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[str] time_next_execution: (Updatable) The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        :param pulumi.Input[str] time_updated: The time this scheduled job was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        :param pulumi.Input[str] work_request_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_updated: The time this scheduled job was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[Sequence[pulumi.Input[str]]] work_request_ids: The list of work request [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this scheduled job.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -1127,6 +1169,7 @@ class ScheduledJob(pulumi.CustomResource):
         __props__.__dict__["time_last_execution"] = time_last_execution
         __props__.__dict__["time_next_execution"] = time_next_execution
         __props__.__dict__["time_updated"] = time_updated
+        __props__.__dict__["work_request_id"] = work_request_id
         __props__.__dict__["work_request_ids"] = work_request_ids
         return ScheduledJob(resource_name, opts=opts, __props__=__props__)
 
@@ -1311,10 +1354,6 @@ class ScheduledJob(pulumi.CustomResource):
     def time_next_execution(self) -> pulumi.Output[str]:
         """
         (Updatable) The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_next_execution")
 
@@ -1325,6 +1364,18 @@ class ScheduledJob(pulumi.CustomResource):
         The time this scheduled job was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         """
         return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="workRequestId")
+    def work_request_id(self) -> pulumi.Output[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "work_request_id")
 
     @property
     @pulumi.getter(name="workRequestIds")

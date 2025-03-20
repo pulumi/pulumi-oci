@@ -130,6 +130,11 @@ public final class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail {
      */
     private String peerMaintenanceRunId;
     /**
+     * @return The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+     * 
+     */
+    private List<String> peerMaintenanceRunIds;
+    /**
      * @return The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      * 
      */
@@ -338,6 +343,13 @@ public final class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail {
         return this.peerMaintenanceRunId;
     }
     /**
+     * @return The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+     * 
+     */
+    public List<String> peerMaintenanceRunIds() {
+        return this.peerMaintenanceRunIds;
+    }
+    /**
      * @return The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      * 
      */
@@ -433,6 +445,7 @@ public final class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail {
         private String patchingStartTime;
         private String patchingStatus;
         private String peerMaintenanceRunId;
+        private List<String> peerMaintenanceRunIds;
         private String state;
         private String targetDbServerVersion;
         private String targetResourceId;
@@ -468,6 +481,7 @@ public final class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail {
     	      this.patchingStartTime = defaults.patchingStartTime;
     	      this.patchingStatus = defaults.patchingStatus;
     	      this.peerMaintenanceRunId = defaults.peerMaintenanceRunId;
+    	      this.peerMaintenanceRunIds = defaults.peerMaintenanceRunIds;
     	      this.state = defaults.state;
     	      this.targetDbServerVersion = defaults.targetDbServerVersion;
     	      this.targetResourceId = defaults.targetResourceId;
@@ -667,6 +681,17 @@ public final class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail {
             return this;
         }
         @CustomType.Setter
+        public Builder peerMaintenanceRunIds(List<String> peerMaintenanceRunIds) {
+            if (peerMaintenanceRunIds == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail", "peerMaintenanceRunIds");
+            }
+            this.peerMaintenanceRunIds = peerMaintenanceRunIds;
+            return this;
+        }
+        public Builder peerMaintenanceRunIds(String... peerMaintenanceRunIds) {
+            return peerMaintenanceRunIds(List.of(peerMaintenanceRunIds));
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail", "state");
@@ -763,6 +788,7 @@ public final class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail {
             _resultValue.patchingStartTime = patchingStartTime;
             _resultValue.patchingStatus = patchingStatus;
             _resultValue.peerMaintenanceRunId = peerMaintenanceRunId;
+            _resultValue.peerMaintenanceRunIds = peerMaintenanceRunIds;
             _resultValue.state = state;
             _resultValue.targetDbServerVersion = targetDbServerVersion;
             _resultValue.targetResourceId = targetResourceId;

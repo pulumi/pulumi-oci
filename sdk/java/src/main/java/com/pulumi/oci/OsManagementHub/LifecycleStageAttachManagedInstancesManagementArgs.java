@@ -9,8 +9,6 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.inputs.LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgs;
 import java.lang.String;
 import java.util.Objects;
-import java.util.Optional;
-import javax.annotation.Nullable;
 
 
 public final class LifecycleStageAttachManagedInstancesManagementArgs extends com.pulumi.resources.ResourceArgs {
@@ -36,15 +34,15 @@ public final class LifecycleStageAttachManagedInstancesManagementArgs extends co
      * The details about the managed instances.
      * 
      */
-    @Import(name="managedInstanceDetails")
-    private @Nullable Output<LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgs> managedInstanceDetails;
+    @Import(name="managedInstanceDetails", required=true)
+    private Output<LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgs> managedInstanceDetails;
 
     /**
      * @return The details about the managed instances.
      * 
      */
-    public Optional<Output<LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgs>> managedInstanceDetails() {
-        return Optional.ofNullable(this.managedInstanceDetails);
+    public Output<LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgs> managedInstanceDetails() {
+        return this.managedInstanceDetails;
     }
 
     private LifecycleStageAttachManagedInstancesManagementArgs() {}
@@ -99,7 +97,7 @@ public final class LifecycleStageAttachManagedInstancesManagementArgs extends co
          * @return builder
          * 
          */
-        public Builder managedInstanceDetails(@Nullable Output<LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgs> managedInstanceDetails) {
+        public Builder managedInstanceDetails(Output<LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgs> managedInstanceDetails) {
             $.managedInstanceDetails = managedInstanceDetails;
             return this;
         }
@@ -117,6 +115,9 @@ public final class LifecycleStageAttachManagedInstancesManagementArgs extends co
         public LifecycleStageAttachManagedInstancesManagementArgs build() {
             if ($.lifecycleStageId == null) {
                 throw new MissingRequiredPropertyException("LifecycleStageAttachManagedInstancesManagementArgs", "lifecycleStageId");
+            }
+            if ($.managedInstanceDetails == null) {
+                throw new MissingRequiredPropertyException("LifecycleStageAttachManagedInstancesManagementArgs", "managedInstanceDetails");
             }
             return $;
         }

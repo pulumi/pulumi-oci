@@ -28,7 +28,7 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         private InputList<string>? _ipFamilies;
 
         /// <summary>
-        /// IP family to use for single stack or define the order of IP families for dual-stack
+        /// IP family to use for single stack or define the order of IP families for dual-stack. Available values are [] (defaults to IPv4), [IPv4] (IPv4), [IPv4, IPv6] (IPv4 preferred dual stack).
         /// </summary>
         public InputList<string> IpFamilies
         {

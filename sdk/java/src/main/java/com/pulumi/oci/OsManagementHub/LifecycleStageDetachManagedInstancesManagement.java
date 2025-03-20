@@ -19,50 +19,6 @@ import javax.annotation.Nullable;
  * 
  * Detaches (removes) a managed instance from a lifecycle stage.
  * 
- * ## Example Usage
- * 
- * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.OsManagementHub.LifecycleStageDetachManagedInstancesManagement;
- * import com.pulumi.oci.OsManagementHub.LifecycleStageDetachManagedInstancesManagementArgs;
- * import com.pulumi.oci.OsManagementHub.inputs.LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs;
- * import com.pulumi.oci.OsManagementHub.inputs.LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testLifecycleStageDetachManagedInstancesManagement = new LifecycleStageDetachManagedInstancesManagement("testLifecycleStageDetachManagedInstancesManagement", LifecycleStageDetachManagedInstancesManagementArgs.builder()
- *             .lifecycleStageId(testLifecycleStage.id())
- *             .managedInstanceDetails(LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs.builder()
- *                 .managedInstances(lifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsManagedInstances)
- *                 .workRequestDetails(LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgs.builder()
- *                     .description(lifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsDescription)
- *                     .displayName(lifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsDisplayName)
- *                     .build())
- *                 .build())
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
- * &lt;!--End PulumiCodeChooser --&gt;
- * 
  * ## Import
  * 
  * LifecycleStageDetachManagedInstancesManagement can be imported using the `id`, e.g.

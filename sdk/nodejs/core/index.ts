@@ -60,6 +60,16 @@ export type ComputeCluster = import("./computeCluster").ComputeCluster;
 export const ComputeCluster: typeof import("./computeCluster").ComputeCluster = null as any;
 utilities.lazyLoad(exports, ["ComputeCluster"], () => require("./computeCluster"));
 
+export { ComputeGpuMemoryClusterArgs, ComputeGpuMemoryClusterState } from "./computeGpuMemoryCluster";
+export type ComputeGpuMemoryCluster = import("./computeGpuMemoryCluster").ComputeGpuMemoryCluster;
+export const ComputeGpuMemoryCluster: typeof import("./computeGpuMemoryCluster").ComputeGpuMemoryCluster = null as any;
+utilities.lazyLoad(exports, ["ComputeGpuMemoryCluster"], () => require("./computeGpuMemoryCluster"));
+
+export { ComputeGpuMemoryFabricArgs, ComputeGpuMemoryFabricState } from "./computeGpuMemoryFabric";
+export type ComputeGpuMemoryFabric = import("./computeGpuMemoryFabric").ComputeGpuMemoryFabric;
+export const ComputeGpuMemoryFabric: typeof import("./computeGpuMemoryFabric").ComputeGpuMemoryFabric = null as any;
+utilities.lazyLoad(exports, ["ComputeGpuMemoryFabric"], () => require("./computeGpuMemoryFabric"));
+
 export { ComputeImageCapabilitySchemaArgs, ComputeImageCapabilitySchemaState } from "./computeImageCapabilitySchema";
 export type ComputeImageCapabilitySchema = import("./computeImageCapabilitySchema").ComputeImageCapabilitySchema;
 export const ComputeImageCapabilitySchema: typeof import("./computeImageCapabilitySchema").ComputeImageCapabilitySchema = null as any;
@@ -349,6 +359,31 @@ export { GetComputeGlobalImageCapabilitySchemasVersionsArgs, GetComputeGlobalIma
 export const getComputeGlobalImageCapabilitySchemasVersions: typeof import("./getComputeGlobalImageCapabilitySchemasVersions").getComputeGlobalImageCapabilitySchemasVersions = null as any;
 export const getComputeGlobalImageCapabilitySchemasVersionsOutput: typeof import("./getComputeGlobalImageCapabilitySchemasVersions").getComputeGlobalImageCapabilitySchemasVersionsOutput = null as any;
 utilities.lazyLoad(exports, ["getComputeGlobalImageCapabilitySchemasVersions","getComputeGlobalImageCapabilitySchemasVersionsOutput"], () => require("./getComputeGlobalImageCapabilitySchemasVersions"));
+
+export { GetComputeGpuMemoryClusterArgs, GetComputeGpuMemoryClusterResult, GetComputeGpuMemoryClusterOutputArgs } from "./getComputeGpuMemoryCluster";
+export const getComputeGpuMemoryCluster: typeof import("./getComputeGpuMemoryCluster").getComputeGpuMemoryCluster = null as any;
+export const getComputeGpuMemoryClusterOutput: typeof import("./getComputeGpuMemoryCluster").getComputeGpuMemoryClusterOutput = null as any;
+utilities.lazyLoad(exports, ["getComputeGpuMemoryCluster","getComputeGpuMemoryClusterOutput"], () => require("./getComputeGpuMemoryCluster"));
+
+export { GetComputeGpuMemoryClusterInstancesArgs, GetComputeGpuMemoryClusterInstancesResult, GetComputeGpuMemoryClusterInstancesOutputArgs } from "./getComputeGpuMemoryClusterInstances";
+export const getComputeGpuMemoryClusterInstances: typeof import("./getComputeGpuMemoryClusterInstances").getComputeGpuMemoryClusterInstances = null as any;
+export const getComputeGpuMemoryClusterInstancesOutput: typeof import("./getComputeGpuMemoryClusterInstances").getComputeGpuMemoryClusterInstancesOutput = null as any;
+utilities.lazyLoad(exports, ["getComputeGpuMemoryClusterInstances","getComputeGpuMemoryClusterInstancesOutput"], () => require("./getComputeGpuMemoryClusterInstances"));
+
+export { GetComputeGpuMemoryClustersArgs, GetComputeGpuMemoryClustersResult, GetComputeGpuMemoryClustersOutputArgs } from "./getComputeGpuMemoryClusters";
+export const getComputeGpuMemoryClusters: typeof import("./getComputeGpuMemoryClusters").getComputeGpuMemoryClusters = null as any;
+export const getComputeGpuMemoryClustersOutput: typeof import("./getComputeGpuMemoryClusters").getComputeGpuMemoryClustersOutput = null as any;
+utilities.lazyLoad(exports, ["getComputeGpuMemoryClusters","getComputeGpuMemoryClustersOutput"], () => require("./getComputeGpuMemoryClusters"));
+
+export { GetComputeGpuMemoryFabricArgs, GetComputeGpuMemoryFabricResult, GetComputeGpuMemoryFabricOutputArgs } from "./getComputeGpuMemoryFabric";
+export const getComputeGpuMemoryFabric: typeof import("./getComputeGpuMemoryFabric").getComputeGpuMemoryFabric = null as any;
+export const getComputeGpuMemoryFabricOutput: typeof import("./getComputeGpuMemoryFabric").getComputeGpuMemoryFabricOutput = null as any;
+utilities.lazyLoad(exports, ["getComputeGpuMemoryFabric","getComputeGpuMemoryFabricOutput"], () => require("./getComputeGpuMemoryFabric"));
+
+export { GetComputeGpuMemoryFabricsArgs, GetComputeGpuMemoryFabricsResult, GetComputeGpuMemoryFabricsOutputArgs } from "./getComputeGpuMemoryFabrics";
+export const getComputeGpuMemoryFabrics: typeof import("./getComputeGpuMemoryFabrics").getComputeGpuMemoryFabrics = null as any;
+export const getComputeGpuMemoryFabricsOutput: typeof import("./getComputeGpuMemoryFabrics").getComputeGpuMemoryFabricsOutput = null as any;
+utilities.lazyLoad(exports, ["getComputeGpuMemoryFabrics","getComputeGpuMemoryFabricsOutput"], () => require("./getComputeGpuMemoryFabrics"));
 
 export { GetComputeImageCapabilitySchemaArgs, GetComputeImageCapabilitySchemaResult, GetComputeImageCapabilitySchemaOutputArgs } from "./getComputeImageCapabilitySchema";
 export const getComputeImageCapabilitySchema: typeof import("./getComputeImageCapabilitySchema").getComputeImageCapabilitySchema = null as any;
@@ -1152,6 +1187,10 @@ const _module = {
                 return new ComputeCapacityTopology(name, <any>undefined, { urn })
             case "oci:Core/computeCluster:ComputeCluster":
                 return new ComputeCluster(name, <any>undefined, { urn })
+            case "oci:Core/computeGpuMemoryCluster:ComputeGpuMemoryCluster":
+                return new ComputeGpuMemoryCluster(name, <any>undefined, { urn })
+            case "oci:Core/computeGpuMemoryFabric:ComputeGpuMemoryFabric":
+                return new ComputeGpuMemoryFabric(name, <any>undefined, { urn })
             case "oci:Core/computeImageCapabilitySchema:ComputeImageCapabilitySchema":
                 return new ComputeImageCapabilitySchema(name, <any>undefined, { urn })
             case "oci:Core/consoleHistory:ConsoleHistory":
@@ -1284,6 +1323,8 @@ pulumi.runtime.registerResourceModule("oci", "Core/computeCapacityReport", _modu
 pulumi.runtime.registerResourceModule("oci", "Core/computeCapacityReservation", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/computeCapacityTopology", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/computeCluster", _module)
+pulumi.runtime.registerResourceModule("oci", "Core/computeGpuMemoryCluster", _module)
+pulumi.runtime.registerResourceModule("oci", "Core/computeGpuMemoryFabric", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/computeImageCapabilitySchema", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/consoleHistory", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/cpe", _module)

@@ -132,6 +132,7 @@ class ManagedInstanceArgs:
 @pulumi.input_type
 class _ManagedInstanceState:
     def __init__(__self__, *,
+                 agent_version: Optional[pulumi.Input[str]] = None,
                  architecture: Optional[pulumi.Input[str]] = None,
                  autonomous_settings: Optional[pulumi.Input['ManagedInstanceAutonomousSettingsArgs']] = None,
                  bug_updates_available: Optional[pulumi.Input[int]] = None,
@@ -158,6 +159,7 @@ class _ManagedInstanceState:
                  other_updates_available: Optional[pulumi.Input[int]] = None,
                  primary_management_station_id: Optional[pulumi.Input[str]] = None,
                  profile: Optional[pulumi.Input[str]] = None,
+                 profile_version: Optional[pulumi.Input[str]] = None,
                  scheduled_job_count: Optional[pulumi.Input[int]] = None,
                  secondary_management_station_id: Optional[pulumi.Input[str]] = None,
                  security_updates_available: Optional[pulumi.Input[int]] = None,
@@ -172,6 +174,7 @@ class _ManagedInstanceState:
                  work_request_count: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering ManagedInstance resources.
+        :param pulumi.Input[str] agent_version: The version of osmh-agent running on the managed instance
         :param pulumi.Input[str] architecture: The CPU architecture type of the managed instance.
         :param pulumi.Input['ManagedInstanceAutonomousSettingsArgs'] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service.
         :param pulumi.Input[int] bug_updates_available: Number of bug fix type updates available for installation.
@@ -198,6 +201,7 @@ class _ManagedInstanceState:
         :param pulumi.Input[int] other_updates_available: Number of non-classified (other) updates available for installation.
         :param pulumi.Input[str] primary_management_station_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as primary management station.
         :param pulumi.Input[str] profile: The profile that was used to register this instance with the service.
+        :param pulumi.Input[str] profile_version: The version of the profile that was used to register this instance with the service.
         :param pulumi.Input[int] scheduled_job_count: Number of scheduled jobs associated with this instance.
         :param pulumi.Input[str] secondary_management_station_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station. 
                
@@ -215,6 +219,8 @@ class _ManagedInstanceState:
         :param pulumi.Input[int] updates_available: Number of updates available for installation.
         :param pulumi.Input[int] work_request_count: Number of work requests associated with this instance.
         """
+        if agent_version is not None:
+            pulumi.set(__self__, "agent_version", agent_version)
         if architecture is not None:
             pulumi.set(__self__, "architecture", architecture)
         if autonomous_settings is not None:
@@ -267,6 +273,8 @@ class _ManagedInstanceState:
             pulumi.set(__self__, "primary_management_station_id", primary_management_station_id)
         if profile is not None:
             pulumi.set(__self__, "profile", profile)
+        if profile_version is not None:
+            pulumi.set(__self__, "profile_version", profile_version)
         if scheduled_job_count is not None:
             pulumi.set(__self__, "scheduled_job_count", scheduled_job_count)
         if secondary_management_station_id is not None:
@@ -291,6 +299,18 @@ class _ManagedInstanceState:
             pulumi.set(__self__, "updates_available", updates_available)
         if work_request_count is not None:
             pulumi.set(__self__, "work_request_count", work_request_count)
+
+    @property
+    @pulumi.getter(name="agentVersion")
+    def agent_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        The version of osmh-agent running on the managed instance
+        """
+        return pulumi.get(self, "agent_version")
+
+    @agent_version.setter
+    def agent_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "agent_version", value)
 
     @property
     @pulumi.getter
@@ -605,6 +625,18 @@ class _ManagedInstanceState:
         pulumi.set(self, "profile", value)
 
     @property
+    @pulumi.getter(name="profileVersion")
+    def profile_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        The version of the profile that was used to register this instance with the service.
+        """
+        return pulumi.get(self, "profile_version")
+
+    @profile_version.setter
+    def profile_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "profile_version", value)
+
+    @property
     @pulumi.getter(name="scheduledJobCount")
     def scheduled_job_count(self) -> Optional[pulumi.Input[int]]:
         """
@@ -848,6 +880,7 @@ class ManagedInstance(pulumi.CustomResource):
             __props__.__dict__["notification_topic_id"] = notification_topic_id
             __props__.__dict__["primary_management_station_id"] = primary_management_station_id
             __props__.__dict__["secondary_management_station_id"] = secondary_management_station_id
+            __props__.__dict__["agent_version"] = None
             __props__.__dict__["architecture"] = None
             __props__.__dict__["bug_updates_available"] = None
             __props__.__dict__["compartment_id"] = None
@@ -869,6 +902,7 @@ class ManagedInstance(pulumi.CustomResource):
             __props__.__dict__["os_version"] = None
             __props__.__dict__["other_updates_available"] = None
             __props__.__dict__["profile"] = None
+            __props__.__dict__["profile_version"] = None
             __props__.__dict__["scheduled_job_count"] = None
             __props__.__dict__["security_updates_available"] = None
             __props__.__dict__["software_sources"] = None
@@ -890,6 +924,7 @@ class ManagedInstance(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            agent_version: Optional[pulumi.Input[str]] = None,
             architecture: Optional[pulumi.Input[str]] = None,
             autonomous_settings: Optional[pulumi.Input[Union['ManagedInstanceAutonomousSettingsArgs', 'ManagedInstanceAutonomousSettingsArgsDict']]] = None,
             bug_updates_available: Optional[pulumi.Input[int]] = None,
@@ -916,6 +951,7 @@ class ManagedInstance(pulumi.CustomResource):
             other_updates_available: Optional[pulumi.Input[int]] = None,
             primary_management_station_id: Optional[pulumi.Input[str]] = None,
             profile: Optional[pulumi.Input[str]] = None,
+            profile_version: Optional[pulumi.Input[str]] = None,
             scheduled_job_count: Optional[pulumi.Input[int]] = None,
             secondary_management_station_id: Optional[pulumi.Input[str]] = None,
             security_updates_available: Optional[pulumi.Input[int]] = None,
@@ -935,6 +971,7 @@ class ManagedInstance(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] agent_version: The version of osmh-agent running on the managed instance
         :param pulumi.Input[str] architecture: The CPU architecture type of the managed instance.
         :param pulumi.Input[Union['ManagedInstanceAutonomousSettingsArgs', 'ManagedInstanceAutonomousSettingsArgsDict']] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service.
         :param pulumi.Input[int] bug_updates_available: Number of bug fix type updates available for installation.
@@ -961,6 +998,7 @@ class ManagedInstance(pulumi.CustomResource):
         :param pulumi.Input[int] other_updates_available: Number of non-classified (other) updates available for installation.
         :param pulumi.Input[str] primary_management_station_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as primary management station.
         :param pulumi.Input[str] profile: The profile that was used to register this instance with the service.
+        :param pulumi.Input[str] profile_version: The version of the profile that was used to register this instance with the service.
         :param pulumi.Input[int] scheduled_job_count: Number of scheduled jobs associated with this instance.
         :param pulumi.Input[str] secondary_management_station_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station. 
                
@@ -982,6 +1020,7 @@ class ManagedInstance(pulumi.CustomResource):
 
         __props__ = _ManagedInstanceState.__new__(_ManagedInstanceState)
 
+        __props__.__dict__["agent_version"] = agent_version
         __props__.__dict__["architecture"] = architecture
         __props__.__dict__["autonomous_settings"] = autonomous_settings
         __props__.__dict__["bug_updates_available"] = bug_updates_available
@@ -1008,6 +1047,7 @@ class ManagedInstance(pulumi.CustomResource):
         __props__.__dict__["other_updates_available"] = other_updates_available
         __props__.__dict__["primary_management_station_id"] = primary_management_station_id
         __props__.__dict__["profile"] = profile
+        __props__.__dict__["profile_version"] = profile_version
         __props__.__dict__["scheduled_job_count"] = scheduled_job_count
         __props__.__dict__["secondary_management_station_id"] = secondary_management_station_id
         __props__.__dict__["security_updates_available"] = security_updates_available
@@ -1021,6 +1061,14 @@ class ManagedInstance(pulumi.CustomResource):
         __props__.__dict__["updates_available"] = updates_available
         __props__.__dict__["work_request_count"] = work_request_count
         return ManagedInstance(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter(name="agentVersion")
+    def agent_version(self) -> pulumi.Output[str]:
+        """
+        The version of osmh-agent running on the managed instance
+        """
+        return pulumi.get(self, "agent_version")
 
     @property
     @pulumi.getter
@@ -1229,6 +1277,14 @@ class ManagedInstance(pulumi.CustomResource):
         The profile that was used to register this instance with the service.
         """
         return pulumi.get(self, "profile")
+
+    @property
+    @pulumi.getter(name="profileVersion")
+    def profile_version(self) -> pulumi.Output[str]:
+        """
+        The version of the profile that was used to register this instance with the service.
+        """
+        return pulumi.get(self, "profile_version")
 
     @property
     @pulumi.getter(name="scheduledJobCount")

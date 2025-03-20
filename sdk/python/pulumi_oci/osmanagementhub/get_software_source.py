@@ -27,7 +27,10 @@ class GetSoftwareSourceResult:
     """
     A collection of values returned by getSoftwareSource.
     """
-    def __init__(__self__, arch_type=None, availability=None, availability_at_oci=None, checksum_type=None, compartment_id=None, custom_software_source_filters=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, gpg_key_fingerprint=None, gpg_key_id=None, gpg_key_url=None, id=None, is_auto_resolve_dependencies=None, is_automatically_updated=None, is_created_from_package_list=None, is_latest_content_only=None, is_mandatory_for_autonomous_linux=None, origin_software_source_id=None, os_family=None, package_count=None, packages=None, repo_id=None, size=None, software_source_id=None, software_source_type=None, software_source_version=None, state=None, system_tags=None, time_created=None, url=None, vendor_name=None, vendor_software_sources=None):
+    def __init__(__self__, advanced_repo_options=None, arch_type=None, availability=None, availability_at_oci=None, checksum_type=None, compartment_id=None, custom_software_source_filters=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, gpg_key_fingerprint=None, gpg_key_id=None, gpg_key_url=None, id=None, is_auto_resolve_dependencies=None, is_automatically_updated=None, is_created_from_package_list=None, is_gpg_check_enabled=None, is_latest_content_only=None, is_mandatory_for_autonomous_linux=None, is_mirror_sync_allowed=None, is_ssl_verify_enabled=None, origin_software_source_id=None, os_family=None, package_count=None, packages=None, repo_id=None, size=None, software_source_id=None, software_source_sub_type=None, software_source_type=None, software_source_version=None, state=None, system_tags=None, time_created=None, time_metadata_updated=None, url=None, vendor_name=None, vendor_software_sources=None):
+        if advanced_repo_options and not isinstance(advanced_repo_options, str):
+            raise TypeError("Expected argument 'advanced_repo_options' to be a str")
+        pulumi.set(__self__, "advanced_repo_options", advanced_repo_options)
         if arch_type and not isinstance(arch_type, str):
             raise TypeError("Expected argument 'arch_type' to be a str")
         pulumi.set(__self__, "arch_type", arch_type)
@@ -79,12 +82,21 @@ class GetSoftwareSourceResult:
         if is_created_from_package_list and not isinstance(is_created_from_package_list, bool):
             raise TypeError("Expected argument 'is_created_from_package_list' to be a bool")
         pulumi.set(__self__, "is_created_from_package_list", is_created_from_package_list)
+        if is_gpg_check_enabled and not isinstance(is_gpg_check_enabled, bool):
+            raise TypeError("Expected argument 'is_gpg_check_enabled' to be a bool")
+        pulumi.set(__self__, "is_gpg_check_enabled", is_gpg_check_enabled)
         if is_latest_content_only and not isinstance(is_latest_content_only, bool):
             raise TypeError("Expected argument 'is_latest_content_only' to be a bool")
         pulumi.set(__self__, "is_latest_content_only", is_latest_content_only)
         if is_mandatory_for_autonomous_linux and not isinstance(is_mandatory_for_autonomous_linux, bool):
             raise TypeError("Expected argument 'is_mandatory_for_autonomous_linux' to be a bool")
         pulumi.set(__self__, "is_mandatory_for_autonomous_linux", is_mandatory_for_autonomous_linux)
+        if is_mirror_sync_allowed and not isinstance(is_mirror_sync_allowed, bool):
+            raise TypeError("Expected argument 'is_mirror_sync_allowed' to be a bool")
+        pulumi.set(__self__, "is_mirror_sync_allowed", is_mirror_sync_allowed)
+        if is_ssl_verify_enabled and not isinstance(is_ssl_verify_enabled, bool):
+            raise TypeError("Expected argument 'is_ssl_verify_enabled' to be a bool")
+        pulumi.set(__self__, "is_ssl_verify_enabled", is_ssl_verify_enabled)
         if origin_software_source_id and not isinstance(origin_software_source_id, str):
             raise TypeError("Expected argument 'origin_software_source_id' to be a str")
         pulumi.set(__self__, "origin_software_source_id", origin_software_source_id)
@@ -106,6 +118,9 @@ class GetSoftwareSourceResult:
         if software_source_id and not isinstance(software_source_id, str):
             raise TypeError("Expected argument 'software_source_id' to be a str")
         pulumi.set(__self__, "software_source_id", software_source_id)
+        if software_source_sub_type and not isinstance(software_source_sub_type, str):
+            raise TypeError("Expected argument 'software_source_sub_type' to be a str")
+        pulumi.set(__self__, "software_source_sub_type", software_source_sub_type)
         if software_source_type and not isinstance(software_source_type, str):
             raise TypeError("Expected argument 'software_source_type' to be a str")
         pulumi.set(__self__, "software_source_type", software_source_type)
@@ -121,6 +136,9 @@ class GetSoftwareSourceResult:
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
+        if time_metadata_updated and not isinstance(time_metadata_updated, str):
+            raise TypeError("Expected argument 'time_metadata_updated' to be a str")
+        pulumi.set(__self__, "time_metadata_updated", time_metadata_updated)
         if url and not isinstance(url, str):
             raise TypeError("Expected argument 'url' to be a str")
         pulumi.set(__self__, "url", url)
@@ -130,6 +148,14 @@ class GetSoftwareSourceResult:
         if vendor_software_sources and not isinstance(vendor_software_sources, list):
             raise TypeError("Expected argument 'vendor_software_sources' to be a list")
         pulumi.set(__self__, "vendor_software_sources", vendor_software_sources)
+
+    @property
+    @pulumi.getter(name="advancedRepoOptions")
+    def advanced_repo_options(self) -> str:
+        """
+        Advanced repository options for the software source
+        """
+        return pulumi.get(self, "advanced_repo_options")
 
     @property
     @pulumi.getter(name="archType")
@@ -231,7 +257,7 @@ class GetSoftwareSourceResult:
     @pulumi.getter(name="gpgKeyUrl")
     def gpg_key_url(self) -> str:
         """
-        URL of the GPG key for this software source.
+        URI of the GPG key for this software source.
         """
         return pulumi.get(self, "gpg_key_url")
 
@@ -268,6 +294,14 @@ class GetSoftwareSourceResult:
         return pulumi.get(self, "is_created_from_package_list")
 
     @property
+    @pulumi.getter(name="isGpgCheckEnabled")
+    def is_gpg_check_enabled(self) -> bool:
+        """
+        Whether signature verification should be done for the software source
+        """
+        return pulumi.get(self, "is_gpg_check_enabled")
+
+    @property
     @pulumi.getter(name="isLatestContentOnly")
     def is_latest_content_only(self) -> bool:
         """
@@ -289,10 +323,26 @@ class GetSoftwareSourceResult:
         return pulumi.get(self, "is_mandatory_for_autonomous_linux")
 
     @property
+    @pulumi.getter(name="isMirrorSyncAllowed")
+    def is_mirror_sync_allowed(self) -> bool:
+        """
+        Indicates if this software source can be mirrored to a management station.
+        """
+        return pulumi.get(self, "is_mirror_sync_allowed")
+
+    @property
+    @pulumi.getter(name="isSslVerifyEnabled")
+    def is_ssl_verify_enabled(self) -> bool:
+        """
+        Indicates if SSL validation is enabled for the software source.
+        """
+        return pulumi.get(self, "is_ssl_verify_enabled")
+
+    @property
     @pulumi.getter(name="originSoftwareSourceId")
     def origin_software_source_id(self) -> str:
         """
-        This property applies only to replicated vendor software sources. This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment. This property applies only to replicated vendor software sources.
         """
         return pulumi.get(self, "origin_software_source_id")
 
@@ -300,7 +350,7 @@ class GetSoftwareSourceResult:
     @pulumi.getter(name="osFamily")
     def os_family(self) -> str:
         """
-        The OS family the software source belongs to.
+        The OS family of the software source.
         """
         return pulumi.get(self, "os_family")
 
@@ -332,7 +382,7 @@ class GetSoftwareSourceResult:
     @pulumi.getter
     def size(self) -> float:
         """
-        The size of the software source in gigabytes (GB).
+        The size of the software source in bytes (B).
         """
         return pulumi.get(self, "size")
 
@@ -340,6 +390,14 @@ class GetSoftwareSourceResult:
     @pulumi.getter(name="softwareSourceId")
     def software_source_id(self) -> str:
         return pulumi.get(self, "software_source_id")
+
+    @property
+    @pulumi.getter(name="softwareSourceSubType")
+    def software_source_sub_type(self) -> str:
+        """
+        Identifies how the versioned custom software source was created.
+        """
+        return pulumi.get(self, "software_source_sub_type")
 
     @property
     @pulumi.getter(name="softwareSourceType")
@@ -382,6 +440,14 @@ class GetSoftwareSourceResult:
         return pulumi.get(self, "time_created")
 
     @property
+    @pulumi.getter(name="timeMetadataUpdated")
+    def time_metadata_updated(self) -> str:
+        """
+        The date and time the metadata for this software source was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        """
+        return pulumi.get(self, "time_metadata_updated")
+
+    @property
     @pulumi.getter
     def url(self) -> str:
         """
@@ -412,6 +478,7 @@ class AwaitableGetSoftwareSourceResult(GetSoftwareSourceResult):
         if False:
             yield self
         return GetSoftwareSourceResult(
+            advanced_repo_options=self.advanced_repo_options,
             arch_type=self.arch_type,
             availability=self.availability,
             availability_at_oci=self.availability_at_oci,
@@ -429,8 +496,11 @@ class AwaitableGetSoftwareSourceResult(GetSoftwareSourceResult):
             is_auto_resolve_dependencies=self.is_auto_resolve_dependencies,
             is_automatically_updated=self.is_automatically_updated,
             is_created_from_package_list=self.is_created_from_package_list,
+            is_gpg_check_enabled=self.is_gpg_check_enabled,
             is_latest_content_only=self.is_latest_content_only,
             is_mandatory_for_autonomous_linux=self.is_mandatory_for_autonomous_linux,
+            is_mirror_sync_allowed=self.is_mirror_sync_allowed,
+            is_ssl_verify_enabled=self.is_ssl_verify_enabled,
             origin_software_source_id=self.origin_software_source_id,
             os_family=self.os_family,
             package_count=self.package_count,
@@ -438,11 +508,13 @@ class AwaitableGetSoftwareSourceResult(GetSoftwareSourceResult):
             repo_id=self.repo_id,
             size=self.size,
             software_source_id=self.software_source_id,
+            software_source_sub_type=self.software_source_sub_type,
             software_source_type=self.software_source_type,
             software_source_version=self.software_source_version,
             state=self.state,
             system_tags=self.system_tags,
             time_created=self.time_created,
+            time_metadata_updated=self.time_metadata_updated,
             url=self.url,
             vendor_name=self.vendor_name,
             vendor_software_sources=self.vendor_software_sources)
@@ -473,6 +545,7 @@ def get_software_source(software_source_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:OsManagementHub/getSoftwareSource:getSoftwareSource', __args__, opts=opts, typ=GetSoftwareSourceResult).value
 
     return AwaitableGetSoftwareSourceResult(
+        advanced_repo_options=pulumi.get(__ret__, 'advanced_repo_options'),
         arch_type=pulumi.get(__ret__, 'arch_type'),
         availability=pulumi.get(__ret__, 'availability'),
         availability_at_oci=pulumi.get(__ret__, 'availability_at_oci'),
@@ -490,8 +563,11 @@ def get_software_source(software_source_id: Optional[str] = None,
         is_auto_resolve_dependencies=pulumi.get(__ret__, 'is_auto_resolve_dependencies'),
         is_automatically_updated=pulumi.get(__ret__, 'is_automatically_updated'),
         is_created_from_package_list=pulumi.get(__ret__, 'is_created_from_package_list'),
+        is_gpg_check_enabled=pulumi.get(__ret__, 'is_gpg_check_enabled'),
         is_latest_content_only=pulumi.get(__ret__, 'is_latest_content_only'),
         is_mandatory_for_autonomous_linux=pulumi.get(__ret__, 'is_mandatory_for_autonomous_linux'),
+        is_mirror_sync_allowed=pulumi.get(__ret__, 'is_mirror_sync_allowed'),
+        is_ssl_verify_enabled=pulumi.get(__ret__, 'is_ssl_verify_enabled'),
         origin_software_source_id=pulumi.get(__ret__, 'origin_software_source_id'),
         os_family=pulumi.get(__ret__, 'os_family'),
         package_count=pulumi.get(__ret__, 'package_count'),
@@ -499,11 +575,13 @@ def get_software_source(software_source_id: Optional[str] = None,
         repo_id=pulumi.get(__ret__, 'repo_id'),
         size=pulumi.get(__ret__, 'size'),
         software_source_id=pulumi.get(__ret__, 'software_source_id'),
+        software_source_sub_type=pulumi.get(__ret__, 'software_source_sub_type'),
         software_source_type=pulumi.get(__ret__, 'software_source_type'),
         software_source_version=pulumi.get(__ret__, 'software_source_version'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
+        time_metadata_updated=pulumi.get(__ret__, 'time_metadata_updated'),
         url=pulumi.get(__ret__, 'url'),
         vendor_name=pulumi.get(__ret__, 'vendor_name'),
         vendor_software_sources=pulumi.get(__ret__, 'vendor_software_sources'))
@@ -531,6 +609,7 @@ def get_software_source_output(software_source_id: Optional[pulumi.Input[str]] =
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getSoftwareSource:getSoftwareSource', __args__, opts=opts, typ=GetSoftwareSourceResult)
     return __ret__.apply(lambda __response__: GetSoftwareSourceResult(
+        advanced_repo_options=pulumi.get(__response__, 'advanced_repo_options'),
         arch_type=pulumi.get(__response__, 'arch_type'),
         availability=pulumi.get(__response__, 'availability'),
         availability_at_oci=pulumi.get(__response__, 'availability_at_oci'),
@@ -548,8 +627,11 @@ def get_software_source_output(software_source_id: Optional[pulumi.Input[str]] =
         is_auto_resolve_dependencies=pulumi.get(__response__, 'is_auto_resolve_dependencies'),
         is_automatically_updated=pulumi.get(__response__, 'is_automatically_updated'),
         is_created_from_package_list=pulumi.get(__response__, 'is_created_from_package_list'),
+        is_gpg_check_enabled=pulumi.get(__response__, 'is_gpg_check_enabled'),
         is_latest_content_only=pulumi.get(__response__, 'is_latest_content_only'),
         is_mandatory_for_autonomous_linux=pulumi.get(__response__, 'is_mandatory_for_autonomous_linux'),
+        is_mirror_sync_allowed=pulumi.get(__response__, 'is_mirror_sync_allowed'),
+        is_ssl_verify_enabled=pulumi.get(__response__, 'is_ssl_verify_enabled'),
         origin_software_source_id=pulumi.get(__response__, 'origin_software_source_id'),
         os_family=pulumi.get(__response__, 'os_family'),
         package_count=pulumi.get(__response__, 'package_count'),
@@ -557,11 +639,13 @@ def get_software_source_output(software_source_id: Optional[pulumi.Input[str]] =
         repo_id=pulumi.get(__response__, 'repo_id'),
         size=pulumi.get(__response__, 'size'),
         software_source_id=pulumi.get(__response__, 'software_source_id'),
+        software_source_sub_type=pulumi.get(__response__, 'software_source_sub_type'),
         software_source_type=pulumi.get(__response__, 'software_source_type'),
         software_source_version=pulumi.get(__response__, 'software_source_version'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
+        time_metadata_updated=pulumi.get(__response__, 'time_metadata_updated'),
         url=pulumi.get(__response__, 'url'),
         vendor_name=pulumi.get(__response__, 'vendor_name'),
         vendor_software_sources=pulumi.get(__response__, 'vendor_software_sources')))

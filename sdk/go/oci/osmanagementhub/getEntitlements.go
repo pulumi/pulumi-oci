@@ -57,7 +57,7 @@ func GetEntitlements(ctx *pulumi.Context, args *GetEntitlementsArgs, opts ...pul
 type GetEntitlementsArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// A filter to return entitlements that match the given CSI.
+	// A filter to return entitlements that match the given customer support identifier (CSI).
 	Csi     *string                 `pulumi:"csi"`
 	Filters []GetEntitlementsFilter `pulumi:"filters"`
 	// A filter to return only resources that match the given vendor name.
@@ -92,7 +92,7 @@ func GetEntitlementsOutput(ctx *pulumi.Context, args GetEntitlementsOutputArgs, 
 type GetEntitlementsOutputArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// A filter to return entitlements that match the given CSI.
+	// A filter to return entitlements that match the given customer support identifier (CSI).
 	Csi     pulumi.StringPtrInput           `pulumi:"csi"`
 	Filters GetEntitlementsFilterArrayInput `pulumi:"filters"`
 	// A filter to return only resources that match the given vendor name.

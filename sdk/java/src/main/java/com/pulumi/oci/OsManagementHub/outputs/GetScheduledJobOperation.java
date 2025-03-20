@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.outputs.GetScheduledJobOperationManageModuleStreamsDetail;
 import com.pulumi.oci.OsManagementHub.outputs.GetScheduledJobOperationSwitchModuleStreamsDetail;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -28,6 +29,11 @@ public final class GetScheduledJobOperation {
      * 
      */
     private List<String> packageNames;
+    /**
+     * @return The number of minutes the service waits for the reboot to complete. If the instance doesn&#39;t reboot within the  timeout, the service marks the reboot job as failed.
+     * 
+     */
+    private Integer rebootTimeoutInMins;
     /**
      * @return The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
      * 
@@ -67,6 +73,13 @@ public final class GetScheduledJobOperation {
         return this.packageNames;
     }
     /**
+     * @return The number of minutes the service waits for the reboot to complete. If the instance doesn&#39;t reboot within the  timeout, the service marks the reboot job as failed.
+     * 
+     */
+    public Integer rebootTimeoutInMins() {
+        return this.rebootTimeoutInMins;
+    }
+    /**
      * @return The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
      * 
      */
@@ -100,6 +113,7 @@ public final class GetScheduledJobOperation {
         private List<GetScheduledJobOperationManageModuleStreamsDetail> manageModuleStreamsDetails;
         private String operationType;
         private List<String> packageNames;
+        private Integer rebootTimeoutInMins;
         private List<String> softwareSourceIds;
         private List<GetScheduledJobOperationSwitchModuleStreamsDetail> switchModuleStreamsDetails;
         private List<String> windowsUpdateNames;
@@ -109,6 +123,7 @@ public final class GetScheduledJobOperation {
     	      this.manageModuleStreamsDetails = defaults.manageModuleStreamsDetails;
     	      this.operationType = defaults.operationType;
     	      this.packageNames = defaults.packageNames;
+    	      this.rebootTimeoutInMins = defaults.rebootTimeoutInMins;
     	      this.softwareSourceIds = defaults.softwareSourceIds;
     	      this.switchModuleStreamsDetails = defaults.switchModuleStreamsDetails;
     	      this.windowsUpdateNames = defaults.windowsUpdateNames;
@@ -143,6 +158,14 @@ public final class GetScheduledJobOperation {
         }
         public Builder packageNames(String... packageNames) {
             return packageNames(List.of(packageNames));
+        }
+        @CustomType.Setter
+        public Builder rebootTimeoutInMins(Integer rebootTimeoutInMins) {
+            if (rebootTimeoutInMins == null) {
+              throw new MissingRequiredPropertyException("GetScheduledJobOperation", "rebootTimeoutInMins");
+            }
+            this.rebootTimeoutInMins = rebootTimeoutInMins;
+            return this;
         }
         @CustomType.Setter
         public Builder softwareSourceIds(List<String> softwareSourceIds) {
@@ -182,6 +205,7 @@ public final class GetScheduledJobOperation {
             _resultValue.manageModuleStreamsDetails = manageModuleStreamsDetails;
             _resultValue.operationType = operationType;
             _resultValue.packageNames = packageNames;
+            _resultValue.rebootTimeoutInMins = rebootTimeoutInMins;
             _resultValue.softwareSourceIds = softwareSourceIds;
             _resultValue.switchModuleStreamsDetails = switchModuleStreamsDetails;
             _resultValue.windowsUpdateNames = windowsUpdateNames;

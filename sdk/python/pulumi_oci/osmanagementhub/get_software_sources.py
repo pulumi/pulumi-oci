@@ -28,7 +28,7 @@ class GetSoftwareSourcesResult:
     """
     A collection of values returned by getSoftwareSources.
     """
-    def __init__(__self__, arch_types=None, availabilities=None, availability_anywheres=None, availability_at_ocis=None, compartment_id=None, display_name=None, display_name_contains=None, display_name_not_equal_tos=None, filters=None, id=None, is_mandatory_for_autonomous_linux=None, os_families=None, software_source_collections=None, software_source_id=None, software_source_types=None, states=None, vendor_name=None):
+    def __init__(__self__, arch_types=None, availabilities=None, availability_anywheres=None, availability_at_ocis=None, compartment_id=None, display_name=None, display_name_contains=None, display_name_not_equal_tos=None, filters=None, id=None, is_mandatory_for_autonomous_linux=None, is_mirror_sync_allowed=None, os_families=None, software_source_collections=None, software_source_id=None, software_source_types=None, states=None, vendor_name=None):
         if arch_types and not isinstance(arch_types, list):
             raise TypeError("Expected argument 'arch_types' to be a list")
         pulumi.set(__self__, "arch_types", arch_types)
@@ -62,6 +62,9 @@ class GetSoftwareSourcesResult:
         if is_mandatory_for_autonomous_linux and not isinstance(is_mandatory_for_autonomous_linux, bool):
             raise TypeError("Expected argument 'is_mandatory_for_autonomous_linux' to be a bool")
         pulumi.set(__self__, "is_mandatory_for_autonomous_linux", is_mandatory_for_autonomous_linux)
+        if is_mirror_sync_allowed and not isinstance(is_mirror_sync_allowed, bool):
+            raise TypeError("Expected argument 'is_mirror_sync_allowed' to be a bool")
+        pulumi.set(__self__, "is_mirror_sync_allowed", is_mirror_sync_allowed)
         if os_families and not isinstance(os_families, list):
             raise TypeError("Expected argument 'os_families' to be a list")
         pulumi.set(__self__, "os_families", os_families)
@@ -158,10 +161,18 @@ class GetSoftwareSourcesResult:
         return pulumi.get(self, "is_mandatory_for_autonomous_linux")
 
     @property
+    @pulumi.getter(name="isMirrorSyncAllowed")
+    def is_mirror_sync_allowed(self) -> Optional[bool]:
+        """
+        Indicates if this software source can be mirrored to a management station.
+        """
+        return pulumi.get(self, "is_mirror_sync_allowed")
+
+    @property
     @pulumi.getter(name="osFamilies")
     def os_families(self) -> Optional[Sequence[str]]:
         """
-        The OS family the software source belongs to.
+        The OS family of the software source.
         """
         return pulumi.get(self, "os_families")
 
@@ -220,6 +231,7 @@ class AwaitableGetSoftwareSourcesResult(GetSoftwareSourcesResult):
             filters=self.filters,
             id=self.id,
             is_mandatory_for_autonomous_linux=self.is_mandatory_for_autonomous_linux,
+            is_mirror_sync_allowed=self.is_mirror_sync_allowed,
             os_families=self.os_families,
             software_source_collections=self.software_source_collections,
             software_source_id=self.software_source_id,
@@ -238,6 +250,7 @@ def get_software_sources(arch_types: Optional[Sequence[str]] = None,
                          display_name_not_equal_tos: Optional[Sequence[str]] = None,
                          filters: Optional[Sequence[Union['GetSoftwareSourcesFilterArgs', 'GetSoftwareSourcesFilterArgsDict']]] = None,
                          is_mandatory_for_autonomous_linux: Optional[bool] = None,
+                         is_mirror_sync_allowed: Optional[bool] = None,
                          os_families: Optional[Sequence[str]] = None,
                          software_source_id: Optional[str] = None,
                          software_source_types: Optional[Sequence[str]] = None,
@@ -265,6 +278,7 @@ def get_software_sources(arch_types: Optional[Sequence[str]] = None,
         display_name_contains=software_source_display_name_contains,
         display_name_not_equal_tos=software_source_display_name_not_equal_to,
         is_mandatory_for_autonomous_linux=software_source_is_mandatory_for_autonomous_linux,
+        is_mirror_sync_allowed=software_source_is_mirror_sync_allowed,
         os_families=software_source_os_family,
         software_source_id=test_software_source["id"],
         software_source_types=software_source_software_source_type,
@@ -274,14 +288,15 @@ def get_software_sources(arch_types: Optional[Sequence[str]] = None,
 
 
     :param Sequence[str] arch_types: A filter to return only instances whose architecture type matches the given architecture.
-    :param Sequence[str] availabilities: The availabilities of the software source in a non-OCI environment for a tenancy.
-    :param Sequence[str] availability_anywheres: The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
-    :param Sequence[str] availability_at_ocis: The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+    :param Sequence[str] availabilities: The availability of the software source in a non-OCI environment for a tenancy.
+    :param Sequence[str] availability_anywheres: The availability of the software source. Use this query parameter to filter across availabilities in different environments.
+    :param Sequence[str] availability_at_ocis: The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
     :param str compartment_id: (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
     :param str display_name: A filter to return resources that match the given user-friendly name.
     :param str display_name_contains: A filter to return resources that may partially match the given display name.
     :param Sequence[str] display_name_not_equal_tos: A multi filter to return resources that do not contains the given display names.
     :param bool is_mandatory_for_autonomous_linux: Indicates whether the software source is mandatory for the Autonomous Linux service.
+    :param bool is_mirror_sync_allowed: A filter to return software sources which can be synced to a management station.
     :param Sequence[str] os_families: A filter to return only resources that match the given operating system family.
     :param str software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the software source.
     :param Sequence[str] software_source_types: The type of the software source.
@@ -299,6 +314,7 @@ def get_software_sources(arch_types: Optional[Sequence[str]] = None,
     __args__['displayNameNotEqualTos'] = display_name_not_equal_tos
     __args__['filters'] = filters
     __args__['isMandatoryForAutonomousLinux'] = is_mandatory_for_autonomous_linux
+    __args__['isMirrorSyncAllowed'] = is_mirror_sync_allowed
     __args__['osFamilies'] = os_families
     __args__['softwareSourceId'] = software_source_id
     __args__['softwareSourceTypes'] = software_source_types
@@ -319,6 +335,7 @@ def get_software_sources(arch_types: Optional[Sequence[str]] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         is_mandatory_for_autonomous_linux=pulumi.get(__ret__, 'is_mandatory_for_autonomous_linux'),
+        is_mirror_sync_allowed=pulumi.get(__ret__, 'is_mirror_sync_allowed'),
         os_families=pulumi.get(__ret__, 'os_families'),
         software_source_collections=pulumi.get(__ret__, 'software_source_collections'),
         software_source_id=pulumi.get(__ret__, 'software_source_id'),
@@ -335,6 +352,7 @@ def get_software_sources_output(arch_types: Optional[pulumi.Input[Optional[Seque
                                 display_name_not_equal_tos: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSoftwareSourcesFilterArgs', 'GetSoftwareSourcesFilterArgsDict']]]]] = None,
                                 is_mandatory_for_autonomous_linux: Optional[pulumi.Input[Optional[bool]]] = None,
+                                is_mirror_sync_allowed: Optional[pulumi.Input[Optional[bool]]] = None,
                                 os_families: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                 software_source_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 software_source_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
@@ -362,6 +380,7 @@ def get_software_sources_output(arch_types: Optional[pulumi.Input[Optional[Seque
         display_name_contains=software_source_display_name_contains,
         display_name_not_equal_tos=software_source_display_name_not_equal_to,
         is_mandatory_for_autonomous_linux=software_source_is_mandatory_for_autonomous_linux,
+        is_mirror_sync_allowed=software_source_is_mirror_sync_allowed,
         os_families=software_source_os_family,
         software_source_id=test_software_source["id"],
         software_source_types=software_source_software_source_type,
@@ -371,14 +390,15 @@ def get_software_sources_output(arch_types: Optional[pulumi.Input[Optional[Seque
 
 
     :param Sequence[str] arch_types: A filter to return only instances whose architecture type matches the given architecture.
-    :param Sequence[str] availabilities: The availabilities of the software source in a non-OCI environment for a tenancy.
-    :param Sequence[str] availability_anywheres: The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
-    :param Sequence[str] availability_at_ocis: The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+    :param Sequence[str] availabilities: The availability of the software source in a non-OCI environment for a tenancy.
+    :param Sequence[str] availability_anywheres: The availability of the software source. Use this query parameter to filter across availabilities in different environments.
+    :param Sequence[str] availability_at_ocis: The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
     :param str compartment_id: (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
     :param str display_name: A filter to return resources that match the given user-friendly name.
     :param str display_name_contains: A filter to return resources that may partially match the given display name.
     :param Sequence[str] display_name_not_equal_tos: A multi filter to return resources that do not contains the given display names.
     :param bool is_mandatory_for_autonomous_linux: Indicates whether the software source is mandatory for the Autonomous Linux service.
+    :param bool is_mirror_sync_allowed: A filter to return software sources which can be synced to a management station.
     :param Sequence[str] os_families: A filter to return only resources that match the given operating system family.
     :param str software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the software source.
     :param Sequence[str] software_source_types: The type of the software source.
@@ -396,6 +416,7 @@ def get_software_sources_output(arch_types: Optional[pulumi.Input[Optional[Seque
     __args__['displayNameNotEqualTos'] = display_name_not_equal_tos
     __args__['filters'] = filters
     __args__['isMandatoryForAutonomousLinux'] = is_mandatory_for_autonomous_linux
+    __args__['isMirrorSyncAllowed'] = is_mirror_sync_allowed
     __args__['osFamilies'] = os_families
     __args__['softwareSourceId'] = software_source_id
     __args__['softwareSourceTypes'] = software_source_types
@@ -415,6 +436,7 @@ def get_software_sources_output(arch_types: Optional[pulumi.Input[Optional[Seque
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
         is_mandatory_for_autonomous_linux=pulumi.get(__response__, 'is_mandatory_for_autonomous_linux'),
+        is_mirror_sync_allowed=pulumi.get(__response__, 'is_mirror_sync_allowed'),
         os_families=pulumi.get(__response__, 'os_families'),
         software_source_collections=pulumi.get(__response__, 'software_source_collections'),
         software_source_id=pulumi.get(__response__, 'software_source_id'),

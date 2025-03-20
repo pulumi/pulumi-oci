@@ -12,6 +12,8 @@ import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseState;
 import com.pulumi.oci.Database.outputs.AutonomousContainerDatabaseAssociatedBackupConfigurationDetail;
 import com.pulumi.oci.Database.outputs.AutonomousContainerDatabaseBackupConfig;
 import com.pulumi.oci.Database.outputs.AutonomousContainerDatabaseBackupDestinationPropertiesList;
+import com.pulumi.oci.Database.outputs.AutonomousContainerDatabaseDataguard;
+import com.pulumi.oci.Database.outputs.AutonomousContainerDatabaseDataguardGroupMember;
 import com.pulumi.oci.Database.outputs.AutonomousContainerDatabaseKeyHistoryEntry;
 import com.pulumi.oci.Database.outputs.AutonomousContainerDatabaseMaintenanceWindow;
 import com.pulumi.oci.Database.outputs.AutonomousContainerDatabaseMaintenanceWindowDetails;
@@ -193,14 +195,14 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.autonomousVmClusterId;
     }
     /**
-     * The availability domain of the Autonomous Container Database
+     * The domain of the Autonomous Container Database
      * 
      */
     @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
-     * @return The availability domain of the Autonomous Container Database
+     * @return The domain of the Autonomous Container Database
      * 
      */
     public Output<String> availabilityDomain() {
@@ -303,6 +305,34 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      */
     public Output<String> databaseSoftwareImageId() {
         return this.databaseSoftwareImageId;
+    }
+    /**
+     * Array of Dg associations.
+     * 
+     */
+    @Export(name="dataguardGroupMembers", refs={List.class,AutonomousContainerDatabaseDataguardGroupMember.class}, tree="[0,1]")
+    private Output<List<AutonomousContainerDatabaseDataguardGroupMember>> dataguardGroupMembers;
+
+    /**
+     * @return Array of Dg associations.
+     * 
+     */
+    public Output<List<AutonomousContainerDatabaseDataguardGroupMember>> dataguardGroupMembers() {
+        return this.dataguardGroupMembers;
+    }
+    /**
+     * The properties that define Autonomous Container Databases Dataguard.
+     * 
+     */
+    @Export(name="dataguards", refs={List.class,AutonomousContainerDatabaseDataguard.class}, tree="[0,1]")
+    private Output<List<AutonomousContainerDatabaseDataguard>> dataguards;
+
+    /**
+     * @return The properties that define Autonomous Container Databases Dataguard.
+     * 
+     */
+    public Output<List<AutonomousContainerDatabaseDataguard>> dataguards() {
+        return this.dataguards;
     }
     /**
      * The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
@@ -409,14 +439,28 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.dstFileVersion;
     }
     /**
-     * The lag time for my preference based on data loss tolerance in seconds.
+     * (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+     * 
+     */
+    @Export(name="failoverTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> failoverTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+     * 
+     */
+    public Output<Optional<Integer>> failoverTrigger() {
+        return Codegen.optional(this.failoverTrigger);
+    }
+    /**
+     * (Updatable) The lag time for my preference based on data loss tolerance in seconds.
      * 
      */
     @Export(name="fastStartFailOverLagLimitInSeconds", refs={Integer.class}, tree="[0]")
     private Output<Integer> fastStartFailOverLagLimitInSeconds;
 
     /**
-     * @return The lag time for my preference based on data loss tolerance in seconds.
+     * @return (Updatable) The lag time for my preference based on data loss tolerance in seconds.
      * 
      */
     public Output<Integer> fastStartFailOverLagLimitInSeconds() {
@@ -465,6 +509,20 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.isAutomaticFailoverEnabled;
     }
     /**
+     * **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
+     * 
+     */
+    @Export(name="isDataGuardEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isDataGuardEnabled;
+
+    /**
+     * @return **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
+     * 
+     */
+    public Output<Boolean> isDataGuardEnabled() {
+        return this.isDataGuardEnabled;
+    }
+    /**
      * (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
      * 
      */
@@ -477,6 +535,20 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      */
     public Output<Boolean> isDstFileUpdateEnabled() {
         return this.isDstFileUpdateEnabled;
+    }
+    /**
+     * Whether it is multiple standby Autonomous Dataguard
+     * 
+     */
+    @Export(name="isMultipleStandby", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isMultipleStandby;
+
+    /**
+     * @return Whether it is multiple standby Autonomous Dataguard
+     * 
+     */
+    public Output<Boolean> isMultipleStandby() {
+        return this.isMultipleStandby;
     }
     /**
      * Key History Entry.
@@ -785,14 +857,14 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.peerDbUniqueName;
     }
     /**
-     * The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+     * (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      * 
      */
     @Export(name="protectionMode", refs={String.class}, tree="[0]")
     private Output<String> protectionMode;
 
     /**
-     * @return The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+     * @return (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      * 
      */
     public Output<String> protectionMode() {
@@ -863,6 +935,20 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.recoveryApplianceDetails;
     }
     /**
+     * (Updatable) An optional property when incremented triggers Reinstate. Could be set to any integer value.
+     * 
+     */
+    @Export(name="reinstateTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> reinstateTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Reinstate. Could be set to any integer value.
+     * 
+     */
+    public Output<Optional<Integer>> reinstateTrigger() {
+        return Codegen.optional(this.reinstateTrigger);
+    }
+    /**
      * The number of CPUs reserved in an Autonomous Container Database.
      * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
@@ -897,12 +983,18 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
     /**
      * (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloud_autonomous_vm_cluster_id` is set.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="rotateKeyTrigger", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> rotateKeyTrigger;
 
     /**
      * @return (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloud_autonomous_vm_cluster_id` is set.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Optional<Boolean>> rotateKeyTrigger() {
@@ -923,20 +1015,14 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.serviceLevelAgreementType;
     }
     /**
-     * (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
      * 
      */
     @Export(name="standbyMaintenanceBufferInDays", refs={Integer.class}, tree="[0]")
     private Output<Integer> standbyMaintenanceBufferInDays;
 
     /**
-     * @return (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
      * 
      */
     public Output<Integer> standbyMaintenanceBufferInDays() {
@@ -955,6 +1041,20 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      */
     public Output<String> state() {
         return this.state;
+    }
+    /**
+     * (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
+     * 
+     */
+    @Export(name="switchoverTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> switchoverTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
+     * 
+     */
+    public Output<Optional<Integer>> switchoverTrigger() {
+        return Codegen.optional(this.switchoverTrigger);
     }
     /**
      * The date and time the Autonomous Container Database was created.
@@ -1013,14 +1113,14 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.totalCpus;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
      * 
      */
     @Export(name="vaultId", refs={String.class}, tree="[0]")
     private Output<String> vaultId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
      * 
      */
     public Output<String> vaultId() {
@@ -1041,14 +1141,14 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.versionPreference;
     }
     /**
-     * The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+     * The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
      * 
      */
     @Export(name="vmFailoverReservation", refs={Integer.class}, tree="[0]")
     private Output<Integer> vmFailoverReservation;
 
     /**
-     * @return The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+     * @return The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
      * 
      */
     public Output<Integer> vmFailoverReservation() {

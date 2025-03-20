@@ -21,10 +21,25 @@ public final class EventData {
      */
     private @Nullable List<EventDataAdditionalDetail> additionalDetails;
     /**
+     * @return The actions used to attempt fixing the error.
+     * 
+     */
+    private @Nullable List<String> attemptedResolutions;
+    /**
      * @return Provides information collected for the exploit attempt event.
      * 
      */
     private @Nullable List<EventDataContent> contents;
+    /**
+     * @return The commands executed by the agent that caused the error.
+     * 
+     */
+    private @Nullable String errorCause;
+    /**
+     * @return The output log of the error.
+     * 
+     */
+    private @Nullable String errorLog;
     /**
      * @return Number of times the event has occurred.
      * 
@@ -36,6 +51,11 @@ public final class EventData {
      */
     private @Nullable String eventFingerprint;
     /**
+     * @return Health state of the management station
+     * 
+     */
+    private @Nullable String healthState;
+    /**
      * @return Type of management station operation.
      * 
      */
@@ -45,6 +65,21 @@ public final class EventData {
      * 
      */
     private @Nullable String reason;
+    /**
+     * @return Reboot status for the current event
+     * 
+     */
+    private @Nullable String rebootStatus;
+    /**
+     * @return The log output after the resolutions.
+     * 
+     */
+    private @Nullable String resolutionLog;
+    /**
+     * @return Indicates if the event succeeded.
+     * 
+     */
+    private @Nullable String resolutionStatus;
     /**
      * @return Status of the management station operation.
      * 
@@ -65,11 +100,32 @@ public final class EventData {
         return this.additionalDetails == null ? List.of() : this.additionalDetails;
     }
     /**
+     * @return The actions used to attempt fixing the error.
+     * 
+     */
+    public List<String> attemptedResolutions() {
+        return this.attemptedResolutions == null ? List.of() : this.attemptedResolutions;
+    }
+    /**
      * @return Provides information collected for the exploit attempt event.
      * 
      */
     public List<EventDataContent> contents() {
         return this.contents == null ? List.of() : this.contents;
+    }
+    /**
+     * @return The commands executed by the agent that caused the error.
+     * 
+     */
+    public Optional<String> errorCause() {
+        return Optional.ofNullable(this.errorCause);
+    }
+    /**
+     * @return The output log of the error.
+     * 
+     */
+    public Optional<String> errorLog() {
+        return Optional.ofNullable(this.errorLog);
     }
     /**
      * @return Number of times the event has occurred.
@@ -86,6 +142,13 @@ public final class EventData {
         return Optional.ofNullable(this.eventFingerprint);
     }
     /**
+     * @return Health state of the management station
+     * 
+     */
+    public Optional<String> healthState() {
+        return Optional.ofNullable(this.healthState);
+    }
+    /**
      * @return Type of management station operation.
      * 
      */
@@ -98,6 +161,27 @@ public final class EventData {
      */
     public Optional<String> reason() {
         return Optional.ofNullable(this.reason);
+    }
+    /**
+     * @return Reboot status for the current event
+     * 
+     */
+    public Optional<String> rebootStatus() {
+        return Optional.ofNullable(this.rebootStatus);
+    }
+    /**
+     * @return The log output after the resolutions.
+     * 
+     */
+    public Optional<String> resolutionLog() {
+        return Optional.ofNullable(this.resolutionLog);
+    }
+    /**
+     * @return Indicates if the event succeeded.
+     * 
+     */
+    public Optional<String> resolutionStatus() {
+        return Optional.ofNullable(this.resolutionStatus);
     }
     /**
      * @return Status of the management station operation.
@@ -124,22 +208,36 @@ public final class EventData {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<EventDataAdditionalDetail> additionalDetails;
+        private @Nullable List<String> attemptedResolutions;
         private @Nullable List<EventDataContent> contents;
+        private @Nullable String errorCause;
+        private @Nullable String errorLog;
         private @Nullable Integer eventCount;
         private @Nullable String eventFingerprint;
+        private @Nullable String healthState;
         private @Nullable String operationType;
         private @Nullable String reason;
+        private @Nullable String rebootStatus;
+        private @Nullable String resolutionLog;
+        private @Nullable String resolutionStatus;
         private @Nullable String status;
         private @Nullable String timeFirstOccurred;
         public Builder() {}
         public Builder(EventData defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.additionalDetails = defaults.additionalDetails;
+    	      this.attemptedResolutions = defaults.attemptedResolutions;
     	      this.contents = defaults.contents;
+    	      this.errorCause = defaults.errorCause;
+    	      this.errorLog = defaults.errorLog;
     	      this.eventCount = defaults.eventCount;
     	      this.eventFingerprint = defaults.eventFingerprint;
+    	      this.healthState = defaults.healthState;
     	      this.operationType = defaults.operationType;
     	      this.reason = defaults.reason;
+    	      this.rebootStatus = defaults.rebootStatus;
+    	      this.resolutionLog = defaults.resolutionLog;
+    	      this.resolutionStatus = defaults.resolutionStatus;
     	      this.status = defaults.status;
     	      this.timeFirstOccurred = defaults.timeFirstOccurred;
         }
@@ -154,6 +252,15 @@ public final class EventData {
             return additionalDetails(List.of(additionalDetails));
         }
         @CustomType.Setter
+        public Builder attemptedResolutions(@Nullable List<String> attemptedResolutions) {
+
+            this.attemptedResolutions = attemptedResolutions;
+            return this;
+        }
+        public Builder attemptedResolutions(String... attemptedResolutions) {
+            return attemptedResolutions(List.of(attemptedResolutions));
+        }
+        @CustomType.Setter
         public Builder contents(@Nullable List<EventDataContent> contents) {
 
             this.contents = contents;
@@ -161,6 +268,18 @@ public final class EventData {
         }
         public Builder contents(EventDataContent... contents) {
             return contents(List.of(contents));
+        }
+        @CustomType.Setter
+        public Builder errorCause(@Nullable String errorCause) {
+
+            this.errorCause = errorCause;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder errorLog(@Nullable String errorLog) {
+
+            this.errorLog = errorLog;
+            return this;
         }
         @CustomType.Setter
         public Builder eventCount(@Nullable Integer eventCount) {
@@ -175,6 +294,12 @@ public final class EventData {
             return this;
         }
         @CustomType.Setter
+        public Builder healthState(@Nullable String healthState) {
+
+            this.healthState = healthState;
+            return this;
+        }
+        @CustomType.Setter
         public Builder operationType(@Nullable String operationType) {
 
             this.operationType = operationType;
@@ -184,6 +309,24 @@ public final class EventData {
         public Builder reason(@Nullable String reason) {
 
             this.reason = reason;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder rebootStatus(@Nullable String rebootStatus) {
+
+            this.rebootStatus = rebootStatus;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder resolutionLog(@Nullable String resolutionLog) {
+
+            this.resolutionLog = resolutionLog;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder resolutionStatus(@Nullable String resolutionStatus) {
+
+            this.resolutionStatus = resolutionStatus;
             return this;
         }
         @CustomType.Setter
@@ -201,11 +344,18 @@ public final class EventData {
         public EventData build() {
             final var _resultValue = new EventData();
             _resultValue.additionalDetails = additionalDetails;
+            _resultValue.attemptedResolutions = attemptedResolutions;
             _resultValue.contents = contents;
+            _resultValue.errorCause = errorCause;
+            _resultValue.errorLog = errorLog;
             _resultValue.eventCount = eventCount;
             _resultValue.eventFingerprint = eventFingerprint;
+            _resultValue.healthState = healthState;
             _resultValue.operationType = operationType;
             _resultValue.reason = reason;
+            _resultValue.rebootStatus = rebootStatus;
+            _resultValue.resolutionLog = resolutionLog;
+            _resultValue.resolutionStatus = resolutionStatus;
             _resultValue.status = status;
             _resultValue.timeFirstOccurred = timeFirstOccurred;
             return _resultValue;

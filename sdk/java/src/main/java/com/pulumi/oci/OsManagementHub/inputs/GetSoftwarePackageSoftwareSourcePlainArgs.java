@@ -33,14 +33,14 @@ public final class GetSoftwarePackageSoftwareSourcePlainArgs extends com.pulumi.
     }
 
     /**
-     * The availabilities of the software source in a non-OCI environment for a tenancy.
+     * The availability of the software source in a non-OCI environment for a tenancy.
      * 
      */
     @Import(name="availabilities")
     private @Nullable List<String> availabilities;
 
     /**
-     * @return The availabilities of the software source in a non-OCI environment for a tenancy.
+     * @return The availability of the software source in a non-OCI environment for a tenancy.
      * 
      */
     public Optional<List<String>> availabilities() {
@@ -48,14 +48,14 @@ public final class GetSoftwarePackageSoftwareSourcePlainArgs extends com.pulumi.
     }
 
     /**
-     * The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
+     * The availability of the software source. Use this query parameter to filter across availabilities in different environments.
      * 
      */
     @Import(name="availabilityAnywheres")
     private @Nullable List<String> availabilityAnywheres;
 
     /**
-     * @return The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
+     * @return The availability of the software source. Use this query parameter to filter across availabilities in different environments.
      * 
      */
     public Optional<List<String>> availabilityAnywheres() {
@@ -63,14 +63,14 @@ public final class GetSoftwarePackageSoftwareSourcePlainArgs extends com.pulumi.
     }
 
     /**
-     * The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+     * The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
      * 
      */
     @Import(name="availabilityAtOcis")
     private @Nullable List<String> availabilityAtOcis;
 
     /**
-     * @return The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+     * @return The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
      * 
      */
     public Optional<List<String>> availabilityAtOcis() {
@@ -246,7 +246,7 @@ public final class GetSoftwarePackageSoftwareSourcePlainArgs extends com.pulumi.
         }
 
         /**
-         * @param availabilities The availabilities of the software source in a non-OCI environment for a tenancy.
+         * @param availabilities The availability of the software source in a non-OCI environment for a tenancy.
          * 
          * @return builder
          * 
@@ -257,7 +257,7 @@ public final class GetSoftwarePackageSoftwareSourcePlainArgs extends com.pulumi.
         }
 
         /**
-         * @param availabilities The availabilities of the software source in a non-OCI environment for a tenancy.
+         * @param availabilities The availability of the software source in a non-OCI environment for a tenancy.
          * 
          * @return builder
          * 
@@ -267,7 +267,7 @@ public final class GetSoftwarePackageSoftwareSourcePlainArgs extends com.pulumi.
         }
 
         /**
-         * @param availabilityAnywheres The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
+         * @param availabilityAnywheres The availability of the software source. Use this query parameter to filter across availabilities in different environments.
          * 
          * @return builder
          * 
@@ -278,7 +278,7 @@ public final class GetSoftwarePackageSoftwareSourcePlainArgs extends com.pulumi.
         }
 
         /**
-         * @param availabilityAnywheres The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
+         * @param availabilityAnywheres The availability of the software source. Use this query parameter to filter across availabilities in different environments.
          * 
          * @return builder
          * 
@@ -288,7 +288,7 @@ public final class GetSoftwarePackageSoftwareSourcePlainArgs extends com.pulumi.
         }
 
         /**
-         * @param availabilityAtOcis The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+         * @param availabilityAtOcis The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
          * 
          * @return builder
          * 
@@ -299,7 +299,7 @@ public final class GetSoftwarePackageSoftwareSourcePlainArgs extends com.pulumi.
         }
 
         /**
-         * @param availabilityAtOcis The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+         * @param availabilityAtOcis The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
          * 
          * @return builder
          * 

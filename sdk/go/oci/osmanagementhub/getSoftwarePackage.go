@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Software Package resource in Oracle Cloud Infrastructure Os Management Hub service.
 //
-// Returns information about the specified software package based on its fully qualified name.
+// Returns information about the specified software package based on its fully qualified name (NVRA or NEVRA).
 //
 // ## Example Usage
 //

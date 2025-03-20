@@ -145,7 +145,7 @@ namespace Pulumi.Oci.OsManagementHub
         private List<string>? _availabilities;
 
         /// <summary>
-        /// The availabilities of the software source in a non-OCI environment for a tenancy.
+        /// The availability of the software source in a non-OCI environment for a tenancy.
         /// </summary>
         public List<string> Availabilities
         {
@@ -157,7 +157,7 @@ namespace Pulumi.Oci.OsManagementHub
         private List<string>? _availabilityAnywheres;
 
         /// <summary>
-        /// The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
+        /// The availability of the software source. Use this query parameter to filter across availabilities in different environments.
         /// </summary>
         public List<string> AvailabilityAnywheres
         {
@@ -169,7 +169,7 @@ namespace Pulumi.Oci.OsManagementHub
         private List<string>? _availabilityAtOcis;
 
         /// <summary>
-        /// The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+        /// The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
         /// </summary>
         public List<string> AvailabilityAtOcis
         {
@@ -269,7 +269,7 @@ namespace Pulumi.Oci.OsManagementHub
         private InputList<string>? _availabilities;
 
         /// <summary>
-        /// The availabilities of the software source in a non-OCI environment for a tenancy.
+        /// The availability of the software source in a non-OCI environment for a tenancy.
         /// </summary>
         public InputList<string> Availabilities
         {
@@ -281,7 +281,7 @@ namespace Pulumi.Oci.OsManagementHub
         private InputList<string>? _availabilityAnywheres;
 
         /// <summary>
-        /// The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
+        /// The availability of the software source. Use this query parameter to filter across availabilities in different environments.
         /// </summary>
         public InputList<string> AvailabilityAnywheres
         {
@@ -293,7 +293,7 @@ namespace Pulumi.Oci.OsManagementHub
         private InputList<string>? _availabilityAtOcis;
 
         /// <summary>
-        /// The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+        /// The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
         /// </summary>
         public InputList<string> AvailabilityAtOcis
         {
@@ -407,7 +407,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The OS family the software source belongs to.
+        /// The OS family of the software source.
         /// </summary>
         public readonly ImmutableArray<string> OsFamilies;
         public readonly string SoftwarePackageName;

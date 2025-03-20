@@ -27,7 +27,10 @@ class GetManagedInstanceResult:
     """
     A collection of values returned by getManagedInstance.
     """
-    def __init__(__self__, architecture=None, autonomous_settings=None, bug_updates_available=None, compartment_id=None, description=None, display_name=None, enhancement_updates_available=None, id=None, installed_packages=None, installed_windows_updates=None, is_managed_by_autonomous_linux=None, is_management_station=None, is_reboot_required=None, ksplice_effective_kernel_version=None, lifecycle_environments=None, lifecycle_stages=None, location=None, managed_instance_groups=None, managed_instance_id=None, notification_topic_id=None, os_family=None, os_kernel_version=None, os_name=None, os_version=None, other_updates_available=None, primary_management_station_id=None, profile=None, scheduled_job_count=None, secondary_management_station_id=None, security_updates_available=None, software_sources=None, status=None, tenancy_id=None, time_created=None, time_last_boot=None, time_last_checkin=None, time_updated=None, updates_available=None, work_request_count=None):
+    def __init__(__self__, agent_version=None, architecture=None, autonomous_settings=None, bug_updates_available=None, compartment_id=None, description=None, display_name=None, enhancement_updates_available=None, id=None, installed_packages=None, installed_windows_updates=None, is_managed_by_autonomous_linux=None, is_management_station=None, is_reboot_required=None, ksplice_effective_kernel_version=None, lifecycle_environments=None, lifecycle_stages=None, location=None, managed_instance_groups=None, managed_instance_id=None, notification_topic_id=None, os_family=None, os_kernel_version=None, os_name=None, os_version=None, other_updates_available=None, primary_management_station_id=None, profile=None, profile_version=None, scheduled_job_count=None, secondary_management_station_id=None, security_updates_available=None, software_sources=None, status=None, tenancy_id=None, time_created=None, time_last_boot=None, time_last_checkin=None, time_updated=None, updates_available=None, work_request_count=None):
+        if agent_version and not isinstance(agent_version, str):
+            raise TypeError("Expected argument 'agent_version' to be a str")
+        pulumi.set(__self__, "agent_version", agent_version)
         if architecture and not isinstance(architecture, str):
             raise TypeError("Expected argument 'architecture' to be a str")
         pulumi.set(__self__, "architecture", architecture)
@@ -109,6 +112,9 @@ class GetManagedInstanceResult:
         if profile and not isinstance(profile, str):
             raise TypeError("Expected argument 'profile' to be a str")
         pulumi.set(__self__, "profile", profile)
+        if profile_version and not isinstance(profile_version, str):
+            raise TypeError("Expected argument 'profile_version' to be a str")
+        pulumi.set(__self__, "profile_version", profile_version)
         if scheduled_job_count and not isinstance(scheduled_job_count, int):
             raise TypeError("Expected argument 'scheduled_job_count' to be a int")
         pulumi.set(__self__, "scheduled_job_count", scheduled_job_count)
@@ -145,6 +151,14 @@ class GetManagedInstanceResult:
         if work_request_count and not isinstance(work_request_count, int):
             raise TypeError("Expected argument 'work_request_count' to be a int")
         pulumi.set(__self__, "work_request_count", work_request_count)
+
+    @property
+    @pulumi.getter(name="agentVersion")
+    def agent_version(self) -> str:
+        """
+        The version of osmh-agent running on the managed instance
+        """
+        return pulumi.get(self, "agent_version")
 
     @property
     @pulumi.getter
@@ -360,6 +374,14 @@ class GetManagedInstanceResult:
         return pulumi.get(self, "profile")
 
     @property
+    @pulumi.getter(name="profileVersion")
+    def profile_version(self) -> str:
+        """
+        The version of the profile that was used to register this instance with the service.
+        """
+        return pulumi.get(self, "profile_version")
+
+    @property
     @pulumi.getter(name="scheduledJobCount")
     def scheduled_job_count(self) -> int:
         """
@@ -371,7 +393,7 @@ class GetManagedInstanceResult:
     @pulumi.getter(name="secondaryManagementStationId")
     def secondary_management_station_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary managment station.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station.
         """
         return pulumi.get(self, "secondary_management_station_id")
 
@@ -462,6 +484,7 @@ class AwaitableGetManagedInstanceResult(GetManagedInstanceResult):
         if False:
             yield self
         return GetManagedInstanceResult(
+            agent_version=self.agent_version,
             architecture=self.architecture,
             autonomous_settings=self.autonomous_settings,
             bug_updates_available=self.bug_updates_available,
@@ -489,6 +512,7 @@ class AwaitableGetManagedInstanceResult(GetManagedInstanceResult):
             other_updates_available=self.other_updates_available,
             primary_management_station_id=self.primary_management_station_id,
             profile=self.profile,
+            profile_version=self.profile_version,
             scheduled_job_count=self.scheduled_job_count,
             secondary_management_station_id=self.secondary_management_station_id,
             security_updates_available=self.security_updates_available,
@@ -528,6 +552,7 @@ def get_managed_instance(managed_instance_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:OsManagementHub/getManagedInstance:getManagedInstance', __args__, opts=opts, typ=GetManagedInstanceResult).value
 
     return AwaitableGetManagedInstanceResult(
+        agent_version=pulumi.get(__ret__, 'agent_version'),
         architecture=pulumi.get(__ret__, 'architecture'),
         autonomous_settings=pulumi.get(__ret__, 'autonomous_settings'),
         bug_updates_available=pulumi.get(__ret__, 'bug_updates_available'),
@@ -555,6 +580,7 @@ def get_managed_instance(managed_instance_id: Optional[str] = None,
         other_updates_available=pulumi.get(__ret__, 'other_updates_available'),
         primary_management_station_id=pulumi.get(__ret__, 'primary_management_station_id'),
         profile=pulumi.get(__ret__, 'profile'),
+        profile_version=pulumi.get(__ret__, 'profile_version'),
         scheduled_job_count=pulumi.get(__ret__, 'scheduled_job_count'),
         secondary_management_station_id=pulumi.get(__ret__, 'secondary_management_station_id'),
         security_updates_available=pulumi.get(__ret__, 'security_updates_available'),
@@ -591,6 +617,7 @@ def get_managed_instance_output(managed_instance_id: Optional[pulumi.Input[str]]
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getManagedInstance:getManagedInstance', __args__, opts=opts, typ=GetManagedInstanceResult)
     return __ret__.apply(lambda __response__: GetManagedInstanceResult(
+        agent_version=pulumi.get(__response__, 'agent_version'),
         architecture=pulumi.get(__response__, 'architecture'),
         autonomous_settings=pulumi.get(__response__, 'autonomous_settings'),
         bug_updates_available=pulumi.get(__response__, 'bug_updates_available'),
@@ -618,6 +645,7 @@ def get_managed_instance_output(managed_instance_id: Optional[pulumi.Input[str]]
         other_updates_available=pulumi.get(__response__, 'other_updates_available'),
         primary_management_station_id=pulumi.get(__response__, 'primary_management_station_id'),
         profile=pulumi.get(__response__, 'profile'),
+        profile_version=pulumi.get(__response__, 'profile_version'),
         scheduled_job_count=pulumi.get(__response__, 'scheduled_job_count'),
         secondary_management_station_id=pulumi.get(__response__, 'secondary_management_station_id'),
         security_updates_available=pulumi.get(__response__, 'security_updates_available'),

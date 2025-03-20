@@ -27,7 +27,7 @@ class GetScheduledJobResult:
     """
     A collection of values returned by getScheduledJob.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_managed_by_autonomous_linux=None, is_restricted=None, is_subcompartment_included=None, lifecycle_stage_ids=None, locations=None, managed_compartment_ids=None, managed_instance_group_ids=None, managed_instance_ids=None, operations=None, recurring_rule=None, retry_intervals=None, schedule_type=None, scheduled_job_id=None, state=None, system_tags=None, time_created=None, time_last_execution=None, time_next_execution=None, time_updated=None, work_request_ids=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_managed_by_autonomous_linux=None, is_restricted=None, is_subcompartment_included=None, lifecycle_stage_ids=None, locations=None, managed_compartment_ids=None, managed_instance_group_ids=None, managed_instance_ids=None, operations=None, recurring_rule=None, retry_intervals=None, schedule_type=None, scheduled_job_id=None, state=None, system_tags=None, time_created=None, time_last_execution=None, time_next_execution=None, time_updated=None, work_request_id=None, work_request_ids=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -103,6 +103,9 @@ class GetScheduledJobResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+        if work_request_id and not isinstance(work_request_id, str):
+            raise TypeError("Expected argument 'work_request_id' to be a str")
+        pulumi.set(__self__, "work_request_id", work_request_id)
         if work_request_ids and not isinstance(work_request_ids, list):
             raise TypeError("Expected argument 'work_request_ids' to be a list")
         pulumi.set(__self__, "work_request_ids", work_request_ids)
@@ -313,6 +316,14 @@ class GetScheduledJobResult:
         return pulumi.get(self, "time_updated")
 
     @property
+    @pulumi.getter(name="workRequestId")
+    def work_request_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+        """
+        return pulumi.get(self, "work_request_id")
+
+    @property
     @pulumi.getter(name="workRequestIds")
     def work_request_ids(self) -> Sequence[str]:
         """
@@ -352,6 +363,7 @@ class AwaitableGetScheduledJobResult(GetScheduledJobResult):
             time_last_execution=self.time_last_execution,
             time_next_execution=self.time_next_execution,
             time_updated=self.time_updated,
+            work_request_id=self.work_request_id,
             work_request_ids=self.work_request_ids)
 
 
@@ -405,6 +417,7 @@ def get_scheduled_job(scheduled_job_id: Optional[str] = None,
         time_last_execution=pulumi.get(__ret__, 'time_last_execution'),
         time_next_execution=pulumi.get(__ret__, 'time_next_execution'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
+        work_request_id=pulumi.get(__ret__, 'work_request_id'),
         work_request_ids=pulumi.get(__ret__, 'work_request_ids'))
 def get_scheduled_job_output(scheduled_job_id: Optional[pulumi.Input[str]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetScheduledJobResult]:
@@ -455,4 +468,5 @@ def get_scheduled_job_output(scheduled_job_id: Optional[pulumi.Input[str]] = Non
         time_last_execution=pulumi.get(__response__, 'time_last_execution'),
         time_next_execution=pulumi.get(__response__, 'time_next_execution'),
         time_updated=pulumi.get(__response__, 'time_updated'),
+        work_request_id=pulumi.get(__response__, 'work_request_id'),
         work_request_ids=pulumi.get(__response__, 'work_request_ids')))

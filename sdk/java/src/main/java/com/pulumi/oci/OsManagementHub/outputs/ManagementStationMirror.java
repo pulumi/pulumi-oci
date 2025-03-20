@@ -5,6 +5,7 @@ package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -17,6 +18,11 @@ public final class ManagementStationMirror {
      * 
      */
     private String directory;
+    /**
+     * @return (Updatable) When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
+     * 
+     */
+    private @Nullable Boolean isSslverifyEnabled;
     /**
      * @return (Updatable) Default mirror listening port for http.
      * 
@@ -40,6 +46,13 @@ public final class ManagementStationMirror {
      */
     public String directory() {
         return this.directory;
+    }
+    /**
+     * @return (Updatable) When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
+     * 
+     */
+    public Optional<Boolean> isSslverifyEnabled() {
+        return Optional.ofNullable(this.isSslverifyEnabled);
     }
     /**
      * @return (Updatable) Default mirror listening port for http.
@@ -73,6 +86,7 @@ public final class ManagementStationMirror {
     @CustomType.Builder
     public static final class Builder {
         private String directory;
+        private @Nullable Boolean isSslverifyEnabled;
         private String port;
         private @Nullable String sslcert;
         private String sslport;
@@ -80,6 +94,7 @@ public final class ManagementStationMirror {
         public Builder(ManagementStationMirror defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.directory = defaults.directory;
+    	      this.isSslverifyEnabled = defaults.isSslverifyEnabled;
     	      this.port = defaults.port;
     	      this.sslcert = defaults.sslcert;
     	      this.sslport = defaults.sslport;
@@ -91,6 +106,12 @@ public final class ManagementStationMirror {
               throw new MissingRequiredPropertyException("ManagementStationMirror", "directory");
             }
             this.directory = directory;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isSslverifyEnabled(@Nullable Boolean isSslverifyEnabled) {
+
+            this.isSslverifyEnabled = isSslverifyEnabled;
             return this;
         }
         @CustomType.Setter
@@ -118,6 +139,7 @@ public final class ManagementStationMirror {
         public ManagementStationMirror build() {
             final var _resultValue = new ManagementStationMirror();
             _resultValue.directory = directory;
+            _resultValue.isSslverifyEnabled = isSslverifyEnabled;
             _resultValue.port = port;
             _resultValue.sslcert = sslcert;
             _resultValue.sslport = sslport;

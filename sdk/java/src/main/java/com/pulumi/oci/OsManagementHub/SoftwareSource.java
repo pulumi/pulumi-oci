@@ -22,7 +22,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Software Source resource in Oracle Cloud Infrastructure Os Management Hub service.
  * 
- * Creates a new versioned or custom software source.
+ * Creates a new software source.
  * 
  * ## Import
  * 
@@ -36,14 +36,28 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:OsManagementHub/softwareSource:SoftwareSource")
 public class SoftwareSource extends com.pulumi.resources.CustomResource {
     /**
-     * The architecture type supported by the software source.
+     * (Updatable) Advanced repository options for the software source
+     * 
+     */
+    @Export(name="advancedRepoOptions", refs={String.class}, tree="[0]")
+    private Output<String> advancedRepoOptions;
+
+    /**
+     * @return (Updatable) Advanced repository options for the software source
+     * 
+     */
+    public Output<String> advancedRepoOptions() {
+        return this.advancedRepoOptions;
+    }
+    /**
+     * The architecture type supported by the third-party software source.
      * 
      */
     @Export(name="archType", refs={String.class}, tree="[0]")
     private Output<String> archType;
 
     /**
-     * @return The architecture type supported by the software source.
+     * @return The architecture type supported by the third-party software source.
      * 
      */
     public Output<String> archType() {
@@ -204,14 +218,14 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
         return this.gpgKeyId;
     }
     /**
-     * URL of the GPG key for this software source.
+     * (Updatable) URI of the GPG key for this software source.
      * 
      */
     @Export(name="gpgKeyUrl", refs={String.class}, tree="[0]")
     private Output<String> gpgKeyUrl;
 
     /**
-     * @return URL of the GPG key for this software source.
+     * @return (Updatable) URI of the GPG key for this software source.
      * 
      */
     public Output<String> gpgKeyUrl() {
@@ -260,6 +274,20 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
         return this.isCreatedFromPackageList;
     }
     /**
+     * (Updatable) Whether signature verification should be done for the software source.
+     * 
+     */
+    @Export(name="isGpgCheckEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isGpgCheckEnabled;
+
+    /**
+     * @return (Updatable) Whether signature verification should be done for the software source.
+     * 
+     */
+    public Output<Boolean> isGpgCheckEnabled() {
+        return this.isGpgCheckEnabled;
+    }
+    /**
      * (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
      * * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
      * * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
@@ -298,6 +326,34 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
         return this.isMandatoryForAutonomousLinux;
     }
     /**
+     * (Updatable) Whether this software source can be synced to a management station
+     * 
+     */
+    @Export(name="isMirrorSyncAllowed", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isMirrorSyncAllowed;
+
+    /**
+     * @return (Updatable) Whether this software source can be synced to a management station
+     * 
+     */
+    public Output<Boolean> isMirrorSyncAllowed() {
+        return this.isMirrorSyncAllowed;
+    }
+    /**
+     * (Updatable) Whether SSL validation needs to be turned on
+     * 
+     */
+    @Export(name="isSslVerifyEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isSslVerifyEnabled;
+
+    /**
+     * @return (Updatable) Whether SSL validation needs to be turned on
+     * 
+     */
+    public Output<Boolean> isSslVerifyEnabled() {
+        return this.isSslVerifyEnabled;
+    }
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
      * 
      */
@@ -312,14 +368,14 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
         return this.originSoftwareSourceId;
     }
     /**
-     * The OS family the software source belongs to.
+     * The OS family for the third-party software source.
      * 
      */
     @Export(name="osFamily", refs={String.class}, tree="[0]")
     private Output<String> osFamily;
 
     /**
-     * @return The OS family the software source belongs to.
+     * @return The OS family for the third-party software source.
      * 
      */
     public Output<String> osFamily() {
@@ -368,18 +424,32 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
         return this.repoId;
     }
     /**
-     * The size of the software source in gigabytes (GB).
+     * The size of the software source in bytes (B).
      * 
      */
     @Export(name="size", refs={Double.class}, tree="[0]")
     private Output<Double> size;
 
     /**
-     * @return The size of the software source in gigabytes (GB).
+     * @return The size of the software source in bytes (B).
      * 
      */
     public Output<Double> size() {
         return this.size;
+    }
+    /**
+     * The creation type of a software source.
+     * 
+     */
+    @Export(name="softwareSourceSubType", refs={String.class}, tree="[0]")
+    private Output<String> softwareSourceSubType;
+
+    /**
+     * @return The creation type of a software source.
+     * 
+     */
+    public Output<String> softwareSourceSubType() {
+        return this.softwareSourceSubType;
     }
     /**
      * (Updatable) Type of software source.
@@ -452,14 +522,28 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
         return this.timeCreated;
     }
     /**
-     * URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is &#39;custom/&lt;repoId&gt;&#39;.
+     * The date and time the metadata for this software source was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     * 
+     */
+    @Export(name="timeMetadataUpdated", refs={String.class}, tree="[0]")
+    private Output<String> timeMetadataUpdated;
+
+    /**
+     * @return The date and time the metadata for this software source was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     * 
+     */
+    public Output<String> timeMetadataUpdated() {
+        return this.timeMetadataUpdated;
+    }
+    /**
+     * (Updatable) URL for the third-party software source.
      * 
      */
     @Export(name="url", refs={String.class}, tree="[0]")
     private Output<String> url;
 
     /**
-     * @return URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is &#39;custom/&lt;repoId&gt;&#39;.
+     * @return (Updatable) URL for the third-party software source.
      * 
      */
     public Output<String> url() {

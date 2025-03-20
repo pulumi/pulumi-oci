@@ -142,14 +142,14 @@ public class Profile extends com.pulumi.resources.CustomResource {
         return this.description;
     }
     /**
-     * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * @return (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
      * 
      */
     public Output<String> displayName() {
@@ -268,14 +268,14 @@ public class Profile extends com.pulumi.resources.CustomResource {
         return this.managedInstanceGroups;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+     * description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is required when creating a profile for non-OCI instances.
      * 
      */
     @Export(name="managementStationId", refs={String.class}, tree="[0]")
     private Output<String> managementStationId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+     * @return description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is required when creating a profile for non-OCI instances.
      * 
      */
     public Output<String> managementStationId() {
@@ -308,6 +308,20 @@ public class Profile extends com.pulumi.resources.CustomResource {
      */
     public Output<String> profileType() {
         return this.profileType;
+    }
+    /**
+     * The version of the profile. The version is automatically incremented each time the profiled is edited.
+     * 
+     */
+    @Export(name="profileVersion", refs={String.class}, tree="[0]")
+    private Output<String> profileVersion;
+
+    /**
+     * @return The version of the profile. The version is automatically incremented each time the profiled is edited.
+     * 
+     */
+    public Output<String> profileVersion() {
+        return this.profileVersion;
     }
     /**
      * The type of instance to register.
@@ -392,6 +406,20 @@ public class Profile extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
+    }
+    /**
+     * The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     * 
+     */
+    @Export(name="timeModified", refs={String.class}, tree="[0]")
+    private Output<String> timeModified;
+
+    /**
+     * @return The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     * 
+     */
+    public Output<String> timeModified() {
+        return this.timeModified;
     }
     /**
      * The vendor of the operating system for the instance.

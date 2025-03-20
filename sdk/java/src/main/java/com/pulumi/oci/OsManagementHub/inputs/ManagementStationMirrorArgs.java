@@ -6,6 +6,7 @@ package com.pulumi.oci.OsManagementHub.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -29,6 +30,21 @@ public final class ManagementStationMirrorArgs extends com.pulumi.resources.Reso
      */
     public Output<String> directory() {
         return this.directory;
+    }
+
+    /**
+     * (Updatable) When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
+     * 
+     */
+    @Import(name="isSslverifyEnabled")
+    private @Nullable Output<Boolean> isSslverifyEnabled;
+
+    /**
+     * @return (Updatable) When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
+     * 
+     */
+    public Optional<Output<Boolean>> isSslverifyEnabled() {
+        return Optional.ofNullable(this.isSslverifyEnabled);
     }
 
     /**
@@ -80,6 +96,7 @@ public final class ManagementStationMirrorArgs extends com.pulumi.resources.Reso
 
     private ManagementStationMirrorArgs(ManagementStationMirrorArgs $) {
         this.directory = $.directory;
+        this.isSslverifyEnabled = $.isSslverifyEnabled;
         this.port = $.port;
         this.sslcert = $.sslcert;
         this.sslport = $.sslport;
@@ -122,6 +139,27 @@ public final class ManagementStationMirrorArgs extends com.pulumi.resources.Reso
          */
         public Builder directory(String directory) {
             return directory(Output.of(directory));
+        }
+
+        /**
+         * @param isSslverifyEnabled (Updatable) When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isSslverifyEnabled(@Nullable Output<Boolean> isSslverifyEnabled) {
+            $.isSslverifyEnabled = isSslverifyEnabled;
+            return this;
+        }
+
+        /**
+         * @param isSslverifyEnabled (Updatable) When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isSslverifyEnabled(Boolean isSslverifyEnabled) {
+            return isSslverifyEnabled(Output.of(isSslverifyEnabled));
         }
 
         /**

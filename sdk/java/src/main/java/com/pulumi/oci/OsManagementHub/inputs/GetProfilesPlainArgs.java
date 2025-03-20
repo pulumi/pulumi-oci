@@ -85,14 +85,14 @@ public final class GetProfilesPlainArgs extends com.pulumi.resources.InvokeArgs 
     }
 
     /**
-     * A boolean variable that is used to list only the default profile resources.
+     * A filter to return only default profiles.
      * 
      */
     @Import(name="isDefaultProfile")
     private @Nullable Boolean isDefaultProfile;
 
     /**
-     * @return A boolean variable that is used to list only the default profile resources.
+     * @return A filter to return only default profiles.
      * 
      */
     public Optional<Boolean> isDefaultProfile() {
@@ -112,6 +112,36 @@ public final class GetProfilesPlainArgs extends com.pulumi.resources.InvokeArgs 
      */
     public Optional<Boolean> isServiceProvidedProfile() {
         return Optional.ofNullable(this.isServiceProvidedProfile);
+    }
+
+    /**
+     * A filter to return resources that aren&#39;t associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    @Import(name="managementStationNotEqualTos")
+    private @Nullable List<String> managementStationNotEqualTos;
+
+    /**
+     * @return A filter to return resources that aren&#39;t associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    public Optional<List<String>> managementStationNotEqualTos() {
+        return Optional.ofNullable(this.managementStationNotEqualTos);
+    }
+
+    /**
+     * A filter to return resources that are associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    @Import(name="managementStations")
+    private @Nullable List<String> managementStations;
+
+    /**
+     * @return A filter to return resources that are associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    public Optional<List<String>> managementStations() {
+        return Optional.ofNullable(this.managementStations);
     }
 
     /**
@@ -157,6 +187,21 @@ public final class GetProfilesPlainArgs extends com.pulumi.resources.InvokeArgs 
      */
     public Optional<List<String>> profileTypes() {
         return Optional.ofNullable(this.profileTypes);
+    }
+
+    /**
+     * The version of the registration profile.
+     * 
+     */
+    @Import(name="profileVersion")
+    private @Nullable String profileVersion;
+
+    /**
+     * @return The version of the registration profile.
+     * 
+     */
+    public Optional<String> profileVersion() {
+        return Optional.ofNullable(this.profileVersion);
     }
 
     /**
@@ -214,9 +259,12 @@ public final class GetProfilesPlainArgs extends com.pulumi.resources.InvokeArgs 
         this.filters = $.filters;
         this.isDefaultProfile = $.isDefaultProfile;
         this.isServiceProvidedProfile = $.isServiceProvidedProfile;
+        this.managementStationNotEqualTos = $.managementStationNotEqualTos;
+        this.managementStations = $.managementStations;
         this.osFamily = $.osFamily;
         this.profileId = $.profileId;
         this.profileTypes = $.profileTypes;
+        this.profileVersion = $.profileVersion;
         this.registrationTypes = $.registrationTypes;
         this.state = $.state;
         this.vendorName = $.vendorName;
@@ -304,7 +352,7 @@ public final class GetProfilesPlainArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param isDefaultProfile A boolean variable that is used to list only the default profile resources.
+         * @param isDefaultProfile A filter to return only default profiles.
          * 
          * @return builder
          * 
@@ -323,6 +371,48 @@ public final class GetProfilesPlainArgs extends com.pulumi.resources.InvokeArgs 
         public Builder isServiceProvidedProfile(@Nullable Boolean isServiceProvidedProfile) {
             $.isServiceProvidedProfile = isServiceProvidedProfile;
             return this;
+        }
+
+        /**
+         * @param managementStationNotEqualTos A filter to return resources that aren&#39;t associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managementStationNotEqualTos(@Nullable List<String> managementStationNotEqualTos) {
+            $.managementStationNotEqualTos = managementStationNotEqualTos;
+            return this;
+        }
+
+        /**
+         * @param managementStationNotEqualTos A filter to return resources that aren&#39;t associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managementStationNotEqualTos(String... managementStationNotEqualTos) {
+            return managementStationNotEqualTos(List.of(managementStationNotEqualTos));
+        }
+
+        /**
+         * @param managementStations A filter to return resources that are associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managementStations(@Nullable List<String> managementStations) {
+            $.managementStations = managementStations;
+            return this;
+        }
+
+        /**
+         * @param managementStations A filter to return resources that are associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managementStations(String... managementStations) {
+            return managementStations(List.of(managementStations));
         }
 
         /**
@@ -366,6 +456,17 @@ public final class GetProfilesPlainArgs extends com.pulumi.resources.InvokeArgs 
          */
         public Builder profileTypes(String... profileTypes) {
             return profileTypes(List.of(profileTypes));
+        }
+
+        /**
+         * @param profileVersion The version of the registration profile.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder profileVersion(@Nullable String profileVersion) {
+            $.profileVersion = profileVersion;
+            return this;
         }
 
         /**

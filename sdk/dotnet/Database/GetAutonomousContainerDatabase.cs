@@ -127,6 +127,9 @@ namespace Pulumi.Oci.Database
         /// A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetailResult> AssociatedBackupConfigurationDetails;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        /// </summary>
         public readonly string AutonomousContainerDatabaseId;
         /// <summary>
         /// **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
@@ -137,7 +140,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string AutonomousVmClusterId;
         /// <summary>
-        /// The availability domain of the Autonomous Container Database.
+        /// The domain of the Autonomous Container Database
         /// </summary>
         public readonly string AvailabilityDomain;
         /// <summary>
@@ -165,6 +168,14 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string ComputeModel;
         public readonly string DatabaseSoftwareImageId;
+        /// <summary>
+        /// Array of Dg associations.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAutonomousContainerDatabaseDataguardGroupMemberResult> DataguardGroupMembers;
+        /// <summary>
+        /// The properties that define Autonomous Container Databases Dataguard.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAutonomousContainerDatabaseDataguardResult> Dataguards;
         /// <summary>
         /// The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         /// </summary>
@@ -194,6 +205,10 @@ namespace Pulumi.Oci.Database
         /// DST Time-zone File version of the Autonomous Container Database.
         /// </summary>
         public readonly string DstFileVersion;
+        public readonly int FailoverTrigger;
+        /// <summary>
+        /// The lag time for my preference based on data loss tolerance in seconds.
+        /// </summary>
         public readonly int FastStartFailOverLagLimitInSeconds;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -207,11 +222,22 @@ namespace Pulumi.Oci.Database
         /// The infrastructure type this resource belongs to.
         /// </summary>
         public readonly string InfrastructureType;
+        /// <summary>
+        /// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        /// </summary>
         public readonly bool IsAutomaticFailoverEnabled;
+        /// <summary>
+        /// **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        /// </summary>
+        public readonly bool IsDataGuardEnabled;
         /// <summary>
         /// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         /// </summary>
         public readonly bool IsDstFileUpdateEnabled;
+        /// <summary>
+        /// Whether it is multiple standby Autonomous Dataguard
+        /// </summary>
+        public readonly bool IsMultipleStandby;
         /// <summary>
         /// Key History Entry.
         /// </summary>
@@ -280,6 +306,9 @@ namespace Pulumi.Oci.Database
         public readonly string PeerAutonomousVmClusterId;
         public readonly string PeerCloudAutonomousVmClusterId;
         public readonly string PeerDbUniqueName;
+        /// <summary>
+        /// The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        /// </summary>
         public readonly string ProtectionMode;
         /// <summary>
         /// An array of CPU values that can be used to successfully provision a single Autonomous Database.
@@ -297,6 +326,7 @@ namespace Pulumi.Oci.Database
         /// Information about the recovery appliance configuration associated with the Autonomous Container Database.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousContainerDatabaseRecoveryApplianceDetailResult> RecoveryApplianceDetails;
+        public readonly int ReinstateTrigger;
         /// <summary>
         /// The number of CPUs reserved in an Autonomous Container Database.
         /// </summary>
@@ -318,6 +348,7 @@ namespace Pulumi.Oci.Database
         /// The current state of the Autonomous Container Database.
         /// </summary>
         public readonly string State;
+        public readonly int SwitchoverTrigger;
         /// <summary>
         /// The date and time the Autonomous Container Database was created.
         /// </summary>
@@ -373,6 +404,10 @@ namespace Pulumi.Oci.Database
 
             string databaseSoftwareImageId,
 
+            ImmutableArray<Outputs.GetAutonomousContainerDatabaseDataguardGroupMemberResult> dataguardGroupMembers,
+
+            ImmutableArray<Outputs.GetAutonomousContainerDatabaseDataguardResult> dataguards,
+
             string dbName,
 
             int dbSplitThreshold,
@@ -389,6 +424,8 @@ namespace Pulumi.Oci.Database
 
             string dstFileVersion,
 
+            int failoverTrigger,
+
             int fastStartFailOverLagLimitInSeconds,
 
             ImmutableDictionary<string, string> freeformTags,
@@ -399,7 +436,11 @@ namespace Pulumi.Oci.Database
 
             bool isAutomaticFailoverEnabled,
 
+            bool isDataGuardEnabled,
+
             bool isDstFileUpdateEnabled,
+
+            bool isMultipleStandby,
 
             ImmutableArray<Outputs.GetAutonomousContainerDatabaseKeyHistoryEntryResult> keyHistoryEntries,
 
@@ -457,6 +498,8 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetAutonomousContainerDatabaseRecoveryApplianceDetailResult> recoveryApplianceDetails,
 
+            int reinstateTrigger,
+
             double reservedCpus,
 
             string role,
@@ -468,6 +511,8 @@ namespace Pulumi.Oci.Database
             int standbyMaintenanceBufferInDays,
 
             string state,
+
+            int switchoverTrigger,
 
             string timeCreated,
 
@@ -495,6 +540,8 @@ namespace Pulumi.Oci.Database
             CompartmentId = compartmentId;
             ComputeModel = computeModel;
             DatabaseSoftwareImageId = databaseSoftwareImageId;
+            DataguardGroupMembers = dataguardGroupMembers;
+            Dataguards = dataguards;
             DbName = dbName;
             DbSplitThreshold = dbSplitThreshold;
             DbUniqueName = dbUniqueName;
@@ -503,12 +550,15 @@ namespace Pulumi.Oci.Database
             DisplayName = displayName;
             DistributionAffinity = distributionAffinity;
             DstFileVersion = dstFileVersion;
+            FailoverTrigger = failoverTrigger;
             FastStartFailOverLagLimitInSeconds = fastStartFailOverLagLimitInSeconds;
             FreeformTags = freeformTags;
             Id = id;
             InfrastructureType = infrastructureType;
             IsAutomaticFailoverEnabled = isAutomaticFailoverEnabled;
+            IsDataGuardEnabled = isDataGuardEnabled;
             IsDstFileUpdateEnabled = isDstFileUpdateEnabled;
+            IsMultipleStandby = isMultipleStandby;
             KeyHistoryEntries = keyHistoryEntries;
             KeyStoreId = keyStoreId;
             KeyStoreWalletName = keyStoreWalletName;
@@ -537,12 +587,14 @@ namespace Pulumi.Oci.Database
             ProvisionedCpus = provisionedCpus;
             ReclaimableCpus = reclaimableCpus;
             RecoveryApplianceDetails = recoveryApplianceDetails;
+            ReinstateTrigger = reinstateTrigger;
             ReservedCpus = reservedCpus;
             Role = role;
             RotateKeyTrigger = rotateKeyTrigger;
             ServiceLevelAgreementType = serviceLevelAgreementType;
             StandbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
             State = state;
+            SwitchoverTrigger = switchoverTrigger;
             TimeCreated = timeCreated;
             TimeOfLastBackup = timeOfLastBackup;
             TimeSnapshotStandbyRevert = timeSnapshotStandbyRevert;

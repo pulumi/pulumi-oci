@@ -14,6 +14,10 @@ namespace Pulumi.Oci.OsManagementHub
     /// 
     /// Adds packages to a software source. This operation can only be done for custom and versioned custom software sources that are not created using filters.
     /// For a versioned custom software source, you can only add packages when the source is created. Once content is added to a versioned custom software source, it is immutable.
+    /// Packages can be of the format:
+    ///   * name (for example: git). If isLatestContentOnly is true, only the latest version of the package will be added, otherwise all versions of the package will be added.
+    ///   * name-version-release.architecture (for example: git-2.43.5-1.el8_10.x86_64)
+    ///   * name-epoch:version-release.architecture (for example: git-0:2.43.5-1.el8_10.x86_64)
     /// 
     /// ## Example Usage
     /// 
@@ -29,6 +33,7 @@ namespace Pulumi.Oci.OsManagementHub
     ///     {
     ///         Packages = softwareSourceAddPackagesManagementPackages,
     ///         SoftwareSourceId = testSoftwareSource.Id,
+    ///         IsContinueOnMissingPackages = softwareSourceAddPackagesManagementIsContinueOnMissingPackages,
     ///     });
     /// 
     /// });
@@ -46,7 +51,13 @@ namespace Pulumi.Oci.OsManagementHub
     public partial class SoftwareSourceAddPackagesManagement : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// List of packages specified by the full package name (NEVRA.rpm).
+        /// Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
+        /// </summary>
+        [Output("isContinueOnMissingPackages")]
+        public Output<bool> IsContinueOnMissingPackages { get; private set; } = null!;
+
+        /// <summary>
+        /// List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
         /// </summary>
         [Output("packages")]
         public Output<ImmutableArray<string>> Packages { get; private set; } = null!;
@@ -107,11 +118,17 @@ namespace Pulumi.Oci.OsManagementHub
 
     public sealed class SoftwareSourceAddPackagesManagementArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
+        /// </summary>
+        [Input("isContinueOnMissingPackages")]
+        public Input<bool>? IsContinueOnMissingPackages { get; set; }
+
         [Input("packages", required: true)]
         private InputList<string>? _packages;
 
         /// <summary>
-        /// List of packages specified by the full package name (NEVRA.rpm).
+        /// List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
         /// </summary>
         public InputList<string> Packages
         {
@@ -137,11 +154,17 @@ namespace Pulumi.Oci.OsManagementHub
 
     public sealed class SoftwareSourceAddPackagesManagementState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
+        /// </summary>
+        [Input("isContinueOnMissingPackages")]
+        public Input<bool>? IsContinueOnMissingPackages { get; set; }
+
         [Input("packages")]
         private InputList<string>? _packages;
 
         /// <summary>
-        /// List of packages specified by the full package name (NEVRA.rpm).
+        /// List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
         /// </summary>
         public InputList<string> Packages
         {

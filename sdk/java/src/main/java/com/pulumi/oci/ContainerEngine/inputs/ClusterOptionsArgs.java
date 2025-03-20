@@ -54,14 +54,14 @@ public final class ClusterOptionsArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * IP family to use for single stack or define the order of IP families for dual-stack
+     * IP family to use for single stack or define the order of IP families for dual-stack. Available values are [] (defaults to IPv4), [IPv4] (IPv4), [IPv4, IPv6] (IPv4 preferred dual stack).
      * 
      */
     @Import(name="ipFamilies")
     private @Nullable Output<List<String>> ipFamilies;
 
     /**
-     * @return IP family to use for single stack or define the order of IP families for dual-stack
+     * @return IP family to use for single stack or define the order of IP families for dual-stack. Available values are [] (defaults to IPv4), [IPv4] (IPv4), [IPv4, IPv6] (IPv4 preferred dual stack).
      * 
      */
     public Optional<Output<List<String>>> ipFamilies() {
@@ -233,7 +233,7 @@ public final class ClusterOptionsArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ipFamilies IP family to use for single stack or define the order of IP families for dual-stack
+         * @param ipFamilies IP family to use for single stack or define the order of IP families for dual-stack. Available values are [] (defaults to IPv4), [IPv4] (IPv4), [IPv4, IPv6] (IPv4 preferred dual stack).
          * 
          * @return builder
          * 
@@ -244,7 +244,7 @@ public final class ClusterOptionsArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ipFamilies IP family to use for single stack or define the order of IP families for dual-stack
+         * @param ipFamilies IP family to use for single stack or define the order of IP families for dual-stack. Available values are [] (defaults to IPv4), [IPv4] (IPv4), [IPv4, IPv6] (IPv4 preferred dual stack).
          * 
          * @return builder
          * 
@@ -254,7 +254,7 @@ public final class ClusterOptionsArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ipFamilies IP family to use for single stack or define the order of IP families for dual-stack
+         * @param ipFamilies IP family to use for single stack or define the order of IP families for dual-stack. Available values are [] (defaults to IPv4), [IPv4] (IPv4), [IPv4, IPv6] (IPv4 preferred dual stack).
          * 
          * @return builder
          * 

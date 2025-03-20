@@ -218,6 +218,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string PeerMaintenanceRunId;
         /// <summary>
+        /// The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+        /// </summary>
+        public readonly ImmutableArray<string> PeerMaintenanceRunIds;
+        /// <summary>
         /// The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         /// </summary>
         public readonly string State;
@@ -306,6 +310,8 @@ namespace Pulumi.Oci.Database
 
             string peerMaintenanceRunId,
 
+            ImmutableArray<string> peerMaintenanceRunIds,
+
             string state,
 
             string targetDbServerVersion,
@@ -349,6 +355,7 @@ namespace Pulumi.Oci.Database
             PatchingStartTime = patchingStartTime;
             PatchingStatus = patchingStatus;
             PeerMaintenanceRunId = peerMaintenanceRunId;
+            PeerMaintenanceRunIds = peerMaintenanceRunIds;
             State = state;
             TargetDbServerVersion = targetDbServerVersion;
             TargetResourceId = targetResourceId;

@@ -46,6 +46,7 @@ import * as utilities from "../utilities";
  *             }],
  *         },
  *         packageNames: scheduledJobOperationsPackageNames,
+ *         rebootTimeoutInMins: scheduledJobOperationsRebootTimeoutInMins,
  *         softwareSourceIds: scheduledJobOperationsSoftwareSourceIds,
  *         switchModuleStreamsDetails: {
  *             moduleName: scheduledJobOperationsSwitchModuleStreamsDetailsModuleName,
@@ -73,6 +74,7 @@ import * as utilities from "../utilities";
  *     managedInstanceIds: scheduledJobManagedInstanceIds,
  *     recurringRule: scheduledJobRecurringRule,
  *     retryIntervals: scheduledJobRetryIntervals,
+ *     workRequestId: testWorkRequest.id,
  * });
  * ```
  *
@@ -206,16 +208,20 @@ export class ScheduledJob extends pulumi.CustomResource {
     public /*out*/ readonly timeLastExecution!: pulumi.Output<string>;
     /**
      * (Updatable) The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly timeNextExecution!: pulumi.Output<string>;
     /**
      * The time this scheduled job was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    public readonly workRequestId!: pulumi.Output<string>;
     /**
      * The list of work request [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this scheduled job.
      */
@@ -257,6 +263,7 @@ export class ScheduledJob extends pulumi.CustomResource {
             resourceInputs["timeLastExecution"] = state ? state.timeLastExecution : undefined;
             resourceInputs["timeNextExecution"] = state ? state.timeNextExecution : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["workRequestId"] = state ? state.workRequestId : undefined;
             resourceInputs["workRequestIds"] = state ? state.workRequestIds : undefined;
         } else {
             const args = argsOrState as ScheduledJobArgs | undefined;
@@ -289,6 +296,7 @@ export class ScheduledJob extends pulumi.CustomResource {
             resourceInputs["retryIntervals"] = args ? args.retryIntervals : undefined;
             resourceInputs["scheduleType"] = args ? args.scheduleType : undefined;
             resourceInputs["timeNextExecution"] = args ? args.timeNextExecution : undefined;
+            resourceInputs["workRequestId"] = args ? args.workRequestId : undefined;
             resourceInputs["isRestricted"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
@@ -400,16 +408,20 @@ export interface ScheduledJobState {
     timeLastExecution?: pulumi.Input<string>;
     /**
      * (Updatable) The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     timeNextExecution?: pulumi.Input<string>;
     /**
      * The time this scheduled job was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
     timeUpdated?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    workRequestId?: pulumi.Input<string>;
     /**
      * The list of work request [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this scheduled job.
      */
@@ -494,10 +506,14 @@ export interface ScheduledJobArgs {
     scheduleType: pulumi.Input<string>;
     /**
      * (Updatable) The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     */
+    timeNextExecution: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timeNextExecution: pulumi.Input<string>;
+    workRequestId?: pulumi.Input<string>;
 }

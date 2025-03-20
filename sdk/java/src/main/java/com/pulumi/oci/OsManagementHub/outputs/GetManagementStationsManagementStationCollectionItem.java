@@ -51,6 +51,11 @@ public final class GetManagementStationsManagementStationCollectionItem {
      */
     private String id;
     /**
+     * @return A filter to return only resources whose location matches the given value.
+     * 
+     */
+    private String location;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
      * 
      */
@@ -146,6 +151,13 @@ public final class GetManagementStationsManagementStationCollectionItem {
         return this.id;
     }
     /**
+     * @return A filter to return only resources whose location matches the given value.
+     * 
+     */
+    public String location() {
+        return this.location;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
      * 
      */
@@ -222,6 +234,7 @@ public final class GetManagementStationsManagementStationCollectionItem {
         private String healthState;
         private String hostname;
         private String id;
+        private String location;
         private String managedInstanceId;
         private Integer mirrorCapacity;
         private Integer overallPercentage;
@@ -242,6 +255,7 @@ public final class GetManagementStationsManagementStationCollectionItem {
     	      this.healthState = defaults.healthState;
     	      this.hostname = defaults.hostname;
     	      this.id = defaults.id;
+    	      this.location = defaults.location;
     	      this.managedInstanceId = defaults.managedInstanceId;
     	      this.mirrorCapacity = defaults.mirrorCapacity;
     	      this.overallPercentage = defaults.overallPercentage;
@@ -315,6 +329,14 @@ public final class GetManagementStationsManagementStationCollectionItem {
               throw new MissingRequiredPropertyException("GetManagementStationsManagementStationCollectionItem", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder location(String location) {
+            if (location == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationsManagementStationCollectionItem", "location");
+            }
+            this.location = location;
             return this;
         }
         @CustomType.Setter
@@ -397,6 +419,7 @@ public final class GetManagementStationsManagementStationCollectionItem {
             _resultValue.healthState = healthState;
             _resultValue.hostname = hostname;
             _resultValue.id = id;
+            _resultValue.location = location;
             _resultValue.managedInstanceId = managedInstanceId;
             _resultValue.mirrorCapacity = mirrorCapacity;
             _resultValue.overallPercentage = overallPercentage;

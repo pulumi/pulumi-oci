@@ -65,9 +65,6 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// Deprecated. see `nodeSource`. The name of the image running on the nodes in the node pool.
         /// </summary>
         public readonly string NodeImageName;
-        /// <summary>
-        /// A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
-        /// </summary>
         public readonly ImmutableDictionary<string, string> NodeMetadata;
         /// <summary>
         /// Node Pool Cycling Details

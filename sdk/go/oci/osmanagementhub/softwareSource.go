@@ -14,7 +14,7 @@ import (
 
 // This resource provides the Software Source resource in Oracle Cloud Infrastructure Os Management Hub service.
 //
-// Creates a new versioned or custom software source.
+// Creates a new software source.
 //
 // ## Import
 //
@@ -26,7 +26,9 @@ import (
 type SoftwareSource struct {
 	pulumi.CustomResourceState
 
-	// The architecture type supported by the software source.
+	// (Updatable) Advanced repository options for the software source
+	AdvancedRepoOptions pulumi.StringOutput `pulumi:"advancedRepoOptions"`
+	// The architecture type supported by the third-party software source.
 	ArchType pulumi.StringOutput `pulumi:"archType"`
 	// Availability of the software source (for non-OCI environments).
 	Availability pulumi.StringOutput `pulumi:"availability"`
@@ -50,7 +52,7 @@ type SoftwareSource struct {
 	GpgKeyFingerprint pulumi.StringOutput `pulumi:"gpgKeyFingerprint"`
 	// ID of the GPG key for this software source.
 	GpgKeyId pulumi.StringOutput `pulumi:"gpgKeyId"`
-	// URL of the GPG key for this software source.
+	// (Updatable) URI of the GPG key for this software source.
 	GpgKeyUrl pulumi.StringOutput `pulumi:"gpgKeyUrl"`
 	// (Updatable) Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
 	IsAutoResolveDependencies pulumi.BoolOutput `pulumi:"isAutoResolveDependencies"`
@@ -58,6 +60,8 @@ type SoftwareSource struct {
 	IsAutomaticallyUpdated pulumi.BoolOutput `pulumi:"isAutomaticallyUpdated"`
 	// Indicates whether the service should create the software source from a list of packages provided by the user.
 	IsCreatedFromPackageList pulumi.BoolOutput `pulumi:"isCreatedFromPackageList"`
+	// (Updatable) Whether signature verification should be done for the software source.
+	IsGpgCheckEnabled pulumi.BoolOutput `pulumi:"isGpgCheckEnabled"`
 	// (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
 	// * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
 	// * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
@@ -67,9 +71,13 @@ type SoftwareSource struct {
 	IsLatestContentOnly pulumi.BoolOutput `pulumi:"isLatestContentOnly"`
 	// Indicates whether the software source is required for the Autonomous Linux service.
 	IsMandatoryForAutonomousLinux pulumi.BoolOutput `pulumi:"isMandatoryForAutonomousLinux"`
+	// (Updatable) Whether this software source can be synced to a management station
+	IsMirrorSyncAllowed pulumi.BoolOutput `pulumi:"isMirrorSyncAllowed"`
+	// (Updatable) Whether SSL validation needs to be turned on
+	IsSslVerifyEnabled pulumi.BoolOutput `pulumi:"isSslVerifyEnabled"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
 	OriginSoftwareSourceId pulumi.StringOutput `pulumi:"originSoftwareSourceId"`
-	// The OS family the software source belongs to.
+	// The OS family for the third-party software source.
 	OsFamily pulumi.StringOutput `pulumi:"osFamily"`
 	// Number of packages the software source contains.
 	PackageCount pulumi.StringOutput `pulumi:"packageCount"`
@@ -77,8 +85,10 @@ type SoftwareSource struct {
 	Packages pulumi.StringArrayOutput `pulumi:"packages"`
 	// The repository ID for the software source.
 	RepoId pulumi.StringOutput `pulumi:"repoId"`
-	// The size of the software source in gigabytes (GB).
+	// The size of the software source in bytes (B).
 	Size pulumi.Float64Output `pulumi:"size"`
+	// The creation type of a software source.
+	SoftwareSourceSubType pulumi.StringOutput `pulumi:"softwareSourceSubType"`
 	// (Updatable) Type of software source.
 	SoftwareSourceType pulumi.StringOutput `pulumi:"softwareSourceType"`
 	// The version to assign to this custom software source.
@@ -89,7 +99,9 @@ type SoftwareSource struct {
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the software source was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
-	// URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is 'custom/<repoId>'.
+	// The date and time the metadata for this software source was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+	TimeMetadataUpdated pulumi.StringOutput `pulumi:"timeMetadataUpdated"`
+	// (Updatable) URL for the third-party software source.
 	Url pulumi.StringOutput `pulumi:"url"`
 	// Name of the vendor providing the software source.
 	VendorName pulumi.StringOutput `pulumi:"vendorName"`
@@ -133,7 +145,9 @@ func GetSoftwareSource(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering SoftwareSource resources.
 type softwareSourceState struct {
-	// The architecture type supported by the software source.
+	// (Updatable) Advanced repository options for the software source
+	AdvancedRepoOptions *string `pulumi:"advancedRepoOptions"`
+	// The architecture type supported by the third-party software source.
 	ArchType *string `pulumi:"archType"`
 	// Availability of the software source (for non-OCI environments).
 	Availability *string `pulumi:"availability"`
@@ -157,7 +171,7 @@ type softwareSourceState struct {
 	GpgKeyFingerprint *string `pulumi:"gpgKeyFingerprint"`
 	// ID of the GPG key for this software source.
 	GpgKeyId *string `pulumi:"gpgKeyId"`
-	// URL of the GPG key for this software source.
+	// (Updatable) URI of the GPG key for this software source.
 	GpgKeyUrl *string `pulumi:"gpgKeyUrl"`
 	// (Updatable) Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
 	IsAutoResolveDependencies *bool `pulumi:"isAutoResolveDependencies"`
@@ -165,6 +179,8 @@ type softwareSourceState struct {
 	IsAutomaticallyUpdated *bool `pulumi:"isAutomaticallyUpdated"`
 	// Indicates whether the service should create the software source from a list of packages provided by the user.
 	IsCreatedFromPackageList *bool `pulumi:"isCreatedFromPackageList"`
+	// (Updatable) Whether signature verification should be done for the software source.
+	IsGpgCheckEnabled *bool `pulumi:"isGpgCheckEnabled"`
 	// (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
 	// * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
 	// * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
@@ -174,9 +190,13 @@ type softwareSourceState struct {
 	IsLatestContentOnly *bool `pulumi:"isLatestContentOnly"`
 	// Indicates whether the software source is required for the Autonomous Linux service.
 	IsMandatoryForAutonomousLinux *bool `pulumi:"isMandatoryForAutonomousLinux"`
+	// (Updatable) Whether this software source can be synced to a management station
+	IsMirrorSyncAllowed *bool `pulumi:"isMirrorSyncAllowed"`
+	// (Updatable) Whether SSL validation needs to be turned on
+	IsSslVerifyEnabled *bool `pulumi:"isSslVerifyEnabled"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
 	OriginSoftwareSourceId *string `pulumi:"originSoftwareSourceId"`
-	// The OS family the software source belongs to.
+	// The OS family for the third-party software source.
 	OsFamily *string `pulumi:"osFamily"`
 	// Number of packages the software source contains.
 	PackageCount *string `pulumi:"packageCount"`
@@ -184,8 +204,10 @@ type softwareSourceState struct {
 	Packages []string `pulumi:"packages"`
 	// The repository ID for the software source.
 	RepoId *string `pulumi:"repoId"`
-	// The size of the software source in gigabytes (GB).
+	// The size of the software source in bytes (B).
 	Size *float64 `pulumi:"size"`
+	// The creation type of a software source.
+	SoftwareSourceSubType *string `pulumi:"softwareSourceSubType"`
 	// (Updatable) Type of software source.
 	SoftwareSourceType *string `pulumi:"softwareSourceType"`
 	// The version to assign to this custom software source.
@@ -196,7 +218,9 @@ type softwareSourceState struct {
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the software source was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeCreated *string `pulumi:"timeCreated"`
-	// URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is 'custom/<repoId>'.
+	// The date and time the metadata for this software source was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+	TimeMetadataUpdated *string `pulumi:"timeMetadataUpdated"`
+	// (Updatable) URL for the third-party software source.
 	Url *string `pulumi:"url"`
 	// Name of the vendor providing the software source.
 	VendorName *string `pulumi:"vendorName"`
@@ -205,7 +229,9 @@ type softwareSourceState struct {
 }
 
 type SoftwareSourceState struct {
-	// The architecture type supported by the software source.
+	// (Updatable) Advanced repository options for the software source
+	AdvancedRepoOptions pulumi.StringPtrInput
+	// The architecture type supported by the third-party software source.
 	ArchType pulumi.StringPtrInput
 	// Availability of the software source (for non-OCI environments).
 	Availability pulumi.StringPtrInput
@@ -229,7 +255,7 @@ type SoftwareSourceState struct {
 	GpgKeyFingerprint pulumi.StringPtrInput
 	// ID of the GPG key for this software source.
 	GpgKeyId pulumi.StringPtrInput
-	// URL of the GPG key for this software source.
+	// (Updatable) URI of the GPG key for this software source.
 	GpgKeyUrl pulumi.StringPtrInput
 	// (Updatable) Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
 	IsAutoResolveDependencies pulumi.BoolPtrInput
@@ -237,6 +263,8 @@ type SoftwareSourceState struct {
 	IsAutomaticallyUpdated pulumi.BoolPtrInput
 	// Indicates whether the service should create the software source from a list of packages provided by the user.
 	IsCreatedFromPackageList pulumi.BoolPtrInput
+	// (Updatable) Whether signature verification should be done for the software source.
+	IsGpgCheckEnabled pulumi.BoolPtrInput
 	// (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
 	// * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
 	// * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
@@ -246,9 +274,13 @@ type SoftwareSourceState struct {
 	IsLatestContentOnly pulumi.BoolPtrInput
 	// Indicates whether the software source is required for the Autonomous Linux service.
 	IsMandatoryForAutonomousLinux pulumi.BoolPtrInput
+	// (Updatable) Whether this software source can be synced to a management station
+	IsMirrorSyncAllowed pulumi.BoolPtrInput
+	// (Updatable) Whether SSL validation needs to be turned on
+	IsSslVerifyEnabled pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
 	OriginSoftwareSourceId pulumi.StringPtrInput
-	// The OS family the software source belongs to.
+	// The OS family for the third-party software source.
 	OsFamily pulumi.StringPtrInput
 	// Number of packages the software source contains.
 	PackageCount pulumi.StringPtrInput
@@ -256,8 +288,10 @@ type SoftwareSourceState struct {
 	Packages pulumi.StringArrayInput
 	// The repository ID for the software source.
 	RepoId pulumi.StringPtrInput
-	// The size of the software source in gigabytes (GB).
+	// The size of the software source in bytes (B).
 	Size pulumi.Float64PtrInput
+	// The creation type of a software source.
+	SoftwareSourceSubType pulumi.StringPtrInput
 	// (Updatable) Type of software source.
 	SoftwareSourceType pulumi.StringPtrInput
 	// The version to assign to this custom software source.
@@ -268,7 +302,9 @@ type SoftwareSourceState struct {
 	SystemTags pulumi.StringMapInput
 	// The date and time the software source was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeCreated pulumi.StringPtrInput
-	// URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is 'custom/<repoId>'.
+	// The date and time the metadata for this software source was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+	TimeMetadataUpdated pulumi.StringPtrInput
+	// (Updatable) URL for the third-party software source.
 	Url pulumi.StringPtrInput
 	// Name of the vendor providing the software source.
 	VendorName pulumi.StringPtrInput
@@ -281,6 +317,10 @@ func (SoftwareSourceState) ElementType() reflect.Type {
 }
 
 type softwareSourceArgs struct {
+	// (Updatable) Advanced repository options for the software source
+	AdvancedRepoOptions *string `pulumi:"advancedRepoOptions"`
+	// The architecture type supported by the third-party software source.
+	ArchType *string `pulumi:"archType"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Provides the information used to apply filters to a vendor software source to create or update a custom software source.
@@ -293,12 +333,16 @@ type softwareSourceArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// (Updatable) URI of the GPG key for this software source.
+	GpgKeyUrl *string `pulumi:"gpgKeyUrl"`
 	// (Updatable) Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
 	IsAutoResolveDependencies *bool `pulumi:"isAutoResolveDependencies"`
 	// (Updatable) Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
 	IsAutomaticallyUpdated *bool `pulumi:"isAutomaticallyUpdated"`
 	// Indicates whether the service should create the software source from a list of packages provided by the user.
 	IsCreatedFromPackageList *bool `pulumi:"isCreatedFromPackageList"`
+	// (Updatable) Whether signature verification should be done for the software source.
+	IsGpgCheckEnabled *bool `pulumi:"isGpgCheckEnabled"`
 	// (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
 	// * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
 	// * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
@@ -306,20 +350,34 @@ type softwareSourceArgs struct {
 	// * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
 	// * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
 	IsLatestContentOnly *bool `pulumi:"isLatestContentOnly"`
+	// (Updatable) Whether this software source can be synced to a management station
+	IsMirrorSyncAllowed *bool `pulumi:"isMirrorSyncAllowed"`
+	// (Updatable) Whether SSL validation needs to be turned on
+	IsSslVerifyEnabled *bool `pulumi:"isSslVerifyEnabled"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
 	OriginSoftwareSourceId *string `pulumi:"originSoftwareSourceId"`
+	// The OS family for the third-party software source.
+	OsFamily *string `pulumi:"osFamily"`
 	// A property used for compatibility only. It doesn't provide a complete list of packages. See [AddPackagesToSoftwareSourceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/osmh/latest/datatypes/AddPackagesToSoftwareSourceDetails) for providing the list of packages used to create the software source when isCreatedFromPackageList is set to true.
 	Packages []string `pulumi:"packages"`
+	// The creation type of a software source.
+	SoftwareSourceSubType *string `pulumi:"softwareSourceSubType"`
 	// (Updatable) Type of software source.
 	SoftwareSourceType string `pulumi:"softwareSourceType"`
 	// The version to assign to this custom software source.
 	SoftwareSourceVersion *string `pulumi:"softwareSourceVersion"`
+	// (Updatable) URL for the third-party software source.
+	Url *string `pulumi:"url"`
 	// (Updatable) List of vendor software sources.
 	VendorSoftwareSources []SoftwareSourceVendorSoftwareSource `pulumi:"vendorSoftwareSources"`
 }
 
 // The set of arguments for constructing a SoftwareSource resource.
 type SoftwareSourceArgs struct {
+	// (Updatable) Advanced repository options for the software source
+	AdvancedRepoOptions pulumi.StringPtrInput
+	// The architecture type supported by the third-party software source.
+	ArchType pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Provides the information used to apply filters to a vendor software source to create or update a custom software source.
@@ -332,12 +390,16 @@ type SoftwareSourceArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// (Updatable) URI of the GPG key for this software source.
+	GpgKeyUrl pulumi.StringPtrInput
 	// (Updatable) Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
 	IsAutoResolveDependencies pulumi.BoolPtrInput
 	// (Updatable) Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
 	IsAutomaticallyUpdated pulumi.BoolPtrInput
 	// Indicates whether the service should create the software source from a list of packages provided by the user.
 	IsCreatedFromPackageList pulumi.BoolPtrInput
+	// (Updatable) Whether signature verification should be done for the software source.
+	IsGpgCheckEnabled pulumi.BoolPtrInput
 	// (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
 	// * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
 	// * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
@@ -345,14 +407,24 @@ type SoftwareSourceArgs struct {
 	// * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
 	// * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
 	IsLatestContentOnly pulumi.BoolPtrInput
+	// (Updatable) Whether this software source can be synced to a management station
+	IsMirrorSyncAllowed pulumi.BoolPtrInput
+	// (Updatable) Whether SSL validation needs to be turned on
+	IsSslVerifyEnabled pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
 	OriginSoftwareSourceId pulumi.StringPtrInput
+	// The OS family for the third-party software source.
+	OsFamily pulumi.StringPtrInput
 	// A property used for compatibility only. It doesn't provide a complete list of packages. See [AddPackagesToSoftwareSourceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/osmh/latest/datatypes/AddPackagesToSoftwareSourceDetails) for providing the list of packages used to create the software source when isCreatedFromPackageList is set to true.
 	Packages pulumi.StringArrayInput
+	// The creation type of a software source.
+	SoftwareSourceSubType pulumi.StringPtrInput
 	// (Updatable) Type of software source.
 	SoftwareSourceType pulumi.StringInput
 	// The version to assign to this custom software source.
 	SoftwareSourceVersion pulumi.StringPtrInput
+	// (Updatable) URL for the third-party software source.
+	Url pulumi.StringPtrInput
 	// (Updatable) List of vendor software sources.
 	VendorSoftwareSources SoftwareSourceVendorSoftwareSourceArrayInput
 }
@@ -444,7 +516,12 @@ func (o SoftwareSourceOutput) ToSoftwareSourceOutputWithContext(ctx context.Cont
 	return o
 }
 
-// The architecture type supported by the software source.
+// (Updatable) Advanced repository options for the software source
+func (o SoftwareSourceOutput) AdvancedRepoOptions() pulumi.StringOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.AdvancedRepoOptions }).(pulumi.StringOutput)
+}
+
+// The architecture type supported by the third-party software source.
 func (o SoftwareSourceOutput) ArchType() pulumi.StringOutput {
 	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.ArchType }).(pulumi.StringOutput)
 }
@@ -506,7 +583,7 @@ func (o SoftwareSourceOutput) GpgKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.GpgKeyId }).(pulumi.StringOutput)
 }
 
-// URL of the GPG key for this software source.
+// (Updatable) URI of the GPG key for this software source.
 func (o SoftwareSourceOutput) GpgKeyUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.GpgKeyUrl }).(pulumi.StringOutput)
 }
@@ -526,6 +603,11 @@ func (o SoftwareSourceOutput) IsCreatedFromPackageList() pulumi.BoolOutput {
 	return o.ApplyT(func(v *SoftwareSource) pulumi.BoolOutput { return v.IsCreatedFromPackageList }).(pulumi.BoolOutput)
 }
 
+// (Updatable) Whether signature verification should be done for the software source.
+func (o SoftwareSourceOutput) IsGpgCheckEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.BoolOutput { return v.IsGpgCheckEnabled }).(pulumi.BoolOutput)
+}
+
 // (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
 // * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
 // * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
@@ -541,12 +623,22 @@ func (o SoftwareSourceOutput) IsMandatoryForAutonomousLinux() pulumi.BoolOutput 
 	return o.ApplyT(func(v *SoftwareSource) pulumi.BoolOutput { return v.IsMandatoryForAutonomousLinux }).(pulumi.BoolOutput)
 }
 
+// (Updatable) Whether this software source can be synced to a management station
+func (o SoftwareSourceOutput) IsMirrorSyncAllowed() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.BoolOutput { return v.IsMirrorSyncAllowed }).(pulumi.BoolOutput)
+}
+
+// (Updatable) Whether SSL validation needs to be turned on
+func (o SoftwareSourceOutput) IsSslVerifyEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.BoolOutput { return v.IsSslVerifyEnabled }).(pulumi.BoolOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
 func (o SoftwareSourceOutput) OriginSoftwareSourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.OriginSoftwareSourceId }).(pulumi.StringOutput)
 }
 
-// The OS family the software source belongs to.
+// The OS family for the third-party software source.
 func (o SoftwareSourceOutput) OsFamily() pulumi.StringOutput {
 	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.OsFamily }).(pulumi.StringOutput)
 }
@@ -566,9 +658,14 @@ func (o SoftwareSourceOutput) RepoId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.RepoId }).(pulumi.StringOutput)
 }
 
-// The size of the software source in gigabytes (GB).
+// The size of the software source in bytes (B).
 func (o SoftwareSourceOutput) Size() pulumi.Float64Output {
 	return o.ApplyT(func(v *SoftwareSource) pulumi.Float64Output { return v.Size }).(pulumi.Float64Output)
+}
+
+// The creation type of a software source.
+func (o SoftwareSourceOutput) SoftwareSourceSubType() pulumi.StringOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.SoftwareSourceSubType }).(pulumi.StringOutput)
 }
 
 // (Updatable) Type of software source.
@@ -596,7 +693,12 @@ func (o SoftwareSourceOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is 'custom/<repoId>'.
+// The date and time the metadata for this software source was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+func (o SoftwareSourceOutput) TimeMetadataUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.TimeMetadataUpdated }).(pulumi.StringOutput)
+}
+
+// (Updatable) URL for the third-party software source.
 func (o SoftwareSourceOutput) Url() pulumi.StringOutput {
 	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.Url }).(pulumi.StringOutput)
 }

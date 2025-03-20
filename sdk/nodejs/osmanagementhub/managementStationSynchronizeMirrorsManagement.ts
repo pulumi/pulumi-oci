@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Management Station Synchronize Mirrors Management resource in Oracle Cloud Infrastructure Os Management Hub service.
  *
- * Synchronize the specified software sources mirrors on the management station.
+ * Synchronize the specified software sources mirrored on the management station.
  *
  * ## Example Usage
  *
@@ -62,7 +62,7 @@ export class ManagementStationSynchronizeMirrorsManagement extends pulumi.Custom
      */
     public readonly managementStationId!: pulumi.Output<string>;
     /**
-     * List of Software Source OCIDs to synchronize
+     * List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to synchronize.
      *
      *
      * ** IMPORTANT **
@@ -110,7 +110,7 @@ export interface ManagementStationSynchronizeMirrorsManagementState {
      */
     managementStationId?: pulumi.Input<string>;
     /**
-     * List of Software Source OCIDs to synchronize
+     * List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to synchronize.
      *
      *
      * ** IMPORTANT **
@@ -128,7 +128,7 @@ export interface ManagementStationSynchronizeMirrorsManagementArgs {
      */
     managementStationId: pulumi.Input<string>;
     /**
-     * List of Software Source OCIDs to synchronize
+     * List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to synchronize.
      *
      *
      * ** IMPORTANT **

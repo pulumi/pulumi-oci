@@ -22,14 +22,29 @@ public final class SoftwareSourceState extends com.pulumi.resources.ResourceArgs
     public static final SoftwareSourceState Empty = new SoftwareSourceState();
 
     /**
-     * The architecture type supported by the software source.
+     * (Updatable) Advanced repository options for the software source
+     * 
+     */
+    @Import(name="advancedRepoOptions")
+    private @Nullable Output<String> advancedRepoOptions;
+
+    /**
+     * @return (Updatable) Advanced repository options for the software source
+     * 
+     */
+    public Optional<Output<String>> advancedRepoOptions() {
+        return Optional.ofNullable(this.advancedRepoOptions);
+    }
+
+    /**
+     * The architecture type supported by the third-party software source.
      * 
      */
     @Import(name="archType")
     private @Nullable Output<String> archType;
 
     /**
-     * @return The architecture type supported by the software source.
+     * @return The architecture type supported by the third-party software source.
      * 
      */
     public Optional<Output<String>> archType() {
@@ -202,14 +217,14 @@ public final class SoftwareSourceState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * URL of the GPG key for this software source.
+     * (Updatable) URI of the GPG key for this software source.
      * 
      */
     @Import(name="gpgKeyUrl")
     private @Nullable Output<String> gpgKeyUrl;
 
     /**
-     * @return URL of the GPG key for this software source.
+     * @return (Updatable) URI of the GPG key for this software source.
      * 
      */
     public Optional<Output<String>> gpgKeyUrl() {
@@ -262,6 +277,21 @@ public final class SoftwareSourceState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * (Updatable) Whether signature verification should be done for the software source.
+     * 
+     */
+    @Import(name="isGpgCheckEnabled")
+    private @Nullable Output<Boolean> isGpgCheckEnabled;
+
+    /**
+     * @return (Updatable) Whether signature verification should be done for the software source.
+     * 
+     */
+    public Optional<Output<Boolean>> isGpgCheckEnabled() {
+        return Optional.ofNullable(this.isGpgCheckEnabled);
+    }
+
+    /**
      * (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
      * * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
      * * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
@@ -302,6 +332,36 @@ public final class SoftwareSourceState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * (Updatable) Whether this software source can be synced to a management station
+     * 
+     */
+    @Import(name="isMirrorSyncAllowed")
+    private @Nullable Output<Boolean> isMirrorSyncAllowed;
+
+    /**
+     * @return (Updatable) Whether this software source can be synced to a management station
+     * 
+     */
+    public Optional<Output<Boolean>> isMirrorSyncAllowed() {
+        return Optional.ofNullable(this.isMirrorSyncAllowed);
+    }
+
+    /**
+     * (Updatable) Whether SSL validation needs to be turned on
+     * 
+     */
+    @Import(name="isSslVerifyEnabled")
+    private @Nullable Output<Boolean> isSslVerifyEnabled;
+
+    /**
+     * @return (Updatable) Whether SSL validation needs to be turned on
+     * 
+     */
+    public Optional<Output<Boolean>> isSslVerifyEnabled() {
+        return Optional.ofNullable(this.isSslVerifyEnabled);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
      * 
      */
@@ -317,14 +377,14 @@ public final class SoftwareSourceState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The OS family the software source belongs to.
+     * The OS family for the third-party software source.
      * 
      */
     @Import(name="osFamily")
     private @Nullable Output<String> osFamily;
 
     /**
-     * @return The OS family the software source belongs to.
+     * @return The OS family for the third-party software source.
      * 
      */
     public Optional<Output<String>> osFamily() {
@@ -377,18 +437,33 @@ public final class SoftwareSourceState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The size of the software source in gigabytes (GB).
+     * The size of the software source in bytes (B).
      * 
      */
     @Import(name="size")
     private @Nullable Output<Double> size;
 
     /**
-     * @return The size of the software source in gigabytes (GB).
+     * @return The size of the software source in bytes (B).
      * 
      */
     public Optional<Output<Double>> size() {
         return Optional.ofNullable(this.size);
+    }
+
+    /**
+     * The creation type of a software source.
+     * 
+     */
+    @Import(name="softwareSourceSubType")
+    private @Nullable Output<String> softwareSourceSubType;
+
+    /**
+     * @return The creation type of a software source.
+     * 
+     */
+    public Optional<Output<String>> softwareSourceSubType() {
+        return Optional.ofNullable(this.softwareSourceSubType);
     }
 
     /**
@@ -467,14 +542,29 @@ public final class SoftwareSourceState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is &#39;custom/&lt;repoId&gt;&#39;.
+     * The date and time the metadata for this software source was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     * 
+     */
+    @Import(name="timeMetadataUpdated")
+    private @Nullable Output<String> timeMetadataUpdated;
+
+    /**
+     * @return The date and time the metadata for this software source was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     * 
+     */
+    public Optional<Output<String>> timeMetadataUpdated() {
+        return Optional.ofNullable(this.timeMetadataUpdated);
+    }
+
+    /**
+     * (Updatable) URL for the third-party software source.
      * 
      */
     @Import(name="url")
     private @Nullable Output<String> url;
 
     /**
-     * @return URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is &#39;custom/&lt;repoId&gt;&#39;.
+     * @return (Updatable) URL for the third-party software source.
      * 
      */
     public Optional<Output<String>> url() {
@@ -514,6 +604,7 @@ public final class SoftwareSourceState extends com.pulumi.resources.ResourceArgs
     private SoftwareSourceState() {}
 
     private SoftwareSourceState(SoftwareSourceState $) {
+        this.advancedRepoOptions = $.advancedRepoOptions;
         this.archType = $.archType;
         this.availability = $.availability;
         this.availabilityAtOci = $.availabilityAtOci;
@@ -530,19 +621,24 @@ public final class SoftwareSourceState extends com.pulumi.resources.ResourceArgs
         this.isAutoResolveDependencies = $.isAutoResolveDependencies;
         this.isAutomaticallyUpdated = $.isAutomaticallyUpdated;
         this.isCreatedFromPackageList = $.isCreatedFromPackageList;
+        this.isGpgCheckEnabled = $.isGpgCheckEnabled;
         this.isLatestContentOnly = $.isLatestContentOnly;
         this.isMandatoryForAutonomousLinux = $.isMandatoryForAutonomousLinux;
+        this.isMirrorSyncAllowed = $.isMirrorSyncAllowed;
+        this.isSslVerifyEnabled = $.isSslVerifyEnabled;
         this.originSoftwareSourceId = $.originSoftwareSourceId;
         this.osFamily = $.osFamily;
         this.packageCount = $.packageCount;
         this.packages = $.packages;
         this.repoId = $.repoId;
         this.size = $.size;
+        this.softwareSourceSubType = $.softwareSourceSubType;
         this.softwareSourceType = $.softwareSourceType;
         this.softwareSourceVersion = $.softwareSourceVersion;
         this.state = $.state;
         this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
+        this.timeMetadataUpdated = $.timeMetadataUpdated;
         this.url = $.url;
         this.vendorName = $.vendorName;
         this.vendorSoftwareSources = $.vendorSoftwareSources;
@@ -567,7 +663,28 @@ public final class SoftwareSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param archType The architecture type supported by the software source.
+         * @param advancedRepoOptions (Updatable) Advanced repository options for the software source
+         * 
+         * @return builder
+         * 
+         */
+        public Builder advancedRepoOptions(@Nullable Output<String> advancedRepoOptions) {
+            $.advancedRepoOptions = advancedRepoOptions;
+            return this;
+        }
+
+        /**
+         * @param advancedRepoOptions (Updatable) Advanced repository options for the software source
+         * 
+         * @return builder
+         * 
+         */
+        public Builder advancedRepoOptions(String advancedRepoOptions) {
+            return advancedRepoOptions(Output.of(advancedRepoOptions));
+        }
+
+        /**
+         * @param archType The architecture type supported by the third-party software source.
          * 
          * @return builder
          * 
@@ -578,7 +695,7 @@ public final class SoftwareSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param archType The architecture type supported by the software source.
+         * @param archType The architecture type supported by the third-party software source.
          * 
          * @return builder
          * 
@@ -819,7 +936,7 @@ public final class SoftwareSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param gpgKeyUrl URL of the GPG key for this software source.
+         * @param gpgKeyUrl (Updatable) URI of the GPG key for this software source.
          * 
          * @return builder
          * 
@@ -830,7 +947,7 @@ public final class SoftwareSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param gpgKeyUrl URL of the GPG key for this software source.
+         * @param gpgKeyUrl (Updatable) URI of the GPG key for this software source.
          * 
          * @return builder
          * 
@@ -903,6 +1020,27 @@ public final class SoftwareSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
+         * @param isGpgCheckEnabled (Updatable) Whether signature verification should be done for the software source.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isGpgCheckEnabled(@Nullable Output<Boolean> isGpgCheckEnabled) {
+            $.isGpgCheckEnabled = isGpgCheckEnabled;
+            return this;
+        }
+
+        /**
+         * @param isGpgCheckEnabled (Updatable) Whether signature verification should be done for the software source.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isGpgCheckEnabled(Boolean isGpgCheckEnabled) {
+            return isGpgCheckEnabled(Output.of(isGpgCheckEnabled));
+        }
+
+        /**
          * @param isLatestContentOnly (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
          * * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
          * * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
@@ -955,6 +1093,48 @@ public final class SoftwareSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
+         * @param isMirrorSyncAllowed (Updatable) Whether this software source can be synced to a management station
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMirrorSyncAllowed(@Nullable Output<Boolean> isMirrorSyncAllowed) {
+            $.isMirrorSyncAllowed = isMirrorSyncAllowed;
+            return this;
+        }
+
+        /**
+         * @param isMirrorSyncAllowed (Updatable) Whether this software source can be synced to a management station
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMirrorSyncAllowed(Boolean isMirrorSyncAllowed) {
+            return isMirrorSyncAllowed(Output.of(isMirrorSyncAllowed));
+        }
+
+        /**
+         * @param isSslVerifyEnabled (Updatable) Whether SSL validation needs to be turned on
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isSslVerifyEnabled(@Nullable Output<Boolean> isSslVerifyEnabled) {
+            $.isSslVerifyEnabled = isSslVerifyEnabled;
+            return this;
+        }
+
+        /**
+         * @param isSslVerifyEnabled (Updatable) Whether SSL validation needs to be turned on
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isSslVerifyEnabled(Boolean isSslVerifyEnabled) {
+            return isSslVerifyEnabled(Output.of(isSslVerifyEnabled));
+        }
+
+        /**
          * @param originSoftwareSourceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
          * 
          * @return builder
@@ -976,7 +1156,7 @@ public final class SoftwareSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param osFamily The OS family the software source belongs to.
+         * @param osFamily The OS family for the third-party software source.
          * 
          * @return builder
          * 
@@ -987,7 +1167,7 @@ public final class SoftwareSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param osFamily The OS family the software source belongs to.
+         * @param osFamily The OS family for the third-party software source.
          * 
          * @return builder
          * 
@@ -1070,7 +1250,7 @@ public final class SoftwareSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param size The size of the software source in gigabytes (GB).
+         * @param size The size of the software source in bytes (B).
          * 
          * @return builder
          * 
@@ -1081,13 +1261,34 @@ public final class SoftwareSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param size The size of the software source in gigabytes (GB).
+         * @param size The size of the software source in bytes (B).
          * 
          * @return builder
          * 
          */
         public Builder size(Double size) {
             return size(Output.of(size));
+        }
+
+        /**
+         * @param softwareSourceSubType The creation type of a software source.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder softwareSourceSubType(@Nullable Output<String> softwareSourceSubType) {
+            $.softwareSourceSubType = softwareSourceSubType;
+            return this;
+        }
+
+        /**
+         * @param softwareSourceSubType The creation type of a software source.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder softwareSourceSubType(String softwareSourceSubType) {
+            return softwareSourceSubType(Output.of(softwareSourceSubType));
         }
 
         /**
@@ -1196,7 +1397,28 @@ public final class SoftwareSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param url URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is &#39;custom/&lt;repoId&gt;&#39;.
+         * @param timeMetadataUpdated The date and time the metadata for this software source was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeMetadataUpdated(@Nullable Output<String> timeMetadataUpdated) {
+            $.timeMetadataUpdated = timeMetadataUpdated;
+            return this;
+        }
+
+        /**
+         * @param timeMetadataUpdated The date and time the metadata for this software source was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeMetadataUpdated(String timeMetadataUpdated) {
+            return timeMetadataUpdated(Output.of(timeMetadataUpdated));
+        }
+
+        /**
+         * @param url (Updatable) URL for the third-party software source.
          * 
          * @return builder
          * 
@@ -1207,7 +1429,7 @@ public final class SoftwareSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param url URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is &#39;custom/&lt;repoId&gt;&#39;.
+         * @param url (Updatable) URL for the third-party software source.
          * 
          * @return builder
          * 

@@ -31,18 +31,21 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := osmanagementhub.GetProfiles(ctx, &osmanagementhub.GetProfilesArgs{
-//				ArchType:                 pulumi.StringRef(profileArchType),
-//				CompartmentId:            pulumi.StringRef(compartmentId),
-//				DisplayNames:             profileDisplayName,
-//				DisplayNameContains:      pulumi.StringRef(profileDisplayNameContains),
-//				IsDefaultProfile:         pulumi.BoolRef(profileIsDefaultProfile),
-//				IsServiceProvidedProfile: pulumi.BoolRef(profileIsServiceProvidedProfile),
-//				OsFamily:                 pulumi.StringRef(profileOsFamily),
-//				ProfileId:                pulumi.StringRef(testProfile.Id),
-//				ProfileTypes:             profileProfileType,
-//				RegistrationTypes:        profileRegistrationType,
-//				State:                    pulumi.StringRef(profileState),
-//				VendorName:               pulumi.StringRef(profileVendorName),
+//				ArchType:                     pulumi.StringRef(profileArchType),
+//				CompartmentId:                pulumi.StringRef(compartmentId),
+//				DisplayNames:                 profileDisplayName,
+//				DisplayNameContains:          pulumi.StringRef(profileDisplayNameContains),
+//				IsDefaultProfile:             pulumi.BoolRef(profileIsDefaultProfile),
+//				IsServiceProvidedProfile:     pulumi.BoolRef(profileIsServiceProvidedProfile),
+//				ManagementStations:           profileManagementStation,
+//				ManagementStationNotEqualTos: profileManagementStationNotEqualTo,
+//				OsFamily:                     pulumi.StringRef(profileOsFamily),
+//				ProfileId:                    pulumi.StringRef(testProfile.Id),
+//				ProfileTypes:                 profileProfileType,
+//				ProfileVersion:               pulumi.StringRef(profileProfileVersion),
+//				RegistrationTypes:            profileRegistrationType,
+//				State:                        pulumi.StringRef(profileState),
+//				VendorName:                   pulumi.StringRef(profileVendorName),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -73,16 +76,22 @@ type GetProfilesArgs struct {
 	// A filter to return resources that match the given display names.
 	DisplayNames []string            `pulumi:"displayNames"`
 	Filters      []GetProfilesFilter `pulumi:"filters"`
-	// A boolean variable that is used to list only the default profile resources.
+	// A filter to return only default profiles.
 	IsDefaultProfile *bool `pulumi:"isDefaultProfile"`
 	// A filter to return only service-provided profiles.
 	IsServiceProvidedProfile *bool `pulumi:"isServiceProvidedProfile"`
+	// A filter to return resources that aren't associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	ManagementStationNotEqualTos []string `pulumi:"managementStationNotEqualTos"`
+	// A filter to return resources that are associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	ManagementStations []string `pulumi:"managementStations"`
 	// A filter to return only resources that match the given operating system family.
 	OsFamily *string `pulumi:"osFamily"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile. A filter used to return the specified profile.
 	ProfileId *string `pulumi:"profileId"`
 	// A filter to return registration profiles that match the given profile type.
 	ProfileTypes []string `pulumi:"profileTypes"`
+	// The version of the registration profile.
+	ProfileVersion *string `pulumi:"profileVersion"`
 	// A filter to return profiles that match the given instance type.
 	RegistrationTypes []string `pulumi:"registrationTypes"`
 	// A filter to return only registration profiles in the given state.
@@ -106,7 +115,9 @@ type GetProfilesResult struct {
 	// Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
 	IsDefaultProfile *bool `pulumi:"isDefaultProfile"`
 	// Indicates if the profile was created by the service. OS Management Hub provides a limited set of standardized profiles that can be used to register Autonomous Linux or Windows instances.
-	IsServiceProvidedProfile *bool `pulumi:"isServiceProvidedProfile"`
+	IsServiceProvidedProfile     *bool    `pulumi:"isServiceProvidedProfile"`
+	ManagementStationNotEqualTos []string `pulumi:"managementStationNotEqualTos"`
+	ManagementStations           []string `pulumi:"managementStations"`
 	// The operating system family.
 	OsFamily *string `pulumi:"osFamily"`
 	// The list of profile_collection.
@@ -114,6 +125,8 @@ type GetProfilesResult struct {
 	ProfileId          *string                        `pulumi:"profileId"`
 	// The type of profile.
 	ProfileTypes []string `pulumi:"profileTypes"`
+	// The version of the profile. The version is automatically incremented each time the profiled is edited.
+	ProfileVersion *string `pulumi:"profileVersion"`
 	// The type of instance to register.
 	RegistrationTypes []string `pulumi:"registrationTypes"`
 	// The current state of the registration profile.
@@ -142,16 +155,22 @@ type GetProfilesOutputArgs struct {
 	// A filter to return resources that match the given display names.
 	DisplayNames pulumi.StringArrayInput     `pulumi:"displayNames"`
 	Filters      GetProfilesFilterArrayInput `pulumi:"filters"`
-	// A boolean variable that is used to list only the default profile resources.
+	// A filter to return only default profiles.
 	IsDefaultProfile pulumi.BoolPtrInput `pulumi:"isDefaultProfile"`
 	// A filter to return only service-provided profiles.
 	IsServiceProvidedProfile pulumi.BoolPtrInput `pulumi:"isServiceProvidedProfile"`
+	// A filter to return resources that aren't associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	ManagementStationNotEqualTos pulumi.StringArrayInput `pulumi:"managementStationNotEqualTos"`
+	// A filter to return resources that are associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	ManagementStations pulumi.StringArrayInput `pulumi:"managementStations"`
 	// A filter to return only resources that match the given operating system family.
 	OsFamily pulumi.StringPtrInput `pulumi:"osFamily"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile. A filter used to return the specified profile.
 	ProfileId pulumi.StringPtrInput `pulumi:"profileId"`
 	// A filter to return registration profiles that match the given profile type.
 	ProfileTypes pulumi.StringArrayInput `pulumi:"profileTypes"`
+	// The version of the registration profile.
+	ProfileVersion pulumi.StringPtrInput `pulumi:"profileVersion"`
 	// A filter to return profiles that match the given instance type.
 	RegistrationTypes pulumi.StringArrayInput `pulumi:"registrationTypes"`
 	// A filter to return only registration profiles in the given state.
@@ -217,6 +236,14 @@ func (o GetProfilesResultOutput) IsServiceProvidedProfile() pulumi.BoolPtrOutput
 	return o.ApplyT(func(v GetProfilesResult) *bool { return v.IsServiceProvidedProfile }).(pulumi.BoolPtrOutput)
 }
 
+func (o GetProfilesResultOutput) ManagementStationNotEqualTos() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetProfilesResult) []string { return v.ManagementStationNotEqualTos }).(pulumi.StringArrayOutput)
+}
+
+func (o GetProfilesResultOutput) ManagementStations() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetProfilesResult) []string { return v.ManagementStations }).(pulumi.StringArrayOutput)
+}
+
 // The operating system family.
 func (o GetProfilesResultOutput) OsFamily() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetProfilesResult) *string { return v.OsFamily }).(pulumi.StringPtrOutput)
@@ -234,6 +261,11 @@ func (o GetProfilesResultOutput) ProfileId() pulumi.StringPtrOutput {
 // The type of profile.
 func (o GetProfilesResultOutput) ProfileTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetProfilesResult) []string { return v.ProfileTypes }).(pulumi.StringArrayOutput)
+}
+
+// The version of the profile. The version is automatically incremented each time the profiled is edited.
+func (o GetProfilesResultOutput) ProfileVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesResult) *string { return v.ProfileVersion }).(pulumi.StringPtrOutput)
 }
 
 // The type of instance to register.

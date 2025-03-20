@@ -58,6 +58,8 @@ type LookupDeploymentBackupArgs struct {
 
 // A collection of values returned by getDeploymentBackup.
 type LookupDeploymentBackupResult struct {
+	// Possible deployment backup source types.
+	BackupSourceType string `pulumi:"backupSourceType"`
 	// Possible Deployment backup types.
 	BackupType string `pulumi:"backupType"`
 	// Name of the bucket where the object is to be uploaded in the object storage
@@ -140,6 +142,11 @@ func (o LookupDeploymentBackupResultOutput) ToLookupDeploymentBackupResultOutput
 
 func (o LookupDeploymentBackupResultOutput) ToLookupDeploymentBackupResultOutputWithContext(ctx context.Context) LookupDeploymentBackupResultOutput {
 	return o
+}
+
+// Possible deployment backup source types.
+func (o LookupDeploymentBackupResultOutput) BackupSourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDeploymentBackupResult) string { return v.BackupSourceType }).(pulumi.StringOutput)
 }
 
 // Possible Deployment backup types.

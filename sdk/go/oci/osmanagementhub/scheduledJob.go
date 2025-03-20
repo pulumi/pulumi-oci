@@ -67,8 +67,9 @@ import (
 //								},
 //							},
 //						},
-//						PackageNames:      pulumi.Any(scheduledJobOperationsPackageNames),
-//						SoftwareSourceIds: pulumi.Any(scheduledJobOperationsSoftwareSourceIds),
+//						PackageNames:        pulumi.Any(scheduledJobOperationsPackageNames),
+//						RebootTimeoutInMins: pulumi.Any(scheduledJobOperationsRebootTimeoutInMins),
+//						SoftwareSourceIds:   pulumi.Any(scheduledJobOperationsSoftwareSourceIds),
 //						SwitchModuleStreamsDetails: &osmanagementhub.ScheduledJobOperationSwitchModuleStreamsDetailsArgs{
 //							ModuleName:       pulumi.Any(scheduledJobOperationsSwitchModuleStreamsDetailsModuleName),
 //							StreamName:       pulumi.Any(testStream.Name),
@@ -96,6 +97,7 @@ import (
 //				ManagedInstanceIds:         pulumi.Any(scheduledJobManagedInstanceIds),
 //				RecurringRule:              pulumi.Any(scheduledJobRecurringRule),
 //				RetryIntervals:             pulumi.Any(scheduledJobRetryIntervals),
+//				WorkRequestId:              pulumi.Any(testWorkRequest.Id),
 //			})
 //			if err != nil {
 //				return err
@@ -167,12 +169,14 @@ type ScheduledJob struct {
 	// The time of the last execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeLastExecution pulumi.StringOutput `pulumi:"timeLastExecution"`
 	// (Updatable) The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeNextExecution pulumi.StringOutput `pulumi:"timeNextExecution"`
 	// The time this scheduled job was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	WorkRequestId pulumi.StringOutput `pulumi:"workRequestId"`
 	// The list of work request [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this scheduled job.
 	WorkRequestIds pulumi.StringArrayOutput `pulumi:"workRequestIds"`
 }
@@ -270,12 +274,14 @@ type scheduledJobState struct {
 	// The time of the last execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeLastExecution *string `pulumi:"timeLastExecution"`
 	// (Updatable) The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeNextExecution *string `pulumi:"timeNextExecution"`
 	// The time this scheduled job was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeUpdated *string `pulumi:"timeUpdated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	WorkRequestId *string `pulumi:"workRequestId"`
 	// The list of work request [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this scheduled job.
 	WorkRequestIds []string `pulumi:"workRequestIds"`
 }
@@ -332,12 +338,14 @@ type ScheduledJobState struct {
 	// The time of the last execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeLastExecution pulumi.StringPtrInput
 	// (Updatable) The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeNextExecution pulumi.StringPtrInput
 	// The time this scheduled job was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeUpdated pulumi.StringPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	WorkRequestId pulumi.StringPtrInput
 	// The list of work request [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this scheduled job.
 	WorkRequestIds pulumi.StringArrayInput
 }
@@ -388,10 +396,12 @@ type scheduledJobArgs struct {
 	// (Updatable) The type of scheduling frequency for the scheduled job.
 	ScheduleType string `pulumi:"scheduleType"`
 	// (Updatable) The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+	TimeNextExecution string `pulumi:"timeNextExecution"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TimeNextExecution string `pulumi:"timeNextExecution"`
+	WorkRequestId *string `pulumi:"workRequestId"`
 }
 
 // The set of arguments for constructing a ScheduledJob resource.
@@ -437,10 +447,12 @@ type ScheduledJobArgs struct {
 	// (Updatable) The type of scheduling frequency for the scheduled job.
 	ScheduleType pulumi.StringInput
 	// (Updatable) The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+	TimeNextExecution pulumi.StringInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TimeNextExecution pulumi.StringInput
+	WorkRequestId pulumi.StringPtrInput
 }
 
 func (ScheduledJobArgs) ElementType() reflect.Type {
@@ -644,9 +656,6 @@ func (o ScheduledJobOutput) TimeLastExecution() pulumi.StringOutput {
 }
 
 // (Updatable) The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ScheduledJobOutput) TimeNextExecution() pulumi.StringOutput {
 	return o.ApplyT(func(v *ScheduledJob) pulumi.StringOutput { return v.TimeNextExecution }).(pulumi.StringOutput)
 }
@@ -654,6 +663,14 @@ func (o ScheduledJobOutput) TimeNextExecution() pulumi.StringOutput {
 // The time this scheduled job was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 func (o ScheduledJobOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *ScheduledJob) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ScheduledJobOutput) WorkRequestId() pulumi.StringOutput {
+	return o.ApplyT(func(v *ScheduledJob) pulumi.StringOutput { return v.WorkRequestId }).(pulumi.StringOutput)
 }
 
 // The list of work request [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this scheduled job.

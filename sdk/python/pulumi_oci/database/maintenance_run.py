@@ -173,6 +173,7 @@ class _MaintenanceRunState:
                  patching_start_time: Optional[pulumi.Input[str]] = None,
                  patching_status: Optional[pulumi.Input[str]] = None,
                  peer_maintenance_run_id: Optional[pulumi.Input[str]] = None,
+                 peer_maintenance_run_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  target_db_server_version: Optional[pulumi.Input[str]] = None,
                  target_resource_id: Optional[pulumi.Input[str]] = None,
@@ -209,6 +210,7 @@ class _MaintenanceRunState:
         :param pulumi.Input[str] patching_start_time: The time when the patching operation started.
         :param pulumi.Input[str] patching_status: The status of the patching operation.
         :param pulumi.Input[str] peer_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] peer_maintenance_run_ids: The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
         :param pulumi.Input[str] state: The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         :param pulumi.Input[str] target_db_server_version: The target software version for the database server patching operation.
         :param pulumi.Input[str] target_resource_id: The ID of the target resource for which the maintenance run should be created.
@@ -269,6 +271,8 @@ class _MaintenanceRunState:
             pulumi.set(__self__, "patching_status", patching_status)
         if peer_maintenance_run_id is not None:
             pulumi.set(__self__, "peer_maintenance_run_id", peer_maintenance_run_id)
+        if peer_maintenance_run_ids is not None:
+            pulumi.set(__self__, "peer_maintenance_run_ids", peer_maintenance_run_ids)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if target_db_server_version is not None:
@@ -567,6 +571,18 @@ class _MaintenanceRunState:
         pulumi.set(self, "peer_maintenance_run_id", value)
 
     @property
+    @pulumi.getter(name="peerMaintenanceRunIds")
+    def peer_maintenance_run_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+        """
+        return pulumi.get(self, "peer_maintenance_run_ids")
+
+    @peer_maintenance_run_ids.setter
+    def peer_maintenance_run_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "peer_maintenance_run_ids", value)
+
+    @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
@@ -840,6 +856,7 @@ class MaintenanceRun(pulumi.CustomResource):
             __props__.__dict__["patching_start_time"] = None
             __props__.__dict__["patching_status"] = None
             __props__.__dict__["peer_maintenance_run_id"] = None
+            __props__.__dict__["peer_maintenance_run_ids"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["target_db_server_version"] = None
             __props__.__dict__["target_resource_type"] = None
@@ -880,6 +897,7 @@ class MaintenanceRun(pulumi.CustomResource):
             patching_start_time: Optional[pulumi.Input[str]] = None,
             patching_status: Optional[pulumi.Input[str]] = None,
             peer_maintenance_run_id: Optional[pulumi.Input[str]] = None,
+            peer_maintenance_run_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             target_db_server_version: Optional[pulumi.Input[str]] = None,
             target_resource_id: Optional[pulumi.Input[str]] = None,
@@ -921,6 +939,7 @@ class MaintenanceRun(pulumi.CustomResource):
         :param pulumi.Input[str] patching_start_time: The time when the patching operation started.
         :param pulumi.Input[str] patching_status: The status of the patching operation.
         :param pulumi.Input[str] peer_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] peer_maintenance_run_ids: The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
         :param pulumi.Input[str] state: The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         :param pulumi.Input[str] target_db_server_version: The target software version for the database server patching operation.
         :param pulumi.Input[str] target_resource_id: The ID of the target resource for which the maintenance run should be created.
@@ -962,6 +981,7 @@ class MaintenanceRun(pulumi.CustomResource):
         __props__.__dict__["patching_start_time"] = patching_start_time
         __props__.__dict__["patching_status"] = patching_status
         __props__.__dict__["peer_maintenance_run_id"] = peer_maintenance_run_id
+        __props__.__dict__["peer_maintenance_run_ids"] = peer_maintenance_run_ids
         __props__.__dict__["state"] = state
         __props__.__dict__["target_db_server_version"] = target_db_server_version
         __props__.__dict__["target_resource_id"] = target_resource_id
@@ -1158,6 +1178,14 @@ class MaintenanceRun(pulumi.CustomResource):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
         """
         return pulumi.get(self, "peer_maintenance_run_id")
+
+    @property
+    @pulumi.getter(name="peerMaintenanceRunIds")
+    def peer_maintenance_run_ids(self) -> pulumi.Output[Sequence[str]]:
+        """
+        The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+        """
+        return pulumi.get(self, "peer_maintenance_run_ids")
 
     @property
     @pulumi.getter

@@ -16,14 +16,14 @@ public final class ClusterOptionsKubernetesNetworkConfigArgs extends com.pulumi.
     public static final ClusterOptionsKubernetesNetworkConfigArgs Empty = new ClusterOptionsKubernetesNetworkConfigArgs();
 
     /**
-     * The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
+     * The CIDR block for Kubernetes pods. Optional. For ipv4, defaults to 10.244.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0000::/96.
      * 
      */
     @Import(name="podsCidr")
     private @Nullable Output<String> podsCidr;
 
     /**
-     * @return The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
+     * @return The CIDR block for Kubernetes pods. Optional. For ipv4, defaults to 10.244.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0000::/96.
      * 
      */
     public Optional<Output<String>> podsCidr() {
@@ -31,14 +31,14 @@ public final class ClusterOptionsKubernetesNetworkConfigArgs extends com.pulumi.
     }
 
     /**
-     * The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
+     * The CIDR block for Kubernetes services. Optional. For ipv4, defaults to 10.96.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0001::/108.
      * 
      */
     @Import(name="servicesCidr")
     private @Nullable Output<String> servicesCidr;
 
     /**
-     * @return The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
+     * @return The CIDR block for Kubernetes services. Optional. For ipv4, defaults to 10.96.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0001::/108.
      * 
      */
     public Optional<Output<String>> servicesCidr() {
@@ -71,7 +71,7 @@ public final class ClusterOptionsKubernetesNetworkConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param podsCidr The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
+         * @param podsCidr The CIDR block for Kubernetes pods. Optional. For ipv4, defaults to 10.244.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0000::/96.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class ClusterOptionsKubernetesNetworkConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param podsCidr The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
+         * @param podsCidr The CIDR block for Kubernetes pods. Optional. For ipv4, defaults to 10.244.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0000::/96.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class ClusterOptionsKubernetesNetworkConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param servicesCidr The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
+         * @param servicesCidr The CIDR block for Kubernetes services. Optional. For ipv4, defaults to 10.96.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0001::/108.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class ClusterOptionsKubernetesNetworkConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param servicesCidr The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
+         * @param servicesCidr The CIDR block for Kubernetes services. Optional. For ipv4, defaults to 10.96.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0001::/108.
          * 
          * @return builder
          * 

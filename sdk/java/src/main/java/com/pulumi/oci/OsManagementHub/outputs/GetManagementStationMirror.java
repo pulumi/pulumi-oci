@@ -5,6 +5,7 @@ package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 
@@ -15,6 +16,11 @@ public final class GetManagementStationMirror {
      * 
      */
     private String directory;
+    /**
+     * @return When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
+     * 
+     */
+    private Boolean isSslverifyEnabled;
     /**
      * @return Listening port used for the proxy.
      * 
@@ -38,6 +44,13 @@ public final class GetManagementStationMirror {
      */
     public String directory() {
         return this.directory;
+    }
+    /**
+     * @return When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
+     * 
+     */
+    public Boolean isSslverifyEnabled() {
+        return this.isSslverifyEnabled;
     }
     /**
      * @return Listening port used for the proxy.
@@ -71,6 +84,7 @@ public final class GetManagementStationMirror {
     @CustomType.Builder
     public static final class Builder {
         private String directory;
+        private Boolean isSslverifyEnabled;
         private String port;
         private String sslcert;
         private String sslport;
@@ -78,6 +92,7 @@ public final class GetManagementStationMirror {
         public Builder(GetManagementStationMirror defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.directory = defaults.directory;
+    	      this.isSslverifyEnabled = defaults.isSslverifyEnabled;
     	      this.port = defaults.port;
     	      this.sslcert = defaults.sslcert;
     	      this.sslport = defaults.sslport;
@@ -89,6 +104,14 @@ public final class GetManagementStationMirror {
               throw new MissingRequiredPropertyException("GetManagementStationMirror", "directory");
             }
             this.directory = directory;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isSslverifyEnabled(Boolean isSslverifyEnabled) {
+            if (isSslverifyEnabled == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationMirror", "isSslverifyEnabled");
+            }
+            this.isSslverifyEnabled = isSslverifyEnabled;
             return this;
         }
         @CustomType.Setter
@@ -118,6 +141,7 @@ public final class GetManagementStationMirror {
         public GetManagementStationMirror build() {
             final var _resultValue = new GetManagementStationMirror();
             _resultValue.directory = directory;
+            _resultValue.isSslverifyEnabled = isSslverifyEnabled;
             _resultValue.port = port;
             _resultValue.sslcert = sslcert;
             _resultValue.sslport = sslport;

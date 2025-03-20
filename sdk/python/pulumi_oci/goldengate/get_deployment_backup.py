@@ -27,7 +27,10 @@ class GetDeploymentBackupResult:
     """
     A collection of values returned by getDeploymentBackup.
     """
-    def __init__(__self__, backup_type=None, bucket=None, compartment_id=None, defined_tags=None, deployment_backup_id=None, deployment_id=None, deployment_type=None, display_name=None, freeform_tags=None, id=None, is_automatic=None, is_lock_override=None, is_metadata_only=None, lifecycle_details=None, locks=None, namespace=None, object=None, ogg_version=None, size_in_bytes=None, state=None, system_tags=None, time_backup_finished=None, time_created=None, time_of_backup=None, time_updated=None):
+    def __init__(__self__, backup_source_type=None, backup_type=None, bucket=None, compartment_id=None, defined_tags=None, deployment_backup_id=None, deployment_id=None, deployment_type=None, display_name=None, freeform_tags=None, id=None, is_automatic=None, is_lock_override=None, is_metadata_only=None, lifecycle_details=None, locks=None, namespace=None, object=None, ogg_version=None, size_in_bytes=None, state=None, system_tags=None, time_backup_finished=None, time_created=None, time_of_backup=None, time_updated=None):
+        if backup_source_type and not isinstance(backup_source_type, str):
+            raise TypeError("Expected argument 'backup_source_type' to be a str")
+        pulumi.set(__self__, "backup_source_type", backup_source_type)
         if backup_type and not isinstance(backup_type, str):
             raise TypeError("Expected argument 'backup_type' to be a str")
         pulumi.set(__self__, "backup_type", backup_type)
@@ -103,6 +106,14 @@ class GetDeploymentBackupResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="backupSourceType")
+    def backup_source_type(self) -> str:
+        """
+        Possible deployment backup source types.
+        """
+        return pulumi.get(self, "backup_source_type")
 
     @property
     @pulumi.getter(name="backupType")
@@ -305,6 +316,7 @@ class AwaitableGetDeploymentBackupResult(GetDeploymentBackupResult):
         if False:
             yield self
         return GetDeploymentBackupResult(
+            backup_source_type=self.backup_source_type,
             backup_type=self.backup_type,
             bucket=self.bucket,
             compartment_id=self.compartment_id,
@@ -357,6 +369,7 @@ def get_deployment_backup(deployment_backup_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:GoldenGate/getDeploymentBackup:getDeploymentBackup', __args__, opts=opts, typ=GetDeploymentBackupResult).value
 
     return AwaitableGetDeploymentBackupResult(
+        backup_source_type=pulumi.get(__ret__, 'backup_source_type'),
         backup_type=pulumi.get(__ret__, 'backup_type'),
         bucket=pulumi.get(__ret__, 'bucket'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
@@ -406,6 +419,7 @@ def get_deployment_backup_output(deployment_backup_id: Optional[pulumi.Input[str
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:GoldenGate/getDeploymentBackup:getDeploymentBackup', __args__, opts=opts, typ=GetDeploymentBackupResult)
     return __ret__.apply(lambda __response__: GetDeploymentBackupResult(
+        backup_source_type=pulumi.get(__response__, 'backup_source_type'),
         backup_type=pulumi.get(__response__, 'backup_type'),
         bucket=pulumi.get(__response__, 'bucket'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),

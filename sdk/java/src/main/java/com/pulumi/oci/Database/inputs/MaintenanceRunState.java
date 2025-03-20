@@ -369,6 +369,21 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+     * 
+     */
+    @Import(name="peerMaintenanceRunIds")
+    private @Nullable Output<List<String>> peerMaintenanceRunIds;
+
+    /**
+     * @return The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+     * 
+     */
+    public Optional<Output<List<String>>> peerMaintenanceRunIds() {
+        return Optional.ofNullable(this.peerMaintenanceRunIds);
+    }
+
+    /**
      * The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      * 
      */
@@ -535,6 +550,7 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
         this.patchingStartTime = $.patchingStartTime;
         this.patchingStatus = $.patchingStatus;
         this.peerMaintenanceRunId = $.peerMaintenanceRunId;
+        this.peerMaintenanceRunIds = $.peerMaintenanceRunIds;
         this.state = $.state;
         this.targetDbServerVersion = $.targetDbServerVersion;
         this.targetResourceId = $.targetResourceId;
@@ -1059,6 +1075,37 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
          */
         public Builder peerMaintenanceRunId(String peerMaintenanceRunId) {
             return peerMaintenanceRunId(Output.of(peerMaintenanceRunId));
+        }
+
+        /**
+         * @param peerMaintenanceRunIds The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerMaintenanceRunIds(@Nullable Output<List<String>> peerMaintenanceRunIds) {
+            $.peerMaintenanceRunIds = peerMaintenanceRunIds;
+            return this;
+        }
+
+        /**
+         * @param peerMaintenanceRunIds The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerMaintenanceRunIds(List<String> peerMaintenanceRunIds) {
+            return peerMaintenanceRunIds(Output.of(peerMaintenanceRunIds));
+        }
+
+        /**
+         * @param peerMaintenanceRunIds The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerMaintenanceRunIds(String... peerMaintenanceRunIds) {
+            return peerMaintenanceRunIds(List.of(peerMaintenanceRunIds));
         }
 
         /**

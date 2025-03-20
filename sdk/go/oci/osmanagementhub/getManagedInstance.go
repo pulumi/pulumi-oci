@@ -58,6 +58,8 @@ type LookupManagedInstanceArgs struct {
 
 // A collection of values returned by getManagedInstance.
 type LookupManagedInstanceResult struct {
+	// The version of osmh-agent running on the managed instance
+	AgentVersion string `pulumi:"agentVersion"`
 	// The CPU architecture type of the managed instance.
 	Architecture string `pulumi:"architecture"`
 	// Settings for the Autonomous Linux service.
@@ -111,9 +113,11 @@ type LookupManagedInstanceResult struct {
 	PrimaryManagementStationId string `pulumi:"primaryManagementStationId"`
 	// The profile that was used to register this instance with the service.
 	Profile string `pulumi:"profile"`
+	// The version of the profile that was used to register this instance with the service.
+	ProfileVersion string `pulumi:"profileVersion"`
 	// Number of scheduled jobs associated with this instance.
 	ScheduledJobCount int `pulumi:"scheduledJobCount"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary managment station.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station.
 	SecondaryManagementStationId string `pulumi:"secondaryManagementStationId"`
 	// Number of security type updates available for installation.
 	SecurityUpdatesAvailable int `pulumi:"securityUpdatesAvailable"`
@@ -169,6 +173,11 @@ func (o LookupManagedInstanceResultOutput) ToLookupManagedInstanceResultOutput()
 
 func (o LookupManagedInstanceResultOutput) ToLookupManagedInstanceResultOutputWithContext(ctx context.Context) LookupManagedInstanceResultOutput {
 	return o
+}
+
+// The version of osmh-agent running on the managed instance
+func (o LookupManagedInstanceResultOutput) AgentVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupManagedInstanceResult) string { return v.AgentVersion }).(pulumi.StringOutput)
 }
 
 // The CPU architecture type of the managed instance.
@@ -309,12 +318,17 @@ func (o LookupManagedInstanceResultOutput) Profile() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagedInstanceResult) string { return v.Profile }).(pulumi.StringOutput)
 }
 
+// The version of the profile that was used to register this instance with the service.
+func (o LookupManagedInstanceResultOutput) ProfileVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupManagedInstanceResult) string { return v.ProfileVersion }).(pulumi.StringOutput)
+}
+
 // Number of scheduled jobs associated with this instance.
 func (o LookupManagedInstanceResultOutput) ScheduledJobCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupManagedInstanceResult) int { return v.ScheduledJobCount }).(pulumi.IntOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary managment station.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station.
 func (o LookupManagedInstanceResultOutput) SecondaryManagementStationId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagedInstanceResult) string { return v.SecondaryManagementStationId }).(pulumi.StringOutput)
 }

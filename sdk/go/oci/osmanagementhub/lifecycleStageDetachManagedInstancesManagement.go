@@ -16,39 +16,6 @@ import (
 //
 // Detaches (removes) a managed instance from a lifecycle stage.
 //
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/osmanagementhub"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := osmanagementhub.NewLifecycleStageDetachManagedInstancesManagement(ctx, "test_lifecycle_stage_detach_managed_instances_management", &osmanagementhub.LifecycleStageDetachManagedInstancesManagementArgs{
-//				LifecycleStageId: pulumi.Any(testLifecycleStage.Id),
-//				ManagedInstanceDetails: &osmanagementhub.LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs{
-//					ManagedInstances: pulumi.Any(lifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsManagedInstances),
-//					WorkRequestDetails: &osmanagementhub.LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgs{
-//						Description: pulumi.Any(lifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsDescription),
-//						DisplayName: pulumi.Any(lifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsDisplayName),
-//					},
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // ## Import
 //
 // LifecycleStageDetachManagedInstancesManagement can be imported using the `id`, e.g.
@@ -74,6 +41,9 @@ func NewLifecycleStageDetachManagedInstancesManagement(ctx *pulumi.Context,
 
 	if args.LifecycleStageId == nil {
 		return nil, errors.New("invalid value for required argument 'LifecycleStageId'")
+	}
+	if args.ManagedInstanceDetails == nil {
+		return nil, errors.New("invalid value for required argument 'ManagedInstanceDetails'")
 	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource LifecycleStageDetachManagedInstancesManagement
@@ -119,7 +89,7 @@ type lifecycleStageDetachManagedInstancesManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
 	LifecycleStageId string `pulumi:"lifecycleStageId"`
 	// The details about the managed instances.
-	ManagedInstanceDetails *LifecycleStageDetachManagedInstancesManagementManagedInstanceDetails `pulumi:"managedInstanceDetails"`
+	ManagedInstanceDetails LifecycleStageDetachManagedInstancesManagementManagedInstanceDetails `pulumi:"managedInstanceDetails"`
 }
 
 // The set of arguments for constructing a LifecycleStageDetachManagedInstancesManagement resource.
@@ -127,7 +97,7 @@ type LifecycleStageDetachManagedInstancesManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
 	LifecycleStageId pulumi.StringInput
 	// The details about the managed instances.
-	ManagedInstanceDetails LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsPtrInput
+	ManagedInstanceDetails LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsInput
 }
 
 func (LifecycleStageDetachManagedInstancesManagementArgs) ElementType() reflect.Type {

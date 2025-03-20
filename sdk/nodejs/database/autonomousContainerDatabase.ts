@@ -60,7 +60,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     public readonly autonomousVmClusterId!: pulumi.Output<string>;
     /**
-     * The availability domain of the Autonomous Container Database
+     * The domain of the Autonomous Container Database
      */
     public /*out*/ readonly availabilityDomain!: pulumi.Output<string>;
     /**
@@ -92,6 +92,14 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     public readonly databaseSoftwareImageId!: pulumi.Output<string>;
     /**
+     * Array of Dg associations.
+     */
+    public /*out*/ readonly dataguardGroupMembers!: pulumi.Output<outputs.Database.AutonomousContainerDatabaseDataguardGroupMember[]>;
+    /**
+     * The properties that define Autonomous Container Databases Dataguard.
+     */
+    public /*out*/ readonly dataguards!: pulumi.Output<outputs.Database.AutonomousContainerDatabaseDataguard[]>;
+    /**
      * The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
      */
     public readonly dbName!: pulumi.Output<string>;
@@ -121,7 +129,11 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly dstFileVersion!: pulumi.Output<string>;
     /**
-     * The lag time for my preference based on data loss tolerance in seconds.
+     * (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+     */
+    public readonly failoverTrigger!: pulumi.Output<number | undefined>;
+    /**
+     * (Updatable) The lag time for my preference based on data loss tolerance in seconds.
      */
     public readonly fastStartFailOverLagLimitInSeconds!: pulumi.Output<number>;
     /**
@@ -137,9 +149,17 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     public readonly isAutomaticFailoverEnabled!: pulumi.Output<boolean>;
     /**
+     * **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     */
+    public /*out*/ readonly isDataGuardEnabled!: pulumi.Output<boolean>;
+    /**
      * (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
      */
     public readonly isDstFileUpdateEnabled!: pulumi.Output<boolean>;
+    /**
+     * Whether it is multiple standby Autonomous Dataguard
+     */
+    public /*out*/ readonly isMultipleStandby!: pulumi.Output<boolean>;
     /**
      * Key History Entry.
      */
@@ -227,7 +247,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
     public readonly peerCloudAutonomousVmClusterId!: pulumi.Output<string>;
     public readonly peerDbUniqueName!: pulumi.Output<string>;
     /**
-     * The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+     * (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      */
     public readonly protectionMode!: pulumi.Output<string>;
     /**
@@ -251,6 +271,10 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly recoveryApplianceDetails!: pulumi.Output<outputs.Database.AutonomousContainerDatabaseRecoveryApplianceDetail[]>;
     /**
+     * (Updatable) An optional property when incremented triggers Reinstate. Could be set to any integer value.
+     */
+    public readonly reinstateTrigger!: pulumi.Output<number | undefined>;
+    /**
      * The number of CPUs reserved in an Autonomous Container Database.
      * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
@@ -262,6 +286,9 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
     public /*out*/ readonly role!: pulumi.Output<string>;
     /**
      * (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloudAutonomousVmClusterId` is set.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly rotateKeyTrigger!: pulumi.Output<boolean | undefined>;
     /**
@@ -269,16 +296,17 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     public readonly serviceLevelAgreementType!: pulumi.Output<string>;
     /**
-     * (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
      */
     public readonly standbyMaintenanceBufferInDays!: pulumi.Output<number>;
     /**
      * The current state of the Autonomous Container Database.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
+    /**
+     * (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
+     */
+    public readonly switchoverTrigger!: pulumi.Output<number | undefined>;
     /**
      * The date and time the Autonomous Container Database was created.
      */
@@ -296,7 +324,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly totalCpus!: pulumi.Output<number>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
      */
     public readonly vaultId!: pulumi.Output<string>;
     /**
@@ -304,7 +332,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     public readonly versionPreference!: pulumi.Output<string>;
     /**
-     * The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+     * The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
      */
     public readonly vmFailoverReservation!: pulumi.Output<number>;
 
@@ -332,6 +360,8 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["computeModel"] = state ? state.computeModel : undefined;
             resourceInputs["databaseSoftwareImageId"] = state ? state.databaseSoftwareImageId : undefined;
+            resourceInputs["dataguardGroupMembers"] = state ? state.dataguardGroupMembers : undefined;
+            resourceInputs["dataguards"] = state ? state.dataguards : undefined;
             resourceInputs["dbName"] = state ? state.dbName : undefined;
             resourceInputs["dbSplitThreshold"] = state ? state.dbSplitThreshold : undefined;
             resourceInputs["dbUniqueName"] = state ? state.dbUniqueName : undefined;
@@ -340,11 +370,14 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["distributionAffinity"] = state ? state.distributionAffinity : undefined;
             resourceInputs["dstFileVersion"] = state ? state.dstFileVersion : undefined;
+            resourceInputs["failoverTrigger"] = state ? state.failoverTrigger : undefined;
             resourceInputs["fastStartFailOverLagLimitInSeconds"] = state ? state.fastStartFailOverLagLimitInSeconds : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["infrastructureType"] = state ? state.infrastructureType : undefined;
             resourceInputs["isAutomaticFailoverEnabled"] = state ? state.isAutomaticFailoverEnabled : undefined;
+            resourceInputs["isDataGuardEnabled"] = state ? state.isDataGuardEnabled : undefined;
             resourceInputs["isDstFileUpdateEnabled"] = state ? state.isDstFileUpdateEnabled : undefined;
+            resourceInputs["isMultipleStandby"] = state ? state.isMultipleStandby : undefined;
             resourceInputs["keyHistoryEntries"] = state ? state.keyHistoryEntries : undefined;
             resourceInputs["keyStoreId"] = state ? state.keyStoreId : undefined;
             resourceInputs["keyStoreWalletName"] = state ? state.keyStoreWalletName : undefined;
@@ -373,12 +406,14 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["provisionedCpus"] = state ? state.provisionedCpus : undefined;
             resourceInputs["reclaimableCpus"] = state ? state.reclaimableCpus : undefined;
             resourceInputs["recoveryApplianceDetails"] = state ? state.recoveryApplianceDetails : undefined;
+            resourceInputs["reinstateTrigger"] = state ? state.reinstateTrigger : undefined;
             resourceInputs["reservedCpus"] = state ? state.reservedCpus : undefined;
             resourceInputs["role"] = state ? state.role : undefined;
             resourceInputs["rotateKeyTrigger"] = state ? state.rotateKeyTrigger : undefined;
             resourceInputs["serviceLevelAgreementType"] = state ? state.serviceLevelAgreementType : undefined;
             resourceInputs["standbyMaintenanceBufferInDays"] = state ? state.standbyMaintenanceBufferInDays : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["switchoverTrigger"] = state ? state.switchoverTrigger : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeOfLastBackup"] = state ? state.timeOfLastBackup : undefined;
             resourceInputs["timeSnapshotStandbyRevert"] = state ? state.timeSnapshotStandbyRevert : undefined;
@@ -407,6 +442,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["distributionAffinity"] = args ? args.distributionAffinity : undefined;
+            resourceInputs["failoverTrigger"] = args ? args.failoverTrigger : undefined;
             resourceInputs["fastStartFailOverLagLimitInSeconds"] = args ? args.fastStartFailOverLagLimitInSeconds : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["isAutomaticFailoverEnabled"] = args ? args.isAutomaticFailoverEnabled : undefined;
@@ -425,9 +461,11 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["peerCloudAutonomousVmClusterId"] = args ? args.peerCloudAutonomousVmClusterId : undefined;
             resourceInputs["peerDbUniqueName"] = args ? args.peerDbUniqueName : undefined;
             resourceInputs["protectionMode"] = args ? args.protectionMode : undefined;
+            resourceInputs["reinstateTrigger"] = args ? args.reinstateTrigger : undefined;
             resourceInputs["rotateKeyTrigger"] = args ? args.rotateKeyTrigger : undefined;
             resourceInputs["serviceLevelAgreementType"] = args ? args.serviceLevelAgreementType : undefined;
             resourceInputs["standbyMaintenanceBufferInDays"] = args ? args.standbyMaintenanceBufferInDays : undefined;
+            resourceInputs["switchoverTrigger"] = args ? args.switchoverTrigger : undefined;
             resourceInputs["vaultId"] = args ? args.vaultId : undefined;
             resourceInputs["versionPreference"] = args ? args.versionPreference : undefined;
             resourceInputs["vmFailoverReservation"] = args ? args.vmFailoverReservation : undefined;
@@ -436,8 +474,12 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["availableCpus"] = undefined /*out*/;
             resourceInputs["backupDestinationPropertiesLists"] = undefined /*out*/;
             resourceInputs["computeModel"] = undefined /*out*/;
+            resourceInputs["dataguardGroupMembers"] = undefined /*out*/;
+            resourceInputs["dataguards"] = undefined /*out*/;
             resourceInputs["dstFileVersion"] = undefined /*out*/;
             resourceInputs["infrastructureType"] = undefined /*out*/;
+            resourceInputs["isDataGuardEnabled"] = undefined /*out*/;
+            resourceInputs["isMultipleStandby"] = undefined /*out*/;
             resourceInputs["keyHistoryEntries"] = undefined /*out*/;
             resourceInputs["keyStoreWalletName"] = undefined /*out*/;
             resourceInputs["largestProvisionableAutonomousDatabaseInCpus"] = undefined /*out*/;
@@ -482,7 +524,7 @@ export interface AutonomousContainerDatabaseState {
      */
     autonomousVmClusterId?: pulumi.Input<string>;
     /**
-     * The availability domain of the Autonomous Container Database
+     * The domain of the Autonomous Container Database
      */
     availabilityDomain?: pulumi.Input<string>;
     /**
@@ -514,6 +556,14 @@ export interface AutonomousContainerDatabaseState {
      */
     databaseSoftwareImageId?: pulumi.Input<string>;
     /**
+     * Array of Dg associations.
+     */
+    dataguardGroupMembers?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseDataguardGroupMember>[]>;
+    /**
+     * The properties that define Autonomous Container Databases Dataguard.
+     */
+    dataguards?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseDataguard>[]>;
+    /**
      * The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
      */
     dbName?: pulumi.Input<string>;
@@ -543,7 +593,11 @@ export interface AutonomousContainerDatabaseState {
      */
     dstFileVersion?: pulumi.Input<string>;
     /**
-     * The lag time for my preference based on data loss tolerance in seconds.
+     * (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+     */
+    failoverTrigger?: pulumi.Input<number>;
+    /**
+     * (Updatable) The lag time for my preference based on data loss tolerance in seconds.
      */
     fastStartFailOverLagLimitInSeconds?: pulumi.Input<number>;
     /**
@@ -559,9 +613,17 @@ export interface AutonomousContainerDatabaseState {
      */
     isAutomaticFailoverEnabled?: pulumi.Input<boolean>;
     /**
+     * **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     */
+    isDataGuardEnabled?: pulumi.Input<boolean>;
+    /**
      * (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
      */
     isDstFileUpdateEnabled?: pulumi.Input<boolean>;
+    /**
+     * Whether it is multiple standby Autonomous Dataguard
+     */
+    isMultipleStandby?: pulumi.Input<boolean>;
     /**
      * Key History Entry.
      */
@@ -649,7 +711,7 @@ export interface AutonomousContainerDatabaseState {
     peerCloudAutonomousVmClusterId?: pulumi.Input<string>;
     peerDbUniqueName?: pulumi.Input<string>;
     /**
-     * The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+     * (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      */
     protectionMode?: pulumi.Input<string>;
     /**
@@ -673,6 +735,10 @@ export interface AutonomousContainerDatabaseState {
      */
     recoveryApplianceDetails?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseRecoveryApplianceDetail>[]>;
     /**
+     * (Updatable) An optional property when incremented triggers Reinstate. Could be set to any integer value.
+     */
+    reinstateTrigger?: pulumi.Input<number>;
+    /**
      * The number of CPUs reserved in an Autonomous Container Database.
      * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
@@ -684,6 +750,9 @@ export interface AutonomousContainerDatabaseState {
     role?: pulumi.Input<string>;
     /**
      * (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloudAutonomousVmClusterId` is set.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     rotateKeyTrigger?: pulumi.Input<boolean>;
     /**
@@ -691,16 +760,17 @@ export interface AutonomousContainerDatabaseState {
      */
     serviceLevelAgreementType?: pulumi.Input<string>;
     /**
-     * (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
      */
     standbyMaintenanceBufferInDays?: pulumi.Input<number>;
     /**
      * The current state of the Autonomous Container Database.
      */
     state?: pulumi.Input<string>;
+    /**
+     * (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
+     */
+    switchoverTrigger?: pulumi.Input<number>;
     /**
      * The date and time the Autonomous Container Database was created.
      */
@@ -718,7 +788,7 @@ export interface AutonomousContainerDatabaseState {
      */
     totalCpus?: pulumi.Input<number>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
      */
     vaultId?: pulumi.Input<string>;
     /**
@@ -726,7 +796,7 @@ export interface AutonomousContainerDatabaseState {
      */
     versionPreference?: pulumi.Input<string>;
     /**
-     * The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+     * The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
      */
     vmFailoverReservation?: pulumi.Input<number>;
 }
@@ -785,7 +855,11 @@ export interface AutonomousContainerDatabaseArgs {
      */
     distributionAffinity?: pulumi.Input<string>;
     /**
-     * The lag time for my preference based on data loss tolerance in seconds.
+     * (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+     */
+    failoverTrigger?: pulumi.Input<number>;
+    /**
+     * (Updatable) The lag time for my preference based on data loss tolerance in seconds.
      */
     fastStartFailOverLagLimitInSeconds?: pulumi.Input<number>;
     /**
@@ -847,11 +921,18 @@ export interface AutonomousContainerDatabaseArgs {
     peerCloudAutonomousVmClusterId?: pulumi.Input<string>;
     peerDbUniqueName?: pulumi.Input<string>;
     /**
-     * The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+     * (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      */
     protectionMode?: pulumi.Input<string>;
     /**
+     * (Updatable) An optional property when incremented triggers Reinstate. Could be set to any integer value.
+     */
+    reinstateTrigger?: pulumi.Input<number>;
+    /**
      * (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloudAutonomousVmClusterId` is set.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     rotateKeyTrigger?: pulumi.Input<boolean>;
     /**
@@ -859,14 +940,15 @@ export interface AutonomousContainerDatabaseArgs {
      */
     serviceLevelAgreementType?: pulumi.Input<string>;
     /**
-     * (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
      */
     standbyMaintenanceBufferInDays?: pulumi.Input<number>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
+     */
+    switchoverTrigger?: pulumi.Input<number>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
      */
     vaultId?: pulumi.Input<string>;
     /**
@@ -874,7 +956,7 @@ export interface AutonomousContainerDatabaseArgs {
      */
     versionPreference?: pulumi.Input<string>;
     /**
-     * The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+     * The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
      */
     vmFailoverReservation?: pulumi.Input<number>;
 }

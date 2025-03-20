@@ -7,9 +7,11 @@ import typing
 # Export this package's modules as members:
 from .application_vip import *
 from .autonomous_container_database import *
+from .autonomous_container_database_add_standby import *
 from .autonomous_container_database_dataguard_association import *
 from .autonomous_container_database_dataguard_association_operation import *
 from .autonomous_container_database_dataguard_role_change import *
+from .autonomous_container_database_snapshot_standby import *
 from .autonomous_database import *
 from .autonomous_database_backup import *
 from .autonomous_database_instance_wallet_management import *

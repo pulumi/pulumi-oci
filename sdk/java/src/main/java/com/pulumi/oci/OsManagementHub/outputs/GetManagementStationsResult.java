@@ -21,7 +21,7 @@ public final class GetManagementStationsResult {
      */
     private @Nullable String compartmentId;
     /**
-     * @return A user-friendly name for the management station.
+     * @return User-friendly name for the management station.
      * 
      */
     private @Nullable String displayName;
@@ -32,6 +32,12 @@ public final class GetManagementStationsResult {
      * 
      */
     private @Nullable String id;
+    private @Nullable List<String> locationNotEqualTos;
+    /**
+     * @return The location of the instance that is acting as the management station.
+     * 
+     */
+    private @Nullable List<String> locations;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
      * 
@@ -57,7 +63,7 @@ public final class GetManagementStationsResult {
         return Optional.ofNullable(this.compartmentId);
     }
     /**
-     * @return A user-friendly name for the management station.
+     * @return User-friendly name for the management station.
      * 
      */
     public Optional<String> displayName() {
@@ -75,6 +81,16 @@ public final class GetManagementStationsResult {
      */
     public Optional<String> id() {
         return Optional.ofNullable(this.id);
+    }
+    public List<String> locationNotEqualTos() {
+        return this.locationNotEqualTos == null ? List.of() : this.locationNotEqualTos;
+    }
+    /**
+     * @return The location of the instance that is acting as the management station.
+     * 
+     */
+    public List<String> locations() {
+        return this.locations == null ? List.of() : this.locations;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
@@ -112,6 +128,8 @@ public final class GetManagementStationsResult {
         private @Nullable String displayNameContains;
         private @Nullable List<GetManagementStationsFilter> filters;
         private @Nullable String id;
+        private @Nullable List<String> locationNotEqualTos;
+        private @Nullable List<String> locations;
         private @Nullable String managedInstanceId;
         private List<GetManagementStationsManagementStationCollection> managementStationCollections;
         private @Nullable String state;
@@ -123,6 +141,8 @@ public final class GetManagementStationsResult {
     	      this.displayNameContains = defaults.displayNameContains;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.locationNotEqualTos = defaults.locationNotEqualTos;
+    	      this.locations = defaults.locations;
     	      this.managedInstanceId = defaults.managedInstanceId;
     	      this.managementStationCollections = defaults.managementStationCollections;
     	      this.state = defaults.state;
@@ -162,6 +182,24 @@ public final class GetManagementStationsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder locationNotEqualTos(@Nullable List<String> locationNotEqualTos) {
+
+            this.locationNotEqualTos = locationNotEqualTos;
+            return this;
+        }
+        public Builder locationNotEqualTos(String... locationNotEqualTos) {
+            return locationNotEqualTos(List.of(locationNotEqualTos));
+        }
+        @CustomType.Setter
+        public Builder locations(@Nullable List<String> locations) {
+
+            this.locations = locations;
+            return this;
+        }
+        public Builder locations(String... locations) {
+            return locations(List.of(locations));
+        }
+        @CustomType.Setter
         public Builder managedInstanceId(@Nullable String managedInstanceId) {
 
             this.managedInstanceId = managedInstanceId;
@@ -191,6 +229,8 @@ public final class GetManagementStationsResult {
             _resultValue.displayNameContains = displayNameContains;
             _resultValue.filters = filters;
             _resultValue.id = id;
+            _resultValue.locationNotEqualTos = locationNotEqualTos;
+            _resultValue.locations = locations;
             _resultValue.managedInstanceId = managedInstanceId;
             _resultValue.managementStationCollections = managementStationCollections;
             _resultValue.state = state;

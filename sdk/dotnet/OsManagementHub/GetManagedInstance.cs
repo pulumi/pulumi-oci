@@ -124,6 +124,10 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetManagedInstanceResult
     {
         /// <summary>
+        /// The version of osmh-agent running on the managed instance
+        /// </summary>
+        public readonly string AgentVersion;
+        /// <summary>
         /// The CPU architecture type of the managed instance.
         /// </summary>
         public readonly string Architecture;
@@ -229,11 +233,15 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly string Profile;
         /// <summary>
+        /// The version of the profile that was used to register this instance with the service.
+        /// </summary>
+        public readonly string ProfileVersion;
+        /// <summary>
         /// Number of scheduled jobs associated with this instance.
         /// </summary>
         public readonly int ScheduledJobCount;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary managment station.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station.
         /// </summary>
         public readonly string SecondaryManagementStationId;
         /// <summary>
@@ -279,6 +287,8 @@ namespace Pulumi.Oci.OsManagementHub
 
         [OutputConstructor]
         private GetManagedInstanceResult(
+            string agentVersion,
+
             string architecture,
 
             ImmutableArray<Outputs.GetManagedInstanceAutonomousSettingResult> autonomousSettings,
@@ -333,6 +343,8 @@ namespace Pulumi.Oci.OsManagementHub
 
             string profile,
 
+            string profileVersion,
+
             int scheduledJobCount,
 
             string secondaryManagementStationId,
@@ -357,6 +369,7 @@ namespace Pulumi.Oci.OsManagementHub
 
             int workRequestCount)
         {
+            AgentVersion = agentVersion;
             Architecture = architecture;
             AutonomousSettings = autonomousSettings;
             BugUpdatesAvailable = bugUpdatesAvailable;
@@ -384,6 +397,7 @@ namespace Pulumi.Oci.OsManagementHub
             OtherUpdatesAvailable = otherUpdatesAvailable;
             PrimaryManagementStationId = primaryManagementStationId;
             Profile = profile;
+            ProfileVersion = profileVersion;
             ScheduledJobCount = scheduledJobCount;
             SecondaryManagementStationId = secondaryManagementStationId;
             SecurityUpdatesAvailable = securityUpdatesAvailable;

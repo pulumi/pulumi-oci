@@ -48,6 +48,10 @@ export class ManagedInstance extends pulumi.CustomResource {
     }
 
     /**
+     * The version of osmh-agent running on the managed instance
+     */
+    public /*out*/ readonly agentVersion!: pulumi.Output<string>;
+    /**
      * The CPU architecture type of the managed instance.
      */
     public /*out*/ readonly architecture!: pulumi.Output<string>;
@@ -152,6 +156,10 @@ export class ManagedInstance extends pulumi.CustomResource {
      */
     public /*out*/ readonly profile!: pulumi.Output<string>;
     /**
+     * The version of the profile that was used to register this instance with the service.
+     */
+    public /*out*/ readonly profileVersion!: pulumi.Output<string>;
+    /**
      * Number of scheduled jobs associated with this instance.
      */
     public /*out*/ readonly scheduledJobCount!: pulumi.Output<number>;
@@ -217,6 +225,7 @@ export class ManagedInstance extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagedInstanceState | undefined;
+            resourceInputs["agentVersion"] = state ? state.agentVersion : undefined;
             resourceInputs["architecture"] = state ? state.architecture : undefined;
             resourceInputs["autonomousSettings"] = state ? state.autonomousSettings : undefined;
             resourceInputs["bugUpdatesAvailable"] = state ? state.bugUpdatesAvailable : undefined;
@@ -243,6 +252,7 @@ export class ManagedInstance extends pulumi.CustomResource {
             resourceInputs["otherUpdatesAvailable"] = state ? state.otherUpdatesAvailable : undefined;
             resourceInputs["primaryManagementStationId"] = state ? state.primaryManagementStationId : undefined;
             resourceInputs["profile"] = state ? state.profile : undefined;
+            resourceInputs["profileVersion"] = state ? state.profileVersion : undefined;
             resourceInputs["scheduledJobCount"] = state ? state.scheduledJobCount : undefined;
             resourceInputs["secondaryManagementStationId"] = state ? state.secondaryManagementStationId : undefined;
             resourceInputs["securityUpdatesAvailable"] = state ? state.securityUpdatesAvailable : undefined;
@@ -266,6 +276,7 @@ export class ManagedInstance extends pulumi.CustomResource {
             resourceInputs["notificationTopicId"] = args ? args.notificationTopicId : undefined;
             resourceInputs["primaryManagementStationId"] = args ? args.primaryManagementStationId : undefined;
             resourceInputs["secondaryManagementStationId"] = args ? args.secondaryManagementStationId : undefined;
+            resourceInputs["agentVersion"] = undefined /*out*/;
             resourceInputs["architecture"] = undefined /*out*/;
             resourceInputs["bugUpdatesAvailable"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
@@ -287,6 +298,7 @@ export class ManagedInstance extends pulumi.CustomResource {
             resourceInputs["osVersion"] = undefined /*out*/;
             resourceInputs["otherUpdatesAvailable"] = undefined /*out*/;
             resourceInputs["profile"] = undefined /*out*/;
+            resourceInputs["profileVersion"] = undefined /*out*/;
             resourceInputs["scheduledJobCount"] = undefined /*out*/;
             resourceInputs["securityUpdatesAvailable"] = undefined /*out*/;
             resourceInputs["softwareSources"] = undefined /*out*/;
@@ -308,6 +320,10 @@ export class ManagedInstance extends pulumi.CustomResource {
  * Input properties used for looking up and filtering ManagedInstance resources.
  */
 export interface ManagedInstanceState {
+    /**
+     * The version of osmh-agent running on the managed instance
+     */
+    agentVersion?: pulumi.Input<string>;
     /**
      * The CPU architecture type of the managed instance.
      */
@@ -412,6 +428,10 @@ export interface ManagedInstanceState {
      * The profile that was used to register this instance with the service.
      */
     profile?: pulumi.Input<string>;
+    /**
+     * The version of the profile that was used to register this instance with the service.
+     */
+    profileVersion?: pulumi.Input<string>;
     /**
      * Number of scheduled jobs associated with this instance.
      */

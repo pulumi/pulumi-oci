@@ -31,7 +31,7 @@ public final class GetAutonomousContainerDatabasesResult {
      */
     private @Nullable String autonomousVmClusterId;
     /**
-     * @return The availability domain of the Autonomous Container Database.
+     * @return The domain of the Autonomous Container Database
      * 
      */
     private @Nullable String availabilityDomain;
@@ -95,7 +95,7 @@ public final class GetAutonomousContainerDatabasesResult {
         return Optional.ofNullable(this.autonomousVmClusterId);
     }
     /**
-     * @return The availability domain of the Autonomous Container Database.
+     * @return The domain of the Autonomous Container Database
      * 
      */
     public Optional<String> availabilityDomain() {

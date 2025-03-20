@@ -17,6 +17,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetManagedInstancesResult {
     private @Nullable List<String> advisoryNames;
+    /**
+     * @return The version of osmh-agent running on the managed instance
+     * 
+     */
+    private @Nullable String agentVersion;
     private @Nullable List<String> archTypes;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance.
@@ -50,6 +55,11 @@ public final class GetManagedInstancesResult {
     private @Nullable Boolean isManagementStation;
     private @Nullable Boolean isProfileAttached;
     /**
+     * @return Indicates whether a reboot is required to complete installation of updates.
+     * 
+     */
+    private @Nullable Boolean isRebootRequired;
+    /**
      * @return Id and name of a resource to simplify the display for the user.
      * 
      */
@@ -73,6 +83,8 @@ public final class GetManagedInstancesResult {
      */
     private List<GetManagedInstancesManagedInstanceCollection> managedInstanceCollections;
     private @Nullable String managedInstanceId;
+    private @Nullable List<String> managementStationNotEqualTos;
+    private @Nullable List<String> managementStations;
     /**
      * @return The operating system type of the managed instance.
      * 
@@ -94,6 +106,13 @@ public final class GetManagedInstancesResult {
     private GetManagedInstancesResult() {}
     public List<String> advisoryNames() {
         return this.advisoryNames == null ? List.of() : this.advisoryNames;
+    }
+    /**
+     * @return The version of osmh-agent running on the managed instance
+     * 
+     */
+    public Optional<String> agentVersion() {
+        return Optional.ofNullable(this.agentVersion);
     }
     public List<String> archTypes() {
         return this.archTypes == null ? List.of() : this.archTypes;
@@ -152,6 +171,13 @@ public final class GetManagedInstancesResult {
         return Optional.ofNullable(this.isProfileAttached);
     }
     /**
+     * @return Indicates whether a reboot is required to complete installation of updates.
+     * 
+     */
+    public Optional<Boolean> isRebootRequired() {
+        return Optional.ofNullable(this.isRebootRequired);
+    }
+    /**
      * @return Id and name of a resource to simplify the display for the user.
      * 
      */
@@ -191,6 +217,12 @@ public final class GetManagedInstancesResult {
     public Optional<String> managedInstanceId() {
         return Optional.ofNullable(this.managedInstanceId);
     }
+    public List<String> managementStationNotEqualTos() {
+        return this.managementStationNotEqualTos == null ? List.of() : this.managementStationNotEqualTos;
+    }
+    public List<String> managementStations() {
+        return this.managementStations == null ? List.of() : this.managementStations;
+    }
     /**
      * @return The operating system type of the managed instance.
      * 
@@ -229,6 +261,7 @@ public final class GetManagedInstancesResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> advisoryNames;
+        private @Nullable String agentVersion;
         private @Nullable List<String> archTypes;
         private @Nullable String compartmentId;
         private @Nullable String displayNameContains;
@@ -241,6 +274,7 @@ public final class GetManagedInstancesResult {
         private @Nullable Boolean isManagedByAutonomousLinux;
         private @Nullable Boolean isManagementStation;
         private @Nullable Boolean isProfileAttached;
+        private @Nullable Boolean isRebootRequired;
         private @Nullable String lifecycleEnvironment;
         private @Nullable String lifecycleEnvironmentNotEqualTo;
         private @Nullable String lifecycleStage;
@@ -249,6 +283,8 @@ public final class GetManagedInstancesResult {
         private @Nullable List<String> locations;
         private List<GetManagedInstancesManagedInstanceCollection> managedInstanceCollections;
         private @Nullable String managedInstanceId;
+        private @Nullable List<String> managementStationNotEqualTos;
+        private @Nullable List<String> managementStations;
         private @Nullable List<String> osFamilies;
         private @Nullable List<String> profileNotEqualTos;
         private @Nullable List<String> profiles;
@@ -258,6 +294,7 @@ public final class GetManagedInstancesResult {
         public Builder(GetManagedInstancesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.advisoryNames = defaults.advisoryNames;
+    	      this.agentVersion = defaults.agentVersion;
     	      this.archTypes = defaults.archTypes;
     	      this.compartmentId = defaults.compartmentId;
     	      this.displayNameContains = defaults.displayNameContains;
@@ -270,6 +307,7 @@ public final class GetManagedInstancesResult {
     	      this.isManagedByAutonomousLinux = defaults.isManagedByAutonomousLinux;
     	      this.isManagementStation = defaults.isManagementStation;
     	      this.isProfileAttached = defaults.isProfileAttached;
+    	      this.isRebootRequired = defaults.isRebootRequired;
     	      this.lifecycleEnvironment = defaults.lifecycleEnvironment;
     	      this.lifecycleEnvironmentNotEqualTo = defaults.lifecycleEnvironmentNotEqualTo;
     	      this.lifecycleStage = defaults.lifecycleStage;
@@ -278,6 +316,8 @@ public final class GetManagedInstancesResult {
     	      this.locations = defaults.locations;
     	      this.managedInstanceCollections = defaults.managedInstanceCollections;
     	      this.managedInstanceId = defaults.managedInstanceId;
+    	      this.managementStationNotEqualTos = defaults.managementStationNotEqualTos;
+    	      this.managementStations = defaults.managementStations;
     	      this.osFamilies = defaults.osFamilies;
     	      this.profileNotEqualTos = defaults.profileNotEqualTos;
     	      this.profiles = defaults.profiles;
@@ -293,6 +333,12 @@ public final class GetManagedInstancesResult {
         }
         public Builder advisoryNames(String... advisoryNames) {
             return advisoryNames(List.of(advisoryNames));
+        }
+        @CustomType.Setter
+        public Builder agentVersion(@Nullable String agentVersion) {
+
+            this.agentVersion = agentVersion;
+            return this;
         }
         @CustomType.Setter
         public Builder archTypes(@Nullable List<String> archTypes) {
@@ -378,6 +424,12 @@ public final class GetManagedInstancesResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isRebootRequired(@Nullable Boolean isRebootRequired) {
+
+            this.isRebootRequired = isRebootRequired;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleEnvironment(@Nullable String lifecycleEnvironment) {
 
             this.lifecycleEnvironment = lifecycleEnvironment;
@@ -437,6 +489,24 @@ public final class GetManagedInstancesResult {
             return this;
         }
         @CustomType.Setter
+        public Builder managementStationNotEqualTos(@Nullable List<String> managementStationNotEqualTos) {
+
+            this.managementStationNotEqualTos = managementStationNotEqualTos;
+            return this;
+        }
+        public Builder managementStationNotEqualTos(String... managementStationNotEqualTos) {
+            return managementStationNotEqualTos(List.of(managementStationNotEqualTos));
+        }
+        @CustomType.Setter
+        public Builder managementStations(@Nullable List<String> managementStations) {
+
+            this.managementStations = managementStations;
+            return this;
+        }
+        public Builder managementStations(String... managementStations) {
+            return managementStations(List.of(managementStations));
+        }
+        @CustomType.Setter
         public Builder osFamilies(@Nullable List<String> osFamilies) {
 
             this.osFamilies = osFamilies;
@@ -481,6 +551,7 @@ public final class GetManagedInstancesResult {
         public GetManagedInstancesResult build() {
             final var _resultValue = new GetManagedInstancesResult();
             _resultValue.advisoryNames = advisoryNames;
+            _resultValue.agentVersion = agentVersion;
             _resultValue.archTypes = archTypes;
             _resultValue.compartmentId = compartmentId;
             _resultValue.displayNameContains = displayNameContains;
@@ -493,6 +564,7 @@ public final class GetManagedInstancesResult {
             _resultValue.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
             _resultValue.isManagementStation = isManagementStation;
             _resultValue.isProfileAttached = isProfileAttached;
+            _resultValue.isRebootRequired = isRebootRequired;
             _resultValue.lifecycleEnvironment = lifecycleEnvironment;
             _resultValue.lifecycleEnvironmentNotEqualTo = lifecycleEnvironmentNotEqualTo;
             _resultValue.lifecycleStage = lifecycleStage;
@@ -501,6 +573,8 @@ public final class GetManagedInstancesResult {
             _resultValue.locations = locations;
             _resultValue.managedInstanceCollections = managedInstanceCollections;
             _resultValue.managedInstanceId = managedInstanceId;
+            _resultValue.managementStationNotEqualTos = managementStationNotEqualTos;
+            _resultValue.managementStations = managementStations;
             _resultValue.osFamilies = osFamilies;
             _resultValue.profileNotEqualTos = profileNotEqualTos;
             _resultValue.profiles = profiles;

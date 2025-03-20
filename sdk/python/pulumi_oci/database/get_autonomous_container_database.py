@@ -27,7 +27,7 @@ class GetAutonomousContainerDatabaseResult:
     """
     A collection of values returned by getAutonomousContainerDatabase.
     """
-    def __init__(__self__, associated_backup_configuration_details=None, autonomous_container_database_id=None, autonomous_exadata_infrastructure_id=None, autonomous_vm_cluster_id=None, availability_domain=None, available_cpus=None, backup_configs=None, backup_destination_properties_lists=None, cloud_autonomous_vm_cluster_id=None, compartment_id=None, compute_model=None, database_software_image_id=None, db_name=None, db_split_threshold=None, db_unique_name=None, db_version=None, defined_tags=None, display_name=None, distribution_affinity=None, dst_file_version=None, fast_start_fail_over_lag_limit_in_seconds=None, freeform_tags=None, id=None, infrastructure_type=None, is_automatic_failover_enabled=None, is_dst_file_update_enabled=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, key_version_id=None, kms_key_id=None, largest_provisionable_autonomous_database_in_cpus=None, last_maintenance_run_id=None, lifecycle_details=None, list_one_off_patches=None, maintenance_window_details=None, maintenance_windows=None, memory_per_oracle_compute_unit_in_gbs=None, net_services_architecture=None, next_maintenance_run_id=None, patch_id=None, patch_model=None, peer_autonomous_container_database_backup_configs=None, peer_autonomous_container_database_compartment_id=None, peer_autonomous_container_database_display_name=None, peer_autonomous_exadata_infrastructure_id=None, peer_autonomous_vm_cluster_id=None, peer_cloud_autonomous_vm_cluster_id=None, peer_db_unique_name=None, protection_mode=None, provisionable_cpuses=None, provisioned_cpus=None, reclaimable_cpus=None, recovery_appliance_details=None, reserved_cpus=None, role=None, rotate_key_trigger=None, service_level_agreement_type=None, standby_maintenance_buffer_in_days=None, state=None, time_created=None, time_of_last_backup=None, time_snapshot_standby_revert=None, total_cpus=None, vault_id=None, version_preference=None, vm_failover_reservation=None):
+    def __init__(__self__, associated_backup_configuration_details=None, autonomous_container_database_id=None, autonomous_exadata_infrastructure_id=None, autonomous_vm_cluster_id=None, availability_domain=None, available_cpus=None, backup_configs=None, backup_destination_properties_lists=None, cloud_autonomous_vm_cluster_id=None, compartment_id=None, compute_model=None, database_software_image_id=None, dataguard_group_members=None, dataguards=None, db_name=None, db_split_threshold=None, db_unique_name=None, db_version=None, defined_tags=None, display_name=None, distribution_affinity=None, dst_file_version=None, failover_trigger=None, fast_start_fail_over_lag_limit_in_seconds=None, freeform_tags=None, id=None, infrastructure_type=None, is_automatic_failover_enabled=None, is_data_guard_enabled=None, is_dst_file_update_enabled=None, is_multiple_standby=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, key_version_id=None, kms_key_id=None, largest_provisionable_autonomous_database_in_cpus=None, last_maintenance_run_id=None, lifecycle_details=None, list_one_off_patches=None, maintenance_window_details=None, maintenance_windows=None, memory_per_oracle_compute_unit_in_gbs=None, net_services_architecture=None, next_maintenance_run_id=None, patch_id=None, patch_model=None, peer_autonomous_container_database_backup_configs=None, peer_autonomous_container_database_compartment_id=None, peer_autonomous_container_database_display_name=None, peer_autonomous_exadata_infrastructure_id=None, peer_autonomous_vm_cluster_id=None, peer_cloud_autonomous_vm_cluster_id=None, peer_db_unique_name=None, protection_mode=None, provisionable_cpuses=None, provisioned_cpus=None, reclaimable_cpus=None, recovery_appliance_details=None, reinstate_trigger=None, reserved_cpus=None, role=None, rotate_key_trigger=None, service_level_agreement_type=None, standby_maintenance_buffer_in_days=None, state=None, switchover_trigger=None, time_created=None, time_of_last_backup=None, time_snapshot_standby_revert=None, total_cpus=None, vault_id=None, version_preference=None, vm_failover_reservation=None):
         if associated_backup_configuration_details and not isinstance(associated_backup_configuration_details, list):
             raise TypeError("Expected argument 'associated_backup_configuration_details' to be a list")
         pulumi.set(__self__, "associated_backup_configuration_details", associated_backup_configuration_details)
@@ -64,6 +64,12 @@ class GetAutonomousContainerDatabaseResult:
         if database_software_image_id and not isinstance(database_software_image_id, str):
             raise TypeError("Expected argument 'database_software_image_id' to be a str")
         pulumi.set(__self__, "database_software_image_id", database_software_image_id)
+        if dataguard_group_members and not isinstance(dataguard_group_members, list):
+            raise TypeError("Expected argument 'dataguard_group_members' to be a list")
+        pulumi.set(__self__, "dataguard_group_members", dataguard_group_members)
+        if dataguards and not isinstance(dataguards, list):
+            raise TypeError("Expected argument 'dataguards' to be a list")
+        pulumi.set(__self__, "dataguards", dataguards)
         if db_name and not isinstance(db_name, str):
             raise TypeError("Expected argument 'db_name' to be a str")
         pulumi.set(__self__, "db_name", db_name)
@@ -88,6 +94,9 @@ class GetAutonomousContainerDatabaseResult:
         if dst_file_version and not isinstance(dst_file_version, str):
             raise TypeError("Expected argument 'dst_file_version' to be a str")
         pulumi.set(__self__, "dst_file_version", dst_file_version)
+        if failover_trigger and not isinstance(failover_trigger, int):
+            raise TypeError("Expected argument 'failover_trigger' to be a int")
+        pulumi.set(__self__, "failover_trigger", failover_trigger)
         if fast_start_fail_over_lag_limit_in_seconds and not isinstance(fast_start_fail_over_lag_limit_in_seconds, int):
             raise TypeError("Expected argument 'fast_start_fail_over_lag_limit_in_seconds' to be a int")
         pulumi.set(__self__, "fast_start_fail_over_lag_limit_in_seconds", fast_start_fail_over_lag_limit_in_seconds)
@@ -103,9 +112,15 @@ class GetAutonomousContainerDatabaseResult:
         if is_automatic_failover_enabled and not isinstance(is_automatic_failover_enabled, bool):
             raise TypeError("Expected argument 'is_automatic_failover_enabled' to be a bool")
         pulumi.set(__self__, "is_automatic_failover_enabled", is_automatic_failover_enabled)
+        if is_data_guard_enabled and not isinstance(is_data_guard_enabled, bool):
+            raise TypeError("Expected argument 'is_data_guard_enabled' to be a bool")
+        pulumi.set(__self__, "is_data_guard_enabled", is_data_guard_enabled)
         if is_dst_file_update_enabled and not isinstance(is_dst_file_update_enabled, bool):
             raise TypeError("Expected argument 'is_dst_file_update_enabled' to be a bool")
         pulumi.set(__self__, "is_dst_file_update_enabled", is_dst_file_update_enabled)
+        if is_multiple_standby and not isinstance(is_multiple_standby, bool):
+            raise TypeError("Expected argument 'is_multiple_standby' to be a bool")
+        pulumi.set(__self__, "is_multiple_standby", is_multiple_standby)
         if key_history_entries and not isinstance(key_history_entries, list):
             raise TypeError("Expected argument 'key_history_entries' to be a list")
         pulumi.set(__self__, "key_history_entries", key_history_entries)
@@ -190,6 +205,9 @@ class GetAutonomousContainerDatabaseResult:
         if recovery_appliance_details and not isinstance(recovery_appliance_details, list):
             raise TypeError("Expected argument 'recovery_appliance_details' to be a list")
         pulumi.set(__self__, "recovery_appliance_details", recovery_appliance_details)
+        if reinstate_trigger and not isinstance(reinstate_trigger, int):
+            raise TypeError("Expected argument 'reinstate_trigger' to be a int")
+        pulumi.set(__self__, "reinstate_trigger", reinstate_trigger)
         if reserved_cpus and not isinstance(reserved_cpus, float):
             raise TypeError("Expected argument 'reserved_cpus' to be a float")
         pulumi.set(__self__, "reserved_cpus", reserved_cpus)
@@ -208,6 +226,9 @@ class GetAutonomousContainerDatabaseResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if switchover_trigger and not isinstance(switchover_trigger, int):
+            raise TypeError("Expected argument 'switchover_trigger' to be a int")
+        pulumi.set(__self__, "switchover_trigger", switchover_trigger)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -241,6 +262,9 @@ class GetAutonomousContainerDatabaseResult:
     @property
     @pulumi.getter(name="autonomousContainerDatabaseId")
     def autonomous_container_database_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        """
         return pulumi.get(self, "autonomous_container_database_id")
 
     @property
@@ -263,7 +287,7 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> str:
         """
-        The availability domain of the Autonomous Container Database.
+        The domain of the Autonomous Container Database
         """
         return pulumi.get(self, "availability_domain")
 
@@ -319,6 +343,22 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter(name="databaseSoftwareImageId")
     def database_software_image_id(self) -> str:
         return pulumi.get(self, "database_software_image_id")
+
+    @property
+    @pulumi.getter(name="dataguardGroupMembers")
+    def dataguard_group_members(self) -> Sequence['outputs.GetAutonomousContainerDatabaseDataguardGroupMemberResult']:
+        """
+        Array of Dg associations.
+        """
+        return pulumi.get(self, "dataguard_group_members")
+
+    @property
+    @pulumi.getter
+    def dataguards(self) -> Sequence['outputs.GetAutonomousContainerDatabaseDataguardResult']:
+        """
+        The properties that define Autonomous Container Databases Dataguard.
+        """
+        return pulumi.get(self, "dataguards")
 
     @property
     @pulumi.getter(name="dbName")
@@ -382,8 +422,16 @@ class GetAutonomousContainerDatabaseResult:
         return pulumi.get(self, "dst_file_version")
 
     @property
+    @pulumi.getter(name="failoverTrigger")
+    def failover_trigger(self) -> int:
+        return pulumi.get(self, "failover_trigger")
+
+    @property
     @pulumi.getter(name="fastStartFailOverLagLimitInSeconds")
     def fast_start_fail_over_lag_limit_in_seconds(self) -> int:
+        """
+        The lag time for my preference based on data loss tolerance in seconds.
+        """
         return pulumi.get(self, "fast_start_fail_over_lag_limit_in_seconds")
 
     @property
@@ -413,7 +461,18 @@ class GetAutonomousContainerDatabaseResult:
     @property
     @pulumi.getter(name="isAutomaticFailoverEnabled")
     def is_automatic_failover_enabled(self) -> bool:
+        """
+        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        """
         return pulumi.get(self, "is_automatic_failover_enabled")
+
+    @property
+    @pulumi.getter(name="isDataGuardEnabled")
+    def is_data_guard_enabled(self) -> bool:
+        """
+        **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        """
+        return pulumi.get(self, "is_data_guard_enabled")
 
     @property
     @pulumi.getter(name="isDstFileUpdateEnabled")
@@ -422,6 +481,14 @@ class GetAutonomousContainerDatabaseResult:
         Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         """
         return pulumi.get(self, "is_dst_file_update_enabled")
+
+    @property
+    @pulumi.getter(name="isMultipleStandby")
+    def is_multiple_standby(self) -> bool:
+        """
+        Whether it is multiple standby Autonomous Dataguard
+        """
+        return pulumi.get(self, "is_multiple_standby")
 
     @property
     @pulumi.getter(name="keyHistoryEntries")
@@ -586,6 +653,9 @@ class GetAutonomousContainerDatabaseResult:
     @property
     @pulumi.getter(name="protectionMode")
     def protection_mode(self) -> str:
+        """
+        The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        """
         return pulumi.get(self, "protection_mode")
 
     @property
@@ -619,6 +689,11 @@ class GetAutonomousContainerDatabaseResult:
         Information about the recovery appliance configuration associated with the Autonomous Container Database.
         """
         return pulumi.get(self, "recovery_appliance_details")
+
+    @property
+    @pulumi.getter(name="reinstateTrigger")
+    def reinstate_trigger(self) -> int:
+        return pulumi.get(self, "reinstate_trigger")
 
     @property
     @pulumi.getter(name="reservedCpus")
@@ -664,6 +739,11 @@ class GetAutonomousContainerDatabaseResult:
         The current state of the Autonomous Container Database.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="switchoverTrigger")
+    def switchover_trigger(self) -> int:
+        return pulumi.get(self, "switchover_trigger")
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -740,6 +820,8 @@ class AwaitableGetAutonomousContainerDatabaseResult(GetAutonomousContainerDataba
             compartment_id=self.compartment_id,
             compute_model=self.compute_model,
             database_software_image_id=self.database_software_image_id,
+            dataguard_group_members=self.dataguard_group_members,
+            dataguards=self.dataguards,
             db_name=self.db_name,
             db_split_threshold=self.db_split_threshold,
             db_unique_name=self.db_unique_name,
@@ -748,12 +830,15 @@ class AwaitableGetAutonomousContainerDatabaseResult(GetAutonomousContainerDataba
             display_name=self.display_name,
             distribution_affinity=self.distribution_affinity,
             dst_file_version=self.dst_file_version,
+            failover_trigger=self.failover_trigger,
             fast_start_fail_over_lag_limit_in_seconds=self.fast_start_fail_over_lag_limit_in_seconds,
             freeform_tags=self.freeform_tags,
             id=self.id,
             infrastructure_type=self.infrastructure_type,
             is_automatic_failover_enabled=self.is_automatic_failover_enabled,
+            is_data_guard_enabled=self.is_data_guard_enabled,
             is_dst_file_update_enabled=self.is_dst_file_update_enabled,
+            is_multiple_standby=self.is_multiple_standby,
             key_history_entries=self.key_history_entries,
             key_store_id=self.key_store_id,
             key_store_wallet_name=self.key_store_wallet_name,
@@ -782,12 +867,14 @@ class AwaitableGetAutonomousContainerDatabaseResult(GetAutonomousContainerDataba
             provisioned_cpus=self.provisioned_cpus,
             reclaimable_cpus=self.reclaimable_cpus,
             recovery_appliance_details=self.recovery_appliance_details,
+            reinstate_trigger=self.reinstate_trigger,
             reserved_cpus=self.reserved_cpus,
             role=self.role,
             rotate_key_trigger=self.rotate_key_trigger,
             service_level_agreement_type=self.service_level_agreement_type,
             standby_maintenance_buffer_in_days=self.standby_maintenance_buffer_in_days,
             state=self.state,
+            switchover_trigger=self.switchover_trigger,
             time_created=self.time_created,
             time_of_last_backup=self.time_of_last_backup,
             time_snapshot_standby_revert=self.time_snapshot_standby_revert,
@@ -834,6 +921,8 @@ def get_autonomous_container_database(autonomous_container_database_id: Optional
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         compute_model=pulumi.get(__ret__, 'compute_model'),
         database_software_image_id=pulumi.get(__ret__, 'database_software_image_id'),
+        dataguard_group_members=pulumi.get(__ret__, 'dataguard_group_members'),
+        dataguards=pulumi.get(__ret__, 'dataguards'),
         db_name=pulumi.get(__ret__, 'db_name'),
         db_split_threshold=pulumi.get(__ret__, 'db_split_threshold'),
         db_unique_name=pulumi.get(__ret__, 'db_unique_name'),
@@ -842,12 +931,15 @@ def get_autonomous_container_database(autonomous_container_database_id: Optional
         display_name=pulumi.get(__ret__, 'display_name'),
         distribution_affinity=pulumi.get(__ret__, 'distribution_affinity'),
         dst_file_version=pulumi.get(__ret__, 'dst_file_version'),
+        failover_trigger=pulumi.get(__ret__, 'failover_trigger'),
         fast_start_fail_over_lag_limit_in_seconds=pulumi.get(__ret__, 'fast_start_fail_over_lag_limit_in_seconds'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         infrastructure_type=pulumi.get(__ret__, 'infrastructure_type'),
         is_automatic_failover_enabled=pulumi.get(__ret__, 'is_automatic_failover_enabled'),
+        is_data_guard_enabled=pulumi.get(__ret__, 'is_data_guard_enabled'),
         is_dst_file_update_enabled=pulumi.get(__ret__, 'is_dst_file_update_enabled'),
+        is_multiple_standby=pulumi.get(__ret__, 'is_multiple_standby'),
         key_history_entries=pulumi.get(__ret__, 'key_history_entries'),
         key_store_id=pulumi.get(__ret__, 'key_store_id'),
         key_store_wallet_name=pulumi.get(__ret__, 'key_store_wallet_name'),
@@ -876,12 +968,14 @@ def get_autonomous_container_database(autonomous_container_database_id: Optional
         provisioned_cpus=pulumi.get(__ret__, 'provisioned_cpus'),
         reclaimable_cpus=pulumi.get(__ret__, 'reclaimable_cpus'),
         recovery_appliance_details=pulumi.get(__ret__, 'recovery_appliance_details'),
+        reinstate_trigger=pulumi.get(__ret__, 'reinstate_trigger'),
         reserved_cpus=pulumi.get(__ret__, 'reserved_cpus'),
         role=pulumi.get(__ret__, 'role'),
         rotate_key_trigger=pulumi.get(__ret__, 'rotate_key_trigger'),
         service_level_agreement_type=pulumi.get(__ret__, 'service_level_agreement_type'),
         standby_maintenance_buffer_in_days=pulumi.get(__ret__, 'standby_maintenance_buffer_in_days'),
         state=pulumi.get(__ret__, 'state'),
+        switchover_trigger=pulumi.get(__ret__, 'switchover_trigger'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_of_last_backup=pulumi.get(__ret__, 'time_of_last_backup'),
         time_snapshot_standby_revert=pulumi.get(__ret__, 'time_snapshot_standby_revert'),
@@ -925,6 +1019,8 @@ def get_autonomous_container_database_output(autonomous_container_database_id: O
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         compute_model=pulumi.get(__response__, 'compute_model'),
         database_software_image_id=pulumi.get(__response__, 'database_software_image_id'),
+        dataguard_group_members=pulumi.get(__response__, 'dataguard_group_members'),
+        dataguards=pulumi.get(__response__, 'dataguards'),
         db_name=pulumi.get(__response__, 'db_name'),
         db_split_threshold=pulumi.get(__response__, 'db_split_threshold'),
         db_unique_name=pulumi.get(__response__, 'db_unique_name'),
@@ -933,12 +1029,15 @@ def get_autonomous_container_database_output(autonomous_container_database_id: O
         display_name=pulumi.get(__response__, 'display_name'),
         distribution_affinity=pulumi.get(__response__, 'distribution_affinity'),
         dst_file_version=pulumi.get(__response__, 'dst_file_version'),
+        failover_trigger=pulumi.get(__response__, 'failover_trigger'),
         fast_start_fail_over_lag_limit_in_seconds=pulumi.get(__response__, 'fast_start_fail_over_lag_limit_in_seconds'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         infrastructure_type=pulumi.get(__response__, 'infrastructure_type'),
         is_automatic_failover_enabled=pulumi.get(__response__, 'is_automatic_failover_enabled'),
+        is_data_guard_enabled=pulumi.get(__response__, 'is_data_guard_enabled'),
         is_dst_file_update_enabled=pulumi.get(__response__, 'is_dst_file_update_enabled'),
+        is_multiple_standby=pulumi.get(__response__, 'is_multiple_standby'),
         key_history_entries=pulumi.get(__response__, 'key_history_entries'),
         key_store_id=pulumi.get(__response__, 'key_store_id'),
         key_store_wallet_name=pulumi.get(__response__, 'key_store_wallet_name'),
@@ -967,12 +1066,14 @@ def get_autonomous_container_database_output(autonomous_container_database_id: O
         provisioned_cpus=pulumi.get(__response__, 'provisioned_cpus'),
         reclaimable_cpus=pulumi.get(__response__, 'reclaimable_cpus'),
         recovery_appliance_details=pulumi.get(__response__, 'recovery_appliance_details'),
+        reinstate_trigger=pulumi.get(__response__, 'reinstate_trigger'),
         reserved_cpus=pulumi.get(__response__, 'reserved_cpus'),
         role=pulumi.get(__response__, 'role'),
         rotate_key_trigger=pulumi.get(__response__, 'rotate_key_trigger'),
         service_level_agreement_type=pulumi.get(__response__, 'service_level_agreement_type'),
         standby_maintenance_buffer_in_days=pulumi.get(__response__, 'standby_maintenance_buffer_in_days'),
         state=pulumi.get(__response__, 'state'),
+        switchover_trigger=pulumi.get(__response__, 'switchover_trigger'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_of_last_backup=pulumi.get(__response__, 'time_of_last_backup'),
         time_snapshot_standby_revert=pulumi.get(__response__, 'time_snapshot_standby_revert'),

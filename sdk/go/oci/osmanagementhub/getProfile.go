@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Profile resource in Oracle Cloud Infrastructure Os Management Hub service.
 //
-// Gets information about the specified registration profile.
+// Returns information about the specified registration profile.
 //
 // ## Example Usage
 //
@@ -84,13 +84,15 @@ type LookupProfileResult struct {
 	ManagedInstanceGroupId string                     `pulumi:"managedInstanceGroupId"`
 	// Provides identifying information for the specified managed instance group.
 	ManagedInstanceGroups []GetProfileManagedInstanceGroup `pulumi:"managedInstanceGroups"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an  instance once registered. Management stations are only used by non-OCI instances.
 	ManagementStationId string `pulumi:"managementStationId"`
 	// The operating system family.
 	OsFamily  string `pulumi:"osFamily"`
 	ProfileId string `pulumi:"profileId"`
 	// The type of profile.
 	ProfileType string `pulumi:"profileType"`
+	// The version of the profile. The version is automatically incremented each time the profiled is edited.
+	ProfileVersion string `pulumi:"profileVersion"`
 	// The type of instance to register.
 	RegistrationType  string   `pulumi:"registrationType"`
 	SoftwareSourceIds []string `pulumi:"softwareSourceIds"`
@@ -102,6 +104,8 @@ type LookupProfileResult struct {
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeCreated string `pulumi:"timeCreated"`
+	// The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+	TimeModified string `pulumi:"timeModified"`
 	// The vendor of the operating system for the instance.
 	VendorName string `pulumi:"vendorName"`
 }
@@ -208,7 +212,7 @@ func (o LookupProfileResultOutput) ManagedInstanceGroups() GetProfileManagedInst
 	return o.ApplyT(func(v LookupProfileResult) []GetProfileManagedInstanceGroup { return v.ManagedInstanceGroups }).(GetProfileManagedInstanceGroupArrayOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an  instance once registered. Management stations are only used by non-OCI instances.
 func (o LookupProfileResultOutput) ManagementStationId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProfileResult) string { return v.ManagementStationId }).(pulumi.StringOutput)
 }
@@ -225,6 +229,11 @@ func (o LookupProfileResultOutput) ProfileId() pulumi.StringOutput {
 // The type of profile.
 func (o LookupProfileResultOutput) ProfileType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProfileResult) string { return v.ProfileType }).(pulumi.StringOutput)
+}
+
+// The version of the profile. The version is automatically incremented each time the profiled is edited.
+func (o LookupProfileResultOutput) ProfileVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupProfileResult) string { return v.ProfileVersion }).(pulumi.StringOutput)
 }
 
 // The type of instance to register.
@@ -254,6 +263,11 @@ func (o LookupProfileResultOutput) SystemTags() pulumi.StringMapOutput {
 // The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 func (o LookupProfileResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProfileResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+func (o LookupProfileResultOutput) TimeModified() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupProfileResult) string { return v.TimeModified }).(pulumi.StringOutput)
 }
 
 // The vendor of the operating system for the instance.

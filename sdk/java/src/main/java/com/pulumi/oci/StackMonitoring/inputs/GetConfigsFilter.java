@@ -17,9 +17,17 @@ public final class GetConfigsFilter extends com.pulumi.resources.InvokeArgs {
 
     public static final GetConfigsFilter Empty = new GetConfigsFilter();
 
+    /**
+     * Name of user Group
+     * 
+     */
     @Import(name="name", required=true)
     private String name;
 
+    /**
+     * @return Name of user Group
+     * 
+     */
     public String name() {
         return this.name;
     }
@@ -64,6 +72,12 @@ public final class GetConfigsFilter extends com.pulumi.resources.InvokeArgs {
             $ = new GetConfigsFilter(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param name Name of user Group
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(String name) {
             $.name = name;
             return this;

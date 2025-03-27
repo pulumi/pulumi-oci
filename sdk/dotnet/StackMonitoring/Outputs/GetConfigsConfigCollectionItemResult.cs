@@ -14,6 +14,10 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
     public sealed class GetConfigsConfigCollectionItemResult
     {
         /// <summary>
+        /// Property Details
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetConfigsConfigCollectionItemAdditionalConfigurationResult> AdditionalConfigurations;
+        /// <summary>
         /// The ID of the compartment in which data is listed.
         /// </summary>
         public readonly string CompartmentId;
@@ -30,6 +34,10 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
+        /// List of dynamic groups dedicated for Stack Monitoring.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetConfigsConfigCollectionItemDynamicGroupResult> DynamicGroups;
+        /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
@@ -38,13 +46,21 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// True if automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
+        /// True if automatic activation of the Management Agent plugin, automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
         /// </summary>
         public readonly bool IsEnabled;
+        /// <summary>
+        /// True if customer decides marks configuration as manually configured.
+        /// </summary>
+        public readonly bool IsManuallyOnboarded;
         /// <summary>
         /// License edition.
         /// </summary>
         public readonly string License;
+        /// <summary>
+        /// List of policy names assigned for onboarding
+        /// </summary>
+        public readonly ImmutableArray<string> PolicyNames;
         /// <summary>
         /// The type of resource to configure for automatic promotion.
         /// </summary>
@@ -65,9 +81,19 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// The time the Config was updated.
         /// </summary>
         public readonly string TimeUpdated;
+        /// <summary>
+        /// List of user groups dedicated for Stack Monitoring.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetConfigsConfigCollectionItemUserGroupResult> UserGroups;
+        /// <summary>
+        /// Assigned version to given onboard configuration.
+        /// </summary>
+        public readonly string Version;
 
         [OutputConstructor]
         private GetConfigsConfigCollectionItemResult(
+            ImmutableArray<Outputs.GetConfigsConfigCollectionItemAdditionalConfigurationResult> additionalConfigurations,
+
             string compartmentId,
 
             string configType,
@@ -76,13 +102,19 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
 
             string displayName,
 
+            ImmutableArray<Outputs.GetConfigsConfigCollectionItemDynamicGroupResult> dynamicGroups,
+
             ImmutableDictionary<string, string> freeformTags,
 
             string id,
 
             bool isEnabled,
 
+            bool isManuallyOnboarded,
+
             string license,
+
+            ImmutableArray<string> policyNames,
 
             string resourceType,
 
@@ -92,21 +124,31 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
 
             string timeCreated,
 
-            string timeUpdated)
+            string timeUpdated,
+
+            ImmutableArray<Outputs.GetConfigsConfigCollectionItemUserGroupResult> userGroups,
+
+            string version)
         {
+            AdditionalConfigurations = additionalConfigurations;
             CompartmentId = compartmentId;
             ConfigType = configType;
             DefinedTags = definedTags;
             DisplayName = displayName;
+            DynamicGroups = dynamicGroups;
             FreeformTags = freeformTags;
             Id = id;
             IsEnabled = isEnabled;
+            IsManuallyOnboarded = isManuallyOnboarded;
             License = license;
+            PolicyNames = policyNames;
             ResourceType = resourceType;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
+            UserGroups = userGroups;
+            Version = version;
         }
     }
 }

@@ -27,7 +27,7 @@ class GetServiceConnectorResult:
     """
     A collection of values returned by getServiceConnector.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, lifecyle_details=None, service_connector_id=None, sources=None, state=None, system_tags=None, targets=None, tasks=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, lifecyle_details=None, service_connector_id=None, sources=None, state=None, system_tags=None, targets=None, tasks=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -46,6 +46,9 @@ class GetServiceConnectorResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if lifecycle_details and not isinstance(lifecycle_details, str):
+            raise TypeError("Expected argument 'lifecycle_details' to be a str")
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if lifecyle_details and not isinstance(lifecyle_details, str):
             raise TypeError("Expected argument 'lifecyle_details' to be a str")
         pulumi.set(__self__, "lifecyle_details", lifecyle_details)
@@ -123,10 +126,18 @@ class GetServiceConnectorResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
     @pulumi.getter(name="lifecyleDetails")
     def lifecyle_details(self) -> str:
         """
-        A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+        *Please note this property is deprecated and will be removed on January 27, 2026. Use `lifecycleDetails` instead.* A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
         """
         return pulumi.get(self, "lifecyle_details")
 
@@ -138,9 +149,6 @@ class GetServiceConnectorResult:
     @property
     @pulumi.getter
     def sources(self) -> Sequence['outputs.GetServiceConnectorSourceResult']:
-        """
-        An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
-        """
         return pulumi.get(self, "sources")
 
     @property
@@ -162,9 +170,6 @@ class GetServiceConnectorResult:
     @property
     @pulumi.getter
     def targets(self) -> Sequence['outputs.GetServiceConnectorTargetResult']:
-        """
-        An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
-        """
         return pulumi.get(self, "targets")
 
     @property
@@ -204,6 +209,7 @@ class AwaitableGetServiceConnectorResult(GetServiceConnectorResult):
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            lifecycle_details=self.lifecycle_details,
             lifecyle_details=self.lifecyle_details,
             service_connector_id=self.service_connector_id,
             sources=self.sources,
@@ -248,6 +254,7 @@ def get_service_connector(service_connector_id: Optional[str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         lifecyle_details=pulumi.get(__ret__, 'lifecyle_details'),
         service_connector_id=pulumi.get(__ret__, 'service_connector_id'),
         sources=pulumi.get(__ret__, 'sources'),
@@ -289,6 +296,7 @@ def get_service_connector_output(service_connector_id: Optional[pulumi.Input[str
         display_name=pulumi.get(__response__, 'display_name'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         lifecyle_details=pulumi.get(__response__, 'lifecyle_details'),
         service_connector_id=pulumi.get(__response__, 'service_connector_id'),
         sources=pulumi.get(__response__, 'sources'),

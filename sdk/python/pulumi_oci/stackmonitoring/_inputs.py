@@ -15,6 +15,12 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'ConfigAdditionalConfigurationsArgs',
+    'ConfigAdditionalConfigurationsArgsDict',
+    'ConfigDynamicGroupArgs',
+    'ConfigDynamicGroupArgsDict',
+    'ConfigUserGroupArgs',
+    'ConfigUserGroupArgsDict',
     'DiscoveryJobDiscoveryDetailsArgs',
     'DiscoveryJobDiscoveryDetailsArgsDict',
     'DiscoveryJobDiscoveryDetailsCredentialsArgs',
@@ -134,6 +140,182 @@ __all__ = [
 ]
 
 MYPY = False
+
+if not MYPY:
+    class ConfigAdditionalConfigurationsArgsDict(TypedDict):
+        properties_map: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Key/Value pair of Property
+        """
+elif False:
+    ConfigAdditionalConfigurationsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ConfigAdditionalConfigurationsArgs:
+    def __init__(__self__, *,
+                 properties_map: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] properties_map: (Updatable) Key/Value pair of Property
+        """
+        if properties_map is not None:
+            pulumi.set(__self__, "properties_map", properties_map)
+
+    @property
+    @pulumi.getter(name="propertiesMap")
+    def properties_map(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        (Updatable) Key/Value pair of Property
+        """
+        return pulumi.get(self, "properties_map")
+
+    @properties_map.setter
+    def properties_map(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "properties_map", value)
+
+
+if not MYPY:
+    class ConfigDynamicGroupArgsDict(TypedDict):
+        domain: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Identity domain name
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Name of dynamic Group
+        """
+        stack_monitoring_assignment: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Assignment of dynamic group in context of Stack Monitoring service. It describes the purpose of dynamic groups in Stack Monitoring.
+        """
+elif False:
+    ConfigDynamicGroupArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ConfigDynamicGroupArgs:
+    def __init__(__self__, *,
+                 domain: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 stack_monitoring_assignment: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] domain: (Updatable) Identity domain name
+        :param pulumi.Input[str] name: (Updatable) Name of dynamic Group
+        :param pulumi.Input[str] stack_monitoring_assignment: (Updatable) Assignment of dynamic group in context of Stack Monitoring service. It describes the purpose of dynamic groups in Stack Monitoring.
+        """
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if stack_monitoring_assignment is not None:
+            pulumi.set(__self__, "stack_monitoring_assignment", stack_monitoring_assignment)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Identity domain name
+        """
+        return pulumi.get(self, "domain")
+
+    @domain.setter
+    def domain(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "domain", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Name of dynamic Group
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="stackMonitoringAssignment")
+    def stack_monitoring_assignment(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Assignment of dynamic group in context of Stack Monitoring service. It describes the purpose of dynamic groups in Stack Monitoring.
+        """
+        return pulumi.get(self, "stack_monitoring_assignment")
+
+    @stack_monitoring_assignment.setter
+    def stack_monitoring_assignment(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "stack_monitoring_assignment", value)
+
+
+if not MYPY:
+    class ConfigUserGroupArgsDict(TypedDict):
+        domain: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Identity domain name
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Name of user Group
+        """
+        stack_monitoring_role: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Role assigned to user group in context of Stack Monitoring service. Access role can be for example: ADMINISTRATOR, OPERATOR, VIEWER, any other access role
+        """
+elif False:
+    ConfigUserGroupArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ConfigUserGroupArgs:
+    def __init__(__self__, *,
+                 domain: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 stack_monitoring_role: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] domain: (Updatable) Identity domain name
+        :param pulumi.Input[str] name: (Updatable) Name of user Group
+        :param pulumi.Input[str] stack_monitoring_role: (Updatable) Role assigned to user group in context of Stack Monitoring service. Access role can be for example: ADMINISTRATOR, OPERATOR, VIEWER, any other access role
+        """
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if stack_monitoring_role is not None:
+            pulumi.set(__self__, "stack_monitoring_role", stack_monitoring_role)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Identity domain name
+        """
+        return pulumi.get(self, "domain")
+
+    @domain.setter
+    def domain(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "domain", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Name of user Group
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="stackMonitoringRole")
+    def stack_monitoring_role(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Role assigned to user group in context of Stack Monitoring service. Access role can be for example: ADMINISTRATOR, OPERATOR, VIEWER, any other access role
+        """
+        return pulumi.get(self, "stack_monitoring_role")
+
+    @stack_monitoring_role.setter
+    def stack_monitoring_role(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "stack_monitoring_role", value)
+
 
 if not MYPY:
     class DiscoveryJobDiscoveryDetailsArgsDict(TypedDict):
@@ -4831,6 +5013,9 @@ class GetBaselineableMetricsFilterArgs:
 if not MYPY:
     class GetConfigsFilterArgsDict(TypedDict):
         name: str
+        """
+        Name of user Group
+        """
         values: Sequence[str]
         regex: NotRequired[bool]
 elif False:
@@ -4842,6 +5027,9 @@ class GetConfigsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
+        """
+        :param str name: Name of user Group
+        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -4850,6 +5038,9 @@ class GetConfigsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
+        """
+        Name of user Group
+        """
         return pulumi.get(self, "name")
 
     @name.setter

@@ -346,6 +346,9 @@ __all__ = [
     'GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionResult',
     'GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionItemResult',
     'GetComputeGpuMemoryFabricsFilterResult',
+    'GetComputeHostsComputeHostCollectionResult',
+    'GetComputeHostsComputeHostCollectionItemResult',
+    'GetComputeHostsFilterResult',
     'GetComputeImageCapabilitySchemasComputeImageCapabilitySchemaResult',
     'GetComputeImageCapabilitySchemasFilterResult',
     'GetConsoleHistoriesConsoleHistoryResult',
@@ -23607,6 +23610,268 @@ class GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionItemResult(dict)
 
 @pulumi.output_type
 class GetComputeGpuMemoryFabricsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetComputeHostsComputeHostCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetComputeHostsComputeHostCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetComputeHostsComputeHostCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetComputeHostsComputeHostCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 availability_domain: str,
+                 capacity_reservation_id: str,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, str],
+                 display_name: str,
+                 fault_domain: str,
+                 freeform_tags: Mapping[str, str],
+                 gpu_memory_fabric_id: str,
+                 has_impacted_components: bool,
+                 health: str,
+                 hpc_island_id: str,
+                 id: str,
+                 instance_id: str,
+                 lifecycle_details: Mapping[str, str],
+                 local_block_id: str,
+                 network_block_id: str,
+                 shape: str,
+                 state: str,
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+        :param str capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Capacity Reserver that is currently on host
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param str display_name: A filter to return only resources that match the given display name exactly.
+        :param str fault_domain: A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param str gpu_memory_fabric_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique GPU Memory Fabric
+        :param str health: The heathy state of the host
+        :param str hpc_island_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique HPC Island
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique host
+        :param str instance_id: The public [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Virtual Machine or Bare Metal instance
+        :param Mapping[str, str] lifecycle_details: A free-form description detailing why the host is in its current state.
+        :param str local_block_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Local Block
+        :param str network_block_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Network Block
+        :param str shape: The shape of host
+        :param str state: The lifecycle state of the host
+        :param str time_created: The date and time that the compute host record was created, in the format defined by [RFC3339](https://tools .ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param str time_updated: The date and time that the compute host record was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "fault_domain", fault_domain)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "gpu_memory_fabric_id", gpu_memory_fabric_id)
+        pulumi.set(__self__, "has_impacted_components", has_impacted_components)
+        pulumi.set(__self__, "health", health)
+        pulumi.set(__self__, "hpc_island_id", hpc_island_id)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "local_block_id", local_block_id)
+        pulumi.set(__self__, "network_block_id", network_block_id)
+        pulumi.set(__self__, "shape", shape)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> str:
+        """
+        The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Capacity Reserver that is currently on host
+        """
+        return pulumi.get(self, "capacity_reservation_id")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="faultDomain")
+    def fault_domain(self) -> str:
+        """
+        A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
+        """
+        return pulumi.get(self, "fault_domain")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="gpuMemoryFabricId")
+    def gpu_memory_fabric_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique GPU Memory Fabric
+        """
+        return pulumi.get(self, "gpu_memory_fabric_id")
+
+    @property
+    @pulumi.getter(name="hasImpactedComponents")
+    def has_impacted_components(self) -> bool:
+        return pulumi.get(self, "has_impacted_components")
+
+    @property
+    @pulumi.getter
+    def health(self) -> str:
+        """
+        The heathy state of the host
+        """
+        return pulumi.get(self, "health")
+
+    @property
+    @pulumi.getter(name="hpcIslandId")
+    def hpc_island_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique HPC Island
+        """
+        return pulumi.get(self, "hpc_island_id")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique host
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> str:
+        """
+        The public [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Virtual Machine or Bare Metal instance
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Mapping[str, str]:
+        """
+        A free-form description detailing why the host is in its current state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="localBlockId")
+    def local_block_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Local Block
+        """
+        return pulumi.get(self, "local_block_id")
+
+    @property
+    @pulumi.getter(name="networkBlockId")
+    def network_block_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Network Block
+        """
+        return pulumi.get(self, "network_block_id")
+
+    @property
+    @pulumi.getter
+    def shape(self) -> str:
+        """
+        The shape of host
+        """
+        return pulumi.get(self, "shape")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The lifecycle state of the host
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time that the compute host record was created, in the format defined by [RFC3339](https://tools .ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time that the compute host record was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetComputeHostsFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

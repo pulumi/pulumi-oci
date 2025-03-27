@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Sch.Outputs
         /// </summary>
         public readonly int BatchSizeInKbs;
         /// <summary>
-        /// The batch rollover size in number of messages.
+        /// The batch rollover size in number of messages. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
         /// </summary>
         public readonly int BatchSizeInNum;
         /// <summary>
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.Sch.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionResult> Dimensions;
         /// <summary>
-        /// Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
+        /// Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol. Example: `true`
         /// </summary>
         public readonly bool EnableFormattedMessaging;
         /// <summary>
@@ -66,11 +66,11 @@ namespace Pulumi.Oci.Sch.Outputs
         /// </summary>
         public readonly string LogSourceIdentifier;
         /// <summary>
-        /// The name of the metric.  Example: `CpuUtilization`
+        /// The name of the metric. Example: `CpuUtilization`
         /// </summary>
         public readonly string Metric;
         /// <summary>
-        /// The namespace of the metric.  Example: `oci_computeagent`
+        /// The namespace of the metric. Example: `oci_computeagent`
         /// </summary>
         public readonly string MetricNamespace;
         /// <summary>

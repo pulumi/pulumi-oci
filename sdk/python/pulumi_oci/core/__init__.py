@@ -81,6 +81,8 @@ from .get_compute_gpu_memory_cluster_instances import *
 from .get_compute_gpu_memory_clusters import *
 from .get_compute_gpu_memory_fabric import *
 from .get_compute_gpu_memory_fabrics import *
+from .get_compute_host import *
+from .get_compute_hosts import *
 from .get_compute_image_capability_schema import *
 from .get_compute_image_capability_schemas import *
 from .get_console_histories import *

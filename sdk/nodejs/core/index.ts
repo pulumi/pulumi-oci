@@ -385,6 +385,16 @@ export const getComputeGpuMemoryFabrics: typeof import("./getComputeGpuMemoryFab
 export const getComputeGpuMemoryFabricsOutput: typeof import("./getComputeGpuMemoryFabrics").getComputeGpuMemoryFabricsOutput = null as any;
 utilities.lazyLoad(exports, ["getComputeGpuMemoryFabrics","getComputeGpuMemoryFabricsOutput"], () => require("./getComputeGpuMemoryFabrics"));
 
+export { GetComputeHostArgs, GetComputeHostResult, GetComputeHostOutputArgs } from "./getComputeHost";
+export const getComputeHost: typeof import("./getComputeHost").getComputeHost = null as any;
+export const getComputeHostOutput: typeof import("./getComputeHost").getComputeHostOutput = null as any;
+utilities.lazyLoad(exports, ["getComputeHost","getComputeHostOutput"], () => require("./getComputeHost"));
+
+export { GetComputeHostsArgs, GetComputeHostsResult, GetComputeHostsOutputArgs } from "./getComputeHosts";
+export const getComputeHosts: typeof import("./getComputeHosts").getComputeHosts = null as any;
+export const getComputeHostsOutput: typeof import("./getComputeHosts").getComputeHostsOutput = null as any;
+utilities.lazyLoad(exports, ["getComputeHosts","getComputeHostsOutput"], () => require("./getComputeHosts"));
+
 export { GetComputeImageCapabilitySchemaArgs, GetComputeImageCapabilitySchemaResult, GetComputeImageCapabilitySchemaOutputArgs } from "./getComputeImageCapabilitySchema";
 export const getComputeImageCapabilitySchema: typeof import("./getComputeImageCapabilitySchema").getComputeImageCapabilitySchema = null as any;
 export const getComputeImageCapabilitySchemaOutput: typeof import("./getComputeImageCapabilitySchema").getComputeImageCapabilitySchemaOutput = null as any;

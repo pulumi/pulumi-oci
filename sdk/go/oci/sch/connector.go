@@ -161,8 +161,10 @@ type Connector struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// *Please note this property is deprecated and will be removed on January 27, 2026. Use `lifecycleDetails` instead.* A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
 	LifecyleDetails pulumi.StringOutput `pulumi:"lifecyleDetails"`
-	// (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+	// (Updatable)
 	Source ConnectorSourceOutput `pulumi:"source"`
 	// (Updatable) The target state for the service connector. Could be set to `ACTIVE` or `INACTIVE`.
 	//
@@ -171,7 +173,7 @@ type Connector struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
-	// (Updatable) An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+	// (Updatable)
 	Target ConnectorTargetOutput `pulumi:"target"`
 	// (Updatable) The list of tasks.
 	Tasks ConnectorTaskArrayOutput `pulumi:"tasks"`
@@ -234,8 +236,10 @@ type connectorState struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// *Please note this property is deprecated and will be removed on January 27, 2026. Use `lifecycleDetails` instead.* A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
 	LifecyleDetails *string `pulumi:"lifecyleDetails"`
-	// (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+	// (Updatable)
 	Source *ConnectorSource `pulumi:"source"`
 	// (Updatable) The target state for the service connector. Could be set to `ACTIVE` or `INACTIVE`.
 	//
@@ -244,7 +248,7 @@ type connectorState struct {
 	State *string `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]string `pulumi:"systemTags"`
-	// (Updatable) An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+	// (Updatable)
 	Target *ConnectorTarget `pulumi:"target"`
 	// (Updatable) The list of tasks.
 	Tasks []ConnectorTask `pulumi:"tasks"`
@@ -266,8 +270,10 @@ type ConnectorState struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
 	// A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+	LifecycleDetails pulumi.StringPtrInput
+	// *Please note this property is deprecated and will be removed on January 27, 2026. Use `lifecycleDetails` instead.* A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
 	LifecyleDetails pulumi.StringPtrInput
-	// (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+	// (Updatable)
 	Source ConnectorSourcePtrInput
 	// (Updatable) The target state for the service connector. Could be set to `ACTIVE` or `INACTIVE`.
 	//
@@ -276,7 +282,7 @@ type ConnectorState struct {
 	State pulumi.StringPtrInput
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.StringMapInput
-	// (Updatable) An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+	// (Updatable)
 	Target ConnectorTargetPtrInput
 	// (Updatable) The list of tasks.
 	Tasks ConnectorTaskArrayInput
@@ -301,14 +307,14 @@ type connectorArgs struct {
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+	// (Updatable)
 	Source ConnectorSource `pulumi:"source"`
 	// (Updatable) The target state for the service connector. Could be set to `ACTIVE` or `INACTIVE`.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State *string `pulumi:"state"`
-	// (Updatable) An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+	// (Updatable)
 	Target ConnectorTarget `pulumi:"target"`
 	// (Updatable) The list of tasks.
 	Tasks []ConnectorTask `pulumi:"tasks"`
@@ -326,14 +332,14 @@ type ConnectorArgs struct {
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
-	// (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+	// (Updatable)
 	Source ConnectorSourceInput
 	// (Updatable) The target state for the service connector. Could be set to `ACTIVE` or `INACTIVE`.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringPtrInput
-	// (Updatable) An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+	// (Updatable)
 	Target ConnectorTargetInput
 	// (Updatable) The list of tasks.
 	Tasks ConnectorTaskArrayInput
@@ -452,11 +458,16 @@ func (o ConnectorOutput) FreeformTags() pulumi.StringMapOutput {
 }
 
 // A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+func (o ConnectorOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v *Connector) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// *Please note this property is deprecated and will be removed on January 27, 2026. Use `lifecycleDetails` instead.* A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
 func (o ConnectorOutput) LifecyleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connector) pulumi.StringOutput { return v.LifecyleDetails }).(pulumi.StringOutput)
 }
 
-// (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+// (Updatable)
 func (o ConnectorOutput) Source() ConnectorSourceOutput {
 	return o.ApplyT(func(v *Connector) ConnectorSourceOutput { return v.Source }).(ConnectorSourceOutput)
 }
@@ -474,7 +485,7 @@ func (o ConnectorOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Connector) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
-// (Updatable) An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+// (Updatable)
 func (o ConnectorOutput) Target() ConnectorTargetOutput {
 	return o.ApplyT(func(v *Connector) ConnectorTargetOutput { return v.Target }).(ConnectorTargetOutput)
 }

@@ -474,6 +474,8 @@
         "core/getComputeGpuMemoryClusters.ts",
         "core/getComputeGpuMemoryFabric.ts",
         "core/getComputeGpuMemoryFabrics.ts",
+        "core/getComputeHost.ts",
+        "core/getComputeHosts.ts",
         "core/getComputeImageCapabilitySchema.ts",
         "core/getComputeImageCapabilitySchemas.ts",
         "core/getConsoleHistories.ts",

@@ -17,7 +17,13 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// The ID of the compartment in which data is listed.
         /// </summary>
         public readonly string CompartmentId;
+        /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
+        /// <summary>
+        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of maintenance window.
@@ -43,6 +49,9 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// Lifecycle state of the monitored resource.
         /// </summary>
         public readonly string State;
+        /// <summary>
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
 
         [OutputConstructor]

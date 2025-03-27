@@ -24,21 +24,29 @@ class MaintenanceWindowArgs:
                  compartment_id: pulumi.Input[str],
                  resources: pulumi.Input[Sequence[pulumi.Input['MaintenanceWindowResourceArgs']]],
                  schedule: pulumi.Input['MaintenanceWindowScheduleArgs'],
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a MaintenanceWindow resource.
         :param pulumi.Input[str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Sequence[pulumi.Input['MaintenanceWindowResourceArgs']]] resources: (Updatable) List of resource Ids which are part of the Maintenance Window
         :param pulumi.Input['MaintenanceWindowScheduleArgs'] schedule: (Updatable) Schedule information of the Maintenance Window
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Maintenance Window description.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] name: Maintenance Window name.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "resources", resources)
         pulumi.set(__self__, "schedule", schedule)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if name is not None:
             pulumi.set(__self__, "name", name)
 
@@ -79,6 +87,18 @@ class MaintenanceWindowArgs:
         pulumi.set(self, "schedule", value)
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
@@ -89,6 +109,18 @@ class MaintenanceWindowArgs:
     @description.setter
     def description(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "freeform_tags", value)
 
     @property
     @pulumi.getter
@@ -107,32 +139,42 @@ class MaintenanceWindowArgs:
 class _MaintenanceWindowState:
     def __init__(__self__, *,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  resources: Optional[pulumi.Input[Sequence[pulumi.Input['MaintenanceWindowResourceArgs']]]] = None,
                  resources_details: Optional[pulumi.Input[Sequence[pulumi.Input['MaintenanceWindowResourcesDetailArgs']]]] = None,
                  schedule: Optional[pulumi.Input['MaintenanceWindowScheduleArgs']] = None,
                  state: Optional[pulumi.Input[str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering MaintenanceWindow resources.
         :param pulumi.Input[str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Maintenance Window description.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: Lifecycle Details of the Maintenance Window.
         :param pulumi.Input[str] name: Maintenance Window name.
         :param pulumi.Input[Sequence[pulumi.Input['MaintenanceWindowResourceArgs']]] resources: (Updatable) List of resource Ids which are part of the Maintenance Window
         :param pulumi.Input[Sequence[pulumi.Input['MaintenanceWindowResourcesDetailArgs']]] resources_details: List of resource details that are part of the Maintenance Window.
         :param pulumi.Input['MaintenanceWindowScheduleArgs'] schedule: (Updatable) Schedule information of the Maintenance Window
         :param pulumi.Input[str] state: Lifecycle state of the monitored resource.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the the maintenance window was created. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time the the mainteance window was updated. An RFC3339 formatted datetime string
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if name is not None:
@@ -145,6 +187,8 @@ class _MaintenanceWindowState:
             pulumi.set(__self__, "schedule", schedule)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
@@ -163,6 +207,18 @@ class _MaintenanceWindowState:
         pulumi.set(self, "compartment_id", value)
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
@@ -173,6 +229,18 @@ class _MaintenanceWindowState:
     @description.setter
     def description(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "freeform_tags", value)
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -247,6 +315,18 @@ class _MaintenanceWindowState:
         pulumi.set(self, "state", value)
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "system_tags", value)
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
@@ -277,7 +357,9 @@ class MaintenanceWindow(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  resources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MaintenanceWindowResourceArgs', 'MaintenanceWindowResourceArgsDict']]]]] = None,
                  schedule: Optional[pulumi.Input[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict']]] = None,
@@ -308,7 +390,13 @@ class MaintenanceWindow(pulumi.CustomResource):
                 "time_maintenance_window_end": maintenance_window_schedule_time_maintenance_window_end,
                 "time_maintenance_window_start": maintenance_window_schedule_time_maintenance_window_start,
             },
-            description=maintenance_window_description)
+            defined_tags={
+                "foo-namespace.bar-key": "value",
+            },
+            description=maintenance_window_description,
+            freeform_tags={
+                "bar-key": "value",
+            })
         ```
 
         ## Import
@@ -322,7 +410,9 @@ class MaintenanceWindow(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Maintenance Window description.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] name: Maintenance Window name.
         :param pulumi.Input[Sequence[pulumi.Input[Union['MaintenanceWindowResourceArgs', 'MaintenanceWindowResourceArgsDict']]]] resources: (Updatable) List of resource Ids which are part of the Maintenance Window
         :param pulumi.Input[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict']] schedule: (Updatable) Schedule information of the Maintenance Window
@@ -359,7 +449,13 @@ class MaintenanceWindow(pulumi.CustomResource):
                 "time_maintenance_window_end": maintenance_window_schedule_time_maintenance_window_end,
                 "time_maintenance_window_start": maintenance_window_schedule_time_maintenance_window_start,
             },
-            description=maintenance_window_description)
+            defined_tags={
+                "foo-namespace.bar-key": "value",
+            },
+            description=maintenance_window_description,
+            freeform_tags={
+                "bar-key": "value",
+            })
         ```
 
         ## Import
@@ -386,7 +482,9 @@ class MaintenanceWindow(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  resources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MaintenanceWindowResourceArgs', 'MaintenanceWindowResourceArgsDict']]]]] = None,
                  schedule: Optional[pulumi.Input[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict']]] = None,
@@ -402,7 +500,9 @@ class MaintenanceWindow(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["description"] = description
+            __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["name"] = name
             if resources is None and not opts.urn:
                 raise TypeError("Missing required property 'resources'")
@@ -413,6 +513,7 @@ class MaintenanceWindow(pulumi.CustomResource):
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["resources_details"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
         super(MaintenanceWindow, __self__).__init__(
@@ -426,13 +527,16 @@ class MaintenanceWindow(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             description: Optional[pulumi.Input[str]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             resources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MaintenanceWindowResourceArgs', 'MaintenanceWindowResourceArgsDict']]]]] = None,
             resources_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MaintenanceWindowResourcesDetailArgs', 'MaintenanceWindowResourcesDetailArgsDict']]]]] = None,
             schedule: Optional[pulumi.Input[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None) -> 'MaintenanceWindow':
         """
@@ -443,13 +547,16 @@ class MaintenanceWindow(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Maintenance Window description.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: Lifecycle Details of the Maintenance Window.
         :param pulumi.Input[str] name: Maintenance Window name.
         :param pulumi.Input[Sequence[pulumi.Input[Union['MaintenanceWindowResourceArgs', 'MaintenanceWindowResourceArgsDict']]]] resources: (Updatable) List of resource Ids which are part of the Maintenance Window
         :param pulumi.Input[Sequence[pulumi.Input[Union['MaintenanceWindowResourcesDetailArgs', 'MaintenanceWindowResourcesDetailArgsDict']]]] resources_details: List of resource details that are part of the Maintenance Window.
         :param pulumi.Input[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict']] schedule: (Updatable) Schedule information of the Maintenance Window
         :param pulumi.Input[str] state: Lifecycle state of the monitored resource.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the the maintenance window was created. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time the the mainteance window was updated. An RFC3339 formatted datetime string
         """
@@ -458,13 +565,16 @@ class MaintenanceWindow(pulumi.CustomResource):
         __props__ = _MaintenanceWindowState.__new__(_MaintenanceWindowState)
 
         __props__.__dict__["compartment_id"] = compartment_id
+        __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
+        __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["name"] = name
         __props__.__dict__["resources"] = resources
         __props__.__dict__["resources_details"] = resources_details
         __props__.__dict__["schedule"] = schedule
         __props__.__dict__["state"] = state
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         return MaintenanceWindow(resource_name, opts=opts, __props__=__props__)
@@ -478,12 +588,28 @@ class MaintenanceWindow(pulumi.CustomResource):
         return pulumi.get(self, "compartment_id")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
         """
         (Updatable) Maintenance Window description.
         """
         return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
+        """
+        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -532,6 +658,14 @@ class MaintenanceWindow(pulumi.CustomResource):
         Lifecycle state of the monitored resource.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, str]]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")

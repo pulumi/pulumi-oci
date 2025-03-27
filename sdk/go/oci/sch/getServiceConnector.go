@@ -73,16 +73,16 @@ type GetServiceConnectorResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
-	LifecyleDetails    string `pulumi:"lifecyleDetails"`
-	ServiceConnectorId string `pulumi:"serviceConnectorId"`
-	// An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
-	Sources []GetServiceConnectorSource `pulumi:"sources"`
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// *Please note this property is deprecated and will be removed on January 27, 2026. Use `lifecycleDetails` instead.* A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+	LifecyleDetails    string                      `pulumi:"lifecyleDetails"`
+	ServiceConnectorId string                      `pulumi:"serviceConnectorId"`
+	Sources            []GetServiceConnectorSource `pulumi:"sources"`
 	// The current state of the connector.
 	State string `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags map[string]string `pulumi:"systemTags"`
-	// An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
-	Targets []GetServiceConnectorTarget `pulumi:"targets"`
+	SystemTags map[string]string           `pulumi:"systemTags"`
+	Targets    []GetServiceConnectorTarget `pulumi:"targets"`
 	// The list of tasks.
 	Tasks []GetServiceConnectorTask `pulumi:"tasks"`
 	// The date and time when the connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
@@ -156,6 +156,11 @@ func (o GetServiceConnectorResultOutput) Id() pulumi.StringOutput {
 }
 
 // A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+func (o GetServiceConnectorResultOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceConnectorResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// *Please note this property is deprecated and will be removed on January 27, 2026. Use `lifecycleDetails` instead.* A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
 func (o GetServiceConnectorResultOutput) LifecyleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorResult) string { return v.LifecyleDetails }).(pulumi.StringOutput)
 }
@@ -164,7 +169,6 @@ func (o GetServiceConnectorResultOutput) ServiceConnectorId() pulumi.StringOutpu
 	return o.ApplyT(func(v GetServiceConnectorResult) string { return v.ServiceConnectorId }).(pulumi.StringOutput)
 }
 
-// An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
 func (o GetServiceConnectorResultOutput) Sources() GetServiceConnectorSourceArrayOutput {
 	return o.ApplyT(func(v GetServiceConnectorResult) []GetServiceConnectorSource { return v.Sources }).(GetServiceConnectorSourceArrayOutput)
 }
@@ -179,7 +183,6 @@ func (o GetServiceConnectorResultOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetServiceConnectorResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
-// An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
 func (o GetServiceConnectorResultOutput) Targets() GetServiceConnectorTargetArrayOutput {
 	return o.ApplyT(func(v GetServiceConnectorResult) []GetServiceConnectorTarget { return v.Targets }).(GetServiceConnectorTargetArrayOutput)
 }

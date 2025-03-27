@@ -482,7 +482,8 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ErrorPageUrl pulumi.StringOutput `pulumi:"errorPageUrl"`
+	ErrorPageUrl pulumi.StringOutput  `pulumi:"errorPageUrl"`
+	ForceDelete  pulumi.BoolPtrOutput `pulumi:"forceDelete"`
 	// (Updatable) A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
 	//
 	// **SCIM++ Properties:**
@@ -1805,6 +1806,7 @@ type domainsAppState struct {
 	// * type: string
 	// * uniqueness: none
 	ErrorPageUrl *string `pulumi:"errorPageUrl"`
+	ForceDelete  *bool   `pulumi:"forceDelete"`
 	// (Updatable) A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
 	//
 	// **SCIM++ Properties:**
@@ -3086,6 +3088,7 @@ type DomainsAppState struct {
 	// * type: string
 	// * uniqueness: none
 	ErrorPageUrl pulumi.StringPtrInput
+	ForceDelete  pulumi.BoolPtrInput
 	// (Updatable) A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
 	//
 	// **SCIM++ Properties:**
@@ -4258,6 +4261,7 @@ type domainsAppArgs struct {
 	// * type: string
 	// * uniqueness: none
 	ErrorPageUrl *string `pulumi:"errorPageUrl"`
+	ForceDelete  *bool   `pulumi:"forceDelete"`
 	// (Updatable) Home Page URL
 	//
 	// **Added In:** 19.2.1
@@ -5231,6 +5235,7 @@ type DomainsAppArgs struct {
 	// * type: string
 	// * uniqueness: none
 	ErrorPageUrl pulumi.StringPtrInput
+	ForceDelete  pulumi.BoolPtrInput
 	// (Updatable) Home Page URL
 	//
 	// **Added In:** 19.2.1
@@ -6520,6 +6525,10 @@ func (o DomainsAppOutput) EditableAttributes() DomainsAppEditableAttributeArrayO
 // * uniqueness: none
 func (o DomainsAppOutput) ErrorPageUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsApp) pulumi.StringOutput { return v.ErrorPageUrl }).(pulumi.StringOutput)
+}
+
+func (o DomainsAppOutput) ForceDelete() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.BoolPtrOutput { return v.ForceDelete }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.

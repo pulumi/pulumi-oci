@@ -15,6 +15,7 @@ import com.pulumi.oci.StackMonitoring.outputs.MaintenanceWindowSchedule;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
 import java.util.List;
+import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
@@ -64,7 +65,9 @@ import javax.annotation.Nullable;
  *                 .timeMaintenanceWindowEnd(maintenanceWindowScheduleTimeMaintenanceWindowEnd)
  *                 .timeMaintenanceWindowStart(maintenanceWindowScheduleTimeMaintenanceWindowStart)
  *                 .build())
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(maintenanceWindowDescription)
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .build());
  * 
  *     }
@@ -99,6 +102,20 @@ public class MaintenanceWindow extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
+    @Export(name="definedTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> definedTags;
+
+    /**
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
+    public Output<Map<String,String>> definedTags() {
+        return this.definedTags;
+    }
+    /**
      * (Updatable) Maintenance Window description.
      * 
      */
@@ -111,6 +128,20 @@ public class MaintenanceWindow extends com.pulumi.resources.CustomResource {
      */
     public Output<String> description() {
         return this.description;
+    }
+    /**
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
+    @Export(name="freeformTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> freeformTags;
+
+    /**
+     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
+    public Output<Map<String,String>> freeformTags() {
+        return this.freeformTags;
     }
     /**
      * Lifecycle Details of the Maintenance Window.
@@ -195,6 +226,20 @@ public class MaintenanceWindow extends com.pulumi.resources.CustomResource {
      */
     public Output<String> state() {
         return this.state;
+    }
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    @Export(name="systemTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> systemTags;
+
+    /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Output<Map<String,String>> systemTags() {
+        return this.systemTags;
     }
     /**
      * The time the the maintenance window was created. An RFC3339 formatted datetime string

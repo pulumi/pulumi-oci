@@ -1415,6 +1415,13 @@ public final class DomainsAppState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.errorPageUrl);
     }
 
+    @Import(name="forceDelete")
+    private @Nullable Output<Boolean> forceDelete;
+
+    public Optional<Output<Boolean>> forceDelete() {
+        return Optional.ofNullable(this.forceDelete);
+    }
+
     /**
      * (Updatable) A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
      * 
@@ -3991,6 +3998,7 @@ public final class DomainsAppState extends com.pulumi.resources.ResourceArgs {
         this.domainOcid = $.domainOcid;
         this.editableAttributes = $.editableAttributes;
         this.errorPageUrl = $.errorPageUrl;
+        this.forceDelete = $.forceDelete;
         this.grantedAppRoles = $.grantedAppRoles;
         this.grants = $.grants;
         this.hashedClientSecret = $.hashedClientSecret;
@@ -5965,6 +5973,15 @@ public final class DomainsAppState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder errorPageUrl(String errorPageUrl) {
             return errorPageUrl(Output.of(errorPageUrl));
+        }
+
+        public Builder forceDelete(@Nullable Output<Boolean> forceDelete) {
+            $.forceDelete = forceDelete;
+            return this;
+        }
+
+        public Builder forceDelete(Boolean forceDelete) {
+            return forceDelete(Output.of(forceDelete));
         }
 
         /**

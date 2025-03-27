@@ -231,25 +231,39 @@ public class Connector extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
      * 
      */
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
+    private Output<String> lifecycleDetails;
+
+    /**
+     * @return A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+     * 
+     */
+    public Output<String> lifecycleDetails() {
+        return this.lifecycleDetails;
+    }
+    /**
+     * *Please note this property is deprecated and will be removed on January 27, 2026. Use `lifecycleDetails` instead.* A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+     * 
+     */
     @Export(name="lifecyleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecyleDetails;
 
     /**
-     * @return A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+     * @return *Please note this property is deprecated and will be removed on January 27, 2026. Use `lifecycleDetails` instead.* A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
      * 
      */
     public Output<String> lifecyleDetails() {
         return this.lifecyleDetails;
     }
     /**
-     * (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+     * (Updatable)
      * 
      */
     @Export(name="source", refs={ConnectorSource.class}, tree="[0]")
     private Output<ConnectorSource> source;
 
     /**
-     * @return (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+     * @return (Updatable)
      * 
      */
     public Output<ConnectorSource> source() {
@@ -290,14 +304,14 @@ public class Connector extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * (Updatable) An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+     * (Updatable)
      * 
      */
     @Export(name="target", refs={ConnectorTarget.class}, tree="[0]")
     private Output<ConnectorTarget> target;
 
     /**
-     * @return (Updatable) An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+     * @return (Updatable)
      * 
      */
     public Output<ConnectorTarget> target() {

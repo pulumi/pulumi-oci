@@ -27,13 +27,19 @@ class GetMaintenanceWindowResult:
     """
     A collection of values returned by getMaintenanceWindow.
     """
-    def __init__(__self__, compartment_id=None, description=None, id=None, lifecycle_details=None, maintenance_window_id=None, name=None, resources=None, resources_details=None, schedules=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, freeform_tags=None, id=None, lifecycle_details=None, maintenance_window_id=None, name=None, resources=None, resources_details=None, schedules=None, state=None, system_tags=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags and not isinstance(defined_tags, dict):
+            raise TypeError("Expected argument 'defined_tags' to be a dict")
+        pulumi.set(__self__, "defined_tags", defined_tags)
         if description and not isinstance(description, str):
             raise TypeError("Expected argument 'description' to be a str")
         pulumi.set(__self__, "description", description)
+        if freeform_tags and not isinstance(freeform_tags, dict):
+            raise TypeError("Expected argument 'freeform_tags' to be a dict")
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -58,6 +64,9 @@ class GetMaintenanceWindowResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -74,12 +83,28 @@ class GetMaintenanceWindowResult:
         return pulumi.get(self, "compartment_id")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter
     def description(self) -> str:
         """
         Maintenance Window description.
         """
         return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
@@ -143,6 +168,14 @@ class GetMaintenanceWindowResult:
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
@@ -166,7 +199,9 @@ class AwaitableGetMaintenanceWindowResult(GetMaintenanceWindowResult):
             yield self
         return GetMaintenanceWindowResult(
             compartment_id=self.compartment_id,
+            defined_tags=self.defined_tags,
             description=self.description,
+            freeform_tags=self.freeform_tags,
             id=self.id,
             lifecycle_details=self.lifecycle_details,
             maintenance_window_id=self.maintenance_window_id,
@@ -175,6 +210,7 @@ class AwaitableGetMaintenanceWindowResult(GetMaintenanceWindowResult):
             resources_details=self.resources_details,
             schedules=self.schedules,
             state=self.state,
+            system_tags=self.system_tags,
             time_created=self.time_created,
             time_updated=self.time_updated)
 
@@ -205,7 +241,9 @@ def get_maintenance_window(maintenance_window_id: Optional[str] = None,
 
     return AwaitableGetMaintenanceWindowResult(
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
         description=pulumi.get(__ret__, 'description'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         maintenance_window_id=pulumi.get(__ret__, 'maintenance_window_id'),
@@ -214,6 +252,7 @@ def get_maintenance_window(maintenance_window_id: Optional[str] = None,
         resources_details=pulumi.get(__ret__, 'resources_details'),
         schedules=pulumi.get(__ret__, 'schedules'),
         state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_maintenance_window_output(maintenance_window_id: Optional[pulumi.Input[str]] = None,
@@ -241,7 +280,9 @@ def get_maintenance_window_output(maintenance_window_id: Optional[pulumi.Input[s
     __ret__ = pulumi.runtime.invoke_output('oci:StackMonitoring/getMaintenanceWindow:getMaintenanceWindow', __args__, opts=opts, typ=GetMaintenanceWindowResult)
     return __ret__.apply(lambda __response__: GetMaintenanceWindowResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
         description=pulumi.get(__response__, 'description'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         maintenance_window_id=pulumi.get(__response__, 'maintenance_window_id'),
@@ -250,5 +291,6 @@ def get_maintenance_window_output(maintenance_window_id: Optional[pulumi.Input[s
         resources_details=pulumi.get(__response__, 'resources_details'),
         schedules=pulumi.get(__response__, 'schedules'),
         state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated')))

@@ -17,7 +17,7 @@ public final class ConnectorSourceLogSource {
      */
     private @Nullable String compartmentId;
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group. Note: For the Notifications target, only _Audit is allowed. Example OCID for _Audit log group: ocid1.tenancy.oc1..exampleuniqueid/_Audit
+     * @return (Updatable) Identifier of the log group. Either `_Audit` or the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group. Note: For the Notifications target, only `_Audit` is allowed.
      * 
      */
     private @Nullable String logGroupId;
@@ -36,7 +36,7 @@ public final class ConnectorSourceLogSource {
         return Optional.ofNullable(this.compartmentId);
     }
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group. Note: For the Notifications target, only _Audit is allowed. Example OCID for _Audit log group: ocid1.tenancy.oc1..exampleuniqueid/_Audit
+     * @return (Updatable) Identifier of the log group. Either `_Audit` or the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group. Note: For the Notifications target, only `_Audit` is allowed.
      * 
      */
     public Optional<String> logGroupId() {

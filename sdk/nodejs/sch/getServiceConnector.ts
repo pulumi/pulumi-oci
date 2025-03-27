@@ -72,11 +72,12 @@ export interface GetServiceConnectorResult {
     /**
      * A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
      */
+    readonly lifecycleDetails: string;
+    /**
+     * *Please note this property is deprecated and will be removed on January 27, 2026. Use `lifecycleDetails` instead.* A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+     */
     readonly lifecyleDetails: string;
     readonly serviceConnectorId: string;
-    /**
-     * An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
-     */
     readonly sources: outputs.Sch.GetServiceConnectorSource[];
     /**
      * The current state of the connector.
@@ -86,9 +87,6 @@ export interface GetServiceConnectorResult {
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
     readonly systemTags: {[key: string]: string};
-    /**
-     * An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
-     */
     readonly targets: outputs.Sch.GetServiceConnectorTarget[];
     /**
      * The list of tasks.

@@ -1081,6 +1081,13 @@ public final class DomainsAppArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.errorPageUrl);
     }
 
+    @Import(name="forceDelete")
+    private @Nullable Output<Boolean> forceDelete;
+
+    public Optional<Output<Boolean>> forceDelete() {
+        return Optional.ofNullable(this.forceDelete);
+    }
+
     /**
      * (Updatable) Home Page URL
      * 
@@ -3069,6 +3076,7 @@ public final class DomainsAppArgs extends com.pulumi.resources.ResourceArgs {
         this.disableKmsiTokenAuthentication = $.disableKmsiTokenAuthentication;
         this.displayName = $.displayName;
         this.errorPageUrl = $.errorPageUrl;
+        this.forceDelete = $.forceDelete;
         this.homePageUrl = $.homePageUrl;
         this.icon = $.icon;
         this.idTokenEncAlgo = $.idTokenEncAlgo;
@@ -4563,6 +4571,15 @@ public final class DomainsAppArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder errorPageUrl(String errorPageUrl) {
             return errorPageUrl(Output.of(errorPageUrl));
+        }
+
+        public Builder forceDelete(@Nullable Output<Boolean> forceDelete) {
+            $.forceDelete = forceDelete;
+            return this;
+        }
+
+        public Builder forceDelete(Boolean forceDelete) {
+            return forceDelete(Output.of(forceDelete));
         }
 
         /**

@@ -159,11 +159,12 @@ namespace Pulumi.Oci.Sch
         /// <summary>
         /// A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
         /// </summary>
+        public readonly string LifecycleDetails;
+        /// <summary>
+        /// *Please note this property is deprecated and will be removed on January 27, 2026. Use `lifecycleDetails` instead.* A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+        /// </summary>
         public readonly string LifecyleDetails;
         public readonly string ServiceConnectorId;
-        /// <summary>
-        /// An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetServiceConnectorSourceResult> Sources;
         /// <summary>
         /// The current state of the connector.
@@ -173,9 +174,6 @@ namespace Pulumi.Oci.Sch
         /// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
-        /// <summary>
-        /// An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetServiceConnectorTargetResult> Targets;
         /// <summary>
         /// The list of tasks.
@@ -204,6 +202,8 @@ namespace Pulumi.Oci.Sch
 
             string id,
 
+            string lifecycleDetails,
+
             string lifecyleDetails,
 
             string serviceConnectorId,
@@ -228,6 +228,7 @@ namespace Pulumi.Oci.Sch
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            LifecycleDetails = lifecycleDetails;
             LifecyleDetails = lifecyleDetails;
             ServiceConnectorId = serviceConnectorId;
             Sources = sources;

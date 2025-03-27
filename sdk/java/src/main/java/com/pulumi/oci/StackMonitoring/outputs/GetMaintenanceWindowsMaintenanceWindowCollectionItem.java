@@ -19,7 +19,15 @@ public final class GetMaintenanceWindowsMaintenanceWindowCollectionItem {
      * 
      */
     private String compartmentId;
+    /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
     private Map<String,String> definedTags;
+    /**
+     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
     private Map<String,String> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of maintenance window.
@@ -50,6 +58,10 @@ public final class GetMaintenanceWindowsMaintenanceWindowCollectionItem {
      * 
      */
     private String state;
+    /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
     private Map<String,String> systemTags;
 
     private GetMaintenanceWindowsMaintenanceWindowCollectionItem() {}
@@ -60,9 +72,17 @@ public final class GetMaintenanceWindowsMaintenanceWindowCollectionItem {
     public String compartmentId() {
         return this.compartmentId;
     }
+    /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
     public Map<String,String> definedTags() {
         return this.definedTags;
     }
+    /**
+     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
     public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
@@ -113,6 +133,10 @@ public final class GetMaintenanceWindowsMaintenanceWindowCollectionItem {
     public String state() {
         return this.state;
     }
+    /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
     public Map<String,String> systemTags() {
         return this.systemTags;
     }

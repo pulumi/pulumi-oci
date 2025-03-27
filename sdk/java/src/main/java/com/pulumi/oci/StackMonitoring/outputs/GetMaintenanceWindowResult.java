@@ -10,6 +10,7 @@ import com.pulumi.oci.StackMonitoring.outputs.GetMaintenanceWindowResourcesDetai
 import com.pulumi.oci.StackMonitoring.outputs.GetMaintenanceWindowSchedule;
 import java.lang.String;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 @CustomType
@@ -20,10 +21,20 @@ public final class GetMaintenanceWindowResult {
      */
     private String compartmentId;
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
+    private Map<String,String> definedTags;
+    /**
      * @return Maintenance Window description.
      * 
      */
     private String description;
+    /**
+     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
+    private Map<String,String> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of maintenance window.
      * 
@@ -61,6 +72,11 @@ public final class GetMaintenanceWindowResult {
      */
     private String state;
     /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    private Map<String,String> systemTags;
+    /**
      * @return The time the the maintenance window was created. An RFC3339 formatted datetime string
      * 
      */
@@ -80,11 +96,25 @@ public final class GetMaintenanceWindowResult {
         return this.compartmentId;
     }
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
+    public Map<String,String> definedTags() {
+        return this.definedTags;
+    }
+    /**
      * @return Maintenance Window description.
      * 
      */
     public String description() {
         return this.description;
+    }
+    /**
+     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
+    public Map<String,String> freeformTags() {
+        return this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of maintenance window.
@@ -139,6 +169,13 @@ public final class GetMaintenanceWindowResult {
         return this.state;
     }
     /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return The time the the maintenance window was created. An RFC3339 formatted datetime string
      * 
      */
@@ -163,7 +200,9 @@ public final class GetMaintenanceWindowResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
+        private Map<String,String> definedTags;
         private String description;
+        private Map<String,String> freeformTags;
         private String id;
         private String lifecycleDetails;
         private String maintenanceWindowId;
@@ -172,13 +211,16 @@ public final class GetMaintenanceWindowResult {
         private List<GetMaintenanceWindowResourcesDetail> resourcesDetails;
         private List<GetMaintenanceWindowSchedule> schedules;
         private String state;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
         public Builder() {}
         public Builder(GetMaintenanceWindowResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
+    	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.maintenanceWindowId = defaults.maintenanceWindowId;
@@ -187,6 +229,7 @@ public final class GetMaintenanceWindowResult {
     	      this.resourcesDetails = defaults.resourcesDetails;
     	      this.schedules = defaults.schedules;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
         }
@@ -200,11 +243,27 @@ public final class GetMaintenanceWindowResult {
             return this;
         }
         @CustomType.Setter
+        public Builder definedTags(Map<String,String> definedTags) {
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetMaintenanceWindowResult", "definedTags");
+            }
+            this.definedTags = definedTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder description(String description) {
             if (description == null) {
               throw new MissingRequiredPropertyException("GetMaintenanceWindowResult", "description");
             }
             this.description = description;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder freeformTags(Map<String,String> freeformTags) {
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetMaintenanceWindowResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
@@ -281,6 +340,14 @@ public final class GetMaintenanceWindowResult {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetMaintenanceWindowResult", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetMaintenanceWindowResult", "timeCreated");
@@ -299,7 +366,9 @@ public final class GetMaintenanceWindowResult {
         public GetMaintenanceWindowResult build() {
             final var _resultValue = new GetMaintenanceWindowResult();
             _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
             _resultValue.description = description;
+            _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.maintenanceWindowId = maintenanceWindowId;
@@ -308,6 +377,7 @@ public final class GetMaintenanceWindowResult {
             _resultValue.resourcesDetails = resourcesDetails;
             _resultValue.schedules = schedules;
             _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             return _resultValue;

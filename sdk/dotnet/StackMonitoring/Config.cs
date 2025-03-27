@@ -63,6 +63,12 @@ namespace Pulumi.Oci.StackMonitoring
     public partial class Config : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// (Updatable) Property Details
+        /// </summary>
+        [Output("additionalConfigurations")]
+        public Output<Outputs.ConfigAdditionalConfigurations?> AdditionalConfigurations { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Compartment in which the configuration is created.
         /// </summary>
         [Output("compartmentId")]
@@ -87,6 +93,12 @@ namespace Pulumi.Oci.StackMonitoring
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) List of dynamic groups dedicated for Stack Monitoring.
+        /// </summary>
+        [Output("dynamicGroups")]
+        public Output<ImmutableArray<Outputs.ConfigDynamicGroup>> DynamicGroups { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
@@ -99,17 +111,25 @@ namespace Pulumi.Oci.StackMonitoring
         public Output<bool> IsEnabled { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) True if customer decides marks configuration as manually configured.
+        /// </summary>
+        [Output("isManuallyOnboarded")]
+        public Output<bool?> IsManuallyOnboarded { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) License edition.
         /// </summary>
         [Output("license")]
         public Output<string> License { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) List of policy names assigned for onboarding
+        /// </summary>
+        [Output("policyNames")]
+        public Output<ImmutableArray<string>> PolicyNames { get; private set; } = null!;
+
+        /// <summary>
         /// The type of resource to configure for automatic promotion.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("resourceType")]
         public Output<string> ResourceType { get; private set; } = null!;
@@ -137,6 +157,22 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) List of user groups dedicated for Stack Monitoring.
+        /// </summary>
+        [Output("userGroups")]
+        public Output<ImmutableArray<Outputs.ConfigUserGroup>> UserGroups { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Assigned version to given onboard configuration.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("version")]
+        public Output<string?> Version { get; private set; } = null!;
 
 
         /// <summary>
@@ -185,6 +221,12 @@ namespace Pulumi.Oci.StackMonitoring
     public sealed class ConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Updatable) Property Details
+        /// </summary>
+        [Input("additionalConfigurations")]
+        public Input<Inputs.ConfigAdditionalConfigurationsArgs>? AdditionalConfigurations { get; set; }
+
+        /// <summary>
         /// (Updatable) Compartment in which the configuration is created.
         /// </summary>
         [Input("compartmentId", required: true)]
@@ -214,6 +256,18 @@ namespace Pulumi.Oci.StackMonitoring
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
+        [Input("dynamicGroups")]
+        private InputList<Inputs.ConfigDynamicGroupArgs>? _dynamicGroups;
+
+        /// <summary>
+        /// (Updatable) List of dynamic groups dedicated for Stack Monitoring.
+        /// </summary>
+        public InputList<Inputs.ConfigDynamicGroupArgs> DynamicGroups
+        {
+            get => _dynamicGroups ?? (_dynamicGroups = new InputList<Inputs.ConfigDynamicGroupArgs>());
+            set => _dynamicGroups = value;
+        }
+
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;
 
@@ -233,20 +287,56 @@ namespace Pulumi.Oci.StackMonitoring
         public Input<bool>? IsEnabled { get; set; }
 
         /// <summary>
+        /// (Updatable) True if customer decides marks configuration as manually configured.
+        /// </summary>
+        [Input("isManuallyOnboarded")]
+        public Input<bool>? IsManuallyOnboarded { get; set; }
+
+        /// <summary>
         /// (Updatable) License edition.
         /// </summary>
         [Input("license")]
         public Input<string>? License { get; set; }
 
+        [Input("policyNames")]
+        private InputList<string>? _policyNames;
+
+        /// <summary>
+        /// (Updatable) List of policy names assigned for onboarding
+        /// </summary>
+        public InputList<string> PolicyNames
+        {
+            get => _policyNames ?? (_policyNames = new InputList<string>());
+            set => _policyNames = value;
+        }
+
         /// <summary>
         /// The type of resource to configure for automatic promotion.
+        /// </summary>
+        [Input("resourceType")]
+        public Input<string>? ResourceType { get; set; }
+
+        [Input("userGroups")]
+        private InputList<Inputs.ConfigUserGroupArgs>? _userGroups;
+
+        /// <summary>
+        /// (Updatable) List of user groups dedicated for Stack Monitoring.
+        /// </summary>
+        public InputList<Inputs.ConfigUserGroupArgs> UserGroups
+        {
+            get => _userGroups ?? (_userGroups = new InputList<Inputs.ConfigUserGroupArgs>());
+            set => _userGroups = value;
+        }
+
+        /// <summary>
+        /// (Updatable) Assigned version to given onboard configuration.
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("resourceType")]
-        public Input<string>? ResourceType { get; set; }
+        [Input("version")]
+        public Input<string>? Version { get; set; }
 
         public ConfigArgs()
         {
@@ -256,6 +346,12 @@ namespace Pulumi.Oci.StackMonitoring
 
     public sealed class ConfigState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Updatable) Property Details
+        /// </summary>
+        [Input("additionalConfigurations")]
+        public Input<Inputs.ConfigAdditionalConfigurationsGetArgs>? AdditionalConfigurations { get; set; }
+
         /// <summary>
         /// (Updatable) Compartment in which the configuration is created.
         /// </summary>
@@ -286,6 +382,18 @@ namespace Pulumi.Oci.StackMonitoring
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
+        [Input("dynamicGroups")]
+        private InputList<Inputs.ConfigDynamicGroupGetArgs>? _dynamicGroups;
+
+        /// <summary>
+        /// (Updatable) List of dynamic groups dedicated for Stack Monitoring.
+        /// </summary>
+        public InputList<Inputs.ConfigDynamicGroupGetArgs> DynamicGroups
+        {
+            get => _dynamicGroups ?? (_dynamicGroups = new InputList<Inputs.ConfigDynamicGroupGetArgs>());
+            set => _dynamicGroups = value;
+        }
+
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;
 
@@ -305,17 +413,31 @@ namespace Pulumi.Oci.StackMonitoring
         public Input<bool>? IsEnabled { get; set; }
 
         /// <summary>
+        /// (Updatable) True if customer decides marks configuration as manually configured.
+        /// </summary>
+        [Input("isManuallyOnboarded")]
+        public Input<bool>? IsManuallyOnboarded { get; set; }
+
+        /// <summary>
         /// (Updatable) License edition.
         /// </summary>
         [Input("license")]
         public Input<string>? License { get; set; }
 
+        [Input("policyNames")]
+        private InputList<string>? _policyNames;
+
+        /// <summary>
+        /// (Updatable) List of policy names assigned for onboarding
+        /// </summary>
+        public InputList<string> PolicyNames
+        {
+            get => _policyNames ?? (_policyNames = new InputList<string>());
+            set => _policyNames = value;
+        }
+
         /// <summary>
         /// The type of resource to configure for automatic promotion.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("resourceType")]
         public Input<string>? ResourceType { get; set; }
@@ -349,6 +471,28 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
+
+        [Input("userGroups")]
+        private InputList<Inputs.ConfigUserGroupGetArgs>? _userGroups;
+
+        /// <summary>
+        /// (Updatable) List of user groups dedicated for Stack Monitoring.
+        /// </summary>
+        public InputList<Inputs.ConfigUserGroupGetArgs> UserGroups
+        {
+            get => _userGroups ?? (_userGroups = new InputList<Inputs.ConfigUserGroupGetArgs>());
+            set => _userGroups = value;
+        }
+
+        /// <summary>
+        /// (Updatable) Assigned version to given onboard configuration.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("version")]
+        public Input<string>? Version { get; set; }
 
         public ConfigState()
         {

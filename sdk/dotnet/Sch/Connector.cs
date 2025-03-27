@@ -192,11 +192,17 @@ namespace Pulumi.Oci.Sch
         /// <summary>
         /// A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
         /// </summary>
+        [Output("lifecycleDetails")]
+        public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// *Please note this property is deprecated and will be removed on January 27, 2026. Use `lifecycleDetails` instead.* A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+        /// </summary>
         [Output("lifecyleDetails")]
         public Output<string> LifecyleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+        /// (Updatable)
         /// </summary>
         [Output("source")]
         public Output<Outputs.ConnectorSource> Source { get; private set; } = null!;
@@ -218,7 +224,7 @@ namespace Pulumi.Oci.Sch
         public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+        /// (Updatable)
         /// </summary>
         [Output("target")]
         public Output<Outputs.ConnectorTarget> Target { get; private set; } = null!;
@@ -330,7 +336,7 @@ namespace Pulumi.Oci.Sch
         }
 
         /// <summary>
-        /// (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+        /// (Updatable)
         /// </summary>
         [Input("source", required: true)]
         public Input<Inputs.ConnectorSourceArgs> Source { get; set; } = null!;
@@ -346,7 +352,7 @@ namespace Pulumi.Oci.Sch
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// (Updatable) An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+        /// (Updatable)
         /// </summary>
         [Input("target", required: true)]
         public Input<Inputs.ConnectorTargetArgs> Target { get; set; } = null!;
@@ -416,11 +422,17 @@ namespace Pulumi.Oci.Sch
         /// <summary>
         /// A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
         /// </summary>
+        [Input("lifecycleDetails")]
+        public Input<string>? LifecycleDetails { get; set; }
+
+        /// <summary>
+        /// *Please note this property is deprecated and will be removed on January 27, 2026. Use `lifecycleDetails` instead.* A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+        /// </summary>
         [Input("lifecyleDetails")]
         public Input<string>? LifecyleDetails { get; set; }
 
         /// <summary>
-        /// (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+        /// (Updatable)
         /// </summary>
         [Input("source")]
         public Input<Inputs.ConnectorSourceGetArgs>? Source { get; set; }
@@ -448,7 +460,7 @@ namespace Pulumi.Oci.Sch
         }
 
         /// <summary>
-        /// (Updatable) An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+        /// (Updatable)
         /// </summary>
         [Input("target")]
         public Input<Inputs.ConnectorTargetGetArgs>? Target { get; set; }

@@ -18,9 +18,17 @@ public final class GetConfigsFilterArgs extends com.pulumi.resources.ResourceArg
 
     public static final GetConfigsFilterArgs Empty = new GetConfigsFilterArgs();
 
+    /**
+     * Name of user Group
+     * 
+     */
     @Import(name="name", required=true)
     private Output<String> name;
 
+    /**
+     * @return Name of user Group
+     * 
+     */
     public Output<String> name() {
         return this.name;
     }
@@ -65,11 +73,23 @@ public final class GetConfigsFilterArgs extends com.pulumi.resources.ResourceArg
             $ = new GetConfigsFilterArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param name Name of user Group
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(Output<String> name) {
             $.name = name;
             return this;
         }
 
+        /**
+         * @param name Name of user Group
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(String name) {
             return name(Output.of(name));
         }

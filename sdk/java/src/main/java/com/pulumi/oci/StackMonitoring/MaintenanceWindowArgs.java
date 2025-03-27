@@ -10,6 +10,7 @@ import com.pulumi.oci.StackMonitoring.inputs.MaintenanceWindowResourceArgs;
 import com.pulumi.oci.StackMonitoring.inputs.MaintenanceWindowScheduleArgs;
 import java.lang.String;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -35,6 +36,21 @@ public final class MaintenanceWindowArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
+    @Import(name="definedTags")
+    private @Nullable Output<Map<String,String>> definedTags;
+
+    /**
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
+    public Optional<Output<Map<String,String>>> definedTags() {
+        return Optional.ofNullable(this.definedTags);
+    }
+
+    /**
      * (Updatable) Maintenance Window description.
      * 
      */
@@ -47,6 +63,21 @@ public final class MaintenanceWindowArgs extends com.pulumi.resources.ResourceAr
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
+    }
+
+    /**
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
+    @Import(name="freeformTags")
+    private @Nullable Output<Map<String,String>> freeformTags;
+
+    /**
+     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
+    public Optional<Output<Map<String,String>>> freeformTags() {
+        return Optional.ofNullable(this.freeformTags);
     }
 
     /**
@@ -98,7 +129,9 @@ public final class MaintenanceWindowArgs extends com.pulumi.resources.ResourceAr
 
     private MaintenanceWindowArgs(MaintenanceWindowArgs $) {
         this.compartmentId = $.compartmentId;
+        this.definedTags = $.definedTags;
         this.description = $.description;
+        this.freeformTags = $.freeformTags;
         this.name = $.name;
         this.resources = $.resources;
         this.schedule = $.schedule;
@@ -144,6 +177,27 @@ public final class MaintenanceWindowArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder definedTags(@Nullable Output<Map<String,String>> definedTags) {
+            $.definedTags = definedTags;
+            return this;
+        }
+
+        /**
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder definedTags(Map<String,String> definedTags) {
+            return definedTags(Output.of(definedTags));
+        }
+
+        /**
          * @param description (Updatable) Maintenance Window description.
          * 
          * @return builder
@@ -162,6 +216,27 @@ public final class MaintenanceWindowArgs extends com.pulumi.resources.ResourceAr
          */
         public Builder description(String description) {
             return description(Output.of(description));
+        }
+
+        /**
+         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder freeformTags(@Nullable Output<Map<String,String>> freeformTags) {
+            $.freeformTags = freeformTags;
+            return this;
+        }
+
+        /**
+         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder freeformTags(Map<String,String> freeformTags) {
+            return freeformTags(Output.of(freeformTags));
         }
 
         /**

@@ -584,6 +584,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * uniqueness: none
      */
     public readonly errorPageUrl!: pulumi.Output<string>;
+    public readonly forceDelete!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
      *
@@ -1621,6 +1622,7 @@ export class DomainsApp extends pulumi.CustomResource {
             resourceInputs["domainOcid"] = state ? state.domainOcid : undefined;
             resourceInputs["editableAttributes"] = state ? state.editableAttributes : undefined;
             resourceInputs["errorPageUrl"] = state ? state.errorPageUrl : undefined;
+            resourceInputs["forceDelete"] = state ? state.forceDelete : undefined;
             resourceInputs["grantedAppRoles"] = state ? state.grantedAppRoles : undefined;
             resourceInputs["grants"] = state ? state.grants : undefined;
             resourceInputs["hashedClientSecret"] = state ? state.hashedClientSecret : undefined;
@@ -1747,6 +1749,7 @@ export class DomainsApp extends pulumi.CustomResource {
             resourceInputs["disableKmsiTokenAuthentication"] = args ? args.disableKmsiTokenAuthentication : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["errorPageUrl"] = args ? args.errorPageUrl : undefined;
+            resourceInputs["forceDelete"] = args ? args.forceDelete : undefined;
             resourceInputs["homePageUrl"] = args ? args.homePageUrl : undefined;
             resourceInputs["icon"] = args ? args.icon : undefined;
             resourceInputs["idTokenEncAlgo"] = args ? args.idTokenEncAlgo : undefined;
@@ -2384,6 +2387,7 @@ export interface DomainsAppState {
      * * uniqueness: none
      */
     errorPageUrl?: pulumi.Input<string>;
+    forceDelete?: pulumi.Input<boolean>;
     /**
      * (Updatable) A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
      *
@@ -3779,6 +3783,7 @@ export interface DomainsAppArgs {
      * * uniqueness: none
      */
     errorPageUrl?: pulumi.Input<string>;
+    forceDelete?: pulumi.Input<boolean>;
     /**
      * (Updatable) Home Page URL
      *

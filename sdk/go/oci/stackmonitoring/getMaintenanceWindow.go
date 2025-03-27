@@ -60,8 +60,12 @@ type LookupMaintenanceWindowArgs struct {
 type LookupMaintenanceWindowResult struct {
 	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Maintenance Window description.
 	Description string `pulumi:"description"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of maintenance window.
 	Id string `pulumi:"id"`
 	// Lifecycle Details of the Maintenance Window.
@@ -77,6 +81,8 @@ type LookupMaintenanceWindowResult struct {
 	Schedules []GetMaintenanceWindowSchedule `pulumi:"schedules"`
 	// Lifecycle state of the monitored resource.
 	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the the maintenance window was created. An RFC3339 formatted datetime string
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the the mainteance window was updated. An RFC3339 formatted datetime string
@@ -122,9 +128,19 @@ func (o LookupMaintenanceWindowResultOutput) CompartmentId() pulumi.StringOutput
 	return o.ApplyT(func(v LookupMaintenanceWindowResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o LookupMaintenanceWindowResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupMaintenanceWindowResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
 // Maintenance Window description.
 func (o LookupMaintenanceWindowResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMaintenanceWindowResult) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o LookupMaintenanceWindowResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupMaintenanceWindowResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of maintenance window.
@@ -164,6 +180,11 @@ func (o LookupMaintenanceWindowResultOutput) Schedules() GetMaintenanceWindowSch
 // Lifecycle state of the monitored resource.
 func (o LookupMaintenanceWindowResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMaintenanceWindowResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o LookupMaintenanceWindowResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupMaintenanceWindowResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the the maintenance window was created. An RFC3339 formatted datetime string

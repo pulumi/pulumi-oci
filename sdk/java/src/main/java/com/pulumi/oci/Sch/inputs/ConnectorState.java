@@ -99,11 +99,26 @@ public final class ConnectorState extends com.pulumi.resources.ResourceArgs {
      * A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
      * 
      */
+    @Import(name="lifecycleDetails")
+    private @Nullable Output<String> lifecycleDetails;
+
+    /**
+     * @return A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+     * 
+     */
+    public Optional<Output<String>> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
+    }
+
+    /**
+     * *Please note this property is deprecated and will be removed on January 27, 2026. Use `lifecycleDetails` instead.* A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+     * 
+     */
     @Import(name="lifecyleDetails")
     private @Nullable Output<String> lifecyleDetails;
 
     /**
-     * @return A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+     * @return *Please note this property is deprecated and will be removed on January 27, 2026. Use `lifecycleDetails` instead.* A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
      * 
      */
     public Optional<Output<String>> lifecyleDetails() {
@@ -111,14 +126,14 @@ public final class ConnectorState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+     * (Updatable)
      * 
      */
     @Import(name="source")
     private @Nullable Output<ConnectorSourceArgs> source;
 
     /**
-     * @return (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+     * @return (Updatable)
      * 
      */
     public Optional<Output<ConnectorSourceArgs>> source() {
@@ -162,14 +177,14 @@ public final class ConnectorState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+     * (Updatable)
      * 
      */
     @Import(name="target")
     private @Nullable Output<ConnectorTargetArgs> target;
 
     /**
-     * @return (Updatable) An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+     * @return (Updatable)
      * 
      */
     public Optional<Output<ConnectorTargetArgs>> target() {
@@ -229,6 +244,7 @@ public final class ConnectorState extends com.pulumi.resources.ResourceArgs {
         this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.lifecycleDetails = $.lifecycleDetails;
         this.lifecyleDetails = $.lifecyleDetails;
         this.source = $.source;
         this.state = $.state;
@@ -363,7 +379,28 @@ public final class ConnectorState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lifecyleDetails A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+         * @param lifecycleDetails A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleDetails(@Nullable Output<String> lifecycleDetails) {
+            $.lifecycleDetails = lifecycleDetails;
+            return this;
+        }
+
+        /**
+         * @param lifecycleDetails A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            return lifecycleDetails(Output.of(lifecycleDetails));
+        }
+
+        /**
+         * @param lifecyleDetails *Please note this property is deprecated and will be removed on January 27, 2026. Use `lifecycleDetails` instead.* A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
          * 
          * @return builder
          * 
@@ -374,7 +411,7 @@ public final class ConnectorState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lifecyleDetails A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+         * @param lifecyleDetails *Please note this property is deprecated and will be removed on January 27, 2026. Use `lifecycleDetails` instead.* A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
          * 
          * @return builder
          * 
@@ -384,7 +421,7 @@ public final class ConnectorState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param source (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+         * @param source (Updatable)
          * 
          * @return builder
          * 
@@ -395,7 +432,7 @@ public final class ConnectorState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param source (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+         * @param source (Updatable)
          * 
          * @return builder
          * 
@@ -453,7 +490,7 @@ public final class ConnectorState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param target (Updatable) An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+         * @param target (Updatable)
          * 
          * @return builder
          * 
@@ -464,7 +501,7 @@ public final class ConnectorState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param target (Updatable) An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+         * @param target (Updatable)
          * 
          * @return builder
          * 

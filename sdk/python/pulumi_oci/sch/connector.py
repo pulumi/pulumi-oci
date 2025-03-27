@@ -34,8 +34,8 @@ class ConnectorArgs:
         The set of arguments for constructing a Connector resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the comparment to create the connector in.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.
-        :param pulumi.Input['ConnectorSourceArgs'] source: (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
-        :param pulumi.Input['ConnectorTargetArgs'] target: (Updatable) An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+        :param pulumi.Input['ConnectorSourceArgs'] source: (Updatable)
+        :param pulumi.Input['ConnectorTargetArgs'] target: (Updatable)
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) The description of the resource. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -89,7 +89,7 @@ class ConnectorArgs:
     @pulumi.getter
     def source(self) -> pulumi.Input['ConnectorSourceArgs']:
         """
-        (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+        (Updatable)
         """
         return pulumi.get(self, "source")
 
@@ -101,7 +101,7 @@ class ConnectorArgs:
     @pulumi.getter
     def target(self) -> pulumi.Input['ConnectorTargetArgs']:
         """
-        (Updatable) An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+        (Updatable)
         """
         return pulumi.get(self, "target")
 
@@ -182,6 +182,7 @@ class _ConnectorState:
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 lifecycle_details: Optional[pulumi.Input[str]] = None,
                  lifecyle_details: Optional[pulumi.Input[str]] = None,
                  source: Optional[pulumi.Input['ConnectorSourceArgs']] = None,
                  state: Optional[pulumi.Input[str]] = None,
@@ -197,15 +198,16 @@ class _ConnectorState:
         :param pulumi.Input[str] description: (Updatable) The description of the resource. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecyle_details: A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
-        :param pulumi.Input['ConnectorSourceArgs'] source: (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+        :param pulumi.Input[str] lifecyle_details: *Please note this property is deprecated and will be removed on January 27, 2026. Use `lifecycleDetails` instead.* A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+        :param pulumi.Input['ConnectorSourceArgs'] source: (Updatable)
         :param pulumi.Input[str] state: (Updatable) The target state for the service connector. Could be set to `ACTIVE` or `INACTIVE`.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-        :param pulumi.Input['ConnectorTargetArgs'] target: (Updatable) An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+        :param pulumi.Input['ConnectorTargetArgs'] target: (Updatable)
         :param pulumi.Input[Sequence[pulumi.Input['ConnectorTaskArgs']]] tasks: (Updatable) The list of tasks.
         :param pulumi.Input[str] time_created: The date and time when the connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The date and time when the connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
@@ -220,6 +222,8 @@ class _ConnectorState:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if lifecyle_details is not None:
             pulumi.set(__self__, "lifecyle_details", lifecyle_details)
         if source is not None:
@@ -298,10 +302,22 @@ class _ConnectorState:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
+        """
+        A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "lifecycle_details", value)
+
+    @property
     @pulumi.getter(name="lifecyleDetails")
     def lifecyle_details(self) -> Optional[pulumi.Input[str]]:
         """
-        A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+        *Please note this property is deprecated and will be removed on January 27, 2026. Use `lifecycleDetails` instead.* A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
         """
         return pulumi.get(self, "lifecyle_details")
 
@@ -313,7 +329,7 @@ class _ConnectorState:
     @pulumi.getter
     def source(self) -> Optional[pulumi.Input['ConnectorSourceArgs']]:
         """
-        (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+        (Updatable)
         """
         return pulumi.get(self, "source")
 
@@ -353,7 +369,7 @@ class _ConnectorState:
     @pulumi.getter
     def target(self) -> Optional[pulumi.Input['ConnectorTargetArgs']]:
         """
-        (Updatable) An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+        (Updatable)
         """
         return pulumi.get(self, "target")
 
@@ -531,13 +547,13 @@ class Connector(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) The description of the resource. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Union['ConnectorSourceArgs', 'ConnectorSourceArgsDict']] source: (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+        :param pulumi.Input[Union['ConnectorSourceArgs', 'ConnectorSourceArgsDict']] source: (Updatable)
         :param pulumi.Input[str] state: (Updatable) The target state for the service connector. Could be set to `ACTIVE` or `INACTIVE`.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Union['ConnectorTargetArgs', 'ConnectorTargetArgsDict']] target: (Updatable) An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+        :param pulumi.Input[Union['ConnectorTargetArgs', 'ConnectorTargetArgsDict']] target: (Updatable)
         :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectorTaskArgs', 'ConnectorTaskArgsDict']]]] tasks: (Updatable) The list of tasks.
         """
         ...
@@ -707,6 +723,7 @@ class Connector(pulumi.CustomResource):
                 raise TypeError("Missing required property 'target'")
             __props__.__dict__["target"] = target
             __props__.__dict__["tasks"] = tasks
+            __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["lifecyle_details"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
@@ -726,6 +743,7 @@ class Connector(pulumi.CustomResource):
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+            lifecycle_details: Optional[pulumi.Input[str]] = None,
             lifecyle_details: Optional[pulumi.Input[str]] = None,
             source: Optional[pulumi.Input[Union['ConnectorSourceArgs', 'ConnectorSourceArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -746,15 +764,16 @@ class Connector(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) The description of the resource. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecyle_details: A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
-        :param pulumi.Input[Union['ConnectorSourceArgs', 'ConnectorSourceArgsDict']] source: (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+        :param pulumi.Input[str] lifecyle_details: *Please note this property is deprecated and will be removed on January 27, 2026. Use `lifecycleDetails` instead.* A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+        :param pulumi.Input[Union['ConnectorSourceArgs', 'ConnectorSourceArgsDict']] source: (Updatable)
         :param pulumi.Input[str] state: (Updatable) The target state for the service connector. Could be set to `ACTIVE` or `INACTIVE`.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-        :param pulumi.Input[Union['ConnectorTargetArgs', 'ConnectorTargetArgsDict']] target: (Updatable) An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+        :param pulumi.Input[Union['ConnectorTargetArgs', 'ConnectorTargetArgsDict']] target: (Updatable)
         :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectorTaskArgs', 'ConnectorTaskArgsDict']]]] tasks: (Updatable) The list of tasks.
         :param pulumi.Input[str] time_created: The date and time when the connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The date and time when the connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
@@ -768,6 +787,7 @@ class Connector(pulumi.CustomResource):
         __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["lifecyle_details"] = lifecyle_details
         __props__.__dict__["source"] = source
         __props__.__dict__["state"] = state
@@ -819,10 +839,18 @@ class Connector(pulumi.CustomResource):
         return pulumi.get(self, "freeform_tags")
 
     @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> pulumi.Output[str]:
+        """
+        A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
     @pulumi.getter(name="lifecyleDetails")
     def lifecyle_details(self) -> pulumi.Output[str]:
         """
-        A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+        *Please note this property is deprecated and will be removed on January 27, 2026. Use `lifecycleDetails` instead.* A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
         """
         return pulumi.get(self, "lifecyle_details")
 
@@ -830,7 +858,7 @@ class Connector(pulumi.CustomResource):
     @pulumi.getter
     def source(self) -> pulumi.Output['outputs.ConnectorSource']:
         """
-        (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+        (Updatable)
         """
         return pulumi.get(self, "source")
 
@@ -858,7 +886,7 @@ class Connector(pulumi.CustomResource):
     @pulumi.getter
     def target(self) -> pulumi.Output['outputs.ConnectorTarget']:
         """
-        (Updatable) An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+        (Updatable)
         """
         return pulumi.get(self, "target")
 

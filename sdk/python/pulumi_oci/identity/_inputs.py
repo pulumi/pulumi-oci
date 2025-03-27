@@ -7957,21 +7957,7 @@ if not MYPY:
         * type: string
         * uniqueness: none
         """
-        ref: NotRequired[pulumi.Input[str]]
-        """
-        (Updatable) URI of the policy.
-
-        **Added In:** 2209070044
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: reference
-        * uniqueness: none
-        """
+        _ref: NotRequired[pulumi.Input[str]]
 elif False:
     DomainsAppRadiusPolicyArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -7979,7 +7965,7 @@ elif False:
 class DomainsAppRadiusPolicyArgs:
     def __init__(__self__, *,
                  value: pulumi.Input[str],
-                 ref: Optional[pulumi.Input[str]] = None):
+                 _ref: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] value: (Updatable) Identifier of the Policy.
                
@@ -7994,22 +7980,10 @@ class DomainsAppRadiusPolicyArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ref: (Updatable) URI of the policy.
-               
-               **Added In:** 2209070044
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: reference
-               * uniqueness: none
         """
         pulumi.set(__self__, "value", value)
-        if ref is not None:
-            pulumi.set(__self__, "ref", ref)
+        if _ref is not None:
+            pulumi.set(__self__, "_ref", _ref)
 
     @property
     @pulumi.getter
@@ -8037,26 +8011,12 @@ class DomainsAppRadiusPolicyArgs:
 
     @property
     @pulumi.getter
-    def ref(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) URI of the policy.
+    def _ref(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "_ref")
 
-        **Added In:** 2209070044
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: reference
-        * uniqueness: none
-        """
-        return pulumi.get(self, "ref")
-
-    @ref.setter
-    def ref(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "ref", value)
+    @_ref.setter
+    def _ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "_ref", value)
 
 
 if not MYPY:

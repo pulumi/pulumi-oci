@@ -27,12 +27,12 @@ public final class ConnectorTarget {
      */
     private @Nullable Integer batchRolloverTimeInMs;
     /**
-     * @return (Updatable) The batch rollover size in kilobytes.
+     * @return (Updatable) The batch rollover size in kilobytes. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
      * 
      */
     private @Nullable Integer batchSizeInKbs;
     /**
-     * @return (Updatable) The batch rollover size in number of messages.
+     * @return (Updatable) The batch rollover size in number of messages. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
      * 
      */
     private @Nullable Integer batchSizeInNum;
@@ -57,7 +57,7 @@ public final class ConnectorTarget {
      */
     private @Nullable List<ConnectorTargetDimension> dimensions;
     /**
-     * @return (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
+     * @return (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol. Example: `true`
      * 
      */
     private @Nullable Boolean enableFormattedMessaging;
@@ -82,12 +82,12 @@ public final class ConnectorTarget {
      */
     private @Nullable String logSourceIdentifier;
     /**
-     * @return (Updatable) The name of the metric.  Example: `CpuUtilization`
+     * @return (Updatable) The name of the metric. Example: `CpuUtilization`
      * 
      */
     private @Nullable String metric;
     /**
-     * @return (Updatable) The namespace of the metric.  Example: `oci_computeagent`
+     * @return (Updatable) The namespace of the metric. Example: `oci_computeagent`
      * 
      */
     private @Nullable String metricNamespace;
@@ -128,14 +128,14 @@ public final class ConnectorTarget {
         return Optional.ofNullable(this.batchRolloverTimeInMs);
     }
     /**
-     * @return (Updatable) The batch rollover size in kilobytes.
+     * @return (Updatable) The batch rollover size in kilobytes. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
      * 
      */
     public Optional<Integer> batchSizeInKbs() {
         return Optional.ofNullable(this.batchSizeInKbs);
     }
     /**
-     * @return (Updatable) The batch rollover size in number of messages.
+     * @return (Updatable) The batch rollover size in number of messages. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
      * 
      */
     public Optional<Integer> batchSizeInNum() {
@@ -170,7 +170,7 @@ public final class ConnectorTarget {
         return this.dimensions == null ? List.of() : this.dimensions;
     }
     /**
-     * @return (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
+     * @return (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol. Example: `true`
      * 
      */
     public Optional<Boolean> enableFormattedMessaging() {
@@ -205,14 +205,14 @@ public final class ConnectorTarget {
         return Optional.ofNullable(this.logSourceIdentifier);
     }
     /**
-     * @return (Updatable) The name of the metric.  Example: `CpuUtilization`
+     * @return (Updatable) The name of the metric. Example: `CpuUtilization`
      * 
      */
     public Optional<String> metric() {
         return Optional.ofNullable(this.metric);
     }
     /**
-     * @return (Updatable) The namespace of the metric.  Example: `oci_computeagent`
+     * @return (Updatable) The namespace of the metric. Example: `oci_computeagent`
      * 
      */
     public Optional<String> metricNamespace() {

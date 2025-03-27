@@ -49,11 +49,12 @@ public final class GetServiceConnectorsServiceConnectorCollectionItem {
      * @return A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
      * 
      */
-    private String lifecyleDetails;
+    private String lifecycleDetails;
     /**
-     * @return An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+     * @return *Please note this property is deprecated and will be removed on January 27, 2026. Use `lifecycleDetails` instead.* A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
      * 
      */
+    private String lifecyleDetails;
     private List<GetServiceConnectorsServiceConnectorCollectionItemSource> sources;
     /**
      * @return A filter to return only resources that match the given lifecycle state.  Example: `ACTIVE`
@@ -65,10 +66,6 @@ public final class GetServiceConnectorsServiceConnectorCollectionItem {
      * 
      */
     private Map<String,String> systemTags;
-    /**
-     * @return An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
-     * 
-     */
     private List<GetServiceConnectorsServiceConnectorCollectionItemTarget> targets;
     /**
      * @return The list of tasks.
@@ -133,13 +130,16 @@ public final class GetServiceConnectorsServiceConnectorCollectionItem {
      * @return A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
      * 
      */
+    public String lifecycleDetails() {
+        return this.lifecycleDetails;
+    }
+    /**
+     * @return *Please note this property is deprecated and will be removed on January 27, 2026. Use `lifecycleDetails` instead.* A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+     * 
+     */
     public String lifecyleDetails() {
         return this.lifecyleDetails;
     }
-    /**
-     * @return An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
-     * 
-     */
     public List<GetServiceConnectorsServiceConnectorCollectionItemSource> sources() {
         return this.sources;
     }
@@ -157,10 +157,6 @@ public final class GetServiceConnectorsServiceConnectorCollectionItem {
     public Map<String,String> systemTags() {
         return this.systemTags;
     }
-    /**
-     * @return An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
-     * 
-     */
     public List<GetServiceConnectorsServiceConnectorCollectionItemTarget> targets() {
         return this.targets;
     }
@@ -201,6 +197,7 @@ public final class GetServiceConnectorsServiceConnectorCollectionItem {
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
+        private String lifecycleDetails;
         private String lifecyleDetails;
         private List<GetServiceConnectorsServiceConnectorCollectionItemSource> sources;
         private String state;
@@ -218,6 +215,7 @@ public final class GetServiceConnectorsServiceConnectorCollectionItem {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.lifecyleDetails = defaults.lifecyleDetails;
     	      this.sources = defaults.sources;
     	      this.state = defaults.state;
@@ -274,6 +272,14 @@ public final class GetServiceConnectorsServiceConnectorCollectionItem {
               throw new MissingRequiredPropertyException("GetServiceConnectorsServiceConnectorCollectionItem", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorsServiceConnectorCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
@@ -357,6 +363,7 @@ public final class GetServiceConnectorsServiceConnectorCollectionItem {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.lifecyleDetails = lifecyleDetails;
             _resultValue.sources = sources;
             _resultValue.state = state;

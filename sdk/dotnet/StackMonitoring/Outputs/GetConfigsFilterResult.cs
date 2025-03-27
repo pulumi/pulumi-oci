@@ -13,6 +13,9 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
     [OutputType]
     public sealed class GetConfigsFilterResult
     {
+        /// <summary>
+        /// Name of user Group
+        /// </summary>
         public readonly string Name;
         public readonly bool? Regex;
         public readonly ImmutableArray<string> Values;

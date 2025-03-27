@@ -53,7 +53,7 @@ if not MYPY:
         """
         config_map: NotRequired[pulumi.Input[str]]
         """
-        (Updatable) The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+        (Updatable) The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using [GetConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin) and review its schema value.
         """
         cursor: NotRequired[pulumi.Input['ConnectorSourceCursorArgsDict']]
         """
@@ -69,7 +69,7 @@ if not MYPY:
         """
         plugin_name: NotRequired[pulumi.Input[str]]
         """
-        (Updatable) The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+        (Updatable) The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using [ListConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins).
         """
         stream_id: NotRequired[pulumi.Input[str]]
         """
@@ -90,11 +90,11 @@ class ConnectorSourceArgs:
                  stream_id: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] kind: (Updatable) The type discriminator.
-        :param pulumi.Input[str] config_map: (Updatable) The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+        :param pulumi.Input[str] config_map: (Updatable) The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using [GetConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin) and review its schema value.
         :param pulumi.Input['ConnectorSourceCursorArgs'] cursor: (Updatable) The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
         :param pulumi.Input[Sequence[pulumi.Input['ConnectorSourceLogSourceArgs']]] log_sources: (Updatable) The logs for this Logging source.
         :param pulumi.Input[Sequence[pulumi.Input['ConnectorSourceMonitoringSourceArgs']]] monitoring_sources: (Updatable) One or more compartment-specific lists of metric namespaces to retrieve data from.
-        :param pulumi.Input[str] plugin_name: (Updatable) The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+        :param pulumi.Input[str] plugin_name: (Updatable) The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using [ListConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins).
         :param pulumi.Input[str] stream_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
         """
         pulumi.set(__self__, "kind", kind)
@@ -127,7 +127,7 @@ class ConnectorSourceArgs:
     @pulumi.getter(name="configMap")
     def config_map(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+        (Updatable) The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using [GetConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin) and review its schema value.
         """
         return pulumi.get(self, "config_map")
 
@@ -175,7 +175,7 @@ class ConnectorSourceArgs:
     @pulumi.getter(name="pluginName")
     def plugin_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+        (Updatable) The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using [ListConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins).
         """
         return pulumi.get(self, "plugin_name")
 
@@ -236,7 +236,7 @@ if not MYPY:
         """
         log_group_id: NotRequired[pulumi.Input[str]]
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group. Note: For the Notifications target, only _Audit is allowed. Example OCID for _Audit log group: ocid1.tenancy.oc1..exampleuniqueid/_Audit
+        (Updatable) Identifier of the log group. Either `_Audit` or the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group. Note: For the Notifications target, only `_Audit` is allowed.
         """
         log_id: NotRequired[pulumi.Input[str]]
         """
@@ -253,7 +253,7 @@ class ConnectorSourceLogSourceArgs:
                  log_id: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the log source.
-        :param pulumi.Input[str] log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group. Note: For the Notifications target, only _Audit is allowed. Example OCID for _Audit log group: ocid1.tenancy.oc1..exampleuniqueid/_Audit
+        :param pulumi.Input[str] log_group_id: (Updatable) Identifier of the log group. Either `_Audit` or the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group. Note: For the Notifications target, only `_Audit` is allowed.
         :param pulumi.Input[str] log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
         """
         if compartment_id is not None:
@@ -279,7 +279,7 @@ class ConnectorSourceLogSourceArgs:
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group. Note: For the Notifications target, only _Audit is allowed. Example OCID for _Audit log group: ocid1.tenancy.oc1..exampleuniqueid/_Audit
+        (Updatable) Identifier of the log group. Either `_Audit` or the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group. Note: For the Notifications target, only `_Audit` is allowed.
         """
         return pulumi.get(self, "log_group_id")
 
@@ -499,11 +499,11 @@ if not MYPY:
         """
         batch_size_in_kbs: NotRequired[pulumi.Input[int]]
         """
-        (Updatable) The batch rollover size in kilobytes.
+        (Updatable) The batch rollover size in kilobytes. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
         """
         batch_size_in_num: NotRequired[pulumi.Input[int]]
         """
-        (Updatable) The batch rollover size in number of messages.
+        (Updatable) The batch rollover size in number of messages. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
         """
         batch_time_in_sec: NotRequired[pulumi.Input[int]]
         """
@@ -523,7 +523,7 @@ if not MYPY:
         """
         enable_formatted_messaging: NotRequired[pulumi.Input[bool]]
         """
-        (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
+        (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol. Example: `true`
         """
         function_id: NotRequired[pulumi.Input[str]]
         """
@@ -539,11 +539,11 @@ if not MYPY:
         """
         metric: NotRequired[pulumi.Input[str]]
         """
-        (Updatable) The name of the metric.  Example: `CpuUtilization`
+        (Updatable) The name of the metric. Example: `CpuUtilization`
         """
         metric_namespace: NotRequired[pulumi.Input[str]]
         """
-        (Updatable) The namespace of the metric.  Example: `oci_computeagent`
+        (Updatable) The namespace of the metric. Example: `oci_computeagent`
         """
         namespace: NotRequired[pulumi.Input[str]]
         """
@@ -590,18 +590,18 @@ class ConnectorTargetArgs:
         :param pulumi.Input[str] kind: (Updatable) The type discriminator.
         :param pulumi.Input[int] batch_rollover_size_in_mbs: (Updatable) The batch rollover size in megabytes.
         :param pulumi.Input[int] batch_rollover_time_in_ms: (Updatable) The batch rollover time in milliseconds.
-        :param pulumi.Input[int] batch_size_in_kbs: (Updatable) The batch rollover size in kilobytes.
-        :param pulumi.Input[int] batch_size_in_num: (Updatable) The batch rollover size in number of messages.
+        :param pulumi.Input[int] batch_size_in_kbs: (Updatable) The batch rollover size in kilobytes. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
+        :param pulumi.Input[int] batch_size_in_num: (Updatable) The batch rollover size in number of messages. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
         :param pulumi.Input[int] batch_time_in_sec: (Updatable) The batch rollover time in seconds.
         :param pulumi.Input[str] bucket: (Updatable) The name of the bucket. Valid characters are letters (upper or lower case), numbers, hyphens (-), underscores(_), and periods (.). Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. Example: my-new-bucket1
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
         :param pulumi.Input[Sequence[pulumi.Input['ConnectorTargetDimensionArgs']]] dimensions: (Updatable) List of dimension names and values.
-        :param pulumi.Input[bool] enable_formatted_messaging: (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
+        :param pulumi.Input[bool] enable_formatted_messaging: (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol. Example: `true`
         :param pulumi.Input[str] function_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
         :param pulumi.Input[str] log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
         :param pulumi.Input[str] log_source_identifier: (Updatable) Identifier of the log source that you want to use for processing data received from the connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
-        :param pulumi.Input[str] metric: (Updatable) The name of the metric.  Example: `CpuUtilization`
-        :param pulumi.Input[str] metric_namespace: (Updatable) The namespace of the metric.  Example: `oci_computeagent`
+        :param pulumi.Input[str] metric: (Updatable) The name of the metric. Example: `CpuUtilization`
+        :param pulumi.Input[str] metric_namespace: (Updatable) The namespace of the metric. Example: `oci_computeagent`
         :param pulumi.Input[str] namespace: (Updatable) The namespace.
         :param pulumi.Input[str] object_name_prefix: (Updatable) The prefix of the objects. Avoid entering confidential information.
         :param pulumi.Input[str] stream_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
@@ -685,7 +685,7 @@ class ConnectorTargetArgs:
     @pulumi.getter(name="batchSizeInKbs")
     def batch_size_in_kbs(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) The batch rollover size in kilobytes.
+        (Updatable) The batch rollover size in kilobytes. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
         """
         return pulumi.get(self, "batch_size_in_kbs")
 
@@ -697,7 +697,7 @@ class ConnectorTargetArgs:
     @pulumi.getter(name="batchSizeInNum")
     def batch_size_in_num(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) The batch rollover size in number of messages.
+        (Updatable) The batch rollover size in number of messages. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
         """
         return pulumi.get(self, "batch_size_in_num")
 
@@ -757,7 +757,7 @@ class ConnectorTargetArgs:
     @pulumi.getter(name="enableFormattedMessaging")
     def enable_formatted_messaging(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
+        (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol. Example: `true`
         """
         return pulumi.get(self, "enable_formatted_messaging")
 
@@ -805,7 +805,7 @@ class ConnectorTargetArgs:
     @pulumi.getter
     def metric(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The name of the metric.  Example: `CpuUtilization`
+        (Updatable) The name of the metric. Example: `CpuUtilization`
         """
         return pulumi.get(self, "metric")
 
@@ -817,7 +817,7 @@ class ConnectorTargetArgs:
     @pulumi.getter(name="metricNamespace")
     def metric_namespace(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The namespace of the metric.  Example: `oci_computeagent`
+        (Updatable) The namespace of the metric. Example: `oci_computeagent`
         """
         return pulumi.get(self, "metric_namespace")
 

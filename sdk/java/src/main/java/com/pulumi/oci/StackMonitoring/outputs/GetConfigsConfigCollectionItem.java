@@ -5,13 +5,22 @@ package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.StackMonitoring.outputs.GetConfigsConfigCollectionItemAdditionalConfiguration;
+import com.pulumi.oci.StackMonitoring.outputs.GetConfigsConfigCollectionItemDynamicGroup;
+import com.pulumi.oci.StackMonitoring.outputs.GetConfigsConfigCollectionItemUserGroup;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
 @CustomType
 public final class GetConfigsConfigCollectionItem {
+    /**
+     * @return Property Details
+     * 
+     */
+    private List<GetConfigsConfigCollectionItemAdditionalConfiguration> additionalConfigurations;
     /**
      * @return The ID of the compartment in which data is listed.
      * 
@@ -33,6 +42,11 @@ public final class GetConfigsConfigCollectionItem {
      */
     private String displayName;
     /**
+     * @return List of dynamic groups dedicated for Stack Monitoring.
+     * 
+     */
+    private List<GetConfigsConfigCollectionItemDynamicGroup> dynamicGroups;
+    /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -43,15 +57,25 @@ public final class GetConfigsConfigCollectionItem {
      */
     private String id;
     /**
-     * @return True if automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
+     * @return True if automatic activation of the Management Agent plugin, automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
      * 
      */
     private Boolean isEnabled;
+    /**
+     * @return True if customer decides marks configuration as manually configured.
+     * 
+     */
+    private Boolean isManuallyOnboarded;
     /**
      * @return License edition.
      * 
      */
     private String license;
+    /**
+     * @return List of policy names assigned for onboarding
+     * 
+     */
+    private List<String> policyNames;
     /**
      * @return The type of resource to configure for automatic promotion.
      * 
@@ -77,8 +101,25 @@ public final class GetConfigsConfigCollectionItem {
      * 
      */
     private String timeUpdated;
+    /**
+     * @return List of user groups dedicated for Stack Monitoring.
+     * 
+     */
+    private List<GetConfigsConfigCollectionItemUserGroup> userGroups;
+    /**
+     * @return Assigned version to given onboard configuration.
+     * 
+     */
+    private String version;
 
     private GetConfigsConfigCollectionItem() {}
+    /**
+     * @return Property Details
+     * 
+     */
+    public List<GetConfigsConfigCollectionItemAdditionalConfiguration> additionalConfigurations() {
+        return this.additionalConfigurations;
+    }
     /**
      * @return The ID of the compartment in which data is listed.
      * 
@@ -108,6 +149,13 @@ public final class GetConfigsConfigCollectionItem {
         return this.displayName;
     }
     /**
+     * @return List of dynamic groups dedicated for Stack Monitoring.
+     * 
+     */
+    public List<GetConfigsConfigCollectionItemDynamicGroup> dynamicGroups() {
+        return this.dynamicGroups;
+    }
+    /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -122,11 +170,18 @@ public final class GetConfigsConfigCollectionItem {
         return this.id;
     }
     /**
-     * @return True if automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
+     * @return True if automatic activation of the Management Agent plugin, automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
      * 
      */
     public Boolean isEnabled() {
         return this.isEnabled;
+    }
+    /**
+     * @return True if customer decides marks configuration as manually configured.
+     * 
+     */
+    public Boolean isManuallyOnboarded() {
+        return this.isManuallyOnboarded;
     }
     /**
      * @return License edition.
@@ -134,6 +189,13 @@ public final class GetConfigsConfigCollectionItem {
      */
     public String license() {
         return this.license;
+    }
+    /**
+     * @return List of policy names assigned for onboarding
+     * 
+     */
+    public List<String> policyNames() {
+        return this.policyNames;
     }
     /**
      * @return The type of resource to configure for automatic promotion.
@@ -170,6 +232,20 @@ public final class GetConfigsConfigCollectionItem {
     public String timeUpdated() {
         return this.timeUpdated;
     }
+    /**
+     * @return List of user groups dedicated for Stack Monitoring.
+     * 
+     */
+    public List<GetConfigsConfigCollectionItemUserGroup> userGroups() {
+        return this.userGroups;
+    }
+    /**
+     * @return Assigned version to given onboard configuration.
+     * 
+     */
+    public String version() {
+        return this.version;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -180,37 +256,60 @@ public final class GetConfigsConfigCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetConfigsConfigCollectionItemAdditionalConfiguration> additionalConfigurations;
         private String compartmentId;
         private String configType;
         private Map<String,String> definedTags;
         private String displayName;
+        private List<GetConfigsConfigCollectionItemDynamicGroup> dynamicGroups;
         private Map<String,String> freeformTags;
         private String id;
         private Boolean isEnabled;
+        private Boolean isManuallyOnboarded;
         private String license;
+        private List<String> policyNames;
         private String resourceType;
         private String state;
         private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
+        private List<GetConfigsConfigCollectionItemUserGroup> userGroups;
+        private String version;
         public Builder() {}
         public Builder(GetConfigsConfigCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.additionalConfigurations = defaults.additionalConfigurations;
     	      this.compartmentId = defaults.compartmentId;
     	      this.configType = defaults.configType;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
+    	      this.dynamicGroups = defaults.dynamicGroups;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isEnabled = defaults.isEnabled;
+    	      this.isManuallyOnboarded = defaults.isManuallyOnboarded;
     	      this.license = defaults.license;
+    	      this.policyNames = defaults.policyNames;
     	      this.resourceType = defaults.resourceType;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
+    	      this.userGroups = defaults.userGroups;
+    	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
+        public Builder additionalConfigurations(List<GetConfigsConfigCollectionItemAdditionalConfiguration> additionalConfigurations) {
+            if (additionalConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetConfigsConfigCollectionItem", "additionalConfigurations");
+            }
+            this.additionalConfigurations = additionalConfigurations;
+            return this;
+        }
+        public Builder additionalConfigurations(GetConfigsConfigCollectionItemAdditionalConfiguration... additionalConfigurations) {
+            return additionalConfigurations(List.of(additionalConfigurations));
+        }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             if (compartmentId == null) {
@@ -244,6 +343,17 @@ public final class GetConfigsConfigCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder dynamicGroups(List<GetConfigsConfigCollectionItemDynamicGroup> dynamicGroups) {
+            if (dynamicGroups == null) {
+              throw new MissingRequiredPropertyException("GetConfigsConfigCollectionItem", "dynamicGroups");
+            }
+            this.dynamicGroups = dynamicGroups;
+            return this;
+        }
+        public Builder dynamicGroups(GetConfigsConfigCollectionItemDynamicGroup... dynamicGroups) {
+            return dynamicGroups(List.of(dynamicGroups));
+        }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetConfigsConfigCollectionItem", "freeformTags");
@@ -268,12 +378,31 @@ public final class GetConfigsConfigCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder isManuallyOnboarded(Boolean isManuallyOnboarded) {
+            if (isManuallyOnboarded == null) {
+              throw new MissingRequiredPropertyException("GetConfigsConfigCollectionItem", "isManuallyOnboarded");
+            }
+            this.isManuallyOnboarded = isManuallyOnboarded;
+            return this;
+        }
+        @CustomType.Setter
         public Builder license(String license) {
             if (license == null) {
               throw new MissingRequiredPropertyException("GetConfigsConfigCollectionItem", "license");
             }
             this.license = license;
             return this;
+        }
+        @CustomType.Setter
+        public Builder policyNames(List<String> policyNames) {
+            if (policyNames == null) {
+              throw new MissingRequiredPropertyException("GetConfigsConfigCollectionItem", "policyNames");
+            }
+            this.policyNames = policyNames;
+            return this;
+        }
+        public Builder policyNames(String... policyNames) {
+            return policyNames(List.of(policyNames));
         }
         @CustomType.Setter
         public Builder resourceType(String resourceType) {
@@ -315,21 +444,46 @@ public final class GetConfigsConfigCollectionItem {
             this.timeUpdated = timeUpdated;
             return this;
         }
+        @CustomType.Setter
+        public Builder userGroups(List<GetConfigsConfigCollectionItemUserGroup> userGroups) {
+            if (userGroups == null) {
+              throw new MissingRequiredPropertyException("GetConfigsConfigCollectionItem", "userGroups");
+            }
+            this.userGroups = userGroups;
+            return this;
+        }
+        public Builder userGroups(GetConfigsConfigCollectionItemUserGroup... userGroups) {
+            return userGroups(List.of(userGroups));
+        }
+        @CustomType.Setter
+        public Builder version(String version) {
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetConfigsConfigCollectionItem", "version");
+            }
+            this.version = version;
+            return this;
+        }
         public GetConfigsConfigCollectionItem build() {
             final var _resultValue = new GetConfigsConfigCollectionItem();
+            _resultValue.additionalConfigurations = additionalConfigurations;
             _resultValue.compartmentId = compartmentId;
             _resultValue.configType = configType;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
+            _resultValue.dynamicGroups = dynamicGroups;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.isEnabled = isEnabled;
+            _resultValue.isManuallyOnboarded = isManuallyOnboarded;
             _resultValue.license = license;
+            _resultValue.policyNames = policyNames;
             _resultValue.resourceType = resourceType;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
+            _resultValue.userGroups = userGroups;
+            _resultValue.version = version;
             return _resultValue;
         }
     }

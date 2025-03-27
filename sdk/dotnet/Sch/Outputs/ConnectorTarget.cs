@@ -22,11 +22,11 @@ namespace Pulumi.Oci.Sch.Outputs
         /// </summary>
         public readonly int? BatchRolloverTimeInMs;
         /// <summary>
-        /// (Updatable) The batch rollover size in kilobytes.
+        /// (Updatable) The batch rollover size in kilobytes. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
         /// </summary>
         public readonly int? BatchSizeInKbs;
         /// <summary>
-        /// (Updatable) The batch rollover size in number of messages.
+        /// (Updatable) The batch rollover size in number of messages. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
         /// </summary>
         public readonly int? BatchSizeInNum;
         /// <summary>
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.Sch.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.ConnectorTargetDimension> Dimensions;
         /// <summary>
-        /// (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
+        /// (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol. Example: `true`
         /// </summary>
         public readonly bool? EnableFormattedMessaging;
         /// <summary>
@@ -66,11 +66,11 @@ namespace Pulumi.Oci.Sch.Outputs
         /// </summary>
         public readonly string? LogSourceIdentifier;
         /// <summary>
-        /// (Updatable) The name of the metric.  Example: `CpuUtilization`
+        /// (Updatable) The name of the metric. Example: `CpuUtilization`
         /// </summary>
         public readonly string? Metric;
         /// <summary>
-        /// (Updatable) The namespace of the metric.  Example: `oci_computeagent`
+        /// (Updatable) The namespace of the metric. Example: `oci_computeagent`
         /// </summary>
         public readonly string? MetricNamespace;
         /// <summary>

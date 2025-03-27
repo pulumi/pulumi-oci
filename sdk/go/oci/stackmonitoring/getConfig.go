@@ -58,6 +58,8 @@ type LookupConfigArgs struct {
 
 // A collection of values returned by getConfig.
 type LookupConfigResult struct {
+	// Property Details
+	AdditionalConfigurations []GetConfigAdditionalConfiguration `pulumi:"additionalConfigurations"`
 	// The OCID of the compartment containing the configuration.
 	CompartmentId string `pulumi:"compartmentId"`
 	ConfigId      string `pulumi:"configId"`
@@ -67,14 +69,20 @@ type LookupConfigResult struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
+	// List of dynamic groups dedicated for Stack Monitoring.
+	DynamicGroups []GetConfigDynamicGroup `pulumi:"dynamicGroups"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The Unique Oracle ID (OCID) that is immutable on creation.
 	Id string `pulumi:"id"`
-	// True if automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
+	// True if automatic activation of the Management Agent plugin, automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
 	IsEnabled bool `pulumi:"isEnabled"`
+	// True if customer decides marks configuration as manually configured.
+	IsManuallyOnboarded bool `pulumi:"isManuallyOnboarded"`
 	// License edition.
 	License string `pulumi:"license"`
+	// List of policy names assigned for onboarding
+	PolicyNames []string `pulumi:"policyNames"`
 	// The type of resource to configure for automatic promotion.
 	ResourceType string `pulumi:"resourceType"`
 	// The current state of the configuration.
@@ -85,6 +93,10 @@ type LookupConfigResult struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the Config was updated.
 	TimeUpdated string `pulumi:"timeUpdated"`
+	// List of user groups dedicated for Stack Monitoring.
+	UserGroups []GetConfigUserGroup `pulumi:"userGroups"`
+	// Assigned version to given onboard configuration.
+	Version string `pulumi:"version"`
 }
 
 func LookupConfigOutput(ctx *pulumi.Context, args LookupConfigOutputArgs, opts ...pulumi.InvokeOption) LookupConfigResultOutput {
@@ -121,6 +133,11 @@ func (o LookupConfigResultOutput) ToLookupConfigResultOutputWithContext(ctx cont
 	return o
 }
 
+// Property Details
+func (o LookupConfigResultOutput) AdditionalConfigurations() GetConfigAdditionalConfigurationArrayOutput {
+	return o.ApplyT(func(v LookupConfigResult) []GetConfigAdditionalConfiguration { return v.AdditionalConfigurations }).(GetConfigAdditionalConfigurationArrayOutput)
+}
+
 // The OCID of the compartment containing the configuration.
 func (o LookupConfigResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConfigResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -145,6 +162,11 @@ func (o LookupConfigResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConfigResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// List of dynamic groups dedicated for Stack Monitoring.
+func (o LookupConfigResultOutput) DynamicGroups() GetConfigDynamicGroupArrayOutput {
+	return o.ApplyT(func(v LookupConfigResult) []GetConfigDynamicGroup { return v.DynamicGroups }).(GetConfigDynamicGroupArrayOutput)
+}
+
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 func (o LookupConfigResultOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupConfigResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
@@ -155,14 +177,24 @@ func (o LookupConfigResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConfigResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// True if automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
+// True if automatic activation of the Management Agent plugin, automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
 func (o LookupConfigResultOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupConfigResult) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+// True if customer decides marks configuration as manually configured.
+func (o LookupConfigResultOutput) IsManuallyOnboarded() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupConfigResult) bool { return v.IsManuallyOnboarded }).(pulumi.BoolOutput)
 }
 
 // License edition.
 func (o LookupConfigResultOutput) License() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConfigResult) string { return v.License }).(pulumi.StringOutput)
+}
+
+// List of policy names assigned for onboarding
+func (o LookupConfigResultOutput) PolicyNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupConfigResult) []string { return v.PolicyNames }).(pulumi.StringArrayOutput)
 }
 
 // The type of resource to configure for automatic promotion.
@@ -188,6 +220,16 @@ func (o LookupConfigResultOutput) TimeCreated() pulumi.StringOutput {
 // The time the Config was updated.
 func (o LookupConfigResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConfigResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// List of user groups dedicated for Stack Monitoring.
+func (o LookupConfigResultOutput) UserGroups() GetConfigUserGroupArrayOutput {
+	return o.ApplyT(func(v LookupConfigResult) []GetConfigUserGroup { return v.UserGroups }).(GetConfigUserGroupArrayOutput)
+}
+
+// Assigned version to given onboard configuration.
+func (o LookupConfigResultOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConfigResult) string { return v.Version }).(pulumi.StringOutput)
 }
 
 func init() {

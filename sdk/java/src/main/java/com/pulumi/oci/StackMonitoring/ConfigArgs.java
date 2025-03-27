@@ -6,8 +6,12 @@ package com.pulumi.oci.StackMonitoring;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.StackMonitoring.inputs.ConfigAdditionalConfigurationsArgs;
+import com.pulumi.oci.StackMonitoring.inputs.ConfigDynamicGroupArgs;
+import com.pulumi.oci.StackMonitoring.inputs.ConfigUserGroupArgs;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -17,6 +21,21 @@ import javax.annotation.Nullable;
 public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final ConfigArgs Empty = new ConfigArgs();
+
+    /**
+     * (Updatable) Property Details
+     * 
+     */
+    @Import(name="additionalConfigurations")
+    private @Nullable Output<ConfigAdditionalConfigurationsArgs> additionalConfigurations;
+
+    /**
+     * @return (Updatable) Property Details
+     * 
+     */
+    public Optional<Output<ConfigAdditionalConfigurationsArgs>> additionalConfigurations() {
+        return Optional.ofNullable(this.additionalConfigurations);
+    }
 
     /**
      * (Updatable) Compartment in which the configuration is created.
@@ -79,6 +98,21 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) List of dynamic groups dedicated for Stack Monitoring.
+     * 
+     */
+    @Import(name="dynamicGroups")
+    private @Nullable Output<List<ConfigDynamicGroupArgs>> dynamicGroups;
+
+    /**
+     * @return (Updatable) List of dynamic groups dedicated for Stack Monitoring.
+     * 
+     */
+    public Optional<Output<List<ConfigDynamicGroupArgs>>> dynamicGroups() {
+        return Optional.ofNullable(this.dynamicGroups);
+    }
+
+    /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -109,6 +143,21 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) True if customer decides marks configuration as manually configured.
+     * 
+     */
+    @Import(name="isManuallyOnboarded")
+    private @Nullable Output<Boolean> isManuallyOnboarded;
+
+    /**
+     * @return (Updatable) True if customer decides marks configuration as manually configured.
+     * 
+     */
+    public Optional<Output<Boolean>> isManuallyOnboarded() {
+        return Optional.ofNullable(this.isManuallyOnboarded);
+    }
+
+    /**
      * (Updatable) License edition.
      * 
      */
@@ -124,10 +173,22 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The type of resource to configure for automatic promotion.
+     * (Updatable) List of policy names assigned for onboarding
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    @Import(name="policyNames")
+    private @Nullable Output<List<String>> policyNames;
+
+    /**
+     * @return (Updatable) List of policy names assigned for onboarding
+     * 
+     */
+    public Optional<Output<List<String>>> policyNames() {
+        return Optional.ofNullable(this.policyNames);
+    }
+
+    /**
+     * The type of resource to configure for automatic promotion.
      * 
      */
     @Import(name="resourceType")
@@ -136,25 +197,64 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return The type of resource to configure for automatic promotion.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     public Optional<Output<String>> resourceType() {
         return Optional.ofNullable(this.resourceType);
     }
 
+    /**
+     * (Updatable) List of user groups dedicated for Stack Monitoring.
+     * 
+     */
+    @Import(name="userGroups")
+    private @Nullable Output<List<ConfigUserGroupArgs>> userGroups;
+
+    /**
+     * @return (Updatable) List of user groups dedicated for Stack Monitoring.
+     * 
+     */
+    public Optional<Output<List<ConfigUserGroupArgs>>> userGroups() {
+        return Optional.ofNullable(this.userGroups);
+    }
+
+    /**
+     * (Updatable) Assigned version to given onboard configuration.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="version")
+    private @Nullable Output<String> version;
+
+    /**
+     * @return (Updatable) Assigned version to given onboard configuration.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<String>> version() {
+        return Optional.ofNullable(this.version);
+    }
+
     private ConfigArgs() {}
 
     private ConfigArgs(ConfigArgs $) {
+        this.additionalConfigurations = $.additionalConfigurations;
         this.compartmentId = $.compartmentId;
         this.configType = $.configType;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
+        this.dynamicGroups = $.dynamicGroups;
         this.freeformTags = $.freeformTags;
         this.isEnabled = $.isEnabled;
+        this.isManuallyOnboarded = $.isManuallyOnboarded;
         this.license = $.license;
+        this.policyNames = $.policyNames;
         this.resourceType = $.resourceType;
+        this.userGroups = $.userGroups;
+        this.version = $.version;
     }
 
     public static Builder builder() {
@@ -173,6 +273,27 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder(ConfigArgs defaults) {
             $ = new ConfigArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param additionalConfigurations (Updatable) Property Details
+         * 
+         * @return builder
+         * 
+         */
+        public Builder additionalConfigurations(@Nullable Output<ConfigAdditionalConfigurationsArgs> additionalConfigurations) {
+            $.additionalConfigurations = additionalConfigurations;
+            return this;
+        }
+
+        /**
+         * @param additionalConfigurations (Updatable) Property Details
+         * 
+         * @return builder
+         * 
+         */
+        public Builder additionalConfigurations(ConfigAdditionalConfigurationsArgs additionalConfigurations) {
+            return additionalConfigurations(Output.of(additionalConfigurations));
         }
 
         /**
@@ -260,6 +381,37 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param dynamicGroups (Updatable) List of dynamic groups dedicated for Stack Monitoring.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dynamicGroups(@Nullable Output<List<ConfigDynamicGroupArgs>> dynamicGroups) {
+            $.dynamicGroups = dynamicGroups;
+            return this;
+        }
+
+        /**
+         * @param dynamicGroups (Updatable) List of dynamic groups dedicated for Stack Monitoring.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dynamicGroups(List<ConfigDynamicGroupArgs> dynamicGroups) {
+            return dynamicGroups(Output.of(dynamicGroups));
+        }
+
+        /**
+         * @param dynamicGroups (Updatable) List of dynamic groups dedicated for Stack Monitoring.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dynamicGroups(ConfigDynamicGroupArgs... dynamicGroups) {
+            return dynamicGroups(List.of(dynamicGroups));
+        }
+
+        /**
          * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
@@ -302,6 +454,27 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param isManuallyOnboarded (Updatable) True if customer decides marks configuration as manually configured.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isManuallyOnboarded(@Nullable Output<Boolean> isManuallyOnboarded) {
+            $.isManuallyOnboarded = isManuallyOnboarded;
+            return this;
+        }
+
+        /**
+         * @param isManuallyOnboarded (Updatable) True if customer decides marks configuration as manually configured.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isManuallyOnboarded(Boolean isManuallyOnboarded) {
+            return isManuallyOnboarded(Output.of(isManuallyOnboarded));
+        }
+
+        /**
          * @param license (Updatable) License edition.
          * 
          * @return builder
@@ -323,10 +496,38 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param resourceType The type of resource to configure for automatic promotion.
+         * @param policyNames (Updatable) List of policy names assigned for onboarding
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @return builder
+         * 
+         */
+        public Builder policyNames(@Nullable Output<List<String>> policyNames) {
+            $.policyNames = policyNames;
+            return this;
+        }
+
+        /**
+         * @param policyNames (Updatable) List of policy names assigned for onboarding
+         * 
+         * @return builder
+         * 
+         */
+        public Builder policyNames(List<String> policyNames) {
+            return policyNames(Output.of(policyNames));
+        }
+
+        /**
+         * @param policyNames (Updatable) List of policy names assigned for onboarding
+         * 
+         * @return builder
+         * 
+         */
+        public Builder policyNames(String... policyNames) {
+            return policyNames(List.of(policyNames));
+        }
+
+        /**
+         * @param resourceType The type of resource to configure for automatic promotion.
          * 
          * @return builder
          * 
@@ -339,14 +540,69 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param resourceType The type of resource to configure for automatic promotion.
          * 
+         * @return builder
+         * 
+         */
+        public Builder resourceType(String resourceType) {
+            return resourceType(Output.of(resourceType));
+        }
+
+        /**
+         * @param userGroups (Updatable) List of user groups dedicated for Stack Monitoring.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder userGroups(@Nullable Output<List<ConfigUserGroupArgs>> userGroups) {
+            $.userGroups = userGroups;
+            return this;
+        }
+
+        /**
+         * @param userGroups (Updatable) List of user groups dedicated for Stack Monitoring.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder userGroups(List<ConfigUserGroupArgs> userGroups) {
+            return userGroups(Output.of(userGroups));
+        }
+
+        /**
+         * @param userGroups (Updatable) List of user groups dedicated for Stack Monitoring.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder userGroups(ConfigUserGroupArgs... userGroups) {
+            return userGroups(List.of(userGroups));
+        }
+
+        /**
+         * @param version (Updatable) Assigned version to given onboard configuration.
+         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
          */
-        public Builder resourceType(String resourceType) {
-            return resourceType(Output.of(resourceType));
+        public Builder version(@Nullable Output<String> version) {
+            $.version = version;
+            return this;
+        }
+
+        /**
+         * @param version (Updatable) Assigned version to given onboard configuration.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder version(String version) {
+            return version(Output.of(version));
         }
 
         public ConfigArgs build() {

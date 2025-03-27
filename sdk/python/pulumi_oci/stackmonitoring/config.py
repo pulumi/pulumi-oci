@@ -13,6 +13,8 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['ConfigArgs', 'Config']
 
@@ -21,22 +23,34 @@ class ConfigArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
                  config_type: pulumi.Input[str],
+                 additional_configurations: Optional[pulumi.Input['ConfigAdditionalConfigurationsArgs']] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 dynamic_groups: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigDynamicGroupArgs']]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_manually_onboarded: Optional[pulumi.Input[bool]] = None,
                  license: Optional[pulumi.Input[str]] = None,
-                 resource_type: Optional[pulumi.Input[str]] = None):
+                 policy_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None,
+                 user_groups: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigUserGroupArgs']]]] = None,
+                 version: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Config resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment in which the configuration is created.
         :param pulumi.Input[str] config_type: The type of configuration. The only valid value is `"AUTO_PROMOTE"`.
+        :param pulumi.Input['ConfigAdditionalConfigurationsArgs'] additional_configurations: (Updatable) Property Details
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) The display name of the configuration.
+        :param pulumi.Input[Sequence[pulumi.Input['ConfigDynamicGroupArgs']]] dynamic_groups: (Updatable) List of dynamic groups dedicated for Stack Monitoring.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_enabled: (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
+        :param pulumi.Input[bool] is_manually_onboarded: (Updatable) True if customer decides marks configuration as manually configured.
         :param pulumi.Input[str] license: (Updatable) License edition.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] policy_names: (Updatable) List of policy names assigned for onboarding
         :param pulumi.Input[str] resource_type: The type of resource to configure for automatic promotion.
+        :param pulumi.Input[Sequence[pulumi.Input['ConfigUserGroupArgs']]] user_groups: (Updatable) List of user groups dedicated for Stack Monitoring.
+        :param pulumi.Input[str] version: (Updatable) Assigned version to given onboard configuration.
                
                
                ** IMPORTANT **
@@ -44,18 +58,30 @@ class ConfigArgs:
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "config_type", config_type)
+        if additional_configurations is not None:
+            pulumi.set(__self__, "additional_configurations", additional_configurations)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if dynamic_groups is not None:
+            pulumi.set(__self__, "dynamic_groups", dynamic_groups)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_enabled is not None:
             pulumi.set(__self__, "is_enabled", is_enabled)
+        if is_manually_onboarded is not None:
+            pulumi.set(__self__, "is_manually_onboarded", is_manually_onboarded)
         if license is not None:
             pulumi.set(__self__, "license", license)
+        if policy_names is not None:
+            pulumi.set(__self__, "policy_names", policy_names)
         if resource_type is not None:
             pulumi.set(__self__, "resource_type", resource_type)
+        if user_groups is not None:
+            pulumi.set(__self__, "user_groups", user_groups)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -82,6 +108,18 @@ class ConfigArgs:
         pulumi.set(self, "config_type", value)
 
     @property
+    @pulumi.getter(name="additionalConfigurations")
+    def additional_configurations(self) -> Optional[pulumi.Input['ConfigAdditionalConfigurationsArgs']]:
+        """
+        (Updatable) Property Details
+        """
+        return pulumi.get(self, "additional_configurations")
+
+    @additional_configurations.setter
+    def additional_configurations(self, value: Optional[pulumi.Input['ConfigAdditionalConfigurationsArgs']]):
+        pulumi.set(self, "additional_configurations", value)
+
+    @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
@@ -104,6 +142,18 @@ class ConfigArgs:
     @display_name.setter
     def display_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="dynamicGroups")
+    def dynamic_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConfigDynamicGroupArgs']]]]:
+        """
+        (Updatable) List of dynamic groups dedicated for Stack Monitoring.
+        """
+        return pulumi.get(self, "dynamic_groups")
+
+    @dynamic_groups.setter
+    def dynamic_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigDynamicGroupArgs']]]]):
+        pulumi.set(self, "dynamic_groups", value)
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -130,6 +180,18 @@ class ConfigArgs:
         pulumi.set(self, "is_enabled", value)
 
     @property
+    @pulumi.getter(name="isManuallyOnboarded")
+    def is_manually_onboarded(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) True if customer decides marks configuration as manually configured.
+        """
+        return pulumi.get(self, "is_manually_onboarded")
+
+    @is_manually_onboarded.setter
+    def is_manually_onboarded(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_manually_onboarded", value)
+
+    @property
     @pulumi.getter
     def license(self) -> Optional[pulumi.Input[str]]:
         """
@@ -142,14 +204,22 @@ class ConfigArgs:
         pulumi.set(self, "license", value)
 
     @property
+    @pulumi.getter(name="policyNames")
+    def policy_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) List of policy names assigned for onboarding
+        """
+        return pulumi.get(self, "policy_names")
+
+    @policy_names.setter
+    def policy_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "policy_names", value)
+
+    @property
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> Optional[pulumi.Input[str]]:
         """
         The type of resource to configure for automatic promotion.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "resource_type")
 
@@ -157,41 +227,83 @@ class ConfigArgs:
     def resource_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "resource_type", value)
 
+    @property
+    @pulumi.getter(name="userGroups")
+    def user_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConfigUserGroupArgs']]]]:
+        """
+        (Updatable) List of user groups dedicated for Stack Monitoring.
+        """
+        return pulumi.get(self, "user_groups")
+
+    @user_groups.setter
+    def user_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigUserGroupArgs']]]]):
+        pulumi.set(self, "user_groups", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Assigned version to given onboard configuration.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version", value)
+
 
 @pulumi.input_type
 class _ConfigState:
     def __init__(__self__, *,
+                 additional_configurations: Optional[pulumi.Input['ConfigAdditionalConfigurationsArgs']] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  config_type: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 dynamic_groups: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigDynamicGroupArgs']]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_manually_onboarded: Optional[pulumi.Input[bool]] = None,
                  license: Optional[pulumi.Input[str]] = None,
+                 policy_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  resource_type: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
-                 time_updated: Optional[pulumi.Input[str]] = None):
+                 time_updated: Optional[pulumi.Input[str]] = None,
+                 user_groups: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigUserGroupArgs']]]] = None,
+                 version: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Config resources.
+        :param pulumi.Input['ConfigAdditionalConfigurationsArgs'] additional_configurations: (Updatable) Property Details
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment in which the configuration is created.
         :param pulumi.Input[str] config_type: The type of configuration. The only valid value is `"AUTO_PROMOTE"`.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) The display name of the configuration.
+        :param pulumi.Input[Sequence[pulumi.Input['ConfigDynamicGroupArgs']]] dynamic_groups: (Updatable) List of dynamic groups dedicated for Stack Monitoring.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_enabled: (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
+        :param pulumi.Input[bool] is_manually_onboarded: (Updatable) True if customer decides marks configuration as manually configured.
         :param pulumi.Input[str] license: (Updatable) License edition.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] policy_names: (Updatable) List of policy names assigned for onboarding
         :param pulumi.Input[str] resource_type: The type of resource to configure for automatic promotion.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the configuration.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the configuration was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the Config was updated.
+        :param pulumi.Input[Sequence[pulumi.Input['ConfigUserGroupArgs']]] user_groups: (Updatable) List of user groups dedicated for Stack Monitoring.
+        :param pulumi.Input[str] version: (Updatable) Assigned version to given onboard configuration.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        if additional_configurations is not None:
+            pulumi.set(__self__, "additional_configurations", additional_configurations)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if config_type is not None:
@@ -200,12 +312,18 @@ class _ConfigState:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if dynamic_groups is not None:
+            pulumi.set(__self__, "dynamic_groups", dynamic_groups)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_enabled is not None:
             pulumi.set(__self__, "is_enabled", is_enabled)
+        if is_manually_onboarded is not None:
+            pulumi.set(__self__, "is_manually_onboarded", is_manually_onboarded)
         if license is not None:
             pulumi.set(__self__, "license", license)
+        if policy_names is not None:
+            pulumi.set(__self__, "policy_names", policy_names)
         if resource_type is not None:
             pulumi.set(__self__, "resource_type", resource_type)
         if state is not None:
@@ -216,6 +334,22 @@ class _ConfigState:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
+        if user_groups is not None:
+            pulumi.set(__self__, "user_groups", user_groups)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="additionalConfigurations")
+    def additional_configurations(self) -> Optional[pulumi.Input['ConfigAdditionalConfigurationsArgs']]:
+        """
+        (Updatable) Property Details
+        """
+        return pulumi.get(self, "additional_configurations")
+
+    @additional_configurations.setter
+    def additional_configurations(self, value: Optional[pulumi.Input['ConfigAdditionalConfigurationsArgs']]):
+        pulumi.set(self, "additional_configurations", value)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -266,6 +400,18 @@ class _ConfigState:
         pulumi.set(self, "display_name", value)
 
     @property
+    @pulumi.getter(name="dynamicGroups")
+    def dynamic_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConfigDynamicGroupArgs']]]]:
+        """
+        (Updatable) List of dynamic groups dedicated for Stack Monitoring.
+        """
+        return pulumi.get(self, "dynamic_groups")
+
+    @dynamic_groups.setter
+    def dynamic_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigDynamicGroupArgs']]]]):
+        pulumi.set(self, "dynamic_groups", value)
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
@@ -290,6 +436,18 @@ class _ConfigState:
         pulumi.set(self, "is_enabled", value)
 
     @property
+    @pulumi.getter(name="isManuallyOnboarded")
+    def is_manually_onboarded(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) True if customer decides marks configuration as manually configured.
+        """
+        return pulumi.get(self, "is_manually_onboarded")
+
+    @is_manually_onboarded.setter
+    def is_manually_onboarded(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_manually_onboarded", value)
+
+    @property
     @pulumi.getter
     def license(self) -> Optional[pulumi.Input[str]]:
         """
@@ -302,14 +460,22 @@ class _ConfigState:
         pulumi.set(self, "license", value)
 
     @property
+    @pulumi.getter(name="policyNames")
+    def policy_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) List of policy names assigned for onboarding
+        """
+        return pulumi.get(self, "policy_names")
+
+    @policy_names.setter
+    def policy_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "policy_names", value)
+
+    @property
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> Optional[pulumi.Input[str]]:
         """
         The type of resource to configure for automatic promotion.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "resource_type")
 
@@ -365,20 +531,54 @@ class _ConfigState:
     def time_updated(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_updated", value)
 
+    @property
+    @pulumi.getter(name="userGroups")
+    def user_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConfigUserGroupArgs']]]]:
+        """
+        (Updatable) List of user groups dedicated for Stack Monitoring.
+        """
+        return pulumi.get(self, "user_groups")
+
+    @user_groups.setter
+    def user_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigUserGroupArgs']]]]):
+        pulumi.set(self, "user_groups", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Assigned version to given onboard configuration.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version", value)
+
 
 class Config(pulumi.CustomResource):
     @overload
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 additional_configurations: Optional[pulumi.Input[Union['ConfigAdditionalConfigurationsArgs', 'ConfigAdditionalConfigurationsArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  config_type: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 dynamic_groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConfigDynamicGroupArgs', 'ConfigDynamicGroupArgsDict']]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_manually_onboarded: Optional[pulumi.Input[bool]] = None,
                  license: Optional[pulumi.Input[str]] = None,
+                 policy_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  resource_type: Optional[pulumi.Input[str]] = None,
+                 user_groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConfigUserGroupArgs', 'ConfigUserGroupArgsDict']]]]] = None,
+                 version: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         This resource provides the Config resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -422,14 +622,20 @@ class Config(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Union['ConfigAdditionalConfigurationsArgs', 'ConfigAdditionalConfigurationsArgsDict']] additional_configurations: (Updatable) Property Details
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment in which the configuration is created.
         :param pulumi.Input[str] config_type: The type of configuration. The only valid value is `"AUTO_PROMOTE"`.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) The display name of the configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigDynamicGroupArgs', 'ConfigDynamicGroupArgsDict']]]] dynamic_groups: (Updatable) List of dynamic groups dedicated for Stack Monitoring.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_enabled: (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
+        :param pulumi.Input[bool] is_manually_onboarded: (Updatable) True if customer decides marks configuration as manually configured.
         :param pulumi.Input[str] license: (Updatable) License edition.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] policy_names: (Updatable) List of policy names assigned for onboarding
         :param pulumi.Input[str] resource_type: The type of resource to configure for automatic promotion.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigUserGroupArgs', 'ConfigUserGroupArgsDict']]]] user_groups: (Updatable) List of user groups dedicated for Stack Monitoring.
+        :param pulumi.Input[str] version: (Updatable) Assigned version to given onboard configuration.
                
                
                ** IMPORTANT **
@@ -496,14 +702,20 @@ class Config(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 additional_configurations: Optional[pulumi.Input[Union['ConfigAdditionalConfigurationsArgs', 'ConfigAdditionalConfigurationsArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  config_type: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 dynamic_groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConfigDynamicGroupArgs', 'ConfigDynamicGroupArgsDict']]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_manually_onboarded: Optional[pulumi.Input[bool]] = None,
                  license: Optional[pulumi.Input[str]] = None,
+                 policy_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  resource_type: Optional[pulumi.Input[str]] = None,
+                 user_groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConfigUserGroupArgs', 'ConfigUserGroupArgsDict']]]]] = None,
+                 version: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -513,6 +725,7 @@ class Config(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ConfigArgs.__new__(ConfigArgs)
 
+            __props__.__dict__["additional_configurations"] = additional_configurations
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
@@ -521,10 +734,15 @@ class Config(pulumi.CustomResource):
             __props__.__dict__["config_type"] = config_type
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
+            __props__.__dict__["dynamic_groups"] = dynamic_groups
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_enabled"] = is_enabled
+            __props__.__dict__["is_manually_onboarded"] = is_manually_onboarded
             __props__.__dict__["license"] = license
+            __props__.__dict__["policy_names"] = policy_names
             __props__.__dict__["resource_type"] = resource_type
+            __props__.__dict__["user_groups"] = user_groups
+            __props__.__dict__["version"] = version
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
@@ -539,18 +757,24 @@ class Config(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            additional_configurations: Optional[pulumi.Input[Union['ConfigAdditionalConfigurationsArgs', 'ConfigAdditionalConfigurationsArgsDict']]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             config_type: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
+            dynamic_groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConfigDynamicGroupArgs', 'ConfigDynamicGroupArgsDict']]]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             is_enabled: Optional[pulumi.Input[bool]] = None,
+            is_manually_onboarded: Optional[pulumi.Input[bool]] = None,
             license: Optional[pulumi.Input[str]] = None,
+            policy_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             resource_type: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
-            time_updated: Optional[pulumi.Input[str]] = None) -> 'Config':
+            time_updated: Optional[pulumi.Input[str]] = None,
+            user_groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConfigUserGroupArgs', 'ConfigUserGroupArgsDict']]]]] = None,
+            version: Optional[pulumi.Input[str]] = None) -> 'Config':
         """
         Get an existing Config resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -558,40 +782,60 @@ class Config(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Union['ConfigAdditionalConfigurationsArgs', 'ConfigAdditionalConfigurationsArgsDict']] additional_configurations: (Updatable) Property Details
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment in which the configuration is created.
         :param pulumi.Input[str] config_type: The type of configuration. The only valid value is `"AUTO_PROMOTE"`.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) The display name of the configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigDynamicGroupArgs', 'ConfigDynamicGroupArgsDict']]]] dynamic_groups: (Updatable) List of dynamic groups dedicated for Stack Monitoring.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_enabled: (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
+        :param pulumi.Input[bool] is_manually_onboarded: (Updatable) True if customer decides marks configuration as manually configured.
         :param pulumi.Input[str] license: (Updatable) License edition.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] policy_names: (Updatable) List of policy names assigned for onboarding
         :param pulumi.Input[str] resource_type: The type of resource to configure for automatic promotion.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the configuration.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the configuration was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the Config was updated.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigUserGroupArgs', 'ConfigUserGroupArgsDict']]]] user_groups: (Updatable) List of user groups dedicated for Stack Monitoring.
+        :param pulumi.Input[str] version: (Updatable) Assigned version to given onboard configuration.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
         __props__ = _ConfigState.__new__(_ConfigState)
 
+        __props__.__dict__["additional_configurations"] = additional_configurations
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["config_type"] = config_type
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
+        __props__.__dict__["dynamic_groups"] = dynamic_groups
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_enabled"] = is_enabled
+        __props__.__dict__["is_manually_onboarded"] = is_manually_onboarded
         __props__.__dict__["license"] = license
+        __props__.__dict__["policy_names"] = policy_names
         __props__.__dict__["resource_type"] = resource_type
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
+        __props__.__dict__["user_groups"] = user_groups
+        __props__.__dict__["version"] = version
         return Config(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter(name="additionalConfigurations")
+    def additional_configurations(self) -> pulumi.Output[Optional['outputs.ConfigAdditionalConfigurations']]:
+        """
+        (Updatable) Property Details
+        """
+        return pulumi.get(self, "additional_configurations")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -626,6 +870,14 @@ class Config(pulumi.CustomResource):
         return pulumi.get(self, "display_name")
 
     @property
+    @pulumi.getter(name="dynamicGroups")
+    def dynamic_groups(self) -> pulumi.Output[Optional[Sequence['outputs.ConfigDynamicGroup']]]:
+        """
+        (Updatable) List of dynamic groups dedicated for Stack Monitoring.
+        """
+        return pulumi.get(self, "dynamic_groups")
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
@@ -642,6 +894,14 @@ class Config(pulumi.CustomResource):
         return pulumi.get(self, "is_enabled")
 
     @property
+    @pulumi.getter(name="isManuallyOnboarded")
+    def is_manually_onboarded(self) -> pulumi.Output[Optional[bool]]:
+        """
+        (Updatable) True if customer decides marks configuration as manually configured.
+        """
+        return pulumi.get(self, "is_manually_onboarded")
+
+    @property
     @pulumi.getter
     def license(self) -> pulumi.Output[str]:
         """
@@ -650,14 +910,18 @@ class Config(pulumi.CustomResource):
         return pulumi.get(self, "license")
 
     @property
+    @pulumi.getter(name="policyNames")
+    def policy_names(self) -> pulumi.Output[Optional[Sequence[str]]]:
+        """
+        (Updatable) List of policy names assigned for onboarding
+        """
+        return pulumi.get(self, "policy_names")
+
+    @property
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> pulumi.Output[str]:
         """
         The type of resource to configure for automatic promotion.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "resource_type")
 
@@ -692,4 +956,24 @@ class Config(pulumi.CustomResource):
         The time the Config was updated.
         """
         return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="userGroups")
+    def user_groups(self) -> pulumi.Output[Optional[Sequence['outputs.ConfigUserGroup']]]:
+        """
+        (Updatable) List of user groups dedicated for Stack Monitoring.
+        """
+        return pulumi.get(self, "user_groups")
+
+    @property
+    @pulumi.getter
+    def version(self) -> pulumi.Output[Optional[str]]:
+        """
+        (Updatable) Assigned version to given onboard configuration.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "version")
 

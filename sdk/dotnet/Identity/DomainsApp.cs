@@ -642,6 +642,9 @@ namespace Pulumi.Oci.Identity
         [Output("errorPageUrl")]
         public Output<string> ErrorPageUrl { get; private set; } = null!;
 
+        [Output("forceDelete")]
+        public Output<bool?> ForceDelete { get; private set; } = null!;
+
         /// <summary>
         /// (Updatable) A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
         /// 
@@ -2361,6 +2364,9 @@ namespace Pulumi.Oci.Identity
         [Input("errorPageUrl")]
         public Input<string>? ErrorPageUrl { get; set; }
 
+        [Input("forceDelete")]
+        public Input<bool>? ForceDelete { get; set; }
+
         /// <summary>
         /// (Updatable) Home Page URL
         /// 
@@ -4010,6 +4016,9 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         [Input("errorPageUrl")]
         public Input<string>? ErrorPageUrl { get; set; }
+
+        [Input("forceDelete")]
+        public Input<bool>? ForceDelete { get; set; }
 
         [Input("grantedAppRoles")]
         private InputList<Inputs.DomainsAppGrantedAppRoleGetArgs>? _grantedAppRoles;

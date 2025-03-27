@@ -14,11 +14,19 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetConfigsFilter {
+    /**
+     * @return Name of user Group
+     * 
+     */
     private String name;
     private @Nullable Boolean regex;
     private List<String> values;
 
     private GetConfigsFilter() {}
+    /**
+     * @return Name of user Group
+     * 
+     */
     public String name() {
         return this.name;
     }

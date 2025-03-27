@@ -27,7 +27,7 @@ class GetDomainsAppResult:
     """
     A collection of values returned by getDomainsApp.
     """
-    def __init__(__self__, access_token_expiry=None, accounts=None, active=None, admin_roles=None, alias_apps=None, all_url_schemes_allowed=None, allow_access_control=None, allow_offline=None, allowed_grants=None, allowed_operations=None, allowed_scopes=None, allowed_tags=None, app_icon=None, app_id=None, app_signon_policies=None, app_thumbnail=None, apps_network_perimeters=None, as_opc_services=None, attr_rendering_metadatas=None, attribute_sets=None, attributes=None, audience=None, authorization=None, based_on_templates=None, bypass_consent=None, callback_service_url=None, certificates=None, client_ip_checking=None, client_secret=None, client_type=None, cloud_control_properties=None, compartment_ocid=None, contact_email_address=None, delegated_service_names=None, delete_in_progress=None, description=None, disable_kmsi_token_authentication=None, display_name=None, domain_ocid=None, editable_attributes=None, error_page_url=None, granted_app_roles=None, grants=None, hashed_client_secret=None, home_page_url=None, icon=None, id=None, id_token_enc_algo=None, idcs_created_bies=None, idcs_endpoint=None, idcs_last_modified_bies=None, idcs_last_upgraded_in_release=None, idcs_prevented_operations=None, identity_providers=None, idp_policies=None, infrastructure=None, is_alias_app=None, is_database_service=None, is_enterprise_app=None, is_form_fill=None, is_kerberos_realm=None, is_login_target=None, is_managed_app=None, is_mobile_target=None, is_multicloud_service_app=None, is_oauth_client=None, is_oauth_resource=None, is_obligation_capable=None, is_opc_service=None, is_radius_app=None, is_saml_service_provider=None, is_unmanaged_app=None, is_web_tier_policy=None, landing_page_url=None, linking_callback_url=None, login_mechanism=None, login_page_url=None, logout_page_url=None, logout_uri=None, metas=None, meter_as_opc_service=None, migrated=None, name=None, ocid=None, post_logout_redirect_uris=None, privacy_policy_url=None, product_logo_url=None, product_name=None, protectable_secondary_audiences=None, radius_policies=None, ready_to_upgrade=None, redirect_uris=None, refresh_token_expiry=None, resource_type_schema_version=None, saml_service_providers=None, schemas=None, scopes=None, secondary_audiences=None, service_params=None, service_type_urn=None, service_type_version=None, show_in_my_apps=None, signon_policies=None, tags=None, tenancy_ocid=None, terms_of_service_url=None, terms_of_uses=None, trust_policies=None, trust_scope=None, urnietfparamsscimschemasoracleidcsextension_oci_tags=None, urnietfparamsscimschemasoracleidcsextensiondbcs_apps=None, urnietfparamsscimschemasoracleidcsextensionenterprise_app_apps=None, urnietfparamsscimschemasoracleidcsextensionform_fill_app_apps=None, urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_templates=None, urnietfparamsscimschemasoracleidcsextensionkerberos_realm_apps=None, urnietfparamsscimschemasoracleidcsextensionmanagedapp_apps=None, urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_apps=None, urnietfparamsscimschemasoracleidcsextensionopc_service_apps=None, urnietfparamsscimschemasoracleidcsextensionradius_app_apps=None, urnietfparamsscimschemasoracleidcsextensionrequestable_apps=None, urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_apps=None, urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_apps=None, user_roles=None):
+    def __init__(__self__, access_token_expiry=None, accounts=None, active=None, admin_roles=None, alias_apps=None, all_url_schemes_allowed=None, allow_access_control=None, allow_offline=None, allowed_grants=None, allowed_operations=None, allowed_scopes=None, allowed_tags=None, app_icon=None, app_id=None, app_signon_policies=None, app_thumbnail=None, apps_network_perimeters=None, as_opc_services=None, attr_rendering_metadatas=None, attribute_sets=None, attributes=None, audience=None, authorization=None, based_on_templates=None, bypass_consent=None, callback_service_url=None, certificates=None, client_ip_checking=None, client_secret=None, client_type=None, cloud_control_properties=None, compartment_ocid=None, contact_email_address=None, delegated_service_names=None, delete_in_progress=None, description=None, disable_kmsi_token_authentication=None, display_name=None, domain_ocid=None, editable_attributes=None, error_page_url=None, force_delete=None, granted_app_roles=None, grants=None, hashed_client_secret=None, home_page_url=None, icon=None, id=None, id_token_enc_algo=None, idcs_created_bies=None, idcs_endpoint=None, idcs_last_modified_bies=None, idcs_last_upgraded_in_release=None, idcs_prevented_operations=None, identity_providers=None, idp_policies=None, infrastructure=None, is_alias_app=None, is_database_service=None, is_enterprise_app=None, is_form_fill=None, is_kerberos_realm=None, is_login_target=None, is_managed_app=None, is_mobile_target=None, is_multicloud_service_app=None, is_oauth_client=None, is_oauth_resource=None, is_obligation_capable=None, is_opc_service=None, is_radius_app=None, is_saml_service_provider=None, is_unmanaged_app=None, is_web_tier_policy=None, landing_page_url=None, linking_callback_url=None, login_mechanism=None, login_page_url=None, logout_page_url=None, logout_uri=None, metas=None, meter_as_opc_service=None, migrated=None, name=None, ocid=None, post_logout_redirect_uris=None, privacy_policy_url=None, product_logo_url=None, product_name=None, protectable_secondary_audiences=None, radius_policies=None, ready_to_upgrade=None, redirect_uris=None, refresh_token_expiry=None, resource_type_schema_version=None, saml_service_providers=None, schemas=None, scopes=None, secondary_audiences=None, service_params=None, service_type_urn=None, service_type_version=None, show_in_my_apps=None, signon_policies=None, tags=None, tenancy_ocid=None, terms_of_service_url=None, terms_of_uses=None, trust_policies=None, trust_scope=None, urnietfparamsscimschemasoracleidcsextension_oci_tags=None, urnietfparamsscimschemasoracleidcsextensiondbcs_apps=None, urnietfparamsscimschemasoracleidcsextensionenterprise_app_apps=None, urnietfparamsscimschemasoracleidcsextensionform_fill_app_apps=None, urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_templates=None, urnietfparamsscimschemasoracleidcsextensionkerberos_realm_apps=None, urnietfparamsscimschemasoracleidcsextensionmanagedapp_apps=None, urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_apps=None, urnietfparamsscimschemasoracleidcsextensionopc_service_apps=None, urnietfparamsscimschemasoracleidcsextensionradius_app_apps=None, urnietfparamsscimschemasoracleidcsextensionrequestable_apps=None, urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_apps=None, urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_apps=None, user_roles=None):
         if access_token_expiry and not isinstance(access_token_expiry, int):
             raise TypeError("Expected argument 'access_token_expiry' to be a int")
         pulumi.set(__self__, "access_token_expiry", access_token_expiry)
@@ -151,6 +151,9 @@ class GetDomainsAppResult:
         if error_page_url and not isinstance(error_page_url, str):
             raise TypeError("Expected argument 'error_page_url' to be a str")
         pulumi.set(__self__, "error_page_url", error_page_url)
+        if force_delete and not isinstance(force_delete, bool):
+            raise TypeError("Expected argument 'force_delete' to be a bool")
+        pulumi.set(__self__, "force_delete", force_delete)
         if granted_app_roles and not isinstance(granted_app_roles, list):
             raise TypeError("Expected argument 'granted_app_roles' to be a list")
         pulumi.set(__self__, "granted_app_roles", granted_app_roles)
@@ -716,6 +719,11 @@ class GetDomainsAppResult:
         This attribute specifies the URL of the page to which an application will redirect an end-user in case of error.
         """
         return pulumi.get(self, "error_page_url")
+
+    @property
+    @pulumi.getter(name="forceDelete")
+    def force_delete(self) -> bool:
+        return pulumi.get(self, "force_delete")
 
     @property
     @pulumi.getter(name="grantedAppRoles")
@@ -1415,6 +1423,7 @@ class AwaitableGetDomainsAppResult(GetDomainsAppResult):
             domain_ocid=self.domain_ocid,
             editable_attributes=self.editable_attributes,
             error_page_url=self.error_page_url,
+            force_delete=self.force_delete,
             granted_app_roles=self.granted_app_roles,
             grants=self.grants,
             hashed_client_secret=self.hashed_client_secret,
@@ -1585,6 +1594,7 @@ def get_domains_app(app_id: Optional[str] = None,
         domain_ocid=pulumi.get(__ret__, 'domain_ocid'),
         editable_attributes=pulumi.get(__ret__, 'editable_attributes'),
         error_page_url=pulumi.get(__ret__, 'error_page_url'),
+        force_delete=pulumi.get(__ret__, 'force_delete'),
         granted_app_roles=pulumi.get(__ret__, 'granted_app_roles'),
         grants=pulumi.get(__ret__, 'grants'),
         hashed_client_secret=pulumi.get(__ret__, 'hashed_client_secret'),
@@ -1752,6 +1762,7 @@ def get_domains_app_output(app_id: Optional[pulumi.Input[str]] = None,
         domain_ocid=pulumi.get(__response__, 'domain_ocid'),
         editable_attributes=pulumi.get(__response__, 'editable_attributes'),
         error_page_url=pulumi.get(__response__, 'error_page_url'),
+        force_delete=pulumi.get(__response__, 'force_delete'),
         granted_app_roles=pulumi.get(__response__, 'granted_app_roles'),
         grants=pulumi.get(__response__, 'grants'),
         hashed_client_secret=pulumi.get(__response__, 'hashed_client_secret'),

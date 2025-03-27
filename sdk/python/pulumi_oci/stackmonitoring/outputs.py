@@ -16,6 +16,9 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'ConfigAdditionalConfigurations',
+    'ConfigDynamicGroup',
+    'ConfigUserGroup',
     'DiscoveryJobDiscoveryDetails',
     'DiscoveryJobDiscoveryDetailsCredentials',
     'DiscoveryJobDiscoveryDetailsCredentialsItem',
@@ -65,8 +68,14 @@ __all__ = [
     'GetBaselineableMetricsEvaluateItemEvaluationDataPointResult',
     'GetBaselineableMetricsEvaluateItemTrainingDataPointResult',
     'GetBaselineableMetricsFilterResult',
+    'GetConfigAdditionalConfigurationResult',
+    'GetConfigDynamicGroupResult',
+    'GetConfigUserGroupResult',
     'GetConfigsConfigCollectionResult',
     'GetConfigsConfigCollectionItemResult',
+    'GetConfigsConfigCollectionItemAdditionalConfigurationResult',
+    'GetConfigsConfigCollectionItemDynamicGroupResult',
+    'GetConfigsConfigCollectionItemUserGroupResult',
     'GetConfigsFilterResult',
     'GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionResult',
     'GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionItemResult',
@@ -162,6 +171,162 @@ __all__ = [
     'GetProcessSetsProcessSetCollectionItemSpecificationResult',
     'GetProcessSetsProcessSetCollectionItemSpecificationItemResult',
 ]
+
+@pulumi.output_type
+class ConfigAdditionalConfigurations(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "propertiesMap":
+            suggest = "properties_map"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ConfigAdditionalConfigurations. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ConfigAdditionalConfigurations.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ConfigAdditionalConfigurations.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 properties_map: Optional[Mapping[str, str]] = None):
+        """
+        :param Mapping[str, str] properties_map: (Updatable) Key/Value pair of Property
+        """
+        if properties_map is not None:
+            pulumi.set(__self__, "properties_map", properties_map)
+
+    @property
+    @pulumi.getter(name="propertiesMap")
+    def properties_map(self) -> Optional[Mapping[str, str]]:
+        """
+        (Updatable) Key/Value pair of Property
+        """
+        return pulumi.get(self, "properties_map")
+
+
+@pulumi.output_type
+class ConfigDynamicGroup(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "stackMonitoringAssignment":
+            suggest = "stack_monitoring_assignment"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ConfigDynamicGroup. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ConfigDynamicGroup.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ConfigDynamicGroup.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 domain: Optional[str] = None,
+                 name: Optional[str] = None,
+                 stack_monitoring_assignment: Optional[str] = None):
+        """
+        :param str domain: (Updatable) Identity domain name
+        :param str name: (Updatable) Name of dynamic Group
+        :param str stack_monitoring_assignment: (Updatable) Assignment of dynamic group in context of Stack Monitoring service. It describes the purpose of dynamic groups in Stack Monitoring.
+        """
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if stack_monitoring_assignment is not None:
+            pulumi.set(__self__, "stack_monitoring_assignment", stack_monitoring_assignment)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> Optional[str]:
+        """
+        (Updatable) Identity domain name
+        """
+        return pulumi.get(self, "domain")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        (Updatable) Name of dynamic Group
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="stackMonitoringAssignment")
+    def stack_monitoring_assignment(self) -> Optional[str]:
+        """
+        (Updatable) Assignment of dynamic group in context of Stack Monitoring service. It describes the purpose of dynamic groups in Stack Monitoring.
+        """
+        return pulumi.get(self, "stack_monitoring_assignment")
+
+
+@pulumi.output_type
+class ConfigUserGroup(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "stackMonitoringRole":
+            suggest = "stack_monitoring_role"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ConfigUserGroup. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ConfigUserGroup.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ConfigUserGroup.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 domain: Optional[str] = None,
+                 name: Optional[str] = None,
+                 stack_monitoring_role: Optional[str] = None):
+        """
+        :param str domain: (Updatable) Identity domain name
+        :param str name: (Updatable) Name of user Group
+        :param str stack_monitoring_role: (Updatable) Role assigned to user group in context of Stack Monitoring service. Access role can be for example: ADMINISTRATOR, OPERATOR, VIEWER, any other access role
+        """
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if stack_monitoring_role is not None:
+            pulumi.set(__self__, "stack_monitoring_role", stack_monitoring_role)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> Optional[str]:
+        """
+        (Updatable) Identity domain name
+        """
+        return pulumi.get(self, "domain")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        (Updatable) Name of user Group
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="stackMonitoringRole")
+    def stack_monitoring_role(self) -> Optional[str]:
+        """
+        (Updatable) Role assigned to user group in context of Stack Monitoring service. Access role can be for example: ADMINISTRATOR, OPERATOR, VIEWER, any other access role
+        """
+        return pulumi.get(self, "stack_monitoring_role")
+
 
 @pulumi.output_type
 class DiscoveryJobDiscoveryDetails(dict):
@@ -3883,6 +4048,104 @@ class GetBaselineableMetricsFilterResult(dict):
 
 
 @pulumi.output_type
+class GetConfigAdditionalConfigurationResult(dict):
+    def __init__(__self__, *,
+                 properties_map: Mapping[str, str]):
+        """
+        :param Mapping[str, str] properties_map: Key/Value pair of Property
+        """
+        pulumi.set(__self__, "properties_map", properties_map)
+
+    @property
+    @pulumi.getter(name="propertiesMap")
+    def properties_map(self) -> Mapping[str, str]:
+        """
+        Key/Value pair of Property
+        """
+        return pulumi.get(self, "properties_map")
+
+
+@pulumi.output_type
+class GetConfigDynamicGroupResult(dict):
+    def __init__(__self__, *,
+                 domain: str,
+                 name: str,
+                 stack_monitoring_assignment: str):
+        """
+        :param str domain: Identity domain name
+        :param str name: Name of user Group
+        :param str stack_monitoring_assignment: Assignment of dynamic group in context of Stack Monitoring service. It describes the purpose of dynamic groups in Stack Monitoring.
+        """
+        pulumi.set(__self__, "domain", domain)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "stack_monitoring_assignment", stack_monitoring_assignment)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> str:
+        """
+        Identity domain name
+        """
+        return pulumi.get(self, "domain")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of user Group
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="stackMonitoringAssignment")
+    def stack_monitoring_assignment(self) -> str:
+        """
+        Assignment of dynamic group in context of Stack Monitoring service. It describes the purpose of dynamic groups in Stack Monitoring.
+        """
+        return pulumi.get(self, "stack_monitoring_assignment")
+
+
+@pulumi.output_type
+class GetConfigUserGroupResult(dict):
+    def __init__(__self__, *,
+                 domain: str,
+                 name: str,
+                 stack_monitoring_role: str):
+        """
+        :param str domain: Identity domain name
+        :param str name: Name of user Group
+        :param str stack_monitoring_role: Role assigned to user group in context of Stack Monitoring service. Access role can be for example: ADMINISTRATOR, OPERATOR, VIEWER, any other access role
+        """
+        pulumi.set(__self__, "domain", domain)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "stack_monitoring_role", stack_monitoring_role)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> str:
+        """
+        Identity domain name
+        """
+        return pulumi.get(self, "domain")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of user Group
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="stackMonitoringRole")
+    def stack_monitoring_role(self) -> str:
+        """
+        Role assigned to user group in context of Stack Monitoring service. Access role can be for example: ADMINISTRATOR, OPERATOR, VIEWER, any other access role
+        """
+        return pulumi.get(self, "stack_monitoring_role")
+
+
+@pulumi.output_type
 class GetConfigsConfigCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetConfigsConfigCollectionItemResult']):
@@ -3897,47 +4160,73 @@ class GetConfigsConfigCollectionResult(dict):
 @pulumi.output_type
 class GetConfigsConfigCollectionItemResult(dict):
     def __init__(__self__, *,
+                 additional_configurations: Sequence['outputs.GetConfigsConfigCollectionItemAdditionalConfigurationResult'],
                  compartment_id: str,
                  config_type: str,
                  defined_tags: Mapping[str, str],
                  display_name: str,
+                 dynamic_groups: Sequence['outputs.GetConfigsConfigCollectionItemDynamicGroupResult'],
                  freeform_tags: Mapping[str, str],
                  id: str,
                  is_enabled: bool,
+                 is_manually_onboarded: bool,
                  license: str,
+                 policy_names: Sequence[str],
                  resource_type: str,
                  state: str,
                  system_tags: Mapping[str, str],
                  time_created: str,
-                 time_updated: str):
+                 time_updated: str,
+                 user_groups: Sequence['outputs.GetConfigsConfigCollectionItemUserGroupResult'],
+                 version: str):
         """
+        :param Sequence['GetConfigsConfigCollectionItemAdditionalConfigurationArgs'] additional_configurations: Property Details
         :param str compartment_id: The ID of the compartment in which data is listed.
         :param str config_type: The type of configuration.
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the entire display name given.
+        :param Sequence['GetConfigsConfigCollectionItemDynamicGroupArgs'] dynamic_groups: List of dynamic groups dedicated for Stack Monitoring.
         :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The Unique Oracle ID (OCID) that is immutable on creation.
-        :param bool is_enabled: True if automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
+        :param bool is_enabled: True if automatic activation of the Management Agent plugin, automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
+        :param bool is_manually_onboarded: True if customer decides marks configuration as manually configured.
         :param str license: License edition.
+        :param Sequence[str] policy_names: List of policy names assigned for onboarding
         :param str resource_type: The type of resource to configure for automatic promotion.
         :param str state: The current state of the Config.
         :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the configuration was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time the Config was updated.
+        :param Sequence['GetConfigsConfigCollectionItemUserGroupArgs'] user_groups: List of user groups dedicated for Stack Monitoring.
+        :param str version: Assigned version to given onboard configuration.
         """
+        pulumi.set(__self__, "additional_configurations", additional_configurations)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "config_type", config_type)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "dynamic_groups", dynamic_groups)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "is_manually_onboarded", is_manually_onboarded)
         pulumi.set(__self__, "license", license)
+        pulumi.set(__self__, "policy_names", policy_names)
         pulumi.set(__self__, "resource_type", resource_type)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "user_groups", user_groups)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="additionalConfigurations")
+    def additional_configurations(self) -> Sequence['outputs.GetConfigsConfigCollectionItemAdditionalConfigurationResult']:
+        """
+        Property Details
+        """
+        return pulumi.get(self, "additional_configurations")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -3972,6 +4261,14 @@ class GetConfigsConfigCollectionItemResult(dict):
         return pulumi.get(self, "display_name")
 
     @property
+    @pulumi.getter(name="dynamicGroups")
+    def dynamic_groups(self) -> Sequence['outputs.GetConfigsConfigCollectionItemDynamicGroupResult']:
+        """
+        List of dynamic groups dedicated for Stack Monitoring.
+        """
+        return pulumi.get(self, "dynamic_groups")
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, str]:
         """
@@ -3991,9 +4288,17 @@ class GetConfigsConfigCollectionItemResult(dict):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> bool:
         """
-        True if automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
+        True if automatic activation of the Management Agent plugin, automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
         """
         return pulumi.get(self, "is_enabled")
+
+    @property
+    @pulumi.getter(name="isManuallyOnboarded")
+    def is_manually_onboarded(self) -> bool:
+        """
+        True if customer decides marks configuration as manually configured.
+        """
+        return pulumi.get(self, "is_manually_onboarded")
 
     @property
     @pulumi.getter
@@ -4002,6 +4307,14 @@ class GetConfigsConfigCollectionItemResult(dict):
         License edition.
         """
         return pulumi.get(self, "license")
+
+    @property
+    @pulumi.getter(name="policyNames")
+    def policy_names(self) -> Sequence[str]:
+        """
+        List of policy names assigned for onboarding
+        """
+        return pulumi.get(self, "policy_names")
 
     @property
     @pulumi.getter(name="resourceType")
@@ -4043,6 +4356,120 @@ class GetConfigsConfigCollectionItemResult(dict):
         """
         return pulumi.get(self, "time_updated")
 
+    @property
+    @pulumi.getter(name="userGroups")
+    def user_groups(self) -> Sequence['outputs.GetConfigsConfigCollectionItemUserGroupResult']:
+        """
+        List of user groups dedicated for Stack Monitoring.
+        """
+        return pulumi.get(self, "user_groups")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        """
+        Assigned version to given onboard configuration.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetConfigsConfigCollectionItemAdditionalConfigurationResult(dict):
+    def __init__(__self__, *,
+                 properties_map: Mapping[str, str]):
+        """
+        :param Mapping[str, str] properties_map: Key/Value pair of Property
+        """
+        pulumi.set(__self__, "properties_map", properties_map)
+
+    @property
+    @pulumi.getter(name="propertiesMap")
+    def properties_map(self) -> Mapping[str, str]:
+        """
+        Key/Value pair of Property
+        """
+        return pulumi.get(self, "properties_map")
+
+
+@pulumi.output_type
+class GetConfigsConfigCollectionItemDynamicGroupResult(dict):
+    def __init__(__self__, *,
+                 domain: str,
+                 name: str,
+                 stack_monitoring_assignment: str):
+        """
+        :param str domain: Identity domain name
+        :param str name: Name of user Group
+        :param str stack_monitoring_assignment: Assignment of dynamic group in context of Stack Monitoring service. It describes the purpose of dynamic groups in Stack Monitoring.
+        """
+        pulumi.set(__self__, "domain", domain)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "stack_monitoring_assignment", stack_monitoring_assignment)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> str:
+        """
+        Identity domain name
+        """
+        return pulumi.get(self, "domain")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of user Group
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="stackMonitoringAssignment")
+    def stack_monitoring_assignment(self) -> str:
+        """
+        Assignment of dynamic group in context of Stack Monitoring service. It describes the purpose of dynamic groups in Stack Monitoring.
+        """
+        return pulumi.get(self, "stack_monitoring_assignment")
+
+
+@pulumi.output_type
+class GetConfigsConfigCollectionItemUserGroupResult(dict):
+    def __init__(__self__, *,
+                 domain: str,
+                 name: str,
+                 stack_monitoring_role: str):
+        """
+        :param str domain: Identity domain name
+        :param str name: Name of user Group
+        :param str stack_monitoring_role: Role assigned to user group in context of Stack Monitoring service. Access role can be for example: ADMINISTRATOR, OPERATOR, VIEWER, any other access role
+        """
+        pulumi.set(__self__, "domain", domain)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "stack_monitoring_role", stack_monitoring_role)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> str:
+        """
+        Identity domain name
+        """
+        return pulumi.get(self, "domain")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of user Group
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="stackMonitoringRole")
+    def stack_monitoring_role(self) -> str:
+        """
+        Role assigned to user group in context of Stack Monitoring service. Access role can be for example: ADMINISTRATOR, OPERATOR, VIEWER, any other access role
+        """
+        return pulumi.get(self, "stack_monitoring_role")
+
 
 @pulumi.output_type
 class GetConfigsFilterResult(dict):
@@ -4050,6 +4477,9 @@ class GetConfigsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
+        """
+        :param str name: Name of user Group
+        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -4058,6 +4488,9 @@ class GetConfigsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
+        """
+        Name of user Group
+        """
         return pulumi.get(self, "name")
 
     @property
@@ -5055,11 +5488,14 @@ class GetMaintenanceWindowsMaintenanceWindowCollectionItemResult(dict):
                  system_tags: Mapping[str, str]):
         """
         :param str compartment_id: The ID of the compartment in which data is listed.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of maintenance window.
         :param str lifecycle_details: A filter to return maintenance windows with matching lifecycleDetails.
         :param str name: A filter to return maintenance windows that match exact resource name.
         :param Sequence['GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArgs'] schedules: Schedule information of the Maintenance Window
         :param str state: Lifecycle state of the monitored resource.
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -5086,11 +5522,17 @@ class GetMaintenanceWindowsMaintenanceWindowCollectionItemResult(dict):
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
         return pulumi.get(self, "freeform_tags")
 
     @property
@@ -5156,6 +5598,9 @@ class GetMaintenanceWindowsMaintenanceWindowCollectionItemResult(dict):
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
         return pulumi.get(self, "system_tags")
 
 

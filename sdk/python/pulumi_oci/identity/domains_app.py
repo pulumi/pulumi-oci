@@ -54,6 +54,7 @@ class DomainsAppArgs:
                  description: Optional[pulumi.Input[str]] = None,
                  disable_kmsi_token_authentication: Optional[pulumi.Input[bool]] = None,
                  error_page_url: Optional[pulumi.Input[str]] = None,
+                 force_delete: Optional[pulumi.Input[bool]] = None,
                  home_page_url: Optional[pulumi.Input[str]] = None,
                  icon: Optional[pulumi.Input[str]] = None,
                  id_token_enc_algo: Optional[pulumi.Input[str]] = None,
@@ -1055,6 +1056,8 @@ class DomainsAppArgs:
             pulumi.set(__self__, "disable_kmsi_token_authentication", disable_kmsi_token_authentication)
         if error_page_url is not None:
             pulumi.set(__self__, "error_page_url", error_page_url)
+        if force_delete is not None:
+            pulumi.set(__self__, "force_delete", force_delete)
         if home_page_url is not None:
             pulumi.set(__self__, "home_page_url", home_page_url)
         if icon is not None:
@@ -1867,6 +1870,15 @@ class DomainsAppArgs:
     @error_page_url.setter
     def error_page_url(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "error_page_url", value)
+
+    @property
+    @pulumi.getter(name="forceDelete")
+    def force_delete(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "force_delete")
+
+    @force_delete.setter
+    def force_delete(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "force_delete", value)
 
     @property
     @pulumi.getter(name="homePageUrl")
@@ -3143,6 +3155,7 @@ class _DomainsAppState:
                  domain_ocid: Optional[pulumi.Input[str]] = None,
                  editable_attributes: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppEditableAttributeArgs']]]] = None,
                  error_page_url: Optional[pulumi.Input[str]] = None,
+                 force_delete: Optional[pulumi.Input[bool]] = None,
                  granted_app_roles: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppGrantedAppRoleArgs']]]] = None,
                  grants: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppGrantArgs']]]] = None,
                  hashed_client_secret: Optional[pulumi.Input[str]] = None,
@@ -4464,6 +4477,8 @@ class _DomainsAppState:
             pulumi.set(__self__, "editable_attributes", editable_attributes)
         if error_page_url is not None:
             pulumi.set(__self__, "error_page_url", error_page_url)
+        if force_delete is not None:
+            pulumi.set(__self__, "force_delete", force_delete)
         if granted_app_roles is not None:
             pulumi.set(__self__, "granted_app_roles", granted_app_roles)
         if grants is not None:
@@ -5483,6 +5498,15 @@ class _DomainsAppState:
     @error_page_url.setter
     def error_page_url(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "error_page_url", value)
+
+    @property
+    @pulumi.getter(name="forceDelete")
+    def force_delete(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "force_delete")
+
+    @force_delete.setter
+    def force_delete(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "force_delete", value)
 
     @property
     @pulumi.getter(name="grantedAppRoles")
@@ -7152,6 +7176,7 @@ class DomainsApp(pulumi.CustomResource):
                  disable_kmsi_token_authentication: Optional[pulumi.Input[bool]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  error_page_url: Optional[pulumi.Input[str]] = None,
+                 force_delete: Optional[pulumi.Input[bool]] = None,
                  home_page_url: Optional[pulumi.Input[str]] = None,
                  icon: Optional[pulumi.Input[str]] = None,
                  id_token_enc_algo: Optional[pulumi.Input[str]] = None,
@@ -8172,6 +8197,7 @@ class DomainsApp(pulumi.CustomResource):
                  disable_kmsi_token_authentication: Optional[pulumi.Input[bool]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  error_page_url: Optional[pulumi.Input[str]] = None,
+                 force_delete: Optional[pulumi.Input[bool]] = None,
                  home_page_url: Optional[pulumi.Input[str]] = None,
                  icon: Optional[pulumi.Input[str]] = None,
                  id_token_enc_algo: Optional[pulumi.Input[str]] = None,
@@ -8280,6 +8306,7 @@ class DomainsApp(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["error_page_url"] = error_page_url
+            __props__.__dict__["force_delete"] = force_delete
             __props__.__dict__["home_page_url"] = home_page_url
             __props__.__dict__["icon"] = icon
             __props__.__dict__["id_token_enc_algo"] = id_token_enc_algo
@@ -8424,6 +8451,7 @@ class DomainsApp(pulumi.CustomResource):
             domain_ocid: Optional[pulumi.Input[str]] = None,
             editable_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppEditableAttributeArgs', 'DomainsAppEditableAttributeArgsDict']]]]] = None,
             error_page_url: Optional[pulumi.Input[str]] = None,
+            force_delete: Optional[pulumi.Input[bool]] = None,
             granted_app_roles: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppGrantedAppRoleArgs', 'DomainsAppGrantedAppRoleArgsDict']]]]] = None,
             grants: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppGrantArgs', 'DomainsAppGrantArgsDict']]]]] = None,
             hashed_client_secret: Optional[pulumi.Input[str]] = None,
@@ -9714,6 +9742,7 @@ class DomainsApp(pulumi.CustomResource):
         __props__.__dict__["domain_ocid"] = domain_ocid
         __props__.__dict__["editable_attributes"] = editable_attributes
         __props__.__dict__["error_page_url"] = error_page_url
+        __props__.__dict__["force_delete"] = force_delete
         __props__.__dict__["granted_app_roles"] = granted_app_roles
         __props__.__dict__["grants"] = grants
         __props__.__dict__["hashed_client_secret"] = hashed_client_secret
@@ -10493,6 +10522,11 @@ class DomainsApp(pulumi.CustomResource):
         * uniqueness: none
         """
         return pulumi.get(self, "error_page_url")
+
+    @property
+    @pulumi.getter(name="forceDelete")
+    def force_delete(self) -> pulumi.Output[Optional[bool]]:
+        return pulumi.get(self, "force_delete")
 
     @property
     @pulumi.getter(name="grantedAppRoles")

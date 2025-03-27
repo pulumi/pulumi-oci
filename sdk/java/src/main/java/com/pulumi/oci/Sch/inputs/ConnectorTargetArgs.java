@@ -51,14 +51,14 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) The batch rollover size in kilobytes.
+     * (Updatable) The batch rollover size in kilobytes. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
      * 
      */
     @Import(name="batchSizeInKbs")
     private @Nullable Output<Integer> batchSizeInKbs;
 
     /**
-     * @return (Updatable) The batch rollover size in kilobytes.
+     * @return (Updatable) The batch rollover size in kilobytes. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
      * 
      */
     public Optional<Output<Integer>> batchSizeInKbs() {
@@ -66,14 +66,14 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) The batch rollover size in number of messages.
+     * (Updatable) The batch rollover size in number of messages. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
      * 
      */
     @Import(name="batchSizeInNum")
     private @Nullable Output<Integer> batchSizeInNum;
 
     /**
-     * @return (Updatable) The batch rollover size in number of messages.
+     * @return (Updatable) The batch rollover size in number of messages. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
      * 
      */
     public Optional<Output<Integer>> batchSizeInNum() {
@@ -141,14 +141,14 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
+     * (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol. Example: `true`
      * 
      */
     @Import(name="enableFormattedMessaging")
     private @Nullable Output<Boolean> enableFormattedMessaging;
 
     /**
-     * @return (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
+     * @return (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol. Example: `true`
      * 
      */
     public Optional<Output<Boolean>> enableFormattedMessaging() {
@@ -216,14 +216,14 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) The name of the metric.  Example: `CpuUtilization`
+     * (Updatable) The name of the metric. Example: `CpuUtilization`
      * 
      */
     @Import(name="metric")
     private @Nullable Output<String> metric;
 
     /**
-     * @return (Updatable) The name of the metric.  Example: `CpuUtilization`
+     * @return (Updatable) The name of the metric. Example: `CpuUtilization`
      * 
      */
     public Optional<Output<String>> metric() {
@@ -231,14 +231,14 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) The namespace of the metric.  Example: `oci_computeagent`
+     * (Updatable) The namespace of the metric. Example: `oci_computeagent`
      * 
      */
     @Import(name="metricNamespace")
     private @Nullable Output<String> metricNamespace;
 
     /**
-     * @return (Updatable) The namespace of the metric.  Example: `oci_computeagent`
+     * @return (Updatable) The namespace of the metric. Example: `oci_computeagent`
      * 
      */
     public Optional<Output<String>> metricNamespace() {
@@ -390,7 +390,7 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param batchSizeInKbs (Updatable) The batch rollover size in kilobytes.
+         * @param batchSizeInKbs (Updatable) The batch rollover size in kilobytes. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
          * 
          * @return builder
          * 
@@ -401,7 +401,7 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param batchSizeInKbs (Updatable) The batch rollover size in kilobytes.
+         * @param batchSizeInKbs (Updatable) The batch rollover size in kilobytes. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
          * 
          * @return builder
          * 
@@ -411,7 +411,7 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param batchSizeInNum (Updatable) The batch rollover size in number of messages.
+         * @param batchSizeInNum (Updatable) The batch rollover size in number of messages. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
          * 
          * @return builder
          * 
@@ -422,7 +422,7 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param batchSizeInNum (Updatable) The batch rollover size in number of messages.
+         * @param batchSizeInNum (Updatable) The batch rollover size in number of messages. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
          * 
          * @return builder
          * 
@@ -526,7 +526,7 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param enableFormattedMessaging (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
+         * @param enableFormattedMessaging (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol. Example: `true`
          * 
          * @return builder
          * 
@@ -537,7 +537,7 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param enableFormattedMessaging (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
+         * @param enableFormattedMessaging (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol. Example: `true`
          * 
          * @return builder
          * 
@@ -631,7 +631,7 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param metric (Updatable) The name of the metric.  Example: `CpuUtilization`
+         * @param metric (Updatable) The name of the metric. Example: `CpuUtilization`
          * 
          * @return builder
          * 
@@ -642,7 +642,7 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param metric (Updatable) The name of the metric.  Example: `CpuUtilization`
+         * @param metric (Updatable) The name of the metric. Example: `CpuUtilization`
          * 
          * @return builder
          * 
@@ -652,7 +652,7 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param metricNamespace (Updatable) The namespace of the metric.  Example: `oci_computeagent`
+         * @param metricNamespace (Updatable) The namespace of the metric. Example: `oci_computeagent`
          * 
          * @return builder
          * 
@@ -663,7 +663,7 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param metricNamespace (Updatable) The namespace of the metric.  Example: `oci_computeagent`
+         * @param metricNamespace (Updatable) The namespace of the metric. Example: `oci_computeagent`
          * 
          * @return builder
          * 

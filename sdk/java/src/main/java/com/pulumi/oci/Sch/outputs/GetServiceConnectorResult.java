@@ -49,12 +49,13 @@ public final class GetServiceConnectorResult {
      * @return A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
      * 
      */
-    private String lifecyleDetails;
-    private String serviceConnectorId;
+    private String lifecycleDetails;
     /**
-     * @return An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+     * @return *Please note this property is deprecated and will be removed on January 27, 2026. Use `lifecycleDetails` instead.* A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
      * 
      */
+    private String lifecyleDetails;
+    private String serviceConnectorId;
     private List<GetServiceConnectorSource> sources;
     /**
      * @return The current state of the connector.
@@ -66,10 +67,6 @@ public final class GetServiceConnectorResult {
      * 
      */
     private Map<String,String> systemTags;
-    /**
-     * @return An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
-     * 
-     */
     private List<GetServiceConnectorTarget> targets;
     /**
      * @return The list of tasks.
@@ -134,16 +131,19 @@ public final class GetServiceConnectorResult {
      * @return A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
      * 
      */
+    public String lifecycleDetails() {
+        return this.lifecycleDetails;
+    }
+    /**
+     * @return *Please note this property is deprecated and will be removed on January 27, 2026. Use `lifecycleDetails` instead.* A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+     * 
+     */
     public String lifecyleDetails() {
         return this.lifecyleDetails;
     }
     public String serviceConnectorId() {
         return this.serviceConnectorId;
     }
-    /**
-     * @return An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
-     * 
-     */
     public List<GetServiceConnectorSource> sources() {
         return this.sources;
     }
@@ -161,10 +161,6 @@ public final class GetServiceConnectorResult {
     public Map<String,String> systemTags() {
         return this.systemTags;
     }
-    /**
-     * @return An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
-     * 
-     */
     public List<GetServiceConnectorTarget> targets() {
         return this.targets;
     }
@@ -205,6 +201,7 @@ public final class GetServiceConnectorResult {
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
+        private String lifecycleDetails;
         private String lifecyleDetails;
         private String serviceConnectorId;
         private List<GetServiceConnectorSource> sources;
@@ -223,6 +220,7 @@ public final class GetServiceConnectorResult {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.lifecyleDetails = defaults.lifecyleDetails;
     	      this.serviceConnectorId = defaults.serviceConnectorId;
     	      this.sources = defaults.sources;
@@ -280,6 +278,14 @@ public final class GetServiceConnectorResult {
               throw new MissingRequiredPropertyException("GetServiceConnectorResult", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
@@ -371,6 +377,7 @@ public final class GetServiceConnectorResult {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.lifecyleDetails = lifecyleDetails;
             _resultValue.serviceConnectorId = serviceConnectorId;
             _resultValue.sources = sources;

@@ -251,6 +251,7 @@ public final class GetDomainsAppResult {
      * 
      */
     private String errorPageUrl;
+    private Boolean forceDelete;
     /**
      * @return A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
      * 
@@ -930,6 +931,9 @@ public final class GetDomainsAppResult {
     public String errorPageUrl() {
         return this.errorPageUrl;
     }
+    public Boolean forceDelete() {
+        return this.forceDelete;
+    }
     /**
      * @return A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
      * 
@@ -1547,6 +1551,7 @@ public final class GetDomainsAppResult {
         private String domainOcid;
         private List<GetDomainsAppEditableAttribute> editableAttributes;
         private String errorPageUrl;
+        private Boolean forceDelete;
         private List<GetDomainsAppGrantedAppRole> grantedAppRoles;
         private List<GetDomainsAppGrant> grants;
         private String hashedClientSecret;
@@ -1673,6 +1678,7 @@ public final class GetDomainsAppResult {
     	      this.domainOcid = defaults.domainOcid;
     	      this.editableAttributes = defaults.editableAttributes;
     	      this.errorPageUrl = defaults.errorPageUrl;
+    	      this.forceDelete = defaults.forceDelete;
     	      this.grantedAppRoles = defaults.grantedAppRoles;
     	      this.grants = defaults.grants;
     	      this.hashedClientSecret = defaults.hashedClientSecret;
@@ -2128,6 +2134,14 @@ public final class GetDomainsAppResult {
               throw new MissingRequiredPropertyException("GetDomainsAppResult", "errorPageUrl");
             }
             this.errorPageUrl = errorPageUrl;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder forceDelete(Boolean forceDelete) {
+            if (forceDelete == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "forceDelete");
+            }
+            this.forceDelete = forceDelete;
             return this;
         }
         @CustomType.Setter
@@ -2932,6 +2946,7 @@ public final class GetDomainsAppResult {
             _resultValue.domainOcid = domainOcid;
             _resultValue.editableAttributes = editableAttributes;
             _resultValue.errorPageUrl = errorPageUrl;
+            _resultValue.forceDelete = forceDelete;
             _resultValue.grantedAppRoles = grantedAppRoles;
             _resultValue.grants = grants;
             _resultValue.hashedClientSecret = hashedClientSecret;

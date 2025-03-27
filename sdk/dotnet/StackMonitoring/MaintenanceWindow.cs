@@ -45,7 +45,15 @@ namespace Pulumi.Oci.StackMonitoring
     ///             TimeMaintenanceWindowEnd = maintenanceWindowScheduleTimeMaintenanceWindowEnd,
     ///             TimeMaintenanceWindowStart = maintenanceWindowScheduleTimeMaintenanceWindowStart,
     ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
     ///         Description = maintenanceWindowDescription,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
     ///     });
     /// 
     /// });
@@ -69,10 +77,22 @@ namespace Pulumi.Oci.StackMonitoring
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// </summary>
+        [Output("definedTags")]
+        public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Maintenance Window description.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// </summary>
+        [Output("freeformTags")]
+        public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Lifecycle Details of the Maintenance Window.
@@ -109,6 +129,12 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
+
+        /// <summary>
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        [Output("systemTags")]
+        public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time the the maintenance window was created. An RFC3339 formatted datetime string
@@ -174,11 +200,35 @@ namespace Pulumi.Oci.StackMonitoring
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
+        [Input("definedTags")]
+        private InputMap<string>? _definedTags;
+
+        /// <summary>
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// </summary>
+        public InputMap<string> DefinedTags
+        {
+            get => _definedTags ?? (_definedTags = new InputMap<string>());
+            set => _definedTags = value;
+        }
+
         /// <summary>
         /// (Updatable) Maintenance Window description.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
+
+        [Input("freeformTags")]
+        private InputMap<string>? _freeformTags;
+
+        /// <summary>
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// </summary>
+        public InputMap<string> FreeformTags
+        {
+            get => _freeformTags ?? (_freeformTags = new InputMap<string>());
+            set => _freeformTags = value;
+        }
 
         /// <summary>
         /// Maintenance Window name.
@@ -218,11 +268,35 @@ namespace Pulumi.Oci.StackMonitoring
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
+        [Input("definedTags")]
+        private InputMap<string>? _definedTags;
+
+        /// <summary>
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// </summary>
+        public InputMap<string> DefinedTags
+        {
+            get => _definedTags ?? (_definedTags = new InputMap<string>());
+            set => _definedTags = value;
+        }
+
         /// <summary>
         /// (Updatable) Maintenance Window description.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
+
+        [Input("freeformTags")]
+        private InputMap<string>? _freeformTags;
+
+        /// <summary>
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// </summary>
+        public InputMap<string> FreeformTags
+        {
+            get => _freeformTags ?? (_freeformTags = new InputMap<string>());
+            set => _freeformTags = value;
+        }
 
         /// <summary>
         /// Lifecycle Details of the Maintenance Window.
@@ -271,6 +345,18 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        [Input("systemTags")]
+        private InputMap<string>? _systemTags;
+
+        /// <summary>
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public InputMap<string> SystemTags
+        {
+            get => _systemTags ?? (_systemTags = new InputMap<string>());
+            set => _systemTags = value;
+        }
 
         /// <summary>
         /// The time the the maintenance window was created. An RFC3339 formatted datetime string

@@ -98,6 +98,10 @@ import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryFabricArgs;
 import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryFabricPlainArgs;
 import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryFabricsArgs;
 import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryFabricsPlainArgs;
+import com.pulumi.oci.Core.inputs.GetComputeHostArgs;
+import com.pulumi.oci.Core.inputs.GetComputeHostPlainArgs;
+import com.pulumi.oci.Core.inputs.GetComputeHostsArgs;
+import com.pulumi.oci.Core.inputs.GetComputeHostsPlainArgs;
 import com.pulumi.oci.Core.inputs.GetComputeImageCapabilitySchemaArgs;
 import com.pulumi.oci.Core.inputs.GetComputeImageCapabilitySchemaPlainArgs;
 import com.pulumi.oci.Core.inputs.GetComputeImageCapabilitySchemasArgs;
@@ -371,6 +375,8 @@ import com.pulumi.oci.Core.outputs.GetComputeGpuMemoryClusterResult;
 import com.pulumi.oci.Core.outputs.GetComputeGpuMemoryClustersResult;
 import com.pulumi.oci.Core.outputs.GetComputeGpuMemoryFabricResult;
 import com.pulumi.oci.Core.outputs.GetComputeGpuMemoryFabricsResult;
+import com.pulumi.oci.Core.outputs.GetComputeHostResult;
+import com.pulumi.oci.Core.outputs.GetComputeHostsResult;
 import com.pulumi.oci.Core.outputs.GetComputeImageCapabilitySchemaResult;
 import com.pulumi.oci.Core.outputs.GetComputeImageCapabilitySchemasResult;
 import com.pulumi.oci.Core.outputs.GetConsoleHistoriesResult;
@@ -11251,6 +11257,471 @@ public final class CoreFunctions {
      */
     public static CompletableFuture<GetComputeGpuMemoryFabricsResult> getComputeGpuMemoryFabricsPlain(GetComputeGpuMemoryFabricsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getComputeGpuMemoryFabrics:getComputeGpuMemoryFabrics", TypeShape.of(GetComputeGpuMemoryFabricsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Compute Host resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified compute host
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeHostArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeHost = CoreFunctions.getComputeHost(GetComputeHostArgs.builder()
+     *             .computeHostId(testComputeHostOciCoreComputeHost.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetComputeHostResult> getComputeHost(GetComputeHostArgs args) {
+        return getComputeHost(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Compute Host resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified compute host
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeHostArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeHost = CoreFunctions.getComputeHost(GetComputeHostArgs.builder()
+     *             .computeHostId(testComputeHostOciCoreComputeHost.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetComputeHostResult> getComputeHostPlain(GetComputeHostPlainArgs args) {
+        return getComputeHostPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Compute Host resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified compute host
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeHostArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeHost = CoreFunctions.getComputeHost(GetComputeHostArgs.builder()
+     *             .computeHostId(testComputeHostOciCoreComputeHost.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetComputeHostResult> getComputeHost(GetComputeHostArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeHost:getComputeHost", TypeShape.of(GetComputeHostResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Compute Host resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified compute host
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeHostArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeHost = CoreFunctions.getComputeHost(GetComputeHostArgs.builder()
+     *             .computeHostId(testComputeHostOciCoreComputeHost.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetComputeHostResult> getComputeHost(GetComputeHostArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeHost:getComputeHost", TypeShape.of(GetComputeHostResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Compute Host resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified compute host
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeHostArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeHost = CoreFunctions.getComputeHost(GetComputeHostArgs.builder()
+     *             .computeHostId(testComputeHostOciCoreComputeHost.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetComputeHostResult> getComputeHostPlain(GetComputeHostPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Core/getComputeHost:getComputeHost", TypeShape.of(GetComputeHostResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Hosts in Oracle Cloud Infrastructure Core service.
+     * 
+     * Generates a list of summary host details
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeHostsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeHosts = CoreFunctions.getComputeHosts(GetComputeHostsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(computeHostAvailabilityDomain)
+     *             .computeHostHealth(computeHostComputeHostHealth)
+     *             .computeHostLifecycleState(computeHostComputeHostLifecycleState)
+     *             .displayName(computeHostDisplayName)
+     *             .networkResourceId(testResource.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetComputeHostsResult> getComputeHosts(GetComputeHostsArgs args) {
+        return getComputeHosts(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Compute Hosts in Oracle Cloud Infrastructure Core service.
+     * 
+     * Generates a list of summary host details
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeHostsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeHosts = CoreFunctions.getComputeHosts(GetComputeHostsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(computeHostAvailabilityDomain)
+     *             .computeHostHealth(computeHostComputeHostHealth)
+     *             .computeHostLifecycleState(computeHostComputeHostLifecycleState)
+     *             .displayName(computeHostDisplayName)
+     *             .networkResourceId(testResource.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetComputeHostsResult> getComputeHostsPlain(GetComputeHostsPlainArgs args) {
+        return getComputeHostsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Compute Hosts in Oracle Cloud Infrastructure Core service.
+     * 
+     * Generates a list of summary host details
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeHostsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeHosts = CoreFunctions.getComputeHosts(GetComputeHostsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(computeHostAvailabilityDomain)
+     *             .computeHostHealth(computeHostComputeHostHealth)
+     *             .computeHostLifecycleState(computeHostComputeHostLifecycleState)
+     *             .displayName(computeHostDisplayName)
+     *             .networkResourceId(testResource.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetComputeHostsResult> getComputeHosts(GetComputeHostsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeHosts:getComputeHosts", TypeShape.of(GetComputeHostsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Hosts in Oracle Cloud Infrastructure Core service.
+     * 
+     * Generates a list of summary host details
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeHostsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeHosts = CoreFunctions.getComputeHosts(GetComputeHostsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(computeHostAvailabilityDomain)
+     *             .computeHostHealth(computeHostComputeHostHealth)
+     *             .computeHostLifecycleState(computeHostComputeHostLifecycleState)
+     *             .displayName(computeHostDisplayName)
+     *             .networkResourceId(testResource.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetComputeHostsResult> getComputeHosts(GetComputeHostsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeHosts:getComputeHosts", TypeShape.of(GetComputeHostsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Hosts in Oracle Cloud Infrastructure Core service.
+     * 
+     * Generates a list of summary host details
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeHostsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeHosts = CoreFunctions.getComputeHosts(GetComputeHostsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(computeHostAvailabilityDomain)
+     *             .computeHostHealth(computeHostComputeHostHealth)
+     *             .computeHostLifecycleState(computeHostComputeHostLifecycleState)
+     *             .displayName(computeHostDisplayName)
+     *             .networkResourceId(testResource.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetComputeHostsResult> getComputeHostsPlain(GetComputeHostsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Core/getComputeHosts:getComputeHosts", TypeShape.of(GetComputeHostsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Compute Image Capability Schema resource in Oracle Cloud Infrastructure Core service.

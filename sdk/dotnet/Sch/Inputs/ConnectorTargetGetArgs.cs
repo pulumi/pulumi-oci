@@ -25,13 +25,13 @@ namespace Pulumi.Oci.Sch.Inputs
         public Input<int>? BatchRolloverTimeInMs { get; set; }
 
         /// <summary>
-        /// (Updatable) The batch rollover size in kilobytes.
+        /// (Updatable) The batch rollover size in kilobytes. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
         /// </summary>
         [Input("batchSizeInKbs")]
         public Input<int>? BatchSizeInKbs { get; set; }
 
         /// <summary>
-        /// (Updatable) The batch rollover size in number of messages.
+        /// (Updatable) The batch rollover size in number of messages. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
         /// </summary>
         [Input("batchSizeInNum")]
         public Input<int>? BatchSizeInNum { get; set; }
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Sch.Inputs
         }
 
         /// <summary>
-        /// (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
+        /// (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol. Example: `true`
         /// </summary>
         [Input("enableFormattedMessaging")]
         public Input<bool>? EnableFormattedMessaging { get; set; }
@@ -97,13 +97,13 @@ namespace Pulumi.Oci.Sch.Inputs
         public Input<string>? LogSourceIdentifier { get; set; }
 
         /// <summary>
-        /// (Updatable) The name of the metric.  Example: `CpuUtilization`
+        /// (Updatable) The name of the metric. Example: `CpuUtilization`
         /// </summary>
         [Input("metric")]
         public Input<string>? Metric { get; set; }
 
         /// <summary>
-        /// (Updatable) The namespace of the metric.  Example: `oci_computeagent`
+        /// (Updatable) The namespace of the metric. Example: `oci_computeagent`
         /// </summary>
         [Input("metricNamespace")]
         public Input<string>? MetricNamespace { get; set; }

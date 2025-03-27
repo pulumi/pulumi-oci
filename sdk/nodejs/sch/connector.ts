@@ -169,9 +169,13 @@ export class Connector extends pulumi.CustomResource {
     /**
      * A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
      */
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    /**
+     * *Please note this property is deprecated and will be removed on January 27, 2026. Use `lifecycleDetails` instead.* A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+     */
     public /*out*/ readonly lifecyleDetails!: pulumi.Output<string>;
     /**
-     * (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+     * (Updatable)
      */
     public readonly source!: pulumi.Output<outputs.Sch.ConnectorSource>;
     /**
@@ -187,7 +191,7 @@ export class Connector extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
     /**
-     * (Updatable) An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+     * (Updatable)
      */
     public readonly target!: pulumi.Output<outputs.Sch.ConnectorTarget>;
     /**
@@ -221,6 +225,7 @@ export class Connector extends pulumi.CustomResource {
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["lifecyleDetails"] = state ? state.lifecyleDetails : undefined;
             resourceInputs["source"] = state ? state.source : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
@@ -252,6 +257,7 @@ export class Connector extends pulumi.CustomResource {
             resourceInputs["state"] = args ? args.state : undefined;
             resourceInputs["target"] = args ? args.target : undefined;
             resourceInputs["tasks"] = args ? args.tasks : undefined;
+            resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["lifecyleDetails"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -289,9 +295,13 @@ export interface ConnectorState {
     /**
      * A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
      */
+    lifecycleDetails?: pulumi.Input<string>;
+    /**
+     * *Please note this property is deprecated and will be removed on January 27, 2026. Use `lifecycleDetails` instead.* A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+     */
     lifecyleDetails?: pulumi.Input<string>;
     /**
-     * (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+     * (Updatable)
      */
     source?: pulumi.Input<inputs.Sch.ConnectorSource>;
     /**
@@ -307,7 +317,7 @@ export interface ConnectorState {
      */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+     * (Updatable)
      */
     target?: pulumi.Input<inputs.Sch.ConnectorTarget>;
     /**
@@ -349,7 +359,7 @@ export interface ConnectorArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+     * (Updatable)
      */
     source: pulumi.Input<inputs.Sch.ConnectorSource>;
     /**
@@ -361,7 +371,7 @@ export interface ConnectorArgs {
      */
     state?: pulumi.Input<string>;
     /**
-     * (Updatable) An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+     * (Updatable)
      */
     target: pulumi.Input<inputs.Sch.ConnectorTarget>;
     /**

@@ -13286,6 +13286,18 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetComputeHostsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetComputeHostsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetComputeImageCapabilitySchemasFilter {
         name: string;
         regex?: boolean;
@@ -43568,21 +43580,7 @@ export namespace Identity {
     }
 
     export interface DomainsAppRadiusPolicy {
-        /**
-         * (Updatable) URI of the policy.
-         *
-         * **Added In:** 2209070044
-         *
-         * **SCIM++ Properties:**
-         * * idcsSearchable: false
-         * * multiValued: false
-         * * mutability: readOnly
-         * * required: false
-         * * returned: default
-         * * type: reference
-         * * uniqueness: none
-         */
-        ref?: pulumi.Input<string>;
+        _ref?: pulumi.Input<string>;
         /**
          * (Updatable) Identifier of the Policy.
          *
@@ -82487,7 +82485,7 @@ export namespace ResourceScheduler {
 export namespace Sch {
     export interface ConnectorSource {
         /**
-         * (Updatable) The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+         * (Updatable) The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using [GetConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin) and review its schema value.
          */
         configMap?: pulumi.Input<string>;
         /**
@@ -82507,7 +82505,7 @@ export namespace Sch {
          */
         monitoringSources?: pulumi.Input<pulumi.Input<inputs.Sch.ConnectorSourceMonitoringSource>[]>;
         /**
-         * (Updatable) The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+         * (Updatable) The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using [ListConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins).
          */
         pluginName?: pulumi.Input<string>;
         /**
@@ -82529,7 +82527,7 @@ export namespace Sch {
          */
         compartmentId?: pulumi.Input<string>;
         /**
-         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group. Note: For the Notifications target, only _Audit is allowed. Example OCID for _Audit log group: ocid1.tenancy.oc1..exampleuniqueid/_Audit
+         * (Updatable) Identifier of the log group. Either `_Audit` or the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group. Note: For the Notifications target, only `_Audit` is allowed.
          */
         logGroupId?: pulumi.Input<string>;
         /**
@@ -82588,11 +82586,11 @@ export namespace Sch {
          */
         batchRolloverTimeInMs?: pulumi.Input<number>;
         /**
-         * (Updatable) The batch rollover size in kilobytes.
+         * (Updatable) The batch rollover size in kilobytes. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
          */
         batchSizeInKbs?: pulumi.Input<number>;
         /**
-         * (Updatable) The batch rollover size in number of messages.
+         * (Updatable) The batch rollover size in number of messages. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
          */
         batchSizeInNum?: pulumi.Input<number>;
         /**
@@ -82612,7 +82610,7 @@ export namespace Sch {
          */
         dimensions?: pulumi.Input<pulumi.Input<inputs.Sch.ConnectorTargetDimension>[]>;
         /**
-         * (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
+         * (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol. Example: `true`
          */
         enableFormattedMessaging?: pulumi.Input<boolean>;
         /**
@@ -82632,11 +82630,11 @@ export namespace Sch {
          */
         logSourceIdentifier?: pulumi.Input<string>;
         /**
-         * (Updatable) The name of the metric.  Example: `CpuUtilization`
+         * (Updatable) The name of the metric. Example: `CpuUtilization`
          */
         metric?: pulumi.Input<string>;
         /**
-         * (Updatable) The namespace of the metric.  Example: `ociComputeagent`
+         * (Updatable) The namespace of the metric. Example: `ociComputeagent`
          */
         metricNamespace?: pulumi.Input<string>;
         /**
@@ -83406,6 +83404,43 @@ export namespace ServiceMesh {
 }
 
 export namespace StackMonitoring {
+    export interface ConfigAdditionalConfigurations {
+        /**
+         * (Updatable) Key/Value pair of Property
+         */
+        propertiesMap?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    }
+
+    export interface ConfigDynamicGroup {
+        /**
+         * (Updatable) Identity domain name
+         */
+        domain?: pulumi.Input<string>;
+        /**
+         * (Updatable) Name of dynamic Group
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) Assignment of dynamic group in context of Stack Monitoring service. It describes the purpose of dynamic groups in Stack Monitoring.
+         */
+        stackMonitoringAssignment?: pulumi.Input<string>;
+    }
+
+    export interface ConfigUserGroup {
+        /**
+         * (Updatable) Identity domain name
+         */
+        domain?: pulumi.Input<string>;
+        /**
+         * (Updatable) Name of user Group
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) Role assigned to user group in context of Stack Monitoring service. Access role can be for example: ADMINISTRATOR, OPERATOR, VIEWER, any other access role
+         */
+        stackMonitoringRole?: pulumi.Input<string>;
+    }
+
     export interface DiscoveryJobDiscoveryDetails {
         /**
          * The OCID of Management Agent
@@ -83627,12 +83662,18 @@ export namespace StackMonitoring {
     }
 
     export interface GetConfigsFilter {
+        /**
+         * Name of user Group
+         */
         name: string;
         regex?: boolean;
         values: string[];
     }
 
     export interface GetConfigsFilterArgs {
+        /**
+         * Name of user Group
+         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;

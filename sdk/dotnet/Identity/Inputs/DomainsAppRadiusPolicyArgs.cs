@@ -12,22 +12,8 @@ namespace Pulumi.Oci.Identity.Inputs
 
     public sealed class DomainsAppRadiusPolicyArgs : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// (Updatable) URI of the policy.
-        /// 
-        /// **Added In:** 2209070044
-        /// 
-        /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
-        /// * multiValued: false
-        /// * mutability: readOnly
-        /// * required: false
-        /// * returned: default
-        /// * type: reference
-        /// * uniqueness: none
-        /// </summary>
-        [Input("ref")]
-        public Input<string>? Ref { get; set; }
+        [Input("_ref")]
+        public Input<string>? _ref { get; set; }
 
         /// <summary>
         /// (Updatable) Identifier of the Policy.

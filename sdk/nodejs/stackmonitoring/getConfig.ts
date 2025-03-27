@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -42,6 +44,10 @@ export interface GetConfigArgs {
  */
 export interface GetConfigResult {
     /**
+     * Property Details
+     */
+    readonly additionalConfigurations: outputs.StackMonitoring.GetConfigAdditionalConfiguration[];
+    /**
      * The OCID of the compartment containing the configuration.
      */
     readonly compartmentId: string;
@@ -59,6 +65,10 @@ export interface GetConfigResult {
      */
     readonly displayName: string;
     /**
+     * List of dynamic groups dedicated for Stack Monitoring.
+     */
+    readonly dynamicGroups: outputs.StackMonitoring.GetConfigDynamicGroup[];
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     readonly freeformTags: {[key: string]: string};
@@ -67,13 +77,21 @@ export interface GetConfigResult {
      */
     readonly id: string;
     /**
-     * True if automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
+     * True if automatic activation of the Management Agent plugin, automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
      */
     readonly isEnabled: boolean;
+    /**
+     * True if customer decides marks configuration as manually configured.
+     */
+    readonly isManuallyOnboarded: boolean;
     /**
      * License edition.
      */
     readonly license: string;
+    /**
+     * List of policy names assigned for onboarding
+     */
+    readonly policyNames: string[];
     /**
      * The type of resource to configure for automatic promotion.
      */
@@ -94,6 +112,14 @@ export interface GetConfigResult {
      * The time the Config was updated.
      */
     readonly timeUpdated: string;
+    /**
+     * List of user groups dedicated for Stack Monitoring.
+     */
+    readonly userGroups: outputs.StackMonitoring.GetConfigUserGroup[];
+    /**
+     * Assigned version to given onboard configuration.
+     */
+    readonly version: string;
 }
 /**
  * This data source provides details about a specific Config resource in Oracle Cloud Infrastructure Stack Monitoring service.

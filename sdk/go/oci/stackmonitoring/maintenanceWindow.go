@@ -47,7 +47,13 @@ import (
 //					TimeMaintenanceWindowEnd:     pulumi.Any(maintenanceWindowScheduleTimeMaintenanceWindowEnd),
 //					TimeMaintenanceWindowStart:   pulumi.Any(maintenanceWindowScheduleTimeMaintenanceWindowStart),
 //				},
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
+//				},
 //				Description: pulumi.Any(maintenanceWindowDescription),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
+//				},
 //			})
 //			if err != nil {
 //				return err
@@ -70,8 +76,12 @@ type MaintenanceWindow struct {
 
 	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Maintenance Window description.
 	Description pulumi.StringOutput `pulumi:"description"`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Lifecycle Details of the Maintenance Window.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Maintenance Window name.
@@ -84,6 +94,8 @@ type MaintenanceWindow struct {
 	Schedule MaintenanceWindowScheduleOutput `pulumi:"schedule"`
 	// Lifecycle state of the monitored resource.
 	State pulumi.StringOutput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time the the maintenance window was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the the mainteance window was updated. An RFC3339 formatted datetime string
@@ -131,8 +143,12 @@ func GetMaintenanceWindow(ctx *pulumi.Context,
 type maintenanceWindowState struct {
 	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId *string `pulumi:"compartmentId"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Maintenance Window description.
 	Description *string `pulumi:"description"`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Lifecycle Details of the Maintenance Window.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Maintenance Window name.
@@ -145,6 +161,8 @@ type maintenanceWindowState struct {
 	Schedule *MaintenanceWindowSchedule `pulumi:"schedule"`
 	// Lifecycle state of the monitored resource.
 	State *string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the the maintenance window was created. An RFC3339 formatted datetime string
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the the mainteance window was updated. An RFC3339 formatted datetime string
@@ -154,8 +172,12 @@ type maintenanceWindowState struct {
 type MaintenanceWindowState struct {
 	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringPtrInput
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Maintenance Window description.
 	Description pulumi.StringPtrInput
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput
 	// Lifecycle Details of the Maintenance Window.
 	LifecycleDetails pulumi.StringPtrInput
 	// Maintenance Window name.
@@ -168,6 +190,8 @@ type MaintenanceWindowState struct {
 	Schedule MaintenanceWindowSchedulePtrInput
 	// Lifecycle state of the monitored resource.
 	State pulumi.StringPtrInput
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput
 	// The time the the maintenance window was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringPtrInput
 	// The time the the mainteance window was updated. An RFC3339 formatted datetime string
@@ -181,8 +205,12 @@ func (MaintenanceWindowState) ElementType() reflect.Type {
 type maintenanceWindowArgs struct {
 	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Maintenance Window description.
 	Description *string `pulumi:"description"`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Maintenance Window name.
 	Name *string `pulumi:"name"`
 	// (Updatable) List of resource Ids which are part of the Maintenance Window
@@ -195,8 +223,12 @@ type maintenanceWindowArgs struct {
 type MaintenanceWindowArgs struct {
 	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Maintenance Window description.
 	Description pulumi.StringPtrInput
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput
 	// Maintenance Window name.
 	Name pulumi.StringPtrInput
 	// (Updatable) List of resource Ids which are part of the Maintenance Window
@@ -297,9 +329,19 @@ func (o MaintenanceWindowOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaintenanceWindow) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o MaintenanceWindowOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MaintenanceWindow) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
 // (Updatable) Maintenance Window description.
 func (o MaintenanceWindowOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaintenanceWindow) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+}
+
+// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o MaintenanceWindowOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MaintenanceWindow) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Lifecycle Details of the Maintenance Window.
@@ -330,6 +372,11 @@ func (o MaintenanceWindowOutput) Schedule() MaintenanceWindowScheduleOutput {
 // Lifecycle state of the monitored resource.
 func (o MaintenanceWindowOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaintenanceWindow) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o MaintenanceWindowOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MaintenanceWindow) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the the maintenance window was created. An RFC3339 formatted datetime string

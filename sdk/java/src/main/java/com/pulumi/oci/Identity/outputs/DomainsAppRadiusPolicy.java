@@ -12,22 +12,7 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DomainsAppRadiusPolicy {
-    /**
-     * @return (Updatable) URI of the policy.
-     * 
-     * **Added In:** 2209070044
-     * 
-     * **SCIM++ Properties:**
-     * * idcsSearchable: false
-     * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
-     * * returned: default
-     * * type: reference
-     * * uniqueness: none
-     * 
-     */
-    private @Nullable String ref;
+    private @Nullable String _ref;
     /**
      * @return (Updatable) Identifier of the Policy.
      * 
@@ -47,23 +32,8 @@ public final class DomainsAppRadiusPolicy {
     private String value;
 
     private DomainsAppRadiusPolicy() {}
-    /**
-     * @return (Updatable) URI of the policy.
-     * 
-     * **Added In:** 2209070044
-     * 
-     * **SCIM++ Properties:**
-     * * idcsSearchable: false
-     * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
-     * * returned: default
-     * * type: reference
-     * * uniqueness: none
-     * 
-     */
-    public Optional<String> ref() {
-        return Optional.ofNullable(this.ref);
+    public Optional<String> _ref() {
+        return Optional.ofNullable(this._ref);
     }
     /**
      * @return (Updatable) Identifier of the Policy.
@@ -94,19 +64,19 @@ public final class DomainsAppRadiusPolicy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable String ref;
+        private @Nullable String _ref;
         private String value;
         public Builder() {}
         public Builder(DomainsAppRadiusPolicy defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.ref = defaults.ref;
+    	      this._ref = defaults._ref;
     	      this.value = defaults.value;
         }
 
         @CustomType.Setter
-        public Builder ref(@Nullable String ref) {
+        public Builder _ref(@Nullable String _ref) {
 
-            this.ref = ref;
+            this._ref = _ref;
             return this;
         }
         @CustomType.Setter
@@ -119,7 +89,7 @@ public final class DomainsAppRadiusPolicy {
         }
         public DomainsAppRadiusPolicy build() {
             final var _resultValue = new DomainsAppRadiusPolicy();
-            _resultValue.ref = ref;
+            _resultValue._ref = _ref;
             _resultValue.value = value;
             return _resultValue;
         }

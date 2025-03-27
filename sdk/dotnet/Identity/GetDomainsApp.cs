@@ -374,6 +374,7 @@ namespace Pulumi.Oci.Identity
         /// This attribute specifies the URL of the page to which an application will redirect an end-user in case of error.
         /// </summary>
         public readonly string ErrorPageUrl;
+        public readonly bool ForceDelete;
         /// <summary>
         /// A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
         /// </summary>
@@ -781,6 +782,8 @@ namespace Pulumi.Oci.Identity
 
             string errorPageUrl,
 
+            bool forceDelete,
+
             ImmutableArray<Outputs.GetDomainsAppGrantedAppRoleResult> grantedAppRoles,
 
             ImmutableArray<Outputs.GetDomainsAppGrantResult> grants,
@@ -986,6 +989,7 @@ namespace Pulumi.Oci.Identity
             DomainOcid = domainOcid;
             EditableAttributes = editableAttributes;
             ErrorPageUrl = errorPageUrl;
+            ForceDelete = forceDelete;
             GrantedAppRoles = grantedAppRoles;
             Grants = grants;
             HashedClientSecret = hashedClientSecret;

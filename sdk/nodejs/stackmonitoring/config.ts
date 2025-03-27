@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -74,6 +76,10 @@ export class Config extends pulumi.CustomResource {
     }
 
     /**
+     * (Updatable) Property Details
+     */
+    public readonly additionalConfigurations!: pulumi.Output<outputs.StackMonitoring.ConfigAdditionalConfigurations | undefined>;
+    /**
      * (Updatable) Compartment in which the configuration is created.
      */
     public readonly compartmentId!: pulumi.Output<string>;
@@ -90,6 +96,10 @@ export class Config extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
+     * (Updatable) List of dynamic groups dedicated for Stack Monitoring.
+     */
+    public readonly dynamicGroups!: pulumi.Output<outputs.StackMonitoring.ConfigDynamicGroup[] | undefined>;
+    /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
@@ -98,15 +108,19 @@ export class Config extends pulumi.CustomResource {
      */
     public readonly isEnabled!: pulumi.Output<boolean>;
     /**
+     * (Updatable) True if customer decides marks configuration as manually configured.
+     */
+    public readonly isManuallyOnboarded!: pulumi.Output<boolean | undefined>;
+    /**
      * (Updatable) License edition.
      */
     public readonly license!: pulumi.Output<string>;
     /**
+     * (Updatable) List of policy names assigned for onboarding
+     */
+    public readonly policyNames!: pulumi.Output<string[] | undefined>;
+    /**
      * The type of resource to configure for automatic promotion.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly resourceType!: pulumi.Output<string>;
     /**
@@ -125,6 +139,18 @@ export class Config extends pulumi.CustomResource {
      * The time the Config was updated.
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    /**
+     * (Updatable) List of user groups dedicated for Stack Monitoring.
+     */
+    public readonly userGroups!: pulumi.Output<outputs.StackMonitoring.ConfigUserGroup[] | undefined>;
+    /**
+     * (Updatable) Assigned version to given onboard configuration.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    public readonly version!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Config resource with the given unique name, arguments, and options.
@@ -139,18 +165,24 @@ export class Config extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ConfigState | undefined;
+            resourceInputs["additionalConfigurations"] = state ? state.additionalConfigurations : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["configType"] = state ? state.configType : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
+            resourceInputs["dynamicGroups"] = state ? state.dynamicGroups : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["isEnabled"] = state ? state.isEnabled : undefined;
+            resourceInputs["isManuallyOnboarded"] = state ? state.isManuallyOnboarded : undefined;
             resourceInputs["license"] = state ? state.license : undefined;
+            resourceInputs["policyNames"] = state ? state.policyNames : undefined;
             resourceInputs["resourceType"] = state ? state.resourceType : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["userGroups"] = state ? state.userGroups : undefined;
+            resourceInputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as ConfigArgs | undefined;
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
@@ -159,14 +191,20 @@ export class Config extends pulumi.CustomResource {
             if ((!args || args.configType === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'configType'");
             }
+            resourceInputs["additionalConfigurations"] = args ? args.additionalConfigurations : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["configType"] = args ? args.configType : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
+            resourceInputs["dynamicGroups"] = args ? args.dynamicGroups : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["isEnabled"] = args ? args.isEnabled : undefined;
+            resourceInputs["isManuallyOnboarded"] = args ? args.isManuallyOnboarded : undefined;
             resourceInputs["license"] = args ? args.license : undefined;
+            resourceInputs["policyNames"] = args ? args.policyNames : undefined;
             resourceInputs["resourceType"] = args ? args.resourceType : undefined;
+            resourceInputs["userGroups"] = args ? args.userGroups : undefined;
+            resourceInputs["version"] = args ? args.version : undefined;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -181,6 +219,10 @@ export class Config extends pulumi.CustomResource {
  * Input properties used for looking up and filtering Config resources.
  */
 export interface ConfigState {
+    /**
+     * (Updatable) Property Details
+     */
+    additionalConfigurations?: pulumi.Input<inputs.StackMonitoring.ConfigAdditionalConfigurations>;
     /**
      * (Updatable) Compartment in which the configuration is created.
      */
@@ -198,6 +240,10 @@ export interface ConfigState {
      */
     displayName?: pulumi.Input<string>;
     /**
+     * (Updatable) List of dynamic groups dedicated for Stack Monitoring.
+     */
+    dynamicGroups?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.ConfigDynamicGroup>[]>;
+    /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
@@ -206,15 +252,19 @@ export interface ConfigState {
      */
     isEnabled?: pulumi.Input<boolean>;
     /**
+     * (Updatable) True if customer decides marks configuration as manually configured.
+     */
+    isManuallyOnboarded?: pulumi.Input<boolean>;
+    /**
      * (Updatable) License edition.
      */
     license?: pulumi.Input<string>;
     /**
+     * (Updatable) List of policy names assigned for onboarding
+     */
+    policyNames?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
      * The type of resource to configure for automatic promotion.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     resourceType?: pulumi.Input<string>;
     /**
@@ -233,12 +283,28 @@ export interface ConfigState {
      * The time the Config was updated.
      */
     timeUpdated?: pulumi.Input<string>;
+    /**
+     * (Updatable) List of user groups dedicated for Stack Monitoring.
+     */
+    userGroups?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.ConfigUserGroup>[]>;
+    /**
+     * (Updatable) Assigned version to given onboard configuration.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    version?: pulumi.Input<string>;
 }
 
 /**
  * The set of arguments for constructing a Config resource.
  */
 export interface ConfigArgs {
+    /**
+     * (Updatable) Property Details
+     */
+    additionalConfigurations?: pulumi.Input<inputs.StackMonitoring.ConfigAdditionalConfigurations>;
     /**
      * (Updatable) Compartment in which the configuration is created.
      */
@@ -256,6 +322,10 @@ export interface ConfigArgs {
      */
     displayName?: pulumi.Input<string>;
     /**
+     * (Updatable) List of dynamic groups dedicated for Stack Monitoring.
+     */
+    dynamicGroups?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.ConfigDynamicGroup>[]>;
+    /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
@@ -264,15 +334,31 @@ export interface ConfigArgs {
      */
     isEnabled?: pulumi.Input<boolean>;
     /**
+     * (Updatable) True if customer decides marks configuration as manually configured.
+     */
+    isManuallyOnboarded?: pulumi.Input<boolean>;
+    /**
      * (Updatable) License edition.
      */
     license?: pulumi.Input<string>;
     /**
+     * (Updatable) List of policy names assigned for onboarding
+     */
+    policyNames?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
      * The type of resource to configure for automatic promotion.
+     */
+    resourceType?: pulumi.Input<string>;
+    /**
+     * (Updatable) List of user groups dedicated for Stack Monitoring.
+     */
+    userGroups?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.ConfigUserGroup>[]>;
+    /**
+     * (Updatable) Assigned version to given onboard configuration.
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    resourceType?: pulumi.Input<string>;
+    version?: pulumi.Input<string>;
 }

@@ -69,6 +69,8 @@ import (
 type Config struct {
 	pulumi.CustomResourceState
 
+	// (Updatable) Property Details
+	AdditionalConfigurations ConfigAdditionalConfigurationsPtrOutput `pulumi:"additionalConfigurations"`
 	// (Updatable) Compartment in which the configuration is created.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The type of configuration. The only valid value is `"AUTO_PROMOTE"`.
@@ -77,16 +79,19 @@ type Config struct {
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The display name of the configuration.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	// (Updatable) List of dynamic groups dedicated for Stack Monitoring.
+	DynamicGroups ConfigDynamicGroupArrayOutput `pulumi:"dynamicGroups"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
 	IsEnabled pulumi.BoolOutput `pulumi:"isEnabled"`
+	// (Updatable) True if customer decides marks configuration as manually configured.
+	IsManuallyOnboarded pulumi.BoolPtrOutput `pulumi:"isManuallyOnboarded"`
 	// (Updatable) License edition.
 	License pulumi.StringOutput `pulumi:"license"`
+	// (Updatable) List of policy names assigned for onboarding
+	PolicyNames pulumi.StringArrayOutput `pulumi:"policyNames"`
 	// The type of resource to configure for automatic promotion.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ResourceType pulumi.StringOutput `pulumi:"resourceType"`
 	// The current state of the configuration.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -96,6 +101,13 @@ type Config struct {
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the Config was updated.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	// (Updatable) List of user groups dedicated for Stack Monitoring.
+	UserGroups ConfigUserGroupArrayOutput `pulumi:"userGroups"`
+	// (Updatable) Assigned version to given onboard configuration.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Version pulumi.StringPtrOutput `pulumi:"version"`
 }
 
 // NewConfig registers a new resource with the given unique name, arguments, and options.
@@ -134,6 +146,8 @@ func GetConfig(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Config resources.
 type configState struct {
+	// (Updatable) Property Details
+	AdditionalConfigurations *ConfigAdditionalConfigurations `pulumi:"additionalConfigurations"`
 	// (Updatable) Compartment in which the configuration is created.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The type of configuration. The only valid value is `"AUTO_PROMOTE"`.
@@ -142,16 +156,19 @@ type configState struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The display name of the configuration.
 	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) List of dynamic groups dedicated for Stack Monitoring.
+	DynamicGroups []ConfigDynamicGroup `pulumi:"dynamicGroups"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
 	IsEnabled *bool `pulumi:"isEnabled"`
+	// (Updatable) True if customer decides marks configuration as manually configured.
+	IsManuallyOnboarded *bool `pulumi:"isManuallyOnboarded"`
 	// (Updatable) License edition.
 	License *string `pulumi:"license"`
+	// (Updatable) List of policy names assigned for onboarding
+	PolicyNames []string `pulumi:"policyNames"`
 	// The type of resource to configure for automatic promotion.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ResourceType *string `pulumi:"resourceType"`
 	// The current state of the configuration.
 	State *string `pulumi:"state"`
@@ -161,9 +178,18 @@ type configState struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the Config was updated.
 	TimeUpdated *string `pulumi:"timeUpdated"`
+	// (Updatable) List of user groups dedicated for Stack Monitoring.
+	UserGroups []ConfigUserGroup `pulumi:"userGroups"`
+	// (Updatable) Assigned version to given onboard configuration.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Version *string `pulumi:"version"`
 }
 
 type ConfigState struct {
+	// (Updatable) Property Details
+	AdditionalConfigurations ConfigAdditionalConfigurationsPtrInput
 	// (Updatable) Compartment in which the configuration is created.
 	CompartmentId pulumi.StringPtrInput
 	// The type of configuration. The only valid value is `"AUTO_PROMOTE"`.
@@ -172,16 +198,19 @@ type ConfigState struct {
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) The display name of the configuration.
 	DisplayName pulumi.StringPtrInput
+	// (Updatable) List of dynamic groups dedicated for Stack Monitoring.
+	DynamicGroups ConfigDynamicGroupArrayInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
 	// (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
 	IsEnabled pulumi.BoolPtrInput
+	// (Updatable) True if customer decides marks configuration as manually configured.
+	IsManuallyOnboarded pulumi.BoolPtrInput
 	// (Updatable) License edition.
 	License pulumi.StringPtrInput
+	// (Updatable) List of policy names assigned for onboarding
+	PolicyNames pulumi.StringArrayInput
 	// The type of resource to configure for automatic promotion.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ResourceType pulumi.StringPtrInput
 	// The current state of the configuration.
 	State pulumi.StringPtrInput
@@ -191,6 +220,13 @@ type ConfigState struct {
 	TimeCreated pulumi.StringPtrInput
 	// The time the Config was updated.
 	TimeUpdated pulumi.StringPtrInput
+	// (Updatable) List of user groups dedicated for Stack Monitoring.
+	UserGroups ConfigUserGroupArrayInput
+	// (Updatable) Assigned version to given onboard configuration.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Version pulumi.StringPtrInput
 }
 
 func (ConfigState) ElementType() reflect.Type {
@@ -198,6 +234,8 @@ func (ConfigState) ElementType() reflect.Type {
 }
 
 type configArgs struct {
+	// (Updatable) Property Details
+	AdditionalConfigurations *ConfigAdditionalConfigurations `pulumi:"additionalConfigurations"`
 	// (Updatable) Compartment in which the configuration is created.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The type of configuration. The only valid value is `"AUTO_PROMOTE"`.
@@ -206,21 +244,33 @@ type configArgs struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The display name of the configuration.
 	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) List of dynamic groups dedicated for Stack Monitoring.
+	DynamicGroups []ConfigDynamicGroup `pulumi:"dynamicGroups"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
 	IsEnabled *bool `pulumi:"isEnabled"`
+	// (Updatable) True if customer decides marks configuration as manually configured.
+	IsManuallyOnboarded *bool `pulumi:"isManuallyOnboarded"`
 	// (Updatable) License edition.
 	License *string `pulumi:"license"`
+	// (Updatable) List of policy names assigned for onboarding
+	PolicyNames []string `pulumi:"policyNames"`
 	// The type of resource to configure for automatic promotion.
+	ResourceType *string `pulumi:"resourceType"`
+	// (Updatable) List of user groups dedicated for Stack Monitoring.
+	UserGroups []ConfigUserGroup `pulumi:"userGroups"`
+	// (Updatable) Assigned version to given onboard configuration.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ResourceType *string `pulumi:"resourceType"`
+	Version *string `pulumi:"version"`
 }
 
 // The set of arguments for constructing a Config resource.
 type ConfigArgs struct {
+	// (Updatable) Property Details
+	AdditionalConfigurations ConfigAdditionalConfigurationsPtrInput
 	// (Updatable) Compartment in which the configuration is created.
 	CompartmentId pulumi.StringInput
 	// The type of configuration. The only valid value is `"AUTO_PROMOTE"`.
@@ -229,17 +279,27 @@ type ConfigArgs struct {
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) The display name of the configuration.
 	DisplayName pulumi.StringPtrInput
+	// (Updatable) List of dynamic groups dedicated for Stack Monitoring.
+	DynamicGroups ConfigDynamicGroupArrayInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
 	// (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
 	IsEnabled pulumi.BoolPtrInput
+	// (Updatable) True if customer decides marks configuration as manually configured.
+	IsManuallyOnboarded pulumi.BoolPtrInput
 	// (Updatable) License edition.
 	License pulumi.StringPtrInput
+	// (Updatable) List of policy names assigned for onboarding
+	PolicyNames pulumi.StringArrayInput
 	// The type of resource to configure for automatic promotion.
+	ResourceType pulumi.StringPtrInput
+	// (Updatable) List of user groups dedicated for Stack Monitoring.
+	UserGroups ConfigUserGroupArrayInput
+	// (Updatable) Assigned version to given onboard configuration.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ResourceType pulumi.StringPtrInput
+	Version pulumi.StringPtrInput
 }
 
 func (ConfigArgs) ElementType() reflect.Type {
@@ -329,6 +389,11 @@ func (o ConfigOutput) ToConfigOutputWithContext(ctx context.Context) ConfigOutpu
 	return o
 }
 
+// (Updatable) Property Details
+func (o ConfigOutput) AdditionalConfigurations() ConfigAdditionalConfigurationsPtrOutput {
+	return o.ApplyT(func(v *Config) ConfigAdditionalConfigurationsPtrOutput { return v.AdditionalConfigurations }).(ConfigAdditionalConfigurationsPtrOutput)
+}
+
 // (Updatable) Compartment in which the configuration is created.
 func (o ConfigOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -349,6 +414,11 @@ func (o ConfigOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// (Updatable) List of dynamic groups dedicated for Stack Monitoring.
+func (o ConfigOutput) DynamicGroups() ConfigDynamicGroupArrayOutput {
+	return o.ApplyT(func(v *Config) ConfigDynamicGroupArrayOutput { return v.DynamicGroups }).(ConfigDynamicGroupArrayOutput)
+}
+
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 func (o ConfigOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Config) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
@@ -359,15 +429,22 @@ func (o ConfigOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Config) pulumi.BoolOutput { return v.IsEnabled }).(pulumi.BoolOutput)
 }
 
+// (Updatable) True if customer decides marks configuration as manually configured.
+func (o ConfigOutput) IsManuallyOnboarded() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Config) pulumi.BoolPtrOutput { return v.IsManuallyOnboarded }).(pulumi.BoolPtrOutput)
+}
+
 // (Updatable) License edition.
 func (o ConfigOutput) License() pulumi.StringOutput {
 	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.License }).(pulumi.StringOutput)
 }
 
+// (Updatable) List of policy names assigned for onboarding
+func (o ConfigOutput) PolicyNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringArrayOutput { return v.PolicyNames }).(pulumi.StringArrayOutput)
+}
+
 // The type of resource to configure for automatic promotion.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ConfigOutput) ResourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.ResourceType }).(pulumi.StringOutput)
 }
@@ -390,6 +467,19 @@ func (o ConfigOutput) TimeCreated() pulumi.StringOutput {
 // The time the Config was updated.
 func (o ConfigOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// (Updatable) List of user groups dedicated for Stack Monitoring.
+func (o ConfigOutput) UserGroups() ConfigUserGroupArrayOutput {
+	return o.ApplyT(func(v *Config) ConfigUserGroupArrayOutput { return v.UserGroups }).(ConfigUserGroupArrayOutput)
+}
+
+// (Updatable) Assigned version to given onboard configuration.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ConfigOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringPtrOutput { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type ConfigArrayOutput struct{ *pulumi.OutputState }

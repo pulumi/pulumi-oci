@@ -13,6 +13,7 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetConfigResult',
@@ -26,7 +27,10 @@ class GetConfigResult:
     """
     A collection of values returned by getConfig.
     """
-    def __init__(__self__, compartment_id=None, config_id=None, config_type=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_enabled=None, license=None, resource_type=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, additional_configurations=None, compartment_id=None, config_id=None, config_type=None, defined_tags=None, display_name=None, dynamic_groups=None, freeform_tags=None, id=None, is_enabled=None, is_manually_onboarded=None, license=None, policy_names=None, resource_type=None, state=None, system_tags=None, time_created=None, time_updated=None, user_groups=None, version=None):
+        if additional_configurations and not isinstance(additional_configurations, list):
+            raise TypeError("Expected argument 'additional_configurations' to be a list")
+        pulumi.set(__self__, "additional_configurations", additional_configurations)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -42,6 +46,9 @@ class GetConfigResult:
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if dynamic_groups and not isinstance(dynamic_groups, list):
+            raise TypeError("Expected argument 'dynamic_groups' to be a list")
+        pulumi.set(__self__, "dynamic_groups", dynamic_groups)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -51,9 +58,15 @@ class GetConfigResult:
         if is_enabled and not isinstance(is_enabled, bool):
             raise TypeError("Expected argument 'is_enabled' to be a bool")
         pulumi.set(__self__, "is_enabled", is_enabled)
+        if is_manually_onboarded and not isinstance(is_manually_onboarded, bool):
+            raise TypeError("Expected argument 'is_manually_onboarded' to be a bool")
+        pulumi.set(__self__, "is_manually_onboarded", is_manually_onboarded)
         if license and not isinstance(license, str):
             raise TypeError("Expected argument 'license' to be a str")
         pulumi.set(__self__, "license", license)
+        if policy_names and not isinstance(policy_names, list):
+            raise TypeError("Expected argument 'policy_names' to be a list")
+        pulumi.set(__self__, "policy_names", policy_names)
         if resource_type and not isinstance(resource_type, str):
             raise TypeError("Expected argument 'resource_type' to be a str")
         pulumi.set(__self__, "resource_type", resource_type)
@@ -69,6 +82,20 @@ class GetConfigResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+        if user_groups and not isinstance(user_groups, list):
+            raise TypeError("Expected argument 'user_groups' to be a list")
+        pulumi.set(__self__, "user_groups", user_groups)
+        if version and not isinstance(version, str):
+            raise TypeError("Expected argument 'version' to be a str")
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="additionalConfigurations")
+    def additional_configurations(self) -> Sequence['outputs.GetConfigAdditionalConfigurationResult']:
+        """
+        Property Details
+        """
+        return pulumi.get(self, "additional_configurations")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -108,6 +135,14 @@ class GetConfigResult:
         return pulumi.get(self, "display_name")
 
     @property
+    @pulumi.getter(name="dynamicGroups")
+    def dynamic_groups(self) -> Sequence['outputs.GetConfigDynamicGroupResult']:
+        """
+        List of dynamic groups dedicated for Stack Monitoring.
+        """
+        return pulumi.get(self, "dynamic_groups")
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, str]:
         """
@@ -127,9 +162,17 @@ class GetConfigResult:
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> bool:
         """
-        True if automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
+        True if automatic activation of the Management Agent plugin, automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
         """
         return pulumi.get(self, "is_enabled")
+
+    @property
+    @pulumi.getter(name="isManuallyOnboarded")
+    def is_manually_onboarded(self) -> bool:
+        """
+        True if customer decides marks configuration as manually configured.
+        """
+        return pulumi.get(self, "is_manually_onboarded")
 
     @property
     @pulumi.getter
@@ -138,6 +181,14 @@ class GetConfigResult:
         License edition.
         """
         return pulumi.get(self, "license")
+
+    @property
+    @pulumi.getter(name="policyNames")
+    def policy_names(self) -> Sequence[str]:
+        """
+        List of policy names assigned for onboarding
+        """
+        return pulumi.get(self, "policy_names")
 
     @property
     @pulumi.getter(name="resourceType")
@@ -179,6 +230,22 @@ class GetConfigResult:
         """
         return pulumi.get(self, "time_updated")
 
+    @property
+    @pulumi.getter(name="userGroups")
+    def user_groups(self) -> Sequence['outputs.GetConfigUserGroupResult']:
+        """
+        List of user groups dedicated for Stack Monitoring.
+        """
+        return pulumi.get(self, "user_groups")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        """
+        Assigned version to given onboard configuration.
+        """
+        return pulumi.get(self, "version")
+
 
 class AwaitableGetConfigResult(GetConfigResult):
     # pylint: disable=using-constant-test
@@ -186,20 +253,26 @@ class AwaitableGetConfigResult(GetConfigResult):
         if False:
             yield self
         return GetConfigResult(
+            additional_configurations=self.additional_configurations,
             compartment_id=self.compartment_id,
             config_id=self.config_id,
             config_type=self.config_type,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
+            dynamic_groups=self.dynamic_groups,
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_enabled=self.is_enabled,
+            is_manually_onboarded=self.is_manually_onboarded,
             license=self.license,
+            policy_names=self.policy_names,
             resource_type=self.resource_type,
             state=self.state,
             system_tags=self.system_tags,
             time_created=self.time_created,
-            time_updated=self.time_updated)
+            time_updated=self.time_updated,
+            user_groups=self.user_groups,
+            version=self.version)
 
 
 def get_config(config_id: Optional[str] = None,
@@ -227,20 +300,26 @@ def get_config(config_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:StackMonitoring/getConfig:getConfig', __args__, opts=opts, typ=GetConfigResult).value
 
     return AwaitableGetConfigResult(
+        additional_configurations=pulumi.get(__ret__, 'additional_configurations'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         config_id=pulumi.get(__ret__, 'config_id'),
         config_type=pulumi.get(__ret__, 'config_type'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
+        dynamic_groups=pulumi.get(__ret__, 'dynamic_groups'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         is_enabled=pulumi.get(__ret__, 'is_enabled'),
+        is_manually_onboarded=pulumi.get(__ret__, 'is_manually_onboarded'),
         license=pulumi.get(__ret__, 'license'),
+        policy_names=pulumi.get(__ret__, 'policy_names'),
         resource_type=pulumi.get(__ret__, 'resource_type'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
-        time_updated=pulumi.get(__ret__, 'time_updated'))
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        user_groups=pulumi.get(__ret__, 'user_groups'),
+        version=pulumi.get(__ret__, 'version'))
 def get_config_output(config_id: Optional[pulumi.Input[str]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConfigResult]:
     """
@@ -265,17 +344,23 @@ def get_config_output(config_id: Optional[pulumi.Input[str]] = None,
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:StackMonitoring/getConfig:getConfig', __args__, opts=opts, typ=GetConfigResult)
     return __ret__.apply(lambda __response__: GetConfigResult(
+        additional_configurations=pulumi.get(__response__, 'additional_configurations'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         config_id=pulumi.get(__response__, 'config_id'),
         config_type=pulumi.get(__response__, 'config_type'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         display_name=pulumi.get(__response__, 'display_name'),
+        dynamic_groups=pulumi.get(__response__, 'dynamic_groups'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         is_enabled=pulumi.get(__response__, 'is_enabled'),
+        is_manually_onboarded=pulumi.get(__response__, 'is_manually_onboarded'),
         license=pulumi.get(__response__, 'license'),
+        policy_names=pulumi.get(__response__, 'policy_names'),
         resource_type=pulumi.get(__response__, 'resource_type'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
-        time_updated=pulumi.get(__response__, 'time_updated')))
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        user_groups=pulumi.get(__response__, 'user_groups'),
+        version=pulumi.get(__response__, 'version')))

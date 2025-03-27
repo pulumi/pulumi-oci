@@ -14,7 +14,7 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type ConnectorSource struct {
-	// (Updatable) The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+	// (Updatable) The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using [GetConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin) and review its schema value.
 	ConfigMap *string `pulumi:"configMap"`
 	// (Updatable) The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
 	Cursor *ConnectorSourceCursor `pulumi:"cursor"`
@@ -24,7 +24,7 @@ type ConnectorSource struct {
 	LogSources []ConnectorSourceLogSource `pulumi:"logSources"`
 	// (Updatable) One or more compartment-specific lists of metric namespaces to retrieve data from.
 	MonitoringSources []ConnectorSourceMonitoringSource `pulumi:"monitoringSources"`
-	// (Updatable) The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+	// (Updatable) The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using [ListConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins).
 	PluginName *string `pulumi:"pluginName"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
 	StreamId *string `pulumi:"streamId"`
@@ -42,7 +42,7 @@ type ConnectorSourceInput interface {
 }
 
 type ConnectorSourceArgs struct {
-	// (Updatable) The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+	// (Updatable) The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using [GetConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin) and review its schema value.
 	ConfigMap pulumi.StringPtrInput `pulumi:"configMap"`
 	// (Updatable) The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
 	Cursor ConnectorSourceCursorPtrInput `pulumi:"cursor"`
@@ -52,7 +52,7 @@ type ConnectorSourceArgs struct {
 	LogSources ConnectorSourceLogSourceArrayInput `pulumi:"logSources"`
 	// (Updatable) One or more compartment-specific lists of metric namespaces to retrieve data from.
 	MonitoringSources ConnectorSourceMonitoringSourceArrayInput `pulumi:"monitoringSources"`
-	// (Updatable) The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+	// (Updatable) The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using [ListConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins).
 	PluginName pulumi.StringPtrInput `pulumi:"pluginName"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
 	StreamId pulumi.StringPtrInput `pulumi:"streamId"`
@@ -135,7 +135,7 @@ func (o ConnectorSourceOutput) ToConnectorSourcePtrOutputWithContext(ctx context
 	}).(ConnectorSourcePtrOutput)
 }
 
-// (Updatable) The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+// (Updatable) The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using [GetConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin) and review its schema value.
 func (o ConnectorSourceOutput) ConfigMap() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectorSource) *string { return v.ConfigMap }).(pulumi.StringPtrOutput)
 }
@@ -160,7 +160,7 @@ func (o ConnectorSourceOutput) MonitoringSources() ConnectorSourceMonitoringSour
 	return o.ApplyT(func(v ConnectorSource) []ConnectorSourceMonitoringSource { return v.MonitoringSources }).(ConnectorSourceMonitoringSourceArrayOutput)
 }
 
-// (Updatable) The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+// (Updatable) The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using [ListConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins).
 func (o ConnectorSourceOutput) PluginName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectorSource) *string { return v.PluginName }).(pulumi.StringPtrOutput)
 }
@@ -194,7 +194,7 @@ func (o ConnectorSourcePtrOutput) Elem() ConnectorSourceOutput {
 	}).(ConnectorSourceOutput)
 }
 
-// (Updatable) The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+// (Updatable) The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using [GetConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin) and review its schema value.
 func (o ConnectorSourcePtrOutput) ConfigMap() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ConnectorSource) *string {
 		if v == nil {
@@ -244,7 +244,7 @@ func (o ConnectorSourcePtrOutput) MonitoringSources() ConnectorSourceMonitoringS
 	}).(ConnectorSourceMonitoringSourceArrayOutput)
 }
 
-// (Updatable) The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+// (Updatable) The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using [ListConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins).
 func (o ConnectorSourcePtrOutput) PluginName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ConnectorSource) *string {
 		if v == nil {
@@ -404,7 +404,7 @@ func (o ConnectorSourceCursorPtrOutput) Kind() pulumi.StringPtrOutput {
 type ConnectorSourceLogSource struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the log source.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group. Note: For the Notifications target, only _Audit is allowed. Example OCID for _Audit log group: ocid1.tenancy.oc1..exampleuniqueid/_Audit
+	// (Updatable) Identifier of the log group. Either `_Audit` or the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group. Note: For the Notifications target, only `_Audit` is allowed.
 	LogGroupId *string `pulumi:"logGroupId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
 	LogId *string `pulumi:"logId"`
@@ -424,7 +424,7 @@ type ConnectorSourceLogSourceInput interface {
 type ConnectorSourceLogSourceArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the log source.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group. Note: For the Notifications target, only _Audit is allowed. Example OCID for _Audit log group: ocid1.tenancy.oc1..exampleuniqueid/_Audit
+	// (Updatable) Identifier of the log group. Either `_Audit` or the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group. Note: For the Notifications target, only `_Audit` is allowed.
 	LogGroupId pulumi.StringPtrInput `pulumi:"logGroupId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
 	LogId pulumi.StringPtrInput `pulumi:"logId"`
@@ -486,7 +486,7 @@ func (o ConnectorSourceLogSourceOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectorSourceLogSource) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group. Note: For the Notifications target, only _Audit is allowed. Example OCID for _Audit log group: ocid1.tenancy.oc1..exampleuniqueid/_Audit
+// (Updatable) Identifier of the log group. Either `_Audit` or the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group. Note: For the Notifications target, only `_Audit` is allowed.
 func (o ConnectorSourceLogSourceOutput) LogGroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectorSourceLogSource) *string { return v.LogGroupId }).(pulumi.StringPtrOutput)
 }
@@ -947,9 +947,9 @@ type ConnectorTarget struct {
 	BatchRolloverSizeInMbs *int `pulumi:"batchRolloverSizeInMbs"`
 	// (Updatable) The batch rollover time in milliseconds.
 	BatchRolloverTimeInMs *int `pulumi:"batchRolloverTimeInMs"`
-	// (Updatable) The batch rollover size in kilobytes.
+	// (Updatable) The batch rollover size in kilobytes. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
 	BatchSizeInKbs *int `pulumi:"batchSizeInKbs"`
-	// (Updatable) The batch rollover size in number of messages.
+	// (Updatable) The batch rollover size in number of messages. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
 	BatchSizeInNum *int `pulumi:"batchSizeInNum"`
 	// (Updatable) The batch rollover time in seconds.
 	BatchTimeInSec *int `pulumi:"batchTimeInSec"`
@@ -959,7 +959,7 @@ type ConnectorTarget struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) List of dimension names and values.
 	Dimensions []ConnectorTargetDimension `pulumi:"dimensions"`
-	// (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
+	// (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol. Example: `true`
 	EnableFormattedMessaging *bool `pulumi:"enableFormattedMessaging"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
 	FunctionId *string `pulumi:"functionId"`
@@ -969,9 +969,9 @@ type ConnectorTarget struct {
 	LogGroupId *string `pulumi:"logGroupId"`
 	// (Updatable) Identifier of the log source that you want to use for processing data received from the connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
 	LogSourceIdentifier *string `pulumi:"logSourceIdentifier"`
-	// (Updatable) The name of the metric.  Example: `CpuUtilization`
+	// (Updatable) The name of the metric. Example: `CpuUtilization`
 	Metric *string `pulumi:"metric"`
-	// (Updatable) The namespace of the metric.  Example: `ociComputeagent`
+	// (Updatable) The namespace of the metric. Example: `ociComputeagent`
 	MetricNamespace *string `pulumi:"metricNamespace"`
 	// (Updatable) The namespace.
 	Namespace *string `pulumi:"namespace"`
@@ -999,9 +999,9 @@ type ConnectorTargetArgs struct {
 	BatchRolloverSizeInMbs pulumi.IntPtrInput `pulumi:"batchRolloverSizeInMbs"`
 	// (Updatable) The batch rollover time in milliseconds.
 	BatchRolloverTimeInMs pulumi.IntPtrInput `pulumi:"batchRolloverTimeInMs"`
-	// (Updatable) The batch rollover size in kilobytes.
+	// (Updatable) The batch rollover size in kilobytes. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
 	BatchSizeInKbs pulumi.IntPtrInput `pulumi:"batchSizeInKbs"`
-	// (Updatable) The batch rollover size in number of messages.
+	// (Updatable) The batch rollover size in number of messages. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
 	BatchSizeInNum pulumi.IntPtrInput `pulumi:"batchSizeInNum"`
 	// (Updatable) The batch rollover time in seconds.
 	BatchTimeInSec pulumi.IntPtrInput `pulumi:"batchTimeInSec"`
@@ -1011,7 +1011,7 @@ type ConnectorTargetArgs struct {
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// (Updatable) List of dimension names and values.
 	Dimensions ConnectorTargetDimensionArrayInput `pulumi:"dimensions"`
-	// (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
+	// (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol. Example: `true`
 	EnableFormattedMessaging pulumi.BoolPtrInput `pulumi:"enableFormattedMessaging"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
 	FunctionId pulumi.StringPtrInput `pulumi:"functionId"`
@@ -1021,9 +1021,9 @@ type ConnectorTargetArgs struct {
 	LogGroupId pulumi.StringPtrInput `pulumi:"logGroupId"`
 	// (Updatable) Identifier of the log source that you want to use for processing data received from the connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
 	LogSourceIdentifier pulumi.StringPtrInput `pulumi:"logSourceIdentifier"`
-	// (Updatable) The name of the metric.  Example: `CpuUtilization`
+	// (Updatable) The name of the metric. Example: `CpuUtilization`
 	Metric pulumi.StringPtrInput `pulumi:"metric"`
-	// (Updatable) The namespace of the metric.  Example: `ociComputeagent`
+	// (Updatable) The namespace of the metric. Example: `ociComputeagent`
 	MetricNamespace pulumi.StringPtrInput `pulumi:"metricNamespace"`
 	// (Updatable) The namespace.
 	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
@@ -1122,12 +1122,12 @@ func (o ConnectorTargetOutput) BatchRolloverTimeInMs() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ConnectorTarget) *int { return v.BatchRolloverTimeInMs }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) The batch rollover size in kilobytes.
+// (Updatable) The batch rollover size in kilobytes. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
 func (o ConnectorTargetOutput) BatchSizeInKbs() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ConnectorTarget) *int { return v.BatchSizeInKbs }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) The batch rollover size in number of messages.
+// (Updatable) The batch rollover size in number of messages. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
 func (o ConnectorTargetOutput) BatchSizeInNum() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ConnectorTarget) *int { return v.BatchSizeInNum }).(pulumi.IntPtrOutput)
 }
@@ -1152,7 +1152,7 @@ func (o ConnectorTargetOutput) Dimensions() ConnectorTargetDimensionArrayOutput 
 	return o.ApplyT(func(v ConnectorTarget) []ConnectorTargetDimension { return v.Dimensions }).(ConnectorTargetDimensionArrayOutput)
 }
 
-// (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
+// (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol. Example: `true`
 func (o ConnectorTargetOutput) EnableFormattedMessaging() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ConnectorTarget) *bool { return v.EnableFormattedMessaging }).(pulumi.BoolPtrOutput)
 }
@@ -1177,12 +1177,12 @@ func (o ConnectorTargetOutput) LogSourceIdentifier() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectorTarget) *string { return v.LogSourceIdentifier }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The name of the metric.  Example: `CpuUtilization`
+// (Updatable) The name of the metric. Example: `CpuUtilization`
 func (o ConnectorTargetOutput) Metric() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectorTarget) *string { return v.Metric }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The namespace of the metric.  Example: `ociComputeagent`
+// (Updatable) The namespace of the metric. Example: `ociComputeagent`
 func (o ConnectorTargetOutput) MetricNamespace() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectorTarget) *string { return v.MetricNamespace }).(pulumi.StringPtrOutput)
 }
@@ -1251,7 +1251,7 @@ func (o ConnectorTargetPtrOutput) BatchRolloverTimeInMs() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) The batch rollover size in kilobytes.
+// (Updatable) The batch rollover size in kilobytes. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
 func (o ConnectorTargetPtrOutput) BatchSizeInKbs() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ConnectorTarget) *int {
 		if v == nil {
@@ -1261,7 +1261,7 @@ func (o ConnectorTargetPtrOutput) BatchSizeInKbs() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) The batch rollover size in number of messages.
+// (Updatable) The batch rollover size in number of messages. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
 func (o ConnectorTargetPtrOutput) BatchSizeInNum() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ConnectorTarget) *int {
 		if v == nil {
@@ -1311,7 +1311,7 @@ func (o ConnectorTargetPtrOutput) Dimensions() ConnectorTargetDimensionArrayOutp
 	}).(ConnectorTargetDimensionArrayOutput)
 }
 
-// (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
+// (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol. Example: `true`
 func (o ConnectorTargetPtrOutput) EnableFormattedMessaging() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ConnectorTarget) *bool {
 		if v == nil {
@@ -1361,7 +1361,7 @@ func (o ConnectorTargetPtrOutput) LogSourceIdentifier() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The name of the metric.  Example: `CpuUtilization`
+// (Updatable) The name of the metric. Example: `CpuUtilization`
 func (o ConnectorTargetPtrOutput) Metric() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ConnectorTarget) *string {
 		if v == nil {
@@ -1371,7 +1371,7 @@ func (o ConnectorTargetPtrOutput) Metric() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The namespace of the metric.  Example: `ociComputeagent`
+// (Updatable) The namespace of the metric. Example: `ociComputeagent`
 func (o ConnectorTargetPtrOutput) MetricNamespace() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ConnectorTarget) *string {
 		if v == nil {
@@ -2201,7 +2201,7 @@ func (o GetConnectorPluginsFilterArrayOutput) Index(i pulumi.IntInput) GetConnec
 }
 
 type GetServiceConnectorSource struct {
-	// The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+	// The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using [GetConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin) and review its schema value.
 	ConfigMap string `pulumi:"configMap"`
 	// The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
 	Cursors []GetServiceConnectorSourceCursor `pulumi:"cursors"`
@@ -2211,7 +2211,7 @@ type GetServiceConnectorSource struct {
 	LogSources []GetServiceConnectorSourceLogSource `pulumi:"logSources"`
 	// One or more compartment-specific lists of metric namespaces to retrieve data from.
 	MonitoringSources []GetServiceConnectorSourceMonitoringSource `pulumi:"monitoringSources"`
-	// The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+	// The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using [ListConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins).
 	PluginName string `pulumi:"pluginName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
 	StreamId string `pulumi:"streamId"`
@@ -2229,7 +2229,7 @@ type GetServiceConnectorSourceInput interface {
 }
 
 type GetServiceConnectorSourceArgs struct {
-	// The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+	// The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using [GetConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin) and review its schema value.
 	ConfigMap pulumi.StringInput `pulumi:"configMap"`
 	// The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
 	Cursors GetServiceConnectorSourceCursorArrayInput `pulumi:"cursors"`
@@ -2239,7 +2239,7 @@ type GetServiceConnectorSourceArgs struct {
 	LogSources GetServiceConnectorSourceLogSourceArrayInput `pulumi:"logSources"`
 	// One or more compartment-specific lists of metric namespaces to retrieve data from.
 	MonitoringSources GetServiceConnectorSourceMonitoringSourceArrayInput `pulumi:"monitoringSources"`
-	// The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+	// The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using [ListConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins).
 	PluginName pulumi.StringInput `pulumi:"pluginName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
 	StreamId pulumi.StringInput `pulumi:"streamId"`
@@ -2296,7 +2296,7 @@ func (o GetServiceConnectorSourceOutput) ToGetServiceConnectorSourceOutputWithCo
 	return o
 }
 
-// The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+// The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using [GetConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin) and review its schema value.
 func (o GetServiceConnectorSourceOutput) ConfigMap() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorSource) string { return v.ConfigMap }).(pulumi.StringOutput)
 }
@@ -2323,7 +2323,7 @@ func (o GetServiceConnectorSourceOutput) MonitoringSources() GetServiceConnector
 	}).(GetServiceConnectorSourceMonitoringSourceArrayOutput)
 }
 
-// The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+// The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using [ListConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins).
 func (o GetServiceConnectorSourceOutput) PluginName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorSource) string { return v.PluginName }).(pulumi.StringOutput)
 }
@@ -2993,7 +2993,7 @@ type GetServiceConnectorTarget struct {
 	BatchRolloverTimeInMs int `pulumi:"batchRolloverTimeInMs"`
 	// Size limit (kilobytes) for batch sent to invoke the function.
 	BatchSizeInKbs int `pulumi:"batchSizeInKbs"`
-	// The batch rollover size in number of messages.
+	// The batch rollover size in number of messages. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
 	BatchSizeInNum int `pulumi:"batchSizeInNum"`
 	// Time limit (seconds) for batch sent to invoke the function.
 	BatchTimeInSec int `pulumi:"batchTimeInSec"`
@@ -3003,7 +3003,7 @@ type GetServiceConnectorTarget struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// List of dimension names and values.
 	Dimensions []GetServiceConnectorTargetDimension `pulumi:"dimensions"`
-	// Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
+	// Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol. Example: `true`
 	EnableFormattedMessaging bool `pulumi:"enableFormattedMessaging"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
 	FunctionId string `pulumi:"functionId"`
@@ -3013,9 +3013,9 @@ type GetServiceConnectorTarget struct {
 	LogGroupId string `pulumi:"logGroupId"`
 	// Identifier of the log source that you want to use for processing data received from the connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
 	LogSourceIdentifier string `pulumi:"logSourceIdentifier"`
-	// The name of the metric.  Example: `CpuUtilization`
+	// The name of the metric. Example: `CpuUtilization`
 	Metric string `pulumi:"metric"`
-	// The namespace of the metric.  Example: `ociComputeagent`
+	// The namespace of the metric. Example: `ociComputeagent`
 	MetricNamespace string `pulumi:"metricNamespace"`
 	// The namespace.
 	Namespace string `pulumi:"namespace"`
@@ -3045,7 +3045,7 @@ type GetServiceConnectorTargetArgs struct {
 	BatchRolloverTimeInMs pulumi.IntInput `pulumi:"batchRolloverTimeInMs"`
 	// Size limit (kilobytes) for batch sent to invoke the function.
 	BatchSizeInKbs pulumi.IntInput `pulumi:"batchSizeInKbs"`
-	// The batch rollover size in number of messages.
+	// The batch rollover size in number of messages. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
 	BatchSizeInNum pulumi.IntInput `pulumi:"batchSizeInNum"`
 	// Time limit (seconds) for batch sent to invoke the function.
 	BatchTimeInSec pulumi.IntInput `pulumi:"batchTimeInSec"`
@@ -3055,7 +3055,7 @@ type GetServiceConnectorTargetArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// List of dimension names and values.
 	Dimensions GetServiceConnectorTargetDimensionArrayInput `pulumi:"dimensions"`
-	// Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
+	// Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol. Example: `true`
 	EnableFormattedMessaging pulumi.BoolInput `pulumi:"enableFormattedMessaging"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
 	FunctionId pulumi.StringInput `pulumi:"functionId"`
@@ -3065,9 +3065,9 @@ type GetServiceConnectorTargetArgs struct {
 	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
 	// Identifier of the log source that you want to use for processing data received from the connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
 	LogSourceIdentifier pulumi.StringInput `pulumi:"logSourceIdentifier"`
-	// The name of the metric.  Example: `CpuUtilization`
+	// The name of the metric. Example: `CpuUtilization`
 	Metric pulumi.StringInput `pulumi:"metric"`
-	// The namespace of the metric.  Example: `ociComputeagent`
+	// The namespace of the metric. Example: `ociComputeagent`
 	MetricNamespace pulumi.StringInput `pulumi:"metricNamespace"`
 	// The namespace.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
@@ -3145,7 +3145,7 @@ func (o GetServiceConnectorTargetOutput) BatchSizeInKbs() pulumi.IntOutput {
 	return o.ApplyT(func(v GetServiceConnectorTarget) int { return v.BatchSizeInKbs }).(pulumi.IntOutput)
 }
 
-// The batch rollover size in number of messages.
+// The batch rollover size in number of messages. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
 func (o GetServiceConnectorTargetOutput) BatchSizeInNum() pulumi.IntOutput {
 	return o.ApplyT(func(v GetServiceConnectorTarget) int { return v.BatchSizeInNum }).(pulumi.IntOutput)
 }
@@ -3170,7 +3170,7 @@ func (o GetServiceConnectorTargetOutput) Dimensions() GetServiceConnectorTargetD
 	return o.ApplyT(func(v GetServiceConnectorTarget) []GetServiceConnectorTargetDimension { return v.Dimensions }).(GetServiceConnectorTargetDimensionArrayOutput)
 }
 
-// Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
+// Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol. Example: `true`
 func (o GetServiceConnectorTargetOutput) EnableFormattedMessaging() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetServiceConnectorTarget) bool { return v.EnableFormattedMessaging }).(pulumi.BoolOutput)
 }
@@ -3195,12 +3195,12 @@ func (o GetServiceConnectorTargetOutput) LogSourceIdentifier() pulumi.StringOutp
 	return o.ApplyT(func(v GetServiceConnectorTarget) string { return v.LogSourceIdentifier }).(pulumi.StringOutput)
 }
 
-// The name of the metric.  Example: `CpuUtilization`
+// The name of the metric. Example: `CpuUtilization`
 func (o GetServiceConnectorTargetOutput) Metric() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorTarget) string { return v.Metric }).(pulumi.StringOutput)
 }
 
-// The namespace of the metric.  Example: `ociComputeagent`
+// The namespace of the metric. Example: `ociComputeagent`
 func (o GetServiceConnectorTargetOutput) MetricNamespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorTarget) string { return v.MetricNamespace }).(pulumi.StringOutput)
 }
@@ -3820,15 +3820,15 @@ type GetServiceConnectorsServiceConnectorCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
-	LifecyleDetails string `pulumi:"lifecyleDetails"`
-	// An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
-	Sources []GetServiceConnectorsServiceConnectorCollectionItemSource `pulumi:"sources"`
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// *Please note this property is deprecated and will be removed on January 27, 2026. Use `lifecycleDetails` instead.* A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+	LifecyleDetails string                                                     `pulumi:"lifecyleDetails"`
+	Sources         []GetServiceConnectorsServiceConnectorCollectionItemSource `pulumi:"sources"`
 	// A filter to return only resources that match the given lifecycle state.  Example: `ACTIVE`
 	State string `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags map[string]string `pulumi:"systemTags"`
-	// An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
-	Targets []GetServiceConnectorsServiceConnectorCollectionItemTarget `pulumi:"targets"`
+	SystemTags map[string]string                                          `pulumi:"systemTags"`
+	Targets    []GetServiceConnectorsServiceConnectorCollectionItemTarget `pulumi:"targets"`
 	// The list of tasks.
 	Tasks []GetServiceConnectorsServiceConnectorCollectionItemTask `pulumi:"tasks"`
 	// The date and time when the connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
@@ -3862,15 +3862,15 @@ type GetServiceConnectorsServiceConnectorCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
-	LifecyleDetails pulumi.StringInput `pulumi:"lifecyleDetails"`
-	// An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
-	Sources GetServiceConnectorsServiceConnectorCollectionItemSourceArrayInput `pulumi:"sources"`
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// *Please note this property is deprecated and will be removed on January 27, 2026. Use `lifecycleDetails` instead.* A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+	LifecyleDetails pulumi.StringInput                                                 `pulumi:"lifecyleDetails"`
+	Sources         GetServiceConnectorsServiceConnectorCollectionItemSourceArrayInput `pulumi:"sources"`
 	// A filter to return only resources that match the given lifecycle state.  Example: `ACTIVE`
 	State pulumi.StringInput `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
-	// An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
-	Targets GetServiceConnectorsServiceConnectorCollectionItemTargetArrayInput `pulumi:"targets"`
+	SystemTags pulumi.StringMapInput                                              `pulumi:"systemTags"`
+	Targets    GetServiceConnectorsServiceConnectorCollectionItemTargetArrayInput `pulumi:"targets"`
 	// The list of tasks.
 	Tasks GetServiceConnectorsServiceConnectorCollectionItemTaskArrayInput `pulumi:"tasks"`
 	// The date and time when the connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
@@ -3961,11 +3961,15 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemOutput) Id() pulumi.St
 }
 
 // A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
+func (o GetServiceConnectorsServiceConnectorCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// *Please note this property is deprecated and will be removed on January 27, 2026. Use `lifecycleDetails` instead.* A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
 func (o GetServiceConnectorsServiceConnectorCollectionItemOutput) LifecyleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItem) string { return v.LifecyleDetails }).(pulumi.StringOutput)
 }
 
-// An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
 func (o GetServiceConnectorsServiceConnectorCollectionItemOutput) Sources() GetServiceConnectorsServiceConnectorCollectionItemSourceArrayOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItem) []GetServiceConnectorsServiceConnectorCollectionItemSource {
 		return v.Sources
@@ -3982,7 +3986,6 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemOutput) SystemTags() p
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
-// An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
 func (o GetServiceConnectorsServiceConnectorCollectionItemOutput) Targets() GetServiceConnectorsServiceConnectorCollectionItemTargetArrayOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItem) []GetServiceConnectorsServiceConnectorCollectionItemTarget {
 		return v.Targets
@@ -4027,7 +4030,7 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemArrayOutput) Index(i p
 }
 
 type GetServiceConnectorsServiceConnectorCollectionItemSource struct {
-	// The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+	// The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using [GetConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin) and review its schema value.
 	ConfigMap string `pulumi:"configMap"`
 	// The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
 	Cursors []GetServiceConnectorsServiceConnectorCollectionItemSourceCursor `pulumi:"cursors"`
@@ -4037,7 +4040,7 @@ type GetServiceConnectorsServiceConnectorCollectionItemSource struct {
 	LogSources []GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource `pulumi:"logSources"`
 	// One or more compartment-specific lists of metric namespaces to retrieve data from.
 	MonitoringSources []GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource `pulumi:"monitoringSources"`
-	// The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+	// The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using [ListConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins).
 	PluginName string `pulumi:"pluginName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
 	StreamId string `pulumi:"streamId"`
@@ -4055,7 +4058,7 @@ type GetServiceConnectorsServiceConnectorCollectionItemSourceInput interface {
 }
 
 type GetServiceConnectorsServiceConnectorCollectionItemSourceArgs struct {
-	// The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+	// The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using [GetConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin) and review its schema value.
 	ConfigMap pulumi.StringInput `pulumi:"configMap"`
 	// The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
 	Cursors GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArrayInput `pulumi:"cursors"`
@@ -4065,7 +4068,7 @@ type GetServiceConnectorsServiceConnectorCollectionItemSourceArgs struct {
 	LogSources GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArrayInput `pulumi:"logSources"`
 	// One or more compartment-specific lists of metric namespaces to retrieve data from.
 	MonitoringSources GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayInput `pulumi:"monitoringSources"`
-	// The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+	// The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using [ListConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins).
 	PluginName pulumi.StringInput `pulumi:"pluginName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
 	StreamId pulumi.StringInput `pulumi:"streamId"`
@@ -4122,7 +4125,7 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemSourceOutput) ToGetSer
 	return o
 }
 
-// The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+// The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using [GetConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin) and review its schema value.
 func (o GetServiceConnectorsServiceConnectorCollectionItemSourceOutput) ConfigMap() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemSource) string { return v.ConfigMap }).(pulumi.StringOutput)
 }
@@ -4153,7 +4156,7 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemSourceOutput) Monitori
 	}).(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayOutput)
 }
 
-// The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+// The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using [ListConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins).
 func (o GetServiceConnectorsServiceConnectorCollectionItemSourceOutput) PluginName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemSource) string { return v.PluginName }).(pulumi.StringOutput)
 }
@@ -4833,7 +4836,7 @@ type GetServiceConnectorsServiceConnectorCollectionItemTarget struct {
 	BatchRolloverTimeInMs int `pulumi:"batchRolloverTimeInMs"`
 	// Size limit (kilobytes) for batch sent to invoke the function.
 	BatchSizeInKbs int `pulumi:"batchSizeInKbs"`
-	// The batch rollover size in number of messages.
+	// The batch rollover size in number of messages. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
 	BatchSizeInNum int `pulumi:"batchSizeInNum"`
 	// Time limit (seconds) for batch sent to invoke the function.
 	BatchTimeInSec int `pulumi:"batchTimeInSec"`
@@ -4843,7 +4846,7 @@ type GetServiceConnectorsServiceConnectorCollectionItemTarget struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// List of dimension names and values.
 	Dimensions []GetServiceConnectorsServiceConnectorCollectionItemTargetDimension `pulumi:"dimensions"`
-	// Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
+	// Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol. Example: `true`
 	EnableFormattedMessaging bool `pulumi:"enableFormattedMessaging"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
 	FunctionId string `pulumi:"functionId"`
@@ -4853,9 +4856,9 @@ type GetServiceConnectorsServiceConnectorCollectionItemTarget struct {
 	LogGroupId string `pulumi:"logGroupId"`
 	// Identifier of the log source that you want to use for processing data received from the connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
 	LogSourceIdentifier string `pulumi:"logSourceIdentifier"`
-	// The name of the metric.  Example: `CpuUtilization`
+	// The name of the metric. Example: `CpuUtilization`
 	Metric string `pulumi:"metric"`
-	// The namespace of the metric.  Example: `ociComputeagent`
+	// The namespace of the metric. Example: `ociComputeagent`
 	MetricNamespace string `pulumi:"metricNamespace"`
 	// The namespace.
 	Namespace string `pulumi:"namespace"`
@@ -4885,7 +4888,7 @@ type GetServiceConnectorsServiceConnectorCollectionItemTargetArgs struct {
 	BatchRolloverTimeInMs pulumi.IntInput `pulumi:"batchRolloverTimeInMs"`
 	// Size limit (kilobytes) for batch sent to invoke the function.
 	BatchSizeInKbs pulumi.IntInput `pulumi:"batchSizeInKbs"`
-	// The batch rollover size in number of messages.
+	// The batch rollover size in number of messages. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
 	BatchSizeInNum pulumi.IntInput `pulumi:"batchSizeInNum"`
 	// Time limit (seconds) for batch sent to invoke the function.
 	BatchTimeInSec pulumi.IntInput `pulumi:"batchTimeInSec"`
@@ -4895,7 +4898,7 @@ type GetServiceConnectorsServiceConnectorCollectionItemTargetArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// List of dimension names and values.
 	Dimensions GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArrayInput `pulumi:"dimensions"`
-	// Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
+	// Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol. Example: `true`
 	EnableFormattedMessaging pulumi.BoolInput `pulumi:"enableFormattedMessaging"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
 	FunctionId pulumi.StringInput `pulumi:"functionId"`
@@ -4905,9 +4908,9 @@ type GetServiceConnectorsServiceConnectorCollectionItemTargetArgs struct {
 	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
 	// Identifier of the log source that you want to use for processing data received from the connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
 	LogSourceIdentifier pulumi.StringInput `pulumi:"logSourceIdentifier"`
-	// The name of the metric.  Example: `CpuUtilization`
+	// The name of the metric. Example: `CpuUtilization`
 	Metric pulumi.StringInput `pulumi:"metric"`
-	// The namespace of the metric.  Example: `ociComputeagent`
+	// The namespace of the metric. Example: `ociComputeagent`
 	MetricNamespace pulumi.StringInput `pulumi:"metricNamespace"`
 	// The namespace.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
@@ -4985,7 +4988,7 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemTargetOutput) BatchSiz
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemTarget) int { return v.BatchSizeInKbs }).(pulumi.IntOutput)
 }
 
-// The batch rollover size in number of messages.
+// The batch rollover size in number of messages. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
 func (o GetServiceConnectorsServiceConnectorCollectionItemTargetOutput) BatchSizeInNum() pulumi.IntOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemTarget) int { return v.BatchSizeInNum }).(pulumi.IntOutput)
 }
@@ -5012,7 +5015,7 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemTargetOutput) Dimensio
 	}).(GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArrayOutput)
 }
 
-// Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
+// Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol. Example: `true`
 func (o GetServiceConnectorsServiceConnectorCollectionItemTargetOutput) EnableFormattedMessaging() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemTarget) bool {
 		return v.EnableFormattedMessaging
@@ -5039,12 +5042,12 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemTargetOutput) LogSourc
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemTarget) string { return v.LogSourceIdentifier }).(pulumi.StringOutput)
 }
 
-// The name of the metric.  Example: `CpuUtilization`
+// The name of the metric. Example: `CpuUtilization`
 func (o GetServiceConnectorsServiceConnectorCollectionItemTargetOutput) Metric() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemTarget) string { return v.Metric }).(pulumi.StringOutput)
 }
 
-// The namespace of the metric.  Example: `ociComputeagent`
+// The namespace of the metric. Example: `ociComputeagent`
 func (o GetServiceConnectorsServiceConnectorCollectionItemTargetOutput) MetricNamespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemTarget) string { return v.MetricNamespace }).(pulumi.StringOutput)
 }

@@ -32,7 +32,13 @@ import * as utilities from "../utilities";
  *         timeMaintenanceWindowEnd: maintenanceWindowScheduleTimeMaintenanceWindowEnd,
  *         timeMaintenanceWindowStart: maintenanceWindowScheduleTimeMaintenanceWindowStart,
  *     },
+ *     definedTags: {
+ *         "foo-namespace.bar-key": "value",
+ *     },
  *     description: maintenanceWindowDescription,
+ *     freeformTags: {
+ *         "bar-key": "value",
+ *     },
  * });
  * ```
  *
@@ -77,9 +83,17 @@ export class MaintenanceWindow extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+     */
+    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    /**
      * (Updatable) Maintenance Window description.
      */
     public readonly description!: pulumi.Output<string>;
+    /**
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     */
+    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * Lifecycle Details of the Maintenance Window.
      */
@@ -105,6 +119,10 @@ export class MaintenanceWindow extends pulumi.CustomResource {
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    /**
      * The time the the maintenance window was created. An RFC3339 formatted datetime string
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
@@ -127,13 +145,16 @@ export class MaintenanceWindow extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as MaintenanceWindowState | undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
+            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
+            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["resources"] = state ? state.resources : undefined;
             resourceInputs["resourcesDetails"] = state ? state.resourcesDetails : undefined;
             resourceInputs["schedule"] = state ? state.schedule : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
         } else {
@@ -148,13 +169,16 @@ export class MaintenanceWindow extends pulumi.CustomResource {
                 throw new Error("Missing required property 'schedule'");
             }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
+            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
+            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["resources"] = args ? args.resources : undefined;
             resourceInputs["schedule"] = args ? args.schedule : undefined;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["resourcesDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
@@ -172,9 +196,17 @@ export interface MaintenanceWindowState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+     */
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
      * (Updatable) Maintenance Window description.
      */
     description?: pulumi.Input<string>;
+    /**
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     */
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Lifecycle Details of the Maintenance Window.
      */
@@ -200,6 +232,10 @@ export interface MaintenanceWindowState {
      */
     state?: pulumi.Input<string>;
     /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
      * The time the the maintenance window was created. An RFC3339 formatted datetime string
      */
     timeCreated?: pulumi.Input<string>;
@@ -218,9 +254,17 @@ export interface MaintenanceWindowArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+     */
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
      * (Updatable) Maintenance Window description.
      */
     description?: pulumi.Input<string>;
+    /**
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     */
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Maintenance Window name.
      */

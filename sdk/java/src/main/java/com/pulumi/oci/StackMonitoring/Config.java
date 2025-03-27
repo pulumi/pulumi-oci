@@ -9,10 +9,15 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.StackMonitoring.ConfigArgs;
 import com.pulumi.oci.StackMonitoring.inputs.ConfigState;
+import com.pulumi.oci.StackMonitoring.outputs.ConfigAdditionalConfigurations;
+import com.pulumi.oci.StackMonitoring.outputs.ConfigDynamicGroup;
+import com.pulumi.oci.StackMonitoring.outputs.ConfigUserGroup;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -80,6 +85,20 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:StackMonitoring/config:Config")
 public class Config extends com.pulumi.resources.CustomResource {
     /**
+     * (Updatable) Property Details
+     * 
+     */
+    @Export(name="additionalConfigurations", refs={ConfigAdditionalConfigurations.class}, tree="[0]")
+    private Output</* @Nullable */ ConfigAdditionalConfigurations> additionalConfigurations;
+
+    /**
+     * @return (Updatable) Property Details
+     * 
+     */
+    public Output<Optional<ConfigAdditionalConfigurations>> additionalConfigurations() {
+        return Codegen.optional(this.additionalConfigurations);
+    }
+    /**
      * (Updatable) Compartment in which the configuration is created.
      * 
      */
@@ -136,6 +155,20 @@ public class Config extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
+     * (Updatable) List of dynamic groups dedicated for Stack Monitoring.
+     * 
+     */
+    @Export(name="dynamicGroups", refs={List.class,ConfigDynamicGroup.class}, tree="[0,1]")
+    private Output</* @Nullable */ List<ConfigDynamicGroup>> dynamicGroups;
+
+    /**
+     * @return (Updatable) List of dynamic groups dedicated for Stack Monitoring.
+     * 
+     */
+    public Output<Optional<List<ConfigDynamicGroup>>> dynamicGroups() {
+        return Codegen.optional(this.dynamicGroups);
+    }
+    /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -164,6 +197,20 @@ public class Config extends com.pulumi.resources.CustomResource {
         return this.isEnabled;
     }
     /**
+     * (Updatable) True if customer decides marks configuration as manually configured.
+     * 
+     */
+    @Export(name="isManuallyOnboarded", refs={Boolean.class}, tree="[0]")
+    private Output</* @Nullable */ Boolean> isManuallyOnboarded;
+
+    /**
+     * @return (Updatable) True if customer decides marks configuration as manually configured.
+     * 
+     */
+    public Output<Optional<Boolean>> isManuallyOnboarded() {
+        return Codegen.optional(this.isManuallyOnboarded);
+    }
+    /**
      * (Updatable) License edition.
      * 
      */
@@ -178,10 +225,21 @@ public class Config extends com.pulumi.resources.CustomResource {
         return this.license;
     }
     /**
-     * The type of resource to configure for automatic promotion.
+     * (Updatable) List of policy names assigned for onboarding
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    @Export(name="policyNames", refs={List.class,String.class}, tree="[0,1]")
+    private Output</* @Nullable */ List<String>> policyNames;
+
+    /**
+     * @return (Updatable) List of policy names assigned for onboarding
+     * 
+     */
+    public Output<Optional<List<String>>> policyNames() {
+        return Codegen.optional(this.policyNames);
+    }
+    /**
+     * The type of resource to configure for automatic promotion.
      * 
      */
     @Export(name="resourceType", refs={String.class}, tree="[0]")
@@ -189,9 +247,6 @@ public class Config extends com.pulumi.resources.CustomResource {
 
     /**
      * @return The type of resource to configure for automatic promotion.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> resourceType() {
@@ -252,6 +307,40 @@ public class Config extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeUpdated() {
         return this.timeUpdated;
+    }
+    /**
+     * (Updatable) List of user groups dedicated for Stack Monitoring.
+     * 
+     */
+    @Export(name="userGroups", refs={List.class,ConfigUserGroup.class}, tree="[0,1]")
+    private Output</* @Nullable */ List<ConfigUserGroup>> userGroups;
+
+    /**
+     * @return (Updatable) List of user groups dedicated for Stack Monitoring.
+     * 
+     */
+    public Output<Optional<List<ConfigUserGroup>>> userGroups() {
+        return Codegen.optional(this.userGroups);
+    }
+    /**
+     * (Updatable) Assigned version to given onboard configuration.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="version", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> version;
+
+    /**
+     * @return (Updatable) Assigned version to given onboard configuration.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<Optional<String>> version() {
+        return Codegen.optional(this.version);
     }
 
     /**

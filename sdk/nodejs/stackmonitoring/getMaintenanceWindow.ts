@@ -48,9 +48,17 @@ export interface GetMaintenanceWindowResult {
      */
     readonly compartmentId: string;
     /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+     */
+    readonly definedTags: {[key: string]: string};
+    /**
      * Maintenance Window description.
      */
     readonly description: string;
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     */
+    readonly freeformTags: {[key: string]: string};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of maintenance window.
      */
@@ -80,6 +88,10 @@ export interface GetMaintenanceWindowResult {
      * Lifecycle state of the monitored resource.
      */
     readonly state: string;
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    readonly systemTags: {[key: string]: string};
     /**
      * The time the the maintenance window was created. An RFC3339 formatted datetime string
      */

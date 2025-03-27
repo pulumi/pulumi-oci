@@ -16,41 +16,11 @@ public final class DomainsAppRadiusPolicyArgs extends com.pulumi.resources.Resou
 
     public static final DomainsAppRadiusPolicyArgs Empty = new DomainsAppRadiusPolicyArgs();
 
-    /**
-     * (Updatable) URI of the policy.
-     * 
-     * **Added In:** 2209070044
-     * 
-     * **SCIM++ Properties:**
-     * * idcsSearchable: false
-     * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
-     * * returned: default
-     * * type: reference
-     * * uniqueness: none
-     * 
-     */
-    @Import(name="ref")
-    private @Nullable Output<String> ref;
+    @Import(name="_ref")
+    private @Nullable Output<String> _ref;
 
-    /**
-     * @return (Updatable) URI of the policy.
-     * 
-     * **Added In:** 2209070044
-     * 
-     * **SCIM++ Properties:**
-     * * idcsSearchable: false
-     * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
-     * * returned: default
-     * * type: reference
-     * * uniqueness: none
-     * 
-     */
-    public Optional<Output<String>> ref() {
-        return Optional.ofNullable(this.ref);
+    public Optional<Output<String>> _ref() {
+        return Optional.ofNullable(this._ref);
     }
 
     /**
@@ -95,7 +65,7 @@ public final class DomainsAppRadiusPolicyArgs extends com.pulumi.resources.Resou
     private DomainsAppRadiusPolicyArgs() {}
 
     private DomainsAppRadiusPolicyArgs(DomainsAppRadiusPolicyArgs $) {
-        this.ref = $.ref;
+        this._ref = $._ref;
         this.value = $.value;
     }
 
@@ -117,47 +87,13 @@ public final class DomainsAppRadiusPolicyArgs extends com.pulumi.resources.Resou
             $ = new DomainsAppRadiusPolicyArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param ref (Updatable) URI of the policy.
-         * 
-         * **Added In:** 2209070044
-         * 
-         * **SCIM++ Properties:**
-         * * idcsSearchable: false
-         * * multiValued: false
-         * * mutability: readOnly
-         * * required: false
-         * * returned: default
-         * * type: reference
-         * * uniqueness: none
-         * 
-         * @return builder
-         * 
-         */
-        public Builder ref(@Nullable Output<String> ref) {
-            $.ref = ref;
+        public Builder _ref(@Nullable Output<String> _ref) {
+            $._ref = _ref;
             return this;
         }
 
-        /**
-         * @param ref (Updatable) URI of the policy.
-         * 
-         * **Added In:** 2209070044
-         * 
-         * **SCIM++ Properties:**
-         * * idcsSearchable: false
-         * * multiValued: false
-         * * mutability: readOnly
-         * * required: false
-         * * returned: default
-         * * type: reference
-         * * uniqueness: none
-         * 
-         * @return builder
-         * 
-         */
-        public Builder ref(String ref) {
-            return ref(Output.of(ref));
+        public Builder _ref(String _ref) {
+            return _ref(Output.of(_ref));
         }
 
         /**

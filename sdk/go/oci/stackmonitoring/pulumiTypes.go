@@ -13,6 +13,373 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type ConfigAdditionalConfigurations struct {
+	// (Updatable) Key/Value pair of Property
+	PropertiesMap map[string]string `pulumi:"propertiesMap"`
+}
+
+// ConfigAdditionalConfigurationsInput is an input type that accepts ConfigAdditionalConfigurationsArgs and ConfigAdditionalConfigurationsOutput values.
+// You can construct a concrete instance of `ConfigAdditionalConfigurationsInput` via:
+//
+//	ConfigAdditionalConfigurationsArgs{...}
+type ConfigAdditionalConfigurationsInput interface {
+	pulumi.Input
+
+	ToConfigAdditionalConfigurationsOutput() ConfigAdditionalConfigurationsOutput
+	ToConfigAdditionalConfigurationsOutputWithContext(context.Context) ConfigAdditionalConfigurationsOutput
+}
+
+type ConfigAdditionalConfigurationsArgs struct {
+	// (Updatable) Key/Value pair of Property
+	PropertiesMap pulumi.StringMapInput `pulumi:"propertiesMap"`
+}
+
+func (ConfigAdditionalConfigurationsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigAdditionalConfigurations)(nil)).Elem()
+}
+
+func (i ConfigAdditionalConfigurationsArgs) ToConfigAdditionalConfigurationsOutput() ConfigAdditionalConfigurationsOutput {
+	return i.ToConfigAdditionalConfigurationsOutputWithContext(context.Background())
+}
+
+func (i ConfigAdditionalConfigurationsArgs) ToConfigAdditionalConfigurationsOutputWithContext(ctx context.Context) ConfigAdditionalConfigurationsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigAdditionalConfigurationsOutput)
+}
+
+func (i ConfigAdditionalConfigurationsArgs) ToConfigAdditionalConfigurationsPtrOutput() ConfigAdditionalConfigurationsPtrOutput {
+	return i.ToConfigAdditionalConfigurationsPtrOutputWithContext(context.Background())
+}
+
+func (i ConfigAdditionalConfigurationsArgs) ToConfigAdditionalConfigurationsPtrOutputWithContext(ctx context.Context) ConfigAdditionalConfigurationsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigAdditionalConfigurationsOutput).ToConfigAdditionalConfigurationsPtrOutputWithContext(ctx)
+}
+
+// ConfigAdditionalConfigurationsPtrInput is an input type that accepts ConfigAdditionalConfigurationsArgs, ConfigAdditionalConfigurationsPtr and ConfigAdditionalConfigurationsPtrOutput values.
+// You can construct a concrete instance of `ConfigAdditionalConfigurationsPtrInput` via:
+//
+//	        ConfigAdditionalConfigurationsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ConfigAdditionalConfigurationsPtrInput interface {
+	pulumi.Input
+
+	ToConfigAdditionalConfigurationsPtrOutput() ConfigAdditionalConfigurationsPtrOutput
+	ToConfigAdditionalConfigurationsPtrOutputWithContext(context.Context) ConfigAdditionalConfigurationsPtrOutput
+}
+
+type configAdditionalConfigurationsPtrType ConfigAdditionalConfigurationsArgs
+
+func ConfigAdditionalConfigurationsPtr(v *ConfigAdditionalConfigurationsArgs) ConfigAdditionalConfigurationsPtrInput {
+	return (*configAdditionalConfigurationsPtrType)(v)
+}
+
+func (*configAdditionalConfigurationsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConfigAdditionalConfigurations)(nil)).Elem()
+}
+
+func (i *configAdditionalConfigurationsPtrType) ToConfigAdditionalConfigurationsPtrOutput() ConfigAdditionalConfigurationsPtrOutput {
+	return i.ToConfigAdditionalConfigurationsPtrOutputWithContext(context.Background())
+}
+
+func (i *configAdditionalConfigurationsPtrType) ToConfigAdditionalConfigurationsPtrOutputWithContext(ctx context.Context) ConfigAdditionalConfigurationsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigAdditionalConfigurationsPtrOutput)
+}
+
+type ConfigAdditionalConfigurationsOutput struct{ *pulumi.OutputState }
+
+func (ConfigAdditionalConfigurationsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigAdditionalConfigurations)(nil)).Elem()
+}
+
+func (o ConfigAdditionalConfigurationsOutput) ToConfigAdditionalConfigurationsOutput() ConfigAdditionalConfigurationsOutput {
+	return o
+}
+
+func (o ConfigAdditionalConfigurationsOutput) ToConfigAdditionalConfigurationsOutputWithContext(ctx context.Context) ConfigAdditionalConfigurationsOutput {
+	return o
+}
+
+func (o ConfigAdditionalConfigurationsOutput) ToConfigAdditionalConfigurationsPtrOutput() ConfigAdditionalConfigurationsPtrOutput {
+	return o.ToConfigAdditionalConfigurationsPtrOutputWithContext(context.Background())
+}
+
+func (o ConfigAdditionalConfigurationsOutput) ToConfigAdditionalConfigurationsPtrOutputWithContext(ctx context.Context) ConfigAdditionalConfigurationsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ConfigAdditionalConfigurations) *ConfigAdditionalConfigurations {
+		return &v
+	}).(ConfigAdditionalConfigurationsPtrOutput)
+}
+
+// (Updatable) Key/Value pair of Property
+func (o ConfigAdditionalConfigurationsOutput) PropertiesMap() pulumi.StringMapOutput {
+	return o.ApplyT(func(v ConfigAdditionalConfigurations) map[string]string { return v.PropertiesMap }).(pulumi.StringMapOutput)
+}
+
+type ConfigAdditionalConfigurationsPtrOutput struct{ *pulumi.OutputState }
+
+func (ConfigAdditionalConfigurationsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConfigAdditionalConfigurations)(nil)).Elem()
+}
+
+func (o ConfigAdditionalConfigurationsPtrOutput) ToConfigAdditionalConfigurationsPtrOutput() ConfigAdditionalConfigurationsPtrOutput {
+	return o
+}
+
+func (o ConfigAdditionalConfigurationsPtrOutput) ToConfigAdditionalConfigurationsPtrOutputWithContext(ctx context.Context) ConfigAdditionalConfigurationsPtrOutput {
+	return o
+}
+
+func (o ConfigAdditionalConfigurationsPtrOutput) Elem() ConfigAdditionalConfigurationsOutput {
+	return o.ApplyT(func(v *ConfigAdditionalConfigurations) ConfigAdditionalConfigurations {
+		if v != nil {
+			return *v
+		}
+		var ret ConfigAdditionalConfigurations
+		return ret
+	}).(ConfigAdditionalConfigurationsOutput)
+}
+
+// (Updatable) Key/Value pair of Property
+func (o ConfigAdditionalConfigurationsPtrOutput) PropertiesMap() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ConfigAdditionalConfigurations) map[string]string {
+		if v == nil {
+			return nil
+		}
+		return v.PropertiesMap
+	}).(pulumi.StringMapOutput)
+}
+
+type ConfigDynamicGroup struct {
+	// (Updatable) Identity domain name
+	Domain *string `pulumi:"domain"`
+	// (Updatable) Name of dynamic Group
+	Name *string `pulumi:"name"`
+	// (Updatable) Assignment of dynamic group in context of Stack Monitoring service. It describes the purpose of dynamic groups in Stack Monitoring.
+	StackMonitoringAssignment *string `pulumi:"stackMonitoringAssignment"`
+}
+
+// ConfigDynamicGroupInput is an input type that accepts ConfigDynamicGroupArgs and ConfigDynamicGroupOutput values.
+// You can construct a concrete instance of `ConfigDynamicGroupInput` via:
+//
+//	ConfigDynamicGroupArgs{...}
+type ConfigDynamicGroupInput interface {
+	pulumi.Input
+
+	ToConfigDynamicGroupOutput() ConfigDynamicGroupOutput
+	ToConfigDynamicGroupOutputWithContext(context.Context) ConfigDynamicGroupOutput
+}
+
+type ConfigDynamicGroupArgs struct {
+	// (Updatable) Identity domain name
+	Domain pulumi.StringPtrInput `pulumi:"domain"`
+	// (Updatable) Name of dynamic Group
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// (Updatable) Assignment of dynamic group in context of Stack Monitoring service. It describes the purpose of dynamic groups in Stack Monitoring.
+	StackMonitoringAssignment pulumi.StringPtrInput `pulumi:"stackMonitoringAssignment"`
+}
+
+func (ConfigDynamicGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigDynamicGroup)(nil)).Elem()
+}
+
+func (i ConfigDynamicGroupArgs) ToConfigDynamicGroupOutput() ConfigDynamicGroupOutput {
+	return i.ToConfigDynamicGroupOutputWithContext(context.Background())
+}
+
+func (i ConfigDynamicGroupArgs) ToConfigDynamicGroupOutputWithContext(ctx context.Context) ConfigDynamicGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigDynamicGroupOutput)
+}
+
+// ConfigDynamicGroupArrayInput is an input type that accepts ConfigDynamicGroupArray and ConfigDynamicGroupArrayOutput values.
+// You can construct a concrete instance of `ConfigDynamicGroupArrayInput` via:
+//
+//	ConfigDynamicGroupArray{ ConfigDynamicGroupArgs{...} }
+type ConfigDynamicGroupArrayInput interface {
+	pulumi.Input
+
+	ToConfigDynamicGroupArrayOutput() ConfigDynamicGroupArrayOutput
+	ToConfigDynamicGroupArrayOutputWithContext(context.Context) ConfigDynamicGroupArrayOutput
+}
+
+type ConfigDynamicGroupArray []ConfigDynamicGroupInput
+
+func (ConfigDynamicGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConfigDynamicGroup)(nil)).Elem()
+}
+
+func (i ConfigDynamicGroupArray) ToConfigDynamicGroupArrayOutput() ConfigDynamicGroupArrayOutput {
+	return i.ToConfigDynamicGroupArrayOutputWithContext(context.Background())
+}
+
+func (i ConfigDynamicGroupArray) ToConfigDynamicGroupArrayOutputWithContext(ctx context.Context) ConfigDynamicGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigDynamicGroupArrayOutput)
+}
+
+type ConfigDynamicGroupOutput struct{ *pulumi.OutputState }
+
+func (ConfigDynamicGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigDynamicGroup)(nil)).Elem()
+}
+
+func (o ConfigDynamicGroupOutput) ToConfigDynamicGroupOutput() ConfigDynamicGroupOutput {
+	return o
+}
+
+func (o ConfigDynamicGroupOutput) ToConfigDynamicGroupOutputWithContext(ctx context.Context) ConfigDynamicGroupOutput {
+	return o
+}
+
+// (Updatable) Identity domain name
+func (o ConfigDynamicGroupOutput) Domain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigDynamicGroup) *string { return v.Domain }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Name of dynamic Group
+func (o ConfigDynamicGroupOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigDynamicGroup) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Assignment of dynamic group in context of Stack Monitoring service. It describes the purpose of dynamic groups in Stack Monitoring.
+func (o ConfigDynamicGroupOutput) StackMonitoringAssignment() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigDynamicGroup) *string { return v.StackMonitoringAssignment }).(pulumi.StringPtrOutput)
+}
+
+type ConfigDynamicGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (ConfigDynamicGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConfigDynamicGroup)(nil)).Elem()
+}
+
+func (o ConfigDynamicGroupArrayOutput) ToConfigDynamicGroupArrayOutput() ConfigDynamicGroupArrayOutput {
+	return o
+}
+
+func (o ConfigDynamicGroupArrayOutput) ToConfigDynamicGroupArrayOutputWithContext(ctx context.Context) ConfigDynamicGroupArrayOutput {
+	return o
+}
+
+func (o ConfigDynamicGroupArrayOutput) Index(i pulumi.IntInput) ConfigDynamicGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ConfigDynamicGroup {
+		return vs[0].([]ConfigDynamicGroup)[vs[1].(int)]
+	}).(ConfigDynamicGroupOutput)
+}
+
+type ConfigUserGroup struct {
+	// (Updatable) Identity domain name
+	Domain *string `pulumi:"domain"`
+	// (Updatable) Name of user Group
+	Name *string `pulumi:"name"`
+	// (Updatable) Role assigned to user group in context of Stack Monitoring service. Access role can be for example: ADMINISTRATOR, OPERATOR, VIEWER, any other access role
+	StackMonitoringRole *string `pulumi:"stackMonitoringRole"`
+}
+
+// ConfigUserGroupInput is an input type that accepts ConfigUserGroupArgs and ConfigUserGroupOutput values.
+// You can construct a concrete instance of `ConfigUserGroupInput` via:
+//
+//	ConfigUserGroupArgs{...}
+type ConfigUserGroupInput interface {
+	pulumi.Input
+
+	ToConfigUserGroupOutput() ConfigUserGroupOutput
+	ToConfigUserGroupOutputWithContext(context.Context) ConfigUserGroupOutput
+}
+
+type ConfigUserGroupArgs struct {
+	// (Updatable) Identity domain name
+	Domain pulumi.StringPtrInput `pulumi:"domain"`
+	// (Updatable) Name of user Group
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// (Updatable) Role assigned to user group in context of Stack Monitoring service. Access role can be for example: ADMINISTRATOR, OPERATOR, VIEWER, any other access role
+	StackMonitoringRole pulumi.StringPtrInput `pulumi:"stackMonitoringRole"`
+}
+
+func (ConfigUserGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigUserGroup)(nil)).Elem()
+}
+
+func (i ConfigUserGroupArgs) ToConfigUserGroupOutput() ConfigUserGroupOutput {
+	return i.ToConfigUserGroupOutputWithContext(context.Background())
+}
+
+func (i ConfigUserGroupArgs) ToConfigUserGroupOutputWithContext(ctx context.Context) ConfigUserGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigUserGroupOutput)
+}
+
+// ConfigUserGroupArrayInput is an input type that accepts ConfigUserGroupArray and ConfigUserGroupArrayOutput values.
+// You can construct a concrete instance of `ConfigUserGroupArrayInput` via:
+//
+//	ConfigUserGroupArray{ ConfigUserGroupArgs{...} }
+type ConfigUserGroupArrayInput interface {
+	pulumi.Input
+
+	ToConfigUserGroupArrayOutput() ConfigUserGroupArrayOutput
+	ToConfigUserGroupArrayOutputWithContext(context.Context) ConfigUserGroupArrayOutput
+}
+
+type ConfigUserGroupArray []ConfigUserGroupInput
+
+func (ConfigUserGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConfigUserGroup)(nil)).Elem()
+}
+
+func (i ConfigUserGroupArray) ToConfigUserGroupArrayOutput() ConfigUserGroupArrayOutput {
+	return i.ToConfigUserGroupArrayOutputWithContext(context.Background())
+}
+
+func (i ConfigUserGroupArray) ToConfigUserGroupArrayOutputWithContext(ctx context.Context) ConfigUserGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigUserGroupArrayOutput)
+}
+
+type ConfigUserGroupOutput struct{ *pulumi.OutputState }
+
+func (ConfigUserGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigUserGroup)(nil)).Elem()
+}
+
+func (o ConfigUserGroupOutput) ToConfigUserGroupOutput() ConfigUserGroupOutput {
+	return o
+}
+
+func (o ConfigUserGroupOutput) ToConfigUserGroupOutputWithContext(ctx context.Context) ConfigUserGroupOutput {
+	return o
+}
+
+// (Updatable) Identity domain name
+func (o ConfigUserGroupOutput) Domain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigUserGroup) *string { return v.Domain }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Name of user Group
+func (o ConfigUserGroupOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigUserGroup) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Role assigned to user group in context of Stack Monitoring service. Access role can be for example: ADMINISTRATOR, OPERATOR, VIEWER, any other access role
+func (o ConfigUserGroupOutput) StackMonitoringRole() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigUserGroup) *string { return v.StackMonitoringRole }).(pulumi.StringPtrOutput)
+}
+
+type ConfigUserGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (ConfigUserGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConfigUserGroup)(nil)).Elem()
+}
+
+func (o ConfigUserGroupArrayOutput) ToConfigUserGroupArrayOutput() ConfigUserGroupArrayOutput {
+	return o
+}
+
+func (o ConfigUserGroupArrayOutput) ToConfigUserGroupArrayOutputWithContext(ctx context.Context) ConfigUserGroupArrayOutput {
+	return o
+}
+
+func (o ConfigUserGroupArrayOutput) Index(i pulumi.IntInput) ConfigUserGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ConfigUserGroup {
+		return vs[0].([]ConfigUserGroup)[vs[1].(int)]
+	}).(ConfigUserGroupOutput)
+}
+
 type DiscoveryJobDiscoveryDetails struct {
 	// The OCID of Management Agent
 	AgentId string `pulumi:"agentId"`
@@ -7733,6 +8100,333 @@ func (o GetBaselineableMetricsFilterArrayOutput) Index(i pulumi.IntInput) GetBas
 	}).(GetBaselineableMetricsFilterOutput)
 }
 
+type GetConfigAdditionalConfiguration struct {
+	// Key/Value pair of Property
+	PropertiesMap map[string]string `pulumi:"propertiesMap"`
+}
+
+// GetConfigAdditionalConfigurationInput is an input type that accepts GetConfigAdditionalConfigurationArgs and GetConfigAdditionalConfigurationOutput values.
+// You can construct a concrete instance of `GetConfigAdditionalConfigurationInput` via:
+//
+//	GetConfigAdditionalConfigurationArgs{...}
+type GetConfigAdditionalConfigurationInput interface {
+	pulumi.Input
+
+	ToGetConfigAdditionalConfigurationOutput() GetConfigAdditionalConfigurationOutput
+	ToGetConfigAdditionalConfigurationOutputWithContext(context.Context) GetConfigAdditionalConfigurationOutput
+}
+
+type GetConfigAdditionalConfigurationArgs struct {
+	// Key/Value pair of Property
+	PropertiesMap pulumi.StringMapInput `pulumi:"propertiesMap"`
+}
+
+func (GetConfigAdditionalConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigAdditionalConfiguration)(nil)).Elem()
+}
+
+func (i GetConfigAdditionalConfigurationArgs) ToGetConfigAdditionalConfigurationOutput() GetConfigAdditionalConfigurationOutput {
+	return i.ToGetConfigAdditionalConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetConfigAdditionalConfigurationArgs) ToGetConfigAdditionalConfigurationOutputWithContext(ctx context.Context) GetConfigAdditionalConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigAdditionalConfigurationOutput)
+}
+
+// GetConfigAdditionalConfigurationArrayInput is an input type that accepts GetConfigAdditionalConfigurationArray and GetConfigAdditionalConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetConfigAdditionalConfigurationArrayInput` via:
+//
+//	GetConfigAdditionalConfigurationArray{ GetConfigAdditionalConfigurationArgs{...} }
+type GetConfigAdditionalConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetConfigAdditionalConfigurationArrayOutput() GetConfigAdditionalConfigurationArrayOutput
+	ToGetConfigAdditionalConfigurationArrayOutputWithContext(context.Context) GetConfigAdditionalConfigurationArrayOutput
+}
+
+type GetConfigAdditionalConfigurationArray []GetConfigAdditionalConfigurationInput
+
+func (GetConfigAdditionalConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigAdditionalConfiguration)(nil)).Elem()
+}
+
+func (i GetConfigAdditionalConfigurationArray) ToGetConfigAdditionalConfigurationArrayOutput() GetConfigAdditionalConfigurationArrayOutput {
+	return i.ToGetConfigAdditionalConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetConfigAdditionalConfigurationArray) ToGetConfigAdditionalConfigurationArrayOutputWithContext(ctx context.Context) GetConfigAdditionalConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigAdditionalConfigurationArrayOutput)
+}
+
+type GetConfigAdditionalConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetConfigAdditionalConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigAdditionalConfiguration)(nil)).Elem()
+}
+
+func (o GetConfigAdditionalConfigurationOutput) ToGetConfigAdditionalConfigurationOutput() GetConfigAdditionalConfigurationOutput {
+	return o
+}
+
+func (o GetConfigAdditionalConfigurationOutput) ToGetConfigAdditionalConfigurationOutputWithContext(ctx context.Context) GetConfigAdditionalConfigurationOutput {
+	return o
+}
+
+// Key/Value pair of Property
+func (o GetConfigAdditionalConfigurationOutput) PropertiesMap() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetConfigAdditionalConfiguration) map[string]string { return v.PropertiesMap }).(pulumi.StringMapOutput)
+}
+
+type GetConfigAdditionalConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConfigAdditionalConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigAdditionalConfiguration)(nil)).Elem()
+}
+
+func (o GetConfigAdditionalConfigurationArrayOutput) ToGetConfigAdditionalConfigurationArrayOutput() GetConfigAdditionalConfigurationArrayOutput {
+	return o
+}
+
+func (o GetConfigAdditionalConfigurationArrayOutput) ToGetConfigAdditionalConfigurationArrayOutputWithContext(ctx context.Context) GetConfigAdditionalConfigurationArrayOutput {
+	return o
+}
+
+func (o GetConfigAdditionalConfigurationArrayOutput) Index(i pulumi.IntInput) GetConfigAdditionalConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigAdditionalConfiguration {
+		return vs[0].([]GetConfigAdditionalConfiguration)[vs[1].(int)]
+	}).(GetConfigAdditionalConfigurationOutput)
+}
+
+type GetConfigDynamicGroup struct {
+	// Identity domain name
+	Domain string `pulumi:"domain"`
+	// Name of user Group
+	Name string `pulumi:"name"`
+	// Assignment of dynamic group in context of Stack Monitoring service. It describes the purpose of dynamic groups in Stack Monitoring.
+	StackMonitoringAssignment string `pulumi:"stackMonitoringAssignment"`
+}
+
+// GetConfigDynamicGroupInput is an input type that accepts GetConfigDynamicGroupArgs and GetConfigDynamicGroupOutput values.
+// You can construct a concrete instance of `GetConfigDynamicGroupInput` via:
+//
+//	GetConfigDynamicGroupArgs{...}
+type GetConfigDynamicGroupInput interface {
+	pulumi.Input
+
+	ToGetConfigDynamicGroupOutput() GetConfigDynamicGroupOutput
+	ToGetConfigDynamicGroupOutputWithContext(context.Context) GetConfigDynamicGroupOutput
+}
+
+type GetConfigDynamicGroupArgs struct {
+	// Identity domain name
+	Domain pulumi.StringInput `pulumi:"domain"`
+	// Name of user Group
+	Name pulumi.StringInput `pulumi:"name"`
+	// Assignment of dynamic group in context of Stack Monitoring service. It describes the purpose of dynamic groups in Stack Monitoring.
+	StackMonitoringAssignment pulumi.StringInput `pulumi:"stackMonitoringAssignment"`
+}
+
+func (GetConfigDynamicGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigDynamicGroup)(nil)).Elem()
+}
+
+func (i GetConfigDynamicGroupArgs) ToGetConfigDynamicGroupOutput() GetConfigDynamicGroupOutput {
+	return i.ToGetConfigDynamicGroupOutputWithContext(context.Background())
+}
+
+func (i GetConfigDynamicGroupArgs) ToGetConfigDynamicGroupOutputWithContext(ctx context.Context) GetConfigDynamicGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigDynamicGroupOutput)
+}
+
+// GetConfigDynamicGroupArrayInput is an input type that accepts GetConfigDynamicGroupArray and GetConfigDynamicGroupArrayOutput values.
+// You can construct a concrete instance of `GetConfigDynamicGroupArrayInput` via:
+//
+//	GetConfigDynamicGroupArray{ GetConfigDynamicGroupArgs{...} }
+type GetConfigDynamicGroupArrayInput interface {
+	pulumi.Input
+
+	ToGetConfigDynamicGroupArrayOutput() GetConfigDynamicGroupArrayOutput
+	ToGetConfigDynamicGroupArrayOutputWithContext(context.Context) GetConfigDynamicGroupArrayOutput
+}
+
+type GetConfigDynamicGroupArray []GetConfigDynamicGroupInput
+
+func (GetConfigDynamicGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigDynamicGroup)(nil)).Elem()
+}
+
+func (i GetConfigDynamicGroupArray) ToGetConfigDynamicGroupArrayOutput() GetConfigDynamicGroupArrayOutput {
+	return i.ToGetConfigDynamicGroupArrayOutputWithContext(context.Background())
+}
+
+func (i GetConfigDynamicGroupArray) ToGetConfigDynamicGroupArrayOutputWithContext(ctx context.Context) GetConfigDynamicGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigDynamicGroupArrayOutput)
+}
+
+type GetConfigDynamicGroupOutput struct{ *pulumi.OutputState }
+
+func (GetConfigDynamicGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigDynamicGroup)(nil)).Elem()
+}
+
+func (o GetConfigDynamicGroupOutput) ToGetConfigDynamicGroupOutput() GetConfigDynamicGroupOutput {
+	return o
+}
+
+func (o GetConfigDynamicGroupOutput) ToGetConfigDynamicGroupOutputWithContext(ctx context.Context) GetConfigDynamicGroupOutput {
+	return o
+}
+
+// Identity domain name
+func (o GetConfigDynamicGroupOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigDynamicGroup) string { return v.Domain }).(pulumi.StringOutput)
+}
+
+// Name of user Group
+func (o GetConfigDynamicGroupOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigDynamicGroup) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Assignment of dynamic group in context of Stack Monitoring service. It describes the purpose of dynamic groups in Stack Monitoring.
+func (o GetConfigDynamicGroupOutput) StackMonitoringAssignment() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigDynamicGroup) string { return v.StackMonitoringAssignment }).(pulumi.StringOutput)
+}
+
+type GetConfigDynamicGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConfigDynamicGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigDynamicGroup)(nil)).Elem()
+}
+
+func (o GetConfigDynamicGroupArrayOutput) ToGetConfigDynamicGroupArrayOutput() GetConfigDynamicGroupArrayOutput {
+	return o
+}
+
+func (o GetConfigDynamicGroupArrayOutput) ToGetConfigDynamicGroupArrayOutputWithContext(ctx context.Context) GetConfigDynamicGroupArrayOutput {
+	return o
+}
+
+func (o GetConfigDynamicGroupArrayOutput) Index(i pulumi.IntInput) GetConfigDynamicGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigDynamicGroup {
+		return vs[0].([]GetConfigDynamicGroup)[vs[1].(int)]
+	}).(GetConfigDynamicGroupOutput)
+}
+
+type GetConfigUserGroup struct {
+	// Identity domain name
+	Domain string `pulumi:"domain"`
+	// Name of user Group
+	Name string `pulumi:"name"`
+	// Role assigned to user group in context of Stack Monitoring service. Access role can be for example: ADMINISTRATOR, OPERATOR, VIEWER, any other access role
+	StackMonitoringRole string `pulumi:"stackMonitoringRole"`
+}
+
+// GetConfigUserGroupInput is an input type that accepts GetConfigUserGroupArgs and GetConfigUserGroupOutput values.
+// You can construct a concrete instance of `GetConfigUserGroupInput` via:
+//
+//	GetConfigUserGroupArgs{...}
+type GetConfigUserGroupInput interface {
+	pulumi.Input
+
+	ToGetConfigUserGroupOutput() GetConfigUserGroupOutput
+	ToGetConfigUserGroupOutputWithContext(context.Context) GetConfigUserGroupOutput
+}
+
+type GetConfigUserGroupArgs struct {
+	// Identity domain name
+	Domain pulumi.StringInput `pulumi:"domain"`
+	// Name of user Group
+	Name pulumi.StringInput `pulumi:"name"`
+	// Role assigned to user group in context of Stack Monitoring service. Access role can be for example: ADMINISTRATOR, OPERATOR, VIEWER, any other access role
+	StackMonitoringRole pulumi.StringInput `pulumi:"stackMonitoringRole"`
+}
+
+func (GetConfigUserGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigUserGroup)(nil)).Elem()
+}
+
+func (i GetConfigUserGroupArgs) ToGetConfigUserGroupOutput() GetConfigUserGroupOutput {
+	return i.ToGetConfigUserGroupOutputWithContext(context.Background())
+}
+
+func (i GetConfigUserGroupArgs) ToGetConfigUserGroupOutputWithContext(ctx context.Context) GetConfigUserGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigUserGroupOutput)
+}
+
+// GetConfigUserGroupArrayInput is an input type that accepts GetConfigUserGroupArray and GetConfigUserGroupArrayOutput values.
+// You can construct a concrete instance of `GetConfigUserGroupArrayInput` via:
+//
+//	GetConfigUserGroupArray{ GetConfigUserGroupArgs{...} }
+type GetConfigUserGroupArrayInput interface {
+	pulumi.Input
+
+	ToGetConfigUserGroupArrayOutput() GetConfigUserGroupArrayOutput
+	ToGetConfigUserGroupArrayOutputWithContext(context.Context) GetConfigUserGroupArrayOutput
+}
+
+type GetConfigUserGroupArray []GetConfigUserGroupInput
+
+func (GetConfigUserGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigUserGroup)(nil)).Elem()
+}
+
+func (i GetConfigUserGroupArray) ToGetConfigUserGroupArrayOutput() GetConfigUserGroupArrayOutput {
+	return i.ToGetConfigUserGroupArrayOutputWithContext(context.Background())
+}
+
+func (i GetConfigUserGroupArray) ToGetConfigUserGroupArrayOutputWithContext(ctx context.Context) GetConfigUserGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigUserGroupArrayOutput)
+}
+
+type GetConfigUserGroupOutput struct{ *pulumi.OutputState }
+
+func (GetConfigUserGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigUserGroup)(nil)).Elem()
+}
+
+func (o GetConfigUserGroupOutput) ToGetConfigUserGroupOutput() GetConfigUserGroupOutput {
+	return o
+}
+
+func (o GetConfigUserGroupOutput) ToGetConfigUserGroupOutputWithContext(ctx context.Context) GetConfigUserGroupOutput {
+	return o
+}
+
+// Identity domain name
+func (o GetConfigUserGroupOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigUserGroup) string { return v.Domain }).(pulumi.StringOutput)
+}
+
+// Name of user Group
+func (o GetConfigUserGroupOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigUserGroup) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Role assigned to user group in context of Stack Monitoring service. Access role can be for example: ADMINISTRATOR, OPERATOR, VIEWER, any other access role
+func (o GetConfigUserGroupOutput) StackMonitoringRole() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigUserGroup) string { return v.StackMonitoringRole }).(pulumi.StringOutput)
+}
+
+type GetConfigUserGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConfigUserGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigUserGroup)(nil)).Elem()
+}
+
+func (o GetConfigUserGroupArrayOutput) ToGetConfigUserGroupArrayOutput() GetConfigUserGroupArrayOutput {
+	return o
+}
+
+func (o GetConfigUserGroupArrayOutput) ToGetConfigUserGroupArrayOutputWithContext(ctx context.Context) GetConfigUserGroupArrayOutput {
+	return o
+}
+
+func (o GetConfigUserGroupArrayOutput) Index(i pulumi.IntInput) GetConfigUserGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigUserGroup {
+		return vs[0].([]GetConfigUserGroup)[vs[1].(int)]
+	}).(GetConfigUserGroupOutput)
+}
+
 type GetConfigsConfigCollection struct {
 	Items []GetConfigsConfigCollectionItem `pulumi:"items"`
 }
@@ -7828,6 +8522,8 @@ func (o GetConfigsConfigCollectionArrayOutput) Index(i pulumi.IntInput) GetConfi
 }
 
 type GetConfigsConfigCollectionItem struct {
+	// Property Details
+	AdditionalConfigurations []GetConfigsConfigCollectionItemAdditionalConfiguration `pulumi:"additionalConfigurations"`
 	// The ID of the compartment in which data is listed.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The type of configuration.
@@ -7836,14 +8532,20 @@ type GetConfigsConfigCollectionItem struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
+	// List of dynamic groups dedicated for Stack Monitoring.
+	DynamicGroups []GetConfigsConfigCollectionItemDynamicGroup `pulumi:"dynamicGroups"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The Unique Oracle ID (OCID) that is immutable on creation.
 	Id string `pulumi:"id"`
-	// True if automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
+	// True if automatic activation of the Management Agent plugin, automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
 	IsEnabled bool `pulumi:"isEnabled"`
+	// True if customer decides marks configuration as manually configured.
+	IsManuallyOnboarded bool `pulumi:"isManuallyOnboarded"`
 	// License edition.
 	License string `pulumi:"license"`
+	// List of policy names assigned for onboarding
+	PolicyNames []string `pulumi:"policyNames"`
 	// The type of resource to configure for automatic promotion.
 	ResourceType string `pulumi:"resourceType"`
 	// The current state of the Config.
@@ -7854,6 +8556,10 @@ type GetConfigsConfigCollectionItem struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the Config was updated.
 	TimeUpdated string `pulumi:"timeUpdated"`
+	// List of user groups dedicated for Stack Monitoring.
+	UserGroups []GetConfigsConfigCollectionItemUserGroup `pulumi:"userGroups"`
+	// Assigned version to given onboard configuration.
+	Version string `pulumi:"version"`
 }
 
 // GetConfigsConfigCollectionItemInput is an input type that accepts GetConfigsConfigCollectionItemArgs and GetConfigsConfigCollectionItemOutput values.
@@ -7868,6 +8574,8 @@ type GetConfigsConfigCollectionItemInput interface {
 }
 
 type GetConfigsConfigCollectionItemArgs struct {
+	// Property Details
+	AdditionalConfigurations GetConfigsConfigCollectionItemAdditionalConfigurationArrayInput `pulumi:"additionalConfigurations"`
 	// The ID of the compartment in which data is listed.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The type of configuration.
@@ -7876,14 +8584,20 @@ type GetConfigsConfigCollectionItemArgs struct {
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// List of dynamic groups dedicated for Stack Monitoring.
+	DynamicGroups GetConfigsConfigCollectionItemDynamicGroupArrayInput `pulumi:"dynamicGroups"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The Unique Oracle ID (OCID) that is immutable on creation.
 	Id pulumi.StringInput `pulumi:"id"`
-	// True if automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
+	// True if automatic activation of the Management Agent plugin, automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	// True if customer decides marks configuration as manually configured.
+	IsManuallyOnboarded pulumi.BoolInput `pulumi:"isManuallyOnboarded"`
 	// License edition.
 	License pulumi.StringInput `pulumi:"license"`
+	// List of policy names assigned for onboarding
+	PolicyNames pulumi.StringArrayInput `pulumi:"policyNames"`
 	// The type of resource to configure for automatic promotion.
 	ResourceType pulumi.StringInput `pulumi:"resourceType"`
 	// The current state of the Config.
@@ -7894,6 +8608,10 @@ type GetConfigsConfigCollectionItemArgs struct {
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the Config was updated.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// List of user groups dedicated for Stack Monitoring.
+	UserGroups GetConfigsConfigCollectionItemUserGroupArrayInput `pulumi:"userGroups"`
+	// Assigned version to given onboard configuration.
+	Version pulumi.StringInput `pulumi:"version"`
 }
 
 func (GetConfigsConfigCollectionItemArgs) ElementType() reflect.Type {
@@ -7947,6 +8665,13 @@ func (o GetConfigsConfigCollectionItemOutput) ToGetConfigsConfigCollectionItemOu
 	return o
 }
 
+// Property Details
+func (o GetConfigsConfigCollectionItemOutput) AdditionalConfigurations() GetConfigsConfigCollectionItemAdditionalConfigurationArrayOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) []GetConfigsConfigCollectionItemAdditionalConfiguration {
+		return v.AdditionalConfigurations
+	}).(GetConfigsConfigCollectionItemAdditionalConfigurationArrayOutput)
+}
+
 // The ID of the compartment in which data is listed.
 func (o GetConfigsConfigCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -7967,6 +8692,13 @@ func (o GetConfigsConfigCollectionItemOutput) DisplayName() pulumi.StringOutput 
 	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// List of dynamic groups dedicated for Stack Monitoring.
+func (o GetConfigsConfigCollectionItemOutput) DynamicGroups() GetConfigsConfigCollectionItemDynamicGroupArrayOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) []GetConfigsConfigCollectionItemDynamicGroup {
+		return v.DynamicGroups
+	}).(GetConfigsConfigCollectionItemDynamicGroupArrayOutput)
+}
+
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 func (o GetConfigsConfigCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
@@ -7977,14 +8709,24 @@ func (o GetConfigsConfigCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// True if automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
+// True if automatic activation of the Management Agent plugin, automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
 func (o GetConfigsConfigCollectionItemOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItem) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+// True if customer decides marks configuration as manually configured.
+func (o GetConfigsConfigCollectionItemOutput) IsManuallyOnboarded() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) bool { return v.IsManuallyOnboarded }).(pulumi.BoolOutput)
 }
 
 // License edition.
 func (o GetConfigsConfigCollectionItemOutput) License() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.License }).(pulumi.StringOutput)
+}
+
+// List of policy names assigned for onboarding
+func (o GetConfigsConfigCollectionItemOutput) PolicyNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) []string { return v.PolicyNames }).(pulumi.StringArrayOutput)
 }
 
 // The type of resource to configure for automatic promotion.
@@ -8012,6 +8754,16 @@ func (o GetConfigsConfigCollectionItemOutput) TimeUpdated() pulumi.StringOutput 
 	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
+// List of user groups dedicated for Stack Monitoring.
+func (o GetConfigsConfigCollectionItemOutput) UserGroups() GetConfigsConfigCollectionItemUserGroupArrayOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) []GetConfigsConfigCollectionItemUserGroup { return v.UserGroups }).(GetConfigsConfigCollectionItemUserGroupArrayOutput)
+}
+
+// Assigned version to given onboard configuration.
+func (o GetConfigsConfigCollectionItemOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.Version }).(pulumi.StringOutput)
+}
+
 type GetConfigsConfigCollectionItemArrayOutput struct{ *pulumi.OutputState }
 
 func (GetConfigsConfigCollectionItemArrayOutput) ElementType() reflect.Type {
@@ -8032,7 +8784,337 @@ func (o GetConfigsConfigCollectionItemArrayOutput) Index(i pulumi.IntInput) GetC
 	}).(GetConfigsConfigCollectionItemOutput)
 }
 
+type GetConfigsConfigCollectionItemAdditionalConfiguration struct {
+	// Key/Value pair of Property
+	PropertiesMap map[string]string `pulumi:"propertiesMap"`
+}
+
+// GetConfigsConfigCollectionItemAdditionalConfigurationInput is an input type that accepts GetConfigsConfigCollectionItemAdditionalConfigurationArgs and GetConfigsConfigCollectionItemAdditionalConfigurationOutput values.
+// You can construct a concrete instance of `GetConfigsConfigCollectionItemAdditionalConfigurationInput` via:
+//
+//	GetConfigsConfigCollectionItemAdditionalConfigurationArgs{...}
+type GetConfigsConfigCollectionItemAdditionalConfigurationInput interface {
+	pulumi.Input
+
+	ToGetConfigsConfigCollectionItemAdditionalConfigurationOutput() GetConfigsConfigCollectionItemAdditionalConfigurationOutput
+	ToGetConfigsConfigCollectionItemAdditionalConfigurationOutputWithContext(context.Context) GetConfigsConfigCollectionItemAdditionalConfigurationOutput
+}
+
+type GetConfigsConfigCollectionItemAdditionalConfigurationArgs struct {
+	// Key/Value pair of Property
+	PropertiesMap pulumi.StringMapInput `pulumi:"propertiesMap"`
+}
+
+func (GetConfigsConfigCollectionItemAdditionalConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigsConfigCollectionItemAdditionalConfiguration)(nil)).Elem()
+}
+
+func (i GetConfigsConfigCollectionItemAdditionalConfigurationArgs) ToGetConfigsConfigCollectionItemAdditionalConfigurationOutput() GetConfigsConfigCollectionItemAdditionalConfigurationOutput {
+	return i.ToGetConfigsConfigCollectionItemAdditionalConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetConfigsConfigCollectionItemAdditionalConfigurationArgs) ToGetConfigsConfigCollectionItemAdditionalConfigurationOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemAdditionalConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemAdditionalConfigurationOutput)
+}
+
+// GetConfigsConfigCollectionItemAdditionalConfigurationArrayInput is an input type that accepts GetConfigsConfigCollectionItemAdditionalConfigurationArray and GetConfigsConfigCollectionItemAdditionalConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetConfigsConfigCollectionItemAdditionalConfigurationArrayInput` via:
+//
+//	GetConfigsConfigCollectionItemAdditionalConfigurationArray{ GetConfigsConfigCollectionItemAdditionalConfigurationArgs{...} }
+type GetConfigsConfigCollectionItemAdditionalConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetConfigsConfigCollectionItemAdditionalConfigurationArrayOutput() GetConfigsConfigCollectionItemAdditionalConfigurationArrayOutput
+	ToGetConfigsConfigCollectionItemAdditionalConfigurationArrayOutputWithContext(context.Context) GetConfigsConfigCollectionItemAdditionalConfigurationArrayOutput
+}
+
+type GetConfigsConfigCollectionItemAdditionalConfigurationArray []GetConfigsConfigCollectionItemAdditionalConfigurationInput
+
+func (GetConfigsConfigCollectionItemAdditionalConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigsConfigCollectionItemAdditionalConfiguration)(nil)).Elem()
+}
+
+func (i GetConfigsConfigCollectionItemAdditionalConfigurationArray) ToGetConfigsConfigCollectionItemAdditionalConfigurationArrayOutput() GetConfigsConfigCollectionItemAdditionalConfigurationArrayOutput {
+	return i.ToGetConfigsConfigCollectionItemAdditionalConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetConfigsConfigCollectionItemAdditionalConfigurationArray) ToGetConfigsConfigCollectionItemAdditionalConfigurationArrayOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemAdditionalConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemAdditionalConfigurationArrayOutput)
+}
+
+type GetConfigsConfigCollectionItemAdditionalConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetConfigsConfigCollectionItemAdditionalConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigsConfigCollectionItemAdditionalConfiguration)(nil)).Elem()
+}
+
+func (o GetConfigsConfigCollectionItemAdditionalConfigurationOutput) ToGetConfigsConfigCollectionItemAdditionalConfigurationOutput() GetConfigsConfigCollectionItemAdditionalConfigurationOutput {
+	return o
+}
+
+func (o GetConfigsConfigCollectionItemAdditionalConfigurationOutput) ToGetConfigsConfigCollectionItemAdditionalConfigurationOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemAdditionalConfigurationOutput {
+	return o
+}
+
+// Key/Value pair of Property
+func (o GetConfigsConfigCollectionItemAdditionalConfigurationOutput) PropertiesMap() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItemAdditionalConfiguration) map[string]string {
+		return v.PropertiesMap
+	}).(pulumi.StringMapOutput)
+}
+
+type GetConfigsConfigCollectionItemAdditionalConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConfigsConfigCollectionItemAdditionalConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigsConfigCollectionItemAdditionalConfiguration)(nil)).Elem()
+}
+
+func (o GetConfigsConfigCollectionItemAdditionalConfigurationArrayOutput) ToGetConfigsConfigCollectionItemAdditionalConfigurationArrayOutput() GetConfigsConfigCollectionItemAdditionalConfigurationArrayOutput {
+	return o
+}
+
+func (o GetConfigsConfigCollectionItemAdditionalConfigurationArrayOutput) ToGetConfigsConfigCollectionItemAdditionalConfigurationArrayOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemAdditionalConfigurationArrayOutput {
+	return o
+}
+
+func (o GetConfigsConfigCollectionItemAdditionalConfigurationArrayOutput) Index(i pulumi.IntInput) GetConfigsConfigCollectionItemAdditionalConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigsConfigCollectionItemAdditionalConfiguration {
+		return vs[0].([]GetConfigsConfigCollectionItemAdditionalConfiguration)[vs[1].(int)]
+	}).(GetConfigsConfigCollectionItemAdditionalConfigurationOutput)
+}
+
+type GetConfigsConfigCollectionItemDynamicGroup struct {
+	// Identity domain name
+	Domain string `pulumi:"domain"`
+	// Name of user Group
+	Name string `pulumi:"name"`
+	// Assignment of dynamic group in context of Stack Monitoring service. It describes the purpose of dynamic groups in Stack Monitoring.
+	StackMonitoringAssignment string `pulumi:"stackMonitoringAssignment"`
+}
+
+// GetConfigsConfigCollectionItemDynamicGroupInput is an input type that accepts GetConfigsConfigCollectionItemDynamicGroupArgs and GetConfigsConfigCollectionItemDynamicGroupOutput values.
+// You can construct a concrete instance of `GetConfigsConfigCollectionItemDynamicGroupInput` via:
+//
+//	GetConfigsConfigCollectionItemDynamicGroupArgs{...}
+type GetConfigsConfigCollectionItemDynamicGroupInput interface {
+	pulumi.Input
+
+	ToGetConfigsConfigCollectionItemDynamicGroupOutput() GetConfigsConfigCollectionItemDynamicGroupOutput
+	ToGetConfigsConfigCollectionItemDynamicGroupOutputWithContext(context.Context) GetConfigsConfigCollectionItemDynamicGroupOutput
+}
+
+type GetConfigsConfigCollectionItemDynamicGroupArgs struct {
+	// Identity domain name
+	Domain pulumi.StringInput `pulumi:"domain"`
+	// Name of user Group
+	Name pulumi.StringInput `pulumi:"name"`
+	// Assignment of dynamic group in context of Stack Monitoring service. It describes the purpose of dynamic groups in Stack Monitoring.
+	StackMonitoringAssignment pulumi.StringInput `pulumi:"stackMonitoringAssignment"`
+}
+
+func (GetConfigsConfigCollectionItemDynamicGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigsConfigCollectionItemDynamicGroup)(nil)).Elem()
+}
+
+func (i GetConfigsConfigCollectionItemDynamicGroupArgs) ToGetConfigsConfigCollectionItemDynamicGroupOutput() GetConfigsConfigCollectionItemDynamicGroupOutput {
+	return i.ToGetConfigsConfigCollectionItemDynamicGroupOutputWithContext(context.Background())
+}
+
+func (i GetConfigsConfigCollectionItemDynamicGroupArgs) ToGetConfigsConfigCollectionItemDynamicGroupOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemDynamicGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemDynamicGroupOutput)
+}
+
+// GetConfigsConfigCollectionItemDynamicGroupArrayInput is an input type that accepts GetConfigsConfigCollectionItemDynamicGroupArray and GetConfigsConfigCollectionItemDynamicGroupArrayOutput values.
+// You can construct a concrete instance of `GetConfigsConfigCollectionItemDynamicGroupArrayInput` via:
+//
+//	GetConfigsConfigCollectionItemDynamicGroupArray{ GetConfigsConfigCollectionItemDynamicGroupArgs{...} }
+type GetConfigsConfigCollectionItemDynamicGroupArrayInput interface {
+	pulumi.Input
+
+	ToGetConfigsConfigCollectionItemDynamicGroupArrayOutput() GetConfigsConfigCollectionItemDynamicGroupArrayOutput
+	ToGetConfigsConfigCollectionItemDynamicGroupArrayOutputWithContext(context.Context) GetConfigsConfigCollectionItemDynamicGroupArrayOutput
+}
+
+type GetConfigsConfigCollectionItemDynamicGroupArray []GetConfigsConfigCollectionItemDynamicGroupInput
+
+func (GetConfigsConfigCollectionItemDynamicGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigsConfigCollectionItemDynamicGroup)(nil)).Elem()
+}
+
+func (i GetConfigsConfigCollectionItemDynamicGroupArray) ToGetConfigsConfigCollectionItemDynamicGroupArrayOutput() GetConfigsConfigCollectionItemDynamicGroupArrayOutput {
+	return i.ToGetConfigsConfigCollectionItemDynamicGroupArrayOutputWithContext(context.Background())
+}
+
+func (i GetConfigsConfigCollectionItemDynamicGroupArray) ToGetConfigsConfigCollectionItemDynamicGroupArrayOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemDynamicGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemDynamicGroupArrayOutput)
+}
+
+type GetConfigsConfigCollectionItemDynamicGroupOutput struct{ *pulumi.OutputState }
+
+func (GetConfigsConfigCollectionItemDynamicGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigsConfigCollectionItemDynamicGroup)(nil)).Elem()
+}
+
+func (o GetConfigsConfigCollectionItemDynamicGroupOutput) ToGetConfigsConfigCollectionItemDynamicGroupOutput() GetConfigsConfigCollectionItemDynamicGroupOutput {
+	return o
+}
+
+func (o GetConfigsConfigCollectionItemDynamicGroupOutput) ToGetConfigsConfigCollectionItemDynamicGroupOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemDynamicGroupOutput {
+	return o
+}
+
+// Identity domain name
+func (o GetConfigsConfigCollectionItemDynamicGroupOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItemDynamicGroup) string { return v.Domain }).(pulumi.StringOutput)
+}
+
+// Name of user Group
+func (o GetConfigsConfigCollectionItemDynamicGroupOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItemDynamicGroup) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Assignment of dynamic group in context of Stack Monitoring service. It describes the purpose of dynamic groups in Stack Monitoring.
+func (o GetConfigsConfigCollectionItemDynamicGroupOutput) StackMonitoringAssignment() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItemDynamicGroup) string { return v.StackMonitoringAssignment }).(pulumi.StringOutput)
+}
+
+type GetConfigsConfigCollectionItemDynamicGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConfigsConfigCollectionItemDynamicGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigsConfigCollectionItemDynamicGroup)(nil)).Elem()
+}
+
+func (o GetConfigsConfigCollectionItemDynamicGroupArrayOutput) ToGetConfigsConfigCollectionItemDynamicGroupArrayOutput() GetConfigsConfigCollectionItemDynamicGroupArrayOutput {
+	return o
+}
+
+func (o GetConfigsConfigCollectionItemDynamicGroupArrayOutput) ToGetConfigsConfigCollectionItemDynamicGroupArrayOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemDynamicGroupArrayOutput {
+	return o
+}
+
+func (o GetConfigsConfigCollectionItemDynamicGroupArrayOutput) Index(i pulumi.IntInput) GetConfigsConfigCollectionItemDynamicGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigsConfigCollectionItemDynamicGroup {
+		return vs[0].([]GetConfigsConfigCollectionItemDynamicGroup)[vs[1].(int)]
+	}).(GetConfigsConfigCollectionItemDynamicGroupOutput)
+}
+
+type GetConfigsConfigCollectionItemUserGroup struct {
+	// Identity domain name
+	Domain string `pulumi:"domain"`
+	// Name of user Group
+	Name string `pulumi:"name"`
+	// Role assigned to user group in context of Stack Monitoring service. Access role can be for example: ADMINISTRATOR, OPERATOR, VIEWER, any other access role
+	StackMonitoringRole string `pulumi:"stackMonitoringRole"`
+}
+
+// GetConfigsConfigCollectionItemUserGroupInput is an input type that accepts GetConfigsConfigCollectionItemUserGroupArgs and GetConfigsConfigCollectionItemUserGroupOutput values.
+// You can construct a concrete instance of `GetConfigsConfigCollectionItemUserGroupInput` via:
+//
+//	GetConfigsConfigCollectionItemUserGroupArgs{...}
+type GetConfigsConfigCollectionItemUserGroupInput interface {
+	pulumi.Input
+
+	ToGetConfigsConfigCollectionItemUserGroupOutput() GetConfigsConfigCollectionItemUserGroupOutput
+	ToGetConfigsConfigCollectionItemUserGroupOutputWithContext(context.Context) GetConfigsConfigCollectionItemUserGroupOutput
+}
+
+type GetConfigsConfigCollectionItemUserGroupArgs struct {
+	// Identity domain name
+	Domain pulumi.StringInput `pulumi:"domain"`
+	// Name of user Group
+	Name pulumi.StringInput `pulumi:"name"`
+	// Role assigned to user group in context of Stack Monitoring service. Access role can be for example: ADMINISTRATOR, OPERATOR, VIEWER, any other access role
+	StackMonitoringRole pulumi.StringInput `pulumi:"stackMonitoringRole"`
+}
+
+func (GetConfigsConfigCollectionItemUserGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigsConfigCollectionItemUserGroup)(nil)).Elem()
+}
+
+func (i GetConfigsConfigCollectionItemUserGroupArgs) ToGetConfigsConfigCollectionItemUserGroupOutput() GetConfigsConfigCollectionItemUserGroupOutput {
+	return i.ToGetConfigsConfigCollectionItemUserGroupOutputWithContext(context.Background())
+}
+
+func (i GetConfigsConfigCollectionItemUserGroupArgs) ToGetConfigsConfigCollectionItemUserGroupOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemUserGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemUserGroupOutput)
+}
+
+// GetConfigsConfigCollectionItemUserGroupArrayInput is an input type that accepts GetConfigsConfigCollectionItemUserGroupArray and GetConfigsConfigCollectionItemUserGroupArrayOutput values.
+// You can construct a concrete instance of `GetConfigsConfigCollectionItemUserGroupArrayInput` via:
+//
+//	GetConfigsConfigCollectionItemUserGroupArray{ GetConfigsConfigCollectionItemUserGroupArgs{...} }
+type GetConfigsConfigCollectionItemUserGroupArrayInput interface {
+	pulumi.Input
+
+	ToGetConfigsConfigCollectionItemUserGroupArrayOutput() GetConfigsConfigCollectionItemUserGroupArrayOutput
+	ToGetConfigsConfigCollectionItemUserGroupArrayOutputWithContext(context.Context) GetConfigsConfigCollectionItemUserGroupArrayOutput
+}
+
+type GetConfigsConfigCollectionItemUserGroupArray []GetConfigsConfigCollectionItemUserGroupInput
+
+func (GetConfigsConfigCollectionItemUserGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigsConfigCollectionItemUserGroup)(nil)).Elem()
+}
+
+func (i GetConfigsConfigCollectionItemUserGroupArray) ToGetConfigsConfigCollectionItemUserGroupArrayOutput() GetConfigsConfigCollectionItemUserGroupArrayOutput {
+	return i.ToGetConfigsConfigCollectionItemUserGroupArrayOutputWithContext(context.Background())
+}
+
+func (i GetConfigsConfigCollectionItemUserGroupArray) ToGetConfigsConfigCollectionItemUserGroupArrayOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemUserGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemUserGroupArrayOutput)
+}
+
+type GetConfigsConfigCollectionItemUserGroupOutput struct{ *pulumi.OutputState }
+
+func (GetConfigsConfigCollectionItemUserGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigsConfigCollectionItemUserGroup)(nil)).Elem()
+}
+
+func (o GetConfigsConfigCollectionItemUserGroupOutput) ToGetConfigsConfigCollectionItemUserGroupOutput() GetConfigsConfigCollectionItemUserGroupOutput {
+	return o
+}
+
+func (o GetConfigsConfigCollectionItemUserGroupOutput) ToGetConfigsConfigCollectionItemUserGroupOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemUserGroupOutput {
+	return o
+}
+
+// Identity domain name
+func (o GetConfigsConfigCollectionItemUserGroupOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItemUserGroup) string { return v.Domain }).(pulumi.StringOutput)
+}
+
+// Name of user Group
+func (o GetConfigsConfigCollectionItemUserGroupOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItemUserGroup) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Role assigned to user group in context of Stack Monitoring service. Access role can be for example: ADMINISTRATOR, OPERATOR, VIEWER, any other access role
+func (o GetConfigsConfigCollectionItemUserGroupOutput) StackMonitoringRole() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItemUserGroup) string { return v.StackMonitoringRole }).(pulumi.StringOutput)
+}
+
+type GetConfigsConfigCollectionItemUserGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConfigsConfigCollectionItemUserGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigsConfigCollectionItemUserGroup)(nil)).Elem()
+}
+
+func (o GetConfigsConfigCollectionItemUserGroupArrayOutput) ToGetConfigsConfigCollectionItemUserGroupArrayOutput() GetConfigsConfigCollectionItemUserGroupArrayOutput {
+	return o
+}
+
+func (o GetConfigsConfigCollectionItemUserGroupArrayOutput) ToGetConfigsConfigCollectionItemUserGroupArrayOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemUserGroupArrayOutput {
+	return o
+}
+
+func (o GetConfigsConfigCollectionItemUserGroupArrayOutput) Index(i pulumi.IntInput) GetConfigsConfigCollectionItemUserGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigsConfigCollectionItemUserGroup {
+		return vs[0].([]GetConfigsConfigCollectionItemUserGroup)[vs[1].(int)]
+	}).(GetConfigsConfigCollectionItemUserGroupOutput)
+}
+
 type GetConfigsFilter struct {
+	// Name of user Group
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
 	Values []string `pulumi:"values"`
@@ -8050,6 +9132,7 @@ type GetConfigsFilterInput interface {
 }
 
 type GetConfigsFilterArgs struct {
+	// Name of user Group
 	Name   pulumi.StringInput      `pulumi:"name"`
 	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
 	Values pulumi.StringArrayInput `pulumi:"values"`
@@ -8106,6 +9189,7 @@ func (o GetConfigsFilterOutput) ToGetConfigsFilterOutputWithContext(ctx context.
 	return o
 }
 
+// Name of user Group
 func (o GetConfigsFilterOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigsFilter) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -10793,9 +11877,11 @@ func (o GetMaintenanceWindowsMaintenanceWindowCollectionArrayOutput) Index(i pul
 
 type GetMaintenanceWindowsMaintenanceWindowCollectionItem struct {
 	// The ID of the compartment in which data is listed.
-	CompartmentId string            `pulumi:"compartmentId"`
-	DefinedTags   map[string]string `pulumi:"definedTags"`
-	FreeformTags  map[string]string `pulumi:"freeformTags"`
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of maintenance window.
 	Id string `pulumi:"id"`
 	// A filter to return maintenance windows with matching lifecycleDetails.
@@ -10809,7 +11895,8 @@ type GetMaintenanceWindowsMaintenanceWindowCollectionItem struct {
 	// Schedule information of the Maintenance Window
 	Schedules []GetMaintenanceWindowsMaintenanceWindowCollectionItemSchedule `pulumi:"schedules"`
 	// Lifecycle state of the monitored resource.
-	State      string            `pulumi:"state"`
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
 }
 
@@ -10826,9 +11913,11 @@ type GetMaintenanceWindowsMaintenanceWindowCollectionItemInput interface {
 
 type GetMaintenanceWindowsMaintenanceWindowCollectionItemArgs struct {
 	// The ID of the compartment in which data is listed.
-	CompartmentId pulumi.StringInput    `pulumi:"compartmentId"`
-	DefinedTags   pulumi.StringMapInput `pulumi:"definedTags"`
-	FreeformTags  pulumi.StringMapInput `pulumi:"freeformTags"`
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of maintenance window.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A filter to return maintenance windows with matching lifecycleDetails.
@@ -10842,7 +11931,8 @@ type GetMaintenanceWindowsMaintenanceWindowCollectionItemArgs struct {
 	// Schedule information of the Maintenance Window
 	Schedules GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArrayInput `pulumi:"schedules"`
 	// Lifecycle state of the monitored resource.
-	State      pulumi.StringInput    `pulumi:"state"`
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 }
 
@@ -10902,10 +11992,12 @@ func (o GetMaintenanceWindowsMaintenanceWindowCollectionItemOutput) CompartmentI
 	return o.ApplyT(func(v GetMaintenanceWindowsMaintenanceWindowCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o GetMaintenanceWindowsMaintenanceWindowCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetMaintenanceWindowsMaintenanceWindowCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 func (o GetMaintenanceWindowsMaintenanceWindowCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetMaintenanceWindowsMaintenanceWindowCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
@@ -10953,6 +12045,7 @@ func (o GetMaintenanceWindowsMaintenanceWindowCollectionItemOutput) State() pulu
 	return o.ApplyT(func(v GetMaintenanceWindowsMaintenanceWindowCollectionItem) string { return v.State }).(pulumi.StringOutput)
 }
 
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o GetMaintenanceWindowsMaintenanceWindowCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetMaintenanceWindowsMaintenanceWindowCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
@@ -20762,6 +21855,12 @@ func (o GetProcessSetsProcessSetCollectionItemSpecificationItemArrayOutput) Inde
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigAdditionalConfigurationsInput)(nil)).Elem(), ConfigAdditionalConfigurationsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigAdditionalConfigurationsPtrInput)(nil)).Elem(), ConfigAdditionalConfigurationsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigDynamicGroupInput)(nil)).Elem(), ConfigDynamicGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigDynamicGroupArrayInput)(nil)).Elem(), ConfigDynamicGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigUserGroupInput)(nil)).Elem(), ConfigUserGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigUserGroupArrayInput)(nil)).Elem(), ConfigUserGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DiscoveryJobDiscoveryDetailsInput)(nil)).Elem(), DiscoveryJobDiscoveryDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DiscoveryJobDiscoveryDetailsPtrInput)(nil)).Elem(), DiscoveryJobDiscoveryDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DiscoveryJobDiscoveryDetailsCredentialsInput)(nil)).Elem(), DiscoveryJobDiscoveryDetailsCredentialsArgs{})
@@ -20858,10 +21957,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBaselineableMetricsEvaluateItemTrainingDataPointArrayInput)(nil)).Elem(), GetBaselineableMetricsEvaluateItemTrainingDataPointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBaselineableMetricsFilterInput)(nil)).Elem(), GetBaselineableMetricsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBaselineableMetricsFilterArrayInput)(nil)).Elem(), GetBaselineableMetricsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigAdditionalConfigurationInput)(nil)).Elem(), GetConfigAdditionalConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigAdditionalConfigurationArrayInput)(nil)).Elem(), GetConfigAdditionalConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigDynamicGroupInput)(nil)).Elem(), GetConfigDynamicGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigDynamicGroupArrayInput)(nil)).Elem(), GetConfigDynamicGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigUserGroupInput)(nil)).Elem(), GetConfigUserGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigUserGroupArrayInput)(nil)).Elem(), GetConfigUserGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionInput)(nil)).Elem(), GetConfigsConfigCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionArrayInput)(nil)).Elem(), GetConfigsConfigCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemInput)(nil)).Elem(), GetConfigsConfigCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemArrayInput)(nil)).Elem(), GetConfigsConfigCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemAdditionalConfigurationInput)(nil)).Elem(), GetConfigsConfigCollectionItemAdditionalConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemAdditionalConfigurationArrayInput)(nil)).Elem(), GetConfigsConfigCollectionItemAdditionalConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemDynamicGroupInput)(nil)).Elem(), GetConfigsConfigCollectionItemDynamicGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemDynamicGroupArrayInput)(nil)).Elem(), GetConfigsConfigCollectionItemDynamicGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemUserGroupInput)(nil)).Elem(), GetConfigsConfigCollectionItemUserGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemUserGroupArrayInput)(nil)).Elem(), GetConfigsConfigCollectionItemUserGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsFilterInput)(nil)).Elem(), GetConfigsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsFilterArrayInput)(nil)).Elem(), GetConfigsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionInput)(nil)).Elem(), GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionArgs{})
@@ -21050,6 +22161,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProcessSetsProcessSetCollectionItemSpecificationArrayInput)(nil)).Elem(), GetProcessSetsProcessSetCollectionItemSpecificationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProcessSetsProcessSetCollectionItemSpecificationItemInput)(nil)).Elem(), GetProcessSetsProcessSetCollectionItemSpecificationItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProcessSetsProcessSetCollectionItemSpecificationItemArrayInput)(nil)).Elem(), GetProcessSetsProcessSetCollectionItemSpecificationItemArray{})
+	pulumi.RegisterOutputType(ConfigAdditionalConfigurationsOutput{})
+	pulumi.RegisterOutputType(ConfigAdditionalConfigurationsPtrOutput{})
+	pulumi.RegisterOutputType(ConfigDynamicGroupOutput{})
+	pulumi.RegisterOutputType(ConfigDynamicGroupArrayOutput{})
+	pulumi.RegisterOutputType(ConfigUserGroupOutput{})
+	pulumi.RegisterOutputType(ConfigUserGroupArrayOutput{})
 	pulumi.RegisterOutputType(DiscoveryJobDiscoveryDetailsOutput{})
 	pulumi.RegisterOutputType(DiscoveryJobDiscoveryDetailsPtrOutput{})
 	pulumi.RegisterOutputType(DiscoveryJobDiscoveryDetailsCredentialsOutput{})
@@ -21146,10 +22263,22 @@ func init() {
 	pulumi.RegisterOutputType(GetBaselineableMetricsEvaluateItemTrainingDataPointArrayOutput{})
 	pulumi.RegisterOutputType(GetBaselineableMetricsFilterOutput{})
 	pulumi.RegisterOutputType(GetBaselineableMetricsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetConfigAdditionalConfigurationOutput{})
+	pulumi.RegisterOutputType(GetConfigAdditionalConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetConfigDynamicGroupOutput{})
+	pulumi.RegisterOutputType(GetConfigDynamicGroupArrayOutput{})
+	pulumi.RegisterOutputType(GetConfigUserGroupOutput{})
+	pulumi.RegisterOutputType(GetConfigUserGroupArrayOutput{})
 	pulumi.RegisterOutputType(GetConfigsConfigCollectionOutput{})
 	pulumi.RegisterOutputType(GetConfigsConfigCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemAdditionalConfigurationOutput{})
+	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemAdditionalConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemDynamicGroupOutput{})
+	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemDynamicGroupArrayOutput{})
+	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemUserGroupOutput{})
+	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemUserGroupArrayOutput{})
 	pulumi.RegisterOutputType(GetConfigsFilterOutput{})
 	pulumi.RegisterOutputType(GetConfigsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDefinedMonitoringTemplatesDefinedMonitoringTemplateCollectionOutput{})

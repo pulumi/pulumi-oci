@@ -13,21 +13,7 @@ namespace Pulumi.Oci.Identity.Outputs
     [OutputType]
     public sealed class DomainsAppRadiusPolicy
     {
-        /// <summary>
-        /// (Updatable) URI of the policy.
-        /// 
-        /// **Added In:** 2209070044
-        /// 
-        /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
-        /// * multiValued: false
-        /// * mutability: readOnly
-        /// * required: false
-        /// * returned: default
-        /// * type: reference
-        /// * uniqueness: none
-        /// </summary>
-        public readonly string? Ref;
+        public readonly string? _ref;
         /// <summary>
         /// (Updatable) Identifier of the Policy.
         /// 
@@ -47,11 +33,11 @@ namespace Pulumi.Oci.Identity.Outputs
 
         [OutputConstructor]
         private DomainsAppRadiusPolicy(
-            string? @ref,
+            string? _ref,
 
             string value)
         {
-            Ref = @ref;
+            this._ref = _ref;
             Value = value;
         }
     }

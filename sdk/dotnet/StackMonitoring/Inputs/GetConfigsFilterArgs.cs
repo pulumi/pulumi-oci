@@ -12,6 +12,9 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
 
     public sealed class GetConfigsFilterInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Name of user Group
+        /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 

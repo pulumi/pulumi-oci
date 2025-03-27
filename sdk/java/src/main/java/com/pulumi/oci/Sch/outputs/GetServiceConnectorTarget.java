@@ -30,7 +30,7 @@ public final class GetServiceConnectorTarget {
      */
     private Integer batchSizeInKbs;
     /**
-     * @return The batch rollover size in number of messages.
+     * @return The batch rollover size in number of messages. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
      * 
      */
     private Integer batchSizeInNum;
@@ -55,7 +55,7 @@ public final class GetServiceConnectorTarget {
      */
     private List<GetServiceConnectorTargetDimension> dimensions;
     /**
-     * @return Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
+     * @return Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol. Example: `true`
      * 
      */
     private Boolean enableFormattedMessaging;
@@ -80,12 +80,12 @@ public final class GetServiceConnectorTarget {
      */
     private String logSourceIdentifier;
     /**
-     * @return The name of the metric.  Example: `CpuUtilization`
+     * @return The name of the metric. Example: `CpuUtilization`
      * 
      */
     private String metric;
     /**
-     * @return The namespace of the metric.  Example: `oci_computeagent`
+     * @return The namespace of the metric. Example: `oci_computeagent`
      * 
      */
     private String metricNamespace;
@@ -133,7 +133,7 @@ public final class GetServiceConnectorTarget {
         return this.batchSizeInKbs;
     }
     /**
-     * @return The batch rollover size in number of messages.
+     * @return The batch rollover size in number of messages. Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
      * 
      */
     public Integer batchSizeInNum() {
@@ -168,7 +168,7 @@ public final class GetServiceConnectorTarget {
         return this.dimensions;
     }
     /**
-     * @return Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
+     * @return Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol. Example: `true`
      * 
      */
     public Boolean enableFormattedMessaging() {
@@ -203,14 +203,14 @@ public final class GetServiceConnectorTarget {
         return this.logSourceIdentifier;
     }
     /**
-     * @return The name of the metric.  Example: `CpuUtilization`
+     * @return The name of the metric. Example: `CpuUtilization`
      * 
      */
     public String metric() {
         return this.metric;
     }
     /**
-     * @return The namespace of the metric.  Example: `oci_computeagent`
+     * @return The namespace of the metric. Example: `oci_computeagent`
      * 
      */
     public String metricNamespace() {

@@ -1395,6 +1395,12 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
     public Output<String> errorPageUrl() {
         return this.errorPageUrl;
     }
+    @Export(name="forceDelete", refs={Boolean.class}, tree="[0]")
+    private Output</* @Nullable */ Boolean> forceDelete;
+
+    public Output<Optional<Boolean>> forceDelete() {
+        return Codegen.optional(this.forceDelete);
+    }
     /**
      * (Updatable) A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
      * 

@@ -4065,38 +4065,6 @@ public final class DataIntegrationFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
-     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceTaskArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWorkspaceTask = DataIntegrationFunctions.getWorkspaceTask(GetWorkspaceTaskArgs.builder()
-     *             .taskKey(workspaceTaskTaskKey)
-     *             .workspaceId(testWorkspace.id())
-     *             .expandReferences(workspaceTaskExpandReferences)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -4111,38 +4079,6 @@ public final class DataIntegrationFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
-     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceTaskArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWorkspaceTask = DataIntegrationFunctions.getWorkspaceTask(GetWorkspaceTaskArgs.builder()
-     *             .taskKey(workspaceTaskTaskKey)
-     *             .workspaceId(testWorkspace.id())
-     *             .expandReferences(workspaceTaskExpandReferences)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -4157,38 +4093,6 @@ public final class DataIntegrationFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
-     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceTaskArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWorkspaceTask = DataIntegrationFunctions.getWorkspaceTask(GetWorkspaceTaskArgs.builder()
-     *             .taskKey(workspaceTaskTaskKey)
-     *             .workspaceId(testWorkspace.id())
-     *             .expandReferences(workspaceTaskExpandReferences)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -4203,38 +4107,6 @@ public final class DataIntegrationFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
-     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceTaskArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWorkspaceTask = DataIntegrationFunctions.getWorkspaceTask(GetWorkspaceTaskArgs.builder()
-     *             .taskKey(workspaceTaskTaskKey)
-     *             .workspaceId(testWorkspace.id())
-     *             .expandReferences(workspaceTaskExpandReferences)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -4249,38 +4121,6 @@ public final class DataIntegrationFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
-     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceTaskArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWorkspaceTask = DataIntegrationFunctions.getWorkspaceTask(GetWorkspaceTaskArgs.builder()
-     *             .taskKey(workspaceTaskTaskKey)
-     *             .workspaceId(testWorkspace.id())
-     *             .expandReferences(workspaceTaskExpandReferences)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */

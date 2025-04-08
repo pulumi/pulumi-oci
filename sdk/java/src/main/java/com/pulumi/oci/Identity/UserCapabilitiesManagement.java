@@ -48,11 +48,11 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testUserCapabilitiesManagement = new UserCapabilitiesManagement("testUserCapabilitiesManagement", UserCapabilitiesManagementArgs.builder()
  *             .userId(user1.id())
- *             .canUseApiKeys("true")
- *             .canUseAuthTokens("true")
- *             .canUseConsolePassword("false")
- *             .canUseCustomerSecretKeys("true")
- *             .canUseSmtpCredentials("true")
+ *             .canUseApiKeys(true)
+ *             .canUseAuthTokens(true)
+ *             .canUseConsolePassword(false)
+ *             .canUseCustomerSecretKeys(true)
+ *             .canUseSmtpCredentials(true)
  *             .build());
  * 
  *     }

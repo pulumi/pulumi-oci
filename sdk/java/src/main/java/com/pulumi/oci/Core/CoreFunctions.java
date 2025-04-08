@@ -4297,38 +4297,6 @@ public final class CoreFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Core.CoreFunctions;
-     * import com.pulumi.oci.Core.inputs.GetByoasnsArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testByoasns = CoreFunctions.getByoasns(GetByoasnsArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .displayName(byoasnDisplayName)
-     *             .state(byoasnState)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -4344,38 +4312,6 @@ public final class CoreFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Core.CoreFunctions;
-     * import com.pulumi.oci.Core.inputs.GetByoasnsArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testByoasns = CoreFunctions.getByoasns(GetByoasnsArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .displayName(byoasnDisplayName)
-     *             .state(byoasnState)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -4391,38 +4327,6 @@ public final class CoreFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Core.CoreFunctions;
-     * import com.pulumi.oci.Core.inputs.GetByoasnsArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testByoasns = CoreFunctions.getByoasns(GetByoasnsArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .displayName(byoasnDisplayName)
-     *             .state(byoasnState)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -4438,38 +4342,6 @@ public final class CoreFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Core.CoreFunctions;
-     * import com.pulumi.oci.Core.inputs.GetByoasnsArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testByoasns = CoreFunctions.getByoasns(GetByoasnsArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .displayName(byoasnDisplayName)
-     *             .state(byoasnState)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -4485,38 +4357,6 @@ public final class CoreFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Core.CoreFunctions;
-     * import com.pulumi.oci.Core.inputs.GetByoasnsArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testByoasns = CoreFunctions.getByoasns(GetByoasnsArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .displayName(byoasnDisplayName)
-     *             .state(byoasnState)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -13047,7 +12887,8 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testCpeDeviceShapes = CoreFunctions.getCpeDeviceShapes();
+     *         final var testCpeDeviceShapes = CoreFunctions.getCpeDeviceShapes(GetCpeDeviceShapesArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -13101,7 +12942,8 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testCpeDeviceShapes = CoreFunctions.getCpeDeviceShapes();
+     *         final var testCpeDeviceShapes = CoreFunctions.getCpeDeviceShapes(GetCpeDeviceShapesArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -13155,7 +12997,8 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testCpeDeviceShapes = CoreFunctions.getCpeDeviceShapes();
+     *         final var testCpeDeviceShapes = CoreFunctions.getCpeDeviceShapes(GetCpeDeviceShapesArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -13209,7 +13052,8 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testCpeDeviceShapes = CoreFunctions.getCpeDeviceShapes();
+     *         final var testCpeDeviceShapes = CoreFunctions.getCpeDeviceShapes(GetCpeDeviceShapesArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -13263,7 +13107,8 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testCpeDeviceShapes = CoreFunctions.getCpeDeviceShapes();
+     *         final var testCpeDeviceShapes = CoreFunctions.getCpeDeviceShapes(GetCpeDeviceShapesArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -13317,7 +13162,8 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testCpeDeviceShapes = CoreFunctions.getCpeDeviceShapes();
+     *         final var testCpeDeviceShapes = CoreFunctions.getCpeDeviceShapes(GetCpeDeviceShapesArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -13371,7 +13217,8 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testCpeDeviceShapes = CoreFunctions.getCpeDeviceShapes();
+     *         final var testCpeDeviceShapes = CoreFunctions.getCpeDeviceShapes(GetCpeDeviceShapesArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -24562,7 +24409,7 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testIpsecAlgorithm = CoreFunctions.getIpsecAlgorithm();
+     *         final var testIpsecAlgorithm = CoreFunctions.getIpsecAlgorithm(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
      * 
      *     }
      * }
@@ -24603,7 +24450,7 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testIpsecAlgorithm = CoreFunctions.getIpsecAlgorithm();
+     *         final var testIpsecAlgorithm = CoreFunctions.getIpsecAlgorithm(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
      * 
      *     }
      * }
@@ -24644,7 +24491,7 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testIpsecAlgorithm = CoreFunctions.getIpsecAlgorithm();
+     *         final var testIpsecAlgorithm = CoreFunctions.getIpsecAlgorithm(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
      * 
      *     }
      * }
@@ -24685,7 +24532,7 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testIpsecAlgorithm = CoreFunctions.getIpsecAlgorithm();
+     *         final var testIpsecAlgorithm = CoreFunctions.getIpsecAlgorithm(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
      * 
      *     }
      * }
@@ -24726,7 +24573,7 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testIpsecAlgorithm = CoreFunctions.getIpsecAlgorithm();
+     *         final var testIpsecAlgorithm = CoreFunctions.getIpsecAlgorithm(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
      * 
      *     }
      * }
@@ -24767,7 +24614,7 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testIpsecAlgorithm = CoreFunctions.getIpsecAlgorithm();
+     *         final var testIpsecAlgorithm = CoreFunctions.getIpsecAlgorithm(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
      * 
      *     }
      * }
@@ -24808,7 +24655,7 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testIpsecAlgorithm = CoreFunctions.getIpsecAlgorithm();
+     *         final var testIpsecAlgorithm = CoreFunctions.getIpsecAlgorithm(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
      * 
      *     }
      * }
@@ -29030,7 +28877,8 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testPeerRegionForRemotePeerings = CoreFunctions.getPeerRegionForRemotePeerings();
+     *         final var testPeerRegionForRemotePeerings = CoreFunctions.getPeerRegionForRemotePeerings(GetPeerRegionForRemotePeeringsArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -29073,7 +28921,8 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testPeerRegionForRemotePeerings = CoreFunctions.getPeerRegionForRemotePeerings();
+     *         final var testPeerRegionForRemotePeerings = CoreFunctions.getPeerRegionForRemotePeerings(GetPeerRegionForRemotePeeringsArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -29116,7 +28965,8 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testPeerRegionForRemotePeerings = CoreFunctions.getPeerRegionForRemotePeerings();
+     *         final var testPeerRegionForRemotePeerings = CoreFunctions.getPeerRegionForRemotePeerings(GetPeerRegionForRemotePeeringsArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -29159,7 +29009,8 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testPeerRegionForRemotePeerings = CoreFunctions.getPeerRegionForRemotePeerings();
+     *         final var testPeerRegionForRemotePeerings = CoreFunctions.getPeerRegionForRemotePeerings(GetPeerRegionForRemotePeeringsArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -29202,7 +29053,8 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testPeerRegionForRemotePeerings = CoreFunctions.getPeerRegionForRemotePeerings();
+     *         final var testPeerRegionForRemotePeerings = CoreFunctions.getPeerRegionForRemotePeerings(GetPeerRegionForRemotePeeringsArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -29245,7 +29097,8 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testPeerRegionForRemotePeerings = CoreFunctions.getPeerRegionForRemotePeerings();
+     *         final var testPeerRegionForRemotePeerings = CoreFunctions.getPeerRegionForRemotePeerings(GetPeerRegionForRemotePeeringsArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -29288,7 +29141,8 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testPeerRegionForRemotePeerings = CoreFunctions.getPeerRegionForRemotePeerings();
+     *         final var testPeerRegionForRemotePeerings = CoreFunctions.getPeerRegionForRemotePeerings(GetPeerRegionForRemotePeeringsArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -33075,7 +32929,8 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testServices = CoreFunctions.getServices();
+     *         final var testServices = CoreFunctions.getServices(GetServicesArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -33118,7 +32973,8 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testServices = CoreFunctions.getServices();
+     *         final var testServices = CoreFunctions.getServices(GetServicesArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -33161,7 +33017,8 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testServices = CoreFunctions.getServices();
+     *         final var testServices = CoreFunctions.getServices(GetServicesArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -33204,7 +33061,8 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testServices = CoreFunctions.getServices();
+     *         final var testServices = CoreFunctions.getServices(GetServicesArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -33247,7 +33105,8 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testServices = CoreFunctions.getServices();
+     *         final var testServices = CoreFunctions.getServices(GetServicesArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -33290,7 +33149,8 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testServices = CoreFunctions.getServices();
+     *         final var testServices = CoreFunctions.getServices(GetServicesArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -33333,7 +33193,8 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testServices = CoreFunctions.getServices();
+     *         final var testServices = CoreFunctions.getServices(GetServicesArgs.builder()
+     *             .build());
      * 
      *     }
      * }

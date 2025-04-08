@@ -1476,7 +1476,8 @@ public final class WaasFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testEdgeSubnets = WaasFunctions.getEdgeSubnets();
+     *         final var testEdgeSubnets = WaasFunctions.getEdgeSubnets(GetEdgeSubnetsArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -1518,7 +1519,8 @@ public final class WaasFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testEdgeSubnets = WaasFunctions.getEdgeSubnets();
+     *         final var testEdgeSubnets = WaasFunctions.getEdgeSubnets(GetEdgeSubnetsArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -1560,7 +1562,8 @@ public final class WaasFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testEdgeSubnets = WaasFunctions.getEdgeSubnets();
+     *         final var testEdgeSubnets = WaasFunctions.getEdgeSubnets(GetEdgeSubnetsArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -1602,7 +1605,8 @@ public final class WaasFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testEdgeSubnets = WaasFunctions.getEdgeSubnets();
+     *         final var testEdgeSubnets = WaasFunctions.getEdgeSubnets(GetEdgeSubnetsArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -1644,7 +1648,8 @@ public final class WaasFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testEdgeSubnets = WaasFunctions.getEdgeSubnets();
+     *         final var testEdgeSubnets = WaasFunctions.getEdgeSubnets(GetEdgeSubnetsArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -1686,7 +1691,8 @@ public final class WaasFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testEdgeSubnets = WaasFunctions.getEdgeSubnets();
+     *         final var testEdgeSubnets = WaasFunctions.getEdgeSubnets(GetEdgeSubnetsArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -1728,7 +1734,8 @@ public final class WaasFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testEdgeSubnets = WaasFunctions.getEdgeSubnets();
+     *         final var testEdgeSubnets = WaasFunctions.getEdgeSubnets(GetEdgeSubnetsArgs.builder()
+     *             .build());
      * 
      *     }
      * }

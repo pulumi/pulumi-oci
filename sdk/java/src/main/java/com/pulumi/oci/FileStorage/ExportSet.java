@@ -42,8 +42,8 @@ import javax.annotation.Nullable;
  *         var testExportSet = new ExportSet("testExportSet", ExportSetArgs.builder()
  *             .mountTargetId(testMountTarget.id())
  *             .displayName(exportSetName)
- *             .maxFsStatBytes(23843202333)
- *             .maxFsStatFiles(223442)
+ *             .maxFsStatBytes("23843202333")
+ *             .maxFsStatFiles("223442")
  *             .build());
  * 
  *     }

@@ -98,7 +98,8 @@ import javax.annotation.Nullable;
  *                     .sourceType(datasetInitialImportDatasetConfigurationImportMetadataPathSourceType)
  *                     .build())
  *                 .build())
- *             .initialRecordGenerationConfiguration()
+ *             .initialRecordGenerationConfiguration(DatasetInitialRecordGenerationConfigurationArgs.builder()
+ *                 .build())
  *             .labelingInstructions(datasetLabelingInstructions)
  *             .build());
  * 

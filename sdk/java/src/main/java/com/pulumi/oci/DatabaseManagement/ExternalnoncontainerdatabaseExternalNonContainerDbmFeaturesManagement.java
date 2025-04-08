@@ -23,50 +23,6 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.DatabaseManagement.ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement;
- * import com.pulumi.oci.DatabaseManagement.ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementArgs;
- * import com.pulumi.oci.DatabaseManagement.inputs.ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsArgs;
- * import com.pulumi.oci.DatabaseManagement.inputs.ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement = new ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement("testExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement", ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementArgs.builder()
- *             .externalNonContainerDatabaseId(testExternalNonContainerDatabase.id())
- *             .enableExternalNonContainerDbmFeature(enableExternalNonContainerDbmFeature)
- *             .featureDetails(ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsArgs.builder()
- *                 .feature(externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsFeature)
- *                 .enableExternalNonContainerDbmFeature(enableExternalNonContainerDbmFeature)
- *                 .connectorDetails(ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs.builder()
- *                     .connectorType(externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsConnectorType)
- *                     .databaseConnectorId(testDatabaseConnector.id())
- *                     .managementAgentId(testManagementAgent.id())
- *                     .privateEndPointId(testPrivateEndPoint.id())
- *                     .build())
- *                 .licenseModel(externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsLicenseModel)
- *                 .build())
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */

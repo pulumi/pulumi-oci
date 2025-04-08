@@ -29606,41 +29606,6 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Identity.IdentityFunctions;
-     * import com.pulumi.oci.Identity.inputs.GetDomainsUserAttributesSettingsArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testUserAttributesSettings = IdentityFunctions.getDomainsUserAttributesSettings(GetDomainsUserAttributesSettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .userAttributesSettingId(testUserAttributesSetting.id())
-     *             .attributeSets("all")
-     *             .attributes("")
-     *             .authorization(userAttributesSettingAuthorization)
-     *             .resourceTypeSchemaVersion(userAttributesSettingResourceTypeSchemaVersion)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -29655,41 +29620,6 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Identity.IdentityFunctions;
-     * import com.pulumi.oci.Identity.inputs.GetDomainsUserAttributesSettingsArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testUserAttributesSettings = IdentityFunctions.getDomainsUserAttributesSettings(GetDomainsUserAttributesSettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .userAttributesSettingId(testUserAttributesSetting.id())
-     *             .attributeSets("all")
-     *             .attributes("")
-     *             .authorization(userAttributesSettingAuthorization)
-     *             .resourceTypeSchemaVersion(userAttributesSettingResourceTypeSchemaVersion)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -29704,41 +29634,6 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Identity.IdentityFunctions;
-     * import com.pulumi.oci.Identity.inputs.GetDomainsUserAttributesSettingsArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testUserAttributesSettings = IdentityFunctions.getDomainsUserAttributesSettings(GetDomainsUserAttributesSettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .userAttributesSettingId(testUserAttributesSetting.id())
-     *             .attributeSets("all")
-     *             .attributes("")
-     *             .authorization(userAttributesSettingAuthorization)
-     *             .resourceTypeSchemaVersion(userAttributesSettingResourceTypeSchemaVersion)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -29753,41 +29648,6 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Identity.IdentityFunctions;
-     * import com.pulumi.oci.Identity.inputs.GetDomainsUserAttributesSettingsArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testUserAttributesSettings = IdentityFunctions.getDomainsUserAttributesSettings(GetDomainsUserAttributesSettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .userAttributesSettingId(testUserAttributesSetting.id())
-     *             .attributeSets("all")
-     *             .attributes("")
-     *             .authorization(userAttributesSettingAuthorization)
-     *             .resourceTypeSchemaVersion(userAttributesSettingResourceTypeSchemaVersion)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -29802,41 +29662,6 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Identity.IdentityFunctions;
-     * import com.pulumi.oci.Identity.inputs.GetDomainsUserAttributesSettingsArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testUserAttributesSettings = IdentityFunctions.getDomainsUserAttributesSettings(GetDomainsUserAttributesSettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .userAttributesSettingId(testUserAttributesSetting.id())
-     *             .attributeSets("all")
-     *             .attributes("")
-     *             .authorization(userAttributesSettingAuthorization)
-     *             .resourceTypeSchemaVersion(userAttributesSettingResourceTypeSchemaVersion)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -34203,7 +34028,8 @@ public final class IdentityFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testRegions = IdentityFunctions.getRegions();
+     *         final var testRegions = IdentityFunctions.getRegions(GetRegionsArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -34245,7 +34071,8 @@ public final class IdentityFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testRegions = IdentityFunctions.getRegions();
+     *         final var testRegions = IdentityFunctions.getRegions(GetRegionsArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -34287,7 +34114,8 @@ public final class IdentityFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testRegions = IdentityFunctions.getRegions();
+     *         final var testRegions = IdentityFunctions.getRegions(GetRegionsArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -34329,7 +34157,8 @@ public final class IdentityFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testRegions = IdentityFunctions.getRegions();
+     *         final var testRegions = IdentityFunctions.getRegions(GetRegionsArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -34371,7 +34200,8 @@ public final class IdentityFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testRegions = IdentityFunctions.getRegions();
+     *         final var testRegions = IdentityFunctions.getRegions(GetRegionsArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -34413,7 +34243,8 @@ public final class IdentityFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testRegions = IdentityFunctions.getRegions();
+     *         final var testRegions = IdentityFunctions.getRegions(GetRegionsArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -34455,7 +34286,8 @@ public final class IdentityFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testRegions = IdentityFunctions.getRegions();
+     *         final var testRegions = IdentityFunctions.getRegions(GetRegionsArgs.builder()
+     *             .build());
      * 
      *     }
      * }

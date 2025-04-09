@@ -6068,7 +6068,8 @@ public final class FleetAppsManagementFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testOnboardingPolicies = FleetAppsManagementFunctions.getOnboardingPolicies();
+     *         final var testOnboardingPolicies = FleetAppsManagementFunctions.getOnboardingPolicies(GetOnboardingPoliciesArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -6110,7 +6111,8 @@ public final class FleetAppsManagementFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testOnboardingPolicies = FleetAppsManagementFunctions.getOnboardingPolicies();
+     *         final var testOnboardingPolicies = FleetAppsManagementFunctions.getOnboardingPolicies(GetOnboardingPoliciesArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -6152,7 +6154,8 @@ public final class FleetAppsManagementFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testOnboardingPolicies = FleetAppsManagementFunctions.getOnboardingPolicies();
+     *         final var testOnboardingPolicies = FleetAppsManagementFunctions.getOnboardingPolicies(GetOnboardingPoliciesArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -6194,7 +6197,8 @@ public final class FleetAppsManagementFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testOnboardingPolicies = FleetAppsManagementFunctions.getOnboardingPolicies();
+     *         final var testOnboardingPolicies = FleetAppsManagementFunctions.getOnboardingPolicies(GetOnboardingPoliciesArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -6236,7 +6240,8 @@ public final class FleetAppsManagementFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testOnboardingPolicies = FleetAppsManagementFunctions.getOnboardingPolicies();
+     *         final var testOnboardingPolicies = FleetAppsManagementFunctions.getOnboardingPolicies(GetOnboardingPoliciesArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -6278,7 +6283,8 @@ public final class FleetAppsManagementFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testOnboardingPolicies = FleetAppsManagementFunctions.getOnboardingPolicies();
+     *         final var testOnboardingPolicies = FleetAppsManagementFunctions.getOnboardingPolicies(GetOnboardingPoliciesArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -6320,7 +6326,8 @@ public final class FleetAppsManagementFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testOnboardingPolicies = FleetAppsManagementFunctions.getOnboardingPolicies();
+     *         final var testOnboardingPolicies = FleetAppsManagementFunctions.getOnboardingPolicies(GetOnboardingPoliciesArgs.builder()
+     *             .build());
      * 
      *     }
      * }

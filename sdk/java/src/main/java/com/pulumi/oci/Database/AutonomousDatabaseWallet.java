@@ -54,7 +54,7 @@ import javax.annotation.Nullable;
  *         var testAutonomousDatabaseWallet = new AutonomousDatabaseWallet("testAutonomousDatabaseWallet", AutonomousDatabaseWalletArgs.builder()
  *             .autonomousDatabaseId(testAutonomousDatabase.id())
  *             .password(autonomousDatabaseWalletPassword)
- *             .base64EncodeContent("false")
+ *             .base64EncodeContent(false)
  *             .generateType(autonomousDatabaseWalletGenerateType)
  *             .isRegional(autonomousDatabaseWalletIsRegional)
  *             .build());

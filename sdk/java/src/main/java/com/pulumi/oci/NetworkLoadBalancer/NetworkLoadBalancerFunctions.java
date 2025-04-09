@@ -289,38 +289,6 @@ public final class NetworkLoadBalancerFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
-     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetBackendSetArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testBackendSet = NetworkLoadBalancerFunctions.getBackendSet(GetBackendSetArgs.builder()
-     *             .backendSetName(testBackendSetOciNetworkLoadBalancerBackendSet.name())
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
-     *             .ipVersion(backendSetIpVersion)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -335,38 +303,6 @@ public final class NetworkLoadBalancerFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
-     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetBackendSetArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testBackendSet = NetworkLoadBalancerFunctions.getBackendSet(GetBackendSetArgs.builder()
-     *             .backendSetName(testBackendSetOciNetworkLoadBalancerBackendSet.name())
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
-     *             .ipVersion(backendSetIpVersion)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -381,38 +317,6 @@ public final class NetworkLoadBalancerFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
-     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetBackendSetArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testBackendSet = NetworkLoadBalancerFunctions.getBackendSet(GetBackendSetArgs.builder()
-     *             .backendSetName(testBackendSetOciNetworkLoadBalancerBackendSet.name())
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
-     *             .ipVersion(backendSetIpVersion)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -427,38 +331,6 @@ public final class NetworkLoadBalancerFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
-     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetBackendSetArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testBackendSet = NetworkLoadBalancerFunctions.getBackendSet(GetBackendSetArgs.builder()
-     *             .backendSetName(testBackendSetOciNetworkLoadBalancerBackendSet.name())
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
-     *             .ipVersion(backendSetIpVersion)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -473,38 +345,6 @@ public final class NetworkLoadBalancerFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
-     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetBackendSetArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testBackendSet = NetworkLoadBalancerFunctions.getBackendSet(GetBackendSetArgs.builder()
-     *             .backendSetName(testBackendSetOciNetworkLoadBalancerBackendSet.name())
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
-     *             .ipVersion(backendSetIpVersion)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2346,7 +2186,8 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testNetworkLoadBalancersPolicies = NetworkLoadBalancerFunctions.getNetworkLoadBalancersPolicies();
+     *         final var testNetworkLoadBalancersPolicies = NetworkLoadBalancerFunctions.getNetworkLoadBalancersPolicies(GetNetworkLoadBalancersPoliciesArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -2388,7 +2229,8 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testNetworkLoadBalancersPolicies = NetworkLoadBalancerFunctions.getNetworkLoadBalancersPolicies();
+     *         final var testNetworkLoadBalancersPolicies = NetworkLoadBalancerFunctions.getNetworkLoadBalancersPolicies(GetNetworkLoadBalancersPoliciesArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -2430,7 +2272,8 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testNetworkLoadBalancersPolicies = NetworkLoadBalancerFunctions.getNetworkLoadBalancersPolicies();
+     *         final var testNetworkLoadBalancersPolicies = NetworkLoadBalancerFunctions.getNetworkLoadBalancersPolicies(GetNetworkLoadBalancersPoliciesArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -2472,7 +2315,8 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testNetworkLoadBalancersPolicies = NetworkLoadBalancerFunctions.getNetworkLoadBalancersPolicies();
+     *         final var testNetworkLoadBalancersPolicies = NetworkLoadBalancerFunctions.getNetworkLoadBalancersPolicies(GetNetworkLoadBalancersPoliciesArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -2514,7 +2358,8 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testNetworkLoadBalancersPolicies = NetworkLoadBalancerFunctions.getNetworkLoadBalancersPolicies();
+     *         final var testNetworkLoadBalancersPolicies = NetworkLoadBalancerFunctions.getNetworkLoadBalancersPolicies(GetNetworkLoadBalancersPoliciesArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -2556,7 +2401,8 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testNetworkLoadBalancersPolicies = NetworkLoadBalancerFunctions.getNetworkLoadBalancersPolicies();
+     *         final var testNetworkLoadBalancersPolicies = NetworkLoadBalancerFunctions.getNetworkLoadBalancersPolicies(GetNetworkLoadBalancersPoliciesArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -2598,7 +2444,8 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testNetworkLoadBalancersPolicies = NetworkLoadBalancerFunctions.getNetworkLoadBalancersPolicies();
+     *         final var testNetworkLoadBalancersPolicies = NetworkLoadBalancerFunctions.getNetworkLoadBalancersPolicies(GetNetworkLoadBalancersPoliciesArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -2641,7 +2488,8 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testNetworkLoadBalancersProtocols = NetworkLoadBalancerFunctions.getNetworkLoadBalancersProtocols();
+     *         final var testNetworkLoadBalancersProtocols = NetworkLoadBalancerFunctions.getNetworkLoadBalancersProtocols(GetNetworkLoadBalancersProtocolsArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -2684,7 +2532,8 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testNetworkLoadBalancersProtocols = NetworkLoadBalancerFunctions.getNetworkLoadBalancersProtocols();
+     *         final var testNetworkLoadBalancersProtocols = NetworkLoadBalancerFunctions.getNetworkLoadBalancersProtocols(GetNetworkLoadBalancersProtocolsArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -2727,7 +2576,8 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testNetworkLoadBalancersProtocols = NetworkLoadBalancerFunctions.getNetworkLoadBalancersProtocols();
+     *         final var testNetworkLoadBalancersProtocols = NetworkLoadBalancerFunctions.getNetworkLoadBalancersProtocols(GetNetworkLoadBalancersProtocolsArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -2770,7 +2620,8 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testNetworkLoadBalancersProtocols = NetworkLoadBalancerFunctions.getNetworkLoadBalancersProtocols();
+     *         final var testNetworkLoadBalancersProtocols = NetworkLoadBalancerFunctions.getNetworkLoadBalancersProtocols(GetNetworkLoadBalancersProtocolsArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -2813,7 +2664,8 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testNetworkLoadBalancersProtocols = NetworkLoadBalancerFunctions.getNetworkLoadBalancersProtocols();
+     *         final var testNetworkLoadBalancersProtocols = NetworkLoadBalancerFunctions.getNetworkLoadBalancersProtocols(GetNetworkLoadBalancersProtocolsArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -2856,7 +2708,8 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testNetworkLoadBalancersProtocols = NetworkLoadBalancerFunctions.getNetworkLoadBalancersProtocols();
+     *         final var testNetworkLoadBalancersProtocols = NetworkLoadBalancerFunctions.getNetworkLoadBalancersProtocols(GetNetworkLoadBalancersProtocolsArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -2899,7 +2752,8 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testNetworkLoadBalancersProtocols = NetworkLoadBalancerFunctions.getNetworkLoadBalancersProtocols();
+     *         final var testNetworkLoadBalancersProtocols = NetworkLoadBalancerFunctions.getNetworkLoadBalancersProtocols(GetNetworkLoadBalancersProtocolsArgs.builder()
+     *             .build());
      * 
      *     }
      * }

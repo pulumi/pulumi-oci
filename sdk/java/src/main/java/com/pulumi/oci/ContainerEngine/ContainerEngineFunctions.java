@@ -3470,39 +3470,6 @@ public final class ContainerEngineFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
-     * import com.pulumi.oci.ContainerEngine.inputs.GetVirtualNodePoolsArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testVirtualNodePools = ContainerEngineFunctions.getVirtualNodePools(GetVirtualNodePoolsArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .clusterId(testCluster.id())
-     *             .name(virtualNodePoolName)
-     *             .states(virtualNodePoolState)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3517,39 +3484,6 @@ public final class ContainerEngineFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
-     * import com.pulumi.oci.ContainerEngine.inputs.GetVirtualNodePoolsArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testVirtualNodePools = ContainerEngineFunctions.getVirtualNodePools(GetVirtualNodePoolsArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .clusterId(testCluster.id())
-     *             .name(virtualNodePoolName)
-     *             .states(virtualNodePoolState)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3564,39 +3498,6 @@ public final class ContainerEngineFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
-     * import com.pulumi.oci.ContainerEngine.inputs.GetVirtualNodePoolsArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testVirtualNodePools = ContainerEngineFunctions.getVirtualNodePools(GetVirtualNodePoolsArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .clusterId(testCluster.id())
-     *             .name(virtualNodePoolName)
-     *             .states(virtualNodePoolState)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3611,39 +3512,6 @@ public final class ContainerEngineFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
-     * import com.pulumi.oci.ContainerEngine.inputs.GetVirtualNodePoolsArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testVirtualNodePools = ContainerEngineFunctions.getVirtualNodePools(GetVirtualNodePoolsArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .clusterId(testCluster.id())
-     *             .name(virtualNodePoolName)
-     *             .states(virtualNodePoolState)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3658,39 +3526,6 @@ public final class ContainerEngineFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
-     * import com.pulumi.oci.ContainerEngine.inputs.GetVirtualNodePoolsArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testVirtualNodePools = ContainerEngineFunctions.getVirtualNodePools(GetVirtualNodePoolsArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .clusterId(testCluster.id())
-     *             .name(virtualNodePoolName)
-     *             .states(virtualNodePoolState)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */

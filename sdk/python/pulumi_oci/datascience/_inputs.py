@@ -42,6 +42,30 @@ __all__ = [
     'JobRunJobStorageMountConfigurationDetailsListArgsDict',
     'JobRunLogDetailArgs',
     'JobRunLogDetailArgsDict',
+    'MlApplicationImplementationApplicationComponentArgs',
+    'MlApplicationImplementationApplicationComponentArgsDict',
+    'MlApplicationImplementationConfigurationSchemaArgs',
+    'MlApplicationImplementationConfigurationSchemaArgsDict',
+    'MlApplicationImplementationLoggingArgs',
+    'MlApplicationImplementationLoggingArgsDict',
+    'MlApplicationImplementationLoggingAggregatedInstanceViewLogArgs',
+    'MlApplicationImplementationLoggingAggregatedInstanceViewLogArgsDict',
+    'MlApplicationImplementationLoggingImplementationLogArgs',
+    'MlApplicationImplementationLoggingImplementationLogArgsDict',
+    'MlApplicationImplementationLoggingTriggerLogArgs',
+    'MlApplicationImplementationLoggingTriggerLogArgsDict',
+    'MlApplicationImplementationMlApplicationPackageArgumentArgs',
+    'MlApplicationImplementationMlApplicationPackageArgumentArgsDict',
+    'MlApplicationImplementationMlApplicationPackageArgumentArgumentArgs',
+    'MlApplicationImplementationMlApplicationPackageArgumentArgumentArgsDict',
+    'MlApplicationInstanceAuthConfigurationArgs',
+    'MlApplicationInstanceAuthConfigurationArgsDict',
+    'MlApplicationInstanceConfigurationArgs',
+    'MlApplicationInstanceConfigurationArgsDict',
+    'MlApplicationInstancePredictionEndpointDetailArgs',
+    'MlApplicationInstancePredictionEndpointDetailArgsDict',
+    'MlApplicationInstancePredictionEndpointDetailPredictionUriArgs',
+    'MlApplicationInstancePredictionEndpointDetailPredictionUriArgsDict',
     'ModelBackupOperationDetailArgs',
     'ModelBackupOperationDetailArgsDict',
     'ModelBackupSettingArgs',
@@ -192,6 +216,12 @@ __all__ = [
     'GetJobShapesFilterArgsDict',
     'GetJobsFilterArgs',
     'GetJobsFilterArgsDict',
+    'GetMlApplicationImplementationsFilterArgs',
+    'GetMlApplicationImplementationsFilterArgsDict',
+    'GetMlApplicationInstancesFilterArgs',
+    'GetMlApplicationInstancesFilterArgsDict',
+    'GetMlApplicationsFilterArgs',
+    'GetMlApplicationsFilterArgsDict',
     'GetModelDeploymentShapesFilterArgs',
     'GetModelDeploymentShapesFilterArgsDict',
     'GetModelDeploymentsFilterArgs',
@@ -1561,6 +1591,1032 @@ class JobRunLogDetailArgs:
     @log_id.setter
     def log_id(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "log_id", value)
+
+
+if not MYPY:
+    class MlApplicationImplementationApplicationComponentArgsDict(TypedDict):
+        application_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        OCID of Data Flow Application
+        """
+        component_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Name of application component
+        """
+        id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The OCID of the MlApplicationImplementation. Unique identifier that is immutable after creation.
+        """
+        job_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        OCID of Data Science Job
+        """
+        model_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        OCID of Data Science Model
+        """
+        name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        ML Application Implementation name which is unique for given ML Application.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pipeline_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        OCID of Data Science Pipeline
+        """
+        resource_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Type of the resource
+        """
+        type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        type of the argument
+        """
+elif False:
+    MlApplicationImplementationApplicationComponentArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MlApplicationImplementationApplicationComponentArgs:
+    def __init__(__self__, *,
+                 application_id: Optional[pulumi.Input[builtins.str]] = None,
+                 component_name: Optional[pulumi.Input[builtins.str]] = None,
+                 id: Optional[pulumi.Input[builtins.str]] = None,
+                 job_id: Optional[pulumi.Input[builtins.str]] = None,
+                 model_id: Optional[pulumi.Input[builtins.str]] = None,
+                 name: Optional[pulumi.Input[builtins.str]] = None,
+                 pipeline_id: Optional[pulumi.Input[builtins.str]] = None,
+                 resource_type: Optional[pulumi.Input[builtins.str]] = None,
+                 type: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] application_id: OCID of Data Flow Application
+        :param pulumi.Input[builtins.str] component_name: Name of application component
+        :param pulumi.Input[builtins.str] id: The OCID of the MlApplicationImplementation. Unique identifier that is immutable after creation.
+        :param pulumi.Input[builtins.str] job_id: OCID of Data Science Job
+        :param pulumi.Input[builtins.str] model_id: OCID of Data Science Model
+        :param pulumi.Input[builtins.str] name: ML Application Implementation name which is unique for given ML Application.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[builtins.str] pipeline_id: OCID of Data Science Pipeline
+        :param pulumi.Input[builtins.str] resource_type: Type of the resource
+        :param pulumi.Input[builtins.str] type: type of the argument
+        """
+        if application_id is not None:
+            pulumi.set(__self__, "application_id", application_id)
+        if component_name is not None:
+            pulumi.set(__self__, "component_name", component_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if job_id is not None:
+            pulumi.set(__self__, "job_id", job_id)
+        if model_id is not None:
+            pulumi.set(__self__, "model_id", model_id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if pipeline_id is not None:
+            pulumi.set(__self__, "pipeline_id", pipeline_id)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="applicationId")
+    def application_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        OCID of Data Flow Application
+        """
+        return pulumi.get(self, "application_id")
+
+    @application_id.setter
+    def application_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "application_id", value)
+
+    @property
+    @pulumi.getter(name="componentName")
+    def component_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Name of application component
+        """
+        return pulumi.get(self, "component_name")
+
+    @component_name.setter
+    def component_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "component_name", value)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The OCID of the MlApplicationImplementation. Unique identifier that is immutable after creation.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @property
+    @pulumi.getter(name="jobId")
+    def job_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        OCID of Data Science Job
+        """
+        return pulumi.get(self, "job_id")
+
+    @job_id.setter
+    def job_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "job_id", value)
+
+    @property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        OCID of Data Science Model
+        """
+        return pulumi.get(self, "model_id")
+
+    @model_id.setter
+    def model_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "model_id", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        ML Application Implementation name which is unique for given ML Application.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="pipelineId")
+    def pipeline_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        OCID of Data Science Pipeline
+        """
+        return pulumi.get(self, "pipeline_id")
+
+    @pipeline_id.setter
+    def pipeline_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "pipeline_id", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Type of the resource
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "resource_type", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        type of the argument
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+if not MYPY:
+    class MlApplicationImplementationConfigurationSchemaArgsDict(TypedDict):
+        default_value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The default value for the optional configuration property (it must not be specified for mandatory configuration properties)
+        """
+        description: NotRequired[pulumi.Input[builtins.str]]
+        """
+        short description of the argument
+        """
+        is_mandatory: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        argument is mandatory or not
+        """
+        key_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Name of key (parameter name)
+        """
+        sample_value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Sample property value (it must match validationRegexp if it is specified)
+        """
+        validation_regexp: NotRequired[pulumi.Input[builtins.str]]
+        """
+        A regular expression will be used for the validation of property value.
+        """
+        value_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Type of value
+        """
+elif False:
+    MlApplicationImplementationConfigurationSchemaArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MlApplicationImplementationConfigurationSchemaArgs:
+    def __init__(__self__, *,
+                 default_value: Optional[pulumi.Input[builtins.str]] = None,
+                 description: Optional[pulumi.Input[builtins.str]] = None,
+                 is_mandatory: Optional[pulumi.Input[builtins.bool]] = None,
+                 key_name: Optional[pulumi.Input[builtins.str]] = None,
+                 sample_value: Optional[pulumi.Input[builtins.str]] = None,
+                 validation_regexp: Optional[pulumi.Input[builtins.str]] = None,
+                 value_type: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] default_value: The default value for the optional configuration property (it must not be specified for mandatory configuration properties)
+        :param pulumi.Input[builtins.str] description: short description of the argument
+        :param pulumi.Input[builtins.bool] is_mandatory: argument is mandatory or not
+        :param pulumi.Input[builtins.str] key_name: Name of key (parameter name)
+        :param pulumi.Input[builtins.str] sample_value: Sample property value (it must match validationRegexp if it is specified)
+        :param pulumi.Input[builtins.str] validation_regexp: A regular expression will be used for the validation of property value.
+        :param pulumi.Input[builtins.str] value_type: Type of value
+        """
+        if default_value is not None:
+            pulumi.set(__self__, "default_value", default_value)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if is_mandatory is not None:
+            pulumi.set(__self__, "is_mandatory", is_mandatory)
+        if key_name is not None:
+            pulumi.set(__self__, "key_name", key_name)
+        if sample_value is not None:
+            pulumi.set(__self__, "sample_value", sample_value)
+        if validation_regexp is not None:
+            pulumi.set(__self__, "validation_regexp", validation_regexp)
+        if value_type is not None:
+            pulumi.set(__self__, "value_type", value_type)
+
+    @property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The default value for the optional configuration property (it must not be specified for mandatory configuration properties)
+        """
+        return pulumi.get(self, "default_value")
+
+    @default_value.setter
+    def default_value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "default_value", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        short description of the argument
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="isMandatory")
+    def is_mandatory(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        argument is mandatory or not
+        """
+        return pulumi.get(self, "is_mandatory")
+
+    @is_mandatory.setter
+    def is_mandatory(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_mandatory", value)
+
+    @property
+    @pulumi.getter(name="keyName")
+    def key_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Name of key (parameter name)
+        """
+        return pulumi.get(self, "key_name")
+
+    @key_name.setter
+    def key_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key_name", value)
+
+    @property
+    @pulumi.getter(name="sampleValue")
+    def sample_value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Sample property value (it must match validationRegexp if it is specified)
+        """
+        return pulumi.get(self, "sample_value")
+
+    @sample_value.setter
+    def sample_value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "sample_value", value)
+
+    @property
+    @pulumi.getter(name="validationRegexp")
+    def validation_regexp(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        A regular expression will be used for the validation of property value.
+        """
+        return pulumi.get(self, "validation_regexp")
+
+    @validation_regexp.setter
+    def validation_regexp(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "validation_regexp", value)
+
+    @property
+    @pulumi.getter(name="valueType")
+    def value_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Type of value
+        """
+        return pulumi.get(self, "value_type")
+
+    @value_type.setter
+    def value_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value_type", value)
+
+
+if not MYPY:
+    class MlApplicationImplementationLoggingArgsDict(TypedDict):
+        aggregated_instance_view_log: NotRequired[pulumi.Input['MlApplicationImplementationLoggingAggregatedInstanceViewLogArgsDict']]
+        """
+        (Updatable) Log configuration details for particular areas of ML Application Implementation.
+        """
+        implementation_log: NotRequired[pulumi.Input['MlApplicationImplementationLoggingImplementationLogArgsDict']]
+        """
+        (Updatable) Log configuration details for particular areas of ML Application Implementation.
+        """
+        trigger_log: NotRequired[pulumi.Input['MlApplicationImplementationLoggingTriggerLogArgsDict']]
+        """
+        (Updatable) Log configuration details for particular areas of ML Application Implementation.
+        """
+elif False:
+    MlApplicationImplementationLoggingArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MlApplicationImplementationLoggingArgs:
+    def __init__(__self__, *,
+                 aggregated_instance_view_log: Optional[pulumi.Input['MlApplicationImplementationLoggingAggregatedInstanceViewLogArgs']] = None,
+                 implementation_log: Optional[pulumi.Input['MlApplicationImplementationLoggingImplementationLogArgs']] = None,
+                 trigger_log: Optional[pulumi.Input['MlApplicationImplementationLoggingTriggerLogArgs']] = None):
+        """
+        :param pulumi.Input['MlApplicationImplementationLoggingAggregatedInstanceViewLogArgs'] aggregated_instance_view_log: (Updatable) Log configuration details for particular areas of ML Application Implementation.
+        :param pulumi.Input['MlApplicationImplementationLoggingImplementationLogArgs'] implementation_log: (Updatable) Log configuration details for particular areas of ML Application Implementation.
+        :param pulumi.Input['MlApplicationImplementationLoggingTriggerLogArgs'] trigger_log: (Updatable) Log configuration details for particular areas of ML Application Implementation.
+        """
+        if aggregated_instance_view_log is not None:
+            pulumi.set(__self__, "aggregated_instance_view_log", aggregated_instance_view_log)
+        if implementation_log is not None:
+            pulumi.set(__self__, "implementation_log", implementation_log)
+        if trigger_log is not None:
+            pulumi.set(__self__, "trigger_log", trigger_log)
+
+    @property
+    @pulumi.getter(name="aggregatedInstanceViewLog")
+    def aggregated_instance_view_log(self) -> Optional[pulumi.Input['MlApplicationImplementationLoggingAggregatedInstanceViewLogArgs']]:
+        """
+        (Updatable) Log configuration details for particular areas of ML Application Implementation.
+        """
+        return pulumi.get(self, "aggregated_instance_view_log")
+
+    @aggregated_instance_view_log.setter
+    def aggregated_instance_view_log(self, value: Optional[pulumi.Input['MlApplicationImplementationLoggingAggregatedInstanceViewLogArgs']]):
+        pulumi.set(self, "aggregated_instance_view_log", value)
+
+    @property
+    @pulumi.getter(name="implementationLog")
+    def implementation_log(self) -> Optional[pulumi.Input['MlApplicationImplementationLoggingImplementationLogArgs']]:
+        """
+        (Updatable) Log configuration details for particular areas of ML Application Implementation.
+        """
+        return pulumi.get(self, "implementation_log")
+
+    @implementation_log.setter
+    def implementation_log(self, value: Optional[pulumi.Input['MlApplicationImplementationLoggingImplementationLogArgs']]):
+        pulumi.set(self, "implementation_log", value)
+
+    @property
+    @pulumi.getter(name="triggerLog")
+    def trigger_log(self) -> Optional[pulumi.Input['MlApplicationImplementationLoggingTriggerLogArgs']]:
+        """
+        (Updatable) Log configuration details for particular areas of ML Application Implementation.
+        """
+        return pulumi.get(self, "trigger_log")
+
+    @trigger_log.setter
+    def trigger_log(self, value: Optional[pulumi.Input['MlApplicationImplementationLoggingTriggerLogArgs']]):
+        pulumi.set(self, "trigger_log", value)
+
+
+if not MYPY:
+    class MlApplicationImplementationLoggingAggregatedInstanceViewLogArgsDict(TypedDict):
+        enable_logging: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        (Updatable) If logging is enabled.
+        """
+        log_group_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        log_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+elif False:
+    MlApplicationImplementationLoggingAggregatedInstanceViewLogArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MlApplicationImplementationLoggingAggregatedInstanceViewLogArgs:
+    def __init__(__self__, *,
+                 enable_logging: Optional[pulumi.Input[builtins.bool]] = None,
+                 log_group_id: Optional[pulumi.Input[builtins.str]] = None,
+                 log_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.bool] enable_logging: (Updatable) If logging is enabled.
+        :param pulumi.Input[builtins.str] log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        :param pulumi.Input[builtins.str] log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        if enable_logging is not None:
+            pulumi.set(__self__, "enable_logging", enable_logging)
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
+
+    @property
+    @pulumi.getter(name="enableLogging")
+    def enable_logging(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        (Updatable) If logging is enabled.
+        """
+        return pulumi.get(self, "enable_logging")
+
+    @enable_logging.setter
+    def enable_logging(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "enable_logging", value)
+
+    @property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @log_group_id.setter
+    def log_group_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "log_group_id", value)
+
+    @property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        return pulumi.get(self, "log_id")
+
+    @log_id.setter
+    def log_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "log_id", value)
+
+
+if not MYPY:
+    class MlApplicationImplementationLoggingImplementationLogArgsDict(TypedDict):
+        enable_logging: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        (Updatable) If logging is enabled.
+        """
+        log_group_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        log_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+elif False:
+    MlApplicationImplementationLoggingImplementationLogArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MlApplicationImplementationLoggingImplementationLogArgs:
+    def __init__(__self__, *,
+                 enable_logging: Optional[pulumi.Input[builtins.bool]] = None,
+                 log_group_id: Optional[pulumi.Input[builtins.str]] = None,
+                 log_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.bool] enable_logging: (Updatable) If logging is enabled.
+        :param pulumi.Input[builtins.str] log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        :param pulumi.Input[builtins.str] log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        if enable_logging is not None:
+            pulumi.set(__self__, "enable_logging", enable_logging)
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
+
+    @property
+    @pulumi.getter(name="enableLogging")
+    def enable_logging(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        (Updatable) If logging is enabled.
+        """
+        return pulumi.get(self, "enable_logging")
+
+    @enable_logging.setter
+    def enable_logging(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "enable_logging", value)
+
+    @property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @log_group_id.setter
+    def log_group_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "log_group_id", value)
+
+    @property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        return pulumi.get(self, "log_id")
+
+    @log_id.setter
+    def log_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "log_id", value)
+
+
+if not MYPY:
+    class MlApplicationImplementationLoggingTriggerLogArgsDict(TypedDict):
+        enable_logging: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        (Updatable) If logging is enabled.
+        """
+        log_group_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        log_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+elif False:
+    MlApplicationImplementationLoggingTriggerLogArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MlApplicationImplementationLoggingTriggerLogArgs:
+    def __init__(__self__, *,
+                 enable_logging: Optional[pulumi.Input[builtins.bool]] = None,
+                 log_group_id: Optional[pulumi.Input[builtins.str]] = None,
+                 log_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.bool] enable_logging: (Updatable) If logging is enabled.
+        :param pulumi.Input[builtins.str] log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        :param pulumi.Input[builtins.str] log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        if enable_logging is not None:
+            pulumi.set(__self__, "enable_logging", enable_logging)
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
+
+    @property
+    @pulumi.getter(name="enableLogging")
+    def enable_logging(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        (Updatable) If logging is enabled.
+        """
+        return pulumi.get(self, "enable_logging")
+
+    @enable_logging.setter
+    def enable_logging(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "enable_logging", value)
+
+    @property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @log_group_id.setter
+    def log_group_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "log_group_id", value)
+
+    @property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        return pulumi.get(self, "log_id")
+
+    @log_id.setter
+    def log_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "log_id", value)
+
+
+if not MYPY:
+    class MlApplicationImplementationMlApplicationPackageArgumentArgsDict(TypedDict):
+        arguments: NotRequired[pulumi.Input[Sequence[pulumi.Input['MlApplicationImplementationMlApplicationPackageArgumentArgumentArgsDict']]]]
+        """
+        Array of the ML Application package arguments
+        """
+elif False:
+    MlApplicationImplementationMlApplicationPackageArgumentArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MlApplicationImplementationMlApplicationPackageArgumentArgs:
+    def __init__(__self__, *,
+                 arguments: Optional[pulumi.Input[Sequence[pulumi.Input['MlApplicationImplementationMlApplicationPackageArgumentArgumentArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['MlApplicationImplementationMlApplicationPackageArgumentArgumentArgs']]] arguments: Array of the ML Application package arguments
+        """
+        if arguments is not None:
+            pulumi.set(__self__, "arguments", arguments)
+
+    @property
+    @pulumi.getter
+    def arguments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MlApplicationImplementationMlApplicationPackageArgumentArgumentArgs']]]]:
+        """
+        Array of the ML Application package arguments
+        """
+        return pulumi.get(self, "arguments")
+
+    @arguments.setter
+    def arguments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MlApplicationImplementationMlApplicationPackageArgumentArgumentArgs']]]]):
+        pulumi.set(self, "arguments", value)
+
+
+if not MYPY:
+    class MlApplicationImplementationMlApplicationPackageArgumentArgumentArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[builtins.str]]
+        """
+        short description of the argument
+        """
+        is_mandatory: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        argument is mandatory or not
+        """
+        name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        ML Application Implementation name which is unique for given ML Application.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        type of the argument
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Argument value
+        """
+elif False:
+    MlApplicationImplementationMlApplicationPackageArgumentArgumentArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MlApplicationImplementationMlApplicationPackageArgumentArgumentArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[builtins.str]] = None,
+                 is_mandatory: Optional[pulumi.Input[builtins.bool]] = None,
+                 name: Optional[pulumi.Input[builtins.str]] = None,
+                 type: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] description: short description of the argument
+        :param pulumi.Input[builtins.bool] is_mandatory: argument is mandatory or not
+        :param pulumi.Input[builtins.str] name: ML Application Implementation name which is unique for given ML Application.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[builtins.str] type: type of the argument
+        :param pulumi.Input[builtins.str] value: Argument value
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if is_mandatory is not None:
+            pulumi.set(__self__, "is_mandatory", is_mandatory)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        short description of the argument
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="isMandatory")
+    def is_mandatory(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        argument is mandatory or not
+        """
+        return pulumi.get(self, "is_mandatory")
+
+    @is_mandatory.setter
+    def is_mandatory(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_mandatory", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        ML Application Implementation name which is unique for given ML Application.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        type of the argument
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Argument value
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class MlApplicationInstanceAuthConfigurationArgsDict(TypedDict):
+        type: pulumi.Input[builtins.str]
+        """
+        Type of AuthN/Z
+        """
+        application_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Name of the IDCS application
+        """
+        domain_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Identity Domain OCID
+        """
+elif False:
+    MlApplicationInstanceAuthConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MlApplicationInstanceAuthConfigurationArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[builtins.str],
+                 application_name: Optional[pulumi.Input[builtins.str]] = None,
+                 domain_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] type: Type of AuthN/Z
+        :param pulumi.Input[builtins.str] application_name: Name of the IDCS application
+        :param pulumi.Input[builtins.str] domain_id: Identity Domain OCID
+        """
+        pulumi.set(__self__, "type", type)
+        if application_name is not None:
+            pulumi.set(__self__, "application_name", application_name)
+        if domain_id is not None:
+            pulumi.set(__self__, "domain_id", domain_id)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[builtins.str]:
+        """
+        Type of AuthN/Z
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[builtins.str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="applicationName")
+    def application_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Name of the IDCS application
+        """
+        return pulumi.get(self, "application_name")
+
+    @application_name.setter
+    def application_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "application_name", value)
+
+    @property
+    @pulumi.getter(name="domainId")
+    def domain_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Identity Domain OCID
+        """
+        return pulumi.get(self, "domain_id")
+
+    @domain_id.setter
+    def domain_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "domain_id", value)
+
+
+if not MYPY:
+    class MlApplicationInstanceConfigurationArgsDict(TypedDict):
+        key: pulumi.Input[builtins.str]
+        """
+        (Updatable) Key of configuration property
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) Value of configuration property
+        """
+elif False:
+    MlApplicationInstanceConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MlApplicationInstanceConfigurationArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[builtins.str],
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: (Updatable) Key of configuration property
+        :param pulumi.Input[builtins.str] value: (Updatable) Value of configuration property
+        """
+        pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[builtins.str]:
+        """
+        (Updatable) Key of configuration property
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[builtins.str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) Value of configuration property
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class MlApplicationInstancePredictionEndpointDetailArgsDict(TypedDict):
+        base_prediction_uri: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Base URI of prediction router.
+        """
+        prediction_uris: NotRequired[pulumi.Input[Sequence[pulumi.Input['MlApplicationInstancePredictionEndpointDetailPredictionUriArgsDict']]]]
+        """
+        Array of all prediction URIs per use-case.
+        """
+elif False:
+    MlApplicationInstancePredictionEndpointDetailArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MlApplicationInstancePredictionEndpointDetailArgs:
+    def __init__(__self__, *,
+                 base_prediction_uri: Optional[pulumi.Input[builtins.str]] = None,
+                 prediction_uris: Optional[pulumi.Input[Sequence[pulumi.Input['MlApplicationInstancePredictionEndpointDetailPredictionUriArgs']]]] = None):
+        """
+        :param pulumi.Input[builtins.str] base_prediction_uri: Base URI of prediction router.
+        :param pulumi.Input[Sequence[pulumi.Input['MlApplicationInstancePredictionEndpointDetailPredictionUriArgs']]] prediction_uris: Array of all prediction URIs per use-case.
+        """
+        if base_prediction_uri is not None:
+            pulumi.set(__self__, "base_prediction_uri", base_prediction_uri)
+        if prediction_uris is not None:
+            pulumi.set(__self__, "prediction_uris", prediction_uris)
+
+    @property
+    @pulumi.getter(name="basePredictionUri")
+    def base_prediction_uri(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Base URI of prediction router.
+        """
+        return pulumi.get(self, "base_prediction_uri")
+
+    @base_prediction_uri.setter
+    def base_prediction_uri(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "base_prediction_uri", value)
+
+    @property
+    @pulumi.getter(name="predictionUris")
+    def prediction_uris(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MlApplicationInstancePredictionEndpointDetailPredictionUriArgs']]]]:
+        """
+        Array of all prediction URIs per use-case.
+        """
+        return pulumi.get(self, "prediction_uris")
+
+    @prediction_uris.setter
+    def prediction_uris(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MlApplicationInstancePredictionEndpointDetailPredictionUriArgs']]]]):
+        pulumi.set(self, "prediction_uris", value)
+
+
+if not MYPY:
+    class MlApplicationInstancePredictionEndpointDetailPredictionUriArgsDict(TypedDict):
+        uri: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Prediction URI.
+        """
+        use_case: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Prediction use-case.
+        """
+elif False:
+    MlApplicationInstancePredictionEndpointDetailPredictionUriArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MlApplicationInstancePredictionEndpointDetailPredictionUriArgs:
+    def __init__(__self__, *,
+                 uri: Optional[pulumi.Input[builtins.str]] = None,
+                 use_case: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] uri: Prediction URI.
+        :param pulumi.Input[builtins.str] use_case: Prediction use-case.
+        """
+        if uri is not None:
+            pulumi.set(__self__, "uri", uri)
+        if use_case is not None:
+            pulumi.set(__self__, "use_case", use_case)
+
+    @property
+    @pulumi.getter
+    def uri(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Prediction URI.
+        """
+        return pulumi.get(self, "uri")
+
+    @uri.setter
+    def uri(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "uri", value)
+
+    @property
+    @pulumi.getter(name="useCase")
+    def use_case(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Prediction use-case.
+        """
+        return pulumi.get(self, "use_case")
+
+    @use_case.setter
+    def use_case(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "use_case", value)
 
 
 if not MYPY:
@@ -8790,6 +9846,165 @@ class GetJobsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: builtins.str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetMlApplicationImplementationsFilterArgsDict(TypedDict):
+        name: builtins.str
+        """
+        A filter to return only resources that match the entire name given.
+        """
+        values: Sequence[builtins.str]
+        regex: NotRequired[builtins.bool]
+elif False:
+    GetMlApplicationImplementationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetMlApplicationImplementationsFilterArgs:
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        """
+        :param builtins.str name: A filter to return only resources that match the entire name given.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        A filter to return only resources that match the entire name given.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: builtins.str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetMlApplicationInstancesFilterArgsDict(TypedDict):
+        name: builtins.str
+        values: Sequence[builtins.str]
+        regex: NotRequired[builtins.bool]
+elif False:
+    GetMlApplicationInstancesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetMlApplicationInstancesFilterArgs:
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: builtins.str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetMlApplicationsFilterArgsDict(TypedDict):
+        name: builtins.str
+        """
+        A filter to return only resources that match the entire name given.
+        """
+        values: Sequence[builtins.str]
+        regex: NotRequired[builtins.bool]
+elif False:
+    GetMlApplicationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetMlApplicationsFilterArgs:
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        """
+        :param builtins.str name: A filter to return only resources that match the entire name given.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        A filter to return only resources that match the entire name given.
+        """
         return pulumi.get(self, "name")
 
     @name.setter

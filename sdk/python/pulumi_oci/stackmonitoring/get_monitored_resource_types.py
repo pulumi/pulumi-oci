@@ -29,7 +29,7 @@ class GetMonitoredResourceTypesResult:
     """
     A collection of values returned by getMonitoredResourceTypes.
     """
-    def __init__(__self__, compartment_id=None, exclude_fields=None, fields=None, filters=None, id=None, is_exclude_system_types=None, metric_namespace=None, monitored_resource_types_collections=None, name=None, status=None):
+    def __init__(__self__, compartment_id=None, exclude_fields=None, fields=None, filters=None, id=None, is_exclude_system_types=None, metric_namespace=None, monitored_resource_types_collections=None, name=None, resource_category=None, source_type=None, status=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -57,6 +57,12 @@ class GetMonitoredResourceTypesResult:
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
+        if resource_category and not isinstance(resource_category, str):
+            raise TypeError("Expected argument 'resource_category' to be a str")
+        pulumi.set(__self__, "resource_category", resource_category)
+        if source_type and not isinstance(source_type, str):
+            raise TypeError("Expected argument 'source_type' to be a str")
+        pulumi.set(__self__, "source_type", source_type)
         if status and not isinstance(status, str):
             raise TypeError("Expected argument 'status' to be a str")
         pulumi.set(__self__, "status", status)
@@ -65,7 +71,7 @@ class GetMonitoredResourceTypesResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
 
@@ -122,6 +128,22 @@ class GetMonitoredResourceTypesResult:
         return pulumi.get(self, "name")
 
     @property
+    @pulumi.getter(name="resourceCategory")
+    def resource_category(self) -> Optional[builtins.str]:
+        """
+        Resource Category to indicate the kind of resource type.
+        """
+        return pulumi.get(self, "resource_category")
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> Optional[builtins.str]:
+        """
+        Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+        """
+        return pulumi.get(self, "source_type")
+
+    @property
     @pulumi.getter
     def status(self) -> Optional[builtins.str]:
         return pulumi.get(self, "status")
@@ -142,6 +164,8 @@ class AwaitableGetMonitoredResourceTypesResult(GetMonitoredResourceTypesResult):
             metric_namespace=self.metric_namespace,
             monitored_resource_types_collections=self.monitored_resource_types_collections,
             name=self.name,
+            resource_category=self.resource_category,
+            source_type=self.source_type,
             status=self.status)
 
 
@@ -152,6 +176,8 @@ def get_monitored_resource_types(compartment_id: Optional[builtins.str] = None,
                                  is_exclude_system_types: Optional[builtins.bool] = None,
                                  metric_namespace: Optional[builtins.str] = None,
                                  name: Optional[builtins.str] = None,
+                                 resource_category: Optional[builtins.str] = None,
+                                 source_type: Optional[builtins.str] = None,
                                  status: Optional[builtins.str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMonitoredResourceTypesResult:
     """
@@ -176,6 +202,8 @@ def get_monitored_resource_types(compartment_id: Optional[builtins.str] = None,
         is_exclude_system_types=monitored_resource_type_is_exclude_system_types,
         metric_namespace=monitored_resource_type_metric_namespace,
         name=monitored_resource_type_name,
+        resource_category=monitored_resource_type_resource_category,
+        source_type=monitored_resource_type_source_type,
         status=monitored_resource_type_status)
     ```
 
@@ -188,6 +216,8 @@ def get_monitored_resource_types(compartment_id: Optional[builtins.str] = None,
     :param builtins.bool is_exclude_system_types: A filter to exclude system resource types. If set to true, system resource types will be excluded.
     :param builtins.str metric_namespace: A filter to return monitored resource types that has the matching namespace.
     :param builtins.str name: A filter to return monitored resource types that match exactly with the resource type name given.
+    :param builtins.str resource_category: A filter to return only resources with matching resource category.
+    :param builtins.str source_type: A filter to return only resources with matching source type.
     :param builtins.str status: A filter to return only resources that matches with lifecycleState given.
     """
     __args__ = dict()
@@ -198,6 +228,8 @@ def get_monitored_resource_types(compartment_id: Optional[builtins.str] = None,
     __args__['isExcludeSystemTypes'] = is_exclude_system_types
     __args__['metricNamespace'] = metric_namespace
     __args__['name'] = name
+    __args__['resourceCategory'] = resource_category
+    __args__['sourceType'] = source_type
     __args__['status'] = status
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:StackMonitoring/getMonitoredResourceTypes:getMonitoredResourceTypes', __args__, opts=opts, typ=GetMonitoredResourceTypesResult).value
@@ -212,6 +244,8 @@ def get_monitored_resource_types(compartment_id: Optional[builtins.str] = None,
         metric_namespace=pulumi.get(__ret__, 'metric_namespace'),
         monitored_resource_types_collections=pulumi.get(__ret__, 'monitored_resource_types_collections'),
         name=pulumi.get(__ret__, 'name'),
+        resource_category=pulumi.get(__ret__, 'resource_category'),
+        source_type=pulumi.get(__ret__, 'source_type'),
         status=pulumi.get(__ret__, 'status'))
 def get_monitored_resource_types_output(compartment_id: Optional[pulumi.Input[builtins.str]] = None,
                                         exclude_fields: Optional[pulumi.Input[Optional[Sequence[builtins.str]]]] = None,
@@ -220,6 +254,8 @@ def get_monitored_resource_types_output(compartment_id: Optional[pulumi.Input[bu
                                         is_exclude_system_types: Optional[pulumi.Input[Optional[builtins.bool]]] = None,
                                         metric_namespace: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                                         name: Optional[pulumi.Input[Optional[builtins.str]]] = None,
+                                        resource_category: Optional[pulumi.Input[Optional[builtins.str]]] = None,
+                                        source_type: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                                         status: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMonitoredResourceTypesResult]:
     """
@@ -244,6 +280,8 @@ def get_monitored_resource_types_output(compartment_id: Optional[pulumi.Input[bu
         is_exclude_system_types=monitored_resource_type_is_exclude_system_types,
         metric_namespace=monitored_resource_type_metric_namespace,
         name=monitored_resource_type_name,
+        resource_category=monitored_resource_type_resource_category,
+        source_type=monitored_resource_type_source_type,
         status=monitored_resource_type_status)
     ```
 
@@ -256,6 +294,8 @@ def get_monitored_resource_types_output(compartment_id: Optional[pulumi.Input[bu
     :param builtins.bool is_exclude_system_types: A filter to exclude system resource types. If set to true, system resource types will be excluded.
     :param builtins.str metric_namespace: A filter to return monitored resource types that has the matching namespace.
     :param builtins.str name: A filter to return monitored resource types that match exactly with the resource type name given.
+    :param builtins.str resource_category: A filter to return only resources with matching resource category.
+    :param builtins.str source_type: A filter to return only resources with matching source type.
     :param builtins.str status: A filter to return only resources that matches with lifecycleState given.
     """
     __args__ = dict()
@@ -266,6 +306,8 @@ def get_monitored_resource_types_output(compartment_id: Optional[pulumi.Input[bu
     __args__['isExcludeSystemTypes'] = is_exclude_system_types
     __args__['metricNamespace'] = metric_namespace
     __args__['name'] = name
+    __args__['resourceCategory'] = resource_category
+    __args__['sourceType'] = source_type
     __args__['status'] = status
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:StackMonitoring/getMonitoredResourceTypes:getMonitoredResourceTypes', __args__, opts=opts, typ=GetMonitoredResourceTypesResult)
@@ -279,4 +321,6 @@ def get_monitored_resource_types_output(compartment_id: Optional[pulumi.Input[bu
         metric_namespace=pulumi.get(__response__, 'metric_namespace'),
         monitored_resource_types_collections=pulumi.get(__response__, 'monitored_resource_types_collections'),
         name=pulumi.get(__response__, 'name'),
+        resource_category=pulumi.get(__response__, 'resource_category'),
+        source_type=pulumi.get(__response__, 'source_type'),
         status=pulumi.get(__response__, 'status')))

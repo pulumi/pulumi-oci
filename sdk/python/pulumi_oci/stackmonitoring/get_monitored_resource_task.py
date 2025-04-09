@@ -28,7 +28,7 @@ class GetMonitoredResourceTaskResult:
     """
     A collection of values returned by getMonitoredResourceTask.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, freeform_tags=None, id=None, monitored_resource_task_id=None, name=None, state=None, system_tags=None, task_details=None, tenant_id=None, time_created=None, time_updated=None, work_request_ids=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, freeform_tags=None, id=None, monitored_resource_task_id=None, name=None, state=None, system_tags=None, task_details=None, tenant_id=None, time_created=None, time_updated=None, type=None, work_request_ids=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -65,6 +65,9 @@ class GetMonitoredResourceTaskResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+        if type and not isinstance(type, str):
+            raise TypeError("Expected argument 'type' to be a str")
+        pulumi.set(__self__, "type", type)
         if work_request_ids and not isinstance(work_request_ids, list):
             raise TypeError("Expected argument 'work_request_ids' to be a list")
         pulumi.set(__self__, "work_request_ids", work_request_ids)
@@ -110,7 +113,7 @@ class GetMonitoredResourceTaskResult:
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        Name of the task.
+        Property name.
         """
         return pulumi.get(self, "name")
 
@@ -163,6 +166,14 @@ class GetMonitoredResourceTaskResult:
         return pulumi.get(self, "time_updated")
 
     @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        Type of the task.
+        """
+        return pulumi.get(self, "type")
+
+    @property
     @pulumi.getter(name="workRequestIds")
     def work_request_ids(self) -> Sequence[builtins.str]:
         """
@@ -189,6 +200,7 @@ class AwaitableGetMonitoredResourceTaskResult(GetMonitoredResourceTaskResult):
             tenant_id=self.tenant_id,
             time_created=self.time_created,
             time_updated=self.time_updated,
+            type=self.type,
             work_request_ids=self.work_request_ids)
 
 
@@ -229,6 +241,7 @@ def get_monitored_resource_task(monitored_resource_task_id: Optional[builtins.st
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
+        type=pulumi.get(__ret__, 'type'),
         work_request_ids=pulumi.get(__ret__, 'work_request_ids'))
 def get_monitored_resource_task_output(monitored_resource_task_id: Optional[pulumi.Input[builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMonitoredResourceTaskResult]:
@@ -266,4 +279,5 @@ def get_monitored_resource_task_output(monitored_resource_task_id: Optional[pulu
         tenant_id=pulumi.get(__response__, 'tenant_id'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated'),
+        type=pulumi.get(__response__, 'type'),
         work_request_ids=pulumi.get(__response__, 'work_request_ids')))

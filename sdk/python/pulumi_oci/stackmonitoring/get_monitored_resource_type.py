@@ -28,10 +28,13 @@ class GetMonitoredResourceTypeResult:
     """
     A collection of values returned by getMonitoredResourceType.
     """
-    def __init__(__self__, additional_namespace_map=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, metadatas=None, metric_namespace=None, monitored_resource_type_id=None, name=None, resource_category=None, source_type=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, additional_namespace_map=None, availability_metrics_configs=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, handler_configs=None, id=None, is_system_defined=None, metadatas=None, metric_namespace=None, monitored_resource_type_id=None, name=None, resource_category=None, source_type=None, state=None, system_tags=None, tenancy_id=None, time_created=None, time_updated=None):
         if additional_namespace_map and not isinstance(additional_namespace_map, dict):
             raise TypeError("Expected argument 'additional_namespace_map' to be a dict")
         pulumi.set(__self__, "additional_namespace_map", additional_namespace_map)
+        if availability_metrics_configs and not isinstance(availability_metrics_configs, list):
+            raise TypeError("Expected argument 'availability_metrics_configs' to be a list")
+        pulumi.set(__self__, "availability_metrics_configs", availability_metrics_configs)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -47,9 +50,15 @@ class GetMonitoredResourceTypeResult:
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if handler_configs and not isinstance(handler_configs, list):
+            raise TypeError("Expected argument 'handler_configs' to be a list")
+        pulumi.set(__self__, "handler_configs", handler_configs)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_system_defined and not isinstance(is_system_defined, bool):
+            raise TypeError("Expected argument 'is_system_defined' to be a bool")
+        pulumi.set(__self__, "is_system_defined", is_system_defined)
         if metadatas and not isinstance(metadatas, list):
             raise TypeError("Expected argument 'metadatas' to be a list")
         pulumi.set(__self__, "metadatas", metadatas)
@@ -74,6 +83,9 @@ class GetMonitoredResourceTypeResult:
         if system_tags and not isinstance(system_tags, dict):
             raise TypeError("Expected argument 'system_tags' to be a dict")
         pulumi.set(__self__, "system_tags", system_tags)
+        if tenancy_id and not isinstance(tenancy_id, str):
+            raise TypeError("Expected argument 'tenancy_id' to be a str")
+        pulumi.set(__self__, "tenancy_id", tenancy_id)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -90,10 +102,18 @@ class GetMonitoredResourceTypeResult:
         return pulumi.get(self, "additional_namespace_map")
 
     @property
+    @pulumi.getter(name="availabilityMetricsConfigs")
+    def availability_metrics_configs(self) -> Sequence['outputs.GetMonitoredResourceTypeAvailabilityMetricsConfigResult']:
+        """
+        Availability metrics details.
+        """
+        return pulumi.get(self, "availability_metrics_configs")
+
+    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
 
@@ -130,12 +150,28 @@ class GetMonitoredResourceTypeResult:
         return pulumi.get(self, "freeform_tags")
 
     @property
+    @pulumi.getter(name="handlerConfigs")
+    def handler_configs(self) -> Sequence['outputs.GetMonitoredResourceTypeHandlerConfigResult']:
+        """
+        Specific resource mapping configurations for Agent Extension Handlers.
+        """
+        return pulumi.get(self, "handler_configs")
+
+    @property
     @pulumi.getter
     def id(self) -> builtins.str:
         """
         Monitored resource type identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isSystemDefined")
+    def is_system_defined(self) -> builtins.bool:
+        """
+        If boolean flag is true, then the resource type cannot be modified or deleted.
+        """
+        return pulumi.get(self, "is_system_defined")
 
     @property
     @pulumi.getter
@@ -199,6 +235,14 @@ class GetMonitoredResourceTypeResult:
         return pulumi.get(self, "system_tags")
 
     @property
+    @pulumi.getter(name="tenancyId")
+    def tenancy_id(self) -> builtins.str:
+        """
+        Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "tenancy_id")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> builtins.str:
         """
@@ -222,12 +266,15 @@ class AwaitableGetMonitoredResourceTypeResult(GetMonitoredResourceTypeResult):
             yield self
         return GetMonitoredResourceTypeResult(
             additional_namespace_map=self.additional_namespace_map,
+            availability_metrics_configs=self.availability_metrics_configs,
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
             description=self.description,
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
+            handler_configs=self.handler_configs,
             id=self.id,
+            is_system_defined=self.is_system_defined,
             metadatas=self.metadatas,
             metric_namespace=self.metric_namespace,
             monitored_resource_type_id=self.monitored_resource_type_id,
@@ -236,6 +283,7 @@ class AwaitableGetMonitoredResourceTypeResult(GetMonitoredResourceTypeResult):
             source_type=self.source_type,
             state=self.state,
             system_tags=self.system_tags,
+            tenancy_id=self.tenancy_id,
             time_created=self.time_created,
             time_updated=self.time_updated)
 
@@ -266,12 +314,15 @@ def get_monitored_resource_type(monitored_resource_type_id: Optional[builtins.st
 
     return AwaitableGetMonitoredResourceTypeResult(
         additional_namespace_map=pulumi.get(__ret__, 'additional_namespace_map'),
+        availability_metrics_configs=pulumi.get(__ret__, 'availability_metrics_configs'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         description=pulumi.get(__ret__, 'description'),
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        handler_configs=pulumi.get(__ret__, 'handler_configs'),
         id=pulumi.get(__ret__, 'id'),
+        is_system_defined=pulumi.get(__ret__, 'is_system_defined'),
         metadatas=pulumi.get(__ret__, 'metadatas'),
         metric_namespace=pulumi.get(__ret__, 'metric_namespace'),
         monitored_resource_type_id=pulumi.get(__ret__, 'monitored_resource_type_id'),
@@ -280,6 +331,7 @@ def get_monitored_resource_type(monitored_resource_type_id: Optional[builtins.st
         source_type=pulumi.get(__ret__, 'source_type'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
+        tenancy_id=pulumi.get(__ret__, 'tenancy_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_monitored_resource_type_output(monitored_resource_type_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -307,12 +359,15 @@ def get_monitored_resource_type_output(monitored_resource_type_id: Optional[pulu
     __ret__ = pulumi.runtime.invoke_output('oci:StackMonitoring/getMonitoredResourceType:getMonitoredResourceType', __args__, opts=opts, typ=GetMonitoredResourceTypeResult)
     return __ret__.apply(lambda __response__: GetMonitoredResourceTypeResult(
         additional_namespace_map=pulumi.get(__response__, 'additional_namespace_map'),
+        availability_metrics_configs=pulumi.get(__response__, 'availability_metrics_configs'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         description=pulumi.get(__response__, 'description'),
         display_name=pulumi.get(__response__, 'display_name'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        handler_configs=pulumi.get(__response__, 'handler_configs'),
         id=pulumi.get(__response__, 'id'),
+        is_system_defined=pulumi.get(__response__, 'is_system_defined'),
         metadatas=pulumi.get(__response__, 'metadatas'),
         metric_namespace=pulumi.get(__response__, 'metric_namespace'),
         monitored_resource_type_id=pulumi.get(__response__, 'monitored_resource_type_id'),
@@ -321,5 +376,6 @@ def get_monitored_resource_type_output(monitored_resource_type_id: Optional[pulu
         source_type=pulumi.get(__response__, 'source_type'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),
+        tenancy_id=pulumi.get(__response__, 'tenancy_id'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated')))

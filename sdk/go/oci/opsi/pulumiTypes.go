@@ -11838,7 +11838,9 @@ func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollect
 type GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Number of OCPUs allocated to OPSI Warehouse ADW.
+	// The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+	ComputeModel string `pulumi:"computeModel"`
+	// Number of CPUs allocated to OPSI Warehouse ADW.
 	CpuAllocated float64 `pulumi:"cpuAllocated"`
 	// Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
 	CpuUsed float64 `pulumi:"cpuUsed"`
@@ -11886,7 +11888,9 @@ type GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection
 type GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Number of OCPUs allocated to OPSI Warehouse ADW.
+	// The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+	ComputeModel pulumi.StringInput `pulumi:"computeModel"`
+	// Number of CPUs allocated to OPSI Warehouse ADW.
 	CpuAllocated pulumi.Float64Input `pulumi:"cpuAllocated"`
 	// Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
 	CpuUsed pulumi.Float64Input `pulumi:"cpuUsed"`
@@ -11978,7 +11982,14 @@ func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollect
 	}).(pulumi.StringOutput)
 }
 
-// Number of OCPUs allocated to OPSI Warehouse ADW.
+// The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) ComputeModel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) string {
+		return v.ComputeModel
+	}).(pulumi.StringOutput)
+}
+
+// Number of CPUs allocated to OPSI Warehouse ADW.
 func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) CpuAllocated() pulumi.Float64Output {
 	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) float64 {
 		return v.CpuAllocated

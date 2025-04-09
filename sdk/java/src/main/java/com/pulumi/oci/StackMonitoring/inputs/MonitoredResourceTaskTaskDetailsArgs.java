@@ -6,6 +6,8 @@ package com.pulumi.oci.StackMonitoring.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.StackMonitoring.inputs.MonitoredResourceTaskTaskDetailsReceiverPropertiesArgs;
+import com.pulumi.oci.StackMonitoring.inputs.MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -18,6 +20,21 @@ import javax.annotation.Nullable;
 public final class MonitoredResourceTaskTaskDetailsArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final MonitoredResourceTaskTaskDetailsArgs Empty = new MonitoredResourceTaskTaskDetailsArgs();
+
+    /**
+     * Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    @Import(name="agentId")
+    private @Nullable Output<String> agentId;
+
+    /**
+     * @return Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    public Optional<Output<String>> agentId() {
+        return Optional.ofNullable(this.agentId);
+    }
 
     /**
      * Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property &#39;availabilityProxyMetrics&#39;.
@@ -35,14 +52,14 @@ public final class MonitoredResourceTaskTaskDetailsArgs extends com.pulumi.resou
     }
 
     /**
-     * List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property &#39;availabilityProxyMetricCollectionIntervalInSeconds&#39;. If no metrics are specified, availability will not be calculated for the resource.
+     * List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  &#39;availabilityProxyMetricCollectionInterval&#39;. If no metrics are specified, availability will not be calculated for the resource.
      * 
      */
     @Import(name="availabilityProxyMetrics")
     private @Nullable Output<List<String>> availabilityProxyMetrics;
 
     /**
-     * @return List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property &#39;availabilityProxyMetricCollectionIntervalInSeconds&#39;. If no metrics are specified, availability will not be calculated for the resource.
+     * @return List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  &#39;availabilityProxyMetricCollectionInterval&#39;. If no metrics are specified, availability will not be calculated for the resource.
      * 
      */
     public Optional<Output<List<String>>> availabilityProxyMetrics() {
@@ -80,6 +97,36 @@ public final class MonitoredResourceTaskTaskDetailsArgs extends com.pulumi.resou
     }
 
     /**
+     * Type of the handler.
+     * 
+     */
+    @Import(name="handlerType")
+    private @Nullable Output<String> handlerType;
+
+    /**
+     * @return Type of the handler.
+     * 
+     */
+    public Optional<Output<String>> handlerType() {
+        return Optional.ofNullable(this.handlerType);
+    }
+
+    /**
+     * True to enable the receiver and false to disable the receiver on the agent.
+     * 
+     */
+    @Import(name="isEnable")
+    private @Nullable Output<Boolean> isEnable;
+
+    /**
+     * @return True to enable the receiver and false to disable the receiver on the agent.
+     * 
+     */
+    public Optional<Output<Boolean>> isEnable() {
+        return Optional.ofNullable(this.isEnable);
+    }
+
+    /**
      * Lifecycle states of the external resource which reflects the status of the resource being up.
      * 
      */
@@ -98,15 +145,30 @@ public final class MonitoredResourceTaskTaskDetailsArgs extends com.pulumi.resou
      * Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
      * 
      */
-    @Import(name="namespace", required=true)
-    private Output<String> namespace;
+    @Import(name="namespace")
+    private @Nullable Output<String> namespace;
 
     /**
      * @return Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
      * 
      */
-    public Output<String> namespace() {
-        return this.namespace;
+    public Optional<Output<String>> namespace() {
+        return Optional.ofNullable(this.namespace);
+    }
+
+    /**
+     * Properties for agent receiver.
+     * 
+     */
+    @Import(name="receiverProperties")
+    private @Nullable Output<MonitoredResourceTaskTaskDetailsReceiverPropertiesArgs> receiverProperties;
+
+    /**
+     * @return Properties for agent receiver.
+     * 
+     */
+    public Optional<Output<MonitoredResourceTaskTaskDetailsReceiverPropertiesArgs>> receiverProperties() {
+        return Optional.ofNullable(this.receiverProperties);
     }
 
     /**
@@ -185,6 +247,21 @@ public final class MonitoredResourceTaskTaskDetailsArgs extends com.pulumi.resou
     }
 
     /**
+     * A collection of resource type configuration details. User can provide  availability proxy metrics list for resource types along with the  telegraf/collectd handler configuration for the resource types.
+     * 
+     */
+    @Import(name="resourceTypesConfigurations")
+    private @Nullable Output<List<MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArgs>> resourceTypesConfigurations;
+
+    /**
+     * @return A collection of resource type configuration details. User can provide  availability proxy metrics list for resource types along with the  telegraf/collectd handler configuration for the resource types.
+     * 
+     */
+    public Optional<Output<List<MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArgs>>> resourceTypesConfigurations() {
+        return Optional.ofNullable(this.resourceTypesConfigurations);
+    }
+
+    /**
      * The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
      * 
      */
@@ -218,19 +295,23 @@ public final class MonitoredResourceTaskTaskDetailsArgs extends com.pulumi.resou
      * Source from where the metrics pushed to telemetry. Possible values:
      * * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
      * * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+     * * OCI_TELEMETRY_TELEGRAF    - The metrics are pushed to telemetry from Telegraf receiver.
+     * * OCI_TELEMETRY_COLLECTD    - The metrics are pushed to telemetry from CollectD receiver.
      * 
      */
-    @Import(name="source", required=true)
-    private Output<String> source;
+    @Import(name="source")
+    private @Nullable Output<String> source;
 
     /**
      * @return Source from where the metrics pushed to telemetry. Possible values:
      * * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
      * * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+     * * OCI_TELEMETRY_TELEGRAF    - The metrics are pushed to telemetry from Telegraf receiver.
+     * * OCI_TELEMETRY_COLLECTD    - The metrics are pushed to telemetry from CollectD receiver.
      * 
      */
-    public Output<String> source() {
-        return this.source;
+    public Optional<Output<String>> source() {
+        return Optional.ofNullable(this.source);
     }
 
     /**
@@ -257,17 +338,22 @@ public final class MonitoredResourceTaskTaskDetailsArgs extends com.pulumi.resou
     private MonitoredResourceTaskTaskDetailsArgs() {}
 
     private MonitoredResourceTaskTaskDetailsArgs(MonitoredResourceTaskTaskDetailsArgs $) {
+        this.agentId = $.agentId;
         this.availabilityProxyMetricCollectionInterval = $.availabilityProxyMetricCollectionInterval;
         this.availabilityProxyMetrics = $.availabilityProxyMetrics;
         this.consolePathPrefix = $.consolePathPrefix;
         this.externalIdMapping = $.externalIdMapping;
+        this.handlerType = $.handlerType;
+        this.isEnable = $.isEnable;
         this.lifecycleStatusMappingsForUpStatuses = $.lifecycleStatusMappingsForUpStatuses;
         this.namespace = $.namespace;
+        this.receiverProperties = $.receiverProperties;
         this.resourceGroup = $.resourceGroup;
         this.resourceNameFilter = $.resourceNameFilter;
         this.resourceNameMapping = $.resourceNameMapping;
         this.resourceTypeFilter = $.resourceTypeFilter;
         this.resourceTypeMapping = $.resourceTypeMapping;
+        this.resourceTypesConfigurations = $.resourceTypesConfigurations;
         this.serviceBaseUrl = $.serviceBaseUrl;
         this.shouldUseMetricsFlowForStatus = $.shouldUseMetricsFlowForStatus;
         this.source = $.source;
@@ -293,6 +379,27 @@ public final class MonitoredResourceTaskTaskDetailsArgs extends com.pulumi.resou
         }
 
         /**
+         * @param agentId Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder agentId(@Nullable Output<String> agentId) {
+            $.agentId = agentId;
+            return this;
+        }
+
+        /**
+         * @param agentId Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder agentId(String agentId) {
+            return agentId(Output.of(agentId));
+        }
+
+        /**
          * @param availabilityProxyMetricCollectionInterval Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property &#39;availabilityProxyMetrics&#39;.
          * 
          * @return builder
@@ -314,7 +421,7 @@ public final class MonitoredResourceTaskTaskDetailsArgs extends com.pulumi.resou
         }
 
         /**
-         * @param availabilityProxyMetrics List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property &#39;availabilityProxyMetricCollectionIntervalInSeconds&#39;. If no metrics are specified, availability will not be calculated for the resource.
+         * @param availabilityProxyMetrics List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  &#39;availabilityProxyMetricCollectionInterval&#39;. If no metrics are specified, availability will not be calculated for the resource.
          * 
          * @return builder
          * 
@@ -325,7 +432,7 @@ public final class MonitoredResourceTaskTaskDetailsArgs extends com.pulumi.resou
         }
 
         /**
-         * @param availabilityProxyMetrics List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property &#39;availabilityProxyMetricCollectionIntervalInSeconds&#39;. If no metrics are specified, availability will not be calculated for the resource.
+         * @param availabilityProxyMetrics List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  &#39;availabilityProxyMetricCollectionInterval&#39;. If no metrics are specified, availability will not be calculated for the resource.
          * 
          * @return builder
          * 
@@ -335,7 +442,7 @@ public final class MonitoredResourceTaskTaskDetailsArgs extends com.pulumi.resou
         }
 
         /**
-         * @param availabilityProxyMetrics List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property &#39;availabilityProxyMetricCollectionIntervalInSeconds&#39;. If no metrics are specified, availability will not be calculated for the resource.
+         * @param availabilityProxyMetrics List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  &#39;availabilityProxyMetricCollectionInterval&#39;. If no metrics are specified, availability will not be calculated for the resource.
          * 
          * @return builder
          * 
@@ -387,6 +494,48 @@ public final class MonitoredResourceTaskTaskDetailsArgs extends com.pulumi.resou
         }
 
         /**
+         * @param handlerType Type of the handler.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder handlerType(@Nullable Output<String> handlerType) {
+            $.handlerType = handlerType;
+            return this;
+        }
+
+        /**
+         * @param handlerType Type of the handler.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder handlerType(String handlerType) {
+            return handlerType(Output.of(handlerType));
+        }
+
+        /**
+         * @param isEnable True to enable the receiver and false to disable the receiver on the agent.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isEnable(@Nullable Output<Boolean> isEnable) {
+            $.isEnable = isEnable;
+            return this;
+        }
+
+        /**
+         * @param isEnable True to enable the receiver and false to disable the receiver on the agent.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isEnable(Boolean isEnable) {
+            return isEnable(Output.of(isEnable));
+        }
+
+        /**
          * @param lifecycleStatusMappingsForUpStatuses Lifecycle states of the external resource which reflects the status of the resource being up.
          * 
          * @return builder
@@ -423,7 +572,7 @@ public final class MonitoredResourceTaskTaskDetailsArgs extends com.pulumi.resou
          * @return builder
          * 
          */
-        public Builder namespace(Output<String> namespace) {
+        public Builder namespace(@Nullable Output<String> namespace) {
             $.namespace = namespace;
             return this;
         }
@@ -436,6 +585,27 @@ public final class MonitoredResourceTaskTaskDetailsArgs extends com.pulumi.resou
          */
         public Builder namespace(String namespace) {
             return namespace(Output.of(namespace));
+        }
+
+        /**
+         * @param receiverProperties Properties for agent receiver.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder receiverProperties(@Nullable Output<MonitoredResourceTaskTaskDetailsReceiverPropertiesArgs> receiverProperties) {
+            $.receiverProperties = receiverProperties;
+            return this;
+        }
+
+        /**
+         * @param receiverProperties Properties for agent receiver.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder receiverProperties(MonitoredResourceTaskTaskDetailsReceiverPropertiesArgs receiverProperties) {
+            return receiverProperties(Output.of(receiverProperties));
         }
 
         /**
@@ -544,6 +714,37 @@ public final class MonitoredResourceTaskTaskDetailsArgs extends com.pulumi.resou
         }
 
         /**
+         * @param resourceTypesConfigurations A collection of resource type configuration details. User can provide  availability proxy metrics list for resource types along with the  telegraf/collectd handler configuration for the resource types.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceTypesConfigurations(@Nullable Output<List<MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArgs>> resourceTypesConfigurations) {
+            $.resourceTypesConfigurations = resourceTypesConfigurations;
+            return this;
+        }
+
+        /**
+         * @param resourceTypesConfigurations A collection of resource type configuration details. User can provide  availability proxy metrics list for resource types along with the  telegraf/collectd handler configuration for the resource types.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceTypesConfigurations(List<MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArgs> resourceTypesConfigurations) {
+            return resourceTypesConfigurations(Output.of(resourceTypesConfigurations));
+        }
+
+        /**
+         * @param resourceTypesConfigurations A collection of resource type configuration details. User can provide  availability proxy metrics list for resource types along with the  telegraf/collectd handler configuration for the resource types.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceTypesConfigurations(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArgs... resourceTypesConfigurations) {
+            return resourceTypesConfigurations(List.of(resourceTypesConfigurations));
+        }
+
+        /**
          * @param serviceBaseUrl The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
          * 
          * @return builder
@@ -589,11 +790,13 @@ public final class MonitoredResourceTaskTaskDetailsArgs extends com.pulumi.resou
          * @param source Source from where the metrics pushed to telemetry. Possible values:
          * * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
          * * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+         * * OCI_TELEMETRY_TELEGRAF    - The metrics are pushed to telemetry from Telegraf receiver.
+         * * OCI_TELEMETRY_COLLECTD    - The metrics are pushed to telemetry from CollectD receiver.
          * 
          * @return builder
          * 
          */
-        public Builder source(Output<String> source) {
+        public Builder source(@Nullable Output<String> source) {
             $.source = source;
             return this;
         }
@@ -602,6 +805,8 @@ public final class MonitoredResourceTaskTaskDetailsArgs extends com.pulumi.resou
          * @param source Source from where the metrics pushed to telemetry. Possible values:
          * * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
          * * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+         * * OCI_TELEMETRY_TELEGRAF    - The metrics are pushed to telemetry from Telegraf receiver.
+         * * OCI_TELEMETRY_COLLECTD    - The metrics are pushed to telemetry from CollectD receiver.
          * 
          * @return builder
          * 
@@ -638,12 +843,6 @@ public final class MonitoredResourceTaskTaskDetailsArgs extends com.pulumi.resou
         }
 
         public MonitoredResourceTaskTaskDetailsArgs build() {
-            if ($.namespace == null) {
-                throw new MissingRequiredPropertyException("MonitoredResourceTaskTaskDetailsArgs", "namespace");
-            }
-            if ($.source == null) {
-                throw new MissingRequiredPropertyException("MonitoredResourceTaskTaskDetailsArgs", "source");
-            }
             if ($.type == null) {
                 throw new MissingRequiredPropertyException("MonitoredResourceTaskTaskDetailsArgs", "type");
             }

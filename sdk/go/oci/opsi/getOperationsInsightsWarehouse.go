@@ -61,7 +61,9 @@ type LookupOperationsInsightsWarehouseArgs struct {
 type LookupOperationsInsightsWarehouseResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Number of OCPUs allocated to OPSI Warehouse ADW.
+	// The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+	ComputeModel string `pulumi:"computeModel"`
+	// Number of CPUs allocated to OPSI Warehouse ADW.
 	CpuAllocated float64 `pulumi:"cpuAllocated"`
 	// Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
 	CpuUsed float64 `pulumi:"cpuUsed"`
@@ -135,7 +137,12 @@ func (o LookupOperationsInsightsWarehouseResultOutput) CompartmentId() pulumi.St
 	return o.ApplyT(func(v LookupOperationsInsightsWarehouseResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Number of OCPUs allocated to OPSI Warehouse ADW.
+// The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+func (o LookupOperationsInsightsWarehouseResultOutput) ComputeModel() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupOperationsInsightsWarehouseResult) string { return v.ComputeModel }).(pulumi.StringOutput)
+}
+
+// Number of CPUs allocated to OPSI Warehouse ADW.
 func (o LookupOperationsInsightsWarehouseResultOutput) CpuAllocated() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupOperationsInsightsWarehouseResult) float64 { return v.CpuAllocated }).(pulumi.Float64Output)
 }

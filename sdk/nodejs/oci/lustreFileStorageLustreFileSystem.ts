@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLustreFileSystem = new oci.oci.LustreFileStorageLustreFileSystem("test_lustre_file_system", {
+ * const testLustreFileSystem = new oci.lustre.FileStorageLustreFileSystem("test_lustre_file_system", {
  *     availabilityDomain: lustreFileSystemAvailabilityDomain,
  *     capacityInGbs: lustreFileSystemCapacityInGbs,
  *     compartmentId: compartmentId,
@@ -51,6 +51,8 @@ import * as utilities from "../utilities";
  * ```sh
  * $ pulumi import oci:oci/lustreFileStorageLustreFileSystem:LustreFileStorageLustreFileSystem test_lustre_file_system "id"
  * ```
+ *
+ * @deprecated oci.oci/lustrefilestoragelustrefilesystem.LustreFileStorageLustreFileSystem has been deprecated in favor of oci.lustre/filestoragelustrefilesystem.FileStorageLustreFileSystem
  */
 export class LustreFileStorageLustreFileSystem extends pulumi.CustomResource {
     /**
@@ -63,6 +65,7 @@ export class LustreFileStorageLustreFileSystem extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     public static get(name: string, id: pulumi.Input<pulumi.ID>, state?: LustreFileStorageLustreFileSystemState, opts?: pulumi.CustomResourceOptions): LustreFileStorageLustreFileSystem {
+        pulumi.log.warn("LustreFileStorageLustreFileSystem is deprecated: oci.oci/lustrefilestoragelustrefilesystem.LustreFileStorageLustreFileSystem has been deprecated in favor of oci.lustre/filestoragelustrefilesystem.FileStorageLustreFileSystem")
         return new LustreFileStorageLustreFileSystem(name, <any>state, { ...opts, id: id });
     }
 
@@ -188,8 +191,11 @@ export class LustreFileStorageLustreFileSystem extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
+    /** @deprecated oci.oci/lustrefilestoragelustrefilesystem.LustreFileStorageLustreFileSystem has been deprecated in favor of oci.lustre/filestoragelustrefilesystem.FileStorageLustreFileSystem */
     constructor(name: string, args: LustreFileStorageLustreFileSystemArgs, opts?: pulumi.CustomResourceOptions)
+    /** @deprecated oci.oci/lustrefilestoragelustrefilesystem.LustreFileStorageLustreFileSystem has been deprecated in favor of oci.lustre/filestoragelustrefilesystem.FileStorageLustreFileSystem */
     constructor(name: string, argsOrState?: LustreFileStorageLustreFileSystemArgs | LustreFileStorageLustreFileSystemState, opts?: pulumi.CustomResourceOptions) {
+        pulumi.log.warn("LustreFileStorageLustreFileSystem is deprecated: oci.oci/lustrefilestoragelustrefilesystem.LustreFileStorageLustreFileSystem has been deprecated in favor of oci.lustre/filestoragelustrefilesystem.FileStorageLustreFileSystem")
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {

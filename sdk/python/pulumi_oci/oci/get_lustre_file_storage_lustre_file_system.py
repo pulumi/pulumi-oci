@@ -23,6 +23,8 @@ __all__ = [
     'get_lustre_file_storage_lustre_file_system_output',
 ]
 
+warnings.warn("""oci.oci/getlustrefilestoragelustrefilesystem.getLustreFileStorageLustreFileSystem has been deprecated in favor of oci.lustre/getfilestoragelustrefilesystem.getFileStorageLustreFileSystem""", DeprecationWarning)
+
 @pulumi.output_type
 class GetLustreFileStorageLustreFileSystemResult:
     """
@@ -361,12 +363,13 @@ def get_lustre_file_storage_lustre_file_system(lustre_file_system_id: Optional[b
     import pulumi
     import pulumi_oci as oci
 
-    test_lustre_file_system = oci.oci.get_lustre_file_storage_lustre_file_system(lustre_file_system_id=test_lustre_file_system_oci_lustre_file_storage_lustre_file_system["id"])
+    test_lustre_file_system = oci.Lustre.get_file_storage_lustre_file_system(lustre_file_system_id=test_lustre_file_system_oci_lustre_file_storage_lustre_file_system["id"])
     ```
 
 
     :param builtins.str lustre_file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Lustre file system.
     """
+    pulumi.log.warn("""get_lustre_file_storage_lustre_file_system is deprecated: oci.oci/getlustrefilestoragelustrefilesystem.getLustreFileStorageLustreFileSystem has been deprecated in favor of oci.lustre/getfilestoragelustrefilesystem.getFileStorageLustreFileSystem""")
     __args__ = dict()
     __args__['lustreFileSystemId'] = lustre_file_system_id
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -412,12 +415,13 @@ def get_lustre_file_storage_lustre_file_system_output(lustre_file_system_id: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_lustre_file_system = oci.oci.get_lustre_file_storage_lustre_file_system(lustre_file_system_id=test_lustre_file_system_oci_lustre_file_storage_lustre_file_system["id"])
+    test_lustre_file_system = oci.Lustre.get_file_storage_lustre_file_system(lustre_file_system_id=test_lustre_file_system_oci_lustre_file_storage_lustre_file_system["id"])
     ```
 
 
     :param builtins.str lustre_file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Lustre file system.
     """
+    pulumi.log.warn("""get_lustre_file_storage_lustre_file_system is deprecated: oci.oci/getlustrefilestoragelustrefilesystem.getLustreFileStorageLustreFileSystem has been deprecated in favor of oci.lustre/getfilestoragelustrefilesystem.getFileStorageLustreFileSystem""")
     __args__ = dict()
     __args__['lustreFileSystemId'] = lustre_file_system_id
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)

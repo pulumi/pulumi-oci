@@ -85,7 +85,7 @@ type BdsInstance struct {
 	NumberOfNodesRequiringMaintenanceReboot pulumi.IntOutput `pulumi:"numberOfNodesRequiringMaintenanceReboot"`
 	// (Updatable) The version of the patch to be upated.
 	OsPatchVersion pulumi.StringPtrOutput `pulumi:"osPatchVersion"`
-	// (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+	// (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
 	RemoveNode               pulumi.StringPtrOutput                        `pulumi:"removeNode"`
 	StartClusterShapeConfigs BdsInstanceStartClusterShapeConfigArrayOutput `pulumi:"startClusterShapeConfigs"`
 	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
@@ -225,7 +225,7 @@ type bdsInstanceState struct {
 	NumberOfNodesRequiringMaintenanceReboot *int `pulumi:"numberOfNodesRequiringMaintenanceReboot"`
 	// (Updatable) The version of the patch to be upated.
 	OsPatchVersion *string `pulumi:"osPatchVersion"`
-	// (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+	// (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
 	RemoveNode               *string                              `pulumi:"removeNode"`
 	StartClusterShapeConfigs []BdsInstanceStartClusterShapeConfig `pulumi:"startClusterShapeConfigs"`
 	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
@@ -299,7 +299,7 @@ type BdsInstanceState struct {
 	NumberOfNodesRequiringMaintenanceReboot pulumi.IntPtrInput
 	// (Updatable) The version of the patch to be upated.
 	OsPatchVersion pulumi.StringPtrInput
-	// (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+	// (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
 	RemoveNode               pulumi.StringPtrInput
 	StartClusterShapeConfigs BdsInstanceStartClusterShapeConfigArrayInput
 	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
@@ -367,7 +367,7 @@ type bdsInstanceArgs struct {
 	NetworkConfig *BdsInstanceNetworkConfig `pulumi:"networkConfig"`
 	// (Updatable) The version of the patch to be upated.
 	OsPatchVersion *string `pulumi:"osPatchVersion"`
-	// (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+	// (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
 	RemoveNode               *string                              `pulumi:"removeNode"`
 	StartClusterShapeConfigs []BdsInstanceStartClusterShapeConfig `pulumi:"startClusterShapeConfigs"`
 	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
@@ -428,7 +428,7 @@ type BdsInstanceArgs struct {
 	NetworkConfig BdsInstanceNetworkConfigPtrInput
 	// (Updatable) The version of the patch to be upated.
 	OsPatchVersion pulumi.StringPtrInput
-	// (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+	// (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
 	RemoveNode               pulumi.StringPtrInput
 	StartClusterShapeConfigs BdsInstanceStartClusterShapeConfigArrayInput
 	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
@@ -677,7 +677,7 @@ func (o BdsInstanceOutput) OsPatchVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BdsInstance) pulumi.StringPtrOutput { return v.OsPatchVersion }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+// (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
 func (o BdsInstanceOutput) RemoveNode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BdsInstance) pulumi.StringPtrOutput { return v.RemoveNode }).(pulumi.StringPtrOutput)
 }

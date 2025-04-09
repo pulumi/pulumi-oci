@@ -41,6 +41,8 @@ import (
 //				IsExcludeSystemTypes: pulumi.BoolRef(monitoredResourceTypeIsExcludeSystemTypes),
 //				MetricNamespace:      pulumi.StringRef(monitoredResourceTypeMetricNamespace),
 //				Name:                 pulumi.StringRef(monitoredResourceTypeName),
+//				ResourceCategory:     pulumi.StringRef(monitoredResourceTypeResourceCategory),
+//				SourceType:           pulumi.StringRef(monitoredResourceTypeSourceType),
 //				Status:               pulumi.StringRef(monitoredResourceTypeStatus),
 //			}, nil)
 //			if err != nil {
@@ -78,13 +80,17 @@ type GetMonitoredResourceTypesArgs struct {
 	MetricNamespace *string `pulumi:"metricNamespace"`
 	// A filter to return monitored resource types that match exactly with the resource type name given.
 	Name *string `pulumi:"name"`
+	// A filter to return only resources with matching resource category.
+	ResourceCategory *string `pulumi:"resourceCategory"`
+	// A filter to return only resources with matching source type.
+	SourceType *string `pulumi:"sourceType"`
 	// A filter to return only resources that matches with lifecycleState given.
 	Status *string `pulumi:"status"`
 }
 
 // A collection of values returned by getMonitoredResourceTypes.
 type GetMonitoredResourceTypesResult struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string                            `pulumi:"compartmentId"`
 	ExcludeFields []string                          `pulumi:"excludeFields"`
 	Fields        []string                          `pulumi:"fields"`
@@ -97,8 +103,12 @@ type GetMonitoredResourceTypesResult struct {
 	// The list of monitored_resource_types_collection.
 	MonitoredResourceTypesCollections []GetMonitoredResourceTypesMonitoredResourceTypesCollection `pulumi:"monitoredResourceTypesCollections"`
 	// A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
-	Name   *string `pulumi:"name"`
-	Status *string `pulumi:"status"`
+	Name *string `pulumi:"name"`
+	// Resource Category to indicate the kind of resource type.
+	ResourceCategory *string `pulumi:"resourceCategory"`
+	// Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+	SourceType *string `pulumi:"sourceType"`
+	Status     *string `pulumi:"status"`
 }
 
 func GetMonitoredResourceTypesOutput(ctx *pulumi.Context, args GetMonitoredResourceTypesOutputArgs, opts ...pulumi.InvokeOption) GetMonitoredResourceTypesResultOutput {
@@ -127,6 +137,10 @@ type GetMonitoredResourceTypesOutputArgs struct {
 	MetricNamespace pulumi.StringPtrInput `pulumi:"metricNamespace"`
 	// A filter to return monitored resource types that match exactly with the resource type name given.
 	Name pulumi.StringPtrInput `pulumi:"name"`
+	// A filter to return only resources with matching resource category.
+	ResourceCategory pulumi.StringPtrInput `pulumi:"resourceCategory"`
+	// A filter to return only resources with matching source type.
+	SourceType pulumi.StringPtrInput `pulumi:"sourceType"`
 	// A filter to return only resources that matches with lifecycleState given.
 	Status pulumi.StringPtrInput `pulumi:"status"`
 }
@@ -150,7 +164,7 @@ func (o GetMonitoredResourceTypesResultOutput) ToGetMonitoredResourceTypesResult
 	return o
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o GetMonitoredResourceTypesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceTypesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -191,6 +205,16 @@ func (o GetMonitoredResourceTypesResultOutput) MonitoredResourceTypesCollections
 // A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
 func (o GetMonitoredResourceTypesResultOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetMonitoredResourceTypesResult) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// Resource Category to indicate the kind of resource type.
+func (o GetMonitoredResourceTypesResultOutput) ResourceCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesResult) *string { return v.ResourceCategory }).(pulumi.StringPtrOutput)
+}
+
+// Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+func (o GetMonitoredResourceTypesResultOutput) SourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesResult) *string { return v.SourceType }).(pulumi.StringPtrOutput)
 }
 
 func (o GetMonitoredResourceTypesResultOutput) Status() pulumi.StringPtrOutput {

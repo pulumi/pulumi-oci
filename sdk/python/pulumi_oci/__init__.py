@@ -152,6 +152,8 @@ if typing.TYPE_CHECKING:
     loganalytics = __loganalytics
     import pulumi_oci.logging as __logging
     logging = __logging
+    import pulumi_oci.lustre as __lustre
+    lustre = __lustre
     import pulumi_oci.managementagent as __managementagent
     managementagent = __managementagent
     import pulumi_oci.managementdashboard as __managementdashboard
@@ -332,6 +334,7 @@ else:
     loadbalancer = _utilities.lazy_import('pulumi_oci.loadbalancer')
     loganalytics = _utilities.lazy_import('pulumi_oci.loganalytics')
     logging = _utilities.lazy_import('pulumi_oci.logging')
+    lustre = _utilities.lazy_import('pulumi_oci.lustre')
     managementagent = _utilities.lazy_import('pulumi_oci.managementagent')
     managementdashboard = _utilities.lazy_import('pulumi_oci.managementdashboard')
     marketplace = _utilities.lazy_import('pulumi_oci.marketplace')
@@ -5180,6 +5183,14 @@ _utilities.register(
   "fqn": "pulumi_oci.logging",
   "classes": {
    "oci:Logging/unifiedAgentConfiguration:UnifiedAgentConfiguration": "UnifiedAgentConfiguration"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Lustre/fileStorageLustreFileSystem",
+  "fqn": "pulumi_oci.lustre",
+  "classes": {
+   "oci:Lustre/fileStorageLustreFileSystem:FileStorageLustreFileSystem": "FileStorageLustreFileSystem"
   }
  },
  {

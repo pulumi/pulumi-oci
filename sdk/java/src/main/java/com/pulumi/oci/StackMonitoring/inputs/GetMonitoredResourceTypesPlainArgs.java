@@ -120,6 +120,36 @@ public final class GetMonitoredResourceTypesPlainArgs extends com.pulumi.resourc
     }
 
     /**
+     * A filter to return only resources with matching resource category.
+     * 
+     */
+    @Import(name="resourceCategory")
+    private @Nullable String resourceCategory;
+
+    /**
+     * @return A filter to return only resources with matching resource category.
+     * 
+     */
+    public Optional<String> resourceCategory() {
+        return Optional.ofNullable(this.resourceCategory);
+    }
+
+    /**
+     * A filter to return only resources with matching source type.
+     * 
+     */
+    @Import(name="sourceType")
+    private @Nullable String sourceType;
+
+    /**
+     * @return A filter to return only resources with matching source type.
+     * 
+     */
+    public Optional<String> sourceType() {
+        return Optional.ofNullable(this.sourceType);
+    }
+
+    /**
      * A filter to return only resources that matches with lifecycleState given.
      * 
      */
@@ -144,6 +174,8 @@ public final class GetMonitoredResourceTypesPlainArgs extends com.pulumi.resourc
         this.isExcludeSystemTypes = $.isExcludeSystemTypes;
         this.metricNamespace = $.metricNamespace;
         this.name = $.name;
+        this.resourceCategory = $.resourceCategory;
+        this.sourceType = $.sourceType;
         this.status = $.status;
     }
 
@@ -261,6 +293,28 @@ public final class GetMonitoredResourceTypesPlainArgs extends com.pulumi.resourc
          */
         public Builder name(@Nullable String name) {
             $.name = name;
+            return this;
+        }
+
+        /**
+         * @param resourceCategory A filter to return only resources with matching resource category.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceCategory(@Nullable String resourceCategory) {
+            $.resourceCategory = resourceCategory;
+            return this;
+        }
+
+        /**
+         * @param sourceType A filter to return only resources with matching source type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceType(@Nullable String sourceType) {
+            $.sourceType = sourceType;
             return this;
         }
 

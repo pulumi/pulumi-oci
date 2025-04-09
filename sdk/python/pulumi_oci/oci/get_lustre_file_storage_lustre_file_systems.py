@@ -24,6 +24,8 @@ __all__ = [
     'get_lustre_file_storage_lustre_file_systems_output',
 ]
 
+warnings.warn("""oci.oci/getlustrefilestoragelustrefilesystems.getLustreFileStorageLustreFileSystems has been deprecated in favor of oci.lustre/getfilestoragelustrefilesystems.getFileStorageLustreFileSystems""", DeprecationWarning)
+
 @pulumi.output_type
 class GetLustreFileStorageLustreFileSystemsResult:
     """
@@ -139,7 +141,7 @@ def get_lustre_file_storage_lustre_file_systems(availability_domain: Optional[bu
     import pulumi
     import pulumi_oci as oci
 
-    test_lustre_file_systems = oci.oci.get_lustre_file_storage_lustre_file_systems(availability_domain=lustre_file_system_availability_domain,
+    test_lustre_file_systems = oci.Lustre.get_file_storage_lustre_file_systems(availability_domain=lustre_file_system_availability_domain,
         compartment_id=compartment_id,
         display_name=lustre_file_system_display_name,
         id=lustre_file_system_id,
@@ -153,6 +155,7 @@ def get_lustre_file_storage_lustre_file_systems(availability_domain: Optional[bu
     :param builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Lustre file system.
     :param builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
     """
+    pulumi.log.warn("""get_lustre_file_storage_lustre_file_systems is deprecated: oci.oci/getlustrefilestoragelustrefilesystems.getLustreFileStorageLustreFileSystems has been deprecated in favor of oci.lustre/getfilestoragelustrefilesystems.getFileStorageLustreFileSystems""")
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
     __args__['compartmentId'] = compartment_id
@@ -189,7 +192,7 @@ def get_lustre_file_storage_lustre_file_systems_output(availability_domain: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_lustre_file_systems = oci.oci.get_lustre_file_storage_lustre_file_systems(availability_domain=lustre_file_system_availability_domain,
+    test_lustre_file_systems = oci.Lustre.get_file_storage_lustre_file_systems(availability_domain=lustre_file_system_availability_domain,
         compartment_id=compartment_id,
         display_name=lustre_file_system_display_name,
         id=lustre_file_system_id,
@@ -203,6 +206,7 @@ def get_lustre_file_storage_lustre_file_systems_output(availability_domain: Opti
     :param builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Lustre file system.
     :param builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
     """
+    pulumi.log.warn("""get_lustre_file_storage_lustre_file_systems is deprecated: oci.oci/getlustrefilestoragelustrefilesystems.getLustreFileStorageLustreFileSystems has been deprecated in favor of oci.lustre/getfilestoragelustrefilesystems.getFileStorageLustreFileSystems""")
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
     __args__['compartmentId'] = compartment_id

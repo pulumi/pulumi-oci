@@ -4244,6 +4244,8 @@ public final class StackMonitoringFunctions {
      *             .isExcludeSystemTypes(monitoredResourceTypeIsExcludeSystemTypes)
      *             .metricNamespace(monitoredResourceTypeMetricNamespace)
      *             .name(monitoredResourceTypeName)
+     *             .resourceCategory(monitoredResourceTypeResourceCategory)
+     *             .sourceType(monitoredResourceTypeSourceType)
      *             .status(monitoredResourceTypeStatus)
      *             .build());
      * 
@@ -4299,6 +4301,8 @@ public final class StackMonitoringFunctions {
      *             .isExcludeSystemTypes(monitoredResourceTypeIsExcludeSystemTypes)
      *             .metricNamespace(monitoredResourceTypeMetricNamespace)
      *             .name(monitoredResourceTypeName)
+     *             .resourceCategory(monitoredResourceTypeResourceCategory)
+     *             .sourceType(monitoredResourceTypeSourceType)
      *             .status(monitoredResourceTypeStatus)
      *             .build());
      * 
@@ -4354,6 +4358,8 @@ public final class StackMonitoringFunctions {
      *             .isExcludeSystemTypes(monitoredResourceTypeIsExcludeSystemTypes)
      *             .metricNamespace(monitoredResourceTypeMetricNamespace)
      *             .name(monitoredResourceTypeName)
+     *             .resourceCategory(monitoredResourceTypeResourceCategory)
+     *             .sourceType(monitoredResourceTypeSourceType)
      *             .status(monitoredResourceTypeStatus)
      *             .build());
      * 
@@ -4409,6 +4415,8 @@ public final class StackMonitoringFunctions {
      *             .isExcludeSystemTypes(monitoredResourceTypeIsExcludeSystemTypes)
      *             .metricNamespace(monitoredResourceTypeMetricNamespace)
      *             .name(monitoredResourceTypeName)
+     *             .resourceCategory(monitoredResourceTypeResourceCategory)
+     *             .sourceType(monitoredResourceTypeSourceType)
      *             .status(monitoredResourceTypeStatus)
      *             .build());
      * 
@@ -4464,6 +4472,8 @@ public final class StackMonitoringFunctions {
      *             .isExcludeSystemTypes(monitoredResourceTypeIsExcludeSystemTypes)
      *             .metricNamespace(monitoredResourceTypeMetricNamespace)
      *             .name(monitoredResourceTypeName)
+     *             .resourceCategory(monitoredResourceTypeResourceCategory)
+     *             .sourceType(monitoredResourceTypeSourceType)
      *             .status(monitoredResourceTypeStatus)
      *             .build());
      * 

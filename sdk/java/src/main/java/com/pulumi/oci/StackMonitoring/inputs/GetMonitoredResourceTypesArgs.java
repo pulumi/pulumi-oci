@@ -121,6 +121,36 @@ public final class GetMonitoredResourceTypesArgs extends com.pulumi.resources.In
     }
 
     /**
+     * A filter to return only resources with matching resource category.
+     * 
+     */
+    @Import(name="resourceCategory")
+    private @Nullable Output<String> resourceCategory;
+
+    /**
+     * @return A filter to return only resources with matching resource category.
+     * 
+     */
+    public Optional<Output<String>> resourceCategory() {
+        return Optional.ofNullable(this.resourceCategory);
+    }
+
+    /**
+     * A filter to return only resources with matching source type.
+     * 
+     */
+    @Import(name="sourceType")
+    private @Nullable Output<String> sourceType;
+
+    /**
+     * @return A filter to return only resources with matching source type.
+     * 
+     */
+    public Optional<Output<String>> sourceType() {
+        return Optional.ofNullable(this.sourceType);
+    }
+
+    /**
      * A filter to return only resources that matches with lifecycleState given.
      * 
      */
@@ -145,6 +175,8 @@ public final class GetMonitoredResourceTypesArgs extends com.pulumi.resources.In
         this.isExcludeSystemTypes = $.isExcludeSystemTypes;
         this.metricNamespace = $.metricNamespace;
         this.name = $.name;
+        this.resourceCategory = $.resourceCategory;
+        this.sourceType = $.sourceType;
         this.status = $.status;
     }
 
@@ -329,6 +361,48 @@ public final class GetMonitoredResourceTypesArgs extends com.pulumi.resources.In
          */
         public Builder name(String name) {
             return name(Output.of(name));
+        }
+
+        /**
+         * @param resourceCategory A filter to return only resources with matching resource category.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceCategory(@Nullable Output<String> resourceCategory) {
+            $.resourceCategory = resourceCategory;
+            return this;
+        }
+
+        /**
+         * @param resourceCategory A filter to return only resources with matching resource category.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceCategory(String resourceCategory) {
+            return resourceCategory(Output.of(resourceCategory));
+        }
+
+        /**
+         * @param sourceType A filter to return only resources with matching source type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceType(@Nullable Output<String> sourceType) {
+            $.sourceType = sourceType;
+            return this;
+        }
+
+        /**
+         * @param sourceType A filter to return only resources with matching source type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceType(String sourceType) {
+            return sourceType(Output.of(sourceType));
         }
 
         /**

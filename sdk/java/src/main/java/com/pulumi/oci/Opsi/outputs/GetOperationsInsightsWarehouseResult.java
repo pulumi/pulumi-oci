@@ -18,7 +18,12 @@ public final class GetOperationsInsightsWarehouseResult {
      */
     private String compartmentId;
     /**
-     * @return Number of OCPUs allocated to OPSI Warehouse ADW.
+     * @return The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+     * 
+     */
+    private String computeModel;
+    /**
+     * @return Number of CPUs allocated to OPSI Warehouse ADW.
      * 
      */
     private Double cpuAllocated;
@@ -108,7 +113,14 @@ public final class GetOperationsInsightsWarehouseResult {
         return this.compartmentId;
     }
     /**
-     * @return Number of OCPUs allocated to OPSI Warehouse ADW.
+     * @return The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+     * 
+     */
+    public String computeModel() {
+        return this.computeModel;
+    }
+    /**
+     * @return Number of CPUs allocated to OPSI Warehouse ADW.
      * 
      */
     public Double cpuAllocated() {
@@ -233,6 +245,7 @@ public final class GetOperationsInsightsWarehouseResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
+        private String computeModel;
         private Double cpuAllocated;
         private Double cpuUsed;
         private Map<String,String> definedTags;
@@ -254,6 +267,7 @@ public final class GetOperationsInsightsWarehouseResult {
         public Builder(GetOperationsInsightsWarehouseResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.computeModel = defaults.computeModel;
     	      this.cpuAllocated = defaults.cpuAllocated;
     	      this.cpuUsed = defaults.cpuUsed;
     	      this.definedTags = defaults.definedTags;
@@ -279,6 +293,14 @@ public final class GetOperationsInsightsWarehouseResult {
               throw new MissingRequiredPropertyException("GetOperationsInsightsWarehouseResult", "compartmentId");
             }
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder computeModel(String computeModel) {
+            if (computeModel == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsWarehouseResult", "computeModel");
+            }
+            this.computeModel = computeModel;
             return this;
         }
         @CustomType.Setter
@@ -420,6 +442,7 @@ public final class GetOperationsInsightsWarehouseResult {
         public GetOperationsInsightsWarehouseResult build() {
             final var _resultValue = new GetOperationsInsightsWarehouseResult();
             _resultValue.compartmentId = compartmentId;
+            _resultValue.computeModel = computeModel;
             _resultValue.cpuAllocated = cpuAllocated;
             _resultValue.cpuUsed = cpuUsed;
             _resultValue.definedTags = definedTags;

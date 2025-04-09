@@ -23,20 +23,20 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/oci"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/lustre"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := oci.NewLustreFileStorageLustreFileSystem(ctx, "test_lustre_file_system", &oci.LustreFileStorageLustreFileSystemArgs{
+//			_, err := lustre.NewFileStorageLustreFileSystem(ctx, "test_lustre_file_system", &lustre.FileStorageLustreFileSystemArgs{
 //				AvailabilityDomain: pulumi.Any(lustreFileSystemAvailabilityDomain),
 //				CapacityInGbs:      pulumi.Any(lustreFileSystemCapacityInGbs),
 //				CompartmentId:      pulumi.Any(compartmentId),
 //				FileSystemName:     pulumi.Any(testFileSystem.Name),
 //				PerformanceTier:    pulumi.Any(lustreFileSystemPerformanceTier),
-//				RootSquashConfiguration: &oci.LustreFileStorageLustreFileSystemRootSquashConfigurationArgs{
+//				RootSquashConfiguration: &lustre.FileStorageLustreFileSystemRootSquashConfigurationArgs{
 //					ClientExceptions: pulumi.Any(lustreFileSystemRootSquashConfigurationClientExceptions),
 //					IdentitySquash:   pulumi.Any(lustreFileSystemRootSquashConfigurationIdentitySquash),
 //					SquashGid:        pulumi.Any(lustreFileSystemRootSquashConfigurationSquashGid),
@@ -71,6 +71,8 @@ import (
 // ```sh
 // $ pulumi import oci:oci/lustreFileStorageLustreFileSystem:LustreFileStorageLustreFileSystem test_lustre_file_system "id"
 // ```
+//
+// Deprecated: oci.oci/lustrefilestoragelustrefilesystem.LustreFileStorageLustreFileSystem has been deprecated in favor of oci.lustre/filestoragelustrefilesystem.FileStorageLustreFileSystem
 type LustreFileStorageLustreFileSystem struct {
 	pulumi.CustomResourceState
 

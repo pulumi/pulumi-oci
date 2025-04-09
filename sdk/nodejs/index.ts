@@ -83,6 +83,7 @@ import * as limits from "./limits";
 import * as loadbalancer from "./loadbalancer";
 import * as loganalytics from "./loganalytics";
 import * as logging from "./logging";
+import * as lustre from "./lustre";
 import * as managementagent from "./managementagent";
 import * as managementdashboard from "./managementdashboard";
 import * as marketplace from "./marketplace";
@@ -211,6 +212,7 @@ export {
     loadbalancer,
     loganalytics,
     logging,
+    lustre,
     managementagent,
     managementdashboard,
     marketplace,

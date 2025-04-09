@@ -169,6 +169,21 @@ public final class MonitoredResourceTaskState extends com.pulumi.resources.Resou
     }
 
     /**
+     * Type of the task.
+     * 
+     */
+    @Import(name="type")
+    private @Nullable Output<String> type;
+
+    /**
+     * @return Type of the task.
+     * 
+     */
+    public Optional<Output<String>> type() {
+        return Optional.ofNullable(this.type);
+    }
+
+    /**
      * Identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for work requests submitted for this task.
      * 
      */
@@ -196,6 +211,7 @@ public final class MonitoredResourceTaskState extends com.pulumi.resources.Resou
         this.tenantId = $.tenantId;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
+        this.type = $.type;
         this.workRequestIds = $.workRequestIds;
     }
 
@@ -425,6 +441,27 @@ public final class MonitoredResourceTaskState extends com.pulumi.resources.Resou
          */
         public Builder timeUpdated(String timeUpdated) {
             return timeUpdated(Output.of(timeUpdated));
+        }
+
+        /**
+         * @param type Type of the task.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder type(@Nullable Output<String> type) {
+            $.type = type;
+            return this;
+        }
+
+        /**
+         * @param type Type of the task.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder type(String type) {
+            return type(Output.of(type));
         }
 
         /**

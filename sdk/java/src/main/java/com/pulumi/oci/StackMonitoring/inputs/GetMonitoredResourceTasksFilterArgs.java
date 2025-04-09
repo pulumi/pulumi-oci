@@ -19,14 +19,14 @@ public final class GetMonitoredResourceTasksFilterArgs extends com.pulumi.resour
     public static final GetMonitoredResourceTasksFilterArgs Empty = new GetMonitoredResourceTasksFilterArgs();
 
     /**
-     * Name of the task.
+     * Property name.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return Name of the task.
+     * @return Property name.
      * 
      */
     public Output<String> name() {
@@ -74,7 +74,7 @@ public final class GetMonitoredResourceTasksFilterArgs extends com.pulumi.resour
         }
 
         /**
-         * @param name Name of the task.
+         * @param name Property name.
          * 
          * @return builder
          * 
@@ -85,7 +85,7 @@ public final class GetMonitoredResourceTasksFilterArgs extends com.pulumi.resour
         }
 
         /**
-         * @param name Name of the task.
+         * @param name Property name.
          * 
          * @return builder
          * 

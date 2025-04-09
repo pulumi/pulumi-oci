@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLustreFileSystems = oci.oci.getLustreFileStorageLustreFileSystems({
+ * const testLustreFileSystems = oci.Lustre.getFileStorageLustreFileSystems({
  *     availabilityDomain: lustreFileSystemAvailabilityDomain,
  *     compartmentId: compartmentId,
  *     displayName: lustreFileSystemDisplayName,
@@ -26,7 +26,9 @@ import * as utilities from "../utilities";
  * });
  * ```
  */
+/** @deprecated oci.oci/getlustrefilestoragelustrefilesystems.getLustreFileStorageLustreFileSystems has been deprecated in favor of oci.lustre/getfilestoragelustrefilesystems.getFileStorageLustreFileSystems */
 export function getLustreFileStorageLustreFileSystems(args?: GetLustreFileStorageLustreFileSystemsArgs, opts?: pulumi.InvokeOptions): Promise<GetLustreFileStorageLustreFileSystemsResult> {
+    pulumi.log.warn("getLustreFileStorageLustreFileSystems is deprecated: oci.oci/getlustrefilestoragelustrefilesystems.getLustreFileStorageLustreFileSystems has been deprecated in favor of oci.lustre/getfilestoragelustrefilesystems.getFileStorageLustreFileSystems")
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:oci/getLustreFileStorageLustreFileSystems:getLustreFileStorageLustreFileSystems", {
@@ -107,7 +109,7 @@ export interface GetLustreFileStorageLustreFileSystemsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLustreFileSystems = oci.oci.getLustreFileStorageLustreFileSystems({
+ * const testLustreFileSystems = oci.Lustre.getFileStorageLustreFileSystems({
  *     availabilityDomain: lustreFileSystemAvailabilityDomain,
  *     compartmentId: compartmentId,
  *     displayName: lustreFileSystemDisplayName,
@@ -116,7 +118,9 @@ export interface GetLustreFileStorageLustreFileSystemsResult {
  * });
  * ```
  */
+/** @deprecated oci.oci/getlustrefilestoragelustrefilesystems.getLustreFileStorageLustreFileSystems has been deprecated in favor of oci.lustre/getfilestoragelustrefilesystems.getFileStorageLustreFileSystems */
 export function getLustreFileStorageLustreFileSystemsOutput(args?: GetLustreFileStorageLustreFileSystemsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLustreFileStorageLustreFileSystemsResult> {
+    pulumi.log.warn("getLustreFileStorageLustreFileSystems is deprecated: oci.oci/getlustrefilestoragelustrefilesystems.getLustreFileStorageLustreFileSystems has been deprecated in favor of oci.lustre/getfilestoragelustrefilesystems.getFileStorageLustreFileSystems")
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:oci/getLustreFileStorageLustreFileSystems:getLustreFileStorageLustreFileSystems", {

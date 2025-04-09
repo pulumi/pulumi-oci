@@ -36,6 +36,7 @@ import (
 //				CompartmentId: pulumi.Any(compartmentId),
 //				CpuAllocated:  pulumi.Any(operationsInsightsWarehouseCpuAllocated),
 //				DisplayName:   pulumi.Any(operationsInsightsWarehouseDisplayName),
+//				ComputeModel:  pulumi.Any(operationsInsightsWarehouseComputeModel),
 //				DefinedTags: pulumi.StringMap{
 //					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
@@ -65,7 +66,9 @@ type OperationsInsightsWarehouse struct {
 
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
+	// (Updatable) The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+	ComputeModel pulumi.StringOutput `pulumi:"computeModel"`
+	// (Updatable) Number of CPUs allocated to OPSI Warehouse ADW.
 	CpuAllocated pulumi.Float64Output `pulumi:"cpuAllocated"`
 	// Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
 	CpuUsed pulumi.Float64Output `pulumi:"cpuUsed"`
@@ -141,7 +144,9 @@ func GetOperationsInsightsWarehouse(ctx *pulumi.Context,
 type operationsInsightsWarehouseState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
+	// (Updatable) The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+	ComputeModel *string `pulumi:"computeModel"`
+	// (Updatable) Number of CPUs allocated to OPSI Warehouse ADW.
 	CpuAllocated *float64 `pulumi:"cpuAllocated"`
 	// Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
 	CpuUsed *float64 `pulumi:"cpuUsed"`
@@ -179,7 +184,9 @@ type operationsInsightsWarehouseState struct {
 type OperationsInsightsWarehouseState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
+	// (Updatable) The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+	ComputeModel pulumi.StringPtrInput
+	// (Updatable) Number of CPUs allocated to OPSI Warehouse ADW.
 	CpuAllocated pulumi.Float64PtrInput
 	// Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
 	CpuUsed pulumi.Float64PtrInput
@@ -221,7 +228,9 @@ func (OperationsInsightsWarehouseState) ElementType() reflect.Type {
 type operationsInsightsWarehouseArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
+	// (Updatable) The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+	ComputeModel *string `pulumi:"computeModel"`
+	// (Updatable) Number of CPUs allocated to OPSI Warehouse ADW.
 	CpuAllocated float64 `pulumi:"cpuAllocated"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -240,7 +249,9 @@ type operationsInsightsWarehouseArgs struct {
 type OperationsInsightsWarehouseArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput
-	// (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
+	// (Updatable) The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+	ComputeModel pulumi.StringPtrInput
+	// (Updatable) Number of CPUs allocated to OPSI Warehouse ADW.
 	CpuAllocated pulumi.Float64Input
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput
@@ -347,7 +358,12 @@ func (o OperationsInsightsWarehouseOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
+// (Updatable) The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+func (o OperationsInsightsWarehouseOutput) ComputeModel() pulumi.StringOutput {
+	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.StringOutput { return v.ComputeModel }).(pulumi.StringOutput)
+}
+
+// (Updatable) Number of CPUs allocated to OPSI Warehouse ADW.
 func (o OperationsInsightsWarehouseOutput) CpuAllocated() pulumi.Float64Output {
 	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.Float64Output { return v.CpuAllocated }).(pulumi.Float64Output)
 }

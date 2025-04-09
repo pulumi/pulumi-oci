@@ -73137,6 +73137,51 @@ export namespace Logging {
     }
 }
 
+export namespace Lustre {
+    export interface FileStorageLustreFileSystemMaintenanceWindow {
+        /**
+         * Day of the week when the maintainence window starts.
+         */
+        dayOfWeek?: pulumi.Input<string>;
+        /**
+         * The time to start the maintenance window. The format is 'HH:MM', 'HH:MM' represents the time in UTC.   Example: `22:00`
+         */
+        timeStart?: pulumi.Input<string>;
+    }
+
+    export interface FileStorageLustreFileSystemRootSquashConfiguration {
+        /**
+         * (Updatable) A list of NIDs allowed with this lustre file system not to be squashed. A maximum of 10 is allowed.
+         */
+        clientExceptions?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Used when clients accessing the Lustre file system have their UID and GID remapped to `squashUid` and `squashGid`. If `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `NONE`.
+         */
+        identitySquash?: pulumi.Input<string>;
+        /**
+         * (Updatable) The GID value to remap to when squashing a client GID. See `identitySquash` for more details. If unspecified, defaults to `65534`.
+         */
+        squashGid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The UID value to remap to when squashing a client UID. See `identitySquash` for more details. If unspecified, defaults to `65534`.
+         */
+        squashUid?: pulumi.Input<string>;
+    }
+
+    export interface GetFileStorageLustreFileSystemsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFileStorageLustreFileSystemsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+}
+
 export namespace ManagementAgent {
     export interface GetManagementAgentAvailableHistoriesFilter {
         name: string;

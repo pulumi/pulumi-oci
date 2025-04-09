@@ -668,7 +668,12 @@ class _LustreFileStorageLustreFileSystemState:
         pulumi.set(self, "time_updated", value)
 
 
+warnings.warn("""oci.oci/lustrefilestoragelustrefilesystem.LustreFileStorageLustreFileSystem has been deprecated in favor of oci.lustre/filestoragelustrefilesystem.FileStorageLustreFileSystem""", DeprecationWarning)
+
+
 class LustreFileStorageLustreFileSystem(pulumi.CustomResource):
+    warnings.warn("""oci.oci/lustrefilestoragelustrefilesystem.LustreFileStorageLustreFileSystem has been deprecated in favor of oci.lustre/filestoragelustrefilesystem.FileStorageLustreFileSystem""", DeprecationWarning)
+
     @overload
     def __init__(__self__,
                  resource_name: str,
@@ -700,7 +705,7 @@ class LustreFileStorageLustreFileSystem(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_lustre_file_system = oci.oci.LustreFileStorageLustreFileSystem("test_lustre_file_system",
+        test_lustre_file_system = oci.lustre.FileStorageLustreFileSystem("test_lustre_file_system",
             availability_domain=lustre_file_system_availability_domain,
             capacity_in_gbs=lustre_file_system_capacity_in_gbs,
             compartment_id=compartment_id,
@@ -773,7 +778,7 @@ class LustreFileStorageLustreFileSystem(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_lustre_file_system = oci.oci.LustreFileStorageLustreFileSystem("test_lustre_file_system",
+        test_lustre_file_system = oci.lustre.FileStorageLustreFileSystem("test_lustre_file_system",
             availability_domain=lustre_file_system_availability_domain,
             capacity_in_gbs=lustre_file_system_capacity_in_gbs,
             compartment_id=compartment_id,
@@ -838,6 +843,7 @@ class LustreFileStorageLustreFileSystem(pulumi.CustomResource):
                  subnet_id: Optional[pulumi.Input[builtins.str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  __props__=None):
+        pulumi.log.warn("""LustreFileStorageLustreFileSystem is deprecated: oci.oci/lustrefilestoragelustrefilesystem.LustreFileStorageLustreFileSystem has been deprecated in favor of oci.lustre/filestoragelustrefilesystem.FileStorageLustreFileSystem""")
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
             raise TypeError('Expected resource options to be a ResourceOptions instance')

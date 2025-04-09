@@ -80,7 +80,9 @@ type MonitoredResourceType struct {
 
 	// Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
 	AdditionalNamespaceMap pulumi.StringMapOutput `pulumi:"additionalNamespaceMap"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+	// Availability metrics details.
+	AvailabilityMetricsConfigs MonitoredResourceTypeAvailabilityMetricsConfigArrayOutput `pulumi:"availabilityMetricsConfigs"`
+	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
@@ -90,6 +92,10 @@ type MonitoredResourceType struct {
 	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	// Specific resource mapping configurations for Agent Extension Handlers.
+	HandlerConfigs MonitoredResourceTypeHandlerConfigArrayOutput `pulumi:"handlerConfigs"`
+	// If boolean flag is true, then the resource type cannot be modified or deleted.
+	IsSystemDefined pulumi.BoolOutput `pulumi:"isSystemDefined"`
 	// (Updatable) The metadata details for resource type.
 	Metadata MonitoredResourceTypeMetadataOutput `pulumi:"metadata"`
 	// (Updatable) Metric namespace for resource type.
@@ -107,6 +113,8 @@ type MonitoredResourceType struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
+	// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	TenancyId pulumi.StringOutput `pulumi:"tenancyId"`
 	// The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time when the monitored resource was updated, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -148,7 +156,9 @@ func GetMonitoredResourceType(ctx *pulumi.Context,
 type monitoredResourceTypeState struct {
 	// Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
 	AdditionalNamespaceMap map[string]string `pulumi:"additionalNamespaceMap"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+	// Availability metrics details.
+	AvailabilityMetricsConfigs []MonitoredResourceTypeAvailabilityMetricsConfig `pulumi:"availabilityMetricsConfigs"`
+	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -158,6 +168,10 @@ type monitoredResourceTypeState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Specific resource mapping configurations for Agent Extension Handlers.
+	HandlerConfigs []MonitoredResourceTypeHandlerConfig `pulumi:"handlerConfigs"`
+	// If boolean flag is true, then the resource type cannot be modified or deleted.
+	IsSystemDefined *bool `pulumi:"isSystemDefined"`
 	// (Updatable) The metadata details for resource type.
 	Metadata *MonitoredResourceTypeMetadata `pulumi:"metadata"`
 	// (Updatable) Metric namespace for resource type.
@@ -175,6 +189,8 @@ type monitoredResourceTypeState struct {
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
+	// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	TenancyId *string `pulumi:"tenancyId"`
 	// The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time when the monitored resource was updated, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -184,7 +200,9 @@ type monitoredResourceTypeState struct {
 type MonitoredResourceTypeState struct {
 	// Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
 	AdditionalNamespaceMap pulumi.StringMapInput
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+	// Availability metrics details.
+	AvailabilityMetricsConfigs MonitoredResourceTypeAvailabilityMetricsConfigArrayInput
+	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput
@@ -194,6 +212,10 @@ type MonitoredResourceTypeState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
+	// Specific resource mapping configurations for Agent Extension Handlers.
+	HandlerConfigs MonitoredResourceTypeHandlerConfigArrayInput
+	// If boolean flag is true, then the resource type cannot be modified or deleted.
+	IsSystemDefined pulumi.BoolPtrInput
 	// (Updatable) The metadata details for resource type.
 	Metadata MonitoredResourceTypeMetadataPtrInput
 	// (Updatable) Metric namespace for resource type.
@@ -211,6 +233,8 @@ type MonitoredResourceTypeState struct {
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput
+	// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	TenancyId pulumi.StringPtrInput
 	// The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeCreated pulumi.StringPtrInput
 	// The date and time when the monitored resource was updated, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -222,7 +246,7 @@ func (MonitoredResourceTypeState) ElementType() reflect.Type {
 }
 
 type monitoredResourceTypeArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -249,7 +273,7 @@ type monitoredResourceTypeArgs struct {
 
 // The set of arguments for constructing a MonitoredResourceType resource.
 type MonitoredResourceTypeArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput
@@ -366,7 +390,14 @@ func (o MonitoredResourceTypeOutput) AdditionalNamespaceMap() pulumi.StringMapOu
 	return o.ApplyT(func(v *MonitoredResourceType) pulumi.StringMapOutput { return v.AdditionalNamespaceMap }).(pulumi.StringMapOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+// Availability metrics details.
+func (o MonitoredResourceTypeOutput) AvailabilityMetricsConfigs() MonitoredResourceTypeAvailabilityMetricsConfigArrayOutput {
+	return o.ApplyT(func(v *MonitoredResourceType) MonitoredResourceTypeAvailabilityMetricsConfigArrayOutput {
+		return v.AvailabilityMetricsConfigs
+	}).(MonitoredResourceTypeAvailabilityMetricsConfigArrayOutput)
+}
+
+// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o MonitoredResourceTypeOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MonitoredResourceType) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -389,6 +420,16 @@ func (o MonitoredResourceTypeOutput) DisplayName() pulumi.StringPtrOutput {
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 func (o MonitoredResourceTypeOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *MonitoredResourceType) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// Specific resource mapping configurations for Agent Extension Handlers.
+func (o MonitoredResourceTypeOutput) HandlerConfigs() MonitoredResourceTypeHandlerConfigArrayOutput {
+	return o.ApplyT(func(v *MonitoredResourceType) MonitoredResourceTypeHandlerConfigArrayOutput { return v.HandlerConfigs }).(MonitoredResourceTypeHandlerConfigArrayOutput)
+}
+
+// If boolean flag is true, then the resource type cannot be modified or deleted.
+func (o MonitoredResourceTypeOutput) IsSystemDefined() pulumi.BoolOutput {
+	return o.ApplyT(func(v *MonitoredResourceType) pulumi.BoolOutput { return v.IsSystemDefined }).(pulumi.BoolOutput)
 }
 
 // (Updatable) The metadata details for resource type.
@@ -427,6 +468,11 @@ func (o MonitoredResourceTypeOutput) State() pulumi.StringOutput {
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o MonitoredResourceTypeOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *MonitoredResourceType) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o MonitoredResourceTypeOutput) TenancyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *MonitoredResourceType) pulumi.StringOutput { return v.TenancyId }).(pulumi.StringOutput)
 }
 
 // The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.

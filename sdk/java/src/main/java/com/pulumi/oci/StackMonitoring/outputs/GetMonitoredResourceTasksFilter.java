@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetMonitoredResourceTasksFilter {
     /**
-     * @return Name of the task.
+     * @return Property name.
      * 
      */
     private String name;
@@ -24,7 +24,7 @@ public final class GetMonitoredResourceTasksFilter {
 
     private GetMonitoredResourceTasksFilter() {}
     /**
-     * @return Name of the task.
+     * @return Property name.
      * 
      */
     public String name() {

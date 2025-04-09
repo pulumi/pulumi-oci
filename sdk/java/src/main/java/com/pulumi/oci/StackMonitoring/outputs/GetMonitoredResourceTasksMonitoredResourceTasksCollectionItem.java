@@ -34,7 +34,7 @@ public final class GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem
      */
     private String id;
     /**
-     * @return Name of the task.
+     * @return Property name.
      * 
      */
     private String name;
@@ -68,6 +68,11 @@ public final class GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem
      * 
      */
     private String timeUpdated;
+    /**
+     * @return Type of the task.
+     * 
+     */
+    private String type;
     /**
      * @return Identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for work requests submitted for this task.
      * 
@@ -104,7 +109,7 @@ public final class GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem
         return this.id;
     }
     /**
-     * @return Name of the task.
+     * @return Property name.
      * 
      */
     public String name() {
@@ -153,6 +158,13 @@ public final class GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem
         return this.timeUpdated;
     }
     /**
+     * @return Type of the task.
+     * 
+     */
+    public String type() {
+        return this.type;
+    }
+    /**
      * @return Identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for work requests submitted for this task.
      * 
      */
@@ -180,6 +192,7 @@ public final class GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem
         private String tenantId;
         private String timeCreated;
         private String timeUpdated;
+        private String type;
         private List<String> workRequestIds;
         public Builder() {}
         public Builder(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem defaults) {
@@ -195,6 +208,7 @@ public final class GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem
     	      this.tenantId = defaults.tenantId;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
+    	      this.type = defaults.type;
     	      this.workRequestIds = defaults.workRequestIds;
         }
 
@@ -290,6 +304,14 @@ public final class GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem
             return this;
         }
         @CustomType.Setter
+        public Builder type(String type) {
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem", "type");
+            }
+            this.type = type;
+            return this;
+        }
+        @CustomType.Setter
         public Builder workRequestIds(List<String> workRequestIds) {
             if (workRequestIds == null) {
               throw new MissingRequiredPropertyException("GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem", "workRequestIds");
@@ -313,6 +335,7 @@ public final class GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem
             _resultValue.tenantId = tenantId;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
+            _resultValue.type = type;
             _resultValue.workRequestIds = workRequestIds;
             return _resultValue;
         }

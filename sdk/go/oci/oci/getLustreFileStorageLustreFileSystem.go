@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/oci"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/lustre"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := oci.LookupLustreFileStorageLustreFileSystem(ctx, &oci.LookupLustreFileStorageLustreFileSystemArgs{
+//			_, err := lustre.GetFileStorageLustreFileSystem(ctx, &lustre.GetFileStorageLustreFileSystemArgs{
 //				LustreFileSystemId: testLustreFileSystemOciLustreFileStorageLustreFileSystem.Id,
 //			}, nil)
 //			if err != nil {
@@ -40,6 +40,8 @@ import (
 //	}
 //
 // ```
+//
+// Deprecated: oci.oci/getlustrefilestoragelustrefilesystem.getLustreFileStorageLustreFileSystem has been deprecated in favor of oci.lustre/getfilestoragelustrefilesystem.getFileStorageLustreFileSystem
 func LookupLustreFileStorageLustreFileSystem(ctx *pulumi.Context, args *LookupLustreFileStorageLustreFileSystemArgs, opts ...pulumi.InvokeOption) (*LookupLustreFileStorageLustreFileSystemResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupLustreFileStorageLustreFileSystemResult

@@ -34,6 +34,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.StackMonitoring.MonitoredResourceTask;
  * import com.pulumi.oci.StackMonitoring.MonitoredResourceTaskArgs;
  * import com.pulumi.oci.StackMonitoring.inputs.MonitoredResourceTaskTaskDetailsArgs;
+ * import com.pulumi.oci.StackMonitoring.inputs.MonitoredResourceTaskTaskDetailsReceiverPropertiesArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -50,21 +51,63 @@ import javax.annotation.Nullable;
  *         var testMonitoredResourceTask = new MonitoredResourceTask("testMonitoredResourceTask", MonitoredResourceTaskArgs.builder()
  *             .compartmentId(compartmentId)
  *             .taskDetails(MonitoredResourceTaskTaskDetailsArgs.builder()
- *                 .namespace(monitoredResourceTaskTaskDetailsNamespace)
- *                 .source(monitoredResourceTaskTaskDetailsSource)
  *                 .type(monitoredResourceTaskTaskDetailsType)
+ *                 .agentId(testAgent.id())
  *                 .availabilityProxyMetricCollectionInterval(monitoredResourceTaskTaskDetailsAvailabilityProxyMetricCollectionInterval)
  *                 .availabilityProxyMetrics(monitoredResourceTaskTaskDetailsAvailabilityProxyMetrics)
  *                 .consolePathPrefix(monitoredResourceTaskTaskDetailsConsolePathPrefix)
  *                 .externalIdMapping(monitoredResourceTaskTaskDetailsExternalIdMapping)
+ *                 .handlerType(monitoredResourceTaskTaskDetailsHandlerType)
+ *                 .isEnable(monitoredResourceTaskTaskDetailsIsEnable)
  *                 .lifecycleStatusMappingsForUpStatuses(monitoredResourceTaskTaskDetailsLifecycleStatusMappingsForUpStatus)
+ *                 .namespace(monitoredResourceTaskTaskDetailsNamespace)
+ *                 .receiverProperties(MonitoredResourceTaskTaskDetailsReceiverPropertiesArgs.builder()
+ *                     .listenerPort(monitoredResourceTaskTaskDetailsReceiverPropertiesListenerPort)
+ *                     .build())
  *                 .resourceGroup(monitoredResourceTaskTaskDetailsResourceGroup)
  *                 .resourceNameFilter(monitoredResourceTaskTaskDetailsResourceNameFilter)
  *                 .resourceNameMapping(monitoredResourceTaskTaskDetailsResourceNameMapping)
  *                 .resourceTypeFilter(monitoredResourceTaskTaskDetailsResourceTypeFilter)
  *                 .resourceTypeMapping(monitoredResourceTaskTaskDetailsResourceTypeMapping)
+ *                 .resourceTypesConfigurations(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArgs.builder()
+ *                     .availabilityMetricsConfig(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigArgs.builder()
+ *                         .collectionIntervalInSeconds(monitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigCollectionIntervalInSeconds)
+ *                         .metrics(monitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigMetrics)
+ *                         .build())
+ *                     .handlerConfig(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigArgs.builder()
+ *                         .collectdResourceNameConfig(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs.builder()
+ *                             .excludeProperties(monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigExcludeProperties)
+ *                             .includeProperties(monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigIncludeProperties)
+ *                             .suffix(monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigSuffix)
+ *                             .build())
+ *                         .collectorTypes(monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectorTypes)
+ *                         .handlerProperties(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArgs.builder()
+ *                             .name(monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertiesName)
+ *                             .value(monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertiesValue)
+ *                             .build())
+ *                         .metricMappings(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArgs.builder()
+ *                             .collectorMetricName(testMetric.name())
+ *                             .isSkipUpload(monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingsIsSkipUpload)
+ *                             .metricUploadIntervalInSeconds(monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingsMetricUploadIntervalInSeconds)
+ *                             .telemetryMetricName(testMetric.name())
+ *                             .build())
+ *                         .metricNameConfig(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigArgs.builder()
+ *                             .excludePatternOnPrefix(monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigExcludePatternOnPrefix)
+ *                             .isPrefixWithCollectorType(monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigIsPrefixWithCollectorType)
+ *                             .build())
+ *                         .metricUploadIntervalInSeconds(monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricUploadIntervalInSeconds)
+ *                         .telegrafResourceNameConfig(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs.builder()
+ *                             .excludeTags(monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigExcludeTags)
+ *                             .includeTags(monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigIncludeTags)
+ *                             .isUseTagsOnly(monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigIsUseTagsOnly)
+ *                             .build())
+ *                         .telemetryResourceGroup(monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelemetryResourceGroup)
+ *                         .build())
+ *                     .resourceType(monitoredResourceTaskTaskDetailsResourceTypesConfigurationResourceType)
+ *                     .build())
  *                 .serviceBaseUrl(monitoredResourceTaskTaskDetailsServiceBaseUrl)
  *                 .shouldUseMetricsFlowForStatus(monitoredResourceTaskTaskDetailsShouldUseMetricsFlowForStatus)
+ *                 .source(monitoredResourceTaskTaskDetailsSource)
  *                 .build())
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .freeformTags(Map.of("bar-key", "value"))
@@ -227,6 +270,20 @@ public class MonitoredResourceTask extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeUpdated() {
         return this.timeUpdated;
+    }
+    /**
+     * Type of the task.
+     * 
+     */
+    @Export(name="type", refs={String.class}, tree="[0]")
+    private Output<String> type;
+
+    /**
+     * @return Type of the task.
+     * 
+     */
+    public Output<String> type() {
+        return this.type;
     }
     /**
      * Identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for work requests submitted for this task.

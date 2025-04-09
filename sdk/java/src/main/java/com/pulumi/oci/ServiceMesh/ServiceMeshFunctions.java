@@ -1920,7 +1920,7 @@ public final class ServiceMeshFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testProxyDetail = ServiceMeshFunctions.getProxyDetail();
+     *         final var testProxyDetail = ServiceMeshFunctions.getProxyDetail(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
      * 
      *     }
      * }
@@ -1961,7 +1961,7 @@ public final class ServiceMeshFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testProxyDetail = ServiceMeshFunctions.getProxyDetail();
+     *         final var testProxyDetail = ServiceMeshFunctions.getProxyDetail(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
      * 
      *     }
      * }
@@ -2002,7 +2002,7 @@ public final class ServiceMeshFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testProxyDetail = ServiceMeshFunctions.getProxyDetail();
+     *         final var testProxyDetail = ServiceMeshFunctions.getProxyDetail(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
      * 
      *     }
      * }
@@ -2043,7 +2043,7 @@ public final class ServiceMeshFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testProxyDetail = ServiceMeshFunctions.getProxyDetail();
+     *         final var testProxyDetail = ServiceMeshFunctions.getProxyDetail(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
      * 
      *     }
      * }
@@ -2084,7 +2084,7 @@ public final class ServiceMeshFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testProxyDetail = ServiceMeshFunctions.getProxyDetail();
+     *         final var testProxyDetail = ServiceMeshFunctions.getProxyDetail(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
      * 
      *     }
      * }
@@ -2125,7 +2125,7 @@ public final class ServiceMeshFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testProxyDetail = ServiceMeshFunctions.getProxyDetail();
+     *         final var testProxyDetail = ServiceMeshFunctions.getProxyDetail(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
      * 
      *     }
      * }
@@ -2166,7 +2166,7 @@ public final class ServiceMeshFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testProxyDetail = ServiceMeshFunctions.getProxyDetail();
+     *         final var testProxyDetail = ServiceMeshFunctions.getProxyDetail(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
      * 
      *     }
      * }

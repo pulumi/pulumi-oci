@@ -333,7 +333,8 @@ public final class BigDataServiceFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testBdsClusterVersions = BigDataServiceFunctions.getBdsClusterVersions();
+     *         final var testBdsClusterVersions = BigDataServiceFunctions.getBdsClusterVersions(GetBdsClusterVersionsArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -375,7 +376,8 @@ public final class BigDataServiceFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testBdsClusterVersions = BigDataServiceFunctions.getBdsClusterVersions();
+     *         final var testBdsClusterVersions = BigDataServiceFunctions.getBdsClusterVersions(GetBdsClusterVersionsArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -417,7 +419,8 @@ public final class BigDataServiceFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testBdsClusterVersions = BigDataServiceFunctions.getBdsClusterVersions();
+     *         final var testBdsClusterVersions = BigDataServiceFunctions.getBdsClusterVersions(GetBdsClusterVersionsArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -459,7 +462,8 @@ public final class BigDataServiceFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testBdsClusterVersions = BigDataServiceFunctions.getBdsClusterVersions();
+     *         final var testBdsClusterVersions = BigDataServiceFunctions.getBdsClusterVersions(GetBdsClusterVersionsArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -501,7 +505,8 @@ public final class BigDataServiceFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testBdsClusterVersions = BigDataServiceFunctions.getBdsClusterVersions();
+     *         final var testBdsClusterVersions = BigDataServiceFunctions.getBdsClusterVersions(GetBdsClusterVersionsArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -543,7 +548,8 @@ public final class BigDataServiceFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testBdsClusterVersions = BigDataServiceFunctions.getBdsClusterVersions();
+     *         final var testBdsClusterVersions = BigDataServiceFunctions.getBdsClusterVersions(GetBdsClusterVersionsArgs.builder()
+     *             .build());
      * 
      *     }
      * }
@@ -585,7 +591,8 @@ public final class BigDataServiceFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testBdsClusterVersions = BigDataServiceFunctions.getBdsClusterVersions();
+     *         final var testBdsClusterVersions = BigDataServiceFunctions.getBdsClusterVersions(GetBdsClusterVersionsArgs.builder()
+     *             .build());
      * 
      *     }
      * }

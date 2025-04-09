@@ -1942,43 +1942,6 @@ public final class ObjectStorageFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
-     * import com.pulumi.oci.ObjectStorage.inputs.GetObjectsArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testObjects = ObjectStorageFunctions.getObjects(GetObjectsArgs.builder()
-     *             .bucket(objectBucket)
-     *             .namespace(objectNamespace)
-     *             .delimiter(objectDelimiter)
-     *             .end(objectEnd)
-     *             .fields(objectFields)
-     *             .prefix(objectPrefix)
-     *             .start(objectStart)
-     *             .startAfter(objectStartAfter)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2002,43 +1965,6 @@ public final class ObjectStorageFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
-     * import com.pulumi.oci.ObjectStorage.inputs.GetObjectsArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testObjects = ObjectStorageFunctions.getObjects(GetObjectsArgs.builder()
-     *             .bucket(objectBucket)
-     *             .namespace(objectNamespace)
-     *             .delimiter(objectDelimiter)
-     *             .end(objectEnd)
-     *             .fields(objectFields)
-     *             .prefix(objectPrefix)
-     *             .start(objectStart)
-     *             .startAfter(objectStartAfter)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2062,43 +1988,6 @@ public final class ObjectStorageFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
-     * import com.pulumi.oci.ObjectStorage.inputs.GetObjectsArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testObjects = ObjectStorageFunctions.getObjects(GetObjectsArgs.builder()
-     *             .bucket(objectBucket)
-     *             .namespace(objectNamespace)
-     *             .delimiter(objectDelimiter)
-     *             .end(objectEnd)
-     *             .fields(objectFields)
-     *             .prefix(objectPrefix)
-     *             .start(objectStart)
-     *             .startAfter(objectStartAfter)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2122,43 +2011,6 @@ public final class ObjectStorageFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
-     * import com.pulumi.oci.ObjectStorage.inputs.GetObjectsArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testObjects = ObjectStorageFunctions.getObjects(GetObjectsArgs.builder()
-     *             .bucket(objectBucket)
-     *             .namespace(objectNamespace)
-     *             .delimiter(objectDelimiter)
-     *             .end(objectEnd)
-     *             .fields(objectFields)
-     *             .prefix(objectPrefix)
-     *             .start(objectStart)
-     *             .startAfter(objectStartAfter)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2182,43 +2034,6 @@ public final class ObjectStorageFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
-     * import com.pulumi.oci.ObjectStorage.inputs.GetObjectsArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testObjects = ObjectStorageFunctions.getObjects(GetObjectsArgs.builder()
-     *             .bucket(objectBucket)
-     *             .namespace(objectNamespace)
-     *             .delimiter(objectDelimiter)
-     *             .end(objectEnd)
-     *             .fields(objectFields)
-     *             .prefix(objectPrefix)
-     *             .start(objectStart)
-     *             .startAfter(objectStartAfter)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */

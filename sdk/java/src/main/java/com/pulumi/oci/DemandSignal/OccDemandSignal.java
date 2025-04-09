@@ -29,61 +29,6 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.DemandSignal.OccDemandSignal;
- * import com.pulumi.oci.DemandSignal.OccDemandSignalArgs;
- * import com.pulumi.oci.DemandSignal.inputs.OccDemandSignalOccDemandSignalArgs;
- * import com.pulumi.oci.DemandSignal.inputs.OccDemandSignalPatchOperationArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testOccDemandSignal = new OccDemandSignal("testOccDemandSignal", OccDemandSignalArgs.builder()
- *             .compartmentId(compartmentId)
- *             .isActive(occDemandSignalIsActive)
- *             .occDemandSignalId(occDemandSignalOccDemandSignalId)
- *             .occDemandSignals(OccDemandSignalOccDemandSignalArgs.builder()
- *                 .resourceType(occDemandSignalOccDemandSignalsResourceType)
- *                 .units(occDemandSignalOccDemandSignalsUnits)
- *                 .values(OccDemandSignalOccDemandSignalValueArgs.builder()
- *                     .timeExpected(occDemandSignalOccDemandSignalsValuesTimeExpected)
- *                     .value(occDemandSignalOccDemandSignalsValuesValue)
- *                     .comments(occDemandSignalOccDemandSignalsValuesComments)
- *                     .build())
- *                 .build())
- *             .definedTags(Map.of("Operations.CostCenter", "42"))
- *             .displayName(occDemandSignalDisplayName)
- *             .freeformTags(Map.of("Department", "Finance"))
- *             .patchOperations(OccDemandSignalPatchOperationArgs.builder()
- *                 .operation(occDemandSignalPatchOperationsOperation)
- *                 .selection(occDemandSignalPatchOperationsSelection)
- *                 .from(occDemandSignalPatchOperationsFrom)
- *                 .position(occDemandSignalPatchOperationsPosition)
- *                 .selectedItem(occDemandSignalPatchOperationsSelectedItem)
- *                 .value(occDemandSignalPatchOperationsValue)
- *                 .values(occDemandSignalPatchOperationsValues)
- *                 .build())
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

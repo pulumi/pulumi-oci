@@ -51,7 +51,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testManagedInstanceGroup = new ManagedInstanceGroup("testManagedInstanceGroup", ManagedInstanceGroupArgs.builder()
- *             .softwareSourceIds()
+ *             .softwareSourceIds(Map.ofEntries(
+ *             ))
  *             .archType(managedInstanceGroupArchType)
  *             .compartmentId(compartmentId)
  *             .displayName(managedInstanceGroupDisplayName)

@@ -22,47 +22,6 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.Core.ComputeImageCapabilitySchema;
- * import com.pulumi.oci.Core.ComputeImageCapabilitySchemaArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testComputeImageCapabilitySchema = new ComputeImageCapabilitySchema("testComputeImageCapabilitySchema", ComputeImageCapabilitySchemaArgs.builder()
- *             .compartmentId(compartmentId)
- *             .computeGlobalImageCapabilitySchemaVersionName(computeImageCapabilitySchemaComputeGlobalImageCapabilitySchemaVersionName)
- *             .imageId(testImage.id())
- *             .schemaData(Map.ofEntries(
- *                 Map.entry("descriptorType", computeImageCapabilitySchemaSchemaDataDescriptorType),
- *                 Map.entry("source", computeImageCapabilitySchemaSchemaDataSource),
- *                 Map.entry("defaultValue", computeImageCapabilitySchemaSchemaDataDefaultValue),
- *                 Map.entry("values", computeImageCapabilitySchemaSchemaDataValues)
- *             ))
- *             .definedTags(Map.of("Operations.CostCenter", "42"))
- *             .displayName(computeImageCapabilitySchemaDisplayName)
- *             .freeformTags(Map.of("Department", "Finance"))
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

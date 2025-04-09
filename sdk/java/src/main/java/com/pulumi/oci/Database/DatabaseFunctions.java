@@ -4737,7 +4737,7 @@ public final class DatabaseFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testAutonomousDatabaseRegionalWalletManagement = DatabaseFunctions.getAutonomousDatabaseRegionalWalletManagement();
+     *         final var testAutonomousDatabaseRegionalWalletManagement = DatabaseFunctions.getAutonomousDatabaseRegionalWalletManagement(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
      * 
      *     }
      * }
@@ -4778,7 +4778,7 @@ public final class DatabaseFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testAutonomousDatabaseRegionalWalletManagement = DatabaseFunctions.getAutonomousDatabaseRegionalWalletManagement();
+     *         final var testAutonomousDatabaseRegionalWalletManagement = DatabaseFunctions.getAutonomousDatabaseRegionalWalletManagement(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
      * 
      *     }
      * }
@@ -4819,7 +4819,7 @@ public final class DatabaseFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testAutonomousDatabaseRegionalWalletManagement = DatabaseFunctions.getAutonomousDatabaseRegionalWalletManagement();
+     *         final var testAutonomousDatabaseRegionalWalletManagement = DatabaseFunctions.getAutonomousDatabaseRegionalWalletManagement(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
      * 
      *     }
      * }
@@ -4860,7 +4860,7 @@ public final class DatabaseFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testAutonomousDatabaseRegionalWalletManagement = DatabaseFunctions.getAutonomousDatabaseRegionalWalletManagement();
+     *         final var testAutonomousDatabaseRegionalWalletManagement = DatabaseFunctions.getAutonomousDatabaseRegionalWalletManagement(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
      * 
      *     }
      * }
@@ -4901,7 +4901,7 @@ public final class DatabaseFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testAutonomousDatabaseRegionalWalletManagement = DatabaseFunctions.getAutonomousDatabaseRegionalWalletManagement();
+     *         final var testAutonomousDatabaseRegionalWalletManagement = DatabaseFunctions.getAutonomousDatabaseRegionalWalletManagement(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
      * 
      *     }
      * }
@@ -4942,7 +4942,7 @@ public final class DatabaseFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testAutonomousDatabaseRegionalWalletManagement = DatabaseFunctions.getAutonomousDatabaseRegionalWalletManagement();
+     *         final var testAutonomousDatabaseRegionalWalletManagement = DatabaseFunctions.getAutonomousDatabaseRegionalWalletManagement(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
      * 
      *     }
      * }
@@ -4983,7 +4983,7 @@ public final class DatabaseFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testAutonomousDatabaseRegionalWalletManagement = DatabaseFunctions.getAutonomousDatabaseRegionalWalletManagement();
+     *         final var testAutonomousDatabaseRegionalWalletManagement = DatabaseFunctions.getAutonomousDatabaseRegionalWalletManagement(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
      * 
      *     }
      * }
@@ -5460,40 +5460,6 @@ public final class DatabaseFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseWalletArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testAutonomousDatabaseWallet = DatabaseFunctions.getAutonomousDatabaseWallet(GetAutonomousDatabaseWalletArgs.builder()
-     *             .autonomousDatabaseId(testAutonomousDatabase.id())
-     *             .password(autonomousDatabaseWalletPassword)
-     *             .base64EncodeContent("false")
-     *             .generateType(autonomousDatabaseWalletGenerateType)
-     *             .isRegional(autonomousDatabaseWalletIsRegional)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -5510,40 +5476,6 @@ public final class DatabaseFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseWalletArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testAutonomousDatabaseWallet = DatabaseFunctions.getAutonomousDatabaseWallet(GetAutonomousDatabaseWalletArgs.builder()
-     *             .autonomousDatabaseId(testAutonomousDatabase.id())
-     *             .password(autonomousDatabaseWalletPassword)
-     *             .base64EncodeContent("false")
-     *             .generateType(autonomousDatabaseWalletGenerateType)
-     *             .isRegional(autonomousDatabaseWalletIsRegional)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -5560,40 +5492,6 @@ public final class DatabaseFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseWalletArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testAutonomousDatabaseWallet = DatabaseFunctions.getAutonomousDatabaseWallet(GetAutonomousDatabaseWalletArgs.builder()
-     *             .autonomousDatabaseId(testAutonomousDatabase.id())
-     *             .password(autonomousDatabaseWalletPassword)
-     *             .base64EncodeContent("false")
-     *             .generateType(autonomousDatabaseWalletGenerateType)
-     *             .isRegional(autonomousDatabaseWalletIsRegional)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -5610,40 +5508,6 @@ public final class DatabaseFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseWalletArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testAutonomousDatabaseWallet = DatabaseFunctions.getAutonomousDatabaseWallet(GetAutonomousDatabaseWalletArgs.builder()
-     *             .autonomousDatabaseId(testAutonomousDatabase.id())
-     *             .password(autonomousDatabaseWalletPassword)
-     *             .base64EncodeContent("false")
-     *             .generateType(autonomousDatabaseWalletGenerateType)
-     *             .isRegional(autonomousDatabaseWalletIsRegional)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -5660,40 +5524,6 @@ public final class DatabaseFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseWalletArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testAutonomousDatabaseWallet = DatabaseFunctions.getAutonomousDatabaseWallet(GetAutonomousDatabaseWalletArgs.builder()
-     *             .autonomousDatabaseId(testAutonomousDatabase.id())
-     *             .password(autonomousDatabaseWalletPassword)
-     *             .base64EncodeContent("false")
-     *             .generateType(autonomousDatabaseWalletGenerateType)
-     *             .isRegional(autonomousDatabaseWalletIsRegional)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -19901,37 +19731,6 @@ public final class DatabaseFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testExadataInfrastructure = DatabaseFunctions.getExadataInfrastructure(GetExadataInfrastructureArgs.builder()
-     *             .exadataInfrastructureId(testExadataInfrastructureOciDatabaseExadataInfrastructure.id())
-     *             .excludedFields(exadataInfrastructureExcludedFields)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -19947,37 +19746,6 @@ public final class DatabaseFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testExadataInfrastructure = DatabaseFunctions.getExadataInfrastructure(GetExadataInfrastructureArgs.builder()
-     *             .exadataInfrastructureId(testExadataInfrastructureOciDatabaseExadataInfrastructure.id())
-     *             .excludedFields(exadataInfrastructureExcludedFields)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -19993,37 +19761,6 @@ public final class DatabaseFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testExadataInfrastructure = DatabaseFunctions.getExadataInfrastructure(GetExadataInfrastructureArgs.builder()
-     *             .exadataInfrastructureId(testExadataInfrastructureOciDatabaseExadataInfrastructure.id())
-     *             .excludedFields(exadataInfrastructureExcludedFields)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -20039,37 +19776,6 @@ public final class DatabaseFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testExadataInfrastructure = DatabaseFunctions.getExadataInfrastructure(GetExadataInfrastructureArgs.builder()
-     *             .exadataInfrastructureId(testExadataInfrastructureOciDatabaseExadataInfrastructure.id())
-     *             .excludedFields(exadataInfrastructureExcludedFields)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -20085,37 +19791,6 @@ public final class DatabaseFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testExadataInfrastructure = DatabaseFunctions.getExadataInfrastructure(GetExadataInfrastructureArgs.builder()
-     *             .exadataInfrastructureId(testExadataInfrastructureOciDatabaseExadataInfrastructure.id())
-     *             .excludedFields(exadataInfrastructureExcludedFields)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -20154,7 +19829,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExadataInfrastructureDownloadConfigFile = DatabaseFunctions.getExadataInfrastructureDownloadConfigFile(GetExadataInfrastructureDownloadConfigFileArgs.builder()
      *             .exadataInfrastructureId(testExadataInfrastructure.id())
-     *             .base64EncodeContent("false")
+     *             .base64EncodeContent(false)
      *             .build());
      * 
      *     }
@@ -20199,7 +19874,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExadataInfrastructureDownloadConfigFile = DatabaseFunctions.getExadataInfrastructureDownloadConfigFile(GetExadataInfrastructureDownloadConfigFileArgs.builder()
      *             .exadataInfrastructureId(testExadataInfrastructure.id())
-     *             .base64EncodeContent("false")
+     *             .base64EncodeContent(false)
      *             .build());
      * 
      *     }
@@ -20244,7 +19919,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExadataInfrastructureDownloadConfigFile = DatabaseFunctions.getExadataInfrastructureDownloadConfigFile(GetExadataInfrastructureDownloadConfigFileArgs.builder()
      *             .exadataInfrastructureId(testExadataInfrastructure.id())
-     *             .base64EncodeContent("false")
+     *             .base64EncodeContent(false)
      *             .build());
      * 
      *     }
@@ -20289,7 +19964,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExadataInfrastructureDownloadConfigFile = DatabaseFunctions.getExadataInfrastructureDownloadConfigFile(GetExadataInfrastructureDownloadConfigFileArgs.builder()
      *             .exadataInfrastructureId(testExadataInfrastructure.id())
-     *             .base64EncodeContent("false")
+     *             .base64EncodeContent(false)
      *             .build());
      * 
      *     }
@@ -20334,7 +20009,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExadataInfrastructureDownloadConfigFile = DatabaseFunctions.getExadataInfrastructureDownloadConfigFile(GetExadataInfrastructureDownloadConfigFileArgs.builder()
      *             .exadataInfrastructureId(testExadataInfrastructure.id())
-     *             .base64EncodeContent("false")
+     *             .base64EncodeContent(false)
      *             .build());
      * 
      *     }
@@ -20581,39 +20256,6 @@ public final class DatabaseFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructuresArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testExadataInfrastructures = DatabaseFunctions.getExadataInfrastructures(GetExadataInfrastructuresArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .displayName(exadataInfrastructureDisplayName)
-     *             .excludedFields(exadataInfrastructureExcludedFields)
-     *             .state(exadataInfrastructureState)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -20629,39 +20271,6 @@ public final class DatabaseFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructuresArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testExadataInfrastructures = DatabaseFunctions.getExadataInfrastructures(GetExadataInfrastructuresArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .displayName(exadataInfrastructureDisplayName)
-     *             .excludedFields(exadataInfrastructureExcludedFields)
-     *             .state(exadataInfrastructureState)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -20677,39 +20286,6 @@ public final class DatabaseFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructuresArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testExadataInfrastructures = DatabaseFunctions.getExadataInfrastructures(GetExadataInfrastructuresArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .displayName(exadataInfrastructureDisplayName)
-     *             .excludedFields(exadataInfrastructureExcludedFields)
-     *             .state(exadataInfrastructureState)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -20725,39 +20301,6 @@ public final class DatabaseFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructuresArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testExadataInfrastructures = DatabaseFunctions.getExadataInfrastructures(GetExadataInfrastructuresArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .displayName(exadataInfrastructureDisplayName)
-     *             .excludedFields(exadataInfrastructureExcludedFields)
-     *             .state(exadataInfrastructureState)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -20773,39 +20316,6 @@ public final class DatabaseFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructuresArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testExadataInfrastructures = DatabaseFunctions.getExadataInfrastructures(GetExadataInfrastructuresArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .displayName(exadataInfrastructureDisplayName)
-     *             .excludedFields(exadataInfrastructureExcludedFields)
-     *             .state(exadataInfrastructureState)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -31929,7 +31439,7 @@ public final class DatabaseFunctions {
      *         final var testVmClusterNetworkDownloadConfigFile = DatabaseFunctions.getVmClusterNetworkDownloadConfigFile(GetVmClusterNetworkDownloadConfigFileArgs.builder()
      *             .exadataInfrastructureId(testExadataInfrastructure.id())
      *             .vmClusterNetworkId(testVmClusterNetwork.id())
-     *             .base64EncodeContent("false")
+     *             .base64EncodeContent(false)
      *             .build());
      * 
      *     }
@@ -31975,7 +31485,7 @@ public final class DatabaseFunctions {
      *         final var testVmClusterNetworkDownloadConfigFile = DatabaseFunctions.getVmClusterNetworkDownloadConfigFile(GetVmClusterNetworkDownloadConfigFileArgs.builder()
      *             .exadataInfrastructureId(testExadataInfrastructure.id())
      *             .vmClusterNetworkId(testVmClusterNetwork.id())
-     *             .base64EncodeContent("false")
+     *             .base64EncodeContent(false)
      *             .build());
      * 
      *     }
@@ -32021,7 +31531,7 @@ public final class DatabaseFunctions {
      *         final var testVmClusterNetworkDownloadConfigFile = DatabaseFunctions.getVmClusterNetworkDownloadConfigFile(GetVmClusterNetworkDownloadConfigFileArgs.builder()
      *             .exadataInfrastructureId(testExadataInfrastructure.id())
      *             .vmClusterNetworkId(testVmClusterNetwork.id())
-     *             .base64EncodeContent("false")
+     *             .base64EncodeContent(false)
      *             .build());
      * 
      *     }
@@ -32067,7 +31577,7 @@ public final class DatabaseFunctions {
      *         final var testVmClusterNetworkDownloadConfigFile = DatabaseFunctions.getVmClusterNetworkDownloadConfigFile(GetVmClusterNetworkDownloadConfigFileArgs.builder()
      *             .exadataInfrastructureId(testExadataInfrastructure.id())
      *             .vmClusterNetworkId(testVmClusterNetwork.id())
-     *             .base64EncodeContent("false")
+     *             .base64EncodeContent(false)
      *             .build());
      * 
      *     }
@@ -32113,7 +31623,7 @@ public final class DatabaseFunctions {
      *         final var testVmClusterNetworkDownloadConfigFile = DatabaseFunctions.getVmClusterNetworkDownloadConfigFile(GetVmClusterNetworkDownloadConfigFileArgs.builder()
      *             .exadataInfrastructureId(testExadataInfrastructure.id())
      *             .vmClusterNetworkId(testVmClusterNetwork.id())
-     *             .base64EncodeContent("false")
+     *             .base64EncodeContent(false)
      *             .build());
      * 
      *     }

@@ -23,49 +23,6 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.DatabaseManagement.ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement;
- * import com.pulumi.oci.DatabaseManagement.ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementArgs;
- * import com.pulumi.oci.DatabaseManagement.inputs.ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgs;
- * import com.pulumi.oci.DatabaseManagement.inputs.ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement = new ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement("testExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement", ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementArgs.builder()
- *             .externalPluggableDatabaseId(testExternalPluggableDatabase.id())
- *             .enableExternalPluggableDbmFeature(enableExternalPluggableDbmFeature)
- *             .featureDetails(ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgs.builder()
- *                 .feature(externalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsFeature)
- *                 .enableExternalPluggableDbmFeature(enableExternalPluggableDbmFeature)
- *                 .connectorDetails(ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs.builder()
- *                     .connectorType(externalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetailsConnectorType)
- *                     .databaseConnectorId(testDatabaseConnector.id())
- *                     .managementAgentId(testManagementAgent.id())
- *                     .privateEndPointId(testPrivateEndPoint.id())
- *                     .build())
- *                 .build())
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */

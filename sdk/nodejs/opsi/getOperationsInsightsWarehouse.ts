@@ -47,7 +47,11 @@ export interface GetOperationsInsightsWarehouseResult {
      */
     readonly compartmentId: string;
     /**
-     * Number of OCPUs allocated to OPSI Warehouse ADW.
+     * The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+     */
+    readonly computeModel: string;
+    /**
+     * Number of CPUs allocated to OPSI Warehouse ADW.
      */
     readonly cpuAllocated: number;
     /**

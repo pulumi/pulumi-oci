@@ -87,7 +87,11 @@ export class MonitoredResourceType extends pulumi.CustomResource {
      */
     public /*out*/ readonly additionalNamespaceMap!: pulumi.Output<{[key: string]: string}>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+     * Availability metrics details.
+     */
+    public /*out*/ readonly availabilityMetricsConfigs!: pulumi.Output<outputs.StackMonitoring.MonitoredResourceTypeAvailabilityMetricsConfig[]>;
+    /**
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -106,6 +110,14 @@ export class MonitoredResourceType extends pulumi.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    /**
+     * Specific resource mapping configurations for Agent Extension Handlers.
+     */
+    public /*out*/ readonly handlerConfigs!: pulumi.Output<outputs.StackMonitoring.MonitoredResourceTypeHandlerConfig[]>;
+    /**
+     * If boolean flag is true, then the resource type cannot be modified or deleted.
+     */
+    public /*out*/ readonly isSystemDefined!: pulumi.Output<boolean>;
     /**
      * (Updatable) The metadata details for resource type.
      */
@@ -139,6 +151,10 @@ export class MonitoredResourceType extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
     /**
+     * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
+    public /*out*/ readonly tenancyId!: pulumi.Output<string>;
+    /**
      * The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
@@ -161,11 +177,14 @@ export class MonitoredResourceType extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as MonitoredResourceTypeState | undefined;
             resourceInputs["additionalNamespaceMap"] = state ? state.additionalNamespaceMap : undefined;
+            resourceInputs["availabilityMetricsConfigs"] = state ? state.availabilityMetricsConfigs : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["handlerConfigs"] = state ? state.handlerConfigs : undefined;
+            resourceInputs["isSystemDefined"] = state ? state.isSystemDefined : undefined;
             resourceInputs["metadata"] = state ? state.metadata : undefined;
             resourceInputs["metricNamespace"] = state ? state.metricNamespace : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
@@ -173,6 +192,7 @@ export class MonitoredResourceType extends pulumi.CustomResource {
             resourceInputs["sourceType"] = state ? state.sourceType : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
+            resourceInputs["tenancyId"] = state ? state.tenancyId : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
         } else {
@@ -191,8 +211,12 @@ export class MonitoredResourceType extends pulumi.CustomResource {
             resourceInputs["resourceCategory"] = args ? args.resourceCategory : undefined;
             resourceInputs["sourceType"] = args ? args.sourceType : undefined;
             resourceInputs["additionalNamespaceMap"] = undefined /*out*/;
+            resourceInputs["availabilityMetricsConfigs"] = undefined /*out*/;
+            resourceInputs["handlerConfigs"] = undefined /*out*/;
+            resourceInputs["isSystemDefined"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
+            resourceInputs["tenancyId"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
@@ -210,7 +234,11 @@ export interface MonitoredResourceTypeState {
      */
     additionalNamespaceMap?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+     * Availability metrics details.
+     */
+    availabilityMetricsConfigs?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourceTypeAvailabilityMetricsConfig>[]>;
+    /**
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -229,6 +257,14 @@ export interface MonitoredResourceTypeState {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * Specific resource mapping configurations for Agent Extension Handlers.
+     */
+    handlerConfigs?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourceTypeHandlerConfig>[]>;
+    /**
+     * If boolean flag is true, then the resource type cannot be modified or deleted.
+     */
+    isSystemDefined?: pulumi.Input<boolean>;
     /**
      * (Updatable) The metadata details for resource type.
      */
@@ -262,6 +298,10 @@ export interface MonitoredResourceTypeState {
      */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
+     * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
+    tenancyId?: pulumi.Input<string>;
+    /**
      * The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      */
     timeCreated?: pulumi.Input<string>;
@@ -276,7 +316,7 @@ export interface MonitoredResourceTypeState {
  */
 export interface MonitoredResourceTypeArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     compartmentId: pulumi.Input<string>;
     /**

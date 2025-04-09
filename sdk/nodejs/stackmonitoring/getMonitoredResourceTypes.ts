@@ -29,6 +29,8 @@ import * as utilities from "../utilities";
  *     isExcludeSystemTypes: monitoredResourceTypeIsExcludeSystemTypes,
  *     metricNamespace: monitoredResourceTypeMetricNamespace,
  *     name: monitoredResourceTypeName,
+ *     resourceCategory: monitoredResourceTypeResourceCategory,
+ *     sourceType: monitoredResourceTypeSourceType,
  *     status: monitoredResourceTypeStatus,
  * });
  * ```
@@ -43,6 +45,8 @@ export function getMonitoredResourceTypes(args: GetMonitoredResourceTypesArgs, o
         "isExcludeSystemTypes": args.isExcludeSystemTypes,
         "metricNamespace": args.metricNamespace,
         "name": args.name,
+        "resourceCategory": args.resourceCategory,
+        "sourceType": args.sourceType,
         "status": args.status,
     }, opts);
 }
@@ -79,6 +83,14 @@ export interface GetMonitoredResourceTypesArgs {
      */
     name?: string;
     /**
+     * A filter to return only resources with matching resource category.
+     */
+    resourceCategory?: string;
+    /**
+     * A filter to return only resources with matching source type.
+     */
+    sourceType?: string;
+    /**
      * A filter to return only resources that matches with lifecycleState given.
      */
     status?: string;
@@ -89,7 +101,7 @@ export interface GetMonitoredResourceTypesArgs {
  */
 export interface GetMonitoredResourceTypesResult {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     readonly compartmentId: string;
     readonly excludeFields?: string[];
@@ -112,6 +124,14 @@ export interface GetMonitoredResourceTypesResult {
      * A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
      */
     readonly name?: string;
+    /**
+     * Resource Category to indicate the kind of resource type.
+     */
+    readonly resourceCategory?: string;
+    /**
+     * Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+     */
+    readonly sourceType?: string;
     readonly status?: string;
 }
 /**
@@ -137,6 +157,8 @@ export interface GetMonitoredResourceTypesResult {
  *     isExcludeSystemTypes: monitoredResourceTypeIsExcludeSystemTypes,
  *     metricNamespace: monitoredResourceTypeMetricNamespace,
  *     name: monitoredResourceTypeName,
+ *     resourceCategory: monitoredResourceTypeResourceCategory,
+ *     sourceType: monitoredResourceTypeSourceType,
  *     status: monitoredResourceTypeStatus,
  * });
  * ```
@@ -151,6 +173,8 @@ export function getMonitoredResourceTypesOutput(args: GetMonitoredResourceTypesO
         "isExcludeSystemTypes": args.isExcludeSystemTypes,
         "metricNamespace": args.metricNamespace,
         "name": args.name,
+        "resourceCategory": args.resourceCategory,
+        "sourceType": args.sourceType,
         "status": args.status,
     }, opts);
 }
@@ -186,6 +210,14 @@ export interface GetMonitoredResourceTypesOutputArgs {
      * A filter to return monitored resource types that match exactly with the resource type name given.
      */
     name?: pulumi.Input<string>;
+    /**
+     * A filter to return only resources with matching resource category.
+     */
+    resourceCategory?: pulumi.Input<string>;
+    /**
+     * A filter to return only resources with matching source type.
+     */
+    sourceType?: pulumi.Input<string>;
     /**
      * A filter to return only resources that matches with lifecycleState given.
      */

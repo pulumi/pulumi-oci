@@ -40,6 +40,36 @@ export const getJobs: typeof import("./getJobs").getJobs = null as any;
 export const getJobsOutput: typeof import("./getJobs").getJobsOutput = null as any;
 utilities.lazyLoad(exports, ["getJobs","getJobsOutput"], () => require("./getJobs"));
 
+export { GetMlApplicationArgs, GetMlApplicationResult, GetMlApplicationOutputArgs } from "./getMlApplication";
+export const getMlApplication: typeof import("./getMlApplication").getMlApplication = null as any;
+export const getMlApplicationOutput: typeof import("./getMlApplication").getMlApplicationOutput = null as any;
+utilities.lazyLoad(exports, ["getMlApplication","getMlApplicationOutput"], () => require("./getMlApplication"));
+
+export { GetMlApplicationImplementationArgs, GetMlApplicationImplementationResult, GetMlApplicationImplementationOutputArgs } from "./getMlApplicationImplementation";
+export const getMlApplicationImplementation: typeof import("./getMlApplicationImplementation").getMlApplicationImplementation = null as any;
+export const getMlApplicationImplementationOutput: typeof import("./getMlApplicationImplementation").getMlApplicationImplementationOutput = null as any;
+utilities.lazyLoad(exports, ["getMlApplicationImplementation","getMlApplicationImplementationOutput"], () => require("./getMlApplicationImplementation"));
+
+export { GetMlApplicationImplementationsArgs, GetMlApplicationImplementationsResult, GetMlApplicationImplementationsOutputArgs } from "./getMlApplicationImplementations";
+export const getMlApplicationImplementations: typeof import("./getMlApplicationImplementations").getMlApplicationImplementations = null as any;
+export const getMlApplicationImplementationsOutput: typeof import("./getMlApplicationImplementations").getMlApplicationImplementationsOutput = null as any;
+utilities.lazyLoad(exports, ["getMlApplicationImplementations","getMlApplicationImplementationsOutput"], () => require("./getMlApplicationImplementations"));
+
+export { GetMlApplicationInstanceArgs, GetMlApplicationInstanceResult, GetMlApplicationInstanceOutputArgs } from "./getMlApplicationInstance";
+export const getMlApplicationInstance: typeof import("./getMlApplicationInstance").getMlApplicationInstance = null as any;
+export const getMlApplicationInstanceOutput: typeof import("./getMlApplicationInstance").getMlApplicationInstanceOutput = null as any;
+utilities.lazyLoad(exports, ["getMlApplicationInstance","getMlApplicationInstanceOutput"], () => require("./getMlApplicationInstance"));
+
+export { GetMlApplicationInstancesArgs, GetMlApplicationInstancesResult, GetMlApplicationInstancesOutputArgs } from "./getMlApplicationInstances";
+export const getMlApplicationInstances: typeof import("./getMlApplicationInstances").getMlApplicationInstances = null as any;
+export const getMlApplicationInstancesOutput: typeof import("./getMlApplicationInstances").getMlApplicationInstancesOutput = null as any;
+utilities.lazyLoad(exports, ["getMlApplicationInstances","getMlApplicationInstancesOutput"], () => require("./getMlApplicationInstances"));
+
+export { GetMlApplicationsArgs, GetMlApplicationsResult, GetMlApplicationsOutputArgs } from "./getMlApplications";
+export const getMlApplications: typeof import("./getMlApplications").getMlApplications = null as any;
+export const getMlApplicationsOutput: typeof import("./getMlApplications").getMlApplicationsOutput = null as any;
+utilities.lazyLoad(exports, ["getMlApplications","getMlApplicationsOutput"], () => require("./getMlApplications"));
+
 export { GetModelArgs, GetModelResult, GetModelOutputArgs } from "./getModel";
 export const getModel: typeof import("./getModel").getModel = null as any;
 export const getModelOutput: typeof import("./getModel").getModelOutput = null as any;
@@ -165,6 +195,21 @@ export type JobRun = import("./jobRun").JobRun;
 export const JobRun: typeof import("./jobRun").JobRun = null as any;
 utilities.lazyLoad(exports, ["JobRun"], () => require("./jobRun"));
 
+export { MlApplicationArgs, MlApplicationState } from "./mlApplication";
+export type MlApplication = import("./mlApplication").MlApplication;
+export const MlApplication: typeof import("./mlApplication").MlApplication = null as any;
+utilities.lazyLoad(exports, ["MlApplication"], () => require("./mlApplication"));
+
+export { MlApplicationImplementationArgs, MlApplicationImplementationState } from "./mlApplicationImplementation";
+export type MlApplicationImplementation = import("./mlApplicationImplementation").MlApplicationImplementation;
+export const MlApplicationImplementation: typeof import("./mlApplicationImplementation").MlApplicationImplementation = null as any;
+utilities.lazyLoad(exports, ["MlApplicationImplementation"], () => require("./mlApplicationImplementation"));
+
+export { MlApplicationInstanceArgs, MlApplicationInstanceState } from "./mlApplicationInstance";
+export type MlApplicationInstance = import("./mlApplicationInstance").MlApplicationInstance;
+export const MlApplicationInstance: typeof import("./mlApplicationInstance").MlApplicationInstance = null as any;
+utilities.lazyLoad(exports, ["MlApplicationInstance"], () => require("./mlApplicationInstance"));
+
 export { ModelArgs, ModelState } from "./model";
 export type Model = import("./model").Model;
 export const Model: typeof import("./model").Model = null as any;
@@ -244,6 +289,12 @@ const _module = {
                 return new Job(name, <any>undefined, { urn })
             case "oci:DataScience/jobRun:JobRun":
                 return new JobRun(name, <any>undefined, { urn })
+            case "oci:DataScience/mlApplication:MlApplication":
+                return new MlApplication(name, <any>undefined, { urn })
+            case "oci:DataScience/mlApplicationImplementation:MlApplicationImplementation":
+                return new MlApplicationImplementation(name, <any>undefined, { urn })
+            case "oci:DataScience/mlApplicationInstance:MlApplicationInstance":
+                return new MlApplicationInstance(name, <any>undefined, { urn })
             case "oci:DataScience/model:Model":
                 return new Model(name, <any>undefined, { urn })
             case "oci:DataScience/modelArtifactExport:ModelArtifactExport":
@@ -279,6 +330,9 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("oci", "DataScience/job", _module)
 pulumi.runtime.registerResourceModule("oci", "DataScience/jobRun", _module)
+pulumi.runtime.registerResourceModule("oci", "DataScience/mlApplication", _module)
+pulumi.runtime.registerResourceModule("oci", "DataScience/mlApplicationImplementation", _module)
+pulumi.runtime.registerResourceModule("oci", "DataScience/mlApplicationInstance", _module)
 pulumi.runtime.registerResourceModule("oci", "DataScience/model", _module)
 pulumi.runtime.registerResourceModule("oci", "DataScience/modelArtifactExport", _module)
 pulumi.runtime.registerResourceModule("oci", "DataScience/modelArtifactImport", _module)

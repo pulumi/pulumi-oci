@@ -61,7 +61,7 @@ export interface GetMonitoredResourceTaskResult {
     readonly id: string;
     readonly monitoredResourceTaskId: string;
     /**
-     * Name of the task.
+     * Property name.
      */
     readonly name: string;
     /**
@@ -88,6 +88,10 @@ export interface GetMonitoredResourceTaskResult {
      * The date and time when the stack monitoring resource task was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      */
     readonly timeUpdated: string;
+    /**
+     * Type of the task.
+     */
+    readonly type: string;
     /**
      * Identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for work requests submitted for this task.
      */

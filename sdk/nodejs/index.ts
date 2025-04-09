@@ -95,6 +95,7 @@ import * as networkloadbalancer from "./networkloadbalancer";
 import * as nosql from "./nosql";
 import * as objectstorage from "./objectstorage";
 import * as oce from "./oce";
+import * as oci from "./oci";
 import * as ocvp from "./ocvp";
 import * as oda from "./oda";
 import * as onesubsription from "./onesubsription";
@@ -222,6 +223,7 @@ export {
     nosql,
     objectstorage,
     oce,
+    oci,
     ocvp,
     oda,
     onesubsription,

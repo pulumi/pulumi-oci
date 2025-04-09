@@ -106,6 +106,7 @@ const (
 	loadBalancerMod                 = "LoadBalancer"                 // Load Balancer
 	logAnalyticsMod                 = "LogAnalytics"                 // Log Analytics
 	loggingMod                      = "Logging"                      // Logging
+	lustreMod                       = "Lustre"                       // Lustre
 	managementAgentMod              = "ManagementAgent"              // Management Agent
 	managementDashboardMod          = "ManagementDashboard"          // Management Dashboard
 	marketplaceMod                  = "Marketplace"                  // Marketplace
@@ -234,6 +235,7 @@ var mappedMods = map[string]string{
 	"load_balancer":                  loadBalancerMod,
 	"log_analytics":                  logAnalyticsMod,
 	"logging":                        loggingMod,
+	"lustre":                         lustreMod,
 	"management_agent":               managementAgentMod,
 	"management_dashboard":           managementDashboardMod,
 	"marketplace":                    marketplaceMod,
